@@ -6,7 +6,7 @@ This document outlines the backend server infrastructure for permissions in Matt
 
 .. note::
 
-  The contents of this document apply to Mattermost Server version 5.0 and later. 
+  The contents of this document apply to Mattermost Server v5.0 and later. 
 
 
 .. contents::
@@ -159,7 +159,7 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | create_post_ephermal                         | channel | Create an ephemeral message within a channel.                                                                                                                                                         |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`__.    |
+| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config <https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit>`__.    |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | edit_others_posts                            | channel | Edit other users' posts.                                                                                                                                                                              |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -1,12 +1,29 @@
-Advanced Permissions (E10/E20)
-==============================
+Advanced Permissions
+====================
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Mattermost System Admins using Mattermost Cloud or Mattermost Server from v5.0 can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
 Two permission schemes are provided in Mattermost: 
 
 * System Scheme: Applies permissions universally across all teams and channels
-* Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise E10 or later)
+* Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional)
 
 This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
 
@@ -22,6 +39,23 @@ The Mattermost System Console provides a number of elements for Admins to contro
 System Scheme
 ~~~~~~~~~~~~~~
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
 
 - **Guests:** If Guest Accounts are enabled, permissions apply to guest users in all channels, in all teams.
@@ -35,10 +69,32 @@ You can access the System Scheme interface by going to **System Console > User M
 
 .. image:: ../images/system-scheme.png
 
-Team Override Schemes (E10/E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Team Override Schemes
+~~~~~~~~~~~~~~~~~~~~~
 
-*Available in Enterprise Edition E10 and higher*
+|enterprise| |professional| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 On systems with multiple `Mattermost teams <https://docs.mattermost.com/messaging/creating-teams.html>`_, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
@@ -57,13 +113,47 @@ Channel Permissions
 
 The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
-Channel Moderation (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Channel Moderation
+~~~~~~~~~~~~~~~~~~~
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 This content has moved to `Team and Channel Management <https://docs.mattermost.com/manage/team-channel-members.html>`_.
 
-Supplementary Roles (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Supplementary Roles
+~~~~~~~~~~~~~~~~~~~~
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in a future release of Enterprise Edition E20*
 
@@ -144,6 +234,23 @@ This permission is applied to all other roles (excluding the Guest role). When t
 
 Read only channels
 ~~~~~~~~~~~~~~~~~~
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **Configure a channel so that members can post/reply/react but guests can only read and react.**
 

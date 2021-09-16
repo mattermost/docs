@@ -786,6 +786,18 @@ Enable Elasticsearch for Autocomplete Queries
 File Storage
 ~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers.
 
 .. note::
@@ -999,6 +1011,18 @@ Ensures that the user can access the server and that the settings are valid.
 Image Proxy
 ~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Enable Image Proxy
 ^^^^^^^^^^^^^^^^^^
 
@@ -1039,7 +1063,7 @@ Remote Image Proxy Options
 
 The URL signing key passed to an ``atmos/camo`` image proxy. This setting is not needed when using the local image proxy.
 
-See the `documentation <https://docs.mattermost.com/administration/image-proxy.html#atmos-camo-image-proxy>`_ to learn more.
+See the `documentation <https://docs.mattermost.com/deploy/image-proxy.html#atmos-camo-image-proxy>`_ to learn more.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RemoteImageProxyOptions": ""`` with string input.                      |
@@ -1143,6 +1167,18 @@ Enable Security Alerts
 
 Push Notification Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Push Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1324,6 +1360,18 @@ The port used for streaming data between servers.
 
 Rate Limiting
 ~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Changes to properties in this section require a server restart before taking effect.
 
@@ -1568,6 +1616,18 @@ See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/adv
 Standard Logging 
 ~~~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1708,6 +1768,18 @@ Enable Diagnostics and Error Reporting
 Session Lengths
 ~~~~~~~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table.
 
 Extend session length with activity
@@ -1817,6 +1889,18 @@ The address the Mattermost server will listen on to expose performance metrics.
 Developer
 ~~~~~~~~~~
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Enable Testing Commands
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1875,6 +1959,14 @@ IP address and domain name rules are applied before host resolution. CIDR rules 
 Site Configuration
 -------------------
 
+Settings for customizing your Mattermost deployment.
+
+Customization
+~~~~~~~~~~~~~
+
+Site Name
+^^^^^^^^^^^
+
 |all-plans| |cloud| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
@@ -1892,14 +1984,6 @@ Site Configuration
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Settings for customizing your Mattermost deployment.
-
-Customization
-~~~~~~~~~~~~~
-
-Site Name
-^^^^^^^^^^^
-
 Name of service shown in login screens and UI. Maximum 30 characters.
 
 +-------------------------------------------------------------------------------------------+
@@ -1909,6 +1993,23 @@ Name of service shown in login screens and UI. Maximum 30 characters.
 Site Description
 ^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
 
 +----------------------------------------------------------------------------------------------+
@@ -1917,6 +2018,23 @@ Description of service shown in login screens and UI. When not specified, "All t
 
 Enable Custom Branding
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -1931,6 +2049,23 @@ Enable Custom Branding
 Custom Brand Image
 ^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
 
 +----------------------------------------------------------------------------------------------------+
@@ -1940,6 +2075,23 @@ Custom JPG image is displayed on left side of server login page. Recommended max
 Custom Brand Text
 ^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as using in Mattermost messages.
 
 +----------------------------------------------------------------------------------------+
@@ -1948,6 +2100,23 @@ Custom text will be shown below custom brand image on left side of server login 
 
 Enable Ask Community Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: **Ask the community** link is visible in the Mattermost channel header, under the **Help** menu. When selected, users are redirected to https://mattermost.com/pl/default-ask-mattermost-community/, where they can join the Mattermost Community to ask questions and help others troubleshoot issues. This option is not available on the mobile apps.
 
@@ -1960,7 +2129,24 @@ Enable Ask Community Link
 Help link
 ^^^^^^^^^^^
 
-Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation are hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
 
 +---------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"HelpLink": "https://about.mattermost.com/default-help/"`` with string input. |
@@ -1968,6 +2154,23 @@ Configurable link to a Help page your organization may provide to end users. By 
 
 Support Email
 ^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Set an email address for feedback or support requests.
 
@@ -1980,6 +2183,18 @@ To ensure that users can contact you for assistance, set this value to an email 
 Terms of Service link
 ^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Configurable link to Terms of Service your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
 
 In version 5.17 and later, this setting does not change the terms of service link in **Main Menu > About Mattermost**, which refers to the Mattermost Terms of Service.
@@ -1990,6 +2205,18 @@ In version 5.17 and later, this setting does not change the terms of service lin
 
 Privacy Policy link
 ^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on about.mattermost.com.
 
@@ -2002,6 +2229,18 @@ In version 5.17 and later, this setting does not change the privacy policy link 
 About Link
 ^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on about.mattermost.com.
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -2011,6 +2250,18 @@ Configurable link to an About page describing your organization may provide to e
 Report a Problem link
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Set the link for the support website.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2019,6 +2270,18 @@ Set the link for the support website.
 
 App Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client. 
 
@@ -2031,6 +2294,18 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -2039,6 +2314,18 @@ Configurable link to a download page for Mattermost Apps. When a link is present
 
 Android App Download Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
@@ -2049,6 +2336,18 @@ Configurable link to download the Android app. When a link is present, users who
 iOS App Download Link
 ^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Configurable link to download the iOS app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2057,6 +2356,23 @@ Configurable link to download the iOS app. When a link is present, users who acc
 
 Localization
 ~~~~~~~~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Default Server Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2096,6 +2412,23 @@ Users and Teams
 Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Maximum number of users per team, excluding inactive users.
 
 The **Max Users Per Team** refers to the size of the "team site" which is workspace a "team of people" inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project.
@@ -2111,6 +2444,23 @@ In terms of technical performance, `with appropriate hardware, Mattermost can ea
 Max Channels Per Team
 ^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Maximum number of channels per team, including both active and deleted channels.
 
 +---------------------------------------------------------------------------------------------------+
@@ -2119,6 +2469,23 @@ Maximum number of channels per team, including both active and deleted channels.
 
 Enable users to open Direct Message channels with
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
 
@@ -2145,6 +2512,23 @@ Allow Team Administrators to edit others' posts
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**.
 
 **Show username**: Displays the user's username.
@@ -2159,6 +2543,23 @@ Specifies how names are displayed in the user interface by default. Please note 
 
 Lock Teammate Name Display for all users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Disables users' ability to change settings under **Account Settings > Display > Teammate Name Display**.
 
@@ -2178,6 +2579,23 @@ Allow Users to View Archived Channels (Beta)
 Show Email Address
 ^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Show email address of all users.
 
 **False**: Hide email address of users from other users in the user interface, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see email addresses in the UI.
@@ -2189,6 +2607,23 @@ Show Email Address
 Show Full Name
 ^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Show full name of all users.
 
 **False**: Hide full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see full names in the UI.
@@ -2197,8 +2632,25 @@ Show Full Name
 | This feature's ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-Enable Custom Statuses
-^^^^^^^^^^^^^^^^^^^^^^^
+Enable Custom User Statuses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
 
@@ -2214,6 +2666,23 @@ Notifications
 Show @channel and @all confirmation dialog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Users will be prompted to confirm when posting @channel and @all in channels with over five members.
 
 **False**: No confirmation is required.
@@ -2224,6 +2693,23 @@ Show @channel and @all confirmation dialog
 
 Enable Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **True**: Enables sending of email notifications.
 
@@ -2242,6 +2728,23 @@ Email invitations and account deactivation emails are not affected by this setti
 Enable Preview Mode Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Preview Mode banner is displayed to all users when ``"SendEmailNotifications": false`` so users are aware that email notifications are disabled.
 
 **False**: Preview Mode banner is not displayed to users.
@@ -2253,10 +2756,27 @@ Enable Preview Mode Banner
 Enable Email Batching
 ^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings > Notifications**.
 
 .. note::
-  - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/administration/config-settings.html#smtp-email-server>`__ is configured. 
+  - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ is configured. 
   - Email batching in `High Availability mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
 
 **False**: If email notifications are enabled in Account Settings, emails will be sent individually for every mention or direct message received.
@@ -2267,6 +2787,23 @@ Enable Email Batching
 
 Email Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 |enterprise|
 
@@ -2288,6 +2825,23 @@ Email Notification Contents
 Notification Display Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Name displayed on email account used when sending notification emails from Mattermost system.
 
 +-------------------------------------------------------------------------------------+
@@ -2296,6 +2850,23 @@ Name displayed on email account used when sending notification emails from Matte
 
 Notification From Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Address displayed on email account used when sending notification emails from within Mattermost.
 
@@ -2308,6 +2879,23 @@ So you don't miss messages, please make sure to change this value to an email yo
 Notification Reply-To Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Email address used in the Reply-To header when sending notification emails from Mattermost.
 
 +---------------------------------------------------------------------------------------+
@@ -2317,6 +2905,23 @@ Email address used in the Reply-To header when sending notification emails from 
 Notification Footer Mailing Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
 
 +---------------------------------------------------------------------------------------------+
@@ -2325,6 +2930,23 @@ Organization name and mailing address displayed in the footer of email notificat
 
 Push Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 **Generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
 
@@ -2342,6 +2964,28 @@ For customers who choose to wrap the Mattermost mobile application in a secure c
 
 Announcement Banner
 ~~~~~~~~~~~~~~~~~~~~
+
+|enterprise| |professional| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Announcement Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2395,6 +3039,23 @@ Allow Banner Dismissal
 
 Emoji
 ~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Emoji Picker
 ^^^^^^^^^^^^^^^^^^^^
@@ -2450,6 +3111,23 @@ Restrict Custom Emoji Creation
 Posts
 ~~~~~~
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -2499,7 +3177,7 @@ Enable LaTeX Rendering
 Enable Local Mode
 ^^^^^^^^^^^^^^^^^^
 
-*This setting is currently not available in the System Console and can only be set in ``config.json``.*
+*This setting is currently not available in the System Console and can only be set in ``config.json``*
 
 **True**: Enables local mode for mmctl.
 
@@ -2552,6 +3230,23 @@ File Sharing and Downloads
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 When ``false``, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -2561,16 +3256,28 @@ When ``false``, disables file sharing on the server. All file and image uploads 
 Allow File Uploads on Mobile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E20*
 
-When ``false``, disables file uploads on mobile apps. All file and image uploads on messages are forbidden across clients and devices, including mobile.
+**True**: Enables file uploads on messages using Mattermost clients.
+
+**False**: Disables file uploads on mobile apps. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMobileUpload": true`` with options ``true`` and ``false``.       |
@@ -2579,16 +3286,28 @@ When ``false``, disables file uploads on mobile apps. All file and image uploads
 Allow File Downloads on Mobile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 *Available in legacy Enterprise Edition E20*
 
-When ``false``, disables file downloads on mobile apps. Users can still download files from a mobile web browser.
+**True**: Enables file downloads on Mattermost mobile apps.
+
+**False**: Disables file downloads on mobile apps. Users can still download files from a mobile web browser.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMobileDownload": true`` with options ``true`` and ``false``.     |
@@ -2596,6 +3315,18 @@ When ``false``, disables file downloads on mobile apps. Users can still download
 
 Public Links
 ~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Public File Links
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2623,6 +3354,23 @@ Public Link Salt
 
 Notices
 ~~~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Enable Admin Notices
 ^^^^^^^^^^^^^^^^^^^^
@@ -2862,6 +3610,16 @@ Failed login attempts allowed before a user is locked out and required to reset 
 MFA
 ~~~~
 
+Configure security settings for multi-factor authentication.
+
+The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
+
+If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you set up a multi-factor authentication service specifically for accessing Mattermost.
+
+
+Enable Multi-factor Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 |all-plans| |cloud| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
@@ -2879,16 +3637,6 @@ MFA
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Configure security settings for multi-factor authentication.
-
-The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
-
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you set up a multi-factor authentication service specifically for accessing Mattermost.
-
-
-Enable Multi-factor Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 **True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to sign-in to the Mattermost server. Specifically, they will be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
 
 **False**: Multi-factor authentication is disabled.
@@ -2900,7 +3648,7 @@ Enable Multi-factor Authentication
 Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -2911,6 +3659,16 @@ Enforce Multi-factor Authentication
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -2925,7 +3683,12 @@ Enforce Multi-factor Authentication
 AD/LDAP
 ~~~~~~~~
 
-|professional| |cloud| |self-hosted|
+|enterprise| |professional| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
 
 .. |professional| image:: ../images/professional-badge.png
   :scale: 30
@@ -3087,12 +3850,22 @@ This filter uses the permissions of the **Bind Username** account to execute the
 Group Filter
 ^^^^^^^^^^^^^
 
-|enterprise|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3254,12 +4027,22 @@ The Mattermost server will replace the user’s profile image upon login (not at
 Group Display Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3275,12 +4058,22 @@ Group Display Name Attribute
 Group Id Attribute
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
 

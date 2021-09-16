@@ -1,9 +1,31 @@
 .. _guest-accounts:
 
-Guest Accounts (Beta) (E10/E20)
-================================
+Guest Accounts (Beta)
+=====================
 
-Available in `Enterprise Edition E10 and higher <https://mattermost.com/pricing-self-managed/>`__.
+|enterprise| |professional| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 Guest Accounts are a way to collaborate with individuals (such as vendors and contractors) outside of your organization by controlling their access to channels and team members. For example, Guest Accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 
@@ -41,7 +63,7 @@ Guest Authentication
 
 Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
 
-Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/deployment/sso-ldap.html>`_ and `SAML Single-Sign-On <https://docs.mattermost.com/deployment/sso-saml.html>`__.
+Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`_ and `SAML Single-Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`__.
 
 Converting a member user to a guest will not change the channels they are in. However, they will be restricted from discovering additional channels and are unable to Direct Message/Group Message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
 
@@ -96,7 +118,9 @@ When a guest logs in without having any channels assigned to their account, they
 Guest Permission Settings
 -------------------------
 
-In Enterprise Edition E10 and E20, you can also control which users can invite guests. By default, only the System Admins can invite guests. There are `additional permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ in E20 that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
+In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the System Admins can invite guests. 
+
+There are `additional permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ in Mattermost Enterprise that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
 
  - Edit posts
  - Delete posts

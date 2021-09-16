@@ -1,4 +1,3 @@
-
 Scaling for Enterprise 
 ======================
 
