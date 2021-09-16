@@ -211,7 +211,7 @@ redirects = {
     "administration/config-settings.html#storage": 
         "https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory",
     "administration/config-settings.html#aggregate-search-indexes": 
-        "https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes"
+        "https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes":
     "administration/config-settings.html#enable-document-search-by-content": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content",
     "administration/config-settings.html#site-url": 
