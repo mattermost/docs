@@ -221,7 +221,7 @@ redirects = {
     "administration/config-settings.html#enable-high-availability-mode": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode",
     "administration/config-settings.html#forward-port-80-to-443": 
-        "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443":
+        "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
     "administration/config-settings.html#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server"
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
