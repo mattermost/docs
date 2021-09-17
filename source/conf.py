@@ -6,9 +6,10 @@
 
 import sys
 import os
+from sphinx.application import Sphinx
 
 
-def setup(app):
+def setup(_: Sphinx):
     return
 
 
@@ -57,7 +58,6 @@ source_suffix = ['.rst', '.md']
 
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
 redirects = {
-
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
@@ -120,24 +120,24 @@ redirects = {
     "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
     "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
     "administration/compliance-export": "https://docs.mattermost.com/comply/compliance-export.html",
-    "administration/config-settings#allow-users-to-view-archived-channels-beta": 
+    "administration/config-settings#allow-users-to-view-archived-channels-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#allow-users-to-view-archived-channels-beta",
     "administration/config-settings#timezone": "https://docs.mattermost.com/configure/configuration-settings.html#timezone",
-    "administration/config-settings#enable-legacy-sidebar": 
+    "administration/config-settings#enable-legacy-sidebar":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
-    "administration/config-settings#town-square-is-read-only-experimental": 
+    "administration/config-settings#town-square-is-read-only-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental",
-    "administration/config-settings#town-square-is-hidden-in-left-hand-sidebar-experimental": 
+    "administration/config-settings#town-square-is-hidden-in-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental",
-    "administration/config-settings#enable-x-to-leave-channels-from-left-hand-sidebar-experimental": 
+    "administration/config-settings#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental",
-    "administration/config-settings#autoclose-direct-messages-in-sidebar-experimental": 
+    "administration/config-settings#autoclose-direct-messages-in-sidebar-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental",
-    "administration/config-settings#sidebar-organization": 
+    "administration/config-settings#sidebar-organization":
         "https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization",
-    "administration/config-settings#experimental-sidebar-features": 
+    "administration/config-settings#experimental-sidebar-features":
         "https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features",
-    "administration/config-settings#deprecated-configuration-settings": 
+    "administration/config-settings#deprecated-configuration-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings",
     "administration/custom-terms-of-service": "https://docs.mattermost.com/comply/custom-terms-of-service.html",
     "administration/image-proxy": "https://docs.mattermost.com/deploy/image-proxy.html",
@@ -152,9 +152,9 @@ redirects = {
     "administration/downgrade": "https://docs.mattermost.com/upgrade/downgrading-mattermost-server.html",
     "administration/open-source-components": "https://docs.mattermost.com/upgrade/open-source-components.html",
     "administration/mmctl-cli-tool": "https://docs.mattermost.com/manage/mmctl-cli-tool.html",
-    "administration/migrating#migrating-from-slack-using-the-mattermost-web-app": 
+    "administration/migrating#migrating-from-slack-using-the-mattermost-web-app":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-web-app",
-    "administration/migrating#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import": 
+    "administration/migrating#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
     "administration/release-definitions": "https://docs.mattermost.com/upgrade/release-definitions.html",
     "administration/performance-alerting-guide": "https://docs.mattermost.com/scale/peformance-alerting.html",
