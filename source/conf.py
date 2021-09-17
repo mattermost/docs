@@ -215,7 +215,9 @@ redirects = {
         "https://docs.mattermost.com/configure/cloud-site-configuration.html",
     "cloud/cloud-mobile/cloud-app-config": "https://docs.mattermost.com/deploy/mobile-appconfig.html",
     "deployment/atlassian-integrations": 
-        "https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#atlassian-integrations"
+        "https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#atlassian-integrations",
+    "deployment/bot-integrations": 
+        "https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#bot-integrations"
     "deployment/admin-roles": "https://docs.mattermost.com/deploy/admin-roles.html",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/bots": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
