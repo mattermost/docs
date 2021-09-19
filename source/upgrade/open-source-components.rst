@@ -110,6 +110,7 @@ Redux
 Server
 ------------------------------
 
+ - Mattermost Enterprise Edition v5.39.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.39/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.38.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.38/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.37.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.37/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.36.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.36/NOTICE.txt>`_.
@@ -174,6 +175,7 @@ Server
 Webapp
 ------------------------------
 
+ - Mattermost Enterprise Edition v5.39.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.39/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.38.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.38/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.37.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.37/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.36.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.36/NOTICE.txt>`_.

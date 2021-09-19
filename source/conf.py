@@ -6,9 +6,10 @@
 
 import sys
 import os
+from sphinx.application import Sphinx
 
 
-def setup(app):
+def setup(_: Sphinx):
     return
 
 
@@ -57,7 +58,6 @@ source_suffix = ['.rst', '.md']
 
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
 redirects = {
-
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
@@ -120,24 +120,24 @@ redirects = {
     "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
     "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
     "administration/compliance-export": "https://docs.mattermost.com/comply/compliance-export.html",
-    "administration/config-settings#allow-users-to-view-archived-channels-beta": 
+    "administration/config-settings#allow-users-to-view-archived-channels-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#allow-users-to-view-archived-channels-beta",
     "administration/config-settings#timezone": "https://docs.mattermost.com/configure/configuration-settings.html#timezone",
-    "administration/config-settings#enable-legacy-sidebar": 
+    "administration/config-settings#enable-legacy-sidebar":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
-    "administration/config-settings#town-square-is-read-only-experimental": 
+    "administration/config-settings#town-square-is-read-only-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental",
-    "administration/config-settings#town-square-is-hidden-in-left-hand-sidebar-experimental": 
+    "administration/config-settings#town-square-is-hidden-in-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental",
-    "administration/config-settings#enable-x-to-leave-channels-from-left-hand-sidebar-experimental": 
+    "administration/config-settings#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental",
-    "administration/config-settings#autoclose-direct-messages-in-sidebar-experimental": 
+    "administration/config-settings#autoclose-direct-messages-in-sidebar-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental",
-    "administration/config-settings#sidebar-organization": 
+    "administration/config-settings#sidebar-organization":
         "https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization",
-    "administration/config-settings#experimental-sidebar-features": 
+    "administration/config-settings#experimental-sidebar-features":
         "https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features",
-    "administration/config-settings#deprecated-configuration-settings": 
+    "administration/config-settings#deprecated-configuration-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings",
     "administration/custom-terms-of-service": "https://docs.mattermost.com/comply/custom-terms-of-service.html",
     "administration/image-proxy": "https://docs.mattermost.com/deploy/image-proxy.html",
@@ -152,9 +152,9 @@ redirects = {
     "administration/downgrade": "https://docs.mattermost.com/upgrade/downgrading-mattermost-server.html",
     "administration/open-source-components": "https://docs.mattermost.com/upgrade/open-source-components.html",
     "administration/mmctl-cli-tool": "https://docs.mattermost.com/manage/mmctl-cli-tool.html",
-    "administration/migrating#migrating-from-slack-using-the-mattermost-web-app": 
+    "administration/migrating#migrating-from-slack-using-the-mattermost-web-app":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-web-app",
-    "administration/migrating#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import": 
+    "administration/migrating#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
     "administration/release-definitions": "https://docs.mattermost.com/upgrade/release-definitions.html",
     "administration/performance-alerting-guide": "https://docs.mattermost.com/scale/peformance-alerting.html",
@@ -199,6 +199,31 @@ redirects = {
     "administration/data-retention": "https://docs.mattermost.com/comply/data-retention-policy.html",
     "administration/custom-terms-of-service": "https://docs.mattermost.com/comply/custom-terms-of-service.html",
     "administration/mobile-changelog": "https://docs.mattermost.com/deploy/mobile-app-changelog.html",
+    "administration/config-settings.html#push-notification-contents": "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
+    "administration/config-settings.html#gitlab-settings": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
+    "administration/config-settings.html#google-settings": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#google-settings",
+    "administration/config-settings.html#office-365-settings": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings",
+    "administration/config-settings.html#openid-connect-other-settings": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings",
+    "administration/config-settings.html#storage": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory",
+    "administration/config-settings.html#aggregate-search-indexes": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes",
+    "administration/config-settings.html#enable-document-search-by-content": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content",
+    "administration/config-settings.html#site-url": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#site-url",
+    "administration/config-settings.html#enable-link-previews": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews",
+    "administration/config-settings.html#enable-high-availability-mode": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode",
+    "administration/config-settings.html#forward-port-80-to-443": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
+    "administration/config-settings.html#smtp-email-server": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
     "cloud/cloud-administration/cloud-compliance":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
@@ -214,6 +239,10 @@ redirects = {
     "cloud/cloud-administration/site-configuration":
         "https://docs.mattermost.com/configure/cloud-site-configuration.html",
     "cloud/cloud-mobile/cloud-app-config": "https://docs.mattermost.com/deploy/mobile-appconfig.html",
+    "deployment/atlassian-integrations": 
+        "https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#atlassian-integrations",
+    "deployment/bot-integrations": 
+        "https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#bot-integrations",
     "deployment/admin-roles": "https://docs.mattermost.com/deploy/admin-roles.html",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/bots": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
@@ -260,6 +289,7 @@ redirects = {
         "https://docs.mattermost.com/scale/high-availability-cluster.html#proxy-server-configuration",
     "deployment/cluster#upgrade-guide": "https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide",
     "deployment/mobile-app-deployment": "https://docs.mattermost.com/deploy/mobile-overview.html",
+    "deployment/push.html": "https://docs.mattermost.com/deploy/mobile-hpns.html#mobile-push-notifications",
     "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
     "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
@@ -272,6 +302,8 @@ redirects = {
     "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
     "guides/administrator#mattermost-integrations": "https://developers.mattermost.com/integrate/getting-started/",
     "guides/integration": "https://developers.mattermost.com/integrate/other-integrations/",
+    "guides/install-deploy-upgrade-scale.html#install-mattermost": 
+        "https://docs.mattermost.com/guides/deployment.html#install-guides",
     "help/apps/desktop-changelog": "https://docs.mattermost.com/install/desktop-app-changelog.html",
     "help/getting-started/welcome-to-mattermost":
         "https://docs.mattermost.com/messaging/welcome-to-mattermost-messaging.html",
@@ -363,6 +395,9 @@ redirects = {
     "mobile/mobile-overview#use-an-emm-provider-with-managed-app-configuration": 
         "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
+    "mobile/mobile-faq.html#how-do-push-notifications-work": 
+        "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work",
+    "mobile/mobile-testing-notifications": "https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
@@ -378,8 +413,7 @@ redirects = {
     "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/help-wanted",
     "process/help-wanted": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute/help-wanted",
     "process/sg_rest_markup":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/security-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/security-release",
     "process/community-overview": "https://handbook.mattermost.com/contributors/contributors/community",
@@ -389,62 +423,49 @@ redirects = {
     "process/release-tips":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-tips",
     "process/sg_general-guidelines":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/community-guidelines":
         "https://handbook.mattermost.com/contributors/contributors/community-playbook/",
     "process/feature-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/feature-release",
     "process/security": "https://handbook.mattermost.com/operations/operations/company-policies/security-policies",
     "process/engineer-expectations":
-        "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer"
-        "-onboarding",
+        "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
     "process/product-manager-hiring":
         "https://handbook.mattermost.com/contributors/join-us/recruiting-cadences/product-manager-hiring",
     "process/new-bug-tickets":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug"
-        "-tickets",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets",
     "process/sg_grammar-spelling-mechanics":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/sg_document-structure":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/release-scorecard-definitions":
-        "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release"
-        "-scorecard-definitions",
+        "https://handbook.mattermost.com/operations/research-and-development/product/release-process/release-scorecard-definitions",
     "process/software-requirements":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software"
-        "-requirements",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements",
     "process/mobile-release-process":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/mobile-release",
     "process/documentation-UItext-guidelines":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/user"
-        "-interface-text-guidelines",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/user-interface-text-guidelines",
     "process/bug-fix-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/bug-fix-release",
     "process/deprecated-features":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated"
-        "-features",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features",
     "process/dot-release":
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/dot-release",
     "process/end-user-documentation":
-        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines"
-        "/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
+        "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
     "process/bug-severity-guidelines":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug"
-        "-tickets/bug-severity-guidelines",
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/new-bug-tickets/bug-severity-guidelines",
     "process/accepting-pull-request":
         "https://handbook.mattermost.com/contributors/contributors/help-wanted",
     "process/pm-faq":
-        "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook"
-        "#frequently-asked-questions-faq",
+        "https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook#frequently-asked-questions-faq",
     "process/product-manager":
         "https://handbook.mattermost.com/contributors/join-us/staff-recruiting/product-manager-hiring",
     "process/partner-programs":
         "https://handbook.mattermost.com/operations/sales/partner-programs",
     "process/overview":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process"
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
     "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html",
@@ -464,9 +485,9 @@ author = 'Mattermost'
 # built documents.
 #
 # The short X.Y version.
-# version = '5.38'
+# version = '5.39'
 # The full version, including alpha/beta/rc tags.
-# release = '5.38'
+# release = '5.39'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
