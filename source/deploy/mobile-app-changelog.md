@@ -27,6 +27,9 @@ Latest Mattermost Mobile Apps releases:
 #### Deprecations
  - Stopped evaluating deprecated config settings starting with server version 6.0.
 
+#### Sidebar Categories
+ - App now displays custom categories in the sidebar.
+
 ### Improvements
  - Added better support for channel and user selection from withing apps commands.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``.
