@@ -109,6 +109,30 @@ There are several ways to work with voice, video, and screensharing in Mattermos
 - Requires Mattermost Enterprise Edition E20.
 - [Source code and documentation](https://github.com/mattermost/mattermost-plugin-msteams-meetings)
 
+### Bot integrations
+
+There are several ways to connect bots with Mattermost. Take a look at the tools recommended below, or visit the [Marketplace](https://mattermost.com/marketplace/) to find others.
+
+#### WelcomeBot
+
+- Welcome users to your Mattermost instance, developed by Mattermost.
+- Add a Welcome Bot that helps add new team members to channels to improve onboarding and HR processes.
+- [Source code and documentation](https://github.com/mattermost/mattermost-plugin-welcomebot)
+
+#### Sample Golang bot
+
+- Sample bot for Go driver, developed by Mattermost.
+- Learn how to use the Mattermost Go driver to interact with a Mattermost server, listen to events and respond to messages.
+- Use the API for simple tasks such as logging in to your server, creating a channel, and posting a message.
+- [Source code and documentation](https://github.com/mattermost/mattermost-bot-sample-golang)
+
+#### Hubot Adapter
+
+- Hubot adapter for Mattermost written in JavaScript that uses Web API and Websockets, developed by Andy Lo-A-Foe.
+- Use the bot to listen for commands and to execute actions based on your requests.
+- Invite your bot to any Mattermost channel just like a regular user.
+- [Source code and documentation](https://github.com/loafoe/hubot-matteruser)
+
 ## Incoming Webhooks
 
 Incoming webhooks from external integrations can post messages to Mattermost in Public and Private channels. Learn more about setting up incoming webhooks in our [documentation](https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/).

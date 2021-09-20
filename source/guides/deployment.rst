@@ -70,11 +70,13 @@ Desktop/Mobile App Installation
     Desktop Application Install Guides </install/desktop-app-install>
     iOS Setup </install/install-ios-app>
     Android Setup </install/install-android-app>
+    Testing Push Notifications </deploy/mobile-testing-notifications>
 
 * :doc:`Install the Mattermost Desktop App </install/installing-mattermost-desktop-app>`
 * :doc:`Desktop Application Install Guides </install/desktop-app-install>`
 * :doc:`iOS Setup </install/install-ios-app>`
 * :doc:`Android Setup </install/install-android-app>`
+* :doc:`Testing Push Notifications </deploy/mobile-testing-notifications>`
 
 Deployment Guide
 ----------------
