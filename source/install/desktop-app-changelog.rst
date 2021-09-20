@@ -4,12 +4,11 @@ Desktop Application Changelog
 Latest Mattermost Desktop App releases:
 
 - `Release v5.0 <#id1>`_
-- `Release v4.7 <#id1>`_
-- `Release v4.6 <#id4>`_
-- `Release v4.5 <#id16>`_
-- `Release v4.4 <#id32>`_
-- `Release v4.3 <#id51>`_
-- `Release v4.2.3 <#id68>`_
+- `Release v4.7 <#id4>`_
+- `Release v4.6 <#id25>`_
+- `Release v4.5 <#id37>`_
+- `Release v4.4 <#id53>`_
+- `Release v4.3 <#id72>`_
 
 Release v5.0
 --------------
@@ -21,6 +20,9 @@ Compatibility
 ~~~~~~~~~~~~~~~
 
 - Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
+Breaking Changes / Upgrade Notes
+~~~~~~~~~~~~~~~
 
 Highlights
 ~~~~~~~~~~~~~~~
