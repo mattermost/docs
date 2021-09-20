@@ -58,7 +58,6 @@ Webhooks
 ~~~~~~~~
 
 - For information about the webhook payload for run start, see the `PlaybookRunWebhookPayload struct <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_. An example of the JSON payload for a run start `is available here <https://gist.github.com/icelander/b68f2bf2b4ffefec93400cb050211cf1>`_.
-- ```
 - For information about the webhook payload for status update, see the `PlaybookRunWebhookPayload struct <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_. An example JSON payload for a status update `is available here <https://gist.github.com/icelander/2f9938ad68d1e0aa656f97969895d080>`_.
 
 Setting permissions
