@@ -36,6 +36,7 @@ Windows
 
 All Platforms
 ^^^^^^^^^^^^^
+- Added support for multiple languages to be used by the spellchecker.
 - Changed server selection to use a dropdown instead of tabs.
 - Added a dark mode for settings and modals.
 - Added dragging and dropping of the server dropdown items.
