@@ -1,7 +1,7 @@
 Mattermost Boards
 =================
 
-Mattermost Boards enable your team to manage projects and tasks via a familiar kanban board structure. Keep everyone in your team and organization in the loop to stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Keep everything your team needs in one place, including documents, images, and important hyperlinks.
+Mattermost Boards enable your team to manage projects and tasks via a familiar Kanban board structure. Keep everyone in your team and organization in the loop to stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Keep everything your team needs in one place, including documents, images, and important hyperlinks.
 
 .. image:: ../images/Boards_Hero.png
 
