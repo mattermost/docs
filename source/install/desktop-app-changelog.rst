@@ -3,12 +3,93 @@ Desktop Application Changelog
 
 Latest Mattermost Desktop App releases:
 
+- `Release v5.0 <#id1>`_
 - `Release v4.7 <#id1>`_
 - `Release v4.6 <#id4>`_
 - `Release v4.5 <#id16>`_
 - `Release v4.4 <#id32>`_
 - `Release v4.3 <#id51>`_
 - `Release v4.2.3 <#id68>`_
+
+Release v5.0
+--------------
+
+**Release Date: 2021-10-13**
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Added new branding for Desktop v5.0.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+- 
+
+All Platforms
+^^^^^^^^^^^^^
+- Changed server selection to use a dropdown instead of tabs.
+- Added a dark mode for settings and modals.
+- Added dragging and dropping of the server dropdown items.
+- Converted the tabs interface to support multiple configurable tabs based on the server added.
+- Migrated to Bootstrap v4 and refreshed interface. Migrated to react-beautiful-dnd instead of react-smooth-dnd for a cleaner experience.
+- Removed Server Management screen from Settings, added Edit/Delete buttons in new dropdown.
+- Updated some keyboard shortcuts and menu items to work with the new desktop app layout.
+- Updated loading screen visuals.
+- Made the Window menu on macOS more consistent with system standards.
+- Added a checkbox to certificate error modal that allows a user to permanently distrust a certificate.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v14.0. Electron is the underlying technology used to build the Desktop app.
+- Added rpm build option to the Electron builder.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+- 
+
+MacOS
+^^^^^^^^^^^^^
+- 
+
+Linux
+^^^^^^^^^^^^^
+- Fixed tray icon size on Linux.
+- Fixed an issue where pressing ``Alt+<somekey>`` could cause the menubar to disable and overlap the top bar on Linux.
+
+All Platforms
+^^^^^^^^^^^^^
+ - Fixed an issue where resizing the app while in the System Console causes a white bar to appear at the top.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The new spellchecker connects to Google servers for downloading updated dictionaries.
+- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
+- Clicking on **View > Find** doesn't work `MM-36606 <https://mattermost.atlassian.net/browse/MM-36606>`_.
+- Right click menu is missing from the ``jira connect`` modal `MM-36032 <https://mattermost.atlassian.net/browse/MM-36032>`_.
+- Search field is focused on first start of the app `MM-35249 <https://mattermost.atlassian.net/browse/MM-35249>`_.
+- The ``create_desktop_file.sh`` script is removed from the .tar.gz release. As a workaround, it can be downloaded from `GitHub here <https://github.com/mattermost/desktop/blob/master/src/assets/linux/create_desktop_file.sh>`_.
+- An error may occur when installing the MSI Installer on any Windows version.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+- 
 
 Release v4.7
 --------------
