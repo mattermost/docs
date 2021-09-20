@@ -67,7 +67,6 @@ Latest Mattermost Cloud releases:
    - config
    - extract
    - group
-   - import
    - integrity
    - ldap
    - license
