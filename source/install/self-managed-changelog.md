@@ -54,12 +54,43 @@ Lastest Mattermost Releases:
 
 ### Highlights
 
-#### 
+#### Blobal Product Launcher
+ - This is disabled on the mobile web view.
+
+#### Permalink Previews
+ - Added support for permalink previews for posts in Mattermost.
+
+#### Tutorial Updates
+ - Added a tip to the **Getting Started** page for downloading Desktop Apps.
+ - Updated tutorial icons and changed text content in tutorial tips.
+
+#### Branding Changes
+ - Added a new default brand theme "Denim".
+ - The existing theme names and colors, including Mattermost, Organization, Mattermost Dark, and Windows Dark have been updated to the new Sapphire, Quartz, Indigo, & Onyx theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing Mattermost, Organization, Mattermost Dark, and Windows Dark themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - Updated email templates to the new branding.
+
+#### Packaging Changes
+ - Updated in-product strings referencing E10 & E20 to new packaging.
+ - SAML has been moved from the highest level tier (Enterprise - former E20) to mid-level (Professional) while Certificate-based authentication feature had no change.
+ - E20, Professional, and Enterprise license SKUs are now supported for installing Enterprise plugins.
 
 ### Improvements
 
 #### User Interface (UI)
- - 
+ - Improved typing performance when the emoji autocomplete is open.
+ - Renamed the “View image” modal to “File preview” modal.
+ - Added “Invite People” to the main "+" button below the hamburger menu.
+ - Dropped support for left-hand side-specific bot icons.
+ - Add a "rest field" to the app command parser.
+ - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
+ - Updated **Account Settings > Display > Timezone** to be more user friendly.
+ - Updated feature discovery images.
+ - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
+ - Removed the Slack importer from the user interface.
+ - Increased the limit of uploaded file attachments per post from 5 to 10.
+ - Removed the legacy channel sidebar.
+ - Added desktop notifications for followed threads.
+ - Hungarian and English-Australian are now official languages.
 
 #### Performance
  - 
