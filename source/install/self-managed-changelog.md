@@ -48,7 +48,10 @@ Lastest Mattermost Releases:
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Important Upgrade Notes
- - 
+ - DB Schema migration.
+ - Changed the field type of Data in ``model.ClusterMessage`` to []byte from string. This also makes a v6 server incompatible with a v5 server in the same cluster. Customers upgrading from 5.x to 6.x cannot do an HA upgrade. This will require a downtime.
+ - 0.9.0 Focalboard plugin requires Mattermost v5.38+.
+ - Advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated documentation.
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.39, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -63,6 +66,9 @@ Lastest Mattermost Releases:
 #### Tutorial Updates
  - Added a tip to the **Getting Started** page for downloading Desktop Apps.
  - Updated tutorial icons and changed text content in tutorial tips.
+ - Updated default treatment for ``Add channel`` button to current color & by team name.
+ - Added a tutorial tip for new settings and status buttons.
+ - Added a tip for the product switcher. Tip is skipped if not applicable.
 
 #### Branding Changes
  - Added a new default brand theme "Denim".
@@ -77,53 +83,141 @@ Lastest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Improved typing performance when the emoji autocomplete is open.
  - Renamed the “View image” modal to “File preview” modal.
  - Added “Invite People” to the main "+" button below the hamburger menu.
- - Dropped support for left-hand side-specific bot icons.
- - Add a "rest field" to the app command parser.
  - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
  - Updated **Account Settings > Display > Timezone** to be more user friendly.
- - Updated feature discovery images.
  - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
- - Removed the Slack importer from the user interface.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
- - Removed the legacy channel sidebar.
  - Added desktop notifications for followed threads.
  - Hungarian and English-Australian are now official languages.
+ - Updated feature discovery images.
+ - Added a **Start Trial** call-to action to the **Main Menu**.
 
 #### Performance
- - 
+ - Improved typing performance when the emoji autocomplete is open.
 
 #### Integrations
- - 
+ - Dropped support for left-hand side-specific bot icons.
+ - Add a "rest field" to the app command parser.
 
 #### Administration
- - 
+ - Migrated the extraction command to mmctl.
+ - Removed a deprecated "Backend" field from the plugin manifest.
+ - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
+ - Converted the "Executables" field in the plugin manifest to a map.
+ - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
+ - Added support for React components in channel header tooltips registered by plugins.
+ - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
+ - Updated Bleve to v2 to use the scorch index type.
+ - Removed the following deprecated CLI commands:
+   - channel
+   - command
+   - config
+   - extract
+   - group
+   - integrity
+   - ldap
+   - license
+   - logs
+   - permissions
+   - plugin
+   - reset
+   - roles
+   - sampledata
+   - team
+   - user
+   - webhook
 
 ### Bug Fixes
- - 
+ - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side with Collapsed Reply Threads (Beta) enabled.
+ - Fixed an error with app locations and binding filtering.
+ - Fixed an issue where pinned and saved post were no longer highlighted.
+ - Disabled admin support email status check job on server startup.
+ - Fixed an issue on joining a missing channel as a System Admin.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableOnboardingFlow``, for enhanced user onboarding experience feature.
+ - Under ``FileSettings`` in ``config.json``:
+    - Added ``MaxImageResolution`` config setting to control the maximum dimension (in pixels) of image uploads.
+ - Removed all of the following configs and cleaned up any code around them:
+   - ``EnableOnlyAdminIntegrations``
+   - ``RestrictCustomEmojiCreation``
+   - ``RestrictPostDelete``
+   - ``AllowEditPost``
+   - ``ImageProxyType``
+   - ``ImageProxyURL``
+   - ``ImageProxyOptions``
+   - ``UseExperimentalGossip``
+   - ``EnableTeamCreation``
+   - ``RestrictTeamInvite``
+   - ``RestrictPublicChannelManagement``
+   - ``RestrictPrivateChannelManagement``
+   - ``RestrictPublicChannelCreation``
+   - ``RestrictPrivateChannelCreation``
+   - ``RestrictPublicChannelDeletion``
+   - ``RestrictPrivateChannelDeletion``
+   - ``RestrictPrivateChannelManageMembers``
+   - ``DisableLegacyMFAEndpoint``
+   - ``ExperimentalTownSquareIsReadOnly``
+   - ``ExperimentalHideTownSquareinLHS``
+   - ``EnableXToLeaveChannelsFromLHS``
+   - ``CloseUnusedDirectMessages``
+   - ``ExperimentalChannelOrganization``
+   - ``ExperimentalChannelSidebarOrganization``
+   - ``EnableLegacySidebar``
+   - The legacy MFA endpoint``
+   - ``utils/authorization.go`` and moved any permissions to the ``MakeDefaultRoles()`` function.
+
+### Database Changes
+ - Removed deprecated ``model.ComparePassword`` method.
+ - Removed deprecated ``Context.SourcePluginId`` field.
+ - Removed ``(*model.Client4).CheckUserMfa``.
+ - Removed ``(*model.Client4).GetServerBusyExpires``.
+ - Removed MB constant from model package.
+ - Removed use of pointers to the following types: 
+   - ``model.ChannelList``
+   - ``model.ChannelListWithTeamData``
+   - ``model.ChannelMembers``
+   - ``model.Preferences``
+   - ``model.ProductNotices``
+ - Renamed ``plugin.Context.IpAddress`` to ``plugin.Context.IPAddress``.
+ - Renamed fields in the model package to have more idiomatic names.
+ - Added the following database indexes:
+   - ``idx_posts_root_id_delete_at_create_at``
+   - ``idx_channels_team_id_display_name``
+   - ``idx_channels_team_id_type``
+   - ``idx_threads_channel_id_last_reply_at``
+   - ``idx_channelmembers_user_id_channel_id_last_viewed_at``
+   - ``idx_channelmembers_channel_id_scheme_guest_user_id``
+ - Removed the following redundant database indexes:
+   - ``idx_posts_root_id``
+   - ``idx_channels_team_id``
+   - ``idx_threads_channel_id``
+   - ``idx_channelmembers_user_id``
+ - Updated all references of ``ToJson/FromJson`` methods to be in the form ``ToJSON/FromJSON``.
+ - Increased ``Post.Props`` size limit to 800,000 characters.
 
 ### API Changes
+ - Updated API to use ``per_page`` query parameter instead of ``pageSize``. This makes the threads API consistent with other endpoints, and automatically limits the number of requested threads with our param handling code. The ``pageSize`` query parameter will still be supported till version 6.0 of the server becomes the minimum version required by the mobile client.
+
+### Websocket Event Changes
+ - Added websocket client to products.
+ - Added plugin websocket hooks (``OnWebSocketConnect``, ``OnWebSocketDisconnect`` and ``WebSocketMessageHasBeenPosted``).
 
 ### Go Version
- - v6.0 is built with Go `` ``.
+ - v6.0 is built with Go ``v1.16.7``.
 
 ### Open Source Components
  - 
 
 ### Known Issues
- - Deleted posts get displayed in channels without new activity after the data retention job is run [MM-36574](https://mattermost.atlassian.net/browse/MM-36574).
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
- - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
- - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
- - Pinned posts are no longer highlighted.
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
