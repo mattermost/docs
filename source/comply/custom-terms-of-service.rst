@@ -35,7 +35,7 @@ There will be no impact to your end users. Users will simply be required to acce
 What happens if a user doesn't accept the Terms of Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A user will not be able to log in if they do not accept the terms of service.
+Users won't be able to log in if they don't accept the Terms of Service.
 
 How do I know if my users accepted the terms of service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
