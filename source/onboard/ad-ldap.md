@@ -168,7 +168,7 @@ When AD/LDAP authentication is used in Mattermost, user deactivation must be don
 There are two main ways to do this:
 
 1. **User deletion:** If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization.
-2. **User filter:** Set the [user filter](https://docs.mattermost.com/configure/configuration-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
+2. **User filter:** Set the [user filter](https://docs.mattermost.com/configure/configuration-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they'll be deactivated in Mattermost on the next synchronization.
 
 For Active Directory, to filter out deactivated users you must set the user filter to:
 
