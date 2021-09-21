@@ -27,7 +27,7 @@ Set Up Guide
 
 Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. \
 
-For self-managed deployments, compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/configure/configuration-settings.html>`__ in the chosen format. If you have configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
+For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/configure/configuration-settings.html>`__ in the chosen format. If you've configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
 
 .. note::
    
