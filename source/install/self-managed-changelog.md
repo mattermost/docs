@@ -133,6 +133,7 @@ Lastest Mattermost Releases:
  - Fixed an issue where pinned and saved post were no longer highlighted.
  - Disabled admin support email status check job on server startup.
  - Fixed an issue on joining a missing channel as a System Admin.
+ - Fixed import process for imports with attachments.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
