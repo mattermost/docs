@@ -26,7 +26,7 @@ livehtml:
 # directories or files not included in the documentation
 linkcheck:
 	@mkdir -p "$(BUILDDIR)"
-	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/*,install/cloud-changelog.md,install/self-managed-changelog.md,install/desktop-app-changelog.rst,deploy/mobile-app-changelog.md:wq "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
+	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
