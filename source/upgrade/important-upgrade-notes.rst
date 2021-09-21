@@ -8,7 +8,7 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v6.0                                               | Longer migration times can be expected. See `this document <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`_ for more details              |
+| v6.0                                               | Longer migration times can be expected. See `this document <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`_ for more details.             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Please see `the changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ for a list deprecations in this release.                           |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -22,7 +22,7 @@ Important Upgrade Notes
 |                                                    | The existing theme names and colors, including Mattermost, Organization, Mattermost Dark, and Windows Dark have been updated to the new Sapphire, Quartz,        |
 |                                                    | Indigo, & Onyx theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace   |
 |                                                    | is upgraded. The theme variables for the existing Mattermost, Organization, Mattermost Dark, and Windows Dark themes will still be accessible in                 |
-|                                                    | [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these      |
+|                                                    | `our documentation <https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples>`_, so a custom theme can be created with these    |
 |                                                    | theme variables if desired. Custom themes are unaffected by this change.                                                                                         |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.38.0                                            | The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config`` command that will     |
