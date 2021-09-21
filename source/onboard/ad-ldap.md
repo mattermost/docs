@@ -218,7 +218,7 @@ This indicates your AD/LDAP server configuration has a maximum page size set and
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/configure/configuration-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query. A max page size setting of 1500 is recommended.
 
-If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
+If the error is still occurring, it's likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
 
 ### Can the AD/LDAP User Filter read security groups?
 
