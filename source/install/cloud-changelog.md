@@ -88,6 +88,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue on joining a missing channel as a System Admin.
  - Fixed an issue where creating a bot with invalid username returned an "invalid email" error.
  - Fixed an issue where /code was not rendering initial whitespace characters.
+ - Fixed import process for imports with attachments.
 
 ### Known Issues
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
