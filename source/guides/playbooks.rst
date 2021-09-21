@@ -13,13 +13,11 @@ The Basics
 .. toctree::
    :hidden:
 
-   Overview </boards/overview>
-   Get Started </boards/getting-started>
-   Access Boards </boards/accessing-boards>
-   Work With Boards </boards/working-with-boards>
-   Work With Views </boards/working-with-views>
-   Share Boards </boards/sharing-boards>
-   Templates </boards/templates>
+   Overview </playbooks/overview>
+   Get Started </playbooks/getting-started>
+   Plan Playbooks </playbooks/setting-up-playbooks>
+   Run Playbooks </playbooks/running-playbooks>
+   Refine and Improve </playbooks/refining-and-improving>
    
 * :doc:`Playbooks Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
 * :doc:`Get Started </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
