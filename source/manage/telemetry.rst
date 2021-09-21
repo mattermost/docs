@@ -204,10 +204,10 @@ Sent every 24 hours.
 
 **Server Telemetry**
 
-Board's Plugin Information
-- Board's Version and Build Number
-- Board's Edition 
-- Operating System for Board's Server
+Boards Plugin Information
+- Boards Version and Build Number
+- Boards Edition 
+- Operating System for Boards server
 - The server diagnostic ID
       
 Configuration Information
