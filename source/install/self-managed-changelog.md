@@ -60,6 +60,14 @@ Lastest Mattermost Releases:
 #### Blobal Product Launcher
  - This is disabled on the mobile web view.
 
+#### Beta features promoted from Beta to General Availability
+   - Archived channels
+   - Compliance exports
+   - Custom terms of service
+   - Guest Accounts
+   - System Roles
+   - Plugins
+
 #### Permalink Previews
  - Added support for permalink previews for posts in Mattermost.
 
@@ -83,6 +91,7 @@ Lastest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Changed H1-H3 heading font from Open Sans to Metropolis.
  - Renamed the “View image” modal to “File preview” modal.
  - Added “Invite People” to the main "+" button below the hamburger menu.
  - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
@@ -102,6 +111,10 @@ Lastest Mattermost Releases:
  - Add a "rest field" to the app command parser.
 
 #### Administration
+ - Added ``playbooks`` and ``boards`` to restricted team URLs list.
+ - Added the ability for Team Edition to edit role permissions.
+ - Removed hard-coded override of ``TeamSettings.MaxNotificationsPerChannel`` on unlicensed servers (e.g. Team Edition).
+ - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
  - Migrated the extraction command to mmctl.
  - Removed a deprecated "Backend" field from the plugin manifest.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
@@ -128,6 +141,8 @@ Lastest Mattermost Releases:
    - webhook
 
 ### Bug Fixes
+ - Fixed an issue where GitLab ``ButtonText`` and ``ButtonColor`` settings were not reflected on the login screen.
+ - Fixed an issue with Collapsed Reply Threads (Beta) where replying to a thread caused users to re-follow the previously unfollowed thread.
  - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side with Collapsed Reply Threads (Beta) enabled.
  - Fixed an error with app locations and binding filtering.
  - Fixed an issue where pinned and saved post were no longer highlighted.
@@ -212,7 +227,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v6.0 is built with Go ``v1.16.7``.
 
 ### Open Source Components
- - 
+ - Added ``@mattermost/compass-components``, ``@mattermost/compass-icons``, ``styled-components`` and ``timezones.json``, and removed ``react-inlinesvg`` from https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
  - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
