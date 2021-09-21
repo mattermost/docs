@@ -246,7 +246,7 @@ Send all users a welcome email with instructions on how to get started using Mat
 
 **References**: 
 - Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
-- Messaging Guide: https://docs.mattermost.com/guides/messaging.html 
+- Channels Guide: https://docs.mattermost.com/guides/channels.html 
 
 3.4 Implementation Schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
