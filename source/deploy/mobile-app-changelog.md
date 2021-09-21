@@ -35,6 +35,7 @@ Latest Mattermost Mobile Apps releases:
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``.
  - Added mobile push notifications for followed threads.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
+ - Added better binding filtering for Apps Framework.
 
 ### Bug Fixes
 
