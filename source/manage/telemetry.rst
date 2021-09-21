@@ -198,7 +198,7 @@ Error and diagnostic reporting is sent by the client to the endpoint ``api.segme
 Boards Telemetry
 ----------------
 
-The following list details the type of Board's metadata we collect.
+The following list details the type of Boards metadata we collect.
 
 Sent every 24 hours.
 
