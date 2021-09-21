@@ -664,3 +664,15 @@ html_use_index = False
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Mattermostdoc'
+
+# linkcheck settings
+linkcheck_ignore = [
+    # Ignore localhost
+    'http://localhost',
+    'http://127.0.0.1',
+    # Ignore anchors on github.com because linkcheck fails on them
+    '^https?://github.com/.*#',
+    # Ignore azuremarketplace because of no server response
+    'https://azuremarketplace.microsoft.com/.*',
+]
+linkcheck_timeout = 300
