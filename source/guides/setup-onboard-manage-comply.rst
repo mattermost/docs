@@ -137,6 +137,16 @@ Cloud Workspaces
 Mattermost Compliance
 ---------------------
 
+All Mattermost Instances
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /comply/compliance-export.rst
+   /comply/custom-terms-of-service.rst
+
 Self-Hosted Deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -146,10 +156,8 @@ Self-Hosted Deployments
 
    /comply/electronic-discovery.rst
    /comply/compliance-reporting-oversight.rst
-   /comply/compliance-export.rst
    /comply/audit-log.rst
    /comply/data-retention-policy.rst
-   /comply/custom-terms-of-service.rst
 
 Cloud Workspaces
 ^^^^^^^^^^^^^^^^
@@ -159,6 +167,4 @@ Cloud Workspaces
    :glob:
 
    /comply/cloud-compliance-and-oversight.rst
-   /comply/cloud-compliance-export.rst
    /comply/cloud-data-retention-policy.rst
-   /comply/cloud-custom-terms-of-service.rst
