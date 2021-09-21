@@ -196,7 +196,7 @@ If you're still having issues, you can [contact support](https://mattermost.com/
 
 This means the query sent back to the AD/LDAP server returned no results. We recommend that you:
 
-1. Check that the user credentials were entered properly - you should log in with the field set as the [`ID Attribute`](https://docs.mattermost.com/configure/configuration-settings.html#id-attribute).
+1. Check that the user credentials were entered correctly - you should log in with the field set as the [`ID Attribute`](https://docs.mattermost.com/configure/configuration-settings.html#id-attribute).
 2. Check that the user account exists in the AD/LDAP server.
 3. Check the AD/LDAP configuration settings are correct.
 
