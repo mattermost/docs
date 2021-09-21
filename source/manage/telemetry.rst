@@ -231,11 +231,11 @@ Workspace Information
 
 **WebApp Event Activity**
 
-- Load Board View
-  - ``UserID``: Unique identifier of the server.
-  - ``UserActualID``: Unique identifier of the user who initiated the action.
-  - ``Event``: Type of the event. Only the ``view`` event is currently monitored.
-  - ``View Type`` (``board``, ``table``, ``gallery``).
+Load Board View
+- ``UserID``: Unique identifier of the server.
+- ``UserActualID``: Unique identifier of the user who initiated the action.
+- ``Event``: Type of the event. Only the ``view`` event is currently monitored.
+- ``View Type`` (``board``, ``table``, ``gallery``).
 
 Apps Framework Telemetry
 ------------------------
