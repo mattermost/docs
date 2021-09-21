@@ -168,7 +168,7 @@ Do I need to pay for deactivated users?
 
 No. If you deactivate a user that user is not counted as an active user during your annual renewal process. 
 
-You can deactivate users via System Console, via Active Directory/LDAP synchronization, using the `CLI tool <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-deactivate>`__, using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__, and using the server `APIs <https://api.mattermost.com/#operation/DeleteUser>`__.
+You can deactivate users in the System Console, via Active Directory/LDAP synchronization, using the `CLI tool <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-deactivate>`__, using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__, and using the server `APIs <https://api.mattermost.com/#operation/DeleteUser>`__.
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
