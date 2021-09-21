@@ -32,7 +32,7 @@ What happens if I update my terms of service text?
 
 There will be no impact to your end users. Users will simply be required to accept the new terms on next login or page refresh.
 
-What happens if a user does not accept the terms of service?
+What happens if a user doesn't accept the Terms of Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A user will not be able to log in if they do not accept the terms of service.
