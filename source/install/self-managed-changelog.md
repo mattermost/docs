@@ -108,8 +108,6 @@ Lastest Mattermost Releases:
  - Converted the "Executables" field in the plugin manifest to a map.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
  - Added support for React components in channel header tooltips registered by plugins.
- - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
- - Updated Bleve to v2 to use the scorch index type.
  - Removed the following deprecated CLI commands:
    - channel
    - command
@@ -170,7 +168,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - ``ExperimentalChannelOrganization``
    - ``ExperimentalChannelSidebarOrganization``
    - ``EnableLegacySidebar``
-   - The legacy MFA endpoint``
+   - The legacy MFA endpoint
    - ``utils/authorization.go`` and moved any permissions to the ``MakeDefaultRoles()`` function.
 
 ### Database Changes
