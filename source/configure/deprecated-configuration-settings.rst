@@ -269,7 +269,7 @@ Timezone
 Timezone
 ^^^^^^^^^
 
-*Deprecated. Not used in Mattermost v6.0 and later*
+*This configuration setting has been promoted to General Availability and is no longer configurable from v6.0.*
 
 Select the timezone used for timestamps in the user interface and email notifications.
 
