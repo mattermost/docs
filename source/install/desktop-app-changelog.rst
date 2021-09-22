@@ -56,6 +56,7 @@ Architectural Changes
 
 - Major version upgrade of Electron to v14.0. Electron is the underlying technology used to build the Desktop app.
 - Added rpm build option to the Electron builder.
+- Added Universal binaries for Mac users.
 - Migrated to Bootstrap v4 and refreshed the interface. Migrated to react-beautiful-dnd instead of react-smooth-dnd for a cleaner experience.
 
 Bug Fixes
