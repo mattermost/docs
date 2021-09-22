@@ -1,5 +1,24 @@
-Managing Team and Channel Members (E20)
-=======================================
+Managing Team and Channel Members
+==================================
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Enterprise Edition E20*
 
 System Admins can manage channel configuration in the System Console, including:
 
@@ -82,10 +101,32 @@ Channel Management
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
-Channel Moderation (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Channel Moderation
+~~~~~~~~~~~~~~~~~~
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |professional| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Enterprise Edition E20*
 
 From v5.22, the channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 

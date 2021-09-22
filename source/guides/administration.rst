@@ -15,8 +15,8 @@ The Basics
     :maxdepth: 1
     :hidden:
 
-    Self-Hosted Configuration </configure/configuration-settings>
-    Cloud Workspace Configuration </configure/cloud-site-configuration>
+    Mattermost Configuration Settings </configure/configuration-settings>
+    Workspace Configuration for Cloud Deployments </configure/cloud-site-configuration>
     Advanced Permissions </onboard/advanced-permissions>
     System Admin Roles </onboard/system-admin-roles>
     OpenID </onboard/sso-openidconnect>

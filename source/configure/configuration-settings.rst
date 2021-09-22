@@ -122,6 +122,8 @@ Settings for managing the edition and license for Mattermost Enterprise Edition.
 Edition and License
 ~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **About > Edition and License**.
+
 Edition
 ^^^^^^^^
 
@@ -176,7 +178,7 @@ Upload or remove license files. For more information on Mattermost Licensing, pl
 Reporting
 ---------
 
-View statistics for your overall deployment and specific teams as well as access server logs.
+View statistics for your overall deployment and specific teams as well as access server logs. Access the following configuration settings in the System Console by going to **Reporting**.
 
 Site Statistics
 ~~~~~~~~~~~~~~~
@@ -240,9 +242,7 @@ Server Logs
 User Management
 ---------------
 
-
-
-Settings for managing users, user access, groups, and permissions.
+Settings for managing users, user access, groups, and permissions. 
 
 Users
 ~~~~~~
@@ -375,7 +375,8 @@ Settings for configuring the network environment in which Mattermost is deployed
 Web Server
 ~~~~~~~~~~
 
-Changes to properties in this section require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Web Server**.
+
 
 Site URL
 ^^^^^^^^^
@@ -663,7 +664,7 @@ Webserver Mode
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly.
+gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. We recommend you enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly.
 
 **gzip**: The Mattermost server will serve static files compressed with gzip to improve performance.
 
@@ -763,7 +764,7 @@ This button purges all the in-memory caches for sessions, accounts, and channels
 Database
 ~~~~~~~~
 
-Changes to properties in this section require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Database**.
 
 Driver Name
 ^^^^^^^^^^^
@@ -1066,7 +1067,8 @@ The workflow for failover without downing the server is to change the database l
 Elasticsearch
 ~~~~~~~~~~~~~~
 
-Changes to properties in this section require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Elasticsearch**.
+
 
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1087,7 +1089,7 @@ Enable Elasticsearch Indexing
 
 **True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
 
-**False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results.
+**False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, we recommend you purge and rebuild the index to ensure complete search results.
 
 +------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
@@ -1303,7 +1305,7 @@ Enable Elasticsearch for Autocomplete Queries
 File Storage
 ~~~~~~~~~~~~
 
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers.
+Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers. Access the following configuration settings in the System Console by going to **Environment > File Storage**.
 
 .. note::
   We have tested Mattermost with `MinIO <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`_ products, but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
@@ -1662,6 +1664,8 @@ Ensures that the user can access the server and that the settings are valid.
 Image Proxy
 ~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Environment > Image Proxy**.
+
 Enable Image Proxy
 ^^^^^^^^^^^^^^^^^^
 
@@ -1758,6 +1762,8 @@ See the `documentation <https://docs.mattermost.com/deploy/image-proxy.html#atmo
 
 SMTP
 ~~~~
+
+Access the following configuration settings in the System Console by going to **Environment > SMTP**.
 
 SMTP Email Server
 ^^^^^^^^^^^^^^^^^
@@ -1963,6 +1969,8 @@ Enable Security Alerts
 Push Notification Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Environment > Push Notification Server**.
+
 Enable Push Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2062,6 +2070,8 @@ If you did not receive an alert:
 
 High Availability
 ~~~~~~~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Environment > High Availability**.
 
 Changes to properties in this section require a server restart before taking effect.
 
@@ -2296,6 +2306,8 @@ The port used for streaming data between servers.
 
 Rate Limiting
 ~~~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Environment > Rate Limiting**.
 
 Changes to properties in this section require a server restart before taking effect.
 
@@ -2629,6 +2641,8 @@ See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/adv
 Standard Logging 
 ~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Environment > Logging**.
+
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2889,6 +2903,8 @@ Enable Diagnostics and Error Reporting
 Session Lengths
 ~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Environment > Session Lengths**.
+
 User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table.
 
 Extend session length with activity
@@ -3036,6 +3052,8 @@ This setting does not take effect if ``ExtendSessionLengthWithActivity`` is set 
 Performance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Environment > Performance Monitoring**.
+
 Changes to properties in this section require a server restart before taking effect.
 
 Enable Performance Monitoring
@@ -3088,6 +3106,8 @@ The address the Mattermost server will listen on to expose performance metrics.
 
 Developer
 ~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Environment > Developer**.
 
 Enable Testing Commands
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -3187,6 +3207,8 @@ Settings for customizing your Mattermost deployment.
 
 Customization
 ~~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Customization**.
 
 Site Name
 ^^^^^^^^^^^
@@ -3581,6 +3603,8 @@ Configurable link to download the iOS app. When a link is present, users who acc
 Localization
 ~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Site Configuration > Localization**.
+
 Default Server Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3666,6 +3690,8 @@ Sets which languages are available for users in **Account Settings > Display > L
 
 Users and Teams
 ~~~~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Users and Teams**.
 
 Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^
@@ -3755,17 +3781,7 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Team Administrators to edit others' posts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This permission is stored in the database and can be modified using the System Console user interface.*
-
-**True**: Team Admins and System Admins can edit other users' posts.
-
-**False**: Only System Admins can edit other users' posts.
-
-.. note::
-   System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
 
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
@@ -3937,6 +3953,8 @@ Enable Custom User Statuses
 
 Notifications
 ~~~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
 Show @channel and @all confirmation dialog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4240,6 +4258,8 @@ For customers who choose to wrap the Mattermost mobile application in a secure c
 Announcement Banner
 ~~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Site Configuration > Announcement Banner**.
+
 Enable Announcement Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4382,6 +4402,8 @@ Allow Banner Dismissal
 Emoji
 ~~~~~~
 
+Access the following configuration settings in the System Console by going to **Site Configuration > Emoji**.
+
 Enable Emoji Picker
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -4438,47 +4460,10 @@ Enable Custom Emoji
 | This feature's ``config.json`` setting is ``"EnableCustomEmoji": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-Restrict Custom Emoji Creation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-*After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.*
-
-**Allow everyone to create custom emoji**: Allows everyone to add custom emojis from the emoji picker.
-
-**Allow System and Team Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System or Team Admins.
-
-**Only allow System Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System Admins.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``"all"``, ``"admin"``, and ``"system_admin"`` for the above settings, respectively. |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Posts
 ~~~~~~
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^
@@ -4638,6 +4623,8 @@ Using a Google API Key allows Mattermost to detect when a video is no longer ava
 File Sharing and Downloads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Site Configuration > File Sharing and Downloads**.
+
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^
 
@@ -4727,8 +4714,10 @@ Allow File Downloads on Mobile
 Public Links
 ~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Site Configuration > Public Links**.
+
 Enable Public File Links
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
@@ -4777,6 +4766,8 @@ Public Link Salt
 
 Notices
 ~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Notices**.
 
 Enable Admin Notices
 ^^^^^^^^^^^^^^^^^^^^
@@ -4841,36 +4832,6 @@ Authentication settings to enable account creation and sign in with email, GitLa
 
 Signup
 ~~~~~~~
-
-Enable Team Creation
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-*After upgrading to v4.9 (released April 16, 2018), changing this ``config.json`` value no longer takes effect because this permission has been migrated to the database. This permission can be modified using the System Console user interface.*
-
-**True**: Ability to create a new team is enabled for all users.
-
-**False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden in the Main Menu UI.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
 
 Enable Account Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5224,7 +5185,7 @@ Configure security settings for multi-factor authentication.
 
 The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
 
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you set up a multi-factor authentication service specifically for accessing Mattermost.
+If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
 
 
 Enable Multi-factor Authentication
@@ -7697,7 +7658,7 @@ User API Endpoint
 
 *Available in legacy Enterprise Edition E20*
 
-It is recommended to use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
+We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
@@ -7730,7 +7691,7 @@ Auth Endpoint
 
 *Available in legacy Enterprise Edition E20*
 
-It is recommended to use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
+We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"`` with string input. |
@@ -7763,7 +7724,7 @@ Token Endpoint
 
 *Available in legacy Enterprise Edition E20*
 
-It is recommended to use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
+We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
 
 +--------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input. |
@@ -7977,7 +7938,7 @@ Token Endpoint
 
 *Available in legacy Enterprise Edition E20*
 
-It is recommended to use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
+We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input. |
@@ -8635,6 +8596,8 @@ Settings to configure Mattermost plugins.
 Plugin Management
 ~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Plugins > Plugin Management**.
+
 Enable Plugins
 ^^^^^^^^^^^^^^^
 
@@ -8856,6 +8819,8 @@ Settings specific to each Mattermost plugin.
 Agenda
 ~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Plugins > Agenda**.
+
 Enable Plugin
 ^^^^^^^^^^^^^
 
@@ -8878,7 +8843,11 @@ Enable Plugin
 Antivirus
 ~~~~~~~~~~
 
-This plugin allows the forwarding of uploaded files to an antivirus scanning application, `ClamAV anti-virus software <https://www.clamav.net/>`__, and prevents the upload from completing if there is a virus detected in the file. Use this plugin to prevent users from inadvertently spreading malware or viruses via your Mattermost server. See the `Mattermost Antivirus Plugin <https://github.com/mattermost/mattermost-plugin-antivirus>`__ documentation for details.
+This plugin allows the forwarding of uploaded files to an antivirus scanning application, `ClamAV anti-virus software <https://www.clamav.net/>`__, and prevents the upload from completing if there is a virus detected in the file. 
+
+Use this plugin to prevent users from inadvertently spreading malware or viruses via your Mattermost server. See the `Mattermost Antivirus Plugin <https://github.com/mattermost/mattermost-plugin-antivirus>`__ documentation for details.
+
+Access the following configuration settings in the System Console by going to **Plugins > Antivirus**.
 
 Enable Plugin
 ^^^^^^^^^^^^^
@@ -8962,6 +8931,8 @@ Autolink
 
 This plugin creates regular expression (regexp) patterns that are reformatted into a Markdown link before the message is saved into the database. System Admins can configure this plugin in the ``config.json`` file, using the ``/autolink`` slash command (when enabled), or through using the System Console. See the `Autolink Plugin <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`__ documentation for details.
 
+Access the following configuration settings in the System Console by going to **Plugins > Autolink**.
+
 Enable Plugin
 ^^^^^^^^^^^^^
 
@@ -9042,7 +9013,9 @@ Specify users authorized to administer the plugin in addition to System Admins. 
 AWS SNS
 ~~~~~~~~
 
-This plugin is used to receive alert notifications from `Amazon AWS CloudWatch <https://aws.amazon.com/cloudwatch/>`__ to Mattermost channels via `AWS Simple Notification Server (SNS) <https://docs.aws.amazon.com/sns/latest/dg/welcome.html>`__.
+This plugin is used to receive alert notifications from `Amazon AWS CloudWatch <https://aws.amazon.com/cloudwatch/>`__ to Mattermost channels via `AWS Simple Notification Server (SNS) <https://docs.aws.amazon.com/sns/latest/dg/welcome.html>`__. 
+
+Access the following configuration settings in the System Console by going to **Plugins > AWS SNS**.
 
 Enable Plugin
 ^^^^^^^^^^^^^
@@ -9120,6 +9093,8 @@ Generate a token to validate incoming requests from AWS SNS by selecting ``Regen
 Channel Export
 ~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Plugins > Channel Export**.
+
 Enable Plugin
 ^^^^^^^^^^^^^
 
@@ -9146,6 +9121,8 @@ Enable Plugin
 
 Demo Plugin
 ~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > Demo Plugin**.
 
 Enable Plugin
 ^^^^^^^^^^^^^
@@ -9203,6 +9180,8 @@ Specify the user to use as part of the demo plugin. If the specified user does n
 
 GIF commands
 ~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > GIF commands**.
 
 This plugin is used to post GIFs from Gfycat, Giphy, or Tenor using slash commands.
 
@@ -9394,6 +9373,8 @@ Mattermost Boards
 
 Mattermost Boards is an open source alternative to Trello, Notion, and Asana that's integrated from Mattermost v5.36. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
 
+Access the following configuration settings in the System Console by going to **Plugins > Mattermost Boards**.
+
 Enable Plugin
 ^^^^^^^^^^^^^
 
@@ -9422,6 +9403,8 @@ Mattermost Playbooks
 ~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ documentation for details.
+
+Access the following configuration settings in the System Console by going to **Plugins > Playbooks**.
 
 Enable Plugin
 ^^^^^^^^^^^^^
@@ -9498,6 +9481,8 @@ User Satisfaction Surveys
 
 This plugin enables Mattermost to send user satisfaction surveys to gather feedback and improve product quality directly from your Mattermost users. Please refer to the 'Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
 
+Access the following configuration settings in the System Console by going to **Plugins > User Satisfaction Surveys**.
+
 Enable Plugin
 ^^^^^^^^^^^^^^
 
@@ -9553,6 +9538,8 @@ This plugin allows team members to initiate a Zoom meeting with a single click. 
 
 .. note::
   To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details. 
+
+Access the following configuration settings in the System Console by going to **Plugins > Zoom**.
 
 Enable Plugin
 ^^^^^^^^^^^^^
@@ -9762,6 +9749,8 @@ Settings to configure webhooks, slash commands, and external integration service
 Integration Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Integrations > Integration Management**.
+
 Enable Incoming Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -9886,39 +9875,6 @@ Enable OAuth 2.0 Service Provider
 | This feature's ``config.json`` setting is ``"EnableOAuthServiceProvider": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
-Restrict managing integrations to Admins
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-*After upgrading to v4.9 (released April 16, 2018), changing the ``config.json`` value no longer takes effect because this permission has been migrated to the database. This permission can be modified using the System Console user interface.*
-
-**True**: Webhooks and slash commands can only be created, edited, and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
-
-**False**: Any team members can create webhooks, slash commands` and OAuth 2.0 applications from **Main Menu > Integrations**.
-
-.. note::
-  OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app setup on the server.
-
-+------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------+
-
 Enable integrations to override usernames
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10008,6 +9964,8 @@ To manage who can create personal access tokens or to search users by token ID, 
 Bot Accounts
 ~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Integrations > Bot Accounts**.
+
 Enable Bot Account Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10066,6 +10024,8 @@ Disable bot accounts when owner is deactivated
 
 GIF (Beta)
 ~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Integrations > GIF (Beta)**.
 
 Enable GIF Picker
 ^^^^^^^^^^^^^^^^^^
@@ -10152,6 +10112,8 @@ The API secret generated by Gfycat for your API key. When blank, uses the defaul
 
 CORS
 ~~~~~
+
+Access the following configuration settings in the System Console by going to **Integrations > CORS**.
 
 Enable cross-origin requests from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10254,6 +10216,9 @@ Changes to properties in this section require a server restart before taking eff
 
 .. warning:: 
    Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
+
+Access the following configuration settings in the System Console by going to **Compliance > Data Retention Policies**.
+
 
 Global retention policy for messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10407,6 +10372,8 @@ Start a Data Retention deletion job immediately. You can monitor the status of t
 
 Compliance Export
 ~~~~~~~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 
 Enable Compliance Export
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10637,6 +10604,8 @@ Compliance Monitoring
 
 Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <configure/configuration-settings.html#compliance-export>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
 
+Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
+
 Enable Compliance Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10756,6 +10725,8 @@ Set the size of the batches in which posts will be read from the database to gen
 Custom Terms of Service
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Compliance > Custom Terms of Service**.
+
 Enable Custom Terms of Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10843,10 +10814,12 @@ There are a number of settings considered "experimental" that are configurable f
 AD/LDAP Settings
 ~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Experimental > Features**.
+
 AD/LDAP Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enteprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -10877,7 +10850,7 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 AD/LDAP Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enteprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -10908,7 +10881,7 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 AD/LDAP Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enteprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -11821,8 +11794,6 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
 
-
-
 Settings configurable only in ``config.json``
 ----------------------------------------------
 
@@ -11834,24 +11805,19 @@ Service Settings
 Automatically Follow Threads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`_, and may affect server performance. It is recommended to review our `documentation on hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ to ensure your servers are appropriately scaled for the size of your user base.
+This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`_, and may affect server performance. We recommend that you review our `documentation on hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ to ensure your servers are appropriately scaled for the size of your user base.
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.   
 
@@ -11868,17 +11834,12 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 WebSocket URL
 ^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -11894,7 +11855,7 @@ This setting allows the server to instruct clients where they should try to conn
 License File Location
 ^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -11905,11 +11866,6 @@ License File Location
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -11925,17 +11881,12 @@ Path and filename of the license file on disk. On startup, if Mattermost cannot 
 TLS Minimum Version
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -11953,17 +11904,12 @@ This setting only takes effect if you are using the built-in server binary direc
 Trusted Proxy IP Header
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -11983,17 +11929,12 @@ We recommend keeping the default setting when Mattermost is running without a pr
 Enable Strict Transport Security (HSTS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12011,17 +11952,12 @@ Enable Strict Transport Security (HSTS)
 Secure TLS Transport Expiry
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12037,17 +11973,12 @@ The time in seconds that the browser remembers a site is only to be accessed usi
 TLS Cipher Overwrites
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12067,17 +11998,12 @@ This setting only takes effect if you are using the built-in server binary direc
 Go Routine Health Threshold
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12095,17 +12021,12 @@ To turn off checking for the threshold, set this value to ``-1``.
 Allow Cookies for Subdomains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12123,17 +12044,12 @@ Allow Cookies for Subdomains
 Cluster Log Timeout
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12149,17 +12065,12 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 Read Only Config
 ^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12177,17 +12088,12 @@ Read Only Config
 Enable Post Search
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12203,17 +12109,12 @@ If this setting is enabled, users can search messages. Disabling search can resu
 Enable File Search
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12233,15 +12134,12 @@ This configuration setting enables users to search documents attached to message
 Enable User Status Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12257,15 +12155,12 @@ Turn status updates off to improve performance. When status updates are off, use
 WebSocket Secure Port
 ^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12283,15 +12178,12 @@ Changes to this setting require a server restart before taking effect.
 WebSocket Port
 ^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12309,15 +12201,12 @@ Changes to this setting require a server restart before taking effect.
 Enable API Team Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12337,15 +12226,12 @@ mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDelet
 Enable API User Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12365,15 +12251,12 @@ mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDelet
 Enable API Channel Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12393,15 +12276,12 @@ mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDe
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12421,15 +12301,12 @@ By default, in order to avoid leaking sensitive information, no method parameter
 Import Settings Default Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12445,15 +12322,12 @@ The directory where the imported files are stored. The path is relative to the `
 Import Settings Default Retention Days
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12469,15 +12343,12 @@ The number of days to retain the imported files before deleting them.
 Export Settings Default Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12493,15 +12364,12 @@ The directory where the exported files are stored. The path is relative to the `
 Export Settings Default Retention Days
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |self-hosted|
+
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12517,17 +12385,12 @@ The number of days to retain the exported files before deleting them.
 Enable Local Mode
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12547,17 +12410,12 @@ Enable Local Mode
 Enable Local Mode Socket Location
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12577,7 +12435,7 @@ If nothing is specified, the default path that both the server and mmctl assumes
 Scoping IDP Provider Id
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -12588,11 +12446,6 @@ Scoping IDP Provider Id
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12612,7 +12465,7 @@ Allows an authenticated user to skip the initial login page of their federated A
 Scoping IDP Name
 ^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -12623,11 +12476,6 @@ Scoping IDP Name
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12647,17 +12495,12 @@ Adds the name associated with a user's Scoping Identity Provider ID.
 Global Relay SMTP Server Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12675,17 +12518,12 @@ The number of seconds that can elapse before the connection attempt to the SMTP 
 Batch Size
 ^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12706,7 +12544,7 @@ SQL Settings
 Read Replicas
 ^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -12717,11 +12555,6 @@ Read Replicas
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12741,7 +12574,7 @@ Changes to this setting require a server restart before taking effect.
 Search Replicas
 ^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -12752,11 +12585,6 @@ Search Replicas
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12776,17 +12604,12 @@ Changes to this setting require a server restart before taking effect.
 Replica Lag Settings
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12833,17 +12656,12 @@ Image Settings
 Maximum Image Resolution
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12862,17 +12680,12 @@ File Settings
 Initial Font
 ^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12888,17 +12701,12 @@ Font used in auto-generated profile pics with colored backgrounds.
 Amazon S3 Signature V2
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12918,17 +12726,12 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 Amazon S3 Path
 ^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12947,17 +12750,12 @@ GitLab Settings
 Scope
 ^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -12978,7 +12776,7 @@ Google Settings
 Scope
 ^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -12989,11 +12787,6 @@ Scope
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13014,7 +12807,7 @@ Office 365 Settings
 Scope
 ^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -13025,11 +12818,6 @@ Scope
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13050,17 +12838,12 @@ Cluster Settings
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13076,17 +12859,12 @@ The maximum number of idle connections held open from one server to all others i
 Maximum Idle Connections per Host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13102,17 +12880,12 @@ The maximum number of idle connections held open from one server to another serv
 Idle Connection Timeout (in Milliseconds)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13128,17 +12901,12 @@ The number of milliseconds to leave an idle connection open between servers in t
 Network Interface
 ^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13154,17 +12922,12 @@ An IP address used to identify the device that does automatic IP detection in Hi
 Bind Address
 ^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13180,17 +12943,12 @@ An IP address used to bind cluster traffic to a specific network device. This se
 Advertise Address
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13206,32 +12964,15 @@ The IP address used to access the server from other nodes. This settings is used
 Metrics Settings
 ~~~~~~~~~~~~~~~~~
 
+Block Profile Rate
+^^^^^^^^^^^^^^^^^^
+
 |all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Block Profile Rate
-^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13256,17 +12997,12 @@ Plugin Settings
 Signature Public Key Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13282,17 +13018,12 @@ In addition to the Mattermost plugin signing key built into the server, each pub
 Chimera OAuth Proxy URL
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13389,17 +13120,12 @@ The audit settings output audit records to syslog (local or remote server via TL
 Enable Reliable Websockets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13442,17 +13168,12 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 Syslog configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13472,17 +13193,12 @@ Enable this setting to write audit records to a local or remote syslog, specifyi
 Syslog IP
 ^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13496,19 +13212,14 @@ The IP address or domain of the syslog server. Use ``localhost`` for local syslo
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog port
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13524,17 +13235,12 @@ The port that the syslog server is listening on. The default port is 6514. This 
 Syslog tag
 ^^^^^^^^^^
 
-all-plans| |cloud| |self-hosted|
+all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13550,17 +13256,12 @@ The syslog metadata tag field. This setting can only be changed from ``config.js
 Syslog cert
 ^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13576,17 +13277,12 @@ This is the path to the syslog server certificate for TLS connections (``.crt`` 
 Syslog insecure
 ^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13605,17 +13301,12 @@ This setting controls whether a client verifies the server's certificate chain a
 Syslog max queue size
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13633,17 +13324,12 @@ This setting can be left as default unless you are seeing audit write failures i
 File configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13663,17 +13349,12 @@ Enable this setting to write audit files locally, specifying size, backup interv
 File name
 ^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13689,17 +13370,12 @@ This is the path to the output file location. This setting can only be changed f
 File max size MB
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13715,17 +13391,12 @@ This is the maximum size (measured in megabytes) that the file can grow before t
 File max age days
 ^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13741,17 +13412,12 @@ This is the maximum age in days a file can reach before triggering rotation. The
 File max backups
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13767,17 +13433,12 @@ This is the maximum number of rotated files kept; the oldest is deleted first. T
 File compress
 ^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13793,17 +13454,12 @@ When ``true``, rotated files are compressed using ``gzip``. This setting can onl
 File max queue size
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13824,17 +13480,12 @@ Advanced Audit Logging Configuration
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13865,17 +13516,12 @@ Service Settings
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13895,17 +13541,12 @@ This setting applies to the new sidebar only. You must disable the `Enable Legac
 Strict CSRF Token Enforcement (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13925,17 +13566,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Disable Legacy MFA API Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13955,17 +13591,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Restrict System Admin
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -13988,17 +13619,12 @@ Team Settings
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14020,17 +13646,12 @@ Control Teammate Name Display at the system level. This setting can only be chan
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14057,17 +13678,12 @@ Client Requirement Settings (Experimental)
 Latest Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14083,17 +13699,12 @@ The latest version of the Android React Native app that is recommended for use. 
 Minimum Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14109,17 +13720,12 @@ The minimum version of the Android React Native app that is required to be used.
 Latest Desktop Version
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14135,17 +13741,12 @@ The latest version of the desktop app that is recommended for use. This setting 
 Minimum Destop Version
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14161,17 +13762,12 @@ The minimum version of the desktop app that is required to be used. This setting
 Latest iOS Version
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14187,17 +13783,12 @@ The latest version of the iOS app that is recommended for use. This setting can 
 Minimum iOS Version
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14213,17 +13804,12 @@ The minimum version of the iOS React Native app that is required to be used. Thi
 Push Notification Buffer
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14242,7 +13828,7 @@ Theme Settings (Experimental)
 Allowed Themes
 ^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -14253,11 +13839,6 @@ Allowed Themes
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14278,17 +13859,12 @@ Experimental Settings
 Disable Post Metadata
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14313,7 +13889,7 @@ Analytics Settings
 Maximum Users for Statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -14324,11 +13900,6 @@ Maximum Users for Statistics
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14351,17 +13922,12 @@ Elasticsearch Settings
 Post Index Replicas
 ^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14379,17 +13945,12 @@ The number of replicas to use for each post index. If this setting is changed, i
 Post Index Shards
 ^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14407,17 +13968,12 @@ The number of shards to use for each post index. If this setting is changed, it 
 Aggregate Search Indexes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14438,17 +13994,12 @@ Elasticsearch indexes over the age specified by this setting will be aggregated 
 Post Aggregator Start Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14468,17 +14019,12 @@ This setting is based on the local time of the server.
 Index Prefix
 ^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14499,17 +14045,12 @@ Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsea
 Live Indexing Batch Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14527,17 +14068,12 @@ Determines how many new posts are batched together before they are added to the 
 Request Timeout
 ^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14555,17 +14091,12 @@ Timeout in seconds for Elasticsearch calls.
 Bulk Indexing Time Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14583,17 +14114,12 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 Trace
 ^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14611,20 +14137,17 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 Bleve Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Access the following configuration settings in the System Console by going to **Experimental > Bleve**.
+
 Index Dir
 ^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14644,17 +14167,12 @@ Directory path to use for storing bleve indexes.
 Enable Indexing
 ^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14674,17 +14192,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Enable Searching
 ^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14704,17 +14217,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Enable Autocomplete
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14734,17 +14242,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Bulk Indexing Time Window Seconds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14763,17 +14266,12 @@ Message Export Settings
 Export From Timestamp
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14791,17 +14289,12 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from. This sett
 File Location
 ^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14824,17 +14317,12 @@ Plugin Settings (Beta)
 Enable Plugin Uploads
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14854,17 +14342,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Allow Insecure Download URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14884,17 +14367,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Enable Plugin Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14914,17 +14392,12 @@ This setting can only be changed from ``config.json`` file, it cannot be changed
 Directory
 ^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14940,17 +14413,12 @@ The location of the plugin files. If blank, they are stored in the ``./plugins``
 Client Directory
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14975,17 +14443,12 @@ When running Mattermost in High Availability mode, ``RunJobs`` should be enabled
 Run Jobs
 ^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -14996,7 +14459,7 @@ Set whether or not this Mattermost server will handle tasks created by the Sched
 
 When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in High Availablity mode, one or more servers should have this setting enabled. It is recommended that a High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+When running Mattermost in High Availablity mode, one or more servers should have this setting enabled. We recommend that your High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
@@ -15005,17 +14468,12 @@ When running Mattermost in High Availablity mode, one or more servers should hav
 Run Scheduler
 ^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -15041,17 +14499,12 @@ In previous Mattermost Server versions, and this documentation, the instructions
 Enable Shared Channels
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+|enterprise| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30

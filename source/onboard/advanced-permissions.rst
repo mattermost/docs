@@ -133,7 +133,7 @@ Channel Moderation
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This content has moved to `Team and Channel Management <https://docs.mattermost.com/manage/team-channel-members.html>`_.
+This content has moved to `Team and Channel Management <https://docs.mattermost.com/manage/team-channel-members.html>`__.
 
 Supplementary Roles
 ~~~~~~~~~~~~~~~~~~~~

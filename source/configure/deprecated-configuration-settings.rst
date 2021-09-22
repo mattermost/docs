@@ -1,10 +1,6 @@
 Deprecated Configuration Settings
 =================================
 
-.. contents::
-    :backlinks: top
-    :local:
-
 Service Settings
 ----------------
 
@@ -51,9 +47,9 @@ SQL Settings
 Amazon S3 Bucket Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set an endpoint URL for Amazon S3 buckets.
-
 *Removed in November 16th, 2016 release*
+
+Set an endpoint URL for Amazon S3 buckets.
 
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3BucketEndpoint": ""`` with string input. |
@@ -62,11 +58,11 @@ Set an endpoint URL for Amazon S3 buckets.
 Amazon S3 Location Constraint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+*Removed in November 16th, 2016 release*
+
 **True**: S3 region is location constrained.
 
 **False**: S3 region is not location constrained.
-
-*Removed in November 16th, 2016 release*
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false``. |
@@ -75,11 +71,11 @@ Amazon S3 Location Constraint
 Amazon S3 Lowercase Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+*Removed in November 16th, 2016 release*
+
 **True**: S3 bucket names are fully lowercase.
 
 **False**: S3 bucket names may contain uppercase and lowercase letters.
-
-*Removed in November 16th, 2016 release*
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false``. |
@@ -99,6 +95,47 @@ Enable Team Directory
 
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
+
+Allow Team Administrators to edit others' posts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      This permission is stored in the database and can be modified using the System Console user interface.
+
+**True**: Team Admins and System Admins can edit other users' posts.
+
+**False**: Only System Admins can edit other users' posts.
+
+.. note::
+   System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
+
+Enable Team Creation
+^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      After upgrading to v4.9 (released April 16, 2018), changing this ``config.json`` value no longer takes effect because this permission has been migrated to the database. This permission can be modified using the System Console user interface.
+
+**True**: Ability to create a new team is enabled for all users.
+
+**False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden in the Main Menu UI.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
 SAML 2.0
@@ -123,8 +160,15 @@ Legacy Sidebar
 Enable Legacy Sidebar
 ^^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud.*
-*Deprecated. Not used in Mattermost v6.0 and later*
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      Not available in Mattermost Cloud.
 
 This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
@@ -157,8 +201,15 @@ Experimental Sidebar Features
 Sidebar Organization
 ^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud.*
-*Deprecated. Not used in Mattermost v6.0 and later*
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      Not available in Mattermost Cloud.
 
 This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
@@ -179,8 +230,15 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 Enable X to Leave Channels from Left-Hand Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud.*
-*Deprecated. Not used in Mattermost v6.0 and later*
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      Not available in Mattermost Cloud.
 
 This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
 
@@ -201,8 +259,15 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 Autoclose Direct Messages in Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Not available in Mattermost Cloud.*
-*Deprecated. Not used in Mattermost v6.0 and later*
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      Not available in Mattermost Cloud.
 
 This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
@@ -226,8 +291,15 @@ Town Square
 Town Square is Hidden in Left-Hand Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available in legacy Enterprise Edition E10 and higher*
-*Deprecated. Not used in Mattermost v6.0 and later*
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      Available in legacy Enterprise Edition E10 and higher.
 
 This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
@@ -248,8 +320,15 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 Town Square is Read-Only
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available in legacy Enterprise Edition E10 and higher*
-*Deprecated. Not used in Mattermost v6.0 and later*
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      Available in legacy Enterprise Edition E10 and higher.
 
 **True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, react using emojis,  pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
 
@@ -263,13 +342,41 @@ Town Square is Read-Only
 | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------------+
 
+Custom Emoji
+------------
+
+Restrict Custom Emoji Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
+
+      Available in legacy Enterprise Edition E10 and E20.
+
+**Allow everyone to create custom emoji**: Allows everyone to add custom emojis from the emoji picker.
+
+**Allow System and Team Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System or Team Admins.
+
+**Only allow System Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System Admins.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``"all"``, ``"admin"``, and ``"system_admin"`` for the above settings, respectively. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Timezone
 --------
 
 Timezone
 ^^^^^^^^^
 
-*This configuration setting has been promoted to General Availability and is no longer configurable from v6.0.*
+*This configuration setting has been promoted to General Availability and is no longer configurable in Mattermost v6.0 and later.*
 
 Select the timezone used for timestamps in the user interface and email notifications.
 
@@ -287,7 +394,7 @@ High-Availability
 Inter-Node Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Deprecated. Not used in version 4.0 and later*
+*Deprecated. Not used in Mattermost v4.0 and later*
 
 The address the Mattermost Server will listen on for inter-node communication. When setting up your network you should secure the listen address so that only machines in the cluster have access to that port. This can be done in different ways, for example, using IPsec, security groups, or routing tables.
 
@@ -298,7 +405,7 @@ The address the Mattermost Server will listen on for inter-node communication. W
 Inter-Node URLs
 ^^^^^^^^^^^^^^^
 
-*Deprecated. Not used in version 4.0 and later*
+*Deprecated. Not used in Mattermost v4.0 and later*
 
 A list of all the machines in the cluster, such as ``["http://10.10.10.2", "http://10.10.10.4"]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
 
@@ -319,6 +426,36 @@ Set to ``false`` to disable all version 3 endpoints of the REST API. Integration
 +---------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIv3": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
+
+Integrations
+------------
+
+Restrict managing integrations to Admins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
+
+      Available in legacy Enterprise Edition E10 and E20.
+
+**True**: Webhooks and slash commands can only be created, edited, and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
+
+**False**: Any team members can create webhooks, slash commands` and OAuth 2.0 applications from **Main Menu > Integrations**.
+
+.. note::
+  OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app setup on the server.
+
++------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------------+
+
 
 Policy
 ------

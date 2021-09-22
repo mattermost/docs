@@ -1,11 +1,31 @@
 Command Line Tools
 ==================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 In self-managed deployments, a ``mattermost`` command is available for configuring the system from the directory where the Mattermost server is installed. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
-.. note::
-  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
-  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
+.. tabs::
+
+   .. tab:: v6.0
+      
+      As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+
+   .. tab:: v5.39 and earlier
+      
+      The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. 
+      
+      As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
 
@@ -785,10 +805,10 @@ mattermost export
    Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise Edition E20 license.
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise subscription plan.
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise Edition E20 license.
-    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise Edition E20 license.
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise subscription plan.
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise subscription plan.
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance

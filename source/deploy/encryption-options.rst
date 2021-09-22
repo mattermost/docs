@@ -36,4 +36,4 @@ File Storage
 
 For local storage or storage via Minio, encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server.
 
-For Amazon’s proprietary S3 system, encryption-at-rest is available via `server-side encryption with Amazon S3-managed keys <https://docs.mattermost.com/configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__ in Enterprise Edition E20.
+For Amazon’s proprietary S3 system, encryption-at-rest is available via `server-side encryption with Amazon S3-managed keys <https://docs.mattermost.com/configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__ in Mattermost enterprise-badge.

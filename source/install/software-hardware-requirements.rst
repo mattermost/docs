@@ -109,7 +109,7 @@ Search limitations on PostgreSQL:
 - Email addresses do not return results.
 - Hashtags or recent mentions of usernames containing a dash do not return search results.
 - Terms containing a dash return incorrect results as dashes are ignored in the search query.
-- If any of the above is an issue, you can either enable the `Elasticsearch (E20) feature <https://docs.mattermost.com/scale/elasticsearch.html>`__ or install MySQL instead.
+- If any of the above is an issue, you can either enable the `Elasticsearch feature <https://docs.mattermost.com/scale/elasticsearch.html>`__ or install MySQL instead.
 
 Search limitations on MySQL:
 
@@ -171,7 +171,7 @@ System Requirements
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
-   - Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__ available in Enterprise Edition E20.
+   - Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__ available in Mattermost Enterprise.
    - Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__. Grafana 5.0.0 and later is recommended.
    - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here <https://docs.mattermost.com/scale/elasticsearch.html>`__.
    - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/configure/configuration-settings.html#file-storage>`__.

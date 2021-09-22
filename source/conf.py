@@ -225,6 +225,20 @@ redirects = {
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
     "administration/config-settings#enable-legacy-sidebar": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
+    "administration/config-settings.html#post-edit-time-limit": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit",
+    "administration/config-settings.html#default-channels-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#default-channels-experimental",
+    "administration/command-line-tools.html#mattermost-group-team-list": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-list",
+    "administration/command-line-tools.html#mattermost-group-team-enable": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-enable",
+    "administration/command-line-tools.html#mattermost-group-channel-enable": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-enable",
+    "administration/command-line-tools.html#mattermost-group-team-disable": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-disable",
+    "administration/command-line-tools.html#mattermost-group-channel-disable": 
+        "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-disable",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/advanced-permissions#read-only-channels": 
         "https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels-e20",
@@ -271,6 +285,9 @@ redirects = {
     "deployment/ldap-group-sync#add-default-teams-or-channels-for-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
     "deployment/team-channel-management#profile": "https://docs.mattermost.com/manage/team-channel-members.html#profile",
+    "deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group": "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
+    "deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group": "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
+    "deployment/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap": "https://docs.mattermost.com/onboard/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap",
     "administration/config-settings#files": "https://docs.mattermost.com/configure/configuration-settings.html#file-storage",
     "administration/config-settings#maximum-file-size":
         "https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size",
@@ -415,6 +432,7 @@ redirects = {
     "guides/integration": "https://developers.mattermost.com/integrate/other-integrations/",
     "guides/install-deploy-upgrade-scale.html#install-mattermost":
         "https://docs.mattermost.com/guides/deployment.html#install-guides",
+    "guides/administrator.html#installing-mattermost": "https://docs.mattermost.com/guides/deployment.html#install-guides",
     "help/apps/desktop-changelog": "https://docs.mattermost.com/install/desktop-app-changelog.html",
     "help/getting-started/welcome-to-mattermost":
         "https://docs.mattermost.com/messaging/welcome-to-mattermost-messaging.html",
