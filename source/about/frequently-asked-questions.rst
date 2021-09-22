@@ -120,7 +120,7 @@ TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.
 
 If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Enterprise Edition E10 subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
 
-Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`__.
+Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__.
 
 Video, Audio, and Screen Sharing
 ---------------------------------
@@ -285,17 +285,17 @@ Working for Mattermost
 How does the licensing key work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have a program for official non-profits and charities?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have discounted licenses for academic institutions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Mattermost Source Available License
 ------------------------------------
@@ -303,7 +303,7 @@ Mattermost Source Available License
 What is the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise E20 License in a production environment.
+A source available license gives access to source code, but places restrictions on its use. The Mattermost Source Available License allows free-of-charge and unrestricted use of the source code in development and testing environments, but requires a valid Mattermost Enterprise Edition License in a production environment.
 
 How can I identify code licensed as source available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -314,7 +314,7 @@ When the Mattermost Source Available ``LICENSE`` file appears in a specific dire
 
 In all cases, any third party components remain licensed under their original license.
 
-An example directory layout is shown below:
+An example directory layout, using an Enterprise Edition E20 license, is shown below:
 
 .. image:: ../images/source-available-license.png
 
@@ -355,14 +355,14 @@ No, if you have already signed the `Mattermost CLA <https://mattermost.org/matte
 Can I compile your plugins by myself?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. If you have a Mattermost Enterprise E20 license, you are free to compile and use a plugin under the Mattermost Source Available License. Furthermore, if you are developing against or testing with such a plugin, you are free to compile and test a plugin even without a Mattermost Enterprise E20 license. Without an Enterprise E20 license, source available plugins may have reduced functionality or refuse to start altogether. Request a `trial license <https://mattermost.com/trial/>`_ if your testing requires access to enterprise functionality.
+Yes. If you have a Mattermost Enterprise Edition license, you are free to compile and use a plugin under the Mattermost Source Available License. Furthermore, if you are developing against or testing with such a plugin, you are free to compile and test a plugin even without a Mattermost Enterprise Edition license. Without an Enterprise Edition license, source available plugins may have reduced functionality or refuse to start altogether. Request a `trial license <https://mattermost.com/trial/>`_ if your testing requires access to enterprise functionality.
 
 Several of our customers value complete access to our source code and compile our plugins from source before deploying to their production servers. By adopting the Mattermost Source Available License, we can develop enterprise-only features in public without impacting this workflow.
 
 Will you distribute open source plugin binaries without any licensing restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At this time, we have no plans to distribute more than one version of each of our plugins. Without a Mattermost Enterprise E20 License, plugins may have reduced functionality or refuse to start altogether.
+At this time, we have no plans to distribute more than one version of each of our plugins. Without a Mattermost Enterprise Edition License, plugins may have reduced functionality or refuse to start altogether.
 
 Can I continue to use the existing open source repositories without restriction?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -403,14 +403,32 @@ What is the full text of the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "The Mattermost Source Available License license (the “Source Available License”)
-
 Copyright (c) 2015-present Mattermost
 
 With regard to the Mattermost Software:
 
-This software and associated documentation files (the "Software") may only be used in production, if you (and any entity that you represent) have agreed to, and are in compliance with, the Mattermost Terms of Service, available at https://mattermost.com/terms-of-service/ (the “EE Terms”), or other agreement governing the use of the Software, as agreed by you and Mattermost, and otherwise have a valid Mattermost Enterprise E20 subscription for the correct number of user seats. Subject to the foregoing sentence, you are free to modify this Software and publish patches to the Software. You agree that Mattermost and/or its licensors (as applicable) retain all right, title and interest in and to all such modifications and/or patches, and all such modifications and/or patches may only be used, copied, modified, displayed, distributed, or otherwise exploited with a valid Mattermost Enterprise E20 Edition subscription for the  correct number of user seats.  Notwithstanding the foregoing, you may copy and modify the Software for development and testing purposes, without requiring a subscription.  You agree that Mattermost and/or its licensors (as applicable) retain all right, title and interest in and to all such modifications.  You are not granted any other rights beyond what is expressly stated herein.  Subject to the foregoing, it is forbidden to copy, merge, publish, distribute, sublicense, and/or sell the Software.
+This software and associated documentation files (the "Software") may only be
+used in production, if you (and any entity that you represent) have agreed to,
+and are in compliance with all of the following: (a) the Mattermost Terms of Service, available at
+https://mattermost.com/enterprise-edition-terms/ (the “EE Terms”), (b) any other
+agreement(s) governing the use of the Software, as agreed upon by you and Mattermost,
+and (c) you otherwise have a valid license or Subscription for the
+correct number of Registered Authorized Users of the Software. Subject to the foregoing, you are free
+to modify this Software and publish patches to the Software. You agree that
+Mattermost and/or its licensors (as applicable) retain all right, title and
+interest in and to all such modifications and/or patches, and all such
+modifications and/or patches may only be used, copied, modified, displayed,
+distributed, or otherwise exploited with a valid license or Subscription for the correct number of 
+Registered Authorized Users of the Software.  Notwithstanding
+the foregoing, you may copy and modify the Software for development and testing
+purposes, without requiring a valid license or Subscription.  You agree that Mattermost and/or
+its licensors (as applicable) retain all right, title and interest in and to
+all such modifications.  You are not granted any other rights beyond what is
+expressly stated herein.  Subject to the foregoing, it is forbidden to copy,
+merge, publish, distribute, sublicense, and/or sell the Software.
 
-The full text of this EE License shall be included in all copies or substantial portions of the Software.
+The full text of this EE License shall be included in all copies or substantial
+portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -420,7 +438,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-For all third party components incorporated into the Mattermost Software, those components are licensed under the original license provided by the owner of the applicable component."
+For all third party components incorporated into the Mattermost Software, those
+components are licensed under the original license provided by the owner of the
+applicable component."
 
 Integration
 -----------
@@ -440,7 +460,7 @@ Use Cases
 Does Mattermost support external guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
+Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information.
 
 Can I use Mattermost for customer service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -642,7 +662,7 @@ When using username-password authentication, especially with AD/LDAP, there's th
 
 We believe this design increases productivity, speeds up user adoption, and reduces help desk tickets and support costs - and that these benefits outweigh the trade-offs.
 
-The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`__.
+The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting>`__.
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations:
 
@@ -671,7 +691,7 @@ Rebranding
 ^^^^^^^^^^
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.org/trademark-standards-of-use/>`__.
-- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`__.
+- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
@@ -682,7 +702,7 @@ Copyright and Licensing of ``/mattermost-server`` open source code
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
 
-- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/configure/configuration-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
 

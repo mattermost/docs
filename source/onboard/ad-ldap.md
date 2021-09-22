@@ -26,7 +26,7 @@ There are two ways to set up AD/LDAP:
      - Next, configure AD/LDAP and then convert your System Admin account to use the AD/LDAP sign in method.
 
 2. **Configure AD/LDAP by editing `config.json`**
-     - Edit `config.json` to enable AD/LDAP based on the [AD/LDAP settings documentation](https://docs.mattermost.com/administration/config-settings.html#ad-ldap). When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
+     - Edit `config.json` to enable AD/LDAP based on the [AD/LDAP settings documentation](https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap). When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
 
 ### Configure AD/LDAP Sign In
 
@@ -34,7 +34,7 @@ There are two ways to set up AD/LDAP:
      - Create a new workspace and create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.
 
 2. **Configure AD/LDAP.**
-     - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap).
+     - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the [configuration settings documentation](https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap).
 
 3. **Confirm that AD/LDAP sign-on is enabled.**
      - After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
@@ -49,7 +49,7 @@ There are two ways to set up AD/LDAP:
 6. **(Optional) If you configured `First Name Attribute` and `Last Name Attribute` in the System Console.**
      - Navigate to **System Console > Site Configuration > Users and Teams** and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-**Note:** If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the command line tool](http://docs.mattermost.com/deployment/on-boarding.html#common-tasks).
+**Note:** If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the command line tool](https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html).
 
 ### Configure AD/LDAP Synchronization
 
@@ -92,14 +92,14 @@ Filters can also be used for excluding users who belong to certain groups. For A
 
 If this filter is removed/changed, active guests will not be promoted to a member and will retain their Guest role. Guests can be promoted in **System Console > User Management**.
 
-1. Navigate to **System Console > Authentication > Guest Access (Beta)** and set Guest Access to `true`.
+1. Navigate to **System Console > Authentication > Guest Access** and set Guest Access to `true`.
 2. Navigate to **System Console > Authentication > AD/LDAP**.
 3. Complete the **Guest Filter** field.
 4. Choose **Save**.
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the [Guest Accounts documentation](https://docs.mattermost.com/cloud/cloud-guest-accounts.html) for more information about this feature.
+See the [Guest Accounts documentation](https://docs.mattermost.com/onboard/guest-accounts.html) for more information about this feature.
 
 #### Admin Filter
 
@@ -149,7 +149,7 @@ No, each user is created on their first login.
 
 Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to **true**.
 
-If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/administration/config-settings.html#user-filter) for guidance on setting a correct syntax format.
+If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/configure/configuration-settings.html#user-filter) for guidance on setting a correct syntax format.
 
 Make sure that you also have at least one LDAP user in Mattermost or the sync will not complete.
 
@@ -158,7 +158,7 @@ Make sure that you also have at least one LDAP user in Mattermost or the sync wi
 There are three AD/LDAP attributes that apear to be similar but serve a different purpose:
 
 1. **Username Attribute:** Used within the Mattermost user interface to identify and mention users. For example, if **Username Attribute** is set to `john.smith`, a user typing `@john` will see `@john.smith` in their autocomplete options and posting a message with `@john.smith` will send a notification to that user that they’ve been mentioned.
-2. **ID Attribute:** Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as `ObjectGUID`. If a user's ID attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the [mattermost ldap idmigrate CLI tool](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate).
+2. **ID Attribute:** Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as `ObjectGUID`. If a user's ID attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the [mattermost ldap idmigrate CLI tool](https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate).
 3. **Login ID Attribute:** The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the **Username Attribute** field above, or another field that users can easily remember.
 
 ### How do I deactivate users?
@@ -168,7 +168,7 @@ When AD/LDAP authentication is used in Mattermost, user deactivation must be don
 There are two main ways to do this:
 
 1. **User deletion:** If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization.
-2. **User filter:** Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization.
+2. **User filter:** Set the [user filter](https://docs.mattermost.com/configure/configuration-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they'll be deactivated in Mattermost on the next synchronization.
 
 For Active Directory, to filter out deactivated users you must set the user filter to:
 
@@ -196,7 +196,7 @@ If you're still having issues, you can [contact support](https://mattermost.com/
 
 This means the query sent back to the AD/LDAP server returned no results. We recommend that you:
 
-1. Check that the user credentials were entered properly - you should log in with the field set as the [`ID Attribute`](https://docs.mattermost.com/administration/config-settings.html#id-attribute).
+1. Check that the user credentials were entered correctly - you should log in with the field set as the [`ID Attribute`](https://docs.mattermost.com/configure/configuration-settings.html#id-attribute).
 2. Check that the user account exists in the AD/LDAP server.
 3. Check the AD/LDAP configuration settings are correct.
 
@@ -208,7 +208,7 @@ If the user can no longer log in to Mattermost with their AD/LDAP credentials - 
 
 The issue can be fixed by changing the value of the field used for the **ID Attribute** back to the old value. If you're currently using a field that sometimes changes for an **ID Attribute** (e.g. username, email that changes when someone gets married), we recommend you switch to using a non-changing field such as a GUID.
 
-To do this, you can set the [**Login ID Attribute**](https://docs.mattermost.com/administration/config-settings.html#login-id-attribute) to whatever you would like users to log in with (e.g. username or email).
+To do this, you can set the [**Login ID Attribute**](https://docs.mattermost.com/configure/configuration-settings.html#login-id-attribute) to whatever you would like users to log in with (e.g. username or email).
 
 **Note:** Currently the value is case sensitive. If the **ID Attribute** is set to the username and the username changes from `John.Smith` to `john.smith`, the user will experience problems logging in.
 
@@ -216,9 +216,9 @@ To do this, you can set the [**Login ID Attribute**](https://docs.mattermost.com
 
 This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
 
-To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query. A max page size setting of 1500 is recommended.
+To address this issue you can set the [max page size](https://docs.mattermost.com/configure/configuration-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query. A max page size setting of 1500 is recommended.
 
-If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
+If the error is still occurring, it's likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
 
 ### Can the AD/LDAP User Filter read security groups?
 
