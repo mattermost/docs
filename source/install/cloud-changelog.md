@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Highlights
 
 #### Permalink Previews
- - Added support for permalink previews for posts in Mattermost.
+ - Added support for permalink previews for posts in Mattermost. Previews are generated to minimize context switching when sharing message links in Channels.
 
 #### Tutorial Updates
  - Added a tip to the **Getting Started** page for downloading Desktop Apps.
@@ -31,20 +31,16 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Improved typing performance when the emoji autocomplete is open.
- - Renamed the “View image” modal to “File preview” modal.
  - Added “Invite People” to the main "+" button below the hamburger menu.
  - Dropped support for left-hand side-specific bot icons.
  - Add a "rest field" to the app command parser.
  - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
  - Updated **Account Settings > Display > Timezone** to be more user friendly.
- - Updated feature discovery images.
  - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
  - Removed the Slack importer from the user interface.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
- - Removed the legacy channel sidebar.
  - Added desktop notifications for followed threads.
  - Hungarian and English-Australian are now official languages.
- - Added an A/B test for prewritten messages.
  - Added a query param to translate in-product help pages when opened from desktop app.
  - Added support for multiselect on apps slash commands.
  - Added rendering for posts containing markdown in email notifications.
