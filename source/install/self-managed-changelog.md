@@ -156,6 +156,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
     - Added ``EnableOnboardingFlow``, for enhanced user onboarding experience feature.
+    - Added ``EnablePermalinkPreviews`` to enable permalink previews.
  - Under ``FileSettings`` in ``config.json``:
     - Added ``MaxImageResolution`` config setting to control the maximum dimension (in pixels) of image uploads.
  - Removed all of the following configs and cleaned up any code around them:
