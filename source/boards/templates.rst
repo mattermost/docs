@@ -40,4 +40,4 @@ Alternatively, you can turn any card into a template:
 5. Close the card using the **X** in the top left corner.
 6. Select the drop-down arrow next to **New**, then select the card you just created.
 
-The card is applicable only to the board in which it's created and isn't available in other boards in your workspace.
+The card template is applicable only to the board in which it's created and isn't available in other boards in your workspace.
