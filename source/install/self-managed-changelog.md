@@ -216,10 +216,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Increased ``Post.Props`` size limit to 800,000 characters.
 
 ### API Changes
- - Updated API to use ``per_page`` query parameter instead of ``pageSize``. This makes the threads API consistent with other endpoints, and automatically limits the number of requested threads with our param handling code. The ``pageSize`` query parameter will still be supported till version 6.0 of the server becomes the minimum version required by the mobile client.
+ - Updated API to use ``per_page`` query parameter instead of ``pageSize``. This makes the threads API consistent with other endpoints, and automatically limits the number of requested threads with our param handling code. The ``pageSize`` query parameter will still be supported until version 6.0 of the server becomes the minimum version required by the mobile client.
 
 ### Websocket Event Changes
- - Added websocket client to products.
+ - Added Websocket client to products.
  - Added plugin websocket hooks (``OnWebSocketConnect``, ``OnWebSocketDisconnect`` and ``WebSocketMessageHasBeenPosted``).
 
 ### Go Version
@@ -227,6 +227,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Open Source Components
  - Added ``@mattermost/compass-components``, ``@mattermost/compass-icons``, ``styled-components`` and ``timezones.json``, and removed ``react-inlinesvg`` from https://github.com/mattermost/mattermost-webapp.
+ - Added ``@types/redux-mock-store`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
  - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
