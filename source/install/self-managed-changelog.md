@@ -45,10 +45,15 @@ Lastest Mattermost Releases:
 9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings).
 
 10. Changes to ``mattermost-server/model`` for naming consistency.
+
 ### Important Upgrade Notes
- - DB Schema migration.
- - Changed the field type of Data in ``model.ClusterMessage`` to []byte from string. This also makes a v6 server incompatible with a v5 server in the same cluster. Customers upgrading from 5.x to 6.x cannot do an HA upgrade. This will require a downtime.
- - 0.9.0 Focalboard plugin requires Mattermost v5.38+.
+ - A major thing to note is that a v6 server is incompatible to run along with a v5 server in a cluster. Therefore, while upgrading, it is required that no other v5 server runs when a v6 server is brought up. A v6 server will run significant DB schema changes that can cause a large startup time depending on the dataset size. Zero downtime will not be possible, but depending on the efforts made during the migration process, it can be minimized to a large extent.
+   1. Low effort, long downtime - This is the usual process of starting a v6 server normally. This has 2 implications - during the migration process, various tables will be locked which will render those tables read-only during that period. Secondly, once the server finishes migration and starts the application, no other v5 server can run in the cluster.
+   2. Medium effort, medium downtime - This process will require SQL queries to be executed manually on the server. To avoid causing a table lock, a customer can choose to use the pt-online-schema-change tool for MySQL. For Postgres, the table locking is very minimal. The advantage is that since there are a lot of queries, the customer can take their own time to run individual queries during off-hours. All queries except #11 are safe to be executed this way. Then the usual method of (1) can be followed.
+   3. High effort, low downtime - This process requires everything of (2), plus it tries to minimize the impact of query #11. We can do this by following step 2, and then starting v6 along with a running v5 server, and then monitor the application logs. As soon as the v6 application starts up, we need to bring down a v5 node. This is a delicate dance, but minimizes the downtime to only a few seconds.
+ - Longer migration times can be expected. See [this document](https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055) for more details.
+ - Changed the field type of Data in model.ClusterMessage to []byte from string. This also makes a v6 server incompatible with a v5 server in the same cluster. Customers upgrading from 5.x to 6.x cannot do an HA upgrade. This will require a downtime.
+ - Focalboard v0.9.1 (released with Mattermost v6.0) requires Mattermost v5.38+.
  - Advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated documentation.
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.39, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -58,7 +63,7 @@ Lastest Mattermost Releases:
 #### Blobal Product Launcher
  - This is disabled on the mobile web view.
 
-#### Beta features promoted from Beta to General Availability
+#### Beta features Promoted to General Availability
    - Archived channels
    - Compliance exports
    - Custom terms of service
@@ -67,7 +72,7 @@ Lastest Mattermost Releases:
    - Plugins
 
 #### Permalink Previews
- - Added support for permalink previews for posts in Mattermost.
+ - Added support for permalink previews for posts in Mattermost. Previews are generated to minimize context switching when sharing message links in Channels.
 
 #### Tutorial Updates
  - Added a tip to the **Getting Started** page for downloading Desktop Apps.
@@ -90,7 +95,6 @@ Lastest Mattermost Releases:
 
 #### User Interface (UI)
  - Changed H1-H3 heading font from Open Sans to Metropolis.
- - Renamed the “View image” modal to “File preview” modal.
  - Added “Invite People” to the main "+" button below the hamburger menu.
  - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
  - Updated **Account Settings > Display > Timezone** to be more user friendly.
@@ -98,7 +102,6 @@ Lastest Mattermost Releases:
  - Increased the limit of uploaded file attachments per post from 5 to 10.
  - Added desktop notifications for followed threads.
  - Hungarian and English-Australian are now official languages.
- - Updated feature discovery images.
  - Added a **Start Trial** call-to action to the **Main Menu**.
 
 #### Performance
