@@ -1,5 +1,5 @@
-mmctl Command Line Tool (Beta)
-==============================
+mmctl Command Line Tool
+=======================
 
 The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication is done with either login credentials or an authentication token.
 
@@ -151,14 +151,14 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 Using local mode
 ~~~~~~~~~~~~~~~~
 
-You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode-socket-location>`_.
+You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location>`_.
 
-In versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
+In Mattermost versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
 Running mmctl tests
 -------------------
@@ -1895,7 +1895,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
   
-   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable <https://docs.mattermost.com/administration/config-in-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
 **Format**
 
@@ -2599,6 +2599,135 @@ Start a content extraction job.
 
    --from int   The timestamp of the earliest file to extract, expressed in seconds since the unix epoch.
    -h, --help   help for run
+   --to int     The timestamp of the latest file to extract, expressed in seconds since the unix epoch. Defaults to the current time.
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract
+-------------
+
+Management of content extraction jobs.
+
+   Child Commands
+      - `mmctl extract job list`_ - List content extract jobs
+      - `mmctl extract job show`_ - Show extract job
+      - `mmctl extract run`_ - Start a content extraction job
+
+mmctl extract job list
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+List content extraction jobs.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl extract job list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   extract job list
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for disable
+   --all            Fetch all extract jobs. --page flag will be ignore if provided
+   --page int       Page number to fetch for the list of extract jobs
+   --per-page int   Number of extract jobs to be fetched (default 200)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract job show
+~~~~~~~~~~~~~~~~~~~~~~
+   
+**Description**
+   
+Show extraction job.
+   
+**Format**
+   
+.. code-block:: sh
+   
+   mmctl extract job show [extractJobID] [flags]
+   
+**Examples**
+   
+.. code-block:: sh
+   
+   extract job show f3d68qkkm7n8xgsfxwuo498rah
+   
+**Options**
+   
+.. code-block:: sh
+   
+   -h, --help       help for disable
+   
+**Options inherited from parent commands**
+   
+.. code-block:: sh
+   
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract run
+~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Start a content extraction job.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl extract run [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   extract run
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for disable
+   --from int   The timestamp of the earliest file to extract, expressed in seconds since the unix epoch.
    --to int     The timestamp of the latest file to extract, expressed in seconds since the unix epoch. Defaults to the current time.
 
 **Options inherited from parent commands**

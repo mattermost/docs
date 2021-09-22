@@ -11,7 +11,7 @@ Single Machine Deployment
 
 Organizations can typically run Mattermost on a single server with up to 2,000 users, though more users have been observed based on different usage and server configurations.
 
-- See `install guides for step-by-step configuration instructions for single machine setup <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__.
+- See `install guides for step-by-step configuration instructions for single machine setup <https://docs.mattermost.com/guides/deployment.html#install-mattermost>`__.
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/software-hardware-requirements.html>`__.
 
 Multi Machine Deployment
@@ -19,7 +19,7 @@ Multi Machine Deployment
 
 Deployments between 2,000 and 10,000 registered users with moderate usage can run on a standard three-machine Mattermost deployment with a proxy, an application server and a database server. At this scale, demands of larger organizations can typically be met by using powerful hardware in a standard configuration.
 
-- See `install guides for step-by-step configuration instructions for multi-machine setup <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__.
+- See `install guides for step-by-step configuration instructions for multi-machine setup <https://docs.mattermost.com/guides/deployment.html#install-mattermost>`__.
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/software-hardware-requirements.html>`__.
 
 Cluster-based Deployment

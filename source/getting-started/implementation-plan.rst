@@ -11,9 +11,10 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS coll
 
 .. _`editions:`: https://mattermost.com/product/
 
-- **Team Edition**
-- **Enterprise Edition (E10)** which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/onboard/ad-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, and next business day support.
-- **Enterprise Edition (E20)** includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/onboard/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/comply/compliance-reporting-oversight.html>`__, `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__, `Data Retention Policy <https://docs.mattermost.com/comply/data-retention-policy.html>`__, and enterprise-class support.
+- Team Edition
+
+- Mattermost Professional adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/onboard/ad-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/configure/configuration-settings.html#policy>`__, and next business day support.
+- Mattermost Enterprise includes Professional features plus `SAML 2.0 Authentication <https://docs.mattermost.com/onboard/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/comply/compliance-reporting-oversight.html>`__, `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__, `Data Retention Policy <https://docs.mattermost.com/comply/data-retention-policy.html>`__, and enterprise class support.
 
 The purpose of this Implementation Plan is to:
 
@@ -151,7 +152,7 @@ Gather all of the software and documentation required for a successful implement
 
 Build out the required deployment environments (development, staging, production, etc.) and implement configuration management (using a tool like Chef, Puppet, Salt, etc.)
 
-**Reference**: https://docs.mattermost.com/install/requirements.html
+**Reference**: https://docs.mattermost.com/install/software-hardware-requirements.html
 
 3.3.4 Install Software
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -228,7 +229,7 @@ Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost o
 
 Train administrators on the tasks required to manage Mattermost.
 
-**Reference**: https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html
+**Reference**: https://docs.mattermost.com/guides/administration.html
 
 3.3.13 Update Legal and Support Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -245,7 +246,7 @@ Send all users a welcome email with instructions on how to get started using Mat
 
 **References**: 
 - Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
-- Welcome email to new users: https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html 
+- Channels Guide: https://docs.mattermost.com/guides/channels.html 
 
 3.4 Implementation Schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

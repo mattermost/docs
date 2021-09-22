@@ -1,13 +1,11 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
-
-.. important::
-   This CLI will be replaced in a future release with the `mmctl CLI <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+In self-managed deployments, a ``mattermost`` command is available for configuring the system from the directory where the Mattermost server is installed. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
 .. note::
-  The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
+  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
 
@@ -187,7 +185,7 @@ mattermost channel add
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel add <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-add>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel add <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-add>`__.
 
 
 Description
@@ -209,7 +207,7 @@ mattermost channel archive
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel archive <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-archive>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel archive <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-archive>`__.
 
 
 Description
@@ -231,7 +229,7 @@ mattermost channel create
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-create>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-create>`__.
 
 
 Description
@@ -263,7 +261,7 @@ mattermost channel delete
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__.
 
 Description
     Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
@@ -284,7 +282,7 @@ mattermost channel list
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-list>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-list>`__.
 
 
 Description
@@ -328,7 +326,7 @@ mattermost channel move
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel move <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel move <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move>`__.
 
 Description
     Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
@@ -355,7 +353,7 @@ mattermost channel remove
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel remove <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-remove>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel remove <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-users-remove>`__.
 
 Description
     Remove users from a channel.
@@ -382,7 +380,7 @@ mattermost channel rename
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel rename <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-rename>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel rename <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-rename>`__.
 
 Description
     Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
@@ -408,7 +406,7 @@ mattermost channel restore
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel restore <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-restore>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel restore <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-restore>`__.
 
 Description
     Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs. Channel IDs can be obtained via the `API <https://api.mattermost.com/#operation/GetChannelByName>`_ or the `mattermost channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__ command.
@@ -429,7 +427,7 @@ mattermost channel search
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl channel search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-search>`__.
 
 Description
     Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
@@ -470,7 +468,7 @@ mattermost command create
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl command create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-create>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-create>`__.
 
 Description
     Create a custom slash command for a specified team.
@@ -505,7 +503,7 @@ mattermost command delete
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl command delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-delete>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-delete>`__.
 
 Description
     Delete a slash command. Commands can be specified by command ID.
@@ -525,7 +523,7 @@ mattermost command list
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl command list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-list>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl command list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-command-list>`__.
 
 
 Description
@@ -628,7 +626,7 @@ mattermost config get
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl config get <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-get>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config get <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-get>`__.
 
 Description
     Retrieve the value of a config setting by its name in dot notation.
@@ -714,7 +712,7 @@ mattermost config show
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl config <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-show>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl config <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-show>`__.
 
 Description
     Print the current mattermost configuration in an easy to read format.
@@ -945,7 +943,7 @@ mattermost group channel
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group channel <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel>`__.
 
 
   Description
@@ -962,7 +960,7 @@ mattermost group channel enable
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group channel enable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel enable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-enable>`__.
 
 
   Description
@@ -987,7 +985,7 @@ mattermost group channel disable
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group channel disable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel disable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
 
 Description
     Disables group constraint on the specified channel.
@@ -1007,7 +1005,7 @@ mattermost group channel list
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group channel list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-list>`__.
 
 Description
     Lists the groups associated with a channel.
@@ -1028,7 +1026,7 @@ mattermost group channel status
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group channel status <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-status>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group channel status <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-status>`__.
 
 Description
     Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users.
@@ -1048,7 +1046,7 @@ mattermost group team
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group team <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team>`__.
 
 Description
     Commands for managing Mattermost groups linked to a team.
@@ -1064,13 +1062,13 @@ mattermost group team enable
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group team enable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__.
+   TIn Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team enable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-enable>`__.
 
 Description
     Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
 
 .. note::
-  To enable a group constraint on a specific team, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.
+  To enable a group constraint on a specific team, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.
 
   Format
     .. code-block:: none
@@ -1087,7 +1085,7 @@ mattermost group team disable
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group team disable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team disable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-disable>`__.
 
 Description
     Disables group constraint on the specified team.
@@ -1107,7 +1105,7 @@ mattermost group team list
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group team list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-list>`__.
 
 Description
     Lists the groups associated with a team.
@@ -1128,7 +1126,7 @@ mattermost group team status
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl group team status <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-status>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl group team status <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-status>`__.
 
 Description
     Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users.
@@ -1282,7 +1280,7 @@ mattermost ldap sync
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl ldap sync <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-sync>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl ldap sync <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-sync>`__.
 
 Description
     Synchronize all AD/LDAP users now.
@@ -1311,7 +1309,7 @@ mattermost license upload
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl license upload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl license upload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__.
 
 Description
     Upload a license. This command replaces the current license if one is already uploaded.
@@ -1334,7 +1332,7 @@ mattermost logs
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl logs <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-logs>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl logs <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-logs>`__.
 
 Description
     Displays Mattermost logs in a human-readable format.
@@ -1442,7 +1440,7 @@ mattermost plugin add
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl plugin add <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-add>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin add <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-add>`__.
 
 Description
     Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
@@ -1462,7 +1460,7 @@ mattermost plugin delete
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl plugin delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-delete>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-delete>`__.
 
 Description
     Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
@@ -1482,7 +1480,7 @@ mattermost plugin disable
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl plugin disable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-disable>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin disable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-disable>`__.
 
 Description
     Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
@@ -1502,7 +1500,7 @@ mattermost plugin enable
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl plugin enable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-enable>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin enable <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-enable>`__.
 
 Description
     Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
@@ -1522,7 +1520,7 @@ mattermost plugin list
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl plugin list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-list>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl plugin list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-plugin-list>`__.
 
 Description
     List all active and inactive plugins installed on your Mattermost server.
@@ -1677,7 +1675,7 @@ mattermost team add
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team add <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users-add>`__.
+   TIn Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team add <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users-add>`__.
 
 Description
     Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1697,7 +1695,7 @@ mattermost team archive
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team archive <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team archive <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive>`__.
 
 
 Description
@@ -1718,7 +1716,7 @@ mattermost team create
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-create>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-create>`__.
 
 Description
     Create a team.
@@ -1747,7 +1745,7 @@ mattermost team delete
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-delete>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-delete>`__.
 
 Description
     Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1772,7 +1770,7 @@ mattermost team list
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-list>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-list>`__.
 
 *Supported in Mattermost v4.10 and later*
 
@@ -1811,7 +1809,7 @@ mattermost team remove
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team remove <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users-remove>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team remove <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users-remove>`__.
 
 Description
     Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1831,7 +1829,7 @@ mattermost team rename
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team rename <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-rename>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team rename <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-rename>`__.
 
 Description
     Rename a team.
@@ -1872,7 +1870,7 @@ mattermost team search
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl team search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-search>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl team search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-search>`__.
 
 Description
     Search for teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1916,7 +1914,7 @@ mattermost user activate
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user activate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-activate>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user activate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-activate>`__.
 
 Description
     Activate users that have been deactivated. If activating multiple users, use a space-separated list.
@@ -1964,7 +1962,7 @@ mattermost user create
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-create>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user create <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-create>`__.
 
 
 Description
@@ -1998,7 +1996,7 @@ mattermost user deactivate
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user deactivate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user deactivate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-deactivate>`__.
 
 Description
     Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
@@ -2072,7 +2070,7 @@ mattermost user email
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user email <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-email>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user email <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-email>`__.
 
 
 Description
@@ -2093,7 +2091,7 @@ mattermost user invite
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user invite <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-invite>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user invite <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-invite>`__.
 
 
 Description
@@ -2275,7 +2273,7 @@ mattermost user password
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user reset_password <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user reset_password <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__.
 
 
 Description
@@ -2296,7 +2294,7 @@ mattermost user resetmfa
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user resetmfa <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-resetmfa>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user resetmfa <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-resetmfa>`__.
 
 
 Description
@@ -2317,7 +2315,7 @@ mattermost user search
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl user search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl user search <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-search>`__.
 
 
 Description
@@ -2354,7 +2352,7 @@ mattermost version
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command `mmctl system version <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-system-version>`__.
+   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl system version <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-system-version>`__.
 
 
 Description
@@ -2584,7 +2582,9 @@ Notes:
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
 
-.. tip :: If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
+.. tip :: 
+	
+	If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 CLI Documentation:
 

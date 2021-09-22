@@ -16,11 +16,11 @@ Mattermost Product Documentation
    :glob:
 
    About Mattermost <overview/index>
-   Install, Deploy, Upgrade, and Scale <guides/install-deploy-upgrade-scale>
-   Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
+   Deploy Mattermost <guides/deployment>
+   Mattermost Administration <guides/administration>
    Channels <guides/channels>
    Playbooks <guides/playbooks>
-   Focalboard <https://www.focalboard.com/guide/user/>
+   Boards <guides/boards>
    Mattermost for Developers <https://developers.mattermost.com/>
    Get Help With Mattermost <guides/get-help>
    Community Chat <guides/community-chat>

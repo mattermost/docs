@@ -90,7 +90,7 @@ Upgrading Mattermost Server
   
    By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
 
-   Run ``ls`` on your Mattermost install directory to identify what default folders exist. If your folders match the structure specified in the following note, you can jump to step 8 below.
+   Run ``ls`` on your Mattermost install directory to identify what default folders exist.
       
    **A default Mattermost installation has the following files and directories**:
 
@@ -114,11 +114,11 @@ Upgrading Mattermost Server
  
     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
     
-  When you're ready to execute the command, append ``xargs echo rm -r`` to the command above to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
+  When you're ready to execute the command, append ``xargs rm -r`` to the command above to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
   
   .. code-block:: sh
   
-    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | sudo xargs echo rm -r
+    sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | sudo xargs rm -r
   
   **Using Bleve Search**
 
@@ -140,14 +140,8 @@ Upgrading Mattermost Server
     
     The ``n`` (no-clobber) flag and trailing ``.`` on source are very important. The ``n`` (no-clobber) flag preserves existing configurations and logs in your installation path. The trailing ``.`` on source ensures all installation files are copied.
 
-9. If you want to use port 80 or 443 to serve your server, and/or if you have TLS set up on your Mattermost server, you **must** activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to ports lower than 1024. For example:
 
-  .. code-block:: sh
-
-    cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
-
-10. Change ownership of the new files before copying them. For example:
+9. Change ownership of the new files after copying them. For example:
 
   .. code-block:: sh
          
@@ -157,6 +151,13 @@ Upgrading Mattermost Server
     
   - If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
   - If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
+  
+10. If you want to use port 80 or 443 to serve your server, and/or if you have TLS set up on your Mattermost server, you **must** activate the ``CAP_NET_BIND_SERVICE`` capability to allow the new Mattermost binary to bind to ports lower than 1024. For example:
+
+  .. code-block:: sh
+
+    cd {install-path}/mattermost
+    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 11. Start your Mattermost server.
 

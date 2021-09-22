@@ -1,5 +1,5 @@
-Administrator Tasks
-===================
+Administrator Onboarding Tasks
+==============================
 
 This document provides instructions for common administrator tasks, including some recommendations on tasks to prepare your Mattermost deployment to onboard users.
 
@@ -26,7 +26,7 @@ These settings can also be set in the ``config.json`` file.  Please see our `con
 3. Begin to onboard users by enabling account creation or by connecting an authentication service to assist with user provisioning.
 
 - Users can be pre-provisioned with migration and bulk loading data processes based on prior collaboration systems. Please see our `migration guide <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migration-guide>`_ and `bulk loading documentation <https://docs.mattermost.com/onboard/bulk-loading-data.html>`_ for additional details.
-- `AD/LDAP authentication <https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20>`_ and `SAML authentication <https://docs.mattermost.com/onboard/sso-saml.html>`_ are available for Enterprise Edition, providing identity management, single sign-on, and automatic account provisioning.
+- `AD/LDAP authentication <https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20>`_ and `SAML authentication <https://docs.mattermost.com/onboard/sso-saml.html>`_ are available for some subscription plans, providing identity management, single sign-on, and automatic account provisioning.
 
 If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our `Enterprise roll out checklist <https://docs.mattermost.com/getting-started/enterprise-roll-out-checklist.html>`__.
 
@@ -48,7 +48,7 @@ Common Tasks
   
 **Migrating to AD/LDAP or SAML from email-based authentication**
 
- - If you have Enterprise Edition, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see `Active Directory/LDAP Setup (E10/E20) <https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20>`_. To set up SAML Single Sign-on, see `SAML Single-Sign-On (E20) <https://docs.mattermost.com/onboard/sso-saml.html>`_.
+ - If you have Professional or Enterprise plans, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see `Active Directory/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20>`_. To set up SAML Single Sign-on, see `SAML Single-Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`_.
  - After the new authentication method is enabled, existing users cannot use the new method until they go to **Account Settings > Security > Sign-in method** and select **Switch to using AD/LDAP** or **Switch to using SAML Single Sign-on**. After they have switched, they can no longer use their email and password to sign in.  
 
 **Deactivating a user**
@@ -113,9 +113,9 @@ Enable full content push notifications, including the sender’s name, the chann
 
 .. note::
 
-  - Mattermost Enterprise Edition E10 and E20 customers can `enable HPNS <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ that includes production-level uptime SLAs.
+  - Mattermost subscription plans allow you to `enable HPNS <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ that includes production-level uptime SLAs.
 
-  - Mattermost Enterprise Edition E20 customers can `enable ID-Only push notifications <https://docs.mattermost.com/configure/configuration-settings.html>`__ so push notification content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device. The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__ while allowing team members to benefit from mobile push notifications.
+  - Mattermost Enterprise customers can `enable ID-Only push notifications <https://docs.mattermost.com/configure/configuration-settings.html>`__ so push notification content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device. The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__ while allowing team members to benefit from mobile push notifications.
 
 **5. Enable Custom Emoji**
 
@@ -123,7 +123,7 @@ Enable full content push notifications, including the sender’s name, the chann
 
 Empower users to create and share their own custom emojis by setting **System Console > Emoji > Enable Custom Emoji** to **true**. See the `Enable custom emoji <https://docs.mattermost.com/configure/configuration-settings.html#enable-custom-emoji>`__ configuration settings documentation for details.
 
-**6. Enable GIF Picker (Beta)**
+**6. Enable GIF Picker**
 
 GIFs are animated images that can make messaging more fun and engaging. Enable users to access the Mattermost GIF picker from the message draft area by setting **System Console > GIF (Beta) > Enable GIF Picker** to **true**. See the `Enable GIF picker <https://docs.mattermost.com/configure/configuration-settings.html#enable-gif-picker>`__ configuration settings documentation for details.
 
@@ -139,8 +139,8 @@ Enable email notifications first by setting **System Console > Notifications > E
 
 Then, enable batched email notifications by setting **System Console > Notifications > Enable Email Batching** to **true**. See the `Enable email batching <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-batching>`__ configuration settings documentation for details. Note that email batching is not available if you are running your deployment in `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 
-**9. Enable Elasticsearch (E20)**
+**9. Enable Elasticsearch**
 
-Mattermost Enterprise Edition E20 customers can enable `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ for optimized search performance at enterprise-scale. Elasticsearch solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results.
+Mattermost Enterprise customers can enable `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ for optimized search performance at enterprise-scale. Elasticsearch solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results.
 
 Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to **true**. See the `Elasticsearch <https://docs.mattermost.com/configure/configuration-settings.html#elasticsearch>`__ configuration settings documentation for details. Enabling Elasticsearch requires `setting up an Elasticsearch server <https://docs.mattermost.com/scale/elasticsearch.html#setting-up-an-elasticsearch-server>`__.
