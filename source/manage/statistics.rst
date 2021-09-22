@@ -36,7 +36,7 @@ Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Total Posts from Bots (graph)
-    The total number of posts made by a `bot account <https://docs.mattermost.com/developer/bot-accounts.html>`_ on a certain day in all the teams on your system, including deleted posts and posts made using automation.
+    The total number of posts made by a `bot account <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`_ on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
@@ -119,7 +119,7 @@ Yes. In Mattermost Enterprise Edition E20, you can enable Team Admins to see the
 
 To enable Team Admins to access their team's statistics:
 
-1. Go to **System Console > User Management > System Roles (Beta)**, then edit the **Viewer** System Admin role. 
+1. Go to **System Console > User Management > System Roles**, then edit the **Viewer** System Admin role. 
 
 .. image:: ../images/edit-viewer-system-admin-role.png
 

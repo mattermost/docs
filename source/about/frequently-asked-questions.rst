@@ -120,7 +120,7 @@ TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.
 
 If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Enterprise Edition E10 subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
 
-Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`__.
+Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__.
 
 Video, Audio, and Screen Sharing
 ---------------------------------
@@ -285,17 +285,17 @@ Working for Mattermost
 How does the licensing key work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have a program for official non-profits and charities?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have discounted licenses for academic institutions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Mattermost Source Available License
 ------------------------------------
@@ -440,7 +440,7 @@ Use Cases
 Does Mattermost support external guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
+Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information.
 
 Can I use Mattermost for customer service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -642,7 +642,7 @@ When using username-password authentication, especially with AD/LDAP, there's th
 
 We believe this design increases productivity, speeds up user adoption, and reduces help desk tickets and support costs - and that these benefits outweigh the trade-offs.
 
-The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`__.
+The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting>`__.
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations:
 
@@ -671,7 +671,7 @@ Rebranding
 ^^^^^^^^^^
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.org/trademark-standards-of-use/>`__.
-- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`__.
+- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
@@ -682,7 +682,7 @@ Copyright and Licensing of ``/mattermost-server`` open source code
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
 
-- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/configure/configuration-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
 

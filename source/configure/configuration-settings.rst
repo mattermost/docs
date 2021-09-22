@@ -9576,6 +9576,9 @@ Enable Plugin
 
 **False**: Disables the Zoom plugin on your Mattermost server.
 
+Plugins
+--------
+
 Zoom URL
 ^^^^^^^^
 
@@ -10754,7 +10757,7 @@ Set the size of the batches in which posts will be read from the database to gen
 +------------------------------------------------------------------------------------------------+
 
 Custom Terms of Service
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable Custom Terms of Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

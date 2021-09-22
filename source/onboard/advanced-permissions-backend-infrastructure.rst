@@ -3,11 +3,9 @@ Advanced Permissions: Backend Infrastructure
 
 This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
-
 .. note::
 
-  The contents of this document apply to Mattermost Server v5.0 and later. 
-
+  The contents of this document apply from Mattermost Server v5.0. 
 
 .. contents::
   :backlinks: top

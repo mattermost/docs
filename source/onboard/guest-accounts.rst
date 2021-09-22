@@ -1,7 +1,7 @@
 .. _guest-accounts:
 
-Guest Accounts (Beta)
-=====================
+Guest Accounts (E10/E20)
+========================
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -49,7 +49,7 @@ Additionally, guests are not automatically added to the default **Town-square** 
 Enabling Guest Accounts
 ------------------------
 
-1. Go to **System Console > Authentication > Guest Access (Beta)**.
+1. Go to **System Console > Authentication > Guest Access**.
 2. Set **Enable Guest Access** to **true**.
 3. (Optional) Specify the **Whitelisted Guest Domains** that are acceptable for guest access. This allows the System Admin to set a list of approved guest domains.
 4. (Optional) Set **Enforce Multi-factor Authentication** to **true**. If you're enforcing MFA for your users, you can optionally choose to also enforce MFA for your guest users.
@@ -92,7 +92,7 @@ Configuring AD/LDAP Authentication
 
 When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
-1. Go to **System Console > Authentication > Guest Access (Beta)** to enable guest access.
+1. Go to **System Console > Authentication > Guest Access** to enable guest access.
 2. Go to **System Console > Authentication > AD/LDAP**.
 3. Complete the **Guest Filter** field.
 4. Select **Save**.
@@ -108,7 +108,7 @@ When enabled, the **Guest Attribute** in Mattermost identifies external users wh
 
 If a Mattermost guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
-1. Go to **System Console > Guest Access (Beta)** to enable guest access.
+1. Go to **System Console > Guest Access** to enable guest access.
 2. Go to **System Console > Authentication > SAML 2.0**.
 3. Complete the **Guest Attribute** field.
 4. Select **Save**.
@@ -167,13 +167,15 @@ System Admins can also promote a guest to member by updating their role in **Sys
 Disabling Guest Accounts
 ------------------------
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access (Beta)**, then set **Enable Guest Access** to **False**. To deactivate individual guest accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual guest accounts by selecting **Activate**.
+To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access**, then set **Enable Guest Access** to **False**. To deactivate individual Guest Accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual Guest Accounts by selecting **Activate**.
 
-From Mattermost Server version 5.18, when a single Guest Account is deactivated or the Guest Account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the Guest Account feature leaves current Guest Accounts as active until they are manually deactivated.
+From Mattermost Server version 5.18 and in Mattermost Cloud:
 
-From Mattermost Server version 5.18, if you're using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
+- Wwhen a single Guest Account is deactivated or the Guest Account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the Guest Account feature leaves current Guest Accounts as active until they are manually deactivated.
+- If you're using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
+- Similarly, for SAML, when the Guest Access setting is disabled, the Guest Attribute and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
 
-Similarly, for SAML, when the Guest Access setting is disabled, the Guest Attribute and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
+You can disable individual guest accounts in **System Console > User Management** via **Manage Members**. When a single Guest Account is disabled or the feature is disabled, the guest will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
 
 Reinstating Guest Accounts
 --------------------------
@@ -211,11 +213,6 @@ Can MFA be applied selectively?
 
 If MFA is enforced for your users, it can be applied to Guest Accounts. Guests can configure MFA in **Account Settings > Security**. If MFA is not enforced for your users, it can't be applied to Guest Accounts.
 
-Why is the Guest Account feature in Beta?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The Guest Account feature is in Beta while we address feedback from our customers on the feature.
-
 Has the Guest Accounts feature been reviewed by an external security firm?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -224,7 +221,7 @@ The Guest Account feature was reviewed by the Mattermost security team. We do no
 How can I validate my guests' identity?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can sign in. Alternatively, you can whitelist domains via **System Console > Authentication > Guest Access (Beta) > Whitelisted Guest Domains**.
+Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can sign in. Alternatively, you can whitelist domains via **System Console > Authentication > Guest Access > Whitelisted Guest Domains**.
 
 Can I restrict guests' ability to upload content?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

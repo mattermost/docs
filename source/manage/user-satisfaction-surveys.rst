@@ -19,7 +19,7 @@ The user satisfaction survey is a pre-packaged plugin, and surveys are enabled b
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
+Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
 
 If the plugin or surveys in the plugin configuration are disabled, they will remain disabled for subsequent server upgrades.
 
@@ -28,8 +28,8 @@ When is the survey scheduled?
 
 Users will receive surveys 21 days after every server upgrade, assuming the following conditions are true:
 
-- User Satisfaction Surveys plugin is enabled in **System Console > Plugins (Beta) > Plugin Management**.
-- Surveys are enabled in the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys**.
+- User Satisfaction Surveys plugin is enabled in **System Console > Plugins > Plugin Management**.
+- Surveys are enabled in the plugin configuration in **System Console > Plugins > User Satisfaction Surveys**.
 - User account is greater than 21 days old.
 - User has not completed a survey in the last 90 days.
 - User has not been sent a survey in the last 90 days.
