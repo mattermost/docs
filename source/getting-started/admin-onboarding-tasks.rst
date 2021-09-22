@@ -1,5 +1,5 @@
-Administrator Tasks
-===================
+Administrator Onboarding Tasks
+==============================
 
 This document provides instructions for common administrator tasks, including some recommendations on tasks to prepare your Mattermost deployment to onboard users.
 
