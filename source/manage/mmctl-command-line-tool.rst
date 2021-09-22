@@ -103,7 +103,7 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 Using local mode
 ~~~~~~~~~~~~~~~~
