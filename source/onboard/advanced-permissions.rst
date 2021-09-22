@@ -232,8 +232,8 @@ Example: Set the default setting to allow all members, Team Admins, and Channel 
 
 This permission is applied to all other roles (excluding the Guest role). When this permission is not enabled for All Members, it must be manually applied to Team Admins and Channel Admins if required.
 
-Read only channels
-~~~~~~~~~~~~~~~~~~
+Read only channels (E20)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
 
