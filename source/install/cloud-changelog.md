@@ -61,24 +61,6 @@ Latest Mattermost Cloud releases:
  - Added support for React components in channel header tooltips registered by plugins.
  - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
  - Updated Bleve to v2 to use the scorch index type.
- - Removed the following deprecated CLI commands:
-   - channel
-   - command
-   - config
-   - extract
-   - group
-   - integrity
-   - ldap
-   - license
-   - logs
-   - permissions
-   - plugin
-   - reset
-   - roles
-   - sampledata
-   - team
-   - user
-   - webhook
 
 ### Bug Fixes
  - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side with Collapsed Reply Threads (Beta) enabled.
