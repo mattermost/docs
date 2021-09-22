@@ -1,7 +1,7 @@
 Working with Boards
 ===================
 
-Using Boards begins with selecting the type of board you want to use. The containers within a board, called cards, are used for tasks. Views are a way to group cards based on their property (e.g., priority, status, etc).
+Using Boards begins with selecting the type of board you want to use. A board contains cards, which typically track tasks or topics, and views, which define how to display the cards, or a subset of them. Views can display cards in a board, table, or gallery layout, optionally filtered and grouped by a property (e.g., priority, status, etc).
 
 * To add a new board, select **+ Add Board** in the bottom left corner of the screen. 
 * To rename a board, select the title area to edit it.
