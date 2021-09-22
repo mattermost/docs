@@ -465,7 +465,6 @@ redirects = {
     "help/settings/custom-emoji": "https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis",
     "incident-collaboration/launching-playbooks": 
         "https://docs.mattermost.com/incident-collaboration/running-playbooks.html",
-    "incident-collaboration/review-and-refine": 
     "incident-collaboration/playbook-planning":
         "https://docs.mattermost.com/incident-collaboration/setting-up-playbooks.html",
     "incident-collaboration/launching-playbooks":
