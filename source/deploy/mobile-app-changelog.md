@@ -2,12 +2,11 @@
 
 Latest Mattermost Mobile Apps releases:
 - [1.47.0 Release](#release)
-- [1.46.0 Release](#release)
-- [1.45.1 Release](#release)
-- [1.45.0 Release](#id1)
-- [1.44.1 Release](#id6)
-- [1.44.0 Release](#id11)
-- [1.43.0 Release](#id18)
+- [1.46.0 Release](#id1)
+- [1.45.1 Release](#id9)
+- [1.45.0 Release](#id14)
+- [1.44.1 Release](#id23)
+- [1.44.0 Release](#id28)
 
 ## 1.47.0 Release
 - Release Date: October 13, 2021
@@ -31,49 +30,43 @@ Latest Mattermost Mobile Apps releases:
  - App now displays custom categories in the sidebar.
 
 ### Improvements
- - Added better support for channel and user selection from withing apps commands.
- - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``.
- - Added mobile push notifications for followed threads.
+ - Added mobile push notifications for followed Threads.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
- - Added better binding filtering for Apps Framework.
+ - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``.
+ - Added better support for channel and user selection from withing Apps commands.
+ - Added better binding filtering for Apps.
 
 ### Bug Fixes
 
 #### All apps
- - Fixed an issue when editing a message with Jumbo Emojis, the emojis were being cutoff.
+ - Added an option to download a video in the gallery view if it failed to playback.
+ - Fixed an issue where the emojis were cutoff when editing a message with jumbo emojis.
  - Fixed an issue where some mentions were highlighted when the mention key partially matched the mention in the message.
- - Added an option to download a video in the gallery view if it fails to playback.
- - Fixed an issue with in-app notifications that caused the keyboard to blur when they were automatically dismissed.
+ - Fixed an issue with in-app notifications that caused the keyboard to blur when the notifications were automatically dismissed.
  - Fixed an issue where the autocomplete options were still visible when the keyboard was dismissed.
- - Added System messages when a guest is added or joins a channel.
- - Fixed an error where the submit button on interactive dialogs was not shown when the dialog did not specify the ``submit_label``.
- - Fixed an issue where clicking Jump to on mobile showed different highlighted channels list than sidebar highlighted channel list.
- - Removed Date and Time label from recents for custom statuses.
- - Fixed an error with locations and binding filtering.
  - Fixed an issue where the “Loading messages…” text was upside down.
- - Fixed an issue where tapping on the push notification for a new reply should open the thread with the post.
- - Fixed an issue where opening a push notification while in the thread screen does not take you to the channel screen.
+ - Fixed an issue where tapping on the push notification for a new reply did not open the thread with the post.
+ - Fixed an issue where opening a push notification while in the Thread screen did not take the user to the channel screen.
+ - Fixed an issue where a System message was missing when a guest user was added to a channel or when a guest joined a channel.
+ - Fixed an error where the submit button on interactive dialogs was not shown when the dialog did not specify ``submit_label``.
+ - Fixed an issue where pressing **Jump to** on mobile showed a different highlighted channels list than the sidebar highlighted channels list.
+ - Removed Date and Time label from recently used custom statuses.
+ - Fixed an error with locations and binding filtering.
 
 #### iOS specific
- - Fixed a crash when attempting to share content into Mattermost on iOS when Biometric authentication is required.
+ - Fixed a crash when attempting to share content into Mattermost on iOS when Biometric authentication was required.
 
 #### Android specific
  - Fixed the ability to snooze push notifications on Android.
- - Fixed upload of animated gif files on Android.
+ - Fixed an issue with uploading of animated gif files on Android.
 
 ### Known Issues
  - Posts sometimes get stuck behind the post textbox on iPad.
  - User may need to log out and back in from the app to see data retention results on the app.
  - Various known issues with Collapsed Reply Threads (Beta) feature:
-   - Mobile app top bar disappears after resuming app from screen lock.
    - New messages banner should only count root posts.
-   - Clicking Jump to on mobile shows a different highlighted channel list than the sidebar highlighted channel list.
-   - Only the last 6 threads are visible in the Threads view.
-   - Some unread channels with leave/join system messages are doubled in search results.
    - Turning the feature on and off does not push an update to the Mobile client.
    - Clicking on a permalink adds the thread replies in the channel view.
-   - Threads item is lost when clearing search in the channel sideabar.
-   - Previously viewed Thread is auto-followed after new replies come in.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
 
 ## 1.46.0 Release
