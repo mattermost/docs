@@ -119,6 +119,7 @@ redirects = {
     "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
     "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
+    "install/prod-windows-2012": "https://forum.mattermost.org/t/production-install-on-windows-server/12232",
     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
     "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
     "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
