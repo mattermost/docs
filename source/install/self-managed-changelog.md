@@ -10,7 +10,7 @@ Lastest Mattermost Releases:
 - [Release v5.38 - Feature Release](#release-v5-38-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
 - [Release v5.36 - Feature Release](#release-v5-36-feature-release)
-- [Release v5.31 - ESR](#release-v5-31-esr)
+- [Release v5.35 - Feature Release](#release-v5-35-feature-release)
 
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
@@ -20,19 +20,19 @@ Lastest Mattermost Releases:
 
 1. [Legacy Command Line Tools](https://docs.mattermost.com/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
 
-2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu has been replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
 
-3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+3. MySQL versions below 5.7.7. Minimum support is now for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
 
-4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
+4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 is Elasticsearch version 7.0.
 
-5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for Mattermost Desktop App issues on Windows 7.
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We no longer provide support for Mattermost Desktop App issues on Windows 7.
 
 6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
 
-7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting. The config setting will be removed and the feature will be promoted to general availability.
+7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting. The config setting is removed and the feature is promoted to general availability.
 
-8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The deprecated settings include:
 
    - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
    - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
@@ -47,21 +47,30 @@ Lastest Mattermost Releases:
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Important Upgrade Notes
- - A major thing to note is that a v6 server is incompatible to run along with a v5 server in a cluster. Therefore, while upgrading, it is required that no other v5 server runs when a v6 server is brought up. A v6 server will run significant DB schema changes that can cause a large startup time depending on the dataset size. Zero downtime will not be possible, but depending on the efforts made during the migration process, it can be minimized to a large extent.
-   1. Low effort, long downtime - This is the usual process of starting a v6 server normally. This has 2 implications - during the migration process, various tables will be locked which will render those tables read-only during that period. Secondly, once the server finishes migration and starts the application, no other v5 server can run in the cluster.
+
+ - Longer migration times can be expected. See [this document](https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055) for more details. The field type of Data in model.ClusterMessage was changed to []byte from string. Therefore, a major thing to note is that a v6 server is incompatible to run along with a v5 server in a cluster. Customers upgrading from 5.x to 6.x cannot do a High Availability upgrade. While upgrading, it is required that no other v5 server runs when a v6 server is brought up. A v6 server will run significant database schema changes that can cause a large startup time depending on the dataset size. Zero downtime will not be possible, but depending on the efforts made during the migration process, it can be minimized to a large extent.
+   1. Low effort, long downtime - This is the usual process of starting a v6 server normally. This has 2 implications: during the migration process, various tables will be locked which will render those tables read-only during that period. Secondly, once the server finishes migration and starts the application, no other v5 server can run in the cluster.
    2. Medium effort, medium downtime - This process will require SQL queries to be executed manually on the server. To avoid causing a table lock, a customer can choose to use the pt-online-schema-change tool for MySQL. For Postgres, the table locking is very minimal. The advantage is that since there are a lot of queries, the customer can take their own time to run individual queries during off-hours. All queries except #11 are safe to be executed this way. Then the usual method of (1) can be followed.
    3. High effort, low downtime - This process requires everything of (2), plus it tries to minimize the impact of query #11. We can do this by following step 2, and then starting v6 along with a running v5 server, and then monitor the application logs. As soon as the v6 application starts up, we need to bring down a v5 node. This is a delicate dance, but minimizes the downtime to only a few seconds.
- - Longer migration times can be expected. See [this document](https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055) for more details.
- - Changed the field type of Data in model.ClusterMessage to []byte from string. This also makes a v6 server incompatible with a v5 server in the same cluster. Customers upgrading from 5.x to 6.x cannot do an HA upgrade. This will require a downtime.
  - Focalboard v0.9.1 (released with Mattermost v6.0) requires Mattermost v5.38+.
- - Advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated documentation.
+ - The advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated documentation.
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.39, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
-#### Blobal Product Launcher
- - This is disabled on the mobile web view.
+#### Global Product Launcher
+ - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view.
+
+#### Branding Changes
+ - Added a new default brand theme "Denim".
+ - The existing theme names and colors, including Mattermost, Organization, Mattermost Dark, and Windows Dark have been updated to the new Sapphire, Quartz, Indigo, & Onyx theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing Mattermost, Organization, Mattermost Dark, and Windows Dark themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - Updated email templates to the new branding.
+
+#### Packaging Changes
+ - Updated in-product strings referencing E10 & E20 to new packaging.
+ - SAML has been moved from the highest level tier (Enterprise - former E20) to mid-level (Professional) while Certificate-based authentication feature had no change.
+ - E20, Professional, and Enterprise license SKUs are now supported for installing Enterprise plugins.
 
 #### Beta features Promoted to General Availability
    - Archived channels
@@ -77,51 +86,41 @@ Lastest Mattermost Releases:
 #### Tutorial Updates
  - Added a tip to the **Getting Started** page for downloading Desktop Apps.
  - Updated tutorial icons and changed text content in tutorial tips.
- - Updated default treatment for ``Add channel`` button to current color & by team name.
+ - Updated the default treatment for the ``Add channel`` button to the current color and by team name.
  - Added a tutorial tip for new settings and status buttons.
- - Added a tip for the product switcher. Tip is skipped if not applicable.
-
-#### Branding Changes
- - Added a new default brand theme "Denim".
- - The existing theme names and colors, including Mattermost, Organization, Mattermost Dark, and Windows Dark have been updated to the new Sapphire, Quartz, Indigo, & Onyx theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing Mattermost, Organization, Mattermost Dark, and Windows Dark themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
- - Updated email templates to the new branding.
-
-#### Packaging Changes
- - Updated in-product strings referencing E10 & E20 to new packaging.
- - SAML has been moved from the highest level tier (Enterprise - former E20) to mid-level (Professional) while Certificate-based authentication feature had no change.
- - E20, Professional, and Enterprise license SKUs are now supported for installing Enterprise plugins.
+ - Added a tip for the product switcher. This tip is skipped if not applicable.
 
 ### Improvements
 
 #### User Interface (UI)
- - Changed H1-H3 heading font from Open Sans to Metropolis.
  - Added “Invite People” to the main "+" button below the hamburger menu.
  - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
  - Updated **Account Settings > Display > Timezone** to be more user friendly.
  - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
- - Added desktop notifications for followed threads.
+ - Added desktop notifications for followed Threads.
  - Hungarian and English-Australian are now official languages.
  - Added a **Start Trial** call-to action to the **Main Menu**.
+ - Changed H1-H3 heading font from Open Sans to Metropolis.
 
 #### Performance
  - Improved typing performance when the emoji autocomplete is open.
 
 #### Integrations
  - Dropped support for left-hand side-specific bot icons.
- - Add a "rest field" to the app command parser.
+ - Add a "rest field" to the App command parser.
+ - Added support for React components in channel header tooltips registered by plugins.
+ - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
+ - Removed a deprecated "Backend" field from the plugin manifest.
+ - Converted the "Executables" field in the plugin manifest to a map.
 
 #### Administration
  - Added ``playbooks`` and ``boards`` to restricted team URLs list.
  - Added the ability for Team Edition to edit role permissions.
- - Removed hard-coded override of ``TeamSettings.MaxNotificationsPerChannel`` on unlicensed servers (e.g. Team Edition).
- - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
+ - Removed a hard-coded override of ``TeamSettings.MaxNotificationsPerChannel`` on unlicensed servers (e.g. Team Edition).
  - Migrated the extraction command to mmctl.
- - Removed a deprecated "Backend" field from the plugin manifest.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
- - Converted the "Executables" field in the plugin manifest to a map.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
- - Added support for React components in channel header tooltips registered by plugins.
  - Removed the following deprecated CLI commands:
    - channel
    - command
@@ -143,13 +142,13 @@ Lastest Mattermost Releases:
 
 ### Bug Fixes
  - Fixed an issue where GitLab ``ButtonText`` and ``ButtonColor`` settings were not reflected on the login screen.
- - Fixed an issue with Collapsed Reply Threads (Beta) where replying to a thread caused users to re-follow the previously unfollowed thread.
+ - Fixed an issue with Collapsed Reply Threads (Beta) where replying to a Thread caused users to re-follow the previously unfollowed Thread.
  - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side with Collapsed Reply Threads (Beta) enabled.
- - Fixed an error with app locations and binding filtering.
- - Fixed an issue where pinned and saved post were no longer highlighted.
+ - Fixed an issue where pinned and saved posts were no longer highlighted.
  - Disabled admin support email status check job on server startup.
  - Fixed an issue on joining a missing channel as a System Admin.
  - Fixed import process for imports with attachments.
+ - Fixed an error with app locations and binding filtering.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -160,7 +159,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     - Added ``EnablePermalinkPreviews`` to enable permalink previews.
  - Under ``FileSettings`` in ``config.json``:
     - Added ``MaxImageResolution`` config setting to control the maximum dimension (in pixels) of image uploads.
- - Removed all of the following configs and cleaned up any code around them:
+ - Removed all of the following configs:
    - ``EnableOnlyAdminIntegrations``
    - ``RestrictCustomEmojiCreation``
    - ``RestrictPostDelete``
@@ -223,7 +222,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Websocket Event Changes
  - Added Websocket client to products.
- - Added plugin websocket hooks (``OnWebSocketConnect``, ``OnWebSocketDisconnect`` and ``WebSocketMessageHasBeenPosted``).
+ - Added plugin Websocket hooks: ``OnWebSocketConnect``, ``OnWebSocketDisconnect`` and ``WebSocketMessageHasBeenPosted``.
 
 ### Go Version
  - v6.0 is built with Go ``v1.16.7``.
