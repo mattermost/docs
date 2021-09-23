@@ -392,6 +392,7 @@ redirects = {
     "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
     "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
+    "install/prod-docker": "https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
