@@ -9,7 +9,6 @@ Latest Mattermost Cloud releases:
 - [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
-- [Release 2021-06-02](#release-2021-06-02)
 
 ## Release 2021-09-29
 
@@ -30,41 +29,45 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Improved typing performance when the emoji autocomplete is open.
  - Added “Invite People” to the main "+" button below the hamburger menu.
- - Dropped support for left-hand side-specific bot icons.
- - Add a "rest field" to the app command parser.
  - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
  - Updated **Account Settings > Display > Timezone** to be more user friendly.
  - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
- - Removed the Slack importer from the user interface.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
- - Added desktop notifications for followed threads.
+ - Added desktop notifications for followed Threads.
  - Hungarian and English-Australian are now official languages.
- - Added a query param to translate in-product help pages when opened from desktop app.
- - Added support for multiselect on apps slash commands.
+ - Added a query param to translate in-product help pages when opened from the Desktop App.
  - Added rendering for posts containing markdown in email notifications.
+
+#### Performance
+ - Improved typing performance when the emoji autocomplete is open.
+
+#### Integrations
+ - Dropped support for left-hand side-specific bot icons.
+ - Added a "rest field" to the App command parser.
+ - Added support for multiselect on Apps slash commands.
  - App commands now make a distinction between the central channel and the right-hand side channel.
+ - Removed a deprecated "Backend" field from the plugin manifest.
+ - Converted the "Executables" field in the plugin manifest to a map.
+ - Added support for React components in channel header tooltips registered by plugins.
 
 #### Administration
  - Upgraded Go to v1.16.7.
+ - Removed the Slack importer from the user interface.
  - Migrated the extraction command to mmctl.
  - Dropped support for Elasticsearch versions earlier than v7.
- - Removed a deprecated "Backend" field from the plugin manifest.
  - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
- - Converted the "Executables" field in the plugin manifest to a map.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
- - Added support for React components in channel header tooltips registered by plugins.
  - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
  - Updated Bleve to v2 to use the scorch index type.
 
 ### Bug Fixes
  - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side with Collapsed Reply Threads (Beta) enabled.
- - Fixed an error with app locations and binding filtering.
- - Fixed an issue where pinned and saved post were no longer highlighted.
+ - Fixed an issue where pinned and saved posts were no longer highlighted.
  - Disabled admin support email status check job on server startup.
  - Fixed an issue on joining a missing channel as a System Admin.
  - Fixed an issue where creating a bot with invalid username returned an "invalid email" error.
+ - Fixed an error with app locations and binding filtering.
  - Fixed an issue where /code was not rendering initial whitespace characters.
  - Fixed import process for imports with attachments.
 
