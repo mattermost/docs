@@ -17,10 +17,10 @@ Mattermost Product Documentation
 
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
-   Set Up, Manage, Onboard, and Comply <guides/setup-onboard-manage-comply>
-   Messaging <guides/messaging>
+   Mattermost Administration <guides/administration>
+   Channels <guides/channels>
    Playbooks <guides/playbooks>
-   Focalboard <https://www.focalboard.com/guide/user/>
+   Boards <guides/boards>
    Mattermost for Developers <https://developers.mattermost.com/>
    Get Help With Mattermost <guides/get-help>
    Community Chat <guides/community-chat>
