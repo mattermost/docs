@@ -598,7 +598,8 @@ redirects = {
     "messaging/welcome-to-mattermost-messaging.html": "https://docs.mattermost.com/overview/index.html",
     "messaging/accessing-your-workspace.html": "https://docs.mattermost.com/messaging/signing-in.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
-    "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html"  
+    "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
+    "configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37"
 }
 
 # The master toctree document.
