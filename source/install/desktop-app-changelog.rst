@@ -41,22 +41,22 @@ MacOS
 
 All Platforms
 ^^^^^^^^^^^^^
-- Added support for multiple languages to be used by the spellchecker configured in the desktop preferences.
-- Changed the server selection to use a dropdown instead of tabs.
+- Added support for multiple languages to be used by the spellchecker. This can be configured in the desktop preferences.
+- Updated loading screen visuals.
 - Added a dark mode for settings and modals.
+- Changed the server selection to use a dropdown instead of tabs.
 - Added support for dragging and dropping of the server dropdown items to re-order servers.
 - Converted the tabs interface to support multiple configurable tabs based on the added server to easily access Boards and Playbooks via tabs in the window header.
 - Removed the **Server Management** screen from **Settings**, and added Edit/Delete buttons to the new dropdown, as users can now configure and edit their servers from the server dropdown menu.
-- Updated loading screen visuals.
 - Added a checkbox to certificate error modal that allows users to permanently distrust a certificate.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Major version upgrade of Electron to v14.0. Electron is the underlying technology used to build the Desktop app.
-- Added rpm build option to the Electron builder.
-- Added Universal binaries for Mac users.
-- Migrated to Bootstrap v4 and refreshed the interface. Migrated to react-beautiful-dnd instead of react-smooth-dnd for a cleaner experience.
+- Added a RPM build option to the Electron builder.
+- Added Universal binaries for MacOS users.
+- Migrated to Bootstrap v4 and refreshed the interface. Migrated to ``react-beautiful-dnd`` instead of ``react-smooth-dnd`` for a cleaner experience.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,7 @@ Linux
 
 All Platforms
 ^^^^^^^^^^^^^
-- Fixed an issue where resizing the app while in the System Console causes a white bar to appear at the top.
+- Fixed an issue where resizing the app while in the System Console caused a white bar to appear at the top.
 - Fixed an issue where the right-click menu was missing from the ``jira connect`` modal.
 
 Known Issues
