@@ -227,6 +227,7 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
     "administration/config-settings.html#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
+    "configure/config-ssl-http2-apache2": "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939"
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
     "cloud/cloud-administration/cloud-compliance":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
