@@ -3,41 +3,101 @@ Upgrading Mattermost Server
 
 In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
+Preparing to Upgrade to the Latest Version
+------------------------------------------
+
+A Mattermost server v6.0 upgrade will run significant database schema changes that can cause a large startup time depending on the dataset size. Zero downtime won't be possible for v6.0, but depending on the efforts made during the migration process, it can be minimized to a large extent. Running queries prior to the upgrade can also save some downtime. However, some queries can still cause full table locking and require Mattermost to be in read-only mode for the duration of the query. 
+
+We recommend that you:
+
+- Set up a maintenance window outside of working hours to mitigate the migration impact. 
+- Keep a backup of your database to ensure you can load a previous database snapshot if necessary.
+- Upgrade your instance of Mattermost to a supported Extended Support Release (ESR) version before attempting to run the v6.0 upgrade.
+
 .. important::
 
-  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`_ or later is required.
+  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 Extended Support Release or later is required.
 
-Upgrading to the Latest Version
+Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. However, it's important to review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+
+v6.0 Database Schema Migrations
 -------------------------------
 
-If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version prior to 3.0.0, you must first upgrade to version 3.0.3.
+Mattermost v6.0 introduces several database schema changes to improve both database and application performance. A v6.0 server upgrade will run significant database schema changes that can cause a large startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts. See the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for specifications, data size, and test results.
 
-Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. However, we strongly recommend that you review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you're aware of the possible migrations that could affect your upgrade.
+.. tabs::
 
-For `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ deployments, we only support one minor version difference between  server versions when performing a rolling upgrade. For example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported. Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. In some upgrade scenarios, it won't be possible to run different versions, and such cases are clearly noted in the :doc:`important-upgrade-notes` product documentation.
+   .. tab:: MySQL
+
+      The following queries executed during the migration process will have a significant impact on database CPU usage and write operation restrictions for the duration of the query:
+
+      ``ALTER TABLE Posts MODIFY Props JSON;`` (~26 minutes)
+
+      ``ALTER TABLE Posts DROP COLUMN ParentId;`` (~26 minutes)
+
+      ``ALTER TABLE Posts MODIFY COLUMN FileIds text;`` (~26 minutes)
+
+      For a complete breakdown of MySQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#mysql-1>`__ documentation.
+
+      **MySQL Mitigation Strategies**
+
+      **Run combined queries prior to the upgrade.**
+      The following queries can be combined when run prior to the upgrade:
+
+      ``ALTER TABLE Posts MODIFY COLUMN FileIds text, MODIFY COLUMN Props JSON;``
+
+      This limits the time taken to that of a single query of that type.
+
+      **Online migration** An online migration that avoids locking can be attempted on MySQL installations, especially for particularly heavy queries. This can be done through an external tool like `pt-online-schema-change <https://www.percona.com/doc/percona-toolkit/LATEST/pt-online-schema-change.html>`__. However, the online migration process can cause a significant spike in CPU usage on the database instance it runs.
+
+      See the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#online-migration-mysql>`__ documentation for a sample execution and additional caveats.
+
+   .. tab:: PostgreSQL
+
+      The following query executed during the migration process will have a significant impact on database CPU usage and write operation restrictions for the duration of the query:
+
+      ``ALTER TABLE posts ALTER COLUMN props TYPE jsonb USING props::jsonb;`` (~ 11 minutes)
+
+      For a complete breakdown of PostgreSQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`__.
+
+Upgrading from Releases Older than v5.35
+----------------------------------------
+
+Customers upgrading from a release older than Mattermost v5.35 should expect downtime when upgrading to v6.0, due to the introduction of backend database architecture introduced in v5.35. See the `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html?highlight=changelog#id39>`__ documentation for details.
+
+If you're upgrading from a version prior to v5.0, be sure to also modify your service file to work with the binary changes introduced with v5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``), and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
+
+Upgrading High Availability Deployments
+---------------------------------------
+
+In `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent you from posting or receiving messages until the migration is complete.
+
+Ensure you review the `High Availability Cluster Upgrade Guide <https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide>`__, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
+
+.. important::
+
+  We only support one minor version difference between server versions when performing a rolling upgrade. For example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported. 
+
+  Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario. Due to a fundamental change to the clustering code in v6.0, nodes from different versions cannot be run, as noted in the :doc:`important-upgrade-notes` product documentation.
+
+  The release of v6.0 also introduces database schema changes and longer migration times should be expected, especially on MySQL installations. 
 
 .. _before-you-begin:
 
 Before you Begin
 ----------------
 
-Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
+**Read these instructions carefully from start to finish.** 
 
-.. important::
+Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
 
-  - Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
-  - If you're upgrading from a version prior to v5.0 be sure to also modify your service file to work with the binary changes introduced with 5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``) and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
-  - Gather the following information before starting the upgrade:
-      - **Existing install directory - {install-path}**: If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command to find standard binary places and $PATH (which won't return anything if ``/opt/mattermost/bin`` wasn't added to the PATH), or use the ``find / -executable -type f -iname mattermost 2> /dev/null`` command to find the mattermost binary. The output should be similar to ``/opt/mattermost/bin/mattermost``. The install directory is everything before the first occurrence of the string ``/mattermost``. In this example, the ``{install-path}`` is ``/opt``. If that command does not produce any results, it's likely because your version is older; try ``whereis platform`` instead.
-      - **Location of your local storage directory**: The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
+**Gather the following information before starting the upgrade**
+
+- **Existing install directory - {install-path}**: If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command to find standard binary places and $PATH (which won't return anything if ``/opt/mattermost/bin`` wasn't added to the PATH), or use the ``find / -executable -type f -iname mattermost 2> /dev/null`` command to find the mattermost binary. The output should be similar to ``/opt/mattermost/bin/mattermost``. The install directory is everything before the first occurrence of the string ``/mattermost``. In this example, the ``{install-path}`` is ``/opt``. If that command does not produce any results, it's likely because your version is older; try ``whereis platform`` instead.
+- **Location of your local storage directory**: The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 
 Upgrading Mattermost Server
 ----------------------------
-
-.. note::
-
-  - If you're upgrading a High Availability cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`__.
-  - Review the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
 
 1. In a terminal window on the server that hosts Mattermost, change to your home directory. Delete any files and directories that might still exist from a previous download.
 
@@ -73,7 +133,7 @@ Upgrading Mattermost Server
 
      sudo systemctl stop mattermost
 
-6. Back up your data and application.
+6. Back up your data and application. Please ensure you have properly backed up your database before continuing with the upgrade. In case of an unexpected failure, you should be in a position to load a previous database snapshot.
 
    a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
 
