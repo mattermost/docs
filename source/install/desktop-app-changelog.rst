@@ -45,7 +45,7 @@ All Platforms
 - Changed the server selection to use a dropdown instead of tabs.
 - Added a dark mode for settings and modals.
 - Added support for dragging and dropping of the server dropdown items to re-order servers.
-- Converted the tabs interface to support multiple configurable tabs based on the added server.
+- Converted the tabs interface to support multiple configurable tabs based on the added server to easily access Boards and Playbooks via tabs in the window header.
 - Removed the **Server Management** screen from **Settings**, and added Edit/Delete buttons to the new dropdown, as users can now configure and edit their servers from the server dropdown menu.
 - Updated some keyboard shortcuts and menu items to work with the new desktop app layout.
 - Updated loading screen visuals.
