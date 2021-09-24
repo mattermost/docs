@@ -629,6 +629,8 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 }
 
 .wy-side-nav-search input[type=text] {
+	width: 80%;
+	padding-left: 28px;
 	border: 1px solid #ddd;
 }
 
