@@ -15,7 +15,7 @@ Downgrading Mattermost Server
 
 In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. The binaries can be found in the :doc:`version-archive`. We do not recommend downgrading more than one version back from your current installation.
 
-downgrading from v6.0 to v5.38
+Downgrading from v6.0 to v5.38
 ------------------------------
 
 Run the following set of queries, specific to your database, to downgrade the schema from v6.0 to v5.38.
