@@ -932,3 +932,7 @@ header .header__searchbar {
 .with-notification .wy-grid-for-nav {
 	padding-top: 134px;
 }
+
+.searchfield {
+	padding-left: 28px;
+}
