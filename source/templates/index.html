@@ -5,9 +5,7 @@
 {% set title = _('Mattermost Documentation') %}
 
 {% block body %}
-
     <style type="text/css">
-
         .landing {
             width: 100%;
             max-width: 700px; /* Force to a maximum of 3 tiles wide */
@@ -267,7 +265,7 @@
         <h1 class="landing-title">Mattermost Product Documentation</h1>
         <div class="landing-search" role="search">
             <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
-                <input type="text" name="q" placeholder="What are you looking for?" autofocus />
+                <input type="text" name="q" placeholder="What are you looking for?" class="st-default-search-input" autofocus />
                 <input type="hidden" name="check_keywords" value="yes" />
                 <input type="hidden" name="area" value="default" />
             </form>
