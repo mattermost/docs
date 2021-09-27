@@ -574,7 +574,7 @@ html_theme_options = {
     "titles_only": False,
 }
 
-html_permalinks_icon = ""
+html_permalinks_icon = " "
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
