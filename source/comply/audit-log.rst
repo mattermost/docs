@@ -3,10 +3,38 @@ Audit Log v2 (Experimental) (E20)
 
 *Available in Mattermost Enterprise Edition E20*
 
-System Admins can review a comprehensive listing of events for more in-depth analysis and advanced logging capabilities. Additionally, the new audit log provides more control over where the logs are generated and stored. 
+System Admins can review a comprehensive listing of events for more in-depth analysis. Additionally, the new audit log provides more control over where the logs are generated and stored. 
 
-.. note::
-   Mattermost v6.0 introduced a change to the logging engine library which changes how the logger is configured. Please see this `sample file <>`_. 
+The advanced logging capabilities of the Audit Log V2 allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+
+System Admins can define multiple log targets to:
+
+- Mirror log output to files and log aggregators for redundancy.
+- Log certain entries to specific destinations. For example, all errors could be routed to a specific destination for review.
+
+All access to the REST API or CLI is audited. When using Advanced Logging for auditing, System Admins can capture the following auditing in the target configuration in addition to discrete log levels:
+
+.. code-block:: none
+
+   "Levels": [
+      {"ID": 100, "Name": "audit-api"},
+      {"ID": 101, "Name": "audit-content"},
+      {"ID": 102, "Name": "audit-permissions"},
+      {"ID": 103, "Name": "audit-cli"},
+   ],
+
+Where:
+
+- ``audit-api``: Enables output of REST API calls.
+- ``audit-content``: Enables output of API calls that generate content (e.g. ``create post``, ``create reaction``).
+- ``audit-permissions``: Enables output of all permissions failures.
+- ``audit-cli``: Enables output of legacy CLI calls.
+
+All levels can be viewed at ``mattermost-server/shared/mlog/levels.go``.
+
+.. Note::
+  - Logs are recorded asynchronously to reduce latency to the caller. 
+  - Advanced logging supports hot-reloading of logger configuration.
 
 Configure audit log in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,6 +43,10 @@ Configuring the Mattermost server to use the new audit log requires editing the 
 
 File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
+.. note::
+   Mattermost v6.0 introduced a change to the logging engine library which changes how the logger is configured in Mattermost 5.x versions. Please refer to `this sample configuration file <https://github.com/mattermost/docs/files/sample-logger-config.json>`_ for the new format in v6.0 and beyond. 
+   
+   
 **Accessing configuration options for audit log**
 
 Open ``config.json`` and navigate to the audit settings under ``ExperimentalAuditSettings``. Within the setting ``AdvancedLoggingConfig`` you are able to specifiy a filespec to another config file, a database DSN, or JSON. 
@@ -46,6 +78,11 @@ The example below specifies one log target that outputs to the console using a p
         "maxqueuesize": 1000
       }
     }
+    
+.. Note::
+    Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
+
+See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file.  
 
 Log Target Types
 ~~~~~~~~~~~~~~~~
@@ -166,14 +203,6 @@ Log Levels
        "white", "37"
 
 
-Supported logging events
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Events evoked from the Mattermost API
-- Events evoked from mmctl 
-- Events evoked from the legacy Mattermost CLI
-- Events evoked from the Focalboard plugin
-
 Data model
 ~~~~~~~~~~~
 
@@ -216,6 +245,8 @@ Both configuration methods can be used, but care must be taken to avoid mutiple 
 The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the type, format, and levels.
 
 Focalboard uses discrete log levels, meaning each level to be output must be listed. This allows for log targets to output specific log levels, and custom log levels to be created. See ``server/mlog/levels.go`` for a list of available log levels. 
+
+See the :download:`Focalboard Logging Options Sample JSON ZIP file <../samples/focalboard-logging-options-sample-json.zip>` for a sample configuration file.  
 
 Planned enhancements to the audit log
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
