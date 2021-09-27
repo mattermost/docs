@@ -23,29 +23,29 @@ The logging configuration JSON is an object (unordered collection) containing na
 
 The example below specifies one log target that outputs to the console using a plain text format with pipes delimiting fields. The standard log levels are listed, with only `error` and lower outputing a stack trace. The `error` level will output in red for log targets and formatters that support color output.
 
-```json
-{
-  "sample-console": {
-    "type": "console",
-    "options": {
-      "out": "stdout"
-    },
-    "format": "plain",
-    "format_options": {
-      "delim": " | "
-    },
-    "levels": [
-      {"id": 5, "name": "debug"},
-      {"id": 4, "name": "info"},
-      {"id": 3, "name": "warn"},
-      {"id": 2, "name": "error", "stacktrace": true, "color": 31},
-      {"id": 1, "name": "fatal", "stacktrace": true},
-      {"id": 0, "name": "panic", "stacktrace": true}
-    ],
-    "maxqueuesize": 1000
-  }
-}
-```
+.. code-block:: json
+
+  {
+      "sample-console": {
+        "type": "console",
+        "options": {
+          "out": "stdout"
+        },
+        "format": "plain",
+        "format_options": {
+          "delim": " | "
+        },
+        "levels": [
+          {"id": 5, "name": "debug"},
+          {"id": 4, "name": "info"},
+          {"id": 3, "name": "warn"},
+          {"id": 2, "name": "error", "stacktrace": true, "color": 31},
+          {"id": 1, "name": "fatal", "stacktrace": true},
+          {"id": 0, "name": "panic", "stacktrace": true}
+        ],
+        "maxqueuesize": 1000
+      }
+    }
 
 Log Target Types
 ~~~~~~~~~~~~~~~~
@@ -182,7 +182,7 @@ A single audit record is emitted for each event (``add``, ``delete``, ``login``,
 .. csv-table::
     :header: "Name", "Type", "Description"
 
-    "ID.", "string", "audit record ID."
+    "ID", "string", "audit record ID."
     "CreateAt", "int64", "timestamp of record creation, UTC."
     "Level", "string", "e.g. ``audit-rest``, ``audit-app``, ``audit-model``"
     "APIPath", "string", "rest endpoint"
@@ -205,17 +205,17 @@ When using remote syslog, the current best practice is to also write to local fi
 
 Configure audit log in Focalboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The `Focalboard configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ `config.json` is used to configure logging.
+The `Focalboard configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging.
 
-`logging_cfg_file` is used to specify the path to a file containing the logging configuration in JSON format.
+``logging_cfg_file`` is used to specify the path to a file containing the logging configuration in JSON format.
 
-`logging_cfg_json` is used to provide logging configuration directly as embedded JSON. Typically this is overridden using the corresponding environment variable `FOCALBOARD_LOGGING_CFG_JSON`.
+``logging_cfg_json`` is used to provide logging configuration directly as embedded JSON. Typically this is overridden using the corresponding environment variable ``FOCALBOARD_LOGGING_CFG_JSON``.
 
 Both configuration methods can be used, but care must be taken to avoid mutiple log targets writing to the same file.
 
 The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the type, format, and levels.
 
-Focalboard uses discrete log levels, meaning each level to be output must be listed. This allows for log targets to output specific log levels, and custom log levels to be created. See `server/mlog/levels.go` for a list of available log levels. 
+Focalboard uses discrete log levels, meaning each level to be output must be listed. This allows for log targets to output specific log levels, and custom log levels to be created. See ``server/mlog/levels.go`` for a list of available log levels. 
 
 Planned enhancements to the audit log
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
