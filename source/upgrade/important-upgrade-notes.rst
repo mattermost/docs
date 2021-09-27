@@ -35,7 +35,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Please see `the changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ for a list deprecations in this release.                           |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Focalboard plugin has been renamed to Mattermost Boards, and v0.9.1 (released with Mattermost v6.0) requires Mattermost v6.0+.                                   |
+|                                                    | Focalboard plugin has been renamed to Mattermost Boards, and v0.9.1 (released with Mattermost v6.0) is now enabled by default.                                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated                                                        |
 |                                                    | `documentation <https://docs.mattermost.com/comply/audit-log.html>`_.                                                                                            |
