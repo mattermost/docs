@@ -26,7 +26,7 @@ Latest Mattermost Mobile Apps releases:
 #### Deprecations
  - Stopped evaluating deprecated config settings starting with server version 6.0.
 
-#### Sidebar Categories
+#### Custom, Collapsible Channel Categories
  - App now displays custom categories in the sidebar.
 
 ### Improvements
