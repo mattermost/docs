@@ -48,7 +48,7 @@ Admin Advisor notices are designed to provide guidance and assist in choosing fe
 .. note::
   Admin Advisor notices are disabled in v5.35 and later.
 
-When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
+When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usages, such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 .. image:: ../images/mattermost_admin_advisor_banner.png
 
@@ -61,7 +61,7 @@ Managing Admin Advisor notices
 
 The Admin Advisor notices are run on a schedule based on specific triggers.
 
-- Selecting **Contact us** in the Admin Advisor banner dismisses the banner notification. In addition, contact information such as the email address and name associated with your Mattermost account is sent to us, so we can contact you as requested and to help us better understand your needs. The number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number are also sent to us to better understand your environment and hence provide more tailored support.
+- Selecting **Contact us** in the Admin Advisor banner dismisses the banner notification. In addition, contact information such as the email address and name associated with your Mattermost account is sent to us, so we can contact you as requested and help us better understand your needs. The number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number are also sent to us to better understand your environment and hence provide more tailored support.
 - Selecting **Acknowledge** in the Admin Advisor banner closes the advisory and does not send your details to Mattermost.
 - Closing the notification bot removes the conversation from your Direct Messages list.
 
