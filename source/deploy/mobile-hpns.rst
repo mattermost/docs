@@ -1,6 +1,23 @@
 Mobile Push Notifications
 =========================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work>`__ to learn more about how push notifications work.
 
 Mattermost offers a `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deploy/deployment-overview.html>`__ for Team Edition, Cloud, and Enterprise deployments.
@@ -40,7 +57,7 @@ See our `Testing Push Notifications <https://docs.mattermost.com/deploy/mobile-t
 Hosted Push Notifications Service (HPNS)
 ----------------------------------------
 
-|enterprise| |professional| |cloud|
+|enterprise| |professional| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -57,7 +74,12 @@ Hosted Push Notifications Service (HPNS)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
-Mattermost Professional, Enterprise, and Cloud, customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
 
 - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) `available on GitHub. <https://github.com/mattermost/mattermost-push-proxy>`__
 - An explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ for the contents of unencrypted messages.
@@ -104,7 +126,7 @@ After setup, test push notifications to confirm they are working.
 ID-Only Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -115,6 +137,11 @@ ID-Only Push Notifications
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Mattermost Enterprise and Cloud customers can limit the data sent to Apple and Google through a configuration setting. 
 

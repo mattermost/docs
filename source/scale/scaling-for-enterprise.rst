@@ -1,6 +1,18 @@
 Scaling for Enterprise 
 ======================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost is designed to scale from small teams hosted on a single server to large enterprises running in cluster-based, highly available deployment configurations.
 
 Server requirements vary based on usage and it is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs.
@@ -84,7 +96,7 @@ The following matrix presents key features for a successful multi-region Matterm
 To scale to 100,000 users and above, we recommended using `the Mattermost open source load testing framework <https://github.com/mattermost/mattermost-load-test>`__ to simulate usage of your system at full scale.
 
 .. csv-table::
-    :header: "Feature", "On Premises", "Amazon AWS", "Azure"
+    :header: "Feature", "Self-Hosted", "Amazon AWS", "Azure"
 
     "Multi-region/data center support", "Yes", "Regions: 16", "Regions: 54"
     "Auto scaling for Mattermost nodes", "Yes - using a solution like Kubernetes", "`AWS Auto Scaling <https://aws.amazon.com/ec2/autoscaling/>`__", "`Azure Autoscale <https://azure.microsoft.com/en-us/features/autoscale/>`__"

@@ -1,6 +1,25 @@
 Mattermost Performance Alerting Guide
 ======================================
 
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
+
 Mattermost recommends using Prometheus and Grafana to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard.  
 
 .. note:: 

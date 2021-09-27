@@ -36,7 +36,7 @@ The MySQL operator and MinIO operator are a good way to try out the Mattermost O
   $ kubectl apply -n minio-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/minio-operator/minio-operator.yaml
 
 Installing the Operators via Helm
-=================================
+---------------------------------
 
 The operators can be installed using the Mattermost Operator Helm chart.
 Follow the instructions `here <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`__.

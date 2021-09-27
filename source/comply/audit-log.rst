@@ -1,7 +1,19 @@
-Audit Log v2 (Experimental) (E20)
-=================================
+Audit Log v2
+============
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 System Admins can review a comprehensive listing of events for more in-depth analysis. Additionally, the new audit log provides more control over where the logs are generated and stored.
 
@@ -12,7 +24,7 @@ Configuring the Mattermost server to use the new audit log requires editing the 
 
 **Accessing configuration options for audit log**
 
-Open ``config.json`` and navigate to the audit settings. The following `configuration options <https://docs.mattermost.com/configure/configuration-settings.html#audit-settings>`_ are available:
+Open ``config.json`` and navigate to the audit settings. The following `configuration options <https://docs.mattermost.com/configure/configuration-settings.html#audit-settings>`__ are available:
 
 - Syslog configuration options:
 

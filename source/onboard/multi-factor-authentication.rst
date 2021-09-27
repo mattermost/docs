@@ -35,6 +35,23 @@ Supported smartphones include iOS, Android, Blackberry, and Windows Phone device
 Enabling MFA
 ------------
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This option is enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
 
 Once enabled, users can opt to use MFA on their account in the `Account Settings <https://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication>`__ menu under **Security > Multi-factor Authentication**.

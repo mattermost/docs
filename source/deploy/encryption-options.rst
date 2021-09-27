@@ -1,6 +1,18 @@
 Encryption Options
 ==================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost provides encryption-in-transit and encryption-at-rest capabilities. This page guides you through setting up appropriate encryption security.
 
 Encryption is not required for GDPR, although it can be used as an additional safeguard against data breach.

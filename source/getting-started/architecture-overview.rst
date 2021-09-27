@@ -1,6 +1,18 @@
 Architecture Overview
 =====================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deployment/deployment.html>`__.
 
 .. toctree::

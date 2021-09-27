@@ -1,6 +1,18 @@
 Administrator Onboarding Tasks
 ==============================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This document provides instructions for common administrator tasks, including some recommendations on tasks to prepare your Mattermost deployment to onboard users.
 
 Getting Started Tasks
@@ -36,7 +48,7 @@ Important Administration Notes
 **DO NOT manipulate the Mattermost database**
 
  - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
- - If you need to permanently delete a team or user, use the `Command Line Tool <https://docs.mattermost.com/manage/command-line-tools.html>`__.
+ - If you need to permanently delete a team or user, use the `Command Line Tool <https://docs.mattermost.com/manage/command-line-tools.html>`__ or the `mmctl <file:///Users/carriewarner/Local/docs/build/html/manage/mmctl-command-line-tool.html>`__.
 
 Common Tasks
 ------------

@@ -2725,31 +2725,6 @@ Changes to this setting require a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false``.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------+
 
-Colorize plain text console logs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
-
-**True**: When logged events are output to the console as plain text, colorize log levels details.
-
-**False**: Plain text log details aren't colorized in the console.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -3514,29 +3489,6 @@ Set the link for the support website.
 | This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`` with string input. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-App Custom URL Schemes
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client. 
-
-When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4097,13 +4049,6 @@ Email Notification Contents
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
-
-|enterprise|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
 
 *Available in legacy Enterprise Edition E20*
 
@@ -11797,7 +11742,7 @@ This setting defines the number of seconds after which the user's status indicat
 Settings configurable only in ``config.json``
 ----------------------------------------------
 
-There are a number of settings customizable in ``config.json`` unavailable in the System Console and require updating from the file itself.
+There are a number of settings customizable in ``config.json`` which are unavailable in the System Console and require updating from the file itself.
 
 Service Settings
 ~~~~~~~~~~~~~~~~
@@ -11816,6 +11761,8 @@ Automatically Follow Threads
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`_, and may affect server performance. We recommend that you review our `documentation on hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_ to ensure your servers are appropriately scaled for the size of your user base.
 
@@ -11846,6 +11793,8 @@ WebSocket URL
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 This setting allows the server to instruct clients where they should try to connect WebSockets to.
 
 +-------------------------------------------------------------------------------------+
@@ -11872,6 +11821,8 @@ License File Location
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Path and filename of the license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it looks here. It can be an absolute path or a path relative to the ``mattermost`` directory.
 
 +---------------------------------------------------------------------------------------------+
@@ -11893,9 +11844,12 @@ TLS Minimum Version
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 The minimum TLS version used by the Mattermost server. TLS v1.2 is default given insecurities for TLS 1.0 and 1.1.
 
-This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
+.. note::
+  This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSMinVer": "1.2"`` with string input. |
@@ -11915,6 +11869,8 @@ Trusted Proxy IP Header
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Specified headers that will be checked one by one for IP addresses (order is important). All other headers are ignored.
 
@@ -11941,6 +11897,8 @@ Enable Strict Transport Security (HSTS)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 **True**: Adds the Strict Transport Security (HSTS) header to all responses, forcing the browser to request all resources via HTTPS. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__.
 
 **False**: No restrictions on TLS transport. Strict Transport Security (HSTS) header is not added to responses.
@@ -11964,6 +11922,8 @@ Secure TLS Transport Expiry
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 The time in seconds that the browser remembers a site is only to be accessed using HTTPS. After this period, a site can be accessed using HTTP unless ``TLSStrictTransport`` is set to ``true``. Defaults to two years. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__.
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -11985,11 +11945,14 @@ TLS Cipher Overwrites
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Set TLS ciphers overwrites to meet requirements from legacy clients which don't support modern ciphers, or to limit the types of accepted ciphers.
 
 If none specified, the Mattermost server assumes a set of currently considered secure ciphers, and allows overwrites in the edge case. See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go <https://github.com/mattermost/mattermost-server/blob/master/model/config.go>`__ for the list of ciphers considered secure.
 
-This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
+.. note::
+  This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with numerical input.    |
@@ -12009,6 +11972,8 @@ Go Routine Health Threshold
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Set a threshold on the number of goroutines when the Mattermost system is considered to be in a healthy state. When goroutines exceed this limit, a warning is returned in the server logs.
 
@@ -12033,6 +11998,8 @@ Allow Cookies for Subdomains
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 **True**: Allows cookies for subdomains by setting the domain parameter on Mattermost cookies.
 
 **False**: Cookies not allowed for subdomains.
@@ -12056,6 +12023,8 @@ Cluster Log Timeout
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 This setting defines the frequency of cluster request time logging for :doc:`../scale/performance-monitoring`, measured in milliseconds.
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -12076,6 +12045,8 @@ Read Only Config
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Changes made to settings in the System Console are ignored.
 
@@ -12100,6 +12071,8 @@ Enable Post Search
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 If this setting is enabled, users can search messages. Disabling search can result in a performance increase, but users get an error message when they attempt to use the search box.
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -12120,6 +12093,8 @@ Enable File Search
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our `Enable Document Search by Content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__ documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
 
@@ -12146,6 +12121,8 @@ Enable User Status Updates
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Turn status updates off to improve performance. When status updates are off, users appear online only for brief periods when posting a message, and only to members of the channel in which the message is posted.
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -12167,9 +12144,10 @@ WebSocket Secure Port
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
+
 (Optional) This setting defines the port on which the secured WebSocket will listen using the ``wss`` protocol. Defaults to ``443``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
-Changes to this setting require a server restart before taking effect.
 
 +------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WebsocketSecurePort": 443`` with numerical input. |
@@ -12190,9 +12168,9 @@ WebSocket Port
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-(Optional) This setting defines the port on which the unsecured WebSocket will listen using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Changes to this setting require a server restart before taking effect.
+(Optional) This setting defines the port on which the unsecured WebSocket will listen using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``WebsocketPort": 80`` with numerical input. |
@@ -12213,11 +12191,14 @@ Enable API Team Deletion
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 **True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by Team and System Admins to permanently delete a team.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
 
-mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDeletion`` is set to ``true``.
+.. note::
+  mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDeletion`` is set to ``true``.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
@@ -12238,6 +12219,8 @@ Enable API User Deletion
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 **True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
@@ -12246,7 +12229,8 @@ Enable API User Deletion
 | This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDeletion`` is set to ``true``.
+.. note::
+  mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDeletion`` is set to ``true``.
 
 Enable API Channel Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -12263,6 +12247,8 @@ Enable API Channel Deletion
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 **True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
@@ -12271,7 +12257,8 @@ Enable API Channel Deletion
 | This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
 
-mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDeletion`` is set to ``true``.
+.. note::
+  mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDeletion`` is set to ``true``.
 
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^
@@ -12287,6 +12274,8 @@ Enable OpenTracing
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers. Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
 
@@ -12313,6 +12302,8 @@ Import Settings Default Directory
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 The directory where the imported files are stored. The path is relative to the ``FileSettings`` directory. By default, imports are stored under ``./data/import``.
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -12333,6 +12324,8 @@ Import Settings Default Retention Days
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 The number of days to retain the imported files before deleting them.
 
@@ -12355,6 +12348,8 @@ Export Settings Default Directory
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 The directory where the exported files are stored. The path is relative to the ``FileSettings`` directory. By default, exports are stored under ``./data/export``.
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -12375,6 +12370,8 @@ Export Settings Default Retention Days
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 The number of days to retain the exported files before deleting them.
 
@@ -12397,7 +12394,7 @@ Enable Local Mode
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-*This setting is currently not available in the System Console and can only be set in ``config.json``*
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Enables local mode for mmctl.
 
@@ -12422,7 +12419,7 @@ Enable Local Mode Socket Location
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-*This setting is not available in the System Console and can only be set in ``config.json``.*
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 The path for the socket that the server will create for mmctl to connect and communicate through local mode. If the default value for this key is changed, you will need to point mmctl to the new socket path when in local mode, using the ``--local-socket-path /new/path/to/socket`` flag in addition to the ``--local`` flag.
 
@@ -12454,7 +12451,7 @@ Scoping IDP Provider Id
 
 *Available in legacy Enterprise Edition E20*
 
-*This setting is currently not available in the System Console and can only be set in ``config.json``.*
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
 
@@ -12484,7 +12481,7 @@ Scoping IDP Name
 
 *Available in legacy Enterprise Edition E20*
 
-*This setting is currently not available in the System Console and can only be set in ``config.json``.*
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Adds the name associated with a user's Scoping Identity Provider ID.
 
@@ -12509,6 +12506,8 @@ Global Relay SMTP Server Timeout
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. The default value is 1800 seconds. This setting is currently not available in the System Console and can only be set in ``config.json``.
 
 +-------------------------------------------------------------------------------------------------+
@@ -12532,11 +12531,64 @@ Batch Size
 
 *Available in legacy Enterprise Edition E20*
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Determines how many new posts are batched together to a compliance export file.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input. |
 +----------------------------------------------------------------------------------------+
+
+App Custom URL Schemes
+^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client. 
+
+When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Colorize plain text console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: When logged events are output to the console as plain text, colorize log levels details.
+
+**False**: Plain text log details aren't colorized in the console.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
++----------------------------------------------------------------------------------------------------------------------------------------+
 
 SQL Settings
 ~~~~~~~~~~~~
@@ -12563,9 +12615,9 @@ Read Replicas
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Changes to this setting require a server restart before taking effect.
+Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
@@ -12593,9 +12645,9 @@ Search Replicas
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Changes to this setting require a server restart before taking effect.
+Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
@@ -12617,6 +12669,8 @@ Replica Lag Settings
   :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
 
@@ -12668,7 +12722,9 @@ Maximum Image Resolution
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Maxiumum image resolution size for message attachments in megapixels. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Maxiumum image resolution size for message attachments in megapixels. 
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileSettings.MaxImageResolution": 33177600`` with numerical input.     |
@@ -12692,6 +12748,8 @@ Initial Font
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Font used in auto-generated profile pics with colored backgrounds.
 
 +-----------------------------------------------------------------------------------------------+
@@ -12712,6 +12770,8 @@ Amazon S3 Signature V2
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html.
 
@@ -12738,6 +12798,8 @@ Amazon S3 Path
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Allows using the same S3 bucket for multiple deployments.
 
 +------------------------------------------------------------------------------------------------------------+
@@ -12763,6 +12825,8 @@ Scope
   :alt: Available for Mattermost Self-Hosted deployments.
 
 *Not available in Cloud Starter*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Not currently supported by GitLab OAuth.
 
@@ -12795,6 +12859,8 @@ Scope
 
 *Available in legacy Enterprise Edition E20*
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``profile email``.
 
 +-------------------------------------------------------------------------------------------+
@@ -12826,6 +12892,8 @@ Scope
 
 *Available in legacy Enterprise Edition E20*
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
 +---------------------------------------------------------------------------------------+
@@ -12850,6 +12918,8 @@ Maximum Idle Connections
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 The maximum number of idle connections held open from one server to all others in the cluster.
 
 +-----------------------------------------------------------------------------------------+
@@ -12870,6 +12940,8 @@ Maximum Idle Connections per Host
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 The maximum number of idle connections held open from one server to another server in the cluster.
 
@@ -12892,6 +12964,8 @@ Idle Connection Timeout (in Milliseconds)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 The number of milliseconds to leave an idle connection open between servers in the cluster.
 
 +----------------------------------------------------------------------------------------------------------+
@@ -12912,6 +12986,8 @@ Network Interface
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 An IP address used to identify the device that does automatic IP detection in High Availability clusters.
 
@@ -12934,6 +13010,8 @@ Bind Address
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involve NAT (Network Address Translation).
 
 +------------------------------------------------------------------------------------+
@@ -12954,6 +13032,8 @@ Advertise Address
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve NAT (Network Address Translation).
 
@@ -12979,13 +13059,13 @@ Block Profile Rate
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
+
 Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 
 To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
-
-Changes to this setting require a server restart before taking effect.
 
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
@@ -13009,6 +13089,8 @@ Signature Public Key Files
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -13029,6 +13111,8 @@ Chimera OAuth Proxy URL
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Mattermost plugins to connect with pre-created OAuth applications.
 
@@ -13051,6 +13135,8 @@ Custom User Attributes
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-custom-attributes/blob/master/README.md>`_.
 
 GitHub
@@ -13067,6 +13153,8 @@ GitHub
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md>`_.
 
@@ -13085,10 +13173,14 @@ Jira
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-jira/blob/master/README.md>`_.
 
 Net Promoter Score
 ^^^^^^^^^^^^^^^^^^
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Learn more `in our documentation <https://docs.mattermost.com/manage/user-satisfaction-surveys.html>`_.
 
@@ -13106,6 +13198,8 @@ Welcome Bot
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-welcomebot/blob/master/README.md>`_.
 
@@ -13132,6 +13226,8 @@ Enable Reliable Websockets
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Enable this setting to make websocket messages more reliable by buffering messages during a connection loss and then re-transmitting all unsent messages when the connection is revived. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -13155,7 +13251,9 @@ Remote Clusters
 
 *Available in legacy Enterprise Edition E20*
 
-Enable this setting to add, remove, and view remote clusters for shared channels. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable this setting to add, remove, and view remote clusters for shared channels. 
 
 **True**: System Admins can manage remote clusters using the System Console.
 
@@ -13180,7 +13278,9 @@ Syslog configuration options
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings. 
 
 **True**: Syslog output is enabled.
 
@@ -13205,7 +13305,9 @@ Syslog IP
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogIP": "localhost"`` with string input consisting of an IP address or domain name. |
@@ -13226,7 +13328,9 @@ Syslog port
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The port that the syslog server is listening on. The default port is 6514. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The port that the syslog server is listening on. The default port is 6514. 
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogPort": 6514`` with numeric input consisting of a port number. |
@@ -13247,7 +13351,10 @@ all-plans| |self-hosted|
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The syslog metadata tag field. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The syslog metadata tag field.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogTag": ""`` with string input consisting of a user-defined tag field. |
@@ -13268,7 +13375,9 @@ Syslog cert
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``). This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``). 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate. |
@@ -13289,7 +13398,9 @@ Syslog insecure
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks. 
 
 .. note:: 
    This should be used only for testing and not in a production environment.
@@ -13313,8 +13424,9 @@ Syslog max queue size
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
+This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records. 
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +------------------------------------------------------------------------------------------------+
@@ -13336,7 +13448,9 @@ File configuration options
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation. 
 
 **True**: File output is enabled.
 
@@ -13361,7 +13475,9 @@ File name
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This is the path to the output file location. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This is the path to the output file location. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).                                    |
@@ -13382,7 +13498,9 @@ File max size MB
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100. 
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxSizeMB": 100`` with numerical input. |
@@ -13403,7 +13521,9 @@ File max age days
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age. 
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxAgeDays": 0`` with numerical input. |
@@ -13424,7 +13544,9 @@ File max backups
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups. 
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input. |
@@ -13445,7 +13567,9 @@ File compress
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-When ``true``, rotated files are compressed using ``gzip``. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+When ``true``, rotated files are compressed using ``gzip``. 
 
 +----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``. |
@@ -13466,8 +13590,9 @@ File max queue size
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records. 
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +----------------------------------------------------------------------------------------------+
@@ -13494,13 +13619,15 @@ Output logs to multiple targets
 
 *Available in legacy Enterprise Edition E20*
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Send log records to multiple targets:
 
 - Multiple local file targets
 - Multiple syslogs
 - Multiple TCP sockets
 
-Allow any combination of local file, syslog, and TCP socket targets. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+Allow any combination of local file, syslog, and TCP socket targets. 
 
 File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
@@ -13528,7 +13655,9 @@ Group Unread Channels (Experimental)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console. 
 
 **Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Account Settings > Sidebar > Group unread channels separately**.
 
@@ -13553,7 +13682,7 @@ Strict CSRF Token Enforcement (Experimental)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
 
@@ -13578,7 +13707,7 @@ Disable Legacy MFA API Endpoint
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
 
@@ -13603,7 +13732,7 @@ Restrict System Admin
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Admins.
 
@@ -13633,7 +13762,9 @@ Teammate Name Display
 
 *Available in legacy Enterprise Edition E20*
 
-Control Teammate Name Display at the system level. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Control Teammate Name Display at the system level. 
 
 **True**: Allows System Admins to control Teammate Name Display at the system level.
 
@@ -13658,11 +13789,14 @@ Default Channels (Experimental)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server. 
 
 When not set, every user is added to the ``off-topic`` and ``town-square`` channels by default.
 
 .. note::
+
    Even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -13690,7 +13824,9 @@ Latest Android Version
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The latest version of the Android React Native app that is recommended for use. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The latest version of the Android React Native app that is recommended for use. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -13711,7 +13847,9 @@ Minimum Android Version
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The minimum version of the Android React Native app that is required to be used. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The minimum version of the Android React Native app that is required to be used. 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -13732,7 +13870,9 @@ Latest Desktop Version
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The latest version of the desktop app that is recommended for use. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The latest version of the desktop app that is recommended for use. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DesktopLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -13753,7 +13893,9 @@ Minimum Destop Version
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The minimum version of the desktop app that is required to be used. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The minimum version of the desktop app that is required to be used. 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DesktopMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -13774,7 +13916,9 @@ Latest iOS Version
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The latest version of the iOS app that is recommended for use. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The latest version of the iOS app that is recommended for use. 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -13795,7 +13939,9 @@ Minimum iOS Version
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The minimum version of the iOS React Native app that is required to be used. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The minimum version of the iOS React Native app that is required to be used. 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -13816,7 +13962,9 @@ Push Notification Buffer
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room. 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
@@ -13847,7 +13995,9 @@ Allowed Themes
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``. 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``. |
@@ -13873,7 +14023,7 @@ Disable Post Metadata
 
 *Available in legacy Enterprise Edition E20*
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
 
@@ -13908,7 +14058,9 @@ Maximum Users for Statistics
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. 
 
 This setting is used to maximize performance for large Enterprise deployments.
 
@@ -13936,7 +14088,9 @@ Post Index Replicas
 
 *Available in legacy Enterprise Edition E20*
 
-The number of replicas to use for each post index. If this setting is changed, it only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The number of replicas to use for each post index. If this setting is changed, it only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting. 
 
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostIndexReplicas": 2`` with numerical input.        |
@@ -13959,7 +14113,9 @@ Post Index Shards
 
 *Available in legacy Enterprise Edition E20*
 
-The number of shards to use for each post index. If this setting is changed, it only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The number of shards to use for each post index. If this setting is changed, it only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting. 
 
 +-------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostIndexShards": 1`` with numerical input.        |
@@ -13982,7 +14138,9 @@ Aggregate Search Indexes
 
 *Available in legacy Enterprise Edition E20*
 
-Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job. 
 
 .. note::
   If you're using `data retention <https://docs.mattermost.com/comply/data-retention-policy.html>`_ and `ElasticSearch <https://docs.mattermost.com/scale/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
@@ -14008,9 +14166,9 @@ Post Aggregator Start Time
 
 *Available in legacy Enterprise Edition E20*
 
-The start time of the daily scheduled aggregator job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting is based on the local time of the server.
+The start time of the daily scheduled aggregator job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostsAggregatorJobStartTime": "03:00"`` with 24-hour timestamp input in the form ``"HH:MM"``. |
@@ -14033,7 +14191,9 @@ Index Prefix
 
 *Available in legacy Enterprise Edition E20*
 
-Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsearch on a shared Elasticsearch cluster. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsearch on a shared Elasticsearch cluster. 
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input.     |
@@ -14059,7 +14219,9 @@ Live Indexing Batch Size
 
 *Available in legacy Enterprise Edition E20*
 
-Determines how many new posts are batched together before they are added to the Elasticsearch index. It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling multiple messages per second. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Determines how many new posts are batched together before they are added to the Elasticsearch index. It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling multiple messages per second. 
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LiveIndexingBatchSize": 1`` with numerical input.         |
@@ -14081,6 +14243,8 @@ Request Timeout
   :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Enterprise Edition E20*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Timeout in seconds for Elasticsearch calls.
 
@@ -14105,7 +14269,9 @@ Bulk Indexing Time Window
 
 *Available in legacy Enterprise Edition E20*
 
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. 
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
@@ -14128,7 +14294,9 @@ Trace
 
 *Available in legacy Enterprise Edition E20*
 
-Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or empty.  ``error`` will create the error trace when initialising the Elasticsearch client and will print any template creation or search query that returns an error as part of the error message. ``all`` will create the three traces (error, trace and info) for the driver and will not print the queries because they will be part of the trace log level of the driver. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or empty.  ``error`` will create the error trace when initialising the Elasticsearch client and will print any template creation or search query that returns an error as part of the error message. ``all`` will create the three traces (error, trace and info) for the driver and will not print the queries because they will be part of the trace log level of the driver. 
 
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
@@ -14154,11 +14322,13 @@ Index Dir
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
 Directory path to use for storing bleve indexes. 
 
 .. tip::
    
-   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
@@ -14179,7 +14349,7 @@ Enable Indexing
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until **Enable Bleve for search queries** is enabled.
 
@@ -14204,7 +14374,7 @@ Enable Searching
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Search queries will use bleve search.
 
@@ -14229,7 +14399,7 @@ Enable Autocomplete
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Autocomplete queries will use bleve search.
 
@@ -14254,7 +14424,9 @@ Bulk Indexing Time Window Seconds
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. 
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
@@ -14280,7 +14452,9 @@ Export From Timestamp
 
 *Available in legacy Enterprise Edition E20*
 
-Set the Unix timestamp (seconds since epoch, UTC) to export data from. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Set the Unix timestamp (seconds since epoch, UTC) to export data from. 
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExportFromTimestamp": 0`` with numerical input. |
@@ -14303,9 +14477,9 @@ File Location
 
 *Available in legacy Enterprise Edition E20*
 
-Set the file location of the compliance exports. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
-By default, they are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory>`_.
+Set the file location of the compliance exports. By default, they are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory>`_.
 
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
@@ -14329,7 +14503,7 @@ Enable Plugin Uploads
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to ``false`` to control which plugins are installed on your server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
 
@@ -14354,7 +14528,7 @@ Allow Insecure Download URL
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Enables downloading and installing a plugin from a remote URL.
 
@@ -14379,7 +14553,7 @@ Enable Plugin Health Check
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Enables plugin health check to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status. The health check runs every 30 seconds. If the plugin is detected to fail 3 times within an hour, the Mattermost server attempts to restart it. If the restart fails 3 successive times, it's automatically disabled.
 
@@ -14404,7 +14578,9 @@ Directory
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. 
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
@@ -14425,7 +14601,9 @@ Client Directory
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. 
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Directory": "./client/plugins"`` with string input.                |
@@ -14455,11 +14633,11 @@ Run Jobs
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Set whether or not this Mattermost server will handle tasks created by the Scheduler. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
-When running Mattermost on a single machine, this setting should always be enabled.
+Set whether or not this Mattermost server will handle tasks created by the Scheduler. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in High Availablity mode, one or more servers should have this setting enabled. We recommend that your High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+When running Mattermost in `High Availablity mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, one or more servers should have this setting enabled. We recommend that your High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
@@ -14480,17 +14658,15 @@ Run Scheduler
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
 
-When running Mattermost on a single machine, this setting should always be enabled.
+Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in High Availablity mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ for more details.
+When running Mattermost in `High Availablity mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ for more details.
 
 .. warning::
 
-   It is strongly recommended not to change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled.
-
-In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
+   We strongly recommend that you not change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled. In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
@@ -14513,7 +14689,10 @@ Enable Shared Channels
 
 *Available in legacy Enterprise Edition E20*
 
-Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+
+Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
