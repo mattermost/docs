@@ -30,7 +30,7 @@ Breaking Changes / Upgrade Notes
 Highlights
 ~~~~~~~~~~~~~~~
 
-- Added new branding for Desktop App v5.0.
+- Redesigned title bar allows users to seamlessly work in Channels, Playbooks, and Boards across multiple servers with minimal context switching.
 
 Improvements
 ~~~~~~~~~~~~~~~
