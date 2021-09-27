@@ -44,8 +44,8 @@ Configuring the Mattermost server to use the new audit log requires editing the 
 File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
 .. note::
-   Mattermost v6.0 introduced a change to the logging engine library which changes how the logger is configured in Mattermost 5.x versions. Please refer to `this sample configuration file <https://github.com/mattermost/docs/files/sample-logger-config.json>`_ for the new format in v6.0 and beyond. 
-   
+   Mattermost v6.0 introduced a change to the logging engine library which changes how the logger is configured in Mattermost 5.x versions. Please refer to :download:`Advanced Logging sample file <../samples/sample-logger-config.json>` for a sample configuration file supported in in v6.0 and beyond. 
+
    
 **Accessing configuration options for audit log**
 
@@ -246,7 +246,6 @@ The logging configuration JSON is an object (unordered collection) containing na
 
 Focalboard uses discrete log levels, meaning each level to be output must be listed. This allows for log targets to output specific log levels, and custom log levels to be created. See ``server/mlog/levels.go`` for a list of available log levels. 
 
-See the :download:`Focalboard Logging Options Sample JSON ZIP file <../samples/focalboard-logging-options-sample-json.zip>` for a sample configuration file.  
 
 Planned enhancements to the audit log
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
