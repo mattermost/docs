@@ -202,30 +202,32 @@ redirects = {
     "administration/data-retention": "https://docs.mattermost.com/comply/data-retention-policy.html",
     "administration/custom-terms-of-service": "https://docs.mattermost.com/comply/custom-terms-of-service.html",
     "administration/mobile-changelog": "https://docs.mattermost.com/deploy/mobile-app-changelog.html",
-    "administration/config-settings.html#push-notification-contents": "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
-    "administration/config-settings.html#gitlab-settings":
+    "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
+    "administration/config-settings#push-notification-contents": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
+    "administration/config-settings#gitlab-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
-    "administration/config-settings.html#google-settings":
+    "administration/config-settings#google-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#google-settings",
-    "administration/config-settings.html#office-365-settings":
+    "administration/config-settings#office-365-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings",
-    "administration/config-settings.html#openid-connect-other-settings":
+    "administration/config-settings#openid-connect-other-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings",
-    "administration/config-settings.html#storage":
+    "administration/config-settings#storage":
         "https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory",
-    "administration/config-settings.html#aggregate-search-indexes":
+    "administration/config-settings#aggregate-search-indexes":
         "https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes",
-    "administration/config-settings.html#enable-document-search-by-content":
+    "administration/config-settings#enable-document-search-by-content":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content",
-    "administration/config-settings.html#site-url":
+    "administration/config-settings#site-url":
         "https://docs.mattermost.com/configure/configuration-settings.html#site-url",
-    "administration/config-settings.html#enable-link-previews":
+    "administration/config-settings#enable-link-previews":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews",
-    "administration/config-settings.html#enable-high-availability-mode":
+    "administration/config-settings#enable-high-availability-mode":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode",
-    "administration/config-settings.html#forward-port-80-to-443":
+    "administration/config-settings#forward-port-80-to-443":
         "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
-    "administration/config-settings.html#smtp-email-server": 
+    "administration/config-settings#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
     "cloud/cloud-administration/cloud-compliance":
@@ -573,6 +575,8 @@ html_theme_options = {
     "includehidden": True,
     "titles_only": False,
 }
+
+html_permalinks_icon = " "
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
