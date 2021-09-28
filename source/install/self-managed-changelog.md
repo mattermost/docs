@@ -61,6 +61,7 @@ Lastest Mattermost Releases:
 
 #### Multi-Product Support
  - Mattermost now ships as one platform with three products - Channels, Playbooks, and Boards.
+ - Playbooks and Boards are visible when [plugins are enabled system-wide](https://docs.mattermost.com/configure/configuration-settings.html#enable-plugins). 
 
 #### Global Product Launcher
  - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view and mobile apps.
