@@ -335,6 +335,13 @@ footer:not(.site-footer) {
     border-top: 1px solid #dedede;
     margin-top: 24px;
 	padding: 24px 0 40px;
+	line-height: 150%;
+    font-size: 14px;
+}
+
+footer:not(.site-footer) p {
+	line-height: 150%;
+    font-size: 14px;
 }
 
 .rst-footer-buttons {
@@ -1004,3 +1011,20 @@ pre {
 	background-color: #eff4ff;
 	/* background-color: #C5D2EC; */
 }
+
+/* Redesign 2021 - NOTE BLOCKS */
+.document .admonition-title {
+	background-color: #1E325C !important;
+}
+
+.document .admonition.note,
+.document .admonition.tip {
+	background-color: #EBEBEF !important;
+}
+
+.document .admonition.note p:not(.admonition-title ) {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Redesign 2021 - FOOTER */
