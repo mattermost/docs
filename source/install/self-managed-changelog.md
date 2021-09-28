@@ -66,8 +66,9 @@ Lastest Mattermost Releases:
  - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view and mobile apps.
 
 #### Branding Changes
- - Added a new default brand theme "Denim".
- - The existing theme names and colors, including Mattermost, Organization, Mattermost Dark, and Windows Dark have been updated to the new Sapphire, Quartz, Indigo, & Onyx theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing Mattermost, Organization, Mattermost Dark, and Windows Dark themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - Added a new default brand theme named "Denim".
+ - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - Added a new light theme named "Quartz" to the default available list of themes.
  - Updated email templates to the new branding.
 
 #### Packaging Changes
