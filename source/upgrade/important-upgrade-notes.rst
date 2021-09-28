@@ -27,7 +27,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | 3. High effort, low downtime - This process requires everything of (2), plus it tries to minimize the impact of query #11. We can do this by following step 2,   |
 |                                                    | and then starting v6 along with a running v5 server, and then monitor the application logs. As soon as the v6 application starts up, we need to bring down a v5  |
-|                                                    | node. This is a delicate dance, but minimizes the downtime to only a few seconds.                                                                                |
+|                                                    | node. This minimizes the downtime to only a few seconds.                                                                                                         |
 |                                                    |                                                                                                                                                                  |
 |                                                    | It is recommended to start Mattermost directly and not by system control to avoid interfering because system control thinks the Mattermost service hangs.        |
 |                                                    | If going with defaults, then the startup timeout should be 1 hour. If the migration is expected to take more than that then running the mattermost binary        |
