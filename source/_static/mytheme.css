@@ -905,11 +905,11 @@ header .header__searchbar {
     font-weight: 300;
     position: absolute;
     cursor: pointer;
-    right: 0px;
+    right: -5px;
     opacity: .3;
     top: 0;
     width: 64px;
-    line-height: 45px;
+    line-height: 35px;
 }
 
 .notification-bar-hide:hover {
