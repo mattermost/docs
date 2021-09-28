@@ -6,7 +6,11 @@
 
 {% block body %}
 
-    <style type="text/css">
+    <style>
+    @import url("https://use.typekit.net/cng2uup.css");
+    </style>
+
+    <!-- <style type="text/css">
 
         .landing {
             width: 100%;
@@ -261,9 +265,219 @@
             justify-content:space-around;
         }
 
+    </style> -->
+
+    <style type="text/css">
+        .wy-nav-content {
+            padding: 0 !important;
+        }
+        footer {
+            overflow-x: hidden;
+        }
+        .header__logo img {
+            height: 40px !important;
+            width: auto !important;
+        }
+        .redesign-landing .masthead, .redesign-landing .home-cards {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .redesign-landing .masthead-pattern {
+            display: none;
+        }
+        .redesign-landing .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .redesign-landing .bg--gray {
+            background-color: #EBEBEF;
+        }
+        .redesign-landing h1 {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 52px;
+            line-height: 130%;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .redesign-landing h2 {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 135%;
+            text-align: center;
+            color: #1E325C;;
+        }
+        .redesign-landing .subhead {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 150%;
+            color: #C5D2EC;
+        }
+        .redesign-landing .card-single h3 {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            color: #363A45;
+        }
+        .redesign-landing .container--small {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .redesign-landing .padding-tb--large {
+            padding: 100px 0;
+        }
+        .redesign-landing .padding-b--large {
+            padding-bottom: 100px;
+        }
+        .redesign-landing .masthead {
+            background-color: #1E325C;
+        }
+        .redesign-landing .card-grid {
+            display: grid;
+            row-gap: 40px;
+            margin-top: 40px;
+        }
+        .redesign-landing .card-grid a {
+            display: block;
+            transition: all .6s cubic-bezier(.23,1,.32,1);
+        }
+        .redesign-landing .card-grid a:hover {
+            transform: translateY(-10px);
+        }
+        .redesign-landing .card-single {
+            padding: 30px;
+            background: white;
+            border-radius: 5px;
+        }
+        .redesign-landing .card-single img {
+            margin-bottom: 40px;
+        }
+        .redesign-landing .card-single svg {
+            width: auto !important;
+            height: 50px !important;
+            margin-bottom: 30px;
+        }
+        .redesign-landing .card-single p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 150%;
+            color: #363A45;
+        }
+        @media (min-width: 992px) {
+            .redesign-landing .card-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 40px;
+            }
+            .redesign-landing .masthead {
+                position: relative;
+            }
+            .redesign-landing .masthead .container--small {
+                position: relative;
+                z-index: 10;
+            }
+            .redesign-landing .masthead-pattern {
+                display: block;
+                position: absolute;
+                z-index: 5;
+                bottom: 0;
+                left: calc(50% - 40vw);
+                max-width: 80vw;
+                height: auto;
+            }
+        }
+        @media (max-width: 1100px) {
+            .redesign-landing .container {
+                padding: 0 20px;
+            }
+        }
     </style>
 
-    <div class="landing">
+    <main class="redesign-landing">
+        <section class="masthead padding-tb--large">
+            <div class="container--small">
+                <h1>Mattermost Documentation</h1>
+                <p class="subhead">Technical resources to help admins, users, and developers leverage Mattermost.</p>
+            </div>
+            <img class="masthead-pattern" src="{{ pathto('_static/images/home/Hero_Stipple_Bottom.png', 1) }}" alt="">
+        </section>
+    
+        <section class="home-cards padding-tb--large bg--gray">
+            <div class="container">
+                <div class="home-cards__group padding-b--large">
+                    <h2>Setup and Administration Guides</h2>
+                    <div class="card-grid">
+                        <a href="/guides/about-mattermost.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Overview.svg', 1) }}" alt="" width="50" height="50">                         
+                            <h3>Overview</h3>
+                            <p>Learn about Mattermost products, capabilities, features, and licensing.</p>
+                        </a>
+                        <a href="/guides/install-deploy-upgrade-scale.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Deploy.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Deploy</h3>
+                            <p>Install Mattermost and scale it to meet your needs.</p>
+                        </a>
+                        <a href="/guides/setup-onboard-manage-comply.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Admin-Guide.svg', 1) }}" alt="" width="50" height="50">                                 
+                            <h3>Admin Guide</h3>
+                            <p>Setup, manage, and configure your Mattermost server.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-cards__group padding-b--large">
+                    <h2>User Guides</h2>
+                    <div class="card-grid">
+                        <a href="/guides/messaging.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Channels.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Channels</h3>
+                            <p>Bring your team together with modern messaging and collaboration.</p>
+                        </a>
+                        <a href="/guides/incident-collaboration.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Playbooks.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Playbooks</h3>
+                            <p>Build reliable and repeatable responses for workflow and process automation.</p>
+                        </a>
+                        <a href="https://www.focalboard.com/guide/user/" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Boards.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Boards</h3>
+                            <p>Keep your team aligned on project planning and execution.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-cards__group">
+                    <h2>Other Resources</h2>
+                    <div class="card-grid">
+                        <a href="https://developers.mattermost.com/contribute/getting-started/" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Contribute.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Contribute</h3>
+                            <p>Contribute code to help make Mattermost better.</p>
+                        </a>
+                        <a href="https://developers.mattermost.com/integrate/getting-started/" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Integrate-Extend.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Integrate and Extend</h3>
+                            <p>Extend Mattermost capabilities via Apps, Plugins, Webhooks, or APIs.</p>
+                        </a>
+                        <a href="https://mattermost.com/help/" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Help.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Get Help</h3>
+                            <p>Connect with our community, or leverage our premium support services.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- <div class="landing">
         <h1 class="landing-title">Mattermost Product Documentation</h1>
         <div class="landing-search" role="search">
             <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
@@ -278,30 +492,30 @@
                 <div class="tile-divider"></div>
                 <p class="tile-description">Learn about our products, security, integrations, and licensing</p>
             </a>            
-            <a class="tile" href="guides/deployment.html">
-                <h2 class="tile-title">Deploy</h2>
+            <a class="tile" href="guides/install-deploy-upgrade-scale.html">
+                <h2 class="tile-title">Install, Deploy, Upgrade, Scale</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description"> Launch a Mattermost server and configure it for your infrastructure</p>
+                <p class="tile-description"> Install, host, and grow with Mattermost</p>
             </a>
-            <a class="tile" href="guides/administration.html">
-                <h2 class="tile-title">Administration</h2>
+            <a class="tile" href="guides/setup-onboard-manage-comply.html">
+                <h2 class="tile-title">Onboard, Manage, Comply</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description"> Set up, configure, and manage your Mattermost server</p>
+                <p class="tile-description"> Set up and manage Mattermost based on your business needs</p>
             </a>
-            <a class="tile" href="guides/channels.html">
-                <h2 class="tile-title">Channels</h2>
+            <a class="tile" href="guides/messaging.html">
+                <h2 class="tile-title">Messaging</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description">Bring your team together with modern messaging and collaboration</p>
+                <p class="tile-description">Get the most out of Messaging</p>
             </a>
             <a class="tile" href="guides/playbooks.html">
                 <h2 class="tile-title">Playbooks</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description">Build reliable and repeatable responses for workflow and process automation</p>
+                <p class="tile-description">Get the most out of Playbooks</p>
             </a>
-            <a class="tile" href="guides/boards.html">
-                <h2 class="tile-title">Boards</h2>
+            <a class="tile" href="https://www.focalboard.com/guide/user/">
+                <h2 class="tile-title">Focalboard</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description">Keep your team aligned on project planning and execution</p>
+                <p class="tile-description">Get the most out of Focalboard</p>
             </a>
             <a class="tile-last" href="https://developers.mattermost.com/">
                 <h2 class="tile-title">Mattermost for Developers</h2>
@@ -319,7 +533,7 @@
                 <p class="tile-description">Connect with the Mattermost community</p>
             </a>
         </div>
-    </div>
+    </div> -->
 </div>
 
 {% endblock %}

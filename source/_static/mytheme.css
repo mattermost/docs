@@ -865,16 +865,15 @@ header .header__searchbar {
 /* Notification Banner */
 
 .notification-bar {
-	color: #0058cc;
+	color: #1B1D22;
     text-align: center;
     display: none;
     width: 100%;
     align-items: center;
     justify-content: center;
-    height: 64px;
+    height: 45px;
     white-space: nowrap;
-    background-image: -webkit-gradient(linear,left top,right top,from(#f0f6ff),to(#d7e7ff));
-    background-image: linear-gradient(90deg,#f0f6ff 0,#d7e7ff 100%);
+	background-color: #FFBC1F;
     position: fixed;
     z-index: 9999;
 }
@@ -884,9 +883,11 @@ header .header__searchbar {
 }
 
 .notification-bar__content {
-    padding: 2rem 3.6rem;
-    font-size: 16px;
-    line-height: 1.4;
+    padding: 0.5rem 1rem;
+	font-family: "trade-gothic-next","Lato","Helvetica Neue","Arial",sans-serif;
+	font-weight: 700;
+    font-size: 15px;
+	line-height: 1.2;
     width: 100%;
 }
 
@@ -896,7 +897,7 @@ header .header__searchbar {
 }
 
 .notification-bar a {
-    color: #0058cc;
+    color: #1B1D22;
 }
 
 .notification-bar__close {
@@ -908,7 +909,7 @@ header .header__searchbar {
     opacity: .3;
     top: 0;
     width: 64px;
-    line-height: 64px;
+    line-height: 45px;
 }
 
 .notification-bar-hide:hover {
@@ -924,9 +925,9 @@ header .header__searchbar {
 }
 
 .with-notification header {
-	top: 64px;
+	top: 46px;
 }
 
 .with-notification .wy-grid-for-nav {
-	padding-top: 134px;
+	padding-top: 114px;
 }
