@@ -29,7 +29,7 @@ From: **[company name]** IT Team
 
 To: End users
 
-Subject: New Communication Platform - Mattermost
+Subject: New Collaboration Platform - Mattermost
 
 
 Hi all,

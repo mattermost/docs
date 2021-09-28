@@ -1,6 +1,18 @@
 Managing Team and Channel Members
 =================================
 
+|enterprise| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 System Admins can manage channel configuration in the System Console.
 
 - **Management:** Manage sync, moderation, and membership settings.
@@ -84,6 +96,23 @@ Channel Management
 
 Channel Moderation
 ~~~~~~~~~~~~~~~~~~~
+
+|enterprise| |professional| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
 
 Channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 

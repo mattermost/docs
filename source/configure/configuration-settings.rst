@@ -9505,9 +9505,6 @@ Enable Plugin
 
 **False**: Disables the Zoom plugin on your Mattermost server.
 
-Plugins
---------
-
 Zoom URL
 ^^^^^^^^
 
@@ -12510,9 +12507,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. The default value is 1800 seconds. This setting is currently not available in the System Console and can only be set in ``config.json``.
 
-+-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPServerTimeout": "1800"`` with numerical input. |
-+-------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GlobalRelaySettings.SMTPServerTimeout": "1800"`` with numerical input.   |
++-----------------------------------------------------------------------------------------------------------------------+
 
 Batch Size
 ^^^^^^^^^^^

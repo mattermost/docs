@@ -279,7 +279,7 @@ Note for Agents: This information is also required:
 
 - Customer name
 - Customer contacts
-- Customer license, e.g. E10/E20/PS
+- Customer license, e.g. Enterprise/Professional
 - Customer tier
 
 Environment

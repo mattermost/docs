@@ -1,6 +1,23 @@
 Desktop App Options
 ===================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`__, the Desktop App provides additional options to customize your experience.
 
 The options appear in the Settings page, available on Windows from **... > File > Settings**, or on Mac from **Mattermost > Preferences**.

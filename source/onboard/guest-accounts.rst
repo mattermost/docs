@@ -1,7 +1,7 @@
 .. _guest-accounts:
 
-Guest Accounts (E10/E20)
-========================
+Guest Accounts
+==============
 
 |enterprise| |professional| |cloud| |self-hosted|
 

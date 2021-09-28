@@ -10,7 +10,6 @@ Access Your Workspace
    :maxdepth: 2
    
    /messaging/welcome-to-mattermost-channels.rst
-   /messaging/accessing-your-workspace.rst
    /messaging/signing-in.rst
    /messaging/switching-between-teams.rst
    /messaging/about-teams-channels-messages.rst
