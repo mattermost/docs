@@ -51,7 +51,7 @@ Lastest Mattermost Releases:
  - Longer migration times can be expected. See [this document](https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055) for more details. The field type of Data in model.ClusterMessage was changed to []byte from string. Therefore, a major thing to note is that a v6 server is incompatible to run along with a v5 server in a cluster. Customers upgrading from 5.x to 6.x cannot do a High Availability upgrade. While upgrading, it is required that no other v5 server runs when a v6 server is brought up. A v6 server will run significant database schema changes that can cause a large startup time depending on the dataset size. Zero downtime will not be possible, but depending on the efforts made during the migration process, it can be minimized to a large extent. It is recommended to start Mattermost directly and not by system control to avoid interfering because system control thinks the Mattermost service hangs. If going with defaults, then the startup timeout should be 1 hour. If the migration is expected to take more than that then running the mattermost binary directly should avoid a possible kill in the middle of it.
    1. Low effort, long downtime - This is the usual process of starting a v6 server normally. This has 2 implications: during the migration process, various tables will be locked which will render those tables read-only during that period. Secondly, once the server finishes migration and starts the application, no other v5 server can run in the cluster.
    2. Medium effort, medium downtime - This process will require SQL queries to be executed manually on the server. To avoid causing a table lock, a customer can choose to use the pt-online-schema-change tool for MySQL. For Postgres, the table locking is very minimal. The advantage is that since there are a lot of queries, the customer can take their own time to run individual queries during off-hours. All queries except #11 are safe to be executed this way. Then the usual method of (1) can be followed.
-   3. High effort, low downtime - This process requires everything of (2), plus it tries to minimize the impact of query #11. We can do this by following step 2, and then starting v6 along with a running v5 server, and then monitor the application logs. As soon as the v6 application starts up, we need to bring down a v5 node. This is a delicate dance, but minimizes the downtime to only a few seconds.
+   3. High effort, low downtime - This process requires everything of (2), plus it tries to minimize the impact of query #11. We can do this by following step 2, and then starting v6 along with a running v5 server, and then monitor the application logs. As soon as the v6 application starts up, we need to bring down a v5 node. This minimizes the downtime to only a few seconds.
  - Focalboard plugin has been renamed to Mattermost Boards, and v0.9.1 (released with Mattermost v6.0) is now enabled by default.
  - The advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated [documentation](https://docs.mattermost.com/comply/audit-log.html).
 
@@ -59,8 +59,11 @@ Lastest Mattermost Releases:
 
 ### Highlights
 
+#### Multi-Product Support
+ - Mattermost now ships as one platform with three products - Channels, Playbooks, and Boards.
+
 #### Global Product Launcher
- - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view.
+ - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view and mobile apps.
 
 #### Branding Changes
  - Added a new default brand theme "Denim".
@@ -68,16 +71,32 @@ Lastest Mattermost Releases:
  - Updated email templates to the new branding.
 
 #### Packaging Changes
- - Updated in-product strings referencing E10 & E20 to new packaging.
- - SAML has been moved from the highest level tier (Enterprise - former E20) to mid-level (Professional) while Certificate-based authentication feature had no change.
+ - Updated in-product strings referencing E10 & E20 to [new packaging](https://mattermost.com/pricing).
+ - Features moved from mid SKU to low SKU:
+   - System default permissions, e.g. permission to create and archive channels system-wide.
+      - Specifically, “System Scheme” only in **System Console > User Management > Permissions**. 
+      - Existing permissions/policies in TE/E0 for "Enable Team Creation" and "Allow Team Administrators to edit others’ posts" are properly handled. 
+   - Team and Channel management pages (but without channel moderation, e.g. read-only channels).
+ - Features moved from high SKU to mid SKU:
+   - SSO with OpenID Connect, SAML, Google and O365
+   - O365 integrations including MS Teams Calling and MS Calendar
+   - Jira multi-server support
+   - Advanced team permissions
+   - Read-only announcement channels
+ - Features added to high-end SKU:
+   - Shared channels
+   - Certificate-based authentication
+   - Granular data retention
+   - Granular audit logs w/export
+   - Custom admin roles
  - E20, Professional, and Enterprise license SKUs are now supported for installing Enterprise plugins.
 
 #### Beta features Promoted to General Availability
    - Archived channels
    - Compliance exports
    - Custom terms of service
-   - Guest Accounts
-   - System Roles
+   - Guest accounts
+   - System roles
    - Plugins
 
 #### Permalink Previews
@@ -108,7 +127,7 @@ Lastest Mattermost Releases:
 
 #### Integrations
  - Dropped support for left-hand side-specific bot icons.
- - Add a "rest field" to the App command parser.
+ - Added a "rest field" to the App command parser.
  - Added support for React components in channel header tooltips registered by plugins.
  - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
  - Removed a deprecated "Backend" field from the plugin manifest.
