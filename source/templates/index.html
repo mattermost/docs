@@ -25,13 +25,22 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        .redesign-landing .masthead {
+            position: relative;
+            overflow: hidden;
+        }
+        .redesign-landing .masthead .container--small {
+            position: relative;
+            z-index: 10;
+        }
         .redesign-landing .masthead-pattern {
             display: block;
             position: absolute;
             z-index: 5;
             bottom: 0;
-            left: calc(50% - 40vw);
-            max-width: 80vw;
+            left: -50vw;
+            width: 200vw;
+            max-width: none;
             height: auto;
         }
         .redesign-landing .container {
@@ -142,12 +151,10 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 column-gap: 40px;
             }
-            .redesign-landing .masthead {
-                position: relative;
-            }
-            .redesign-landing .masthead .container--small {
-                position: relative;
-                z-index: 10;
+            .redesign-landing .masthead-pattern {
+                left: calc(50% - 40vw);
+                width: 80vw;
+                max-width: 80vw;
             }
         }
         @media (max-width: 1100px) {

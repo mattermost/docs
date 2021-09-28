@@ -935,7 +935,7 @@ header .header__searchbar {
 	padding-top: 114px;
 }
 
-/* Redesign 2021 */
+/* Redesign 2021 - BASE */
 body {
 	font-family: 'Noto Sans','Helvetica Neue',Arial,sans-serif;
 	color: #363A45;
@@ -944,6 +944,10 @@ body {
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'trade-gothic-next',sans-serif;
 	font-weight: 800;
+}
+
+.document p {
+	line-height: 150%;
 }
 
 a,
@@ -959,12 +963,14 @@ pre {
 	font-family: 'Fira Mono','Courier New',Courier,monospace;
 }
 
+/* Redesign 2021 - NAV */
+
 .header__logo img {
 	height: 40px !important;
 	width: auto !important;
 }
 
-/* Redesign 2021 - MENU */
+/* Redesign 2021 - SIDE MENU */
 
 .wy-menu,
 .wy-breadcrumbs,
@@ -980,6 +986,16 @@ pre {
 	font-weight: 800;
 	font-size: 16px;
 	line-height: 152.7%;
+}
+
+/* Redesign 2021 - CONTENT */
+.document ul,
+.document ol {
+	padding-left: 20px;
+}
+.document ul li,
+.document ol li {
+	margin-bottom: 5px;
 }
 
 /* Redesign 2021 - CODE BLOCKS */
