@@ -26,7 +26,13 @@
             -moz-osx-font-smoothing: grayscale;
         }
         .redesign-landing .masthead-pattern {
-            display: none;
+            display: block;
+            position: absolute;
+            z-index: 5;
+            bottom: 0;
+            left: calc(50% - 40vw);
+            max-width: 80vw;
+            height: auto;
         }
         .redesign-landing .container {
             max-width: 1100px;
@@ -117,6 +123,9 @@
             .redesign-landing .padding-tb--large {
                 padding: 100px 0;
             }
+            .redesign-landing .padding-tb--large.masthead {
+                padding: 100px 0 80px;
+            }
             .redesign-landing .padding-b--large {
                 padding-bottom: 100px;
             }
@@ -139,15 +148,6 @@
             .redesign-landing .masthead .container--small {
                 position: relative;
                 z-index: 10;
-            }
-            .redesign-landing .masthead-pattern {
-                display: block;
-                position: absolute;
-                z-index: 5;
-                bottom: 0;
-                left: calc(50% - 40vw);
-                max-width: 80vw;
-                height: auto;
             }
         }
         @media (max-width: 1100px) {
@@ -177,12 +177,12 @@
                             <h3>Overview</h3>
                             <p>Learn about Mattermost products, capabilities, features, and licensing.</p>
                         </a>
-                        <a href="/guides/install-deploy-upgrade-scale.html" class="card-single">
+                        <a href="/guides/deployment.html" class="card-single">
                             <img src="{{ pathto('_static/images/home/Deploy.svg', 1) }}" alt="" width="50" height="50">   
                             <h3>Deploy</h3>
                             <p>Install Mattermost and scale it to meet your needs.</p>
                         </a>
-                        <a href="/guides/setup-onboard-manage-comply.html" class="card-single">
+                        <a href="/guides/administration.html" class="card-single">
                             <img src="{{ pathto('_static/images/home/Admin-Guide.svg', 1) }}" alt="" width="50" height="50">                                 
                             <h3>Admin Guide</h3>
                             <p>Setup, manage, and configure your Mattermost server.</p>
@@ -192,17 +192,17 @@
                 <div class="home-cards__group padding-b--large">
                     <h2>User Guides</h2>
                     <div class="card-grid">
-                        <a href="/guides/messaging.html" class="card-single">
+                        <a href="/guides/channels.html" class="card-single">
                             <img src="{{ pathto('_static/images/home/Channels.svg', 1) }}" alt="" width="50" height="50">   
                             <h3>Channels</h3>
                             <p>Bring your team together with modern messaging and collaboration.</p>
                         </a>
-                        <a href="/guides/incident-collaboration.html" class="card-single">
+                        <a href="/guides/playbooks.html" class="card-single">
                             <img src="{{ pathto('_static/images/home/Playbooks.svg', 1) }}" alt="" width="50" height="50">   
                             <h3>Playbooks</h3>
                             <p>Build reliable and repeatable responses for workflow and process automation.</p>
                         </a>
-                        <a href="https://www.focalboard.com/guide/user/" class="card-single">
+                        <a href="/guides/boards.html" class="card-single">
                             <img src="{{ pathto('_static/images/home/Boards.svg', 1) }}" alt="" width="50" height="50">   
                             <h3>Boards</h3>
                             <p>Keep your team aligned on project planning and execution.</p>

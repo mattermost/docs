@@ -1,3 +1,6 @@
+/* Redesign 2021 - Fonts */
+@import url("https://use.typekit.net/hzs0pdc.css");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /* Pygment CSS transfer to reduce CSS assets */
 pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -930,4 +933,58 @@ header .header__searchbar {
 
 .with-notification .wy-grid-for-nav {
 	padding-top: 114px;
+}
+
+/* Redesign 2021 */
+body {
+	font-family: 'Noto Sans','Helvetica Neue',Arial,sans-serif;
+	color: #363A45;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'trade-gothic-next',sans-serif;
+	font-weight: 800;
+}
+
+a,
+a:visited {
+	color: #1C58D9;
+}
+
+a:hover {
+	color: #1E325C;
+}
+
+pre {
+	font-family: 'Fira Mono','Courier New',Courier,monospace;
+}
+
+.header__logo img {
+	height: 40px !important;
+	width: auto !important;
+}
+
+/* Redesign 2021 - MENU */
+
+.wy-menu,
+.wy-breadcrumbs,
+.header__links {
+	font-family: 'trade-gothic-next',sans-serif;
+}
+
+.wy-menu-vertical a {
+	color: #888;
+}
+
+.wy-menu > ul > li.current >a {
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 152.7%;
+}
+
+/* Redesign 2021 - CODE BLOCKS */
+
+.highlight {
+	background-color: #eff4ff;
+	/* background-color: #C5D2EC; */
 }
