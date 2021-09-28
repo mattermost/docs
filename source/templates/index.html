@@ -9,264 +9,6 @@
     <style>
     @import url("https://use.typekit.net/cng2uup.css");
     </style>
-
-    <!-- <style type="text/css">
-
-        .landing {
-            width: 100%;
-            max-width: 700px; /* Force to a maximum of 3 tiles wide */
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .landing .landing-title {
-            text-align:center;
-            font-size: 2em;
-            margin: .67em 0
-        }
-
-        .landing .landing-search {
-            overflow: hidden;
-            padding:20px;
-        }
-
-        .landing .landing-search input[type="text"] {
-            width: 640px;
-            border-style: none;
-            padding: 8px 12px;
-            font-size: 16px;
-            box-shadow: .5px 2px 4px 0 #bdbdbd;
-        }
-
-        @media screen and (max-width: 728px) {
-            .landing .landing-search input[type="text"] {
-                width: 420px;
-            }
-        }
-
-        @media screen and (max-width: 508px) {
-            .landing .landing-search {
-                display: none;
-            }
-        }
-
-        .tiles-flex {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -ms-flex-line-pack: center;
-            align-content: center;
-            max-width: 700px; /* purely to stop the max width of tiles at 3 */
-        }
-
-        .tile {
-            /* looks */
-            border-top: 8px solid #0058CC;
-            background-color: #fff;
-            box-shadow: .5px 2px 4px 0 #bdbdbd;
-            /* sizing/boxing */
-            width: 200px;
-            height: 220px;
-            margin: 10px;
-            padding: 10px;
-            /* animation */
-            -webkit-transition: 250ms;
-            transition: 250ms;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            will-change: transform;
-            /* layout */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -ms-flex-line-pack: stretch;
-            align-content: stretch;
-            -webkit-box-align: stretch;
-            -ms-flex-align: stretch;
-            align-items: stretch;
-        }
-
-        .tile-last {
-            /* looks */
-            border-top: 8px solid #22406D;
-            background-color: #fff;
-            box-shadow: .5px 2px 4px 0 #bdbdbd;
-            /* sizing/boxing */
-            width: 300px;
-            height: 180px;
-            margin: 10px;
-            padding: 10px;
-            /* animation */
-            -webkit-transition: 250ms;
-            transition: 250ms;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            will-change: transform;
-            /* layout */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -ms-flex-line-pack: stretch;
-            align-content: stretch;
-            -webkit-box-align: stretch;
-            -ms-flex-align: stretch;
-            align-items: stretch;
-        }
-
-        .tile:hover {
-            -webkit-transform: translate3d(0,-6px,0);
-            transform: translate3d(0,-6px,0)
-        }
-
-        .tile-last:hover {
-            -webkit-transform: translate3d(0,-6px,0);
-            transform: translate3d(0,-6px,0)
-        }
-
-        .tile .tile-title {
-            /* looks */
-            font-size: 20px;
-            letter-spacing: .4px;
-            color: #676363;
-            /* sizing/boxing */
-            height: 89px;
-            width: 100%;
-            margin: 0px;
-            padding: 0px 20px;
-            /* layout */
-            display:-webkit-box;
-            display:-ms-flexbox;
-            display:flex;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-            -webkit-box-orient:vertical;
-            -webkit-box-direction:normal;
-            -ms-flex-direction:column;
-            flex-direction:column;
-            -ms-flex-pack:distribute;
-            justify-content:space-around;
-        }
-
-        .tile-last .tile-title {
-            /* looks */
-            font-size: 20px;
-            letter-spacing: .4px;
-            color: #676363;
-            /* sizing/boxing */
-            height: 89px;
-            width: 100%;
-            margin: 0px;
-            padding: 0px 20px;
-            /* layout */
-            display:-webkit-box;
-            display:-ms-flexbox;
-            display:flex;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-            -webkit-box-orient:vertical;
-            -webkit-box-direction:normal;
-            -ms-flex-direction:column;
-            flex-direction:column;
-            -ms-flex-pack:distribute;
-            justify-content:space-around;
-        }
-
-        .tile .tile-divider {
-            height:2px;
-            width: 100%;
-            margin: 0 5px;
-            border: .5px solid #0058CC;
-            background-color: #343537;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-        }
-
-        .tile-last .tile-divider {
-            height:2px;
-            width: 100%;
-            margin: 0 5px;
-            border: .5px solid #0058CC;
-            background-color: #343537;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-        }
-
-        .tile .tile-description {
-            /* looks */
-            font-size: 14px;
-            letter-spacing: .2px;
-            line-height: 1.25;
-            color: #757575;
-            /* sizing/boxing */
-            height: 89px;
-            width: 100%;
-            margin: 0px;
-            /* layout */            
-            display:-webkit-box;
-            display:-ms-flexbox;
-            display:flex;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-            -webkit-box-orient:vertical;
-            -webkit-box-direction:normal;
-            -ms-flex-direction:column;
-            flex-direction:column;
-            -ms-flex-pack:distribute;
-            justify-content:space-around;
-        }
-
-        .tile-last .tile-description {
-            /* looks */
-            font-size: 14px;
-            letter-spacing: .2px;
-            line-height: 1.25;
-            color: #757575;
-            /* sizing/boxing */
-            height: 75px;
-            width: 100%;
-            margin: 0px;
-            /* layout */            
-            display:-webkit-box;
-            display:-ms-flexbox;
-            display:flex;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-            -webkit-box-orient:vertical;
-            -webkit-box-direction:normal;
-            -ms-flex-direction:column;
-            flex-direction:column;
-            -ms-flex-pack:distribute;
-            justify-content:space-around;
-        }
-
-    </style> -->
-
     <style type="text/css">
         .wy-nav-content {
             padding: 0 !important;
@@ -297,7 +39,7 @@
             font-family: 'trade-gothic-next',sans-serif !important;
             font-style: normal;
             font-weight: 800;
-            font-size: 52px;
+            font-size: 45px;
             line-height: 130%;
             color: white;
             margin-bottom: 20px;
@@ -308,8 +50,7 @@
             font-weight: 800;
             font-size: 32px;
             line-height: 135%;
-            text-align: center;
-            color: #1E325C;;
+            color: #1E325C;
         }
         .redesign-landing .subhead {
             font-family: 'trade-gothic-next',sans-serif !important;
@@ -330,13 +71,12 @@
         .redesign-landing .container--small {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
         }
         .redesign-landing .padding-tb--large {
-            padding: 100px 0;
+            padding: 50px 0;
         }
         .redesign-landing .padding-b--large {
-            padding-bottom: 100px;
+            padding-bottom: 50px;
         }
         .redesign-landing .masthead {
             background-color: #1E325C;
@@ -374,6 +114,21 @@
             color: #363A45;
         }
         @media (min-width: 992px) {
+            .redesign-landing .padding-tb--large {
+                padding: 100px 0;
+            }
+            .redesign-landing .padding-b--large {
+                padding-bottom: 100px;
+            }
+            .redesign-landing .container--small {
+                text-align: center;
+            }
+            .redesign-landing h1 {
+                font-size: 52px;
+            }
+            .redesign-landing h2 {
+                text-align: center;
+            }
             .redesign-landing .card-grid {
                 grid-template-columns: 1fr 1fr 1fr;
                 column-gap: 40px;
@@ -396,7 +151,8 @@
             }
         }
         @media (max-width: 1100px) {
-            .redesign-landing .container {
+            .redesign-landing .container,
+            .redesign-landing .masthead .container--small {
                 padding: 0 20px;
             }
         }
@@ -476,64 +232,6 @@
             </div>
         </section>
     </main>
-
-    <!-- <div class="landing">
-        <h1 class="landing-title">Mattermost Product Documentation</h1>
-        <div class="landing-search" role="search">
-            <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
-                <input type="text" name="q" placeholder="What are you looking for?" autofocus />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-            </form>
-        </div>
-        <div class="tiles-flex">
-            <a class="tile" href="guides/about-mattermost.html">
-                <h2 class="tile-title">About Mattermost</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Learn about our products, security, integrations, and licensing</p>
-            </a>            
-            <a class="tile" href="guides/install-deploy-upgrade-scale.html">
-                <h2 class="tile-title">Install, Deploy, Upgrade, Scale</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description"> Install, host, and grow with Mattermost</p>
-            </a>
-            <a class="tile" href="guides/setup-onboard-manage-comply.html">
-                <h2 class="tile-title">Onboard, Manage, Comply</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description"> Set up and manage Mattermost based on your business needs</p>
-            </a>
-            <a class="tile" href="guides/messaging.html">
-                <h2 class="tile-title">Messaging</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Get the most out of Messaging</p>
-            </a>
-            <a class="tile" href="guides/playbooks.html">
-                <h2 class="tile-title">Playbooks</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Get the most out of Playbooks</p>
-            </a>
-            <a class="tile" href="https://www.focalboard.com/guide/user/">
-                <h2 class="tile-title">Focalboard</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Get the most out of Focalboard</p>
-            </a>
-            <a class="tile-last" href="https://developers.mattermost.com/">
-                <h2 class="tile-title">Mattermost for Developers</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Integrate with and contribute to the open source project</p>
-            </a>
-            <a class="tile-last" href="guides/get-help.html">
-                <h2 class="tile-title">Get Help With Mattermost</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Get help on your Mattermost journey</p>
-            </a>
-            <a class="tile-last" href="guides/community-chat.html">
-                <h2 class="tile-title">Community Chat</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Connect with the Mattermost community</p>
-            </a>
-        </div>
-    </div> -->
 </div>
 
 {% endblock %}
