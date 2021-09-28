@@ -991,7 +991,7 @@ pre {
 /* Redesign 2021 - CONTENT */
 .document ul,
 .document ol {
-	padding-left: 20px;
+	padding-left: 10px;
 }
 .document ul li,
 .document ol li {
