@@ -48,7 +48,7 @@ Admin Advisor notices are designed to provide guidance and assist in choosing fe
 .. note::
   Admin Advisor notices are disabled in v5.35 and later.
 
-When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage, such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
+When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 .. image:: ../images/mattermost_admin_advisor_banner.png
 
