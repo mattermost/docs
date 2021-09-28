@@ -330,7 +330,7 @@ html, body {
 
 /* Thermometer Confirmation Popup Ends */
 
-footer {
+footer:not(.site-footer) {
 	position: relative;
     border-top: 1px solid #dedede;
     margin-top: 24px;
