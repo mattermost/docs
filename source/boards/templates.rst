@@ -18,7 +18,7 @@ Templates
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Templates provide you with a predefined structure so that you can get started quickly.
+Templates provide you with a predefined structure so that you can get started quickly. Alternatively, you can create your own board and card templates.
 
 Board templates 
 ---------------

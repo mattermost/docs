@@ -18,10 +18,10 @@ Sharing Boards
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-1. Hover over the right-hand side of the board menu.
-2. Click on the options menu (…) and select “Share board”. 
-3. Turn the switch on which says “Publish to web and share this board with anyone”. 
-4. Copy the given link.
+1. Open a board in any view.
+2. On the top-right of the board select the options menu **...**, then select **Share board**.
+3. Set the toggle on to **Publish to web and share this board with anyone**.
+4. Copy the link provided.
 
 Anyone with the link will be able to view the board.
 
