@@ -1,22 +1,19 @@
-Running Playbooks
-=================
+Run a playbook
+==============
+
+You can start a playbook run from any channel that you're a member of, using the **Toggle Playbook List** icon. Select the **Run** icon next to a playbook name.
+
+From the dialog box, you can create a new playbook or proceed with the playbook you chose. Provide a name for your run, then select **Start run**. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
+ 
+You can also use slash commands to initiate playbook runs, make announcements, and get information about a playbook run.
 
 Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants, and tasks finished.
 
 .. image:: ../images/Playbook-dashboard.png
    :alt: View and track playbook information.
-   
-You can also use slash commands to initiate playbook runs, make announcements, and get information about a playbook run. 
-
-Start a run
------------
-
-Start a playbook run from any channel that you're a member of, using the **Toggle Playbook List** icon. Select the **Run** icon next to a playbook name.
-
-From the dialog box, you can create a new playbook or proceed with the playbook you chose. Provide a name for your run, then select **Start run**. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
 
 Join a playbook run
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Open **Main Menu > Playbooks** to see a list of runs, to which you have access. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
