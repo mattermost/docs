@@ -77,7 +77,7 @@ The following post metadata is sent in all push notifications:
 - ``Category`` (iOS only, determines if the notifications can be replied to)
 - ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
 
-Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__:
+Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__:
 
 - **Generic description with sender and channel names**: ``Channel name`` metadata will be included.
 - **Full message content sent in the notification payload**: ``Post content`` and ``Channel name`` metadata will be included.
@@ -206,7 +206,7 @@ After the above, your ``/assets/override/config.json`` file would look something
         "ExperimentalUsernamePressIsMention": true
     }
 
-7. Finally, `compile your own version <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ of the Mattermost mobile app and Mattermost push proxy server.
+7. Finally, `compile your own version <https://developers.mattermost.com/contribute/mobile/build-your-own/>`__ of the Mattermost mobile app and Mattermost push proxy server.
 
 How can I get Google SSO to work with the Mattermost mobile app?
 -----------------------------------------------------------------
