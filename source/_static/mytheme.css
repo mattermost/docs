@@ -659,13 +659,28 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	position: relative;
 } */
 
-header .search__icon {
+.search__icon {
 	cursor: pointer;
-	display: none;
-	float: left;
-	font-size: 20px;
+	display: inline-block;
+	font-size: 16px;
 	padding: 0 20px;
+	color: #1C58D9;
 	position: relative;
+}
+
+@media screen and (min-width: 770px) {
+	.search__icon {
+		display: none;
+	}
+}
+
+.search__icon span {
+	font-family: "trade-gothic-next","Lato","Helvetica Neue","Arial",sans-serif;
+	font-size: 16px;
+}
+
+.search__icon:hover {
+	color: #1E325C;
 }
 
 .wy-nav-top {
@@ -1000,6 +1015,27 @@ pre {
 .header__links {
 	font-family: 'trade-gothic-next',sans-serif;
 }
+
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+	display: block;
+	float: none;
+}
+
+@media (max-width: 770px) {
+	.wy-breadcrumbs li.wy-breadcrumbs-aside {
+		margin-top: 20px;
+	}
+	.wy-breadcrumbs li.wy-breadcrumbs-aside .search__icon {
+		padding: 0 20px 0 0;
+	}
+}
+
+@media (min-width: 770px) {
+	.wy-breadcrumbs li.wy-breadcrumbs-aside {
+		float: right;
+	}
+}
+
 
 .wy-menu-vertical a {
 	color: #888;

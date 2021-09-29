@@ -15,6 +15,9 @@
     <li>{{ title }}</li>
     <li class="wy-breadcrumbs-aside">
       {% if pagename != "search" %}
+        <div class="search__icon">
+          <i class="fa fa-search"></i> <span>Search</span>
+        </div>
         {% if display_github %}
           <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> Edit</a>
         {% elif display_bitbucket %}

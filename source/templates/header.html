@@ -17,11 +17,6 @@
 <header class="site-header site-header--not-home" itemscope="" itemtype="https://schema.org/WebSite">
 {% endif %}
 	<div class="nav-container site-header__container">
-		{%- if pagename != 'index' %}
-		<div class="search__icon">
-			<i class="fa fa-search"></i>
-		</div>
-		{% endif %}
 		<div class="row site-header__row">
 			<div class="col-9 col-md-3 col-lg-2 site-header__col--logo">
 				<a href="/" data-ol-has-click-handler=""><img src="{{ pathto('_static/images/Mattermost-Logo-Denim.svg', 1) }}" alt="Mattermost Logo"></a>

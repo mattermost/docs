@@ -56,7 +56,7 @@ $(document).ready(function () {
 		$("header .header__links").slideToggle();
 	});
 
-	$('header .search__icon').on('click', function () {
+	$('.search__icon').on('click', function () {
 		$("header .header__links").hide();
 		$("header .header__searchbar").slideToggle(400, function () {
 			if ($(this).is(':visible')) {
