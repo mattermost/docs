@@ -86,6 +86,10 @@ Upgrading Mattermost Server
 
 7. Remove all files **except** data and custom directories from within the current ``mattermost`` directory. 
 
+   .. code-block:: sh
+   
+      sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
+
    **What's preserved on upgrade?**
   
    By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.

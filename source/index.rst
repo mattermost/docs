@@ -18,7 +18,7 @@ Mattermost Product Documentation
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
    Mattermost Administration <guides/administration>
-   Messaging <guides/messaging>
+   Channels <guides/channels>
    Playbooks <guides/playbooks>
    Boards <guides/boards>
    Mattermost for Developers <https://developers.mattermost.com/>
