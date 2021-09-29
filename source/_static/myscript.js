@@ -3,8 +3,6 @@ $(document).ready(function () {
 	var dataLayer = window.dataLayer || [];
 	var eventValue = 0;
 	var rating = '';
-
-
 	var thermometerHtml =
 		" <div class='c-thermometer-popup'> \
 			<div class='c-thermometer-popup__close'>×</div> \
@@ -164,10 +162,7 @@ $(document).ready(function () {
 				break;
 		}
 	});
-
-
 	// Notification Banner
-
 	if (localStorage.getItem("docsFeedback") === null) {
 		localStorage.setItem('docsFeedback', true);
 		$('.notification-bar').addClass('flex');
@@ -182,7 +177,6 @@ $(document).ready(function () {
 			$('body').addClass('with-notification');
 		}
 	}
-
 	$('body').on('click', '.notification-bar__close', function(){
 		$('.notification-bar').remove();
 		$('body').removeClass('with-notification');
@@ -190,11 +184,9 @@ $(document).ready(function () {
 	});
 
 });
-
-// REDESIGN
+// Redesign - Navigation
 document.addEventListener("DOMContentLoaded", function(event) {     
     const hamburger = document.getElementById('hamburger');
-
     const subMenus = document.querySelectorAll('.site-nav__hassubnav a');
 
     let multiEventSingleHandler = (elem, events, handler, use_capture) => {
