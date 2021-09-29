@@ -1,37 +1,26 @@
 Getting Started 
 ===============
 
-Mattermost Playbooks is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically.
-
-*For self-hosted deployments*
-
-Mattermost Playbooks is available in the Plugin Marketplace:
-
-1. As a System Admin, go to **Main Menu > Plugin Marketplace**.
-2. Search for **Playbooks**.
-3. Select **Install** if not yet installed, then select **Configure** to enable.
-4. From the plugin configuration page, set **Enable Plugin** to **true**.
-5. Select **Save** to enable the plugin.
+Mattermost Playbooks is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically. For Mattermost self-hosted deployments, Playbooks can be accessed in the product switcher in the top-left corner of Mattermost.
 
 Accessing and Navigating Playbooks
 ----------------------------------
 
-* From the Main Menu, select **Playbooks** to view runs, configure playbooks, and modify settings. System Admins have unrestricted access.
-* From the channel header, select the **Playbook** icon in the channel header to open the right-hand sidebar. From there, you can start a new playbook run using a playbook or a playbook template.
+The optimal way to access Playbooks is using the **Toggle Playbook List** icon in the channel header to open the right-hand sidebar (RHS). In the RHS, you'll find playbooks you're a member of as well as playbook templates.
 
-Finding playbook runs
-~~~~~~~~~~~~~~~~~~~~~
+To open a playbook and view its statistics, select the playbook name. To begin a run using a listed playbook, select **Run**.
 
-When you're in a channel with an active run, select the **Playbook** icon in the channel header to open the right-hand sidebar to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
+Viewing run details
+~~~~~~~~~~~~~~~~~~~
 
-To find all playbook runs, select **Main Menu > Playbooks**. Select a run to view its overview. Select **Go to channel** to open the run's channel.
+When you're in a channel with an active run, select the **Toggle Playbook List** icon in the channel header to open the RHS to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
+
+To find all playbook runs, select any playbook name. Then, select **Runs** from the navigation bar. Select a run to view its overview. Select **Go to channel** to open the run's channel.
 
 Viewing playbooks 
 ~~~~~~~~~~~~~~~~~
 
-Playbooks are accessed via **Main Menu > Playbooks** in Mattermost, where you can also view a list of templates.
-
-When you're in a channel that's not running a playbook, select the **Playbook** icon in the channel header to open the right-hand sidebar and view the list of playbooks and templates available for your team.
+When you're in a channel that's not running a playbook, select the **Toggle Playbook List** icon in the channel header to open the right-hand sidebar and view the list of playbooks and templates available for your team.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~~
