@@ -292,6 +292,38 @@
         .c-thermometer {
             display: none;
         }
+        .redesign-landing .landing-search {
+            overflow: hidden;
+            width: 80vw;
+            display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+            z-index: 20;
+			bottom: -4rem;
+            border-radius: 5px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        .redesign-landing .landing-search input[type="text"] {
+            border: 2px solid #BABEC9;
+			font-weight: 400;
+			font-size: 16px;
+			border-radius: 0;
+			padding: 0 16px 0 44px;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 728px) {
+            .redesign-landing .landing-search {
+                width: 640px;
+            }
+            .redesign-landing .landing-search input[type="text"] {
+                width: 550px;
+            }
+        }
     </style>
 
     <main class="redesign-landing">
@@ -301,6 +333,13 @@
                 <p class="subhead">Technical resources to help admins, users, and developers leverage Mattermost.</p>
             </div>
             <img class="masthead-pattern" src="{{ pathto('_static/images/home/Hero_Stipple_Bottom.png', 1) }}" alt="">
+            <div class="landing-search" role="search">
+                <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+                    <input type="text" name="q" placeholder="What are you looking for?" autofocus />
+                    <input type="hidden" name="check_keywords" value="yes" />
+                    <input type="hidden" name="area" value="default" />
+                </form>
+            </div>
         </section>
     
         <section class="home-cards padding-tb--large bg--gray">

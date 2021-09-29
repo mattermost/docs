@@ -4,7 +4,7 @@
             <span aria-hidden="true">×</span>
         </a>
 	    <div>
-			<img src="{{ pathto('_static/images/notification-bar/globe.svg', 1) }}" width="25" height="25" alt="globe icon">
+			<img src="{{ pathto('_static/images/notification-bar/leaf-icon.svg', 1) }}" width="30" height="30" alt="leaf icon">
 			<a href="https://mattermost.com/blog/hacktoberfest-2021/?utm_source=referral&utm_medium=docs&utm_campaign=fall-events-hacktoberfest-2021">
 				Join us for Hacktoberfest!
 			</a>
@@ -17,9 +17,11 @@
 <header class="site-header site-header--not-home" itemscope="" itemtype="https://schema.org/WebSite">
 {% endif %}
 	<div class="nav-container site-header__container">
+		{%- if pagename != 'index' %}
 		<div class="search__icon">
 			<i class="fa fa-search"></i>
 		</div>
+		{% endif %}
 		<div class="row site-header__row">
 			<div class="col-9 col-md-3 col-lg-2 site-header__col--logo">
 				<a href="/" data-ol-has-click-handler=""><img src="{{ pathto('_static/images/Mattermost-Logo-Denim.svg', 1) }}" alt="Mattermost Logo"></a>
@@ -360,6 +362,7 @@
 			</div>
 		</div>
 	</div>
+	{%- if pagename != 'index' %}
 	<div class="header__searchbar">
 		<form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
 			<input type="text" name="q" placeholder="Search by keyword" autofocus />
@@ -367,4 +370,5 @@
 			<input type="hidden" name="area" value="default" />
 		</form>
 	</div>
+	{% endif %}
 </header>
