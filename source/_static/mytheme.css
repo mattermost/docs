@@ -371,6 +371,7 @@ footer hr {
 		left: 0;
 		display: flex;
 		justify-content: center;
+		position: relative;
 	}
 
 	.c-thermometer__trigger {
