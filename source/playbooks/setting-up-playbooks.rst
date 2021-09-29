@@ -5,7 +5,7 @@ Playbooks help streamline and manage complex processes while decreasing the risk
 
 Playbooks are made up of:
 
-- **Checklists:** The list of tasks to be completed for the run. Checklists form part of a playbook but can be added and edited ad-hoc during a run.
+- **Checklists:** The list of tasks to be completed for the run. Checklists can be edited ad-hoc during a run.
 - **Templates:** Templates for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
 - **Actions:** Automation options for inviting members, webhooks, welcome messages, channel export settings, and more.
 - **Permissions:** Manage permissions at a channel and a playbook level.
