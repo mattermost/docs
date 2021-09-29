@@ -1,39 +1,29 @@
 Running Playbooks
 =================
 
-Use slash commands to initiate playbook runs, make announcements, and get information about a playbook run.
+Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants, and tasks finished.
 
-Slash commands
-~~~~~~~~~~~~~~
+.. image:: ../images/Playbook-dashboard.png
+   :alt: View and track playbook information.
+   
+You can also use slash commands to initiate playbook runs, make announcements, and get information about a playbook run. 
 
-The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile for:
+Start a run
+-----------
 
-- ``/playbook start`` - Start a playbook run.
-- ``/playbook end`` - End a playbook run.
-- ``/playbook update`` - Update the current playbook run's status.
-- ``/playbook restart`` - Restart an ended playbook run.
-- ``/playbook check [checklist item]`` - Check/uncheck the specified task.
-- ``/playbook announce ~[channels]`` - Announce the current playbook run in other channels.
-- ``/playbook list`` - List all your ongoing playbook runs.
-- ``/playbook owner [@username]`` - Show or change the current playbook run owner.
-- ``/playbook info`` - Show a summary of the current playbook's activities.
+Start a playbook run from any channel that you're a member of, using the **Toggle Playbook List** icon. Select the **Run** icon next to a playbook name.
 
-To run a playbook use the ``/playbook start`` slash command from any channel. You can also use the desktop or browser to:
+From the dialog box, you can create a new playbook or proceed with the playbook you chose. Provide a name for your run, then select **Start run**. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
 
- * Select the **Playbook** icon in the channel header, and select **Run playbook** from the right-hand sidebar.
- * Use the context menu of a post and select **Run playbook**.
-
-Running a playbook opens an interactive dialog. You can create a new playbook or select an existing playbook. Provide a name for your playbook run, then select **Start run**. Only playbooks you belong to are listed in the **Playbook** drop-down menu. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
-
-Joining a playbook run
+Join a playbook run
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Open **Main Menu > Playbooks** to see a list of runs, to which you have access. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
 If the channel is private, an existing member must invite you.
 
-Working with tasks
-~~~~~~~~~~~~~~~~~~
+Manage tasks
+~~~~~~~~~~~~
 
 Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks:
 
@@ -44,13 +34,13 @@ Tasks can be part of pre-configured task templates in playbooks and they can als
 
 .. image:: ../images/IC-ad-hoc-tasks.gif
 
-Changing owners
+Change owners
 ~~~~~~~~~~~~~~~
 
 To change playbook owners you can run the ``/playbook owner @username`` slash command from within the run's channel. To change the owner to a user who is not in the channel, first add the user to the channel.
 
-Providing a status update
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Status updates 
+--------------
 
 Status updates ensure that stakeholders remain informed about the playbook run's progress. To post a status update:
 
@@ -74,10 +64,10 @@ Status updates ensure that stakeholders remain informed about the playbook run's
 
 The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
-Ending a playbook run
-~~~~~~~~~~~~~~~~~~~~~
+End a playbook run
+~~~~~~~~~~~~~~~~~~~
 
-Playbook run members can end an incident using the ``/playbook end`` slash command. Playbook runs can also be ended from the desktop or browser:
+Run members can end an incident using the ``/playbook end`` slash command. Playbook runs can also be ended from the desktop or browser:
 
 1. Select the **Playbook** icon in the channel header to open the RHS.
 2. Find the playbook run you're looking for and select **Go to channel**.
@@ -88,18 +78,27 @@ Playbook run members can end an incident using the ``/playbook end`` slash comma
 
 Ending a playbook run signals to all members of the channel that the playbook run is complete. Members of the team can continue to post in the channel, mark tasks as complete, and change the owner if needed.
 
-Restarting a playbook run
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Restart a playbook run
+~~~~~~~~~~~~~~~~~~~~~~~
 
 If a playbook run was ended prematurely, it can be restarted within the channel using the ``/playbook restart`` slash command. Runs can also be restarted from the desktop or browser:
 
 1. Select the **Playbook** icon in the channel header to open the RHS.
 2. Find the playbook run you're looking for and select **Go to channel**.
 
-Playbook dashboard
-------------------
+Slash commands
+--------------
 
-Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants, and tasks finished.
+Slash commands are available for playbooks. The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile. To run a playbook use the ``/playbook start`` slash command from any channel.
 
-.. image:: ../images/Playbook-dashboard.png
-   :alt: View and track playbook information.
+Available slash commands include:
+
+- ``/playbook start`` - Start a playbook run.
+- ``/playbook end`` - End a playbook run.
+- ``/playbook update`` - Update the current playbook run's status.
+- ``/playbook restart`` - Restart an ended playbook run.
+- ``/playbook check [checklist item]`` - Check/uncheck the specified task.
+- ``/playbook announce ~[channels]`` - Announce the current playbook run in other channels.
+- ``/playbook list`` - List all your ongoing playbook runs.
+- ``/playbook owner [@username]`` - Show or change the current playbook run owner.
+- ``/playbook info`` - Show a summary of the current playbook's activities.
