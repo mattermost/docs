@@ -311,7 +311,7 @@ redirects = {
     "administration/config-settings.html#allow-users-to-view-archived-channels-beta": 
         "https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels",
     "administration/config-settings.html#push-notification-contents": "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
-    "administration/config-settings.html#gitlab-settings":
+    "administration/config-settings.html#gitlab-settings": "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
     "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
     "administration/config-settings#push-notification-contents": 
         "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
