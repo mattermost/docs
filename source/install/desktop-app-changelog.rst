@@ -70,6 +70,7 @@ All Platforms
 ^^^^^^^^^^^^^
 - Fixed an issue where resizing the app while in the System Console caused a white bar to appear at the top.
 - Fixed an issue where the right-click menu was missing from the ``jira connect`` modal.
+- Fixed an issue where the app would render off screen and the user would have trouble getting the window in view.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
