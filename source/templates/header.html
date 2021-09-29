@@ -3,43 +3,26 @@
         <a class="notification-bar__close" data-ol-has-click-handler="">
             <span aria-hidden="true">×</span>
         </a>
-	    <div><a href="https://mattermost.com/blog/hacktoberfest-2021/?utm_source=referral&utm_medium=docs&utm_campaign=fall-events-hacktoberfest-2021">Join us for Hacktoberfest!</a></div>
+	    <div>
+			<img src="{{ pathto('_static/images/notification-bar/globe.svg', 1) }}" width="25" height="25" alt="globe icon">
+			<a href="https://mattermost.com/blog/hacktoberfest-2021/?utm_source=referral&utm_medium=docs&utm_campaign=fall-events-hacktoberfest-2021">
+				Join us for Hacktoberfest!
+			</a>
+		</div>
     </div>
 </div>
-<!-- <header data-swiftype-index=false class="with-notification">
-	<div class="header__container">
+{%- if pagename == 'index' %}
+<header class="site-header" itemscope="" itemtype="https://schema.org/WebSite">
+{%- else %}
+<header class="site-header site-header--not-home" itemscope="" itemtype="https://schema.org/WebSite">
+{% endif %}
+	<div class="nav-container site-header__container">
 		<div class="search__icon">
 			<i class="fa fa-search"></i>
 		</div>
-		<a href="https://docs.mattermost.com/" class="header__logo">
-			<img width="176" height="29" src="{{ pathto('_static/images/Mattermost-Logo-Denim.svg', 1) }}" alt="Mattermost">
-		</a>
-		<div class="links__icon">
-			<i class="fa fa-bars"></i>
-		</div>
-		<ul class="header__links">
-			<li><a href="https://developers.mattermost.com/">Developers</a></li>
-			<li><a href="https://mattermost.com/features/">Product</a></li>
-			<li><a href="https://mattermost.com/pricing/">Pricing</a></li>
-			<li><a href="https://mattermost.com/blog/">Blog</a></li>
-			<li><a href="https://mattermost.com/download/">Download</a></li>
-			<li><a href="https://mattermost.com/trial/">Trial</a></li>
-		</ul>
-		<div class="header__searchbar">
-			<form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
-                <input type="text" name="q" placeholder="Search by keyword" autofocus />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-            </form>
-		</div>
-	</div>
-</header> -->
-<!-- REDESIGN -->
-<header class="site-header" itemscope="" itemtype="https://schema.org/WebSite">
-	<div class="nav-container site-header__container">
 		<div class="row site-header__row">
 			<div class="col-9 col-md-3 col-lg-2 site-header__col--logo">
-				<a href="https://mattermost.com/" data-ol-has-click-handler=""><img src="{{ pathto('_static/images/Mattermost-Logo-Denim.svg', 1) }}" alt="Mattermost Logo"></a>
+				<a href="/" data-ol-has-click-handler=""><img src="{{ pathto('_static/images/Mattermost-Logo-Denim.svg', 1) }}" alt="Mattermost Logo"></a>
 			</div>
 			<div class="col-3 col-md-9 site-header__mobile-menu" id="hamburger" data-ol-has-click-handler="">
 				<svg class="hamburger-open" width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +158,7 @@
 										</li>
 										<li class="sub-menu__links--single">
 											<a href="https://mattermost.com/solutions/use-cases/it-service-desk/" data-ol-has-click-handler="">
-												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/HITServiceDesk.svg', 1) }}"></span>IT Service Desk
+												<span class="sub-menu__links--icon"><img src="{{ pathto('_static/images/nav/ITServiceDesk.svg', 1) }}"></span>IT Service Desk
 											</a>
 										</li>
 										<li class="sub-menu__links--single">
@@ -376,5 +359,12 @@
 				</ul>
 			</div>
 		</div>
+	</div>
+	<div class="header__searchbar">
+		<form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+			<input type="text" name="q" placeholder="Search by keyword" autofocus />
+			<input type="hidden" name="check_keywords" value="yes" />
+			<input type="hidden" name="area" value="default" />
+		</form>
 	</div>
 </header>
