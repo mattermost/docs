@@ -23,10 +23,6 @@
         .redesign-landing .masthead, .redesign-landing .home-cards {
             font-family: 'trade-gothic-next',sans-serif !important;
         }
-        .redesign-landing .masthead {
-            position: relative;
-            overflow: hidden;
-        }
         .redesign-landing .masthead .container--small {
             position: relative;
             z-index: 10;
@@ -94,6 +90,17 @@
         }
         .redesign-landing .masthead {
             background-color: #1E325C;
+            background-position: bottom center;
+            background-size: 1500px;
+            background-repeat: no-repeat;
+        }
+        @media (max-width: 991.98px) {
+            .home-cards.padding-tb--large {
+                padding-top: 100px;
+            }
+            .redesign-landing .masthead {
+                padding-bottom: 0;
+            }
         }
         .redesign-landing .card-grid {
             display: grid;
@@ -135,6 +142,9 @@
             display: none;
         }
         @media (min-width: 992px) {
+            .redesign-landing .masthead {
+                background-size: 90vw;
+            }
             .redesign-landing .padding-tb--large {
                 padding: 100px 0;
             }
@@ -143,6 +153,9 @@
             }
             .redesign-landing .padding-b--large {
                 padding-bottom: 100px;
+            }
+            .redesign-landing .masthead.padding-tb--large {
+                padding: 100px 0 0;
             }
             .redesign-landing .container--small {
                 text-align: center;
@@ -259,9 +272,6 @@
             footer.site-footer .secondary-footer__social li img {
                 width: 50px
             }
-        }
-
-        @media (max-width: 991.98px) {
             footer.site-footer .secondary-footer__copy {
                 order:6;
                 grid-column: 1/span 2
@@ -294,16 +304,16 @@
         }
         .redesign-landing .landing-search {
             overflow: hidden;
-            width: 80vw;
+            width: 90vw;
             display: flex;
 			justify-content: center;
 			align-items: center;
 			position: relative;
             z-index: 20;
-			bottom: -4rem;
+			bottom: -2.5rem;
             border-radius: 5px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 20px 20px 15px;
             background-color: white;
         }
 
@@ -312,27 +322,28 @@
 			font-weight: 400;
 			font-size: 16px;
 			border-radius: 0;
-			padding: 0 16px 0 44px;
-            width: 100%;
+			padding: 20px;
+            width: 78vw;
         }
 
         @media screen and (min-width: 728px) {
             .redesign-landing .landing-search {
                 width: 640px;
+                padding: 20px;
             }
             .redesign-landing .landing-search input[type="text"] {
-                width: 550px;
+                width: 600px;
+                padding: 10px 20px;
             }
         }
     </style>
 
     <main class="redesign-landing">
-        <section class="masthead padding-tb--large">
+        <section class="masthead padding-tb--large" style="background-image: url({{ pathto('_static/images/home/Hero_Stipple_Bottom.png', 1) }});">
             <div class="container--small">
                 <h1>Mattermost Documentation</h1>
                 <p class="subhead">Technical resources to help admins, users, and developers leverage Mattermost.</p>
             </div>
-            <img class="masthead-pattern" src="{{ pathto('_static/images/home/Hero_Stipple_Bottom.png', 1) }}" alt="">
             <div class="landing-search" role="search">
                 <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
                     <input type="text" name="q" placeholder="What are you looking for?" autofocus />

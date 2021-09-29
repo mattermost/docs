@@ -63,6 +63,9 @@ $(document).ready(function () {
 				$(this).find("input[type=text]").focus();
 			}
 		});
+		// document.getElementById('hamburger').classList.remove('is-active');
+        // document.body.classList.remove('nav-open');
+        // document.getElementById('navigation').classList.remove('active');
 	});
 
 	if ($('.wy-menu-vertical li.current>a').length) {

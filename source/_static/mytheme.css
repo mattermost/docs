@@ -1072,7 +1072,7 @@ pre {
     .nav-container {
         padding: 0 24px ;
     }
-	.nav-container .site-header__col--logo {
+	div:not(.site-header--not-home) .nav-container .site-header__col--logo {
 		padding-left: 50px;
 	}
 }
@@ -1177,7 +1177,7 @@ pre {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 3147483642;
+    z-index: 1000;
 }
 .site-header__col--logo {
     display: flex;
