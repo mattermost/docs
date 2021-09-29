@@ -1,12 +1,12 @@
-Refining and Improving
-======================
+Retrospectives
+==============
 
 Filling out a retrospective helps teams identify areas of improvement to apply to future playbook runs as well as provide stakeholders with insight into the run.
 
 Retrospective components are customized per playbook.
 
-Creating and publishing retrospectives
---------------------------------------
+Create and publish retrospectives
+----------------------------------
 
 First, configure the retrospective's settings in the relevant playbook via the **Playbooks** tab. Select the playbook and then select **Edit**. Open the **Templates** and scroll down to the **Retrospective Reminder Interval** and **Retrospective Template** fields.
 
@@ -20,8 +20,8 @@ Channel export
 
 Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
 
-Reviewing past runs
-~~~~~~~~~~~~~~~~~~~
+Review past runs
+~~~~~~~~~~~~~~~~
 
 To view active and past runs in your team from the desktop or browser:
 
