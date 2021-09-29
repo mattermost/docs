@@ -16,7 +16,7 @@ Start a playbook run from any channel that you're a member of, using the **Toggl
 From the dialog box, you can create a new playbook or proceed with the playbook you chose. Provide a name for your run, then select **Start run**. The creator of a playbook run is automatically added as the first member and becomes the owner. Lastly, when the playbook run is created, it's announced in the associated channel by the Playbook Bot.
 
 Join a playbook run
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Open **Main Menu > Playbooks** to see a list of runs, to which you have access. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
 
@@ -35,7 +35,7 @@ Tasks can be part of pre-configured task templates in playbooks and they can als
 .. image:: ../images/IC-ad-hoc-tasks.gif
 
 Change owners
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 To change playbook owners you can run the ``/playbook owner @username`` slash command from within the run's channel. To change the owner to a user who is not in the channel, first add the user to the channel.
 
@@ -65,7 +65,7 @@ Status updates ensure that stakeholders remain informed about the playbook run's
 The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
 
 End a playbook run
-~~~~~~~~~~~~~~~~~~~
+------------------
 
 Run members can end an incident using the ``/playbook end`` slash command. Playbook runs can also be ended from the desktop or browser:
 
