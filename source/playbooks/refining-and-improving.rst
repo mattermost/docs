@@ -12,6 +12,8 @@ Open Playbooks and select the **Playbooks** tab. Select the playbook and then se
 
 You can set a reminder to fill out the retrospective, which is broadcast to the channel. The template is then pre-populated in the report. Once the report is written, it's saved and is listed in the run's detailed view.
 
+During a run, posts made in the run channel are automatically added to the retrospective timeline and can be filtered based on all events, specific actions (such as role changes, status updates, task assignments), or activities (such as using a slash command).
+
 .. image:: ../images/Retro.gif
    :alt: Create and publish retrospective reports.
 
