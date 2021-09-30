@@ -155,7 +155,7 @@ Mattermost currently supports three log formats: plain, JSON, and `GELF <https:/
        "line_end", "string", "\n ", "Alternative end of line character(s)."
        "enable_color", "bool", "false", "Enables color for targets that support color output."
 
-**Json configuration options:**
+**JSON configuration options:**
 
 .. csv-table::
     :header: "Key", "Type", "Default", "Description"
