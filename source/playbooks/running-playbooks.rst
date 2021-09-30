@@ -15,14 +15,16 @@ Each playbook has a dashboard with details such as how many runs using the playb
 Join a playbook run
 -------------------
 
-Open **Main Menu > Playbooks** to see a list of runs, to which you have access. If the channel is public, you may join the channel without permission. You can also search for and join the channel via **Browse Channels**.
+Open Playbooks to see a list of runs, to which you have access. If the channel is public, you can join it without permission. You can also search for and join the channel via **Find channel** in the channel sidebar.
 
-If the channel is private, an existing member must invite you.
+If the run channel is private, an existing member must invite you.
 
-Manage tasks
-~~~~~~~~~~~~
+Work with checklists
+~~~~~~~~~~~~~~~~~~~~
 
-Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks:
+Checklists contain tasks - they can be pre-configured task templates and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks. Note that if you edit, add, or delete a task during an active run it applies only to that run. The change isn't applied to the playbook. If you decide to retain that change, edit the playbook's checklist.
+
+If you aren't able to open the checklists to see completed tasks, hover over any area of the checklist. Then in the top right corner, select the filter icon. Under the **Task State** section, select **Show checked tasks**.
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
@@ -41,7 +43,7 @@ Status updates
 
 Status updates ensure that stakeholders remain informed about the playbook run's progress. To post a status update:
 
-1. Go to **Main Menu > Playbooks**.
+1. Select **Toggle Playbook List** from the channel header.
 2. Open the run you want to update and select **Go to channel**.
 3. Select **Post update**.
 
@@ -54,12 +56,12 @@ Status updates ensure that stakeholders remain informed about the playbook run's
  * If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
  * If this is a subsequent status update, the last reminder timer will be pre-populated here.
 
-6. Select **Update Status** to post your status update.
+6. Select **Post** to post your status update.
 
- * Status updates are posted to the incident channel as a message from the user providing the status update.
- * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the incident bot.
+ * Status updates are posted to the run channel as a message from the person posting it.
+ * If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot.
 
-The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Status updates that are broadcast to another channel will not be edited or deleted.
+The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Note that status updates that are broadcast to another channel won't be updated or removed if the original post is edited or deleted.
 
 End a playbook run
 ------------------
