@@ -30,7 +30,7 @@ We recommend that you:
 
   Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 Extended Support Release or later is required.
 
-Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. However, it's important to review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should be roughly the same as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 v6.0 Database Schema Migrations
 -------------------------------
@@ -60,7 +60,7 @@ Mattermost v6.0 introduces several database schema changes to improve both datab
 
       This limits the time taken to that of a single query of that type.
 
-      **Online migration**: An online migration that avoids locking can be attempted on MySQL installations, especially for particularly heavy queries. This can be done through an external tool like `pt-online-schema-change <https://www.percona.com/doc/percona-toolkit/LATEST/pt-online-schema-change.html>`__. However, the online migration process can cause a significant spike in CPU usage on the database instance it runs.
+      **Online migration**: An online migration that avoids locking can be attempted on MySQL installations, especially for particularly heavy queries or very big datasets (tens of millions of posts or more). This can be done through an external tool like `pt-online-schema-change <https://www.percona.com/doc/percona-toolkit/LATEST/pt-online-schema-change.html>`__. However, the online migration process can cause a significant spike in CPU usage on the database instance it runs.
 
       See the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#online-migration-mysql>`__ documentation for a sample execution and additional caveats.
 
@@ -82,7 +82,7 @@ If you're upgrading from a version prior to v5.0, be sure to also modify your se
 Upgrading High Availability Deployments
 ---------------------------------------
 
-In `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent you from posting or receiving messages until the migration is complete.
+In `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
 
 Ensure you review the `High Availability Cluster Upgrade Guide <https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide>`__, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
 
@@ -160,7 +160,7 @@ Upgrading Mattermost Server
 
    **What's preserved on upgrade?**
   
-   By default, your data directories will be preserved with the following commands:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
+   By default, the following subdirectories will be preserved:``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different directory configured for local storage). Custom directories are any directories that you've added to Mattermost and are not preserved by default. Generally, these are TLS keys or other custom information.
 
    Run ``ls`` on your Mattermost install directory to identify what default folders exist.
       
@@ -217,7 +217,7 @@ Upgrading Mattermost Server
 
   .. code-block:: sh
          
-    sudo chown -R mattermost:mattermost {install-path}
+    sudo chown -R mattermost:mattermost {install-path}/mattermost
      
 .. note::
     
@@ -237,7 +237,14 @@ Upgrading Mattermost Server
 
     sudo systemctl start mattermost
 
-12. If you're using a `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+12. Remove the temporary files.
+
+  .. code-block:: sh
+
+    sudo rm -r /tmp/mattermost-upgrade/
+    sudo rm -i /tmp/mattermost*.gz
+
+13. If you're using a `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
     If they continue to display as yellow, trigger a configuration propagation across the cluster by opening the System Console, changing a setting, and reverting it. This will enable the **Save** button for that page. Then, select **Save**. This will not change any configuration, but sends the existing configuration to all nodes in the cluster. 
 
