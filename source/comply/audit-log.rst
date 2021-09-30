@@ -53,7 +53,7 @@ Open ``config.json`` and navigate to the audit settings under ``ExperimentalAudi
 
 The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the target type, format, and levels.
 
-The example below specifies one log target that outputs to the console using a plain text format with pipes delimiting fields. The standard log levels are listed, with only `error` and lower outputing a stack trace. The `error` level will output in red for log targets and formatters that support color output.
+The example below specifies one log target that outputs to the console using a plain text format with pipes delimiting fields. The standard log levels are listed, with only `error` and lower outputting a stack trace. The `error` level will output in red for log targets and formatters that support color output.
 
 .. code-block:: json
 
