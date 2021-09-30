@@ -1,16 +1,16 @@
 Retrospectives
 ==============
 
-Filling out a retrospective helps teams identify areas of improvement to apply to future playbook runs as well as provide stakeholders with insight into the run.
+Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review. Playbooks make scheduling and filling out a retrospective easier with cus
 
 Retrospective components are customized per playbook.
 
 Create and publish retrospectives
 ----------------------------------
 
-First, configure the retrospective's settings in the relevant playbook via the **Playbooks** tab. Select the playbook and then select **Edit**. Open the **Templates** and scroll down to the **Retrospective Reminder Interval** and **Retrospective Template** fields.
+Open Playbooks and select the **Playbooks** tab. Select the playbook and then select **Edit**. Sekect **Templates** and scroll down to the **Retrospective Reminder Interval** and **Retrospective Template** fields.
 
-This sets a reminder to fill out the retrospective, which is broadcast to the channel. The template is then pre-populated in the report. Once the report is written, it's saved and is listed in the run's detailed view.
+You can set a reminder to fill out the retrospective, which is broadcast to the channel. The template is then pre-populated in the report. Once the report is written, it's saved and is listed in the run's detailed view.
 
 .. image:: ../images/Retro.gif
    :alt: Create and publish retrospective reports.
@@ -19,14 +19,3 @@ Channel export
 ~~~~~~~~~~~~~~
 
 Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
-
-Review past runs
-~~~~~~~~~~~~~~~~
-
-To view active and past runs in your team from the desktop or browser:
-
-1. Navigate to **Main Menu > Playbooks**.
-2. Select **Runs**.
-3. Select the specified run from the list provided.
-4. The run's details are provided in the **Overview** tab, and the retrospective is in the **Retrospective** tab.
-5. Optionally export the contents of the incident channel to review.
