@@ -79,7 +79,7 @@ The example below specifies one log target that outputs to the console using a p
       }
     }
     
-.. Note::
+.. note::
     Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
 
 See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file.  
