@@ -34,7 +34,7 @@ All levels can be viewed at ``mattermost-server/shared/mlog/levels.go``.
 
 .. Note::
   - Logs are recorded asynchronously to reduce latency to the caller. 
-  - Advanced logging supports hot-reloading of logger configuration.
+  - In version 5.x advanced logging supports hot-reloading of logger configuration. In versions 6.0 and greater, hot-reloading of configuration as been removed. 
 
 Configure audit log in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,9 +254,5 @@ To ensure audit logs cannot be unknowingly corrupted or tampered with, make it p
 
 Planned enhancements to logging in general
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Allow discrete logging levels. Currently, an application-wide logging level is configured and any log records matching that level or lower will be emitted. These logging levels will remain, but support for zero or more discrete logging levels will be added, meaning only records matching the current log level or one of the discrete levels are emitted. Within the logging engine, any level below 10 (``trace`` through ``critical``/``fatal``, plus ``reserved``) will behave as it does currently, but any level above 10 will be considered discrete. Audit records will have a level above 10.
-
-- Allow logging levels and discrete levels to different targets (files, databases, etc) via configuration.
 
 See the `logging enhancements <https://docs.google.com/document/d/1DSE-SKfqwcpUIXKUokWFIh_uAp3nzw-5UkKBUt90ZqE/edit?usp=sharing>`_ proposal for more details.
