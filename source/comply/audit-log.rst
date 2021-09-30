@@ -232,7 +232,7 @@ During short spans of inability to write to targets, the audit records buffer in
 
 When using remote syslog, the current best practice is to also write to local file so no records are lost. Note that this does not automatically take records from local file and send it to syslog when syslog becomes available again.
 
-Configure audit log in Focalboard
+Configure audit log in Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The `Boards configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging.
 
