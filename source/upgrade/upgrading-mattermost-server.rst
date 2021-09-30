@@ -200,13 +200,11 @@ Upgrading Mattermost Server
   - You can then store that directory or re-index as preferred. 
   - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on configuring the bleve index directory.
 
-8. Copy the new files to your install directory and remove the temporary files.
+8. Copy the new files to your install directory.
 
   .. code-block:: sh
 
    sudo cp -an /tmp/mattermost-upgrade/. mattermost/
-   sudo rm -r /tmp/mattermost-upgrade/
-   sudo rm -i /tmp/mattermost*.gz
 
   .. note::
     
