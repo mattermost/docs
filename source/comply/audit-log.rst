@@ -234,7 +234,7 @@ When using remote syslog, the current best practice is to also write to local fi
 
 Configure audit log in Focalboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The `Focalboard configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging.
+The `Boards configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging.
 
 ``logging_cfg_file`` is used to specify the path to a file containing the logging configuration in JSON format.
 
