@@ -44,7 +44,7 @@ Configuring the Mattermost server to use the new audit log requires editing the 
 File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
 .. note::
-   Mattermost v6.0 introduced a change to the logging engine library which changes how the logger is configured in Mattermost 5.x versions. Please refer to :download:`Advanced Logging sample file <../samples/sample-logger-config.json>` for a sample configuration file supported in in v6.0 and beyond. 
+   Mattermost v6.0 introduced a change to the logging engine library which changes how the logger is configured in Mattermost 5.x versions. Please refer to :download:`Advanced Logging sample file <../samples/sample-logger-config.json>` for a sample configuration file supported from v6.0. 
 
    
 **Accessing configuration options for audit log**
