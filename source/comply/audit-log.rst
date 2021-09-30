@@ -240,7 +240,7 @@ The `Focalboard configuration file <https://github.com/mattermost/focalboard/blo
 
 ``logging_cfg_json`` is used to provide logging configuration directly as embedded JSON. Typically this is overridden using the corresponding environment variable ``FOCALBOARD_LOGGING_CFG_JSON``.
 
-Both configuration methods can be used, but care must be taken to avoid mutiple log targets writing to the same file.
+Both configuration methods can be used, but care must be taken to avoid multiple log targets writing to the same file.
 
 The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the type, format, and levels.
 
