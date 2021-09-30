@@ -14,10 +14,10 @@
     {% endfor %}
     <li>{{ title }}</li>
     <li class="wy-breadcrumbs-aside">
+      <div class="search__icon">
+        <i class="fa fa-search"></i> <span>Search</span>
+      </div>
       {% if pagename != "search" %}
-        <div class="search__icon">
-          <i class="fa fa-search"></i> <span>Search</span>
-        </div>
         {% if display_github %}
           <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}" class="fa fa-github"> Edit</a>
         {% elif display_bitbucket %}
@@ -28,7 +28,7 @@
           <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> View page source</a>
         {% endif %}
       {% endif %}
-    </li>
+    </li> 
   </ul>
   <hr/>
 </div>

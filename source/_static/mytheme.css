@@ -1800,3 +1800,8 @@ pre {
     }
 }
 
+/* Redesign 2021 - SEARCH */
+#search-results .context {
+	word-break: break-word;
+}
+
