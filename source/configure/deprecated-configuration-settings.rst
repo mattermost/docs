@@ -41,6 +41,27 @@ Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.
 | This feature's ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
+Disable Legacy MFA API Endpoint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: v6.0
+      
+      Deprecated. Not used in Mattermost v6.0 and later.
+
+   .. tab:: v5.39 and earlier
+      
+      This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
+
+**False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------+
+
 SQL Settings
 -------------
 

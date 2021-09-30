@@ -13689,31 +13689,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Disable Legacy MFA API Endpoint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
-
-**False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
-
 Restrict System Admin
 ^^^^^^^^^^^^^^^^^^^^^^
 
