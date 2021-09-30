@@ -1,7 +1,7 @@
 Retrospectives
 ==============
 
-Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review. Playbooks make scheduling and filling out a retrospective easier with cus
+Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review.
 
 Retrospective components are customized per playbook.
 
