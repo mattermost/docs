@@ -5,7 +5,7 @@ Audit Log v2 (Experimental) (E20)
 
 System Admins can review a comprehensive listing of events for more in-depth analysis. Additionally, the new audit log provides more control over where the logs are generated and stored. 
 
-The advanced logging capabilities of the Audit Log V2 allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+The advanced logging capabilities of the Audit Log V2 allow any combination of console, local file, syslog, and TCP socket targets, and can send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
 
 System Admins can define multiple log targets to:
 
