@@ -136,7 +136,7 @@ To temporarily disable a log target its type can be set to "none".
 
 Log Formatters
 ~~~~~~~~~~~~~~~~~~~
-Mattermost currently supports three log formats: plain, json, and `GELF <https://docs.graylog.org/en/4.0/pages/gelf.html>`_.
+Mattermost currently supports three log formats: plain, JSON, and `GELF <https://docs.graylog.org/en/4.0/pages/gelf.html>`__.
 
 **Plain configuration options:**
 
