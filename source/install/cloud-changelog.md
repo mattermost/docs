@@ -73,6 +73,7 @@ Latest Mattermost Cloud releases:
  - Fixed import process for imports with attachments.
 
 ### Known Issues
+ - To exit Playbooks, uers can press the **Back** button or use a keyboard shortcut to go back.
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
