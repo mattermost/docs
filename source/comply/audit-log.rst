@@ -129,7 +129,7 @@ Log target types include Console, Syslog, File, or TCP.
        "port", "number", " ", "Port number for server receiving log records."
        "tls", "bool", "false", "When true, a TLS connection will be created."
        "cert", "string", "  ", "Path to a cert file (.pem) to be used when establishing a TLS connection."
-       "insecure", "bool", "false", "When true, Mattermost will accept any certificate presented by the server and any host name in that certificate. Should be used only in testing environments."
+       "insecure", "bool", "false", "When true, any certificate will be accepted and any host name in that certificate. Should be used only in testing environments."
 
     
 To temporarily disable a log target its type can be set to "none".
