@@ -23,7 +23,7 @@ All access to the REST API or CLI is audited. When using Advanced Logging for au
       {"ID": 103, "Name": "audit-cli"},
    ],
 
-Where:
+where:
 
 - ``audit-api``: Enables output of REST API calls.
 - ``audit-content``: Enables output of API calls that generate content (e.g. ``create post``, ``create reaction``).
