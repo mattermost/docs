@@ -126,6 +126,8 @@ Lastest Mattermost Releases:
 
 #### Performance
  - Improved typing performance when the emoji autocomplete is open.
+ - Added performance improvements for draft storage with multiple tabs open.
+ - Improved performance of draft loading.
 
 #### Integrations
  - Dropped support for left-hand side-specific bot icons.
