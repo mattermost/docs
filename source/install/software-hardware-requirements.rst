@@ -173,7 +173,7 @@ Alternate Storage Calculations
 
 As an alternative to recommended storage sizing above, you can forecast your own storage usage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
 
--  Estimated storage per user per month (see below), multipled by 12 months in a year
+-  Estimated storage per user per month (see below), multiplied by 12 months in a year
 -  Estimated mean average number of users in a year
 -  A 1-2x safety factor
 
