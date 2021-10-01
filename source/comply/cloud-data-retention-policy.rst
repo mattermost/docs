@@ -1,7 +1,12 @@
 Data Retention Policy
 =====================
 
-|cloud|
+|enterprise| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
