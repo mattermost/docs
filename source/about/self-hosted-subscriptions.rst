@@ -18,7 +18,7 @@ Once you are logged in to the Customer Portal:
 7. Choose **Download the license key**.
 
 .. note::
-If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal. If possible, keep the error message/number that you received on hand as it may assist with their investigation.
+   If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal. If possible, keep the error message/number that you received on hand as it may assist with their investigation.
 
 Your Mattermost license is ready to use and be applied via the Mattermost System Console.
 
@@ -55,14 +55,14 @@ You can access your Customer Portal account to view information about your:
 For licenses purchased using the Customer Portal, you can view the license start date, expiry date, number of users, and license type in your account under **Subscription**. Subscription and licenses not purchased via the Customer Portal won't be listed.
 
 Adding More Users to a Subscription
--------------------------------------------------
+------------------------------------
 
 To add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
 
 You may incur retroactive charges for any unique users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
 Renewing a Subscription
-----------------------------------
+------------------------
 From Mattermost Server v5.32 and later, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
 If you have not upgraded to v5.32, you can contact Support (support@mattermost.com) to renew your license.
@@ -95,16 +95,16 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Self-hosted Subscription Frequently Asked Questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 How do I renew my license subscription if I don't have internet access?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you don't have access to the internet, please email support@mattermost.com for assistance.
 
 
 Can I use the same license key on multiple self-hosted servers?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 License keys for unlocking the advanced features in Mattermost can only be applied to a single deployment. A deployment consists of either a single Mattermost application server. or multiple linked Mattermost application servers in a High Availability configuration with access to a single database.
 
