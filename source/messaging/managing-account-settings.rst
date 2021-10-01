@@ -92,24 +92,28 @@ Sessions are created when you log in with your email and password to a new brows
 Notifications
 -------------
 
-Settings to configure desktop notifications, desktop notification sounds, email notifications, and words that trigger mentions.
+Settings to configure desktop notifications, desktop notification sounds, email notifications, mobile push notifications, and words that trigger mentions.
 
 Desktop Notifications
 ~~~~~~~~~~~~~~~~~~~~~
 
-Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost.
-
-When `Desktop App <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+Desktop notifications appear in the top corner of your main monitor when there is activity in Mattermost.
 
 Send Desktop Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Firefox, Safari, and Chrome.
+Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Chrome, Edge, Firefox, and Safari.
+
+When `Desktop App <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages":
+
+- An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
+- A solid red circle with a post count is displayed when a message with an at-mention is received.
+- And when `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/messaging/organizing-conversations.html#start-or-reply-to-threads>`__.
 
 Notification Sound
 ^^^^^^^^^^^^^^^^^^
 
-Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on Edge, Safari and Chrome.
+Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on Chrome, Edge, Firefox, and Safari in addition to the Mattermost Desktop App.
 
 Notification Duration
 ^^^^^^^^^^^^^^^^^^^^^
@@ -121,16 +125,18 @@ In Mattermost v5.0 and later, desktop notifications will stay onscreen for 5 sec
 Email Notifications
 ~~~~~~~~~~~~~~~~~~~
 
-Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than 5 minutes. Change the email where notifications are sent in **Account Settings > General > Email**.
+Email notifications are sent for mentions and direct messages after you’ve been offline for more than 60 seconds or away from Mattermost for more than five minutes. Change the email where notifications are sent in **Account Settings > General > Email**.
 
-If your System Admin has enabled **Email Batching**, you'll have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
+If your System Admin has enabled `Email Batching <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-batching>`__, you'll have additional options under this settings to select how often email notifications will be sent. All notifications received over this time period are combined and sent in a single email.
 
 Mobile Push Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification. By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the Mattermost setting to trigger push notifications depending on your Mattermost `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ is hidden. If your System Admin has not set up push notifications, this setting will be disabled.
+Push notifications can be sent to your mobile device if you have the Android or iOS app installed. You can choose the type of activity that will send a notification. 
 
-If you're actively viewing a channel (Public or Private), Direct Message, or Group Message on desktop or web, no push notifications will be sent for that channel. If a notification is viewed on desktop or web, the lockscreen notification will clear on Android, and on iOS the badge on the Mattermost app icon will decrement accordingly.
+By default, push notifications are sent "For mentions and direct messages". If push notifications are sent "Never", the Mattermost setting to trigger push notifications depending on your `Mattermost availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ is hidden. If your System Admin has not set up push notifications, this setting will be disabled.
+
+If you're actively viewing a channel (Public or Private), Direct Message, or Group Message using the Desktop App or a browser, no push notifications will be sent for that channel. If a notification is viewed using the Desktop App or a browser, the lockscreen notification will clear on Android, and on iOS the badge on the Mattermost app icon will count down accordingly.
 
 Trigger Mobile Push Notifications When
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +151,10 @@ By default, you receive notifications when someone posts a message that contains
 Reply Notifications
 ~~~~~~~~~~~~~~~~~~~
 
-In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the `reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`__ in an already existing thread.
+When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in. 
+
+- You are considered to start a thread when you post a message to which other members of your team reply. 
+- You are considered to participate in a thread when you post a message using the `Reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`__ in an pre-existing thread.
 
 Automatic Direct Message Replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

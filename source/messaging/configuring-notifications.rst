@@ -12,12 +12,13 @@ You can configure your Mattermost account for how and when you want to be notifi
 - Sends you a Direct Message
 - Mentions your username or first name in a channel
 - Notifies a channel you're in using @channel or @all
+- Responds to a thread you're following
 - Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
 
 Desktop Notifications
 ----------------------
 
-Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Firefox, Edge, Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`_. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop Apps.
+Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Edge, Firefox, and Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`_. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop Apps.
 
 .. image:: ../images/desktop_notification.png
 
