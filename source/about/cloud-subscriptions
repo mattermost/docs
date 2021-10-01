@@ -3,7 +3,7 @@ Cloud Subscriptions
 ===================
 
 Purchasing a Cloud subscription
---------------------------------------------
+-------------------------------
 
 Mattermost Cloud subscriptions start with a 14-day trial. A banner will alert you when you are nearing the end of your trial to upgrade to a subscription plan. 
 
@@ -15,7 +15,7 @@ Mattermost Cloud subscriptions start with a 14-day trial. A banner will alert yo
 6. Select **Complete**.
 
 Viewing Subscription Details
----------------------------------------
+----------------------------
 You can view your subscription details in **System Console > Billing & Account > Subscription**. 
 
 You can view information about your:
@@ -35,12 +35,12 @@ If you are on a monthly Cloud subscription, you can simply add more users to you
 If you are on an annual Cloud subscription, you may incur retroactive charges for any unique users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
 Renewing a Subscription
----------------------------------------------------
+-----------------------
 
 Monthly Cloud subscriptions automatically renew. 
 
 Cloud Subscription Frequently Asked Questions
-------------------------------------------------------------------
+---------------------------------------------
 
 How am I billed for my Cloud monthly subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
