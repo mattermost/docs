@@ -75,9 +75,14 @@ Mattermost v6.0 introduces several database schema changes to improve both datab
 Upgrading from Releases Older than v5.35
 ----------------------------------------
 
-Customers upgrading from a release older than Mattermost v5.35 should expect downtime when upgrading to v6.0, due to the introduction of backend database architecture introduced in v5.35. See the `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html?highlight=changelog#id39>`__ documentation for details.
+Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0, due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. See the `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html?highlight=changelog#id39>`__ documentation for details.
 
-If you're upgrading from a version prior to v5.0, be sure to also modify your service file to work with the binary changes introduced with v5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``), and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
+Upgrading from Releases Prior to v5.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you're upgrading from a version prior to v5.0, you can't upgrade directly to v6.0. Instead, we strongly recommend approaching the upgrade in phases, starting with an upgrade to the latest `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ first, followed by the upgrade to v6.0.
+
+During the first phase of updates, you must modify your service file to work with the binary changes introduced with v5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``), and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
 
 Upgrading High Availability Deployments
 ---------------------------------------
@@ -157,6 +162,10 @@ Upgrading Mattermost Server
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
 7. Remove all files **except** data and custom directories from within the current ``mattermost`` directory. 
+
+   .. code-block:: sh
+
+     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
 
    **What's preserved on upgrade?**
   
