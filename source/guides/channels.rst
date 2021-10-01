@@ -36,7 +36,7 @@ Work With Messages
    Text Formatting </messaging/formatting-text>
    Use Emojis </messaging/using-emoji>
    Mention Teammates </messaging/mentioning-teammates>
-   Share Messages </messaging/sharing-channels>
+   Share Messages </messaging/sharing-messages>
    Share Files </messaging/sharing-files>
    Execute Commands </messaging/executing-slash-commands>
    Save Messages </messaging/saving-messages>
