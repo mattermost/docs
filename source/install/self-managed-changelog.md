@@ -54,6 +54,10 @@ Lastest Mattermost Releases:
    3. High effort, low downtime - This process requires everything of (2), plus it tries to minimize the impact of query #11. We can do this by following step 2, and then starting v6 along with a running v5 server, and then monitor the application logs. As soon as the v6 application starts up, we need to bring down a v5 node. This minimizes the downtime to only a few seconds.
  - Focalboard plugin has been renamed to Mattermost Boards, and v0.9.1 (released with Mattermost v6.0) is now enabled by default.
  - The advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated [documentation](https://docs.mattermost.com/comply/audit-log.html).
+ - Some breaking changes to plugins are included:
+   - Support for left-hand side-specific bot icons was dropped.
+   - Removed a deprecated "Backend" field from the plugin manifest.
+   - Converted the "Executables" field in the plugin manifest to a map.
 
 **IMPORTANT:** If you upgrade from a release earlier than v5.39, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -130,12 +134,9 @@ Lastest Mattermost Releases:
  - Improved performance of draft loading.
 
 #### Integrations
- - Dropped support for left-hand side-specific bot icons.
  - Added a "rest field" to the App command parser.
  - Added support for React components in channel header tooltips registered by plugins.
  - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
- - Removed a deprecated "Backend" field from the plugin manifest.
- - Converted the "Executables" field in the plugin manifest to a map.
 
 #### Administration
  - Added ``playbooks`` and ``boards`` to restricted team URLs list.
@@ -212,19 +213,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - ``utils/authorization.go`` and moved any permissions to the ``MakeDefaultRoles()`` function.
 
 ### Database Changes
- - Removed deprecated ``model.ComparePassword`` method.
- - Removed deprecated ``Context.SourcePluginId`` field.
- - Removed ``(*model.Client4).CheckUserMfa``.
- - Removed ``(*model.Client4).GetServerBusyExpires``.
- - Removed MB constant from model package.
- - Removed use of pointers to the following types: 
-   - ``model.ChannelList``
-   - ``model.ChannelListWithTeamData``
-   - ``model.ChannelMembers``
-   - ``model.Preferences``
-   - ``model.ProductNotices``
- - Renamed ``plugin.Context.IpAddress`` to ``plugin.Context.IPAddress``.
- - Renamed fields in the model package to have more idiomatic names.
  - Added the following database indexes:
    - ``idx_posts_root_id_delete_at_create_at``
    - ``idx_channels_team_id_display_name``
@@ -246,6 +234,21 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Websocket Event Changes
  - Added Websocket client to products.
  - Added plugin Websocket hooks: ``OnWebSocketConnect``, ``OnWebSocketDisconnect`` and ``WebSocketMessageHasBeenPosted``.
+
+### Library Changes
+ - Removed deprecated ``model.ComparePassword`` method.
+ - Removed deprecated ``Context.SourcePluginId`` field.
+ - Removed ``(*model.Client4).CheckUserMfa``.
+ - Removed ``(*model.Client4).GetServerBusyExpires``.
+ - Removed MB constant from model package.
+ - Removed use of pointers to the following types: 
+   - ``model.ChannelList``
+   - ``model.ChannelListWithTeamData``
+   - ``model.ChannelMembers``
+   - ``model.Preferences``
+   - ``model.ProductNotices``
+ - Renamed ``plugin.Context.IpAddress`` to ``plugin.Context.IPAddress``.
+ - Renamed fields in the model package to have more idiomatic names.
 
 ### Go Version
  - v6.0 is built with Go ``v1.16.7``.
