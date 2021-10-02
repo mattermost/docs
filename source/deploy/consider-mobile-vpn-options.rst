@@ -45,7 +45,7 @@ Connect via Corporate Proxy Server
 
 Review the following commonly-asked questions about connecting through a corporate proxy server:
 
-- `How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <https://docs.mattermost.com/deploy/mobile-faq.html#how-do-i-receive-mobile-push-notifications-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`__
-- `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy/#receiving-mobile-push-notification-if-the-use-of-a-corporate-proxy-server-is-required-by-your-it-policy>`__
-- `Whitelist Mattermost push notification proxy to bypass your corporate proxy server <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy/#receiving-mobile-push-notification-if-the-use-of-a-corporate-proxy-server-is-required-by-your-it-policy>`__
-- `Run App Store versions of the Mattermost Mobile apps <https://developers.mattermost.com/contribute/mobile/push-notifications/corporate-proxy/#receiving-mobile-push-notification-if-the-use-of-a-corporate-proxy-server-is-required-by-your-it-policy>`__
+- `How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server? <https://docs.mattermost.com/deploy/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`__
+- `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <https://docs.mattermost.com/deploy/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`__
+- `Whitelist Mattermost push notification proxy to bypass your corporate proxy server <https://docs.mattermost.com/deploy/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server>`__
+- `Run App Store versions of the Mattermost Mobile apps <https://docs.mattermost.com/deploy/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps>`__
