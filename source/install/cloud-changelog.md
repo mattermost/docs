@@ -3,12 +3,53 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-10-13](#release-2021-10-13)
 - [Release 2021-09-29](#release-2021-09-29)
 - [Release 2021-08-12](#release-2021-08-12)
 - [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
-- [Release 2021-06-16](#release-2021-06-16)
+
+## Release 2021-10-13
+
+### Highlights
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a query param to translate in-product help pages when opened from desktop app.
+ - Added support for multiselect on apps slash commands.
+ - Added rendering for posts containing markdown in email notifications.
+ - App Commands make a distinction between the central channel and the RHS channel.
+ - Slightly improved performance around rendering of system messages.
+ - Added inline Latex rendering.
+ - Added the channel category menu item to the channel header dropdown.
+ - Added keyboard shortcuts to tooltips. Use shortcut key component for displaying keys.
+ - App bindings now recognize between channels in post menus.
+ - Changed the UI of the edit-indicator of posts and moved it inline.
+ - CRT: Global threads infinite scroll.
+ - Get flagged posts endpoint will return now only flagged posts for channels the user is member of.
+ - Added performance improvements for draft storage with multiple tabs open.
+ - Improved performance of draft loading.
+
+#### Administration
+ - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
+ - Updated bleve to v2 and use the scorch index type.
+ - Added new registerMessageWillBeUpdatedHook(newPost, oldPost) client-side plugin hook to intercept edited messages.
+ - The Bleve index has been updated to use the scorch index type. This new default index type has some improvements on efficiency, which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
+ - Supported browsers changes https://github.com/mattermost/mattermost-server/pull/18305 
+
+### Bug Fixes
+ - Fixed an issue where creating bot with invalid username returned "invalid email".
+ - Fixed an issue where /code was not rendering initial whitespace characters.
+ - Fixed an issue where Try Enterprise for free option was missing spacing in mobile webview.
+
+### Known Issues
+ - To exit Playbooks, uers can press the **Back** button or use a keyboard shortcut to go back.
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-09-29
 
