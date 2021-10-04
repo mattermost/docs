@@ -80,7 +80,7 @@ Section 1194.21 Software Applications and Operating Systems - Detail
 
 - **Remarks and Explanations**: Nothing to add. 
 
-(c) A well-defined on-screen indication of the current focus shall be provided if moves among interactive interface elements as the input focus changes. The focus shall be programmatically exposed so that Assistive Technology can track focus and focus changes.
+(c) A well-defined on-screen indication of the current focus shall be provided if moves among interactive interface elements as the input focus change. The focus shall be programmatically exposed so that Assistive Technology can track focus and focus changes.
 
 - **Level of Support and Supporting Features**: SUPPORTS 
 
