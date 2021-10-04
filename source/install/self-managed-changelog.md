@@ -78,7 +78,7 @@ Lastest Mattermost Releases:
 
 #### Packaging Changes
  - Updated in-product strings referencing E10 & E20 to [new packaging](https://mattermost.com/pricing).
- - Features moved from mid SKU to low SKU:
+ - Features moved from legacy E10 to all plans, including Team Edition:
    - System default permissions, e.g. permission to create and archive channels system-wide.
       - Specifically, “System Scheme” only in **System Console > User Management > Permissions**. 
       - Existing permissions/policies in TE/E0 for "Enable Team Creation" and "Allow Team Administrators to edit others’ posts" are properly handled. 
@@ -88,7 +88,7 @@ Lastest Mattermost Releases:
    - O365 integrations including MS Teams Calling and MS Calendar
    - Jira multi-server support
    - Advanced team permissions
-   - Read-only announcement channels
+   - Channel moderation
  - Features added to Enterprise plan:
    - Shared channels
    - Certificate-based authentication
@@ -139,7 +139,7 @@ Lastest Mattermost Releases:
  - Exported ``ChannelInviteModal`` and ``ChannelMembersModal`` components for plugins.
 
 #### Administration
- - Added ``playbooks`` and ``boards`` to restricted team URLs list.
+ - Added ``playbooks`` and ``boards`` to restricted team URLs list. Conflict exists if users hit the URL to the team directly without the trailing channel, permalink or threads information (ie server/team) and they have a team name “playbooks” or “boards”. User would expect to be taken to their messaging team.  
  - Added the ability for Team Edition to edit role permissions.
  - Removed a hard-coded override of ``TeamSettings.MaxNotificationsPerChannel`` on unlicensed servers (e.g. Team Edition).
  - Migrated the extraction command to mmctl.
