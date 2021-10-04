@@ -64,7 +64,7 @@ Features include:
 - `Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__
 - Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__
-- Multiple languages including U.S. English, Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, Swedish, Hungarian, Australian English, and Ukrainian
+- Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian
 - `SOC2 Type1 certification<https://mattermost.com/security/>`__ (Cloud only)
 - `Community support <https://mattermost.com/support/>`__
 
