@@ -156,6 +156,9 @@ When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/mana
 - You are considered to start a thread when you post a message to which other members of your team reply. 
 - You are considered to participate in a thread when you post a message using the `Reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`__ in an pre-existing thread.
 
+.. note::
+  This setting is hidden when Collapsed Reply Threads (Beta) is enabled.
+
 Automatic Direct Message Replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
