@@ -1,7 +1,20 @@
 Account Settings
 ================
 
-Account Settings is accessible from the **Main Menu** by selecting the three horizontal lines (or hamburger menu) at the top of the channel sidebar. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
+Account Settings is where you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
+
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier releases, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      From Mattermost v6.0, **Account Settings** have moved.
+
+      - Access Profile and Security settings from your avatar in the Global Header.
+      - Access Notifications, Display, Sidebar, and Advanced Settings by selecting the **Gear** |gear-icon| icon in the global header.
 
 General
 -------
@@ -268,7 +281,20 @@ The following sidebar settings apply to your current sidebar only:
 
 This feature groups unread channels at the top of the channel sidebar in an **Unreads** category. System Admins can `set the default of this setting <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__ for you. 
 
-You can choose to enable it or disable it in **Account Settings > Sidebar**. 
+To enable or disable these settings: 
+
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier releases, access **Account Settings > Sidebar** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      From Mattermost v6.0, **Account Settings** have moved.
+
+      - Access Profile and Security settings from your avatar in the Global Header.
+      - Access Notifications, Display, Sidebar, and Advanced Settings by selecting the **Gear** |gear-icon| icon in the global header.
 
 Legacy sidebar settings
 ~~~~~~~~~~~~~~~~~~~~~~~
