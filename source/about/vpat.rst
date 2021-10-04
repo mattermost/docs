@@ -1,7 +1,7 @@
 Voluntary Product Accessibility Template (VPAT) 
 ===============================================
 
-The following Voluntary Product Accessiblity Template for 508 Compliance is completed per `online guidelines from the United States Department of State <https://www.state.gov/m/irm/impact/126343.htm>`__.
+The following Voluntary Product Accessibility Template for 508 Compliance is completed per `online guidelines from the United States Department of State <https://www.state.gov/m/irm/impact/126343.htm>`__.
 
 - **Product Name**: Mattermost Enterprise Edition (including E10, E20 and all variants) 
 - **Product Version Number**: Assessment applies to release 3.7 and later 
@@ -45,7 +45,7 @@ Section 1194.25 Self-Contained, Closed Products
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE for 14 criteria.
 
-- **Remarks and Explanations**: Mattermost is not a closed prduct. 
+- **Remarks and Explanations**: Mattermost is not a closed product. 
 
 Section 1194.26 Desktop and Portable Computers 
 
@@ -80,7 +80,7 @@ Section 1194.21 Software Applications and Operating Systems - Detail
 
 - **Remarks and Explanations**: Nothing to add. 
 
-(c) A well-defined on-screen indication of the current focus shall be provided that moves among interactive interface elements as the input focus changes. The focus shall be programmatically exposed so that Assistive Technology can track focus and focus changes.
+(c) A well-defined on-screen indication of the current focus shall be provided if moves among interactive interface elements as the input focus changes. The focus shall be programmatically exposed so that Assistive Technology can track focus and focus changes.
 
 - **Level of Support and Supporting Features**: SUPPORTS 
 
@@ -215,7 +215,7 @@ Section 1194.22 Web-based Intranet and Internet information and Applications - D
 
 - **Remarks and Explanations**: Nothing to add. 
 
-(m) When a web page requires that an applet, plug-in or other application be present on the client system to interpret page content, the page must provide a link to a plug-in or applet that complies with 1194.21(a) through (l).
+(m) When a web page requires that an applet, plug-in, or other application be present on the client system to interpret page content, the page must provide a link to a plug-in or applet that complies with 1194.21(a) through (l).
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
@@ -296,7 +296,7 @@ Section 1194.23 Telecommunications Products - Detail
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-(j) Products that transmit or conduct information or communication, shall pass through cross-manufacturer, non-proprietary, industry-standard codes, translation protocols, formats or other information necessary to provide the information or communication in a usable format. Technologies which use encoding, signal compression, format transformation, or similar techniques shall not remove information needed for access or shall restore it upon delivery.
+(j) Products that transmit or conduct information or communication, shall pass through cross-manufacturer, non-proprietary, industry-standard codes, translation protocols, formats, or other information necessary to provide the information or communication in a usable format. Technologies which use encoding, signal compression, format transformation, or similar techniques shall not remove information needed for access or shall restore it upon delivery.
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
@@ -362,7 +362,7 @@ a) All analog television displays 13 inches and larger, and computer equipment t
 Section 1194.25 Self-Contained, Closed Products - Detail 
 --------------------------------------------------------
 
-(a) Self contained products shall be usable by people with disabilities without requiring an end-user to attach Assistive Technology to the product. Personal headsets for private listening are not Assistive Technology.
+(a) Self-contained products shall be usable by people with disabilities without requiring an end-user to attach Assistive Technology to the product. Personal headsets for private listening are not Assistive Technology.
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
@@ -386,7 +386,7 @@ Section 1194.25 Self-Contained, Closed Products - Detail
 
 - **Remarks and Explanations**: Functionality described in this requirement is not included in the product.
 
-(e) When products provide auditory output, the audio signal shall be provided at a standard signal level through an industry standard connector that will allow for private listening. The product must provide the ability to interrupt, pause, and restart the audio at anytime.
+(e) When products provide auditory output, the audio signal shall be provided at a standard signal level through an industry standard connector that will allow for private listening. The product must provide the ability to interrupt, pause, and restart the audio at any time.
 
 - **Level of Support and Supporting Features**: NOT APPLICABLE 
 
