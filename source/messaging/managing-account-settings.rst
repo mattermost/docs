@@ -7,19 +7,32 @@ Account Settings is where you can configure your profile settings, notification 
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier releases, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
-      From Mattermost v6.0, **Account Settings** have moved.
+      In Mattermost v6.0, **Account Settings** have moved.
 
-      - Access Profile and Security settings from your avatar in the Global Header.
-      - Access Notifications, Display, Sidebar, and Advanced Settings by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
 
 General
 -------
 
 Settings to configure name, username, nickname, email, and profile picture.
+
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Account Settings** have moved.
+
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
 
 Full Name
 ~~~~~~~~~
@@ -34,7 +47,7 @@ Usernames are unique identifiers appearing next to all posts. Pick something eas
 Nickname
 ~~~~~~~~
 
-Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**. 
+Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Account Settings**.
 
 Position
 ~~~~~~~~~
@@ -51,12 +64,38 @@ Profile Picture
 
 Profile pictures appear next to all posts and at the top of the channel sidebar next to your name. 
 
-To change your profile picture, select **Select**, then choose an image. For best results, choose an image that's at least 128 x 128 pixels in size. Supported image formats include: BMP, JPG, JPEG, and PNG. The GIF file format is not supported.
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Account Settings** have moved.
+
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+
+To change your profile picture, choose **Select**, then choose an image. For best results, choose an image that's at least 128 x 128 pixels in size. Supported image formats include: BMP, JPG, JPEG, and PNG. The GIF file format is not supported.
 
 Security
 --------
 
 Settings to configure your password, view access history, and view or logout of active sessions.
+
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Account Settings** have moved.
+
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
 
 Password
 ~~~~~~~~
@@ -106,6 +145,19 @@ Notifications
 -------------
 
 Settings to configure desktop notifications, desktop notification sounds, email notifications, and words that trigger mentions.
+
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Account Settings** have moved.
+
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
 
 Desktop Notifications
 ~~~~~~~~~~~~~~~~~~~~~
@@ -169,6 +221,19 @@ Display
 -------
 
 Settings to configure clock and teammate name display preferences.
+
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Account Settings** have moved.
+
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
 
 Theme
 ~~~~~
@@ -275,26 +340,24 @@ Sidebar
 
 The channel sidebar includes `enhanced sidebar features <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Account Settings** have moved.
+
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+
 The following sidebar settings apply to your current sidebar only:
 
 **Group unread channels separately**
 
 This feature groups unread channels at the top of the channel sidebar in an **Unreads** category. System Admins can `set the default of this setting <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__ for you. 
-
-To enable or disable these settings: 
-
-.. tabs::
-
-  .. tab:: v5.39 and earlier
-
-      In Mattermost v5.39 and earlier releases, access **Account Settings > Sidebar** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
-
-  .. tab:: v6.0 onwards
-
-      From Mattermost v6.0, **Account Settings** have moved.
-
-      - Access Profile and Security settings from your avatar in the Global Header.
-      - Access Notifications, Display, Sidebar, and Advanced Settings by selecting the **Gear** |gear-icon| icon in the global header.
 
 Legacy sidebar settings
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -325,6 +388,19 @@ Advanced
 --------
 
 Settings to configure when messages are sent.
+
+.. tabs::
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+
+  .. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Account Settings** have moved.
+
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
 
 Send messages on CTRL+ENTER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
