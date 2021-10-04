@@ -20,18 +20,22 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
 .. tabs::
 
+.. tab:: v6.0 onwards
+
+      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
+      
+      - Configure desktop notifications in **Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
+      
+      - By default, all channels use the global setting configured in **Notifications**.
+
   .. tab:: v5.39 and earlier
 
       In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      
       - Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
+      
       - By default, all channels use the global setting configured in **Account Settings**.
-
-  .. tab:: v6.0 onwards
-
-      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
-      - Configure desktop notifications in **Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
-      - By default, all channels use the global setting configured in **Notifications**.
-
+  
 Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
 
 **Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
@@ -45,17 +49,21 @@ By default, you'll get email notifications if you're not actively using Mattermo
 
 .. tabs::
 
-  .. tab:: v5.39 and earlier
-
-      In Mattermost versions up to 5.39: 
-      -  Configure email notifications in **Account Settings > Notifications > Email notifications**.
-      -  Configure the email address where notifications are sent in **Account Settings > General > Email**.
-
   .. tab:: v6.0 onwards
 
       In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
+      
       - Configure email notifications in **Notifications > Email Notifications > Send desktop notifications**, then choose your sound preference.
+      
       - By default, all channels use the global setting configured in **Notifications**.
+
+  .. tab:: v5.39 and earlier
+
+      In Mattermost versions up to 5.39: 
+      
+      -  Configure email notifications in **Account Settings > Notifications > Email notifications**.
+      
+      -  Configure the email address where notifications are sent in **Account Settings > General > Email**.
 
 Messages in email notifications can be opened in the Mattermost Desktop App, Mobile App, or in your browser:
 
@@ -72,17 +80,21 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 
 .. tabs::
 
-  .. tab:: v5.39 and earlier
-
-      In Mattermost versions up to 5.39: 
-      -  Configure push notifications in **Account Settings > Notifications > Mobile Push Notifications > Send mobile push notifications**.
-      -  Configure when push notifications are sent depending on your availability in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
-
   .. tab:: v6.0 onwards
 
       In Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
+      
       - Configure push notifications in **Notifications > Mobile Push Notifications > Send mobile push notifications**.
+      
       - Configure when push notifications are sent depending on your availability in **Notifications > Mobile Push Notifications > Trigger push notifications when**.
+      
+  .. tab:: v5.39 and earlier
+
+      In Mattermost versions up to 5.39: 
+      
+      -  Configure push notifications in **Account Settings > Notifications > Mobile Push Notifications > Send mobile push notifications**.
+      
+      -  Configure when push notifications are sent depending on your availability in **Account Settings > Notifications > Mobile push notifications > Trigger push notifications when**.
   
 **Not getting a push notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-mobile-push-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.   
 
