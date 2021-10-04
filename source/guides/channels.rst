@@ -98,9 +98,9 @@ Customize Channels
 * :doc:`Desktop App Configurations </messaging/managing-desktop-app-options>` - Configure settings on the Windows, Mac, and Linux Desktop Apps.
 * :doc:`Manage Server Connections </messaging/managing-desktop-app-servers>` - Manage your connections to multiple Mattermost servers.
 
-
 Navigate Channels
 -----------------
+
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -111,8 +111,8 @@ Navigate Channels
 * :doc:`Keyboard Accessibility </messaging/keyboard-accessibility>` - Use navigational keyboard shortcuts to use Mattermost without a mouse.
 * :doc:`Keyboard Shortcuts </messaging/keyboard-shortcuts>` - Use keyboard shortcuts to perform actions that help you navigate Mattermost Channels.
 
-Extend Mattermost channel-settings
-----------------------------------
+Extend Mattermost Channels
+---------------------------
       
 .. toctree::
    :maxdepth: 2
