@@ -68,7 +68,7 @@ Features include:
 - `SOC2 Type1 certification<https://mattermost.com/security/>`__ (Cloud only)
 - `Community support <https://mattermost.com/support/>`__
 
-See a complete list of features here <https://mattermost.com/pricing>`__.
+See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Professional 
 ^^^^^^^^^^^^^^^^^^^^^^^
