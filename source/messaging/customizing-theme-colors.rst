@@ -7,14 +7,14 @@ The colors of the Mattermost user interface are customizable.
 
 .. tabs::
 
-  .. tab:: v5.39 and earlier
-
-      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Theme**.
-      
   .. tab:: v6.0 onwards
 
       In Mattermost v6.0, navigate to **Settings > Display > Theme**.
       
+  .. tab:: v5.39 and earlier
+
+      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Theme**.
+     
 You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
 
 Any color changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
@@ -103,14 +103,14 @@ You can export a theme from Mattermost by copying the theme values from the Cust
 
 .. tabs::
 
-  .. tab:: v5.39 and earlier
-
-      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
-      
   .. tab:: v6.0 onwards
 
       In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
+      
+  .. tab:: v5.39 and earlier
 
+      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
+  
 Importing a Custom Theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -120,14 +120,14 @@ Copy existing theme values, then go to:
 
 .. tabs::
 
-  .. tab:: v5.39 and earlier
-
-      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
-      
   .. tab:: v6.0 onwards
 
       In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
 
+  .. tab:: v5.39 and earlier
+
+      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
+  
 Custom Theme Examples
 ~~~~~~~~~~~~~~~~~~~~~
 
