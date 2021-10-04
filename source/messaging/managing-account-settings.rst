@@ -7,7 +7,7 @@ Account Settings is where you can configure your profile settings, notification 
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
@@ -25,7 +25,7 @@ Settings to configure name, username, nickname, email, and profile picture.
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
@@ -68,7 +68,7 @@ Profile pictures appear next to all posts and at the top of the channel sidebar 
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
@@ -88,7 +88,7 @@ Settings to configure your password, view access history, and view or logout of 
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
@@ -150,7 +150,7 @@ Settings to configure desktop notifications, desktop notification sounds, email 
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
@@ -226,7 +226,7 @@ Settings to configure clock and teammate name display preferences.
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
@@ -344,7 +344,7 @@ The channel sidebar includes `enhanced sidebar features <https://docs.mattermost
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
@@ -393,7 +393,7 @@ Settings to configure when messages are sent.
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
