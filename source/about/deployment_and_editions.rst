@@ -89,7 +89,7 @@ Building on the features in Starter plan, it also offers:
 - 99.9% uptime SLA guarantee (Cloud only)
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`__
 
-See a complete list of features here <https://mattermost.com/pricing>`__.
+See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Enterprise 
 ^^^^^^^^^^^^^^^^^^^^^^
