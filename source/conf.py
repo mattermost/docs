@@ -527,6 +527,8 @@ redirects = {
     "mobile/mobile-faq.html#how-do-push-notifications-work":
         "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work",
     "mobile/mobile-testing-notifications": "https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
+    "onboard/ad-ldap#active-directory-ldap-setup-e10-e20": 
+        "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
