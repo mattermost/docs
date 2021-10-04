@@ -114,7 +114,7 @@ Building on the features in Professional plan, it also offers:
 - `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__
 
-See a complete list of features here <https://mattermost.com/pricing/>`__. 
+See a complete list of features `here <https://mattermost.com/pricing/>`__. 
 
 
 Mattermost Legacy Enterprise Editions
