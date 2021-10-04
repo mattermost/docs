@@ -161,4 +161,4 @@ As the platform matures and new features are added, they are evaluated to be inc
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer. 
 
-You can provide us feedback on our forum where ideas and input influences the future of the platform: ​​https://mattermost.uservoice.com/ 
+You can provide us feedback on `our forum <https://mattermost.uservoice.com/>`__, where ideas and input influences the future of the platform.
