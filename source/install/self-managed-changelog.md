@@ -63,7 +63,7 @@ Lastest Mattermost Releases:
 
 ### Highlights
 
-#### Multi-Product Support
+#### Multi-Product Platform
  - Mattermost now ships as one platform with three products - Channels, Playbooks, and Boards.
  - Playbooks and Boards are visible when [plugins are enabled system-wide](https://docs.mattermost.com/configure/configuration-settings.html#enable-plugins). 
 
@@ -83,13 +83,13 @@ Lastest Mattermost Releases:
       - Specifically, “System Scheme” only in **System Console > User Management > Permissions**. 
       - Existing permissions/policies in TE/E0 for "Enable Team Creation" and "Allow Team Administrators to edit others’ posts" are properly handled. 
    - Team and Channel management pages (but without channel moderation, e.g. read-only channels).
- - Features moved from high SKU to mid SKU:
+ - Features moved from legacy E20 to Professional plan:
    - SSO with OpenID Connect, SAML, Google and O365
    - O365 integrations including MS Teams Calling and MS Calendar
    - Jira multi-server support
    - Advanced team permissions
    - Read-only announcement channels
- - Features added to high-end SKU:
+ - Features added to Enterprise plan:
    - Shared channels
    - Certificate-based authentication
    - Granular data retention
