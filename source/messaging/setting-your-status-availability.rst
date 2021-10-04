@@ -10,7 +10,7 @@ Setting a Custom Status
 
   .. tab:: v5.39 and earlier
 
-      In Mattermost v5.39 and earlier, set status and availability from your avatar at the top of the channel sidebar.
+      In Mattermost versions up to 5.39, set status and availability from your avatar at the top of the channel sidebar.
 
   .. tab:: v6.0 onwards
 
