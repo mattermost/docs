@@ -8,28 +8,28 @@ Setting a Custom Status
 
 .. tabs::
 
-  .. tab:: v5.39 and earlier
-
-      In Mattermost versions up to 5.39, set status and availability from your avatar at the top of the channel sidebar.
-
   .. tab:: v6.0 onwards
 
       In Mattermost v6.0, set status and availability from your avatar in the top-right corner of the global header.
+      
+  .. tab:: v5.39 and earlier
 
+      In Mattermost versions up to 5.39, set status and availability from your avatar at the top of the channel sidebar.
+  
 Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
 
 .. tabs::
+
+   .. tab:: v6.0 onwards
+
+     1. To set a custom status, select your in the top-right corner of the global header, then select **Set a Custom Status**.
+     2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
 
   .. tab:: v5.39 and earlier
 
      1. To set a custom status, select your avatar at the top of the channel sidebar, then select **Set a Custom Status**.
      2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
-
-  .. tab:: v6.0 onwards
-
-     1. To set a custom status, select your in the top-right corner of the global header, then select **Set a Custom Status**.
-     2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
-
+ 
 .. note::
 
   - If custom statuses aren't available, you can request your System Admin to enable this feature in **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**.
