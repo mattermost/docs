@@ -39,9 +39,9 @@ Latest Mattermost Cloud releases:
  - The Bleve index has been updated to v2 to use the scorch index type. This new default index type has some improvements on efficiency, which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
  - ``get flagged posts`` endpoint will now return only flagged posts for channels the user is member of.
  - Minimum supported browser versions changes:
-  - Chrome updated from ``61+`` to ``89+``.
-  - Firefox updated from ``60+`` to ``78+``.
-  - MacOS updated from ``10.9+`` to ``10.14+``.
+   - Chrome updated from ``61+`` to ``89+``.
+   - Firefox updated from ``60+`` to ``78+``.
+   - MacOS updated from ``10.9+`` to ``10.14+``.
 
 ### Bug Fixes
  - Fixed an issue where creating a bot with an invalid username returned an "invalid email" error.
