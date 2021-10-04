@@ -1770,15 +1770,15 @@ To ensure that users can contact you for assistance, set this value to an email 
 | This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Terms of Service link
+Terms of Use link
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Configurable link to Terms of Service your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
+Configurable link to Terms of Use your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Terms of Use page hosted on mattermost.com/terms-of-service/. If changing the link to a different Terms of Use, make sure to include the "Mattermost Terms of Use" notice to end users that must also be shown to users from the "Terms of Use" link.
 
-In version 5.17 and later, this setting does not change the terms of service link in **Main Menu > About Mattermost**, which refers to the Mattermost Terms of Service.
+In version 5.17 and later, this setting does not change the terms of service link in **Main Menu > About Mattermost**, which refers to the Mattermost Terms of Use.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                 |
+| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://mattermost.com/terms-of-service/"`` with string input.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link
@@ -1789,7 +1789,7 @@ Configurable link to Privacy Policy your organization may provide to end users o
 In version 5.17 and later, this setting does not change the privacy policy link in **Main Menu > About Mattermost**, which refers to the Mattermost Privacy Policy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                         |
+| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://mattermost.com/privacy-policy/"`` with string input.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About Link
