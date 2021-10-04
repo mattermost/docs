@@ -10,10 +10,10 @@ Below is an overview of our features, security, account management, deployment, 
    :maxdepth: 2
    :glob:
 
-   /overview/product*
-   /overview/security*
-   /overview/integrations*
-   /overview/license-and-subscription*
-   /overview/auth*
-   /overview/compliance*
-   /overview/faq*
+   /about/product
+   /about/security*
+   /about/integrations*
+   /about/licensing-and-subscription*
+   /about/corporate-directory-integration*
+   /about/certifications-and-compliance*
+   /about/frequently-asked-questions*

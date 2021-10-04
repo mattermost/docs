@@ -1,21 +1,37 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [dev-packages]
-
-awscli = "*"
-
+#
+# Amazon AWS Universal CLI environment (https://aws.amazon.com/cli/)
+# Release notes: https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst
+# Repo: https://github.com/aws/aws-cli
+awscli = "==1.20.11"
 
 [packages]
-
-sphinx = "*"
-sphinx-autobuild = "*"
-sphinx-rtd-theme = "*"
-recommonmark = "*"
-sphinx-sitemap = "*"
-sphinx_reredirects = "*"
-sphinx-press-theme ="*"
+#
+# Sphinx (https://www.sphinx-doc.org)
+# Release notes: https://www.sphinx-doc.org/en/master/changes.html
+# Repo: https://github.com/sphinx-doc/sphinx
+sphinx = "==3.5.4"
+#
+# ReadTheDocs Theme (https://sphinx-rtd-theme.readthedocs.io/)
+# Release notes: https://github.com/readthedocs/sphinx_rtd_theme/blob/master/docs/changelog.rst
+# Repo: https://github.com/readthedocs/sphinx_rtd_theme
+sphinx-rtd-theme = "==0.5.2"
+#
+# MyST Parser (https://myst-parser.readthedocs.io/en/latest/)
+# Release notes: https://myst-parser.readthedocs.io/en/latest/develop/_changelog.html
+# Repo: https://github.com/executablebooks/myst-parser
+myst-parser = "==0.15.1"
+#
+# Python `typing` package extensions (https://github.com/python/typing/blob/master/typing_extensions/README.rst)
+# Supports MyST Parser on macOS with Python 3.7
+# Repo: https://github.com/python/typing/tree/master/typing_extensions
+typing-extensions = "==3.10.0.0"
+#
+# Sphinx Autobuild (https://github.com/executablebooks/sphinx-autobuild)
+sphinx-autobuild = "==2021.3.14"
+sphinx-tabs = "3.2.0"
