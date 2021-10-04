@@ -89,12 +89,6 @@ Lastest Mattermost Releases:
    - Jira multi-server support
    - Advanced team permissions
    - Channel moderation
- - Features added to Enterprise plan:
-   - Shared channels
-   - Certificate-based authentication
-   - Granular data retention
-   - Granular audit logs w/export
-   - Custom admin roles
  - E20, Professional, and Enterprise license SKUs are now supported for installing Enterprise plugins.
 
 #### Beta features Promoted to General Availability
