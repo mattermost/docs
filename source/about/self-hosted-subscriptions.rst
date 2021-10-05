@@ -71,7 +71,7 @@ From Mattermost Server v5.32 and later, you can renew your self-hosted Mattermos
 
 If you have not upgraded to v5.32, you can contact Support (support@mattermost.com) to renew your license.
 
-If you are a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact sales@mattermost.com.
+If you're a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact sales@mattermost.com.
 
 System Admins will be alerted 60 days prior to license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
 
