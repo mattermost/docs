@@ -30,7 +30,7 @@ Add more users to your subscription
 
 If you're on a monthly Cloud subscription, you can just add more users to your instance and you'll be billed on your monthly invoice. If you add new users in the middle of a billing cycle, you’ll only be charged for the days that the user is registered.
 
-If you are on an annual Cloud subscription, you may incur retroactive charges for any unique users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
+If you're on an annual Cloud subscription, you may incur retroactive charges for any new users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
 Renew your subscription
 -----------------------
