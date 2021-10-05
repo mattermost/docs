@@ -11,6 +11,7 @@ Below is an overview of our features, security, account management, deployment, 
    :glob:
 
    /about/product
+   /about/deployments_and_editions*
    /about/security*
    /about/integrations*
    /about/licensing-and-subscription*
