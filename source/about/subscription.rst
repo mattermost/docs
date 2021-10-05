@@ -1,4 +1,3 @@
-=====================
 Subscription Overview
 =====================
 
@@ -9,7 +8,6 @@ Mattermost self-hosted deployments require a license to be applied to access fea
 Mattermost Cloud is a software-as-as-service. You can simply sign up and start using Mattermost in a trial mode, then upgrade to the edition you desire within the product. Please see :ref:`cloud-subscriptions` for more details.
 
 For more general information and frequently asked questions on licensing and subscriptions, please see the following sections. 
-
 
 General Frequently Asked Questions
 -----------------------------------
@@ -23,6 +21,7 @@ Should you wish to make payment using another method, please contact our `Billin
 
 Why do I need to provide my name and physical address when purchasing a subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Mattermost is a U.S. corporation and, therefore, all business we do is governed by the laws of the United States, in addition to the local laws wherever we are doing business. 
 
 The United States has a number of export control regulations implemented to protect national security interests and to promote its foreign policy objectives. Based on these regulations, U.S. companies are prohibited from doing business with specific countries which have been embargoed by the U.S. government. They are also prohibited from exporting certain items to certain countries that have been sanctioned by the U.S. government. In addition, U.S. companies are prohibited from doing business with specific people and/or companies that have been named and listed by the U.S. government. 
@@ -104,7 +103,6 @@ Organizations that receive a Mattermost Nonprofit License must make their server
 
 To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__, or contact us at community[at]mattermost.com.
 
-
 Do you have discounted subscriptions for academic institutions?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -114,7 +112,6 @@ Is there a maximum number of users per subscription?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No, there is no limit to the subscription value or number of users you can purchase per product.
-
 
 What happens if my department buys a Mattermost subscription and then central IT buys a high volume subscription that also covers my department?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
