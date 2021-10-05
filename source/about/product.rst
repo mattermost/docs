@@ -34,12 +34,16 @@ Channel-based communication workflows require real-time information sharing, fle
 
 `Channels <https://docs.mattermost.com/guides/channels.html>`__ enable you to organize your team’s real-time 1:1 and group communications with an unlimited and fully searchable message history. Share materials such as files, images, links; share sentiments with emojis and GIFs; and express ideas with rich markdown formatting, code syntax highlighting, and multi-language support. Facilitate face-to-face connections with integrated voice/video conferencing. Channels are ideal for bug triage, daily standups, posting announcements, and team conversations. 
 
+.. image:: ../images/Channels_Hero.png
+
 Use Playbooks to support your prescribed workflows and trust the process
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Structured workflows are specific scenarios and use cases that require a reliable and repeatable process. These use cases lend themselves well to shared checklists, automation, and retrospectives where the life cycle is measured in hours to weeks. Some examples include incident collaboration and software releases.
 
 `Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ streamline complex, recurring processes that enable teams to achieve a specific and predictable outcome. Orchestrate prescribed workflows with built-in checklists, triggers, automation, tool integrations, and retrospectives. Increase stakeholder visibility with status updates and cumulative statistics. Customize a playbook to align with organizational practices, and adjust on the fly to respond quickly in highly dynamic situations. Playbooks are critical in incident collaboration to avoid and minimize costly business disruptions, and in software release processes to ship high-quality software on time. 
+
+.. image:: ../images/Playbooks_Hero.png
 
 Use Boards to hit your milestones and support your project workflows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,6 +52,7 @@ Project workflows include use cases driving milestone achievement such as projec
 
 `Boards <https://docs.mattermost.com/guides/boards.html>`__ is a deliverable and task management solution to help teams achieve project milestones using a familiar kanban board structure. Align work across the organization, and invest time and effort into what matters most. Stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Increase transparency and keep all resources available including documents, images, and links. Additionally, boards are perfect for tracking tasks for sprints and features in roadmap planning.
 
+.. image:: ../images/Boards_Hero.png
 
 About the Mattermost Open-Source Project
 -----------------------------------------
