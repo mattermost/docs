@@ -8,7 +8,7 @@ Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the 
 
 If you have an existing Customer Portal account, you can log in with your previously created login credentials.  
 
-Once you are logged in to the Customer Portal: 
+Once you're logged in to the Customer Portal:
 
 1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
 2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__, the cost of which is automatically added to your order total.
