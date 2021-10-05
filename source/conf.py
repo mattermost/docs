@@ -226,6 +226,20 @@ redirects = {
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
     "administration/config-settings#enable-legacy-sidebar": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
+    "administration/config-settings#enable-automatic-replies-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies-experimental",
+    "administration/config-settings#teammate-name-display": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#teammate-name-display",
+    "administration/config-settings#group-unread-channels-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#group-unread-channels-experimental",
+    "administration/config-settings#enable-legacy-sidebar": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
+    "administration/config-settings#autoclose-direct-messages-in-sidebar-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental",
+    "administration/config-settings#timezone": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#timezone",
+    "administration/config-settings#link-previews": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews",
     "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/advanced-permissions#read-only-channels": 
         "https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels-e20",
@@ -469,6 +483,9 @@ redirects = {
     "incident-collaboration/playbook-planning": 
         "https://docs.mattermost.com/incident-collaboration/setting-up-playbooks.html",
     "help/settings/custom-emoji": "https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis",
+    "help/getting-started/messaging-basics#messaging-basics": "https://docs.mattermost.com/messaging/messaging-basics.html",
+    "help/messaging/formatting-text#in-line-images": "https://docs.mattermost.com/messaging/formatting-text.html#in-line-images",
+    "help/getting-started/organizing-your-sidebar": "https://docs.mattermost.com/messaging/organizing-your-sidebar.html",
     "incident-collaboration/launching-playbooks": 
         "https://docs.mattermost.com/incident-collaboration/running-playbooks.html",
     "incident-collaboration/playbook-planning":
