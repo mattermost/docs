@@ -6,12 +6,13 @@ Purchasing a Cloud subscription
 
 Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner will notify you to upgrade to a subscription plan. 
 
-1. Choose a subscription and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
-2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__, the cost of which is automatically added to your order total.
-3. Select **Next Step**.
-4. Enter your billing and payment information.
-5. Accept the **Terms**.
-6. Select **Complete**.
+1. Select **Subscribe now** from the banner
+2. Provide your credit card details 
+3. Provide your billing address
+4. (Optional) Select a subscription plan
+5. Select **Subscribe**
+
+Your credit card will be verified and you will be charged at the end of the billing period. You can also contact sales to inquire about an annual Cloud subscription. 
 
 View subscription details
 -------------------------
@@ -65,41 +66,30 @@ How do I cancel my subscription?
 
 To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
-How much does Mattermost Cloud cost?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Mattermost Cloud Professional is $10 USD per user, per month as a pay-as-you-go subscription. If you have over 1000 users, please contact us for a quote.
-* Mattermost Cloud Enterprise is an annual subscription. Please contact us for a quote.
-
-How can customers trial Mattermost Cloud?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Mattermost Cloud Professional plan includes a 14-day free trial.
-* Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 60-day period. The proof-of-concept program includes a dedicated Customer Engineer.
 
 When will support for other regions be available?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud Enterprise will support data residency based on feedback from our customers. We appreciate feedback from our customers on regional support for both editions.
+Mattermost Cloud Enterprise will support data residency based on feedback from our customers. We appreciate feedback from our customers on regional support.
 
 How is Mattermost Cloud secured?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certified and working towards SOC2 Type 2.
 
-Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace.
+Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. Please contact sales for more inforamtion on this option. 
 
 What are the alternatives, and why should customers choose Mattermost Cloud?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Other SaaS offerings are closed-source and focus on a very broad use case. Mattermost Cloud is built on our open source core offering, allowing customers to view our source code and have a high degree of transparency into Mattermost development processes. Mattermost provides a DevOps-centric offering and has deep integrations and workflows that help builders and operators be more effective.
 
-Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. Other SaaS offerings are multi-tenant, meaning customers share resources.
+Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. Other SaaS offerings are multi-tenant, meaning customers share resources. Please contact sales for more inforamtion on this option. 
 
 Is Mattermost Cloud Enterprise a dedicated instance run on AWS systems?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes, Mattermost Cloud Enterprise is a dedicated Mattermost environment running in a dedicated AWS account with separate infrastructure for that customer specifically, i.e. separate database, separate VMs, separate Kubernetes cluster.
+Mattermost Cloud Enterprise can be deployed as a dedicated Mattermost environment running in a dedicated AWS account with separate infrastructure for that customer specifically, i.e. separate database, separate VMs, separate Kubernetes cluster. Please contact sales for more inforamtion on this option.
 
 How is customer data in Mattermost Cloud Enterprise encrypted?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
