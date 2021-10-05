@@ -12,6 +12,38 @@ Latest Mattermost Cloud releases:
 
 ## Release 2021-10-13
 
+### Highlights
+
+#### Multi-Product Platform
+ - Mattermost now ships as one platform with three products - Channels, Playbooks, and Boards.
+ - Playbooks and Boards are visible when [plugins are enabled system-wide](https://docs.mattermost.com/configure/configuration-settings.html#enable-plugins). 
+
+#### Global Product Launcher
+ - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view and mobile apps.
+
+#### Packaging Changes
+ - Updated in-product strings referencing E10 & E20 to [new packaging](https://mattermost.com/pricing).
+ - Features moved from legacy E10 to all plans, including Team Edition:
+   - System default permissions, e.g. permission to create and archive channels system-wide.
+      - Specifically, “System Scheme” only in **System Console > User Management > Permissions**. 
+      - Existing permissions/policies in TE/E0 for "Enable Team Creation" and "Allow Team Administrators to edit others’ posts" are properly handled. 
+   - Team and Channel management pages (but without channel moderation, e.g. read-only channels).
+ - Features moved from legacy E20 to Professional plan:
+   - SSO with OpenID Connect, SAML, Google and O365
+   - O365 integrations including MS Teams Calling and MS Calendar
+   - Jira multi-server support
+   - Advanced team permissions
+   - Channel moderation
+ - E20, Professional, and Enterprise license SKUs are now supported for installing Enterprise plugins.
+
+#### Beta features Promoted to General Availability
+   - Archived channels
+   - Compliance exports
+   - Custom terms of service
+   - Guest accounts
+   - System roles
+   - Plugins
+
 ### Improvements
 
 #### User Interface (UI)
@@ -36,7 +68,6 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
- - The Bleve index has been updated to v2 to use the scorch index type. This new default index type has some improvements on efficiency, which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
  - ``get flagged posts`` endpoint will now return only flagged posts for channels the user is member of.
  - Minimum supported browser versions changes:
    - Chrome updated from ``61+`` to ``89+``.
