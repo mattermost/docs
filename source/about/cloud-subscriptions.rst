@@ -13,7 +13,7 @@ Mattermost Cloud subscriptions start with a 14-day trial. When you're near the e
 5. Accept the **Terms**.
 6. Select **Complete**.
 
-Viewing Subscription Details
+View subscription details
 ----------------------------
 
 You can view your subscription details in **System Console > Billing & Account > Subscription**. 
