@@ -13,7 +13,7 @@ Below is an overview of our features, security, account management, deployment, 
    /about/product
    /about/security*
    /about/integrations*
-   /about/licensing-and-subscription*
+   /about/subscription*
    /about/corporate-directory-integration*
    /about/certifications-and-compliance*
    /about/frequently-asked-questions*
