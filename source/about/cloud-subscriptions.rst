@@ -64,7 +64,7 @@ If you upgrade during a monthly billing cycle, charges will be prorated. For exa
 How do I cancel my subscription? 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__
+To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
 How much does Mattermost Cloud cost?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
