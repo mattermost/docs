@@ -57,7 +57,7 @@ If you upgrade in the middle of a billing period, charges will also be prorated.
 Can I purchase an annual subscription to Mattermost Cloud deployments?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes. Annual Cloud orders need to be processed by our Sales team, as we don't currently support an annual term using the self-service Customer Portal or Cloud workspace.
+Yes. Annual Cloud subscriptions need to be processed by our Sales team, as we don't currently support an annual term using the self-service Customer Portal or Cloud workspace.
 
 If you upgrade during a monthly billing cycle, charges will be prorated. For example, if you upgrade from Starter to an annual term of Mattermost Professional on 6/15, we will charge you on 7/1 for starter for the period 6/1 - 6/14. Separately, an invoice will be provided for an annual period starting 6/15.
 
