@@ -4,7 +4,7 @@ Cloud Subscriptions
 Purchasing a Cloud subscription
 -------------------------------
 
-Mattermost Cloud subscriptions start with a 14-day trial. A banner will alert you when you are nearing the end of your trial to upgrade to a subscription plan. 
+Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner will notify you to upgrade to a subscription plan. 
 
 1. Choose a subscription and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
 2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__, the cost of which is automatically added to your order total.
