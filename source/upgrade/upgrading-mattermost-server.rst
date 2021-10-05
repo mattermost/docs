@@ -149,7 +149,7 @@ Upgrading Mattermost Server
 
   .. code-block:: sh
          
-    sudo chown -R mattermost:mattermost {install-path}
+    sudo chown -R mattermost:mattermost {install-path}/mattermost
      
 .. note::
     
