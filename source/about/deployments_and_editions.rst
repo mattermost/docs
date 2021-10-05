@@ -129,7 +129,7 @@ Please contact our `sales team <https://mattermost.com/contact-us/>`__ with ques
 Mattermost Enterprise Edition E10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. E10 features are now available in Mattermost Professional <link to new package in doc>
+Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. 
 
 - Active Directory/LDAP Single Sign-on
 - OAuth 2.0 authentication for team creation, account creation, and user sign-in
@@ -141,7 +141,7 @@ Mattermost E10 was offered as a commercial enterprise messaging solution for tea
 Mattermost Enterprise Edition E20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability features are offered in Mattermost Enterprise. 
+Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability and Compliance features are offered in Mattermost Enterprise. 
 
 - Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services
 - Active Directory/LDAP group synchronization
