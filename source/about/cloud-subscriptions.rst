@@ -89,7 +89,7 @@ How is Mattermost Cloud secured?
 
 Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certified and working towards SOC2 Type 2.
 
-Mattermost Cloud Enterprise is deployed in a private environment within an AWS VPC dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace.
+Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace.
 
 What are the alternatives, and why should customers choose Mattermost Cloud?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
