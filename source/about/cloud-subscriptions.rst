@@ -1,4 +1,3 @@
-===================
 Cloud Subscriptions
 ===================
 
@@ -16,6 +15,7 @@ Mattermost Cloud subscriptions start with a 14-day trial. A banner will alert yo
 
 Viewing Subscription Details
 ----------------------------
+
 You can view your subscription details in **System Console > Billing & Account > Subscription**. 
 
 You can view information about your:
@@ -28,7 +28,7 @@ You can view information about your:
 Please see more detailed information on the Cloud billing process `here <https://docs.mattermost.com/manage/cloud-billing.html>`__. 
 
 Adding More Users to a Subscription
----------------------------------------------------
+-----------------------------------
 
 If you are on a monthly Cloud subscription, you can simply add more users to your instance and you will be billed on your monthly invoice. If you add new users in the middle of a billing cycle, you’ll only be charged for the days that the user is registered.
 
