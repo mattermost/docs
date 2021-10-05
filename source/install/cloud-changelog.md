@@ -45,7 +45,7 @@ Latest Mattermost Cloud releases:
 
 ### Bug Fixes
  - Fixed an issue where creating a bot with an invalid username returned an "invalid email" error.
- - Fixed an issue where using /code did not render initial whitespace characters.
+ - Fixed an issue where using ``/code`` did not render initial whitespace characters.
  - Fixed an issue where **Try Enterprise for Free** option was missing spacing in mobile webview.
 
 ### Known Issues
