@@ -57,7 +57,7 @@ You can access your Customer Portal account to view information about your:
 
 For licenses purchased using the Customer Portal, you can view the license start date, expiry date, number of users, and license type in your account under **Subscription**. Subscription and licenses not purchased via the Customer Portal won't be listed.
 
-Adding More Users to a Subscription
+Add more users to a subscription
 ------------------------------------
 
 To add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
