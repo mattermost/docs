@@ -75,7 +75,7 @@ How much does Mattermost Cloud cost?
 How can customers trial Mattermost Cloud?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud Professional plan is available to try free for up to 14 days. 
+* Mattermost Cloud Professional plan includes a 14-day free trial.
 
 Mattermost Cloud Enterprise offers a discounted proof-of-concept program for a 60-day period. The proof-of-concept program includes a dedicated Customer Engineer.
 
