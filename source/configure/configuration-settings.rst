@@ -1207,7 +1207,7 @@ Advanced Logging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed. Please see 'Audit Log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ for more comprehensive documentation. 
 
 System Admins can define multiple log targets to:
 
