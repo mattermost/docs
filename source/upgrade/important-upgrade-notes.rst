@@ -40,7 +40,7 @@ Important Upgrade Notes
 |                                                    | `documentation <https://docs.mattermost.com/comply/audit-log.html>`_.                                                                                            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim",         |
-|                                                    | "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their       |
+|                                                    | "Quartz", "Indigo", and "Onyx" theme names and colors, respectively. Anyone using the existing themes will see slightly modified theme colors after their        |
 |                                                    | server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be   |
 |                                                    | accessible in `our documentation <https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples>`_, so a custom theme can be created |
 |                                                    | with these theme variables if desired. Custom themes are unaffected by this change.                                                                              |
