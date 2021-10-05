@@ -38,7 +38,7 @@ Renew your subscription
 
 Monthly Cloud subscriptions renew automatically.
 
-Cloud Subscription Frequently Asked Questions
+Frequently Asked Questions
 ---------------------------------------------
 
 How am I billed for my Cloud monthly subscription?
