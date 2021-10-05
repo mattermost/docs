@@ -102,7 +102,6 @@ How do I renew my license subscription if I don't have internet access?
 
 If you don't have access to the internet, please email support@mattermost.com for assistance.
 
-
 Can I use the same license key on multiple self-hosted servers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
