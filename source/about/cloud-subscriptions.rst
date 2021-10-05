@@ -52,7 +52,7 @@ If you begin your subscription in the middle of a billing period, charges will b
 
 Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
 
-If you upgrade in the middle of a billing period, charges will also be prorated. For example, if  you upgrade from Starter to Professional on 6/15, we will charge you 7/1, with a single charge for Starter for the period 6/1 - 6/14, then Professional for the period 6/15 - 6/30.
+If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Starter to Professional on 6/15, we'll charge you 7/1. This will be a single charge for Starter for the period 6/1 - 6/14, then a separate charge for Professional for the period 6/15 - 6/30.
 
 Can I purchase an annual subscription to Mattermost Cloud deployments?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
