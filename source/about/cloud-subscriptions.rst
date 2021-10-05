@@ -18,7 +18,6 @@ View subscription details
 
 Access your subscription details in **System Console > Billing & Account > Subscription** to view:
 
-You can view information about your:
 
 - Subscription invoices
 - Billing history
