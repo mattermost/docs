@@ -36,7 +36,7 @@ If you are on an annual Cloud subscription, you may incur retroactive charges fo
 Renew your subscription
 -----------------------
 
-Monthly Cloud subscriptions automatically renew. 
+Monthly Cloud subscriptions renew automatically.
 
 Cloud Subscription Frequently Asked Questions
 ---------------------------------------------
