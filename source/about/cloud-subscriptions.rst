@@ -25,7 +25,7 @@ You can view information about your:
 - Organization information
 - Credit Card payment methods
 
-Please see more detailed information on the Cloud billing process `here <https://docs.mattermost.com/manage/cloud-billing.html>`__. 
+Please see the `Cloud Billing <https://docs.mattermost.com/manage/cloud-billing.html>`__ documentation for more detailed information on the Cloud billing process.
 
 Adding More Users to a Subscription
 -----------------------------------
