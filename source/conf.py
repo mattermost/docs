@@ -123,6 +123,7 @@ redirects = {
     "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
     "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
+    "install/prod-windows-2012": "https://forum.mattermost.org/t/production-install-on-windows-server/12232",
     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
     "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
     "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
@@ -339,6 +340,7 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
     "administration/config-settings#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
+    "configure/config-ssl-http2-apache2": "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
     "cloud/cloud-administration/cloud-compliance":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
@@ -518,6 +520,7 @@ redirects = {
     "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
     "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
+    "install/prod-docker": "https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
