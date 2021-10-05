@@ -18,7 +18,7 @@ The ``/playbook`` slash command allows interaction with incidents via the post t
 - ``/playbook owner [@username]`` - Show or change the current playbook run owner.
 - ``/playbook info`` - Show a summary of the current playbook's activities.
 
-To run a playbook use the ``/playbook start`` slash command from any channel. You can also use the desktop or browser to:
+To run a playbook, use the ``/playbook start`` slash command from any channel. You can also use the desktop or browser to:
 
  * Select the **Playbook** icon in the channel header, and select **Run playbook** from the right-hand sidebar.
  * Use the context menu of a post and select **Run playbook**.
@@ -35,7 +35,7 @@ If the channel is private, an existing member must invite you.
 Working with tasks
 ~~~~~~~~~~~~~~~~~~
 
-Tasks can be part of pre-configured task templates in playbooks and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks:
+Tasks can be part of pre-configured task templates in playbooks, and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks:
 
 * To mark a task as completed, select the unchecked checkbox next to the task. To undo this, clear the checkbox.
 * To assign a task to a member of the incident channel, select **No Assignee** (or the existing assignee's username), then select a user.
