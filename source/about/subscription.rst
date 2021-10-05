@@ -7,8 +7,6 @@ Mattermost self-hosted deployments require a license to be applied to access fea
 
 Mattermost Cloud is a software-as-as-service. You can simply sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :ref:`cloud-subscriptions` for more details.
 
-For more general information and frequently asked questions on licensing and subscriptions, please see the following sections. 
-
 General Frequently Asked Questions
 -----------------------------------
 
