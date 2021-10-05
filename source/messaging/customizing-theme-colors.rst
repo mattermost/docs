@@ -3,7 +3,7 @@
 Theme Colors
 ============
 
-The colors of the Mattermost user interface are customizable in **Account Settings > Display > Theme**. You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team - "Denim", "Sapphire", "Indigo", and "Onyx".
+The colors of the Mattermost user interface are customizable in **Account Settings > Display > Theme**. You can import your theme colors from Slack, customize the colors yourself, or choose from five standard themes designed by the Mattermost team - "Denim", "Sapphire", "Quartz", "Indigo", and "Onyx".
 
 Any color changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
 
