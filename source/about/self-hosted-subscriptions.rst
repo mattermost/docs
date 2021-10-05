@@ -41,7 +41,9 @@ If you haven't yet installed and deployed a Mattermost instance, visit the `Depl
 View subscription information
 --------------------------------
 
-Self-hosted subscriptions purchased via the `Customer Portal <https://customers.mattermost.com>`__ are stored and listed in the Customer Portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history, making it easier to manage purchases and renewal dates.
+Self-hosted subscriptions purchased via the `Customer Portal <https://customers.mattermost.com>`__ are stored and listed in the Customer Portal.
+
+Here you can view license details, including their start and end dates, and have full access to your billing history, making it easier to manage purchases and renewal dates.
 
 You can access your Customer Portal account to view information about your:
 
