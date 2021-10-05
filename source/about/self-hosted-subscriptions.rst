@@ -64,7 +64,7 @@ To add more users to your existing subscription, `contact us <https://mattermost
 
 You may incur retroactive charges for any unique users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
-Renewing a Subscription
+Renew a subscription
 ------------------------
 
 From Mattermost Server v5.32 and later, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
