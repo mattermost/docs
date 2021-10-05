@@ -33,7 +33,7 @@ If you're on a monthly Cloud subscription, you can just add more users to your i
 
 If you are on an annual Cloud subscription, you may incur retroactive charges for any unique users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
-Renewing a Subscription
+Renew your subscription
 -----------------------
 
 Monthly Cloud subscriptions automatically renew. 
