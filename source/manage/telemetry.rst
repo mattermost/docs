@@ -195,6 +195,52 @@ The following list details the types of Playbooks metadata we collect:
   
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, disable the feature in **System Console > Environment > Logging**.
 
+Boards Telemetry
+----------------
+
+The following list details the type of Boards metadata we collect and is sent every 24 hours.
+
+**Server Telemetry**
+
+Boards Plugin Information
+
+- Boards Version and Build Number
+- Boards Edition 
+- Operating System for Boards server
+- The server diagnostic ID
+      
+Configuration Information
+
+- ServerRoot is default server root (``true``/``false``)
+- Port is default port (``true``/``false``)
+- UseSSL (``true``/``false``)
+- Database Type 
+- Single User (``true``/``false``)
+    
+User Count Information
+
+- Registered User Count
+- Daily Active User Count
+- Weekly Active User Count
+- Monthly Active User Count
+    
+Block Count Information
+
+- Block Counts By Type
+    
+Workspace Information
+
+- Workspace Count
+
+**WebApp Event Activity**
+
+Load Board View
+
+- ``UserID``: Unique identifier of the server.
+- ``UserActualID``: Unique identifier of the user who initiated the action.
+- ``Event``: Type of the event. Only the ``view`` event is currently monitored.
+- ``View Type`` (``board``, ``table``, ``gallery``).
+
 Apps Framework Telemetry
 ------------------------
 
