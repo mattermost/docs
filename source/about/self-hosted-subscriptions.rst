@@ -116,7 +116,7 @@ Customers who are eligible to purchase the `Premier Support add-on <https://matt
 Is my license available immediately?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes, once your payment is successfully processed your license is immediately available to download.
+Yes, once your payment is successfully processed your license is available to download immediately.
 
 How will I know when to renew my license?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
