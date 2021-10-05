@@ -50,7 +50,7 @@ After your first month, the billing period begins at 12 AM UTC on the first day 
 
 If you begin your subscription in the middle of a billing period, charges will be prorated. For example, if you signed up 6/15, we'll charge you on 7/1 for the period 6/15 - 6/30.
 
-Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we will charge you on 7/1 for the period 6/1 - 6/15.
+Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
 
 If you upgrade in the middle of a billing period, charges will also be prorated. For example, if  you upgrade from Starter to Professional on 6/15, we will charge you 7/1, with a single charge for Starter for the period 6/1 - 6/14, then Professional for the period 6/15 - 6/30.
 
