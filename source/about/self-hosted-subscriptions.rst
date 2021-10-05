@@ -21,7 +21,7 @@ Once you're logged in to the Customer Portal:
 .. note::
    If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal. If possible, keep the error message/number that you received on hand as it may assist with their investigation.
 
-Your Mattermost license is ready to use and be applied via the Mattermost System Console.
+Once downloaded, your Mattermost license is ready to use and be applied via the Mattermost System Console.
 
 .. image:: ../images/mattermost_enterprise_license.png
 	:alt: Apply the Mattermost Enterprise license using the System Console.
