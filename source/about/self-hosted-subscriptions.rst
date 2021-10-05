@@ -1,7 +1,7 @@
 Self-Hosted Subscriptions
 =========================
 
-Purchasing a Subscription
+Purchase a subscription
 --------------------------
 
 Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the required information, and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. If you have an existing Customer Portal account, you can log in with your previously created login credentials.  
