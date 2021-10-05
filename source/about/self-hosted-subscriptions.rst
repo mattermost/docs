@@ -38,7 +38,7 @@ You can also use the `mmctl <https://docs.mattermost.com/install/enterprise-inst
 
 If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html>`__ documentation.
 
-Viewing Subscription Information
+View subscription information
 --------------------------------
 
 Self-hosted subscriptions purchased via the `Customer Portal <https://customers.mattermost.com>`__ are stored and listed in the Customer Portal, with license details including their start and end dates, providing you with an at-a-glance overview of your account. You also have full access to your billing history, making it easier to manage purchases and renewal dates.
