@@ -70,7 +70,6 @@ How much does Mattermost Cloud cost?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Mattermost Cloud Professional is $10 USD per user, per month as a pay-as-you-go subscription. If you have over 1000 users, please contact us for a quote.
-
 Mattermost Cloud Enterprise is an annual subscription. Please contact us for a quote.    
 
 How can customers trial Mattermost Cloud?
