@@ -1,6 +1,23 @@
 Installing a License Key
 ========================
 
+|enterprise| |professional| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 You can use the System Console, the mmctl, or the CLI to add or change a Mattermost license key.
 
 .. tabs::
