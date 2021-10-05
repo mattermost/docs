@@ -122,7 +122,7 @@ Mattermost Legacy Enterprise Editions
 
 Mattermost introduced a new pricing and packaging structure on October 13, 2021. The packages listed below will reach end-of-life on October 31, 2023. 
 
-We are no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new packages, but we will honor existing pricing and features for renewals and expansions of E10/20 until September 30th, 2022. 
+We are no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new packages, but we will honor existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. 
 
 Please contact our `sales team <https://mattermost.com/contact-us/>`__ with questions.
 
