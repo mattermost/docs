@@ -151,6 +151,7 @@ Upgrade Mattermost
 
     Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
     Enterprise Install and Upgrade </install/enterprise-install-upgrade>
+    Install a License Key </upgrade/installing-license-key>
     Release Definitions </upgrade/release-definitions>
     Important Upgrade Notes </upgrade/important-upgrade-notes>
     Release Lifecycle </upgrade/release-lifecycle>
@@ -163,6 +164,7 @@ Stay up to date with the latest features and improvements.
 
 * :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
 * :doc:`Enterprise Install and Upgrade </install/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost server to premium versions.
+* :doc:`Install a License Key </upgrade/installing-license-key>` - Learn how to add or change a Mattermost license key.
 * :doc:`Release Definitions </upgrade/release-definitions>` - Get details on the Mattermost release schedule and the types of releases.
 * :doc:`Important Upgrade Notes </upgrade/important-upgrade-notes>` - Find version-specific upgrade considerations.
 * :doc:`Release Lifecycle </upgrade/release-lifecycle>` - See critical release lifecycle dates.
