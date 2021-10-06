@@ -3,12 +3,81 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-09-29](#release-2021-09-29)
 - [Release 2021-08-12](#release-2021-08-12)
 - [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
 - [Release 2021-06-16](#release-2021-06-16)
-- [Release 2021-06-02](#release-2021-06-02)
+
+## Release 2021-09-29
+
+### Highlights
+
+#### Permalink Previews
+ - Added support for permalink previews for posts in Mattermost. Previews are generated to minimize context switching when sharing message links in Channels.
+
+#### Tutorial Updates
+ - Added a tip to the **Getting Started** page for downloading Desktop Apps.
+ - Updated tutorial icons and changed text content in tutorial tips.
+
+#### Branding Changes
+ - Added a new default brand theme named "Denim".
+ - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - Added a new light theme named "Quartz" to the default available list of themes.
+ - Updated email templates to the new branding.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added “Invite People” to the main "+" button below the hamburger menu.
+ - The whole category bounds are now highlighted while holding a channel above a category name on the left-hand side.
+ - Updated **Account Settings > Display > Timezone** to be more user friendly.
+ - New theme agnostic file preview modal takes up the full screen. The file preview now has information about the user, channel, and the file, and moves away from text-based buttons to icon-based buttons.
+ - Increased the limit of uploaded file attachments per post from 5 to 10.
+ - Added desktop notifications for followed Threads.
+ - Hungarian and English-Australian are now official languages.
+ - Added a query param to translate in-product help pages when opened from the Desktop App.
+ - Added rendering for posts containing markdown in email notifications.
+
+#### Performance
+ - Improved typing performance when the emoji autocomplete is open.
+
+#### Integrations
+ - Dropped support for left-hand side-specific bot icons.
+ - Added a "rest field" to the App command parser.
+ - Added support for multiselect on Apps slash commands.
+ - App commands now make a distinction between the central channel and the right-hand side channel.
+ - Removed a deprecated "Backend" field from the plugin manifest.
+ - Converted the "Executables" field in the plugin manifest to a map.
+ - Added support for React components in channel header tooltips registered by plugins.
+
+#### Administration
+ - Upgraded Go to v1.16.7.
+ - Removed the Slack importer from the user interface.
+ - Migrated the extraction command to mmctl.
+ - Dropped support for Elasticsearch versions earlier than v7.
+ - Removed the convert channel endpoint to use ``/channels/{channel_id}/privacy`` instead.
+ - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``. Also removed ``CommandWebhook.ParentId`` and ``CompliancePost.ParentId`` for the same reason.
+ - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
+ - Updated Bleve to v2 to use the scorch index type.
+
+### Bug Fixes
+ - Fixed an issue where floating timestamps appeared incorrectly on the right-hand side with Collapsed Reply Threads (Beta) enabled.
+ - Fixed an issue where pinned and saved posts were no longer highlighted.
+ - Disabled admin support email status check job on server startup.
+ - Fixed an issue on joining a missing channel as a System Admin.
+ - Fixed an issue where creating a bot with invalid username returned an "invalid email" error.
+ - Fixed an error with app locations and binding filtering.
+ - Fixed an issue where /code was not rendering initial whitespace characters.
+ - Fixed import process for imports with attachments.
+
+### Known Issues
+ - To exit Playbooks, uers can press the **Back** button or use a keyboard shortcut to go back.
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-08-12
 

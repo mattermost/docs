@@ -73,7 +73,7 @@ Server Configuration Settings
 
   **Type values (enumerated integer and enumerated boolean)**
 
-  **ServiceSettings**: enum WebserverMode, bool EnableSecurityFixAlert, bool EnableInsecureOutgoingConnections, bool EnableIncomingWebhooks, bool EnableOutgoingWebhooks, bool EnableCommands, bool EnableOnlyAdminIntegrations, bool EnablePostUsernameOverride, bool EnablePostIconOverride, bool EnableCustomEmoji, enum RestrictCustomEmojiCreation, bool EnableTesting, bool EnableDeveloper, bool EnableMultifactorAuthentication, bool EnableOAuthServiceProvider, enum ConnectionSecurity, bool UseLetsEncrypt, bool Forward80To443, enum ConnectionSecurity, bool TLSStrictTransport, bool EnforceMultifactorAuthentication, enum RestrictPostDelete, bool AllowEditPost, bool EnableUserTypingMessages, bool EnablePostSearch, bool EnableUserStatuses, bool EnableChannelViewMessages, bool EnableEmojiPicker, bool EnableGifPicker, bool xEnableAuthenticationTransfer, enum TeammateNameDisplay, bool EnableUserAccessTokens, enum MaximumLoginAttempts, bool ExtendSessionLengthWithActivity, enum SessionLengthWebInDays, enum SessionLengthMobileInDays, int SessionCacheInMinutes, enum SessionIdleTimeoutInMinutes, enum PostEditTimeLimit, enum TimeBetweenUserTypingUpdatesMilliseconds, enum ClusterLogTimeoutMilliseconds, bool CloseUnusedDirectMessages, bool EnablePreviewFeatures, bool EnableTutorial, bool EnableOnboarding, bool ExperimentalEnableDefaultChannelLeaveJoinMessages, bool ExperimentalGroupUnreadChannels, bool AllowCookiesForSubdomains, bool EnableAPITeamDeletion, bool EnableAPIUserDeletion, bool EnableAPIChannelDeletion, bool ExperimentalEnableHardenedMode, bool DisableLegacyMFA, bool ExperimentalStrictCSRFEnforcement, bool EnableEmailInvitations, bool ExperimentalChannelOrganization, bool ExperimentalChannelSidebarOrganization, bool EnableLegacySidebar, bool CorsAllowCredentials, bool CorsDebug, bool DisableBotsWhenOwnerIsDeactivated, bool EnableBotAccountCreation, bool RestrictLinkPreviews, bool EnableSVGs, bool EnableLatex, bool EnableOpenTracing, bool Directory, bool RetentionDays, bool ExperimentalDataPrefetch, bool EnableLocalMode; **TeamSettings**: bool EnableUserCreation, bool EnableTeamCreation, bool RestrictTeamNames, enum RestrictTeamInvite, enum RestrictPublicChannelManagement, enum RestrictPrivateChannelManagement, enum RestrictPublicChannelCreation, enum RestrictPrivateChannelCreation, enum RestrictPublicChannelDeletion, enum RestrictPrivateChannelDeletion, enum RestrictPrivateChannelManageMembers, bool EnableOpenServer, bool EnableUserDeactivation, bool EnableCustomBrand, bool RestrictDirectMessage, enum MaxNotificationsPerChannel, bool EnableConfirmNotificationsToChannel; enum MaxUsersPerTeam, enum MaxChannelsPerTeam, bool EnableCustomUserStatuses, bool ExperimentalTownSquareIsReadOnly, bool ExperimentalHideTownSquareinLHS, bool EnableXToLeaveChannelsFromLHS, bool ExperimentalEnableAutomaticReplies, bool ExperimentalViewArchivedChannels, bool LockTeammateNameDisplay; **ClientRequirementSettings**: enum AndroidLatestVersion, enum AndroidMinVersion, enum DesktopLatestVersion, enum DesktopMinVersion, enum IosLatestVersion, enum IosMinVersion; **DisplaySettings**: bool ExperimentalTimezone; **GuestAccountsSettings**: bool Enable, bool AllowEmailAccounts, bool EnforceMultifactorAuthentication; **SqlSettings**: enum DriverName, bool Trace, enum MaxIdleConns, enum ConnMaxIdleTimeMilliseconds, bool ConnMaxLifetimeMilliseconds; enum MaxOpenC onns, enum QueryTimeout, bool DisableDatabaseSearch; **LogSettings**: bool EnableConsole, enum ConsoleLevel, bool ConsoleJson, bool EnableFile, enum FileLevel, bool FileJson, bool EnableWebhookDebugging; **NotificationLogSettings**: bool EnableConsole, bool ConsoleLevel, bool ConsoleJson, bool EnableFile, bool FileLevel, bool FileJson **PasswordSettings**: bool Lowercase, bool Number, bool Uppercase, bool Symbol, enum MinimumLength; **FileSettings**: bool EnablePublicLink, enum DriverName, enum MaxFileSize, bool FileSettings.ExtractContent, bool FileSettings.ArchiveRecursion, bool AmazonS3SSL, bool AmazonS3SignV2, bool AmazonS3SSE, bool AmazonS3Trace, bool EnableFileAttachments, bool EnableMobileUpload, bool EnableMobileDownload; **EmailSettings**: bool EnableSignUpWithEmail, bool EnableSignInWithEmail, bool EnableSignInWithUsername, bool RequireEmailVerification, bool SendEmailNotifications, bool UseChannelInEmailNotifications, bool EmailNotificationContentsType, bool EnableSMTPAuth, enum ConnectionSecurity, bool SendPushNotifications, enum PushNotificationContents, bool EnableEmailBatching, bool SkipServerCertificateVerification, enum EmailBatchingBufferSize, enum EmailBatchingInterval, bool EnablePreviewModeBanner, enum SMTPServerTimeout; **MessageExportSettings**: bool DownloadExportResults; **RateLimitSettings**: bool EnableRateLimiter, bool VaryByRemoteAddr,  bool VaryByUser, enum PerSec, enum MaxBurst, enum MemoryStoreSize; **PrivacySettings**: bool ShowEmailAddress, bool ShowFullName; **ThemeSettings**: bool EnableThemeSelection, bool AllowCustomThemes; **GitLabSettings**: bool Enable; **GoogleSettings**: bool Enable; **Office365Settings**: bool Enable; **SupportSettings**: bool CustomTermsOfServiceEnabled; enum CustomTermsOfServiceReAcceptancePeriod; **LdapSettings**: bool Enable, bool EnableSync, enum ConnectionSecurity, bool SkipCertificateVerification, enum SyncIntervalMinutes, enum QueryTimeout, enum MaxPageSize, bool EnableAdminFilter; **ComplianceSettings**: bool Enable, bool EnableDaily; **LocalizationSettings**: enum DefaultServerLocale, enum DefaultClientLocale, enum AvailableLocales; **SamlSettings**: bool Enable, bool EnableSyncWithLdap, bool IgnoreGuestsLdapSync, bool EnableSyncWithLdapIncludeAuth, bool Verify, bool Encrypt, bool SignRequest, bool EnableAdminFilter; **ClusterSettings**: bool Enable, bool UseIpAddress, bool UseExperimentalGossip, bool ReadOnlyConfig, bool EnableExperimentalGossipEncryption, bool EnableGossipCompression; **MetricsSettings**: bool Enable, enum BlockProfileRate; **WebrtcSettings** (only in v5.5 and earlier): bool Enable; **ExperimentalSettings** bool ClientSideCertEnable, bool EnablePostMetadata, bool LinkMetadataTimeoutMilliseconds, bool EnableClickToReply, bool RestrictSystemAdmin, bool UseNewSAMLLibrary, bool CloudBilling, bool CloudUserLimit, bool RemoteClusters, bool EnableSharedChannels, bool EnableRemoteClusterService; **AnnouncementSettings**: bool EnableBanner, bool AllowBannerDismissal, bool AdminNoticesEnabled, bool UserNoticesEnabled; **ElasticsearchSettings**: bool EnableIndexing, bool EnableSearching, bool Sniff, enum PostIndexReplicas, enum PostIndexShards, enum LiveIndexingBatchSize, enum BulkIndexingTimeWindowSeconds, enum RequestTimeoutSeconds, bool SkipTLSVerification, bool Trace; **PluginSettings**: bool Enable, bool EnableUploads, bool EnableHealthCheck, bool EnableMarketplace, bool EnableRemoteMarketplace, bool AutomaticPrepackagedPlugins, bool RequirePluginSignature; **DataRetentionSettings**: bool EnableMessageDeletion, bool MessageRetentionDays, bool AllowInsecureDownloadUrl, bool EnableFileDeletion, bool FileRetentionDays, enum DeletionJobStartTime; **MessageExportSettings**: bool EnableExport, enum ExportFormat, enum DailyRunTime, enum ExportFromTimestamp, enum BatchSize, enum GlobalRelaySettings.CustomerType; **ExperimentalAuditSettings**: bool SysLogEnabled, bool SysLogInsecure, enum SysLogMaxQueueSize, bool FileEnabled, enum FileMaxSizeMB, enum FileMaxAgeDays, bool FileMaxBackups, bool FileCompress, enum FileMaxQueueSize; **BleveSettings**: bool EnableIndexing, bool EnableSearching, bool EnableAutocomplete, enum BulkIndexingTimeWindowSeconds; bool FeatureFlags
+  **ServiceSettings**: enum WebserverMode, bool EnableSecurityFixAlert, bool EnableInsecureOutgoingConnections, bool EnableIncomingWebhooks, bool EnableOutgoingWebhooks, bool EnableCommands, bool EnableOnlyAdminIntegrations, bool EnablePostUsernameOverride, bool EnablePostIconOverride, bool EnableCustomEmoji, enum RestrictCustomEmojiCreation, bool EnableTesting, bool EnableDeveloper, bool EnableMultifactorAuthentication, bool EnableOAuthServiceProvider, enum ConnectionSecurity, bool UseLetsEncrypt, bool Forward80To443, enum ConnectionSecurity, bool TLSStrictTransport, bool EnforceMultifactorAuthentication, enum RestrictPostDelete, bool AllowEditPost, bool EnableUserTypingMessages, bool EnablePostSearch, bool EnableUserStatuses, bool EnableChannelViewMessages, bool EnableEmojiPicker, bool EnableGifPicker, bool xEnableAuthenticationTransfer, enum TeammateNameDisplay, bool EnableUserAccessTokens, enum MaximumLoginAttempts, bool ExtendSessionLengthWithActivity, enum SessionLengthWebInDays, enum SessionLengthMobileInDays, int SessionCacheInMinutes, enum SessionIdleTimeoutInMinutes, enum PostEditTimeLimit, enum TimeBetweenUserTypingUpdatesMilliseconds, enum ClusterLogTimeoutMilliseconds, bool CloseUnusedDirectMessages, bool EnablePreviewFeatures, bool EnableTutorial, bool EnableOnboarding, bool ExperimentalEnableDefaultChannelLeaveJoinMessages, bool ExperimentalGroupUnreadChannels, bool AllowCookiesForSubdomains, bool EnableAPITeamDeletion, bool EnableAPIUserDeletion, bool EnableAPIChannelDeletion, bool ExperimentalEnableHardenedMode, bool DisableLegacyMFA, bool ExperimentalStrictCSRFEnforcement, bool EnableEmailInvitations, bool ExperimentalChannelOrganization, bool ExperimentalChannelSidebarOrganization, bool EnableLegacySidebar, bool CorsAllowCredentials, bool CorsDebug, bool DisableBotsWhenOwnerIsDeactivated, bool EnableBotAccountCreation, bool RestrictLinkPreviews, bool EnableSVGs, bool EnableLatex, bool EnableOpenTracing, bool Directory, bool RetentionDays, bool ExperimentalDataPrefetch, bool EnableLocalMode; **TeamSettings**: bool EnableUserCreation, bool EnableTeamCreation, bool RestrictTeamNames, enum RestrictTeamInvite, enum RestrictPublicChannelManagement, enum RestrictPrivateChannelManagement, enum RestrictPublicChannelCreation, enum RestrictPrivateChannelCreation, enum RestrictPublicChannelDeletion, enum RestrictPrivateChannelDeletion, enum RestrictPrivateChannelManageMembers, bool EnableOpenServer, bool EnableUserDeactivation, bool EnableCustomBrand, bool RestrictDirectMessage, enum MaxNotificationsPerChannel, bool EnableConfirmNotificationsToChannel; enum MaxUsersPerTeam, enum MaxChannelsPerTeam, bool EnableCustomUserStatuses, bool ExperimentalTownSquareIsReadOnly, bool ExperimentalHideTownSquareinLHS, bool EnableXToLeaveChannelsFromLHS, bool ExperimentalEnableAutomaticReplies, bool ExperimentalViewArchivedChannels, bool LockTeammateNameDisplay; **ClientRequirementSettings**: enum AndroidLatestVersion, enum AndroidMinVersion, enum DesktopLatestVersion, enum DesktopMinVersion, enum IosLatestVersion, enum IosMinVersion; **DisplaySettings**: bool ExperimentalTimezone; **GuestAccountsSettings**: bool Enable, bool AllowEmailAccounts, bool EnforceMultifactorAuthentication; **SqlSettings**: enum DriverName, bool Trace, enum MaxIdleConns, enum ConnMaxIdleTimeMilliseconds, bool ConnMaxLifetimeMilliseconds; enum MaxOpenC onns, enum QueryTimeout, bool DisableDatabaseSearch; **LogSettings**: bool EnableConsole, enum ConsoleLevel, bool ConsoleJson, bool EnableFile, enum FileLevel, bool FileJson, bool EnableWebhookDebugging; **NotificationLogSettings**: bool EnableConsole, bool ConsoleLevel, bool ConsoleJson, bool EnableFile, bool FileLevel, bool FileJson **PasswordSettings**: bool Lowercase, bool Number, bool Uppercase, bool Symbol, enum MinimumLength; **FileSettings**: bool EnablePublicLink, enum DriverName, enum MaxFileSize, enum FileSettings.MaxImageResolution, bool FileSettings.ExtractContent, bool FileSettings.ArchiveRecursion, bool AmazonS3SSL, bool AmazonS3SignV2, bool AmazonS3SSE, bool AmazonS3Trace, bool EnableFileAttachments, bool EnableMobileUpload, bool EnableMobileDownload; **EmailSettings**: bool EnableSignUpWithEmail, bool EnableSignInWithEmail, bool EnableSignInWithUsername, bool RequireEmailVerification, bool SendEmailNotifications, bool UseChannelInEmailNotifications, bool EmailNotificationContentsType, bool EnableSMTPAuth, enum ConnectionSecurity, bool SendPushNotifications, enum PushNotificationContents, bool EnableEmailBatching, bool SkipServerCertificateVerification, enum EmailBatchingBufferSize, enum EmailBatchingInterval, bool EnablePreviewModeBanner, enum SMTPServerTimeout; **MessageExportSettings**: bool DownloadExportResults; **RateLimitSettings**: bool EnableRateLimiter, bool VaryByRemoteAddr,  bool VaryByUser, enum PerSec, enum MaxBurst, enum MemoryStoreSize; **PrivacySettings**: bool ShowEmailAddress, bool ShowFullName; **ThemeSettings**: bool EnableThemeSelection, bool AllowCustomThemes; **GitLabSettings**: bool Enable; **GoogleSettings**: bool Enable; **Office365Settings**: bool Enable; **SupportSettings**: bool CustomTermsOfServiceEnabled; enum CustomTermsOfServiceReAcceptancePeriod; **LdapSettings**: bool Enable, bool EnableSync, enum ConnectionSecurity, bool SkipCertificateVerification, enum SyncIntervalMinutes, enum QueryTimeout, enum MaxPageSize, bool EnableAdminFilter; **ComplianceSettings**: bool Enable, bool EnableDaily; **LocalizationSettings**: enum DefaultServerLocale, enum DefaultClientLocale, enum AvailableLocales; **SamlSettings**: bool Enable, bool EnableSyncWithLdap, bool IgnoreGuestsLdapSync, bool EnableSyncWithLdapIncludeAuth, bool Verify, bool Encrypt, bool SignRequest, bool EnableAdminFilter; **ClusterSettings**: bool Enable, bool UseIpAddress, bool UseExperimentalGossip, bool ReadOnlyConfig, bool EnableExperimentalGossipEncryption, bool EnableGossipCompression; **MetricsSettings**: bool Enable, enum BlockProfileRate; **WebrtcSettings** (only in v5.5 and earlier): bool Enable; **ExperimentalSettings** bool ClientSideCertEnable, bool EnablePostMetadata, bool LinkMetadataTimeoutMilliseconds, bool EnableClickToReply, bool RestrictSystemAdmin, bool UseNewSAMLLibrary, bool CloudBilling, bool CloudUserLimit, bool RemoteClusters, bool EnableSharedChannels, bool EnableRemoteClusterService; **AnnouncementSettings**: bool EnableBanner, bool AllowBannerDismissal, bool AdminNoticesEnabled, bool UserNoticesEnabled; **ElasticsearchSettings**: bool EnableIndexing, bool EnableSearching, bool Sniff, enum PostIndexReplicas, enum PostIndexShards, enum LiveIndexingBatchSize, enum BulkIndexingTimeWindowSeconds, enum RequestTimeoutSeconds, bool SkipTLSVerification, bool Trace; **PluginSettings**: bool Enable, bool EnableUploads, bool EnableHealthCheck, bool EnableMarketplace, bool EnableRemoteMarketplace, bool AutomaticPrepackagedPlugins, bool RequirePluginSignature; **DataRetentionSettings**: bool EnableMessageDeletion, bool MessageRetentionDays, bool AllowInsecureDownloadUrl, bool EnableFileDeletion, bool FileRetentionDays, enum DeletionJobStartTime; **MessageExportSettings**: bool EnableExport, enum ExportFormat, enum DailyRunTime, enum ExportFromTimestamp, enum BatchSize, enum GlobalRelaySettings.CustomerType; **ExperimentalAuditSettings**: bool SysLogEnabled, bool SysLogInsecure, enum SysLogMaxQueueSize, bool FileEnabled, enum FileMaxSizeMB, enum FileMaxAgeDays, bool FileMaxBackups, bool FileCompress, enum FileMaxQueueSize; **BleveSettings**: bool EnableIndexing, bool EnableSearching, bool EnableAutocomplete, enum BulkIndexingTimeWindowSeconds; bool FeatureFlags
   
   **Counts (integer)**
 
@@ -142,10 +142,10 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
 
-Incident Collaboration Telemetry
---------------------------------
+Playbooks Telemetry
+-------------------
 
-The following list details the types of Incident Collaboration metadata we collect:
+The following list details the types of Playbooks metadata we collect:
 
 **Data collected for all event types**
 
@@ -155,36 +155,36 @@ The following list details the types of Incident Collaboration metadata we colle
 - ``Event``: Type of the event. There are three event types that are tracked: ``incident``, ``tasks``, ``playbook``.
 - ``UserActualID``: Unique identifier of the user who initiated the action.
 
-**Data collected in incident events**
+**Data collected in run events**
 
-- ``IncidentID``: Unique identifier of the incident.
+- ``IncidentID``: Unique identifier of the run.
 - ``IsActive``: Boolean value indicating if the incident is active.
-- ``CommanderUserID``: Unique identifier of the commander of the incident.
-- ``TeamID``: Unique identifier of the team where the incident channel is created.
-- ``CreatedAt``: Timestamp of the incident creation.
-- ``PostID``: Unique identifier of the post from which the incident was created (if relevant).
-- ``NumChecklists``: Number of stages in this incident.
-- ``TotalChecklistItems``: Number of tasks in this incident.
-- ``ActiveStage``: A number indicating the stage of the incident (0-based).
-- ``Action``: The type of action performed against the incident: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``.
-- ``Public``: When creating an incident, ``true`` if it is public, and ``false`` if it is private.
+- ``CommanderUserID``: Unique identifier of the owner of the run.
+- ``TeamID``: Unique identifier of the team where the channel is created.
+- ``CreatedAt``: Timestamp of the run start.
+- ``PostID``: Unique identifier of the post from which the run was started (if relevant).
+- ``NumChecklists``: Number of stages in this run.
+- ``TotalChecklistItems``: Number of tasks in this run.
+- ``ActiveStage``: A number indicating the stage of the run (0-based).
+- ``Action``: The type of action performed against the run: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``, ``add_timeline_event_from_post``, ``update_retrospective``, ``publish_retrospective``, ``remove_timeline_event``.
+- ``Public``: When starting a run, ``true`` if it is public, and ``false`` if it is private.
 - ``ReminderTimerSeconds``: The next timer for the reminder to update the status, in seconds. It's tracked only when ``Action`` equals ``update_status``.
 
 **Data collected in tasks events**
 
-- ``IncidentID``: Unique identifier of the incident.
+- ``IncidentID``: Unique identifier of the run.
 - ``NewState``: ``null`` if the task is uncompleted, ``done`` if the task was marked completed.
 - ``Action``: The type of action performed against the task: ``add_task``, ``remove_task``, ``rename_task``, ``modify_task_state``, ``move_task``, ``set_assignee_for_task``, ``run_task_slash_command``.
 - ``NewState``: When modifying a task state, ``true`` if the task is now checked, ``false`` if the task is now unchecked.
-- ``WasCommander``: When modifying a task state, ``true`` if the userId who initiated the event was also the commander of the event, and ``false`` otherwise.
-- ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the event was also the assignee of the event, and ``false`` otherwise.
+- ``WasCommander``: When modifying a task state, ``true`` if the userId who initiated the event was also the owner of the run, and ``false`` otherwise.
+- ``WasAssignee``: When modifying a task state, ``true`` if the userId who initiated the run was also the assignee of the event, and ``false`` otherwise.
 
 **Data collected in playbook events**
 
 - ``PlaybookID``: Unique identifier of the playbook.
 - ``TeamID``: Unique identifier of the team associated with this playbook.
 - ``NumChecklists``: Number of stages in this playbook.
-- ``TotalChecklistItems``: Number of tasks in this incident.
+- ``TotalChecklistItems``: Number of tasks in this run.
 - ``IsPublic``: ``true`` if the playbook is public, ``false`` if it is private.
 - ``NumMembers``: The number of members with access to this playbook.
 - ``NumSlashCommands``: The number of tasks with slash commands in this playbook.
@@ -194,6 +194,78 @@ The following list details the types of Incident Collaboration metadata we colle
 - ``Action``: The type of action performed against this playbook: ``create``, ``update``, ``delete``.
   
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, disable the feature in **System Console > Environment > Logging**.
+
+Boards Telemetry
+----------------
+
+The following list details the type of Boards metadata we collect and is sent every 24 hours.
+
+**Server Telemetry**
+
+Boards Plugin Information
+
+- Boards Version and Build Number
+- Boards Edition 
+- Operating System for Boards server
+- The server diagnostic ID
+      
+Configuration Information
+
+- ServerRoot is default server root (``true``/``false``)
+- Port is default port (``true``/``false``)
+- UseSSL (``true``/``false``)
+- Database Type 
+- Single User (``true``/``false``)
+    
+User Count Information
+
+- Registered User Count
+- Daily Active User Count
+- Weekly Active User Count
+- Monthly Active User Count
+    
+Block Count Information
+
+- Block Counts By Type
+    
+Workspace Information
+
+- Workspace Count
+
+**WebApp Event Activity**
+
+Load Board View
+
+- ``UserID``: Unique identifier of the server.
+- ``UserActualID``: Unique identifier of the user who initiated the action.
+- ``Event``: Type of the event. Only the ``view`` event is currently monitored.
+- ``View Type`` (``board``, ``table``, ``gallery``).
+
+Apps Framework Telemetry
+------------------------
+
+The following list details the types of Apps Framework metadata we collect:
+
+**Data collected for all event types**
+
+- ``PluginVersion``: Version of the plugin.
+- ``ServerVersion``: Version of the server the plugin is running on.
+- ``UserID``: Unique identifier of the server.
+- ``appID``: ID of the App that triggers the event.
+- ``Event``: Type of the event. There are three event types that are tracked: ``install``, ``uninstall``, ``call``, ``oauthComplete``.
+
+**Data collected in install and uninstall events**
+
+- ``appType``: Type of the App installed (e.g., HTTP, AWS).
+
+**Data collected in call events**
+
+- ``location``: Call location.
+- ``type``: Call type. Right now only submit calls are tracked.
+
+**Data collected in oauthComplete events**
+
+- ``UserActualID``: User ID of the user completing the OAuth flow.
 
 Android Mobile App Performance Monitoring
 -----------------------------------------

@@ -33,6 +33,7 @@ Mattermost Cloud and Enterprise Edition E10 and E20 customers can use Mattermost
 - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) `available on GitHub. <https://github.com/mattermost/mattermost-push-proxy>`__
 - An explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ for the contents of unencrypted messages.
 - Encrypted TLS connections:
+
   - Between HPNS and Apple Push Notification Services 
   - Between HPNS and Google’s Firebase Cloud Messaging Service 
   - HPNS and your Mattermost Server

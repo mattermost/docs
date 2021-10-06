@@ -630,9 +630,9 @@ The local directory to which files are written when the File Storage System is s
 +-------------------------+------------------------------------------------------------------------------------------+
 
 Maximum File Size
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
-Maximum file size for message attachments entered in megabytes in the System Console UI. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
+Maximum file size for message attachments and plugins entered in megabytes in the System Console. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
 
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxFileSize": 104857600`` with numerical input.                  |
@@ -655,20 +655,17 @@ Enable users to search the contents of documents attached to messages.
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
-You can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
++---------------------------------------------------------------------------------------------------------------------------------+
+
+In addition, you can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
 
 - ``tidy``: Used to search the contents of HTML and PAGES documents.
 - ``wv``: Used to search the contents of DOC documents.
 - ``popplerutils``: Used to significantly improve server performance when extracting the contents of PDF documents.
 - ``unrtf``: Used to search the contents of RTF documents.
 - ``Justtext``: Used to search HTML documents.
-
-.. note::
-   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older documents based on file name only.
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
-+---------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
   - Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
@@ -1210,7 +1207,7 @@ Advanced Logging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed. Please see 'Audit Log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ for more comprehensive documentation. 
 
 System Admins can define multiple log targets to:
 
@@ -4716,6 +4713,10 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 
 **False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled.
 
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for older actions taken prior to the setting being enabled. For example, if a user comments on an old thread, they automatically follow the thread if this setting is enabled regardless of whether the thread existed when this setting was disabled.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5076,9 +5077,9 @@ Maximum Image Resolution
 
 Maxiumum image resolution size for message attachments in megapixels. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
-+---------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileSettings.MaxImageResolution": 33177600`` with numerical input.     |
-+---------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
 
 File Settings
 ~~~~~~~~~~~~~~
