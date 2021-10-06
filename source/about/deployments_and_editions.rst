@@ -20,7 +20,7 @@ Mattermost Cloud delivers Mattermost as software-as-a-service in a highly secure
 
 To get started with a 14-day free trial of Mattermost Cloud online, visit https://customers.mattermost.com/cloud/signup. Signing up requires you to create an account with a business email and specify a domain for the workspace. Once you sign up and create your workspace, a wizard will help you get started completing your profile, inviting team members, and integrating with your favorite developer tools.
 
-Mattermost Editions
+Mattermost editions
 --------------------
 
 The Mattermost platform is offered under four editions to meet the needs of organizations of all sizes.
