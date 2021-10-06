@@ -4,7 +4,7 @@ Cloud Subscriptions
 Purchase a Cloud subscription
 -------------------------------
 
-Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner will notify you to upgrade to a subscription plan. 
+Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan.
 
 1. Select **Subscribe now** from the banner.
 2. Provide your credit card details. 
