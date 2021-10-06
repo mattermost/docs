@@ -17,6 +17,8 @@ Release v5.0
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
+**Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+
 Compatibility
 ~~~~~~~~~~~~~~~
 
@@ -74,10 +76,7 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- The new spellchecker connects to Google servers for downloading updated dictionaries.
 - Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
-- The ``create_desktop_file.sh`` script is removed from the .tar.gz release. As a workaround, it can be downloaded from `GitHub here <https://github.com/mattermost/desktop/blob/master/src/assets/linux/create_desktop_file.sh>`_.
-- An error may occur when installing the MSI Installer on any Windows version.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
