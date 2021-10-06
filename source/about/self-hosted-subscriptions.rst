@@ -69,7 +69,7 @@ We will send you an email notice around the end of the quarter reminding you to 
 .. image:: ../images/Site_Statistics.png
 	:alt: Take a screenshot from the System Console > Site Statistics page.
 
-If you have more total active users than what you purchased in your annual subscription, we will provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__ .  
+If you have more total active users than you purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__ .
 
 Renew a subscription
 --------------------
