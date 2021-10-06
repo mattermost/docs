@@ -15,9 +15,8 @@ Account Settings is where you can configure your profile settings, notification 
   .. tab:: v5.39 and earlier
 
       In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
-
   
-General
+Profile
 -------
 
 Settings to configure name, username, nickname, email, and profile picture.
@@ -48,7 +47,7 @@ Usernames are unique identifiers appearing next to all posts. Pick something eas
 Nickname
 ~~~~~~~~
 
-Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Account Settings**.
+Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Notifications**.
 
 Position
 ~~~~~~~~~
