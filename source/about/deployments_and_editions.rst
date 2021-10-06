@@ -1,7 +1,7 @@
 Mattermost Deployments and Editions
 ===================================
 
-Mattermost Deployment Options
+Mattermost deployment options
 ------------------------------
 
 Mattermost provides additional benefits in our commercial editions to support the hosting and growth needs of an organization. You can explore these commercial features through a `trial <https://mattermost.com/get-started/>`__ with Mattermost Self-Hosted or Mattermost Cloud deployment options.
