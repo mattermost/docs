@@ -64,7 +64,7 @@ To add more users to your existing subscription, `contact us <https://mattermost
 
 When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system if you're above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
-We will send you an email notice around the end of the quarter reminding you to send us your report.  To send this report, you can simply take a screenshot of **System Console > Site Statistics** and send in a reply email back to us.  Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric.  
+We'll send you an email notice around the end of the quarter reminding you to send us your report. To send this report, take a screenshot of **System Console > Site Statistics** and send in a reply email back to us. Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric.
 
 .. image:: ../images/Site_Statistics.png
 	:alt: Take a screenshot from the System Console > Site Statistics page.
