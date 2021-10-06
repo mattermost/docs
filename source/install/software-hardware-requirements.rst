@@ -83,7 +83,7 @@ Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
-- Using the Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
+- Using the Mattermost `Docker deployment <https://github.com/mattermost/docker>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
 
@@ -181,7 +181,7 @@ Alternate Storage Calculations
 
 As an alternative to recommended storage sizing above, you can forecast your own storage usage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
 
--  Estimated storage per user per month (see below), multipled by 12 months in a year
+-  Estimated storage per user per month (see below), multiplied by 12 months in a year
 -  Estimated mean average number of users in a year
 -  A 1-2x safety factor
 
