@@ -9,7 +9,7 @@ Mattermost provides additional benefits in our commercial editions to support th
 Mattermost self-hosted 
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost Self-Hosted provides Mattermost within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers.
+Mattermost self-hosted provides Mattermost within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premises in private clouds and virtual or physical servers.
 
 Once you’ve downloaded and installed Mattermost within your preferred environment, you have the option to use it as-is, or you can access Mattermost's commercial features by starting a trial or purchasing a subscription. You can start a 30-day free Enterprise trial via **Main Menu > System Console > Edition and License > Start trial** or request a trial online at https://mattermost.com/trial/.
 
