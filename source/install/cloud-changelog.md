@@ -58,7 +58,7 @@ Latest Mattermost Cloud releases:
 #### Integrations
  - Added support for multi-select on Apps slash commands.
  - App commands now make a distinction between the central channel and the right-hand side channel.
- - App bindings now recognize channels in between in the post menus.
+ - App bindings now recognize the post menu options for each channel they live in.
  - Added new ``registerMessageWillBeUpdatedHook(newPost, oldPost)`` client-side plugin hook to intercept edited messages.
 
 #### Performance
