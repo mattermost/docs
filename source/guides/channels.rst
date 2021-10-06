@@ -75,7 +75,7 @@ Manage Teams, Channels, and Members
 * :doc:`Channel Settings </messaging/channel-settings>` - Customize notification, headers, names, and descriptions of Channels.
 * :doc:`Organize Channels </messaging/organizing-mattermost>` - Organize and navigate Channels.
 
-Customize Mattermost
+Customize Channels
 --------------------
 
 .. toctree::
@@ -99,7 +99,7 @@ Customize Mattermost
 * :doc:`Manage Server Connections </messaging/managing-desktop-app-servers>` - Manage your connections to multiple Mattermost servers.
 
 
-Navigate Mattermost
+Navigate Channels
 -------------------
 .. toctree::
    :maxdepth: 1
@@ -111,7 +111,7 @@ Navigate Mattermost
 * :doc:`Keyboard Accessibility </messaging/keyboard-accessibility>` - Use navigational keyboard shortcuts to use Mattermost without a mouse.
 * :doc:`Keyboard Shortcuts </messaging/keyboard-shortcuts>` - Use keyboard shortcuts to perform actions that help you navigate Mattermost Channels.
 
-Extend Mattermost Messaging
+Extend Mattermost Channels
 ---------------------------
       
 .. toctree::
