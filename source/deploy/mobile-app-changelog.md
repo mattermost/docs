@@ -22,7 +22,7 @@ Latest Mattermost Mobile Apps releases:
 #### Branding Changes
  - Updated the Splash Screen, app icons, and Threads illustration to align with new branding.
  - Added a new default brand theme named "Denim".
- - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", & "Onyx" theme names and colours, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", and "Onyx" theme names and colors, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
  - Added a new light theme named "Quartz" to the default available list of themes.
 
 #### Deprecations
@@ -35,7 +35,7 @@ Latest Mattermost Mobile Apps releases:
  - Added mobile push notifications for followed Threads.
  - Increased the limit of uploaded file attachments per post from 5 to 10.
  - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``.
- - Added better support for channel and user selection from withing Apps commands.
+ - Added better support for channel and user selection from within Apps commands.
  - Added better binding filtering for Apps.
 
 ### Bug Fixes
@@ -63,8 +63,14 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with uploading of animated gif files on Android.
 
 ### Known Issues
+ - "CANCEL" is missing from options when selecting "Copy Channel Header", "Copy Channel Purpose", or "Copy URL in channel header".
+ - An error may occur when archiving a channel or when attempting to post to an archived channel.
+ - The "+" to add a reaction is still visible in archived channels.
+ - Channel categories may unexpectedly expand or collapse.
+ - Empty Favorites category is shown at the top of the channel sidebar if no favourites are set.
+ - Close Preview X and Close Settings X are themed incorrectly in Quartz theme.
+ - Channel sidebar disappears sometimes in Airplane mode.
  - Posts sometimes get stuck behind the post textbox on iPad.
- - User may need to log out and back in from the app to see data retention results on the app.
  - Various known issues with Collapsed Reply Threads (Beta) feature:
    - New messages banner should only count root posts.
    - Turning the feature on and off does not push an update to the Mobile client.
