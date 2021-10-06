@@ -61,6 +61,7 @@ source_suffix = [".rst", ".md"]
 
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
 redirects = {
+    "about/licensing-and-subscription": "https://docs/mattermost.com/about/subscription.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
