@@ -38,7 +38,6 @@ History arrows
 
 Use the arrows to the right of the tool switcher to show the last channel/next channel.
 
-
 FAQ
 ---
 Where have custom emojis moved to?
