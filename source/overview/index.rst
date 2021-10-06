@@ -13,7 +13,7 @@ Below is an overview of our features, security, account management, deployment, 
    /about/product
    /about/security*
    /about/integrations*
-   /about/subscription*
+   /about/subscription
    /about/cloud-subscriptions
    /about/self-hosted-subscriptions
    /about/corporate-directory-integration*
