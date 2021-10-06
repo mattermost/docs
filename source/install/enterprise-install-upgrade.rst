@@ -17,7 +17,6 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 * `Production Enterprise Edition on RHEL 7 <https://docs.mattermost.com/install/install-rhel-7.html>`__
 * `Production Enterprise Edition on RHEL 8 <https://docs.mattermost.com/install/install-rhel-8.html>`__
 * `Production Enterprise Edition on Debian Stretch <https://docs.mattermost.com/install/install-debian.html>`__
-* `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
 
 Upgrading to Mattermost Enterprise Edition
 --------------------------------------------
