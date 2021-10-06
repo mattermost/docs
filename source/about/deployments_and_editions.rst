@@ -153,7 +153,7 @@ Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging
 - Eligibility for Premier Support add-on
 
 
-Packaging Decisions
+Packaging decisions
 ----------------------------
 As the platform matures and new features are added, they are evaluated to be included in the edition that best aligns with the organizational use cases outlined by the editions above. Multiple factors are considered in determining which tier to include a feature including mission-critical impact, relative value to a single team, cross-functional teams, and the enterprise, as well as security, compliance, and scalability.
 
