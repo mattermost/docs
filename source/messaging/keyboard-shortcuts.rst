@@ -10,13 +10,13 @@ To display a list of available keyboard shortcuts, press CTRL+/ (CMD+/ on Mac), 
    Though Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
 
 Navigation 
------------
+----------
 
 .. tabs::
 
-  .. tab:: Mattermost v6.0 onwards
+  .. tab:: Desktop App v5.0 onwards
 
-    Mattermost v6.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards.
+    Mattermost Desktop App v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards.
 
     **Navigate between Mattermost servers**
     
@@ -49,11 +49,11 @@ Navigation
     | CTRL+SHIFT+TAB  | CMD+SHIFT+TAB   | Navigates to the previous tab based on your current position      |
     +-----------------+-----------------+-------------------------------------------------------------------+
 
-    All existing navigation keyboard shortcuts available in Mattermost v5.39 and earlier releases continue to be supported in v6.0.
+    All existing navigation keyboard shortcuts available in Mattermost v4.7 and earlier releases continue to be supported in Desktop App v5.0.
 
-  .. tab:: Mattermost v5.39 and earlier
+  .. tab:: Desktop App v4.7 and earlier
 
-    Mattermost v5.39 and earlier releases support the following navigation keyboard shortcuts:
+    Mattermost Desktop App v4.7 and earlier releases support the following navigation keyboard shortcuts:
 
     +----------------------------+---------------------------+--------------------------------------------------------------------------------+
     | On Windows                 | On Mac                    | Description                                                                    |
