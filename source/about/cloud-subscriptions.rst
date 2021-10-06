@@ -12,7 +12,7 @@ Mattermost Cloud subscriptions start with a 14-day trial. When you're near the e
 4. (Optional) Select a subscription plan
 5. Select **Subscribe**
 
-Your credit card will be verified and you will be charged at the end of the billing period. You can also contact sales to inquire about an annual Cloud subscription. 
+Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote. 
 
 View subscription details
 -------------------------
