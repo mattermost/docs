@@ -17,7 +17,7 @@ Your credit card will be verified and you'll be charged at the end of the billin
 View subscription details
 -------------------------
 
-Access your subscription details in **System Console > Billing & Account > Subscription** to view:
+Go to **System Console > Billing & Account > Subscription** to access the following subscription details:
 
 - Subscription invoices
 - Billing history
