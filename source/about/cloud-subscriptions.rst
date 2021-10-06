@@ -6,11 +6,11 @@ Purchase a Cloud subscription
 
 Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner will notify you to upgrade to a subscription plan. 
 
-1. Select **Subscribe now** from the banner
-2. Provide your credit card details 
-3. Provide your billing address
-4. (Optional) Select a subscription plan
-5. Select **Subscribe**
+1. Select **Subscribe now** from the banner.
+2. Provide your credit card details. 
+3. Provide your billing address.
+4. (Optional) Select a subscription plan.
+5. Select **Subscribe**.
 
 Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote. 
 
