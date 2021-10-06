@@ -50,11 +50,9 @@ Your first Cloud subscription charge is at the end of the calendar month, and al
 
 After your first month, the billing period begins at 12 AM UTC on the first day of each calendar month and ends at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
 
-If you begin your subscription in the middle of a billing period, charges will be prorated. For example, if you signed up 6/15, we'll charge you on 7/1 for the period 6/15 - 6/30.
-
-Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
-
-If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Starter to Professional on 6/15, we'll charge you 7/1. This will be a single charge for Starter for the period 6/1 - 6/14, then a separate charge for Professional for the period 6/15 - 6/30.
+- If you begin your subscription in the middle of a billing period, charges will be prorated. For example, if you signed up 6/15, we'll charge you on 7/1 for the period 6/15 - 6/30.
+- Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
+- If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Starter to Professional on 6/15, we'll charge you 7/1. This will be a single charge for Starter for the period 6/1 - 6/14, then a separate charge for Professional for the period 6/15 - 6/30.
 
 Can I purchase an annual subscription to Mattermost Cloud deployments?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
