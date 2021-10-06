@@ -1,7 +1,7 @@
 Cloud Data Export
 =========================
 
-After completing your 14-day free Cloud trial, if you have decided to self-host your own Mattermost deployment, you may want to migrate your Cloud data to your Self-Hosted instance.
+If, after completing your 14-day free Cloud trial, you've decided to self-host your own Mattermost deployment, you may want to migrate your Cloud data to your self-hosted instance.
 
 We plan to publish documentation on how to perform a Cloud data export for channels, messages, users and other bulk export data self-serve, with some knowledge about running commands to export this data.
 
