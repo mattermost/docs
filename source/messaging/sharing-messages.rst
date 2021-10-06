@@ -11,6 +11,5 @@ Previews respect channel membership permissions, so they’re only visible to us
 
     The timestamp next to the username of any message also functions as a permanent link to that conversation.
 
-
 .. image:: ../images/permalink-previews.png
    :alt: Mattermost generates previews of links shared in Channels.
