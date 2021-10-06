@@ -1,37 +1,35 @@
-=================================
-Mattermost Deployments & Editions
-=================================
+Mattermost Deployments and Editions
+===================================
 
 Mattermost Deployment Options
 ------------------------------
 
-Mattermost provides additional benefits in our commercial editions to support the hosting and growth needs of an organization. You can explore these commercial features through a `trial <https://mattermost.com/get-started/>`__ with Mattermost Self-Hosted or Mattermost Cloud deployment options.  
+Mattermost provides additional benefits in our commercial editions to support the hosting and growth needs of an organization. You can explore these commercial features through a `trial <https://mattermost.com/get-started/>`__ with Mattermost Self-Hosted or Mattermost Cloud deployment options.
 
 Mattermost Self-Hosted 
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Self-Hosted provides Mattermost within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers.
 
-Once you’ve downloaded and installed Mattermost within your preferred environment, you have the option to use it as-is, or you can access Mattermost's commercial features by starting a trial or purchasing a subscription. You can start a 30-day free Enterprise trial via **Main Menu > System Console > Edition and License > Start trial** or request a trial online at https://mattermost.com/trial/. 
+Once you’ve downloaded and installed Mattermost within your preferred environment, you have the option to use it as-is, or you can access Mattermost's commercial features by starting a trial or purchasing a subscription. You can start a 30-day free Enterprise trial via **Main Menu > System Console > Edition and License > Start trial** or request a trial online at https://mattermost.com/trial/.
 
 Mattermost Cloud
 ^^^^^^^^^^^^^^^^^
 
-Mattermost Cloud delivers Mattermost as software-as-a-service in a highly secure, hosted environment designed for privacy-conscious enterprises and developer collaboration. 
+Mattermost Cloud delivers Mattermost as software-as-a-service in a highly secure, hosted environment designed for privacy-conscious enterprises and developer collaboration.
 
-To get started with a 14-day free trial of Mattermost Cloud online, visit https://customers.mattermost.com/cloud/signup. Signing up requires you to create an account with a business email and specify a domain for the workspace. Once you sign up and create your workspace, a wizard will help you get started completing your profile, inviting team members, and integrating with your favorite developer tools. 
-
+To get started with a 14-day free trial of Mattermost Cloud online, visit https://customers.mattermost.com/cloud/signup. Signing up requires you to create an account with a business email and specify a domain for the workspace. Once you sign up and create your workspace, a wizard will help you get started completing your profile, inviting team members, and integrating with your favorite developer tools.
 
 Mattermost Editions
 --------------------
 
-The Mattermost platform is offered under four editions to meet the needs of organizations of all sizes. 
+The Mattermost platform is offered under four editions to meet the needs of organizations of all sizes.
 
 Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Starter, Professional, and Enterprise plans. Mattermost Starter can be used for free without a subscription as commercial software that’s functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a subscription is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`__.
 
-Our open-source, self-hosted Team Edition will remain free forever with features that align with our self-hosted Mattermost Starter plan. We do not currently offer a free edition of Mattermost Cloud, however, we provide it at a low cost to make it a valuable option for teams with budgetary limitations. 
+Our open-source, self-hosted Team Edition will remain free forever with features that align with our self-hosted Mattermost Starter plan. We do not currently offer a free edition of Mattermost Cloud, however, we provide it at a low cost to make it a valuable option for teams with budgetary limitations.
 
-Self-hosted and cloud deployments of the various Mattermost plans have equivalent features, aside from a few cases where a feature is specific to the deployment model. For example, Omnibus or Kubernetes deployment tools are only available for our self-hosted offering as they are specific to self-hosting Mattermost. 
+Self-hosted and cloud deployments of the various Mattermost plans have equivalent features, aside from a few cases where a feature is specific to the deployment model. For example, Omnibus or Kubernetes deployment tools are only available for our self-hosted offering as they are specific to self-hosting Mattermost.
 
 For a complete list of features and pricing across plans, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`__.
 
