@@ -3,14 +3,9 @@ Navigating Mattermost Products
 
 In Mattermost v6.0, we’ve introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.
 
-The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the product suite in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks.
+The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the product suite in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks. You'll notice that going forward, when you open Playbooks and Boards, they display as tabs in the window header for easier access.
 
-Desktop App 5.0
----------------
-
-In the Desktop App 5.0 version, we've changed how you access multiple servers. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
-
-You'll also notice that when you open Playbooks and Boards, they display as tabs in the window header for easier access.
+We've also changed how you access multiple servers. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
 
 .. image:: ../images/server-menu.png
   :alt: Mattermost server list
@@ -22,10 +17,9 @@ While Channels, Boards, and Playbooks feature unique functionality within the Gl
 
 * Account Settings
 * Status and Availability
-* Settings (different options for each tool)
-* Product Menu button
+* Product menu
 
-In addition to this documentation, take a look at the Mattermost onboarding tips/tutorials. Note that once the tips/tutorials are dismissed, you won't be able to access them again.
+In addition to this documentation, take a look at the Mattermost onboarding tips/tutorials available immediately after installation/upgrade. Note that once the tips/tutorials are dismissed, you won't be able to access them again.
 
 Account Settings
 ----------------
