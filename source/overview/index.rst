@@ -15,7 +15,7 @@ Below is an overview of our features, security, account management, deployment, 
    /about/integrations*
    /about/subscription*
    /about/cloud-subscriptions
-   /about/self-hosted-subscriptions*
+   /about/self-hosted-subscriptions
    /about/corporate-directory-integration*
    /about/certifications-and-compliance*
    /about/frequently-asked-questions*
