@@ -16,7 +16,7 @@ We support key developer collaboration use cases:
 
  - **Secure collaboration** for InfoSec and CIO/CISO in companies that require the highest levels of security, privacy, compliance, and data control. We provide an on-premise, self-hosted collaboration solution that is fully secured, highly customizable, and managed internally with strict access controls, and integrates easily with in-house security/compliance frameworks that can’t be achieved with SaaS. 
 
-The Mattermost Platform
+The Mattermost platform
 ------------------------
 Mattermost is an integrated platform of productivity tools that provides workflow orchestration and eliminates context switching between. Mattermost offers solutions incorporating channel-based communication, structured workflow execution, and project workflows. The platform provides a single secure deployment, shared user management, and a common user experience with a comprehensive toolset enabling enterprise-grade collaboration. 
 
