@@ -33,7 +33,7 @@ If you're on a monthly Cloud subscription, you can just add more users to your i
 
 When you subscribe to an annual plan with Mattermost, you may incur retroactive charges on a quarterly basis for the actual number of registered users within your system if you are above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
-If you have more total active users than what you purchased in your annual subscription, we will provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__ . 
+If you have more total active users than what you purchased in your annual subscription, we will provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__ . 
 
 Renew your subscription
 -----------------------
