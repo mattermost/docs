@@ -62,7 +62,14 @@ Add more users to a subscription
 
 To add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
 
-You may incur retroactive charges for any unique users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
+When you subscribe to an annual plan with Mattermost, you agree to provide quarterly reports of the actual number of registered users within your system. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
+
+We will send you an email notice around the end of the quarter reminding you to send us your report.  To send this report, you can simply take a screenshot of **System Console > Site Statistics** and send in a reply email back to us.  Please ensure your screenshot is taken from the top of the page and includes the **Total Active Users** metric.  
+
+.. image:: ../images/Site_Statistics.png
+	:alt: Take a screenshot from the System Console > Site Statistics page.
+
+If you have more total active users than what you purchased in your annual subscription, we will provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__ .  
 
 Renew a subscription
 --------------------
