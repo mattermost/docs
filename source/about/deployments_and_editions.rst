@@ -114,7 +114,6 @@ Building on the features in Professional plan, it also offers:
 
 See a complete list of features `here <https://mattermost.com/pricing/>`__. 
 
-
 Mattermost legacy Enterprise Editions
 --------------------------------------
 
