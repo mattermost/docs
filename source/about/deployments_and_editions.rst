@@ -153,7 +153,7 @@ Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging
 
 Packaging decisions
 -----------------------
-As the platform matures and new features are added, they are evaluated to be included in the edition that best aligns with the organizational use cases outlined by the editions above. Multiple factors are considered in determining which tier to include a feature including mission-critical impact, relative value to a single team, cross-functional teams, and the enterprise, as well as security, compliance, and scalability.
+As the platform matures and new features are added, they're evaluated to be included in the edition that best aligns with the organizational use cases outlined by the editions above. Multiple factors are considered in determining which tier to include a feature including mission-critical impact, relative value to a single team, cross-functional teams, and the enterprise, as well as security, compliance, and scalability.
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer. 
 
