@@ -13,6 +13,8 @@ The Global Header introduces a new way of navigating and using Mattermost, and o
 
 Another change that's introduced is how to access multiple servers and the inclusion of tabs for easy switching between products. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu. Notifications across servers work the same way as before, so you won't miss any important conversations.
 
+
+
 While Channels, Boards, and Playbooks feature unique functionality within the Global Header, the following features are shared across all three products:
 
 * Account Settings
@@ -32,8 +34,8 @@ Status and Availability
 
 Let your team know your online status using status and availability settings. Select your avatar in the top-right corner to change your status and availability. 
 
-Product switcher
-----------------
+Product menu
+------------
 
 In the top-left corner of the Global Header, select the Product Menu button to open the tool switcher to switch between Channels, Playbooks, and Boards.
 
