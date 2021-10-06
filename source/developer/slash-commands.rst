@@ -26,10 +26,10 @@ Each Mattermost installation comes with some built-in slash commands that are re
 .. csv-table::
     :header: "Command", "Description", "Example"
 
-    "/away", "Set your availablity to away", "/away"
-    "/offline", "Set your availablity to offline", "/offline"
-    "/online", "Set your availablity to online", "/online"
-    "/dnd", "Set your availablity to Do Not Disturb", "/dnd"
+    "/away", "Set your availability to away", "/away"
+    "/offline", "Set your availability to offline", "/offline"
+    "/online", "Set your availability to online", "/online"
+    "/dnd", "Set your availability to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
     "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
     "/expand", "Turn off auto-collapsing of image previews", "/expand"

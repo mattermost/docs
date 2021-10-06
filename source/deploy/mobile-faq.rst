@@ -172,7 +172,7 @@ First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) 
 How do I white label the app and customize build settings?
 ----------------------------------------------------------
 
-All files in the ``/assets/base`` folder can be overriden as needed without conflicting with changes made to the upstream version of the app. To do this:
+All files in the ``/assets/base`` folder can be overridden as needed without conflicting with changes made to the upstream version of the app. To do this:
 
 1. Create the folder ``/assets/override``.
 2. Copy any files or folders that you wish to replace from ``/assets/base`` into ``/assets/override``.

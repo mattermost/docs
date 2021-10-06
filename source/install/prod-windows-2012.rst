@@ -108,7 +108,7 @@ Now that MySQL has been installed and configured, a database and user account mu
 
 21. To confirm the database and user were configured correctly:
 
-    a. Connect to the MySQL server/datbase by executing ``mysql -u mmuser -p mattermost``.
+    a. Connect to the MySQL server/database by executing ``mysql -u mmuser -p mattermost``.
     b. When prompted, entering ``mmuser-password``.
     c. If If successful, you will be at the ``mysql>`` prompt.
     d. Type ``exit`` to finish.
