@@ -16,25 +16,14 @@ Latest Mattermost Cloud releases:
 
 #### Multi-Product Platform
  - Mattermost now ships as one platform with three products - Channels, Playbooks, and Boards.
- - Playbooks and Boards are visible when [plugins are enabled system-wide](https://docs.mattermost.com/configure/configuration-settings.html#enable-plugins). 
 
 #### Global Product Launcher
  - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view and mobile apps.
 
 #### Packaging Changes
- - Updated in-product strings referencing E10 & E20 to [new packaging](https://mattermost.com/pricing).
- - Features moved from legacy E10 to all plans, including Team Edition:
-   - System default permissions, e.g. permission to create and archive channels system-wide.
-      - Specifically, “System Scheme” only in **System Console > User Management > Permissions**. 
-      - Existing permissions/policies in TE/E0 for "Enable Team Creation" and "Allow Team Administrators to edit others’ posts" are properly handled. 
-   - Team and Channel management pages (but without channel moderation, e.g. read-only channels).
- - Features moved from legacy E20 to Professional plan:
-   - SSO with OpenID Connect, SAML, Google and O365
-   - O365 integrations including MS Teams Calling and MS Calendar
-   - Jira multi-server support
-   - Advanced team permissions
-   - Channel moderation
- - E20, Professional, and Enterprise license SKUs are now supported for installing Enterprise plugins.
+ - Introducing [updated packaging](https://mattermost.com/pricing) with new Starter, Professional and Enterprise plans to better serve our customers.
+ - Existing paying Cloud Professional customers will automatically be upgraded to Cloud Enterprise with no change to pricing or feature set for the next 12 months. More information will be shared to the workspace owner's email address shortly after the release.
+ - Existing free Cloud customers will be asked to enter their credit card by January 15th, 2022 to continue using Mattermost Cloud. More information will be shared to the workspace owner's email address shortly after the release.
 
 #### Beta features Promoted to General Availability
    - Archived channels
@@ -80,8 +69,21 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where **Try Enterprise for Free** option was missing spacing in mobile webview.
 
 ### Known Issues
+ - Clicking on "..." post menu on a System message crashes the webapp [MM-39116](https://mattermost.atlassian.net/browse/MM-39116).
+ - Desktop notifications don't work intermittently [MM-39052](https://mattermost.atlassian.net/browse/MM-39052).
+ - **System Console > Open ID Connect** is not available in Professional license [MM-39007](https://mattermost.atlassian.net/browse/MM-39007).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Accessibility breaks in ``ItemToggleModalRedux`` [MM-38915](https://mattermost.atlassian.net/browse/MM-38915).
+ - Deep link opened on mobile shows incorrect text directing the opening to the Desktop app [MM-38913](https://mattermost.atlassian.net/browse/MM-38913).
+ - Channel switcher is missing "(You)" indicator on your own Direct Message channel [MM-38798](https://mattermost.atlassian.net/browse/MM-38798).
+ - LDAP Sync job inserting invalid NULL unicode character into job's Data column [MM-38711](https://mattermost.atlassian.net/browse/MM-38711).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Login screen flashes sporadically when switching from Boards to Channels [MM-38077](https://mattermost.atlassian.net/browse/MM-38077).
+ - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
- - Sometimes an "Unable to get role" error appears when changing a channel member role in **System Console > User Management > Channels**.
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
