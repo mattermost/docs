@@ -27,7 +27,7 @@ The Mattermost platform is offered under four editions to meet the needs of orga
 
 Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Starter, Professional, and Enterprise plans. Mattermost Starter can be used for free without a subscription as commercial software that’s functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a subscription is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`__.
 
-Our open-source, self-hosted Team Edition will remain free forever with features that align with our self-hosted Mattermost Starter plan. We do not currently offer a free edition of Mattermost Cloud, however, we provide it at a low cost to make it a valuable option for teams with budgetary limitations.
+Our open source, self-hosted Team Edition will remain free forever with features that align with our self-hosted Mattermost Starter plan. We do not currently offer a free edition of Mattermost Cloud, however, we provide it at a low cost to make it a valuable option for teams with budgetary limitations.
 
 Self-hosted and cloud deployments of the various Mattermost plans have equivalent features, aside from a few cases where a feature is specific to the deployment model. For example, Omnibus or Kubernetes deployment tools are only available for our self-hosted offering as they are specific to self-hosting Mattermost.
 
