@@ -3,17 +3,20 @@ Navigating Mattermost Products
 
 In Mattermost v6.0, we’ve introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.
 
-Other changes you'll see when you upgrade to 6.0 are:
+The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the product suite in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks.
 
-* WebApp updates
-* Desktop App 5.0
-* Mobile Apps 1.50
+Desktop App 5.0
+---------------
 
-The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the product suite in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a tool switcher for easy navigation between Channels, Boards, and Playbooks.
+In the Desktop App 5.0 version, we've changed how you access multiple servers. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
 
-Another change that's introduced is how to access multiple servers and the inclusion of tabs for easy switching between products. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu. Notifications across servers work the same way as before, so you won't miss any important conversations.
+You'll also notice that when you open Playbooks and Boards, they display as tabs in the window header for easier access.
 
+.. image:: ../images/server-menu.png
+  :alt: Mattermost server list
 
+Where is everything?
+--------------------
 
 While Channels, Boards, and Playbooks feature unique functionality within the Global Header, the following features are shared across all three products:
 
@@ -27,19 +30,19 @@ In addition to this documentation, take a look at the Mattermost onboarding tips
 Account Settings
 ----------------
 
-Account Settings is accessible from the top-right corner of the Global Header. Select your avatar image, then choose Account Settings. From here, you can configure your profile settings and security settings. 
+The Account Settings menu is now located in the top-right corner of the Global Header, and some settings have moved to a new menu. To open Account Settings, select your avatar image, then choose Account Settings. From here, you can configure your profile settings and security settings.
 
 Status and Availability
 -----------------------
 
-Let your team know your online status using status and availability settings. Select your avatar in the top-right corner to change your status and availability. 
+Let your team know your online status using custom status and availability settings, which include emojis. Select your avatar in the top-right corner to change your status and availability.
 
 Product menu
 ------------
 
 In the top-left corner of the Global Header, select the Product Menu button to open the tool switcher to switch between Channels, Playbooks, and Boards.
 
-Depending on permissions set for your Mattermost , this is where you would also find Mattermost Integrations, System Console, and Marketplace menu links. You’ll always be able to view the version information of your Mattermost workspace.
+Depending on permissions set for your Mattermost, this is also where you would also find Mattermost Integrations, System Console, and Marketplace menu links. You’ll always be able to view the version information of your Mattermost workspace in this menu.
 
 History arrows
 --------------
