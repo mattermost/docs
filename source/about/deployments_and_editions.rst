@@ -115,7 +115,7 @@ Building on the features in Professional plan, it also offers:
 See a complete list of features `here <https://mattermost.com/pricing/>`__. 
 
 
-Mattermost Legacy Enterprise Editions
+Mattermost legacy Enterprise Editions
 --------------------------------------
 
 Mattermost introduced a new pricing and packaging structure on October 13, 2021. The packages listed below will reach end-of-life on October 31, 2023. 
