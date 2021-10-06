@@ -29,7 +29,7 @@ Mattermost Enterprise Edition is the name for the binary of the Mattermost self-
 
 Our open source, self-hosted Team Edition will remain free forever with features that align with our self-hosted Mattermost Starter plan. We do not currently offer a free edition of Mattermost Cloud, however, we provide it at a low cost to make it a valuable option for teams with budgetary limitations.
 
-Self-hosted and cloud deployments of the various Mattermost plans have equivalent features, aside from a few cases where a feature is specific to the deployment model. For example, Omnibus or Kubernetes deployment tools are only available for our self-hosted offering as they are specific to self-hosting Mattermost.
+Self-hosted and Cloud deployments of the various Mattermost plans have equivalent features, aside from a few cases where a feature is specific to the deployment model. For example, Omnibus or Kubernetes deployment tools are only available for our self-hosted offering as they are specific to self-hosting Mattermost.
 
 For a complete list of features and pricing across plans, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`__.
 
