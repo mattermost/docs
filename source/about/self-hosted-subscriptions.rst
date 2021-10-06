@@ -2,7 +2,7 @@ Self-Hosted Subscriptions
 =========================
 
 Purchase a subscription
---------------------------
+-----------------------
 
 Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the required information, and check the box to confirm **I have read and agree to the Privacy Policy**. Then select **Next**. When you've completed the process and validated your email address, you can proceed with the steps below. 
 
@@ -39,7 +39,7 @@ You can also use the `mmctl <https://docs.mattermost.com/manage/mmctl-command-li
 If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html>`__ documentation.
 
 View subscription information
---------------------------------
+-----------------------------
 
 Self-hosted subscriptions purchased via the `Customer Portal <https://customers.mattermost.com>`__ are stored and listed in the Customer Portal.
 
@@ -58,14 +58,14 @@ You can access your Customer Portal account to view information about your:
 Subscription and licenses not purchased via the Customer Portal won't be listed.
 
 Add more users to a subscription
-------------------------------------
+--------------------------------
 
 To add more users to your existing subscription, `contact us <https://mattermost.com/contact-us/>`__.
 
 You may incur retroactive charges for any unique users added that exceed the total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
 Renew a subscription
-------------------------
+--------------------
 
 From Mattermost Server v5.32 and later, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
@@ -99,7 +99,7 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Frequently Asked Questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 How do I renew my license subscription if I don't have internet access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -154,7 +154,7 @@ Once a new license is applied, the banner will no longer be visible.
 If you don't plan to renew your subscription, revoke the expired license in **System Console > Edition and License**.
 
 Can other members of my organization use the Customer Portal account to manage our subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We currently support a single account/user per organization. The ability to add multiple users per organization will be available in a future release.
 
