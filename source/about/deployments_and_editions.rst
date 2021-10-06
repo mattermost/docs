@@ -6,7 +6,7 @@ Mattermost Deployment Options
 
 Mattermost provides additional benefits in our commercial editions to support the hosting and growth needs of an organization. You can explore these commercial features through a `trial <https://mattermost.com/get-started/>`__ with Mattermost Self-Hosted or Mattermost Cloud deployment options.
 
-Mattermost Self-Hosted 
+Mattermost self-hosted 
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Self-Hosted provides Mattermost within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers.
