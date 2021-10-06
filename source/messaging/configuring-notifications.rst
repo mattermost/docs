@@ -20,7 +20,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
 .. tabs::
 
-.. tab:: v6.0 onwards
+ .. tab:: v6.0 onwards
 
       In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
       
