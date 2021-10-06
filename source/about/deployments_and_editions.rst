@@ -51,20 +51,20 @@ Mattermost Starter is a collaboration solution to improve your technical team’
 
 Features include:
 
-- Unlimited teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji
-- One customizable playbook for unlimited participants, ad hoc add/remove tasks, automated triggers, and stakeholders dashboard
-- Unlimited boards, with table, gallery, list views, a single workspace per channel, shareable read-only boards, and data import 
-- Native apps for iOS, Android, Windows, Mac, and Linux
+- Unlimited teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
+- One customizable playbook for unlimited participants, ad hoc add/remove tasks, automated triggers, and stakeholders dashboard.
+- Unlimited boards, with table, gallery, list views, a single workspace per channel, shareable read-only boards, and data import. 
+- Native apps for iOS, Android, Windows, Mac, and Linux.
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
-- Tools for `custom branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__ and `themes <https://docs.mattermost.com/messaging/customizing-theme-colors.html>`__
-- Multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__
-- Single Sign-on with GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ (Self-hosted only)
-- `Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__
-- Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__
-- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__
-- Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian
-- `SOC2 Type1 certification<https://mattermost.com/security/>`__ (Cloud only)
-- `Community support <https://mattermost.com/support/>`__
+- Tools for `custom branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__ and `themes <https://docs.mattermost.com/messaging/customizing-theme-colors.html>`__.
+- Multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__.
+- Single Sign-on with GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ (Self-hosted only).
+- `Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
+- Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__.
+- Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian.
+- `SOC2 Type1 certification<https://mattermost.com/security/>`__ (Cloud only).
+- `Community support <https://mattermost.com/support/>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
@@ -75,17 +75,17 @@ Mattermost Professional is a collaboration solution that enables you to build an
 
 Building on the features in Starter plan, it also offers:
 
-- `Guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`__
-- Unlimited playbooks, retrospective reports and timelines
-- `Active Directory/LDAP Single Sign-on and user synchronization <https://docs.mattermost.com/onboard/ad-ldap.html>`__
-- Single Sign-on with SAML, `Google <https://docs.mattermost.com/onboard/sso-google.html>`__, `Office365 <https://docs.mattermost.com/onboard/sso-office.html>`__ or `OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ 
-- `MFA enforcement <https://docs.mattermost.com/onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__
-- `Advanced team permissions <https://docs.mattermost.com/onboard/advanced-permissions.html#team-override-schemes-e20>`__
-- `Read-only announcement channels <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20>`__
-- `System-wide announcement banners <https://docs.mattermost.com/manage/announcement-banner.html>`__
-- O365 integrations with `Microsoft Teams Calling <>`_ and `Microsoft Calendar <>`_
-- 99.9% uptime SLA guarantee (Cloud only)
-- `Next business day support via online ticketing system <https://mattermost.com/support/>`__
+- `Guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`__.
+- Unlimited playbooks, retrospective reports and timelines.
+- `Active Directory/LDAP Single Sign-on and user synchronization <https://docs.mattermost.com/onboard/ad-ldap.html>`__.
+- Single Sign-on with SAML, `Google <https://docs.mattermost.com/onboard/sso-google.html>`__, `Office365 <https://docs.mattermost.com/onboard/sso-office.html>`__ or `OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__. 
+- `MFA enforcement <https://docs.mattermost.com/onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
+- `Advanced team permissions <https://docs.mattermost.com/onboard/advanced-permissions.html#team-override-schemes-e20>`__.
+- `Read-only announcement channels <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20>`__.
+- `System-wide announcement banners <https://docs.mattermost.com/manage/announcement-banner.html>`__.
+- O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
+- 99.9% uptime SLA guarantee (Cloud only).
+- `Next business day support via online ticketing system <https://mattermost.com/support/>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
@@ -96,21 +96,21 @@ Mattermost Enterprise is an enterprise-grade collaboration system that supports 
 
 Building on the features in Professional plan, it also offers:
 
-- `Shared channels with other Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__
-- `Configurable playbook permissions, analytics dashboards and channel exports <>`_
-- `AD/LDAP Group synchronization <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__
-- `Automated compliance exports and reporting <https://docs.mattermost.com/comply/compliance-export.html>`__
-- `Custom EMM providers via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__
-- `Custom user terms of service <https://docs.mattermost.com/comply/custom-terms-of-service.html>`__
-- `ID-only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__
-- `Global and custom retention policies for messages and files <https://docs.mattermost.com/comply/data-retention-policy.html>`__
-- `Custom admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__
-- `Granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__
-- `High availability support with multi-node database deployment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__
-- `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__
-- `Elasticsearch support for highly efficient database searches in a cluster environment <https://docs.mattermost.com/scale/elasticsearch.html>`__
-- `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__
-- `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__
+- `Shared channels with other Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
+- `Configurable playbook permissions, analytics dashboards and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`_.
+- `AD/LDAP Group synchronization <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+- `Automated compliance exports and reporting <https://docs.mattermost.com/comply/compliance-export.html>`__.
+- `Custom EMM providers via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__.
+- `Custom user terms of service <https://docs.mattermost.com/comply/custom-terms-of-service.html>`__.
+- `ID-only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.
+- `Global and custom retention policies for messages and files <https://docs.mattermost.com/comply/data-retention-policy.html>`__.
+- `Custom system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__.
+- `Granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__.
+- `High availability support with multi-node database deployment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
+- `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
+- `Elasticsearch support for highly efficient database searches in a cluster environment <https://docs.mattermost.com/scale/elasticsearch.html>`__.
+- `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
+- `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing/>`__. 
 
@@ -128,28 +128,28 @@ Mattermost Enterprise Edition E10
 
 Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. 
 
-- Active Directory/LDAP Single Sign-on
-- OAuth 2.0 authentication for team creation, account creation, and user sign-in
-- Encrypted push notifications with service level agreements (SLAs) via HPNS
-- Advanced access control policy
-- Next business day support via online ticketing system
-- Scale to handle hundreds of users per team
+- Active Directory/LDAP Single Sign-on.
+- OAuth 2.0 authentication for team creation, account creation, and user sign-in.
+- Encrypted push notifications with service level agreements (SLAs) via HPNS.
+- Advanced access control policy.
+- Next business day support via online ticketing system.
+- Scale to handle hundreds of users per team.
 
 Mattermost Enterprise Edition E20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability and Compliance features are offered in Mattermost Enterprise. 
 
-- Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services
-- Active Directory/LDAP group synchronization
-- OpenID Connect authentication for team creation, account creation, and user sign-in
-- Compliance exports of message histories with oversight protection
-- Custom retention policies for messages and files
-- High Availability support with multi-node database deployment
-- Horizontal scaling through cluster-based deployment
-- Elasticsearch support for highly efficient database searches in a cluster environment
-- Advanced performance monitoring
-- Eligibility for Premier Support add-on
+- Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services.
+- Active Directory/LDAP group synchronization.
+- OpenID Connect authentication for team creation, account creation, and user sign-in.
+- Compliance exports of message histories with oversight protection.
+- Custom retention policies for messages and files.
+- High Availability support with multi-node database deployment.
+- Horizontal scaling through cluster-based deployment.
+- Elasticsearch support for highly efficient database searches in a cluster environment.
+- Advanced performance monitoring.
+- Eligibility for Premier Support add-on.
 
 Packaging decisions
 -----------------------
