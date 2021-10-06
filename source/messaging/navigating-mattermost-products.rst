@@ -30,17 +30,21 @@ In addition to this documentation, take a look at the Mattermost onboarding tips
 Account Settings
 ----------------
 
-The Account Settings menu is now located in the top-right corner of the Global Header, and some settings have moved to a new menu. To open Account Settings, select your avatar image, then choose Account Settings. From here, you can configure your profile settings and security settings.
+The Account Settings menu has been split into Account Settings and Settings.
+
+Your **Profile** and **Security** settings can be found in Account Settings, while **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are in the settings menu.
+
+To open Account Settings, select your avatar in the top-right corner of Mattermost, then choose Account Settings. The Settings menu is located to the left of your avatar
 
 Status and Availability
 -----------------------
 
-Let your team know your online status using custom status and availability settings, which include emojis. Select your avatar in the top-right corner to change your status and availability.
+Let your team know your online status using `custom status and availability settings <https://docs.mattermost.com/messaging/setting-your-status-availability.html#>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
 
 Product menu
 ------------
 
-In the top-left corner of the Global Header, select the Product Menu button to open the tool switcher to switch between Channels, Playbooks, and Boards.
+In the top-left corner of the Global Header, select the Product menu button to open the tool switcher to switch between Channels, Playbooks, and Boards.
 
 Depending on permissions set for your Mattermost, this is also where you would also find Mattermost Integrations, System Console, and Marketplace menu links. You’ll always be able to view the version information of your Mattermost workspace in this menu.
 
@@ -49,8 +53,8 @@ History arrows
 
 Use the arrows to the right of the tool switcher to show the last channel/next channel.
 
-Mattermost menu
----------------
+Server list
+-----------
 
 If you're using multiple servers (e.g., you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are located. To change servers, select the menu and then select the server you want to use.
 
@@ -65,4 +69,4 @@ Managing custom emojis can be accessed from the emoji picker now.
 I can't find my plugins
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-TBC
+Plugins are listed in the Product menu, in the top-left corner of Mattermost.
