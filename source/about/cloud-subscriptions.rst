@@ -29,7 +29,7 @@ Please see the `Cloud Billing <https://docs.mattermost.com/manage/cloud-billing.
 Add more users to your subscription
 -----------------------------------
 
-If you're on a monthly Cloud subscription, you can just add more users to your instance and you'll be billed on your monthly invoice. If you add new users in the middle of a billing cycle, you’ll only be charged for the days that the user is registered.
+If you're on a monthly Cloud subscription, you can add more users to your instance which will be reflected on your monthly invoice. If you add new users in the middle of a billing cycle, you’ll only be charged for the days that the user is registered.
 
 When you subscribe to an annual plan with Mattermost, you may incur retroactive charges on a quarterly basis for the actual number of registered users within your system if you are above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
