@@ -38,7 +38,7 @@ Mattermost Team Edition
 
 Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
 
-The open-source Mattermost Team Edition is functionally identical to Mattermost Starter, but there is no ability to unlock additional features.
+The open source Mattermost Team Edition is functionally identical to Mattermost Starter, but there's no ability to unlock additional features.
 
 We generally recommend installing Mattermost Starter, even if you don't currently need a subscription. This provides the flexibility to seamlessly unlock additional features should you need them. However, if you only want to install software with a fully open-source code base, then Team Edition is the best choice for you.
 
