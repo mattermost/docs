@@ -9,7 +9,7 @@ Previews respect channel membership permissions, so they’re only visible to us
 
 .. tip::
 
-    The timestamp next to the username of any message also functionas as a permanent link to that conversation.
+    The timestamp next to the username of any message also functions as a permanent link to that conversation.
 
 
 .. image:: ../images/permalink-previews.png
