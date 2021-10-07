@@ -6,7 +6,7 @@ Mattermost Playbooks is included in Mattermost and Mattermost Cloud workspace, e
 Accessing and Navigating Playbooks
 ----------------------------------
 
-Access Playbooks using the **Toggle Playbook List** icon in the channel header to open the right-hand sidebar (RHS). In the RHS, you'll find playbooks you're a member of as well as playbook templates.
+Access Playbooks within Channels using the **Toggle Playbook List** icon in the channel header to open the right-hand sidebar (RHS). In the RHS, you'll find playbooks you can run as well as playbook templates.
 
 To open a playbook and view its statistics, select the playbook name. To begin a run using a listed playbook, select **Run**.
 
