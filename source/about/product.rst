@@ -25,7 +25,8 @@ The platform is fully extensible by design, supporting a rich ecosystem of third
 
 Collaboration workflows addressed by Mattermost
 -----------------------------------------------
-The Mattermost platform integrates three primary tools that cover a wide range of collaboration use cases. Each tool focuses on a primary workflow and can be used seamlessly in combination for real-time collaboration and for processes and projects with durations ranging from days to months.  
+
+The Mattermost platform integrates three primary tools that cover a wide range of collaboration use cases. Each tool focuses on a primary workflow and can be used seamlessly in combination for real-time collaboration and for processes and projects with durations ranging from days to months.
 
 Use Channels to stay connected and support your communication workflows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
