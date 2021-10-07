@@ -1,4 +1,4 @@
 Navigate Mattermost Products
 ============================
 
-.. include:: navigating-mattermost-products.rst
+.. include:: common-navigating-mattermost-products.rst
