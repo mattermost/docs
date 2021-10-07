@@ -123,7 +123,7 @@ Mattermost Desktop and Mobile Apps must be used with the latest Extended Suppor
 
 .. include:: upgrading-to-v60.rst
 
-In cases where Mattermost features or functionality involve the operating system, a specific Desktop App or Mobile App version may be required. For example, the Mattermost Desktop App v4.6 included a setting for choosing desktop notification sounds which required Mattermost server v5.28 or later.
+In cases where Mattermost features or functionality involve the operating system, a specific Desktop App or Mobile App version may be required. For example, the Mattermost Desktop App v4.6 includes a setting for choosing desktop notification sounds which requires Mattermost Server v5.28 or later.
 
 .. note::
 
