@@ -9,67 +9,14 @@ To display a list of available keyboard shortcuts, press CTRL+/ (CMD+/ on Mac), 
 
    Though Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
 
-Navigation 
-----------
-
-Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/messaging/keyboard-accessibility.html>`_.
-
-All Mattermost Clients
-~~~~~~~~~~~~~~~~~~~~~~
-
-The following shortcuts are supported in all Mattermost clients.
-
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| On Windows                 | On Mac                    | Description                                                                    |
-+============================+===========================+================================================================================+
-| ALT+UP                     | OPTION+UP                 | Previous channel or direct message in the channel sidebar                      |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| ALT+DOWN                   | OPTION+DOWN               | Next channel or direct message in the channel sidebar                          |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| ALT+SHIFT+UP               | OPTION+SHIFT+UP           | Previous channel or direct message in the channel sidebar with unread messages |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| ALT+SHIFT+DOWN             | OPTION+SHIFT+DOWN         | Next channel or direct message in the channel sidebar with unread messages     |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+ALT+UP                | CMD+OPTION+UP             | Previous team                                                                  |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+ALT+DOWN              | CMD+OPTION+DOWN           | Next team                                                                      |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+ALT+[1-9]             | CMD+OPTION+[1-9]          | Switch to a specific team                                                      |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+K                     | CMD+K                     | Open a quick channel switcher dialog                                           |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+SHIFT+K               | CMD+SHIFT+K               | Open the Direct Messages dialog                                                |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+SHIFT+A               | CMD+SHIFT+A               | Open the Account Settings dialog                                               |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+SHIFT+M               | CMD+SHIFT+M               | Open recent mentions                                                           |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+SHIFT+L               | CMD+SHIFT+L               | Set focus to center channel input field                                        |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| CTRL+.                     | CMD+.                     | Open and close the right-hand sidebar                                          |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-
-Mattermost Mobile Apps Only
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following shortcut is supported in Mattermost Mobile Apps only.
-
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-| On Windows                 | On Mac                    | Description                                                                    |
-+============================+===========================+================================================================================+
-| CTRL+SHIFT+F               | CMD+SHIFT+F               | Move focus to the Search field and search the current channel                  |
-+----------------------------+---------------------------+--------------------------------------------------------------------------------+
-
-Mattermost Desktop App Only
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following shortcuts are supported in Mattermost Desktop Apps only.
+Mattermost Server and Product Navigation
+----------------------------------------
 
 .. tabs::
 
   .. tab:: Desktop App v5.0 onwards
 
-    Mattermost Desktop App v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards.
+    Mattermost Desktop App v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. The following keyboard shortcuts are supported in Mattermost Desktop App only.
     
     +-----------------+-----------------+------------------------------------------------------------------------------------+
     | On Windows      | On Mac          | Description                                                                        |
@@ -115,10 +62,50 @@ The following shortcuts are supported in Mattermost Desktop Apps only.
     | ALT+DOWN                   | OPTION+DOWN               | Next channel or direct message in the channel sidebar                                                 |
     +----------------------------+---------------------------+-------------------------------------------------------------------------------------------------------+
 
+General Mattermost Navigation 
+-----------------------------
+
+The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
+
+.. note::
+  See our `Keyboard Accessibility <https://docs.mattermost.com/messaging/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen reader users.
+
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| On Windows                 | On Mac                    | Description                                                                    |
++============================+===========================+================================================================================+
+| ALT+UP                     | OPTION+UP                 | Previous channel or direct message in the channel sidebar                      |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| ALT+DOWN                   | OPTION+DOWN               | Next channel or direct message in the channel sidebar                          |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| ALT+SHIFT+UP               | OPTION+SHIFT+UP           | Previous channel or direct message in the channel sidebar with unread messages |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| ALT+SHIFT+DOWN             | OPTION+SHIFT+DOWN         | Next channel or direct message in the channel sidebar with unread messages     |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+ALT+UP                | CMD+OPTION+UP             | Previous team                                                                  |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+ALT+DOWN              | CMD+OPTION+DOWN           | Next team                                                                      |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+ALT+[1-9]             | CMD+OPTION+[1-9]          | Switch to a specific team                                                      |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+K                     | CMD+K                     | Open a quick channel switcher dialog                                           |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+SHIFT+K               | CMD+SHIFT+K               | Open the Direct Messages dialog                                                |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+SHIFT+A               | CMD+SHIFT+A               | Open the Account Settings dialog                                               |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+SHIFT+M               | CMD+SHIFT+M               | Open recent mentions                                                           |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+SHIFT+L               | CMD+SHIFT+L               | Set focus to center channel input field                                        |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+.                     | CMD+.                     | Open and close the right-hand sidebar                                          |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+| CTRL+SHIFT+F               | CMD+SHIFT+F               | Move focus to the Search field and search the current channel                  |
++----------------------------+---------------------------+--------------------------------------------------------------------------------+
+
 Files
 -----
 
-The following shortcuts are supported on all Mattermost clients.
+The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
 
 +------------+--------+---------------+
 | On Windows | On Mac | Description   |
@@ -129,7 +116,7 @@ The following shortcuts are supported on all Mattermost clients.
 Messages
 --------
 
-The following shortcuts are supported in all Mattermost clients.
+The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
 
 +----------------------------------+---------------------------------+---------------------------------------------------------+
 | On Windows                       | On Mac                          | Description                                             |
@@ -154,7 +141,7 @@ The following shortcuts are supported in all Mattermost clients.
 Formatting
 ----------
 
-The following shortcuts are supported in all Mattermost clients.
+The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
 
 +------------+-----------+-----------------------+
 | On Windows | On Mac    | Description           |
@@ -169,7 +156,7 @@ The following shortcuts are supported in all Mattermost clients.
 Browser Built-in
 ----------------
 
-The following shortcuts are supported in all Mattermost clients.
+The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
 
 +------------------------------+------------------------------+-------------------------------------+
 | On Windows                   | On Mac                       | Description                         |
