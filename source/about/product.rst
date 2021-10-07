@@ -23,7 +23,7 @@ Mattermost is an integrated platform of productivity tools that provides workflo
 The platform is fully extensible by design, supporting a rich ecosystem of third-party applications and integrations. Mattermost is easily enhanced and customized using open APIs, developer frameworks, open source customizations, and community-driven enhancements. Mattermost also supports 20 languages to meet the needs of global teams.
 
 
-Collaboration Workflows Addressed by Mattermost
+Collaboration workflows addressed by Mattermost
 -----------------------------------------------
 The Mattermost platform integrates three primary tools that cover a wide range of collaboration use cases. Each tool focuses on a primary workflow and can be used seamlessly in combination for real-time collaboration and for processes and projects with durations ranging from days to months.  
 
