@@ -18,10 +18,10 @@ Install the Mattermost Desktop App
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The Mattermost Desktop App is  available for Windows, macOS, and Linux operating systems.
+The Mattermost Desktop App is available for Windows, macOS, and Linux operating systems.
 
 .. image:: ../images/desktop.png
 
-You can `download the apps directly from our download page <https://mattermost.com/download/#mattermostApps>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`__ for help during setup and for troubleshooting tips.
+You can `download the Desktop App directly from our Download page <https://mattermost.com/download/#mattermostApps>`__, and visit our `installation guides <https://docs.mattermost.com/install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
 
-To view the latest updates, please see our `changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__.
+.. include:: ../upgrade/upgrading-to-v60.rst

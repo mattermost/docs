@@ -472,7 +472,7 @@ Does Mattermost support multi-region High Availability deployment?
 
 Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
 
-What does Mattermost recommend for diaster recovery of the databases?
+What does Mattermost recommend for disaster recovery of the databases?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When deploying Mattermost in a High Availability configuration, we recommend using a database load balancer between Mattermost and your database. Depending on your deployment this needs more or less consideration.

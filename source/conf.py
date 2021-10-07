@@ -103,6 +103,30 @@ redirects = {
         "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": 
         "https://docs.mattermost.com/getting-started/architecture-overview.html",
+    "about/licensing-and-subscription": "https://docs/mattermost.com/about/subscription.html",
+    "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
+    "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
+    "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
+    "developer/interactive-dialogs": "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-dialogs/",
+    "developer/interactive-message-buttons": "https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/",
+    "developer/message-attachments": "https://developers.mattermost.com/integrate/admin-guide/admin-message-attachments/",
+    "developer/oauth-2-0-applications": "https://developers.mattermost.com/integrate/admin-guide/admin-oauth2/",
+    "developer/personal-access-token": "https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/",
+    "developer/slash-commands": "https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/",
+    "developer/webhook-outgoing": "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
+    "developer/webhook-incoming": "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
+    "developer/bot-accounts": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
+    "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
+    "overview/product": "https://docs.mattermost.com/about/product.html",
+    "overview/product": "https://docs.mattermost.com/about/product.html#mattermost-overview",
+    "about/product": "https://docs.mattermost.com/about/product.html#mattermost-overview",
+    "overview/security": "https://docs.mattermost.com/about/security.html",
+    "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
+    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
+    "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
+    "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
+    "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
+    "overview/architecture": "https://docs.mattermost.com/getting-started/architecture-overview.html",
     "overview/license-and-subscription#frequently-asked-questions": 
         "https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions",
     "overview/product#mattermost-enterprise-edition-e10": 
@@ -177,6 +201,14 @@ redirects = {
         "https://docs.mattermost.com/manage/command-line-tools.html",
     "administration/compliance-export": 
         "https://docs.mattermost.com/comply/compliance-export.html",
+    "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
+    "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
+    "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
+    "install/prod-windows-2012": "https://forum.mattermost.org/t/production-install-on-windows-server/12232",
+    "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
+    "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
+    "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
+    "administration/compliance-export": "https://docs.mattermost.com/comply/compliance-export.html",
     "administration/config-settings#allow-users-to-view-archived-channels-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#allow-users-to-view-archived-channels-beta",
     "administration/config-settings#timezone": 
@@ -315,6 +347,21 @@ redirects = {
         "https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-database",
     "deployment/deployment": 
         "https://docs.mattermost.com/deploy/deployment-overview.html",
+    "administration/config-settings#enable-automatic-replies-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies-experimental",
+    "administration/config-settings#teammate-name-display": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#teammate-name-display",
+    "administration/config-settings#group-unread-channels-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#group-unread-channels-experimental",
+    "administration/config-settings#enable-legacy-sidebar": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
+    "administration/config-settings#autoclose-direct-messages-in-sidebar-experimental": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental",
+    "administration/config-settings#timezone": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#timezone",
+    "administration/config-settings#link-previews": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews",
+    "deployment/deployment": "https://docs.mattermost.com/deploy/deployment-overview.html",
     "deployment/advanced-permissions#read-only-channels": 
         "https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels-e20",
     "deployment/bots": 
@@ -460,6 +507,7 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
     "administration/config-settings#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
+    "configure/config-ssl-http2-apache2": "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
     "cloud/cloud-administration/cloud-compliance":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
@@ -607,6 +655,10 @@ redirects = {
         "https://docs.mattermost.com/incident-collaboration/setting-up-playbooks.html",
     "help/settings/custom-emoji": 
         "https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis",
+    "help/settings/custom-emoji": "https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis",
+    "help/getting-started/messaging-basics#messaging-basics": "https://docs.mattermost.com/messaging/messaging-basics.html",
+    "help/messaging/formatting-text#in-line-images": "https://docs.mattermost.com/messaging/formatting-text.html#in-line-images",
+    "help/getting-started/organizing-your-sidebar": "https://docs.mattermost.com/messaging/organizing-your-sidebar.html",
     "incident-collaboration/launching-playbooks": 
         "https://docs.mattermost.com/incident-collaboration/running-playbooks.html",
     "incident-collaboration/playbook-planning":
@@ -680,6 +732,13 @@ redirects = {
         "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom":
         "https://mattermost.gitbook.io/plugin-zoom/",
+    "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
+    "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
+    "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
+    "install/prod-docker": "https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
+    "install/enterprise-install-upgrade#changing-a-license-key": "https://docs.mattermost.com/upgrade/installing-license-key.html",
+    "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
+    "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
     "mobile/mobile-overview#use-an-emm-provider-with-managed-app-configuration":
         "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
@@ -688,6 +747,8 @@ redirects = {
         "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work",
     "mobile/mobile-testing-notifications": "https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
     "mobile/deploy-mobile-apps-using-emm-provider": "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
+    "onboard/ad-ldap#active-directory-ldap-setup-e10-e20": 
+        "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",

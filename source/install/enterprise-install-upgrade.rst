@@ -29,7 +29,7 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 * `Production Enterprise Edition on RHEL 7 <https://docs.mattermost.com/install/install-rhel-7.html>`__
 * `Production Enterprise Edition on RHEL 8 <https://docs.mattermost.com/install/install-rhel-8.html>`__
 * `Production Enterprise Edition on Debian Stretch <https://docs.mattermost.com/install/install-debian.html>`__
-* `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
+* `Production Enterprise Edition using Docker and Docker Compose <https://github.com/mattermost/docker>`__
 
 Upgrading to Mattermost Enterprise Edition
 --------------------------------------------
@@ -37,9 +37,9 @@ Upgrading to Mattermost Enterprise Edition
 Checking your Mattermost Edition and Version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're already running Mattermost, you can check the Mattermost edition and version from the command line using:
+If you're already running Mattermost v5.39 or earlier, you can check the Mattermost edition and version from the command line using:
 
-``mattermost version``
+`mattermost version`
 
 To check your edition and version from the web or desktop interface, open **Main Menu > About Mattermost**.
 
@@ -173,53 +173,3 @@ Can’t retrieve Enterprise Edition binary file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error, please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
-
-Changing a License Key
-----------------------
-
-Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is in the **Total Active Users** field. The license is rejected if this value is greater than the value allowed by the key.
-
-Installing a New License Key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Using the command line interface (CLI)**
-
-Use `this command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-license-upload>`__ to upload a new license or to replace an existing license with a new one.
-
-.. code-block:: none
-
-  mattermost license upload {license}
-  
-**Using the mmctl tool**
-
-Use `this command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ to upload a new license or to replace an existing license with a new one.
-
-.. code-block:: none
-
-  mmctl license upload [license] [flags]
-
-.. note::
-
-  If you upload the license via the CLI or the mmctl, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See the CLI or mmctl documentation for details.
-  
-License key storage
-^^^^^^^^^^^^^^^^^^^^
-
-Once you've uploaded your license key to your Mattermost server it's stored in your SQL database at ``mattermost.Licenses``. You can check what keys are on your server by running ``select * from mattermost.Licenses;``.
-
-**Using the System Console**
-
-1. Go go **System Console > About > Edition and License**.
-2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
-3. Upload the new license key file.
-
-Removing an Enterprise or Professional license key will not remove the configuration for Enterprise or Professional settings; however, these features will not function until an Enterprise or Professional license key is applied.
-
-When you're using High Availability, it's critical to ensure that all servers in the cluster have the Enterprise Edition license properly installed to prevent multi-node clusters from failing. An Enterprise Edition license is required for High Availability to work.
-
-.. note::
-
-  - When you apply an Enterprise license key to a previously Professional (or E10-licensed) server, the Professional features will retain their configuration settings in Enterprise. 
-  - When you apply a Professional license to a previously Enterprise (or E20-licensed) server, the Enterprise features will retain their configuration but will no longer be accessible for use.
-
-Once the key is uploaded and installed, the details of your license are displayed.

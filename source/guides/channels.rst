@@ -32,7 +32,7 @@ Work With Messages
 
    Messaging Basics </messaging/messaging-basics>
    Send and Receive Messages </messaging/sending-receiving-messages>
-   Collapsed Reply Threads </messaging/organizing-conversations>
+   Organize Conversations </messaging/organizing-conversations>
    Text Formatting </messaging/formatting-text>
    Use Emojis </messaging/using-emoji>
    Mention Teammates </messaging/mentioning-teammates>

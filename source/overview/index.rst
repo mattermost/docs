@@ -11,9 +11,12 @@ Below is an overview of our features, security, account management, deployment, 
    :glob:
 
    /about/product
+   /about/deployments_and_editions*
    /about/security*
    /about/integrations*
-   /about/licensing-and-subscription*
+   /about/subscription
+   /about/cloud-subscriptions
+   /about/self-hosted-subscriptions
    /about/corporate-directory-integration*
    /about/certifications-and-compliance*
    /about/frequently-asked-questions*

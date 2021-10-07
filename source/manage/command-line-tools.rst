@@ -15,17 +15,9 @@ Command Line Tools
 
 In self-managed deployments, a ``mattermost`` command is available for configuring the system from the directory where the Mattermost server is installed. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
-.. tabs::
-
-   .. tab:: v6.0
-      
-      As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
-
-   .. tab:: v5.39 and earlier
-      
-      The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. 
-      
-      As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
+.. note::
+  - As of Mattermost v6.0, this CLI has been replaced with the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__. However, `mattermost import <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-import>`__ commands, `mattermost export <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-export>`__ commands, and related subcommands, remain available and fully supported from Mattermost v6.0.
+  - The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as creating and deleting users or changing configuration settings require a server restart.
 
 These ``mattermost`` commands include:
 

@@ -193,5 +193,3 @@ Choose from **All direct messages**, or choose to show **10**, **15**, **20**, o
 
 .. note::
   Direct Message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
-
-Mobile support for this feature will be available in a future release.

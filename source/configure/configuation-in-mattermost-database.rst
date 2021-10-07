@@ -34,7 +34,9 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. There are several ways to do this, but the easiest is to use the ``mattermost config get`` command:
+The first step is to get your master database connection string. We recommend using the `mmctl config get command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-get>`__, or using the CLI's ``mattermost config get`` command to do this.  
+
+To use the ``mattermost config get`` command:
 
 .. code-block:: bash
 
@@ -49,9 +51,9 @@ Example output:
    SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
 
 .. note::
-   Be sure to run this command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
+   Be sure to run this CLI command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
 
-Another way is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
+Another way to get your database connection string is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
 
 If ``SqlSettings.DataSource`` does not start with ``postgres://`` or ``mysql://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026`` replace it with ``&``.
 
@@ -74,7 +76,7 @@ Create an environment file
 
 .. note::
    
-   If you're running Mattermost in a High Availability cluster this step must be done on all servers in the cluster.
+   If you're running Mattermost in a High Availability cluster, this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
@@ -156,11 +158,13 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+You can use the `mmctl config migrate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ command, or you can use the CLI mattermost config migrate command for this step, as described below.
+
 .. note::
  
-   If you're using a High Availability cluster you only need to run this on a single server in the cluster.
+   If you're using a High Availability cluster, you only need to run this on a single server in the cluster.
 
-The command to migrate the config to the database should always be run as the *mattermost* user.
+The CLI command to migrate the config to the database should always be run as the *mattermost* user.
 
 .. code-block:: bash
 

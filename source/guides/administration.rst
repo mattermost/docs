@@ -63,6 +63,7 @@ Workspace Management
     Statistics </manage/cloud-reporting>
     User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>
     Managing Team and Channel Members </manage/cloud-team-and-channel>
+    Cloud Data Export </manage/cloud-data-export>
 
 * :doc:`Mattermost Cloud Billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
 * :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.

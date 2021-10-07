@@ -146,7 +146,7 @@ Sent to the user upon account creation to verify email address.
 +-----------+------------------------------+-----------------------------------+
 | VerifyUrl | URL for email verification   | --                                |
 +-----------+------------------------------+-----------------------------------+
-| Button    | Button for email verfication | api.templates.verify_body.button  |
+| Button    | Button for email verification | api.templates.verify_body.button |
 +-----------+------------------------------+-----------------------------------+
 
 
