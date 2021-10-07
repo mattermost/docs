@@ -13,7 +13,7 @@ To open a playbook and view its statistics, select the playbook name. To begin a
 Viewing run details
 ~~~~~~~~~~~~~~~~~~~
 
-When you're in a channel with an active run, select the **Toggle Playbook List** icon in the channel header to open the RHS to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
+When you're in a channel with an active run, select the **Toggle Run Details** icon in the channel header to open the RHS to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
 
 To find all playbook runs, select any playbook name. Then, select **Runs** from the navigation bar. Select a run to view its overview. Select **Go to channel** to open the run's channel.
 
