@@ -75,6 +75,8 @@ redirects = {
     "developer/bot-accounts": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
     "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
     "overview/product": "https://docs.mattermost.com/about/product.html",
+    "overview/product": "https://docs.mattermost.com/about/product.html#mattermost-overview",
+    "about/product": "https://docs.mattermost.com/about/product.html#mattermost-overview",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
     "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
