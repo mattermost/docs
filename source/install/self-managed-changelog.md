@@ -263,7 +263,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Channel switcher is missing "(You)" indicator on your own Direct Message channel [MM-38798](https://mattermost.atlassian.net/browse/MM-38798).
  - LDAP Sync job inserting invalid NULL unicode character into job's Data column [MM-38711](https://mattermost.atlassian.net/browse/MM-38711).
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Login screen flashes sporadically when switching from Boards to Channels [MM-38077](https://mattermost.atlassian.net/browse/MM-38077).
  - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
  - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
  - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
