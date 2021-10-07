@@ -18,7 +18,9 @@ Below is a list of additional resources:
 - `Source code <https://github.com/mattermost/desktop>`__
 - Contributor’s guide (coming soon)
 
-You can `download the apps directly from our downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+You can `download the Mobile Apps directly from our Downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+
+.. include:: ../upgrade/upgrading-to-v60.rst
 
 .. contents::
     :backlinks: top
