@@ -1,7 +1,7 @@
 Getting Started 
 ===============
 
-Mattermost Playbooks is included in the Mattermost Cloud workspace, enabled by default, and upgraded automatically. For Mattermost self-hosted deployments, Playbooks can be accessed in the product switcher in the top-left corner of Mattermost.
+Mattermost Playbooks is included in Mattermost and Mattermost Cloud workspace, enabled by default, and upgraded automatically. Playbooks can be accessed in the Product menu in the top-left corner of Mattermost.
 
 Accessing and Navigating Playbooks
 ----------------------------------
