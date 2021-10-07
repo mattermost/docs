@@ -55,7 +55,7 @@ Project workflows include use cases driving milestone achievement such as projec
 
 .. image:: ../images/Boards_Hero.png
 
-About the Mattermost Open-Source Project
+About the Mattermost open source project
 -----------------------------------------
 At its core, Mattermost is an open-source alternative to proprietary SaaS collaboration for teams. The software, developed in partnership with thousands of contributors from around the world, is designed to increase the agility, efficiency, and innovation in high trust organizations while keeping data and operations under IT control.
 
