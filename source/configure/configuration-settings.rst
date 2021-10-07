@@ -4468,6 +4468,17 @@ Link previews are disabled for this list of comma-separated domains (e.g. “git
 | This feature's ``config.json`` setting is ``"RestrictLinkPreviews": ""`` with string input. |
 +---------------------------------------------------------------------------------------------+
 
+Enable message link previews
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Links to messages generate a preview for any users with access to the original message. 
+
+**False**: Links to messages don't include a preview.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePermalinkPreviews": true`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------+
+
 Enable SVGs
 ^^^^^^^^^^^
 
