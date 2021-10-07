@@ -3,7 +3,7 @@ Getting Started
 
 Mattermost Boards (formerly known as Focalboard) is accessible from the product switcher in the top left corner of Mattermost.
 
-If you're using Mattermost 6.0, select the product switcher in the top left corner to activate Boards.
+If you're using Mattermost 6.0, select the Product menu in the top left corner of Mattermost to activate Boards.
 
 For self-hosted deployments using versions 5.38 and earlier, Boards is available in the Plugin Marketplace.
 
