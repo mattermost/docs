@@ -15,3 +15,5 @@ Your Mattermost teams can be accessed on Android mobile devices by downloading t
 .. _documentation: https://docs.mattermost.com/deployment/sso-saml.html
 .. _App Store: https://geo.itunes.apple.com/us/app/mattermost/id984966508?mt=8
 .. _Google Play Store: https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en
+
+.. include:: ../upgrade/upgrading-to-v60.rst
