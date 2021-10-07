@@ -105,11 +105,11 @@ Navigate Channels
    :maxdepth: 1
    :hidden:
 
-   Navigating Mattermost Products </messaging/navigating-mattermost.rst>
+   Navigating Mattermost </messaging/navigating-mattermost.rst>
    Keyboard Accessibility </messaging/keyboard-accessibility>
    Keyboard Shortcuts </messaging/keyboard-shortcuts>
 
-* :doc:`Navigating Mattermost</messaging/navigating-mattermost.rst>` - Find your way around Mattermost.
+* :doc:`Navigating Mattermost </messaging/navigating-mattermost.rst>` - Find your way around Mattermost.
 * :doc:`Keyboard Accessibility </messaging/keyboard-accessibility>` - Use navigational keyboard shortcuts to use Mattermost without a mouse.
 * :doc:`Keyboard Shortcuts </messaging/keyboard-shortcuts>` - Use keyboard shortcuts to perform actions that help you navigate Mattermost Channels.
 
