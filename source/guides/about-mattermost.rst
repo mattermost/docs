@@ -14,7 +14,7 @@ About Mattermost
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
 
-Mattermost is an open source platform for secure communication, collaboration, and orchestration of work across tools and teams. Mattermost contains 3 key tools:
+Mattermost is an open source platform for secure communication, collaboration, and orchestration of work across tools and teams. Mattermost contains three key tools:
 
 * :doc:`Channels </guides/channels>` - Stay connected with your team via 1:1 and group messaging.
 * :doc:`Playbooks </guides/playbooks>` - Build and configure repeatable processes to achieve specific and predictable outcomes.
