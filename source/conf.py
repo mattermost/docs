@@ -541,6 +541,7 @@ redirects = {
     "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
     "install/prod-docker": "https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
+    "install/enterprise-install-upgrade#changing-a-license-key": "https://docs.mattermost.com/upgrade/installing-license-key.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",

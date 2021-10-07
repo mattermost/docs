@@ -27,7 +27,7 @@ Checking your Mattermost Edition and Version
 
 If you're already running Mattermost, you can check the Mattermost edition and version from the command line using:
 
-  `mattermost version`
+`mattermost version`
 
 To check your edition and version from the web interface, open **Main Menu > About Mattermost**.
 
@@ -161,53 +161,3 @@ Can’t retrieve Enterprise Edition binary file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error, please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
-
-Changing a License Key
-----------------------
-
-Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is in the **Total Active Users** field. The license is rejected if this value is greater than the value allowed by the key.
-
-Installing a New License Key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Using the command line interface (CLI)**
-
-Use `this command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-license-upload>`__ to upload a new license or to replace an existing license with a new one.
-
-.. code-block:: none
-
-  mattermost license upload {license}
-  
-**Using the mmctl tool**
-
-Use `this command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ to upload a new license or to replace an existing license with a new one.
-
-.. code-block:: none
-
-  mmctl license upload [license] [flags]
-
-.. note::
-
-  If you upload the license via the CLI or the mmctl, you need to restart the Mattermost server after uploading. Additionally, if you're running a cluster, the license file needs to be uploaded to every node. See the CLI or mmctl documentation for details.
-  
-License key storage
-^^^^^^^^^^^^^^^^^^^^
-
-Once you've uploaded your license key to your Mattermost server it's stored in your SQL database at ``mattermost.Licenses``. You can check what keys are on your server by running ``select * from mattermost.Licenses;``.
-
-**Using the System Console**
-
-1. Go go **System Console > About > Edition and License**.
-2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
-3. Upload the new license key file.
-
-Removing an Enterprise Edition E10 or E20 license key will not remove the configuration for Enterprise settings; however, these features will not function until an Enterprise Edition E10 or E20 license key is applied.
-
-When you're using High Availability, it's critical to ensure that all servers in the cluster have the Enterprise Edition E20 license properly installed to prevent multi-node clusters from failing. An Enterprise Edition E20 license is required for High Availability to work.
-
-.. note::
-
-  - When you apply an E20 license key to a previously E10-licensed server, the E10 features will retain their configuration settings in E20. 
-  - When you apply an E10 license to a previously E20-licensed server, the E20 features will retain their configuration but will no longer be accessible for use.
-
-Once the key is uploaded and installed, the details of your license are displayed.
