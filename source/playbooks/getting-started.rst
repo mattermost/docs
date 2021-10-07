@@ -20,7 +20,7 @@ To find all playbook runs, select any playbook name. Then, select **Runs** from 
 Viewing playbooks 
 ~~~~~~~~~~~~~~~~~
 
-When you're in a channel that's not running a playbook, select the **Toggle Playbook List** icon in the channel header to open the right-hand sidebar and view the list of playbooks and templates available for your team.
+When you're in a channel that's not running a playbook, select Playbooks from the Product menu in the top-left corner of Mattermost.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~~
