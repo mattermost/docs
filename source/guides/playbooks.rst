@@ -14,12 +14,14 @@ The Basics
    :hidden:
 
    Overview </playbooks/overview>
+   Navigate Mattermost </playbooks/navigate-mattermost>
    Get Started </playbooks/getting-started>
    Plan Playbooks </playbooks/setting-up-playbooks>
    Run Playbooks </playbooks/running-playbooks>
    Refine and Improve </playbooks/refining-and-improving>
    
 * :doc:`Playbooks Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
+* :doc:`Navigate Mattermost </playbooks/navigate-mattermost>` - Find your way around Mattermost quickly.
 * :doc:`Get Started </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
 * :doc:`Plan Playbooks </playbooks/setting-up-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage permissions for your team.
 * :doc:`Run Playbooks </playbooks/running-playbooks>` - Initiate Playbooks, make announcements, and get information about your workflows.
