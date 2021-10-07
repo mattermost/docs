@@ -13,18 +13,18 @@ Upgrading Mattermost Server
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-In most cases you can upgrade Mattermost Server in a few minutes, but the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
+In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
 Preparing to Upgrade to the Latest Version
 ------------------------------------------
 
 A Mattermost server v6.0 upgrade will run significant database schema changes that can cause a large startup time depending on the dataset size. Zero downtime won't be possible for v6.0, but depending on the efforts made during the migration process, it can be minimized to a large extent. Running queries prior to the upgrade can also save some downtime. However, some queries can still cause full table locking and require Mattermost to be in read-only mode for the duration of the query. 
 
-We recommend that you:
+We strongly recommend that you:
 
 - Set up a maintenance window outside of working hours to mitigate the migration impact. 
 - Keep a backup of your database to ensure you can load a previous database snapshot if necessary.
-- Upgrade your instance of Mattermost to a supported Extended Support Release (ESR) version before attempting to run the v6.0 upgrade.
+- Upgrade your instance of Mattermost to the latest `Extended Support Release (ESR) <https://docs.mattermost.com/administration/extended-support-release.html>`__ first before attempting to run the Mattermost v6.0 upgrade.
 
 .. important::
 
@@ -54,7 +54,7 @@ Mattermost v6.0 introduces several database schema changes to improve both datab
       **MySQL Mitigation Strategies**
 
       **Run combined queries prior to the upgrade.**
-      The following queries can be combined when run prior to the upgrade:
+      The previous queries can be combined when run prior to the upgrade as follows:
 
       ``ALTER TABLE Posts MODIFY COLUMN FileIds text, MODIFY COLUMN Props JSON;``
 
@@ -75,14 +75,11 @@ Mattermost v6.0 introduces several database schema changes to improve both datab
 Upgrading from Releases Older than v5.35
 ----------------------------------------
 
-Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0, due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. See the `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html?highlight=changelog#id39>`__ documentation for details.
+Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0 due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. We recommend upgrading to the latest `Extended Support Release (ESR) <https://docs.mattermost.com/administration/extended-support-release.html>`__ first before upgrading to Mattermost v6.0. See the `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`__ documentation for additional details.
 
-Upgrading from Releases Prior to v5.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you're upgrading from a version prior to Mattermost v5.0, you can't upgrade directly to v6.0. Instead, we strongly recommend approaching the upgrade in phases, starting with an upgrade to the latest ESR first, followed by the upgrade to v6.0. During the first phase of updates, you must also modify your service file to work with the binary changes introduced with the v5.0 release. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``), and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``). 
 
-If you're upgrading from a version prior to v5.0, you can't upgrade directly to v6.0. Instead, we strongly recommend approaching the upgrade in phases, starting with an upgrade to the latest `Extended Support Release <https://docs.mattermost.com/administration/extended-support-release.html>`__ first, followed by the upgrade to v6.0.
-
-During the first phase of updates, you must modify your service file to work with the binary changes introduced with v5.0. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``), and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``).
+Ensure you review the :doc:`important-upgrade-notes` for all intermediate release versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 Upgrading High Availability Deployments
 ---------------------------------------
