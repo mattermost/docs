@@ -33,7 +33,7 @@ Use Channels to stay connected and support your communication workflows
 
 Channel-based communication workflows require real-time information sharing, flexibility, and ad hoc activities where the life cycle of communication workflows is typically measured in seconds to hours.
 
-`Channels <https://docs.mattermost.com/guides/channels.html>`__ enable you to organize your team’s real-time 1:1 and group communications with an unlimited and fully searchable message history. Share materials such as files, images, links; share sentiments with emojis and GIFs; and express ideas with rich markdown formatting, code syntax highlighting, and multi-language support. Facilitate face-to-face connections with integrated voice/video conferencing. Channels are ideal for bug triage, daily standups, posting announcements, and team conversations. 
+`Channels <https://docs.mattermost.com/guides/channels.html>`__ enable you to organize your team’s real-time 1:1 and group communications with an unlimited and fully searchable message history. Share materials such as files, images, links; share sentiments with emojis and GIFs; and express ideas with rich markdown formatting, code syntax highlighting, and multi-language support. Facilitate face-to-face connections with integrated voice/video conferencing. Channels are ideal for bug triage, daily standups, posting announcements, and team conversations.
 
 .. image:: ../images/Channels_Hero.png
 
