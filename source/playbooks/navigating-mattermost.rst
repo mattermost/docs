@@ -1,4 +1,4 @@
 Navigating Mattermost
 =====================
 
-.. include:: messaging/common-navigating-mattermost-products.rst
+.. include:: ../messaging/common-navigating-mattermost-products.rst
