@@ -119,7 +119,7 @@ During each monthly release, Mattermost backports high severity or high impact s
 Desktop and Mobile App Server Compatibility
 -------------------------------------------
 
-Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost server. 
+Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost Server.
 
 .. include:: upgrading-to-v60.rst
 
