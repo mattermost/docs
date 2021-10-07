@@ -9,7 +9,7 @@ Start app on login (Windows, Linux only)
     When enabled, the Mattermost application starts when you log in to your machine. This setting is enabled by default.
 
 Check spelling
-    When enabled, based on your system language configuration misspelled words in your messages are highlighted. This setting is enabled by default. You must restart the app to change this setting.
+    When enabled, based on your system language configuration misspelled words in your messages are highlighted. This setting is enabled by default. You must restart the app to change this setting. In v5.0 and later versions, you can select multiple languages. When you go to type, all selected languages show as correct when a word matches one of them, and incorrect if it matches neither. If no language is selected, spell check will be based on the system language.
 
 Show red badge on taskbar icon to indicate unread messages (Windows, macOS only)
     When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions or Direct Messages. If disabled, a red badge is only shown for unread mentions (with a number count). This setting is enabled by default.
