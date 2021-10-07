@@ -1,4 +1,4 @@
-Navigate Mattermost Products
-============================
+Navigating Mattermost
+=====================
 
 .. include:: common-navigating-mattermost-products.rst
