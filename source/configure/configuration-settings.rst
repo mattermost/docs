@@ -2124,9 +2124,9 @@ Push Notification Contents
 
 **Full message content sent in the notification payload**: Selecting **Send full message snippet** sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
-**ID-Only Push Notifications - Full message content fetched from the server on receipt** (*Available in Enterprise Edition E20*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extention <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`_ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`_ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. 
+**ID-Only Push Notifications - Full message content fetched from the server on receipt** (*Available in Enterprise Edition E20*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extension <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`_ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`_ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. 
 
-For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dymanics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service. 
+For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dynamics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PushNotificationContents": "full"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively.    |
@@ -3165,7 +3165,7 @@ Email Attribute
 
 The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
 
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin.
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
@@ -6087,7 +6087,7 @@ Set whether or not this Mattermost server will handle tasks created by the Sched
 
 When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in High Availablity mode, one or more servers should have this setting enabled. It is recommended that a High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+When running Mattermost in High Availability mode, one or more servers should have this setting enabled. It is recommended that a High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
@@ -6100,7 +6100,7 @@ Set whether or not this Mattermost server will schedule tasks that will be compl
 
 When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in High Availablity mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/deployment/cluster.html#job-server>`__ for more details.
+When running Mattermost in High Availability mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/deployment/cluster.html#job-server>`__ for more details.
 
 .. warning::
 

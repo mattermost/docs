@@ -3,7 +3,7 @@
 Configuring CloudFront to host Mattermost static assets
 =======================================================
 
-Configuring CloudFront to host Mattermost's static assets allows for improved caching performance and shorter load times for those members of your team geographicly distributed throughout the world. 
+Configuring CloudFront to host Mattermost's static assets allows for improved caching performance and shorter load times for those members of your team geographically distributed throughout the world. 
 
 1. Create an S3 bucket using your desired domain. In our example it will be ``mattermost.example.com``.
 2. Enable static hosting for your S3 bucket.
