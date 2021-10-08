@@ -21,14 +21,14 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
 .. tabs::
 
- .. tab:: v6.0 onwards
+ .. tab:: Mattermost v6.0 onwards
 
       In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
       - Configure desktop notifications in **Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
 
-  .. tab:: v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
       In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
       
@@ -48,14 +48,14 @@ By default, you'll get email notifications if you're not actively using Mattermo
 
 .. tabs::
 
-  .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
       In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
       
       - Configure email notifications in **Notifications > Email Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
 
-  .. tab:: v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
       In Mattermost versions up to 5.39: 
       
@@ -77,14 +77,14 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 
 .. tabs::
 
-  .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
       In Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
       - Configure push notifications in **Notifications > Mobile Push Notifications > Send mobile push notifications**.
       - Configure when push notifications are sent depending on your availability in **Notifications > Mobile Push Notifications > Trigger push notifications when**.
       
-  .. tab:: v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
       In Mattermost versions up to 5.39: 
       

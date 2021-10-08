@@ -7,11 +7,11 @@ The colors of the Mattermost user interface are customizable.
 
 .. tabs::
 
-  .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
       In Mattermost v6.0, navigate to **Settings > Display > Theme**.
       
-  .. tab:: v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
       In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Theme**.
      
@@ -103,11 +103,11 @@ You can export a theme from Mattermost by copying the theme values from the Cust
 
 .. tabs::
 
-  .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
       In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
       
-  .. tab:: v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
       In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
   
@@ -120,11 +120,11 @@ Copy existing theme values, then go to:
 
 .. tabs::
 
-  .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
       In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
 
-  .. tab:: v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
       In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
   

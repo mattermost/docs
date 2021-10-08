@@ -8,11 +8,11 @@ Setting a Custom Status
 
 .. tabs::
 
-  .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
       In Mattermost v6.0, set status and availability from your Avatar in the top-right corner of the Global Header.
       
-  .. tab:: v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
       In Mattermost versions up to 5.39, set status and availability from your avatar at the top of the channel sidebar.
   
