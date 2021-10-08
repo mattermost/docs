@@ -63,11 +63,8 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with uploading of animated gif files on Android.
 
 ### Known Issues
- - "CANCEL" is missing from options when selecting "Copy Channel Header", "Copy Channel Purpose", or "Copy URL in channel header".
  - An error may occur when archiving a channel or when attempting to post to an archived channel.
  - The "+" to add a reaction is still visible in archived channels.
- - Channel categories may unexpectedly expand or collapse.
- - Empty Favorites category is shown at the top of the channel sidebar if no favourites are set.
  - Close Preview X and Close Settings X are themed incorrectly in Quartz theme.
  - Channel sidebar disappears sometimes in Airplane mode.
  - Posts sometimes get stuck behind the post textbox on iPad.
