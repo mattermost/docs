@@ -29,7 +29,7 @@ Desktop Apps
     :header: "Operating System", "Technical Requirement"
 
     "Windows", "Windows 8.1 and 10"
-    "Mac", "MacOS 10.12+"
+    "Mac", "MacOS 10.14+"
     "Linux", "Ubuntu LTS releases 18.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
