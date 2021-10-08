@@ -27,7 +27,7 @@ Your **Profile** and **Security** settings can be found in Account Settings, whi
 
 To open Account Settings, select your avatar in the top-right corner of Mattermost, then choose Account Settings. The Settings menu is located to the left of your avatar
 
-Status and Availability
+Status and availability
 -----------------------
 
 Let your team know your online status using `custom status and availability settings <https://docs.mattermost.com/messaging/setting-your-status-availability.html#>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.

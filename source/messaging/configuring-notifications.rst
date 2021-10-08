@@ -23,7 +23,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
  .. tab:: v6.0 onwards
 
-      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
+      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
       - Configure desktop notifications in **Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
@@ -79,7 +79,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 
   .. tab:: v6.0 onwards
 
-      In Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
+      In Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
       - Configure push notifications in **Notifications > Mobile Push Notifications > Send mobile push notifications**.
       - Configure when push notifications are sent depending on your availability in **Notifications > Mobile Push Notifications > Trigger push notifications when**.

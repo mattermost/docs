@@ -10,7 +10,7 @@ Account Settings is where you can configure your profile settings, notification 
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
 
   .. tab:: v5.39 and earlier
 
@@ -28,7 +28,7 @@ Settings to configure name, username, nickname, email, and profile picture.
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
   .. tab:: v5.39 and earlier
 
@@ -71,7 +71,7 @@ Profile pictures appear next to all posts and at the top of the channel sidebar 
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
   .. tab:: v5.39 and earlier
 
@@ -91,7 +91,7 @@ Settings to configure your password, view access history, and view or logout of 
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
 
   .. tab:: v5.39 and earlier
 
@@ -153,7 +153,7 @@ Settings to configure desktop notifications, desktop notification sounds, email 
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
   .. tab:: v5.39 and earlier
 
@@ -241,7 +241,7 @@ Settings to configure clock and teammate name display preferences.
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
 
   .. tab:: v5.39 and earlier
 
@@ -359,7 +359,7 @@ The channel sidebar includes `enhanced sidebar features <https://docs.mattermost
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
   .. tab:: v5.39 and earlier
 
@@ -408,7 +408,7 @@ Settings to configure when messages are sent.
       In Mattermost v6.0, **Account Settings** have moved.
 
       - Access **Profile** and **Security** settings from your avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the global header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
   .. tab:: v5.39 and earlier
 
