@@ -18,7 +18,9 @@ In most cases, you can upgrade Mattermost Server in a few minutes. However, the 
 Preparing to upgrade to the latest version
 ------------------------------------------
 
-A Mattermost server v6.0 upgrade will run significant database schema changes that can cause a large startup time depending on the dataset size. Zero downtime won't be possible for v6.0, but depending on the efforts made during the migration process, it can be minimized to a large extent. Running queries prior to the upgrade can also save some downtime. However, some queries can still cause full table locking and require Mattermost to be in read-only mode for the duration of the query. 
+A Mattermost server v6.0 upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. Zero downtime won't be possible for v6.0, but depending on the efforts made during the migration process, it can be minimized to a large extent. 
+
+Running queries prior to the upgrade can also save some downtime. However, some queries can still cause full table locking and require Mattermost to be in read-only mode for the duration of the query.
 
 We strongly recommend that you:
 
