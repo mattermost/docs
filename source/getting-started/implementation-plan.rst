@@ -65,7 +65,7 @@ A Mattermost Enterprise implementation consists of the following system componen
 - **Mattermost Database**
   - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ is most appropriate for your deployment.
 - **Mattermost Push Notification Service**
-  - Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
+  - Hosted or on-premise service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
 - **Mattermost Client Applications**
   - Client applications are available for Mattermost for the following platforms: Android, iOS, Windows, OSX, and Linux (Beta).
 - **Mattermost Web Client**
