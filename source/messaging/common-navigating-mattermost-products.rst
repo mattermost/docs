@@ -49,15 +49,11 @@ Server list
 
 If you're using multiple servers (e.g., you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are located. To change servers, select the menu and then select the server you want to use.
 
-FAQ
----
+What else has changed?
+----------------------
 
-Where has custom emoji management moved to?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Some other menu items have moved around. For example:
 
-Managing custom emojis can be accessed from the emoji picker now.
-
-I can't find my plugins
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Plugins are listed in the Product menu, in the top-left corner of Mattermost.
+* Plugins are listed in the Product menu, in the top-left corner of Mattermost.
+* System Console is listed in the Product menu, in the top-left corner of Mattermost.
+* Managing custom emojis can be accessed from the emoji picker now.
