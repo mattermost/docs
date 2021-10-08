@@ -153,7 +153,7 @@ The following keyboard shortcuts are supported in all supported browsers and in 
 | CTRL+ALT+K | CMD+ALT+K | Format text as a link |
 +------------+-----------+-----------------------+
 
-Browser Built-in
+Browser built-in
 ----------------
 
 The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
