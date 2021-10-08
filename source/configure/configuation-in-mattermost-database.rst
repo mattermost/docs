@@ -1,6 +1,18 @@
 Configuration in the Mattermost Database
 ========================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 A new configuration option was added in the `5.10 release <https://docs.mattermost.com/install/self-managed-changelog.html>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
@@ -161,7 +173,7 @@ The CLI command to migrate the config to the database should always be run as th
    bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
-   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
+   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
    
 As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
 

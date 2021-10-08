@@ -1,7 +1,24 @@
 Keyboard Shortcuts
 ==================
 
-Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See the `Executing Slash Commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ documentation for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
 To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), or ``/shortcuts``.
 

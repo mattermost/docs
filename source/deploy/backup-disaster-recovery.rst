@@ -1,6 +1,18 @@
 Backup and Disaster Recovery 
 =============================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Options to protect your Mattermost server from different types of failures range from simple backup to sophisticated disaster recovery deployments and automation.
 
 Backup

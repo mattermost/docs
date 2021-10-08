@@ -15,7 +15,7 @@ As a workaround, you can install the released Mattermost mobile app and sign up 
 Is there a tablet version of the mobile apps?
 ---------------------------------------------
 
-Mattermost Classic mobile apps support tablets. Our second generation mobile apps (Mattermost) have beta support for tablets.
+Mattermost Classic mobile apps support tablets. Our second generation Mattermost mobile apps include beta support for tablets.
 
 Can the permanent sidebar on tablet devices be disabled?
 --------------------------------------------------------
@@ -59,12 +59,8 @@ This means if you use the Mattermost apps from the Apple App Store or Google Pla
 4. Either APNS or FCM receives the push notification message from MPNS over TLS, and then relays the message to the user's iOS or Android device to be displayed.
 
 .. note:: 
-
-  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by 
-  server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an `option to omit the contents of Mattermost
-  messages from push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_, or `to configure message
-  content to be fetched from the server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_ when the notification
-  reaches the device (*available in Enterprise Edition E20*) in order to meet certain compliance requirements.
+  
+  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an option available in Mattermost Enterprise to omit the contents of Mattermost messages from push notifications, or to configure message contents to be fetched from the server when notifications reach the device. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__` documentation for details.
 
 What post metadata is sent in mobile push notifications?
 --------------------------------------------------------
@@ -83,9 +79,9 @@ The following post metadata is sent in all push notifications:
 
 Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__:
 
-- **Generic description with sender and channel names:** ``Channel name`` metadata will be included.
-- **Full message content sent in the notification payload:** ``Post content`` and ``Channel name`` metadata will be included.
-- **Full message content fetched from the server on receipt:** (*available in Enterprise Edition E20*) ``Post content`` and ``Channel name`` aren't included in the notification payload. Instead, the ``Post ID`` is used to fetch ``Post content`` and ``Channel name`` from the server after the push notification is received on the device.
+- **Generic description with sender and channel names**: ``Channel name`` metadata will be included.
+- **Full message content sent in the notification payload**: ``Post content`` and ``Channel name`` metadata will be included.
+- **Full message content fetched from the server on receipt** (available in Mattermost Enterprise): ``Post content`` and ``Channel name`` are not included in the notification payload, instead the ``Post ID`` is used to fetch ``Post content`` and ``Channel name`` from the server after the push notification is received on the device.
 
 How can I use ID-Only Push Notifications to protect notification content from being exposed to third-party services?
 ---------------------------------------------------------------------------------------------------------------------
@@ -133,7 +129,7 @@ The following options are available for securing your push notification service:
 
 4. Securing the Mattermost Apple App Store and Google Play apps:
 
-  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise Edition E10 or higher, which offers a `Hosted Push Notification Service (HPNS) <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`__.
+  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Professional or Enterprise to use Mattermost's `Hosted Push Notification Service (HPNS) <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`__.
 
 .. note:: 
 
@@ -252,8 +248,8 @@ How do I connect users across internal and external networks?
 
 By setting up global network traffic management, you can send a user to an internal or external network when connecting with a mobile app. Moreover, you can have two separate layers of restrictions on internal and external traffic, such as:
 
-- In the internal network, deploy on a private network via per device VPN.
-- In the external network, deploy with `TLS mutual auth <https://docs.mattermost.com/deployment/ssl-client-certificate.html>`__ with an NGINX proxy, and `client-side certificates <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`__ for desktop and iOS.
+ - In the internal network, deploy on a private network via per device VPN.
+ - In the external network, deploy with `TLS mutual auth <https://docs.mattermost.com/onboard/ssl-client-certificate.html>`__ with an NGINX proxy, and `client-side certificates <https://docs.mattermost.com/onboard/certificate-based-authentication.html>`__ for desktop and iOS.
  
 Many services such as Microsoft Azure provide options for `managing network traffic <https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`__, or you can engage a services partner to assist.
 
