@@ -78,7 +78,7 @@ Manage Teams, Channels, and Members
 * :doc:`Organize Channels </messaging/organizing-mattermost>` - Organize and navigate Channels.
 
 Customize Channels
---------------------
+------------------
 
 .. toctree::
    :maxdepth: 1
@@ -100,9 +100,9 @@ Customize Channels
 * :doc:`Desktop App Configurations </messaging/managing-desktop-app-options>` - Configure settings on the Windows, Mac, and Linux Desktop Apps.
 * :doc:`Manage Server Connections </messaging/managing-desktop-app-servers>` - Manage your connections to multiple Mattermost servers.
 
-
 Navigate Channels
--------------------
+-----------------
+
 .. toctree::
    :maxdepth: 1
    :hidden:

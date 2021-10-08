@@ -1,5 +1,3 @@
-:orphan:
-
 ..  _install-rhel-66-mattermost:
 
 Installing Mattermost Server

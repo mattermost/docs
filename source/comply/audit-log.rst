@@ -1,7 +1,19 @@
-Audit Log v2 (Experimental) (E20)
-=================================
+Audit Log v2
+============
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 System Admins can review a comprehensive listing of events for more in-depth analysis. Additionally, the new audit log provides more control over where the logs are generated and stored. 
 
@@ -234,6 +246,7 @@ When using remote syslog, the current best practice is to also write to local fi
 
 Configure audit log in Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The `Boards configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging.
 
 ``logging_cfg_file`` is used to specify the path to a file containing the logging configuration in JSON format.

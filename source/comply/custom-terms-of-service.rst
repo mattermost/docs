@@ -1,11 +1,28 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service (E20)
-=============================
+Custom Terms of Service
+=======================
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |cloud| |self-hosted|
 
-You can outline custom Terms of Service for your team members to accept before they can access Mattermost on web, desktop, or mobile.
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
+
+System Admins can outline custom Terms of Service for their team members to accept before they can access Mattermost on web, desktop, or mobile.
 
 Configuring Terms of Service
 ----------------------------
