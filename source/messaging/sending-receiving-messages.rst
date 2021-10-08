@@ -24,7 +24,7 @@ Sending messages and replying to messages are important ways to keep conversatio
 
 .. note::
   
-  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise Edition E10 or later <https://docs.mattermost.com/about/product.html#mattermost-enterprise-edition-e10>`__.
+  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
 Send a Message
 ---------------

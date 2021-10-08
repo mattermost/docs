@@ -119,4 +119,4 @@ Extend Mattermost Channels
 .. toctree::
    :maxdepth: 2
       
-   /messaging/extending-messaging-with-integrations.md
+   Extending Channels with Integrations </messaging/extending-channels-with-integrations>

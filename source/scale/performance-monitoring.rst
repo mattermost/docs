@@ -80,11 +80,11 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 4. To test that the server is running, go to ``<ip>:<port>/metrics``.
 
 .. note::
-   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
+   A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP.
 
-5. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus. For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
+1. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus. For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
 
-6. Once the service has started, you can access the data in ``<localhost>:<port>/graph``. While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
+2. Once the service has started, you can access the data in ``<localhost>:<port>/graph``. While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
 
 .. note:: 
   For troubleshooting advice, check the `Prometheus FAQ page <https://prometheus.io/docs/introduction/faq/>`__.
@@ -268,7 +268,7 @@ The performance monitoring feature provides standard Go metrics for HTTP server 
 To learn how to set up runtime profiling, see the `pprof package Go documentation <https://pkg.go.dev/net/http/pprof>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 
 .. note::
-   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
+   A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP.
 
 If enabled, you can run the profiler by
 

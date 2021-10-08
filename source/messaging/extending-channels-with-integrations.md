@@ -8,8 +8,9 @@ Settings for integrations are accessible from the **Main Menu**. Select **Integr
 
 There are several ways to connect your Microsoft tools to Mattermost. Take a look at the tools recommended below, or visit the [Marketplace](https://mattermost.com/marketplace/) to find others.
 
-#### Office 365 Calendar (E20)
+#### Office 365 Calendar
 
+- Available in Mattermost Enterprise.
 - Two-way integration between Mattermost and Office 365 Calendar, developed by Mattermost.
 - Receive a daily summary of calendar events, and accept or decline new events.
 - Reflect user status as "Do Not Disturb" when in a meeting scheduled via Outlook Calendar.
@@ -23,8 +24,9 @@ There are several ways to connect your Microsoft tools to Mattermost. Take a loo
 - Visit the [Marketplace](https://mattermost.com/marketplace/) to install, configure, and use this integration.
 - [Source code](https://github.com/mattermost/mattermost-plugin-skype4business)
 
-#### Office 365 SSO (E20)
+#### Office 365 SSO
 
+- Available in Mattermost Professional and Enterprise subscription plans.
 - Configure Mattermost to use your Office 365 credentials and Azure Active Directory account as a single sign-on (SSO) service, developed by Mattermost.
 - Supports Microsoft Active Directory Tenants for team creation, account creation, and Single Sign-On (SSO).
 - Receive a daily summary of calendar events, and accept or decline new events.

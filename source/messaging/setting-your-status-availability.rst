@@ -25,7 +25,7 @@ Setting a Custom Status
 
 Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
 
-1. To set a custom status, select your avatar at the top of the channel sidebar, then select **Set a Custom Status**.
+1. To set a custom status, select your Avatar, then select **Set a Custom Status**.
 
 .. image:: ../images/set-custom-status.png
   :alt: Set a custom status.
@@ -43,7 +43,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 Clearing a Custom Status
 ------------------------
 
-To clear a custom status, select your avatar at the top of the channel sidebar, then select **Clear Status**, or select the **Clear** option next to your current status.
+To clear a custom status, select your Avatar, then select **Clear Status**, or select the **Clear** option next to your current status.
 
 .. image:: ../images/clear-custom-status.png
   :alt: Clear your custom status.
@@ -51,7 +51,7 @@ To clear a custom status, select your avatar at the top of the channel sidebar, 
 Setting Your Availability
 -------------------------
 
-To set your availability, select your avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
+To set your availability, select your Avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
 
 .. image:: ../images/set-your-availability.png
   :alt: Set your availability to online, away, do not disturb, or offline.
