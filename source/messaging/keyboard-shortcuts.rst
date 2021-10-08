@@ -62,7 +62,7 @@ Mattermost server and product navigation
     | ALT+DOWN                   | OPTION+DOWN               | Next channel or direct message in the channel sidebar                                                 |
     +----------------------------+---------------------------+-------------------------------------------------------------------------------------------------------+
 
-General Mattermost Navigation 
+General Mattermost navigation 
 -----------------------------
 
 The following keyboard shortcuts are supported in all supported browsers and in the Mattermost Desktop App.
