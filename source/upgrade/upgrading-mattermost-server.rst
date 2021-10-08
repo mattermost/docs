@@ -151,7 +151,7 @@ Upgrading Mattermost Server
 
      sudo systemctl stop mattermost
 
-6. Back up your data and application. Please ensure you have properly backed up your database before continuing with the upgrade. In case of an unexpected failure, you should be in a position to load a previous database snapshot.
+6. Back up your data and application. Make sure you've properly backed up your database before continuing with the upgrade. In case of an unexpected failure, you should be in a position to load a previous database snapshot.
 
    a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
 
