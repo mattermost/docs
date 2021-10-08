@@ -191,13 +191,13 @@ Self-Hosted Compliance
 
     Electronic Discovery </comply/electronic-discovery>
     Compliance Export </comply/compliance-export>
-    Audit Log v2 </comply/audit-log>
+    Audit Log v2 (Experimental) </comply/audit-log>
     Data Retention Policy </comply/data-retention-policy>
     Custom Terms of Service </comply/custom-terms-of-service>
 
 * :doc:`Electronic Discovery </comply/electronic-discovery>` - Extract data from Mattermost for eDiscovery use in legal cases.
 * :doc:`Compliance Export </comply/compliance-export>` - Create compliance reports from the Mattermost System Console. 
-* :doc:`Audit Log v2 </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
+* :doc:`Audit Log v2 (Experimental) </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
 * :doc:`Data Retention Policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
 
 Other Resources
