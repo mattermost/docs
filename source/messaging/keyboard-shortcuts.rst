@@ -9,7 +9,7 @@ To display a list of available keyboard shortcuts, press CTRL+/ (CMD+/ on Mac), 
 
    Though Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
 
-Mattermost Server and Product Navigation
+Mattermost server and product navigation
 ----------------------------------------
 
 .. tabs::
