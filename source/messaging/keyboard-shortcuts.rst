@@ -23,7 +23,7 @@ Mattermost Server and Product Navigation
     +=================+=================+====================================================================================+
     | CTRL+F          | CMD+F           | Move focus to the Search field and search the current channel                      |
     +-----------------+-----------------+------------------------------------------------------------------------------------+  
-    | CTRL+SHIFT+S    | CMD+CTRL+S      | Open the Server selector, then use UP/DOWN arrows to navigate between servers.     |
+    | CTRL+SHIFT+S    | CMD+CTRL+S      | Open the Servers selector, then use UP/DOWN arrows to navigate between servers.     |
     |                 |                 | Use ENTER to select a server                                                       |
     +-----------------+-----------------+------------------------------------------------------------------------------------+
     || CTRL+SHIFT+1,  || CMD+CTRL+1,    || Navigate to the first server in the Servers list. Replace the number with the     |
