@@ -102,7 +102,7 @@ Ensure you review the `High Availability Cluster Upgrade Guide <https://docs.mat
 
 .. _before-you-begin:
 
-Before you Begin
+Before you begin
 ----------------
 
 **Read these instructions carefully from start to finish.** 
