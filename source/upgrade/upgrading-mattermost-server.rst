@@ -37,7 +37,9 @@ Upgrading from a previous Extended Support Release to the latest Extended Suppor
 v6.0 Database Schema Migrations
 -------------------------------
 
-Mattermost v6.0 introduces several database schema changes to improve both database and application performance. A v6.0 server upgrade will run significant database schema changes that can cause a large startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts. See the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for specifications, data size, and test results.
+Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts. 
+
+See the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for specifications, data size, and test results.
 
 .. tabs::
 
