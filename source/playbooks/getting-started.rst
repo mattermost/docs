@@ -3,24 +3,24 @@ Getting Started
 
 Mattermost Playbooks is included in Mattermost and Mattermost Cloud workspace, enabled by default, and upgraded automatically. Playbooks can be accessed in the Product menu in the top-left corner of Mattermost.
 
-Accessing and Navigating Playbooks
-----------------------------------
+Access and Navigate Playbooks
+------------------------------
 
-Access Playbooks within Channels using the **Toggle Playbook List** icon in the channel header to open the right-hand sidebar (RHS). In the RHS, you'll find playbooks you can run as well as playbook templates.
+You can access Playbooks within Channels using the **Toggle Playbook List** icon in the channel header to open the right-hand sidebar (RHS). In the RHS, you'll find playbooks you can run as well as templates.
 
-To open a playbook and view its statistics, select the playbook name. To begin a run using a listed playbook, select **Run**.
+* Playbooks are preconfigured workflows, applied to a specific situation or event, that are refined over time with steps and processes that your team agree on.
+* Playbook Templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
 
-Viewing run details
-~~~~~~~~~~~~~~~~~~~
+To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** next to that playbook's name.
+
+When you're in a channel that's not running a playbook, select Playbooks from the Product menu in the top-left corner of Mattermost.
+
+View run details
+~~~~~~~~~~~~~~~~
 
 When you're in a channel with an active run, select the **Toggle Run Details** icon in the channel header to open the RHS to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
 
 To find all playbook runs, select any playbook name. Then, select **Runs** from the navigation bar. Select a run to view its overview. Select **Go to channel** to open the run's channel.
-
-Viewing playbooks 
-~~~~~~~~~~~~~~~~~
-
-When you're in a channel that's not running a playbook, select Playbooks from the Product menu in the top-left corner of Mattermost.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~~
