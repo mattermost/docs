@@ -35,7 +35,7 @@ Let your team know your online status using `custom status and availability sett
 Product menu
 ------------
 
-In the top-left corner of the Global Header, select the Product menu button to open the tool switcher to switch between Channels, Playbooks, and Boards.
+In the top-left corner of the Global Header, select the Product menu button to navigate to Channels, Playbooks, and Boards.
 
 Depending on permissions set for your Mattermost, this is also where you would also find Mattermost Integrations, System Console, and Marketplace menu links. You’ll always be able to view the version information of your Mattermost workspace in this menu.
 
