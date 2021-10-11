@@ -1,7 +1,24 @@
 Getting Started 
 ===============
 
-Mattermost Playbooks is included in Mattermost and Mattermost Cloud workspace, enabled by default, and upgraded automatically. Playbooks can be accessed in the Product menu in the top-left corner of Mattermost.
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+  
+Mattermost Playbooks is included in Mattermost and Mattermost Cloud workspace. You can access Playbooks via the Product menu in the top-left corner of Mattermost.
 
 Access playbooks and runs
 -------------------------

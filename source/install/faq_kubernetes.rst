@@ -30,7 +30,7 @@ be providing steps for this configuration.
 Can you use blue-green deployments with different database schemas?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently this is not supported as it introduces the possiblilty of missing a data entry in the database.
+Currently this is not supported as it introduces the possibility of missing a data entry in the database.
 
 Issues configuring Login with SAML on Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

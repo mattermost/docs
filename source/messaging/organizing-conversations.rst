@@ -1,6 +1,23 @@
 Organizing Conversations using Collapsed Reply Threads (Beta)
 =============================================================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Threads are a key part of the messaging experience in Mattermost Channels. They're used to organize conversations and enable users to discuss topics without adding noise to channels or Direct Messages.
 
 Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Our goal is to improve users’ ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
@@ -46,7 +63,7 @@ Replies are collapsed under the first message of a thread. To reply to a thread,
 Follow Threads and Messages
 ---------------------------
 
-You can follow particular messages and threads so that any reply activity triggers notifications. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or by accessing the **More Actions** menu. 
+You can follow particular messages and threads so that any reply activity triggers `notifications <https://docs.mattermost.com/messaging/managing-account-settings.html#notifications>`__. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or by accessing the **More Actions** menu. 
 
 .. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies.
@@ -57,7 +74,7 @@ You'll automatically follow every thread you participate or are mentioned in. If
    :alt: Follow, unfollow, and mark threads as unread from More Actions.
    
 .. tip::
-  Follow messages with no replies from the **More Actions** menu to be notified if someone replies to the message later.
+  Follow messages with no replies from the **More Actions** menu to be notified if someone replies to the message later based on your notification preferences.
 
 View All Threads
 ----------------

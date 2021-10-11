@@ -1,5 +1,24 @@
-Additional System Admin Roles (E20)
-===================================
+Additional System Admin Roles
+==============================
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 From v5.28, System Admins can use the command line to assign roles that permit members to have admin access to specified areas of the System Console. This allows members of your organization to perform certain administrative tasks without providing them with access to all system administrative capabilities.
 

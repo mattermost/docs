@@ -1,6 +1,18 @@
 Implementation Plan
 ===================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 1 Introduction
 --------------
 
@@ -53,7 +65,7 @@ A Mattermost Enterprise E20 implementation consists of the following system comp
 - **Mattermost Database**
   - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ is most appropriate for your deployment.
 - **Mattermost Push Notification Service**
-  - Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
+  - Hosted or on-premise service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
 - **Mattermost Client Applications**
   - Client applications are available for Mattermost for the following platforms: Android, iOS, Windows, OSX, and Linux (Beta).
 - **Mattermost Web Client**
@@ -357,8 +369,8 @@ If training will be provided by one or more commercial vendors, identify them, t
  
 If the training will be provided by State staff, provide the course name(s) and an outline of the content of each course.  Identify the resources, support materials, and proposed instructors required to teach the course(s).
 
-4.3 Performance Monitoring (E20)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4.3 Performance Monitoring 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/scale/performance-monitoring.html
 

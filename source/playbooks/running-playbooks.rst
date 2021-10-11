@@ -1,6 +1,23 @@
 Run a playbook
 ==============
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 You can start a playbook run from any channel that you're a member of, using the **Toggle Playbook List** icon. Select the **Run** icon next to a playbook name.
 
 From the dialog box, you can create a new playbook or proceed with the playbook you chose. Provide a name for your run, then select **Start run**. The creator of a playbook run is automatically added as the first member and becomes the owner. 
@@ -8,8 +25,6 @@ From the dialog box, you can create a new playbook or proceed with the playbook 
 Lastly, if you've configured a broadcast channel and enabled it, when the playbook run is created it's announced in the associated channel by the Playbook Bot.
  
 You can also use slash commands to initiate playbook runs, make announcements, and get information about a playbook run.
-
-Each playbook has a dashboard with details such as how many runs using the playbook are currently in progress, total runs per week over a 12-week period, and a list of runs with details such as status, duration, owner/participants, and tasks finished.
 
 .. image:: ../images/Playbook-dashboard.png
    :alt: View and track playbook information.

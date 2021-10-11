@@ -2,6 +2,23 @@
 SAML Single Sign-On
 ====================
 
+|enterprise| |professional| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 Single sign-on (SSO) is a way for users to log into multiple applications with a single user ID and password without having to re-enter their credentials. The SAML standard allows identity providers to pass credentials to service providers. Mattermost can be configured to act as a SAML 2.0 Service Provider. 
 
 Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Single sign-on integration offers the following benefits:
@@ -18,10 +35,10 @@ For more information about SAML, see `this article from Varonis <https://www.var
 
 Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers.
 
- - `Okta SAML Configuration <https://docs.mattermost.com/deployment/sso-saml-okta.html>`_
- - `OneLogin SAML Configuration <https://docs.mattermost.com/deployment/sso-saml-onelogin.html>`_
- - `Microsoft ADFS SAML Configuration for Windows Server 2012 <https://docs.mattermost.com/deployment/sso-saml-adfs.html#configure-saml-with-microsoft-adfs-for-windows-server-2012>`_
- - `Microsoft ADFS SAML Configuration for Windows Server 2016 <https://docs.mattermost.com/deployment/sso-saml-adfs-msws2016.html>`_
+ - `Okta SAML Configuration <https://docs.mattermost.com/onboard/sso-saml-okta.html>`_
+ - `OneLogin SAML Configuration <https://docs.mattermost.com/onboard/sso-saml-onelogin.html>`_
+ - `Microsoft ADFS SAML Configuration for Windows Server 2012 <https://docs.mattermost.com/onboard/sso-saml-adfs.html#configure-saml-with-microsoft-adfs-for-windows-server-2012>`_
+ - `Microsoft ADFS SAML Configuration for Windows Server 2016 <https://docs.mattermost.com/onboard/sso-saml-adfs-msws2016.html#configure-saml-with-microsoft-adfs-using-microsoft-windows-server-2016>`_
 
 In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
@@ -55,7 +72,7 @@ If a Mattermost Guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information about this feature.
+See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information about this feature.
 
 Admin Attribute
 ~~~~~~~~~~~~~~~
@@ -78,6 +95,6 @@ We are open to providing assistance when configuring your custom IdP by answerin
 
 To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 
-For technical documentation on SAML, see `SAML Single-Sign-On: Technical Documentation <https://docs.mattermost.com/cloud/cloud-administration/saml-technical.html>`_.
+For technical documentation on SAML, see `SAML Single-Sign-On: Technical Documentation <https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html>`_.
 
 Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_.

@@ -1,6 +1,18 @@
 Important Upgrade Notes
 =======================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 .. important::
    - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
    - The "version" CLI command will be deprecated in Mattermost v6.1.
@@ -391,7 +403,7 @@ Important Upgrade Notes
 |                                                    | ``RestrictTeamInvite``,                                                                                                                                          |
 |                                                    | ``RestrictCustomEmojiCreation``.                                                                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | The behavior of the ``config.json`` setting ``PostEditTimeLimit`` has been updated to accomodate the migration to a roles based permission system.               |
+|                                                    | The behavior of the ``config.json`` setting ``PostEditTimeLimit`` has been updated to accommodate the migration to a roles based permission system.               |
 |                                                    | When post editing is permitted, set ``"PostEditTimeLimit": -1`` to allow editing anytime, or set ``"PostEditTimeLimit"`` to a positive integer to restrict       | 
 |                                                    | editing time in seconds. If post editing is disabled, this setting does not apply.                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -405,7 +417,7 @@ Important Upgrade Notes
 |                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let's        |
 |                                                    | Encrypt certification.                                                                                                                                           |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer ugprade times for servers with more than 1 million messages.               |
+| v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer upgrade times for servers with more than 1 million messages.               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | LDAP sync now depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost.             |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+

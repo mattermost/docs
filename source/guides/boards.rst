@@ -13,17 +13,17 @@ The Basics
    :hidden:
 
    Overview </boards/overview>
+   Navigating Mattermost </boards/navigating-mattermost>
    Get Started </boards/getting-started>
    Access Boards </boards/accessing-boards>
    Work With Boards </boards/working-with-boards>
-   Work With Views </boards/working-with-views>
    Share Boards </boards/sharing-boards> 
    Templates </boards/templates>
 
 * :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
+* :doc:`Navigating Mattermost </boards/navigating-mattermost>` - Find your way around Mattermost.
 * :doc:`Get Started </boards/getting-started>` - Enable Boards for your Mattermost instance.
 * :doc:`Access Boards </boards/accessing-boards>` - Use Mattermost Channels to access your Boards.
 * :doc:`Work With Boards </boards/working-with-boards>` - Create new Boards and manage their properties.
-* :doc:`Work With Views </boards/working-with-views>` - Use Views to manage cards.
 * :doc:`Share Boards </boards/sharing-boards>` - Share Boards with your team and manage sharing settings. 
 * :doc:`Templates </boards/templates>` - Customize your Boards and Cards with Templates.
