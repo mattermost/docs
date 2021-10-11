@@ -1,6 +1,23 @@
 Channel Settings
 ================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Notification preferences, channel header, channel purpose, and channel
 name are customizable for each channel. To access these settings, click
 the channel name at the top of the page to open the channel menu.
@@ -21,7 +38,7 @@ name at the top of the page to access the channel menu, then click
 Ignore mentions for @channel, @here and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, you will recieve mention notifications for any uses of @channel, @all or @here in a channel. When enabled, the channel will ignore mention notifications for channel wide mentions. Any messages containing @channel, @all or @here will still mark the channel unread, unless channel mute is enabled.
+By default, you will receive mention notifications for any uses of @channel, @all or @here in a channel. When enabled, the channel will ignore mention notifications for channel wide mentions. Any messages containing @channel, @all or @here will still mark the channel unread, unless channel mute is enabled.
 
 Send Desktop Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -3,13 +3,25 @@
 Electronic Discovery
 =====================
 
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Electronic discovery (also known as eDiscovery) refers to a process where where electronic data is searched with the intent to use it as evidence in a legal case.
 
 This page describes how to extract data from Mattermost for eDiscovery. There are three primary methods that can be used to accomplish the goal of extracting user post data from Mattermost:
 
-- `Mattermost Compliance Exports <https://docs.mattermost.com/administration/compliance-export.html>`__
-- `Mattermost RESTful API <https://docs.mattermost.com/administration/ediscovery.html#mattermost-restful-api>`__
-- `Mattermost database using standard SQL queries <https://docs.mattermost.com/administration/ediscovery.html#mattermost-database>`__
+- `Mattermost Compliance Exports <https://docs.mattermost.com/comply/compliance-export.html>`__
+- `Mattermost RESTful API <https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-restful-api>`__
+- `Mattermost database using standard SQL queries <https://docs.mattermost.com/comply/electronic-discovery.html#mattermost-database>`__
 
 Each of the options is discussed in detail below.
 
@@ -19,16 +31,16 @@ Each of the options is discussed in detail below.
 Mattermost Compliance Exports
 -----------------------------
 
-Mattermost Enterprise E20 has compliance report export capabilities.
+Mattermost Enterprise has compliance report export capabilities.
 
 Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML, and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
 
-For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/administration/compliance-export.html>`__.
+For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/comply/compliance-export.html>`__.
 
 Mattermost RESTful API
 ----------------------
 
-The Mattermost API can be used to export a user's posts in CSV compliance format that is part of Mattermost Enterprise E20. The following section outlines how to use the API to create and retrieve a report for a specific user via the API. Please note that full documentation for the Mattermost API can be found at https://api.mattermost.com.
+The Mattermost API can be used to export a user's posts in CSV compliance format that is part of Mattermost Enterprise. The following section outlines how to use the API to create and retrieve a report for a specific user via the API. Please note that full documentation for the Mattermost API can be found at https://api.mattermost.com.
 
 To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using curl you can authenticate using the following command:
 
@@ -105,4 +117,4 @@ If you want to limit the results of the query based on the date and time that th
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username' AND CreateAt > 1530405832000 AND CreateAt < 1532997832000);
 
 .. note:: 
-  The Mattermost database stores date and time stamps in the Unix Epoch (https://en.wikipedia.org/wiki/Unix_time) format. A tool like https://www.epochconverter.com/ can be useful in converting to and from the required format.
+  The Mattermost database stores date and time stamps in the `Unix Epoch <https://en.wikipedia.org/wiki/Unix_time>`__ format. A tool like the `Epoch Converter <https://www.epochconverter.com/>`__ can be useful in converting to and from the required format.

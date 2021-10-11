@@ -1,6 +1,18 @@
 User Satisfaction Surveys
 =========================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost introduced in-product feedback surveys from v5.12. Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
 .. contents::
@@ -70,7 +82,7 @@ Data is only collected when a user selects a score or provides written feedback 
    - Installation date of the server
    - Diagnostic ID used for error and diagnostics reporting
    - License ID used for error and diagnostics reporting (if applicable)
-   - E10 or E20 (if applicable)
+   - Enterprise or Professional (if applicable)
 - User information:
    - User role (System Admin, Team Admin, or member)
    - Account creation timestamp

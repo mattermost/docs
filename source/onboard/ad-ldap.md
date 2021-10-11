@@ -1,4 +1,3 @@
-
 # Active Directory/LDAP Setup
 
 ## Overview

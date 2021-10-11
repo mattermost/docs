@@ -1,6 +1,18 @@
 Migration Guide
 ===============
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace collaboration. Mattermost deploys as a single Linux binary with MySQL or PostgreSQL, and can scale from dozens to tens of thousands of users in a single channel.
 
 This guide summarizes different approaches to migrating from one Mattermost deployment to another, and migrating from other tools (such as Slack, HipChat, Jabber, and bespoke solutions) to Mattermost.
@@ -120,12 +132,89 @@ Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
   
   This method is the recommended way to import Slack's corporate export file. It can be used from Mattermost v5.0.
 
-1. Use the `slack-advanced-exporter <https://github.com/icelander/slack-advanced-exporter>`_ to download attachments and add users' email addresses to your Slack corporate export file.
-2. Use the `mmetl tool <https://github.com/mattermost/mmetl>`_ to transform Slack's corporate export file into the ``jsonl`` format required by the bulk import tool.
-3. Bulk load the files using the steps provided in the `bulk loading documentation <https://docs.mattermost.com/onboard/bulk-loading-data.html>`_.
+**1. Prepare your Mattermost Server**
+
+We recommend you create a new team in Mattermost to hold the imported Slack data. You can import this into an existing team, but ensure there are no channel name collisions. Also, make sure that all users in Mattermost have the same username as in Slack, otherwise the import will fail. Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
+
+**2. Generate a Slack import**
+
+The first step is to generate a `Slack export <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_.
+
+Next, follow these steps to create a bot token:
+
+1. Go to https://api.slack.com/apps.
+2. Select **Create New App**.
+3. Select **From scratch**.
+4. Name the app something like "Slack Advanced Exporter" and select the workspace. You'll have to do this for every workspace. Then create the app.
+5. Select **OAuth & Permissions** and scroll down to **Scopes**.
+6. Under **Bot Token Scopes** select ``users:read`` and ``users:read.email``.
+7. Scroll up and select **Install to Workspace**.
+8. Grant the app permissions.
+9. Copy the Bot User OAuth Token and save it somewhere convenient.
+
+**3. Download file attachments and email addresses**
+
+The Slack export does not include file attachments and email addresses, so you must use ``slack-advanced-exporter`` to download them. Download the latest release of ``slack-advanced-exporter`` for your OS and architecture `here <https://github.com/icelander/slack-advanced-exporter/releases/>`__ and extract it.
+
+Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slack token you generated earlier and ``<SLACK EXPORT FILE>`` with the `path <https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/>`__ to your file.
+
+.. note::
+
+    - You'll end up with two files. The file ``export-with-attachments.zip`` will not have user emails and cannot be imported.
+    - The first command can take a long time if you have a large number of file uploads. If it's interrupted delete the file generated (if any) and start again.
+
+.. code:: bash
+
+    slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-attachments.zip fetch-attachments
+    slack-advanced-exporter --input-archive export-with-attachments.zip --output-archive export-with-emails-and-attachments.zip fetch-emails --api-token <SLACK TOKEN>
+
+The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
+
+**3. Convert Slack Import to Mattermost Bulk Export Format**
+
+Now that you have a Slack export file with emails and attachments you have to convert it to the Mattermost format using ``mmetl``. Download the latest release of ``mmetl`` for your OS and architecture `here <https://github.com/mattermost/mmetl/releases/>`__ and extract it to your $PATH like with ``slack-advanced-exporter``. The same caveat applies.
+
+Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the name of your team:
+
+.. code:: bash
+
+    ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
+
+Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` that contains the attachments. On Linux and Mac you can use this command:
+
+.. code:: bash
+
+    zip -r mattermost-bulk-import.zip bulk-export-attachments mattermost_import.jsonl
+
+The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
+
+**4. Import into Mattermost**
+
+Now you can start the import process. Once you have ``mmctl`` installed and authenticated use this command to upload ``mattermost-bulk-export.zip``:
+
+.. code:: bash
+
+    mmctl import upload ./mattermost-bulk-import.zip
+
+Run this command to list the available imports:
+
+.. code:: bash
+
+    mmctl import list available
+
+Finally, run this command to process the import. Replace ``<IMPORT FILE NAME>`` with the name you got from the ``mmctl import list available`` command:
+
+.. code:: bash
+
+    mmctl import process <IMPORT FILE NAME>    
+
+Debugging Imports
+-----------------
+
+If you run into problems your best bet is to use the ``mattermost bulk import`` command, since the ``mmctl`` import process does not give you any debugging information, even in the Mattermost server logs.
 
 Migrating from Slack using the Mattermost Web App
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
   In Mattermost v6.0, the ability to migrate from Slack using the Mattermost Web App has been deprecated and removed in favor of using the Mattermost mmetl tool with bulk import.

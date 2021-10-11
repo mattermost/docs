@@ -1,6 +1,17 @@
-
 Scaling for Enterprise 
 ======================
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Mattermost is designed to scale from small teams hosted on a single server to large enterprises running in cluster-based, highly available deployment configurations.
 
@@ -25,7 +36,19 @@ Deployments between 2,000 and 10,000 registered users with moderate usage can ru
 Cluster-based Deployment
 ------------------------
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 Deployments over 10,000 registered users with moderate usage can be supported by adding additional servers in cluster-based, High Availability configuration. To date, the largest simulation included `70,000 concurrent users on a single Mattermost instance <https://mattermost.com/blog/performance-scale-mattermost/>`__.
 
@@ -63,7 +86,7 @@ Here’s an example of the hardware you’ll need for a 10,000-user deployment:
 .. image:: ../images/scaling-3.png
    :alt: Hardware needed for a 10,000 user deployment
 
-For more information, check out our `Administrator's Guide <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html#administrator-tasks>`__.
+For more information, check out our `Administrator Onboarding Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html#administrator-tasks>`__ documentation.
 
 Hosting Recommendation for 100,000+ users
 -----------------------------------------
@@ -73,7 +96,7 @@ The following matrix presents key features for a successful multi-region Matterm
 To scale to 100,000 users and above, we recommended using `the Mattermost open source load testing framework <https://github.com/mattermost/mattermost-load-test>`__ to simulate usage of your system at full scale.
 
 .. csv-table::
-    :header: "Feature", "On Premises", "Amazon AWS", "Azure"
+    :header: "Feature", "Self-Hosted", "Amazon AWS", "Azure"
 
     "Multi-region/data center support", "Yes", "Regions: 16", "Regions: 54"
     "Auto scaling for Mattermost nodes", "Yes - using a solution like Kubernetes", "`AWS Auto Scaling <https://aws.amazon.com/ec2/autoscaling/>`__", "`Azure Autoscale <https://azure.microsoft.com/en-us/features/autoscale/>`__"

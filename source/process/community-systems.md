@@ -137,7 +137,7 @@ Response after Jira ticket is created:
 Thanks @[GITHUB_USERNAME], [Jira ticket]([LINK_TO_JIRA_TICKET]) created for this issue. 
 ```
 
-### Category: Miscellanous Issues
+### Category: Miscellaneous Issues
 
 ##### Label: Asking community help to repro 
 

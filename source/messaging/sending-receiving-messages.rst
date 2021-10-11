@@ -3,7 +3,24 @@
 Sending and Receiving Messages
 ==============================
  
-Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them. You can also share links to any message with other Mattermost users.
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them.
 
 .. note::
   
@@ -53,16 +70,6 @@ Select the **More Actions** link next to a message that you've sent.
 Select **Edit** to edit your own messages. Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
 
 Select **Delete** to delete your own messages. Select **Delete** again to confirm.
-
-Link to Messages
------------------
-
-Select the **More Actions** link next to a message, then select **Copy Link**. Paste the link into a message.
-
-If the link is to a message in a Public Channel, any member of the team can see the message. If the link is to a message in a Private Channel, only members in that channel can see the message.
-
-.. tip::
-   The timestamp next to the username of any message also functionas as a permanent link to that conversation.
 
 Mark Messages as Unread
 -----------------------
