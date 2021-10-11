@@ -31,11 +31,11 @@ Mattermost Boards (formerly known as Focalboard) is accessible from the product 
 
       For self-hosted deployments using versions 5.38 and earlier, Boards is available in the Marketplace.
 
-  1. As a System Admin, go to **Main Menu > Marketplace**.
-  2. Search for **Boards**.
-  3. Select **Install** if not yet installed, then select **Configure** to enable.
-  4. From the plugin configuration page, set **Enable Plugin** to **true**.
-  5. Select **Save** to enable the plugin.
+      1. As a System Admin, go to **Main Menu > Marketplace**.
+      2. Search for **Boards**.
+      3. Select **Install** if not yet installed, then select **Configure** to enable.
+      4. From the plugin configuration page, set **Enable Plugin** to **true**.
+      5. Select **Save** to enable the plugin.
 
 Configuration
 -------------
