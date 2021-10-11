@@ -620,10 +620,10 @@ Fields of the User object
       <td>The authentication service to use for this user account. If not provided, it defaults to password-based authentication. Must be one of the following values:<br>
         <kbd>""</kbd> or not provided - password authentication.<br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
-        <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
-        <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
-        <kbd>"google"</kbd> - Google OAuth authentication (E20)<br>
-        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (E20)</td>
+        <kbd>"ldap"</kbd> - LDAP authentication (Enterprise and Professional)<br>
+        <kbd>"saml"</kbd> - Generic SAML based authentication (Enterprise)<br>
+        <kbd>"google"</kbd> - Google OAuth authentication (Enterprise)<br>
+        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (Enterprise)</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>

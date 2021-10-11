@@ -15,8 +15,8 @@ The Basics
     :maxdepth: 1
     :hidden:
 
-    Self-Hosted Configuration </configure/configuration-settings>
-    Cloud Workspace Configuration </configure/cloud-site-configuration>
+    Mattermost Configuration Settings </configure/configuration-settings>
+    Workspace Configuration for Cloud Deployments </configure/cloud-site-configuration>
     Advanced Permissions </onboard/advanced-permissions>
     System Admin Roles </onboard/system-admin-roles>
     OpenID </onboard/sso-openidconnect>
@@ -29,7 +29,7 @@ The Basics
 These resources will help you get started with your Mattermost server.
 
 * **Configuration Overview** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers </configure/configuration-settings>` and :doc:`Mattermost cloud workspaces </configure/cloud-site-configuration>`.
-* **Authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`Gitlab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory / LDAP </onboard/ad-ldap.md>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
+* **Authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`Gitlab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory / LDAP </onboard/ad-ldap>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
 * **User Permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`system admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 
 Cloud Admin
@@ -46,13 +46,11 @@ Workspace Setup and Configuration
     Site Configuration </configure/cloud-site-configuration>
     SAML Single Sign-On </onboard/cloud-sso-saml>
     AD/LDAP Groups </onboard/cloud-groups>
-    Guest Accounts </onboard/cloud-guest-accounts>
     Shared Channels </onboard/shared-channels>
 
 * :doc:`Site Configuration </configure/cloud-site-configuration>` - Set up and configure your Mattermost Cloud workspace.
 * :doc:`SAML Single Sign-On </onboard/cloud-sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider. Refer to the :doc:`SAML reference documentation </onboard/cloud-sso-saml-technical>` for technical implementation details.
 * :doc:`AD/LDAP Groups </onboard/cloud-groups>` - Sync AD/LDAP groups with Mattermost roles and teams.
-* :doc:`Guest Accounts </onboard/cloud-guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
 * :doc:`Shared Channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
 
 Workspace Management
@@ -78,13 +76,9 @@ Workspace Compliance
     :maxdepth: 1
     :hidden:
 
-    Compliance Export </comply/cloud-compliance-export>
     Data Retention Policy </comply/cloud-data-retention-policy>
-    Custom Terms of Service </comply/cloud-custom-terms-of-service>
 
-* :doc:`Compliance Export </comply/cloud-compliance-export>` - Create compliance reports from the Mattermost System Console. 
 * :doc:`Data Retention Policy </comply/cloud-data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
-* :doc:`Custom Terms of Service </comply/cloud-custom-terms-of-service>` - Define custom terms of service for users to accept before joining your Mattermost server.
 
 Self-Hosted Admin
 -----------------
@@ -92,7 +86,7 @@ Self-Hosted Admin
 This section of the guide is for admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the Cloud section of this page.
 
 Self-Hosted Setup and Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Initial Setup
 """""""""""""
@@ -204,7 +198,6 @@ Self-Hosted Compliance
 * :doc:`Compliance Export Beta </comply/compliance-export>` - Create compliance reports from the Mattermost System Console. 
 * :doc:`Audit Log v2 (Experimental) </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
 * :doc:`Data Retention Policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
-* :doc:`Custom Terms of Service (Beta) </comply/custom-terms-of-service>` - Define custom terms of service for users to accept before joining your Mattermost server.
 
 Other Resources
 ---------------

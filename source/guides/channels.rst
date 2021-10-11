@@ -36,6 +36,7 @@ Work With Messages
    Text Formatting </messaging/formatting-text>
    Use Emojis </messaging/using-emoji>
    Mention Teammates </messaging/mentioning-teammates>
+   Share Messages </messaging/sharing-messages>
    Share Files </messaging/sharing-files>
    Execute Commands </messaging/executing-slash-commands>
    Save Messages </messaging/saving-messages>
@@ -48,6 +49,7 @@ Work With Messages
 * :doc:`Text Formatting </messaging/formatting-text>` - Use markdown to format message content.
 * :doc:`Use Emojis </messaging/using-emoji>` - Express concepts, emotions, and physical gestures in your messages.
 * :doc:`Mention Teammates </messaging/mentioning-teammates>` - Use mentions to get the attention of specific people.
+* :doc:`Share Messages </messaging/sharing-messages>` - Share links to messages across channels.
 * :doc:`Share Files </messaging/sharing-files>` - Share videos, voice recordings, and images in your Mattermost messages.
 * :doc:`Execute Commands </messaging/executing-slash-commands>` - Use slash commands to execute Mattermost functionality.
 * :doc:`Save Messages </messaging/saving-messages>` - Save messages to follow up later.
@@ -76,7 +78,7 @@ Manage Teams, Channels, and Members
 * :doc:`Organize Channels </messaging/organizing-mattermost>` - Organize and navigate Channels.
 
 Customize Channels
---------------------
+------------------
 
 .. toctree::
    :maxdepth: 1
@@ -98,9 +100,9 @@ Customize Channels
 * :doc:`Desktop App Configurations </messaging/managing-desktop-app-options>` - Configure settings on the Windows, Mac, and Linux Desktop Apps.
 * :doc:`Manage Server Connections </messaging/managing-desktop-app-servers>` - Manage your connections to multiple Mattermost servers.
 
-
 Navigate Channels
--------------------
+-----------------
+
 .. toctree::
    :maxdepth: 1
    :hidden:

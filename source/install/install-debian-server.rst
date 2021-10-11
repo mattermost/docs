@@ -1,5 +1,3 @@
-:orphan:
-
 .. _install-debian-server:
 
 Installing Debian Buster

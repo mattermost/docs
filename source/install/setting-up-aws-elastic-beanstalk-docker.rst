@@ -3,8 +3,19 @@
 AWS Elastic Beanstalk Docker Setup
 ==================================
 
-The following instructions use Docker to install Mattermost in *Preview
-Mode* for exploring product functionality. This configuration should not
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality. This configuration should not
 be used in production.
 
 1.  From your `AWS console <https://console.aws.amazon.com/console/home>`__ select **Compute > Elastic Beanstalk**.
