@@ -87,8 +87,6 @@ redirects = {
         "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
     "developer/localization":
         "https://handbook.mattermost.com/contributors/contributors/localization",
-    "overview/product": 
-        "https://docs.mattermost.com/about/product.html",
     "overview/security": 
         "https://docs.mattermost.com/about/security.html",
     "overview/integrations": 
@@ -117,9 +115,7 @@ redirects = {
     "developer/webhook-incoming": "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
     "developer/bot-accounts": "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
     "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
-    "overview/product": "https://docs.mattermost.com/about/product.html",
-    "overview/product": "https://docs.mattermost.com/about/product.html#mattermost-overview",
-    "about/product": "https://docs.mattermost.com/about/product.html#mattermost-overview",
+    # "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
     "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
@@ -603,7 +599,7 @@ redirects = {
     "help/getting-started/creating-teams": "https://docs.mattermost.com/messaging/creating-teams.html",
     "help/settings/team-settings": "https://docs.mattermost.com/messaging/team-settings.html",
     "help/getting-started/organizing-conversations": "https://docs.mattermost.com/messaging/managing-channels.html",
-    "help/getting-started/organizing": "https://docs.mattermost.com/messaging/organizing-mattermost.html",
+    "help/getting-started/organizing": "https://docs.mattermost.com/messaging/organizing-channels.html",
     "help/settings/channel-settings": "https://docs.mattermost.com/messaging/channel-settings.html",
     "help/getting-started/managing-members": "https://docs.mattermost.com/messaging/managing-members.html",
     "help/getting-started/setting-your-status-availability":
@@ -749,7 +745,6 @@ redirects = {
     "mobile/deploy-mobile-apps-using-emm-provider": "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
     "onboard/ad-ldap#active-directory-ldap-setup-e10-e20": 
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
-    "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
     "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",

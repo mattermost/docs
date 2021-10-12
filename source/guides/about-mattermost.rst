@@ -14,10 +14,10 @@ Below is an overview of our products, features, security, integrations, licensin
    /about/product.rst
    /about/security.rst
    /about/integrations.rst
+   /about/deployments-and-editions.rst
    /about/license-and-subscription.rst
    /about/self-hosted-subscriptions.rst
    /about/cloud-subscriptions.rst
-   /about/deployments-and-editions.rst
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
@@ -35,9 +35,10 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Product Overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
-* :doc:`Self-Hosted Subscriptions </about/self-hosted-subscriptions>` - Learn more about Mattermost self-hosted subscriptions.
-* :doc:`Cloud Subscriptions </about/cloud-subscriptions>` - Learn more about Mattermost Cloud subscriptions.
 * :doc:`Deployments and Editions </about/deployments-and-editions>` - Learn more about Mattermost deployment options.
+* :doc:`License and Subscription Overview </about/license-and-subscription>` - Learn about Mattermost licenses and subscriptions.
+* :doc:`Self-Hosted Subscriptions </about/self-hosted-subscriptions>` - Learn about Mattermost self-hosted subscriptions.
+* :doc:`Cloud Subscriptions </about/cloud-subscriptions>` - Learn about Mattermost Cloud subscriptions.
 * :doc:`Corporate Directory Integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
 * :doc:`Certifications and Compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
 * :doc:`Frequently Asked Questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.

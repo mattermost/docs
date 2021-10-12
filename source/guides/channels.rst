@@ -30,7 +30,7 @@ Work With Messages
    :maxdepth: 1
    :hidden:
 
-   Messaging Basics </messaging/messaging-basics>
+   Messaging Basics </messaging/channels-basics>
    Send and Receive Messages </messaging/sending-receiving-messages>
    Organize Conversations </messaging/organizing-conversations>
    Text Formatting </messaging/formatting-text>
@@ -43,7 +43,7 @@ Work With Messages
    Pin Messages </messaging/pinning-messages>
    Search </messaging/searching-in-mattermost>
 
-* :doc:`Messaging Basics </messaging/messaging-basics>` - Learn about the basic functionality of Mattermost Channels.
+* :doc:`Messaging Basics </messaging/channels-basics>` - Learn about the basic functionality of Mattermost Channels.
 * :doc:`Send and Receive Messages </messaging/sending-receiving-messages>` - Communicate with your team.
 * :doc:`Collapsed Reply Threads </messaging/organizing-conversations>` - Use Collapsed Reply Threads to organize your messages.
 * :doc:`Text Formatting </messaging/formatting-text>` - Use markdown to format message content.
@@ -68,14 +68,14 @@ Manage Teams, Channels, and Members
    Manage Team Members </messaging/managing-members>
    Manage Channels </messaging/managing-channels>
    Channel Settings </messaging/channel-settings>
-   Organize Channels </messaging/organizing-mattermost>
+   Organize Channels </messaging/organizing-channels>
 
 * :doc:`Create Teams </messaging/creating-teams>` - Create teams to group your organization’s users together.
 * :doc:`Team Settings </messaging/team-settings>` - Configure team names, descriptions, icons, and invite settings.
 * :doc:`Manage Team Members </messaging/managing-members>` - Invite users to teams, configure user roles, and disable user access.
 * :doc:`Manage Channels </messaging/managing-channels>` - Create, join, rename, leave, favorite, mute, and archive Channels.
 * :doc:`Channel Settings </messaging/channel-settings>` - Customize notification, headers, names, and descriptions of Channels.
-* :doc:`Organize Channels </messaging/organizing-mattermost>` - Organize and navigate Channels.
+* :doc:`Organize Channels </messaging/organizing-channels>` - Organize and navigate Channels.
 
 Customize Channels
 ------------------

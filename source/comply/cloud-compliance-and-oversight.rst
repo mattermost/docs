@@ -8,6 +8,10 @@ Compliance Reporting and Oversight
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Cloud deployments.
 
+.. important::
+   
+   This feature has been replaced by a new :doc:`Compliance Export feature <compliance-export>`, and has been removed from Mattermost Cloud. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
+
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries.
 
 Compliance exports can be filtered to date range, user account, and keyword list. Requests from queries can be downloaded from the user interface in ``.csv`` format, with a ``.json`` metafile documenting the query, as well as placed in a directory set by the System Admin.

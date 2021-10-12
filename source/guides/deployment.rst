@@ -117,6 +117,7 @@ Desktop & Mobile App Deployment
     Mobile Push Notifications </deploy/mobile-hpns>
     Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps>
     Deploying Mobile Apps Using an EMM Provider </deploy/deploy-mobile-apps-using-emm-provider>
+    AppConfig for EMM Solutions with Mattermost Mobile Apps </deploy/mobile-appconfig> 
     Mobile VPN Options </deploy/consider-mobile-vpn-options>
     Mobile Apps FAQ </deploy/mobile-faq>
     Client-side Data Storage FAQ </deploy/client-side-data>
@@ -137,6 +138,7 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 * :doc:`Mobile Push Notifications </deploy/mobile-hpns>` - Set up mobile push notifications. 
 * :doc:`Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps>` - Build custom mobile Mattermost apps.
 * :doc:`Deploying Mobile Apps Using an EMM Provider </deploy/deploy-mobile-apps-using-emm-provider>` - Deploy with Enterprise Mobile Management software to enforce security policies and enforce specific versions of the Mattermost mobile apps.
+* :doc:`AppConfig for EMM Solutions with Mattermost Mobile Apps </deploy/mobile-appconfig>` - Learn how AppConfig provides an easy way to configure enterprise mobile applications.
 * :doc:`Mobile VPN Options </deploy/consider-mobile-vpn-options>` - Learn how to use the Mattermost mobile apps with Mobile VPNs.
 * :doc:`Mobile Apps FAQ </deploy/mobile-faq>`
 * :doc:`Client-side Data Storage FAQ </deploy/client-side-data>`

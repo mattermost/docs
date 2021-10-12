@@ -16,7 +16,7 @@ The Basics
     :hidden:
 
     Mattermost Configuration Settings </configure/configuration-settings>
-    Mattermost Deprecated Configuration Settings </configure/depreciated-configuration-settings>
+    Mattermost Deprecated Configuration Settings </configure/deprecated-configuration-settings>
     Workspace Configuration for Cloud Deployments </configure/cloud-site-configuration>
     Advanced Permissions </onboard/advanced-permissions>
     System Admin Roles </onboard/system-admin-roles>
@@ -46,6 +46,7 @@ Workspace Setup and Configuration
 
     Site Configuration </configure/cloud-site-configuration>
     SAML Single Sign-On </onboard/cloud-sso-saml>
+    SAML SSO Technical Documentation </onboard/cloud-sso-saml-technical>
     AD/LDAP Groups </onboard/cloud-groups>
     Shared Channels </onboard/shared-channels>
 
@@ -190,13 +191,13 @@ Self-Hosted Compliance
     :hidden:
 
     Electronic Discovery </comply/electronic-discovery>
-    Compliance Export Beta </comply/compliance-export>
+    Compliance Export </comply/compliance-export>
     Audit Log v2 (Experimental) </comply/audit-log>
     Data Retention Policy </comply/data-retention-policy>
-    Custom Terms of Service (Beta) </comply/custom-terms-of-service>
+    Custom Terms of Service </comply/custom-terms-of-service>
 
 * :doc:`Electronic Discovery </comply/electronic-discovery>` - Extract data from Mattermost for eDiscovery use in legal cases.
-* :doc:`Compliance Export Beta </comply/compliance-export>` - Create compliance reports from the Mattermost System Console. 
+* :doc:`Compliance Export </comply/compliance-export>` - Create compliance reports from the Mattermost System Console. 
 * :doc:`Audit Log v2 (Experimental) </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
 * :doc:`Data Retention Policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
 

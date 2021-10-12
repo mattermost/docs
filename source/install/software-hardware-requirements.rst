@@ -38,11 +38,11 @@ Desktop Apps
 ^^^^^^^^^^^^
 
 .. csv-table::
-    :header: "Operating System", "Technical Requirement"
+    :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Windows", "Windows 8.1 and 10"
-    "Mac", "MacOS 10.12+"
-    "Linux", "Ubuntu LTS releases 18.04 or later"
+    "Windows", "Windows 8.1 and 10", "Windows 8.1 and 10"
+    "Mac", "MacOS 10.12+", "MacOS 10.14+"
+    "Linux", "Ubuntu LTS releases 18.04 or later", "Ubuntu LTS releases 18.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
@@ -52,12 +52,12 @@ PC Web
 ^^^^^^
 
 .. csv-table::
-    :header: "Browser", "Technical Requirement"
+    :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v77+"
-    "Firefox", "v68+"
-    "Safari", "v12+"
-    "Edge", "v44+"
+    "Chrome", "v77+", "v89+"
+    "Firefox", "v68+", "v78+"
+    "Safari", "v12+", "v12+"
+    "Edge", "v44+", "v44+"
 
 `*` Support for Internet Explorer (IE11) has been removed in Mattermost 5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
 

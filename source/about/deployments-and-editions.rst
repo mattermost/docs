@@ -7,14 +7,14 @@ Mattermost deployment options
 Mattermost provides additional benefits in our commercial editions to support the hosting and growth needs of an organization. You can explore these commercial features through a `trial <https://mattermost.com/get-started/>`__ with Mattermost self-hosted or Mattermost Cloud deployment options.
 
 Mattermost self-hosted 
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost self-hosted provides Mattermost within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premises in private clouds and virtual or physical servers.
 
 Once you’ve downloaded and installed Mattermost within your preferred environment, you have the option to use it as-is, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial** or request a trial online at https://mattermost.com/trial/.
 
 Mattermost Cloud
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Mattermost Cloud delivers Mattermost as software-as-a-service in a highly secure, hosted environment designed for privacy-conscious enterprises and developer collaboration.
 
@@ -34,7 +34,7 @@ Self-hosted and Cloud deployments of the various Mattermost plans have equivalen
 For a complete list of features and pricing across plans, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`__.
 
 Mattermost Team Edition
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
 
@@ -45,7 +45,7 @@ We generally recommend installing Mattermost Starter, even if you don't currentl
 To get started, `download the open-source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
 
 Mattermost Starter 
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Mattermost Starter is a collaboration solution to improve your technical team’s productivity, ship software faster with higher quality, and improve alignment between team members.
 
@@ -61,7 +61,7 @@ Features include:
 - Single Sign-on with GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ (Self-hosted only).
 - `Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
 - Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
-- Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__, and `third-party extensions <https://about.mattermost.com/default-app-directory/>`__.
+- Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
 - Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian.
 - `SOC2 Type1 certification<https://mattermost.com/security/>`__ (Cloud only).
 - `Community support <https://mattermost.com/support/>`__.
@@ -69,7 +69,7 @@ Features include:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Professional 
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Professional is a collaboration solution that enables you to build and scale your sophisticated developer workflows across multiple cross-functional teams to deliver mission-critical software.
 
@@ -90,7 +90,7 @@ Building on the features in Starter plan, it also offers:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Enterprise 
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise is an enterprise-grade collaboration system that supports and helps you scale your mission-critical enterprise workflows, meet strict enterprise security, compliance, and privacy requirements, as well as provide executive reporting, dashboards, and productivity metrics.
 
@@ -124,7 +124,7 @@ We're no longer selling these products to new customers. For existing customers,
 Please contact our `sales team <https://mattermost.com/contact-us/>`__ with questions.
 
 Mattermost Enterprise Edition E10
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional.
 
@@ -136,7 +136,7 @@ Mattermost E10 was offered as a commercial enterprise messaging solution for tea
 - Scale to handle hundreds of users per team.
 
 Mattermost Enterprise Edition E20
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability and compliance features are offered in Mattermost Enterprise.
 

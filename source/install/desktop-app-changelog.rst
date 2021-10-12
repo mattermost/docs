@@ -42,7 +42,7 @@ Compatibility
 - Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
 
 Breaking Changes / Upgrade Notes
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Some keyboard shortcuts and menu items were updated to work with the new Desktop App layout. ``Ctrl+#`` is used for changing tabs and ``Ctrl+Shft+#`` is used for changing servers.
 
@@ -60,6 +60,7 @@ MacOS
 
 All Platforms
 ^^^^^^^^^^^^^
+
 - Added support for multiple languages to be used by the spellchecker. This can be configured in the desktop preferences.
 - Updated loading screen visuals.
 - Added a dark mode for settings and modals.
@@ -93,6 +94,7 @@ All Platforms
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
@@ -101,6 +103,7 @@ Known Issues
 
 Contributors
 ~~~~~~~~~~~~~~
+
 - `devinbinnie <https://github.com/devinbinnie>`_, `elsiehupp <https://github.com/elsiehupp>`_, `jtwillis92 <https://github.com/jtwillis92>`_, `koox00 <https://github.com/koox00>`_, `svelle <https://github.com/svelle>`_ , `Westacular <https://github.com/Westacular>`_, `Willyfrog <https://github.com/Willyfrog>`_
 
 Release v4.7

@@ -17,7 +17,7 @@ Compliance Reporting and Oversight
 
 .. important::
    
-   This feature has bee replaced by a new :doc:`Compliance Export feature <compliance-export>`, and has been removed from Mattermost v6.0. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
+   This feature has been replaced by a new :doc:`Compliance Export feature <compliance-export>`, and has been removed from Mattermost v6.0. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries.
 
