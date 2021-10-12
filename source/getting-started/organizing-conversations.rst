@@ -23,7 +23,7 @@ Channels can be created, joined, renamed, left, marked as a favorite, muted, unm
 Creating a channel
 ------------------
 
-To create a new Public or Private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
+To create a new Public or Private channel, select the **+** symbol at the top right corber of the channel sidebar, then select **Create New Channel**.
 
     .. image:: ../images/create-new-channel.png
         :alt: Create a channel.
