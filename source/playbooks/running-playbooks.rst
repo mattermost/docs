@@ -20,7 +20,6 @@ Run a playbook
 
 You can start a playbook run using the **Toggle Playbook List** icon in a channel header. Then, select the **Run** icon next to a playbook name. A new channel will be created for your run, which you can access in the channel sidebar.
 
-From the dialog box, you can create a new playbook or proceed with the playbook you chose. Provide a name for your run, then select **Start run**. The creator of a playbook run is automatically added as the first member and becomes the owner. 
 
 Lastly, if you've configured a broadcast channel and enabled it, when the playbook run is created it's announced in the associated channel by the Playbook Bot.
  
