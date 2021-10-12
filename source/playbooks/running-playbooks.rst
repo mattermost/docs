@@ -32,12 +32,12 @@ Join a playbook run
 
 Open Playbooks to see a list of runs, to which you have access. If the channel is public, you can join it without permission.
 
-If the run channel is private, an existing member must invite you.
+If the run is private, an existing member must invite you to the corresponding channel.
 
 Work with checklists
 ~~~~~~~~~~~~~~~~~~~~
 
-Checklists contain tasks - they can be pre-configured task templates and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks. Note that if you edit, add, or delete a task during an active run it applies only to that run. The change isn't applied to the playbook. If you decide to retain that change, edit the playbook's checklist.
+Checklists contain tasks - they can be pre-configured task templates and they can also be added, edited, and removed as needed during an active run. Any member of the playbook run can work with tasks. Note that if you edit, add, or delete a task during an active run it applies only to that run. The change isn't applied to the playbook. If you decide to retain that change, edit the playbook's checklist for use with subsequent runs.
 
 If you aren't able to open the checklists to see completed tasks, hover over any area of the checklist. Then in the top right corner, select the filter icon. Under the **Task State** section, select **Show checked tasks**.
 
@@ -91,14 +91,6 @@ Run members can end an incident using the ``/playbook end`` slash command. Playb
 6. Select **Update Status**.
 
 Ending a playbook run signals to all members of the channel that the playbook run is complete. Members of the team can continue to post in the channel, mark tasks as complete, and change the owner if needed.
-
-Restart a playbook run
-~~~~~~~~~~~~~~~~~~~~~~~
-
-If a playbook run was ended prematurely, it can be restarted within the channel using the ``/playbook restart`` slash command. Runs can also be restarted from the desktop or browser:
-
-1. Select the **Playbook** icon in the channel header to open the RHS.
-2. Find the playbook run you're looking for and select **Go to channel**.
 
 Slash commands
 --------------
