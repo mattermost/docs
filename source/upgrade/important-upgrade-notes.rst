@@ -447,7 +447,7 @@ Important Upgrade Notes
 |                                                    | ``RestrictTeamInvite``,                                                                                                                                          |
 |                                                    | ``RestrictCustomEmojiCreation``.                                                                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | The behavior of the ``config.json`` setting ``PostEditTimeLimit`` has been updated to accommodate the migration to a roles based permission system.               |
+|                                                    | The behavior of the ``config.json`` setting ``PostEditTimeLimit`` has been updated to accommodate the migration to a roles based permission system.              |
 |                                                    | When post editing is permitted, set ``"PostEditTimeLimit": -1`` to allow editing anytime, or set ``"PostEditTimeLimit"`` to a positive integer to restrict       | 
 |                                                    | editing time in seconds. If post editing is disabled, this setting does not apply.                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+

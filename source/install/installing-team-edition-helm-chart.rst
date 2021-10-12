@@ -17,9 +17,9 @@ As the Mattermost Helm Chart is installed in a separate namespace, it is recomme
 Prerequisites
 --------------
 
-  - A running Kubernetes cluster.
-  - `Helm v2 <https://helm.sh/docs/intro/install/)>`_.
-  - `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component) installed on the cluster.
+- A running Kubernetes cluster.
+- `Helm v2 <https://helm.sh/docs/intro/install/)>`_.
+- `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component) installed on the cluster.
 
 .. note::
 

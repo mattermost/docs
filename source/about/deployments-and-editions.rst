@@ -42,7 +42,7 @@ The open source Mattermost Team Edition is functionally identical to Mattermost 
 
 We generally recommend installing Mattermost Starter, even if you don't currently need a subscription. This provides the flexibility to seamlessly unlock additional features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-To get started, `download the open-source Mattermost Team Edition server <https://docs.mattermost.com/administration/version-archive.html#mattermost-team-edition-server-archive>`__ under an MIT license.
+To get started, `download the open-source Mattermost Team Edition server <https://docs.mattermost.com/upgrade/version-archive.html#mattermost-team-edition>`__ under an MIT license.
 
 Mattermost Starter 
 ~~~~~~~~~~~~~~~~~~
@@ -57,8 +57,8 @@ Features include:
 - Native apps for iOS, Android, Windows, Mac, and Linux.
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__ and `themes <https://docs.mattermost.com/messaging/customizing-theme-colors.html>`__.
-- Multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__.
-- Single Sign-on with GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ (Self-hosted only).
+- `Multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__.
+- `Single Sign-on with GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ (Self-hosted only).
 - `Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
 - Highly customizable `third-party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.

@@ -55,7 +55,7 @@ Interactive Messages
 
 Mattermost supports interactive message buttons and menus for incoming and outgoing webhooks, custom slash commands, and plugins via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity. Interactive messages can be used together with slash commands, custom apps, and plugins. 
 
-Learn about `interactive messages and buttons <https://docs.mattermost.com/developer/interactive-messages.html>`_ and `interactive dialogs <https://docs.mattermost.com/developer/interactive-dialogs.html>`_ 
+Learn about `interactive messages and buttons <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/>`_ and `interactive dialogs <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-dialogs/>`_ 
 
 CLI
 ----

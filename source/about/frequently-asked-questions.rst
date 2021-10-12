@@ -130,7 +130,7 @@ What support is available for video and audio calling and screen sharing?
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
-You can learn more about the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions (e.g. SIP PBX, Zoom, and Skype for Business), in the `Voice, video, and screensharing guide <https://docs.mattermost.com/deployment/video-and-audio-calling.html>`_.
+You can learn more about the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions (e.g. SIP PBX, Zoom, and Skype for Business), in our `Integrations <https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html>`__ documentation.
 
 Note that you can also neatly link video, audio and screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
@@ -331,7 +331,7 @@ As we add enterprise-only functionality, we will update the license on affected 
 To which repositories does this apply?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Collaboration <https://github.com/mattermost/mattermost-plugin-incident-collaboration>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
+We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release `Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
 
 We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost-server <https://github.com/mattermost/mattermost-server>`_ or `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
