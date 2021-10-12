@@ -1,30 +1,50 @@
 Mattermost Performance Alerting Guide
 ======================================
 
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
+
 Mattermost recommends using Prometheus and Grafana to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard.  
 
-.. note:: We highly recommend setting up performance alerting for deployments above 5,000 users, where additional servers have been added for performance load-balancing.
+.. note:: 
+  We highly recommend setting up performance alerting for deployments above 5,000 users, where additional servers have been added for performance load-balancing.
 
 **Prerequisites**
 
-Set up performance monitoring for Mattermost. See our `documentation <https://docs.mattermost.com/scale/performance-monitoring.html>`__ to learn more.
+Set up performance monitoring for Mattermost. See our `Performance Monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation to learn more.
 
 To get alerts, first set up a Notification Channel in Grafana. Here’s how you can set it up to automatically post alerts in Mattermost:
 
 1. In Mattermost:
 
-  a. Create an Alerts channel
-  b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ for the Alerts channel and copy the URL
+  a. Create an Alerts channel.
+  b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ for the Alerts channel and copy the URL.
 
 2. In Grafana:
 
-  a. Under the alert icon in the sidebar, click **Notification channels**
-  b. Click **Add channel**
-  c. Enter **Mattermost Alerts Channel** as the name
-  d. For type, select **Slack**
-  e. Paste your webhook URL into the URL field
-  f. Include an @ mention in the mention field, if you want to send mentions when an alert is posted to Mattermost
-  g. Press **Send Test** to test the alert
+  a. Under the alert icon in the sidebar, click **Notification channels**.
+  b. Click **Add channel**.
+  c. Enter **Mattermost Alerts Channel** as the name.
+  d. For type, select **Slack**.
+  e. Paste your webhook URL into the URL field.
+  f. Include an @ mention in the mention field, if you want to send mentions when an alert is posted to Mattermost.
+  g. Press **Send Test** to test the alert.
 
 If you would also like to get email alerts, you can follow `these instructions <https://grafana.com/docs/grafana/latest/alerting/>`__ to set that up.
 
