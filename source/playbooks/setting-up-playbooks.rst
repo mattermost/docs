@@ -1,8 +1,6 @@
 Create a Playbook
 ==================
 
-Playbooks help streamline and manage complex processes while decreasing the risk of forgotten steps or tasks. They also support tool integration, status updates in a dedicated channel, and can be edited on the fly. When a playbook run is finished, you can review the entire run to assess any areas of improvement for the next run.
-
 |all-plans| |cloud| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
@@ -19,6 +17,8 @@ Playbooks help streamline and manage complex processes while decreasing the risk
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+  
+Playbooks help streamline and manage complex processes while decreasing the risk of forgotten steps or tasks. They also support tool integration, status updates in a dedicated channel, and can be edited on the fly. When a playbook run is finished, you can review the entire run to assess any areas of improvement for the next run.
 
 Playbooks are made up of:
 
