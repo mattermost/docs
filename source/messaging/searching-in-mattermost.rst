@@ -23,7 +23,7 @@ Use the Mattermost Search field to find messages, replies, and the contents of f
 .. image:: ../images/ui_search.png
    :alt: ui_search
 
-You can also do more advanced search using `search modifiers <https://docs.mattermost.com/help/getting-started/searching.html#search-modifiers>`__.
+You can also do more advanced search using `search modifiers <https://docs.mattermost.com/messaging/searching-in-mattermost.html#search-modifiers>`__.
 
 Searching for message contents 
 ------------------------------
@@ -53,9 +53,9 @@ File contents that match on file name, or contain matching text content within s
 
   - System Admins can extend file content search support to include:
   
-    - `files shared before upgrading to Mattermost Server v5.35 <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-extract-documents-content>`__.
-    - `DOCX, RTF, and PAGES file formats <https://docs.mattermost.com/administration/config-settings.html#enable-document-search-by-content>`__.
-    - `documents within ZIP files <https://docs.mattermost.com/administration/config-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
+    - `files shared before upgrading to Mattermost Server v5.35 <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__.
+    - `DOCX, RTF, and PAGES file formats <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__.
+    - `documents within ZIP files <https://docs.mattermost.com/configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
 
 To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
   

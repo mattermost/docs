@@ -50,7 +50,7 @@ By default, the mobile push notification preference assigned in *Account Setting
 Channel header
 --------------
 
-In the channel menu, select **Edit Channel Header** to change the text that appears next to the channel name at the top of the screen. It can be used to summarize the channel topic or provide links to frequently accessed documents. Any channel member can edit this setting, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+In the channel menu, select **Edit Channel Header** to change the text that appears next to the channel name at the top of the screen. It can be used to summarize the channel topic or provide links to frequently accessed documents. Any channel member can edit this setting, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
 
 Adding links to the channel header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,10 +62,10 @@ Example: `Google Hangout <https://plus.google.com/hangouts/_/store.com/shipping>
 Channel purpose
 ---------------
 
-In the channel menu, select **Edit Channel Purpose** to change the text that appears in the **More…** menu for channels. The channel purpose is usually a short description that helps others decide whether to join the channel. Any channel member can edit this setting, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
+In the channel menu, select **Edit Channel Purpose** to change the text that appears in the **More…** menu for channels. The channel purpose is usually a short description that helps others decide whether to join the channel. Any channel member can edit this setting, unless the System Admin has `restricted the permissions <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
 
 Channel name
 ------------
 
 In the channel menu, select **Rename Channel** to change the channel name or handle. Changing the channel handle changes the channel URL. Any channel member can edit this setting, unless the System Admin has
-`restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported.
+`restricted the permissions <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported.

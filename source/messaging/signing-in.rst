@@ -1,23 +1,6 @@
 Signing In
 ==========
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 To sign in, navigate to the Mattermost sign-in screen. You can `get the URL of the sign-in screen <https://docs.mattermost.com/messaging/accessing-your-workspace.html>`__ from your System Admin or from an email invitation.
 
 .. tip::
@@ -42,6 +25,23 @@ When enabled by your System Admin, you can sign in using your GitLab, Google, Of
 
 GitLab Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 When enabled by your System Admin, you can sign in with your GitLab account using a one-click sign in option.
 

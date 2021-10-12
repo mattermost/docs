@@ -1407,7 +1407,7 @@ Enable users to search the contents of documents attached to messages.
 **True**: Documents are searchable by their content.  
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 

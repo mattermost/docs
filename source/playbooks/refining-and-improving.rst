@@ -21,7 +21,7 @@ Retrospectives
 Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review. Retrospective components are customized per playbook.
 
 Configuring retrospectives before a run
-----------------------------------
+----------------------------------------
 
 Open Playbooks and select the **Playbooks** tab. Select the playbook and then select **Edit**. Select **Templates** and scroll down to the **Retrospective Reminder Interval** and **Retrospective Template** fields.
 
