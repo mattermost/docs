@@ -1,7 +1,7 @@
 Extending Channels with Integrations
 ====================================
 
-Access settings for integrations from the **Main Menu**. Select **Integrations** to open a page where you can view and configure incoming webhooks, outgoing webhooks, and slash commands for your team. If you can't see an **Integrations** option, then your System Admin may limit access to System Admins only.
+Access settings for integrations from the **Product menu**. Select **Integrations** to open a page where you can view and configure incoming webhooks, outgoing webhooks, and slash commands for your team. If you can't see an **Integrations** option, then your System Admin may limit access to System Admins only.
 
 `Visit our Marketplace <https://mattermost.com/marketplace/>`__ for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
