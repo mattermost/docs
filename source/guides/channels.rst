@@ -107,7 +107,7 @@ Navigate Channels
    :maxdepth: 1
    :hidden:
 
-   Navigating Mattermost </messaging/navigating-mattermost.rst>
+   Navigating Mattermost </messaging/navigating-mattermost>
    Keyboard Accessibility </messaging/keyboard-accessibility>
    Keyboard Shortcuts </messaging/keyboard-shortcuts>
 
@@ -121,4 +121,4 @@ Extend Mattermost Channels
 .. toctree::
    :maxdepth: 2
       
-   /messaging/extending-messaging-with-integrations.md
+   Extending Channels with Integrations </messaging/extending-channels-with-integrations>

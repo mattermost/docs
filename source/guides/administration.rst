@@ -25,7 +25,7 @@ The Basics
     Office 365 SSO </onboard/sso-office>
     Gitlab SSO </onboard/sso-gitlab>
     Multi-factor Authentication </onboard/multi-factor-authentication>
-    Active Directory / LDAP </onboard/ad-ldap.md>
+    Active Directory / LDAP </onboard/ad-ldap>
 
 These resources will help you get started with your Mattermost server.
 
