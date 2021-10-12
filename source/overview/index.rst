@@ -10,13 +10,13 @@ Below is an overview of our features, security, account management, deployment, 
    :maxdepth: 2
    :glob:
 
-   /about/product
-   /about/deployments_and_editions*
-   /about/security*
-   /about/integrations*
-   /about/subscription
-   /about/cloud-subscriptions
-   /about/self-hosted-subscriptions
-   /about/corporate-directory-integration*
-   /about/certifications-and-compliance*
-   /about/frequently-asked-questions*
+   /about/product.rst
+   /about/security.rst
+   /about/integrations.rst
+   /about/license-and-subscription.rst
+   /about/self-hosted-subscriptions.rst
+   /about/cloud-subscriptions.rst
+   /about/deployments-and-editions.rst
+   /about/corporate-directory-integration.rst
+   /about/certifications-and-compliance.rst
+   /about/frequently-asked-questions.rst

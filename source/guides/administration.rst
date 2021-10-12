@@ -16,6 +16,7 @@ The Basics
     :hidden:
 
     Mattermost Configuration Settings </configure/configuration-settings>
+    Mattermost Deprecated Configuration Settings </configure/depreciated-configuration-settings>
     Workspace Configuration for Cloud Deployments </configure/cloud-site-configuration>
     Advanced Permissions </onboard/advanced-permissions>
     System Admin Roles </onboard/system-admin-roles>

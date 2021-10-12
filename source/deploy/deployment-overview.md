@@ -106,29 +106,29 @@ For notifications and account verification, Mattermost connects to your existing
 
 The Mattermost server installs as a single compiled binary file. All server settings are stored in a configuration file, ``config/config.json``, which can be updated directly or via the web-based System Console user interface.
 
-#### RESTful JSON Web Service
+### RESTful JSON Web Service
 
 The entirety of the Mattermost server is accessible through a RESTful Web Service API. The API can be completely accessed by developers creating custom applications for Mattermost either directly or via Javascript and Golang drivers.
 
-#### Authentication Client
+### Authentication Client
 
 Authenticates users by email or username plus password.
 
 For customers of Enterprise Edition, Single Sign-on via Microsoft Active Directory and LDAP is also available.
 
-#### Authentication Provider
+### Authentication Provider
 
 Enables authentication of Mattermost server to other services with Authentication Client interface using OAuth2.
 
-#### Notification Service
+### Notification Service
 
 Sends notifications via SMTP email and mobile push notifications via Mattermost Push Notificiation Service.
 
-#### Data Management Service
+### Data Management Service
 
 Connects to and manages supported databases.
 
-### High Availability (Enterprise Edition)
+### High Availability (Available in Mattermost Enterprise)
 
 Large organizations needing sophisticated, large scale, High Availability configurations can set up a [highly available, horizontally scalable](https://docs.mattermost.com/scale/high-availability-cluster.html) deployment. Contact the [Enterprise team](https://mattermost.com/contact-us/) for guidance on configuring and sizing Mattermost Enterprise Edition to support your specific needs.
 

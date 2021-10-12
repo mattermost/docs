@@ -1,24 +1,24 @@
-Subscription Overview
-=====================
+License and Subscription Overview
+=================================
 
 Mattermost offers features through `Starter, Professional, or Enterprise subscription plans <www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or cloud, and the plan as Starter, Professional, or Enterprise. 
 
-Mattermost self-hosted deployments require a license to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can easily purchase and manage your Mattermost self-hosted subscriptions. When you purchase a subscription, a license is generated. Please see :ref:`self-hosted-subscriptions` for more details. 
+Mattermost self-hosted deployments require a license to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can easily purchase and manage your Mattermost self-hosted subscriptions. When you purchase a subscription, a license is generated. Please see :ref:`</about/self-hosted-subscriptions>` for more details. 
 
-Mattermost Cloud is a software-as-as-service. You can simply sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :ref:`cloud-subscriptions` for more details.
+Mattermost Cloud is a software-as-as-service. You can simply sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :ref:`</about/cloud-subscriptions>` for more details.
 
 General Frequently Asked Questions
 -----------------------------------
 
 Are my credit card details safe?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We use `Stripe <https://stripe.com/payments>`__ and `Solupay <https://www.solupay.com/>`__ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`__, which is PCI-DSS compliant.
 
 Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`__.
 
 Why do I need to provide my name and physical address when purchasing a subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a U.S. corporation and, therefore, all business we do is governed by the laws of the United States, in addition to the local laws wherever we are doing business. 
 
@@ -27,7 +27,7 @@ The United States has a number of export control regulations implemented to prot
 In order to comply with these requirements, Mattermost must collect the name and physical address of all individuals and companies it does business with so that it can comply with the U.S. export controls regulations.
 
 What does Mattermost do with this information?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The information you provide is used for a screening process. There are two different purposes for screening: 
 
@@ -35,7 +35,7 @@ The information you provide is used for a screening process. There are two diffe
 - The other screening is against people and companies. There are certain people and companies that the government has put on a list (the Denied Party List) that US companies are prohibited from doing any business with for various reasons. They could be terrorists, be on a terrorist watch list, could be helping finance terrorists, could be participating in human rights violations, etc. If they are on the Denied Party List, we are not able to do any business with them.
 
 Who are the sanctioned people, companies, and entities?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Office of Foreign Assets Control (OFAC) maintains a list of sanctioned entities. Some examples include:
 
@@ -47,24 +47,24 @@ The Office of Foreign Assets Control (OFAC) maintains a list of sanctioned entit
 This will also include people in violation of government contracts because of our business with the U.S. government. Individuals and Companies do not end up on the Denied Party List based on the country they live in but by their actions and conduct.
 
 What does “physical address” mean for software that will be used in many places?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this case, the "physical address" is the location where the individual, who will be receiving the license key, is physically located and will be able to access the software for installation.
 
 How is a user defined for subscriptions?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For the purpose of billing, a “user” is any account created in Mattermost that has not been deactivated by the System Administrator. You can see your user count for billing purposes from the System Console on the **Site Statistics** page under “Total Active Users”. Guests are also defined as users. 
 
 Do I need to pay for deactivated users?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No. If you deactivate a user, that user is not counted as an active user during your annual renewal process. You can deactivate users manually via System Console, and also via Active Directory/LDAP synchronization, the mmctl tool, and the server APIs.
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
 Which features are affected when my subscription expires?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The affected features include, but are not limited to, the following:
 
@@ -91,7 +91,7 @@ The affected features include, but are not limited to, the following:
     "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
     
 Do you have a program for official non-profits, open source projects, and charities?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. The Mattermost Nonprofit License enables foundations and other nonprofit organizations that support open source projects or other technology initiatives to apply the benefits of Mattermost Enterprise Edition to advancing their missions with special nonprofit pricing.
 
@@ -102,17 +102,17 @@ Organizations that receive a Mattermost Nonprofit License must make their server
 To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__, or contact us at nonprofit[at]mattermost.com.
 
 Do you have discounted subscriptions for academic institutions?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`__ for no charge to students (staff members pay the regular price). You need to pay for at least 10 staff members in order to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`__ for more information.
 
 Is there a maximum number of users per subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, there is no limit to the subscription value or number of users you can purchase per product.
 
 What happens if my department buys a Mattermost subscription and then central IT buys a high volume subscription that also covers my department?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost subscriptions and support benefits are per production instance.
 
