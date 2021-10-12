@@ -25,7 +25,7 @@ Configuring retrospectives before a run
 
 Open Playbooks and select the **Playbooks** tab. Select the playbook and then select **Edit**. Select **Templates** and scroll down to the **Retrospective Reminder Interval** and **Retrospective Template** fields.
 
-You can set a reminder to fill out the retrospective, which is broadcast to the channel. The template is then pre-populated in the report. Once the report is written, it's saved and is listed in the run's detailed view.
+You can set a reminder to fill out the retrospective after a run is finished. The configured template is pre-populated in the run's retrospective.
 
 Use the run timeline to help write an accurate retrospective. Events such as owner changes, status updates, and task assignments appear automatically. Selected posts may also be added to the timeline by using the post context menu.
 
