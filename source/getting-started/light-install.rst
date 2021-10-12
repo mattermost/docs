@@ -55,18 +55,18 @@ Add Users
 
 Next, add people to your team by sending them an invitation:
 
-1. Click your username at the top left of the Navigation Panel.
-2. Click **Invite People** and enter the email addresses of the people you want to add.
-3. Click **Invite Members**.
+1. Select your team name at the top left corner of Mattermost.
+2. Select **Invite People** and enter the email addresses of the people you want to add.
+3. Select **Invite Members**.
 
-When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available `here <https://docs.mattermost.com/messaging/managing-members.html#managing-members>`_. 
+When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available `here <https://docs.mattermost.com/messaging/managing-members.html#managing-members>`_.
 
 Create a Notifications Hub
 --------------------------
 
-Create a `“heartbeat” channel <https://community.mattermost.com/core/channels/community-heartbeat>`_ and integrate your most-used apps and plugins with Mattermost to send status updates and critical notifications in one place. 
+Create a `“heartbeat” channel <https://community.mattermost.com/core/channels/community-heartbeat>`_ and integrate your most-used apps and plugins with Mattermost to send status updates and critical notifications in one place.
 
-You can find and install integrations and plugins via **Main Menu > Plugin Marketplace**. 
+You can find and install integrations and plugins via **Product menu > Marketplace**.
 
 Get started with GitHub, Jira, and Jenkins:
 
