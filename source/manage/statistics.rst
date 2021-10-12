@@ -184,4 +184,4 @@ To enable Team Admins to access their team's statistics:
 
 .. note::
 
-  - System Admins must manually add people to or remove people from the **Viewer** System Admin role to address Team Admin changes, such as promotions or demotions.
+    System Admins must manually add people to or remove people from the **Viewer** System Admin role to address Team Admin changes, such as promotions or demotions.

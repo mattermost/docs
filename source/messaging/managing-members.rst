@@ -164,7 +164,7 @@ Guests cannot:
 User with personal access token permission
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A System Admin can enable `personal access tokens <https://docs.mattermost.com/developer/personal-access-tokens.html>`__ and give permissions for that account to create personal access tokens in **System Console > Users**.
+A System Admin can enable `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ and give permissions for that account to create personal access tokens in **System Console > Users**.
 
 In addition, the System Admin can optionally set the following permissions for the account, useful for integrations and bot accounts:
 
