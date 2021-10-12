@@ -231,7 +231,7 @@ Now that you have an environment in place, we recommend working through the foll
 - Determine and create team structure for your environment
 
  - Recommendation: Start with fewer teams in your early roll out
- - Resource: https://docs.mattermost.com/help/getting-started/organizing.html 
+ - Resource: https://docs.mattermost.com/messaging/organizing-channels.html 
 
 - Determine and create key channels to support your users. Town Square and Off-Topic are built in channels in every team
 
@@ -336,6 +336,7 @@ Now that you have an environment in place, we recommend working through the foll
 
 - Understand management tools available to support users
 
+ - mmctl Command Line Tool Resource: https://docs.mattermost.com/manage/mmctl-command-line-tool.html
  - Command Line Tools Resource: https://docs.mattermost.com/manage/command-line-tools.html
  - Database Scripts Resource: https://docs.mattermost.com/manage/scripts.html 
 
