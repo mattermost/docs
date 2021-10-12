@@ -1,11 +1,28 @@
-Compliance Export (E20)
-=======================
+Compliance Export
+=================
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 This feature enables compliance exports to be produced from the System Console, containing all messages including:
 
-- Those made in direct message channels
+- Messages sent in direct message channels
 - File uploads
 - Posts from plugins
 - Posts from bots/webhooks
@@ -14,7 +31,7 @@ The exports include information on channel member history at the time the messag
 
 From Mattermost v5.18 and in Mattermost Cloud, entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. Global Relay reports include file deletion entries but message deletion entries are excluded.
 
-By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise E20, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
+By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Mattermost Enterprise, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
 Enterprise deployments with a requirement to archive history beyond the data retention period can enable this add-on to export compliance reports to third-party systems. Integration with Actiance Vantage and Global Relay are currently supported, with integrations with other systems in the roadmap.
 
@@ -69,7 +86,7 @@ Global Relay EML
 3. Set the **Compliance Export time**. This is the start time of the daily scheduled compliance export job and must be a 24-hour time stamp in the form HH:MM. Choose a time when fewer people are using your system.
 4. Set the export file format to **GlobalRelay EML**.
 5. Select `A9/Type 9` or `A10/Type 10` for the **Global Relay Customer Account**. This is the type of Global Relay customer account your organization has.
-6. Set the **Global Relay SMTP username**, **Global Relay SMTP password**, and **Global Relay SMTP email address**, as provided by Global Relay.
+6. Set the **Global Relay SMTP username**, **Global Relay SMTP password**, and **Global Relay SMTP email address**, provided by Global Relay.
 7. Select **Save**.
 
 Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system. For more information, see `Global Relay Archive <https://www.globalrelay.com/gr-services/archive>`__.

@@ -3,6 +3,18 @@
 Local Machine Setup using Docker 
 ================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality on a single machine. 
 
 **Note:** This configuration should not be used in production, as it uses a known password string, contains other non-production configuration settings, and does not support upgrade. 

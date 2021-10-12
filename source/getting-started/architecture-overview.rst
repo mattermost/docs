@@ -1,6 +1,18 @@
 Architecture Overview
 =====================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deployment/deployment.html>`__.
 
 .. toctree::
@@ -13,7 +25,7 @@ At its core, Mattermost is a single-compiled Go binary that is exposed as a Rest
 
 It is configured using `config/config.json <https://docs.mattermost.com/administration/config-settings.html>`__ and provides the following:
 
-- **Authentication client:** The functionality for users to log into Mattermost via email address and password in Team Edition. Enterprise Edition E10 adds the ability for users to authenticate using Active Directory or LDAP, and Enterprise Edition E20 adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin, and Okta.
+- **Authentication client:** The functionality for users to log into Mattermost via email address and password in Team Edition. Mattermost Professional adds the ability for users to authenticate using Active Directory or LDAP, and Mattermost Enterprise adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin, and Okta.
 - **Authentication provider:** Enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
 - **Notification service:** Sends notifications via SMTP or a Push Notification Service for mobile applications.
 - **Data management service:** Connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data between them.
@@ -104,7 +116,7 @@ In order to receive push notifications, your network must allow traffic on `port
 High Availability and Scalability
 ---------------------------------
 
-Enterprise Edition E20 supports:
+Mattermost Enterprise supports:
 
 1. Clustered Mattermost servers, which minimize latency by:
 
@@ -126,7 +138,7 @@ Moreover, search replicas are also supported to handle search queries.
 Reference Architectures
 -----------------------
 
-The following diagrams show the suggested architecture configurations for Enterprise Edition E20 enterprise deployments of Mattermost at different scales. These diagrams are meant as guidelines for typical Mattermost deployments. Hardware and infrastructure requirements can vary significantly based on usage and policies.
+The following diagrams show the suggested architecture configurations enterprise deployments of Mattermost at different scales. These diagrams are meant as guidelines for typical Mattermost deployments. Hardware and infrastructure requirements can vary significantly based on usage and policies.
 
 There are two versions of each diagram. One is generalized while the other focuses on AWS.
 
@@ -134,38 +146,38 @@ Each generalized diagram represents a full High Availability deployment across a
 
 Each AWS diagram represents a full High Availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
 
-5,000 Users on Enterprise Edition E20 - General
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5,000 Users on Enterprise - General
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kUsers.png
 
-5,000 Users on Enterprise Edition E20 - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5,000 Users on Enterprise - AWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kaws.png
 
-10,000 Users on Enterprise Edition E20 - General
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10,000 Users on Enterprise - General
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kUsers.png
 
-10,000 Users on Enterprise Edition E20 - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10,000 Users on Enterprise - AWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kaws.png
 
-25,000 Users on Enterprise Edition E20 - General
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+25,000 Users on Enterprise - General
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kUsers.png
 
-25,000 Users on Enterprise Edition E20 - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+25,000 Users on Enterprise - AWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kaws.png
 
-50,000 Users on Enterprise Edition E20 - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+50,000 Users on Enterprise - AWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment50kaws.png
 

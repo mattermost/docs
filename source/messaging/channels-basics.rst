@@ -1,6 +1,23 @@
 Channels Basics
 ================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 **Write messages** using the text input box at the bottom of the screen. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. To send messages on CTRL+ENTER and use ENTER to insert new lines go to **Main Menu > Account Settings > Advanced** > **Send messages on CTRL+ENTER**.
 
 **Reply to messages** by clicking the reply arrow next to the message text.

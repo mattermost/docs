@@ -3,6 +3,18 @@
 Software and Hardware Requirements
 ==================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out.
 
 .. contents::
@@ -28,7 +40,7 @@ Desktop Apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "Windows", "Windows 7, 8.1, and 10"
+    "Windows", "Windows 8.1 and 10"
     "Mac", "MacOS 10.12+"
     "Linux", "Ubuntu LTS releases 18.04 or later"
 
@@ -83,7 +95,7 @@ Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
-- Using the Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
+- Using the Mattermost `Docker deployment <https://github.com/mattermost/docker>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
 
@@ -95,7 +107,7 @@ For Mattermost v6.0:
 -  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
 
-For Mattermost v5.38 and previous releases:
+For Mattermost v5.39 and previous releases:
 
 - MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
 - PostgreSQL 10.0+
@@ -109,7 +121,7 @@ Search limitations on PostgreSQL:
 - Email addresses do not return results.
 - Hashtags or recent mentions of usernames containing a dash do not return search results.
 - Terms containing a dash return incorrect results as dashes are ignored in the search query.
-- If any of the above is an issue, you can either enable the `Elasticsearch (E20) feature <https://docs.mattermost.com/scale/elasticsearch.html>`__ or install MySQL instead.
+- If any of the above is an issue, you can either enable the `Elasticsearch feature <https://docs.mattermost.com/scale/elasticsearch.html>`__ or install MySQL instead.
 
 Search limitations on MySQL:
 
@@ -171,9 +183,9 @@ System Requirements
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
-   - Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__ available in Enterprise Edition E20.
+   - Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__ available in Mattermost Enterprise.
    - Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__. Grafana 5.0.0 and later is recommended.
-   - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here <https://docs.mattermost.com/scale/elasticsearch.html>`__.
+   - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.39 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here <https://docs.mattermost.com/scale/elasticsearch.html>`__.
    - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/configure/configuration-settings.html#file-storage>`__.
 
 Alternate Storage Calculations
@@ -181,7 +193,7 @@ Alternate Storage Calculations
 
 As an alternative to recommended storage sizing above, you can forecast your own storage usage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
 
--  Estimated storage per user per month (see below), multipled by 12 months in a year
+-  Estimated storage per user per month (see below), multiplied by 12 months in a year
 -  Estimated mean average number of users in a year
 -  A 1-2x safety factor
 

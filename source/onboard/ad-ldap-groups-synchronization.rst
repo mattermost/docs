@@ -1,7 +1,26 @@
 .. _ldap-group-sync:
 
-AD/LDAP Groups (E20)
-====================
+AD/LDAP Groups
+==============
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 Overview
 --------
@@ -184,7 +203,7 @@ On teams that are managed by synchronized groups, guests, and member users outsi
  - Invitation through a team invite link.
  - Invitations through an email invite.
 
-Similarily on private channels that are managed by synchronized groups, guests and member users outside of the group are restricted from:
+Similarly on private channels that are managed by synchronized groups, guests and member users outside of the group are restricted from:
 
  - Invitation through a mention.
  - Invitation through the ``/invite`` slash command.

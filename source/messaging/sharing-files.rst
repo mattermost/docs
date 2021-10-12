@@ -1,6 +1,23 @@
 Sharing Files
 ===============
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 With file attachments, you can share additional information that will help your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos will make your messages more effective and clear.
 
 Attach Files to Messages
@@ -8,7 +25,7 @@ Attach Files to Messages
 
 You can attach files to messages in the following ways:
 
--  Use the attachment icon - select the paperclip icon inside the message input box
+-  Use the attachment icon inside the message input box
 -  Drag and drop
 -  Paste from the clipboard
 

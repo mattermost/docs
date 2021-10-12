@@ -3,6 +3,18 @@
 Installing Mattermost on RHEL 7
 =================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 You can also use these instructions to install Mattermost on CentOS 7, Oracle Linux 7, or Scientific Linux 7. With the exception of the operating system that you install, the process is identical.
 
 .. include:: install-common-intro.rst
