@@ -52,11 +52,12 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
       - Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Account Settings**.
   
-Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
+     Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
+
 
 **Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
 
-Email Notifications
+Email notifications
 -------------------
 
 By default, you'll get email notifications if you're not actively using Mattermost. You can change the default preference for email notifications to turn them off entirely.
@@ -85,7 +86,7 @@ Messages in email notifications can be opened in the Mattermost Desktop App, Mob
 
 **Not getting an email notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-an-email-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
 
-Mobile Push Notifications
+Mobile push notifications
 -------------------------
 
 Mobile push notifications appear on the lock screen of your mobile device if the Mattermost Android or iOS app is installed. By default, these notifications are triggered when you're not actively using Mattermost, but this is configurable. You can also change the default preference to trigger push notifications for all messages sent in channels you're a member of, or turn them off entirely.
@@ -114,14 +115,14 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 
   Learn more about how Mattermost detects your `availability <https://docs.mattermost.com/help/getting-started/setting-your-status-availability.html>`__ as **Online**, **Away** or **Offline**.
 
-Browser Tab Notifications
+Browser tab notifications
 -------------------------
 
 If Mattermost is open in a browser tab, the favicon updates to notify you of unread messages (\*) and a count of mentions or Direct Messages. Browser tab notifications are available on Chrome, Edge, Firefox, Safari.
 
 .. image:: ../images/browser_notification.png
 
-Muting a Channel
+Muting a channel
 ----------------
 
 Channels in the sidebar are **bold** when there are unread messages in the channel and show a badge count if you are mentioned specifically. 
@@ -134,7 +135,7 @@ To mute a channel, click on the channel name and select **Mute Channel**. To unm
 
   Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__. Learn more about `mentioning teammates <https://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
 
-Ignoring Mentions
+Ignoring mentions
 -----------------
 
 To turn off notifications for channel-wide mentions for @channel, @here, and @all, navigate to:
@@ -143,6 +144,6 @@ To turn off notifications for channel-wide mentions for @channel, @here, and @al
 
 When this setting is on you will still receive notifications for direct mentions. 
 
-**Note:** If you have muted a channel and also enabled **Ignore mentions for @channel, @here and @all** then you will not receive any notifications (whether they're direct or channel-wide). However, if you are directly mentioned in the muted channel a badge counter will be displayed in the sidebar. 
+**Note:** If you've muted a channel and also enabled **Ignore mentions for @channel, @here and @all** then you will not receive any notifications (whether they're direct or channel-wide). However, if you are directly mentioned in the muted channel a badge counter will be displayed in the sidebar. 
 
 You can also view the `notifications flow charts <https://docs.mattermost.com/overview/faq.html?#notifications>`_ for more information about notification behavior in Mattermost.  
