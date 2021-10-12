@@ -50,7 +50,7 @@ There are two ways to set up AD/LDAP:
      - Log in to your workspace and create a new account using email and password. This is assigned the System Admin role as the first user created.
      - Next, configure AD/LDAP and then convert your System Admin account to use the AD/LDAP sign in method.
 
-2. **Configure AD/LDAP by editing `config.json`**
+2. **Configure AD/LDAP by editing ``config.json``**
      - Edit ``config.json`` to enable AD/LDAP based on the `AD/LDAP settings documentation <https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap>`__. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
 
 Configure AD/LDAP sign in
