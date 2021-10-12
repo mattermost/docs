@@ -32,7 +32,7 @@ You can also use slash commands to initiate playbook runs, make announcements, a
 Join a playbook run
 -------------------
 
-Open Playbooks to see a list of runs, to which you have access. If the channel is public, you can join it without permission. You can also search for and join the channel via **Find channel** in the channel sidebar.
+Open Playbooks to see a list of runs, to which you have access. If the channel is public, you can join it without permission.
 
 If the run channel is private, an existing member must invite you.
 
