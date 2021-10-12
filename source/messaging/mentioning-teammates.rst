@@ -145,7 +145,7 @@ Once enabled for a specific group, users can mention and notify the entire group
 
 Group mention identifiers (slugs) use the LDAP group name by default. To customize/rename the slug:
 
-1. Open **System Console > Groups (Beta)**.
+1. Open **System Console > User Management > Groups**.
 2. Select **Edit** next to the group you want to edit.
 3. In **Group Profile > Group Mention** enter the new slug.
 4. Select **Save**.
@@ -156,7 +156,7 @@ As with ``@username`` mentions, use *@* to bring up a list of groups that can be
 
   @dev-managers great work hitting all of our code coverage goals this quarter!
 
-Words That Trigger Mentions
+Words that trigger mentions
 ---------------------------
 
 |all-plans| |cloud| |self-hosted|
@@ -176,11 +176,11 @@ Words That Trigger Mentions
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can customize words that trigger mention notifications in **Account Settings > Notifications > Words That Trigger Mentions**. By default, you receive mention notifications for your username and for ``@channel``, ``@all`` and ``@here``. You can choose to have your first name be a word that triggers mentions.
+You can customize words that trigger mention notifications in **Settings > Notifications > Words That Trigger Mentions**. By default, you receive mention notifications for your username and for ``@channel``, ``@all`` and ``@here``. You can choose to have your first name be a word that triggers mentions.
 
 You can add a list of customized words to get mention notifications for by typing them into the input box, separated by commas. This is useful if you want to be notified of all posts on certain topics, such as "interviewing" or "marketing".
 
-Recent Mentions
+Recent mentions
 ---------------
 
 |all-plans| |cloud| |self-hosted|
@@ -207,7 +207,7 @@ Select **@** next to the **Search** box to query for your most recent @mentions 
 
 Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
-Confirmation Dialog Warnings
+Confirmation dialog warnings
 ----------------------------
 
 |all-plans| |cloud| |self-hosted|

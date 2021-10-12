@@ -46,11 +46,11 @@ Disable Legacy MFA API Endpoint
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -123,11 +123,11 @@ Allow Team Administrators to edit others' posts
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       This permission is stored in the database and can be modified using the System Console user interface.
 
@@ -143,17 +143,17 @@ Enable Team Creation
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       After upgrading to v4.9 (released April 16, 2018), changing this ``config.json`` value no longer takes effect because this permission has been migrated to the database. This permission can be modified using the System Console user interface.
 
 **True**: Ability to create a new team is enabled for all users.
 
-**False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden in the Main Menu UI.
+**False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden.
 
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``. |
@@ -183,11 +183,11 @@ Enable Legacy Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -211,9 +211,9 @@ Experimental Sidebar Features
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
-**Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Account Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering.
+**Enabled (Default On)**: Enables the experimental sidebar features for all users on this server. Users can disable the features in **Settings > Sidebar > Experimental Sidebar Features**. Features include custom collapsible channel categories, drag and drop to reorganize channels, and unread filtering.
 
-**Enabled (Default Off)**: Users must enable the experimental sidebar features in **Account Settings**.
+**Enabled (Default Off)**: Users must enable the experimental sidebar features in **Settings**.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``. |
@@ -224,11 +224,11 @@ Sidebar Organization
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -240,9 +240,9 @@ This setting applies to the legacy sidebar only. You must enable the `Enable Leg
 
 We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#organizing-your-sidebar>`__ for more information about these features.
 
-**True**: Enables channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
+**True**: Enables channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
 
-**False**: Hides the channel sidebar organization options in **Account Settings > Sidebar > Channel grouping and sorting**.
+**False**: Hides the channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**.
 
 +-----------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``. |
@@ -253,11 +253,11 @@ Enable X to Leave Channels from Left-Hand Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -282,11 +282,11 @@ Autoclose Direct Messages in Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -314,11 +314,11 @@ Town Square is Hidden in Left-Hand Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Available in legacy Enterprise Edition E10 and higher.
 
@@ -343,11 +343,11 @@ Town Square is Read-Only
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Available in legacy Enterprise Edition E10 and higher.
 
@@ -371,11 +371,11 @@ Restrict Custom Emoji Creation
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
 
@@ -401,9 +401,9 @@ Timezone
 
 Select the timezone used for timestamps in the user interface and email notifications.
 
-**True**: The **Timezone** setting is visible in the Account Settings and a timezone is automatically assigned in the next active session.
+**True**: The **Timezone** setting is visible in the Settings and a timezone is automatically assigned in the next active session.
 
-**False**: The **Timezone** setting is hidden in the Account Settings.
+**False**: The **Timezone** setting is hidden in the Settings.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
@@ -456,11 +456,11 @@ Restrict managing integrations to Admins
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
 
@@ -468,7 +468,7 @@ Restrict managing integrations to Admins
 
 **True**: Webhooks and slash commands can only be created, edited, and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
-**False**: Any team members can create webhooks, slash commands` and OAuth 2.0 applications from **Main Menu > Integrations**.
+**False**: Any team members can create webhooks, slash commands` and OAuth 2.0 applications from **Product menu > Integrations**.
 
 .. note::
   OAuth 2.0 applications can be authorized by all users if they have the **Client ID** and **Client Secret** for an app setup on the server.
@@ -496,13 +496,13 @@ Enable sending team invites from
 
    From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
 
-Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the Main Menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
+Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the Product menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
 **All team members**: Allows any team member to invite others using an email invitation, team invite link, or by adding members to the team directly.
 
-**Team and System Admins**: Hides the email invitation, team invite link, and the add members to team buttons in the Main Menu from users who are not Team Admins or System Admins.
+**Team and System Admins**: Hides the email invitation, team invite link, and the add members to team buttons in the Product menu from users who are not Team Admins or System Admins.
 
-**System Admins**: Hides the email invitation, team invite link, and add members to team buttons in the Main Menu from users who are not System Admins.
+**System Admins**: Hides the email invitation, team invite link, and add members to team buttons in the Product menu from users who are not System Admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``"all"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |

@@ -39,12 +39,12 @@ Guests can:
 
 Guests cannot:
 
-- Discover public channels
+- Discover Public channels
 - Join open teams
-- Create direct messages or group messages with members who aren’t within the same channel
+- Create Direct Messages or Group Messages with members who aren’t within the same channel
 - Invite people
 
-Additionally, guests are not automatically added to the default **Town-square** and **Off-topic** channels upon logging in and need to be invited/added to them manually.
+Additionally, guests are not automatically added to the default ``Town-square`` and ``Off-topic`` channels upon logging in and need to be invited/added to them manually.
 
 Enabling Guest Accounts
 ------------------------
@@ -79,7 +79,7 @@ Guests can be invited into one or more Mattermost channels within a team by Syst
 To invite guests into one or more Mattermost channels:
 
 1. Go to **System Console > Signup > Enable Email Invitations** to enable email invites.
-2. Go to **Main Menu > Invite People**. This is a new invitation option that combines inviting guests and members and consolidates **Send Email**, **Get Team Invite Link**, and **Add Members to the Team**.
+2. Select your team's name at the top of the channel sidebar and choose **Invite People**.
 3. Select **Invite Guests**.
 4. Enter the guest’s email address.
 5. Choose the channels the guest can join (excluding managed teams).

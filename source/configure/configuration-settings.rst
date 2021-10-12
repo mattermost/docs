@@ -3791,8 +3791,8 @@ Lock Teammate Name Display for all users
 
 **False**: Users can change how their teammate name displays.
 
-Allow Users to View Archived Channels (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Allow Users to View Archived Channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
@@ -7906,12 +7906,17 @@ OpenID Connect
 Select OpenID Connect service provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|enterprise| |professional| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
+.. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -7958,8 +7963,7 @@ GitLab Site URL
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-*Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Starter.*
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
@@ -8436,8 +8440,8 @@ Obtain this value by registering Mattermost as an application in your service pr
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
-Guest Access (Beta)
-~~~~~~~~~~~~~~~~~~~
+Guest Access
+~~~~~~~~~~~~
 
 Enable Guest Access
 ^^^^^^^^^^^^^^^^^^^

@@ -21,41 +21,41 @@ In self-managed deployments, a ``mattermost`` command is available for configuri
 
 These ``mattermost`` commands include:
 
-**General Administration**
+**General administration**
 
--  Creating teams
--  Creating users
--  Assigning roles to users
--  Resetting user passwords
--  Inviting users to teams
+-  Create teams
+-  Create users
+-  Assign roles to users
+-  Reset user passwords
+-  Invite users to teams
 
-**Advanced Administration**
+**Advanced administration**
 
--  Permanently deleting users (use cautiously - database backup recommended before use)
--  Permanently deleting teams (use cautiously - database backup recommended before use)
+-  Permanently delete users (use cautiously - database backup recommended before use)
+-  Permanently delete teams (use cautiously - database backup recommended before use)
 
-**Advanced Automation**
+**Advanced automation**
 
--  Creating channels
--  Inviting users to channels
--  Removing users from channels
--  Listing all channels for a team
--  Restoring previously deleted channels
--  Modifying a channel's public/private type
--  Migrating sign-in options
--  Resetting multi-factor authentication for a user
--  Creating sample data
+-  Create channels
+-  Invite users to channels
+-  Remove users from channels
+-  List all channels for a team
+-  Restore previously deleted channels
+-  Modify a channel's public/private type
+-  Migrate sign-in options
+-  Reset multi-factor authentication for a user
+-  Create sample data
 
 **Diagnostics**
 
-- Analyzing the database for relational consistency
+- Analyze the database for relational consistency
 
 .. contents::
     :backlinks: top
     :local:
 
-Using the CLI
--------------
+Use the CLI
+-----------
 
 To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
@@ -78,8 +78,8 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
  
    bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
-Using the CLI on GitLab Omnibus
--------------------------------
+Use the CLI on GitLab Omnibus
+------------------------------
 
 On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
 
@@ -94,8 +94,8 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
    
    The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
 
-Using the CLI on Docker Install
--------------------------------
+Use the CLI on Docker Install
+-----------------------------
 
 On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so you can use the CLI directly with the ``docker exec`` command. Note that the container name may be ``mattermostdocker_app_1`` if you installed Mattermost with ``docker-compose.yml``.
 
@@ -105,8 +105,8 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
 
     docker exec -it <your-mattermost-container-name> mattermost version
 
-Using the CLI on Docker Preview
--------------------------------
+Use the CLI on Docker Preview
+-----------------------------
 
 The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
 
