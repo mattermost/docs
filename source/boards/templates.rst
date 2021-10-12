@@ -30,7 +30,7 @@ Board templates include:
 * **Personal Goals**: Personal Goals are sorted by status (To Do, Doing, Done) and can be viewed by date.
 * **Personal Tasks**: Personal Tasks are sorted by status (To Do, Doing, Done) but do not have a date view.
 * **Project Tasks**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
-* **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Satus, Epics, Tasks, Tasks by Status. It also includes a priority filter.
+* **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
 * **Empty Board**: If none of those boards fit your use case, you can use a blank template and customize it as needed.
 
 Editing board templates

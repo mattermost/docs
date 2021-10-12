@@ -9,6 +9,7 @@ This Mattermost Boards User Guide is for anyone who needs help using Mattermost 
 
 The Basics
 ----------
+
 .. toctree::
    :hidden:
 
@@ -17,6 +18,7 @@ The Basics
    Get Started </boards/getting-started>
    Access Boards </boards/accessing-boards>
    Work With Boards </boards/working-with-boards>
+   Work with Cards </boards/work-with-cards>
    Share Boards </boards/sharing-boards> 
    Templates </boards/templates>
 
@@ -25,5 +27,6 @@ The Basics
 * :doc:`Get Started </boards/getting-started>` - Enable Boards for your Mattermost instance.
 * :doc:`Access Boards </boards/accessing-boards>` - Use Mattermost Channels to access your Boards.
 * :doc:`Work With Boards </boards/working-with-boards>` - Create new Boards and manage their properties.
+* :doc:`Work with Cards </boards/work-with-cards>` - Learn about the different property types in cards.
 * :doc:`Share Boards </boards/sharing-boards>` - Share Boards with your team and manage sharing settings. 
 * :doc:`Templates </boards/templates>` - Customize your Boards and Cards with Templates.
