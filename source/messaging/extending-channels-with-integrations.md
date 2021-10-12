@@ -1,6 +1,6 @@
 ## Extending Channels with Integrations
 
-Settings for integrations are accessible from the **Main Menu**. Select **Integrations** to open a page where you can view and configure incoming webhooks, outgoing webhooks, and slash commands for your team. If you can't see an **Integrations** option, then your System Admin may have only given Admins access.
+Settings for integrations are accessible from the **Product menu**. Select **Integrations** to open a page where you can view and configure incoming webhooks, outgoing webhooks, and slash commands for your team. If you can't see an **Integrations** option, then your System Admin may have only given Admins access.
 
 [Visit our Marketplace](https://mattermost.com/marketplace/) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
@@ -108,7 +108,7 @@ There are several ways to work with voice, video, and screensharing in Mattermos
 - Start and join voice calls, video calls, and use screensharing with your team members, developed by Mattermost.
 - Select a video icon in a Mattermost channel to invite team members to join a Microsoft Teams Meeting, hosted using the credentials of the user who initiated the call.
 - Requires a Microsoft Teams account.
-- Requires Mattermost Enterprise Edition E20.
+- Requires Mattermost Enterprise.
 - [Source code and documentation](https://github.com/mattermost/mattermost-plugin-msteams-meetings)
 
 ### Bot integrations
