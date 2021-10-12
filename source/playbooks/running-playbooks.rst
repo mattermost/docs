@@ -23,7 +23,6 @@ You can start a playbook run using the **Toggle Playbook List** icon in a channe
 
 Lastly, if you've configured a broadcast channel and enabled it, when the playbook run is created it's announced in the associated channel by the Playbook Bot.
  
-You can also use slash commands to initiate playbook runs, make announcements, and get information about a playbook run.
 
 .. image:: ../images/Playbook-dashboard.png
    :alt: View and track playbook information.
