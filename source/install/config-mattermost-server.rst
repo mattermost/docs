@@ -7,12 +7,12 @@ Create the System Admin user and set up Mattermost for general use.
 
 2. Create the first team and user. The first user in the system has the ``system_admin`` role, which gives you access to the System Console.
 
-3. To open the System Console, click your username at the top of the navigation panel and select **System Console**.
+3. To open the System Console, select the Product menu in the top-left corner of the navigation panel, then select **System Console**.
 
 4. Set the Site URL:
 
   * Open **System Console > Environment > Web Server**.
-  * In the **Site URL** field, set the URL that users point their browsers at. For example, *https://mattermost.example.com*. If you are using HTTPS, make sure that you set up TLS, either on Mattermost server or on a proxy.
+  * In the **Site URL** field, set the URL that users point their browsers at. For example, *https://mattermost.example.com*. If you're using HTTPS, make sure that you set up TLS, either on Mattermost server or on a proxy.
 
 5. Set up email notifications.
 
