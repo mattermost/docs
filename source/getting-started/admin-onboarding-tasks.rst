@@ -21,7 +21,7 @@ These settings can also be set in the ``config.json`` file. Please see our `conf
  - The Support email is used on email notifications and during tutorial for users to ask support questions.
  - The Help Link is on the Mattermost login page, sign-up pages, and Main Menu and can be used to to link to your help desk ticketing system.
  
-These settings can also be set in the ``config.json`` file.  Please see our `configuration settings documenation <https://docs.mattermost.com/configure/configuration-settings.html>`__ for a full listing of all configuration settings.
+These settings can also be set in the ``config.json`` file.  Please see our `configuration settings documentation <https://docs.mattermost.com/configure/configuration-settings.html>`__ for a full listing of all configuration settings.
 
 3. Begin to onboard users by enabling account creation or by connecting an authentication service to assist with user provisioning.
 

@@ -131,7 +131,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Navigation Discovery Diagnostics:* Joined a channel from the "More" list, through an invite or by clicking a public link; created a channel, direct, or group direct message conversation; renamed, joined, left or deleted an existing channel; updated header or purpose; added or removed members; updated channel notification preferences; loaded more messages in a channel; switched a channel or a team; opened the "More" modal for channels or direct message conversations; updated team name; invited members; updated account settings
   - *Core Feature Discovery Diagnostics:* Created, edited or deleted a message; posted a message containing a hashtag, link, mention or file attachment; searched for a term; searched for saved posts or recent mentions
   - *Advanced Feature Discovery Diagnostics:* Reacted to a message; favorited or unfavorited a channel; saved or unsaved a message; pinned or unpinned a message; replied to a message; expanded the right-hand sidebar; started or finished a WebRTC video call (only in v5.5 and earlier); created or deleted a personal access token; added or removed post:all or post:channels permission; created a category in the sidebar
-  - *Integration Discovery Diagnostics:* Created or triggered a webhook or slash command; created, authroized or deleted an OAuth 2.0 app; created, posted, or deleted a custom emoji
+  - *Integration Discovery Diagnostics:* Created or triggered a webhook or slash command; created, authorized or deleted an OAuth 2.0 app; created, posted, or deleted a custom emoji
   - *Plugin Discovery Diagnostics:* Number of installed plugins containing either server or webapp portions, or both; number of those plugins being activated
   - *Plugin Marketplace Diagnostics:* Plugin ID, current version, and target version for all install and update events. Only sent when the default Marketplace is configured
   - *Plugin telemetry:* Search terms used in Marketplace on cloud workspaces will be recorded
@@ -194,6 +194,52 @@ The following list details the types of Playbooks metadata we collect:
 - ``Action``: The type of action performed against this playbook: ``create``, ``update``, ``delete``.
   
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, disable the feature in **System Console > Environment > Logging**.
+
+Boards Telemetry
+----------------
+
+The following list details the type of Boards metadata we collect and is sent every 24 hours.
+
+**Server Telemetry**
+
+Boards Plugin Information
+
+- Boards Version and Build Number
+- Boards Edition 
+- Operating System for Boards server
+- The server diagnostic ID
+      
+Configuration Information
+
+- ServerRoot is default server root (``true``/``false``)
+- Port is default port (``true``/``false``)
+- UseSSL (``true``/``false``)
+- Database Type 
+- Single User (``true``/``false``)
+    
+User Count Information
+
+- Registered User Count
+- Daily Active User Count
+- Weekly Active User Count
+- Monthly Active User Count
+    
+Block Count Information
+
+- Block Counts By Type
+    
+Workspace Information
+
+- Workspace Count
+
+**WebApp Event Activity**
+
+Load Board View
+
+- ``UserID``: Unique identifier of the server.
+- ``UserActualID``: Unique identifier of the user who initiated the action.
+- ``Event``: Type of the event. Only the ``view`` event is currently monitored.
+- ``View Type`` (``board``, ``table``, ``gallery``).
 
 Apps Framework Telemetry
 ------------------------

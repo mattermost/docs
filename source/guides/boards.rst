@@ -1,49 +1,27 @@
 Mattermost Boards
 =================
 
-Product documentation for Mattermost Boards.
+Mattermost Boards enable your team to manage projects and tasks via a familiar Kanban board structure. Keep everyone in your team and organization in the loop to stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Keep everything your team needs in one place, including documents, images, and important hyperlinks.
 
-Before You Begin
-----------------
+.. image:: ../images/Boards_Hero.png
 
+This Mattermost Boards User Guide is for anyone who needs help using Mattermost project and task management capabilities.
+
+The Basics
+----------
 .. toctree::
-   :maxdepth: 1
+   :hidden:
 
-   /boards/overview.rst
-   /boards/getting-started.rst
-   /boards/focalboard/installing-boards.rst
-       
-Access your Workspace
----------------------
+   Overview </boards/overview>
+   Get Started </boards/getting-started>
+   Access Boards </boards/accessing-boards>
+   Work With Boards </boards/working-with-boards>
+   Share Boards </boards/sharing-boards> 
+   Templates </boards/templates>
 
-.. toctree::
-   :maxdepth: 1
-
-  /boards/accessing-boards.rst
-
-Work with Boards
-----------------
-
-.. toctree::
-   :maxdepth: 2
-
-  /boards/working-with-boards.rst
-  /boards/working-with-views.rst
-   
-
-Manage your Boards
-------------------
-
-.. toctree::
-   :maxdepth: 2
-   
-  /boards/sharing-boards.rst
-
-Customize your Boards
----------------------
-
-.. toctree::
-   :maxdepth: 2
-   
-  /boards/templates.rst 
-
+* :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
+* :doc:`Get Started </boards/getting-started>` - Enable Boards for your Mattermost instance.
+* :doc:`Access Boards </boards/accessing-boards>` - Use Mattermost Channels to access your Boards.
+* :doc:`Work With Boards </boards/working-with-boards>` - Create new Boards and manage their properties.
+* :doc:`Share Boards </boards/sharing-boards>` - Share Boards with your team and manage sharing settings. 
+* :doc:`Templates </boards/templates>` - Customize your Boards and Cards with Templates.

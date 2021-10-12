@@ -1,5 +1,5 @@
 .. Top-Level documentation file is used to start the toctree;
-   however, this file is overriden in the rendering process
+   however, this file is overridden in the rendering process
    by an alternative index.html that provides a visually-pleasing
    landing page.  Updates to this top-level item must also
    be transposed in the 'templates/index.html' file.
@@ -18,7 +18,7 @@ Mattermost Product Documentation
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
    Mattermost Administration <guides/administration>
-   Messaging <guides/messaging>
+   Channels <guides/channels>
    Playbooks <guides/playbooks>
    Boards <guides/boards>
    Mattermost for Developers <https://developers.mattermost.com/>
