@@ -92,7 +92,7 @@ A recommended installation of Mattermost Enterprise E20 configured with a redund
 +-------------------+---------+---------------+--------+----------+
 
 .. note::
-  Mattermost hardware sizing guidance can be found here: https://docs.mattermost.com/install/requirements.html#hardware-requirements
+  See the `Mattermost hardware sizing guidance <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ documentation for details. 
 
 2.3 Project References
 ~~~~~~~~~~~~~~~~~~~~~~
