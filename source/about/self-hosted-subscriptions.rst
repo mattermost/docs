@@ -159,7 +159,7 @@ Once a new license is applied, the banner will no longer be visible.
 If you don't plan to renew your subscription, revoke the expired license in **System Console > Edition and License**.
 
 Can other members of my organization use the Customer Portal account to manage our subscription?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We currently support a single account/user per organization. The ability to add multiple users per organization will be available in a future release.
 
