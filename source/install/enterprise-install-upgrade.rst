@@ -17,7 +17,7 @@ Enterprise Install and Upgrade
 
 Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Professional and Enterprise. You can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
 
-Once you've downloaded and installed Mattermost, start an Enterprise trial via **Main Menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`__ and purchase a `license key online <https://customers.mattermost.com/login/>`__.
+Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. You can view `pricing and feature information <https://mattermost.com/pricing/>`__ and purchase a `license key online <https://customers.mattermost.com/login/>`__.
 
 Installing Enterprise Edition
 -----------------------------
@@ -41,7 +41,7 @@ If you're already running Mattermost v5.39 or earlier, you can check the Matterm
 
 `mattermost version`
 
-To check your edition and version from the web or desktop interface, open **Main Menu > About Mattermost**.
+To check your edition and version from the web or desktop interface, open **Product menu > About Mattermost**.
 
 - **Mattermost Enterprise Edition** indicates you can apply a license key to enable Enterprise features.
 - **Mattermost Team Edition** indicates you're using the open source version and need to upgrade (per upgrade instructions below) before a license key can be applied.
@@ -96,11 +96,11 @@ From Mattermost v5.27 on, if you're running a Linux system with x86-64 architect
   * If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary.
   * For versions prior to v5.27, please follow `these upgrade instructions <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`_.
 
-Navigate to **System Console > Edition and License** and select **Upgrade to Enterprise Edition**.
+Navigate to **Product menu > System Console > Edition and License** and select **Upgrade to Enterprise Edition**.
 
 During the upgrade process, the Mattermost Enterprise Edition binary file that matches your current server version is downloaded, decompressed, and extracted. The Team Edition binary is then replaced by the Enterprise Edition version. Once this process is complete, you're prompted to restart your server.
 
-The Mattermost version listed in **System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can now activate an Enterprise Edition trial or upload a license.
+The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can now activate an Enterprise Edition trial or upload a license.
 
 Permissions and Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
