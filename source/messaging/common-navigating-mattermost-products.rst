@@ -56,4 +56,4 @@ Some other menu items have moved around. For example:
 
 * Plugins are listed in the Product menu, in the top-left corner of Mattermost.
 * System Console is listed in the Product menu, in the top-left corner of Mattermost.
-* Managing custom emojis can be accessed from the emoji picker now.
+* Managing Custom Emojis can be done from the emoji picker now.
