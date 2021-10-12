@@ -37,20 +37,20 @@ Download Group Policy and MSI Installer files
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
 
-3. Navigate to the release page for `version v4.7.2 <https://github.com/mattermost/desktop/releases/tag/v4.7.2>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
+3. Navigate to the release page for `version v5.0.0 <https://github.com/mattermost/desktop/releases/tag/v5.0.0>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v4.7.2.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.0.0.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
 
 Installing Group Policy files locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Browse to the folder the above files were downloaded to and unzip the ``desktop-4.7.2.zip`` file in place.
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.0.0.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
 
-2. Navigate to the unzipped ``desktop-4.7.2\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-5.0.0\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
 
@@ -134,6 +134,6 @@ Silent Installation Guide
 
 Perform a silent installation of MSI by running the following command:
 
-``msiexec /i mattermost-desktop-v4.7.2-x64.msi /qn``
+``msiexec /i mattermost-desktop-v5.0.0-x64.msi /qn``
 
-Note: Current version is 4.7.2. In the future, you may need to change this command accordingly.
+Note: Current version is 5.0.0. In the future, you may need to change this command accordingly.
