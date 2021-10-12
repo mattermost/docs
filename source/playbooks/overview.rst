@@ -27,6 +27,10 @@ Every reported incident or new checklist results in a newly-created, public or p
 * Starting a playbook run automatically creates a dedicated channel to coordinate discussion. 
   
   - Use custom categories in the channel sidebar to streamline access to ongoing playbook runs.
+  
+* The playbook overview provides a summary of the active run, updates, and current status.
+
+  - Create a dedicated channel and broadcast run status updates directly to that channel.
 
 * Playbooks define the tasks toward resolution as your team manages the run.
   
