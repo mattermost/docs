@@ -1,5 +1,5 @@
-Audit Log v2
-============
+Audit Log v2 (Experimental)
+===========================
 
 |enterprise| |self-hosted|
 

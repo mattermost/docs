@@ -19,6 +19,7 @@ The Basics
     Mattermost Deprecated Configuration Settings </configure/deprecated-configuration-settings>
     Workspace Configuration for Cloud Deployments </configure/cloud-site-configuration>
     Advanced Permissions </onboard/advanced-permissions>
+    Guest Accounts </onboard/guest-accounts>
     System Admin Roles </onboard/system-admin-roles>
     OpenID </onboard/sso-openidconnect>
     Google SSO </onboard/sso-google>
@@ -209,9 +210,8 @@ Other Resources
 
     Converting OAuth 2.0 Service Providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>
     Generate a Support Packet </manage/generating-support-packet>
-    mmctl Command Line Tool (Beta) </manage/mmctl-command-line-tool>
+    mmctl Command Line Tool </manage/mmctl-command-line-tool>
     Migration Announcement Email Template </onboard/migration-announcement-email>
-    Configuring Apache2 (Unofficial) </configure/configuring-apache2>
     Advanced Permissions: Backend Infrastructure </onboard/advanced-permissions-backend-infrastructure>
     Command Line Tools </manage/command-line-tools>
     Scripts </manage/scripts>
@@ -220,9 +220,8 @@ If the information above doesn’t solve your problem, look at these other resou
 
 * :doc:`Converting OAuth 2.0 Service Providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>` - Migrate from OAuth 2.0 to OpenID Connect.
 * :doc:`Generate a Support Packet </manage/generating-support-packet>` - Generate configuration information, logs, plugin details, and data dependencies to provide when contacting Mattermost support.
-* :doc:`mmctl Command Line Tool (Beta) </manage/mmctl-command-line-tool>` - Use mmctl to manage self-hosted Mattermost servers from the command line.
+* :doc:`mmctl Command Line Tool </manage/mmctl-command-line-tool>` - Use mmctl to manage self-hosted Mattermost servers from the command line.
 * :doc:`Migration Announcement Email Template </onboard/migration-announcement-email>` - Use this email template to notify your users about migrating to Mattermost.
-* :doc:`Configuring Apache2 (Unofficial) </configure/configuring-apache2>` - Replace the default NGINX proxy with Apache2 for self-hosted Mattermost servers.
 * :doc:`Advanced Permissions: Backend Infrastructure </onboard/advanced-permissions-backend-infrastructure>` - Read our technical guide on modifying self-hosted Mattermost installations to create custom permissions schemes.
 * :doc:`Command Line Tools </manage/command-line-tools>` - Learn how to use the command line to manage self-hosted Mattermost servers.
 * :doc:`Scripts </manage/scripts>` - Explore a selection of example scripts you can use to manage self-hosted Mattermost servers.

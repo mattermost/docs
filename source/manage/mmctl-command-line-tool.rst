@@ -47,7 +47,7 @@ What's changed in Mattermost v6.0?
 The following mmctl changes are available from Mattermost v6.0:
 
 - The inherited option ``config-path`` has changed to ``config``.
-- The option``password`` has changed to ``password-file``.
+- The option ``password`` has changed to ``password-file``.
 - Option names that contained underscores have been updated to use hyphens for consistency.
 
 For more information on what's changed in mmctl for Mattermost v6.0, see the `Mattermost v6.0 mmctl changes video <https://www.youtube.com/watch?v=hmbSfSeWo4Y>`_.
@@ -62,7 +62,7 @@ For more information on what's changed in mmctl for Mattermost v6.0, see the `Ma
    
    You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v.6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
 
-mmctl Usage Notes
+mmctl usage notes
 -----------------
 
 - System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
@@ -71,7 +71,7 @@ mmctl Usage Notes
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
-mmctl Commands
+mmctl commands
 --------------
 
    - `mmctl auth`_ - Authentication Management
@@ -120,8 +120,8 @@ mmctl Commands
        --strict                       will only run commands if the mmctl version matches the server one
        --suppress-warnings            disables printing warning messages
 
-Installing mmctl
-----------------
+Install mmctl
+-------------
 
 |all-plans| |cloud| |self-hosted|
 
@@ -164,8 +164,8 @@ To add the project in your `$GOPATH` run the following command:
 
 Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
-Building mmctl
-----------------
+Build mmctl
+------------
 
 |all-plans| |cloud| |self-hosted|
 

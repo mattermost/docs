@@ -61,8 +61,7 @@ Common Tasks
 **Migrating to AD/LDAP or SAML from email-based authentication**
 
 - If you have Professional or Enterprise plans, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see `Active Directory/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20>`_. To set up SAML Single Sign-on, see `SAML Single-Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`_.
-- After the new authentication method is enabled, existing users cannot use the new method until they go to **Account Settings > Security > Sign-in method** and select **Switch to using AD/LDAP** or **Switch to using SAML Single Sign-on**. After they have switched, they can no longer use their email and password to sign in.  
-
+- After the new authentication method is enabled, existing users cannot use the new method until they go to **Settings > Security > Sign-in method** and select **Switch to using AD/LDAP** or **Switch to using SAML Single Sign-on**. After they have switched, they can no longer use their email and password to sign in.  
 **Deactivating a user**
 
 - System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Deactivate**.
@@ -82,7 +81,7 @@ User Experience Optimizations
 
 We highly recommend the following best practices, configuration options, and features for an optimal Mattermost user experience.
 
-**1. Upgrade your Mattermost Server**
+**1. Upgrade your Mattermost server**
 
 When you upgrade your Mattermost server frequently, your users can access new features, improved user experiences, bug fixes, security fixes, and Mobile App compatibility.
 
@@ -90,13 +89,13 @@ Mattermost releases regular updates to `Mattermost Team Edition <https://matterm
 
 Upgrading your Mattermost server only takes a few minutes. See the `Upgrade Guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ for step-by-step instructions.
 
-**2. Install Plugins**
+**2. Install plugins**
 
 You can enable plugins and integrations to connect your team's workflows and toolsets into Mattermost. Plugins and integrations customize and extend the Mattermost platform.
 
 **Install and manage plugins**
 
-To enable and manage plugins, go to **System Console > Plugins**. Next, install plugins with a single click from the **Main Menu > Plugin Marketplace**. See the `Plugin Marketplace  <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/#plugin-marketplace>`__ documentation for details.
+To enable and manage plugins, go to **System Console > Plugins**. Next, install plugins from **Product menu > Marketplace**. See the `Marketplace  <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/#plugin-marketplace>`__ documentation for details.
 
 Consider installing and enabling the following productivity plugins for your users:   
   - Enable audio/video calling and screen sharing with `Jitsi <https://mattermost.com/blog/mattermost-and-jitsi/>`__ or `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__.
@@ -107,13 +106,13 @@ Consider installing and enabling the following productivity plugins for your use
   - Create and share to do items with `Todo <https://github.com/mattermost/mattermost-plugin-todo>`__.
   - Customize welcome messages for new users with `WelcomeBot <https://mattermost.com/marketplace/welcomebot-plugin/>`__.
 
-Explore all plugins and integrations available in the `Mattermost Plugin Marketplace <https://mattermost.com/marketplace/>`__.
+Explore all plugins and integrations available in the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__.
 
 **Enable and manage integrations**
 
 To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, to go **System Console > Integrations**. More information on these integrations can be found `here <https://developers.mattermost.com/integrate/other-integrations/>`_. 
 
-**3. Enable Automatically Extended Sessions**
+**3. Enable automatically extended sessions**
 
 Keep your desktop and mobile users logged in and `extend user sessions automatically <https://mattermost.com/blog/session-expiry-experience/>`__ by setting **System Console > Sessions > Extend session length with activity** to **true**. See the `Extend session length with activity <https://docs.mattermost.com/configure/configuration-settings.html#extend-session-length-with-activity>`__ configuration settings documentation for details.
 
@@ -135,15 +134,15 @@ Enable full content push notifications, including the sender’s name, the chann
 
 Empower users to create and share their own custom emojis by setting **System Console > Emoji > Enable Custom Emoji** to **true**. See the `Enable custom emoji <https://docs.mattermost.com/configure/configuration-settings.html#enable-custom-emoji>`__ configuration settings documentation for details.
 
-**6. Enable GIF Picker**
+**6. Enable GIF picker**
 
 GIFs are animated images that can make messaging more fun and engaging. Enable users to access the Mattermost GIF picker from the message draft area by setting **System Console > GIF (Beta) > Enable GIF Picker** to **true**. See the `Enable GIF picker <https://docs.mattermost.com/configure/configuration-settings.html#enable-gif-picker>`__ configuration settings documentation for details.
 
-**7. Enable Link Previews**
+**7. Enable link previews**
 
 Link previews provide a visual glimpse of relevant content for links shared in messages. Enable link previews by setting **System Console > Posts > Enable Link Previews** to **true**. See the `Enable link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ configuration settings documentation for details.
  
-**8. Enable Batched Email Notifications**
+**8. Enable batched email notifications**
 
 Email notifications can be batched together so users don’t get overwhelmed with too many emails.
 

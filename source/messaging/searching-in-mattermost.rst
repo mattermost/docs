@@ -25,7 +25,7 @@ Use the Mattermost Search field to find messages, replies, and the contents of f
 
 You can also do more advanced search using `search modifiers <https://docs.mattermost.com/help/getting-started/searching.html#search-modifiers>`__.
 
-Searching for Message Contents 
+Searching for message contents 
 ------------------------------
 
 Select the Search field, then type your search criteria. 
@@ -39,7 +39,7 @@ When message results display in the Search Results pane, select **Jump** to view
 .. tip::
   Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to switch between results.
   
-Searching for File Contents
+Searching for file contents
 ---------------------------
 
 Select the **Search** field, select **Files**, then type your search criteria. 
@@ -66,7 +66,7 @@ To narrow search results further, in the Search Results pane, select the **File 
   
   .. image:: ../images/channel-files-icon.png
 
-Search Modifiers
+Search modifiers
 ----------------
 
 You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below.
@@ -76,33 +76,36 @@ You can apply search modifiers to any search to reduce the number of results ret
 ``from:`` and ``in:``
 ~~~~~~~~~~~~~~~~~~~~~
 
-Use ``from:`` to find messages or files from specific users. 
-For example, searching ``from:john.smith`` only returns content from your Direct Message history with John Smith.
+- Use ``from:`` to find messages or files from specific users. 
 
-Use ``in:`` to find messages or files posted in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. 
-For example, searching ``Mattermost in:town-square`` only returns results in the Town Square Public channel that contains the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns results that contains the term ``Mattermost`` in your Direct Message history with John Smith.
+  * For example, searching ``from:john.smith`` only returns content from your Direct Message history with John Smith.
+
+- Use ``in:`` to find messages or files posted in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. 
+  
+  * For example, searching ``Mattermost in:town-square`` only returns results in the Town Square Public channel that contains the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns results that contains the term ``Mattermost`` in your Direct Message history with John Smith.
 
 ``before:``, ``after:``, and ``on:``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use ``before:`` to find messages or files posted before a specified date.
+- Use ``before:`` to find messages or files posted before a specified date.
 
-Use ``after:`` to find messages or files posted after a specified date. 
+  * For example, searching ``website before: 2018-09-01`` returns messages or files containing the term ``website`` posted prior to September 1, 2018.
 
-Use both ``before:`` and ``after:`` together to search in a specified date range.  
+- Use ``after:`` to find messages or files posted after a specified date.
 
-Use ``on:`` to find messages files posted on a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format. 
+  * For example, searching ``website after: 2018-08-01`` returns messages or files containing the term ``website`` posted after August 1, 2018.
+
+- Use both ``before:`` and ``after:`` together to search in a specified date range.
+
+  * For example, searching ``website before: 2018-09-01 after: 2018-08-01`` returns all messages or files containing the term ``website`` posted between August 1, 2018 and September 1, 2018.
+
+- Use ``on:`` to find messages files posted on a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format.
+
+  * For example, searching ``website on: 2018-09-01`` returns messages or files containing the term ``website`` posted on September 1, 2018.
 
 .. image:: ../images/calendar2.png
   :width: 300 px
 
-Examples:
-
--  Searching ``website before: 2018-09-01`` returns messages or files containing the term ``website`` posted prior to September 1, 2018.
--  Searching ``website after: 2018-08-01`` returns messages or files containing the term ``website`` posted after August 1, 2018.
--  Searching ``website before: 2018-09-01 after: 2018-08-01`` returns all messages or files containing the term ``website`` posted between August 1, 2018 and September 1, 2018.
--  Searching ``website on: 2018-09-01`` returns messages or files containing the term ``website`` posted on September 1, 2018.
-  
 Exclusions
 ~~~~~~~~~~
 
@@ -123,7 +126,7 @@ Use the asterisk ``*`` symbol for wildcard searches that match within words. For
 Hashtags
 --------
 
-Hashtags are searchable labels for messages. Anyone can create a hashtag in a message by using the pound sign ``#`` followed by alphanumeric or other unicode characters. Hashtag examples include: ``#bug``, ``#marketing``, ``#user_testing``, ``#per.iod``, ``#check-in``, ``#마케팅``
+Hashtags are searchable labels for messages. Anyone can create a hashtag in a message by using the pound sign ``#`` followed by alphanumeric or other unicode characters. Hashtag examples include: ``#bug``, ``#marketing``, ``#user_testing``, ``#per.iod``, ``#check-in``, ``#마케팅``.
 
 Valid hashtags:
 
@@ -138,19 +141,19 @@ To search for messages containing hashtags, select a hashtag in an existing post
   
   Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
 
-Notes About All Searches
+Notes about all searches
 ------------------------
 
 - Multiple-word searches return results that contain *all* of your search criteria.
 - Search modifiers can help narrow down searches. See the `Search Modifiers`_ section for details.
-- You can search Archived channels as long as you're a member of that channel. 
+- You can search Archived channels as long as you're a member of that channel.
 
-  - If you're unable to see messages or files in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**. 
-  - To remove archived channels from your search results, you can leave the Archived channels. 
+  - If you're unable to see messages or files in archived channels in your search results, ask your System Admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**.
+  - To remove archived channels from your search results, you can leave the Archived channels.
 - Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search results because they typically return too many results. See the `Technical Notes`_ section for details.
 - IP addresses (e.g. ``10.100.200.101``) don't return results.
 
-Technical Notes
+Technical notes
 ---------------
 
 Searching Chinese, Korean, and Japanese
@@ -162,9 +165,9 @@ Searching Chinese, Korean, and Japanese
 Differences between PostgreSQL and MySQL search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Main Menu > About Mattermost** to see which database you’re using.
+By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Product menu > About Mattermost** to see which database you’re using.
 
-For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list. 
+For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list.
 
 Other database-specific differences include:
 
