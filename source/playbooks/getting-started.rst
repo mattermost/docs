@@ -37,7 +37,7 @@ View run details
 
 When you're in a channel with an active run, select the **Toggle Run Details** icon in the channel header to open the RHS to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
 
-To find all playbook runs, select any playbook name. Then, select **Runs** from the navigation bar. Select a run to view its overview. Select **Go to channel** to open the run's channel.
+To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select **Runs** from the navigation bar. and choose a run to view its overview. Select **Go to channel** to open the run's channel.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~~
