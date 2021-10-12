@@ -107,7 +107,7 @@ Navigate Channels
    :maxdepth: 1
    :hidden:
 
-   Navigating Mattermost </messaging/navigating-mattermost.rst>
+   Navigating Mattermost </messaging/navigating-mattermost>
    Keyboard Accessibility </messaging/keyboard-accessibility>
    Keyboard Shortcuts </messaging/keyboard-shortcuts>
 
