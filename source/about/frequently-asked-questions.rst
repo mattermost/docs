@@ -118,9 +118,9 @@ Yes, push notifications are free if you compile your own `push-proxy service <ht
 
 TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.com>`_, offers transport-level encryption, but not production-level service level agreements (SLAs).
 
-If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Enterprise Edition E10 subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
+If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Professional subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
 
-Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`__.
+Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__.
 
 Video, Audio, and Screen Sharing
 ---------------------------------
@@ -130,7 +130,7 @@ What support is available for video and audio calling and screen sharing?
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
-You can learn more about the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions (e.g. SIP PBX, Zoom, and Skype for Business), in the `Voice, video, and screensharing guide <https://docs.mattermost.com/deployment/video-and-audio-calling.html>`_.
+You can learn more about the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions (e.g. SIP PBX, Zoom, and Skype for Business), in our `Integrations <https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html>`__ documentation.
 
 Note that you can also neatly link video, audio and screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
@@ -285,7 +285,7 @@ Working for Mattermost
 How does the licensing key work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have a program for official non-profits and charities?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -314,7 +314,7 @@ When the Mattermost Source Available ``LICENSE`` file appears in a specific dire
 
 In all cases, any third party components remain licensed under their original license.
 
-An example directory layout, using an Enterprise Edition E20 license, is shown below:
+An example directory layout, using an Enterprise license, is shown below:
 
 .. image:: ../images/source-available-license.png
 
@@ -331,7 +331,7 @@ As we add enterprise-only functionality, we will update the license on affected 
 To which repositories does this apply?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Collaboration <https://github.com/mattermost/mattermost-plugin-incident-collaboration>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
+We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release `Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
 
 We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost-server <https://github.com/mattermost/mattermost-server>`_ or `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
@@ -377,7 +377,7 @@ You are free to license your own code as you see fit. We will not apply the Matt
 Can I publish my own plugin and rely on enterprise specific functionality?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As before, you are free to license your own code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise Edition E20 license regardless of how you license your plugin.
+As before, you are free to license your own code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise license regardless of how you license your plugin.
 
 Can’t someone compile out any license restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -460,14 +460,14 @@ Use Cases
 Does Mattermost support external guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
+Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information.
 
 Can I use Mattermost for customer service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your own solution.
 
-Mattermost Enterprise Edition is designed for self-managed, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case.
+Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It's not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case.
 
 If you'd like to create an open source derivative version of Mattermost using the ``/mattermost-server`` source code to support your use case, please see below.
 
@@ -662,7 +662,7 @@ When using username-password authentication, especially with AD/LDAP, there's th
 
 We believe this design increases productivity, speeds up user adoption, and reduces help desk tickets and support costs - and that these benefits outweigh the trade-offs.
 
-The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`__.
+The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting>`__.
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations:
 
@@ -691,7 +691,7 @@ Rebranding
 ^^^^^^^^^^
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.org/trademark-standards-of-use/>`__.
-- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`__.
+- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
@@ -702,7 +702,7 @@ Copyright and Licensing of ``/mattermost-server`` open source code
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
 
-- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/configure/configuration-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
 

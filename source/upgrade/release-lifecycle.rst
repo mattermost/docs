@@ -1,6 +1,18 @@
 Release Lifecycle
 ==================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 What is a Release Lifecycle?
 -----------------------------
 
@@ -8,11 +20,13 @@ During each monthly release, Mattermost backports high severity or high impact s
 
 .. important::
 
-  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
+  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
+| 6.0         | Feature               |  2021-10-13              | 2022-01-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.39        | Quality               |  2021-09-16              | 2021-12-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 5.38        | Feature               |  2021-08-16              | 2021-11-15               |                          |
@@ -119,6 +133,12 @@ During each monthly release, Mattermost backports high severity or high impact s
 Desktop and Mobile App Server Compatibility
 -------------------------------------------
 
-Desktop and mobile apps are required to be used with the `latest Extended Support Release or a newer version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_. Also, certain features that involve the operating system require a specific desktop or mobile app version. E.g., in Desktop App 4.6 we added a setting for choosing desktop notification sounds which requires server v5.28+. Please review `the Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`_ and `the Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`_ notes for any specific Self-Managed version requirements for features and functionalities, as well as notes on security fixes.
+Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost Server.
 
-Bug fixes are not normally backported to previous desktop or mobile app versions. It is also recommended to upgrade to the latest desktop and mobile app versions to stay up to date with security fixes.
+.. include:: upgrading-to-v60.rst
+
+In cases where Mattermost features or functionality involve the operating system, a specific Desktop App or Mobile App version may be required. For example, the Mattermost Desktop App v4.6 includes a setting for choosing desktop notification sounds which requires Mattermost Server v5.28 or later.
+
+.. note::
+
+  Bug fixes aren't typically backported to previous Desktop App or Mobile App versions. Upgrading to the latest Desktop and Mobile App versions helps you stay updated with the latest bug and security fixes.

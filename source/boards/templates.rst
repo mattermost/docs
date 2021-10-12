@@ -1,6 +1,23 @@
 Templates
 =========
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Templates provide you with a predefined structure so that you can get started quickly. Alternatively, you can create your own board and card templates.
 
 Board templates 
@@ -13,7 +30,7 @@ Board templates include:
 * **Personal Goals**: Personal Goals are sorted by status (To Do, Doing, Done) and can be viewed by date.
 * **Personal Tasks**: Personal Tasks are sorted by status (To Do, Doing, Done) but do not have a date view.
 * **Project Tasks**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
-* **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Satus, Epics, Tasks, Tasks by Status. It also includes a priority filter.
+* **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
 * **Empty Board**: If none of those boards fit your use case, you can use a blank template and customize it as needed.
 
 Editing board templates
