@@ -20,22 +20,22 @@ Sending and Receiving Messages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you have sent them.
+Sending messages and replying to messages are important ways to keep conversations active with your team. You can edit and delete messages after you've sent them.
 
 .. note::
   
   Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
-Send a Message
+Send a message
 ---------------
 
-Write a message by typing into the text input box, then press ENTER to send it. Use SHIFT+ENTER to create a new line without sending a message. To send messages by pressing CTRL+ENTER, go to **Main Menu > Account Settings > Advanced > Send Messages on CTRL/CMD+ENTER > Edit**.
+Write a message by typing into the text input box, then press ENTER to send it. Use SHIFT+ENTER to create a new line without sending a message. To send messages by pressing CTRL+ENTER, go to **Settings > Advanced > Send Messages on CTRL/CMD+ENTER > Edit**.
 
 .. tip::
   
   Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
 
-Reply to Messages
+Reply to messages
 -----------------
 
 .. tip::
@@ -59,7 +59,7 @@ To shrink the right-hand sidebar to its original width, select the same **Collap
 .. image:: ../images/collapse-sidebar.png
    :alt: Collapse the right-hand sidebar to its original width
 
-Edit or Delete Messages
+Edit or delete messages
 -----------------------
 
 Select the **More Actions** link next to a message that you've sent.
@@ -71,7 +71,7 @@ Select **Edit** to edit your own messages. Message edits do not trigger new @men
 
 Select **Delete** to delete your own messages. Select **Delete** again to confirm.
 
-Mark Messages as Unread
+Mark messages as unread
 -----------------------
 
 Marking a message as unread bolds the channel in your sidebar, and adds the new messages line above the marked message. This can be a useful reminder to follow-up on the message later if you don't have time to address it when the message was read.
