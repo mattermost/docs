@@ -90,7 +90,7 @@ Webhooks
 Set permissions
 ---------------
 
-1. Go to **Main Menu > Playbooks**, and then select **Permissions**.
+1. Go to **Product menu > Playbooks**, and then select **Permissions**.
 
  * **Channel access**: Decide whether the automatically-created channel should be Public or Private within the team.
  * **Playbook access**: Share this playbook with other members of the team to allow them to use the playbook to start a run, as well as edit the playbook.
@@ -100,7 +100,7 @@ Edit a playbook
 
 You can change a playbook's configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **Main Menu > Playbooks**.
+1. Go to **Product menu > Playbooks**.
 2. Find the playbook to be edited.
 
  * Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
