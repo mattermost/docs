@@ -11,7 +11,7 @@ Priority customers evaluating large scale deployments are invited to join the **
 
 This is a publicly accessible Mattermost deployment where hundreds of contributors to the Mattermost open source project meet and collaborate to collaboratively develop the software and community extensions. 
 
-The community server runs daily builds of the Mattermost open source project, which means you will be able to see and interact with features being developed for the next release of the software. It also means you'll be exposed to some occassional bugs in the pre-released software. 
+The community server runs daily builds of the Mattermost open source project, which means you will be able to see and interact with features being developed for the next release of the software. It also means you'll be exposed to some occasional bugs in the pre-released software. 
 
 To get started: 
 
