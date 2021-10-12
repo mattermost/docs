@@ -20,7 +20,7 @@ Setting Your Status and Availability
 
 Let your team know whether you're available by setting a custom status and your availability in Mattermost.
 
-Setting a Custom Status
+Setting a custom status
 -----------------------
 
 .. tabs::
@@ -35,13 +35,11 @@ Setting a Custom Status
   
 Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
 
-1. To set a custom status, select your Avatar, then select **Set a Custom Status**.
-
 .. tabs::
 
    .. tab:: v6.0 onwards
 
-     1. To set a custom status, select your in the top-right corner of the global header, then select **Set a Custom Status**.
+     1. To set a custom status, select your Avatar in the top-right corner of the global header, then select **Set a Custom Status**.
      2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
 
   .. tab:: v5.39 and earlier
@@ -54,7 +52,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
   - If custom statuses aren't available, you can request your System Admin to enable this feature in **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**.
   - Custom statuses will be available in the Mattermost Mobile App in a future release. 
 
-Clearing a Custom Status
+Clearing a custom status
 ------------------------
 
 To clear a custom status, select your Avatar, then select **Clear Status**, or select the **Clear** option next to your current status.
@@ -62,7 +60,7 @@ To clear a custom status, select your Avatar, then select **Clear Status**, or s
 .. image:: ../images/clear-custom-status.png
   :alt: Clear your custom status.
 
-Setting Your Availability
+Setting your availability
 -------------------------
 
 To set your availability, select your Avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
@@ -74,7 +72,7 @@ When you set your availability, an availability icon displays next to your name.
 
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
 
-How Mattermost Determines Your Availability
+How Mattermost determines your availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
