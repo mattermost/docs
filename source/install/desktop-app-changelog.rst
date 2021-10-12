@@ -3,12 +3,88 @@ Desktop Application Changelog
 
 Latest Mattermost Desktop App releases:
 
-- `Release v4.7 <#id1>`_
-- `Release v4.6 <#id4>`_
-- `Release v4.5 <#id16>`_
-- `Release v4.4 <#id32>`_
-- `Release v4.3 <#id51>`_
-- `Release v4.2.3 <#id68>`_
+- `Release v5.0 <#id1>`_
+- `Release v4.7 <#id4>`_
+- `Release v4.6 <#id25>`_
+- `Release v4.5 <#id37>`_
+- `Release v4.4 <#id53>`_
+- `Release v4.3 <#id72>`_
+
+Release v5.0
+--------------
+
+**Release Date: 2021-10-13**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+**Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
+Breaking Changes / Upgrade Notes
+~~~~~~~~~~~~~~~
+
+- Some keyboard shortcuts and menu items were updated to work with the new Desktop App layout. ``Ctrl+#`` is used for changing tabs and ``Ctrl+Shft+#`` is used for changing servers.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Redesigned title bar allows users to seamlessly work in Channels, Playbooks, and Boards across multiple servers with minimal context switching.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+MacOS
+^^^^^^
+- Made the window menu on macOS more consistent with system standards.
+
+All Platforms
+^^^^^^^^^^^^^
+- Added support for multiple languages to be used by the spellchecker. This can be configured in the desktop preferences.
+- Updated loading screen visuals.
+- Added a dark mode for settings and modals.
+- Changed the server selection to use a dropdown instead of tabs.
+- Added support for dragging and dropping of the server dropdown items to re-order servers.
+- Converted the tabs interface to support multiple configurable tabs based on the added server to easily access Boards and Playbooks via tabs in the window header.
+- Removed the **Server Management** screen from **Settings**, and added Edit/Delete buttons to the new dropdown, as users can now configure and edit their servers from the server dropdown menu.
+- Added a checkbox to certificate error modal that allows users to permanently distrust a certificate.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v14.1. Electron is the underlying technology used to build the Desktop app.
+- Added a RPM build option to the Electron builder.
+- Added Universal binaries for MacOS users.
+- Migrated to Bootstrap v4 and refreshed the interface. Migrated to ``react-beautiful-dnd`` instead of ``react-smooth-dnd`` for a cleaner experience.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^^^^^^^^
+- Fixed the tray icon size on Linux.
+- Fixed an issue where pressing ``Alt+<somekey>`` could cause the menu bar to disable and overlap the top bar on Linux.
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where resizing the app while in the System Console caused a white bar to appear at the top.
+- Fixed an issue where the right-click menu was missing from the ``jira connect`` modal.
+- Fixed an issue where the app would render off screen and the user would have trouble getting the window in view.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+- `devinbinnie <https://github.com/devinbinnie>`_, `elsiehupp <https://github.com/elsiehupp>`_, `jtwillis92 <https://github.com/jtwillis92>`_, `koox00 <https://github.com/koox00>`_, `svelle <https://github.com/svelle>`_ , `Westacular <https://github.com/Westacular>`_, `Willyfrog <https://github.com/Willyfrog>`_
 
 Release v4.7
 --------------
