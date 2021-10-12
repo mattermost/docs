@@ -602,7 +602,7 @@ Consulting Advisers
 
 To provide guidance, coaching and development for senior and functional leaders, we bring in experts to advise in key areas.
 
-- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our CEO and community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
+- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our CEO and community team regularly to refine our processes and understanding. There's a range of similarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
 Meetings typically take place over phone or video calls. We bring on advisers with `standard consulting agreements <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`_ on either a time and materials basis or a recurring fee.
 
