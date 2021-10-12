@@ -66,7 +66,7 @@ Configure AD/LDAP sign in
      - After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
 4. **Switch your System Admin account from email to AD/LDAP authentication.**
-     - Navigate to **Account Settings > Security > Sign-in Method > Switch to AD/LDAP** and sign in with your AD/LDAP credentials to complete the switch.
+     - Navigate to **Settings > Security > Sign-in Method > Switch to AD/LDAP** and sign in with your AD/LDAP credentials to complete the switch.
 
 5. **(Optional) Restrict authentication to AD/LDAP.**
      - Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to **false** and **Enable sign-in with username** to **false**.
