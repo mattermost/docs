@@ -103,12 +103,12 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 Using local mode
 ~~~~~~~~~~~~~~~~
 
-You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/administration/config-settings.html#enable-local-mode-socket-location>`_.
+You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location>`_.
 
 In versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 

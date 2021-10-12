@@ -55,7 +55,7 @@ Mobile Apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 11+"
+    "iOS", "iPhone 5s devices and later with iOS 12.1+"
     "Android", "Android devices with Android 7+"
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
@@ -66,7 +66,7 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 11+ with Safari 12+ or Chrome 77+"
+    "iOS", "iOS 12.1+ with Safari 12+ or Chrome 77+"
     "Android", "Android 7+ with Chrome 77+"
 
 Email Client
@@ -83,7 +83,7 @@ Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
-- Using the Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
+- Using the Mattermost `Docker deployment <https://github.com/mattermost/docker>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
 
@@ -173,7 +173,7 @@ Alternate Storage Calculations
 
 As an alternative to recommended storage sizing above, you can forecast your own storage usage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:
 
--  Estimated storage per user per month (see below), multipled by 12 months in a year
+-  Estimated storage per user per month (see below), multiplied by 12 months in a year
 -  Estimated mean average number of users in a year
 -  A 1-2x safety factor
 
