@@ -30,7 +30,7 @@ You can access Playbooks within Channels using the **Toggle Playbook List** icon
 
 To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** next to that playbook's name.
 
-To access runs, select the Product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active instead of joining each run's channel to keep up.
+To access runs, select the Product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
 
 View run details
 ~~~~~~~~~~~~~~~~
