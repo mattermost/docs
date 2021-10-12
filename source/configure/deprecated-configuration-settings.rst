@@ -46,11 +46,11 @@ Disable Legacy MFA API Endpoint
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -123,11 +123,11 @@ Allow Team Administrators to edit others' posts
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       This permission is stored in the database and can be modified using the System Console user interface.
 
@@ -143,11 +143,11 @@ Enable Team Creation
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       After upgrading to v4.9 (released April 16, 2018), changing this ``config.json`` value no longer takes effect because this permission has been migrated to the database. This permission can be modified using the System Console user interface.
 
@@ -183,11 +183,11 @@ Enable Legacy Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -224,11 +224,11 @@ Sidebar Organization
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -253,11 +253,11 @@ Enable X to Leave Channels from Left-Hand Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -282,11 +282,11 @@ Autoclose Direct Messages in Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Not available in Mattermost Cloud.
 
@@ -314,11 +314,11 @@ Town Square is Hidden in Left-Hand Sidebar
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Available in legacy Enterprise Edition E10 and higher.
 
@@ -343,11 +343,11 @@ Town Square is Read-Only
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       Available in legacy Enterprise Edition E10 and higher.
 
@@ -371,11 +371,11 @@ Restrict Custom Emoji Creation
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
 
@@ -456,11 +456,11 @@ Restrict managing integrations to Admins
 
 .. tabs::
 
-   .. tab:: v6.0
+   .. tab:: Mattermost v6.0 onwards
       
       Deprecated. Not used in Mattermost v6.0 and later.
 
-   .. tab:: v5.39 and earlier
+   .. tab:: Mattermost v5.39 and earlier
       
       After upgrading to v4.9 (released April 16th, 2018) or later, changing the ``config.json`` value no longer has an effect because this setting has been migrated to the database. This setting can be modified using the System Console user interface.
 
