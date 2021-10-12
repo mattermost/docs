@@ -20,7 +20,7 @@ End users can securely share messages and files using a web-based Mattermost exp
 
 ### Mobile App Experience
 
-Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on the App Store and Google Play, or deploy to an [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) on your organization's private network. A [Test Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns) is available for use while evaluating options.
+Native applications for iOS and Android are available for interacting with the Mattermost server and receiving encrypted push notifications from your private cloud. Organizations can use [a Hosted Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns) with encrypted communications to mobile apps on the App Store and Google Play, or deploy to an Enterprise App Store on your organization's private network. A [Test Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns) is available for use while evaluating options.
 
 ### Mobile Web Experience
 
@@ -94,7 +94,7 @@ Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP Singl
 
 ### Private Cloud Integrations
 
-Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and slash command options for integrating with your self-managed systems.
+Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and slash command options for integrating with your self-hosted systems.
 
 [Visit our app directory](https://mattermost.com/marketplace/#privateApps) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and SVN, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
@@ -106,29 +106,29 @@ For notifications and account verification, Mattermost connects to your existing
 
 The Mattermost server installs as a single compiled binary file. All server settings are stored in a configuration file, ``config/config.json``, which can be updated directly or via the web-based System Console user interface.
 
-#### RESTful JSON Web Service
+### RESTful JSON Web Service
 
 The entirety of the Mattermost server is accessible through a RESTful Web Service API. The API can be completely accessed by developers creating custom applications for Mattermost either directly or via Javascript and Golang drivers.
 
-#### Authentication Client
+### Authentication Client
 
 Authenticates users by email or username plus password.
 
 For customers of Enterprise Edition, Single Sign-on via Microsoft Active Directory and LDAP is also available.
 
-#### Authentication Provider
+### Authentication Provider
 
 Enables authentication of Mattermost server to other services with Authentication Client interface using OAuth2.
 
-#### Notification Service
+### Notification Service
 
 Sends notifications via SMTP email and mobile push notifications via Mattermost Push Notificiation Service.
 
-#### Data Management Service
+### Data Management Service
 
 Connects to and manages supported databases.
 
-### High Availability (Enterprise Edition)
+### High Availability (Available in Mattermost Enterprise)
 
 Large organizations needing sophisticated, large scale, High Availability configurations can set up a [highly available, horizontally scalable](https://docs.mattermost.com/scale/high-availability-cluster.html) deployment. Contact the [Enterprise team](https://mattermost.com/contact-us/) for guidance on configuring and sizing Mattermost Enterprise Edition to support your specific needs.
 
@@ -174,16 +174,16 @@ Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advice 
 
 Mattermost can be deployed behind your company firewall on a private network with access from the outside via a Virtual Private Network (VPN). This means running a VPN client on the mobile devices and desktop computers that need to access Mattermost.
 
-The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/deployment-overview.html#push-notification-service) (MPNS) should be behind your firewall on your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for the App Store or Google Play, or to mobile apps within an Enterprise App Store.
+The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html) (MPNS) should be behind your firewall on your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for the App Store or Google Play, or to mobile apps within an Enterprise App Store.
 
 ### Mobile Devices without VPN Clients
 
 If Mattermost is available on the internet, we recommend Mattermost Enterprise Edition featuring SAML-based Single Sign-on and multi-factor authentication (MFA) using Google Authenticator.
 
-The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/deployment-overview.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
+The [Mattermost Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
 For support for certificate-based authentication for mobile devices, [contact the Enterprise Sales team for more information](https://mattermost.com/contact-us/).
 
 ### Mobile Devices with an EMM Provider
 
-Mattermost mobile applications can also be deployed via [EMM providers who support AppConfig](https://docs.mattermost.com/deploy/mobile-appconfig.html) such as Blackberry UEM, Mobileiron, and Airwatch. EMM solutions typically offer "App Tunnel" or per-app VPN capabilities that can be used to connect to mobile apps behind a VPN.
+Mattermost mobile applications can also be deployed via [EMM providers who support AppConfig](https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html). EMM solutions typically offer per-app VPN capabilities that can be used to connect to mobile apps behind a VPN.

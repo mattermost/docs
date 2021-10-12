@@ -1,9 +1,9 @@
-Scripts
-=======
+Scripts (Unofficial)
+====================
 
-This repository contains a series of scripts to perform descrete tasks: https://github.com/icelander/mattermost-scripts.
+This repository contains a series of scripts to perform discrete tasks: https://github.com/icelander/mattermost-scripts.
 
-.. note::
+.. important::
    
    This code is provided as-is without any warranty and is not sponsored by Mattermost. Please use cautiously and test before running any of these scripts against a production server.
 

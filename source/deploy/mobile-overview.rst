@@ -1,6 +1,23 @@
 Deploy Mattermost Mobile Apps
 =============================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This documentation provides foundational information you need when developing a plan for an enterprise mobile application deployment. It’s intended for business leaders, system administrators, and mobile app developers responsible for deploying Mattermost in their organization.
 
 This documentation provides information to help you: 

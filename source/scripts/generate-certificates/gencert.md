@@ -4,13 +4,13 @@ Generate a self-signed x509v3 certificate for use with multiple URLs / IPs.
 
 ## Generate Certificates
 
-#### Default values
+### Default values
 
 ```bash
 CRT_CN="client.com" CRT_SAN="DNS.1:www.client.com,DNS.2:admin.client.com,IP.1:192.168.1.10,IP.2:10.0.0.234" gencert.sh
 ```
 
-#### Custom values
+### Custom values
 
 You may change the `CRT_CN` and `CRT_SAN` values of the above command based on your needs.
 
@@ -22,7 +22,7 @@ Additionally you may use any of the following environment variables :
  - `CRT_CN` : Common Name value
  - `CRT_SAN` : SubjectAltName value
 
-#### Result
+### Result
 
 The command will generate two files:
  - pkcs#8 private key : `mattermost-x509.key`
