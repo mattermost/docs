@@ -18,7 +18,7 @@ Getting Started
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
   
-Mattermost Playbooks is included in Mattermost and Mattermost Cloud workspace. You can access Playbooks via the Product menu in the top-left corner of Mattermost.
+Mattermost Playbooks is included in Mattermost self-hosted and Mattermost Cloud workspace. You can access Playbooks via the Product menu in the top-left corner of Mattermost.
 
 Access playbooks and runs
 -------------------------
