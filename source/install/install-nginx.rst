@@ -32,7 +32,7 @@ First, update your local ``apt`` package index for access to the most recent pac
 
 After accepting the procedure, ``apt`` will install NGINX and any required dependencies to your server.
 
-3. After installing it, you already have everything you need. You can point your browser to your server IP address. You should see the default Nginx landing page:
+3. After installing it, you already have everything you need. You can point your browser to your server IP address. You should see the default NGINX landing page:
 
   ..figure:: ../images/install_nginx_welcome.png
 
