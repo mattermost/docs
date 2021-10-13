@@ -193,7 +193,7 @@ Load testing
 
 Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
 
-- six Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)
-- one MySQL database server with 5 read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)
-- three load test runners (for running the loadtest)
-- three NGINX proxies
+- Six Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)
+- One MySQL database server with five read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)
+- Three load test runners (for running the loadtest)
+- Three NGINX proxies
