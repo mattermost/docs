@@ -3,8 +3,6 @@ $(document).ready(function () {
 	var dataLayer = window.dataLayer || [];
 	var eventValue = 0;
 	var rating = '';
-
-
 	var thermometerHtml =
 		" <div class='c-thermometer-popup'> \
 			<div class='c-thermometer-popup__close'>×</div> \
@@ -58,13 +56,16 @@ $(document).ready(function () {
 		$("header .header__links").slideToggle();
 	});
 
-	$('header .search__icon').on('click', function () {
+	$('.search__icon').on('click', function () {
 		$("header .header__links").hide();
 		$("header .header__searchbar").slideToggle(400, function () {
 			if ($(this).is(':visible')) {
 				$(this).find("input[type=text]").focus();
 			}
 		});
+		// document.getElementById('hamburger').classList.remove('is-active');
+        // document.body.classList.remove('nav-open');
+        // document.getElementById('navigation').classList.remove('active');
 	});
 
 	if ($('.wy-menu-vertical li.current>a').length) {
@@ -164,10 +165,7 @@ $(document).ready(function () {
 				break;
 		}
 	});
-
-
 	// Notification Banner
-
 	if (localStorage.getItem("docsFeedback") === null) {
 		localStorage.setItem('docsFeedback', true);
 		$('.notification-bar').addClass('flex');
@@ -182,11 +180,37 @@ $(document).ready(function () {
 			$('body').addClass('with-notification');
 		}
 	}
-
 	$('body').on('click', '.notification-bar__close', function(){
 		$('.notification-bar').remove();
 		$('body').removeClass('with-notification');
 		localStorage.setItem('docsFeedback', false);
 	});
 
+});
+// Redesign - Navigation
+document.addEventListener("DOMContentLoaded", function(event) {     
+    const hamburger = document.getElementById('hamburger');
+    const subMenus = document.querySelectorAll('.site-nav__hassubnav a');
+
+    let multiEventSingleHandler = (elem, events, handler, use_capture) => {
+        events.forEach(ev => {
+            elem.addEventListener(ev, handler, typeof(use_capture) === 'undefined' ? false : use_capture);
+        });
+    }
+
+    let clickTouch = (elem, handler, use_capture) => {
+        multiEventSingleHandler(elem, ['click', 'touch'], handler, typeof(use_capture) === 'undefined' ? false : use_capture);
+    }
+
+    subMenus.forEach(snav => {
+        clickTouch(snav, () => {
+            snav.parentElement.classList.toggle('is-active');
+        }, false);
+    });
+
+    clickTouch(hamburger, () => {
+        hamburger.classList.toggle('is-active');
+        document.body.classList.toggle('nav-open');
+        document.getElementById('navigation').classList.toggle('active');
+    });
 });
