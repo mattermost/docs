@@ -59,7 +59,7 @@ After accepting the procedure, ``apt`` will install NGINX and any required depen
 
 **Managing the NGINX process**
 
-Now that you have your web server up and running, let’s review some basic management commands.
+Now that you have your web server up and running, let’s review some basic management commands. These are all run in the command line interface.
 
 To stop your web server, type:
 
