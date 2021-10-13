@@ -57,7 +57,7 @@ After accepting the procedure, ``apt`` will install NGINX and any required depen
     </body>
     </html>
 
-**Managing the Nginx Process**
+**Managing the NGINX process**
 
 Now that you have your web server up and running, let’s review some basic management commands.
 
