@@ -77,7 +77,7 @@ macOS 10.9+
 -----------
 
 1. Download the latest version of the Mattermost desktop app:
-  - `Intel systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac.dmg>`__
+  - `Intel systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac-x64.dmg>`__
   - `M1 systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac-m1.dmg>`__ (Beta)
 
 2. Double-click the download to open the disk image.
