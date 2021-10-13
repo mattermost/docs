@@ -101,7 +101,7 @@ redirects = {
         "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": 
         "https://docs.mattermost.com/getting-started/architecture-overview.html",
-    "about/licensing-and-subscription": "https://docs/mattermost.com/about/subscription.html",
+    "about/licensing-and-subscription": "https://docs.mattermost.com/about/subscription.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
