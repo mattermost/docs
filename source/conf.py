@@ -823,6 +823,7 @@ redirects = {
     "messaging/accessing-your-workspace.html": "https://docs.mattermost.com/messaging/signing-in.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
+    "about/licensing-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": "https://docs.mattermost.com/about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
     "configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37"
 }
 
