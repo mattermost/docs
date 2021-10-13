@@ -475,7 +475,7 @@ redirects = {
     "administration/config-settings.html#push-notification-contents": 
         "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
     "administration/config-settings.html#push-notification-contents": "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
-    "administration/config-settings.html#gitlab-settings": "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
+    "administration/config-settings#gitlab-settings": "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
     "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
     "administration/config-settings#push-notification-contents": 
         "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
@@ -571,6 +571,8 @@ redirects = {
     "deployment/cluster#upgrade-guide": "https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide",
     "deployment/mobile-app-deployment": "https://docs.mattermost.com/deploy/mobile-overview.html",
     "deployment/push.html": "https://docs.mattermost.com/deploy/mobile-hpns.html#mobile-push-notifications",
+    "deployment/ldap-group-constrained-team-channel": "https://docs.mattermost.com/onboard/cloud-groups.html",
+    "developer/personal-access-tokens": "https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/",
     "developer/localization": "https://handbook.mattermost.com/contributors/contributors/localization",
     "getting-started/implementation_plan": "https://docs.mattermost.com/getting-started/implementation-plan.html",
     "getting-started/welcome_email": "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
@@ -587,8 +589,8 @@ redirects = {
         "https://docs.mattermost.com/guides/deployment.html#install-guides",
     "guides/administrator.html#installing-mattermost": "https://docs.mattermost.com/guides/deployment.html#install-guides",
     "help/apps/desktop-changelog": "https://docs.mattermost.com/install/desktop-app-changelog.html",
-    "help/getting-started/welcome-to-mattermost":
-        "https://docs.mattermost.com/messaging/welcome-to-mattermost-messaging.html",
+    "help/getting-started/welcome-to-mattermost": "https://docs.mattermost.com/guides/channels.html",
+    "messaging/welcome-to-mattermost-messaging": "https://docs.mattermost.com/guides/channels.html",
     "help/getting-started/access-your-workspace": "https://docs.mattermost.com/messaging/accessing-your-workspace.html",
     "help/getting-started/signing-in": "https://docs.mattermost.com/messaging/signing-in.html",
     "help/getting-started/switch-between-teams": "https://docs.mattermost.com/messaging/switching-between-teams.html",
@@ -743,6 +745,7 @@ redirects = {
         "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work",
     "mobile/mobile-testing-notifications": "https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
     "mobile/deploy-mobile-apps-using-emm-provider": "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
+    "mobile/mobile-overview": "https://docs.mattermost.com/deploy/mobile-overview.html",
     "onboard/ad-ldap#active-directory-ldap-setup-e10-e20": 
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
     "overview/security": "https://docs.mattermost.com/about/security.html",

@@ -37,7 +37,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 
 .. tabs::
 
-   .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
      1. To set a custom status, select your Avatar in the top-right corner of the global header, then select **Set a Custom Status**.
      2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.

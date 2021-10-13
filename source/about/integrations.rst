@@ -55,7 +55,7 @@ Interactive Messages
 
 Mattermost supports interactive message buttons and menus for incoming and outgoing webhooks, custom slash commands, and plugins via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity. Interactive messages can be used together with slash commands, custom apps, and plugins. 
 
-Learn about `interactive messages and buttons <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/>`_ and `interactive dialogs <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-dialogs/>`_ 
+Learn about `interactive messages and buttons <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/>`_ and `interactive dialogs <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-dialogs/>`__. 
 
 CLI
 ----
@@ -65,11 +65,11 @@ Zapier
 --------- 
 Mattermost's Zap connector enables you to connect to over 2,000 public cloud services, like Email, Gmail, GitHub, Jira, BitBucket, and Confluence.
 
-Learn about `Mattermost-Zapier integration <https://docs.mattermost.com/integrations/zapier.html>`__
+Learn about `Mattermost-Zapier integration <https://docs.mattermost.com/integrations/zapier.html>`__.
 
 Source Code Customizations
 --------------------------
 As an open source project, we support your ability to modify the source code for the server or web app to make changes and customizations to meet your specific needs. 
 
-Learn about `forking our open source repositories <https://developers.mattermost.com/integrate/other-integrations/customization/>`_
+Learn about `forking our open source repositories <https://developers.mattermost.com/integrate/other-integrations/customization/>`__.
 

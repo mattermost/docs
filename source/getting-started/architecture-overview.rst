@@ -23,7 +23,7 @@ Basics
 
 At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`__.
 
-It is configured using `config/config.json <https://docs.mattermost.com/administration/config-settings.html>`__ and provides the following:
+It is configured using `config/config.json <https://docs.mattermost.com/configure/configuration-settings.html>`__ and provides the following:
 
 - **Authentication client:** The functionality for users to log into Mattermost via email address and password in Team Edition. Mattermost Professional adds the ability for users to authenticate using Active Directory or LDAP, and Mattermost Enterprise adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin, and Okta.
 - **Authentication provider:** Enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
@@ -37,7 +37,7 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 Push Notification Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Mattermost `hosted push notification service <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/overview/faq.html#tpns>`__ or deploy their own push notification service and `compile their mobile applications <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ to use that service.
+The Mattermost `hosted push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__` and `compile their mobile applications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to use that service.
 
 Proxy
 ~~~~~
