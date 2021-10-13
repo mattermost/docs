@@ -91,6 +91,7 @@ redirects = {
         "https://docs.mattermost.com/about/security.html",
     "overview/integrations": 
         "https://docs.mattermost.com/about/integrations.html",
+    "about/subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/license-and-subscription": 
         "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": 
@@ -101,7 +102,6 @@ redirects = {
         "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": 
         "https://docs.mattermost.com/getting-started/architecture-overview.html",
-    "about/licensing-and-subscription": "https://docs.mattermost.com/about/subscription.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
@@ -118,7 +118,6 @@ redirects = {
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
-    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
@@ -750,7 +749,6 @@ redirects = {
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
-    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
