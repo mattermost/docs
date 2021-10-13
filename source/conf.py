@@ -91,7 +91,7 @@ redirects = {
         "https://docs.mattermost.com/about/security.html",
     "overview/integrations": 
         "https://docs.mattermost.com/about/integrations.html",
-    "about/subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
+    "about/subscription": "https://docs.mattermost.com/overview/license-and-subscription.html",
     "overview/license-and-subscription": 
         "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": 
