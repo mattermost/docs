@@ -101,7 +101,7 @@ redirects = {
         "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": 
         "https://docs.mattermost.com/getting-started/architecture-overview.html",
-    "about/licensing-and-subscription": "https://docs/mattermost.com/about/subscription.html",
+    "about/licensing-and-subscription": "https://docs.mattermost.com/about/subscription.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
@@ -823,6 +823,7 @@ redirects = {
     "messaging/accessing-your-workspace.html": "https://docs.mattermost.com/messaging/signing-in.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
+    "about/licensing-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": "https://docs.mattermost.com/about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
     "configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37"
 }
 
