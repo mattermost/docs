@@ -18,7 +18,7 @@ Lastest Mattermost Releases:
   - Fixing an issue with the 6.0 migration where the ``Users.Timezone`` column has a default. This affects servers that had Mattermost v4.9 or earlier installed before upgrading. The workaround is to run ``ALTER TABLE users ALTER COLUMN timezone DROP DEFAULT;`` [MM-39297](https://mattermost.atlassian.net/browse/MM-39297).
   - Investigating an issue related to a Websocket error on Mattermost Boards.
   - Investigating an issue where Playbooks failed to start with a "failed to run migrations[...]" error.
-  - Adding a fix to display ``tableName`` and ``columnName`` for jsonb schema failures.
+  - Adding a fix to display ``tableName`` and ``columnName`` for jsonb schema failures. Currently when there is a schema upgrade failure related to jsonb columns, the log line doesn't mention which table/column is affected.
 - **v6.0.0, released 2021-10-13**
   - Original 6.0.0 release
 
