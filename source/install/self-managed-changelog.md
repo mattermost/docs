@@ -14,10 +14,11 @@ Lastest Mattermost Releases:
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v6.0.1, release day TBD**
+  - Fixing a panic in translations that causes the server to not run properly. The panic causes the server to be terminated [MM-39299](https://mattermost.atlassian.net/browse/MM-39299).
   - Fixing an issue with the 6.0 migration where the ``Users.Timezone`` column has a default. This affects servers that had Mattermost v4.9 or earlier installed before upgrading. The workaround is to run ``ALTER TABLE users ALTER COLUMN timezone DROP DEFAULT;`` [MM-39297](https://mattermost.atlassian.net/browse/MM-39297).
-  - Fixing a panic in ``api.email_batching.send_batched_email_notification.title`` translation for ``bg`` and ``hu`` languages, preventing the server to be terminated [MM-39299](https://mattermost.atlassian.net/browse/MM-39299).
   - Investigating an issue related to a Websocket error on Mattermost Boards.
   - Investigating an issue where Playbooks failed to start with a "failed to run migrations[...]" error.
+  - Adding a fix to display ``tableName`` and ``columnName`` for jsonb schema failures.
 - **v6.0.0, released 2021-10-13**
   - Original 6.0.0 release
 
