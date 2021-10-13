@@ -77,7 +77,7 @@ If you are simply making configuration changes, Nginx can often reload without d
 
 ``sudo systemctl reload nginx``
  
-By default, Nginx is configured to start automatically when the server boots. If this is not what you want, you can disable this behavior by typing:
+By default, NGINX is configured to start automatically when the server boots. If this isn't what you want, you can disable this behavior using:
 
 ``sudo systemctl disable nginx``
  
