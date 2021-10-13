@@ -130,7 +130,7 @@ As with any design process, iteration, prototyping, informed critique and evalua
 
 This guide outlines the levels of UX feedback in the order of positive impact in order to guide contributors towards the behaviors that best advance a fast-moving, asychronously-developed open source product.
 
-**Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than 2 minutes spent thinking about the pros and cons of the changes the feedback suggests.
+**Entry-level UX feedback:** Authentic questions or suggestions for design changes, presented with good intentions, coming from personal preferences with less than two minutes spent thinking about the pros and cons of the changes the feedback suggests.
 
 Example 1: Well intentioned suggestion that does not consider pros and cons.
 
@@ -158,7 +158,7 @@ UX feedback at intermediate level or higher is highly appreciated. It should be 
 
 Example: Noticing a design issue and influencing a change in UX guidelines to correct things system-wide.
 
-   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than 7 options before grouping. I'd propose we use fewer than 5. There's research showing 5 items as a number most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile experience, where ungrouped 10-item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
+   A menu with 10 items without groupings seems too long. Both Apple (link) and Windows (link) user interface guidelines suggest fewer than seven options before grouping. I'd propose we use fewer than 5. There's research showing five items as a number most people can comfortably store mentally (link), and looking through other products I don't see situations where we wouldn't be able to group by 5. Also, fewer menu items, perhaps through sub-menus, should also help mobile experience, where ungrouped 10-item menus just look messy. I've added a PR on UX guidelines where we can discuss this as well.
 
 -----
 
@@ -170,7 +170,7 @@ Display: Alignment
 
 **Elements should feature margins horizontally and vertically, evenly spaced.**
 
-Create space between elements, such as buttons, text, line separators, headers and backgrounds, by leaving even space around them (either equal space or at most 1 pixel difference).
+Create space between elements, such as buttons, text, line separators, headers and backgrounds, by leaving even space around them (either equal space or at most one pixel difference).
 
     **Examples:**
 
@@ -320,7 +320,7 @@ Examples of where an @ icon should precede the username are as follows:
 Display: Number of Choices
 --------------------------
 
-To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`__ for background on why this helps.
+To simplify decisions, when practical, limit the number of choices to three or four, and add separators or headings between logical groups. See `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`__ for background on why this helps.
 
 Example:
 
