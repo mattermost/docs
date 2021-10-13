@@ -81,7 +81,7 @@ By default, Nginx is configured to start automatically when the server boots. If
 
 ``sudo systemctl disable nginx``
  
-To re-enable the service to start up at boot, you can type:
+To re-enable the service to start up at boot, use:
 
 ``sudo systemctl enable nginx``
 
