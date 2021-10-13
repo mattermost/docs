@@ -36,7 +36,7 @@ After accepting the procedure, ``apt`` will install NGINX and any required depen
 
   ..figure:: ../images/install_nginx_welcome.png
 
-  If you see this page, you have successfully installed Nginx on your web server. This page is included with Nginx to show you that the server is running correctly.
+  If you see this page, you've successfully installed NGINX on your web server. This page is included with NGINX to show you that the server is running correctly.
 
   Or you can also verify it by:
 
