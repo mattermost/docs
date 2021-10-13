@@ -73,7 +73,7 @@ To stop and then start the service again, type:
 
 ``sudo systemctl restart nginx``
  
-If you are simply making configuration changes, Nginx can often reload without dropping connections. To do this, type:
+If you're simply making configuration changes, NGINX can often reload without dropping connections. To do this, use:
 
 ``sudo systemctl reload nginx``
  
