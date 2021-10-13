@@ -13,7 +13,13 @@ Lastest Mattermost Releases:
 
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-10-13**
+- **v6.0.1, release day TBD**
+  - Fixing an issue with the 6.0 migration for installations where the ``Users.Timezone`` column has a default [MM-39297](https://mattermost.atlassian.net/browse/MM-39297).
+  - Fixing a panic in translations preventing the server to be terminated [MM-39299](https://mattermost.atlassian.net/browse/MM-39299).
+  - Investigating an issue related to a Websocket error on Mattermost Boards.
+  - Investigating an issue where Playbooks failed to start with a "failed to run migrations[...]" error.
+- **v6.0.0, released 2021-10-13**
+  - Original 6.0.0 release
 
 ### Deprecations
 
