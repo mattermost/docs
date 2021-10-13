@@ -213,7 +213,7 @@ See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for add
        ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA;
        ssl_prefer_server_ciphers on;
        ssl_session_cache shared:SSL:50m;
-       # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
+       # HSTS (ngx_http_headers_module is required) (15768000 seconds = six months)
        add_header Strict-Transport-Security max-age=15768000;
        # OCSP Stapling ---
        # fetch OCSP records from URL in ssl_certificate and cache them
