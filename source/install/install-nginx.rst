@@ -65,7 +65,7 @@ To stop your web server, type:
 
 ``sudo systemctl stop nginx``
 
-To start the web server when it is stopped, type:
+To start the web server when it's stopped, use:
 
 ``sudo systemctl start nginx``
  
