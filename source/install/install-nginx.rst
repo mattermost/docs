@@ -69,7 +69,7 @@ To start the web server when it's stopped, use:
 
 ``sudo systemctl start nginx``
  
-To stop and then start the service again, type:
+To stop and then start the service again, use:
 
 ``sudo systemctl restart nginx``
  
