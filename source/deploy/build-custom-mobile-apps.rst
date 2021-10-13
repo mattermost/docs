@@ -1,12 +1,24 @@
 Building and Distributing Your Own Custom Mattermost Mobile Apps
 ================================================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
 You can build and distribute custom versions of the Mattermost Mobile App. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__.
 
 This approach is recommended for:
 
 - Organizations that want to customize their Mattermost Mobile Apps.
-- Customers using self-hosted Mattermost Team Edition or Enterprise Editions that prefer to host their own push proxy server instead of using one of Mattermost’s hosted versions.
+- Customers using self-hosted Mattermost Team Edition, Professional or Enterprise Edition that prefer to host their own push proxy server instead of using one of Mattermost’s hosted versions.
   
 Deployment Options
 ------------------
@@ -44,7 +56,7 @@ In general, building your own Mobile apps will present some challenges, includin
 Custom Mobile App Branding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Messaging". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines.html>`__ in our Company Handbook for details.
+Ensure you select a unique app name that helps users distinguish your version from others, such as "<Your Company Name> Collaboration". See our `Brand and Visual Design Guidelines <https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/brand-and-visual-design-guidelines#name-usage-guidelines.html>`__ in our Company Handbook for details.
 
 Deploying Your Custom App
 -------------------------

@@ -1,11 +1,24 @@
 Open Source Components
 =======================
 
-The following open source components are used to provide the full benefits of Mattermost Enterprise Edition.
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+The following open source components are used to provide the full benefits of Mattermost Enterprise.
 
 Desktop
 --------
 
+ - Mattermost Desktop v5.0.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-5.0/NOTICE.txt>`_.
  - Mattermost Desktop v4.7.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.7/NOTICE.txt>`_.
  - Mattermost Desktop v4.6.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.6/NOTICE.txt>`_.
  - Mattermost Desktop v4.5.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.5/NOTICE.txt>`_.
@@ -19,6 +32,7 @@ Desktop
 Mobile
 -------
 
+ - Mattermost Mobile v1.47.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.47/NOTICE.txt>`_.
  - Mattermost Mobile v1.46.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.46/NOTICE.txt>`_.
  - Mattermost Mobile v1.45.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.45/NOTICE.txt>`_.
  - Mattermost Mobile v1.44.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.44/NOTICE.txt>`_.
@@ -110,6 +124,8 @@ Redux
 Server
 ------------------------------
 
+ - Mattermost Enterprise Edition v6.0.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-6.0/NOTICE.txt>`_.
+ - Mattermost Enterprise Edition v5.39.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.39/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.38.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.38/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.37.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.37/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.36.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-5.36/NOTICE.txt>`_.
@@ -174,6 +190,8 @@ Server
 Webapp
 ------------------------------
 
+ - Mattermost Enterprise Edition v6.0.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-6.0/NOTICE.txt>`_.
+ - Mattermost Enterprise Edition v5.39.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.39/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.38.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.38/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.37.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.37/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v5.36.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-5.36/NOTICE.txt>`_.

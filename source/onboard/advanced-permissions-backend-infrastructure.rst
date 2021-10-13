@@ -1,13 +1,28 @@
 Advanced Permissions: Backend Infrastructure
 =============================================
 
-This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
+|all-plans| |cloud| |self-hosted|
 
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
 
 .. note::
 
-  The contents of this document apply to Mattermost Server version 5.0 and later. 
-
+  The contents of this document apply from Mattermost Server v5.0. 
 
 .. contents::
   :backlinks: top
@@ -159,7 +174,7 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | create_post_ephermal                         | channel | Create an ephemeral message within a channel.                                                                                                                                                         |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`__.    |
+| edit_post                                    | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config <https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit>`__.  |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | edit_others_posts                            | channel | Edit other users' posts.                                                                                                                                                                              |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

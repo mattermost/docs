@@ -6,8 +6,7 @@
 SOURCEDIR       = source
 BUILDDIR        = build
 WARNINGSFILE    = $(BUILDDIR)/warnings.log
-ERRORSFILE      = $(BUILDDIR)/errors.log
-SPHINXOPTS      ?= -j auto -w $(WARNINGSFILE)
+SPHINXOPTS      ?= -j auto
 SPHINXBUILD     ?= pipenv run sphinx-build
 SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 
@@ -15,7 +14,7 @@ SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile livehtml clean
+.PHONY: help Makefile livehtml
 
 # Run `make livehtml` to start sphinx-autobuild
 livehtml:
@@ -26,7 +25,4 @@ livehtml:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@mkdir -p "$(BUILDDIR)"
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(ERRORSFILE)"
-
-clean: # clean the build directory
-	rm -rf build/
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"

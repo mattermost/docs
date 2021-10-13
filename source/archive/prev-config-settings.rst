@@ -1272,7 +1272,7 @@ Email Attribute
 
 The attribute in the AD/LDAP server used to populate the email address field in Mattermost.
 
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin.
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
@@ -1497,7 +1497,7 @@ Email Attribute
 
 The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
 
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin.
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input.                                                                                |
@@ -4793,7 +4793,7 @@ Run Jobs
 Set whether or not this Mattermost server will handle tasks created by the Scheduler.
 
 - When running Mattermost on a single machine, this setting should always be enabled.
-- When running Mattermost in High Availablity mode, one or more servers should have this setting enabled. It is recommended that a High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+- When running Mattermost in High Availability mode, one or more servers should have this setting enabled. It is recommended that a High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
@@ -4805,7 +4805,7 @@ Run Scheduler
 Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker.
 
 - When running Mattermost on a single machine, this setting should always be enabled.
-- When running Mattermost in High Availablity mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/deployment/cluster.html#job-server>`__ for more details.
+- When running Mattermost in High Availability mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/deployment/cluster.html#job-server>`__ for more details.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |

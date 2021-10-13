@@ -1,6 +1,18 @@
 AD/LDAP Groups
 ==============
 
+|enterprise| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 Overview
 ---------
 
@@ -9,7 +21,7 @@ The groups feature is useful for organizations that have many new users to onboa
 - Creating groups by synchronization with your AD/LDAP system groups.
 - Syncing groups to pre-defined roles in Mattermost.
 - AD/LDAP nested groups.
-- Using synchronized groups to manage `membership of teams and private channels <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__.
+- Using synchronized groups to manage `membership of teams and private channels <https://docs.mattermost.com/onboard/cloud-groups.html>`__.
 
 Pre-installation Notes
 ----------------------
@@ -18,7 +30,7 @@ If you have enabled synchronization with AD/LDAP, all groups matching the defaul
 
 The group filter is an optional configuration setting available under **System Console > AD/LDAP**, and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter, however it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.
 
-The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
+The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 Enabling AD/LDAP Group Synchronization
 --------------------------------------
@@ -111,7 +123,7 @@ For new users, default teams and channels will be added when they log in for the
 It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6 seconds for an organization with 200,000 users and 30,000 linked groups.
 
 .. note::
-   Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. They will not be re-added if they were manually removed or removed themselves. To manage a team or private channel membership with synchronized groups, please see `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
+   Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. They will not be re-added if they were manually removed or removed themselves. To manage a team or private channel membership with synchronized groups, please see `this documentation <https://docs.mattermost.com/onboard/cloud-groups.html>`_.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
 
@@ -151,7 +163,7 @@ Mattermost groups can be deleted by adjusting your AD/LDAP group filter to remov
 Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership
 -------------------------------------------------------------------------------
 
-Mattermost groups created with `synchronized AD/LDAP groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.
+Mattermost groups created with `synchronized AD/LDAP groups <https://docs.mattermost.com/onboard/ad-ldap.html>`_ can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.
 
 For instance, you may have a AD/LDAP group that contains your development team that you want to synchronize to a developer team.  By using this feature, new developers will get added to the team when they are added to the synchronized AD/LDAP group and they will be removed from the team when removed from the AD/LDAP group.
 
@@ -162,7 +174,7 @@ On teams that are managed by synchronized groups, users outside of the group are
 - Invitation through a team invite link
 - Invitation through an email invite
 
-Similarily on private channels that are managed by synchronized groups, users outside of the group are restricted from:
+Similarly on private channels that are managed by synchronized groups, users outside of the group are restricted from:
 
 - Invitation through a mention
 - Invitation through the ``/invite`` slash command
@@ -297,7 +309,7 @@ You can do so by setting the team or channel management to synced groups instead
 How do I use AD/LDAP Group Sync with SAML?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use AD/LDAP Group Sync with SAML by enabling `SAML Synchronization with AD/LDAP <https://docs.mattermost.com/deployment/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap>`__. You do not need to enable LDAP sign-in for this feature to work.
+You can use AD/LDAP Group Sync with SAML by enabling `SAML Synchronization with AD/LDAP <https://docs.mattermost.com/onboard/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap>`__. You do not need to enable LDAP sign-in for this feature to work.
 
 However, is critical that the unique Mattermost ID identifier that you have chosen as your attribute in your directory service (AD/LDAP) is the same for both the SAML and AD/LDAP configurations.
 
@@ -306,7 +318,7 @@ For instance, if ``ObjectGUID`` has been chosen as the Mattermost ID in your AD/
 Why aren’t public channels supported with synchronized groups?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Public channels are available to all members to discover and join. Managing membership with synchronized groups removes the ability for Public channels to be accessible to users on the team. Private channels typically require a more controlled membership management, which is why this feature applies to Private channels. Groups can be assigned to public teams and Public channels as described in `this documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`__.
+Public channels are available to all members to discover and join. Managing membership with synchronized groups removes the ability for Public channels to be accessible to users on the team. Private channels typically require a more controlled membership management, which is why this feature applies to Private channels. Groups can be assigned to public teams and Public channels as described in `this documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`__.
 
 Does a team with its membership managed by groups have any effect on public channel access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -323,7 +335,7 @@ Additionally, LDAP users who are not accessible to Mattermost based on filters w
 Why aren’t Public channels supported with AD/LDAP Synchronized Groups?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Public channels are available to all members to discover and join. Managing membership with synchronized groups removes the ability for Public channels to be accessible to users on the team. Private channels typically require a more controlled membership management, which is why this feature applies to Private channels. Groups can be assigned to public teams and Public channels as described in `this documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`__.
+Public channels are available to all members to discover and join. Managing membership with synchronized groups removes the ability for Public channels to be accessible to users on the team. Private channels typically require a more controlled membership management, which is why this feature applies to Private channels. Groups can be assigned to public teams and Public channels as described in `this documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group>`__.
 
 Does a team with its membership managed by groups have any effect on Public channel access?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

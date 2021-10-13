@@ -1,12 +1,78 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.46.0 Release](#release)
-- [1.45.1 Release](#release)
-- [1.45.0 Release](#id1)
-- [1.44.1 Release](#id6)
-- [1.44.0 Release](#id11)
-- [1.43.0 Release](#id18)
+- [1.47.0 Release](#release)
+- [1.46.0 Release](#id1)
+- [1.45.1 Release](#id9)
+- [1.45.0 Release](#id14)
+- [1.44.1 Release](#id23)
+- [1.44.0 Release](#id28)
+
+## 1.47.0 Release
+- Release Date: October 13, 2021
+- Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Highlights
+
+#### Branding Changes
+ - Updated the Splash Screen, app icons, and Threads illustration to align with new branding.
+ - Added a new default brand theme named "Denim".
+ - The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim", "Sapphire", "Indigo", and "Onyx" theme names and colors, respectively. Anyone using the existing themes will see slightly modified theme colors after their server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be accessible in [our documentation](https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples), so a custom theme can be created with these theme variables if desired. Custom themes are unaffected by this change.
+ - Added a new light theme named "Quartz" to the default available list of themes.
+
+#### Deprecations
+ - Stopped evaluating deprecated config settings starting with server version 6.0.
+
+#### Custom, Collapsible Channel Categories
+ - App now displays custom categories in the sidebar.
+
+### Improvements
+ - Added mobile push notifications for followed Threads.
+ - Increased the limit of uploaded file attachments per post from 5 to 10.
+ - Removed deprecated ``Posts.ParentId`` in favor of the semantically equivalent ``Posts.RootId``.
+ - Added better support for channel and user selection from within Apps commands.
+ - Added better binding filtering for Apps.
+
+### Bug Fixes
+
+#### All apps
+ - Added an option to download a video in the gallery view if it failed to playback.
+ - Fixed an issue where the emojis were cutoff when editing a message with jumbo emojis.
+ - Fixed an issue where some mentions were highlighted when the mention key partially matched the mention in the message.
+ - Fixed an issue with in-app notifications that caused the keyboard to blur when the notifications were automatically dismissed.
+ - Fixed an issue where the autocomplete options were still visible when the keyboard was dismissed.
+ - Fixed an issue where the “Loading messages…” text was upside down.
+ - Fixed an issue where tapping on the push notification for a new reply did not open the thread with the post.
+ - Fixed an issue where opening a push notification while in the Thread screen did not take the user to the channel screen.
+ - Fixed an issue where a System message was missing when a guest user was added to a channel or when a guest joined a channel.
+ - Fixed an error where the submit button on interactive dialogs was not shown when the dialog did not specify ``submit_label``.
+ - Fixed an issue where pressing **Jump to** on mobile showed a different highlighted channels list than the sidebar highlighted channels list.
+ - Removed Date and Time label from recently used custom statuses.
+ - Fixed an error with locations and binding filtering.
+
+#### iOS specific
+ - Fixed a crash when attempting to share content into Mattermost on iOS when Biometric authentication was required.
+
+#### Android specific
+ - Fixed the ability to snooze push notifications on Android.
+ - Fixed an issue with uploading of animated gif files on Android.
+
+### Known Issues
+ - An error may occur when archiving a channel or when attempting to post to an archived channel.
+ - The "+" to add a reaction is still visible in archived channels.
+ - Close Preview X and Close Settings X are themed incorrectly in Quartz theme.
+ - Channel sidebar disappears sometimes in Airplane mode.
+ - Posts sometimes get stuck behind the post textbox on iPad.
+ - Various known issues with Collapsed Reply Threads (Beta) feature:
+   - New messages banner should only count root posts.
+   - Turning the feature on and off does not push an update to the Mobile client.
+   - Clicking on a permalink adds the thread replies in the channel view.
+   - Threads item unread state (bolding) does not persist when deleting documents and data.
 
 ## 1.46.0 Release
 - Release Date: August 16, 2021

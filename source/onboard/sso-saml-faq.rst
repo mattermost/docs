@@ -31,7 +31,7 @@ However, IWA is not supported on the Mattermost Desktop Apps due to a limitation
 How do I migrate users from one authentication method (e.g. email) to SAML?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the `Mattermost user migrate_auth CLI command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-migrate-auth>`__ documentation for details.
+See the `user migrate_auth CLI command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-migrate-auth>`__ documentation, or see the `mmctl user migrate_auth command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth>`__ for details.
 
 How is SAML different from OAuth 2.0 and OpenId Connect?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
