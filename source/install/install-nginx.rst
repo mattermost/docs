@@ -14,7 +14,7 @@ The main benefits of using a proxy are as follows:
 
 **Introduction**
 
-Nginx is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet. 
+NGINX is a popular web server and is responsible for hosting some of the largest and highest-traffic sites on the internet.
 It is more resource-friendly than Apache in most cases and can be used as a web server or reverse proxy.
 
 **To install NGINX on Ubuntu Server:**
