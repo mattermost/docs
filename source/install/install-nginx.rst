@@ -23,7 +23,7 @@ It's more resource-friendly than Apache in most cases and can be used as a web s
 
 2. Install NGINX.
 
-Because Nginx is available in Ubuntu’s default repositories, it is possible to install it from these repositories using the ``apt`` packaging system.
+Because NGINX is available in Ubuntu’s default repositories, it's possible to install it from these repositories using the ``apt`` packaging system.
 
 Since this is our first interaction with the ``apt`` packaging system in this session, we will update our local package index so that we have access to the most recent package listings. Afterwards, we can install ``nginx``:
 
