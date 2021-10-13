@@ -1,6 +1,18 @@
 User Satisfaction Surveys
 ==========================
 
+|all-plans| |cloud|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 Mattermost provides in-product feedback surveys. Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
 .. contents::
@@ -14,12 +26,12 @@ Administration
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default. However, the plugin will not be activated on any workspaces that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`__ disabled, meaning no surveys or data collection occurs.
+The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default. However, the plugin will not be activated on any workspaces that have `Error and Diagnostic Reporting <https://docs.mattermost.com/manage/telemetry.html>`__ disabled, meaning no surveys or data collection occurs.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
+Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
 
 If the plugin or surveys in the plugin configuration are disabled, they will remain disabled.
 
@@ -28,8 +40,8 @@ When is the survey scheduled?
 
 Users will receive a survey every 90 days, assuming the following conditions are true:
 
-- User Satisfaction Surveys plugin is enabled in **System Console > Plugins (Beta) > Plugin Management**
-- Surveys are enabled in the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys**
+- User Satisfaction Surveys plugin is enabled in **System Console > Plugins > Plugin Management**
+- Surveys are enabled in the plugin configuration in **System Console > Plugins > User Satisfaction Surveys**
 - User account is greater than 21 days old
 - User has not completed a survey in the last 90 days
 

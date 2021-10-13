@@ -1,6 +1,23 @@
 Customizing Mattermost
 ======================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 There are several ways to customize your Mattermost server. 
 
 If customizing Mattermost, please avoid branding that could be confused with the Mattermost brand. For example, it's okay to brand as "Healthcare Central" because it's a completely different brand. "Mattermost Healthcare Central" is not okay, because it can potentially be confused with the Mattermost brand. Please see the `Mattermost trademark guidelines <https://mattermost.org/trademark-standards-of-use/>`__ for details.

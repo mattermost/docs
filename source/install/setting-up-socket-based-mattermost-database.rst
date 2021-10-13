@@ -1,6 +1,18 @@
 Using Sockets for Database
 ==========================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost requires a database back-end. If you plan to run it on the machine,
 install MySQL or PostgreSQL as the database. In this document let's understand how
 you can use sockets for setting up the database.

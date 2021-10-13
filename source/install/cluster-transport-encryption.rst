@@ -1,6 +1,19 @@
+Configuring Cluster Transport Encryption
+========================================
 
-Configuring Cluster Transport Encryption (E20)
-==============================================
+|enterprise| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 Mattermost is able to encrypt the messages sent within the cluster of a deployment using SSH tunneling. The guide walks through the deployment of this solution on Ubuntu 18.04, but it can be adapted for any Linux operating system.
 
@@ -16,7 +29,8 @@ Prerequisites
 - Mattermost running with a dedicated service user.
 - Mattermost service is stopped on each cluster node.
 
-**Note:** Support on the application level is currently in development and will deprecate this document.
+.. note:: 
+  Support on the application level is currently in development and, when available, will deprecate this document.
 
 Example Environment
 -------------------
@@ -58,8 +72,9 @@ Next, ensure that the SSH public key of each node is added to the ``authorized_k
 
 Repeat this step for each node of the cluster. As a result, each node should be able to establish an SSH connection to the other nodes of the cluster.
 
-**Note:** This service account can be separate from the service account already used for the Mattermost ``systemd`` service itself. It is important that it is allowed to create a SSH tunnel with port forwarding, but it does not require any additional
-permissions.
+.. note:: 
+  
+  This service account can be separate from the service account already used for the Mattermost ``systemd`` service itself. It's important that this service account is allowed to create a SSH tunnel with port forwarding, but it doesn't require any additional permissions.
 
 ufw Configuration
 -----------------
@@ -153,7 +168,7 @@ Repeat those steps for every node on the cluster. At the end of this section the
 SSH Configuration
 -----------------
 
-As a next step, we will ensure that the SSH tunnels are created as part of the Mattermost service start. To do so, create a file called ``pre_start.sh`` in ``/opt/mattermost/bin`` on ``mattermost1``:
+As a next step, ensure that the SSH tunnels are created as part of the Mattermost service start. To do so, create a file called ``pre_start.sh`` in ``/opt/mattermost/bin`` on ``mattermost1``:
 
 .. code-block:: none
 
@@ -163,11 +178,12 @@ As a next step, we will ensure that the SSH tunnels are created as part of the M
   ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 28075:10.10.250.165:8075 10.10.250.165 || true
   ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 28074:10.10.250.165:8074 10.10.250.165 || true
 
-**Note:** We're ignoring the error from the SSH connection itself in case a tunnel is already active. Otherwise the Mattermost server would fail to start.
+.. note:: 
+  
+  - We're ignoring the error from the SSH connection itself in case a tunnel is already active. Otherwise the Mattermost server would fail to start.
+  - Please make sure to back up this script in case of a version upgrade.
 
-**Note:** Please make sure to back up this script in case of a version upgrade.
-
-Afterwards, we set the executable bit on the shell script:
+Afterwards, set the executable bit on the shell script:
 
 .. code-block:: none
 

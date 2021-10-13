@@ -2,6 +2,23 @@
 Desktop Application Install Guides
 ==================================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost desktop applications are available for Windows, Mac, and Linux operating systems. They support all the features of the web experience, plus:
 
 - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
@@ -18,7 +35,9 @@ Below is a list of additional resources:
 - `Source code <https://github.com/mattermost/desktop>`__
 - Contributor’s guide (coming soon)
 
-You can `download the apps directly from our downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+You can `download the Mobile Apps directly from our Downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+
+.. include:: ../upgrade/upgrading-to-v60.rst
 
 .. contents::
     :backlinks: top
@@ -58,7 +77,7 @@ macOS 10.9+
 -----------
 
 1. Download the latest version of the Mattermost desktop app:
-  - `Intel systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac.dmg>`__
+  - `Intel systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac-x64.dmg>`__
   - `M1 systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac-m1.dmg>`__ (Beta)
 
 2. Double-click the download to open the disk image.

@@ -3,6 +3,18 @@
 SMTP Email Setup
 ================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems using email-based authentication.
 
 How to Enable Email
@@ -10,8 +22,7 @@ How to Enable Email
 
 To enable email, configure an SMTP email service as follows:
 
-1. **Set up an SMTP email sending service** (if you don't yet have an
-   SMTP service with credentials)
+1. **Set up an SMTP email sending service** (if you don't yet have an SMTP service with credentials)
 
     * Any SMTP email service can be used, you just need the following
       information: ``Server Name``, ``Port``, ``SMTP Username``, and
@@ -35,7 +46,7 @@ To enable email, configure an SMTP email service as follows:
                 (DKIM) for your email domain.
 
             4. Choose a sender address like ``mattermost@example.com`` and
-                click ``Send a Test Email`` to verify setup is working
+                select ``Send a Test Email`` to verify setup is working
                 correctly.
 	    
         - By local ``sendmail`` can be used by using **Server Name** ``127.0.0.1`` with **Port** ``25``
@@ -43,16 +54,15 @@ To enable email, configure an SMTP email service as follows:
 
 2. **Configure SMTP settings**
 
-   1. Open the **System Console** by logging into an existing team and
-      accessing "System Console" from the main menu.
+   1. Go to **Product menu > System Console**.
 
-      * Alternatively, if a team doesn't yet exist navigate to your ``serverURL`` click **Go To System Console**.
+      * Alternatively, if a team doesn't yet exist navigate to your ``serverURL`` and select **Go To System Console**.
 
-   2. Go to the **Authentication** > **Email** tab and configure the following:
+   2. Go to the **Authentication > Email** tab and configure the following:
 
       1. **Allow Sign Up With Email:** ``true``
       
-   3. Go to the **Notifications** > **Email** tab and configure the following:
+   3. Go to the **Notifications > Email** tab and configure the following:
    
       1.  **Send Email Notifications:** ``true``
       2.  **Notification Display Name:** Display name on email account
@@ -64,12 +74,11 @@ To enable email, configure an SMTP email service as follows:
       6.  **SMTP Server**: ``SMTP Server`` from Step 1
       7.  **SMTP Port**: ``SMTP Port`` from Step 1
       8. **Connection Security**: ``TLS (Recommended)``
-      9. Then click **Save**
-      10. Then click **Test Connection**
-      11. If the test failed please look in **OTHER** > **Logs** for any
-          errors that look like ``[EROR] /api/v4/email/test ...``
+      9. Then select **Save**
+      10. Then select **Test Connection**
+      11. If the test failed please look in **OTHER > Logs** for any errors that look like ``[EROR] /api/v4/email/test ...``
 
-   4. (Optional) Go to the **Security** > **Sign Up** tab and configure the following:
+   4. (Optional) Go to the **Security > Sign Up** tab and configure the following:
 
       1.  **Enable Email Invitations:** ``true``
 
@@ -107,8 +116,7 @@ Gmail
 
 .. warning::
 
-  Additional configuration is required in Google to allow SMTP email to relay through their servers.
-  See `SMTP relay: Route outgoing non-Gmail messages through Google <https://support.google.com/a/answer/2956491?hl=en>`_ for the required steps.
+  Additional configuration is required in Google to allow SMTP email to relay through their servers. See `SMTP relay: Route outgoing non-Gmail messages through Google <https://support.google.com/a/answer/2956491?hl=en>`_ for the required steps.
 
 Hotmail
 ~~~~~~~
@@ -134,8 +142,7 @@ Troubleshooting SMTP
 TLS/STARTTLS Requirements 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you fill in **SMTP Username** and **SMTP Password** then you must set
-**Connection Security** to **TLS** or to **STARTTLS**
+If you fill in **SMTP Username** and **SMTP Password** then you must set **Connection Security** to **TLS** or to **STARTTLS**
 
 Troubleshooting using Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,8 +155,7 @@ For example, if **System Console > Logs** has an error code reading:
 
     Connection unsuccessful: Failed to add to email address - 554 5.7.1 <unknown[IP-ADDRESS]>: Client host rejected: Access denied
 
-Search for ``554 5.7.1 error`` and
-``Client host rejected: Access denied``.
+Search for ``554 5.7.1 error`` and ``Client host rejected: Access denied``.
 
 Checking your SMTP server is reachable 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

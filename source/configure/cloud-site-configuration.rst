@@ -1,6 +1,18 @@
 Site Configuration
 ==================
 
+|all-plans| |cloud|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 Announcement Banner
 -------------------
 
@@ -127,7 +139,7 @@ Control content in posts using the following four settings under **System Consol
 - **Enable LaTeX Rendering:** Controls users' ability to render LaTeX code.
 - **Custom URL Schemes:** A list of URL schemes that are used for autolinking in message text. HTTP, HTTPS, FTP, tel, and mailto always create links.
 
-You can also control whether all `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height are automatically collapsed or expanded in messages by setting a `user preference <https://docs.mattermost.com/help/settings/account-settings.html#link-previews>`__, or by using the ``/collapse`` and ``/expand`` `slash commands <https://docs.mattermost.com/cloud/cloud-integrations/cloud-slash-commands.html>`__. 
+You can also control whether all `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height are automatically collapsed or expanded in messages by setting a `user preference <https://docs.mattermost.com/messaging/managing-account-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` `slash commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__. 
 
 Select **Save** to apply your changes.
 
