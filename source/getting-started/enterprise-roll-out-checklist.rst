@@ -166,7 +166,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - Resource: https://docs.mattermost.com/install/smtp-email-setup.html
 
- - Set up Elasticsearch (highly recommended if your organization anticipates over 2 million posts)
+ - Set up Elasticsearch (highly recommended if your organization anticipates over two million posts)
 
   - Resource: https://docs.mattermost.com/scale/elasticsearch.html
 
