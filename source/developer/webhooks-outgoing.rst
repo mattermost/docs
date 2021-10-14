@@ -60,7 +60,7 @@ In our example, we would set the channel to ``town-square`` and specify ``#build
 .. image:: ../images/outgoing_webhooks_token.png
   :width: 500 px
 
-8 - Next, write your external application. Include a function, which receives HTTP POST requests from Mattermost. The function should look something like this:
+8 - Next, write your external application. Include a function, which receives HTTP POST requests from Mattermost. The function should accept something like this:
 
     .. code-block:: text
 
