@@ -9908,7 +9908,7 @@ Enable Personal Access Tokens
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Users can create `personal access tokens <https://docs.mattermost.com/developer/personal-access-tokens.html>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
+**True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
 
 To manage who can create personal access tokens or to search users by token ID, go to the **System Console > Users** page.
 
