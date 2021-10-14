@@ -386,7 +386,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 4. Harden Security
 ^^^^^^^^^^^^^^^^^^
 
-- Harden security controls around the web, desktop and mobile security
+- Harden security controls around the web, desktop, and mobile security
 
 - Harden configuration management 
 
