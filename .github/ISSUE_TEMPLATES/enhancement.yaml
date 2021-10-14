@@ -1,0 +1,28 @@
+name: Enhancement request
+description: 'For opening a enhancement request. '
+title: '[Enhancement]:'
+labels:
+  - enhancement
+body:
+  - type: input
+    attributes:
+      label: What type of documentation is this?
+      description: Guide/Troubleshooting etc
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Which page or section would this documentation live?
+      description: Please provide a link
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Does this solve a problem or answer a question? Is it new content?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Is there a related thread or link to provide some context?
+    validations:
+      required: true
