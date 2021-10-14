@@ -93,7 +93,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Determine System Administration access policies
 
- - Identify list of users or groups who need administrative access for Mattermost System Console, Command Line Tools and API privileges
+ - Identify the list of users or groups who need administrative access for Mattermost System Console, Command Line Tools, and API privileges
 
 - Define and configure authentication policies
 
@@ -127,7 +127,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Recommend using to test early configurations for database, authentication, file storage, Elasticsearch, prior to setting up high availability and load balancing 
  - Recommend configuring staging to be an identical replication of your production environment
 
-- Create production environment
+- Create a production environment
 
  - Install Mattermost
 
@@ -166,7 +166,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - Resource: https://docs.mattermost.com/install/smtp-email-setup.html
 
- - Set up Elasticsearch (highly recommended if your organization anticipates over 2 million posts)
+ - Set up Elasticsearch (highly recommended if your organization anticipates over two million posts)
 
   - Resource: https://docs.mattermost.com/scale/elasticsearch.html
 
@@ -228,7 +228,7 @@ Now that you have an environment in place, we recommend working through the foll
 1. Define Your Team and Channel Strategy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Determine and create team structure for your environment
+- Determine and create a team structure for your environment
 
  - Recommendation: Start with fewer teams in your early roll out
  - Resource: https://docs.mattermost.com/messaging/organizing-channels.html 
@@ -244,7 +244,7 @@ Now that you have an environment in place, we recommend working through the foll
 2. Enable Key Integrations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Build list of key integrations and tools used by your teams
+- Build the list of key integrations and tools used by your teams
 
  - Resource: https://developers.mattermost.com/integrate/getting-started/
 
@@ -328,7 +328,7 @@ Now that you have an environment in place, we recommend working through the foll
 - Manage support requests and product requests from your end users
 
  - Resource: https://mattermost.com/support/ 
- - See process below for escalating to Mattermost
+ - See the process below for escalating to Mattermost
 
 - Enable additional integrations and plugins to support user workflows
 
@@ -386,7 +386,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 4. Harden Security
 ^^^^^^^^^^^^^^^^^^
 
-- Harden security controls around web, desktop and mobile security
+- Harden security controls around the web, desktop, and mobile security
 
 - Harden configuration management 
 
@@ -403,7 +403,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
  - Resource: https://mattermost.com/security-updates/
 
-- Perform first upgrade
+- Perform the first upgrade
 
  - Resource: https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html
 
