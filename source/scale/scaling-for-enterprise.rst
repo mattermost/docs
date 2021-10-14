@@ -93,7 +93,7 @@ Hosting Recommendation for 100,000+ users
 
 The following matrix presents key features for a successful multi-region Mattermost implementation that scales to 100,000 users with support for high availability and geographically based traffic routing in on premises, AWS, and Azure deployments.
 
-To scale to 100,000 users and above, we recommended using `the Mattermost open source load testing framework <https://github.com/mattermost/mattermost-load-test>`__ to simulate the usage of your system at full scale.
+To scale to 100,000 users and above, we recommended using `the Mattermost open source load testing framework <https://github.com/mattermost/mattermost-load-test>`__ to simulate usage of your system at full scale.
 
 .. csv-table::
     :header: "Feature", "Self-Hosted", "Amazon AWS", "Azure"
