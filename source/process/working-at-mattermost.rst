@@ -109,7 +109,7 @@ c) Post in the `Stand-up channel <https://community.mattermost.com/private-core/
 
 d) Block off time in the shared `Mattermost Timeoff calendar <https://calendar.google.com/calendar/embed?src=mattermost.com_mg3nulgf6e70e50ohlq2rrkcnc%40group.calendar.google.com&ctz=America%2FLos_Angeles>`__, so it's easy for the team to see who is going to be away.
 
-There is no limit to how much time-off you can take when your work is meeting or exceeding expectations. We strongly recommend a minimum of 2 weeks per year.
+There is no limit to how much time-off you can take when your work is meeting or exceeding expectations. We strongly recommend a minimum of two weeks per year.
 
 2) Holidays
 ~~~~~~~~~~~

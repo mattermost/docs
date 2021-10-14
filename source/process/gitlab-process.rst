@@ -123,7 +123,7 @@ GitLab Premier Support Issues
 
 GitLab has a `4-hour support window for their premier support customers <https://about.gitlab.com/features/premium-support/>`__ and Mattermost has set up a process to support this window.
 
-When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within 4 hours using the ``mattermost-support`` account.
+When a premier support issue requires escalation to the Mattermost support team, GitLab assigns the issue to the ``mattermost-support`` account. This assignment sends an email notification, which is automatically escalated to the critical level technical support who answers the question within four hours using the ``mattermost-support`` account.
 
 Monthly Meetings
 -------------------

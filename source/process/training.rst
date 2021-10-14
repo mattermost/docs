@@ -32,14 +32,14 @@ Hiring
 - (People Ops and New Hire) Offer letter accepted via click-sign.
 - (Logistics) Mail track jacket and socks.
 
-T-minus 1-3 weeks
+T-minus one-three weeks
 -----------------
 
 - (People Ops and New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a MacBook in your local area, for developers budget is cost of a MacBook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to people@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology, and training materials.
 - (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
  
-T-minus 1 week
+T-minus one week
 ---------------
 
 - (People Ops and New Hire) Set up payroll.
@@ -183,9 +183,9 @@ Procedure:
 **Before meeting:**
 
 1. (Chair) Schedules items for the weekly agenda, and works 1-1 with presenters to prepare for them.
-2. (Vice Chair) Works with new hires and their managers to schedule week 2 welcomes. If new hire or manager is away, introduction is postponed to the following meeting.
+2. (Vice Chair) Works with new hires and their managers to schedule week two welcomes. If new hire or manager is away, introduction is postponed to the following meeting.
 
-     - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes).
+     - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max two minutes).
      - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking).
 3. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
 4. (Vice Chair) Posts a reminder message in the meeting channel about the meeting 24 hours prior to meeting start.
@@ -208,7 +208,7 @@ Procedure:
 3. (Chair and Co-Chairs) Run through the agenda, which comprises one or more of the following items:
 
   - **Introduction:** One of the founders does an introduction to the meeting.
-  - **Week 2 welcomes of new team members:** New team members introduced on their second week by their manager, or optionally by the new team member themselves.
+  - **Week two welcomes of new team members:** New team members introduced on their second week by their manager, or optionally by the new team member themselves.
   - **Main topics:** Examples include: Series A marketing announce; FOSDEM event; key use cases and stories from customers to understand how they use Mattermost. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback:** At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
@@ -247,7 +247,7 @@ Attendees:
 
 Time:
 
-- Every 3 weeks on Wednesdays from 9:00am to 10:30am Palo Alto time.
+- Every three weeks on Wednesdays from 9:00am to 10:30am Palo Alto time.
 
 Procedure:
 
@@ -355,7 +355,7 @@ Procedure:
 Leads Meeting
 ^^^^^^^^^^^^^
 
-**Mattermost staff only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <https://everytimezone.com/>`__)
+**Mattermost staff only** - (Leads - one hour/week) Wednesday (13:00 `San Francisco Time <https://everytimezone.com/>`__)
 
 - Goal: Address leadership and process topics.
 - Attendees: (Required) Leads from R&D, Marketing, Sales, and Operations.
@@ -431,8 +431,8 @@ Here we summarize meeting elements that can be re-used for meetings across teams
 Ice-breaker
 ^^^^^^^^^^^
 
-- 2-3 minute exercises designed to learn more about colleagues at the start of a recurring meeting.
-- Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (2 R&D staff, 1 'other' (e.g. Sales, Ops, etc).
+- two-three minute exercises designed to learn more about colleagues at the start of a recurring meeting.
+- Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (two R&D staff, one 'other' (e.g. Sales, Ops, etc).
 
 - Examples:
    - "Hobby talk" - Sharing about an interesting hobby, past or present.
