@@ -93,7 +93,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Determine System Administration access policies
 
- - Identify the list of users or groups who need administrative access for Mattermost System Console, Command Line Tools and API privileges
+ - Identify the list of users or groups who need administrative access for Mattermost System Console, Command Line Tools, and API privileges
 
 - Define and configure authentication policies
 
