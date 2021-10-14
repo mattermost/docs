@@ -54,7 +54,7 @@ After importing users, you can send out an announcement via email or via your ol
  
 Use the following message template to alert users of the migration::
 
-     @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new location, e.g. ``https://yourcompany.com/mattermost``], clicking on **I forgot my password** and entering the email you used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
+     @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new location, e.g. ``https://yourcompany.com/mattermost``], selecting **I forgot my password**, and entering the email you used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
 
 **Announcing Mattermost onboarding using email using username/password:**
 

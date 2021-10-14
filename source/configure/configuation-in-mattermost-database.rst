@@ -1,6 +1,18 @@
 Configuration in the Mattermost Database
 ========================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 A new configuration option was added in the `5.10 release <https://docs.mattermost.com/install/self-managed-changelog.html>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
@@ -22,7 +34,9 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. There are several ways to do this, but the easiest is to use the ``mattermost config get`` command:
+The first step is to get your master database connection string. We recommend using the `mmctl config get command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-get>`__, or using the CLI's ``mattermost config get`` command to do this.  
+
+To use the ``mattermost config get`` command:
 
 .. code-block:: bash
 
@@ -37,9 +51,9 @@ Example output:
    SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
 
 .. note::
-   Be sure to run this command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
+   Be sure to run this CLI command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
 
-Another way is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
+Another way to get your database connection string is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
 
 If ``SqlSettings.DataSource`` does not start with ``postgres://`` or ``mysql://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026`` replace it with ``&``.
 
@@ -62,7 +76,7 @@ Create an environment file
 
 .. note::
    
-   If you're running Mattermost in a High Availability cluster this step must be done on all servers in the cluster.
+   If you're running Mattermost in a High Availability cluster, this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
@@ -144,11 +158,13 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+You can use the `mmctl config migrate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ command, or you can use the CLI mattermost config migrate command for this step, as described below.
+
 .. note::
  
-   If you're using a High Availability cluster you only need to run this on a single server in the cluster.
+   If you're using a High Availability cluster, you only need to run this on a single server in the cluster.
 
-The command to migrate the config to the database should always be run as the *mattermost* user.
+The CLI command to migrate the config to the database should always be run as the *mattermost* user.
 
 .. code-block:: bash
 
@@ -157,7 +173,7 @@ The command to migrate the config to the database should always be run as the *m
    bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
-   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell.  See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
+   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
    
 As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
 

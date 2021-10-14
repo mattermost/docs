@@ -31,4 +31,4 @@ Before running the bulk loading command, you must first create a `JSONL
 
 .. important::
 
-After the import tool has run, all files created in the ``data`` directory are owned by *root* as the tool was run as *sudo*. The owner of the ``data`` directory and all its content has to change to *mattermost* user, otherwise, Mattermost can't fetch the files created in the ``data`` directory after the import tool has run.
+  After the import tool has run, all files created in the ``data`` directory are owned by *root* as the tool was run as *sudo*. The owner of the ``data`` directory and all its content has to change to *mattermost* user, otherwise, Mattermost can't fetch the files created in the ``data`` directory after the import tool has run.

@@ -3,6 +3,18 @@
 Software and Hardware Requirements
 ==================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out.
 
 .. contents::
@@ -11,7 +23,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment Overview
 -------------------
 
-Please see the `Mattermost Deployment Overview <https://docs.mattermost.com/deployment/deployment.html>`__ documentation for a summary of software systems whose requirements are described in this document.
+Please see the `Mattermost Deployment Overview <https://docs.mattermost.com/deploy/deployment-overview.html>`__ documentation for a summary of software systems whose requirements are described in this document.
 
 .. image:: ../images/network_diagram.png
    :alt: Mattermost Network Diagram
@@ -26,11 +38,11 @@ Desktop Apps
 ^^^^^^^^^^^^
 
 .. csv-table::
-    :header: "Operating System", "Technical Requirement"
+    :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Windows", "Windows 7, 8.1, and 10"
-    "Mac", "MacOS 10.12+"
-    "Linux", "Ubuntu LTS releases 18.04 or later"
+    "Windows", "Windows 8.1 and 10", "Windows 8.1 and 10"
+    "Mac", "MacOS 10.12+", "MacOS 10.14+"
+    "Linux", "Ubuntu LTS releases 18.04 or later", "Ubuntu LTS releases 18.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
@@ -40,12 +52,12 @@ PC Web
 ^^^^^^
 
 .. csv-table::
-    :header: "Browser", "Technical Requirement"
+    :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v77+"
-    "Firefox", "v68+"
-    "Safari", "v12+"
-    "Edge", "v44+"
+    "Chrome", "v77+", "v89+"
+    "Firefox", "v68+", "v78+"
+    "Safari", "v12+", "v12+"
+    "Edge", "v44+", "v44+"
 
 `*` Support for Internet Explorer (IE11) has been removed in Mattermost 5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
 
@@ -55,7 +67,7 @@ Mobile Apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 11+"
+    "iOS", "iPhone 5s devices and later with iOS 12.1+"
     "Android", "Android devices with Android 7+"
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
@@ -66,7 +78,7 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 11+ with Safari 12+ or Chrome 77+"
+    "iOS", "iOS 12.1+ with Safari 12+ or Chrome 77+"
     "Android", "Android 7+ with Chrome 77+"
 
 Email Client
@@ -90,9 +102,17 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database Software
 ^^^^^^^^^^^^^^^^^
 
--  MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
+For Mattermost v6.0:
+
+-  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
--  Amazon Aurora MySQL 5.6+
+
+For Mattermost v5.39 and previous releases:
+
+- MySQL 5.6, 5.7, 8.0.12+ (see note below on MySQL 8 support)
+- PostgreSQL 10.0+
+
+Amazon Aurora equivalents of both MySQL and PostgreSQL are also supported.
 
 Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
 
@@ -101,7 +121,7 @@ Search limitations on PostgreSQL:
 - Email addresses do not return results.
 - Hashtags or recent mentions of usernames containing a dash do not return search results.
 - Terms containing a dash return incorrect results as dashes are ignored in the search query.
-- If any of the above is an issue, you can either enable the `Elasticsearch (E20) feature <https://docs.mattermost.com/deployment/elasticsearch.html>`__ or install MySQL instead.
+- If any of the above is an issue, you can either enable the `Elasticsearch feature <https://docs.mattermost.com/scale/elasticsearch.html>`__ or install MySQL instead.
 
 Search limitations on MySQL:
 
@@ -132,7 +152,7 @@ Hardware Requirements
 
 Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
 
-Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/administration/config-settings.html#maximum-file-size>`__. Changing this number may change memory requirements.
+Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size>`__. Changing this number may change memory requirements.
 
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
@@ -141,8 +161,8 @@ Hardware Requirements for Team Deployments
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
 
- -  1 - 1,000 users - 1 vCPU/cores, 2 GB RAM
- -  1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM
+-  1 - 1,000 users - 1 vCPU/cores, 2 GB RAM
+-  1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM
 
 .. _hardware-sizing-for-enterprise:
 
@@ -152,21 +172,21 @@ Hardware Requirements for Enterprise Deployments (Multi-Server)
 Scale Requirements
 ^^^^^^^^^^^^^^^^^^
 
-For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`__.
+For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`__.
 
 It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
-Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`__ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
+Mattermost's `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
-   - Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`__ available in Enterprise Edition E20.
-   - Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`__. Grafana 5.0.0 and later is recommended.
-   - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 5.0 and later is supported. `Learn more here <https://docs.mattermost.com/deployment/elasticsearch.html>`__.
-   - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/administration/config-settings.html#files>`__.
+- Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__ available in Mattermost Enterprise.
+- Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__. Grafana 5.0.0 and later is recommended.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.39 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here <https://docs.mattermost.com/scale/elasticsearch.html>`__.
+- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/configure/configuration-settings.html#file-storage>`__.
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

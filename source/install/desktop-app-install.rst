@@ -2,6 +2,23 @@
 Desktop Application Install Guides
 ==================================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost desktop applications are available for Windows, Mac, and Linux operating systems. They support all the features of the web experience, plus:
 
 - Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
@@ -18,7 +35,9 @@ Below is a list of additional resources:
 - `Source code <https://github.com/mattermost/desktop>`__
 - Contributor’s guide (coming soon)
 
-You can `download the apps directly from our downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+You can `download the Mobile Apps directly from our Downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+
+.. include:: ../upgrade/upgrading-to-v60.rst
 
 .. contents::
     :backlinks: top
@@ -28,9 +47,9 @@ Windows 10+, Windows 8.1+
 
 1. Download the latest version of the Mattermost desktop app:
 
-  - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-setup-4.7.2-win.exe>`__
+  - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-setup-5.0.0-win.exe>`__
 
-2. From the **\Downloads** folder right-click on the file ``mattermost-desktop-setup-4.7.2-win.exe`` and select **Open**.
+2. From the **\Downloads** folder right-click on the file ``mattermost-desktop-setup-5.0.0-win.exe`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
@@ -39,8 +58,8 @@ MSI Installer and Group Policies (Beta)
 
 Download the latest version of the Mattermost desktop app MSI installer (Beta):
 
-- MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-x64.msi>`__
-- MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-x86.msi>`__
+- MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-x64.msi>`__
+- MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-x86.msi>`__
 
 `See here <https://docs.mattermost.com/install/desktop-msi-gpo.html>`__ for instructions on installing the Mattermost desktop app via an MSI installer and configuring supported Group Policies.
 
@@ -58,8 +77,8 @@ macOS 10.9+
 -----------
 
 1. Download the latest version of the Mattermost desktop app:
-  - `Intel systems <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-mac.dmg>`__
-  - `M1 systems <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-mac-m1.dmg>`__ (Beta)
+  - `Intel systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac-x64.dmg>`__
+  - `M1 systems <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-mac-m1.dmg>`__ (Beta)
 
 2. Double-click the download to open the disk image.
 
@@ -75,8 +94,8 @@ Generic Linux package
 
 1. Download the latest version of the Mattermost desktop app:
 
- - 64-bit systems: `mattermost-desktop-4.7.2-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-linux-x64.tar.gz>`__
- - 32-bit systems: `mattermost-desktop-4.7.2-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-linux-ia32.tar.gz>`__
+ - 64-bit systems: `mattermost-desktop-5.0.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-linux-x64.tar.gz>`__
+ - 32-bit systems: `mattermost-desktop-5.0.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -90,16 +109,16 @@ Unofficial, community-driven ``.deb`` packages are available.
 1. Download the latest version of the Mattermost Desktop App:
 
 - 64-bit systems
-  `mattermost-desktop-4.7.2-linux-amd64.deb <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-linux-amd64.deb>`__
+  `mattermost-desktop-5.0.0-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-linux-amd64.deb>`__
 - 32-bit systems
-  `mattermost-desktop-4.7.2-linux-i386.deb <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-linux-i386.deb>`__
+  `mattermost-desktop-5.0.0-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
 - 64-bit systems
-  ``sudo dpkg -i mattermost-desktop-4.7.2-linux-amd64.deb``
+  ``sudo dpkg -i mattermost-desktop-5.0.0-linux-amd64.deb``
 - 32-bit systems
-  ``sudo dpkg -i mattermost-desktop-4.7.2-linux-i386.deb``
+  ``sudo dpkg -i mattermost-desktop-5.0.0-linux-i386.deb``
 
 3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 
@@ -111,16 +130,16 @@ Unofficial, community-driven ``.rpm`` packages are available.
 1. Download the latest version of the Mattermost Desktop App:
 
 - 32-bit systems
-  `mattermost-desktop-4.7.2-linux-i686.rpm <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-linux-i686.rpm>`__
+  `mattermost-desktop-5.0.0-linux-i686.rpm <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-linux-i686.rpm>`__
 - 64-bit systems
-  `mattermost-desktop-4.7.2-linux-x86_64.rpm <https://releases.mattermost.com/desktop/4.7.2/mattermost-desktop-4.7.2-linux-x86_64.rpm>`__
+  `mattermost-desktop-5.0.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.0.0/mattermost-desktop-5.0.0-linux-x86_64.rpm>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
 - 32-bit systems
-  ``sudo rpm -i mattermost-desktop-4.7.2-linux-i686.rpm``
+  ``sudo rpm -i mattermost-desktop-5.0.0-linux-i686.rpm``
 - 64-bit systems
-  ``sudo rpm -i mattermost-desktop-4.7.2-linux-x86_64.rpm``
+  ``sudo rpm -i mattermost-desktop-5.0.0-linux-x86_64.rpm``
 
 3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
 

@@ -3,6 +3,18 @@
 Troubleshooting Mattermost Issues
 =================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
@@ -40,7 +52,7 @@ The resulting server log file is called ``mattermost.log`` and can be opened wit
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings `here <https://docs.mattermost.com/administration/config-settings.html#logging>`__.
+You can find more on logging settings `here <https://docs.mattermost.com/configure/configuration-settings.html#standard-logging>`__.
 
 **Mattermost Desktop App**
 
@@ -88,7 +100,7 @@ Connect with Another Device
 - If you have another mobile device available, try connecting with that to see if your issue still reproduces.
 - If you don’t have another device available, check with other teammates to see if they are having the same issue.
 
-Opening a Support Ticket for Self-Managed Deployments
+Opening a Support Ticket for Self-Hosted Deployments
 -----------------------------------------------------
 
 When opening a Support ticket, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
@@ -267,7 +279,7 @@ Note for Agents: This information is also required:
 
 - Customer name
 - Customer contacts
-- Customer license, e.g. E10/E20/PS
+- Customer license, e.g. Enterprise/Professional
 - Customer tier
 
 Environment

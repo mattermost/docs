@@ -43,7 +43,6 @@ Server Installation
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
-    Helm </install/install-kubernetes.html#installing-the-operators-via-helm>
     Debian Buster </install/install-debian>
     RHEL 8 </install/install-rhel-8>
     CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>
@@ -54,7 +53,6 @@ Server Installation
 * :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
 * :doc:`Kubernetes </install/install-kubernetes>`
-* `Helm <https://docs.mattermost.com/install/install-kubernetes.html#installing-the-operators-via-helm>`__
 * :doc:`Debian Buster </install/install-debian>`
 * :doc:`RHEL 8 </install/install-rhel-8>`
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
@@ -119,6 +117,7 @@ Desktop & Mobile App Deployment
     Mobile Push Notifications </deploy/mobile-hpns>
     Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps>
     Deploying Mobile Apps Using an EMM Provider </deploy/deploy-mobile-apps-using-emm-provider>
+    AppConfig for EMM Solutions with Mattermost Mobile Apps </deploy/mobile-appconfig> 
     Mobile VPN Options </deploy/consider-mobile-vpn-options>
     Mobile Apps FAQ </deploy/mobile-faq>
     Client-side Data Storage FAQ </deploy/client-side-data>
@@ -139,6 +138,7 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 * :doc:`Mobile Push Notifications </deploy/mobile-hpns>` - Set up mobile push notifications. 
 * :doc:`Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps>` - Build custom mobile Mattermost apps.
 * :doc:`Deploying Mobile Apps Using an EMM Provider </deploy/deploy-mobile-apps-using-emm-provider>` - Deploy with Enterprise Mobile Management software to enforce security policies and enforce specific versions of the Mattermost mobile apps.
+* :doc:`AppConfig for EMM Solutions with Mattermost Mobile Apps </deploy/mobile-appconfig>` - Learn how AppConfig provides an easy way to configure enterprise mobile applications.
 * :doc:`Mobile VPN Options </deploy/consider-mobile-vpn-options>` - Learn how to use the Mattermost mobile apps with Mobile VPNs.
 * :doc:`Mobile Apps FAQ </deploy/mobile-faq>`
 * :doc:`Client-side Data Storage FAQ </deploy/client-side-data>`
@@ -151,6 +151,7 @@ Upgrade Mattermost
 
     Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
     Enterprise Install and Upgrade </install/enterprise-install-upgrade>
+    Install a License Key </upgrade/installing-license-key>
     Release Definitions </upgrade/release-definitions>
     Important Upgrade Notes </upgrade/important-upgrade-notes>
     Release Lifecycle </upgrade/release-lifecycle>
@@ -163,6 +164,7 @@ Stay up to date with the latest features and improvements.
 
 * :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
 * :doc:`Enterprise Install and Upgrade </install/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost server to premium versions.
+* :doc:`Install a License Key </upgrade/installing-license-key>` - Learn how to add or change a Mattermost license key.
 * :doc:`Release Definitions </upgrade/release-definitions>` - Get details on the Mattermost release schedule and the types of releases.
 * :doc:`Important Upgrade Notes </upgrade/important-upgrade-notes>` - Find version-specific upgrade considerations.
 * :doc:`Release Lifecycle </upgrade/release-lifecycle>` - See critical release lifecycle dates.

@@ -1,4 +1,3 @@
-
 Statistics
 ==========
 
@@ -6,6 +5,18 @@ Statistics on users, posts, and channels are tracked for each system and team.
 
 Site Statistics
 ---------------
+
+|all-plans| |cloud|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
 
 System statistics are viewable under **System Console > Reporting > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
@@ -31,13 +42,25 @@ Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Total Posts from Bots (graph)
-    The total number of posts made by a `bot account <https://docs.mattermost.com/developer/bot-accounts.html>`_ on a certain day in all the teams on your system, including deleted posts and posts made using automation.
+    The total number of posts made by a `bot account <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`_ on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
 Team Statistics
 ---------------
+
+|all-plans| |cloud|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
 
 Team Statistics are viewable under **System Console > Reporting > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.
 
@@ -76,7 +99,7 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can Team Admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Administrators can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ to enable Team Administrators to see team statistics.
+System Admins can designate the **Viewer** `System Admin Role <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ to enable Team Admin to see team statistics.
 
 Once Team Admins are assigned to the **Viewer** role, they can access all statistics for all teams.
 
