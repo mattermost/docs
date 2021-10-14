@@ -1,15 +1,75 @@
 Important Upgrade Notes
 =======================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 .. important::
-   - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
+   - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
    - The "version" CLI command will be deprecated in Mattermost v6.1.
    - Upgrading Mattermost can result in an error “ERROR: default for column "column_name" cannot be cast automatically to type jsonb” if you have non-JSON data in a column. This can also happen if the database data has been manipulated by external processes (e.g. plugins) and in cases where improper input data could get silently truncated due to varchar limits. The data in the affected database column has to be manually fixed.
-   - The deprecations `listed here <https://docs.mattermost.com/administration/changelog.html#upcoming-deprecations-in-mattermost-v6-0>`_ are planned for the Mattermost v6.0 release, which is scheduled for October 13, 2021. The list is subject to change prior to the release. Also please note that with Mattermost v6.0, longer migration times can be expected - see `this document <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`_ for more details. Also, nodes from v5.x cannot run with v6.x nodes in a cluster, meaning that a High Availability upgrade is not possible when upgrading to Mattermost v6.0 - see this `Forum post <https://forum.mattermost.org/t/6-0-important-upgrade-notes/12037>`_ for details.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v6.0                                               | Longer migration times can be expected.                                                                                                                          |
+|                                                    |                                                                                                                                                                  |
+|                                                    |  - See `this document <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`_ for the estimated upgrade times with datasets of 10+ million posts.|                                                                                                                                            
+|                                                    |  - See `this document <https://gist.github.com/streamer45/868c451164f6e8069d8b398685a31b6e>`_ for the estimated upgrade times with datasets of 70+ million posts.|                                                                                                                          
+|                                                    |                                                                                                                                                                  |
+|                                                    | The field type of Data in ``model.ClusterMessage`` was changed to []byte from string. Therefore, a major thing to note is that a v6 server is incompatible to    |
+|                                                    | run along with a v5 server in a cluster. Customers upgrading from 5.x to 6.x cannot do a High Availability upgrade. While upgrading, it is required that no      | 
+|                                                    | other v5 server runs when a v6 server is brought up. A v6 server will run significant database schema changes that can cause a large startup time depending on   |
+|                                                    | the dataset size. Zero downtime will not be possible, but depending on the efforts made during the migration process, it can be minimized to a large extent.     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | 1. Low effort, long downtime - This is the usual process of starting a v6 server normally. This has 2 implications: during the migration process, various        |
+|                                                    | tables will be locked which will render those tables read-only during that period. Secondly, once the server finishes migration and starts the application, no   |
+|                                                    | other v5 server can run in the cluster.                                                                                                                          |
+|                                                    |                                                                                                                                                                  |
+|                                                    | 2. Medium effort, medium downtime - This process will require SQL queries to be executed manually on the server. To avoid causing a table lock, a customer can   |
+|                                                    | choose to use the pt-online-schema-change tool for MySQL. For Postgres, the table locking is very minimal. The advantage is that since there are a lot of        |
+|                                                    | queries, the customer can take their own time to run individual queries during off-hours. All queries except #11 are safe to be executed this way. Then the      |
+|                                                    | usual method of (1) can be followed.                                                                                                                             |
+|                                                    |                                                                                                                                                                  |
+|                                                    | 3. High effort, low downtime - This process requires everything of (2), plus it tries to minimize the impact of query #11. We can do this by following step 2,   |
+|                                                    | and then starting v6 along with a running v5 server, and then monitor the application logs. As soon as the v6 application starts up, we need to bring down a v5  |
+|                                                    | node. This minimizes the downtime to only a few seconds.                                                                                                         |
+|                                                    |                                                                                                                                                                  |
+|                                                    | It is recommended to start Mattermost directly and not through systemctl to avoid the server process getting killed during the migration. This can happen since  |
+|                                                    | the value of ``TimeoutStartSec`` in the provided systemctl service file is set to 1 hour.                                                                        |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Customers using the Mattermost Kubernetes operator should be aware of the above migration information and choose the path that is most appropriate for them. If  |
+|                                                    | (1) is acceptable, then the normal upgrade process using the operator will suffice. For minimum downtime, follow (2) before using the operator to update         |
+|                                                    | Mattermost following the normal upgrade process.                                                                                                                 |    
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Please see `the changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ for a list deprecations in this release.                           |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Focalboard plugin has been renamed to Mattermost Boards, and v0.9.1 (released with Mattermost v6.0) is now enabled by default.                                   |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The advanced logging configuration schema changed. This is a breaking change relative to 5.x. See updated                                                        |
+|                                                    | `documentation <https://docs.mattermost.com/comply/audit-log.html>`_.                                                                                            |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The existing theme names and colors, including "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" have been updated to the new "Denim",         |
+|                                                    | "Quartz", "Indigo", and "Onyx" theme names and colors, respectively. Anyone using the existing themes will see slightly modified theme colors after their        |
+|                                                    | server or workspace is upgraded. The theme variables for the existing "Mattermost", "Organization", "Mattermost Dark", and "Windows Dark" themes will still be   |
+|                                                    | accessible in `our documentation <https://docs.mattermost.com/messaging/customizing-theme-colors.html#custom-theme-examples>`_, so a custom theme can be created |
+|                                                    | with these theme variables if desired. Custom themes are unaffected by this change.                                                                              |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Some breaking changes to plugins are included:                                                                                                                   |
+|                                                    |                                                                                                                                                                  |
+|                                                    |  - Support for left-hand side-specific bot icons was dropped.                                                                                                    |
+|                                                    |  - Removed a deprecated "Backend" field from the plugin manifest.                                                                                                |
+|                                                    |  - Converted the "Executables" field in the plugin manifest to a map.                                                                                            |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.38.0                                            | The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config reload`` command, which |
 |                                                    | must be run to apply configuration changes after they are made on disk. This change improves configuration performance and robustness.                           |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -391,7 +451,7 @@ Important Upgrade Notes
 |                                                    | ``RestrictTeamInvite``,                                                                                                                                          |
 |                                                    | ``RestrictCustomEmojiCreation``.                                                                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | The behavior of the ``config.json`` setting ``PostEditTimeLimit`` has been updated to accommodate the migration to a roles based permission system.               |
+|                                                    | The behavior of the ``config.json`` setting ``PostEditTimeLimit`` has been updated to accommodate the migration to a roles based permission system.              |
 |                                                    | When post editing is permitted, set ``"PostEditTimeLimit": -1`` to allow editing anytime, or set ``"PostEditTimeLimit"`` to a positive integer to restrict       | 
 |                                                    | editing time in seconds. If post editing is disabled, this setting does not apply.                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+

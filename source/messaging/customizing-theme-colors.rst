@@ -3,9 +3,38 @@
 Theme Colors
 ============
 
-The colors of the Mattermost user interface are customizable in **Account Settings > Display > Theme**. You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
+|all-plans| |cloud| |self-hosted|
 
-Any color changes you make are applied to all teams that you belong to. In Enterprise Edition, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+The colors of the Mattermost user interface are customizable. 
+
+.. tabs::
+
+  .. tab:: Mattermost v6.0 onwards
+
+      In Mattermost v6.0, navigate to **Settings > Display > Theme**.
+      
+  .. tab:: Mattermost v5.39 and earlier
+
+      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Theme**.
+     
+You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
+
+Any color changes you make are applied to all teams that you belong to. In Mattermost Enterprise, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
 
 Import Theme from Slack
 -----------------------
@@ -89,24 +118,82 @@ Exporting a Custom Theme
 
 You can export a theme from Mattermost by copying the theme values from the Custom Theme menu.
 
-Go to **Account Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
+.. tabs::
 
+  .. tab:: Mattermost v6.0 onwards
+
+      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
+      
+  .. tab:: Mattermost v5.39 and earlier
+
+      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
+  
 Importing a Custom Theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can import a theme into Mattermost by pasting the theme values into the Custom Theme menu.
 
-Copy existing theme values, then go to **Account Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
+Copy existing theme values, then go to: 
 
+.. tabs::
+
+  .. tab:: Mattermost v6.0 onwards
+
+      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
+
+  .. tab:: Mattermost v5.39 and earlier
+
+      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
+  
 Custom Theme Examples
 ~~~~~~~~~~~~~~~~~~~~~
 
 Customize your theme colors and share them with others by copying and pasting theme values into the input box. Below are some example themes with their corresponding theme values.
 
+Mattermost
+^^^^^^^^^^
+
+.. image:: ../images/Mattermost.png
+  :alt: Mattermost Theme
+  
+.. code-block:: none
+
+		{"sidebarBg":"#145dbf","sidebarText":"#ffffff","sidebarUnreadText":"#ffffff","sidebarTextHoverBg":"#4578bf","sidebarTextActiveBorder":"#579eff","sidebarTextActiveColor":"#ffffff","sidebarHeaderBg":"#1153ab","sidebarTeamBarBg":"#0b428c","sidebarHeaderTextColor":"#ffffff","onlineIndicator":"#06d6a0","awayIndicator":"#ffbc42","dndIndicator":"#f74343","mentionBg":"#ffffff","mentionBj":"#ffffff","mentionColor":"#145dbf","centerChannelBg":"#ffffff","centerChannelColor":"#3d3c40","newMessageSeparator":"#ff8800","linkColor":"#2389d7","buttonBg":"#166de0","buttonColor":"#ffffff","errorTextColor":"#fd5960","mentionHighlightBg":"#ffe577","mentionHighlightLink":"#166de0","codeTheme":"github"}
+
+Organization
+^^^^^^^^^^^^
+
+.. image:: ../images/Organization.png
+  :alt: Organization Theme
+
+.. code-block:: none
+
+						{"sidebarBg":"#2071a7","sidebarText":"#ffffff","sidebarUnreadText":"#ffffff","sidebarTextHoverBg":"#136197","sidebarTextActiveBorder":"#7ab0d6","sidebarTextActiveColor":"#ffffff","sidebarHeaderBg":"#2f81b7","sidebarTeamBarBg":"#256996","sidebarHeaderTextColor":"#ffffff","onlineIndicator":"#7dbe00","awayIndicator":"#dcbd4e","dndIndicator":"#ff6a6a","mentionBg":"#fbfbfb","mentionColor":"#2071f7","centerChannelBg":"#f2f4f8","centerChannelColor":"#333333","newMessageSeparator":"#ff8800","linkColor":"#2f81b7","buttonBg":"#1dacfc","buttonColor":"#ffffff","errorTextColor":"#a94442","mentionHighlightBg":"#f3e197","mentionHighlightLink":"#2f81b7","codeTheme":"github"}
+
+Mattermost Dark
+^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDark.png
+  :alt: Mattermost Dark Theme
+
+.. code-block:: none
+
+			{"sidebarBg":"#1b2c3e","sidebarText":"#ffffff","sidebarUnreadText":"#ffffff","sidebarTextHoverBg":"#4a5664","sidebarTextActiveBorder":"#66b9a7","sidebarTextActiveColor":"#ffffff","sidebarHeaderBg":"#1b2c3e","sidebarTeamBarBg":"#152231","sidebarHeaderTextColor":"#ffffff","onlineIndicator":"#65dcc8","awayIndicator":"#c1b966","dndIndicator":"#e81023","mentionBg":"#b74a4a","mentionColor":"#ffffff","centerChannelBg":"#2f3e4e","centerChannelColor":"#dddddd","newMessageSeparator":"#5de5da","linkColor":"#a4ffeb","buttonBg":"#4cbba4","buttonColor":"#ffffff","errorTextColor":"#ff6461","mentionHighlightBg":"#984063","mentionHighlightLink":"#a4ffeb","codeTheme":"solarized-dark"}
+
+Windows Dark
+^^^^^^^^^^^^
+
+.. image:: ../images/WindowsDark.png
+  :alt: Windows Dark Theme
+
+.. code-block:: none
+
+		{"sidebarBg":"#171717","sidebarText":"#ffffff","sidebarUnreadText":"#ffffff","sidebarTextHoverBg":"#302e30","sidebarTextActiveBorder":"#196caf","sidebarTextActiveColor":"#ffffff","sidebarHeaderBg":"#1f1f1f","sidebarTeamBarBg":"#181818","sidebarHeaderTextColor":"#ffffff","onlineIndicator":"#399fff","awayIndicator":"#c1b966","dndIndicator":"#e81023","mentionBg":"#0177e7","mentionColor":"#ffffff","centerChannelBg":"#1f1f1f","centerChannelColor":"#dddddd","newMessageSeparator":"#cc992d","linkColor":"#0d93ff","buttonBg":"#0177e7","buttonColor":"#ffffff","errorTextColor":"#ff6461","mentionHighlightBg":"#784098","mentionHighlightLink":"#a4ffeb","codeTheme":"monokai"}
+
 GitHub Theme
 ^^^^^^^^^^^^
 
-.. image:: ../images/theme2.png
+.. image:: ../images/GitHub.png
   :alt: GitHub Theme
 
 .. code-block:: none
@@ -116,7 +203,7 @@ GitHub Theme
 Monokai Theme
 ^^^^^^^^^^^^^
 
-.. image:: ../images/theme3.png
+.. image:: ../images/Monokai.png
   :alt: Monokai Theme
 
 .. code-block:: none
@@ -126,7 +213,7 @@ Monokai Theme
 Solarized Dark Theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../images/themeSolarizedDark.png
+.. image:: ../images/SolarizedDark.png
   :alt: Solarized Dark Theme
 
 .. code-block:: none
@@ -136,7 +223,7 @@ Solarized Dark Theme
 Gruvbox Dark Theme
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ../images/themeGruvboxDark.png
+.. image:: ../images/GruvboxDark.png
   :alt: Gruvbox Dark Theme
 
 .. code-block:: none
@@ -146,7 +233,7 @@ Gruvbox Dark Theme
 One Dark Theme
 ^^^^^^^^^^^^^^
 
-.. image:: ../images/themeOneDark.png
+.. image:: ../images/OneDark.png
   :alt: One Dark Theme
 
 `GitHub <https://github.com/georgewitteman/one-dark-mattermost>`_
@@ -158,7 +245,7 @@ One Dark Theme
 Discord Dark Theme
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ../images/discordDarkTheme.png
+.. image:: ../images/DiscordDarkTheme.png
   :alt: Discord Dark Theme
 
 `GitHub <https://github.com/danger89/mattermost-discord-dark>`_
@@ -170,7 +257,7 @@ Discord Dark Theme
 Night Owl Dark Theme
 ^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../images/nightOwlDark.png
+.. image:: ../images/NightOwlDark.png
   :alt: Night Owl Dark Theme
 
 .. code-block:: none

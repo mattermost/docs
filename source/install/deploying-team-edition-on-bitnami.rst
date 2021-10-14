@@ -3,6 +3,13 @@
 Deploy Mattermost on Bitnami
 =============================
 
+|self-hosted|
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Deploy your Mattermost Team Edition server in the cloud with one simple click using one of `several Bitnami cloud images <https://bitnami.com/stack/mattermost/cloud>`__.
 
 Deployment options include:

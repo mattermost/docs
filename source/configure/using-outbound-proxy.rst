@@ -3,6 +3,18 @@
 Using an Outbound Proxy
 =======================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 In some scenarios, you may wish to use Mattermost behind a proxy. This can be used to do things such as monitoring outbound traffic from Mattermost or controlling which websites can appear in link previews and other embedded content. If you only want to use a proxy for images, the `image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__ is also an option.
 
 Configuration
@@ -13,7 +25,7 @@ Mattermost's use of a proxy is configured using the ``HTTP_PROXY``, ``HTTPS_PROX
 ``HTTP_PROXY`` and ``HTTPS_PROXY``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``HTTP_PROXY`` and ``HTTPS_PROXY`` environment variables store the address of the proxy server for HTTP and HTTPS requests respectively. This value should include the protocol and port of the proxy such as ``http://192.168.4.5:3128``.
+The ``HTTP_PROXY`` and ``HTTPS_PROXY`` environment variables store the address of the proxy server for HTTP and HTTPS requests, respectively. This value should include the protocol and port of the proxy, such as ``http://192.168.4.5:3128``.
 
 If you wish to have Mattermost authenticate with your proxy, it supports HTTP basic authentication by specifying the address of the proxy such as ``http://mattermost:password@192.168.4.5:3128``.
 
@@ -60,4 +72,4 @@ To set these environment variables while running the Mattermost server via ``sys
     [Install]
     WantedBy=postgresql.service
     
-For GitLab Mattermost follow the details at https://docs.gitlab.com/omnibus/gitlab-mattermost/#setting-custom-environment-variables instead.
+For GitLab Mattermost follow the details at https://docs.gitlab.com/ee/integration/mattermost/ instead.

@@ -11,11 +11,11 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
 
     ``mattermost config subpath --path /company/mattermost``
 
-4. From the Mattermost distribution, upload the ``client`` directory to S3 and rename it to ``static``. You can use the AWS CLI command below from within the ``client`` directory  to upload all the files to S3. The files must be publicly readable with the permission ``public-read``.
+4. From the Mattermost distribution, upload the ``client`` directory to S3 and rename it to ``static``. You can use the AWS CLI command below from within the ``client`` directory to upload all the files to S3. The files must be publicly readable with the permission ``public-read``.
 
     ``aws s3 cp --acl public-read --recursive . s3://static.spinmint.com/static/``
 
-5. Set up your Mattermost app server and create a record from a subdomain of your desired domain to point directly to your app server. This is to bypass CloudFront to connect WebSockets. For our example we will use the domain ``ws.mattermost.example.com``. If you have multiple app servers, this domain should point to the load balancer/proxy such as ALB or NGINX.
+5. Set up your Mattermost app server and create a record from a subdomain of your desired domain to point directly to your app server. This is to bypass CloudFront to connect WebSockets. For our example, we will use the domain ``ws.mattermost.example.com``. If you have multiple app servers, this domain should point to the load balancer/proxy such as ALB or NGINX.
 6. Create a Web CloudFront distribution with the following configuration.
 
    a. Set Origin Domain Name to the S3 bucket you created above.
@@ -44,7 +44,7 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
    d. Set HTTP Response Code to ``200``.
    e. Repeat the above steps for HTTP Error Code 404.
 
-10. Now you can set up the domain you want Mattermost to be served from to point to your CloudFront distribution. Setting up this domain is beyond the scope of this guide.
+10. Now, you can set up the domain you want Mattermost to be served from to point to your CloudFront distribution. Setting up this domain is beyond the scope of this guide.
 11. Finally, set these Mattermost ``config.json`` settings:
 
     a. SiteURL: ``https://mattermost.example.com``
