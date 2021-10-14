@@ -20,7 +20,7 @@ iOS Setup
 
 Your Mattermost teams can be accessed on iOS mobile devices via the Mattermost Mobile App.
 
-1. Open the App Store on your Apple device running iOS 9.0 or later.
+1. Open the App Store on your Apple device running iOS 12.1 or later.
 2. Search for "Mattermost" and select **GET** to download the app.
 3. Open Mattermost from your homescreen and enter your team and account information to log in:
 
