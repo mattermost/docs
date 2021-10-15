@@ -3,12 +3,86 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-10-13](#release-2021-10-13)
 - [Release 2021-09-29](#release-2021-09-29)
 - [Release 2021-08-12](#release-2021-08-12)
 - [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
 - [Release 2021-07-01](#release-2021-07-01)
-- [Release 2021-06-16](#release-2021-06-16)
+
+## Release 2021-10-13
+
+### Highlights
+
+#### Multi-Product Platform
+ - Mattermost now ships as one platform with three products - Channels, Playbooks, and Boards.
+
+#### Global Product Launcher
+ - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view and mobile apps.
+
+#### Packaging Changes
+ - Introducing [updated packaging](https://mattermost.com/pricing) with new Starter, Professional and Enterprise plans to better serve our customers.
+ - Existing paying Cloud Professional customers will automatically be upgraded to Cloud Enterprise with no change to pricing or feature set for the next 12 months. More information will be shared to the workspace owner's email address shortly after the release.
+ - Existing free Cloud customers will be asked to enter their credit card by January 15th, 2022 to continue using Mattermost Cloud. More information will be shared to the workspace owner's email address shortly after the release.
+
+#### Beta features Promoted to General Availability
+   - Archived channels
+   - Compliance exports
+   - Custom terms of service
+   - Guest accounts
+   - System roles
+   - Plugins
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a query param to translate in-product help pages when opened from the Desktop App.
+ - Added rendering for posts containing markdown in email notifications.
+ - Added support for inline Latex rendering.
+ - Added the **Move to...** option menu item to the channel header dropdown.
+ - Added keyboard shortcuts to tooltips. Use shortcut key component for displaying keys.
+ - Changed the user interface of the edit-indicator of posts and moved it inline.
+ - Added support for Global threads infinite scroll.
+
+#### Integrations
+ - Added support for multi-select on Apps slash commands.
+ - App commands now make a distinction between the central channel and the right-hand side channel.
+ - App bindings now recognize the post menu options for each channel they live in.
+ - Added new ``registerMessageWillBeUpdatedHook(newPost, oldPost)`` client-side plugin hook to intercept edited messages.
+
+#### Performance
+ - Added performance improvements for draft storage with multiple tabs open.
+ - Improved performance of draft loading.
+ - Slightly improved performance around rendering of system messages.
+
+#### Administration
+ - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
+ - ``get flagged posts`` endpoint will now return only flagged posts for channels the user is member of.
+ - Minimum supported browser versions changes:
+   - Chrome updated from ``61+`` to ``89+``.
+   - Firefox updated from ``60+`` to ``78+``.
+   - MacOS updated from ``10.9+`` to ``10.14+``.
+
+### Bug Fixes
+ - Fixed an issue where creating a bot with an invalid username returned an "invalid email" error.
+ - Fixed an issue where using ``/code`` did not render initial whitespace characters.
+ - Fixed an issue where **Try Enterprise for Free** option was missing spacing in mobile webview.
+
+### Known Issues
+ - Clicking on "..." post menu on a System message crashes the webapp [MM-39116](https://mattermost.atlassian.net/browse/MM-39116).
+ - Desktop notifications don't work intermittently [MM-39052](https://mattermost.atlassian.net/browse/MM-39052).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Deep link opened on mobile shows incorrect text directing the opening to the Desktop app [MM-38913](https://mattermost.atlassian.net/browse/MM-38913).
+ - Channel switcher is missing "(You)" indicator on your own Direct Message channel [MM-38798](https://mattermost.atlassian.net/browse/MM-38798).
+ - LDAP Sync job inserting invalid NULL unicode character into job's Data column [MM-38711](https://mattermost.atlassian.net/browse/MM-38711).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-09-29
 

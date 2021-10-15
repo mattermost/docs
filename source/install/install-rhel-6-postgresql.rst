@@ -1,5 +1,3 @@
-:orphan:
-
 ..  _install-rhel-6-postgresql:
 
 Installing PostgreSQL Database

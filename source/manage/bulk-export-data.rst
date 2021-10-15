@@ -22,7 +22,7 @@ You can export the following data types:
 
    Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
   
-  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
+   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`__.
 
 Version object
 --------------
@@ -170,10 +170,10 @@ User object
       <td valign="middle">string</td>
       <td>The authentication service used for this user account. This field will be absent for user/password authentication.<br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
-        <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
-        <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
-        <kbd>"google"</kbd> - Google OAuth authentication (E20)<br>
-        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (E20)</td>
+        <kbd>"ldap"</kbd> - LDAP authentication (Enterprise and Professional)<br>
+        <kbd>"saml"</kbd> - Generic SAML based authentication (Enterprise)<br>
+        <kbd>"google"</kbd> - Google OAuth authentication (Enterprise)<br>
+        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (Enterprise)</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">auth_data</td>
