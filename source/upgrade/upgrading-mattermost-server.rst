@@ -18,7 +18,7 @@ In most cases, you can upgrade Mattermost Server in a few minutes. However, the 
 Preparing to upgrade to the latest version
 ------------------------------------------
 
-A Mattermost server v6.0 upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. Zero downtime won't be possible for v6.0, but depending on the efforts made during the migration process, it can be minimized to a large extent. 
+A Mattermost Server v6.0 upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. Zero downtime won't be possible for v6.0, but depending on the efforts made during the migration process, it can be minimized to a large extent. 
 
 Running queries prior to the upgrade can also save some downtime. However, some queries can still cause full table locking and require Mattermost to be in read-only mode for the duration of the query.
 
@@ -34,7 +34,7 @@ We strongly recommend that you:
 
 Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
-v6.0 Database Schema Migrations
+v6.0 database schema migrations
 -------------------------------
 
 Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts and more than 72 million posts.
@@ -78,7 +78,7 @@ A large migration from v5.39 to v6.0 of 72+ million posts will take approximatel
 
       For a complete breakdown of PostgreSQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`__.
 
-Upgrading from Releases Older than v5.35
+Upgrading from releases older than v5.35
 ----------------------------------------
 
 Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0 due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. We recommend upgrading to the latest `Extended Support Release (ESR) <https://docs.mattermost.com/upgrade/extended-support-release.html>`__ first before upgrading to Mattermost v6.0. See the `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`__ documentation for additional details.
@@ -107,9 +107,9 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate rele
     ALTER TABLE users ALTER COLUMN notifyprops TYPE jsonb USING notifyprops::jsonb;
     ALTER TABLE users ALTER COLUMN timezone TYPE jsonb USING timezone::jsonb;
 
-  Once you've identified the table being affected, use a SELECT query to find all the rows with unicode characters in JSON, where the column contains something like ``%\u%``. 
+  Once you've identified the table being affected, use a SELECT query to find all the rows with unicode characters in JSON, where the column contains something like ``%\u%``.
 
-Upgrading High Availability Deployments
+Upgrading High Availability deployments
 ---------------------------------------
 
 In `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
@@ -198,7 +198,7 @@ Upgrading Mattermost Server
 
    Run ``ls`` on your Mattermost install directory to identify what default folders exist.
       
-   **A default Mattermost installation has the following files and directories**:
+   **A default Mattermost installation has the following files and directories:**
 
    .. code-block:: sh
 
@@ -287,7 +287,7 @@ Upgrading Team Edition to Enterprise Edition
 
 To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions provided above, making sure that you download the Enterprise Edition of Mattermost Server in Step 2.
 
-Uploading a License Key
+Uploading a license key
 -----------------------
 
 When Enterprise Edition is running, open **System Console > About > Editions and License** and upload your license key.
