@@ -9,7 +9,7 @@ Installing PostgreSQL Database
 
   ``sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm``
 
-3. Install PostgreSQL version 10 or greater. Replace the contents of the ``{version}`` with the version you wish to install. 
+3. Install PostgreSQL version 10 or higher. Replace the contents of the ``{version}`` with the version you wish to install.
 
   ``sudo yum install -y postgresql{version}-server``
 
