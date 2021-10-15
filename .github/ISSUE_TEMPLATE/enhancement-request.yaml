@@ -26,3 +26,11 @@ body:
       label: Is there a related thread or link to provide some context?
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: >-
+        ## Next steps:
+
+        #### Once your PR is submitted, it will be reviewed by one of our
+        #### technical writers. Additional reviewers, such as Product Managers and
+        #### developers may also be included. We look forward to working with you!
