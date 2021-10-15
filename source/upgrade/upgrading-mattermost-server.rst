@@ -87,6 +87,28 @@ If you're upgrading from a version prior to Mattermost v5.0, you can't upgrade d
 
 Ensure you review the :doc:`important-upgrade-notes` for all intermediate release versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
+.. note::
+
+  Customers upgrading from releases older than v5.35 following our recommended upgrade process may encounter the following error during the upgrade to v6.0:
+  
+  ``Failed to alter column type. It is likely you have invalid JSON values in the column. Please fix the values manually and run the migration again.","caller":"sqlstore/store.go:854","error":"pq: unsupported Unicode escape sequence``
+  
+  This issue will be addressed in a patch release, but in the interim, you can enable ``SqlSettings.Trace`` to narrow down what table and column are causing issues during the upgrade: The following queries change the columns to JSONB format in PostgreSQL. Run these against your v5.39 development database to find out which table and column has Unicode issues:
+  
+  .. code-block:: sh
+
+    ALTER TABLE posts ALTER COLUMN props TYPE jsonb USING props::jsonb;
+    ALTER TABLE channelmembers ALTER COLUMN notifyprops TYPE jsonb USING notifyprops::jsonb;
+    ALTER TABLE jobs ALTER COLUMN data TYPE jsonb USING data::jsonb;
+    ALTER TABLE linkmetadata ALTER COLUMN data TYPE jsonb USING data::jsonb;
+    ALTER TABLE sessions ALTER COLUMN props TYPE jsonb USING props::jsonb;
+    ALTER TABLE threads ALTER COLUMN participants TYPE jsonb USING participants::jsonb;
+    ALTER TABLE users ALTER COLUMN props TYPE jsonb USING props::jsonb;
+    ALTER TABLE users ALTER COLUMN notifyprops TYPE jsonb USING notifyprops::jsonb;
+    ALTER TABLE users ALTER COLUMN timezone TYPE jsonb USING timezone::jsonb;
+
+  Once you've identified the table being affected, use a SELECT query to find all the rows with unicode characters in JSON, where the column contains something like ``%\u%``. 
+
 Upgrading High Availability Deployments
 ---------------------------------------
 
