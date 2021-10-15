@@ -31,15 +31,15 @@ Step 1: Create OpenID Connect project in Google API Manager
 
 8. Copy and paste the **Your Client ID** and **Your Client Secret** values to a temporary location. You will enter these values in the Mattermost System Console.
 
-.. image:: /images/create-google-sso-credentials.png
+.. image:: https://github.com/mattermost/docs/blob/3292fffe2d78a4335e315aa74e3b05f0ed6d7148/source/images/create-google-sso-credentials.png
 
-.. image:: /images/select-google-sso-web-app.png
+.. image:: https://github.com/mattermost/docs/blob/3292fffe2d78a4335e315aa74e3b05f0ed6d7148/source/images/select-google-sso-web-app.png
 
-.. image:: /images/google-sso-web-app-name.png
+.. image:: https://github.com/mattermost/docs/blob/3292fffe2d78a4335e315aa74e3b05f0ed6d7148/source/images/google-sso-web-app-name.png
 
-.. image:: /images/google-sso-redirect-uri.png
+.. image:: https://github.com/mattermost/docs/blob/3292fffe2d78a4335e315aa74e3b05f0ed6d7148/source/images/google-sso-redirect-uri.png
 
-.. image:: /images/google-sso-credentials.png
+.. image:: https://github.com/mattermost/docs/blob/3292fffe2d78a4335e315aa74e3b05f0ed6d7148/source/images/google-sso-credentials.png
 
 Step 2: Enable Google People API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
