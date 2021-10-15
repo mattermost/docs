@@ -1,0 +1,30 @@
+name: Bug Report
+description: For reporting a bug
+title: '[BUG]:'
+labels:
+  - bug
+body:
+  - type: input
+    attributes:
+      label: What type of bug is this?
+      description: eg. broken link,typo, grammatical mistake, content add
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Which page or section you find bug?
+      description: Please provide a link
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Provide solution if possible
+      description: eg, correct link,correct word sentence
+  - type: markdown
+    attributes:
+      value: >-
+        ## Next steps:
+
+        #### Once your Issue is opened, it will be reviewed by one of our
+        technical writers. Additional reviewers, such as Product Managers and
+        developers may also be included. We look forward to working with you!
