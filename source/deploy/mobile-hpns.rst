@@ -1,7 +1,7 @@
 Mobile Push Notifications
 =========================
 
-A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work>`__ to learn more about how push notifications work.
+A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our `mobile Apps FAQ documentation <https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work>`__ to learn more about how push notifications work.
 
 Mattermost offers a `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deploy/deployment-overview.html>`__ for Team Edition, Cloud, and Enterprise deployments.
 
