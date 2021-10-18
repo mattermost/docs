@@ -1,8 +1,19 @@
 .. _install-kubernetes:
 
-=========================================
 Installing Mattermost on Kubernetes
-=========================================
+===================================
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 This document describes installing and deploying a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes operator.
 
@@ -10,7 +21,7 @@ An operator is a set of product- or application-specific instructions packaged i
 
 Deploying the Mattermost Operator on Kubernetes is the recommended installation process. It provides a single common installation and management method that can be implemented in practically any environment with less IT overhead and more automation.
 
-It is possible to manage MySQL database and MinIO file store using the Mattermost Operator, but it is not recomended for production usage.
+It is possible to manage MySQL database and MinIO file store using the Mattermost Operator, but it is not recommended for production usage.
 
 .. include:: install-kubernetes-cluster.rst
 .. include:: install-kubernetes-operator.rst

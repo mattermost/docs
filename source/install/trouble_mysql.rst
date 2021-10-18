@@ -1,6 +1,18 @@
 MySQL Installation Troubleshooting
 ==================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command
 ``sudo -u mattermost bin/mattermost``. If the Mattermost server cannot connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
 
@@ -23,7 +35,7 @@ If MySQL is not running, review the instructions for installation on your distri
   Some of the commands used in this section alter the database. **Use these commands only if your Mattermost installation has failed.** Do not directly manipulate the MySQL database for a working Mattermost installation.
 
 The ``mattermost`` Database
------------------------
+---------------------------
 
 The database created during installation is named ``mattermost``. If you fail to create this database or you misname it, you will see an error such as the following when you attempt to start the Mattermost server:
 
@@ -67,7 +79,7 @@ If the ``mattermost`` database does exist, confirm that you have defined the dat
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
 
 You should also confirm that ``DriverName`` element (found immediately above the ``DataSource`` element) is set to ``mysql``.
 
@@ -85,7 +97,7 @@ The ``mmuser-password`` value is a placeholder for the password you chose. You m
 
 .. note::
 
-A MySQL user is fully defined by their username and the host that they access MySQL from. These elements are separated by the ``@`` sign. The ``%`` character is a wild card indicating that the user can access MySQL from any IP address. If the user you created accesses MySQL from a specific IP address such as ``10.10.10.2``, please adjust your actions accordingly.
+    A MySQL user is fully defined by their username and the host that they access MySQL from. These elements are separated by the ``@`` sign. The ``%`` character is a wild card indicating that the user can access MySQL from any IP address. If the user you created accesses MySQL from a specific IP address such as ``10.10.10.2``, please adjust your actions accordingly.
 
 If the user and host combination that you created does not exist, you will see an error such as:
 
@@ -120,7 +132,7 @@ If ``'mmuser'@'%'`` does not exist, create this user by logging into MySQL as *r
 
 :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`.
 
-After creating a user, ensure that this user has rights to the ``mattermost`` database by following the instructions given in :ref:`mysql_grants`.
+After creating a user, ensure that this user has rights to the ``mattermost`` database.
 
 **User Exists**
 
@@ -128,7 +140,7 @@ If the user ``mmuser`` exists, the DataSource element of the ``/opt/mattermost/c
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
 
 If you correct an error, restart the Mattermost server by navigating to the ``/opt/mattermost`` directory and issuing the command: ``sudo -u mattermost bin/mattermost``.
 
@@ -149,7 +161,7 @@ The DataSource element of the ``/opt/mattermost/config/config.json`` file refere
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
 
 Check that the password is correct. If you correct an error, restart the Mattermost server by navigating to ``/opt/mattermost`` and issuing the command: ``sudo -u mattermost bin/mattermost``.
 
@@ -180,7 +192,7 @@ If the database exists and the username and password are correct, the ``mmuser``
 
 .. note::
 
-Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.json`` file. For example, if the error message reads``Access denied for user 'muser'@'%' ...`` you will know that you have misidentified the user as ``muser`` in the ``config.json`` file.
+    Examine the error message closely. The user name displayed in the error message is the user identified in the ``DataSource`` element of the ``/opt/mattermost/config/config.json`` file. For example, if the error message reads``Access denied for user 'muser'@'%' ...`` you will know that you have misidentified the user as ``muser`` in the ``config.json`` file.
 
 You can check if the user ``mmuser`` has access to the ``mattermost`` database by logging in to MySQL as ``mmuser`` and issuing the command: ``show databases;``. If this user does not have rights to view the ``mattermost`` database, you will not see it in the output.
 

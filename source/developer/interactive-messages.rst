@@ -301,7 +301,7 @@ Context
         }
       }
 
-  Then, when the integration receives the request, it can act based on the action ID.
+  Then, when the integration receives the request, it can act based on the action ID, which should match the `[a-zA-Z0-9]+` regular expression.
 
 Tips and Best Practices
 ------------------------

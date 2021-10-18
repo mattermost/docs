@@ -43,6 +43,7 @@ T-minus 1 week
 ---------------
 
 - (People Ops and New Hire) Set up payroll.
+
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.
  - Non-US Employee/Non-Canadian Employee, complete bank info form for monthly wire transfer.
  - Non-US Resident Contractor, complete W8-BEN form.
@@ -337,6 +338,7 @@ Triage Meeting
 - Attendees: One dev representative from each development team, at least one PM, QA team, Release Manager, and optionally leads, customer support and other Mattermost staff.
 
 **Note:**
+
 - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a Fix Version, Mattermost Team and Sprint. Unclear tickets may be assigned to their creator for more information.
      - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence. It is the responsibility of the triage team to make sure tickets are clear before they're assigned a Fix Version.
      - When assigning a ticket to a **Mattermost Team**, it gets assigned to a dev and put into the current release's Fix Version and the current sprint if the ticket is time-sensitive for release. Otherwise the ticket is assigned to a team with a "Triage" Fix Version and is later prioritized and assigned to the appropriate people within that team.
@@ -600,7 +602,7 @@ Consulting Advisers
 
 To provide guidance, coaching and development for senior and functional leaders, we bring in experts to advise in key areas.
 
-- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our CEO and community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
+- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our CEO and community team regularly to refine our processes and understanding. There's a range of similarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
 Meetings typically take place over phone or video calls. We bring on advisers with `standard consulting agreements <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`_ on either a time and materials basis or a recurring fee.
 

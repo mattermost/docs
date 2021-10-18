@@ -1,1 +1,3 @@
-Please see :doc:`install-ubuntu-1804`.
+:orphan:
+
+Please see :doc:`../install/install-ubuntu-1604`.

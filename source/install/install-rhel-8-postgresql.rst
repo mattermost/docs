@@ -1,7 +1,7 @@
 ..  _install-rhel-8-postgresql:
 
 Installing PostgreSQL Database
-==============================
+------------------------------
 
 1. Log in to the server that will host the database, and open a terminal window.
 
@@ -9,6 +9,8 @@ Installing PostgreSQL Database
 2. Install PostgreSQL.
 
   ``sudo yum install postgresql-server postgresql-contrib``
+  
+Confirm this version is PostgreSQL version 10 or higher. You can do this by running ``psql -V``. If this isn't version 10 or higher you can reference the PostgreSQL documentation [here](https://www.postgresql.org/download/linux/redhat/) to install an updated version of PostgreSQL.
 
 3. Initialize the database.
 

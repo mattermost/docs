@@ -1,8 +1,19 @@
 .. _install-rhel-8:
 
-=================================
 Installing Mattermost on RHEL 8
 =================================
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 You can also use these instructions to install Mattermost on CentOS 8 or Oracle Linux 8. With the exception of the operating system that you install, the process is identical.
 

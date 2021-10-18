@@ -1,7 +1,7 @@
 .. _install-ubuntu-1804-postgresql:
 
 Installing PostgreSQL Database Server
-=====================================
+-------------------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.
 
@@ -14,6 +14,7 @@ Assume that the IP address of this server is 10.10.10.1.
   ``sudo apt install postgresql postgresql-contrib``
 
   When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
+Confirm this version is PostgreSQL version 10 or higher. You can do this by running ``psql -V``. If this isn't version 10 or higher you can reference the PostgreSQL documentation [here](https://www.postgresql.org/download/linux/ubuntu/) to install an updated version of PostgreSQL.
 
 2. Log in to the *postgres* account.
 

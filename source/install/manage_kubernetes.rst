@@ -1,3 +1,5 @@
+:orphan:
+
 .. _manage_kubernetes:
 
 Managing the Mattermost Kubernetes Operator

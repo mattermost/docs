@@ -1,7 +1,7 @@
 .. _config-ssl-http2-nginx:
 
 Configuring NGINX with SSL and HTTP/2
-=====================================
+-------------------------------------
 
 NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
 
@@ -16,15 +16,18 @@ You can use any certificate that you want, but these instructions show you how t
 
 **To configure NGINX as a proxy with SSL and HTTP/2**
 
-If you're looking for additional Let's Encrypt/Certbot assistance you can access their documentation `here <https://certbot.eff.org>`_ .
+See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 
-2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor and update the ``{ip}`` address in the ``upstream backend`` to point towards Mattermost (ex: ``127.0.0.1:8065``, and the ``server_name`` to be your domain for Mattermost.
+2. Open the your Mattermost ``nginx.conf`` file as *root* in a text editor, then update the ``{ip}`` address in the ``upstream backend`` to point towards Mattermost (such as ``127.0.0.1:8065``), and update the ``server_name`` to be your domain for Mattermost.
 
 .. note::
-   On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file run ``sudo touch /etc/nginx/sites-available/mattermost``.
-   On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file run ``sudo touch /etc/nginx/conf.d/mattermost``.
+   
+   - On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file, run ``sudo touch /etc/nginx/sites-available/mattermost``.
+   - On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file, run ``sudo touch /etc/nginx/conf.d/mattermost``.
+   - Note that the IP address included in the examples in this documentation may not match your network configuration. 
+   - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``. 
    
 .. code-block:: none
 
@@ -210,7 +213,7 @@ If you're looking for additional Let's Encrypt/Certbot assistance you can access
        ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA;
        ssl_prefer_server_ciphers on;
        ssl_session_cache shared:SSL:50m;
-       # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
+       # HSTS (ngx_http_headers_module is required) (15768000 seconds = six months)
        add_header Strict-Transport-Security max-age=15768000;
        # OCSP Stapling ---
        # fetch OCSP records from URL in ssl_certificate and cache them

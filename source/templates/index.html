@@ -6,205 +6,508 @@
 
 {% block body %}
 
+    <style>
+    @import url("https://use.typekit.net/cng2uup.css");
+    </style>
     <style type="text/css">
-
-        .landing {
-            width: 100%;
-            max-width: 700px; /* Force to a maximum of 3 tiles wide */
+        .wy-nav-content {
+            padding: 0 !important;
+        }
+        footer {
+            overflow-x: hidden;
+        }
+        .header__logo img {
+            height: 40px !important;
+            width: auto !important;
+        }
+        .redesign-landing .masthead, .redesign-landing .home-cards {
+            font-family: 'trade-gothic-next',sans-serif !important;
+        }
+        .redesign-landing .masthead .container--small {
+            position: relative;
+            z-index: 10;
+        }
+        .redesign-landing .masthead-pattern {
+            display: block;
+            position: absolute;
+            z-index: 5;
+            bottom: 0;
+            left: -50vw;
+            width: 200vw;
+            max-width: none;
+            height: auto;
+        }
+        .redesign-landing .container,
+        .site-footer .container {
+            max-width: 1100px;
             margin: 0 auto;
-            text-align: center;
+        }
+        .redesign-landing .bg--gray {
+            background-color: #EBEBEF;
+        }
+        .redesign-landing h1 {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 45px;
+            line-height: 130%;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .redesign-landing h2 {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 135%;
+            color: #1E325C;
+        }
+        .redesign-landing .subhead {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 150%;
+            color: #C5D2EC;
+        }
+        .redesign-landing .card-single h3 {
+            font-family: 'trade-gothic-next',sans-serif !important;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 130%;
+            color: #363A45;
+        }
+        .redesign-landing .container--small {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .redesign-landing .padding-tb--large {
+            padding: 50px 0;
+        }
+        .redesign-landing .padding-b--large {
+            padding-bottom: 50px;
+        }
+        .redesign-landing .masthead {
+            background-color: #1E325C;
+            background-position: bottom center;
+            background-size: 1500px;
+            background-repeat: no-repeat;
+        }
+        @media (max-width: 991.98px) {
+            .home-cards.padding-tb--large {
+                padding-top: 100px;
+            }
+            .redesign-landing .masthead {
+                padding-bottom: 0;
+            }
+        }
+        .redesign-landing .card-grid {
+            display: grid;
+            row-gap: 40px;
+            margin-top: 40px;
+        }
+        .redesign-landing .card-grid a {
+            display: block;
+            transition: all .6s cubic-bezier(.23,1,.32,1);
+        }
+        .redesign-landing .card-grid a:hover {
+            transform: translateY(-10px);
+        }
+        .redesign-landing .card-single {
+            padding: 30px;
+            background: white;
+            border-radius: 5px;
+        }
+        .redesign-landing .card-single img {
+            margin-bottom: 40px;
+            width: auto;
+            height: auto;
+            max-width: 50px;
+            max-height: 50px;
+        }
+        .redesign-landing .card-single svg {
+            width: auto !important;
+            height: 50px !important;
+            margin-bottom: 30px;
+        }
+        .redesign-landing .card-single p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 150%;
+            color: #363A45;
+        }
+        footer:not(.site-footer) {
+            display: none;
+        }
+        @media (min-width: 992px) {
+            .redesign-landing .masthead {
+                background-size: 90vw;
+            }
+            .redesign-landing .padding-tb--large {
+                padding: 100px 0;
+            }
+            .redesign-landing .padding-tb--large.masthead {
+                padding: 100px 0 80px;
+            }
+            .redesign-landing .padding-b--large {
+                padding-bottom: 100px;
+            }
+            .redesign-landing .masthead.padding-tb--large {
+                padding: 100px 0 0;
+            }
+            .redesign-landing .container--small {
+                text-align: center;
+            }
+            .redesign-landing h1 {
+                font-size: 52px;
+            }
+            .redesign-landing h2 {
+                text-align: center;
+            }
+            .redesign-landing .card-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 40px;
+            }
+            .redesign-landing .masthead-pattern {
+                left: calc(50% - 40vw);
+                width: 80vw;
+                max-width: 80vw;
+            }
+        }
+        @media (max-width: 1100px) {
+            .redesign-landing .container,
+            .redesign-landing .masthead .container--small,
+            footer.site-footer .container {
+                padding: 0 20px;
+            }
+        }
+        footer.site-footer {
+            background: linear-gradient(180deg,rgba(19,30,57,.9),#1e325c 20%);
+            padding: 50px 0;
+            font-family: 'trade-gothic-next',sans-serif;
+            overflow-x: hidden;
+        }
+        @media (min-width: 992px) {
+            footer.site-footer {
+                padding:100px 0 50px
+            }
+        }
+        footer.site-footer .container {
+            display: grid;
+            grid-template-columns: repeat(2,minmax(0,1fr))
+        }
+        @media (max-width: 1199.98px) {
+            footer.site-footer .container {
+                row-gap:30px;
+                -moz-column-gap: 50px;
+                column-gap: 50px
+            }
+        }
+        @media (min-width: 992px) {
+            footer.site-footer .container {
+                grid-template-columns:repeat(5,minmax(0,1fr));
+                -moz-column-gap: 30px;
+                column-gap: 30px
+            }
+        }
+        footer.site-footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0
+        }
+        footer.site-footer .footer-menu__heading {
+            color: #ffbc1f;
+            font-family: 'Fira Mono',monospace;
+            font-size: 16px
+        }
+        footer.site-footer .footer-menu__single a,footer.site-footer .footer-menu__single a:visited {
+            color: #fff;
+            font-size: 15px
         }
 
-        .landing .landing-title {
-            text-align:center;
-            font-size: 2em;
-            margin: .67em 0
+        footer.site-footer .footer-menu__single a:focus,footer.site-footer .footer-menu__single a:hover {
+            color: #7e96c8
         }
 
-        .landing .landing-search {
+        footer.site-footer .footer-menu__single li {
+            margin-bottom: 10px
+        }
+
+        footer.site-footer .footer-menu__single ul {
+            margin-top: 10px
+        }
+
+        footer.site-footer a {
+            text-decoration: none
+        }
+
+        footer.site-footer small,footer.site-footer small a, footer.site-footer small a:visited {
+            color: #c5d2ec
+        }
+
+        footer.site-footer .secondary-footer__copy {
+            font-size: 15px
+        }
+
+        footer.site-footer .secondary-footer__copy a:focus,footer.site-footer .secondary-footer__copy a:hover {
+            color: #ffbc1f
+        }
+
+        footer.site-footer .secondary-footer__social li {
+            display: inline-block
+        }
+
+        footer.site-footer .secondary-footer__social li:focus svg path,footer.site-footer .secondary-footer__social li:hover svg path {
+            fill: #7e96c8
+        }
+
+        @media (max-width: 991.98px) {
+            footer.site-footer .secondary-footer__social li {
+                width:45%;
+                margin-bottom: 25px;
+            }
+
+            footer.site-footer .secondary-footer__social li img {
+                width: 50px
+            }
+            footer.site-footer .secondary-footer__copy {
+                order:6;
+                grid-column: 1/span 2
+            }
+        }
+
+        @media (min-width: 992px) {
+            footer.site-footer .secondary-footer__copy,footer.site-footer .secondary-footer__social {
+                margin-top:50px
+            }
+
+            footer.site-footer .secondary-footer__copy {
+                grid-column: 1/span 2;
+                place-self: end start
+            }
+
+            footer.site-footer .secondary-footer__social {
+                grid-column: 4/span 2;
+                place-self: end end
+            }
+
+            footer.site-footer .secondary-footer__social li {
+                margin-left: 25px
+            }
+        }
+        .c-thermometer-popup,
+        .c-thermometer-modal__container,
+        .c-thermometer {
+            display: none;
+        }
+        .redesign-landing .landing-search {
             overflow: hidden;
-            padding:20px;
+            width: 90vw;
+            display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+            z-index: 20;
+			bottom: -2.5rem;
+            border-radius: 5px;
+            margin: 0 auto;
+            padding: 20px 20px 15px;
+            background-color: white;
+            box-shadow: 0px 0px 33px 2px rgba(0, 0, 0, 0.2);
         }
 
-        .landing .landing-search input[type="text"] {
-            width: 640px;
-            border-style: none;
-            padding: 8px 12px;
-            font-size: 16px;
-            box-shadow: .5px 2px 4px 0 #bdbdbd;
+        .redesign-landing .landing-search input[type="text"] {
+            border: 2px solid #BABEC9;
+			font-weight: 400;
+			font-size: 16px;
+			border-radius: 0;
+			padding: 20px;
+            width: 78vw;
         }
 
-        @media screen and (max-width: 728px) {
-            .landing .landing-search input[type="text"] {
-                width: 420px;
+        @media screen and (min-width: 728px) {
+            .redesign-landing .landing-search {
+                width: 640px;
+                padding: 20px;
+            }
+            .redesign-landing .landing-search input[type="text"] {
+                width: 600px;
+                padding: 10px 20px;
             }
         }
-
-        @media screen and (max-width: 508px) {
-            .landing .landing-search {
-                display: none;
-            }
-        }
-
-        .tiles-flex {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -ms-flex-line-pack: center;
-            align-content: center;
-            max-width: 700px; /* purely to stop the max width of tiles at 3 */
-        }
-
-        .tile {
-            /* looks */
-            border-top: 8px solid #343537;
-            background-color: #fff;
-            box-shadow: .5px 2px 4px 0 #bdbdbd;
-            /* sizing/boxing */
-            width: 200px;
-            height: 220px;
-            margin: 10px;
-            padding: 10px;
-            /* animation */
-            -webkit-transition: 250ms;
-            transition: 250ms;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            will-change: transform;
-            /* layout */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -ms-flex-line-pack: stretch;
-            align-content: stretch;
-            -webkit-box-align: stretch;
-            -ms-flex-align: stretch;
-            align-items: stretch;
-        }
-
-        .tile:hover {
-            -webkit-transform: translate3d(0,-6px,0);
-            transform: translate3d(0,-6px,0)
-        }
-
-        .tile .tile-title {
-            /* looks */
-            font-size: 20px;
-            letter-spacing: .4px;
-            color: #676363;
-            /* sizing/boxing */
-            height: 89px;
-            width: 100%;
-            margin: 0px;
-            padding: 0px 20px;
-            /* layout */
-            display:-webkit-box;
-            display:-ms-flexbox;
-            display:flex;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-            -webkit-box-orient:vertical;
-            -webkit-box-direction:normal;
-            -ms-flex-direction:column;
-            flex-direction:column;
-            -ms-flex-pack:distribute;
-            justify-content:space-around;
-        }
-
-        .tile .tile-divider {
-            height:2px;
-            width: 100%;
-            margin: 0 5px;
-            border: .5px solid #343537;
-            background-color: #343537;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-        }
-
-        .tile .tile-description {
-            /* looks */
-            font-size: 14px;
-            letter-spacing: .2px;
-            line-height: 1.25;
-            color: #757575;
-            /* sizing/boxing */
-            height: 89px;
-            width: 100%;
-            margin: 0px;
-            /* layout */            
-            display:-webkit-box;
-            display:-ms-flexbox;
-            display:flex;
-            -ms-flex-item-align: auto;
-            align-self: auto;
-            -webkit-box-orient:vertical;
-            -webkit-box-direction:normal;
-            -ms-flex-direction:column;
-            flex-direction:column;
-            -ms-flex-pack:distribute;
-            justify-content:space-around;
-        }
-
     </style>
 
-    <div class="landing">
-        <h1 class="landing-title">Mattermost Documentation</h1>
-        <div class="landing-search" role="search">
-            <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
-                <input type="text" name="q" placeholder="Search by keyword" autofocus />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-            </form>
-        </div>
-        <div class="tiles-flex">
-            <a class="tile" href="overview/index.html">
-                <h2 class="tile-title">Overview</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Features, security, deployment, and integration</p>
-            </a>            
-            <a class="tile" href="guides/administrator.html">
-                <h2 class="tile-title">Self-Managed Administrator's Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description"> Self-managed installation, deployment, and administration guides</p>
-            </a>
-            <a class="tile" href="guides/cloud-admin-guide.html">
-                <h2 class="tile-title">Cloud Administrator's Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description"> Cloud deployment, administration, and management guides</p>
-            </a>
-            <a class="tile" href="guides/user.html">
-                <h2 class="tile-title">User's Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">End user help and documentation</p>
-            </a>
-            <a class="tile" href="guides/integration.html">
-                <h2 class="tile-title">Integration Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Integrating other systems into Mattermost</p>
-            </a>
-            <a class="tile" href="https://developers.mattermost.com/">
-                <h2 class="tile-title">Developer's Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Contributing to the open source project</p>
-            </a>
-        </div>
-    </div>
+    <main class="redesign-landing">
+        <section class="masthead padding-tb--large" style="background-image: url({{ pathto('_static/images/home/Hero_Stipple_Bottom.png', 1) }});">
+            <div class="container--small">
+                <h1>Mattermost Documentation</h1>
+                <p class="subhead">Technical resources to help admins, users, and developers leverage Mattermost.</p>
+            </div>
+            <div class="landing-search" role="search">
+                <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
+                    <input type="text" name="q" placeholder="What are you looking for?" />
+                    <input type="hidden" name="check_keywords" value="yes" />
+                    <input type="hidden" name="area" value="default" />
+                </form>
+            </div>
+        </section>
+    
+        <section class="home-cards padding-tb--large bg--gray">
+            <div class="container">
+                <div class="home-cards__group padding-b--large">
+                    <h2>Setup and Administration Guides</h2>
+                    <div class="card-grid">
+                        <a href="guides/about-mattermost.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Overview.svg', 1) }}" alt="" width="50" height="50">                         
+                            <h3>Overview</h3>
+                            <p>Learn about Mattermost products, capabilities, features, and licensing.</p>
+                        </a>
+                        <a href="guides/deployment.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Deploy.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Deploy</h3>
+                            <p>Install Mattermost and scale it to meet your needs.</p>
+                        </a>
+                        <a href="guides/administration.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Admin-Guide.svg', 1) }}" alt="" width="50" height="50">                                 
+                            <h3>Admin Guide</h3>
+                            <p>Setup, manage, and configure your Mattermost server.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-cards__group padding-b--large">
+                    <h2>User Guides</h2>
+                    <div class="card-grid">
+                        <a href="guides/channels.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Channels.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Channels</h3>
+                            <p>Bring your team together with modern messaging and collaboration.</p>
+                        </a>
+                        <a href="guides/playbooks.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Playbooks.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Playbooks</h3>
+                            <p>Build reliable and repeatable responses for workflow and process automation.</p>
+                        </a>
+                        <a href="guides/boards.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Boards.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Boards</h3>
+                            <p>Keep your team aligned on project planning and execution.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-cards__group">
+                    <h2>Other Resources</h2>
+                    <div class="card-grid">
+                        <a href="https://developers.mattermost.com/contribute/getting-started/" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Contribute.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Contribute</h3>
+                            <p>Contribute code to help make Mattermost better.</p>
+                        </a>
+                        <a href="https://developers.mattermost.com/integrate/getting-started/" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Integrate-Extend.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Integrate and Extend</h3>
+                            <p>Extend Mattermost capabilities via Apps, Plugins, Webhooks, or APIs.</p>
+                        </a>
+                        <a href="https://docs.mattermost.com/guides/get-help.html" class="card-single">
+                            <img src="{{ pathto('_static/images/home/Help.svg', 1) }}" alt="" width="50" height="50">   
+                            <h3>Get Help</h3>
+                            <p>Connect with our community, or leverage our premium support services.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer aria-label="Mattermost Footer" class="site-footer">
+	<div class="container">
+		<ul class="footer-menu__single">
+			<li><span class="footer-menu__heading">Company</span>
+				<ul id="menu-footer-company" class="menu"><li id="menu-item-25352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25352"><a href="https://mattermost.com/about-us/" data-ol-has-click-handler="">About Us</a></li>
+<li id="menu-item-25353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25353"><a href="https://mattermost.com/newsroom/" data-ol-has-click-handler="">Newsroom</a></li>
+<li id="menu-item-25354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25354"><a href="https://mattermost.com/partners/" data-ol-has-click-handler="">Partners</a></li>
+<li id="menu-item-25355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25355"><a href="https://mattermost.com/events/" data-ol-has-click-handler="">Events</a></li>
+<li id="menu-item-25356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25356"><a href="https://mattermost.com/careers/" data-ol-has-click-handler="">Careers</a></li>
+<li id="menu-item-28328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28328"><a href="https://mattermost.com/contact-sales/" data-ol-has-click-handler="">Contact Us</a></li>
+</ul>			</li>
+		</ul>
+		<ul class="footer-menu__single">
+			<li><span class="footer-menu__heading">Platform</span>
+			<ul id="menu-footer-platform" class="menu"><li id="menu-item-27084" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27084"><a href="https://mattermost.com/platform-overview/" data-ol-has-click-handler="">Platform Overview</a></li>
+<li id="menu-item-27085" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27085"><a href="https://mattermost.com/channels/" data-ol-has-click-handler="">Channels</a></li>
+<li id="menu-item-27086" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27086"><a href="https://mattermost.com/boards/" data-ol-has-click-handler="">Boards</a></li>
+<li id="menu-item-27087" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27087"><a href="https://mattermost.com/playbooks/" data-ol-has-click-handler="">Playbooks</a></li>
+<li id="menu-item-27088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27088"><a href="https://mattermost.com/integrations-overview/" data-ol-has-click-handler="">Integrations</a></li>
+<li id="menu-item-25358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25358"><a href="https://mattermost.com/security/" data-ol-has-click-handler="">Security</a></li>
+</ul>			</li>
+		</ul>
+		<ul class="footer-menu__single">
+			<li><span class="footer-menu__heading">Documentation</span>
+				<ul id="menu-footer-documentation" class="menu"><li id="menu-item-25359" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25359"><a href="https://docs.mattermost.comguides/deployment.html" data-ol-has-click-handler="">Deployment Guide</a></li>
+<li id="menu-item-25360" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25360"><a href="https://docs.mattermost.comguides/messaging.html" data-ol-has-click-handler="">User Guide</a></li>
+<li id="menu-item-25362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25362"><a href="https://docs.mattermost.comguides/administration.html" data-ol-has-click-handler="">Admin Guide</a></li>
+<li id="menu-item-25363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25363"><a href="https://api.mattermost.com/" data-ol-has-click-handler="">API Reference Guide</a></li>
+<li id="menu-item-25364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25364"><a href="https://docs.mattermost.com/" data-ol-has-click-handler="">All Docs</a></li>
+</ul>			</li>
+		</ul>
+		<ul class="footer-menu__single">
+			<li><span class="footer-menu__heading">Download</span>
+				<ul id="menu-footer-download" class="menu"><li id="menu-item-25365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25365"><a href="/download/" data-ol-has-click-handler="">Mobile &amp; Desktop Apps</a></li>
+<li id="menu-item-25366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25366"><a href="https://docs.mattermost.comguides/administrator.html#installing-mattermost" data-ol-has-click-handler="">Mattermost Server</a></li>
+<li id="menu-item-27089" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27089"><a href="https://mattermost.com/trial/" data-ol-has-click-handler="">Enterprise Trial License</a></li>
+<li id="menu-item-27090" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27090"><a href="https://mattermost.com/trial/" data-ol-has-click-handler="">Cloud Trial</a></li>
+</ul>			</li>
+		</ul>
+		<ul class="footer-menu__single">
+			<li><span class="footer-menu__heading">Support</span>
+				<ul id="menu-footer-support" class="menu"><li id="menu-item-25369" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25369"><a href="https://community.mattermost.com/login" data-ol-has-click-handler="">Community Chat Server</a></li>
+<li id="menu-item-25370" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25370"><a href="https://forum.mattermost.org/" data-ol-has-click-handler="">Forums</a></li>
+<li id="menu-item-25371" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25371"><a href="/security-vulnerability-report/" data-ol-has-click-handler="">Report an Issue</a></li>
+<li id="menu-item-25372" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25372"><a href="https://mattermost.org/feature-ideas/" data-ol-has-click-handler="">Nominate a Feature</a></li>
+<li id="menu-item-28329" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28329"><a href="https://support.mattermost.com/hc/en-us" data-ol-has-click-handler="">Help Center</a></li>
+</ul>			</li>
+		</ul>
+		<div class="secondary-footer__copy">
+			<small class="disclaimer">© Mattermost, Inc. 2021. <span><a href="https://mattermost.com/terms-of-use/" title="Terms of Use" data-ol-has-click-handler="">Terms
+				of Use</a>. <a href="https://mattermost.com/privacy-policy/" title="Privacy Policy" data-ol-has-click-handler="">Privacy Policy</a>.</span></small>
+		</div>
+		<ul class="secondary-footer__social">
+			<li>
+				<a href="https://github.com/mattermost/mattermost-server" target="_blank" rel="noopener noreferrer" data-ol-has-click-handler="">
+					<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<title>GitHub icon</title>
+						<path d="M17.5 0C7.83232 0 0 7.83232 0 17.5C0 27.1677 7.83232 35 17.5 35C27.1677 35 35 27.1677 35 17.5C35 7.83232 27.1677 0 17.5 0ZM20.8293 27.2317C20.5945 27.061 20.3384 26.8262 20.3384 26.5061C20.3384 26.1433 20.3598 25.9299 20.3598 24.3293C20.3598 22.7287 20.1463 22.1524 19.3994 21.6829C21.7043 21.4482 23.1555 20.872 23.8384 19.3567L23.9024 19.2073C23.9665 19.0793 24.0091 18.9299 24.0091 18.9299L24.0945 18.6311C24.2439 18.0549 24.3293 17.372 24.3506 16.561C24.3506 14.3841 23.2835 13.5945 23.0915 13.2317C23.3902 11.5671 23.0488 10.8201 22.878 10.564C22.2805 10.3506 20.8079 11.0976 19.997 11.6311C18.6738 11.247 15.8994 11.2896 14.8537 11.7378C12.9329 10.372 11.9085 10.5854 11.9085 10.5854C11.9085 10.5854 11.247 11.7591 11.7378 13.4665C11.0976 14.2774 10.628 14.8323 10.628 16.3476C10.628 17.2012 10.7348 17.9482 10.9482 18.6098L11.0122 18.7591L11.2043 19.1646L11.2896 19.314C12.0152 20.6159 13.4024 21.4268 15.7713 21.6616C15.4299 21.9177 15.0244 22.3872 14.9817 22.9634C14.5549 23.2409 13.7012 23.3262 13.0396 23.1128C12.122 22.814 11.7591 21 10.372 21.2561C10.0732 21.3201 10.1372 21.5122 10.3933 21.6829C10.8201 21.9604 11.2043 22.3018 11.5244 23.0274C11.7591 23.5823 12.25 24.5854 13.8293 24.5854C14.4482 24.5854 14.8963 24.5213 14.8963 24.5213C14.8963 24.5213 14.9177 25.9299 14.9177 26.4848C14.9177 26.8476 14.6402 27.061 14.4055 27.2317C10.4787 25.8872 7.64024 22.1524 7.64024 17.7561C7.64024 12.2073 12.122 7.72561 17.6707 7.72561C23.2195 7.72561 27.7012 12.2073 27.7012 17.7561C27.6372 22.1311 24.7774 25.8872 20.8293 27.2317Z" fill="#FFFFFF"></path>
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://gitlab.com/gitlab-org/gitlab-mattermost" target="_blank" rel="noopener noreferrer" data-ol-has-click-handler="">
+				<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<title>Gitlab icon</title>
+					<path d="M17.5 0C7.83232 0 0 7.83232 0 17.5C0 27.1677 7.83232 35 17.5 35C27.1677 35 35 27.1677 35 17.5C35 7.83232 27.1677 0 17.5 0ZM26.5701 19.4207L17.564 25.9726L8.55793 19.4207C8.30183 19.25 8.21646 18.9085 8.30183 18.6311L9.34756 15.4299L11.3963 9.09146C11.503 8.77134 11.9726 8.77134 12.0793 9.09146L14.1494 15.4299H21L23.0701 9.09146C23.1768 8.77134 23.6463 8.77134 23.753 9.09146L25.8232 15.4299L26.8689 18.6311C26.9116 18.9299 26.8262 19.25 26.5701 19.4207Z" fill="#FFFFFF"></path>
+				</svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.facebook.com/Mattermost-2300985916642531/" target="_blank" rel="noopener noreferrer" data-ol-has-click-handler="">
+				<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<title>Facebook icon</title>
+					<path d="M17.5 0C7.83232 0 0 7.83232 0 17.5C0 27.1677 7.83232 35 17.5 35C27.1677 35 35 27.1677 35 17.5C35 7.83232 27.1677 0 17.5 0ZM21.7043 11.7378H20.0183C18.9085 11.7378 18.8445 12.1433 18.8445 12.9329V14.5549H21.4909L21.1707 17.4573H18.8445V26.0579H14.9604V17.4573H13.4451V14.5549H14.9604V12.6982C14.9604 10.2866 15.9634 8.83537 18.8232 8.83537H21.7043V11.7378Z" fill="#FFFFFF"></path>
+				</svg>
+				</a>
+			</li>
+			<li>
+				<a href="https://twitter.com/mattermost" target="_blank" rel="noopener noreferrer" data-ol-has-click-handler="">
+				<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<title>Twitter icon</title>
+					<path d="M17.5 0C7.83232 0 0 7.83232 0 17.5C0 27.1677 7.83232 35 17.5 35C27.1677 35 35 27.1677 35 17.5C35 7.83232 27.1677 0 17.5 0ZM24.0091 14.1494C24.0091 14.2988 24.0091 14.4268 24.0091 14.5762C24.0091 18.9726 20.6799 24.0305 14.5549 24.0305C12.6768 24.0305 10.9268 23.4756 9.47561 22.5366C9.73171 22.5579 10.0091 22.5793 10.2652 22.5793C11.8232 22.5793 13.253 22.0457 14.3841 21.1494C12.9543 21.128 11.7378 20.1677 11.311 18.8445C11.503 18.8872 11.7165 18.9085 11.9299 18.9085C12.2287 18.9085 12.5274 18.8659 12.8049 18.8018C11.2896 18.503 10.1372 17.1585 10.1372 15.5366C10.1372 15.5152 10.1372 15.5152 10.1372 15.4939C10.5854 15.75 11.0976 15.8994 11.6311 15.8994C10.7348 15.3018 10.1585 14.2774 10.1585 13.1463C10.1585 12.5274 10.3293 11.9726 10.6067 11.4817C12.25 13.4878 14.6829 14.811 17.4573 14.9604C17.3933 14.7256 17.372 14.4695 17.372 14.2134C17.372 12.378 18.8659 10.8841 20.7012 10.8841C21.6616 10.8841 22.5152 11.2896 23.1341 11.9299C23.8811 11.7805 24.6067 11.503 25.247 11.1189C24.9909 11.8872 24.4787 12.5488 23.7957 12.9543C24.4573 12.8689 25.0976 12.6982 25.6951 12.4421C25.2256 13.0823 24.6707 13.6799 24.0091 14.1494Z" fill="#FFFFFF"></path>
+				</svg>
+				</a>
+			</li>
+		</ul>
+	</div>
+</footer>
 
 {% endblock %}

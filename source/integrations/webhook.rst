@@ -1,4 +1,4 @@
-==============================
+
 Using Mattermost with Webhook
 ==============================
 
@@ -7,10 +7,11 @@ Using Mattermost with Webhook
 Mattermost's outgoing webhooks feature  can be used with this fairly easily as long as you take a few things into account.
 
 Sending information from Mattermost
-------------------------------------
+-----------------------------------
 
 Mattermost's :doc:`interactive message buttons <../developer/interactive-messages>` send information using a parameter called "context." The easiest way to get all the information from Mattermost is to use the following configuration, which will pass the entire payload to your script as a string:
 
+.. code-block:: json
 
   {
   	"source": "entire-payload"
@@ -18,7 +19,7 @@ Mattermost's :doc:`interactive message buttons <../developer/interactive-message
 
 
 Responding to the request
----------------------------
+--------------------------
 
 If you don't respond to the request you'll see an error in your Mattermost logs that looks like ``Action integration error [details: err=EOF]``.
 
@@ -31,6 +32,7 @@ Authenticating Requests
 
 Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use the following in your webhook configuration:
 
+.. code-block:: json
 
     "trigger-rule":
     {

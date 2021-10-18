@@ -4,6 +4,7 @@ Outgoing Webhooks
 =================
 
 .. note::
+  
   This is the admin documentation for outgoing webhooks. If you're a developer looking to build an integration, see `our developer documentation <https://developers.mattermost.com/integrate/getting-started/>`__.
 
 Mattermost supports webhooks to easily integrate external applications into the server.
@@ -16,6 +17,7 @@ Use outgoing webhooks to post automated responses to posts made by your users. O
 Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`__ instead.
 
 .. note::
+  
   To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
 
 .. toctree::
@@ -28,9 +30,9 @@ Suppose you want to write an external application, which executes software tests
 
 You can follow these general guidelines to set up a Mattermost outgoing webhook for your application.
 
-1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so.
+1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them by going to **System Console > Integrations > Integration Management**, or ask your System Admin to do so.
 
-2 - Click **Add Outgoing Webhook** and add name and description for the webhook. The description can be up to 500 characters. 
+2 - Select **Add Outgoing Webhook** and add name and description for the webhook. The description can be up to 500 characters. 
 
 3 - Choose the content type by which the request will be sent.
 
@@ -51,14 +53,14 @@ In our example, we would set the channel to ``town-square`` and specify ``#build
  - If the first word of a message matches one of the trigger words exactly, or
  - If the first word of a message starts with one of the trigger words.
 
-6 - Finally, set one or more callback URLs that HTTP POST requests will be sent to, and hit **Save**. If the URL is private, add it as a `trusted internal connection <https://about.mattermost.com/default-allow-internal-connections-settings-documentation/>`__.
+6 - Finally, set one or more callback URLs that HTTP POST requests will be sent to, and select **Save**. If the URL is private, add it as a `trusted internal connection <https://docs.mattermost.com/configure/configuration-settings.html#allow-untrusted-internal-connections-to>`__.
 
 7 - On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../images/outgoing_webhooks_token.png
   :width: 500 px
 
-8 - Next, write your external application. Include a function, which receives HTTP POST requests from Mattermost. The function should look something like this:
+8 - Next, write your external application. Include a function, which receives HTTP POST requests from Mattermost. The function should accept something like this:
 
     .. code-block:: text
 
@@ -105,9 +107,9 @@ which would render in Mattermost as:
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the username is set to `webhook`.
+  `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them by going to **System Console > Integrations > Integration Management**, or ask your System Admin. If not enabled, the username is set to *webhook*.
 
- Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+ Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them by going to **System Console > Integrations > Integration Management**, or ask your System Admin. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------
@@ -118,7 +120,7 @@ Tips and Best Practices
 
 3. Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`__ instead.
 
-4. You can restrict who can create outgoing webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
+4. You can restrict who can create outgoing webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/configure/configuration-settings.html#restrict-managing-integrations-to-admins>`__.
 
 5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON response format <https://docs.mattermost.com/developer/webhooks-outgoing.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
 
@@ -127,9 +129,9 @@ Tips and Best Practices
 Share Your Integration
 -----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://developers.mattermost.com/contribute/getting-started/contribution-checklist/>`__ in our `app directory <https://mattermost.com/marketplace/>`__.
 
-The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
+The `app directory <https://mattermost.com/marketplace/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------

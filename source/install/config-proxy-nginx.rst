@@ -1,7 +1,7 @@
 .. _config-proxy-nginx:
 
 Configuring NGINX as a proxy for Mattermost Server
-==================================================
+--------------------------------------------------
 
 NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
 
@@ -21,10 +21,11 @@ On RHEL 7 and 8, open the file ``/etc/nginx/conf.d/mattermost``.
 SSL and HTTP/2 with server push are enabled in the provided configuration example.
 
 .. note::
-  If you're going to use Let's Encrypt to manage your SSL certificate stop at step 3 here and please see the `NGINX HTTP/2 & SSL full configuration guide <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__.
-
-.. note::
-  You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
+  
+  - If you're going to use Let's Encrypt to manage your SSL certificate, stop here at step 3 here and see the `NGINX HTTP/2 & SSL product documentation <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ for details.
+  - You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
+  - Note that the IP address included in the examples in this documentation may not match your network configuration.
+  - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``. 
 
 .. code-block:: none
 
@@ -64,7 +65,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
        ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
        ssl_prefer_server_ciphers on;
        ssl_session_cache shared:SSL:50m;
-       # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
+       # HSTS (ngx_http_headers_module is required) (15768000 seconds = six months)
        add_header Strict-Transport-Security max-age=15768000;
        # OCSP Stapling ---
        # fetch OCSP records from URL in ssl_certificate and cache them
@@ -154,7 +155,8 @@ Now that NGINX is installed and running, you can configure it to use SSL, which 
 NGINX Configuration FAQ
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-**Why are Websocket connections returning a 403 error?**
+Why are Websocket connections returning a 403 error?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and make sure that the host header being set in the proxy is dynamic:
 
@@ -179,7 +181,8 @@ Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain be
 
 For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
 
-**How do I setup an NGINX proxy with the Mattermost Docker installation?**
+How do I setup an NGINX proxy with the Mattermost Docker installation?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Find the name of the Mattermost network and connect it to the NGINX proxy.
 
@@ -214,13 +217,14 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
       - "80"
       - "443"
 
-**Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?**
+Why does NGINX fail when installing GitLab CE with Mattermost on Azure?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may need to update the callback URLs for the Application entry of Mattermost inside your GitLab instance.
 
 1. Log in to your GitLab instance as the admin.
 2. Go to **Admin > Applications**.
-3. Click **Edit** on GitLab-Mattermost.
+3. Select **Edit** on GitLab-Mattermost.
 4. Update the Callback URLs to your new domain/URL.
 5. Save the changes.
 6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.

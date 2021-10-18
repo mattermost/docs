@@ -1,3 +1,5 @@
+:orphan:
+
 Mattermost Developer's Guide
 ============================
 

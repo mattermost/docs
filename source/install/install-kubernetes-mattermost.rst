@@ -1,7 +1,7 @@
 .. _install-kubernetes-mattermost:
 
 Deploying a Mattermost Installation
-===================================
+-----------------------------------
 
 .. warning::
   If you used the Mattermost Operator in version prior to v1.12.x or are still using ``ClusterInstallation`` Custom Resource 
@@ -74,7 +74,7 @@ Save the file as ``mattermost-installation.yaml``.
     Steps 3 to 5 cover configuring Mattermost with external database and filestore which is recommended installation configuration. 
 
     When using MySQL and MinIO operators these steps can be skipped. 
-    It requires both Operators to be installed on the cluster and it is **not recomended for production usage**.
+    It requires both Operators to be installed on the cluster and it is **not recommended for production usage**.
 
 **3. Create external database secret**
 
@@ -220,7 +220,7 @@ The deployment process can be monitored in the Kubernetes user interface or in c
 
   $ kubectl -n mattermost get mm -w
 
-The installation should be deployed successfuly, when the Custom Resource reaches the ``stable`` state.
+The installation should be deployed successfully, when the Custom Resource reaches the ``stable`` state.
 
 **7. Configure DNS and use Mattermost**
 
@@ -245,7 +245,7 @@ If you just want to try it out on your local machine without configuring the dom
 And navigate to http://localhost:8065.
 
 Restoring an Existing Mattermost MySQL Database
------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Mattermost Operator can be used in a backup and restore scenario to apply an existing Mattermost MySQL database to a new Mattermost installation, in its own namespace. This can also be helpful in the event that you need to revert your Mattermost instance's database to the most recent backup point, on your existing installation. In both cases, you will need a backup of your database.
 
