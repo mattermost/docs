@@ -15,13 +15,14 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
 
-#### Enabling Timed Do Not Disturb feature for all users.
+#### Timed Do Not Disturb
+ - 
 
 ### Improvements
 
 #### User Interface (UI)
  - Recent mentions and saved posts now show across all teams.
- - Included @here mentions in the ``EnableConfirmNotificationsToChannel`` config setting.
+ - Added ``@here`` mention to the ``EnableConfirmNotificationsToChannel`` config setting to show a warning modal when over 5 members might be alerted with ``@here``.
  - Added one-click reactions for posts. Also, the three most recently used emojis will display when the mouse is hovered on a post. 
  - Added support for selecting names and aliases in the emoji picker.
  - The updated "Tips & Next Steps" screen is now shown to all System Admins.
@@ -35,21 +36,21 @@ Latest Mattermost Cloud releases:
  - A composite index has been added to the jobs table for better query performance. Since for some customers with large jobs table, this can take a long time, it is recommended to add the index during off-hours and then run the migration.
     - For PostgreSQL: ``create index idx_jobs_status_type on jobs (status,type);``
     - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
- - Enabled prometheus metrics when running a standalone jobserver.
+ - Prometheus metrics are now enabled when running a standalone jobserver.
 
 ### Bug Fixes
- - Fixed a broken Custom Emoji link on servers with a subpath configured.
- - Fixed "No results found" string shown in the **Direct Messages** modal.
- - Fixed an issue where picking two emojis from the emoji picker put the caret in the middle of the emojis.
+ - Fixed a broken link to the **Custom Emoji** page on servers with a subpath configured.
+ - Fixed an issue where a "No results found" error string was displayed in the **Direct Messages** modal.
+ - Fixed an issue where the caret got placed in the middle of the emojis when picking two emojis from the emoji picker.
  - Fixed an issue where **System Console > Channels > Channel Management** displayed an option to toggle group management in Team Edition, Starter, and Professional.
  - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
- - Fixed an issue where user set clock format was not respected on the edit indicator popover.
+ - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
-    - CRT: Recent sidebar sorting option should only consider parent posts.
-    - CRT: Removed badge in thread list when the thread is started by another user in a DM.
-    - CRT: Remove user avatar from the participants list after their post is deleted and they have no other posts in the thread.
-    - Show ephemeral message as centre post even if CRT is enabled.
-    - Fixed drag and drop files on a thread while on CRT Panel.
+    - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
+    - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
+    - Fixed an issue where the user avatar was displayed in the participants list after their post was deleted and if they had no other posts in the thread.
+    - Fixed an issue where the ephemeral message was not displyaed as the centre post.
+    - Fixed an issue with dragging and dropping files on a thread while on a Threads panel.
 
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
