@@ -81,7 +81,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with uploading of animated gif files on Android.
 
 ### Known Issues
- - Selecting text causes channel sidebar to slide open.
  - An error may occur when archiving a channel or when attempting to post to an archived channel.
  - The "+" to add a reaction is still visible in archived channels.
  - Close Preview X and Close Settings X are themed incorrectly in Quartz theme.
