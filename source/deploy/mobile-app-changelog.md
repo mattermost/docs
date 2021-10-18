@@ -23,6 +23,9 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where navigating to Global Threads crashed the app.
  - Fixed Text input font scaling to follow the OS setting to fix an issue where iOS Dynamic Type size was not correct in the message box.
 
+#### iOS specific
+ - Fixed a gesture conflict between the drawers and the post input on iOS.
+
 ## 1.47.0 Release
 - Release Date: October 13, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
