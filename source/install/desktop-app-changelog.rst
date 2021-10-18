@@ -35,6 +35,7 @@ Release v5.0
  - Fixed an issue where using a proxy server with the Desktop app caused the app to crash.
  - Fixed the new server modal not being accessible on Linux when no other servers existed.
  - Fixed an issue where switching from Boards/Playbooks to Channels caused a reload in the Channels view.
+ - Fixed an issue with GPO and built-in servers not working correctly with Boards/Playbooks tabs.
  - Reduced the size of some builds by removing unnecessary files.
 - **v5.0.0, released 2021-10-13**
  - Original v5.0.0 release
