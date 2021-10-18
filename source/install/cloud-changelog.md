@@ -2,13 +2,75 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
+
 Latest Mattermost Cloud releases:
+- [Release 2021-10-27](#release-2021-10-27)
 - [Release 2021-10-13](#release-2021-10-13)
 - [Release 2021-09-29](#release-2021-09-29)
 - [Release 2021-08-12](#release-2021-08-12)
 - [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
-- [Release 2021-07-01](#release-2021-07-01)
+
+## Release 2021-10-27
+
+### Highlights
+
+#### Enabling Timed Do Not Disturb feature for all users.
+
+### Improvements
+
+#### User Interface (UI)
+ - Recent mentions and saved posts now show across all teams.
+ - Included @here mentions in the ``EnableConfirmNotificationsToChannel`` config setting.
+ - Added one-click reactions for posts. Also, the three most recently used emojis will display when the mouse is hovered on a post. 
+ - Added support for selecting names and aliases in the emoji picker.
+ - The updated "Tips & Next Steps" screen is now shown to all System Admins.
+ - Updated in-product text for the invitation modal for clarity.
+ - Updated the file attachment limits and sizes within in-product help documentation.
+
+#### Performance
+ - Reduced storage-related slow-downs on page load.
+
+#### Administration
+ - A composite index has been added to the jobs table for better query performance. Since for some customers with large jobs table, this can take a long time, it is recommended to add the index during off-hours and then run the migration.
+    - For PostgreSQL: ``create index idx_jobs_status_type on jobs (status,type);``
+    - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
+ - Enabled prometheus metrics when running a standalone jobserver.
+
+### Bug Fixes
+ - Fixed a broken Custom Emoji link on servers with a subpath configured.
+ - Fixed "No results found" string shown in the **Direct Messages** modal.
+ - Fixed an issue where picking two emojis from the emoji picker put the caret in the middle of the emojis.
+ - Fixed an issue where **System Console > Channels > Channel Management** displayed an option to toggle group management in Team Edition, Starter, and Professional.
+ - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
+ - Fixed an issue where user set clock format was not respected on the edit indicator popover.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+    - CRT: Recent sidebar sorting option should only consider parent posts.
+    - CRT: Removed badge in thread list when the thread is started by another user in a DM.
+    - CRT: Remove user avatar from the participants list after their post is deleted and they have no other posts in the thread.
+    - Show ephemeral message as centre post even if CRT is enabled.
+    - Fixed drag and drop files on a thread while on CRT Panel.
+
+### Known Issues
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Deep link opened on mobile shows incorrect text directing the opening to the Desktop app [MM-38913](https://mattermost.atlassian.net/browse/MM-38913).
+ - LDAP Sync job inserting invalid NULL unicode character into job's Data column [MM-38711](https://mattermost.atlassian.net/browse/MM-38711).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+Latest Mattermost Cloud releases:
+- [Release 2021-10-27](#release-2021-10-27)
+- [Release 2021-10-13](#release-2021-10-13)
+- [Release 2021-09-29](#release-2021-09-29)
+- [Release 2021-08-12](#release-2021-08-12)
+- [Release 2021-07-29](#release-2021-07-29)
+- [Release 2021-07-15](#release-2021-07-15)
 
 ## Release 2021-10-13
 
