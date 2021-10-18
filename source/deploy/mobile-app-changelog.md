@@ -1,12 +1,28 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
+- [1.47.1 Release](#release)
 - [1.47.0 Release](#release)
 - [1.46.0 Release](#id1)
 - [1.45.1 Release](#id9)
 - [1.45.0 Release](#id14)
 - [1.44.1 Release](#id23)
 - [1.44.0 Release](#id28)
+
+## 1.47.1 Release
+- Release Date: , 2021
+- Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where navigating to Global Threads crashed the app.
+ - Fixed Text input font scaling to follow the OS setting to fix an issue where iOS Dynamic Type size was not correct in the message box.
 
 ## 1.47.0 Release
 - Release Date: October 13, 2021
