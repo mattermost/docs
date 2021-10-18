@@ -2,7 +2,6 @@
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
-
 Latest Mattermost Cloud releases:
 - [Release 2021-10-27](#release-2021-10-27)
 - [Release 2021-10-13](#release-2021-10-13)
@@ -14,6 +13,9 @@ Latest Mattermost Cloud releases:
 ## Release 2021-10-27
 
 ### Highlights
+
+#### Start Trial is Displayed when 10 Users are Reached
+ - 
 
 #### Timed Do Not Disturb
  - 
@@ -51,6 +53,7 @@ Latest Mattermost Cloud releases:
     - Fixed an issue where the user avatar was displayed in the participants list after their post was deleted and if they had no other posts in the thread.
     - Fixed an issue where the ephemeral message was not displyaed as the centre post.
     - Fixed an issue with dragging and dropping files on a thread while on a Threads panel.
+    - Fixed an issue where permalinks were not highlighting a post on a thread that was already open on the right-hand side.
 
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
