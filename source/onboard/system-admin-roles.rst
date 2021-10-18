@@ -1,5 +1,24 @@
-Additional System Admin Roles (E20)
-===================================
+Additional System Admin Roles
+==============================
+
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Managed deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 From v5.28, System Admins can use the command line to assign roles that permit members to have admin access to specified areas of the System Console. This allows members of your organization to perform certain administrative tasks without providing them with access to all system administrative capabilities.
 
@@ -11,9 +30,9 @@ From v5.30, System Admins can also use the System Console to manage additional S
 
 There are two ways to assign roles:
 
-1. In the System Console under **User Management > System Roles (Beta)**.
+1. In the System Console under **User Management > System Roles**.
 
-2. Using the `mmctl tool <https://docs.mattermost.com/administration/mmctl-cli-tool.html>`__.
+2. Using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
 
 When a user is assigned a role, they have access to the System Console. As each role has a different set of default permissions the items that they can view depend on the role they've been assigned.
 
@@ -54,7 +73,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   **In the System Console**
 
-- Go to **System Console > User Management > System Roles (Beta) > Assigned People**. 
+- Go to **System Console > User Management > System Roles > Assigned People**. 
 
   **Using the mmctl tool**
 
@@ -66,7 +85,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **System Manager** role.
+  1. Go to **System Console > User Management > System Roles** then select the **System Manager** role.
 
   2. Under **Assigned People**, choose **Add People**.
 
@@ -82,7 +101,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
+  1. Go to **System Console > User Management > System Roles** then select the **User Manager** role.
 
   2. Under **Assigned People**, choose **Add People**.
 
@@ -98,7 +117,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **Viewer** role.
+  1. Go to **System Console > User Management > System Roles** then select the **Viewer** role.
 
   2. Under **Assigned People**, select **Add People**.
 
@@ -114,7 +133,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **Viewer** role.
+  1. Go to **System Console > User Management > System Roles** then select the **Viewer** role.
 
   2. Under **Assigned People** search for **Bob Smith**, then select **Remove**.
 
@@ -133,7 +152,7 @@ System Admins can grant read and write access to other areas of the System Conso
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **System Manager**, **User Manager**, or **Viewer** role.
+  1. Go to **System Console > User Management > System Roles** then select the **System Manager**, **User Manager**, or **Viewer** role.
 
   2. For each set of privileges, select the access level as **Can edit**, **Read only**, or **No access**.
 
@@ -149,7 +168,7 @@ System Admins can grant read and write access to other areas of the System Conso
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
+  1. Go to **System Console > User Management > System Roles** then select the **User Manager** role.
 
   2. Under **Privileges > Authentication** select **Can edit**, then select **Save**.
 
@@ -163,7 +182,7 @@ System Admins can grant read and write access to other areas of the System Conso
 
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
+  1. Go to **System Console > User Management > System Roles** then select the **User Manager** role.
 
   2. Under **Privileges > Authentication** select **Read only**, then select **Save**.
 
@@ -177,7 +196,7 @@ System Admins can grant read and write access to other areas of the System Conso
   
   **In the System Console**
 
-  1. Go to **System Console > User Management > System Roles (Beta)** then select the **User Manager** role.
+  1. Go to **System Console > User Management > System Roles** then select the **User Manager** role.
 
   2. Under **Privileges > Authentication** select **No access**, then choose **Save**.
 
@@ -368,11 +387,11 @@ Admin Roles and Privileges
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_OPENID                      |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_OPENID                     |
 |                        |                                                                          |
-|                        | **Guest Access (Beta)**                                                  | 
+|                        | **Guest Access**                                                         | 
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_GUEST_ACCESS                |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_GUEST_ACCESS               | 
 +------------------------+--------------------------------------------------------------------------+
-| Plugin (Beta)          |  - PERMISSION_SYSCONSOLE_READ_PLUGINS                                    |
+| Plugin                 |  - PERMISSION_SYSCONSOLE_READ_PLUGINS                                    |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_PLUGINS                                   |
 +------------------------+--------------------------------------------------------------------------+
 | Integrations           | **Integration Management**                                               |
@@ -395,7 +414,7 @@ Admin Roles and Privileges
 |                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_DATA_RETENTION_POLICY           |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_DATA_RETENTION_POLICY          |
 |                        |                                                                          |
-|                        | **Compliance Export (Beta)**                                             |
+|                        | **Compliance Export**                                                    |
 |                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_COMPLIANCE_EXPORT               |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_COMPLIANCE_EXPORT              |
 |                        |                                                                          |
@@ -403,7 +422,7 @@ Admin Roles and Privileges
 |                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_COMPLIANCE_MONITORING           |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_COMPLIANCE_MONITORING          |
 |                        |                                                                          |
-|                        | **Custom Terms of Service (Beta)**                                       |
+|                        | **Custom Terms of Service**                                              |
 |                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_CUSTOM_TERMS_OF_SERVICE         |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_COMPLIANCE_CUSTOM_TERMS_OF_SERVICE        |
 +------------------------+--------------------------------------------------------------------------+

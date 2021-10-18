@@ -25,8 +25,10 @@
 
   {# Performance: Preload Theme Font #}
   <link rel="preload" as="font" href="{{ pathto('_static/css/fonts/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e', 1) }}" crossorigin>
-  <link rel="preload" as="font" href="{{ pathto('_static/css/fonts/lato-normal.woff2?bd03a2cc277bbbc338d464e679fe9942', 1) }}" crossorigin>
-  <link rel="preload" as="font" href="{{ pathto('_static/css/fonts/lato-bold.woff2?cccb897485813c7c256901dbca54ecf2', 1) }}" crossorigin>
+  <link rel="preload" href="https://p.typekit.net" crossorigin>
+  <link rel="preload" href="https://use.typekit.net" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
 
   {# RTD hosts this file, so just load on non RTD builds #}
   {% if not READTHEDOCS %}

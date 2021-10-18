@@ -1,6 +1,23 @@
 Custom Branding Tools
 =====================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Use custom branding tools to present a Mattermost experience that's tailored to the branding of your organization.
 
 .. figure:: ../images/custom-branding-tools.png
@@ -31,7 +48,7 @@ Upload a company logo or custom image representative of your site that is displa
 Custom Brand Text
 ~~~~~~~~~~~~~~~~~
 
-Write custom text to display your company tagline or a welcome prompt. Custom text will be shown below the custom brand image on the left side of site login page on desktop. You can format this text to a maximum of 500 characters using the same `Markdown formatting syntax <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as used in Mattermost messages.
+Write custom text to display your company tagline or a welcome prompt. Custom text will be shown below the custom brand image on the left side of site login page on desktop. You can format this text to a maximum of 500 characters using the same `Markdown formatting syntax <https://docs.mattermost.com/messaging/formatting-text.html>`__ as used in Mattermost messages.
 
 Site Description
 ~~~~~~~~~~~~~~~~

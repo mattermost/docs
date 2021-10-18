@@ -1,11 +1,33 @@
-Elasticsearch (E20)
-===================
+Elasticsearch
+=============
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts.
 
-The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__. Elasticsearch v5.x, v6.x, and v7.x are supported. 
+The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__. 
+
+.. important::
+
+  For Mattermost v6.0, a minimum of Elasticsearch v7.x is supported. 
+  Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
     
 Deployment Guide
 ----------------
@@ -13,7 +35,7 @@ Deployment Guide
 Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
 .. important::
-    The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
+    The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over five million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
 
 .. note::
     From Mattermost v5.26, you can filter inactive users, search by user role, and also search for terms inside links. This update introduces a breaking change which affects the "from" part of the search. To avoid this, reindex your Elasticsearch instance/cluster prior to upgrading.
@@ -66,7 +88,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 
    - Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Read the `documentation to learn more <https://docs.mattermost.com/configure/configuration-settings.html#elasticsearch>`__.
    - If your deployment has a large number of posts (typically in excess of one million but not strictly defined), the reindexing progress percentage may stay at 99% for a long time. The size of the data to be indexed is estimated, and on large databases, estimations can become inaccurate. While progress estimates may be inaccurate, and the progress percentage may appear stuck at near completion, indexing will continue behind the scenes until complete.
-   - Search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `extraction command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__ is executed using the CLI. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
+   - Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__, or using the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Environment > Elasticsearch > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
     
 Limitations
 ------------
@@ -118,7 +140,7 @@ There are a few possible reasons:
 
 - Querying the posts out of the database is resource limited (i.e., the machine the database is on is not powerful enough).
 - The Elasticsearch cluster is performance limited (i.e., the machines are not powerful enough).
-- The 25,000 messages are spread out over a long time window, and the ``BulkIndexingTimeWindowSeconds`` configuration value is too low for efficient indexing of such a "sparse" database. The value of that config should ideally be set so that the median number of posts falling within any period of that time in the database is around 700 to 800. The default value is 1 hour, so if you are doing a lot less than 800 posts an hour on average, then the indexing will be much slower in terms of "posts per unit time". This can be sped up by increasing that time window.
+- The 25,000 messages are spread out over a long time window, and the ``BulkIndexingTimeWindowSeconds`` configuration value is too low for efficient indexing of such a "sparse" database. The value of that config should ideally be set so that the median number of posts falling within any period of that time in the database is around 700 to 800. The default value is one hour, so if you are doing a lot less than 800 posts an hour on average, then the indexing will be much slower in terms of "posts per unit time". This can be sped up by increasing that time window.
  
 What form of data is sent to Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

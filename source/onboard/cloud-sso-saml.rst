@@ -2,6 +2,23 @@
 SAML Single Sign-On
 ====================
 
+|enterprise| |professional| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 Single sign-on (SSO) is a way for users to log into multiple applications with a single user ID and password without having to re-enter their credentials. The SAML standard allows identity providers to pass credentials to service providers. Mattermost can be configured to act as a SAML 2.0 Service Provider. 
 
 Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Single sign-on integration offers the following benefits:
@@ -49,6 +66,7 @@ When enabled, the Guest Attribute in Mattermost identifies external users whose 
 If a Mattermost Guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the Guest Attribute added, the synchronization processes will automatically demote the member user to the guest role.
 
 **Enable Guest Access**
+
 1. Go to **System Console > Authentication > SAML 2.0**.
 2. Complete the Guest Attribute field.
 3. Select **Save**.

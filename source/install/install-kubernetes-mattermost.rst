@@ -74,7 +74,7 @@ Save the file as ``mattermost-installation.yaml``.
     Steps 3 to 5 cover configuring Mattermost with external database and filestore which is recommended installation configuration. 
 
     When using MySQL and MinIO operators these steps can be skipped. 
-    It requires both Operators to be installed on the cluster and it is **not recomended for production usage**.
+    It requires both Operators to be installed on the cluster and it is **not recommended for production usage**.
 
 **3. Create external database secret**
 
@@ -220,7 +220,7 @@ The deployment process can be monitored in the Kubernetes user interface or in c
 
   $ kubectl -n mattermost get mm -w
 
-The installation should be deployed successfuly, when the Custom Resource reaches the ``stable`` state.
+The installation should be deployed successfully, when the Custom Resource reaches the ``stable`` state.
 
 **7. Configure DNS and use Mattermost**
 

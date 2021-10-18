@@ -1,7 +1,24 @@
-Performance Monitoring (E20)
-============================
+Performance Monitoring
+======================
 
-*Available in Mattermost Enterprise Edition E20*
+|enterprise| |cloud| |self-hosted|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Available in legacy Mattermost Enterprise Edition E20*
 
 Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__.
 
@@ -43,7 +60,7 @@ Installing Prometheus
       # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
       - job_name: 'prometheus'
 
-        # Override the global default and scrape targets from this job every 5 seconds.
+        # Override the global default and scrape targets from this job every five seconds.
         # scrape_interval: 5s
 
         # metrics_path defaults to '/metrics'
@@ -54,7 +71,7 @@ Installing Prometheus
 
 Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
 
-3. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `configuration settings documentation <https://docs.mattermost.com/configure/configuration-settings.html#performance-monitoring>`__ for details.
+3. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#performance-monitoring>`__ documentation for details.
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
@@ -63,11 +80,11 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 4. To test that the server is running, go to ``<ip>:<port>/metrics``.
 
 .. note::
-   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
+   A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP.
 
-5. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus. For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
+1. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus. For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
 
-6. Once the service has started, you can access the data in ``<localhost>:<port>/graph``. While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
+2. Once the service has started, you can access the data in ``<localhost>:<port>/graph``. While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
 
 .. note:: 
   For troubleshooting advice, check the `Prometheus FAQ page <https://prometheus.io/docs/introduction/faq/>`__.
@@ -165,8 +182,8 @@ Login and Session Metrics
 - ``mattermost_login_logins_fail_total``: The total number of failed logins.
 - ``mattermost_login_logins_total``: The total number of successful logins.
 
-Messaging Metrics
-^^^^^^^^^^^^^^^^^
+Mattermost Channels Metrics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``mattermost_post_broadcasts_total``: The total number of WebSocket broadcasts sent because a post was created.
 - ``mattermost_post_emails_sent_total``: The total number of emails sent because a post was created.
@@ -251,7 +268,7 @@ The performance monitoring feature provides standard Go metrics for HTTP server 
 To learn how to set up runtime profiling, see the `pprof package Go documentation <https://pkg.go.dev/net/http/pprof>`__. You can also visit the ``ip:port`` page for a complete list of metrics with descriptions.
 
 .. note::
-   A Mattermost Enterprise Edition E20 license is required to connect to ``/metrics`` using HTTP.
+   A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP.
 
 If enabled, you can run the profiler by
 
