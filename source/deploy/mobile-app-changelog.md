@@ -24,6 +24,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed Text input font scaling to follow the OS setting to fix an issue where iOS Dynamic Type size was not correct in the message box.
 
 #### iOS specific
+ - Updated the iOS app icon to a flattened version.
  - Fixed a gesture conflict between the drawers and the post input on iOS.
 
 ## 1.47.0 Release
