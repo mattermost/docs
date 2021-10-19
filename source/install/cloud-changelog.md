@@ -47,6 +47,8 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where **System Console > Channels > Channel Management** displayed an option to toggle group management in Team Edition, Starter, and Professional.
  - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
  - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
+ - Replaced Metropolis font files with a new set to correct a kerning issue.
+ - Fixed an issue where deep links opened on mobile displayed an incorrect text directing the opening to the Desktop app.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
     - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
     - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
@@ -54,6 +56,7 @@ Latest Mattermost Cloud releases:
     - Fixed an issue where the ephemeral message was not displyaed as the centre post.
     - Fixed an issue with dragging and dropping files on a thread while on a Threads panel.
     - Fixed an issue where permalinks were not highlighting a post on a thread that was already open on the right-hand side.
+    - Fixed an issue with missing threads in the Thread list.
 
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
