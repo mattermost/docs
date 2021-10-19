@@ -49,6 +49,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
  - Replaced Metropolis font files with a new set to correct a kerning issue.
  - Fixed an issue where deep links opened on mobile displayed an incorrect text directing the opening to the Desktop app.
+ - Addressed various user interface style bugs from 6.0 release.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
     - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
     - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
