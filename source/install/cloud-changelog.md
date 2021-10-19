@@ -15,10 +15,10 @@ Latest Mattermost Cloud releases:
 ### Highlights
 
 #### Start Trial is Displayed when 10 Users are Reached
- - 
+ - Once a non-licensed server has reached 10 users, a modal is displayed to the admin to encourage to start a 30-day trial.
 
 #### Timed Do Not Disturb
- - 
+ - Added the ability to disable all notifications for a specified period of time to avoid distractions, without losing important messages when you're back.
 
 ### Improvements
 
