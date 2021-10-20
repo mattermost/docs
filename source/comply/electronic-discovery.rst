@@ -42,7 +42,7 @@ Mattermost RESTful API
 
 The Mattermost API can be used to export a user's posts in CSV compliance format that is part of Mattermost Enterprise. The following section outlines how to use the API to create and retrieve a report for a specific user via the API. Please note that full documentation for the Mattermost API can be found at https://api.mattermost.com.
 
-To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using curl you can authenticate using the following command:
+To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using curl, you can authenticate using the following command:
 
 .. code-block:: json
 
@@ -69,7 +69,7 @@ Include the ``token`` value sent in the response as part of the Authorization he
 
   curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me
 
-Once you're authenticated in to Mattermost you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com:
+Once you're authenticated into Mattermost, you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com:
 
 .. note::
 
@@ -83,13 +83,13 @@ Once you're authenticated in to Mattermost you can use the `Compliance API to cr
   --data '{"id":"","create_at":0,"user_id":"craig","status":"","count":0,"desc":" ","type":"","start_at":1514769359000,"end_at": 1546305359000,"keywords":"","emails":"craig@mattermost.com"}' \
   https://yourmattermosturl/api/v4/compliance/reports
 
-If the post is successful Mattermost will return a message that looks like the following, indicating that the server is running the compliance export process:
+If the post is successful, Mattermost will return a message that looks like the following, indicating that the server is running the compliance export process:
 
 .. code-block:: json
 
   {"id":"du6kektczifqxexeroywpz3nbc"," create_at":1531444617901, "user_id":"qfjzamfg47bu9gsyyfbqjk4s6a", "status":"running", "count":0, "desc":" ", "type":"adhoc", "start_at":1514769359000, "end_at":1546305359000, "keywords":"", "emails":"craig@mattermost.com"}
 
-When the export process is complete (the execution time is based on the number of records to return and the current server load) you will need to send another HTTP Post request to Mattermost to retrieve and download a zip file containing the report that looks like the following curl request:
+When the export process is complete (the execution time is based on the number of records to return and the current server load), you will need to send another HTTP Post request to Mattermost to retrieve and download a zip file containing the report that looks like the following curl request:
 
 .. code-block:: json
 
@@ -99,7 +99,7 @@ When the export process is complete (the execution time is based on the number o
   --output report-zip.zip \
   https://yourmattermosturl/api/v4/compliance/reports/du6kektczifqxexeroywpz3nbc/download
 
-When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to save that file as. In the example above the file will be saved as ``report-zip.zip``.
+When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to save that file as. In the example above, the file will be saved as ``report-zip.zip``.
 
 Mattermost Database
 -------------------
