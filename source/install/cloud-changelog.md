@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 ### Highlights
 
 #### Start Trial is Displayed when 10 Users are Reached
- - Once a non-licensed server has reached 10 users, a modal is displayed to the admin to encourage to start a 30-day trial.
+ - Once a non-licensed server has reached 10 users, a modal is displayed to the admin encouraging them to start a 30-day trial.
 
 #### Timed Do Not Disturb
  - Added the ability to disable all notifications for a specified period of time to avoid distractions, without losing important messages when you're back.
@@ -35,7 +35,7 @@ Latest Mattermost Cloud releases:
  - Reduced storage-related slow-downs on page load.
 
 #### Administration
- - A composite index has been added to the jobs table for better query performance. Since for some customers with large jobs table, this can take a long time, it is recommended to add the index during off-hours and then run the migration.
+ - A composite index has been added to the jobs table for better query performance. For some customers with large jobs table, this can take a long time, so we recommend adding the index during off-hours, and then running the migration.
     - For PostgreSQL: ``create index idx_jobs_status_type on jobs (status,type);``
     - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
  - Prometheus metrics are now enabled when running a standalone jobserver.
@@ -43,13 +43,13 @@ Latest Mattermost Cloud releases:
 ### Bug Fixes
  - Fixed a broken link to the **Custom Emoji** page on servers with a subpath configured.
  - Fixed an issue where a "No results found" error string was displayed in the **Direct Messages** modal.
- - Fixed an issue where the caret got placed in the middle of the emojis when picking two emojis from the emoji picker.
+ - Fixed an issue where the caret was placed in the middle of the emojis when picking two emojis from the emoji picker.
  - Fixed an issue where **System Console > Channels > Channel Management** displayed an option to toggle group management in Team Edition, Starter, and Professional.
  - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
  - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
  - Replaced Metropolis font files with a new set to correct a kerning issue.
- - Fixed an issue where deep links opened on mobile displayed an incorrect text directing the opening to the Desktop app.
- - Addressed various user interface style bugs from 6.0 release.
+ - Fixed an issue where deep links opened on mobile displayed an incorrect text directing users to open the Desktop app.
+ - Addressed various user interface style bugs from the v6.0 release.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
     - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
     - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
@@ -62,11 +62,11 @@ Latest Mattermost Cloud releases:
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - ``CMD+/`` does not close shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
- - Deep link opened on mobile shows incorrect text directing the opening to the Desktop app [MM-38913](https://mattermost.atlassian.net/browse/MM-38913).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Deep link opened on mobile shows incorrect text directing the user to open the Desktop app [MM-38913](https://mattermost.atlassian.net/browse/MM-38913).
  - LDAP Sync job inserting invalid NULL unicode character into job's Data column [MM-38711](https://mattermost.atlassian.net/browse/MM-38711).
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
  - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
