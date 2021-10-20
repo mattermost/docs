@@ -14,9 +14,6 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
 
-#### Start Trial is Displayed when 10 Users are Reached
- - Once a non-licensed server has reached 10 users, a modal is displayed to the admin encouraging them to start a 30-day trial.
-
 #### Timed Do Not Disturb
  - Added the ability to disable all notifications for a specified period of time to avoid distractions, without losing important messages when you're back.
 
@@ -49,7 +46,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
  - Replaced Metropolis font files with a new set to correct a kerning issue.
  - Fixed an issue where deep links opened on mobile displayed an incorrect text directing users to open the Desktop app.
- - Addressed various user interface style bugs from the v6.0 release.
+ - Addressed various user interface style bugs from the Oct 13 release.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
     - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
     - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
