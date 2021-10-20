@@ -72,14 +72,6 @@ Latest Mattermost Cloud releases:
  - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
-Latest Mattermost Cloud releases:
-- [Release 2021-10-27](#release-2021-10-27)
-- [Release 2021-10-13](#release-2021-10-13)
-- [Release 2021-09-29](#release-2021-09-29)
-- [Release 2021-08-12](#release-2021-08-12)
-- [Release 2021-07-29](#release-2021-07-29)
-- [Release 2021-07-15](#release-2021-07-15)
-
 ## Release 2021-10-13
 
 ### Highlights
