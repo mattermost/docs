@@ -1,5 +1,5 @@
-License and Subscription Overview
-=================================
+Subscription Overview
+=====================
 
 Mattermost offers features through `Starter, Professional, or Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or cloud, and the plan as Starter, Professional, or Enterprise. 
 

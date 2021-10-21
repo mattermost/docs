@@ -92,7 +92,7 @@ redirects = {
     "overview/integrations": 
         "https://docs.mattermost.com/about/integrations.html",
     "overview/license-and-subscription": 
-        "https://docs.mattermost.com/about/licensing-and-subscription.html",
+        "https://docs.mattermost.com/about/subscription.html",
     "overview/auth": 
         "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": 
@@ -101,7 +101,6 @@ redirects = {
         "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": 
         "https://docs.mattermost.com/getting-started/architecture-overview.html",
-    "about/licensing-and-subscription": "https://docs/mattermost.com/about/subscription.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
@@ -118,13 +117,12 @@ redirects = {
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
-    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": "https://docs.mattermost.com/getting-started/architecture-overview.html",
     "overview/license-and-subscription#frequently-asked-questions": 
-        "https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions",
+        "https://docs.mattermost.com/about/subscription.html#frequently-asked-questions",
     "overview/product#mattermost-enterprise-edition-e10": 
         "https://docs.mattermost.com/about/product.html#mattermost-enterprise-edition-e10",
     "getting-started/implementation_plan": 
@@ -750,7 +748,6 @@ redirects = {
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
-    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
@@ -823,6 +820,7 @@ redirects = {
     "messaging/accessing-your-workspace.html": "https://docs.mattermost.com/messaging/signing-in.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
+    "about/license-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
     "configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37"
 }
 
