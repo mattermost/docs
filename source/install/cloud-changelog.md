@@ -31,12 +31,6 @@ Latest Mattermost Cloud releases:
 #### Performance
  - Reduced storage-related slow-downs on page load.
 
-#### Administration
- - A composite index has been added to the jobs table for better query performance. For some customers with large jobs table, this can take a long time, so we recommend adding the index during off-hours, and then running the migration.
-    - For PostgreSQL: ``create index idx_jobs_status_type on jobs (status,type);``
-    - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
- - Prometheus metrics are now enabled when running a standalone jobserver.
-
 ### Bug Fixes
  - Fixed a broken link to the **Custom Emoji** page on servers with a subpath configured.
  - Fixed an issue where a "No results found" error string was displayed in the **Direct Messages** modal.
