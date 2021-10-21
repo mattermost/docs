@@ -60,7 +60,7 @@ Installing Prometheus
       # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
       - job_name: 'prometheus'
 
-        # Override the global default and scrape targets from this job every 5 seconds.
+        # Override the global default and scrape targets from this job every five seconds.
         # scrape_interval: 5s
 
         # metrics_path defaults to '/metrics'
