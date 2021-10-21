@@ -14,8 +14,7 @@ The main benefits of using a proxy are as follows:
 
 **Introduction**
 
-NGINX is a popular web server and is responsible for hosting some of the largest and highest-traffic sites on the internet.
-It's more resource-friendly than Apache in most cases, and can be used as a web server or reverse proxy.
+NGINX is a popular web server and is responsible for hosting some of the largest and highest-traffic sites on the internet. It's more resource-friendly than Apache in most cases, and can be used as a web server or reverse proxy.
 
 **To install NGINX on Ubuntu Server:**
 
@@ -23,9 +22,7 @@ It's more resource-friendly than Apache in most cases, and can be used as a web 
 
 2. Install NGINX.
 
-Because NGINX is available in Ubuntu’s default repositories, it's possible to install it from these repositories using the ``apt`` packaging system.
-
-First, update your local ``apt`` package index for access to the most recent package listings. Then, install ``nginx``:
+Because NGINX is available in Ubuntu’s default repositories, it's possible to install it from these repositories using the ``apt`` packaging system. First, update your local ``apt`` package index for access to the most recent package listings. Then, install ``nginx``:
 
   ``sudo apt update``
   ``sudo apt install nginx``
@@ -34,7 +31,7 @@ After accepting the procedure, ``apt`` will install NGINX and any required depen
 
 3. After installing it, you already have everything you need. You can point your browser to your server IP address. You should see the default NGINX landing page:
 
-  ..figure:: ../images/install_nginx_welcome.png
+.. image:: /images/install_nginx_welcome.png
 
   If you see this page, you've successfully installed NGINX on your web server. This page is included with NGINX to show you that the server is running correctly.
 
@@ -88,4 +85,4 @@ To re-enable the service to start up at boot, use:
 **What to do next**
 
 1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` to point to the NGINX server.
-2. Configure NGINX to proxy connections from the internet to the Mattermost Server.
+2. Configure NGINX to proxy connections from the internet to the Mattermost server.
