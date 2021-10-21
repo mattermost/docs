@@ -144,7 +144,7 @@ Configure SAML Sign-in for Mattermost
 
 8. (Optional) If you configured ``First Name`` Attribute and ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
+To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement to your users detailing how the migration will work.
 
