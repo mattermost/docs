@@ -34,7 +34,7 @@ Redundancy at anticipated scale
 Update sequence for continuous operation
   You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `Upgrade Guide`_ for instructions on how to do this.
 
-  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around 5 seconds. For a database schema update, downtime can be up to 30 seconds.
+  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
 
 Deployment Guide
 ----------------
@@ -367,7 +367,7 @@ Updating Configuration Changes While Operating Continuously
 
 A service interruption is not required for most configuration updates. See `Server Upgrades Requiring Service Interruption`_ for a list of configuration updates that require a service interruption.
 
-You can apply updates during a period of low load, but if your High Availability cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
+You can apply updates during a period of low load, but if your High Availability cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
 .. note::
 
@@ -391,7 +391,7 @@ You can apply updates during a period when the anticipated load is small enough 
 
   We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
 
-Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
+Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
 1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.
