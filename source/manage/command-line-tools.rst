@@ -1967,7 +1967,7 @@ mattermost user convert
     .. code-block:: none
 
           --bot string       Convert user to bot.  Supports converting multiple bots at once, use a space-separated list.
-          --user string      Convert bot to user.  Supports converting 1 account per command. The converted user will have the role of `system_user` set.
+          --user string      Convert bot to user.  Supports converting one account per command. The converted user will have the role of `system_user` set.
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~
