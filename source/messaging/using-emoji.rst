@@ -53,7 +53,7 @@ It's also possible to `create your own custom emoji <#custom-emoji>`_ if the emo
 Creating Custom Emojis
 -----------------------
   
-You can create Custom Emojis which are available to everyone on your Mattermost server. From the Emoji Picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG and up to one MB in size.
+You can create Custom Emojis which are available to everyone on your Mattermost server. From the Emoji Picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG and up to 1 MB in size.
   
 1. Enter a name for your Custom Emoji. This is the name that will show up in the emoji autocomplete.
 2. Choose **Select**, then select the image to use for the emoji. 
