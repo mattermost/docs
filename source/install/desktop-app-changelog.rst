@@ -30,7 +30,7 @@ Latest Mattermost Desktop App releases:
 Release v5.0
 --------------
 
-- **v5.0.1, release day TBD**
+- **v5.0.1, released 2021-10-22**
  - Fixed issue with desktop notification sounds not working correctly.
  - Fixed an issue where using a proxy server with the Desktop app caused the app to crash.
  - Fixed the new server modal not being accessible on Linux when no other servers existed.
