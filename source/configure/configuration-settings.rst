@@ -1402,7 +1402,7 @@ Enable Document Search by Content
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Enable users to search the contents of documents attached to messages. 
+Enable users to search the contents of documents attached to messages. Mattermost self-hosted deployments include support for PDF, PPTX, ODT, HTML, and TXT documents. Additional file support is available for DOCX, RTF, and PAGES documents through the installation of third-party dependencies.  
 
 **True**: Documents are searchable by their content.  
 
@@ -1415,10 +1415,12 @@ Enable users to search the contents of documents attached to messages.
 | This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
-In addition, you can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
+To extend content search support to include file formats including DOCX, RTF, and PAGES, you must install `these dependencies <https://github.com/sajari/docconv#dependencies>`__. If you choose not to install these dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. 
+
+The search support each dependency offers is described below: 
 
 - ``tidy``: Used to search the contents of HTML and PAGES documents.
-- ``wv``: Used to search the contents of DOC documents.
+- ``wv``: Used to search the contents of DOC/DOCX documents.
 - ``popplerutils``: Used to significantly improve server performance when extracting the contents of PDF documents.
 - ``unrtf``: Used to search the contents of RTF documents.
 - ``Justtext``: Used to search HTML documents.
