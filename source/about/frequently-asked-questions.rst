@@ -627,7 +627,7 @@ Vendors become "Nation State Targets" when the value of the breaching their syst
 
 2) MMTA systems can't protect customers from unknown vulnerabilities
 
-A single bug in an MMTA system can put all customers at risk. For example, `Slack reported a bug that exposed message histories and files for nearly 4 million users <https://www.wired.com/2017/03/hack-brief-slack-bug-everyones-worst-office-nightmare/>`_ (2017), and `a bug left 400 million Microsoft accounts exposed to account takeover <https://www.hackread.com/critical-bug-in-microsoft-left-400m-accounts-exposed/>`_ (2018).
+A single bug in an MMTA system can put all customers at risk. For example, `Slack reported a bug that exposed message histories and files for nearly four million users <https://www.wired.com/2017/03/hack-brief-slack-bug-everyones-worst-office-nightmare/>`_ (2017), and `a bug left 400 million Microsoft accounts exposed to account takeover <https://www.hackread.com/critical-bug-in-microsoft-left-400m-accounts-exposed/>`_ (2018).
 
 For multi-tenant systems, bugs in infrastructure can present vulnerabilities as well. For example, in 2018 researchers discovered that chip-level exploits like `Meltdown and Spectre <https://www.wired.com/story/intel-meltdown-spectre-storm/>`_, which had been around for decades, could make it possible for malicious code run by one tenant to affect the operations of another tenant that shared the same CPU.
 
