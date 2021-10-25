@@ -93,7 +93,7 @@ Center Channel BG
 Center Channel Text
 	Color of all the text - with the exception of mentions, links, hashtags and code blocks - in the center pane, right-hand sidebar, and dialogs.
 New Message Separator
-	The new message separator appears below the last read message when you switch to a channel with unread messages.
+	The new message separator appears below the last read message when you navigate to a channel with unread messages.
 Error Text Color
 	Color of all error text.
 Mention Highlight BG

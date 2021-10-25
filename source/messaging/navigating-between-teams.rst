@@ -1,5 +1,5 @@
-Switch Between Teams
-====================
+Navigating Between Teams
+========================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -18,7 +18,7 @@ Switch Between Teams
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can switch between teams you have joined using the team sidebar that appears to the left of your channel list on the left-hand sidebar.
+You can navigate between teams you have joined using the team sidebar that appears to the left of your channel list.
 
 .. image:: ../images/team-sidebar.png
-  :alt: Switching teams in Mattermost.
+  :alt: Navigating between teams in Mattermost.
