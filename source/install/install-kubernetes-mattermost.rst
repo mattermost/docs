@@ -44,7 +44,7 @@ Some of the most commonly-used fields are:
 
     "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better.", "Yes"
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
-    "spec.ingressName", "The DNS for your Mattermost installation.", "Yes"
+    "spec.ingress.host", "The DNS for your Mattermost installation.", "Yes"
     "spec.version", "The Mattermost version.", "No"
     "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments.", "No"
     "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance.", "No"
@@ -62,10 +62,12 @@ Open a text editor and create a Mattermost installation manifest:
     name: mm-example-full                         # Chose the desired name
   spec:
     size: 5000users                               # Adjust to your requirements
-    ingressName: example.mattermost-example.com   # Adjust to your domain
-    ingressAnnotations:
-      kubernetes.io/ingress.class: nginx
-    version: 5.31.0
+    ingress:
+      enabled: true
+      host: example.mattermost-example.com        # Adjust to your domain
+      annotations:
+        kubernetes.io/ingress.class: nginx
+    version: 6.0.1
     licenseSecret: ""                             # If you have created secret in step 1, put its name here
     
 Save the file as ``mattermost-installation.yaml``.
@@ -175,10 +177,12 @@ Example Mattermost manifest configured with both external databases and filestor
     name: mm-example-external-db
   spec:
     size: 5000users
-    ingressName: example.mattermost-example.com
-    ingressAnnotations:
-      kubernetes.io/ingress.class: nginx
-    version: 5.31.0
+    ingress:
+      enabled: true
+      host: example.mattermost-example.com
+      annotations:
+        kubernetes.io/ingress.class: nginx
+    version: 6.0.1
     licenseSecret: ""
     database:
       external:
@@ -232,9 +236,9 @@ When the deployment is complete, obtain the hostname or IP address of your Matte
 
 Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
 
-Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+Use your domain registration service to create a canonical name or IP address record for the ``ingress.host`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
 
-Navigate to the ``ingressName`` URL in your browser and use Mattermost.
+Navigate to the ``ingress.host`` URL in your browser and use Mattermost.
 
 If you just want to try it out on your local machine without configuring the domain, run:
 
