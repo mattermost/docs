@@ -23,7 +23,6 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue copying and pasting files on iOS.
 
 #### Android specific
- - Fixed a crash while opening notifications on Android.
  - Fixed a crash when switching channels or focusing the text input area.
 
 ## 1.47.1 Release
