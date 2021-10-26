@@ -24,7 +24,7 @@ Latest Mattermost Mobile Apps releases:
 
 #### Android specific
  - Fixed a crash while opening notifications on Android.
- - Fixed a crash while blurring the Post Input on Android.
+ - Fixed a crash when switching channels or focusing the text input area.
 
 ## 1.47.1 Release
 - Release Date: October 19, 2021
