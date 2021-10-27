@@ -60,7 +60,12 @@ This means if you use the Mattermost apps from the Apple App Store or Google Pla
 
 .. note:: 
   
-  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an option available in Mattermost Enterprise to omit the contents of Mattermost messages from push notifications, or to configure message contents to be fetched from the server when notifications reach the device. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__` documentation for details.
+  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an option available in Mattermost Enterprise to omit the contents of Mattermost messages from push notifications, or to configure message contents to be fetched from the server when notifications reach the device. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ documentation for details.
+
+Is TLS v1.3 supported?
+----------------------
+
+No. TLS v1.3 doesn't work with the Mattermost Mobile app websocket. This limitation will be addressed in a future release. We recommend that you continue using TLS v1.2.
 
 What post metadata is sent in mobile push notifications?
 --------------------------------------------------------
@@ -301,7 +306,7 @@ You will need to `whitelist one subdomain and one port from Apple <https://devel
 Run App Store versions of the Mattermost mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with the `Mattermost Hosted Push Notification Service (HPNS) <https://docs.mattermost.com/deploy/mobile-hpns.html>` through your corporate proxy.
+You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with the `Mattermost Hosted Push Notification Service (HPNS) <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ through your corporate proxy.
 
 .. note::
   
