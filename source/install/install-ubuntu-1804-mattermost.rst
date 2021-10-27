@@ -9,7 +9,7 @@ Assume that the IP address of this server is 10.10.10.2.
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
    
-2. Download `the latest version of the Mattermost Server <https://mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+2. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
   
   ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
 

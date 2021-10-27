@@ -32,6 +32,11 @@ Can you use blue-green deployments with different database schemas?
 
 Currently this is not supported as it introduces the possibility of missing a data entry in the database.
 
+Are environment variables supported?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. However, ``config.json`` file settings will be overridden if the `$MM_SQLSETTINGS_DATASOURCE` environment variable is set. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ configuration settings documentation for details.
+
 Issues configuring Login with SAML on Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
