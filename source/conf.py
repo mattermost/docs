@@ -677,8 +677,6 @@ redirects = {
         "https://docs.mattermost.com/messaging/channels-basics.html",
     "messaging/organizing-mattermost": 
         "https://docs.mattermost.com/messaging/organizing-channels.html",
-    "messaging/channel-settings": 
-        "https://docs.mattermost.com/messaging/channel-settings.html",
     "messaging/extending-messaging-with-integrations": 
         "https://docs.mattermost.com/messaging/extending-channels-with-integrations.html",
     "incident-collaboration/refining-and-improving":
