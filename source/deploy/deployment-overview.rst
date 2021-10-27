@@ -113,7 +113,7 @@ Proxy
 
 |all-plans| |self-hosted|
 
-.. |all-plans| image:: ../images/enterprise-badge.png
+.. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
