@@ -10929,6 +10929,141 @@ Adds a configurable timeout for requests made to return link metadata. If the me
 | This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds": 5000`` with numerical input.                     |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
+Bleve Settings
+~~~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Experimental > Bleve**.
+
+Enable Bleve Indexing
+^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until `Enable Bleve for search queries <https://docs.mattermost.com/configure/configuration-settings.html#enable-bleve-for-search-queries>`__ is enabled.
+
+**False**: The indexing of new posts does not occur automatically.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+Index Directory
+^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Directory path to use for storing bleve indexes. 
+
+.. tip::
+   
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Bulk Index Now
+^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
+
+You can configure the maximum time window used for a batch of posts being indexed. See the `Bulk Indexing Time Window Seconds <https://docs.mattermost.com/configure/configuration-settings.html#bulk-indexing-time-window-seconds>`__ documentation for details.
+
+Purge Indexes
+^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
+
+Enable Bleve for search queries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+**True**: Search queries will use bleve search.
+
+**False**: Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Enable Bleve for autocomplete queries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+**True**: Autocomplete queries will use bleve search.
+
+**False**: Autocomplete queries will not use bleve search.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
+
 Email Settings
 ~~~~~~~~~~~~~~
 
@@ -14291,112 +14426,8 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 | This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
 +-------------------------------------------------------------------------------------------------------+
 
-Bleve Settings (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Experimental > Bleve**.
-
-Index Dir
-^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Directory path to use for storing bleve indexes. 
-
-.. tip::
-   
-   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
-+-----------------------------------------------------------------------------------------------------------+
-
-Enable Indexing
-^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until **Enable Bleve for search queries** is enabled.
-
-**False**: The indexing of new posts does not occur automatically.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
-Enable Searching
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: Search queries will use bleve search.
-
-**False**: Search queries will not use bleve search.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
-+--------------------------------------------------------------------------------------------------------------+
-
-Enable Autocomplete
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: Autocomplete queries will use bleve search.
-
-**False**: Autocomplete queries will not use bleve search.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
-+-----------------------------------------------------------------------------------------------------------------+
+Bleve Settings
+~~~~~~~~~~~~~~
 
 Bulk Indexing Time Window Seconds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -14474,8 +14505,8 @@ Set the file location of the compliance exports. By default, they are written to
 | This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Plugin Settings (Beta)
-~~~~~~~~~~~~~~~~~~~~~~
+Plugin Settings
+~~~~~~~~~~~~~~~
 
 Enable Plugin Uploads
 ^^^^^^^^^^^^^^^^^^^^^
