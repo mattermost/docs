@@ -45,7 +45,7 @@ By default, the desktop notification preference assigned in **Settings** is used
 Send mobile push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, the mobile push notification preference assigned in *Account Settings* is used for all channels. To customize the mobile push notification for each channel, click the channel name at the top of the page to access the channel menu, then select **Notification Preferences > Send mobile push notifications**.
+By default, the mobile push notification preference assigned in **Settings** is used for all channels. To customize the mobile push notification for each channel, click the channel name at the top of the page to access the channel menu, then select **Notification Preferences > Send mobile push notifications**.
 
 Channel header
 --------------
