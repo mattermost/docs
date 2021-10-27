@@ -116,23 +116,6 @@ The channel permissions interface is accessed in **System Console > User Managem
 Channel Moderation
 ~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 This content has moved to `Team and Channel Management <https://docs.mattermost.com/manage/team-channel-members.html>`__.
 
 Supplementary Roles
