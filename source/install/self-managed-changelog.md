@@ -13,7 +13,7 @@ Lastest Mattermost Releases:
 
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v6.0.2, release day TBD**
+- **v6.0.2, released 2021-10-27**
   - Mattermost v6.0.2 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
   - Update prepackaged Boards version to 0.9.4.
@@ -288,7 +288,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.39 - [Quality Release](https://docs.mattermost.com/upgrade/release-definitions.html#quality-release)
 
-- **v5.39.1, release day TBD**
+- **v5.39.1, released 2021-10-27**
   - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with fetching threads upon websocket reconnection.
   - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
@@ -384,7 +384,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v5.38.3, release day TBD**
+- **v5.38.3, released 2021-10-27**
   - Mattermost v5.38.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
 - **v5.38.2, released 2021-08-26**
@@ -540,7 +540,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
-- **v5.37.3, release day TBD**
+- **v5.37.3, released 2021-10-27**
   - Mattermost v5.37.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
   - Fixed import process for imports with attachments [MM-38375](https://mattermost.atlassian.net/browse/MM-38375).
