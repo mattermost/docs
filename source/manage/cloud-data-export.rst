@@ -35,7 +35,10 @@ Next, download the export file by running the following mmctl command:
 
    mmctl export download [exportname] [filepath] [flags]
 
-Note that you can indicate the name of the export and its destination path ``$ mmctl export download samplename sample_export.zip``. If you only indicate the name, the path will match: ``$ mmctl export download sample_export.zip``.
+.. note::
+
+  You can indicate the name of the export and its destination path ``$ mmctl export download samplename sample_export.zip``. If you only indicate the name, the path
+  will match: ``$ mmctl export download sample_export.zip``.
 
 When the file download is complete, log into your Mattermost server. Run the following mmctl command to import your data to your Mattermost server:
 
