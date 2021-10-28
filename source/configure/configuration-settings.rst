@@ -4192,7 +4192,7 @@ Push Notification Contents
 
 **Full message content sent in the notification payload**: Selecting **Send full message snippet** sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
-**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extention <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`_ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`_ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. 
+**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extension <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`_ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`_ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. 
 
 For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dynamics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service. 
 
@@ -4397,7 +4397,7 @@ Enable Custom Emoji
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Enables a **Custom Emoji** option in the emoji picker, where users can go to add customiz emojis.
+**True**: Enables a **Custom Emoji** option in the emoji picker, where users can go to add custom emojis.
 
 **False**: Custom emojis are disabled.
 
@@ -5091,7 +5091,7 @@ Password Requirements
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error messasage previewed in the System Console will appear on the account creation page if a user enters an invalid password.
+Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error message previewed in the System Console will appear on the account creation page if a user enters an invalid password.
 
 - **At least one lowercase letter**: Select this checkbox if a valid password must contain at least one lowercase letter.
 - **At least one uppercase letter**: Select this checkbox if a valid password must contain at least one uppercase letter.
@@ -6906,7 +6906,7 @@ Email Attribute
 
 The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
 
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin.
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
 
 +---------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input. |
@@ -9432,7 +9432,7 @@ Enable Experimental Features
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Enables exeprimental Playbooks features on your Mattermost workspace.
+**True**: Enables experimental Playbooks features on your Mattermost workspace.
 
 **False**: Disables experimental Playbooks features on your Mattermost workspace.
 
@@ -10271,7 +10271,7 @@ Custom retention policy
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps messages and files across specific teams and channels by specifing a name for the custom retention policy, setting a duration value, specifying the teams and channels that will follow this policy.
+Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value, specifying the teams and channels that will follow this policy.
 
 Data Deletion Time
 ^^^^^^^^^^^^^^^^^^^
