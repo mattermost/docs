@@ -121,7 +121,7 @@ Control notifications using the following six settings under **System Console > 
 
   - **Generic description with only sender name** will include only the name of the person who sent the message but no information about channel name or message text. 
   - **Generic description with sender and channel names** will include names of users and channels but no specific details from the message text. 
-  - **Full message content sent in the notification payload** will nclude the message contents in the push notification payload that is relayed through Apple's Push Notification Service (APNS) or Google's Firebase Cloud Messaging (FCM). It is highly recommended this option only be used with an "https" protocol to encrypt the connection and protect confidential information sent in messages.  
+  - **Full message content sent in the notification payload** will include the message contents in the push notification payload that is relayed through Apple's Push Notification Service (APNS) or Google's Firebase Cloud Messaging (FCM). It is highly recommended this option only be used with an "https" protocol to encrypt the connection and protect confidential information sent in messages.  
   - **Full message content fetched from the server on receipt** means the notification payload relayed through APNS or FCM contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device. If the server cannot be reached, a generic notification will be displayed.
 
 Select **Save** to apply your changes.

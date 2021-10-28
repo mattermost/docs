@@ -20,7 +20,7 @@ Below is additional information on how to configure the database for different l
 
 更多中文相关问题讨论请访问 `中文讨论组 <https://forum.mattermost.org/c/international/chinese>`__ 。
 
-以Ubuntu 14.04 PosgreSQL 9.3 数据库 mattermost 为例。
+以Ubuntu 14.04 PostgreSQL 9.3 数据库 mattermost 为例。
 
 编译scws
 ~~~~~~~~
