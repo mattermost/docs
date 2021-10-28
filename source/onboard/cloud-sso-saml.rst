@@ -96,6 +96,6 @@ We are open to providing assistance when configuring your custom IdP by answerin
 
 To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 
-For technical documentation on SAML, see `SAML Single-Sign-On: Technical Documentation <https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html>`_.
+For technical documentation on SAML, see `SAML Single-Sign-On: Technical Documentation <https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html#saml-single-sign-on-technical-documentation>`_.
 
 Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_.
