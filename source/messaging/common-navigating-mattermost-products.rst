@@ -42,7 +42,7 @@ Depending on permissions set for your Mattermost, this is also where you would a
 History arrows
 --------------
 
-Use the arrows to the right of the tool switcher to show the last channel/next channel.
+Use the arrows to the right of the Product menu to show the last channel/next channel.
 
 Server list
 -----------
