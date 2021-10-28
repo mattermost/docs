@@ -18,7 +18,7 @@ Getting Started
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Mattermost Boards (formerly known as Focalboard) is accessible from the Product list in the top left corner of Mattermost.
+Mattermost Boards (formerly known as Focalboard) is accessible from the Product menu in the top left corner of Mattermost.
 
 .. tabs::
    
