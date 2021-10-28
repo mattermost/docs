@@ -78,7 +78,7 @@ How Mattermost determines your availability
 .. csv-table::
     :header: "Client", "**Online**", "**Away**", "**Offline**"
 
-    "**Desktop App**", "You're interacting with your computer", "You're been inactive on your computer for five minutes", "You close Mattermost, sleep, or lock your computer"
+    "**Desktop App**", "You're interacting with your computer", "You've been inactive on your computer for five minutes", "You close Mattermost, sleep, or lock your computer"
     "**Web Browser**", "You're interacting with Mattermost in a browser", "
     - You have not typed or navigated between channels for five minutes
     - The tab is unfocused for five minutes
