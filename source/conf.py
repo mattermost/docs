@@ -363,7 +363,6 @@ redirects = {
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
     "deployment/webrtc": "https://docs.mattermost.com/deployment/video-and-audio-calling.html",
-    "deployment/bleve": "https://docs.mattermost.com/deploy/bleve-search.html",
     "deployment/desktop-app-deployment": "https://docs.mattermost.com/deploy/desktop-app.html",
     "deployment/scaling": "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
     "deployment/cluster": "https://docs.mattermost.com/scale/high-availability-cluster.html",
@@ -529,7 +528,6 @@ redirects = {
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
     "deployment/webrtc": "https://docs.mattermost.com/deployment/video-and-audio-calling.html",
-    "deployment/bleve": "https://docs.mattermost.com/deploy/bleve-search.html",
     "deployment/desktop-app-deployment": "https://docs.mattermost.com/deploy/desktop-app.html",
     "deployment/scaling": "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
     "deployment/cluster": "https://docs.mattermost.com/scale/high-availability-cluster.html",
@@ -679,8 +677,6 @@ redirects = {
         "https://docs.mattermost.com/messaging/channels-basics.html",
     "messaging/organizing-mattermost": 
         "https://docs.mattermost.com/messaging/organizing-channels.html",
-    "messaging/channel-settings": 
-        "https://docs.mattermost.com/messaging/channel-settings.html",
     "messaging/extending-messaging-with-integrations": 
         "https://docs.mattermost.com/messaging/extending-channels-with-integrations.html",
     "messaging/switching-between-teams": "https://docs.mattermost.com/messaging/navigating-between-teams.html",

@@ -164,7 +164,7 @@ Or by indenting each line by four spaces:
 
 **Syntax highlighting**
 
-To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, and Monokai) that can be changed in **Account Settings > Display > Theme > Custom Theme > Center Channel Styles**.
+To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, and Monokai) that can be changed in **Settings > Display > Theme > Custom Theme > Center Channel Styles**.
 
 Supported languages and their aliases include:
 
