@@ -21,16 +21,25 @@ Desktop Application Changelog
 Latest Mattermost Desktop App releases:
 
 - `Release v5.0 <#id1>`_
-- `Release v4.7 <#id4>`_
-- `Release v4.6 <#id25>`_
-- `Release v4.5 <#id37>`_
-- `Release v4.4 <#id53>`_
-- `Release v4.3 <#id72>`_
+- `Release v4.7 <#id3>`_
+- `Release v4.6 <#id21>`_
+- `Release v4.5 <#id33>`_
+- `Release v4.4 <#id49>`_
+- `Release v4.3 <#id68>`_
 
 Release v5.0
 --------------
 
-**Release Date: 2021-10-13**
+- **v5.0.1, released 2021-10-22**
+ - Fixed issue with desktop notification sounds not working correctly.
+ - Fixed an issue where using a proxy server with the Desktop app caused the app to crash.
+ - Fixed the new server modal not being accessible on Linux when no other servers existed.
+ - Fixed an issue where switching from Boards/Playbooks to Channels caused a reload in the Channels view.
+ - Fixed an issue with GPO and built-in servers not working correctly with Boards/Playbooks tabs.
+ - Fixed an issue where the top bar buttons on Windows 8 were missing.
+ - Reduced the size of some builds by removing unnecessary files.
+- **v5.0.0, released 2021-10-13**
+ - Original v5.0.0 release
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 

@@ -202,7 +202,7 @@ Notification Duration
 
 *Removed in June 16th, 2018 release*
 
-In Mattermost v5.0 and later, desktop notifications will stay onscreen for 5 seconds when supported by the browser and operating system.
+In Mattermost v5.0 and later, desktop notifications will stay onscreen for five seconds when supported by the browser and operating system.
 
 Email Notifications
 ~~~~~~~~~~~~~~~~~~~
@@ -411,7 +411,7 @@ Hide the channel switcher used to jump between channels quickly. The channel swi
 Autoclose Direct Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the **+** button in the channel sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
+Hide Direct Message conversations with no activity for seven days. These conversations can be reopened with the **+** button in the channel sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
 
 Advanced
 --------

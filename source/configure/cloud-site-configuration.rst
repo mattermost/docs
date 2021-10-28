@@ -100,7 +100,7 @@ Select **Save** to apply your changes.
 Localization
 ------------
 
-Mattermost is translated into 20 languages. Users can set their default language by going to **Account Settings > Display > Language**, then selecting **Save**.
+Mattermost is translated into 20 languages. Users can set their default language by going to **Settings > Display > Language**, then selecting **Save**.
 
 New languages are added automatically by default. Users can add new languages using the dropdown menu manually as they become available. When manually adding new languages, the Default Client Language must be added before saving the setting.
 
@@ -121,7 +121,7 @@ Control notifications using the following six settings under **System Console > 
 
   - **Generic description with only sender name** will include only the name of the person who sent the message but no information about channel name or message text. 
   - **Generic description with sender and channel names** will include names of users and channels but no specific details from the message text. 
-  - **Full message content sent in the notification payload** will nclude the message contents in the push notification payload that is relayed through Apple's Push Notification Service (APNS) or Google's Firebase Cloud Messaging (FCM). It is highly recommended this option only be used with an "https" protocol to encrypt the connection and protect confidential information sent in messages.  
+  - **Full message content sent in the notification payload** will include the message contents in the push notification payload that is relayed through Apple's Push Notification Service (APNS) or Google's Firebase Cloud Messaging (FCM). It is highly recommended this option only be used with an "https" protocol to encrypt the connection and protect confidential information sent in messages.  
   - **Full message content fetched from the server on receipt** means the notification payload relayed through APNS or FCM contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device. If the server cannot be reached, a generic notification will be displayed.
 
 Select **Save** to apply your changes.
@@ -134,7 +134,7 @@ Control content in posts using the following four settings under **System Consol
 - **Enable Link Previews:** Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.
 
   - System Admins can disable all website link previews, image link previews, and YouTube previews by changing this setting to **false**. System Admins can also disable link previews from specific domains.
-  - When link previews are enabled, users can choose to show or hide website link previews from **Account Settings > Display > Website Link Previews**. 
+  - When link previews are enabled, users can choose to show or hide website link previews from **Settings > Display > Website Link Previews**. 
 - **Enable SVGs:** Controls whether users have the ability to see previews of SVG file attachments and SVG image links.
 - **Enable LaTeX Rendering:** Controls users' ability to render LaTeX code.
 - **Custom URL Schemes:** A list of URL schemes that are used for autolinking in message text. HTTP, HTTPS, FTP, tel, and mailto always create links.
@@ -158,12 +158,12 @@ Control the following users and teams settings under **System Console > Site Con
 
   - This setting adjusts the users returned in the Direct Messages **More** menu. The CTRL/CMD+K channel switcher only lists users on the current team. 
   - This setting only affects the user interface, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
-- **Teammate Name Display:** Specify how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**.
+- **Teammate Name Display:** Specify how names are displayed in the user interface by default. Please note that users can override this setting in **Settings > Display > Teammate Name Display**.
 
   - **Show username** displays the user's username. 
   - **Show nickname** if one exists displays the user's nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed. 
   - **Show first and last name:** displays the user's full name. If the user doesn't have a full name, their username is displayed. Recommended when using SAML or LDAP if first name and last name attributes are configured.
-- **Lock Teammate Name Display for all users:** Specifies whether users can change settings under **Main Menu > Account Settings > Display > Teammate Name Display**.
+- **Lock Teammate Name Display for all users:** Specifies whether users can change settings under **Settings > Display > Teammate Name Display**.
 - **Show Email Address:** When set to **false**, this setting hides a user's email address from other users, including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see email addresses in the user interface.
 - **Show Full Name:** When set to **false**, this setting hides full name of users from other users including Team Admins. This is designed for managing teams where users choose to keep their contact information private. System Admins will still be able to see full names in the user interface.
 - **Enable Custom Statuses:** Sets whether users can set descriptive status messages and emoji visible to all users.
