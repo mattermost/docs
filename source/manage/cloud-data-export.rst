@@ -8,20 +8,20 @@ Using the mmctl CLI tool, you can export your channels, messages, users, and fil
 How does the process work?
 --------------------------
 
-Before you export and migrate your data, you first need to `install Mattermost <https://docs.mattermost.com/guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost.
+Before you export and migrate your data, you must `install Mattermost <https://docs.mattermost.com/guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost.
 
-The migration is done using the mmctl tool. This is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication is done with either login credentials or an authentication token. If you haven’t used mmctl before, first `install mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#install-mmctl>`_ and then read the `mmctl usage notes <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ before you get started.
+The migration is done using the mmctl tool which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. Authentication is done with either login credentials or an authentication token. If you haven’t used mmctl before, first `install mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#install-mmctl>`_ then read the `mmctl usage notes <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ before you get started.
 
-Once you've installed mmctl, you'll be using the mmctl export commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
+Once you've installed mmctl, you'll be using the `mmctl export <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
 
 .. note::
   
-  The export process doesn’t include integrations and any custom data. Other aspects of your instance, such as specific security settings and requirements are also not included. For assistance with migrating additional data and settings, see our support options: https://mattermost.com/support/.
+  The export process doesn’t include integrations or any custom data. Other aspects of your instance, such as specific security settings and requirements, are also not included. For assistance with migrating additional data and settings, see our support options: https://mattermost.com/support/.
 
 Migrating from Cloud to self-hosted
 -----------------------------------
 
-Log into your Cloud instance and use: 
+Log into your Cloud instance and run the following mmctl command: 
 
 .. code:: none
 
@@ -31,26 +31,26 @@ Ensure you set **attachments** to **true** to include file attachments.
 
 This creates a zip file of your Mattermost data.
 
-Next, download the export file using
+Next, download the export file by running the following mmctl command:
 
 .. code::
 
    mmctl export download [exportname] [filepath] [flags]
 
-Note that you can indicate the name of the export and its destination path ``$ mmctl export download samplename sample_export.zip`` or if you only indicate the name, the path will match it: ``$ mmctl export download sample_export.zip``.
+Note that you can indicate the name of the export and its destination path ``$ mmctl export download samplename sample_export.zip``. If you only indicate the name, the path will match: ``$ mmctl export download sample_export.zip``.
 
-When the file download is complete, log into your Mattermost server. Use the following command to import your data to your Mattermost server.
+When the file download is complete, log into your Mattermost server. Run the following mmctl command to import your data to your Mattermost server:
 
 .. code::
   
    mmctl import upload [filepath] [flags]. 
    
-You then need to extract the file in order to use it: 
+Then extract the file to use it by running the following mmctl command:
 
 .. code::
    
    mmctl extract run [flags].
 
-Once your migration is complete and you’ve imported your data into your self-hosted instance, take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance. It’s recommended that you validate your data before taking down your Cloud instance.
+Once your migration is complete and you’ve imported your data into your self-hosted instance. We recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
 
-If you encounter any issues or problems, please contact our support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
+If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
