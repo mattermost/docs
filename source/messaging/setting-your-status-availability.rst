@@ -23,29 +23,23 @@ Let your team know whether you're available by setting a custom status and your 
 Setting a custom status
 -----------------------
 
-.. tabs::
-
-  .. tab:: Mattermost v6.0 onwards
-
-      In Mattermost v6.0, set status and availability from your Avatar in the top-right corner of the Global Header.
-      
-  .. tab:: Mattermost v5.39 and earlier
-
-      In Mattermost versions up to 5.39, set status and availability from your avatar at the top of the channel sidebar.
-  
 Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
 
 .. tabs::
 
   .. tab:: Mattermost v6.0 onwards
 
-     1. To set a custom status, select your Avatar in the top-right corner of the global header, then select **Set a Custom Status**.
-     2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
+      In Mattermost v6.0, set status and availability from your Profile in the top-right corner of the Global Header.
+      
+      1. Select your Profile, then select **Set a Custom Status**.
+      2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
+      
+  .. tab:: Mattermost v5.39 and earlier
 
-  .. tab:: v5.39 and earlier
+      In Mattermost versions up to v5.39, set status and availability from your Avatar at the top of the channel sidebar.
 
-     1. To set a custom status, select your avatar at the top of the channel sidebar, then select **Set a Custom Status**.
-     2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
+      1. Select your Avatar, then select **Set a Custom Status**.
+      2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
  
 .. note::
 
