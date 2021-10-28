@@ -167,6 +167,11 @@ Can I use an Omnibus server as part of a cluster?
 
 No, Omnibus is designed to be a self-contained Mattermost platform, so it expects all the necessary components to be in the same server.
 
+Does the SSL Certificate automatically renew?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. The SSL certificate automatically updated and renewed. Omnibus installs the certbot package to manage the certificate, and it comes with a cron job that you can find at `/etc/cron.d/certbot` that automatically launches the renewal process.
+
 Where can I get help?
 ~~~~~~~~~~~~~~~~~~~~~
 
