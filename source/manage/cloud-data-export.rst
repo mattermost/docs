@@ -3,7 +3,7 @@ Cloud Data Export
 
 If, after completing your 14-day free Cloud trial, you've decided to self-host your own Mattermost deployment, you may want to migrate your Cloud data to your self-hosted instance.
 
-This migration enables you to export your channels, messages, users, and files. This is done using the mmctl CLI tool. You can store the exported file locally.
+Using the mmctl CLI tool, you can export your channels, messages, users, and files, and store those exported files locally.
 
 How does the process work?
 --------------------------
