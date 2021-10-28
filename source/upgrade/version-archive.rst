@@ -22,8 +22,8 @@ If you want to check that the version of Mattermost you are installing is the of
 .. contents::
     :backlinks: top
 
-Mattermost Enterprise Edition
-------------------------------
+Mattermost Enterprise
+---------------------
 
 Mattermost Enterprise Edition v6.0.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-0-feature-release>`__ - `Download <https://releases.mattermost.com/6.0.1/mattermost-6.0.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.0.1/mattermost-6.0.1-linux-amd64.tar.gz``
