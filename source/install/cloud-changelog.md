@@ -3,12 +3,67 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-10-27](#release-2021-10-27)
 - [Release 2021-10-13](#release-2021-10-13)
 - [Release 2021-09-29](#release-2021-09-29)
 - [Release 2021-08-12](#release-2021-08-12)
 - [Release 2021-07-29](#release-2021-07-29)
 - [Release 2021-07-15](#release-2021-07-15)
-- [Release 2021-07-01](#release-2021-07-01)
+
+## Release 2021-10-27
+
+### Highlights
+
+#### Timed Do Not Disturb
+ - Added the ability to disable all notifications for a specified period of time to avoid distractions, without losing important messages when you're back.
+
+### Improvements
+
+#### User Interface (UI)
+ - Recent mentions and saved posts now show across all teams.
+ - Added ``@here`` mention to the ``EnableConfirmNotificationsToChannel`` config setting to show a warning modal when over 5 members might be alerted with ``@here``.
+ - Added one-click reactions for posts. Also, the three most recently used emojis will display when the mouse is hovered on a post. 
+ - Added support for selecting names and aliases in the emoji picker.
+ - The updated "Tips & Next Steps" screen is now shown to all System Admins.
+ - Updated in-product text for the invitation modal for clarity.
+ - Updated the file attachment limits and sizes within in-product help documentation.
+
+#### Performance
+ - Reduced storage-related slow-downs on page load.
+
+### Bug Fixes
+ - Fixed a broken link to the **Custom Emoji** page on servers with a subpath configured.
+ - Fixed an issue where a "No results found" error string was displayed in the **Direct Messages** modal.
+ - Fixed an issue where the caret was placed in the middle of the emojis when picking two emojis from the emoji picker.
+ - Fixed an issue where **System Console > Channels > Channel Management** displayed an option to toggle group management in Team Edition, Starter, and Professional.
+ - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
+ - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
+ - Replaced Metropolis font files with a new set to correct a kerning issue.
+ - Fixed an issue where deep links opened on mobile displayed an incorrect text directing users to open the Desktop app.
+ - Addressed various user interface style bugs from the Oct 13 release.
+ - Fixed emails templates for clients that do not support the <style> tag.
+ - Fixed an issue where the scrollbar was hardly visible with Denim & Sapphire Themes.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+    - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
+    - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
+    - Fixed an issue where the user avatar was displayed in the participants list after their post was deleted and if they had no other posts in the thread.
+    - Fixed an issue where the ephemeral message was not displyaed as the centre post.
+    - Fixed an issue with dragging and dropping files on a thread while on a Threads panel.
+    - Fixed an issue where permalinks were not highlighting a post on a thread that was already open on the right-hand side.
+    - Fixed an issue with missing threads in the Thread list.
+
+### Known Issues
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Deep link opened on mobile shows incorrect text directing the user to open the Desktop app [MM-38913](https://mattermost.atlassian.net/browse/MM-38913).
+ - LDAP Sync job inserting invalid NULL unicode character into job's Data column [MM-38711](https://mattermost.atlassian.net/browse/MM-38711).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-10-13
 
