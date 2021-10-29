@@ -13,7 +13,7 @@ Outgoing webhooks take data from Mattermost, and send it to an external applicat
 
 ## What's a slash command?
 
-A slash command is similar to an outgoing webhook, but instead of listening to a channel it is used as a command tool. This means, if you type in a slash command it will not be posted to a channel, whereas an outgoing webhook is only triggered by posted messages.
+A slash command is similar to an outgoing webhook, but instead of listening to a channel it is used as a command tool. If you type in a slash command, that content won't be posted to a channel, whereas an outgoing webhook is only triggered by posted messages.
 
 ## What does Slack-compatible mean?
 
