@@ -76,7 +76,7 @@ To enable email, configure an SMTP email service as follows:
       8. **Connection Security**: ``TLS (Recommended)``
       9. Then select **Save**
       10. Then select **Test Connection**
-      11. If the test failed please look in **OTHER > Logs** for any errors that look like ``[EROR] /api/v4/email/test ...``
+      11. If the test failed please look in **OTHER > Logs** for any errors that look like ``[ERROR] /api/v4/email/test ...``
 
    4. (Optional) Go to the **Security > Sign Up** tab and configure the following:
 
