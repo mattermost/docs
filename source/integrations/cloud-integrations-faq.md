@@ -35,7 +35,7 @@ We currently don't support the ability to attach files to a post made by an inte
 
 ## Where can I find existing integrations?
 
-[Visit our app directory](https://mattermost.com/marketplace/#privateApps) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
+[Visit our app directory](https://mattermost.com/marketplace/) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and Bitbucket, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
 ## Where should I install my integrations? 
 
