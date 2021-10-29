@@ -363,7 +363,6 @@ redirects = {
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
     "deployment/webrtc": "https://docs.mattermost.com/deployment/video-and-audio-calling.html",
-    "deployment/bleve": "https://docs.mattermost.com/deploy/bleve-search.html",
     "deployment/desktop-app-deployment": "https://docs.mattermost.com/deploy/desktop-app.html",
     "deployment/scaling": "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
     "deployment/cluster": "https://docs.mattermost.com/scale/high-availability-cluster.html",
@@ -529,7 +528,6 @@ redirects = {
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
     "deployment/webrtc": "https://docs.mattermost.com/deployment/video-and-audio-calling.html",
-    "deployment/bleve": "https://docs.mattermost.com/deploy/bleve-search.html",
     "deployment/desktop-app-deployment": "https://docs.mattermost.com/deploy/desktop-app.html",
     "deployment/scaling": "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
     "deployment/cluster": "https://docs.mattermost.com/scale/high-availability-cluster.html",
@@ -679,8 +677,6 @@ redirects = {
         "https://docs.mattermost.com/messaging/channels-basics.html",
     "messaging/organizing-mattermost": 
         "https://docs.mattermost.com/messaging/organizing-channels.html",
-    "messaging/channel-settings": 
-        "https://docs.mattermost.com/messaging/channel-settings.html",
     "messaging/extending-messaging-with-integrations": 
         "https://docs.mattermost.com/messaging/extending-channels-with-integrations.html",
     "incident-collaboration/refining-and-improving":
@@ -856,7 +852,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ["archive/*"]
+exclude_patterns = ["archive/*", "process/*"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -1017,4 +1013,19 @@ html_use_index = False
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "Mattermostdoc"
+
+htmlhelp_basename = 'Mattermostdoc'
+
+# linkcheck settings
+linkcheck_ignore = [
+    # Ignore localhost
+    'http://localhost',
+    'http://127.0.0.1',
+    # Ignore anchors on github.com because linkcheck fails on them
+    'https://github.com',
+    # Ignore azuremarketplace because of no server response
+    'https://azuremarketplace.microsoft.com/.*',
+]
+linkcheck_timeout = 5
+linkcheck_rate_limit_timeout = 1
+linkcheck_anchors = False
