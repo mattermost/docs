@@ -852,7 +852,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ["archive/*"]
+exclude_patterns = ["archive/*", "process/*"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -1013,4 +1013,19 @@ html_use_index = False
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "Mattermostdoc"
+
+htmlhelp_basename = 'Mattermostdoc'
+
+# linkcheck settings
+linkcheck_ignore = [
+    # Ignore localhost
+    'http://localhost',
+    'http://127.0.0.1',
+    # Ignore anchors on github.com because linkcheck fails on them
+    'https://github.com',
+    # Ignore azuremarketplace because of no server response
+    'https://azuremarketplace.microsoft.com/.*',
+]
+linkcheck_timeout = 5
+linkcheck_rate_limit_timeout = 1
+linkcheck_anchors = False
