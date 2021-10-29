@@ -1,9 +1,26 @@
-Executing Commands
-==================
+Executing Slash Commands
+========================
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
 Slash commands perform operations in Mattermost by typing into the text input box. Enter a ``/`` followed by a command and some arguments to perform actions.
 
-Built-in slash commands come with all Mattermost installations and custom slash commands are configurable to interact with external applications. Learn about configuring custom slash commands on the `developer slash command documentation page <../../developer/slash-commands.html>`__.
+Built-in slash commands come with all Mattermost installations and custom slash commands are configurable to interact with external applications. Learn about configuring custom slash commands on the `developer slash command documentation page <https://developers.mattermost.com/integrate/other-integrations/slash-commands/>`__.
 
 Built-in Commands
 -----------------
@@ -38,7 +55,7 @@ The following slash commands are available on all Mattermost installations:
     "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
     "/groupmsg *{@username1, @username2, ...}* *{message}*", "Sends a Group Message to the specified users", "/groupmsg @alice, @bob hello"
     "/search *{text}*", "Search text in messages", "/search meeting"
-    "/settings", "Open the Account Settings dialog", "/settings"
+    "/settings", "Open the Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
     "/status *{emoji_name}* *{descriptive status_message}* *", Set a custom status that includes an optional emoji and a descriptive status message, "/status sick Feeling unwell and taking time off to recover" 
@@ -57,4 +74,4 @@ Custom Commands
 
 Custom slash commands integrate with external applications. For example, a team might configure a custom slash command to check internal health records with `/patient joe smith` or check the weekly weather forecast in a city with `/weather toronto week`. Check with your System Admin or open the autocomplete list by typing `/` to determine if your team configured any custom slash commands.
 
-Custom slash commands are disabled by default and can be enabled by the System Admin by going to **System Console** > **Integrations** > **Integration Management**. Learn about configuring custom slash commands on the `developer slash command documentation page <../../developer/slash-commands.html>`__.
+Custom slash commands are disabled by default and can be enabled by the System Admin by going to **System Console** > **Integrations** > **Integration Management**. Learn about configuring custom slash commands on the `developer slash command documentation page <https://developers.mattermost.com/integrate/other-integrations/slash-commands/>`__.

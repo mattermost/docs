@@ -1,5 +1,3 @@
-:orphan:
-
 .. _install-debian-server:
 
 Installing Debian Buster
@@ -9,7 +7,7 @@ Install the 64-bit version of Debian on each machine that hosts one or more of t
 
 **To install Debian Buster:**
 
-1. To install Debian Buster, see the `Debian Installation Guide (PDF). <https://www.debian.org/releases/stable/amd64/install.pdf>`__
+1. To install Debian Buster, see `Debian Installation documentation <https://www.debian.org/releases/buster/installmanual>`__ for details.
 
 2. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands as root:
 

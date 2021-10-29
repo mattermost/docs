@@ -2,6 +2,23 @@
 Organizing Your Sidebar
 =======================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Conversations in Mattermost are crucial to company productivity and success. Keeping conversations organized in the sidebar creates an efficient workplace.
 
 Channel types
@@ -145,7 +162,7 @@ Group unread channels separately
 
 By default, Mattermost provides a one-click **Unreads** filter to only show channels with unread activity. Alternatively, you may choose to automatically group unread channels in their own category at the top of your sidebar.
 
-Go to **Main Menu > Account Settings > Sidebar**, set **Group unread channels separately** to **On**, then select **Save**.
+Go to **Settings > Sidebar**, set **Group unread channels separately** to **On**, then select **Save**.
 
 - When this setting is enabled, all unread messages appear only in the **Unreads** category, sorted with mentions first.
 - When this setting is disabled, all unread messages appear within their respective categories and channels. You can use the **Unread filter** to focus on only unread channels in the sidebar.
@@ -156,7 +173,7 @@ When enabled, unread channels with mentions will sort to the top of the category
 
 .. tip::
   
-  If you prefer to see only unread channels in their respective categories, we recommend collapsing your custom categories and disabling **Group unread channels separately** under **Account Settings > Sidebar**.
+  If you prefer to see only unread channels in their respective categories, we recommend collapsing your custom categories and disabling **Group unread channels separately** under **Settings > Sidebar**.
 
 Managing Direct Messages
 ------------------------
@@ -168,7 +185,7 @@ How many Direct Messages to display?
 
 Control how many Direct Message conversations display in the **Direct Messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
 
-To configure the number of Direct Messages to display, go to **Main Menu > Account Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
+To configure the number of Direct Messages to display, go to **Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older Direct Messages.
 
@@ -176,5 +193,3 @@ Choose from **All direct messages**, or choose to show **10**, **15**, **20**, o
 
 .. note::
   Direct Message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
-
-Mobile support for this feature will be available in a future release.

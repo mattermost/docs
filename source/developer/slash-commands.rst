@@ -26,10 +26,10 @@ Each Mattermost installation comes with some built-in slash commands that are re
 .. csv-table::
     :header: "Command", "Description", "Example"
 
-    "/away", "Set your availablity to away", "/away"
-    "/offline", "Set your availablity to offline", "/offline"
-    "/online", "Set your availablity to online", "/online"
-    "/dnd", "Set your availablity to Do Not Disturb", "/dnd"
+    "/away", "Set your availability to away", "/away"
+    "/offline", "Set your availability to offline", "/offline"
+    "/online", "Set your availability to online", "/online"
+    "/dnd", "Set your availability to Do Not Disturb", "/dnd"
     "/code *{text}*", "Display text as a code block", "/code File bugs"
     "/collapse", "Turn on auto-collapsing of image previews", "/collapse"
     "/expand", "Turn off auto-collapsing of image previews", "/expand"
@@ -50,7 +50,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
     "/groupmsg *{@username1, @username2, ...}* *{message}*", "Sends a Group Message to the specified users", "/groupmsg @alice, @bob hello"
     "/search *{text}*", "Search text in messages", "/search meeting"
-    "/settings", "Open the Account Settings dialog", "/settings"
+    "/settings", "Open the Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
     "/status *{emoji_name}* *{descriptive status_message}*", "Set a custom status that includes an optional emoji and a descriptive status message", "/status sick Feeling unwell and taking time off to recover"

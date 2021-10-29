@@ -38,7 +38,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/upgrade/version-archive.html>`_, and follow our standard install guides. The same applies to server upgrades.
+To deploy the Team Edition, download the `Mattermost Team Edition binary <https://docs.mattermost.com/upgrade/version-archive.html#mattermost-team-edition>`_, and follow our standard install guides. The same applies to server upgrades.
 
 Community Questions
 -------------------
@@ -118,9 +118,9 @@ Yes, push notifications are free if you compile your own `push-proxy service <ht
 
 TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.com>`_, offers transport-level encryption, but not production-level service level agreements (SLAs).
 
-If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Enterprise Edition E10 subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
+If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Professional subscriber `agreeing to our Conditions of Use <https://about.mattermost.com/default-terms/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
 
-Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deployment/push.html>`__.
+Learn more about `our mobile apps and push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__.
 
 Video, Audio, and Screen Sharing
 ---------------------------------
@@ -130,7 +130,7 @@ What support is available for video and audio calling and screen sharing?
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
-You can learn more about the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions (e.g. SIP PBX, Zoom, and Skype for Business), in the `Voice, video, and screensharing guide <https://docs.mattermost.com/deployment/video-and-audio-calling.html>`_.
+You can learn more about the most popular options, including self-hosted on-prem, self-hosted private cloud solutions, and vendor-hosted SaaS solutions (e.g. SIP PBX, Zoom, and Skype for Business), in our `Integrations <https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html>`__ documentation.
 
 Note that you can also neatly link video, audio and screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
@@ -201,37 +201,39 @@ What happens when the Enterprise Edition subscription expires?
 
 Sixty days prior to expiry, System Administrators receive notifications that the Enterprise Edition license key will expire on the anniversary of its purchase. After expiry, there is a 10-day grace period to upload a new license key. After the grace period, Enterprise features will be disabled. At any time, Enterprise Edition can be downgraded to the free Team Edition without data loss by switching off any Enterprise features enabled and then removing the license key.
 
-What are Mattermost's policies around licensing, terms of service, and privacy?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What are Mattermost's policies around licensing, terms of use, and privacy?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following outlines the licensing, terms of service and privacy policies across Mattermost software and services.
+The following outlines the licensing, terms of use and privacy policies across Mattermost software and services.
 
 Mattermost Software
 ^^^^^^^^^^^^^^^^^^^^
 
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Software                                           | License                                                                                                                   | Terms of Service                                                                                                              | Privacy Policy                                                                                                             |
+| Software                                           | License                                                                                                                   | Terms and Conditions                                                                                                          | Privacy Policy                                                                                                             |
 +====================================================+===========================================================================================================================+===============================================================================================================================+============================================================================================================================+
 | Mattermost Team Edition (Open Source)              | Open Source **MIT License**.                                                                                              | `Mattermost Trademark Policy <https://mattermost.org/trademark-standards-of-use/>`__                                          | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__ |
 |                                                    |                                                                                                                           |                                                                                                                               | with `GDPR Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__.                   |
-|                                                    | Open Source Add-ons available under `Apache v2 and other licenses <https://mattermost.org/licensing/>`__.                 | `Mattermost Server Conditions of Use <https://about.mattermost.com/default-terms/>`__                                         |                                                                                                                            |
+|                                                    | Open Source Add-ons available under `Apache v2 and other licenses <https://mattermost.org/licensing/>`__.                 | `Mattermost Terms of Use <https://about.mattermost.com/default-terms/>`__                                                     |                                                                                                                            |
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
 | Mattermost Enterprise Edition with no subscription | `Commercial Enterprise Edition License <https://about.mattermost.com/enterprise-edition-license/>`__.                     | No subscription terms apply when operating without a subscription                                                             |                                                                                                                            |
 |                                                    |                                                                                                                           |                                                                                                                               |                                                                                                                            |
 |                                                    | You are welcome to use the Enterprise Edition of Mattermost free of charge in perpetuity when the subscription feature    |                                                                                                                               |                                                                                                                            |
 +----------------------------------------------------+ are not enabled by a license key.                                                                                         +-------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
-| Mattermost Enterprise Edition with subscription    |                                                                                                                           | `Enterprise Edition Subscription Terms <https://about.mattermost.com/enterprise-edition-terms/>`__                            |                                                                                                                            |
+| Mattermost Enterprise Edition with subscription    |                                                                                                                           | `Self Managed Subscription Terms <https://about.mattermost.com/enterprise-edition-terms/>`__                                  |                                                                                                                            |
 |                                                    | If you choose to purchase a subscription for paid features, terms and conditions are offered                              |                                                                                                                               |                                                                                                                            |
 |                                                    | as part of the subscription purchase (see “Terms”).                                                                       | `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`__|                                                                                                                            |
+|                                                    |                                                                                                                           |                                                                                                                               |                                                                                                                            |
+|                                                    |                                                                                                                           | `Cloud Subscription Agreement <https://mattermost.com/cloud-subscription-terms/>`__                                           |                                                                                                                            |
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Mattermost Service Agreements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Service                                                                     | Terms of Service                                                                                                                                | Privacy Policy                                                                                                             |
+| Service                                                                     | Terms and Conditions                                                                                                                               | Privacy Policy                                                                                                          |
 +=============================================================================+=================================================================================================================================================+============================================================================================================================+
-| Mattermost Enterprise Edition Support, including Premier Support            | `Mattermost Support Terms of Service <https://mattermost.com/support/>`__                                                                       | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__ |
+| Mattermost Enterprise Edition Support, including Premier Support            | `Mattermost Support Terms <https://mattermost.com/support/>`__                                                                       | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__            |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+ with `GDPR Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__.                   |
 | Mattermost Hosted Push Notification Service                                 | `Hosted Push Notifications Service Terms <https://about.mattermost.com/hpns-terms/>`__                                                          |                                                                                                                            |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
@@ -242,9 +244,9 @@ Mattermost Websites
 ^^^^^^^^^^^^^^^^^^^^
 
 +----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Website                    | License                                                                                                                                                          | Terms of Service                                                                      | Privacy Policy                                                                                                            |
+| Website                    | License                                                                                                                                                          | Terms and Conditions                                                                  | Privacy Policy                                                                                                            |
 +============================+==================================================================================================================================================================+=======================================================================================+===========================================================================================================================+
-| Mattermost Websites:       | Open source under                                                                                                                                                | `Mattermost Websites Terms of Service <https://mattermost.com/terms-of-service/>`__   | `Mattermost Websites Privacy Policy <https://about.mattermost.com/privacy/>`__                                            |
+| Mattermost Websites:       | Open source under                                                                                                                                                | `Mattermost Terms of Use <https://mattermost.com/terms-of-service/>`__   | `Mattermost Websites Privacy Policy <https://about.mattermost.com/privacy/>`__                                                         |
 |                            | `Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (CC BY-NC-SA 3.0) <https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US>`__. |                                                                                       |                                                                                                                           |
 |  - about.mattermost.com    |                                                                                                                                                                  |                                                                                       |                                                                                                                           |
 |  - mattermost.com          |                                                                                                                                                                  |                                                                                       |                                                                                                                           |
@@ -254,7 +256,7 @@ Mattermost Websites
 +----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 Mattermost Partnership Agreements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | Partnership Agreement                                                       | Agreement                                                                                                         |
@@ -275,7 +277,7 @@ Working for Mattermost
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| Service                                                                     | Terms of Service                                                                                                                                 |
+| Service                                                                     | Terms and Conditions                                                                                                                             |
 +=============================================================================+==================================================================================================================================================+
 | Mattermost Professional Consulting Services                                 | `Mattermost Professional Consulting Services Agreement <https://docs.google.com/document/d/1tgEkO5Q-xqAgVEcx5Y-z28OC36HptpltKORpivQGLoY/edit>`__ |
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,7 +287,7 @@ Working for Mattermost
 How does the licensing key work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/overview/license-and-subscription.html#frequently-asked-questions>`_.
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`_.
 
 Do you have a program for official non-profits and charities?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -314,7 +316,7 @@ When the Mattermost Source Available ``LICENSE`` file appears in a specific dire
 
 In all cases, any third party components remain licensed under their original license.
 
-An example directory layout, using an Enterprise Edition E20 license, is shown below:
+An example directory layout, using an Enterprise license, is shown below:
 
 .. image:: ../images/source-available-license.png
 
@@ -331,7 +333,7 @@ As we add enterprise-only functionality, we will update the license on affected 
 To which repositories does this apply?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release our `Incident Collaboration <https://github.com/mattermost/mattermost-plugin-incident-collaboration>`_ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins, currently in beta, under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
+We plan to apply this license to the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-ee-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins. We also intend to release `Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins under the Mattermost Source Available License. New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
 
 We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost-server <https://github.com/mattermost/mattermost-server>`_ or `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
@@ -377,7 +379,7 @@ You are free to license your own code as you see fit. We will not apply the Matt
 Can I publish my own plugin and rely on enterprise specific functionality?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As before, you are free to license your own code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise Edition E20 license regardless of how you license your plugin.
+As before, you are free to license your own code as you see fit. Note that some server functionality is only enabled with a Mattermost Enterprise license regardless of how you license your plugin.
 
 Can’t someone compile out any license restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -402,18 +404,19 @@ No. This FAQ is informational only. The Mattermost Source Available License stan
 What is the full text of the Mattermost Source Available License?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-"The Mattermost Source Available License license (the “Source Available License”)
-Copyright (c) 2015-present Mattermost
+"The Mattermost Source Available License (the “Source Available License”)
+(c) Mattermost, Inc. 2015-present.
 
 With regard to the Mattermost Software:
 
 This software and associated documentation files (the "Software") may only be
 used in production, if you (and any entity that you represent) have agreed to,
-and are in compliance with all of the following: (a) the Mattermost Terms of Service, available at
-https://mattermost.com/enterprise-edition-terms/ (the “EE Terms”), (b) any other
-agreement(s) governing the use of the Software, as agreed upon by you and Mattermost,
-and (c) you otherwise have a valid license or Subscription for the
-correct number of Registered Authorized Users of the Software. Subject to the foregoing, you are free
+and are in compliance with all of the following: (a) the Mattermost Terms of Use, 
+available at https://mattermost.com/terms-of-service/ (the "TOU"), (b) and the Mattermost 
+Software License Agreement,  available at https://mattermost.com/enterprise-edition-terms/ 
+(the “SLA”) or other licensing agreement governing your use of the Software, as agreed 
+by you and Mattermost, and otherwise have a valid Mattermost Enterprise for the correct 
+number of Registered Authorized Users the Software. Subject to the foregoing, you are free
 to modify this Software and publish patches to the Software. You agree that
 Mattermost and/or its licensors (as applicable) retain all right, title and
 interest in and to all such modifications and/or patches, and all such
@@ -427,7 +430,7 @@ all such modifications.  You are not granted any other rights beyond what is
 expressly stated herein.  Subject to the foregoing, it is forbidden to copy,
 merge, publish, distribute, sublicense, and/or sell the Software.
 
-The full text of this EE License shall be included in all copies or substantial
+The full text of this Source Available License shall be included in all copies or substantial
 portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -460,14 +463,14 @@ Use Cases
 Does Mattermost support external guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
+Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information.
 
 Can I use Mattermost for customer service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You are welcome to use the open source Mattermost Team Edition and its extensive API library to build your own solution.
 
-Mattermost Enterprise Edition is designed for self-managed, enterprise-grade communication. It is not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case.
+Mattermost Enterprise Edition is designed for self-hosted, enterprise-grade communication. It's not recommended for primarily providing customer service or customer support, and does not currently offer a licensing model nor technical advice for this use case.
 
 If you'd like to create an open source derivative version of Mattermost using the ``/mattermost-server`` source code to support your use case, please see below.
 
@@ -627,7 +630,7 @@ Vendors become "Nation State Targets" when the value of the breaching their syst
 
 2) MMTA systems can't protect customers from unknown vulnerabilities
 
-A single bug in an MMTA system can put all customers at risk. For example, `Slack reported a bug that exposed message histories and files for nearly 4 million users <https://www.wired.com/2017/03/hack-brief-slack-bug-everyones-worst-office-nightmare/>`_ (2017), and `a bug left 400 million Microsoft accounts exposed to account takeover <https://www.hackread.com/critical-bug-in-microsoft-left-400m-accounts-exposed/>`_ (2018).
+A single bug in an MMTA system can put all customers at risk. For example, `Slack reported a bug that exposed message histories and files for nearly four million users <https://www.wired.com/2017/03/hack-brief-slack-bug-everyones-worst-office-nightmare/>`_ (2017), and `a bug left 400 million Microsoft accounts exposed to account takeover <https://www.hackread.com/critical-bug-in-microsoft-left-400m-accounts-exposed/>`_ (2018).
 
 For multi-tenant systems, bugs in infrastructure can present vulnerabilities as well. For example, in 2018 researchers discovered that chip-level exploits like `Meltdown and Spectre <https://www.wired.com/story/intel-meltdown-spectre-storm/>`_, which had been around for decades, could make it possible for malicious code run by one tenant to affect the operations of another tenant that shared the same CPU.
 
@@ -656,13 +659,13 @@ Design Decisions
 Why does Mattermost disclose whether or not an account exists when a user enters an incorrect password?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost's core design principle is to be `"fast, obvious, forgiving" <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`__ and, telling users that they made a mistake in entering their password, is in service of our principle of prioritizing user interests.
+Mattermost's core design principle is to be "fast, obvious, forgiving" and, telling users that they made a mistake in entering their password, is in service of our principle of prioritizing user interests.
 
 When using username-password authentication, especially with AD/LDAP, there's the possibility of usernames being email addresses, Mattermost username, AD/LDAP username, AD/LDAP ID, or other AD/LDAP attributes and our design principle intends to help end users understand whether their login error came from having the wrong password or the wrong email/username.
 
 We believe this design increases productivity, speeds up user adoption, and reduces help desk tickets and support costs - and that these benefits outweigh the trade-offs.
 
-The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/administration/config-settings.html#rate-limiting>`__.
+The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's `API rate limiting settings <https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting>`__.
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations:
 
@@ -691,7 +694,7 @@ Rebranding
 ^^^^^^^^^^
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.org/trademark-standards-of-use/>`__.
-- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/administration/config-settings.html#customization>`__.
+- You can rebrand your system using convenience tools for `custom branding <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`__ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost-server`` open source code
@@ -702,7 +705,8 @@ Copyright and Licensing of ``/mattermost-server`` open source code
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
 
-- Mattermost has a default `Conditions of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`__ agreement for the Terms of Service link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default `Terms of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`__ agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
 
@@ -716,7 +720,7 @@ Why does Mattermost have a discount for certain kinds of non-profits but not for
 
 While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion and public promotion of solutions, among many other factors.
 
-Learn more about our non-profit discount program at https://about.mattermost.com/mattermost-mondays/.
+See our `License and Subscription <https://docs.mattermost.com/about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities>`__ documentation for details.
 
 Can I create a derivative work of the Mattermost /mattermost-server repository that is not open source?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -749,8 +753,8 @@ Illicit Use
 How do I report illicit use of Mattermost software? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Illicit use of Mattermost software to harm others, infringe on their rights, break laws or policies is explicitly against our `Conditions of Use <https://about.mattermost.com/default-terms/>`_.
+Illicit use of Mattermost software to harm others, infringe on their rights, break laws or policies is explicitly against our `Terms of Use <https://about.mattermost.com/default-terms/>`_.
 
 If the illicit use is happening on a web address ending in ``“mattermost.com”``, it means the suspected perpetrators are using Mattermost software controlled by our company, Mattermost, Inc. In this case, please get in touch with us at ``support@mattermost.com`` to report the issue for us to investigate.
 
-If the illicit use is happening on a different web address, then it means the suspected perpetrators may be using Mattermost software controlled by a person or company other than Mattermost, Inc. In this case, you need to contact the person or company who controls the web address by using a lookup service such as https://www.whois.net/ to find the contact email to report abuse. You can use a link to this FAQ as a reference to our `Conditions of Use <https://about.mattermost.com/default-terms/>`_ policy for Mattermost software.
+If the illicit use is happening on a different web address, then it means the suspected perpetrators may be using Mattermost software controlled by a person or company other than Mattermost, Inc. In this case, you need to contact the person or company who controls the web address by using a lookup service such as https://www.whois.net/ to find the contact email to report abuse. You can use a link to this FAQ as a reference to our `Terms of Use <https://about.mattermost.com/default-terms/>`_ policy for Mattermost software.

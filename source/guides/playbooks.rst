@@ -13,16 +13,16 @@ The Basics
 .. toctree::
    :hidden:
 
-   Overview </boards/overview>
-   Get Started </boards/getting-started>
-   Access Boards </boards/accessing-boards>
-   Work With Boards </boards/working-with-boards>
-   Work With Views </boards/working-with-views>
-   Share Boards </boards/sharing-boards>
-   Templates </boards/templates>
+   Overview </playbooks/overview>
+   Navigate Mattermost </playbooks/navigating-mattermost>
+   Get Started </playbooks/getting-started>
+   Plan Playbooks </playbooks/setting-up-playbooks>
+   Run Playbooks </playbooks/running-playbooks>
+   Retrospectives </playbooks/refining-and-improving>
    
 * :doc:`Playbooks Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
+* :doc:`Navigate Mattermost </playbooks/navigating-mattermost>` - Find your way around Mattermost.
 * :doc:`Get Started </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
 * :doc:`Plan Playbooks </playbooks/setting-up-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage permissions for your team.
 * :doc:`Run Playbooks </playbooks/running-playbooks>` - Initiate Playbooks, make announcements, and get information about your workflows.
-* :doc:`Refine and Improve </playbooks/refining-and-improving>` - Use retrospectives to improve your workflows and provide detailed insight into your Playbooks.
+* :doc:`Retrospectives </playbooks/refining-and-improving>` - Use retrospectives to improve your workflows and provide detailed insight into your Playbooks.

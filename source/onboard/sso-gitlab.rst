@@ -1,11 +1,29 @@
-
 GitLab Single Sign-On
 =====================
+
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+*Not available in Cloud Starter*
 
 Migrating from OAuth 2.0 to OpenID Connect
 -------------------------------------------
 
-OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to product documentation to `convert your existing OAuth configuration <https://docs.mattermost.com/cloud/cloud-administration/converting-oauth-2.0-to-openid-connect.html>`__ for GitLab to the OpenID Connect standard. 
+OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to product documentation to `convert your existing OAuth configuration <https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html>`__ for GitLab to the OpenID Connect standard. 
 
 Configuring GitLab as a Single Sign-On (SSO) service
 ----------------------------------------------------

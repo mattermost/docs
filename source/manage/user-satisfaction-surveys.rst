@@ -1,6 +1,18 @@
 User Satisfaction Surveys
 =========================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Mattermost introduced in-product feedback surveys from v5.12. Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
 .. contents::
@@ -19,7 +31,7 @@ The user satisfaction survey is a pre-packaged plugin, and surveys are enabled b
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
+Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
 
 If the plugin or surveys in the plugin configuration are disabled, they will remain disabled for subsequent server upgrades.
 
@@ -28,8 +40,8 @@ When is the survey scheduled?
 
 Users will receive surveys 21 days after every server upgrade, assuming the following conditions are true:
 
-- User Satisfaction Surveys plugin is enabled in **System Console > Plugins (Beta) > Plugin Management**.
-- Surveys are enabled in the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys**.
+- User Satisfaction Surveys plugin is enabled in **System Console > Plugins > Plugin Management**.
+- Surveys are enabled in the plugin configuration in **System Console > Plugins > User Satisfaction Surveys**.
 - User account is greater than 21 days old.
 - User has not completed a survey in the last 90 days.
 - User has not been sent a survey in the last 90 days.
@@ -70,7 +82,7 @@ Data is only collected when a user selects a score or provides written feedback 
    - Installation date of the server
    - Diagnostic ID used for error and diagnostics reporting
    - License ID used for error and diagnostics reporting (if applicable)
-   - E10 or E20 (if applicable)
+   - Enterprise or Professional (if applicable)
 - User information:
    - User role (System Admin, Team Admin, or member)
    - Account creation timestamp

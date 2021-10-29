@@ -1,6 +1,18 @@
 MySQL Installation Troubleshooting
 ==================================
 
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command
 ``sudo -u mattermost bin/mattermost``. If the Mattermost server cannot connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
 
@@ -30,7 +42,7 @@ The database created during installation is named ``mattermost``. If you fail to
  ::
 
     [2017/09/20 17:11:37 EDT] [INFO] Pinging SQL master database
-    [2017/09/20 17:11:37 EDT] [EROR] Failed to ping DB retrying in 10 seconds
+    [2017/09/20 17:11:37 EDT] [ERROR] Failed to ping DB retrying in 10 seconds
     err-Error 1044: Access denied for user 'mmuser'@'%' to database 'mattermost'
 
 Note that MySQL is specifically denying access to the ``mattermost`` database. This may mean that you have failed to create a database named
@@ -92,7 +104,7 @@ If the user and host combination that you created does not exist, you will see a
  ::
 
     [2017/09/20 17:06:18 EDT] [INFO] Pinging SQL master database
-    [2017/09/20 17:06:18 EDT] [EROR] Failed to ping DB retrying in 10 seconds
+    [2017/09/20 17:06:18 EDT] [ERROR] Failed to ping DB retrying in 10 seconds
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
 **Checking that mmuser Exists**
@@ -140,7 +152,7 @@ Mattermost will fail if you use an incorrect password for ``mmuser``. An incorre
  ::
 
     [2017/09/20 17:09:10 EDT] [INFO] Pinging SQL master database
-    [2017/09/20 17:09:10 EDT] [EROR] Failed to ping DB retrying in 10 seconds
+    [2017/09/20 17:09:10 EDT] [ERROR] Failed to ping DB retrying in 10 seconds
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
 **The Password in config.json**
@@ -175,7 +187,7 @@ If the database exists and the username and password are correct, the ``mmuser``
  ::
 
     [2017/09/20 17:20:53 EDT] [INFO] Pinging SQL master database
-    [2017/09/20 17:20:53 EDT] [EROR] Failed to ping DB retrying in 10 seconds
+    [2017/09/20 17:20:53 EDT] [ERROR] Failed to ping DB retrying in 10 seconds
     err-Error 1044: Access denied for user 'mmuser'@'%' to database 'mattermost
 
 .. note::

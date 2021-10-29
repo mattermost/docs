@@ -1,6 +1,18 @@
 Data Retention Policy
 =====================
 
+|enterprise| |cloud|
+
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Cloud deployments.
+
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users.
 
 With a data retention policy, you can set a custom policy to manage how long messages and file uploads are kept in Mattermost channels and direct messages.

@@ -6,7 +6,7 @@ You can migrate HipChat users and message histories to Mattermost using the foll
 Step 1:  Set up your Mattermost Instance
 -----------------------------------------
 
-- `Go to Mattermost download page <https://mattermost.com/download/>`__ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
+- `Go to Mattermost download page <https://mattermost.com/deploy/>`__ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
 
 Questions? Please visit our `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for help. 
 
@@ -54,7 +54,7 @@ After importing users, you can send out an announcement via email or via your ol
  
 Use the following message template to alert users of the migration::
 
-     @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new location, e.g. ``https://yourcompany.com/mattermost``], clicking on **I forgot my password** and entering the email you used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
+     @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new location, e.g. ``https://yourcompany.com/mattermost``], selecting **I forgot my password**, and entering the email you used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
 
 **Announcing Mattermost onboarding using email using username/password:**
 
