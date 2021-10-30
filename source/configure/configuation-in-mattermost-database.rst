@@ -175,7 +175,7 @@ The CLI command to migrate the config to the database should always be run as th
 .. warning::
    When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
    
-As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
+As with the environment file, you'll have to escape any single quote in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
 
 When configuration in the database is enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
