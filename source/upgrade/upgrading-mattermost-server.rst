@@ -93,7 +93,7 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate rele
   
   ``Failed to alter column type. It is likely you have invalid JSON values in the column. Please fix the values manually and run the migration again.","caller":"sqlstore/store.go:854","error":"pq: unsupported Unicode escape sequence``
   
-  This issue will be addressed in a patch release, but in the interim, you can enable ``SqlSettings.Trace`` to narrow down what table and column are causing issues during the upgrade: The following queries change the columns to JSONB format in PostgreSQL. Run these against your v5.39 development database to find out which table and column has Unicode issues:
+  To assist with troubleshooting, you can enable ``SqlSettings.Trace`` to narrow down what table and column are causing issues during the upgrade. The following queries change the columns to JSONB format in PostgreSQL. Run these against your v5.39 development database to find out which table and column has Unicode issues:
   
   .. code-block:: sh
 
