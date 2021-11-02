@@ -79,7 +79,7 @@ Lastest Mattermost Releases:
  - Replaced Metropolis font files with a new set to correct a kerning issue.
  - Fixed an issue where deep links opened on mobile displayed an incorrect text directing users to open the Desktop app.
  - Addressed various user interface style bugs from v6.0 release.
- - Fixed emails templates for clients that do not support the <style> tag.
+ - Fixed emails templates for clients that do not support the ``style`` tag.
  - Fixed an issue where the scrollbar was hardly visible with Denim & Sapphire Themes.
  - Fixed an issue where creating a bot with an invalid username returned an "invalid email" error.
  - Fixed an issue where using ``/code`` did not render initial whitespace characters.
