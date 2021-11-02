@@ -4,12 +4,17 @@
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 Lastest Mattermost Releases:
+- [Release v6.1 - Feature Release](#release-v6.1-feature-release)
 - [Release v6.0 - Feature Release](#release-v6.0-feature-release)
 - [Release v5.39 - Quality Release](#release-v5-39-quality-release)
 - [Release v5.38 - Feature Release](#release-v5-38-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
-- [Release v5.36 - Feature Release](#release-v5-36-feature-release)
-- [Release v5.35 - Feature Release](#release-v5-35-feature-release)
+
+## Release v6.1 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2021-11-16**
+
+
 
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
