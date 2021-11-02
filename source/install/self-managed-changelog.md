@@ -14,8 +14,132 @@ Lastest Mattermost Releases:
 
 **Release Day: 2021-11-16**
 
+### Upgrade Notes
+ - The Bleve index has been updated to use the scorch index type. This new default index type has some improvements on efficiency, which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
+ - A composite index has been added to the jobs table for better query performance. For some customers with large jobs table, this can take a long time, so we recommend adding the index during off-hours, and then running the migration.
+   - For PostgreSQL: ``create index concurrently idx_jobs_status_type on jobs (status,type);
+   - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
 
+### Highlights
 
+#### Timed Do Not Disturb
+ - Added the ability to disable all notifications for a specified period of time to avoid distractions, without losing important messages when you're back.
+
+#### Cross-team recent mentions
+ - Recent mentions and saved posts now show across all teams.
+
+#### Start Trial is Displayed when 10 Users are Reached
+ - Once a non-licensed server has reached 10 users, a modal is displayed to the admin encouraging them to start a 30-day trial.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added one-click reactions for posts. Also, the three most recently used emojis will display when the mouse is hovered on a post.
+ - Added support for selecting names and aliases in the emoji picker.
+ - Changed the user interface of the edit-indicator of posts and moved it inline.
+ - The updated "Tips & Next Steps" screen is now shown to all System Admins.
+ - Once the user has selected **Start Trial**, they will see a modal that lists all of the features now available to them through the Enterprise plan.
+ - Added a query param to translate in-product help pages when opened from the Desktop App.
+ - Updated in-product text for the invitation modal for clarity.
+ - Updated the file attachment limits and sizes within in-product help documentation.
+ - Added rendering for posts containing markdown in email notifications.
+ - Added support for inline Latex rendering.
+ - Added the **Move to...** option menu item to the channel header dropdown.
+ - Added keyboard shortcuts to tooltips. The shortcut key component is now used for displaying keys.
+ - Added support for Global threads infinite scroll.
+ - Added ``@here`` mention to the ``EnableConfirmNotificationsToChannel`` config setting to show a warning modal when over 5 members might be alerted with ``@here``.
+
+#### Integrations
+ - Added support for multi-select on Apps slash commands.
+ - App commands now make a distinction between the central channel and the right-hand side channel.
+ - App bindings now recognize the post menu options for each channel they live in.
+ - Added new ``registerMessageWillBeUpdatedHook(newPost, oldPost)`` client-side plugin hook to intercept edited messages.
+
+#### Performance
+ - Slightly improved performance around rendering of system messages.
+ - Reduced storage-related slow-downs on page load.
+
+#### Administration
+ - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
+ - ``get flagged posts`` endpoint will now return only flagged posts for channels the user is a member of.
+ - Updated Bleve to v2 to use the scorch index type.
+ - Minimum supported browser versions changes:
+   - Chrome updated from ``61+`` to ``89+``.
+   - Firefox updated from ``60+`` to ``78+``.
+   - MacOS updated from ``10.9+`` to ``10.14+``.
+ - Prometheus metrics are now enabled when running a standalone jobserver.
+
+### Bug Fixes
+ - Fixed a broken link to the **Custom Emoji** page on servers with a subpath configured.
+ - Fixed an issue where a "No results found" error string was displayed in the **Direct Messages** modal.
+ - Fixed an issue where the caret was placed in the middle of the emojis when picking two emojis from the emoji picker.
+ - Fixed an issue where **System Console > Channels > Channel Management** displayed an option to toggle group management in Team Edition, Starter, and Professional.
+ - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
+ - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
+ - Replaced Metropolis font files with a new set to correct a kerning issue.
+ - Fixed an issue where deep links opened on mobile displayed an incorrect text directing users to open the Desktop app.
+ - Addressed various user interface style bugs from v6.0 release.
+ - Fixed emails templates for clients that do not support the <style> tag.
+ - Fixed an issue where the scrollbar was hardly visible with Denim & Sapphire Themes.
+ - Fixed an issue where creating a bot with an invalid username returned an "invalid email" error.
+ - Fixed an issue where using ``/code`` did not render initial whitespace characters.
+ - Fixed an issue where **Try Enterprise for Free** option was missing spacing in mobile webview.
+ - Fixed an issue where the SQLStore cache was relied on when populating the WebConn channel memberships.
+ - Fixed an issue where logging was not re-configured when the server config was changed via the System Console.
+ - Fixed an issue with an indigo theme glitch when returning from Playbooks to Channels.
+ - Fixed an issue where the offline indicator color did not use the correct theme color.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+    - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
+    - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
+    - Fixed an issue where the user avatar was displayed in the participants list after their post was deleted and if they had no other posts in the thread.
+    - Fixed an issue where the ephemeral message was not displyaed as the centre post.
+    - Fixed an issue with dragging and dropping files on a thread while on a Threads panel.
+    - Fixed an issue where permalinks were not highlighting a post on a thread that was already open on the right-hand side.
+    - Fixed an issue with missing threads in the Thread list.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added ``EnableInlineLatex`` to add support for inline Latex rendering.
+ - Under ``JobSettings`` in ``config.json``
+   - Added ``CleanupJobsThresholdDays``. This defines the time gap in hours beyond which older jobs will be removed. Default is -1 which means the feature is disabled. Setting to 0 will clean all completed jobs.
+   
+#### Database Changes
+ - Extended the maximum size to 256 characters for the following database columns:
+    - ``Sessions.Roles``
+    - ``ChannelMembers.Roles``
+    - ``TeamMembers.Roles``
+
+### API Changes
+ - Added a new API endpoint ``POST /api/v4/posts/search`` to perform searches across all channels.
+
+### Known Issues
+ - Clicking on "..." post menu on a System message crashes the webapp [MM-39116](https://mattermost.atlassian.net/browse/MM-39116).
+ - Desktop notifications don't work intermittently [MM-39052](https://mattermost.atlassian.net/browse/MM-39052).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Deep link opened on mobile shows incorrect text directing the opening to the Desktop app [MM-38913](https://mattermost.atlassian.net/browse/MM-38913).
+ - Channel switcher is missing "(You)" indicator on your own Direct Message channel [MM-38798](https://mattermost.atlassian.net/browse/MM-38798).
+ - LDAP Sync job inserting invalid NULL unicode character into job's Data column [MM-38711](https://mattermost.atlassian.net/browse/MM-38711).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
+ - **System Console > Channels > Channel Management** has an option to toggle group management in Team Edition, Starter, and Professional [MM-39216](https://mattermost.atlassian.net/browse/MM-39216).
+ - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+   
+ 
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 **Release Day: 2021-10-13**
