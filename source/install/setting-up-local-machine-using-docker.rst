@@ -123,7 +123,7 @@ The default single-container Docker instance for Mattermost is designed for prod
 Configuration Settings
 ----------------------
 
-See `Configuration Settings <https://docs.mattermost.com/administration/config-settings.html>`__ documentation to customize your deployment.
+See `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ documentation to customize your deployment.
 
 Updating Docker Preview
 -----------------------
@@ -138,8 +138,8 @@ To delete your existing Docker preview and run a new version use:
 Accessing Your Container
 ------------------------
 
--  If you wish to gain access to a shell on the container use:
+If you wish to gain access to a shell on the container use:
 
-   .. code:: bash
+.. code:: bash
 
-       docker exec -ti mattermost-preview /bin/bash
+   docker exec -ti mattermost-preview /bin/bash

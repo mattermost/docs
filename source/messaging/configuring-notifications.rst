@@ -27,7 +27,7 @@ You can configure your Mattermost account for how and when you want to be notifi
 - Mentions your username or first name in a channel
 - Notifies a channel you're in using @channel or @all
 - Responds to a thread you're following
-- Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
+- Uses any `keywords you've configured <https://docs.mattermost.com/messaging/managing-account-settings.html#words-that-trigger-mentions>`_ 
 
 Desktop Notifications
 ----------------------
@@ -40,7 +40,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
  .. tab:: Mattermost v6.0 onwards
 
-      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
+      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
       
       - Configure desktop notifications in **Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
@@ -68,7 +68,7 @@ By default, you'll get email notifications if you're not actively using Mattermo
 
   .. tab:: Mattermost v6.0 onwards
 
-      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
+      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the global header.
       
       - Configure email notifications in **Notifications > Email Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
@@ -97,7 +97,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 
   .. tab:: Mattermost v6.0 onwards
 
-      In Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
+      In Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
       
       - Configure push notifications in **Notifications > Mobile Push Notifications > Send mobile push notifications**.
       - Configure when push notifications are sent depending on your availability in **Notifications > Mobile Push Notifications > Trigger push notifications when**.

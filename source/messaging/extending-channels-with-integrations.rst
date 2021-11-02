@@ -40,7 +40,7 @@ The Microsoft Office 355 Calendar integration enables two-way integration betwee
 - Receive a daily summary of calendar events, and accept or decline new events.
 - Reflect user status as "Do Not Disturb" when in a meeting scheduled via Outlook Calendar.
 
-Visit the `Marketplace <https://mattermost.com/marketplace/>`__ to install, configure, and use this integration.
+Visit the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to install, configure, and use this integration.
 
 Skype for Business
 ~~~~~~~~~~~~~~~~~~
@@ -131,7 +131,7 @@ The GitHub integration supports GitHub Enterprise, and works with Saas and Enter
 - Get reminders on issues and pull requests that need your attention.
 - Get notifications in Mattermost about mentions, review requests, and comments.
 
-Visit the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__` to install, configure, and use this integration. Please see the `source code <https://github.com/mattermost/mattermost-plugin-github>`__ for more information.
+Visit the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to install, configure, and use this integration. Please see the `source code <https://github.com/mattermost/mattermost-plugin-github>`__ for more information.
 
 GitLab
 ~~~~~~
@@ -158,7 +158,7 @@ The GitLab integration supports SaaS and on-prem versions of GitLab. This integr
 - Get reminders on issues and merge requests that need your attention.
 - Get notifications in Mattermost about mentions, review requests, and comments.
 
-Visit the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__` to install, configure, and use this integration. Please see the `source code <https://github.com/mattermost/mattermost-plugin-gitlab>`__ for more information.
+Visit the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to install, configure, and use this integration. Please see the `source code <https://github.com/mattermost/mattermost-plugin-gitlab>`__ for more information.
 
 Atlassian integrations
 -----------------------

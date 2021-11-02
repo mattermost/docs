@@ -92,19 +92,19 @@ A recommended installation of Mattermost Enterprise E20 configured with a redund
 +-------------------+---------+---------------+--------+----------+
 
 .. note::
-  See the `Mattermost hardware sizing guidance <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ documentation for details. 
+  See the `Mattermost hardware sizing guidance <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__ documentation for details. 
 
 2.3 Project References
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides a bibliography of key project references and deliverables that have been produced before this point in the project development.
 
-- Mattermost Product Overview: https://docs.mattermost.com/about/product.html
-- Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/requirements.html 
+- Mattermost Overview: https://docs.mattermost.com/about/product.html
+- Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/software-hardware-requirements.html 
 - Mattermost Security Features: https://docs.mattermost.com/about/security.html 
-- Mattermost Channels: https://docs.mattermost.com/guides/messaging.html
+- Mattermost Channels: https://docs.mattermost.com/guides/channels.html
 - Mattermost Playbooks: https://docs.mattermost.com/guides/playbooks.html
-- Mattermost Boards: https://www.focalboard.com/guide/user/
+- Mattermost Boards: https://docs.mattermost.com/guides/boards.html
 
 2.4 Glossary
 ~~~~~~~~~~~~
@@ -173,7 +173,7 @@ Install and configure Mattermost and its component software (MySQL or PostgreSQL
 
 **Reference**: https://docs.mattermost.com/guides/deployment.html#install-guides
 
-Install in High Availability (E20): https://docs.mattermost.com/scale/high-availability-cluster.html 
+Install in High Availability (Available in Mattermost Enterprise): https://docs.mattermost.com/scale/high-availability-cluster.html 
 
 3.3.5 Test Deployment
 ^^^^^^^^^^^^^^^^^^^^^
