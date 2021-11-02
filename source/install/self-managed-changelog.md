@@ -17,7 +17,7 @@ Lastest Mattermost Releases:
 ### Important Upgrade Notes
  - The Bleve index has been updated to use the scorch index type. This new default index type has some improvements on efficiency, which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
  - A composite index has been added to the jobs table for better query performance. For some customers with large jobs table, this can take a long time, so we recommend adding the index during off-hours, and then running the migration.
-   - For PostgreSQL: ``create index concurrently idx_jobs_status_type on jobs (status,type);
+   - For PostgreSQL: ``create index concurrently idx_jobs_status_type on jobs (status,type);``
    - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
