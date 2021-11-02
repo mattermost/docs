@@ -15,7 +15,7 @@ Desktop MSI Installer and Group Policy Installation Guides (Beta)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This guide provides steps to install the MSI and use Group Policies in Windows Professional or Enterprise. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v4.7.0>`_. 
+This guide provides steps to install the MSI and use Group Policies in Windows Professional or Enterprise. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v5.0.1>`_. 
 
 .. note::
     The Mattermost MSI installer and Group Policy (GPO) definitions are in Beta. If you are using this installer or GPOs and have feedback, particularly if you are an organization executing remote deployments, please contact us in the `MSI Installer channel on our Community server <https://community.mattermost.com/core/channels/msi-installer>`_ or on our `community forum <https://forum.mattermost.org/>`_. We hope to promote this installer out of Beta when the known issues are addressed and we are confident that the various deployment scenarios expected in production environments are tested sufficiently with the help of organizations using this Beta. Feedback is highly appreciated.
@@ -37,20 +37,20 @@ Download Group Policy and MSI Installer files
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
 
-3. Navigate to the release page for `version v5.0.0 <https://github.com/mattermost/desktop/releases/tag/v5.0.0>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
+3. Navigate to the release page for `version v5.0.1 <https://github.com/mattermost/desktop/releases/tag/v5.0.1>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.0.0.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.0.1.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
 
 Installing Group Policy files locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.0.0.zip`` file in place.
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.0.1.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
 
-2. Navigate to the unzipped ``desktop-5.0.0\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-5.0.1\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
 
@@ -134,6 +134,6 @@ Silent Installation Guide
 
 Perform a silent installation of MSI by running the following command:
 
-``msiexec /i mattermost-desktop-v5.0.0-x64.msi /qn``
+``msiexec /i mattermost-desktop-v5.0.1-x64.msi /qn``
 
-Note: Current version is 5.0.0. In the future, you may need to change this command accordingly.
+Note: Current version is 5.0.1. In the future, you may need to change this command accordingly.

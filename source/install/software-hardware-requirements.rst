@@ -161,8 +161,8 @@ Hardware Requirements for Team Deployments
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
 
- -  1 - 1,000 users - 1 vCPU/cores, 2 GB RAM
- -  1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM
+-  1 - 1,000 users - 1 vCPU/cores, 2 GB RAM
+-  1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM
 
 .. _hardware-sizing-for-enterprise:
 
@@ -172,7 +172,7 @@ Hardware Requirements for Enterprise Deployments (Multi-Server)
 Scale Requirements
 ^^^^^^^^^^^^^^^^^^
 
-For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/scale/scaling.html>`__.
+For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`__.
 
 It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
@@ -183,10 +183,10 @@ System Requirements
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
-   - Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__ available in Mattermost Enterprise.
-   - Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__. Grafana 5.0.0 and later is recommended.
-   - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.39 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here <https://docs.mattermost.com/scale/elasticsearch.html>`__.
-   - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/configure/configuration-settings.html#file-storage>`__.
+- Prometheus to track system health of your Mattermost deployment, through `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__ available in Mattermost Enterprise.
+- Grafana to visualize the system health metrics collected by Prometheus with the `performance monitoring feature <https://docs.mattermost.com/scale/performance-monitoring.html>`__. Grafana 5.0.0 and later is recommended.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.39 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here <https://docs.mattermost.com/scale/elasticsearch.html>`__.
+- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/configure/configuration-settings.html#file-storage>`__.
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,7 +208,7 @@ File usage per user varies significantly across industries. The below benchmarks
 	- Use a mix of text messages as well as shared documents and images to communicate. Examples might include business teams that may commonly drag and drop screenshots, PDFs and Microsoft Office documents into Mattermost for sharing and review.
 
 -  **High usage teams** (25-100 MB/user/month)
-	- Heaviest utlization comes from teams uploading a high number of large files into Mattermost on a regular basis. Examples include creative teams who share and store artwork and media with tags and commentary in a pipeline production process.
+	- Heaviest utilization comes from teams uploading a high number of large files into Mattermost on a regular basis. Examples include creative teams who share and store artwork and media with tags and commentary in a pipeline production process.
 
 *Example:* A 30-person team with medium usage (5-25 MB/user/month) with a safety factor of 2x would require between 3.5 GB (30 users \* 5 MB \* 12 months \* 2x safety factor) and 17.6 GB (30 users \* 25 MB \* 12 months \* 2x safety factor) of free space in the next year.
 

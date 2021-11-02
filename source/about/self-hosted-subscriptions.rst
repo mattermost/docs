@@ -74,9 +74,9 @@ Renew a subscription
 
 From Mattermost Server v5.32 and later, you can renew your self-hosted Mattermost subscription with a credit card if you have a standard Mattermost contract. When you renew your license, you can also increase the number of active users.
 
-If you haven't upgraded to v5.32, you can contact Support (support@mattermost.com) to renew your license.
+If you haven't upgraded to v5.32, you can contact Mattermost Support at support@mattermost.com to renew your license.
 
-If you're a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact sales@mattermost.com.
+If you're a reseller, have a non-standard contract, or want to adjust the number of active users on your license during the license period, please contact Mattermost Sales at sales@mattermost.com.
 
 System Admins will be alerted 60 days prior to license expiry via a banner in Mattermost. Select **Renew license now** to start the renewal process in the Customer Portal. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**.
 

@@ -35,9 +35,9 @@ The process of sharing channels involves the following three steps:
 
 2. System Admins `use a slash command <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
 
-3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accepting-a-secure-connection-invitation>`_.
+3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accept-a-secure-connection-invitation>`_.
 
-Once a trusted relationship is established between Mattermost servers, System Admins can `share specific Public or Private channels <#sharing-channels-with-secure-connections>`_ with secure connections.
+Once a trusted relationship is established between Mattermost servers, System Admins can `share specific Public or Private channels <#share-channels-with-secure-connections>`_ with secure connections.
 
 .. note:: 
 
@@ -128,7 +128,7 @@ For example:
 This slash command invites the shared connection to the current channel based on its connection ID.
 
 .. tip:: 
-    See `Reviewing Secure Connection Status <#reviewing-secure-connection-status>`_ to find the connectionID for a shared connection.
+    See `Reviewing Secure Connection Status <#review-secure-connection-status>`_ to find the connectionID for a shared connection.
 
 Uninvite a shared channel connection from a channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

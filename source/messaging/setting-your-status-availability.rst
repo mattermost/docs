@@ -37,7 +37,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 
 .. tabs::
 
-   .. tab:: v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards
 
      1. To set a custom status, select your Avatar in the top-right corner of the global header, then select **Set a Custom Status**.
      2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
@@ -78,10 +78,10 @@ How Mattermost determines your availability
 .. csv-table::
     :header: "Client", "**Online**", "**Away**", "**Offline**"
 
-    "**Desktop App**", "You're interacting with your computer", "You're inactive on your computer for 5 minutes", "You close Mattermost, sleep, or lock your computer"
+    "**Desktop App**", "You're interacting with your computer", "You're inactive on your computer for five minutes", "You close Mattermost, sleep, or lock your computer"
     "**Web Browser**", "You're interacting with Mattermost in a browser", "
-    - You have not typed or switched channels for 5 minutes
-    - The tab is unfocused for 5 minutes
-    - The browser is in the background or minimized for 5 minutes", "You close the Mattermost browser window"
-    "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen" 
+    - You have not typed or switched channels for five minutes
+    - The tab is unfocused for five minutes
+    - The browser is in the background or minimized for five minutes", "You close the Mattermost browser window"
+    "**Mobile App**", "Mattermost is open", "Mattermost is open with five minutes of inactivity", "You switch apps, close Mattermost, or lock your screen" 
     
