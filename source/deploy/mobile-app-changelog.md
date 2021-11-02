@@ -17,6 +17,44 @@ Latest Mattermost Mobile Apps releases:
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
+### Highlights
+
+#### Cross-team recent mentions
+ - Recent mentions and saved posts now show across all teams.
+
+### Improvements
+ - Adjusted channel override mobile notification preferences for Threads.
+ - Added long press options to the Global Threads screen.
+ - Added a new messages line to the Threads screen.
+ - Added "pull to refresh" to load threads in the Global Threads screen.
+ - Added OAuth support for plugins and apps.
+ - Added multiselect support for apps forms.
+ - Added a "Rest" field app command to filter empty options on static and dynamic selects and to prohibit executing non-leaf commands.
+ - App bindings now recognize the post menu options for each channel they live in.
+ - Included ``@here`` mentions in the ``EnableConfirmNotificationsToChannel`` config setting.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where image previews could only be viewed once while on the Thread view.
+
+#### iOS specific
+ - 
+
+#### Android specific
+ - 
+
+### Known Issues
+ - An error may occur when archiving a channel or when attempting to post to an archived channel.
+ - The "+" to add a reaction is still visible in archived channels.
+ - Close Preview X and Close Settings X are themed incorrectly in Quartz theme.
+ - Channel sidebar disappears sometimes in Airplane mode.
+ - Posts sometimes get stuck behind the post textbox on iPad.
+ - Various known issues with Collapsed Reply Threads (Beta) feature:
+   - New messages banner should only count root posts.
+   - Clicking on a permalink adds the thread replies in the channel view.
+   - Threads item unread state (bolding) does not persist when deleting documents and data.
+
 ## 1.47.2 Release
 - Release Date: October 25, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
