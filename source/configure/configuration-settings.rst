@@ -51,9 +51,9 @@ The name of the environment variable for any setting can be derived from the nam
 
 1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
 2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
-3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
+3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``. An environment variable (ENV) file is created under `/etc/mattermost`.
 
-Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
+When settings are configured through an environment variable, modifying them in the System Console is disabled.
 
 For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented in the sections below.
 
@@ -397,7 +397,7 @@ The URL that users will use to access Mattermost. The port number is required if
 
 **This field is required in Mattermost v3.8 and later.**
 
-In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``.
+In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``. System Admins can't update the Site URL value if an environment variable file exists under `/etc/mattermost`. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ documentation for more information on working with environment variables. 
 
 If Site URL is not set, the following features will not operate correctly:
 
