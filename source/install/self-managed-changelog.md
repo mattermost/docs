@@ -116,6 +116,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### API Changes
  - Added a new API endpoint ``POST /api/v4/posts/search`` to perform searches across all channels.
+ 
+### Go Version
+ - v6.1 is built with Go ``v1.16.7``.
+
+### Open Source Components
+ - Added ``fast-deep-equal``, ``luxon``, and ``react-window-infinite-loader`` to https://github.com/mattermost/mattermost-webapp.
+ - Added ``@mattermost/react-native-paste-input`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
