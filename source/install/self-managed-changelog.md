@@ -30,9 +30,6 @@ Lastest Mattermost Releases:
 #### Cross-team recent mentions
  - Recent mentions and saved posts now show across all teams.
 
-#### Start Trial is Displayed when 10 Users are Reached
- - Once a non-licensed server has reached 10 users, a modal is displayed to the admin encouraging them to start a 30-day trial.
-
 ### Improvements
 
 #### User Interface (UI)
@@ -41,6 +38,7 @@ Lastest Mattermost Releases:
  - Changed the user interface of the edit-indicator of posts and moved it inline.
  - The updated "Tips & Next Steps" screen is now shown to all System Admins.
  - Once the user has selected **Start Trial**, they will see a modal that lists all of the features now available to them through the Enterprise plan.
+ - Once a non-licensed server has reached 10 users, a modal is displayed to the admin encouraging them to start a 30-day trial.
  - Added a query param to translate in-product help pages when opened from the Desktop App.
  - Updated in-product text for the invitation modal for clarity.
  - Updated the file attachment limits and sizes within in-product help documentation.
