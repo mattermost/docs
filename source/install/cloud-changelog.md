@@ -41,7 +41,7 @@ Latest Mattermost Cloud releases:
  - Replaced Metropolis font files with a new set to correct a kerning issue.
  - Fixed an issue where deep links opened on mobile displayed an incorrect text directing users to open the Desktop app.
  - Addressed various user interface style bugs from the Oct 13 release.
- - Fixed emails templates for clients that do not support the <style> tag.
+ - Fixed emails templates for clients that do not support the `<style>` tag.
  - Fixed an issue where the scrollbar was hardly visible with Denim & Sapphire Themes.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
     - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
