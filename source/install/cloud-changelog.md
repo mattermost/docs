@@ -12,6 +12,36 @@ Latest Mattermost Cloud releases:
 
 ## Release 2021-11-10
 
+### Improvements
+
+#### User Interface (UI)
+ - Added online status to profile images on user autocomplete.
+ - App Commands now have an option to open them as modals.
+ - Added support for navigating through Collapsed Reply Threads via arrow keys.
+ - Added support for focusing the input box in Collapsed Reply Threads while typing.
+ - Added support for blurring the input box in Collapsed Reply Threads on pressing Escape.
+ - Adjusted the channel override desktop notification preference for Threads.
+ - Added a **Click to open thread** setting for all users.
+ - Added lang/tz defaults to Luxon.
+ - User interface is now improved when no text is set for a custom status.
+
+#### Administration
+ - Channel results in channel switcher will include channels from other teams as well as private channels. For users using Bleve or Elasticsearch for autocomplete/search would have to reindex their data to get the new results. Since this can take a long time, it is suggested to disable autocomplete and run indexing in the background. And then when it's complete, re-enable autocomplete.
+
+### Bug Fixes
+ - Fixed an issue where API allowed changing the name of the Town Square channel.
+ - Fixed an issue where errors were logged if a user disabled notifications.
+ - Fixed an issue where a channel was not immediately removed from the sidebar when the current user was removed from one.
+
+### Known Issues
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-10-27
 
