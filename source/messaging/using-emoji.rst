@@ -26,10 +26,13 @@ Adding Emojis to messages
 Selecting an emoji
 ~~~~~~~~~~~~~~~~~~
 
-Select the **Smile** icon inside the Mattermost message input box to open the Emoji Picker.
+Select the |smile-icon| icon inside the Mattermost message input box to open the Emoji Picker.
+
+.. |smile-icon| image:: ../images/smile-icon.png
+  :alt: Smile icon.
 
 .. image:: ../images/selectemoji.png
-  :alt: Open the Mattermost Emoji Picker.
+  :alt: The Mattermost Emoji Picker dialog.
 
 Selecting a default skin tone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,6 +41,14 @@ Select the **Skin Tone** icon in the top right corner of the Emoji Picker to spe
 
 .. image:: ../images/emoji-skin-tone.png
   :alt: Select a default skin tone for people-based emojis.
+
+Selecting recent emojis
+-----------------------
+
+From Mattermost v6.1 and in Mattermost Cloud, react to messages quickly by selecting a recently used emoji while hovering over a message. If your most recent reactions aren't visible, you can enable one-click reactions by selecting **Settings > Display > One-click reactions on messages**.
+
+.. image:: ../images/recent-emojis.png
+  :alt: React to messages quickly by selecting one of your last three emojis.
 
 Typing an emoji
 ---------------
