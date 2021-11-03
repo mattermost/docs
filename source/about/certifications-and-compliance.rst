@@ -1,4 +1,3 @@
-
 Certifications and Compliance Overview
 ========================================
 
