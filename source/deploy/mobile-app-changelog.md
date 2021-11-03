@@ -32,6 +32,7 @@ Latest Mattermost Mobile Apps releases:
  - Added a "Rest" field app command to filter empty options on static and dynamic selects and to prohibit executing non-leaf commands.
  - App bindings now recognize the post menu options for each channel they live in.
  - Included ``@here`` mentions in the ``EnableConfirmNotificationsToChannel`` config setting.
+ - Updated "Jump to..." to match webapp equivalent user interface string.
 
 ### Bug Fixes
 
