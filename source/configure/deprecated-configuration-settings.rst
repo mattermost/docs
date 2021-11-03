@@ -298,7 +298,7 @@ This setting applies to the legacy sidebar only. You must enable the `Enable Leg
 
 We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
-**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Account Settings > Sidebar**.
+**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Settings > Sidebar**.
 
 **False**: Conversations remain in the sidebar until they are manually closed.
 
@@ -768,7 +768,7 @@ Profile Picture Width
 
 *Removed in July 16th, 2017 release*
 
-The width to which profile pictures are resized after being uploaded via Account Settings.
+The width to which profile pictures are resized after being uploaded via **Account Settings > Profile**.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ProfileWidth": 128`` with numerical input. |
@@ -779,7 +779,7 @@ Profile Picture Height
 
 *Removed in July 16th, 2017 release*
 
-The height to which profile pictures are resized after being uploaded via Account Settings.
+The height to which profile pictures are resized after being uploaded via **Account Settings > Profile**.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input. |
