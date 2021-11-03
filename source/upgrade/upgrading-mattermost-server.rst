@@ -91,7 +91,7 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate rele
 
   Customers upgrading from releases older than v5.35 following our recommended upgrade process may encounter the following error during the upgrade to v6.0:
   
-  ``Failed to alter column type. It is likely you have invalid JSON values in the column. Please fix the values manually and run the migration again.","caller":"sqlstore/store.go:854","error":"pq: unsupported Unicode escape sequence``
+  `Failed to alter column type. It is likely you have invalid JSON values in the column. Please fix the values manually and run the migration again.","caller":"sqlstore/store.go:854","error":"pq: unsupported Unicode escape sequence`
   
   To assist with troubleshooting, you can enable ``SqlSettings.Trace`` to narrow down what table and column are causing issues during the upgrade. The following queries change the columns to JSONB format in PostgreSQL. Run these against your v5.39 development database to find out which table and column has Unicode issues:
   
@@ -107,7 +107,17 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate rele
     ALTER TABLE users ALTER COLUMN notifyprops TYPE jsonb USING notifyprops::jsonb;
     ALTER TABLE users ALTER COLUMN timezone TYPE jsonb USING timezone::jsonb;
 
-  Once you've identified the table being affected, use a SELECT query to find all the rows with unicode characters in JSON, where the column contains something like ``%\u%``.
+  Once you've identified the table being affected, verify how many invalid occurrences of `\u0000` you have using the following SELECT query:
+
+  .. code-block:: sh
+
+    SELECT COUNT(*) FROM TableName WHERE ColumnName LIKE '%\u0000%';
+
+  Then select and fix the rows accordingly. If you prefer, you can also fix all occurrences at once in a given table or column using the following UPDATE query:
+
+  .. code-block:: sh
+
+    UPDATE TableName SET ColumnName = regexp_replace(ColumnName, '\\u0000', '', 'g') WHERE ColumnName LIKE '%\u0000%';
 
 Upgrading High Availability deployments
 ---------------------------------------
