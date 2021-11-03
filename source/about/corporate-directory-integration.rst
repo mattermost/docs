@@ -1,4 +1,3 @@
-
 Corporate Directory Integration 
 ================================
 
