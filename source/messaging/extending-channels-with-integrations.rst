@@ -15,6 +15,11 @@ Office 365 Calendar
 
 |enterprise| |professional| |cloud| |self-hosted|
 
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
@@ -27,7 +32,7 @@ Office 365 Calendar
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -47,21 +52,6 @@ Skype for Business
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The Skype for Business integration supports a vendor-hosted cloud solution, and enables you to:
 
 - Start and join voice calls, video calls, and use screen-sharing with your team members. Developed by kosgrz and maintained by Mattermost.
@@ -73,26 +63,6 @@ Office 365 SSO
 ~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 The Office 365 SSO integration Supports Microsoft Active Directory Tenants for team creation, account creation, and Single Sign-On (SSO). This integration enables you to:
 
@@ -111,21 +81,6 @@ GitHub
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The GitHub integration supports GitHub Enterprise, and works with Saas and Enterprise versions of GitHub. This integration enables two-way integration between Mattermost and GitHub, and was developed by Mattermost. This integration enables you to:
 
 - Get reminders on issues and pull requests that need your attention.
@@ -137,21 +92,6 @@ GitLab
 ~~~~~~
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 The GitLab integration supports SaaS and on-prem versions of GitLab. This integration enables two-way integration between Mattermost and GitLab,  was developed by Romain Maneschi, and is supported by Mattermost. This integration enables you to:
 
@@ -170,21 +110,6 @@ Confluence
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The Confluence integration supports Confluence Cloud, Server, and Data Center platforms. This integration is an Atlassian Marketplace application for Confluence and Mattermost, and was developed by codefortynine. This integration enables you to:
 
 - Send notifications about page, blogpost, question, or comment updates from your Confluence spaces to Mattermost channels.
@@ -196,21 +121,6 @@ Jira
 ~~~~
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 The Jira integration supports Jira Core and Jira Software products for Cloud, Server, and Data Center platforms. This plugin enables two-way integration between Mattermost and Jira, and was developed by Mattermost. This integration enables you to:
 
@@ -229,21 +139,6 @@ Google Calendar
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The Google Calendar integration is a time management tool developed by Wasim Thabraze. This integration enables you to get reminders about appointments and meetings from a configured Google Calendar in any Mattermost channel.
 
 Please see `source code and documentation <https://github.com/waseem18/mattermost-plugin-google-calendar>`__ for more information.
@@ -252,21 +147,6 @@ Remind
 ~~~~~~
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 The Remind integration sets one-time or recurring events, tasks, and reminders for users in any Mattermost channel, and was developed by Scott Lee Davis.
 
@@ -282,21 +162,6 @@ Zoom
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The Zoom integration was developed by Mattermost, and requires one paid `Zoom Pro, Business, Education, or API plan <https://zoom.us/pricing>`__ to generate an API key and secret. It supports a self-hosted cloud solution and a vendor-hosted cloud solution. This integration enables you to:
 
 - Start and join voice calls, video calls, and use screensharing with your team members.
@@ -308,26 +173,6 @@ Microsoft Teams Meetings
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 The Microsoft Teams Meetings integration was developed by Mattermost, and requires a Microsoft Teams account. This integration enables you to:
 
@@ -346,21 +191,6 @@ WelcomeBot
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The WelcomeBot integration welcomes users to your Mattermost instance, and was developed by Mattermost. This integration enables you to add a Welcome Bot that helps add new team members to channels to improves onboarding and HR processes.
 
 Please see the `source code and documentation <https://github.com/mattermost/mattermost-plugin-welcomebot>`__ for more information. 
@@ -369,21 +199,6 @@ Sample Golang bot
 ~~~~~~~~~~~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 The Sample Goland Bot integration is a sample bot for Go driver, and was developed by Mattermost. This integration enables you to:
 
@@ -397,21 +212,6 @@ Hubot adapter
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The Hubot Adapter integration for Mattermost was written in JavaScript, uses Web API and Websockets, and was developed by Andy Lo-A-Foe. This integration enables you to:
 
 - Use the bot to listen for commands and to execute actions based on your requests.
@@ -424,21 +224,6 @@ Incoming webhooks
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Incoming webhooks from external integrations can post messages to Mattermost in Public and Private channels. Learn more about setting up incoming webhooks in our `developer documentation  <https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/>`__.
 
 Outgoing webhooks
@@ -446,42 +231,12 @@ Outgoing webhooks
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Outgoing webhooks use trigger words to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Learn more about setting up outgoing webhooks in our `developer documentation <https://developers.mattermost.com/integrate/other-integrations/outgoing-webhooks/>`__.
 
 Slash commands
 ---------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Slash commands allow users to interact with external applications by typing ``/`` followed by a command. See the `Executing Slash Commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ product documentation for a list of built-in commands. 
 
