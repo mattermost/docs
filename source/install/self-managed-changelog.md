@@ -15,8 +15,8 @@ Lastest Mattermost Releases:
 **Release Day: 2021-11-16**
 
 ### Important Upgrade Notes
- - The Bleve index has been updated to use the scorch index type. This new default index type has some improvements on efficiency, which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
- - A composite index has been added to the jobs table for better query performance. For some customers with large jobs table, this can take a long time, so we recommend adding the index during off-hours, and then running the migration.
+ - The Bleve index has been updated to use the scorch index type. This new default index type features some efficiency improvements which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
+ - A composite index has been added to the jobs table for better query performance. For some customers with a large jobs table, this can take a long time, so we recommend adding the index during off-hours, and then running the migration.
    - For PostgreSQL: ``create index concurrently idx_jobs_status_type on jobs (status,type);``
    - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
 
@@ -33,12 +33,12 @@ Lastest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added one-click reactions for posts. Also, the three most recently used emojis will display when the mouse is hovered on a post.
+ - Added one-click reactions for posts. A user's three most recently used emojis display when the user hovers over a message.
  - Added support for selecting names and aliases in the emoji picker.
  - Changed the user interface of the edit-indicator of posts and moved it inline.
  - The updated "Tips & Next Steps" screen is now shown to all System Admins.
  - Once the user has selected **Start Trial**, they will see a modal that lists all of the features now available to them through the Enterprise plan.
- - Once a non-licensed server has reached 10 users, a modal is displayed to the admin encouraging them to start a 30-day trial.
+ - Once a non-licensed server has reached 10 users, a modal is displayed to System Admins encouraging them to start a 30-day trial.
  - Added a query param to translate in-product help pages when opened from the Desktop App.
  - Updated in-product text for the invitation modal for clarity.
  - Updated the file attachment limits and sizes within in-product help documentation.
@@ -77,25 +77,25 @@ Lastest Mattermost Releases:
  - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
  - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
  - Replaced Metropolis font files with a new set to correct a kerning issue.
- - Fixed an issue where deep links opened on mobile displayed an incorrect text directing users to open the Desktop app.
+ - Fixed an issue where deep links opened on mobile displayed an incorrect message directing users to open the Desktop app.
  - Addressed various user interface style bugs from v6.0 release.
  - Fixed emails templates for clients that do not support the ``style`` tag.
- - Fixed an issue where the scrollbar was hardly visible with Denim & Sapphire Themes.
+ - Fixed an issue where the scrollbar was hardly visible with Denim & Sapphire themes.
  - Fixed an issue where creating a bot with an invalid username returned an "invalid email" error.
  - Fixed an issue where using ``/code`` did not render initial whitespace characters.
  - Fixed an issue where **Try Enterprise for Free** option was missing spacing in mobile webview.
  - Fixed an issue where the SQLStore cache was relied on when populating the WebConn channel memberships.
  - Fixed an issue where logging was not re-configured when the server config was changed via the System Console.
- - Fixed an issue with an indigo theme glitch when returning from Playbooks to Channels.
+ - Fixed a display issue with the Indigo theme when returning from Playbooks to Channels.
  - Fixed an issue where the offline indicator color did not use the correct theme color.
  - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
     - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
     - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
-    - Fixed an issue where the user avatar was displayed in the participants list after their post was deleted and if they had no other posts in the thread.
+    - Fixed an issue where the user avatar was displayed in the participants list after their post was deleted when the user had no other posts in the thread.
     - Fixed an issue where the ephemeral message was not displyaed as the centre post.
-    - Fixed an issue with dragging and dropping files on a thread while on a Threads panel.
+    - Fixed an issue with dragging and dropping files on a thread while on the Threads panel.
     - Fixed an issue where permalinks were not highlighting a post on a thread that was already open on the right-hand side.
-    - Fixed an issue with missing threads in the Thread list.
+    - Fixed an issue with missing threads in the Threads list.
    
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
