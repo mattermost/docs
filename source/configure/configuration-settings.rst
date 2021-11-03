@@ -56,14 +56,13 @@ The name of the environment variable for any setting can be derived from the nam
 
 1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
 2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
-3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``. An environment variable (ENV) file is created under `/etc/mattermost`.
-
-When settings are configured through an environment variable, modifying them in the System Console is disabled.
-
-For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented in the sections below.
+3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
 
 .. note::
-   If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+
+  - If Mattermost is run from an initialization file, environment variables can be set via ``Environment=<>``, or ``EnvironmentFile=<path/to/file>``. In the second case, the file specified contains the list of environment variables to set. 
+  - When settings are configured through an environment variable, System Admins can't modify them in the System Console. If a setting is configured through an environment variable, and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+  - For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the setting's default value as documented in the sections below on this page.
 
 .. warning::
    
