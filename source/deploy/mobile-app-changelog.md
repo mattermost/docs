@@ -40,7 +40,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where image previews could only be viewed once while on the Thread view.
 
 ### Known Issues
- - Channel sidebar disappears sometimes in Airplane mode.
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issues with Collapsed Reply Threads (Beta) feature:
    - New messages banner should only count root posts.
