@@ -22,16 +22,15 @@ Latest Mattermost Cloud releases:
  - Added support for blurring the input box in Collapsed Reply Threads on pressing Escape.
  - Adjusted the channel override desktop notification preference for Threads.
  - Added a **Click to open thread** setting for all users.
- - Added lang/tz defaults to Luxon.
  - User interface is now improved when no text is set for a custom status.
 
 #### Administration
- - Channel results in channel switcher will include channels from other teams as well as private channels. For users using Bleve or Elasticsearch for autocomplete/search would have to reindex their data to get the new results. Since this can take a long time, it is suggested to disable autocomplete and run indexing in the background. And then when it's complete, re-enable autocomplete.
+ - Channel results in channel switcher will include channels from other teams as well as private channels. Customers using Bleve or Elasticsearch for autocomplete/search must reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When reindexing is complete, re-enable autocomplete.
 
 ### Bug Fixes
  - Fixed an issue where API allowed changing the name of the Town Square channel.
  - Fixed an issue where errors were logged if a user disabled notifications.
- - Fixed an issue where a channel was not immediately removed from the sidebar when the current user was removed from one.
+ - Fixed an issue where a channel was not immediately removed from the sidebar when the current user was removed from it.
 
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
