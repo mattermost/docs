@@ -104,7 +104,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``ServiceSettings`` in ``config.json``:
    - Added ``EnableInlineLatex`` to add support for inline Latex rendering.
  - Under ``JobSettings`` in ``config.json``
-   - Added ``CleanupJobsThresholdDays``. This defines the time gap in hours beyond which older jobs will be removed. Default is -1 which means the feature is disabled. Setting to 0 will clean all completed jobs.
+   - Added ``CleanupJobsThresholdDays``. This defines the time gap in days beyond which older jobs will be removed. Default is -1 which means the feature is disabled. Setting to 0 will clean all completed jobs.
    
 #### Database Changes
  - Extended the maximum size to 256 characters for the following database columns:
