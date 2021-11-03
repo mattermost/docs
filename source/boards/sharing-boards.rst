@@ -10,13 +10,15 @@ Sharing Boards
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
+
+To share a board with others:
 
 1. Open a board in any view.
 2. On the top-right of the board select the options menu **...**, then select **Share board**.
