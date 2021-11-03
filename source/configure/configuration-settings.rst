@@ -221,7 +221,7 @@ The URL that users will use to access Mattermost. The port number is required if
 
 **This field is required in Mattermost v3.8 and later.**
 
-In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``. System Admins can't update the Site URL value if an environment variable file exists under `/etc/mattermost`. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ documentation for more information on working with environment variables. 
+In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``. System Admins can't update the Site URL value when it's configured through an environment variable. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ product documentation for details. 
 
 If Site URL is not set, the following features will not operate correctly:
 
