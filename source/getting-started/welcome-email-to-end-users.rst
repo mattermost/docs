@@ -10,7 +10,7 @@ Welcome Email to End Users
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -57,7 +57,6 @@ To get started:
 1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to bookmark the URL so you can use it to log in next time.
 
 2. `Download <https://mattermost.com/download/#mattermostApps>`__ the Mattermost apps for desktop and mobile. See the `Channels <https://docs.mattermost.com/messaging/welcome-to-mattermost-messaging.html>`__ documentation for details on how to get up and running quickly.
-
 
 3. Start messaging! 
 
