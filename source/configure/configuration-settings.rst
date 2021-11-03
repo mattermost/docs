@@ -12733,9 +12733,25 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 **False**: Plain text log details aren't colorized in the console.
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
-+----------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------+
+
+Database Settings
+~~~~~~~~~~~~~~~~~
+
+Clean Up Old Database Jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Defines the threshold in hours beyond which older completed database jobs are removed. This setting applies to both MySQL and PostgreSQL databases, is disabled by default, and must be set to ``0`` to be enabled.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
++--------------------------------------------------------------------------------------------------------------------+
 
 SQL Settings
 ~~~~~~~~~~~~
