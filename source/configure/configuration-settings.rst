@@ -3633,7 +3633,7 @@ Available Languages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Sets which languages are available for users in **Account Settings > Display > Languages**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
+Sets which languages are available for users in **Settings > Display > Language**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
 
 .. note::
   Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
@@ -3757,7 +3757,7 @@ Teammate Name Display
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**.
+Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Settings > Display > Teammate Name Display**.
 
 **Show username**: Displays the user's username.
 
@@ -3789,7 +3789,7 @@ Lock Teammate Name Display for all users
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Disables users' ability to change settings under **Account Settings > Display > Teammate Name Display**.
+**True**: Disables users' ability to change settings under **Settings > Display > Teammate Name Display**.
 
 **False**: Users can change how their teammate name displays.
 
@@ -4020,13 +4020,13 @@ Enable Email Batching
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings > Notifications**.
+**True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Settings > Notifications**.
 
 .. note::
   - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ is configured. 
   - Email batching in `High Availability mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
 
-**False**: If email notifications are enabled in Account Settings, emails will be sent individually for every mention or direct message received.
+**False**: If email notifications are enabled in **Settings**, emails will be sent individually for every mention or direct message received.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableEmailBatching": false`` with options ``true`` and ``false``. |
@@ -4194,7 +4194,7 @@ Push Notification Contents
 
 **Full message content sent in the notification payload**: Selecting **Send full message snippet** sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
-**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extention <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`_ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`_ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. 
+**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extension <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`_ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`_ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. 
 
 For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dynamics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`_ service. 
 
@@ -4399,7 +4399,7 @@ Enable Custom Emoji
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Enables a **Custom Emoji** option in the emoji picker, where users can go to add customiz emojis.
+**True**: Enables a **Custom Emoji** option in the emoji picker, where users can go to add custom emojis.
 
 **False**: Custom emojis are disabled.
 
@@ -4436,7 +4436,7 @@ Link previews are previews of linked website content, image links, and YouTube v
 
 Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be established through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where direct internet connectivity is not given or security policies make this necessary.
 
-**True**: Website link previews, image link previews, and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Account Settings > Display > Website Link Previews**.
+**True**: Website link previews, image link previews, and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Settings > Display > Website Link Previews**.
 
 **False**: Website link previews, image link previews, and YouTube previews are disabled. The server does not request metadata for any links sent in messages.
 
@@ -5093,7 +5093,7 @@ Password Requirements
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error messasage previewed in the System Console will appear on the account creation page if a user enters an invalid password.
+Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error message previewed in the System Console will appear on the account creation page if a user enters an invalid password.
 
 - **At least one lowercase letter**: Select this checkbox if a valid password must contain at least one lowercase letter.
 - **At least one uppercase letter**: Select this checkbox if a valid password must contain at least one uppercase letter.
@@ -5935,7 +5935,7 @@ First Name Attribute
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name in **Account Settings**.
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.    |
@@ -5966,7 +5966,7 @@ Last Name Attribute
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name in **Account Settings**.
 
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.      |
@@ -5997,7 +5997,7 @@ Nickname Attribute
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname in **Account Settings**.
 
 +--------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.   |
@@ -6028,7 +6028,7 @@ Position Attribute
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position in **Account Settings**.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
@@ -6908,7 +6908,7 @@ Email Attribute
 
 The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
 
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin.
+Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
 
 +---------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input. |
@@ -9434,7 +9434,7 @@ Enable Experimental Features
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Enables exeprimental Playbooks features on your Mattermost workspace.
+**True**: Enables experimental Playbooks features on your Mattermost workspace.
 
 **False**: Disables experimental Playbooks features on your Mattermost workspace.
 
@@ -10273,7 +10273,7 @@ Custom retention policy
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps messages and files across specific teams and channels by specifing a name for the custom retention policy, setting a duration value, specifying the teams and channels that will follow this policy.
+Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value, specifying the teams and channels that will follow this policy.
 
 Data Deletion Time
 ^^^^^^^^^^^^^^^^^^^
@@ -10895,7 +10895,7 @@ Allow Authentication Transfer
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
+**True**: Users can change their sign-in method to any that is enabled on the server, either via **Account Settings > Security** or the APIs.
 
 **False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
 
@@ -11217,7 +11217,7 @@ Enable Account Deactivation
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Ability for users to deactivate their own account from **Account Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
+**True**: Ability for users to deactivate their own account from **Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
 
 **False**: Ability for users to deactivate their own account is disabled.
 
@@ -11245,9 +11245,9 @@ Enable Automatic Replies
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Users can enable Automatic Replies in **Account Settings > Notifications**. Users set a custom message that will be automatically sent in response to Direct Messages.
+**True**: Users can enable Automatic Replies in **Settings > Notifications**. Users set a custom message that will be automatically sent in response to Direct Messages.
 
-**False**: Disables the Automatic Direct Message Replies feature and hides it from Account Settings.
+**False**: Disables the Automatic Direct Message Replies feature and hides it from **Settings**.
 
 +--------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAutomaticReplies": false`` with options ``true`` and ``false``. |
@@ -11458,9 +11458,9 @@ Enable Preview Features
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**True**: Preview features can be enabled from **Account Settings > Advanced > Preview pre-release features**.
+**True**: Preview features can be enabled from **Settings > Advanced > Preview Pre-release features**.
 
-**False**: Disables and hides preview features from **Account Settings > Advanced > Preview pre-release features**.
+**False**: Disables and hides preview features from **Settings > Advanced > Preview Pre-release features**.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false``. |
@@ -11493,9 +11493,9 @@ Enable Theme Selection
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Enables the **Display > Theme** tab in Account Settings so users can select their theme.
+**True**: Enables the **Display > Theme** tab in **Settings** so users can select their theme.
 
-**False**: Users cannot select a different theme. The **Display > Theme** tab is hidden in Account Settings.
+**False**: Users cannot select a different theme. The **Display > Theme** tab is hidden in **Settings**.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableThemeSelection": true`` with options ``true`` and ``false``. |
@@ -11528,9 +11528,9 @@ Allow Custom Themes
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Enables the **Display > Theme > Custom Theme** section in Account Settings.
+**True**: Enables the **Display > Theme > Custom Theme** section in **Settings**.
 
-**False**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in Account Settings.
+**False**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in **Settings**.
 
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCustomThemes": true`` with options ``true`` and ``false``. |
@@ -11826,7 +11826,7 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 
 System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
 
-**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Account Settings**.
+**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
 
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
@@ -13808,9 +13808,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console. 
 
-**Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Account Settings > Sidebar > Group unread channels separately**.
+**Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
 
-**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Account Settings > Sidebar > Group unread channels separately**. 
+**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**. 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |

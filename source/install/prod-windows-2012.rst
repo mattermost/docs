@@ -214,7 +214,7 @@ Internet Information Server (IIS) for Windows Server is the standard capability 
 
 1. For the purposes of this guide we will assume this server has an IP address of 10.0.0.3.
 
-2. Map a FQDN (fully qualitified domain name), like **mattermost.example.com** to the proxy server (e.g. 10.0.0.2).
+2. Map a FQDN (fully qualified domain name), like **mattermost.example.com** to the proxy server (e.g. 10.0.0.2).
 
 Install IIS
 ~~~~~~~~~~~
@@ -298,7 +298,7 @@ Configure SSL
 
 .. note:: 
 
-   SSL communication requires that the web server have a well-formed and trusted certificate. A common freely-available SSL encryption and certificate managemet is Let's Encrypt; however, this service does not formally support the Windows Operating system. A number of third-parties have created clients to support this, and you are free to try out any of them.  This section assumes that you have taken the necessary steps to obtain a web-server certificate that will be trusted by your users.
+   SSL communication requires that the web server have a well-formed and trusted certificate. A common freely-available SSL encryption and certificate management is Let's Encrypt; however, this service does not formally support the Windows Operating system. A number of third-parties have created clients to support this, and you are free to try out any of them.  This section assumes that you have taken the necessary steps to obtain a web-server certificate that will be trusted by your users.
 
 29. Within the IIS Manager, select the server node in the left-hand connections pane.
 
@@ -337,7 +337,7 @@ Redirect HTTP to HTTPS
 
 44. Select **Apply**, and then **Back to Rules**.
 
-45. Ensure that the **HTTP to HTTPS Redirect** rule is at the top of the list of inbound rules. If nceessary, you can select a rule and use the **Move Up** and **Move Down** actions to reorganize.
+45. Ensure that the **HTTP to HTTPS Redirect** rule is at the top of the list of inbound rules. If necessary, you can select a rule and use the **Move Up** and **Move Down** actions to reorganize.
 
 46. On a client workstation, open your favorite browser and navigate to `http://mattermost.example.com` and confirm that you are redirected to `https://mattermost.example.com`.
 

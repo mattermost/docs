@@ -6,7 +6,7 @@ Frequently Asked Questions
 What's the difference between the Mattermost Operator and Helm Charts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Mattermost Operater is a self-contained set of application/product-specific instructions that runs inside Kubernetes and facilitates application
+The Mattermost Operator is a self-contained set of application/product-specific instructions that runs inside Kubernetes and facilitates application
 management and deployment.
 
 Helm is a tool used to deploy Kubernetes manifests to a cluster, but does not facilitate application management.
@@ -32,6 +32,11 @@ Can you use blue-green deployments with different database schemas?
 
 Currently this is not supported as it introduces the possibility of missing a data entry in the database.
 
+Are environment variables supported?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. However, ``config.json`` file settings will be overridden if the `$MM_SQLSETTINGS_DATASOURCE` environment variable is set. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ configuration settings documentation for details.
+
 Issues configuring Login with SAML on Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -44,8 +49,10 @@ To fix this issue, configure an appropriate buffer size (8k or 16k should be suf
   ...
   spec:
   ...
-    ingressAnnotations:
-      nginx.ingress.kubernetes.io/proxy-buffer-size: 16k
+    ingress:
+    ...
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-buffer-size: 16k
   ...
 
 Use caution when changing the buffer size as it may slightly impact NGINX performance. Exact values are machine-dependent.
