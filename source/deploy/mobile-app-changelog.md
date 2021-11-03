@@ -19,19 +19,19 @@ Latest Mattermost Mobile Apps releases:
 
 ### Highlights
 
-#### Cross-team recent mentions
+#### Cross-team Recent Mentions
  - Recent mentions and saved posts now show across all teams.
 
 ### Improvements
  - Adjusted channel override mobile notification preferences for Threads.
- - Added long press options to the Global Threads screen.
+ - Added long-press options to the Global Threads screen.
  - Added a new messages line to the Threads screen.
  - Added "pull to refresh" to load threads in the Global Threads screen.
  - Added OAuth support for plugins and apps.
  - Added multiselect support for apps forms.
  - Added a "Rest" field app command to filter empty options on static and dynamic selects and to prohibit executing non-leaf commands.
  - App bindings now recognize the post menu options for each channel they live in.
- - Included ``@here`` mentions in the ``EnableConfirmNotificationsToChannel`` config setting.
+ - Added ``@here`` mention to the ``EnableConfirmNotificationsToChannel`` config setting to show a warning modal when over 5 members might be alerted with ``@here``.
  - Updated "Jump to..." to match webapp equivalent user interface string.
 
 ### Bug Fixes
@@ -39,16 +39,7 @@ Latest Mattermost Mobile Apps releases:
 #### All apps
  - Fixed an issue where image previews could only be viewed once while on the Thread view.
 
-#### iOS specific
- - 
-
-#### Android specific
- - 
-
 ### Known Issues
- - An error may occur when archiving a channel or when attempting to post to an archived channel.
- - The "+" to add a reaction is still visible in archived channels.
- - Close Preview X and Close Settings X are themed incorrectly in Quartz theme.
  - Channel sidebar disappears sometimes in Airplane mode.
  - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issues with Collapsed Reply Threads (Beta) feature:
