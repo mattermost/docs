@@ -107,7 +107,7 @@ All channels and Direct Message conversations in the deleted category move back 
 Organizing channels in categories
 ---------------------------------
 
-Once you've created categories, you can move channels within them to organize your sidebar.
+Once you've created categories, you can move channels within them to organize your sidebar. 
 
 Dragging and dropping selections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,9 +129,14 @@ Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Me
 Moving selections
 ~~~~~~~~~~~~~~~~~
 
-In addition to selecting and dragging, you can also specify a destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon in the sidebar.  
+In addition to selecting and dragging, you can specify a destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon in the sidebar.  
 
-    .. image:: ../images/multi-select-move.gif
+.. image:: ../images/multi-select-move.gif
+
+From Mattermost v6.1, you can also specify a destination for selected channels or conversations using the **Move to** option directly from the Channel Header. Channels moved a category display a checkmark next to the category name.
+
+.. image:: ../images/channel-heading-categories.png
+  :alt: Move channels or conversations directly from the channel header.
 
 Muting and unmuting categories
 ------------------------------
