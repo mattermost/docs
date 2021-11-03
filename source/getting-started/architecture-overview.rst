@@ -37,7 +37,7 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 Push Notification Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Mattermost `hosted push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__` and `compile their mobile applications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to use that service.
+The Mattermost `hosted push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__ and `compile their mobile applications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to use that service.
 
 Proxy
 ~~~~~
