@@ -27,7 +27,7 @@ Lastest Mattermost Releases:
 #### Timed Do Not Disturb
  - Added the ability to disable all notifications for a specified period of time to avoid distractions, without losing important messages when you're back.
 
-#### Cross-team recent mentions
+#### Cross-team Recent Mentions
  - Recent mentions and saved posts now show across all teams.
 
 ### Improvements
