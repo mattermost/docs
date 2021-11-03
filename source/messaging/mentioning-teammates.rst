@@ -200,10 +200,20 @@ Recent mentions
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Select **@** next to the **Search** box to query for your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). 
+Select **@** to the right of the **Search** box to query your most recent @mentions and words that trigger mentions (excluding LDAP group mentions). 
 
 .. image:: ../images/recent-mentions.png
    :alt: See your most recent @mentions
+
+.. tabs::
+  
+  .. tab:: Mattermost v6.1 onwards
+
+    From Mattermost v6.1, your recent mentions are shown for all of your teams.
+
+  .. tab:: Mattermost v6.0 and earlier
+
+    In Mattermost versions up to v6.0, your recent mentions are shown for your current team only.
 
 Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
@@ -229,7 +239,7 @@ Confirmation dialog warnings
 
 For any mention that will trigger notifications for more than five users, the user posting the mention must confirm the action before sending the notifications.
 
-This confirmation dialog only appears when ``TeamSettings.EnableConfirmNotificationsToChannel`` in ``config.json`` is enabled. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled.
+This confirmation dialog only appears when your System Admin has `configured this setting in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#show-channel-and-all-confirmation-dialog>`__ product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the `AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ feature is enabled.
 
 Highlighting
 ------------
