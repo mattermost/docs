@@ -24,9 +24,6 @@ Latest Mattermost Cloud releases:
  - Added a **Click to open thread** setting for all users.
  - User interface is now improved when no text is set for a custom status.
 
-#### Administration
- - Channel results in channel switcher will include channels from other teams as well as private channels. Customers using Bleve or Elasticsearch for autocomplete/search must reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When reindexing is complete, re-enable autocomplete.
-
 ### Bug Fixes
  - Fixed an issue where API allowed changing the name of the Town Square channel.
  - Fixed an issue where errors were logged if a user disabled notifications.
