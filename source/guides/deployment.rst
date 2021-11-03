@@ -92,7 +92,7 @@ Server Deployment
     Backup and Disaster Recovery </deploy/backup-disaster-recovery>
     Encryption Options </deploy/encryption-options>
     Configure Transport Encryption </install/transport-encryption>
-    Bleve Search (Experimental) </deploy/bleve-search>
+    Bleve Search </deploy/bleve-search>
 
 * :doc:`Deployment Overview </deploy/deployment-overview>` - Learn the basics of the Mattermost user experience, communication protocols, network access, data storage, and deployment options.
 * :doc:`Set Up a Socket-based Mattermost Database </install/setting-up-socket-based-mattermost-database>` - Connect your Mattermost server to your database service.
@@ -100,7 +100,7 @@ Server Deployment
 * :doc:`Backup and Disaster Recovery </deploy/backup-disaster-recovery>` - Implement data backups, disaster recovery, and high availability deployment.
 * :doc:`Encryption Options </deploy/encryption-options>` - Setup encryption for data in transit and at rest.
 * :doc:`Configure Transport Encryption </install/transport-encryption>` - Use transport encryption between Mattermost clusters and your proxy and database.
-* :doc:`Bleve Search (Experimental) </deploy/bleve-search>` - Use the Bleve search engine to provide Lucene-style full-text search.
+* :doc:`Bleve Search </deploy/bleve-search>` - Use the Bleve search engine to provide Lucene-style full-text search.
 
 Desktop & Mobile App Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
