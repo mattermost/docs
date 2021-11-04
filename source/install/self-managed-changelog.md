@@ -36,8 +36,6 @@ Lastest Mattermost Releases:
  - Added one-click reactions for posts. A user's three most recently used emojis display when the user hovers over a message.
  - Added support for selecting names and aliases in the emoji picker.
  - Changed the user interface of the edit-indicator of posts and moved it inline.
- - The updated "Tips & Next Steps" screen is now shown to all System Admins.
- - Once the user has selected **Start Trial**, they will see a modal that lists all of the features now available to them through the Enterprise plan.
  - Once a non-licensed server has reached 10 users, a modal is displayed to System Admins encouraging them to start a 30-day trial.
  - Added a query param to translate in-product help pages when opened from the Desktop App.
  - Updated in-product text for the invitation modal for clarity.
@@ -56,7 +54,7 @@ Lastest Mattermost Releases:
  - Added new ``registerMessageWillBeUpdatedHook(newPost, oldPost)`` client-side plugin hook to intercept edited messages.
 
 #### Performance
- - Slightly improved performance around rendering of system messages.
+ - Improved performance around rendering of system messages.
  - Reduced storage-related slow-downs on page load.
 
 #### Administration
@@ -67,6 +65,10 @@ Lastest Mattermost Releases:
    - Chrome updated from ``61+`` to ``89+``.
    - Firefox updated from ``60+`` to ``78+``.
    - MacOS updated from ``10.9+`` to ``10.14+``.
+
+#### Enterprise Edition
+ - Once the user has selected **Start Trial**, they will see a modal that lists all of the features now available to them through the Enterprise plan.
+ - Once a non-licensed server has reached 10 users, a modal is displayed to System Admins encouraging them to start a 30-day trial.
  - Prometheus metrics are now enabled when running a standalone jobserver.
 
 ### Bug Fixes
