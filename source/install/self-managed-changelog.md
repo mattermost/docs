@@ -30,6 +30,12 @@ Lastest Mattermost Releases:
 #### Cross-team Recent Mentions
  - Recent mentions and saved posts now show across all teams.
 
+#### Playbooks Updates
+ - Added a wiki-style page with a playbook preview as well as new playbook notifications.
+
+#### Boards Updates
+ - Added a new create board user interface, Board calculations to quickly get basic metrics on projects, at-mention notifications, as well as card previews.
+
 ### Improvements
 
 #### User Interface (UI)
