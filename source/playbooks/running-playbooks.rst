@@ -83,7 +83,7 @@ End a playbook run
 
 To end a playbook run, navigate to the run's channel. Note that all tasks need to be complete before a run can be finished.
 
-1. Select **Toggle Run Details** in the channel header to open the rigut-hand sidebar.
+1. Select **Toggle Run Details** in the channel header to open the right-hand sidebar.
 2. Scroll down to the bottom of the right-hand sidebar.
 3. Select **Finish run** and confirm.
 4. Next, complete the retrospective.
