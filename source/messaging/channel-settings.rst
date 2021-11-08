@@ -18,8 +18,7 @@ Channel Settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Notification preferences, channel header, channel purpose, and channel name are customizable for each channel. To access these settings, select
-the channel name at the top of the page.
+Notification preferences, channel header, channel purpose, and channel name are customizable for each channel. To access these settings, select the channel name at the top of the page.
 
 Channel notification preferences
 --------------------------------
