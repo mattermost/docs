@@ -8,9 +8,14 @@ mmctl Command Line Tool
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
 
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -125,21 +130,6 @@ Install mmctl
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 There are different methods available to install mmctl.
 
 **Using brew (Linux, macOS)**
@@ -169,21 +159,6 @@ Build mmctl
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
 ``go`` 1.11 or greater and compile the binary using:
 
@@ -195,16 +170,6 @@ Local mode
 ----------
 
 |all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Local mode allows platform administrators with access to the Mattermost server to run mmctl commands against the API without needing to have a user registered. To ensure secure usage of this API, the server exposes a local socket that only a user with access to the server's file system can access. The requests coming from the socket are treated as authorized, so they can reach the handlers without requiring a user session.
 
@@ -226,16 +191,6 @@ Running mmctl tests
 -------------------
 
 |all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 mmctl has two types of tests: unit tests and end to end tests. 
 
@@ -262,21 +217,6 @@ mmctl auth
 ----------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 **Description**
 
@@ -661,21 +601,6 @@ mmctl bot
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage bots.
 
    Child Commands
@@ -932,21 +857,6 @@ mmctl channel
 --------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Manage channels.
 
@@ -1516,21 +1426,6 @@ mmctl command
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage slash commands.
 
    Child Commands
@@ -1839,21 +1734,6 @@ mmctl completion
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Generate autocompletion scripts for ``bash`` and ``zsh``.
 
    Child Commands
@@ -1950,21 +1830,6 @@ mmctl config
 ------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Configuration settings.
 
@@ -2347,21 +2212,6 @@ mmctl docs
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 **Description**
 
 Generate mmctl documentation.
@@ -2396,21 +2246,6 @@ mmctl export
 ------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Manage exports.
 
@@ -2828,21 +2663,6 @@ mmctl group
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage channel and team groups.
 
    Child Commands
@@ -2854,21 +2674,6 @@ mmctl group channel
 --------------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Management of channel groups
 
@@ -3079,21 +2884,6 @@ mmctl group team
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage team groups.
 
    Child Commands
@@ -3264,21 +3054,6 @@ mmctl import
 ------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 **Description**
 
@@ -3596,21 +3371,6 @@ mmctl integrity
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 **Description**
 
 Perform a relational integrity check which returns information about any orphaned record found. This command can only be run using local mode.
@@ -3646,21 +3406,6 @@ mmctl ldap
 ----------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 LDAP-related utilities.
 
@@ -3761,21 +3506,6 @@ mmctl license
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage the Mattermost license.
 
    Child Commands
@@ -3869,21 +3599,6 @@ mmctl logs
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 **Description**
 
 Display logs in a human-readable format. As the log format depends on the server, the ``--format`` flag cannot be used with this command.
@@ -3920,21 +3635,6 @@ mmctl permissions
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage permissions and roles.
 
    Child Commands
@@ -3955,21 +3655,6 @@ mmctl permissions add
 ~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -4014,21 +3699,6 @@ mmctl permissions remove
 
 |enterprise| |cloud| |self-hosted|
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
 **Description**
@@ -4072,21 +3742,6 @@ mmctl permissions reset
 
 |enterprise| |cloud| |self-hosted|
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
 **Description**
@@ -4129,21 +3784,6 @@ mmctl permissions role assign
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -4274,21 +3914,6 @@ mmctl plugin
 -------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Manage plugins.
 
@@ -4546,21 +4171,6 @@ mmctl plugin marketplace
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage Marketplace plugins.
 
    Child Commands
@@ -4673,21 +4283,6 @@ mmctl post
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage posts.
 
    Child Commands
@@ -4787,21 +4382,6 @@ mmctl roles
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 **Description**
 
 Promote users to the System Admin role, or remove System Admin privileges from users.
@@ -4869,21 +4449,6 @@ mmctl saml
 ----------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 SAML-related utilities.
 
@@ -5228,21 +4793,6 @@ mmctl team
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage teams.
 
    Child Commands
@@ -5581,21 +5131,6 @@ mmctl team users
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Manage team users.
 
    Child Commands
@@ -5688,21 +5223,6 @@ mmctl token
 -----------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Manage users' access tokens.
 
@@ -5840,21 +5360,6 @@ mmctl user
 ----------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Manage users.
 
@@ -6639,21 +6144,6 @@ mmctl version
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 **Description**
 
 Print the version of mmctl.
@@ -6687,21 +6177,6 @@ mmctl webhook
 -------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 **Description**
 
@@ -7022,21 +6497,6 @@ mmctl websocket
 ---------------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 **Description**
 

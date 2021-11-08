@@ -10,7 +10,7 @@ User Satisfaction Surveys
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 Mattermost provides in-product feedback surveys. Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
