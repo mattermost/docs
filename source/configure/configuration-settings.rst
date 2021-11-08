@@ -807,12 +807,12 @@ Enable Document Search by Content
 
 |all-plans| |self-hosted|
 
-Enable users to search the contents of documents attached to messages. 
+Enable users to search the contents of documents attached to messages. Mattermost self-hosted deployments include support for PDF, PPTX, DOCX, ODT, HTML, and plain text documents. Improved server performance during PDF extraction is available through the installation of a third-party dependency. Additional file support for RTF, DOC, and PAGES documents is available through the installation of third-party dependencies. 
 
 **True**: Documents are searchable by their content.  
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server 5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
@@ -820,7 +820,9 @@ Enable users to search the contents of documents attached to messages.
 | This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
-In addition, you can optionally install `these dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, HTML, and PAGES. If you choose not to install the dependencies, you will see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. The search support each dependency offers is described below: 
+To extend content search support to include file formats including RTF, DOC, and PAGES, and to take advantage of improved server performance during PDF extraction, you must install `these dependencies <https://github.com/sajari/docconv#dependencies>`__. If you choose not to install these dependencies, you'll see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. 
+
+The search support each dependency offers is described below: 
 
 - ``tidy``: Used to search the contents of HTML and PAGES documents.
 - ``wv``: Used to search the contents of DOC documents.
