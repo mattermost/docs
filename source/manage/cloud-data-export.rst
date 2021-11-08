@@ -25,7 +25,7 @@ Log into your Cloud instance and run the following mmctl command:
 
 .. code:: none
 
-   mmctl export create [flags]. 
+   mmctl export create --attachments [flags]. 
 
 Ensure you set **attachments** to **true** to include file attachments - this creates a zip file of your Mattermost data.
 
