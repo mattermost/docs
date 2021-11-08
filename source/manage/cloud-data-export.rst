@@ -1,5 +1,10 @@
-Cloud Data Export
-=========================
+Changing Deployment Types
+==========================
+
+This document outlines the process for migrating from Mattermost Cloud to Mattermost self-hosted. In the future, a process for migrating from Mattermost self-hosted to Mattermost Cloud will also be documented and provided here.
+
+Migrating from Cloud to self-hosted
+-----------------------------------
 
 If, after completing your 14-day free Cloud trial, you've decided to self-host your own Mattermost deployment, you may want to migrate your Cloud data to your self-hosted instance.
 
@@ -17,9 +22,6 @@ Once you've installed mmctl, you'll be using the `mmctl export <https://docs.mat
 .. note::
   
   The export process doesn’t include integrations or any custom data. Other aspects of your instance, such as specific security settings and requirements, are also not included. For assistance with migrating additional data and settings, see our support options: https://mattermost.com/support/.
-
-Migrating from Cloud to self-hosted
------------------------------------
 
 Log into your Cloud instance and run the following mmctl command: 
 
