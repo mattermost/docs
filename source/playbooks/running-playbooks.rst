@@ -81,16 +81,14 @@ The most recent status post will also appear in the right-hand sidebar of the ru
 End a playbook run
 ------------------
 
-Run members can end an incident using the ``/playbook end`` slash command. Playbook runs can also be ended from the desktop or browser:
+To end a playbook run, navigate to the run's channel. Note that all tasks need to be complete before a run can be finished.
 
-1. Select the **Playbook** icon in the channel header to open the RHS.
-2. Find the playbook run you're looking for and select **Go to channel**.
-3. Select **Update Status**.
-4. From the **Status** drop-down menu, select **Resolved**.
-5. Enter a message with additional details.
-6. Select **Update Status**.
+1. Select **Toggle Run Details** in the channel header to open the rigut-hand sidebar.
+2. Scroll down to the bottom of the right-hand sidebar.
+3. Select **Finish run** and confirm.
+4. Next, complete the retrospective.
 
-Ending a playbook run signals to all members of the channel that the playbook run is complete. Members of the team can continue to post in the channel, mark tasks as complete, and change the owner if needed.
+Ending a playbook run signals to all members of the channel that the playbook run is complete. Team members can continue to post in the channel but no changes can be made.
 
 Slash commands
 --------------
