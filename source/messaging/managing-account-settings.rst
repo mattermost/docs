@@ -269,7 +269,7 @@ Collapsed Reply Threads (Beta) offers an enhanced experience for users communica
 
 See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
-One-click reactions on messages
+Quick reactions on messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 React to messages with recently used reactions in a single click when hovering over a message.
