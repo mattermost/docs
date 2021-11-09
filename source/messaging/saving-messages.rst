@@ -20,7 +20,7 @@ Saving Messages
 
 Saving a message helps you mark messages for follow up. Your saved messages are personal, and can't be seen by other users. There's no limit to the number of posts you can save.
 
-One way to use saved messages is to mark messages you want to respond to later. You can save the message in the list of **Saved Posts**, refer back to it later, and once complete, you can remove it from the list.
+One way to use saved messages is to mark messages you want to respond to later. You can save the message in the list of **Saved posts**, refer back to it later, and once complete, you can remove it from the list.
 
 Saving a Message
 ----------------
