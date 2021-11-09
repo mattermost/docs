@@ -29,7 +29,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 
   .. tab:: Mattermost v6.0 onwards
 
-      In Mattermost v6.0, set status and availability from your Profile in the top-right corner of the Global Header.
+      From Mattermost v6.0, set status and availability from your Profile in the top-right corner of the Global Header.
       
       1. Select your Profile, then select **Set a Custom Status**.
       2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
