@@ -45,7 +45,7 @@ Select the **Skin Tone** icon in the top right corner of the Emoji Picker to spe
 Selecting recent emojis
 -----------------------
 
-From Mattermost v6.1 and in Mattermost Cloud, react to messages quickly by selecting a recently used emoji while hovering over a message. If your most recent reactions aren't visible, you can enable one-click reactions by selecting **Settings > Display > One-click reactions on messages**.
+From Mattermost v6.1 and in Mattermost Cloud, react to messages quickly by selecting a recently used emoji while hovering over a message. If your most recent reactions aren't visible, you can enable quick reactions by selecting **Settings > Display > One-click reactions on messages**.
 
 .. image:: ../images/recent-emojis.png
   :alt: React to messages quickly by selecting one of your last three emojis.
