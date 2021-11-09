@@ -272,7 +272,7 @@ See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://
 Quick reactions to messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-React to messages with recently used reactions in a single click when hovering over a message.
+You can react to messages quickly using your most recently used emojis by hovering over a message.
 
 Channel Display
 ~~~~~~~~~~~~~~~
