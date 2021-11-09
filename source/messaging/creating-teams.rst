@@ -30,7 +30,7 @@ If team creation is enabled by the System Admin, teams can be created from the t
 Team sidebar
 ~~~~~~~~~~~~
 
-If you belong to more than one team, a team sidebar will appear to the left of your channel list. You can drag teams to reorder them in the sidebar. You can also use `keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`_ to switch teams.
+If you belong to more than one team, a team sidebar will appear to the left of your channel list. You can drag teams to reorder them in the sidebar. You can also use `keyboard shortcuts <https://docs.mattermost.com/messaging/keyboard-shortcuts.html>`_ to navigate between teams.
 
 .. image:: ../images/team-sidebar.gif
 

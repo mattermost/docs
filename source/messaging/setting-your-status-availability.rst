@@ -72,10 +72,10 @@ How Mattermost determines your availability
 .. csv-table::
     :header: "Client", "**Online**", "**Away**", "**Offline**"
 
-    "**Desktop App**", "You're interacting with your computer", "You're inactive on your computer for five minutes", "You close Mattermost, sleep, or lock your computer"
+    "**Desktop App**", "You're interacting with your computer", "You've been inactive on your computer for five minutes", "You close Mattermost, sleep, or lock your computer"
     "**Web Browser**", "You're interacting with Mattermost in a browser", "
-    - You have not typed or switched channels for five minutes
+    - You have not typed or navigated between channels for five minutes
     - The tab is unfocused for five minutes
     - The browser is in the background or minimized for five minutes", "You close the Mattermost browser window"
-    "**Mobile App**", "Mattermost is open", "Mattermost is open with five minutes of inactivity", "You switch apps, close Mattermost, or lock your screen" 
+    "**Mobile App**", "Mattermost is open", "Mattermost is open with five minutes of inactivity", "You change apps, close Mattermost, or lock your screen" 
     

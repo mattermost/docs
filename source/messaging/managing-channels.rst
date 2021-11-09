@@ -161,13 +161,13 @@ Once a channel is muted:
 
 To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
 
-Switching channels
-------------------
+Navigating between channels
+---------------------------
 
 Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/messaging/setting-your-status-availability.html>`__ at a glance.
 
     .. image:: ../images/switch-channels.png
-        :alt: Switch channels and review member availability.
+        :alt: Navigate between channels and review member availability.
 
 Navigating recently viewed channels
 -----------------------------------
