@@ -129,7 +129,7 @@ Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Me
 Moving selections
 ~~~~~~~~~~~~~~~~~
 
-In addition to selecting and dragging, you can specify a category destination for selected channels and/or Direct Messages using the **Move to** option under the **Channel options** icon in the sidebar.  
+In addition to selecting and dragging, you can specify a category destination for selected channels and/or Direct Messages. To do this, select the **Channel options** icon in the sidebar and then select **Move to**.
 
 .. image:: ../images/multi-select-move.gif
 
