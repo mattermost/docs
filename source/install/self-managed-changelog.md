@@ -40,6 +40,7 @@ Lastest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Polish is promoted to an officially supported language.
  - Added one-click reactions for posts. A user's three most recently used emojis display when the user hovers over a message.
  - Added support for selecting names and aliases in the emoji picker.
  - Changed the user interface of the edit-indicator of posts and moved it inline.
