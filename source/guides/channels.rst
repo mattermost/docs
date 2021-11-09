@@ -16,12 +16,12 @@ Access Your Workspace
 
    Log In to Your Workspace </messaging/signing-in>
    About Teams, Channels, and Messages </messaging/about-teams-channels-messages>
-   Switch Between Teams </messaging/switching-between-teams>
+   Navigate Between Teams </messaging/navigating-between-teams>
    Log Out of Mattermost </messaging/logging-out>
 
 * :doc:`Log In to Your Workspace </messaging/signing-in>` - Sign into a Mattermost server and navigate teams, channels, and messages to connect with your teammates. 
 * :doc:`About Teams, Channels, and Messages </messaging/about-teams-channels-messages>` - Find out how to access all of the Mattermost Channels capabilities.
-* :doc:`Switch Between Teams </messaging/switching-between-teams>` - Learn how to navigate between Mattermost Teams.
+* :doc:`Navigate Between Teams </messaging/navigating-between-teams>` - Learn how to navigate between Mattermost Teams.
 * :doc:`Log Out of Mattermost </messaging/logging-out>` - Look here if you get stuck trying to log out.
 
 Work With Messages

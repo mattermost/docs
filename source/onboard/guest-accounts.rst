@@ -130,7 +130,7 @@ There are `additional permissions <https://docs.mattermost.com/onboard/advanced-
 Guest Identification
 ---------------------
 
-Guests are identified with a **Guest** badge. This badge is visible in various places on the interface and mobile apps such as on a guest’s profile and next to their name on user lists, including @mentions and quick switcher lists. When guests are added to a channel, a system message informs other channel members that the added user is a guest.
+Guests are identified with a **Guest** badge. This badge is visible in various places on the interface and mobile apps, such as on a guest’s profile and next to their name on user lists, including @mentions. When guests are added to a channel, a system message informs other channel members that the added user is a guest.
 
 Channels containing guests will have their header automatically updated with a message stating: *This channel has guests*.
 
