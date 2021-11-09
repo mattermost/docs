@@ -24,7 +24,7 @@ The Bleve search engine works as a library integrated into the Mattermost codeba
 
 .. note::
 
-  From Mattermost v6.1, Bleve search uses the scorch index type on newly created indexes which features efficiency improvements and indexes that use significantly less disk space. 
+  From Mattermost v6.1, Bleve search uses the scorch index type on newly-created indexes. This new index type features efficiency improvements and indexes that use significantly less disk space.
   
   To use this new type of index, after upgrading Mattermost Server to version to v6.1 or later, go to **System Console > Experimental > Bleve**, then run a purge operation by selecting **Purge Index**, followed by a reindex by selecting **Index Now**. Bleve remains compatible with existing indexes, so currently indexed data will continue to work if a purge and reindex isn't run.
 
