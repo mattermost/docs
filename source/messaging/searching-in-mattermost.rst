@@ -47,7 +47,7 @@ When message results display in the Search Results pane, select **Jump** to view
 .. image:: ../images/jump-to-message.png
 
 .. tip::
-  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to switch between results.
+  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to toggle between results.
   
 Searching for file contents
 ---------------------------

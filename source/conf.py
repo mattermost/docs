@@ -679,6 +679,7 @@ redirects = {
         "https://docs.mattermost.com/messaging/organizing-channels.html",
     "messaging/extending-messaging-with-integrations": 
         "https://docs.mattermost.com/messaging/extending-channels-with-integrations.html",
+    "messaging/switching-between-teams": "https://docs.mattermost.com/messaging/navigating-between-teams.html",
     "incident-collaboration/refining-and-improving":
          "https://docs.mattermost.com/playbooks/refining-and-improving.html",
     "install/requirements": 
