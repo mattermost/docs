@@ -15,7 +15,7 @@ Site Statistics
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 System statistics are viewable under **System Console > Reporting > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
@@ -51,16 +51,6 @@ Team Statistics
 ---------------
 
 |all-plans| |cloud|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
 
 Team Statistics are viewable under **System Console > Reporting > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.
 
