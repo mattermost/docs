@@ -64,7 +64,7 @@ You can ignore channel-wide mentions in specific channels in the **Channel Menu 
 
   @channel great work on interviews this week. I think we found some excellent potential candidates!
 
-If a channel has five or more members, you're prompted to confirm that you want notifications sent to everyone in the channel.
+If a channel has five or more members, you may be prompted to confirm that you want notifications sent to everyone in the channel.
 
 @here
 ~~~~~
@@ -75,9 +75,11 @@ You can mention everyone who is online in a channel by typing ``@here``. This se
 
 .. code-block:: none
 
-  @here can someone do a quick review of this?
+  @here can someone complete a quick review of this?
+
+If a channel has five or more members, you may be prompted to confirm that you want notifications sent to everyone in the channel.
   
-You can ignore channel-wide mentions in specific channels in the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here and @all**.
+You can ignore channel-wide mentions in specific channels by enabling the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here, and @all** option.
   
 @groupname (Beta)
 ~~~~~~~~~~~~~~~~~
