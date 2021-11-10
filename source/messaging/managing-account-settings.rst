@@ -26,7 +26,7 @@ Account Settings is where you can configure your profile settings, notification 
 
       In Mattermost v6.0, **Account Settings** have moved.
 
-      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Profile** and **Security** settings from your Avatar in the Global Header.
       - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the **Gear** icon in the Global Header.
 
       .. |gear-icon| image:: ../images/gear-icon.png
