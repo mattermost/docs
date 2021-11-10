@@ -32,19 +32,9 @@ To try it out, hover over a message and select the **Save** icon to save the mes
 Viewing Saved Messages
 ----------------------
 
-To view a list of your **Saved Posts**, select the **Save** icon at the top of the channel.
+To view a list of saved posts for your current team, select the **Saved posts** icon in the Global Header. In Mattermost versions up to 5.39, the **Saved posts** icon is located at the top of the channel.
 
 .. image:: ../images/saved-posts.png
-
-.. tabs::
-  
-  .. tab:: Mattermost v6.1 onwards
-
-    From Mattermost v6.1, your saved messages are shown for all of your teams.
-
-  .. tab:: Mattermost v6.0 and earlier
-
-    In Mattermost versions up to v6.0, your saved messages are shown for your current team only.
 
 Unsaving Messages
 -----------------
