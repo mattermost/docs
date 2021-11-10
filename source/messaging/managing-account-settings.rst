@@ -274,7 +274,7 @@ Quick reactions to messages
 
 You can react to messages quickly using your most recently used emojis by hovering over a message.
 
-Channel Display
+Channel display
 ~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
