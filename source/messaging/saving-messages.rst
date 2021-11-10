@@ -32,7 +32,7 @@ To try it out, hover over a message and select the **Save** icon to save the mes
 Viewing Saved Messages
 ----------------------
 
-To view a list of **Saved Posts** for your current team, select the **Save** icon at the top of the channel.
+To view a list of saved posts for your current team, select the **Saved posts** icon in the Global Header. In Mattermost versions up to 5.39, the **Saved posts** icon is located at the top of the channel.
 
 .. image:: ../images/saved-posts.png
 
