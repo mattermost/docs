@@ -25,8 +25,7 @@ You can use the System Console, the mmctl, or the CLI to add or change a Matterm
     .. tab:: Using System Console
 
         1. Go go **System Console > About > Edition and License**.
-        2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
-        3. Upload the new license key file.
+        2. Upload your license key file.
 
         Once the key is uploaded and installed, the details of your license are displayed.
 
