@@ -2323,12 +2323,12 @@ Notifications
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
-Show @channel and @all confirmation dialog
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Show @channel, @all, or @here confirmation dialog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Users will be prompted to confirm when posting @channel and @all in channels with over five members.
+**True**: Users will be prompted to confirm when posting @channel, @all, or @here in channels with over five members.
 
 **False**: No confirmation is required.
 
