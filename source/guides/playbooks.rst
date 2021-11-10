@@ -18,6 +18,7 @@ The Basics
    Get Started </playbooks/getting-started>
    Plan Playbooks </playbooks/setting-up-playbooks>
    Run Playbooks </playbooks/running-playbooks>
+   Notifications and Updates </playbooks/notifications-and-updates>
    Retrospectives </playbooks/refining-and-improving>
    
 * :doc:`Playbooks Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
@@ -25,4 +26,5 @@ The Basics
 * :doc:`Get Started </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
 * :doc:`Plan Playbooks </playbooks/setting-up-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage permissions for your team.
 * :doc:`Run Playbooks </playbooks/running-playbooks>` - Initiate Playbooks, make announcements, and get information about your workflows.
+* :doc: `Notificatoons and Updates </playbooks/notifications-and-updates>` - Keep track of all your active runs and tasks.
 * :doc:`Retrospectives </playbooks/refining-and-improving>` - Use retrospectives to improve your workflows and provide detailed insight into your Playbooks.
