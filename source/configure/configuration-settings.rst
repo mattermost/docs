@@ -223,7 +223,7 @@ The URL that users will use to access Mattermost. The port number is required if
 
 In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``. System Admins can't update the Site URL value when it's configured through an environment variable. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ product documentation for details. 
 
-If Site URL is not set, the following features will not operate correctly:
+If Site URL isn't set, the following features will not operate correctly:
 
 - Email notifications will contain broken links, and email batching will not work.
 - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.
