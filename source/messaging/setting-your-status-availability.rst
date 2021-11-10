@@ -75,7 +75,7 @@ Setting Do Not Disturb
 
 From Mattermost v6.1, set your availability to **Do Not Disturb** to disable all desktop, email, and push notifications when you are unavailable or need to concentrate. 
 
-You can specify how long to disable notifications by selecting a preset expiration or setting a custom expiration. Your availability setting automatically reverts to its previous setting once the expiration is reached. It may take up to five minutes for your availability to revert to its previous setting.
+You can specify how long to disable notifications by selecting a preset expiration or setting a custom expiration. Your availability setting automatically reverts to its previous setting once the expiration is reached (this may take up to five minutes).
 
 How Mattermost determines your availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
