@@ -336,7 +336,7 @@ Read Timeout
 
 |all-plans| |self-hosted|
 
-Maximum time allowed from when the connection is accepted to when the request body is fully read.
+Maximum time allowed in seconds from when the connection is accepted to when the request body is fully read.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadTimeout": 300`` with numerical input. |
@@ -347,7 +347,7 @@ Write Timeout
 
 |all-plans| |self-hosted|
 
-If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
+If using HTTP (insecure), this is the maximum time in seconds allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
@@ -358,7 +358,7 @@ Idle Timeout
 
 |all-plans| |self-hosted|
 
-Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
+Set an explicit idle timeout in seconds in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
