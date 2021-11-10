@@ -41,7 +41,7 @@ Desktop Apps
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Windows", "Windows 8.1 and 10", "Windows 8.1 and 10"
-    "Mac", "MacOS 10.12+", "MacOS 10.14+"
+    "Mac", "MacOS 10.14+", "MacOS 10.14+"
     "Linux", "Ubuntu LTS releases 18.04 or later", "Ubuntu LTS releases 18.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
@@ -54,8 +54,8 @@ PC Web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v77+", "v89+"
-    "Firefox", "v68+", "v78+"
+    "Chrome", "v89+", "v89+"
+    "Firefox", "v78+", "v78+"
     "Safari", "v12+", "v12+"
     "Edge", "v44+", "v44+"
 
@@ -78,8 +78,8 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 12.1+ with Safari 12+ or Chrome 77+"
-    "Android", "Android 7+ with Chrome 77+"
+    "iOS", "iOS 12.1+ with Safari 12+ or Chrome 89+"
+    "Android", "Android 7+ with Chrome 89+"
 
 Email Client
 ^^^^^^^^^^^^
