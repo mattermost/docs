@@ -343,7 +343,7 @@ Math Formulas
 
   .. tab:: Using Inline LaTeX
 
-    From Mattermost v6.1, you can create formulas that display inline using LaTeX. Begin and end each formula with a dollar sign ($) symbol.
+    From Mattermost v6.1, you can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
 
     .. note::
 
