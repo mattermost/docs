@@ -2615,18 +2615,31 @@ Enable SVGs
 | This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------+
 
-Enable LaTeX Rendering
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable LaTeX Code Block Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Enables rendering of LaTeX code.
+**True**: Enables rendering of LaTeX code in a ``latex`` code block.
 
 **False**: Disables rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted.
 
-+---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableLatex": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Enable Inline LaTeX Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+**True**: Enables inline rendering of LaTeX code.
+
+**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableInlineLatex": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^
