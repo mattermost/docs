@@ -23,7 +23,7 @@ Let your team know whether you're available by setting a custom status and your 
 Setting a custom status
 -----------------------
 
-Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the channel sidebar and in conversations. 
+Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the Channel Sidebar and in conversations. 
 
 .. tabs::
 
