@@ -335,7 +335,7 @@ Read Timeout
 
 |all-plans| |self-hosted|
 
-Maximum time allowed from when the connection is accepted to when the request body is fully read.
+Maximum time allowed in seconds from when the connection is accepted to when the request body is fully read.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadTimeout": 300`` with numerical input. |
@@ -346,7 +346,7 @@ Write Timeout
 
 |all-plans| |self-hosted|
 
-If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
+If using HTTP (insecure), this is the maximum time in seconds allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
@@ -357,7 +357,7 @@ Idle Timeout
 
 |all-plans| |self-hosted|
 
-Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
+Set an explicit idle timeout in seconds in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
@@ -2231,7 +2231,7 @@ Enable users to open Direct Message channels with
 
 **Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
 
-**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and CTRL/CMD+K channel switcher only lists users on the current team. If a user belongs to multiple teams, Direct Messages will still be received regardless of what team they are currently on.
+**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and pressing CTRL/CMD+K only lists users on the current team. If a user belongs to multiple teams, Direct Messages will still be received regardless of what team they are currently on.
 
 This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
 
@@ -2717,7 +2717,7 @@ Enable Public File Links
 
 .. note:: 
 
-   When switched to ``False``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When switched back to ``True``, old public links will work again unless the **Public Link Salt** has been regenerated.
+   When set to ``False``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When set back to ``True``, old public links will work again unless the **Public Link Salt** has been regenerated.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePublicLink": true`` with options ``true`` and ``false``. |
