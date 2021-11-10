@@ -11,7 +11,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
    From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the `mmctl config reload command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they're made. This change will improve configuration performance and robustness.
 
-   See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.  
+   See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.
 
 Configuration in Database
 --------------------------
@@ -58,12 +58,11 @@ The name of the environment variable for any setting can be derived from the nam
 2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
 3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
 
-Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
-
-For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented in the sections below.
-
 .. note::
-   If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+
+  - If Mattermost is run from an initialization file, environment variables can be set via ``Environment=<>``, or ``EnvironmentFile=<path/to/file>``. In the second case, the file specified contains the list of environment variables to set.
+  - When settings are configured through an environment variable, System Admins can't modify them in the System Console. If a setting is configured through an environment variable, and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+  - For any setting that's not set in ``config.json`` or in environment variables, the Mattermost server uses the setting's default value as documented in the sections below on this page.
 
 .. warning::
    
@@ -222,9 +221,9 @@ The URL that users will use to access Mattermost. The port number is required if
 
 **This field is required in Mattermost v3.8 and later.**
 
-In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``.
+In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``. System Admins can't update the Site URL value when it's configured through an environment variable. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ product documentation for details.
 
-If Site URL is not set, the following features will not operate correctly:
+If Site URL isn't set, the following features will not operate correctly:
 
 - Email notifications will contain broken links, and email batching will not work.
 - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.
