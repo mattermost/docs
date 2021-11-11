@@ -8,7 +8,7 @@ Daily digest
 
 When you're running playbooks in multiple channels it can be overwhelming. The daily digest is sent once a day, in the morning. It lists the actionable items for each run, as well as any outstanding tasks or status updates required. Select the run name to move to that channel.
 
-The digest is on by default. To turn it off, use the slash command ``/playbook digest``.
+The digest is on by default. To turn it off, use the slash command ``/playbook digest off``.
 
 Playbook to do
 --------------
