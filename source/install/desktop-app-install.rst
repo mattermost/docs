@@ -1,4 +1,3 @@
-
 Desktop Application Install Guides
 ==================================
 
@@ -11,7 +10,7 @@ Desktop Application Install Guides
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -21,7 +20,7 @@ Desktop Application Install Guides
 
 Mattermost desktop applications are available for Windows, Mac, and Linux operating systems. They support all the features of the web experience, plus:
 
-- Connect to multiple Mattermost servers from a single interface, and switch with shortcut keys.
+- Connect to multiple Mattermost servers from a single interface, and navigate between servers using keyboard shortcuts.
 - Auto-start Mattermost when a user logs into their machine.
 - (Windows) Add Mattermost to Start menu, Taskbar, and System Tray.
 - (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if app is already installed.
