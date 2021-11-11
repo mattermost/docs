@@ -20,7 +20,7 @@ be used in production.
 
 The Elastic Beanstalk application creation process used here is the easy *Getting Started* approach which combines Application and Environment creation in the same flow. 
 
-1.  From your `AWS console <https://console.aws.amazon.com/console/home>`__ select **Compute > Elastic Beanstalk**.
+1.  From your `AWS console <https://console.aws.amazon.com/console/home>`__ select **Elastic Beanstalk**.
 2.  Select the **Create Application** button on the Elastic Beanstalk home page.
 3.  Enter an **Application name** for the Elastic Beanstalk application.
 4.  (Optional) Specify **Application tags**.
