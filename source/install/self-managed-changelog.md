@@ -133,6 +133,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@mattermost/react-native-paste-input`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - Recent Mentions search sometimes includes incorrect results [MM-39867](https://mattermost.atlassian.net/browse/MM-39867).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
