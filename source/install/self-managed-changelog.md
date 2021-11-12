@@ -549,7 +549,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 - **v5.37.4, released TBD**
   -
   - Fixed a potential panic during the message export job [MM-39521](https://mattermost.atlassian.net/browse/MM-39521).
-  - Fixed a sentry crash [MM-38565](https://mattermost.atlassian.net/browse/MM-38565).
+  - Fixed some sentry crashes [MM-38565](https://mattermost.atlassian.net/browse/MM-38565), [MM-39208](https://mattermost.atlassian.net/browse/MM-39208).
   - Updated in-product help documentation to fix broken links and to correct outdated information.
 - **v5.37.3, released 2021-10-27**
   - Mattermost v5.37.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
