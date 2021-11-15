@@ -42,12 +42,47 @@ Next, download the export file by running the following mmctl command:
   You can indicate the name of the export and its destination path ``$ mmctl export download samplename sample_export.zip``. If you only indicate the name, the path
   will match: ``$ mmctl export download samplename``.
 
-When the file download is complete, log into your Mattermost server. Run the following mmctl command to import your data to your Mattermost server:
+When the file download is complete, log into your Mattermost server. Run ``mmctl import upload`` to import your data to your Mattermost server:
 
 .. code::
-  
-   mmctl import upload [filepath] [flags]. 
-   
+
+  $ mmctl --local import upload
+  Upload session successfully created, ID: min9k3cmpjy1bxcg4ikxkaxq5o 
+  Import file successfully uploaded, name: uqptf3nou7deznercw5jbz19zy
+
+You can check the uploaded files to process using ``mmctl import list available``:
+
+.. code::
+
+  $ mmctl --local import list available
+  min9k3cmpjy1bxcg4ikxkaxq5o_rh6ph34653btikunitshz1qsyr_export.zip
+
+Then, start a processing job for the one we've uploaded using ``mmctl import process``:
+
+.. code::
+
+  $ mmctl --local import process min9k3cmpjy1bxcg4ikxkaxq5o_rh6ph34653btikunitshz1qsyr_export.zip
+  Import process job successfully created, ID: f93jxu1hzty79enwa1xy6f1tbr
+
+Once you've marked the file for processing, you can check the status of the job using ``mmctl import job list``:
+
+.. code::
+
+  $ mmctl --local import job list
+    ID: f93jxu1hzty79enwa1xy6f1tbr
+    Status: pending
+    Created: 2021-10-28 13:32:55 +0200 CEST
+
+When the job is complete, the ``success`` status is displayed:
+
+.. code::
+
+  $ mmctl --local import job list
+    ID: f93jxu1hzty79enwa1xy6f1tbr
+    Status: success
+    Created: 2021-10-28 13:32:55 +0200 CEST
+    Started: 2021-10-28 13:33:05 +0200 CEST
+
 Then extract the file to use it by running the following mmctl command:
 
 .. code::
