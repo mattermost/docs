@@ -48,13 +48,13 @@ Mattermost has eight regions that can be focused for navigation. Use **F6** (Des
 2. Message input region
 3. Right-hand side message list region
 4. Right-hand side message input region
-5. Team menu region
+5. Channel find and filter region
 6. Channel sidebar region
 7. Channel header region
 8. Search
 
-.. image:: ../images/navigation.gif
-  :alt: Navigate through the sections of Mattermost using a keyboard.
+.. image:: ../images/region-navigation.gif
+  :alt: Navigate through the sections of the Mattermost Channels interface using a keyboard.
 
 Message Navigation
 ------------------
