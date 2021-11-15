@@ -18,29 +18,65 @@ Channels Basics
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-**Write messages** using the text input box at the bottom of the screen. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. To send messages on CTRL+ENTER and use ENTER to insert new lines go to **Settings > Advanced > Send messages on CTRL/CMD+ENTER**.
+Write messages
+--------------
 
-**Reply to messages** by clicking the reply arrow next to the message text.
+Write messages using the text input box at the bottom of the screen. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. 
 
-.. image:: ../images/reply-icon.png
-   :alt: Reply Arrow icon
+To send messages on CTRL+ENTER and use ENTER to insert new lines go to **Main Menu > Account Settings > Advanced** > **Send messages on CTRL+ENTER**.
 
-**Notify teammates** when they are needed by typing ``@username``.
+Reply to messages
+------------------
 
-**Format your messages** using Markdown that supports text styling, headings, links, emojis, code blocks, block quotes, tables, lists, and in-line images.
+Reply to messages by selecting the |reply-arrow| icon next to the message text.
 
-You can use either ``_`` or ``*`` for italics and bold text. See the table below for examples.
+.. |reply-arrow| image:: ../images/reply-arrow.png
+  :alt: Reply icon.
+
+Notify teammates
+----------------
+
+Let teammates know when they're needed by typing ``@username``.
+
+Format your messages
+--------------------
+
+Format your messages using Markdown that supports text styling, headings, links, emojis, code blocks, block quotes, tables, lists, and in-line images.
+
+You can use either ``_`` or ``*`` for italics and bold text. 
 
 .. image:: ../images/messagesTable1.png
    :alt: Formatting markdown controls the look and feel of text messages.
 
-**Quickly add emojis** by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji <https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis>`__.
+See our `Formatting Text <https://docs.mattermost.com/messaging/formatting-text.html>`__ documentation for more details and examples.
 
-**Attach files** by dragging and dropping them into Channels, or by selecting the **Attachment** icon within the text input box.
+React to messages
+-----------------
 
-**Save messages for follow up** using the **Save** icon next to the message.
+React to messages quickly by selecting the |smile-icon| icon inside the Mattermost message input box to open the Emoji Picker.
 
-.. figure:: ../images/save-message.png
+.. |smile-icon| image:: ../images/smile-icon.png
+  :alt: Smile icon.
+
+Or, react to messages by typing ":" followed by two characters, which will open an emoji autocomplete. If the existing emojis don't cover what you want to express, you can also create your own `Custom Emoji <https://docs.mattermost.com/messaging/using-emoji.html#creating-custom-emojis>`__.
+
+Share files
+-----------
+
+Share files by dragging and dropping them into Channels, or by selecting the |attachment-icon| icon within the message input box.
+
+.. |attachment-icon| image:: ../images/attachment-icon.png
+  :alt: Attachment icon.
+
+Save messages for follow up
+---------------------------
+
+Save messages for later follow up by selecting the |save-icon| icon next to the message.
+
+.. |save-icon| image:: ../images/save-icon.png
+  :alt: Save icon.
+
+.. image:: ../images/save-message.png
    :alt: Save messages for later follow up.
 
 Learn more about:

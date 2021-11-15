@@ -62,9 +62,14 @@ To set your availability, select your Avatar, then specify your availability as 
 .. image:: ../images/set-your-availability.png
   :alt: Set your availability to online, away, do not disturb, or offline.
 
-When you set your availability, an availability icon displays next to your name. Setting your availability as **Do Not Disturb** automatically disables desktop, email, and push notifications.
-
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
+
+Setting Do Not Disturb
+----------------------
+
+From Mattermost v6.1, set your availability to **Do Not Disturb** to disable all desktop, email, and push notifications when you are unavailable or need to concentrate. 
+
+You can specify how long to disable notifications by selecting a preset expiration or setting a custom expiration. Your availability setting automatically reverts to its previous setting once the expiration is reached (this may take up to five minutes).
 
 How Mattermost determines your availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

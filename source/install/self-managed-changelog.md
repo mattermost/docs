@@ -4,13 +4,155 @@
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 Lastest Mattermost Releases:
+- [Release v6.1 - Feature Release](#release-v6.1-feature-release)
 - [Release v6.0 - Feature Release](#release-v6.0-feature-release)
 - [Release v5.39 - Quality Release](#release-v5-39-quality-release)
 - [Release v5.38 - Feature Release](#release-v5-38-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
-- [Release v5.36 - Feature Release](#release-v5-36-feature-release)
-- [Release v5.35 - Feature Release](#release-v5-35-feature-release)
 
+## Release v6.1 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2021-11-16**
+
+Mattermost v6.1.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
+### Important Upgrade Notes
+ - Please refer to [the schema migration analysis](https://gist.github.com/streamer45/997b726a86b5d2a624ac2af435a66086) when upgrading to v6.1.
+ - The Bleve index has been updated to use the scorch index type. This new default index type features some efficiency improvements which means that the indexes use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run.
+ - A composite index has been added to the jobs table for better query performance. For some customers with a large jobs table, this can take a long time, so we recommend adding the index during off-hours, and then running the migration. A table with more than 1 million rows can be considered as large enough to be updated prior to the upgrade.
+   - For PostgreSQL: ``create index concurrently idx_jobs_status_type on jobs (status,type);``
+   - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``
+
+**IMPORTANT:** If you upgrade from a release earlier than v6.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Timed Do Not Disturb
+ - Added the ability to disable all notifications for a specified period of time to avoid distractions, without losing important messages when you're back.
+
+#### Cross-team Recent Mentions
+ - Recent mentions and saved posts now show across all teams.
+
+#### Playbooks Updates
+ - Added a wiki-style page with a playbook preview as well as new playbook notifications.
+
+#### Boards Updates
+ - Added a new create board user interface, Board calculations to quickly get basic metrics on projects, at-mention notifications, as well as card previews.
+
+### Improvements
+
+#### User Interface (UI)
+ - Polish is promoted to an officially supported language.
+ - Added one-click reactions for posts. A user's three most recently used emojis display when the user hovers over a message.
+ - Added support for selecting names and aliases in the emoji picker.
+ - Changed the user interface of the edit-indicator of posts and moved it inline.
+ - Added a query param to translate in-product help pages when opened from the Desktop App.
+ - Updated in-product text for the invitation modal for clarity.
+ - Updated the file attachment limits and sizes within in-product help documentation.
+ - Added rendering for posts containing markdown in email notifications.
+ - Added support for inline Latex rendering.
+ - Added the **Move to...** option menu item to the channel header dropdown.
+ - Added keyboard shortcuts to tooltips. The shortcut key component is now used for displaying keys.
+ - Added support for Global threads infinite scroll.
+ - Added ``@here`` mention to the ``EnableConfirmNotificationsToChannel`` config setting to show a warning modal when over 5 members might be alerted with ``@here``.
+
+#### Integrations
+ - Added support for multi-select on Apps slash commands.
+ - App commands now make a distinction between the central channel and the right-hand side channel.
+ - App bindings now recognize the post menu options for each channel they live in.
+ - Added new ``registerMessageWillBeUpdatedHook(newPost, oldPost)`` client-side plugin hook to intercept edited messages.
+
+#### Performance
+ - Improved performance around rendering of system messages.
+ - Reduced storage-related slow-downs on page load.
+
+#### Administration
+ - Bulk imports with attached files now log and continue when a file fails to upload instead of halting.
+ - ``get flagged posts`` endpoint will now return only flagged posts for channels the user is a member of.
+ - Updated Bleve to v2 to use the scorch index type.
+ - Minimum supported browser versions changes:
+   - Chrome updated from ``61+`` to ``89+``.
+   - Firefox updated from ``60+`` to ``78+``.
+   - MacOS updated from ``10.9+`` to ``10.14+``.
+
+#### Enterprise Edition
+ - Once the user has selected **Start Trial**, they will see a modal that lists all of the features now available to them through the Enterprise plan.
+ - Once a non-licensed server has reached 10 users, a one-time modal is displayed to System Admins encouraging them to start a 30-day trial.
+ - Prometheus metrics are now enabled when running a standalone jobserver.
+
+### Bug Fixes
+ - Fixed a broken link to the **Custom Emoji** page on servers with a subpath configured.
+ - Fixed an issue where a "No results found" error string was displayed in the **Direct Messages** modal.
+ - Fixed an issue where the caret was placed in the middle of the emojis when picking two emojis from the emoji picker.
+ - Fixed an issue where **System Console > Channels > Channel Management** displayed an option to toggle group management in Team Edition, Starter, and Professional.
+ - Fixed an issue where the channel switcher was missing the "(You)" indicator on the user's own Direct Message channel.
+ - Fixed an issue where the clock format set by the user was not respected on the edit indicator popover.
+ - Replaced Metropolis font files with a new set to correct a kerning issue.
+ - Fixed an issue where deep links opened on mobile displayed an incorrect message directing users to open the Desktop app.
+ - Addressed various user interface style bugs from v6.0 release.
+ - Fixed emails templates for clients that do not support the ``style`` tag.
+ - Fixed an issue where the scrollbar was hardly visible with Denim & Sapphire themes.
+ - Fixed an issue where creating a bot with an invalid username returned an "invalid email" error.
+ - Fixed an issue where using ``/code`` did not render initial whitespace characters.
+ - Fixed an issue where **Try Enterprise for Free** option was missing spacing in mobile webview.
+ - Fixed an issue where the SQLStore cache was relied on when populating the WebConn channel memberships.
+ - Fixed an issue where logging was not re-configured when the server config was changed via the System Console.
+ - Fixed a display issue with the Indigo theme when returning from Playbooks to Channels.
+ - Fixed an issue where the offline indicator color did not use the correct theme color.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+    - Fixed an issue where the recent sidebar sorting option didn't only consider parent posts.
+    - Fixed an issue where a badge was displayed on a thread list when the thread was started by another user in a Direct Message.
+    - Fixed an issue where the user avatar was displayed in the participants list after their post was deleted when the user had no other posts in the thread.
+    - Fixed an issue where the ephemeral message was not displyaed as the centre post.
+    - Fixed an issue with dragging and dropping files on a thread while on the Threads panel.
+    - Fixed an issue where permalinks were not highlighting a post on a thread that was already open on the right-hand side.
+    - Fixed an issue with missing threads in the Threads list.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added ``EnableInlineLatex`` to add support for inline Latex rendering.
+ - Under ``JobSettings`` in ``config.json``
+   - Added ``CleanupJobsThresholdDays``. This defines the time gap in days beyond which older jobs will be removed. Default is -1 which means the feature is disabled. Setting to 0 will clean all completed jobs.
+   
+#### Database Changes
+ - Extended the maximum size to 256 characters for the following database columns:
+    - ``Sessions.Roles``
+    - ``ChannelMembers.Roles``
+    - ``TeamMembers.Roles``
+
+### API Changes
+ - Added a new API endpoint ``POST /api/v4/posts/search`` to perform searches across all channels.
+ 
+### Go Version
+ - v6.1 is built with Go ``v1.16.7``.
+
+### Open Source Components
+ - Added ``fast-deep-equal``, ``luxon``, and ``react-window-infinite-loader`` to https://github.com/mattermost/mattermost-webapp.
+ - Added ``@mattermost/react-native-paste-input`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Created permalinks from saved posts do not correctly redirect to the correct team [MM-39816](https://mattermost.atlassian.net/browse/MM-39816).
+ - Recent Mentions search sometimes includes incorrect results [MM-39867](https://mattermost.atlassian.net/browse/MM-39867).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Close button on invite people page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [A9u](https://github.com/A9u), [aaronrothschild](https://github.com/aaronrothschild), [abhijit-singh](https://github.com/abhijit-singh), [achie27](https://github.com/achie27), [achromik](https://translate.mattermost.com/user/achromik/), [adithyaakrishna](https://github.com/adithyaakrishna), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [alauregaillard](https://github.com/alauregaillard), [alejandrovelez7](https://github.com/alejandrovelez7), [alieh-rymasheuski](https://github.com/alieh-rymasheuski), [aloks98](https://github.com/aloks98), [amyblais](https://github.com/amyblais), [anchepiece](https://github.com/anchepiece), [andrewbrown00](https://github.com/andrewbrown00), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anoopmsivadas](https://github.com/anoopmsivadas), [anurag6713](https://github.com/anurag6713), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [astraldawn](https://github.com/astraldawn), [audreyaudz](https://github.com/audreyaudz), [Audrey Kon](https://github.com/audreyaudz), [Avinaba-Mazumdar](https://github.com/Avinaba-Mazumdar), [avinashlng1080](https://github.com/avinashlng1080), [AWerbrouck](https://github.com/AWerbrouck), [b4sen](https://github.com/b4sen), [banaboi](https://github.com/banaboi), [bartfelder](https://github.com/bartfelder), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [BenLloydPearson](https://github.com/BenLloydPearson), [bensiauu](https://github.com/bensiauu), [berkeka](https://github.com/berkeka), [bhaveshgoyal182](https://github.com/bhaveshgoyal182), [Bhavin789](https://github.com/Bhavin789), [Bruno-366](https://github.com/Bruno-366), [calebroseland](https://github.com/calebroseland), [caugner](https://github.com/caugner), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chrysillala](https://github.com/chrysillala), [cinlloc](https://github.com/cinlloc), [cleferman](https://github.com/cleferman), [cognvn](https://github.com/cognvn), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [craph](https://github.com/craph), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [darkLord19](https://github.com/darkLord19), [DarshanKansara2015](https://github.com/DarshanKansara2015), [deanwhillier](https://github.com/deanwhillier), [DeeJayBro](https://github.com/DeeJayBro), [devinbinnie](https://github.com/devinbinnie), [dialvarezs](https://github.com/dialvarezs), [dimitraz](https://github.com/dimitraz), [dizlv](https://github.com/dizlv), [donno2048](https://github.com/donno2048), [drobiu](https://github.com/drobiu), [Duaard](https://github.com/Duaard), [echobash](https://github.com/echobash), [elyscape](https://github.com/elyscape), [emdecr](https://github.com/emdecr), [emilyacook](https://github.com/emilyacook), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [EranKricheli](https://github.com/EranKricheli), [erezo9](https://github.com/erezo9), Erik Pfeiffer, [esethna](https://github.com/esethna), [fareskalaboud](https://github.com/fareskalaboud), [fcoiuri](https://github.com/fcoiuri), [firasm](https://github.com/firasm), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gagandeepp](https://github.com/gagandeepp), [garanews](https://github.com/garanews), [gaurav-baghel](https://github.com/gaurav-baghel), [Gauravsaha-97](https://github.com/Gauravsaha-97), [GianOrtiz](https://github.com/GianOrtiz), [gigawhitlocks](https://github.com/gigawhitlocks), [gpt14](https://github.com/gpt14), [grsky360](https://github.com/grsky360), [gupsho](https://github.com/gupsho), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [Hard-Coder05](https://github.com/Hard-Coder05), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [Hridoy-31](https://github.com/Hridoy-31), [iamquang95](https://github.com/iamquang95), [icelander](https://github.com/icelander), [igordsm](https://github.com/igordsm), [im-endangered](https://github.com/im-endangered), [iomodo](https://github.com/iomodo), [iOSGeekster](https://github.com/iOSGeekster), [isacikgoz](https://github.com/isacikgoz), [jamiehurewitz](https://github.com/jamiehurewitz), [Jasmin F](https://github.com/jasmezz), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [JenyaFTW](https://github.com/JenyaFTW), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jlram](https://github.com/jlram), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [joremysh](https://github.com/joremysh), [josephbaylon](https://github.com/josephbaylon), [joshalling](https://github.com/joshalling), [jprusch](https://github.com/jprusch), [JtheBAB](https://github.com/JtheBAB), [jufab](https://github.com/jufab), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kaitrin](https://github.com/kaitrin), [kamre](https://github.com/kamre), [kanitmann](https://github.com/kanitmann), [KavyaJaiswal](https://github.com/KavyaJaiswal), [kayazeren](https://github.com/kayazeren), [koox00](https://github.com/koox00), [korvmoij](https://translate.mattermost.com/user/korvmoij/), [krmh04](https://github.com/krmh04), [KuSh](https://github.com/KuSh), [larkox](https://github.com/larkox), [leosunmo](https://github.com/leosunmo), [levb](https://github.com/levb), [lex111](https://github.com/lex111), [lieut-data](https://github.com/lieut-data), [lindy65](https://github.com/lindy65), [lonnelars](https://github.com/lonnelars), [LSantos06](https://github.com/LSantos06), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majo](https://translate.mattermost.com/user/majo/), [maknop](https://github.com/maknop), [marcvelasco](https://github.com/marcvelasco), [marianunez](https://github.com/marianunez), [Mark E Fuller](https://github.com/mefuller), [Markus Hermann](https://github.com/MarHerUMR), [maruTA-bis5](https://github.com/maruTA-bis5), [master7](https://translate.mattermost.com/user/master7/), [mathiasvr](https://github.com/mathiasvr), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [Matthew Williams](https://github.com/matthew-w), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [michizhou](https://github.com/michizhou), [mickmister](https://github.com/mickmister), [mishmanners](https://github.com/mishmanners), [mjnagel](https://github.com/mjnagel), [mkraft](https://github.com/mkraft), [mohitsaxenaknoldus](https://github.com/mohitsaxenaknoldus), [Mshahidtaj](https://github.com/Mshahidtaj), [NakulChauhan2001](https://github.com/NakulChauhan2001), [naltang](https://github.com/naltang), [namreg](https://github.com/namreg), [naresh1205](https://github.com/naresh1205), [nathanaelhoun](https://github.com/nathanaelhoun), [neallred](https://github.com/neallred), [NeroBurner](https://github.com/NeroBurner), [nevyangelova](https://github.com/nevyangelova), [ngmmartins](https://github.com/ngmmartins), [nishantwrp](https://github.com/nishantwrp), [noviicee](https://github.com/noviicee), [ogi-m](https://github.com/ogi-m), [pablovelezvidal](https://github.com/pablovelezvidal), [pascalhein](https://github.com/pascalhein), [pawankm21](https://github.com/pawankm21), [penthaapatel](https://github.com/penthaapatel), [Phrynobatrachus](https://github.com/Phrynobatrachus), [pikami](https://github.com/pikami), [pjenicot](https://github.com/pjenicot), [poflankov](https://github.com/poflankov), [prabhigupta](https://github.com/prabhigupta), [prakharporwal](https://github.com/prakharporwal), [prapti](https://github.com/prapti), [Privatecoder](https://github.com/Privatecoder), [prograde](https://translate.mattermost.com/user/prograde/), [puerco](https://github.com/puerco), [radiantly](https://github.com/radiantly), [rafaeelaudibert](https://github.com/rafaeelaudibert), [Ray0Emma](https://github.com/Ray0Emma), [rbradleyhaas](https://github.com/rbradleyhaas), [rootbid](https://github.com/rootbid), [Roy-Orbison](https://github.com/Roy-Orbison), [rutulganatra](https://github.com/rutulganatra), [s4kh](https://github.com/s4kh), [sadohert](https://github.com/sadohert), [sahil9001](https://github.com/sahil9001), [sakaitsu](https://github.com/sakaitsu), [sangramrath](https://github.com/sangramrath), [sanjaydemansol](https://github.com/sanjaydemansol), [sapora1](https://github.com/sapora1), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [sbishel](https://github.com/sbishel), [seoyeongeun](https://github.com/seoyeongeun), [shadowshot-x](https://github.com/shadowshot-x), [shazm](https://github.com/shazm), [shinnlok](https://github.com/shinnlok), [shzmr](https://github.com/shzmr), [sibasankarnayak](https://github.com/sibasankarnayak), [spinales](https://github.com/spinales), [spirosoik](https://github.com/spirosoik), [srijit2002](https://github.com/srijit2002), [ssensalo](https://github.com/ssensalo), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svelle](https://github.com/svelle), [syauqy](https://github.com/syauqy), [Szymongib](https://github.com/Szymongib), [TautZuk](https://github.com/TautZuk), [teamzamong](https://translate.mattermost.com/user/teamzamong/), [TheLaw1337](https://github.com/TheLaw1337), [tiago154](https://github.com/tiago154), [triogempar](https://github.com/triogempar), [tsabi](https://github.com/tsabi), [ucyang](https://github.com/ucyang), [vblz](https://github.com/vblz), [vinod-demansol](https://github.com/vinod-demansol), [void-hr](https://github.com/void-hr), [weblate](https://github.com/weblate), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [xMicky24GIT](https://github.com/xMicky24GIT), [yeongeun.seo](https://github.com/seoyeongeun),  [ZeeshanAmjad0495](https://github.com/ZeeshanAmjad0495), [Zeezee1210](https://github.com/Zeezee1210), [zefhemel](https://github.com/zefhemel), [zolikonta](https://github.com/zolikonta), [zulmarij](https://github.com/zulmarij)
+ 
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v6.0.3, released 2021-11-15**

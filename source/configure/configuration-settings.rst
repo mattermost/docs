@@ -2322,12 +2322,12 @@ Notifications
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
-Show @channel and @all confirmation dialog
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Show @channel, @all, or @here confirmation dialog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Users will be prompted to confirm when posting @channel and @all in channels with over five members.
+**True**: Users will be prompted to confirm when posting @channel, @all, or @here in channels with over five members.
 
 **False**: No confirmation is required.
 
@@ -2614,18 +2614,31 @@ Enable SVGs
 | This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------+
 
-Enable LaTeX Rendering
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable LaTeX Code Block Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Enables rendering of LaTeX code.
+**True**: Enables rendering of LaTeX code in a ``latex`` code block.
 
 **False**: Disables rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted.
 
-+---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableLatex": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Enable Inline LaTeX Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+**True**: Enables inline rendering of LaTeX code.
+
+**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableInlineLatex": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^
@@ -6512,9 +6525,25 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 **False**: Plain text log details aren't colorized in the console.
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
-+----------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------+
+
+Database Settings
+~~~~~~~~~~~~~~~~~
+
+Clean Up Old Database Jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Defines the threshold in hours beyond which older completed database jobs are removed. This setting applies to both MySQL and PostgreSQL databases, is disabled by default, and must be set to a value greater than or equal to ``0`` to be enabled.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
++--------------------------------------------------------------------------------------------------------------------+
 
 SQL Settings
 ~~~~~~~~~~~~
