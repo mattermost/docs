@@ -25,6 +25,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v6.1.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-1-feature-release>`__ - `Download <https://releases.mattermost.com/6.1.0/mattermost-6.1.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.1.0/mattermost-6.1.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``304a46c1abf984b97d6adaf74b8ab4324df68178dcd95cdf721ad02756c7e14d``
+  - GPG Signature: https://releases.mattermost.com/6.1.0/mattermost-6.1.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v6.0.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-0-feature-release>`__ - `Download <https://releases.mattermost.com/6.0.3/mattermost-6.0.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.0.3/mattermost-6.0.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``0c9a5c3caf90705f0067fd5b3c98669a03bfe1c7765292bd73185b218aa4d148``
@@ -270,6 +274,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v6.1.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-1-feature-release>`__ - `Download <https://releases.mattermost.com/6.1.0/mattermost-team-6.1.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.1.0/mattermost-team-6.1.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``8f7ed5402109c7b8c6eb30c654148c8fea56a4c81650d282d3c15443fbcb8410``
+  - GPG Signature: https://releases.mattermost.com/6.1.0/mattermost-team-6.1.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v6.0.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-0-feature-release>`__ - `Download <https://releases.mattermost.com/6.0.3/mattermost-team-6.0.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.0.3/mattermost-team-6.0.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``0434adeef9ec30db5beb498584857af6a59f53bf468650c711efcf5b00963c0a``
