@@ -49,7 +49,7 @@ There are three types of channels: Public Channels, Private Channels, and Direct
 Public Channels
 ~~~~~~~~~~~~~~~
 
-Public Channels are open to everyone on a team and are identified with a globe icon |globe-icon|. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
+Public Channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
 
 .. |globe-icon| image:: ../images/globe-icon.png
    :alt: A globe icon indicates a public channel.
