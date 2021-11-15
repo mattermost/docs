@@ -10,7 +10,7 @@ Searching
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -37,7 +37,7 @@ When message results display in the Search Results pane, select **Jump** to view
 .. image:: ../images/jump-to-message.png
 
 .. tip::
-  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to switch between results.
+  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to toggle between results.
   
 Searching for file contents
 ---------------------------
@@ -48,13 +48,13 @@ Select the **Search** field, select **Files**, then type your search criteria.
 
 File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
 
-- For Mattermost Cloud workspaces, supported document file formats include PDF, DOCX, PPTX, ODT, HTML, and plain text documents. RTF and PAGES file formats, as well as the contents of ZIP files, are not supported.
-- For Mattermost Server deployments, supported document file formats include PDF, PPTX, ODT, HTML, and plain text documents. 
+- For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC, RTF, and PAGES file formats, as well as the contents of ZIP files, are not supported.
+- For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
 
-  - System Admins can extend file content search support to include:
+  - System Admins can extend file content search support for self-hosted deployments to include:
   
     - `files shared before upgrading to Mattermost Server v5.35 <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__.
-    - `DOCX, RTF, and PAGES file formats <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__.
+    - `DOC, RTF, and PAGES file formats <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__.
     - `documents within ZIP files <https://docs.mattermost.com/configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
 
 To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.

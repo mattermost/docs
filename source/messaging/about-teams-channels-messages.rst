@@ -10,7 +10,7 @@ About Teams, Channels, and Messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -34,7 +34,7 @@ Teams
 
 A team is a digital workspace where you and your teammates can collaborate together. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
-You have the ability to switch back and forth between teams on the Team Sidebar, located on the upper left side of the app.
+You have the ability to navigate between teams on the Team Sidebar, located on the upper left side of the app.
 
 .. image:: ../images/teams.gif
    :alt: ui_teams
