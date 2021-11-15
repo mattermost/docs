@@ -136,7 +136,8 @@ Control content in posts using the following four settings under **System Consol
   - System Admins can disable all website link previews, image link previews, and YouTube previews by changing this setting to **false**. System Admins can also disable link previews from specific domains.
   - When link previews are enabled, users can choose to show or hide website link previews from **Settings > Display > Website Link Previews**. 
 - **Enable SVGs:** Controls whether users have the ability to see previews of SVG file attachments and SVG image links.
-- **Enable LaTeX Rendering:** Controls users' ability to render LaTeX code.
+- **Enable LaTeX Rendering:** Controls users' ability to render LaTeX code in a ``latex`` code block.
+- **Enable Inline LaTeX Rendering:** Controls users' ability to render inline LaTeX code.
 - **Custom URL Schemes:** A list of URL schemes that are used for autolinking in message text. HTTP, HTTPS, FTP, tel, and mailto always create links.
 
 You can also control whether all `in-line images <https://docs.mattermost.com/help/messaging/formatting-text.html#in-line-images>`__ over 100px in height are automatically collapsed or expanded in messages by setting a `user preference <https://docs.mattermost.com/messaging/managing-account-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` `slash commands <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__. 

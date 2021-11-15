@@ -32,6 +32,11 @@ To open a playbook and view its statistics, select the playbook name. To begin a
 
 To access runs, select the Product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
 
+Playbook preview
+~~~~~~~~~~~~~~~~
+
+The playbook preview is a landing page that provides a summary of the playbook's components. This gives you insight into the playbook, as it's applied in a run, without having to join a active run.
+
 View run details
 ~~~~~~~~~~~~~~~~
 

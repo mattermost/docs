@@ -15,12 +15,24 @@ Important Upgrade Notes
 
 .. important::
    - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
-   - The "version" CLI command will be deprecated in Mattermost v6.1.
+   - The "version" CLI command will be deprecated in a future release.
    - Upgrading Mattermost can result in an error “ERROR: default for column "column_name" cannot be cast automatically to type jsonb” if you have non-JSON data in a column. This can also happen if the database data has been manipulated by external processes (e.g. plugins) and in cases where improper input data could get silently truncated due to varchar limits. The data in the affected database column has to be manually fixed.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v6.1                                               | Please refer to `the schema migration analysis <https://gist.github.com/streamer45/997b726a86b5d2a624ac2af435a66086>`_ when upgrading to v6.1.                   |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The Bleve index has been updated to use the scorch index type. This new default index type features some efficiency improvements which means that the indexes    |
+|                                                    | use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve    |
+|                                                    | section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run. |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | A composite index has been added to the jobs table for better query performance. For some customers with a large jobs table, this can take a long time, so we    |
+|                                                    | recommend adding the index during off-hours, and then running the migration. A table with more than 1 million rows can be considered as large enough to be       |
+|                                                    | updated prior to the upgrade.                                                                                                                                    |
+|                                                    |   - For PostgreSQL: ``create index concurrently idx_jobs_status_type on jobs (status,type);``                                                                    |
+|                                                    |   - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``                                                                                      |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v6.0                                               | Longer migration times can be expected.                                                                                                                          |
 |                                                    |                                                                                                                                                                  |
 |                                                    |  - See `this document <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`_ for the estimated upgrade times with datasets of 10+ million posts.|                                                                                                                                            
