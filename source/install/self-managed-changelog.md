@@ -46,7 +46,6 @@ Mattermost v6.1.0 contains low level security fixes. [Upgrading](https://docs.ma
  - Added one-click reactions for posts. A user's three most recently used emojis display when the user hovers over a message.
  - Added support for selecting names and aliases in the emoji picker.
  - Changed the user interface of the edit-indicator of posts and moved it inline.
- - Once a non-licensed server has reached 10 users, a modal is displayed to System Admins encouraging them to start a 30-day trial.
  - Added a query param to translate in-product help pages when opened from the Desktop App.
  - Updated in-product text for the invitation modal for clarity.
  - Updated the file attachment limits and sizes within in-product help documentation.
