@@ -1029,5 +1029,5 @@ linkcheck_ignore = [
     'https://azuremarketplace.microsoft.com/.*',
 ]
 linkcheck_timeout = 5
-linkcheck_rate_limit_timeout = 1
+linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
