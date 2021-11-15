@@ -30,6 +30,9 @@ Latest Mattermost Desktop App releases:
 Release v5.0
 --------------
 
+- **v5.0.2, released 2021-11-15**
+ - Fixed an issue where the Desktop app crashed intermittently when switching between tabs while a tab was loading.
+ - Fixed an issue where the app didn't raise the window from the tray icon when clicking on the taskbar icon.
 - **v5.0.1, released 2021-10-22**
  - Fixed issue with desktop notification sounds not working correctly.
  - Fixed an issue where using a proxy server with the Desktop app caused the app to crash.
