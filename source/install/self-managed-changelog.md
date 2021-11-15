@@ -77,7 +77,7 @@ Mattermost v6.1.0 contains low level security fixes. [Upgrading](https://docs.ma
 
 #### Enterprise Edition
  - Once the user has selected **Start Trial**, they will see a modal that lists all of the features now available to them through the Enterprise plan.
- - Once a non-licensed server has reached 10 users, a modal is displayed to System Admins encouraging them to start a 30-day trial.
+ - Once a non-licensed server has reached 10 users, a one-time modal is displayed to System Admins encouraging them to start a 30-day trial.
  - Prometheus metrics are now enabled when running a standalone jobserver.
 
 ### Bug Fixes
