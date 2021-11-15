@@ -61,7 +61,7 @@ Private Channels
 
 Private Channels are for sensitive topics and are only visible to selected team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, and any member of a Private Channel can remove other members from the channel. 
 
-Private Channels are identified with a lock icon |lock-icon|.
+Private Channels are identified with a |lock-icon| icon.
 
 .. |lock-icon| image:: ../images/lock-icon.png
    :alt: A lock icon indicates a private channel.
