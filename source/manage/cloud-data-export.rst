@@ -54,6 +54,6 @@ Then extract the file to use it by running the following mmctl command:
    
    mmctl extract run [flags].
 
-Once your migration is complete and you’ve imported your data into your self-hosted instance. We recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
+Once your migration is complete and you’ve imported your data into your self-hosted instance we recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
 
 If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
