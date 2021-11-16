@@ -3,12 +3,46 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-11-24](#release-2021-11-24)
 - [Release 2021-11-11](#release-2021-11-11)
 - [Release 2021-11-10](#release-2021-11-10)
 - [Release 2021-10-27](#release-2021-10-27)
 - [Release 2021-10-13](#release-2021-10-13)
 - [Release 2021-09-29](#release-2021-09-29)
-- [Release 2021-08-12](#release-2021-08-12)
+
+## Release 2021-11-24
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated **Account Settings** terminology to **Profile**.
+ - Updated instances of **switch** to **navigate**.
+ - Updated in-product text terminology to shift from **comments** to **conversations** and **replies**.
+ - Do Not Disturb option for **Tomorrow** now displays the expiry time.
+ - Recent emojis now get updated based on the default selected skin tone.
+ - Updated **SingleImageView** to hide the image name for attached images until the image is collapsed.
+ - Moved the expand arrow to the left of image name. 
+ - The image expansion icon now appears on image hover.
+
+### Bug Fixes
+ - Fixed an issue where emoji reaction buttons on posts did not respect user permissions.
+ - Fixed an issue where unchecking the automatic timezone changed the timezone in the selector.
+ - Fixed an issue where emoji names were being truncated too soon in the emoji picker.
+ - Fixed an issue where the thread footer did not allow the user to follow a Thread.
+ - Fixed an issue where the app crashed when switching to Threads view after leaving a channel.
+ - Fixed an issue where push notifications did not clear from the lock screen or the notification center with Collapsed Reply Threads enabled.
+ - Fixed an issue where Direct Message notifications were missing the sender name with Collapsed Reply Threads enabled.
+ - Fixed an issue where keyboard shortcuts were not working with Global Threads.
+
+### Known Issues
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Close button on the Invite People page is incorrectly themed [MM-37852](https://mattermost.atlassian.net/browse/MM-37852).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - **Cloud > "Tips & Next Steps"** should not show an "Explore channels" section for guest users.
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-11-11
 
