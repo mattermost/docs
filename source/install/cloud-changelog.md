@@ -3,12 +3,17 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-11-11](#release-2021-11-11)
 - [Release 2021-11-10](#release-2021-11-10)
 - [Release 2021-10-27](#release-2021-10-27)
 - [Release 2021-10-13](#release-2021-10-13)
 - [Release 2021-09-29](#release-2021-09-29)
 - [Release 2021-08-12](#release-2021-08-12)
-- [Release 2021-07-29](#release-2021-07-29)
+
+## Release 2021-11-11
+
+### Bug Fixes
+ - Fixed an issue with panics in a ``patchChannel`` function [MM-40014](https://mattermost.atlassian.net/browse/MM-40014).
 
 ## Release 2021-11-10
 

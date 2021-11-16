@@ -64,7 +64,7 @@ You can ignore channel-wide mentions in specific channels in the **Channel Menu 
 
   @channel great work on interviews this week. I think we found some excellent potential candidates!
 
-If a channel has five or more members, you're prompted to confirm that you want notifications sent to everyone in the channel.
+If a channel has five or more members, you may be prompted to confirm that you want notifications sent to everyone in the channel.
 
 @here
 ~~~~~
@@ -75,9 +75,11 @@ You can mention everyone who is online in a channel by typing ``@here``. This se
 
 .. code-block:: none
 
-  @here can someone do a quick review of this?
+  @here can someone complete a quick review of this?
+
+If a channel has five or more members, you may be prompted to confirm that you want notifications sent to everyone in the channel.
   
-You can ignore channel-wide mentions in specific channels in the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here and @all**.
+You can ignore channel-wide mentions in specific channels by enabling the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here, and @all** option.
   
 @groupname (Beta)
 ~~~~~~~~~~~~~~~~~
@@ -120,6 +122,16 @@ Select **@** next to the **Search** box to query for your most recent @mentions 
 .. image:: ../images/recent-mentions.png
    :alt: See your most recent @mentions
 
+.. tabs::
+  
+  .. tab:: Mattermost v6.1 onwards
+
+    From Mattermost v6.1, your recent mentions are shown for all of your teams.
+
+  .. tab:: Mattermost v6.0 and earlier
+
+    In Mattermost versions up to v6.0, your recent mentions are shown for your current team only.
+
 Select **Jump** next to a search result in the right-hand sidebar to jump the center pane to the channel and location of the message with the mention.
 
 Confirmation dialog warnings
@@ -129,7 +141,7 @@ Confirmation dialog warnings
 
 For any mention that will trigger notifications for more than five users, the user posting the mention must confirm the action before sending the notifications.
 
-This confirmation dialog only appears when ``TeamSettings.EnableConfirmNotificationsToChannel`` in ``config.json`` is enabled. This is supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled.
+This confirmation dialog only appears when your System Admin has configured this setting in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#show-channel-and-all-confirmation-dialog>`__ product documentation for details. This configuration setting is supported on the Mattermost Mobile App (from v1.34) if the `AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ feature is enabled.
 
 Highlighting
 ------------
