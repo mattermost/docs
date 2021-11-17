@@ -18,30 +18,22 @@ AWS Elastic Beanstalk Docker Setup
 The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality. This configuration should not
 be used in production.
 
-1.  From your `AWS console <https://console.aws.amazon.com/console/home>`__ select **Compute > Elastic Beanstalk**.
-2.  Select **Create New Application** from the top right.
-3.  Name your Elastic Beanstalk application and click **Next**.
-4.  On the New Environment page, select **Create web server** .
-5.  If asked, select **Create an IAM role and instance profile**, then click **Next**.
-6.  On the **Environment Type**:
+The Elastic Beanstalk application creation process used here is the easy *Getting Started* approach which combines Application and Environment creation in the same flow. 
 
-    a. Set Predefined Configuration to **Multi-Container Docker** under the generic heading in the drop-down list.
-    b. Set Environment Type to **Single instance** in the drop-down list.
-    c. Click **Next**.
-
-7.  For **Application Source**, select **Upload your own** and upload the ``Dockerrun.aws.json`` file from
-    https://raw.githubusercontent.com/mattermost/mattermost-docker/master/contrib/aws/Dockerrun.aws.json (select the version you'd like to use), then click **Next**.
-8.  Type an Environment Name and URL. Make sure the URL is available by clicking **Check availability**, then click **Next**.
-9.  The options on the **Additional Resources** page may be left at default unless you wish to change them. Click **Next**.
-10. On the **Configuration Details** page:
-
-    a. Select an Instance Type of **t2.small** or larger.
-    b. The remaining options may be left at their default values unless you wish to change them. Click **Next**.
-
-11. **Environment tags** may be left blank. Click **Next**.
-12. Review your information, then click **Launch**.
-13. It may take a few minutes for Beanstalk to launch your environment. If the launch is successful, you will see a see a large green checkmark and the **Health status** displays in “Green”.
-14. Test your environment by clicking the domain link next to your application name at the top of the dashboard. Alternatively, enter the domain into your browser in the form of ``http://<your-ebs-application-url>.elasticbeanstalk.com``. You can also map your own domain if you wish. If everything is working correctly, the domain should navigate you to the Mattermost signup page. Enjoy exploring Mattermost!
+1.  From your `AWS console <https://console.aws.amazon.com/console/home>`__ select **Elastic Beanstalk**.
+2.  Select the **Create Application** button on the Elastic Beanstalk home page.
+3.  Enter an **Application name** for the Elastic Beanstalk application.
+4.  (Optional) Specify **Application tags**.
+5.  Select **Docker** for the Platform.
+6.  Choose **Docker running on 64bit Amazon Linux 2** for the **Platform** branch. Note that multi-container Docker is now deprecated.
+7.  Leave the platform version preselected as **3.4.8 (Recommended)**.
+7.  For **Application code**, select **Upload your code**.
+8.  Download the ``Dockerrun.aws.json`` file from
+    https://raw.githubusercontent.com/mattermost/mattermost-docker-preview/master/Dockerrun.aws.json.
+9.  Set a unique **Version Label**, choose **Local File**, then select **Choose file** button to browse for the downloaded file in the previous step. You should see a *File successfully uploaded* message.
+10. Select **Create Application**.
+11. It may take a few minutes for Beanstalk to launch your environment. If the launch is successful, you will see a see a large green checkmark and the **Health status** displayed in green.
+12. Test your environment by selecting the domain link next to your application name at the top of the dashboard. Alternatively, enter the domain into your browser in the form of ``http://<your-ebs-application-url>.elasticbeanstalk.com``. You can also map your own domain if you prefer. When everything is working correctly, the domain navigates you to the Mattermost Sign In page. Enjoy exploring Mattermost!
 
 Configuration Settings
 ----------------------

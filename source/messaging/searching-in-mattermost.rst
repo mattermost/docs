@@ -18,12 +18,22 @@ Searching
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available now in Mattermost Cloud, and in Mattermost Server from v5.35, with mobile support coming soon.
+Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
 
 .. image:: ../images/ui_search.png
-   :alt: ui_search
+   :alt: Use Search to find messages, replies, and the contents of files shared across channels.
 
 You can also do more advanced search using `search modifiers <https://docs.mattermost.com/messaging/searching-in-mattermost.html#search-modifiers>`__.
+
+.. tabs::
+  
+  .. tab:: Mattermost v6.1 onwards
+
+    From Mattermost v6.1, your search results include messages from all of your teams.
+
+  .. tab:: Mattermost v6.0 and earlier
+
+    In Mattermost versions up to v6.0, your search results include messages from your current team only.
 
 Searching for message contents 
 ------------------------------
@@ -37,7 +47,7 @@ When message results display in the Search Results pane, select **Jump** to view
 .. image:: ../images/jump-to-message.png
 
 .. tip::
-  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to switch between results.
+  Message results return first automatically if a message search isn't specified. In the Search Results pane, select **Messages** or **Files** to toggle between results.
   
 Searching for file contents
 ---------------------------

@@ -339,19 +339,42 @@ Renders as:
 Math Formulas
 -------------
 
-Create formulas by using LaTeX in a ``latex`` `Code Block`_. 
+.. tabs::
 
-.. note::
+  .. tab:: Using Inline LaTeX
 
-  This feature is `disabled by default <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-rendering>`_. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+    From Mattermost v6.1, you can create formulas that display inline using LaTeX. Use the dollar sign ($) symbol at the beginning and end of each formula.
 
-.. code-block:: none
+    .. note::
 
-  ```latex
-  X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
-  ```
+      This feature is `disabled by default <https://docs.mattermost.com/configure/configuration-settings.html#enable-inline-latex-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-Renders as:
+    .. code-block:: none
 
-.. image:: ../images/markdownMath.png
-   :alt: Markdown Math Sample
+      $X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]$
+  
+    Renders as:
+
+    .. image:: ../images/latex-inline.png
+      :alt: An inline LaTeX math equation sample.
+      
+  .. tab:: Using LaTeX in Code Blocks
+
+    Create formulas as code blocks by using LaTeX in a ``latex`` `Code Block`_. 
+
+    .. note::
+
+      This feature is `disabled by default <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+
+    .. code-block:: none
+
+      ```latex
+      X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
+      ```
+
+    Renders as:
+
+    .. image:: ../images/latex-codeblock.png
+      :alt: A LaTeX code block math equation sample.
+
+  

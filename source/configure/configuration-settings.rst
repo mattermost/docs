@@ -11,7 +11,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
    From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the `mmctl config reload command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they're made. This change will improve configuration performance and robustness.
 
-   See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.  
+   See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.
 
 Configuration in Database
 --------------------------
@@ -58,12 +58,11 @@ The name of the environment variable for any setting can be derived from the nam
 2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
 3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
 
-Finally, if a setting is configured through an environment variable, modifying it in the System Console is disabled.
-
-For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented in the sections below.
-
 .. note::
-   If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+
+  - If Mattermost is run from an initialization file, environment variables can be set via ``Environment=<>``, or ``EnvironmentFile=<path/to/file>``. In the second case, the file specified contains the list of environment variables to set.
+  - When settings are configured through an environment variable, System Admins can't modify them in the System Console. If a setting is configured through an environment variable, and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+  - For any setting that's not set in ``config.json`` or in environment variables, the Mattermost server uses the setting's default value as documented in the sections below on this page.
 
 .. warning::
    
@@ -222,9 +221,9 @@ The URL that users will use to access Mattermost. The port number is required if
 
 **This field is required in Mattermost v3.8 and later.**
 
-In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``.
+In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``. System Admins can't update the Site URL value when it's configured through an environment variable. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ product documentation for details.
 
-If Site URL is not set, the following features will not operate correctly:
+If Site URL isn't set, the following features will not operate correctly:
 
 - Email notifications will contain broken links, and email batching will not work.
 - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.
@@ -336,7 +335,7 @@ Read Timeout
 
 |all-plans| |self-hosted|
 
-Maximum time allowed from when the connection is accepted to when the request body is fully read.
+Maximum time allowed in seconds from when the connection is accepted to when the request body is fully read.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadTimeout": 300`` with numerical input. |
@@ -347,7 +346,7 @@ Write Timeout
 
 |all-plans| |self-hosted|
 
-If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
+If using HTTP (insecure), this is the maximum time in seconds allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
@@ -358,7 +357,7 @@ Idle Timeout
 
 |all-plans| |self-hosted|
 
-Set an explicit idle timeout in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
+Set an explicit idle timeout in seconds in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
@@ -2232,7 +2231,7 @@ Enable users to open Direct Message channels with
 
 **Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
 
-**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and CTRL/CMD+K channel switcher only lists users on the current team. If a user belongs to multiple teams, Direct Messages will still be received regardless of what team they are currently on.
+**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and pressing CTRL/CMD+K only lists users on the current team. If a user belongs to multiple teams, Direct Messages will still be received regardless of what team they are currently on.
 
 This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
 
@@ -2323,12 +2322,12 @@ Notifications
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
-Show @channel and @all confirmation dialog
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Show @channel, @all, or @here confirmation dialog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Users will be prompted to confirm when posting @channel and @all in channels with over five members.
+**True**: Users will be prompted to confirm when posting @channel, @all, or @here in channels with over five members.
 
 **False**: No confirmation is required.
 
@@ -2615,18 +2614,31 @@ Enable SVGs
 | This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------+
 
-Enable LaTeX Rendering
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable LaTeX Code Block Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Enables rendering of LaTeX code.
+**True**: Enables rendering of LaTeX code in a ``latex`` code block.
 
 **False**: Disables rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted.
 
-+---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableLatex": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Enable Inline LaTeX Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+**True**: Enables inline rendering of LaTeX code.
+
+**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableInlineLatex": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^
@@ -2718,7 +2730,7 @@ Enable Public File Links
 
 .. note:: 
 
-   When switched to ``False``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When switched back to ``True``, old public links will work again unless the **Public Link Salt** has been regenerated.
+   When set to ``False``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When set back to ``True``, old public links will work again unless the **Public Link Salt** has been regenerated.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePublicLink": true`` with options ``true`` and ``false``. |
@@ -6513,9 +6525,25 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 **False**: Plain text log details aren't colorized in the console.
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``.                                |
-+----------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------+
+
+Database Settings
+~~~~~~~~~~~~~~~~~
+
+Clean Up Old Database Jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Defines the threshold in hours beyond which older completed database jobs are removed. This setting applies to both MySQL and PostgreSQL databases, is disabled by default, and must be set to a value greater than or equal to ``0`` to be enabled.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
++--------------------------------------------------------------------------------------------------------------------+
 
 SQL Settings
 ~~~~~~~~~~~~
