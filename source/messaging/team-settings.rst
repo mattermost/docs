@@ -49,9 +49,9 @@ You can upload a team icon in BMP, JPG or PNG format. Square images with a solid
 Allow only users with a specific email domain to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specifying domains in this setting prevents users from joining the team when their email domain is not on the list. Only users that have an email domain matching the defined domains may join the team.
+Specifying domains in this setting prevents users from joining the team when their email domain is not on the list. Only users that have an email domain matching the defined domains may join the team. 
 
-Users without a matching domain on the team prior to the domain being specified will not be removed after the domain is added.
+Users without a matching domain on the team prior to the domain being specified will not be removed after the domain is added. For domains to be restricted, **System Console > Authentication > Email > Require Email Verification** must be set to ``True``. 
 
 Allow anyone to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
