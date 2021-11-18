@@ -22,3 +22,17 @@ Cards can have different configuration fields, depending on the type of board yo
 
 The default name for a new property is **New Property**. Ensure that you name your property as it's added to the filter list at the top of the board and having all your filters named **New Property** makes it difficult to work out what you're filtering. You can rename a property field by opening up a card and selecting **New Property**. Enter the new name in the field provided. The change is saved immediately and applied across all cards.
 
+Recurring events
+---------------
+
+Calendar view
+-------------
+
+Calculations
+------------
+
+Mention people
+--------------
+
+Previews
+--------
