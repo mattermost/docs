@@ -2806,7 +2806,7 @@ Restrict account creation to specified email domains
 
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
 
-This setting only affects email login. For domains to be restricted, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``. 
+This setting only affects email login. For domains restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``. 
 
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
