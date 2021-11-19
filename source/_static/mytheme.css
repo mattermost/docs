@@ -1147,7 +1147,7 @@ pre {
 		padding-right: 50px;
 	}
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
 	.site-header--not-home .nav-container {
 		padding-right: 20vw;
 	}
