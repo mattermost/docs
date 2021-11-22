@@ -1,7 +1,7 @@
 Signing In
 ==========
 
-To sign in, navigate to the Mattermost sign-in screen. You can `get the URL of the sign-in screen <https://docs.mattermost.com/messaging/accessing-your-workspace.html>`__ from your System Admin or from an email invitation.
+To sign in, navigate to the Mattermost sign-in screen. You'll receive a Mattermost URL from your System Admin or from an email invitation.
 
 .. tip::
   We recommend bookmarking the Mattermost URL provided by your System Admin or through an email invitation so signing in to Mattermost is easy in the future.
