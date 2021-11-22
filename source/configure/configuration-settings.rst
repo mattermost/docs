@@ -1634,9 +1634,6 @@ Output logs to console
 
 |all-plans| |self-hosted|
 
-.. note::
-   Logs are rotated once the log file reaches a size of 100 MB or more.
-
 **True**: Output log messages to the console based on ``ConsoleLevel`` option. The server writes messages to the standard output stream (stdout).
 
 **False**: Output log messages are not written to the console.
@@ -1687,6 +1684,9 @@ Output logs to file
 |all-plans| |self-hosted|
 
 Typically set to ``true`` in production. When ``true``, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
+
+.. note::
+   Logs are rotated once the log file reaches a size of 100 MB or more.
 
 **True**: Log files are written to files specified in ``FileLocation``.
 
