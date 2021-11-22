@@ -20,13 +20,17 @@ Additional System Admin Roles
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-From v5.28, System Admins can use the command line to assign roles that permit members to have admin access to specified areas of the System Console. This allows members of your organization to perform certain administrative tasks without providing them with access to all system administrative capabilities.
+System Admins can assign roles that permit granular user access to specific of the System Console. These system roles enable users to perform certain administrative tasks without requiring access to all system administration areas. System roles never supercede the user's original role or the user's permissions configured by the Permissions scheme.
 
-From v5.30, System Admins can also use the System Console to manage additional System Admin roles and privileges.
+- From Mattermost v5.28, System Admins can use the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__ to assign roles and privileges.
+- From Mattermost v5.30, and in Mattermost Cloud, System Admins can use the System Console to assign and manage roles and privileges.
+- From Mattermost v6.0, the CLI has been deprecated in favor of the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+
+A System Admin can configure the following system roles:
 
 - **System Manager:** The System Manager has read/write permissions for management areas of the System Console, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read only.
-- **Viewer:** This role is able to access all pages of the System Console but has no write access to any pages.
+- **Viewer:** This role is able to view all pages of the System Console, but has no write access to any pages.
 
 There are two ways to assign roles:
 
@@ -34,7 +38,7 @@ There are two ways to assign roles:
 
 2. Using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
 
-When a user is assigned a role, they have access to the System Console. As each role has a different set of default permissions the items that they can view depend on the role they've been assigned.
+When a user is assigned a role, they have role-based access to the System Console. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
 
 **System Manager**
 
