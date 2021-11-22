@@ -34,5 +34,9 @@ Calculations
 Mention people
 --------------
 
+If you'd like to include a team member in a card, notify a team member of progress, or provide visibility you can mention them and they'll receive a notification.
+
 Previews
 --------
+
+When you share a link to a card in Mattermost, the card details are automatically displayed in a preview.
