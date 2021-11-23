@@ -22,21 +22,32 @@ Cards can have different configuration fields, depending on the type of board yo
 
 The default name for a new property is **New Property**. Ensure that you name your property as it's added to the filter list at the top of the board and having all your filters named **New Property** makes it difficult to work out what you're filtering. You can rename a property field by opening up a card and selecting **New Property**. Enter the new name in the field provided. The change is saved immediately and applied across all cards.
 
-Recurring events
----------------
+How to use properties
+---------------------
 
-Calendar view
--------------
+Properties can be used for whatever situation you choose. Here are some use cases that you can use on your own boards.
+
+Recurring events
+~~~~~~~~~~~~~~~~
+
+In some situations, such as a weekly meeting agenda, there may be agenda items that are regularly revisited. You can use the **Checkbox** property to create a property type (e.g., **Recurring** or **Revisit**). To display this information in the view you're using, select **Properties** and then select the property name to display the checkbox on the card.
+
+Note that this setting is applied per board.
 
 Calculations
 ------------
 
+
+
 Mention people
 --------------
 
-If you'd like to include a team member in a card, notify a team member of progress, or provide visibility you can mention them and they'll receive a notification.
+You can include a team member in a card by mentioning them on the card. The format is the same as using mentions in Channels. The team member you mention will receive a Direct Message notification from the Boards bot with a link to the card you mentioned them on.
+
+To mention multiple team members, separate each name with a comma. Ensure that you enter the correct username - auto-complete will be available in a future version of Boards.
 
 Previews
 --------
 
-When you share a link to a card in Mattermost, the card details are automatically displayed in a preview.
+When you share a link to a card in Mattermost, the card details are automatically displayed in a preview so you can see what the card is about at a glance and without having to click through to it.
+
