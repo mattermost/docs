@@ -76,7 +76,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
-  - Added a new config setting ``DeveloperFlags``.
+   - Added a new config setting ``DeveloperFlags``.
  - Removed ``DesktopLatestVersion`` and ``DesktopMinVersion`` config settings.
 
 ### API Changes
