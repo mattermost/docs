@@ -20,7 +20,7 @@ Additional System Admin Roles
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-System Admins can assign roles that permit granular user access to specific of the System Console. These system roles enable users to perform certain administrative tasks without requiring access to all system administration areas. System roles never supercede the user's original role or the user's permissions configured by the Permissions scheme.
+System Admins can assign system roles that permit granular user access to specific areas of the System Console. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. System roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
 
 - From Mattermost v5.28, System Admins can use the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__ to assign roles and privileges.
 - From Mattermost v5.30, and in Mattermost Cloud, System Admins can use the System Console to assign and manage roles and privileges.
