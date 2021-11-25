@@ -37,7 +37,13 @@ Note that this setting is applied per board.
 Calculations
 ------------
 
+Each board includes calculations which allow users to answer basic metric questions without needing to create complex reports, such as:
 
+- How many story points are planned for this release?
+- How many tasks have been assigned or not assigned?
+- How long has the oldest bug been sitting in the backlog?
+
+The calculation options are available at the bottom of a board.
 
 Mention people
 --------------
