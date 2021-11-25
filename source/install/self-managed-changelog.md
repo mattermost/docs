@@ -15,7 +15,7 @@ Lastest Mattermost Releases:
 **Release Day: 2021-12-16**
 
 ### Important Upgrade Notes
- - Channel results in channel switcher will include channels from other teams as well as private channels. For users using Bleve or Elasticsearch for autocomplete/search would have to reindex their data to get the new results. Since this can take a long time, it is suggested to disable autocomplete and run indexing in the background. And then when it's complete, re-enable autocomplete.
+ - Channel results in the channel switcher will include channels from other teams as well as private channels. For users using Bleve or Elasticsearch for autocomplete/search will have to reindex their data to get the new results. Since this can take a long time, it is suggested to disable autocomplete and run indexing in the background. When this is complete, re-enable autocomplete.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -35,10 +35,11 @@ Lastest Mattermost Releases:
  - Updated **Account Settings** terminology to **Profile**.
  - Updated instances of **switch** to **navigate**.
  - Updated in-product text terminology to shift from **comments** to **conversations** and **replies**.
+ - Added a **Click to open thread** setting for all users, to allow users to click anywhere on a message to open the reply thread.
  - Do Not Disturb option for **Tomorrow** now displays the expiry time.
  - Recent emojis now get updated based on the default selected skin tone.
  - Updated **SingleImageView** to hide the image name for attached images until the image is collapsed.
- - Moved the expand arrow to the left of image name. 
+ - Moved the expand arrow to the left of an image name. 
  - The image expansion icon now appears on image hover.
  - Added online status to profile images on user autocomplete.
  - App Commands now have an option to be opened as modals.
@@ -46,43 +47,43 @@ Lastest Mattermost Releases:
  - Added support for focusing the input box in Collapsed Reply Threads while typing.
  - Added support for blurring the input box in Collapsed Reply Threads on pressing Escape.
  - Adjusted the channel override desktop notification preference for Threads.
- - Added a **Click to open thread** setting for all users.
  - User interface is now improved when no text is set for a custom status.
 
 #### Enterprise Edition
- - Implemented a new design for current License Page for on-prem
+ - Implemented a new design for the current License page for self-hosted.
 
 ### Bug Fixes
- - Bug fixes app crash on root post delete from global threads
- - Fixed a potential server crash when creating or updating posts with permalink previews.
- - Bug fix - Created permalink from saved posts do not correctly redirect to the correct team
- - Fix long file extension names pushing out of the bounds of the module.
  - Fixed an issue where OpenID redirect did not work when hosting Mattermost on a subdirectory.
- - Default log rotation file size was mistakenly set to 10GB for V6, and is now reverted back to 100MB.
+ - Fixed an issue where the default log rotation file size was mistakenly set to 10GB, and is now reverted back to 100MB.
  - Fixed an issue where emoji reaction buttons on posts did not respect user permissions.
  - Fixed an issue where unchecking the automatic timezone changed the timezone in the selector.
  - Fixed an issue where emoji names were being truncated too soon in the emoji picker.
  - Fixed an issue where the thread footer did not allow the user to follow a Thread.
  - Fixed an issue where the app crashed when switching to Threads view after leaving a channel.
+ - Fixed an issue where Mattermost crashed when deleting a root post from Global Threads.
  - Fixed an issue where push notifications did not clear from the lock screen or the notification center with Collapsed Reply Threads enabled.
  - Fixed an issue where Direct Message notifications were missing the sender name with Collapsed Reply Threads enabled.
  - Fixed an issue where keyboard shortcuts were not working with Global Threads.
  - Fixed an issue where API allowed changing the name of the Town Square channel.
  - Fixed an issue where errors were logged if a user disabled notifications.
  - Fixed an issue where a channel was not immediately removed from the sidebar when the current user was removed from it.
+ - Fixed a potential server crash when creating or updating posts with permalink previews.
+ - Fixed an issue where permalinks created from saved posts did not correctly redirect to the correct team.
+ - Fixed an issue where long file extension names pushed out of the bounds of the module.
    
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added a new config setting ServiceSettings.DeveloperFlags.
- - Removed DesktopLatestVersion and DesktopMinVersion config items
+ - Under ``ServiceSettings`` in ``config.json``:
+  - Added a new config setting ``DeveloperFlags``.
+ - Removed ``DesktopLatestVersion`` and ``DesktopMinVersion`` config settings.
 
 ### API Changes
- - Added a new Plugin API IsEnterpriseReady()
- - Added a new API endpoint GET /api/v4/roles.
- - Add a Plugin API User custom status
- - Added CRUD methods for user sessions to plugin API
+ - Added a new ``IsEnterpriseReady()`` plugin API.
+ - Added a new ``GET /api/v4/roles`` API endpoint.
+ - Added new ``UpdateCustomStatus`` and ``RemoveUserCustomStatus`` plugin APIs for user custom status.
+ - Added CRUD methods for user sessions to the plugin API.
  
 ### Go Version
  - v6.2 is built with Go ``v1.16.7``.
