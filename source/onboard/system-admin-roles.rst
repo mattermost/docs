@@ -38,7 +38,7 @@ There are two ways to assign roles:
 
 2. Using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
 
-When a user is assigned a role, they have role-based access to the System Console. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
+When a user is assigned a system role, they have role-based access to the System Console. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
 
 **System Manager**
 
