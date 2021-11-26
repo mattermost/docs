@@ -18,7 +18,7 @@ Latest Mattermost Cloud releases:
  - Clarified Latex Rendering config setting descriptions and fixed a broken product documentation link.
  - Updated the "One-click reactions on messages" user setting to "Quick reactions on messages".
  - Added tab focus support to the global header and user avatars.
- - Added a new **Replies** banner to the right-hand side thread viewer.
+ - Added a new **Replies** banner to the right-hand side Thread viewer.
 
 ### Bug Fixes
  - Fixed an issue where Mattermost Cloud installations were panicing after the November 23, 2021 release.
