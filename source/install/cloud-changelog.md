@@ -17,17 +17,17 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Clarified Latex Rendering config setting descriptions and fixed a broken product documentation link.
  - Updated the "One-click reactions on messages" user setting to "Quick reactions on messages".
- - Added tab focus support to global header headings and user avatars.
+ - Added tab focus support to the global header and user avatars.
  - Added a new **Replies** banner to the right-hand side thread viewer.
 
 #### Administration
  - Added an asynchronous job to fix an issue with Collapsed Reply Threads that resulted in unexpected unread channels. The job may result in an increase in server and database resource usage. Depending on the size of your Mattermost database, this job could take several hours to complete. In our testing it took about 3 hours to check and fix a ``ChannelMembership`` table with about 4 million rows in a PostgreSQL database.
 
 ### Bug Fixes
- - Fixed an issue where Mattermost Cloud installations were panicing after the November 23rd release.
+ - Fixed an issue where Mattermost Cloud installations were panicing after the November 23, 2021 release.
  - Fixed an issue where the default log rotation file size was mistakenly set to 10GB, and is now reverted back to 100MB.
- - Fixed an issue where OpenID redirect did not work when hosting Mattermost on a subdirectory.
- - Fixed an issue where using Cmd/Ctrl + Shift + F in global threads did not add a search term automatically.
+ - Fixed an issue where OpenID redirects didn't work when hosting Mattermost on a subdirectory.
+ - Fixed an issue where using CMD/CTRL + SHIFT + F in global threads did not add a search term automatically.
  - Fixed the alignment of the “X” button in the “message deleted” System message.
  - Fixed an issue where the long post "Show More/Less" background was broken in the Thread viewer.
 
@@ -35,7 +35,7 @@ Latest Mattermost Cloud releases:
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
- - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
