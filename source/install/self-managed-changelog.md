@@ -53,7 +53,7 @@ Lastest Mattermost Releases:
  - Implemented a new design for the current License page for self-hosted.
 
 ### Bug Fixes
- - Fixed an issue where OpenID redirect did not work when hosting Mattermost on a subdirectory.
+ - Fixed an issue where OpenID redirects didn't work when hosting Mattermost on a subdirectory.
  - Fixed an issue where the default log rotation file size was mistakenly set to 10GB, and is now reverted back to 100MB.
  - Fixed an issue where emoji reaction buttons on posts did not respect user permissions.
  - Fixed an issue where unchecking the automatic timezone changed the timezone in the selector.
@@ -94,7 +94,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
