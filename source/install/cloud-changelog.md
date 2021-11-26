@@ -20,9 +20,6 @@ Latest Mattermost Cloud releases:
  - Added tab focus support to the global header and user avatars.
  - Added a new **Replies** banner to the right-hand side thread viewer.
 
-#### Administration
- - Added an asynchronous job to fix an issue with Collapsed Reply Threads that resulted in unexpected unread channels. The job may result in an increase in server and database resource usage. Depending on the size of your Mattermost database, this job could take several hours to complete. In our testing it took about 3 hours to check and fix a ``ChannelMembership`` table with about 4 million rows in a PostgreSQL database.
-
 ### Bug Fixes
  - Fixed an issue where Mattermost Cloud installations were panicing after the November 23, 2021 release.
  - Fixed an issue where the default log rotation file size was mistakenly set to 10GB, and is now reverted back to 100MB.
