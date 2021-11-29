@@ -27,12 +27,10 @@ Mention people
 
 You can include a team member on a card by mentioning them on a card <https://docs.mattermost.com/messaging/mentioning-teammates.html>__ the same way you would in Channels. The team member you mention will receive a Direct Message notification from the Boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
 
-Mention auto-completes will be available in a future release.
-
 Share card previews
 -------------------
 
-When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to click through to it.
+When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
 
 Customize card properties
 -------------------------
@@ -42,15 +40,13 @@ Cards can contain different data fields depending on the purpose of the board. F
 Add and manage properties
 -------------------------
 
-On a card, you can create a new property field by selecting Add a property, then selecting the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
+To create a new a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
 
-Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later.
+Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later. You can rename a property at any time by opening a card, then selecting **New Property**. Your changes are saved immediately, and applied across all cards on the current board.
 
-You can rename a property at any time by opening a card, then selecting New Property. Your changes are saved immediate, and applied across all cards on the current board.
+To delete properties you no longer need, select the property, then choose Delete. You'll be asked to confirm that you want to removes that property from every card on the current board.
 
-You can also delete properties you no longer need by selecting the property, then choosing Delete.  You'll be asked to confirm that you want to removes that property from every card on the current board.
-
-Once you have card properties defined, you have full control over which properties are visible on the board. Click Properties at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don't want to see.
+Once you have card properties defined, you have full control over which properties are visible on the board. Select **Properties** at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don't want to see.
 
 Work with property types
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,16 +55,16 @@ Work with property types
 * **Multi-select** allows you to create badges to indicate things like status.
 * **Numbers** are useful to capture metrics such as task sizing or effort estimates.
 * **Person** provides a quick way to capture user assignments.
-
-Once you've added a property and named it, to display this information in the view you're using, select **Properties** and then select the property name.
+* **URL** can be used to provide a link to a pull request or relevant website.
+* **Created time/Created by/Last updated time/Last updated by** are good ways order tasks in order of recency.
 
 Calculations
 ------------
 
-Each board includes calculations which allow users to answer basic metric questions without needing to create complex reports, such as:
+When you view a board in table view, you can use calculations to answer basic metric questions without needing to create complex reports. Hover over the bottom of a column to display the **Calculate** feature, then select the arrow to open the menu options.
 
-- How many story points are planned for this release?
-- How many tasks have been assigned or not assigned?
-- How long has the oldest bug been sitting in the backlog?
+You can use calculations to quickly see:
 
-The calculation options are available at the bottom of a board.
+- How many story points are planned for a release.
+- How many tasks have been assigned or not assigned.
+- How long has the oldest bug been sitting in the backlog.
