@@ -54,6 +54,7 @@ Lastest Mattermost Releases:
 
 ### Bug Fixes
  - Fixed an issue where OpenID redirects didn't work when hosting Mattermost on a subdirectory.
+ - Fixed an issue where the webapp crashed sometimes when clicking on an image file from "Recent files".
  - Fixed an issue where the default log rotation file size was mistakenly set to 10GB, and is now reverted back to 100MB.
  - Fixed an issue where emoji reaction buttons on posts did not respect user permissions.
  - Fixed an issue where unchecking the automatic timezone changed the timezone in the selector.
