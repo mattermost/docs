@@ -13,7 +13,7 @@ If, after completing your 14-day free Cloud trial, you've decided to self-host y
 How does the process work?
 --------------------------
 
-Before you export and migrate your data, you must `install Mattermost <https://docs.mattermost.com/guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. From Mattermost version 6.0 onwards, mmctl is pre-installed. For versions prior to 6.0, first download the newest release from `the releases page <https://github.com/mattermost/mmctl/releases/tag/v6.1.0>`_, `install mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#install-mmctl>`_, and place the binary on your ``PATH``.
+Before you export and migrate your data, you must `install Mattermost <https://docs.mattermost.com/guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. From Mattermost v6.0 onwards, mmctl is pre-installed. For versions prior to 6.0, first download the newest release from `the releases page <https://github.com/mattermost/mmctl/releases/tag/v6.1.0>`_, `install mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#install-mmctl>`_, and place the binary on your ``PATH``.
 
 The `mmctl usage notes <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
 
