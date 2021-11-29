@@ -84,7 +84,7 @@ Finally, it's time to take our export from the source server and use it as an im
 
 .. code::
 
-   $ mmctl auth login https://my-destintation-server.example
+   $ mmctl auth login https://localinstance.company.com
 
 Use the following command to upload the export to the destination server. The speed of the upload may vary based on connection speed. When the upload is complete the command will return with the ID of the import:
 
