@@ -29,14 +29,10 @@ You can include a team member on a card by mentioning them on a card <https://do
 
 Mention auto-completes will be available in a future release.
 
-[Note that I've started simple with user mentions, rather than diving right into the properties. This provides foundational grounding for the reader because user mentions in boards work exactly the same way as something they are likely already experienced with: Channels!]
-
 Share card previews
 -------------------
 
 When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to click through to it.
-
-[Similar philosophy here - a simple concept that ideally works the same as Channels via link previews; this helps users extend existing knowledge to new functional areas.]
 
 Customize card properties
 -------------------------
@@ -57,26 +53,14 @@ You can also delete properties you no longer need by selecting the property, the
 Once you have card properties defined, you have full control over which properties are visible on the board. Click Properties at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don't want to see.
 
 Work with property types
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-    checkboxes are useful for agenda items that are regularly revisited in weekly sprint or grooming meetings
-    multi-select allows you to create badges to indicate things like status
-    numbers are useful to capture metrics such as task sizing or effort estimates
-    person provides a quick way to capture user assignments
-    etc.
+* **Checkboxes** are useful for agenda items that are regularly revisited in weekly sprint or grooming meetings.
+* **Multi-select** allows you to create badges to indicate things like status.
+* **Numbers** are useful to capture metrics such as task sizing or effort estimates.
+* **Person** provides a quick way to capture user assignments.
 
-****
-
-How to use properties
----------------------
-
-Properties can be used for whatever situation you choose. Here are some use cases that you can use on your own boards.
-
-Recurring events
-~~~~~~~~~~~~~~~~
-
-In some situations, such as a weekly meeting agenda, there may be agenda items that are regularly revisited. You can use the **Checkbox** property to create a property type (e.g., **Recurring** or **Revisit**). To display this information in the view you're using, select **Properties** and then select the property name to display the checkbox on the card.
-
-Note that this setting is applied per board.
+Once you've added a property and named it, to display this information in the view you're using, select **Properties** and then select the property name.
 
 Calculations
 ------------
@@ -88,16 +72,3 @@ Each board includes calculations which allow users to answer basic metric questi
 - How long has the oldest bug been sitting in the backlog?
 
 The calculation options are available at the bottom of a board.
-
-Mention people
---------------
-
-You can include a team member in a card by mentioning them on the card. The format is the same as using mentions in Channels. The team member you mention will receive a Direct Message notification from the Boards bot with a link to the card you mentioned them on.
-
-To mention multiple team members, separate each name with a comma. Ensure that you enter the correct username - auto-complete will be available in a future version of Boards.
-
-Previews
---------
-
-When you share a link to a card in Mattermost, the card details are automatically displayed in a preview so you can see what the card is about at a glance and without having to click through to it.
-
