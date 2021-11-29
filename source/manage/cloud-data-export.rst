@@ -3,7 +3,7 @@ Mattermost Workspace Migration
 
 This document outlines the process for migrating from Mattermost Cloud to a Mattermost self-hosted instance. In the future, a process for migrating from Mattermost self-hosted to Mattermost Cloud will also be documented and provided here.
 
-Migrating between two installations is the same process regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**, as long as the instances involved have a version of Mattermost later than 5.33.
+Migrating between two installations follows the same process that's documented below, regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**, as long as the instances are on Mattermost version 5.33 and up.
 
 Migrating from Cloud to self-hosted
 -----------------------------------
