@@ -34,7 +34,7 @@ Authentication is done with either Mattermost login credentials or an authentica
 
    $ mmctl auth login https://yourdomain.cloud.mattermost.com
    
-You'll be prompted for a username (use your admin user), password, and for a connection name. The connection name can be anything you want, and it's used to identify this set of credentials in the future, for your convenience. Then you will be able to start the export process:
+You'll be prompted for a username (use your admin user), password, and for a connection name. The connection name can be anything you want, and it's used to identify this set of credentials in the future, for your convenience. Then you will be able to start the export process.
 
 Create the export
 -----------------
