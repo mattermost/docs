@@ -15,7 +15,7 @@ Lastest Mattermost Releases:
 **Release Day: 2021-12-16**
 
 ### Important Upgrade Notes
- - Channel results in the channel switcher will include channels from other teams as well as private channels. For users using Bleve or Elasticsearch for autocomplete/search will have to reindex their data to get the new results. Since this can take a long time, it is suggested to disable autocomplete and run indexing in the background. When this is complete, re-enable autocomplete.
+ - Channel results in the channel menu will include channels from other teams as well as private channels. Customers using Bleve or Elasticsearch for autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
