@@ -35,7 +35,7 @@ Guests can:
 - Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)
 - Favorite channels
 - Mute channels
-- Update their account settings
+- Update their profile
 
 Guests cannot:
 
@@ -211,7 +211,7 @@ Currently, you cannot. This feature may be added at a later stage.
 Can MFA be applied selectively?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If MFA is enforced for your users, it can be applied to Guest Accounts. Guests can configure MFA in **Account Settings > Security**. If MFA is not enforced for your users, it can't be applied to Guest Accounts.
+If MFA is enforced for your users, it can be applied to Guest Accounts. Guests can configure MFA in by going to their avatar and selecting **Profile > Security**. If MFA is not enforced for your users, it can't be applied to Guest Accounts.
 
 Has the Guest Accounts feature been reviewed by an external security firm?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
