@@ -4,11 +4,106 @@
 Also see [changelog in progress](https://bit.ly/2nK3cVf) for the next release.
 
 Lastest Mattermost Releases:
+- [Release v6.2 - Feature Release](#release-v6.2-feature-release)
 - [Release v6.1 - Feature Release](#release-v6.1-feature-release)
 - [Release v6.0 - Feature Release](#release-v6.0-feature-release)
 - [Release v5.39 - Quality Release](#release-v5-39-quality-release)
-- [Release v5.38 - Feature Release](#release-v5-38-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
+
+## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2021-12-16**
+
+### Important Upgrade Notes
+ - Channel results in the channel menu will include channels from other teams as well as private channels. Customers using Bleve or Elasticsearch for autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete.
+
+**IMPORTANT:** If you upgrade from a release earlier than v6.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Playbook Updates
+ - 
+
+#### Boards Updates
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - Clarified Latex Rendering config setting descriptions and fixed a broken product documentation link.
+ - Updated the "One-click reactions on messages" user setting to "Quick reactions on messages".
+ - Updated **Account Settings** terminology to **Profile**.
+ - Updated instances of **switch** to **navigate**.
+ - Updated in-product text terminology to shift from **comments** to **conversations** and **replies**.
+ - Added a **Click to open thread** setting for all users, to allow users to click anywhere on a message to open the reply thread.
+ - Do Not Disturb option for **Tomorrow** now displays the expiry time.
+ - Recent emojis now get updated based on the default selected skin tone.
+ - Updated **SingleImageView** to hide the image name for attached images until the image is collapsed.
+ - Moved the expand arrow to the left of an image name. 
+ - The image expansion icon now appears on image hover.
+ - Added online status to profile images on user autocomplete.
+ - App Commands now have an option to be opened as modals.
+ - Added support for navigating through Collapsed Reply Threads via arrow keys.
+ - Added support for focusing the input box in Collapsed Reply Threads while typing.
+ - Added support for blurring the input box in Collapsed Reply Threads on pressing Escape.
+ - Adjusted the channel override desktop notification preference for Threads.
+ - User interface is now improved when no text is set for a custom status.
+
+#### Enterprise Edition
+ - Implemented a new design for the current License page for self-hosted.
+
+### Bug Fixes
+ - Fixed an issue where OpenID redirects didn't work when hosting Mattermost on a subdirectory.
+ - Fixed an issue where the webapp crashed sometimes when clicking on an image file from "Recent files".
+ - Fixed an issue where the default log rotation file size was mistakenly set to 10GB, and is now reverted back to 100MB.
+ - Fixed an issue where emoji reaction buttons on posts did not respect user permissions.
+ - Fixed an issue where unchecking the automatic timezone changed the timezone in the selector.
+ - Fixed an issue where emoji names were being truncated too soon in the emoji picker.
+ - Fixed an issue where the thread footer did not allow the user to follow a Thread.
+ - Fixed an issue where the app crashed when switching to Threads view after leaving a channel.
+ - Fixed an issue where Mattermost crashed when deleting a root post from Global Threads.
+ - Fixed an issue where push notifications did not clear from the lock screen or the notification center with Collapsed Reply Threads enabled.
+ - Fixed an issue where Direct Message notifications were missing the sender name with Collapsed Reply Threads enabled.
+ - Fixed an issue where keyboard shortcuts were not working with Global Threads.
+ - Fixed an issue where API allowed changing the name of the Town Square channel.
+ - Fixed an issue where errors were logged if a user disabled notifications.
+ - Fixed an issue where a channel was not immediately removed from the sidebar when the current user was removed from it.
+ - Fixed a potential server crash when creating or updating posts with permalink previews.
+ - Fixed an issue where permalinks created from saved posts did not correctly redirect to the correct team.
+ - Fixed an issue where long file extension names pushed out of the bounds of the module.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added a new config setting ``DeveloperFlags``.
+ - Removed ``DesktopLatestVersion`` and ``DesktopMinVersion`` config settings.
+
+### API Changes
+ - Added a new ``IsEnterpriseReady()`` plugin API.
+ - Added a new ``GET /api/v4/roles`` API endpoint.
+ - Added new ``UpdateCustomStatus`` and ``RemoveUserCustomStatus`` plugin APIs for user custom status.
+ - Added CRUD methods for user sessions to the plugin API.
+
+### Go Version
+ - v6.2 is built with Go ``v1.16.7``.
+
+### Known Issues
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+
 
 ## Release v6.1 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
