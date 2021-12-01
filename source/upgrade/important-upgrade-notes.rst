@@ -21,7 +21,7 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v6.2                                               | Channel results in the channel menu will include private channels. Customers using Bleve or Elasticsearch for                                                    |
+| v6.2                                               | Channel results in the channel autocomplete will include private channels. Customers using Bleve or Elasticsearch for                                            |
 |                                                    | autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running              |
 |                                                    | indexing in the background. When this is complete, re-enable autocomplete.                                                                                       |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
