@@ -6865,46 +6865,12 @@ Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Ma
 | This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-Custom User Attributes
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-custom-attributes/blob/master/README.md>`__.
-
-GitHub
-^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md>`__.
-
-Jira
-^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-jira/blob/master/README.md>`__.
-
-Net Promoter Score
-^^^^^^^^^^^^^^^^^^
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://docs.mattermost.com/manage/user-satisfaction-surveys.html>`__.
-
 Welcome Bot
 ^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
+The settings for the WelcomeBot plugin aren't available in the System Console, and can only be set in ``config.json``.
 
 Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-welcomebot/blob/master/README.md>`__.
 
