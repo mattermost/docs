@@ -19,7 +19,7 @@ The following instructions use Docker to install Mattermost in *Preview Mode* us
 
 .. important::
 
-  This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, and doesn't support upgrades. For a production installation with Docker, see the `Mattermost Production Docker Deployment Guide <https://docs.mattermost.com/install/prod-docker.html>`__.
+  This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, and doesn't support upgrades. For a production installation with Docker, see the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__.
 
 .. note::
   If you have problems installing Mattermost, see
