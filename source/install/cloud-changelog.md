@@ -17,6 +17,11 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Added thread replies to search results when collapsible reply threads feature is enabled.
  - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
+ - Government related references are now shown for Government type licenses.
+
+#### Performance
+ - Added a general performance fix for loading the web application and typing.
+ - Improved performance while typing by moving some autocomplete layout calculation.
 
 ### Bug Fixes
  - Fixed slow channel loading for instances with website link previews enabled.
