@@ -1301,13 +1301,19 @@ pre {
 @media (min-width: 992px) {
     .site-header__col--menu .site-nav__toplink > a {
         line-height: 150%;
-        padding: 26px 13px;
-        font-size: 15px;
+        padding: 26px 5px;
+        font-size: 14px;
     }
 }
 @media (min-width: 1200px) {
     .site-header__col--menu .site-nav__toplink > a {
         padding: 26px 10px;
+    }
+}
+@media (min-width: 1400px) {
+    .site-header__col--menu .site-nav__toplink > a {
+        padding: 26px 10px;
+        font-size: 15px;
     }
 }
 @media (max-width: 991.98px) {
@@ -1334,11 +1340,6 @@ pre {
 .site-header__col--menu .site-nav__toplink > a:hover span svg path {
     stroke: #1c58d9;
 }
-@media (min-width: 992px) {
-    .site-header__col--menu .site-nav__toplink > a {
-        font-size: 15px;
-    }
-}
 .site-header__col--menu .site-nav__button {
     border-bottom: none;
     margin: 0 auto;
@@ -1354,7 +1355,7 @@ pre {
     .site-header__col--menu .site-nav__button a {
         font-size: 14px;
         padding: 5px 20px;
-        margin-top: 7px;
+        margin-top: 9px;
     }
 }
 .site-header__col--menu .site-nav__button a:focus,
@@ -1363,7 +1364,7 @@ pre {
 }
 @media (max-width: 991.98px) {
     .site-header__col--menu .site-nav__button {
-        padding-bottom: 30px;
+        padding-bottom: 0px;
     }
 }
 @media (min-width: 992px) {
@@ -1788,7 +1789,7 @@ pre {
         margin-bottom: 0;
     }
     .site-header .site-nav__button {
-        padding-top: 40px;
+        padding-top: 20px;
     }
 }
 .mm-button {
@@ -1822,6 +1823,31 @@ pre {
     .mm-button.mm-button-solid.mm-button-blue:hover {
         background-color: #043cb5;
         border-color: #043cb5;
+    }
+}
+
+.site-nav__button .mm-button {
+    border-width: 1px !important;
+    transition: none !important;
+}
+
+.mm-button-outline--thin.mm-button-outline--thin-blue {
+    color: #043cb5 !important;
+    border: 1px solid #043cb5;
+}
+
+@media (max-width: 767px) {
+    .mm-button-outline--thin.mm-button-outline--thin-blue:hover,
+    .mm-button-outline--thin.mm-button-outline--thin-blue:focus {
+        color: #043cb5 !important; 
+    }
+}
+@media (min-width: 768px) {
+    .mm-button-outline--thin.mm-button-outline--thin-blue:hover,
+    .mm-button-outline--thin.mm-button-outline--thin-blue:focus {
+        color: white !important;
+        background-color:  #043CB5;
+        border: 1px solid  #043CB5;
     }
 }
 
