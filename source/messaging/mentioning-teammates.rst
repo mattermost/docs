@@ -81,7 +81,7 @@ If a channel has five or more members, you may be prompted to confirm that you w
   
 You can ignore channel-wide mentions in specific channels by enabling the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here, and @all** option.
   
-@groupname (Beta)
+@groupname
 ~~~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
