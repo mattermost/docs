@@ -23,6 +23,7 @@ Latest Mattermost Cloud releases:
  - Added a general performance fix for loading the web application and typing.
  - Improved performance while typing by moving some autocomplete layout calculations.
  - Improved performance by reducing DOM usage during render.
+ - Removed real-time updates of a couple features to prevent overloading servers on user updates.
 
 ### Bug Fixes
  - Fixed slow channel loading for instances with website link previews enabled.
