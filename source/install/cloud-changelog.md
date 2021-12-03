@@ -21,12 +21,13 @@ Latest Mattermost Cloud releases:
 
 #### Performance
  - Added a general performance fix for loading the web application and typing.
- - Improved performance while typing by moving some autocomplete layout calculation.
+ - Improved performance while typing by moving some autocomplete layout calculations.
+ - Improved performance by reducing DOM usage during render.
 
 ### Bug Fixes
  - Fixed slow channel loading for instances with website link previews enabled.
- - Fixed an issue where the webapp crashed sometimes when clicking on an image file from "Recent files".
- - Fixed an issue where the status menu unexpectedly closed when clicking the "Disable Notifications Until" header.
+ - Fixed an issue where the webapp crashed sometimes when selecting an image file from "Recent files".
+ - Fixed an issue where the status menu unexpectedly closed when selecting the "Disable Notifications Until" header.
 
 ### Known Issues
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
