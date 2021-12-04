@@ -30,7 +30,7 @@ Advanced Permissions
 
 Mattermost System Admins using Mattermost Cloud or Mattermost Server from v5.0 can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
-Two permission schemes are provided in Mattermost: 
+Two permission schemes are provided in Mattermost:
 
 * System Scheme: Applies permissions universally across all teams and channels
 * Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional)
@@ -108,7 +108,7 @@ This section provides some examples of common permissions use cases for team man
 Team Management
 ~~~~~~~~~~~~~~~~
 
-**Only allow Admins, in specific team, to add members**
+**Only allow Admins, in a specific team, to add members**
 
 Example: In Team A, only allow Team and System Admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
