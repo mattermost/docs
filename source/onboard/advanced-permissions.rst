@@ -32,8 +32,8 @@ Mattermost System Admins using Mattermost Cloud or Mattermost Server from v5.0 c
 
 Two permission schemes are provided in Mattermost:
 
-* System Scheme: Applies permissions universally across all teams and channels
-* Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional)
+* System Scheme: Applies permissions universally across all teams and channels.
+* Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
 
 This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
 
@@ -41,10 +41,10 @@ This document describes the types of permissions that can be given to users of M
   :backlinks: top
   :local:
   
-Permissions Structure
+Permissions structure
 ----------------------
 
-The Mattermost System Console provides a number of elements for Admins to control the permissions in their system. 
+The Mattermost System Console provides a number of elements for Admins to control the permissions in their system.
 
 System Scheme
 ~~~~~~~~~~~~~~
@@ -64,8 +64,8 @@ You can access the System Scheme interface by going to **System Console > User M
 
 .. image:: ../images/system-scheme.png
 
-Team Override Schemes
-~~~~~~~~~~~~~~~~~~~~~
+Team Override Scheme
+~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -101,11 +101,11 @@ Supplementary Roles
 Allows Admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams, or system level.
 
 Recipes
---------
+-------
 
 This section provides some examples of common permissions use cases for team management, channel management, and overall permissions. 
 
-Team Management
+Team management
 ~~~~~~~~~~~~~~~~
 
 **Only allow Admins, in a specific team, to add members**
@@ -124,10 +124,10 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
   iv. In the **Team Administrators** panel, check the box for **Add Team Members**.
 
-7. Select **Save**. 
-8. Select the back arrow to return to the **Permission Schemes** menu. 
+7. Select **Save**.
+8. Select the back arrow to return to the **Permission Schemes** menu.
 
-Public and Private Channel Management
+Public and Private channel management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Restrict who can rename channels and edit channel header and purposes**
@@ -199,10 +199,10 @@ The channel is available for all members and guests to access, but guests can on
 
 The channel is available for all members and guests to access but only admins can post.
 
-Post Management
-~~~~~~~~~~~~~~~~
+Post management
+~~~~~~~~~~~~~~~
 
-**Restrict who can delete posts**
+**Restrict who can delete posts.**
 
 Example: As the default for the entire system, restrict deleting posts to only Team and System Admins.
 
@@ -211,7 +211,7 @@ Example: As the default for the entire system, restrict deleting posts to only T
 3. In the **All Members** and **Channel Admininistrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 4. In the **Channel Administrators** and **Team Administrators** panels, in the **Delete Posts** section, check the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 
-**Restrict who can edit posts**
+**Restrict who can edit posts.**
 
 Example: As the default for the entire system, only allow users to edit their own posts for five minutes after posting.
 
@@ -224,10 +224,10 @@ Example: As the default for the entire system, only allow users to edit their ow
 
   The post edit time limit is a `global config variable <https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
 
-Integration Management
-~~~~~~~~~~~~~~~~~~~~~~~
+Integration management
+~~~~~~~~~~~~~~~~~~~~~~
 
-**Restrict managing webhooks and slash commands**
+**Restrict managing webhooks and slash commands.**
 
 Example: As the default for the entire system, only allow System Admins to create, edit and delete integrations.
 
@@ -239,7 +239,7 @@ Example: As the default for the entire system, only allow System Admins to creat
 
   Permissions for creating, editing, and deleting integrations are currently grouped for each integration type. These will be split into separate permissions in a future release.
 
-Administration Tools
+Administration tools
 --------------------
 
 There are a number of CLI and mmctl tools available for Admins to help in configuring and troubleshooting the permissions system:
@@ -248,7 +248,7 @@ There are a number of CLI and mmctl tools available for Admins to help in config
 2. `Export permission schemes <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-export>`__: Exports the System Scheme and any Team Override Schemes to a ``jsonl`` file.
 3. `Import permission schemes <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a ``jsonl`` input file in the format outputted by ``mattermost permissions export``.
 
-Backend Infrastructure
+Backend infrastructure
 ----------------------
 
 Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__.
