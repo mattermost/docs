@@ -4,7 +4,7 @@ The following process provides steps to configure SAML with Keycloak for Matterm
 
 ### Pre-installation
 
-1 - Before configuring SAML with Okta, make sure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) installed on your Mattermost instance. The XML Security Library is usually included as part of Debian GNU/Linux.
+1 - Before configuring SAML with Keycloak, ensure you have the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) installed on your Mattermost instance. The XML Security Library is a part of Debian GNU/Linux.
 
 Also confirm if the `xmlsec1-openssl` library was successfully installed. If not, run
  - `apt-get install libxmlsec1-openssl` on Ubuntu
@@ -13,7 +13,7 @@ Also confirm if the `xmlsec1-openssl` library was successfully installed. If not
 
 ### Set up a connection app for Mattermost SSO
 
-2 - Sign into Keycloak as an administrator.
+2 - Sign in to Keycloak as an administrator.
 
 3 - Click **Clients** then **Create** and save. You'll use this client ID in a later step.
     - `Client ID` - mattermost
@@ -47,27 +47,27 @@ Also confirm if the `xmlsec1-openssl` library was successfully installed. If not
 ![keycloak_3_add_builtins](../../source/images/keycloak_3_add_builtins.PNG)
 
 10 - Add the username and id attribute
-    a. With the **Mappers** section of your client click **Create**
+    a. With the **Mappers** section of your client, click **Create**
     b. Set **name** to ``username``
     c. Under Mapper Type select **User Property**
     d. Set **property** to ``Username`` (This is case sensitive)
     d. Set **SAML Attribute Name** to ``username``
     e. Click **Save**.
-    f. Repeat this step again and use the property of ``id`` to create the ID Attribute.
+    f. Repeat this step and use the property of ``id`` to create the ID Attribute.
 
 
 ![keycloak_4_create_username_attribute](../../source/images/keycloak_4_create_username_attribute.PNG)
 
-11 - Get the metadata url from keycloak
-    a. Within your Realm click **Realm Settings**
-    b. At the bottom of the **General** tab you should see a **SAML 2.0 Identity Provider Metadata** endpoint. Right click and copy this url. Store for the next step.
+11 - Get the metadata URL from keycloak
+    a. Within your Realm, click **Realm Settings**
+    b. At the bottom of the **General** tab you should see a **SAML 2.0 Identity Provider Metadata** endpoint. Right-click and copy this URL. Store for the next step.
 
 ### Configure SAML for Mattermost
 
-12 - Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**
+12 - Start Mattermost server and sign in to Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**
 
-13 - Set the **Identity Provider Metadata URL** to the value you copied from the step above and click **Get SAML Metadata from IdP**. This will populate most of the important fields related to your keycloak configuration.
-    If you have any issues with this import you can check the ``mattermost.log`` file for more information. You will need to turn on debug logging and try again if you do not already have debug logging enabled.
+13 - Set the **Identity Provider Metadata URL** to the value you copied from the step above and click **Get SAML Metadata from IdP**. The metadata import will populate fields related to your keycloak configuration.
+    If you have any issues with this import, you can check the ``mattermost.log`` file for more information. You will need to turn on debug logging and try again if you do not already have debug logging enabled.
 
 14 - Set the below fields:
     - **Verify Signature** : ``true``
@@ -97,7 +97,7 @@ Also confirm if the `xmlsec1-openssl` library was successfully installed. If not
 
 ![keycloak_7_mattermost_request_signing](../../source/images/keycloak_7_mattermost_request_signing.PNG)
 
-16 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you configured in Keycloak in step 9 and 10. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
+16 - Set attributes for the SAML Assertions, which will update user information in Mattermost. Attributes for email and username are required to match the values you configured in Keycloak in steps 9 and 10. See [documentation on SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
 
     - **Username Attribute** : ``username``
     - **Email Attribute** : ``email``
@@ -109,7 +109,7 @@ Also confirm if the `xmlsec1-openssl` library was successfully installed. If not
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
-It is also recommended to post an announcement about how the migration will work to users.
+It is also recommended to post an announcement about how the migration will work for users.
 
 You may also configure SAML for Keycloak by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](http://docs.mattermost.com/administration/config-settings.html#saml-enterprise). You must restart the Mattermost server for the changes to take effect.
 
@@ -119,24 +119,24 @@ The following are troubleshooting suggestions on common error messages and issue
 
 ##### 1. System Administrator locks themselves out of the system
 
-If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
+If the System Administrator is locked out of the system during the SAML configuration process, they can set an existing account to System Administrator using [a command-line tool](http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
 
 ##### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+This error usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 ##### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+This error usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 ##### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
 
-Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Okta configuration and in **System Console > SAML**.
+Confirm that all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Keybcloak configuration and in **System Console > SAML**.
 
 ##### 5. Unable to switch to SAML authentication successfully
 
 First, ensure you have installed the [XML Security Library](https://www.aleksey.com/xmlsec/download.html) on your Mattermost instance and that **it is available in your** `PATH`.
 
-Second, ensure you have completed each step in our guide above for configuring SAML with Okta.
+Second, ensure you have completed each step in our guide above for configuring SAML with Keycloak.
 
-Lastly, if you are still having trouble with configuration, feel free to post in our [Troubleshooting forum](http://www.mattermost.org/troubleshoot/) and we'll be happy to help with issues during setup.
+Lastly, if you are still having trouble with configuration, feel free to post in our [Troubleshooting forum](http://www.mattermost.org/troubleshoot/), and we'll be happy to help with issues during setup.
