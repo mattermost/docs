@@ -1,17 +1,15 @@
 Roles and Permissions
 =====================
 
-There are different ways to access in interact with playbooks and this is controlled in the System Console by Playbook Admins in the form of roles and permissions.
+There are different ways to access in interact with playbooks and this is controlled in the System Console by Playbook Admins in the form of permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility, and to different roles.
 
 Roles
 -----
 
-Members
-~~~~~~~
+There are two types of roles that apply to playbooks:
 
-* Members are users of Mattermost who belong to the team within which the run is active and who may have a vested interest in the run.
-* A member can follow a run or a playbook.
-* A member is part of a run either as an active participant or spectator. 
+* System roles
+* Playbook-specific roles
 
 Playbook Admin
 ~~~~~~~~~~~~~~
@@ -19,6 +17,13 @@ Playbook Admin
 * Playbook Admins are also members, but have elevated permissions to change playbook and run visibility and functional settings. They can be System or Team Admins as well but don’t have to be.
 * A playbook Admin’s purpose is to manage the configuration settings and member permissions.
 * A playbook Admin can follow a run or a playbook.
+
+Members
+~~~~~~~
+
+* Members are users of Mattermost who belong to the team within which the run is active and who may have a vested interest in the run.
+* A member can follow a run or a playbook.
+* A member is part of a run either as an active participant or spectator. 
 
 Participants
 ~~~~~~~~~~~~
@@ -37,3 +42,5 @@ Owner
 
 Permissions
 -----------
+
+The default settings allow all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, etc. Using permissions provides better control over confidential runs and playbooks, as well as member management.
