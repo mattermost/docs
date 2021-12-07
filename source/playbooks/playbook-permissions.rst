@@ -21,13 +21,40 @@ The default Playbooks settings are completely open. This means that members can 
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+In this example, set permissions to only allow Playbook Admins to edit playbooks and start runs. Team members can view Public and Private playbooks and runs but can't edit playbooks, check off tasks, or remove members from runs.
 
-Control who can convert playbooks
+1. Go to **System Console > User Management > Permissions**.
+2. In the **All Members** section, uncheck **Manage Public Playbooks** and uncheck **Manage Private Playbooks**.
+3. Scroll down to the **Playbook Admin** section and confirm that **Manage Public Playbooks** and **Manage Private Playbooks** are checked.
+4. Select **Save**.
+
+Manage how playbooks are accessed
 ---------------------------------
+
+By default, playbooks are Public. This means that any member of the team can view the playbook and associated runs. Playbooks can be converted from Public to Private, but once a playbook is Private it can't be converted back to Public.
 
 Restrict who can convert playbooks from Public to Private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+In this example, you can control whether Members can convert playbooks from Public to Private.
+
+1. Go to **System Console > User Management > Permissions**.
+2. In the **All Members** section, check **Convert Playbooks**.
+3. Select **Save**.
+
+To restrict this action to only Members and not allow Playbook Admins to convert playbooks from Public to Private:
+
+1. Go to **System Console > User Management > Permissions**.
+2. Scroll down to **Playbook Admin**.
+3. Uncheck **Convert Playbooks**.
+4. Select **Save**.
+
 Control who can start runs
 --------------------------
 
+By default, all Members can start a run using a playbook. This setting restricts that action to Playbook Admins.
+
+1. Go to **System Console > User Management > Permissions**.
+2. In the **All Members** section, uncheck **Manage Runs**.
+3. Scroll down to **Playbook Admin** and ensure that **Manage Runs** is checked.
+3. Select **Save**.
