@@ -7260,32 +7260,6 @@ The minimum version of the Android React Native app that is required to be used.
 | This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Latest Desktop Version
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The latest version of the desktop app that is recommended for use. 
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DesktopLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Minimum Destop Version
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum version of the desktop app that is required to be used. 
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DesktopMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Latest iOS Version
 ^^^^^^^^^^^^^^^^^^^
 
