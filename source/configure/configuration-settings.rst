@@ -1924,9 +1924,9 @@ Enable Developer Mode
 
 **False**: Users are not alerted to Javascript errors.
 
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.EnableDeveloper": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------+
 
 Allow Untrusted Internal Connections To
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6051,6 +6051,19 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 .. note::
 
    Enabling this configuration setting doesn’t retroactively follow threads for older actions taken prior to the setting being enabled. For example, if a user comments on an old thread, they automatically follow the thread if this setting is enabled regardless of whether the thread existed when this setting was disabled.
+
+Developer Flags
+^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting specifies a list of strings where each string is a flag used to set the content security policy for the Mattermost web app. Each flag must be in the format ``flag=true`` (e.g. ``unsafe-eval=true,unsafe-inline=true``). This configuration setting is disabled by default and requires `Developer Mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled.
+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.DeveloperFlags": ""`` with string input.  |
++--------------------------------------------------------------------------------------------------------+
 
 WebSocket URL
 ^^^^^^^^^^^^^^
