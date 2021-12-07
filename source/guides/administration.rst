@@ -24,7 +24,7 @@ The Basics
     OpenID </onboard/sso-openidconnect>
     Google SSO </onboard/sso-google>
     Office 365 SSO </onboard/sso-office>
-    Gitlab SSO </onboard/sso-gitlab>
+    GitLab SSO </onboard/sso-gitlab>
     Multi-factor Authentication </onboard/multi-factor-authentication>
     Active Directory / LDAP </onboard/ad-ldap>
 
