@@ -50,7 +50,7 @@ Step 1: Add an OpenID Connect application to your GitLab account
 
    If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
 
-  c. Do not select any options under **Scopes**.
+  c. Select the scopes: ``openid``, ``profile``, and ``email``.
 
 3. Select **Save application**.
 
