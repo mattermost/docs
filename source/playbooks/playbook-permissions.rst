@@ -1,17 +1,31 @@
 Roles and Permissions
 =====================
 
-There are different ways to access and interact with playbooks and this is controlled in the System Console in the form of permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility, and to different roles.
+There are different ways to access and interact with playbooks and this is controlled in the System Console in the form of permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility, and to different roles. Two permission schemes are provided in Mattermost:
 
-Permissions in Playbooks are applied to roles and inherited from System Schemes which apply across Mattermost to Members and Playbook Administrators. 
+* **System Scheme:** Applies permissions universally across all teams and channels.
+* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
+
+You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Playbook Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
+
+* **Guests:** If Guest Accounts are enabled, permissions apply to guest users in all channels, in all teams.
+* **All Members:** Permissions apply to all members, including Admins, in all channels, in all teams.
+* **Channel Administrators:** Permissions apply to all Channel Admins in all channels, in all teams.
+* **Playbook Admins:** Permissions apply to all Playbook Admins in all channels, in all teams.
+* **Team Administrators:** Permissions apply to all Team Admins, in all teams.
+
+For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
+
+Roles
+-----
 
 **Member**
 
-In the context of Playbooks, members are users of Mattermost who belong to the team within which the run is active and who may have a vested interest in the run. Depending on the permissions granted, members can have the same privileges as Playbook Admins or restricted privileges.
+In the context of Playbooks, members are users of Mattermost who belong to the team within which the run is active and who may have a vested interest in the run. Depending on the permissions granted, members can have the same privileges as Playbook Admins or restricted privileges. Members are also referred to as participants in a run.
 
 **Playbook Admin**
 
-In the context of Playbooks, Playbook Admins are also members, but have elevated permissions to change playbook and run visibility and functional settings. The Playbook Admin role is a default role, and members need to be promoted to the role from within Playbooks. The Playbook Admin role then applies across the Playbooks platform. They do not have access to the System Console and their privileges are managed by System and Team Admins.
+In the context of Playbooks, Playbook Admins are also members, but have elevated permissions to change playbook and run visibility and functional settings. The Playbook Admin role is a default role, and members need to be promoted to the role from within Playbooks. The Playbook Admin role then applies across the Playbooks platform. They do not have access to the System Console and their privileges are managed by System Admin.
 
 Manage playbook visibility
 --------------------------
@@ -57,4 +71,4 @@ By default, all Members can start a run using a playbook. This setting restricts
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Runs**.
 3. Scroll down to **Playbook Admin** and ensure that **Manage Runs** is checked.
-3. Select **Save**.
+4. Select **Save**.
