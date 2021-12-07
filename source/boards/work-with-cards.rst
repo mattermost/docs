@@ -69,7 +69,7 @@ You can use calculations to quickly see:
 - How many tasks have been assigned or not assigned.
 - How long has the oldest bug been sitting in the backlog.
 - The count of cards where particular properties are empty (useful to make sure important info isn’t missing)
-- The sum of estimated developer days for features (to make sure your team isn’t overloaded), and
+- The sum of estimated developer days for features (to make sure your team isn’t overloaded).
 - The range of estimated dates (to make sure your milestones all line up).
 
 The calculation options are detailed below:
