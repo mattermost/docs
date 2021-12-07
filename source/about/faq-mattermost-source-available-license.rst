@@ -111,7 +111,7 @@ With regard to the Mattermost Software:
 This software and associated documentation files (the "Software") may only be
 used in production, if you (and any entity that you represent) have agreed to,
 and are in compliance with all of the following: (a) the Mattermost Terms of Use, 
-available at https://mattermost.com/terms-of-service/ (the "TOU"), (b) and the Mattermost 
+available at https://mattermost.com/terms-of-use/ (the "TOU"), (b) and the Mattermost 
 Software License Agreement,  available at https://mattermost.com/enterprise-edition-terms/ 
 (the “SLA”) or other licensing agreement governing your use of the Software, as agreed 
 by you and Mattermost, and otherwise have a valid Mattermost Enterprise for the correct 
