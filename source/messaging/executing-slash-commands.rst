@@ -10,7 +10,7 @@ Executing Slash Commands
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -55,7 +55,7 @@ The following slash commands are available on all Mattermost installations:
     "/msg *{@username}* *{message}*", "Send a Direct Message to a user", "/msg @alice hello"
     "/groupmsg *{@username1, @username2, ...}* *{message}*", "Sends a Group Message to the specified users", "/groupmsg @alice, @bob hello"
     "/search *{text}*", "Search text in messages", "/search meeting"
-    "/settings", "Open the Account Settings dialog", "/settings"
+    "/settings", "Open the Settings dialog", "/settings"
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
     "/status *{emoji_name}* *{descriptive status_message}* *", Set a custom status that includes an optional emoji and a descriptive status message, "/status sick Feeling unwell and taking time off to recover" 

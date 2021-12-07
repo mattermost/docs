@@ -1,4 +1,3 @@
-
 Certifications and Compliance Overview
 ========================================
 
@@ -170,7 +169,7 @@ To be compliant with GDPR, do I need to remove message contents of email notific
 
 Based on our interpretation of GDPR, it is not required to hide message contents in email notifications to remain compliant for the following reasons:
 
-1. Every user has the ability to disable email notifications in their Account Settings. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
+1. Every user has the ability to disable email notifications in **Settings**. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
 2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect communication between the Mattermost server and the SMTP email server.
 3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to `disable notifications completely <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-notifications>`__ on your Mattermost server. To use Mattermost in production with no email notifications, you also need to `disable a "preview mode" notice banner <https://docs.mattermost.com/configure/configuration-settings.html#enable-preview-mode-banner>`__.
 

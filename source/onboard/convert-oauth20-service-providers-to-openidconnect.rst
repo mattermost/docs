@@ -15,7 +15,7 @@ Converting OAuth 2.0 Service Providers to OpenID Connect
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -31,11 +31,6 @@ Configuring OpenID Connect Single Sign-On
 -----------------------------------------
 
 |self-hosted|
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 For details on configuring Mattermost to use a service provider as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in OpenID Connect, refer to the following documentation:
 

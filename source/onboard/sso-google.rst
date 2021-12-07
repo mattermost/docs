@@ -15,7 +15,7 @@ Google Single Sign-On
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -32,14 +32,9 @@ Configure Mattermost ``config.json`` for Google Apps SSO
 
 |self-hosted|
 
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 Instead of using the System Console, you can add the Google settings directly to the ``config.json`` file directly on your Mattermost server.
 
-1. Open ``config.json`` as *root* in a text editor. It’s usually in ``/opt/mattermost/config`` but it might be elsewhere on your system.
+1. Open ``config.json`` as *root* in a text editor. It’s usually in ``/opt/mattermost/config``, but it might be elsewhere on your system.
 2. Locate the ``GoogleSettings`` section, then add or update the following information:
 
 .. code-block:: text

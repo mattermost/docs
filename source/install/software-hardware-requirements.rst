@@ -41,7 +41,7 @@ Desktop Apps
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Windows", "Windows 8.1 and 10", "Windows 8.1 and 10"
-    "Mac", "MacOS 10.12+", "MacOS 10.14+"
+    "Mac", "MacOS 10.14+", "MacOS 10.14+"
     "Linux", "Ubuntu LTS releases 18.04 or later", "Ubuntu LTS releases 18.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
@@ -54,8 +54,8 @@ PC Web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v77+", "v89+"
-    "Firefox", "v68+", "v78+"
+    "Chrome", "v89+", "v89+"
+    "Firefox", "v78+", "v78+"
     "Safari", "v12+", "v12+"
     "Edge", "v44+", "v44+"
 
@@ -78,8 +78,8 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 12.1+ with Safari 12+ or Chrome 77+"
-    "Android", "Android 7+ with Chrome 77+"
+    "iOS", "iOS 12.1+ with Safari 12+ or Chrome 89+"
+    "Android", "Android 7+ with Chrome 89+"
 
 Email Client
 ^^^^^^^^^^^^
@@ -208,7 +208,7 @@ File usage per user varies significantly across industries. The below benchmarks
 	- Use a mix of text messages as well as shared documents and images to communicate. Examples might include business teams that may commonly drag and drop screenshots, PDFs and Microsoft Office documents into Mattermost for sharing and review.
 
 -  **High usage teams** (25-100 MB/user/month)
-	- Heaviest utlization comes from teams uploading a high number of large files into Mattermost on a regular basis. Examples include creative teams who share and store artwork and media with tags and commentary in a pipeline production process.
+	- Heaviest utilization comes from teams uploading a high number of large files into Mattermost on a regular basis. Examples include creative teams who share and store artwork and media with tags and commentary in a pipeline production process.
 
 *Example:* A 30-person team with medium usage (5-25 MB/user/month) with a safety factor of 2x would require between 3.5 GB (30 users \* 5 MB \* 12 months \* 2x safety factor) and 17.6 GB (30 users \* 25 MB \* 12 months \* 2x safety factor) of free space in the next year.
 

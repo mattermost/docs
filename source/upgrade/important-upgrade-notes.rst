@@ -15,12 +15,24 @@ Important Upgrade Notes
 
 .. important::
    - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
-   - The "version" CLI command will be deprecated in Mattermost v6.1.
+   - The "version" CLI command will be deprecated in a future release.
    - Upgrading Mattermost can result in an error “ERROR: default for column "column_name" cannot be cast automatically to type jsonb” if you have non-JSON data in a column. This can also happen if the database data has been manipulated by external processes (e.g. plugins) and in cases where improper input data could get silently truncated due to varchar limits. The data in the affected database column has to be manually fixed.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v6.1                                               | Please refer to `the schema migration analysis <https://gist.github.com/streamer45/997b726a86b5d2a624ac2af435a66086>`_ when upgrading to v6.1.                   |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The Bleve index has been updated to use the scorch index type. This new default index type features some efficiency improvements which means that the indexes    |
+|                                                    | use significantly less disk space. To use this new type of index, after upgrading the server version, run a purge operation and then a reindex from the Bleve    |
+|                                                    | section of the System Console. Bleve is still compatible with the old indexes, so the currently indexed data will work fine if the purge and reindex is not run. |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | A composite index has been added to the jobs table for better query performance. For some customers with a large jobs table, this can take a long time, so we    |
+|                                                    | recommend adding the index during off-hours, and then running the migration. A table with more than 1 million rows can be considered as large enough to be       |
+|                                                    | updated prior to the upgrade.                                                                                                                                    |
+|                                                    |   - For PostgreSQL: ``create index concurrently idx_jobs_status_type on jobs (status,type);``                                                                    |
+|                                                    |   - For MySQL: ``create index idx_jobs_status_type on Jobs (Status,Type);``                                                                                      |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v6.0                                               | Longer migration times can be expected.                                                                                                                          |
 |                                                    |                                                                                                                                                                  |
 |                                                    |  - See `this document <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`_ for the estimated upgrade times with datasets of 10+ million posts.|                                                                                                                                            
@@ -31,7 +43,7 @@ Important Upgrade Notes
 |                                                    | other v5 server runs when a v6 server is brought up. A v6 server will run significant database schema changes that can cause a large startup time depending on   |
 |                                                    | the dataset size. Zero downtime will not be possible, but depending on the efforts made during the migration process, it can be minimized to a large extent.     |
 |                                                    |                                                                                                                                                                  |
-|                                                    | 1. Low effort, long downtime - This is the usual process of starting a v6 server normally. This has 2 implications: during the migration process, various        |
+|                                                    | 1. Low effort, long downtime - This is the usual process of starting a v6 server normally. This has two implications: during the migration process, various      |
 |                                                    | tables will be locked which will render those tables read-only during that period. Secondly, once the server finishes migration and starts the application, no   |
 |                                                    | other v5 server can run in the cluster.                                                                                                                          |
 |                                                    |                                                                                                                                                                  |
@@ -45,7 +57,11 @@ Important Upgrade Notes
 |                                                    | node. This minimizes the downtime to only a few seconds.                                                                                                         |
 |                                                    |                                                                                                                                                                  |
 |                                                    | It is recommended to start Mattermost directly and not through systemctl to avoid the server process getting killed during the migration. This can happen since  |
-|                                                    | the value of ``TimeoutStartSec`` in the provided systemctl service file is set to 1 hour.                                                                        |
+|                                                    | the value of ``TimeoutStartSec`` in the provided systemctl service file is set to one hour.                                                                      |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Customers using the Mattermost Kubernetes operator should be aware of the above migration information and choose the path that is most appropriate for them. If  |
+|                                                    | (1) is acceptable, then the normal upgrade process using the operator will suffice. For minimum downtime, follow (2) before using the operator to update         |
+|                                                    | Mattermost following the normal upgrade process.                                                                                                                 |    
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Please see `the changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ for a list deprecations in this release.                           |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,8 +87,9 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | v5.38 adds fixes for some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This |
 |                                                    | fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute   |
-|                                                    | and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes  |
-|                                                    | about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MySQL v5.6.51.   | 
+|                                                    | and 20 seconds for a database containing approximately four million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix     |
+|                                                    | takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MySQL      |
+|                                                    | v5.6.51.                                                                                                                                                         | 
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Focalboard v0.8.2 (released with Mattermost v5.38.0) requires Mattermost v5.37+ due to the new database connection system.                                       |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -461,7 +478,7 @@ Important Upgrade Notes
 |                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let's        |
 |                                                    | Encrypt certification.                                                                                                                                           |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer upgrade times for servers with more than 1 million messages.               |
+| v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer upgrade times for servers with more than one million messages.             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | LDAP sync now depends on email. Make sure all users on your AD/LDAP server have an email address or that their account is deactivated in Mattermost.             |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+

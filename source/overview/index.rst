@@ -13,7 +13,7 @@ Below is an overview of our products, features, security, integrations, licensin
    /about/product.rst
    /about/security.rst
    /about/integrations.rst
-   /about/license-and-subscription.rst
+   /about/subscription.rst
    /about/self-hosted-subscriptions.rst
    /about/cloud-subscriptions.rst
    /about/deployments-and-editions.rst
@@ -34,6 +34,7 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Product Overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
+* :doc:`Subscription Overview </about/subscription>` - Learn about Mattermost subscriptions.
 * :doc:`Self-Hosted Subscriptions </about/self-hosted-subscriptions>` - Learn more about Mattermost self-hosted subscriptions.
 * :doc:`Cloud Subscriptions </about/cloud-subscriptions>` - Learn more about Mattermost Cloud subscriptions.
 * :doc:`Deployments and Editions </about/deployments-and-editions>` - Learn more about Mattermost deployment options.

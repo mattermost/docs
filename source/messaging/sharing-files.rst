@@ -10,7 +10,7 @@ Sharing Files
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -69,6 +69,6 @@ Other document previews (such as Word, Excel, or PPT) are not yet supported.
 Attachment Limits and Sizes
 ---------------------------
 
-Up to 10 files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin.
+Up to 10 files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size>`__ product documentation for details.
 
-Image files can be a maximum size of 7680 pixels x 4320 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 253 MB. System Admins can customize the maximum image resolution size within the ``config.json`` file. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size>`__ product documentation for details.
+Image files can be a maximum size of 7680 pixels x 4320 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 253 MB. System Admins can customize the maximum image resolution size within the ``config.json`` file. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#maximum-image-resolution>`__ product documentation for details.

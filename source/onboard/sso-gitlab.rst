@@ -10,7 +10,7 @@ GitLab Single Sign-On
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -50,7 +50,7 @@ Step 1: Add an OpenID Connect application to your GitLab account
 
    If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
 
-  c. Do not select any options under **Scopes**.
+  c. Select the scopes: ``openid``, ``profile``, and ``email``.
 
 3. Select **Save application**.
 

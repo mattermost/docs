@@ -10,7 +10,7 @@ Consider Mobile VPN Options
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -37,7 +37,7 @@ A Virtual Private Network (VPN) allows a device outside a firewall to access con
 
 We recommend one of two options: `per-app VPN <#id3>`_ or a `device VPN <#id4>`_ to secure your deployment. Both options are compatible with most EMM providers. 
 
-We also recommend following our `recommended steps to secure your deployment <https://docs.mattermost.com/mobile/mobile-appstore-install.html>`__ and to review the following commonly-asked questions about data security on mobile devices:
+We also recommend you review the following commonly-asked questions about data security on mobile devices:
 
 - `How data is handled on a device after an account is deleted? <https://docs.mattermost.com/deploy/mobile-faq.html#how-is-data-handled-on-mobile-devices-after-a-user-account-is-deactivated>`__
 - `What post metadata is sent in mobile push notifications? <https://docs.mattermost.com/deploy/mobile-faq.html#what-post-metadata-is-sent-in-mobile-push-notifications>`__

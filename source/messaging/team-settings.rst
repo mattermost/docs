@@ -10,7 +10,7 @@ Team Settings
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -51,7 +51,7 @@ Allow only users with a specific email domain to join this team
 
 Specifying domains in this setting prevents users from joining the team when their email domain is not on the list. Only users that have an email domain matching the defined domains may join the team.
 
-Users without a matching domain on the team prior to the domain being specified will not be removed after the domain is added.
+Users without a matching domain on the team prior to the domain being specified will not be removed after the domain is added. For servers with email authentication **System Console > Authentication > Email > Require Email Verification** must be set to **true** for domain restrictions to be effective.
 
 Allow anyone to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -10,7 +10,7 @@ About Teams, Channels, and Messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -34,7 +34,7 @@ Teams
 
 A team is a digital workspace where you and your teammates can collaborate together. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
-You have the ability to switch back and forth between teams on the Team Sidebar, located on the upper left side of the app.
+You have the ability to navigate between teams on the Team Sidebar, located on the upper left side of the app.
 
 .. image:: ../images/teams.gif
    :alt: ui_teams
@@ -46,24 +46,25 @@ Channels are used to organize conversations across different topics. Find availa
 
 There are three types of channels: Public Channels, Private Channels, and Direct Messages.
 
-.. image:: ../images/ui_channels5.png
-   :alt: Mattermost Channels
-
 Public Channels
 ~~~~~~~~~~~~~~~
 
-Public Channels are open to everyone on a team. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
+Public Channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
 
-Public Channels are identified with a **globe icon**.
+.. |globe-icon| image:: ../images/globe-icon.png
+   :alt: A globe icon indicates a public channel.
 
-Select the **More...** button at the bottom of the Public Channels section to explore more channels to join!
+Select the **+** button and select **Browse Channels** at the top of the channel sidebar to explore more channels to join!
 
 Private Channels
 ~~~~~~~~~~~~~~~~
 
 Private Channels are for sensitive topics and are only visible to selected team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, and any member of a Private Channel can remove other members from the channel. 
 
-Private Channels are identified with a **lock icon**.
+Private Channels are identified with a |lock-icon| icon.
+
+.. |lock-icon| image:: ../images/lock-icon.png
+   :alt: A lock icon indicates a private channel.
 
 Direct and Group Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~

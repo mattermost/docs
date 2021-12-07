@@ -8,6 +8,11 @@ Scaling for Enterprise
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
 
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
@@ -37,16 +42,6 @@ Cluster-based Deployment
 ------------------------
 
 |enterprise| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Managed deployments.
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -105,4 +100,4 @@ To scale to 100,000 users and above, we recommended using `the Mattermost open s
     "Multi-region, HA storage", "Yes", "`S3 <https://aws.amazon.com/s3/>`__", "?"
     "Multi-region, HA MySQL", "Yes - using a solution like Galera", "`Aurora <https://aws.amazon.com/rds/aurora/>`__ / `RDS for MySQL <https://aws.amazon.com/rds/mysql/>`__", "`Azure MySQL <https://azure.microsoft.com/en-us/services/mysql/>`__"
     "Multi-region, HA PostgreSQL", "Yes", "`Aurora <https://aws.amazon.com/rds/aurora/>`__ / `RDS for PostgreSQL <https://aws.amazon.com/rds/postgresql/>`__", "`Azure PostgreSQL <https://azure.microsoft.com/en-us/services/postgresql/>`__"
-    "Multi-region, HA elasticsearch", "Yes", "`Amazon Elasticsearch Service <https://aws.amazon.com/elasticsearch-service/>`__", "No"
+    "Multi-region, HA elasticsearch", "Yes", "`Amazon Elasticsearch Service <https://aws.amazon.com/opensearch-service/>`__", "No"

@@ -10,7 +10,7 @@ Performance Monitoring
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/pricing
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -60,7 +60,7 @@ Installing Prometheus
       # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
       - job_name: 'prometheus'
 
-        # Override the global default and scrape targets from this job every 5 seconds.
+        # Override the global default and scrape targets from this job every five seconds.
         # scrape_interval: 5s
 
         # metrics_path defaults to '/metrics'

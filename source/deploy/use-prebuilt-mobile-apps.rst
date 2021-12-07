@@ -10,7 +10,7 @@ Using Mattermost's Pre-Built Mobile Apps
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -23,7 +23,7 @@ We strongly recommend using Mattermost’s pre-built Mobile App. This approach i
 Deployment Options
 ------------------
 
-When you decide to use the pre-built Mattermost Mobile apps, you have two ways to distribute them: as your users to download them, or distribute them through an Enterprise Mobile Management (EMM) provider.
+When you decide to use the pre-built Mattermost Mobile apps, you have two ways to distribute them: ask your users to download them, or distribute them through an Enterprise Mobile Management (EMM) provider.
   
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -10,7 +10,7 @@ Creating Teams
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/deploy
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -25,16 +25,16 @@ New teams can be created if the System Admin sets **Enable Team Creation** to **
 Methods to Create a Team
 ------------------------
 
-If team creation is enabled by the System Admin, teams can be created from the team sidebar or Main Menu. The person who creates a team will automatically be assigned the Team Admin role for that team.
+If team creation is enabled by the System Admin, teams can be created from the team sidebar or the channel sidebar. The person who creates a team will automatically be assigned the Team Admin role for that team.
 
 Team sidebar
 ~~~~~~~~~~~~
 
-If you belong to more than one team, a team sidebar will appear to the left of your channel list. You can drag teams to reorder them in the sidebar. You can also use `keyboard shortcuts <https://docs.mattermost.com/help/messaging/keyboard-shortcuts.html>`_ to switch teams.
+If you belong to more than one team, a team sidebar will appear to the left of your channel list. You can drag teams to reorder them in the sidebar. You can also use `keyboard shortcuts <https://docs.mattermost.com/messaging/keyboard-shortcuts.html>`_ to navigate between teams.
 
 .. image:: ../images/team-sidebar.gif
 
-If you have appropriate permissions, select the "+" icon at the bottom of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
+If you have appropriate permissions, select the "+" icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
 
 If you have no other teams to join, selecting the "+" icon brings you directly to the team creation page if team creation is enabled.
 
@@ -54,18 +54,17 @@ Team name
 This is the display name of your team that appears in menus and headings.
 
 -  It can contain any letters, numbers or symbols.
--  It is case sensitive.
--  It must be 2–15 characters in length.
+-  It's case sensitive.
+-  It must be 2–64 characters in length.
 
 Team URL
 ~~~~~~~~
 
-The team URL is part of the web address that navigates to your team on
-the system domain, ``https://domain.com/teamurl/``.
+The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
 
 -  Teams may contain only lowercase letters, numbers and dashes.
 -  Teams must start with a letter and cannot end in a dash.
--  Teams must be 2–15 characters in length.
+-  Teams must be 2–64 characters in length.
 -  Team names cannot start with the following restricted words: ``admin``, ``api``, ``channel``, ``claim``, ``error``, ``files``, ``help``, ``landing``, ``login``, ``mfa``, ``oauth``, ``plug``, ``plugins``, ``post``, ``signup``, ``playbooks``, or ``boards``.
    
 Best practices for using a single team vs. multiple teams
@@ -83,4 +82,4 @@ However, some Mattermost customers prefer multiple team deployments for the foll
 
 * Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.
 * Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.
-* Creating a shared team for all users, and using `advanced permissions <https://docs.mattermost.com/deployment/advanced-permissions.html#recipes>`__ to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an `annoucement banner <https://docs.mattermost.com/administration/announcement-banner.html>`__ can be used to provide system wide announcements.
+* Creating a shared team for all users, and using `advanced permissions <https://docs.mattermost.com/deployment/advanced-permissions.html#recipes>`__ to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an `annoucement banner <https://docs.mattermost.com/administration/announcement-banner.html>`__ can be used to provide system-wide announcements.

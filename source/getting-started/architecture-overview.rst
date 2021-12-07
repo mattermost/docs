@@ -37,7 +37,7 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 Push Notification Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Mattermost `hosted push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__` and `compile their mobile applications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to use that service.
+The Mattermost `hosted push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__ and `compile their mobile applications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to use that service.
 
 Proxy
 ~~~~~
@@ -193,7 +193,7 @@ Load testing
 
 Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
 
-- 6 Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)
-- 1 MySQL database server with 5 read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)
-- 3 load test runners (for running the loadtest)
-- 3 NGINX proxies
+- Six Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)
+- One MySQL database server with five read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)
+- Three load test runners (for running the loadtest)
+- Three NGINX proxies

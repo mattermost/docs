@@ -1,12 +1,88 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.47.0 Release](#release)
-- [1.46.0 Release](#id1)
-- [1.45.1 Release](#id9)
-- [1.45.0 Release](#id14)
-- [1.44.1 Release](#id23)
-- [1.44.0 Release](#id28)
+- [1.48.0 Release](#release)
+- [1.47.2 Release](#id1)
+- [1.47.1 Release](#id6)
+- [1.47.0 Release](#id11)
+- [1.46.0 Release](#id20)
+- [1.45.1 Release](#id28)
+
+## 1.48.0 Release
+- Release Date: November 16, 2021
+- Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Highlights
+
+#### Cross-team Recent Mentions
+ - Recent mentions and saved posts now show across all teams.
+
+### Improvements
+ - Adjusted channel override mobile notification preferences for Threads.
+ - Added long-press options to the Global Threads screen.
+ - Added a new messages line to the Threads screen.
+ - Added "pull to refresh" to load threads in the Global Threads screen.
+ - Added OAuth support for plugins and apps.
+ - Added multiselect support for apps forms.
+ - Added a "Rest" field app command to filter empty options on static and dynamic selects and to prohibit executing non-leaf commands.
+ - App bindings now recognize the post menu options for each channel they live in.
+ - Added ``@here`` mention to the ``EnableConfirmNotificationsToChannel`` config setting to show a warning modal when over 5 members might be alerted with ``@here``.
+ - Updated "Jump to..." to match webapp equivalent user interface string.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where image previews could only be viewed once while on the Thread view.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
+ - Various known issues with Collapsed Reply Threads (Beta) feature:
+   - New messages banner should only count root posts.
+   - Clicking on a permalink adds the thread replies in the channel view.
+   - Threads item unread state (bolding) does not persist when deleting documents and data.
+
+## 1.47.2 Release
+- Release Date: October 25, 2021
+- Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Bug Fixes
+
+#### iOS specific
+ - Fixed an issue copying and pasting files on iOS.
+
+#### Android specific
+ - Fixed a crash when switching channels or focusing the text input area on Android.
+ - Fixed a crash while opening notifications on Android.
+
+## 1.47.1 Release
+- Release Date: October 19, 2021
+- Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where navigating to Global Threads crashed the app.
+ - Fixed Text input font scaling to follow the OS setting to fix an issue where iOS Dynamic Type size was not correct in the message box.
+
+#### iOS specific
+ - Updated the iOS app icon to a flattened version.
+ - Fixed a gesture conflict between the drawers and the post input on iOS.
 
 ## 1.47.0 Release
 - Release Date: October 13, 2021
@@ -120,7 +196,7 @@ Latest Mattermost Mobile Apps releases:
    - Mobile app top bar disappears after resuming app from screen lock.
    - New messages banner should only count root posts.
    - Clicking Jump to on mobile shows a different highlighted channel list than the sidebar highlighted channel list.
-   - Only the last 6 threads are visible in the Threads view.
+   - Only the last six threads are visible in the Threads view.
    - Some unread channels with leave/join system messages are doubled in search results.
    - Tapping on the push notification for new reply should open the thread with the post.
    - Turning the feature on and off does not push an update to the Mobile client.
@@ -328,7 +404,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where the parser of images did not accept URL escaped string, contrary to what happens in the webapp.
  - Fixed an issue where images with a transparent background showed as black in the gallery.
  - Fixed an issue where the Mention Highlight Link Color was not being used properly.
- - Fixed an issue where sliding did not work when 5 images were uploaded.
+ - Fixed an issue where sliding did not work when five images were uploaded.
  - Fixed a minor typo in the search **in:** modifier label.
  - Fixed an issue where OpenGraph without images did not show the image placeholder.
 
@@ -935,7 +1011,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
  
 ### Improvements
  - Significantly improved how quickly channels load when you open the app and when you switch between them.
- - Set all requests timeouts to a maximum of 5 seconds to improve reliability on bad networks.
+ - Set all requests timeouts to a maximum of five seconds to improve reliability on bad networks.
  - Changed "Copy Permalink" to "Copy Link" for readability.
  
 ### Bug Fixes
@@ -1442,7 +1518,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed a few mobile app crash / fatal error issues.
  - Fixed an issue with an expanding animation when tapping on Jump to Channel in the channel list.
  - Fixed an issue on iOS where animated custom emoji weren't animated.
- - Fixed an issue on iOS where users were unable to create channel name of 2 characters.
+ - Fixed an issue on iOS where users were unable to create channel name of two characters.
  - Fixed an issue on iOS where emoji appeared too close, with uneven spacing, and too small in the info modal.
  - Added an error handler when sharing text that was over server's maximum post size with the iOS Share Extension.
  - Fixed an issue where users could upload a GIF as a profile image.
@@ -1495,7 +1571,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where the user mention autocomplete drop-down was case sensitive.
  - Fixed an issue where system admininistrators were able to see the full long press menu when long pressing a system message.
  - Fixed an issue where users were not able to unflag posts from "Flagged Posts" when opened from a read-only channel.
- - Fixed an issue where users were unable to create channel names of 2 byte characters.
+ - Fixed an issue where users were unable to create channel names of two byte characters.
  
 ### Known Issues
  - Content for ephemeral messages is not displayed on Mattermost Mobile Apps.
@@ -2130,7 +2206,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ### Bug Fixes
 - Fixed issue where if only LDAP and GitLab login were enabled, LDAP did not show up on the login page
-- Fixed issue with 3 digit mention count UI in channel drawer
+- Fixed issue with three digit mention count UI in channel drawer
 
 ### Known Issues
 - Using `+:emoji:` to react to a message is not yet supported 
@@ -2272,7 +2348,7 @@ The Beta apps are a work in progress, supported features are listed below. You c
 
 #### Files
 - File thumbnails for posts with attachments
-- Upload up to 5 images
+- Upload up to five images
 - Image previewer to view images when clicked on
 
 #### Channels

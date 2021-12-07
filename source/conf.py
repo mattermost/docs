@@ -92,7 +92,7 @@ redirects = {
     "overview/integrations": 
         "https://docs.mattermost.com/about/integrations.html",
     "overview/license-and-subscription": 
-        "https://docs.mattermost.com/about/licensing-and-subscription.html",
+        "https://docs.mattermost.com/about/subscription.html",
     "overview/auth": 
         "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": 
@@ -101,7 +101,6 @@ redirects = {
         "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": 
         "https://docs.mattermost.com/getting-started/architecture-overview.html",
-    "about/licensing-and-subscription": "https://docs/mattermost.com/about/subscription.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
     "integrations/net-promoter-score": "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
@@ -118,13 +117,12 @@ redirects = {
     "overview/product": "https://docs.mattermost.com/about/product.html",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
-    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
     "overview/architecture": "https://docs.mattermost.com/getting-started/architecture-overview.html",
     "overview/license-and-subscription#frequently-asked-questions": 
-        "https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions",
+        "https://docs.mattermost.com/about/subscription.html#frequently-asked-questions",
     "overview/product#mattermost-enterprise-edition-e10": 
         "https://docs.mattermost.com/about/product.html#mattermost-enterprise-edition-e10",
     "getting-started/implementation_plan": 
@@ -365,7 +363,6 @@ redirects = {
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
     "deployment/webrtc": "https://docs.mattermost.com/deployment/video-and-audio-calling.html",
-    "deployment/bleve": "https://docs.mattermost.com/deploy/bleve-search.html",
     "deployment/desktop-app-deployment": "https://docs.mattermost.com/deploy/desktop-app.html",
     "deployment/scaling": "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
     "deployment/cluster": "https://docs.mattermost.com/scale/high-availability-cluster.html",
@@ -504,6 +501,7 @@ redirects = {
     "administration/config-settings#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
     "configure/config-ssl-http2-apache2": "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
+    "configure/configuration-settings#enable-latex-rendering": "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
     "cloud/cloud-administration/cloud-compliance":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
@@ -531,7 +529,6 @@ redirects = {
     "deployment/on-boarding": "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
     "deployment/ha": "https://docs.mattermost.com/deployment/cluster.html",
     "deployment/webrtc": "https://docs.mattermost.com/deployment/video-and-audio-calling.html",
-    "deployment/bleve": "https://docs.mattermost.com/deploy/bleve-search.html",
     "deployment/desktop-app-deployment": "https://docs.mattermost.com/deploy/desktop-app.html",
     "deployment/scaling": "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
     "deployment/cluster": "https://docs.mattermost.com/scale/high-availability-cluster.html",
@@ -681,10 +678,9 @@ redirects = {
         "https://docs.mattermost.com/messaging/channels-basics.html",
     "messaging/organizing-mattermost": 
         "https://docs.mattermost.com/messaging/organizing-channels.html",
-    "messaging/channel-settings": 
-        "https://docs.mattermost.com/messaging/channel-settings.html",
     "messaging/extending-messaging-with-integrations": 
         "https://docs.mattermost.com/messaging/extending-channels-with-integrations.html",
+    "messaging/switching-between-teams": "https://docs.mattermost.com/messaging/navigating-between-teams.html",
     "incident-collaboration/refining-and-improving":
          "https://docs.mattermost.com/playbooks/refining-and-improving.html",
     "install/requirements": 
@@ -750,7 +746,6 @@ redirects = {
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
     "overview/security": "https://docs.mattermost.com/about/security.html",
     "overview/integrations": "https://docs.mattermost.com/about/integrations.html",
-    "overview/license-and-subscription": "https://docs.mattermost.com/about/licensing-and-subscription.html",
     "overview/auth": "https://docs.mattermost.com/about/corporate-directory-integration.html",
     "overview/compliance": "https://docs.mattermost.com/about/certifications-and-compliance.html",
     "overview/faq": "https://docs.mattermost.com/about/frequently-asked-questions.html",
@@ -823,6 +818,7 @@ redirects = {
     "messaging/accessing-your-workspace.html": "https://docs.mattermost.com/messaging/signing-in.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
+    "about/license-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
     "configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37"
 }
 
@@ -839,9 +835,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '6.0'
+# version = '6.1'
 # The full version, including alpha/beta/rc tags.
-# release = '6.0'
+# release = '6.1'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -858,7 +854,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ["archive/*"]
+exclude_patterns = ["archive/*", "process/*"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -1019,4 +1015,19 @@ html_use_index = False
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "Mattermostdoc"
+
+htmlhelp_basename = 'Mattermostdoc'
+
+# linkcheck settings
+linkcheck_ignore = [
+    # Ignore localhost
+    'http://localhost',
+    'http://127.0.0.1',
+    # Ignore anchors on github.com because linkcheck fails on them
+    'https://github.com',
+    # Ignore azuremarketplace because of no server response
+    'https://azuremarketplace.microsoft.com/.*',
+]
+linkcheck_timeout = 5
+linkcheck_rate_limit_timeout = 1.0
+linkcheck_anchors = False
