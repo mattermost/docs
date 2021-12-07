@@ -1,5 +1,5 @@
-Channel Settings
-================
+Set Channel Preferences
+=======================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -18,12 +18,12 @@ Channel Settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Notification preferences, channel header, channel purpose, and channel name are customizable for each channel. To access these settings, select the channel name at the top of the page.
+You can set channel preferences, such as notifications, as well as the channel's header, purpose, and name for each channel you belong to. To access these settings, select the channel name at the top of the page.
 
 Channel notification preferences
 --------------------------------
 
-Notification preferences can be modified for each channel you belong to.
+Each channel you belong to can have different notification preferences.
 
 Mute channel
 ~~~~~~~~~~~~~

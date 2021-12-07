@@ -140,7 +140,7 @@ Guests can:
 - Use slash commands (with the exception of those used to invite members).
 - Favorite channels.
 - Mute channels.
-- Update their account settings.
+- Update their profile.
 
 Guests cannot:
 
@@ -155,8 +155,8 @@ A System Admin can enable `personal access tokens <https://docs.mattermost.com/d
 
 In addition, the System Admin can optionally set the following permissions for the account, useful for integrations and bot accounts:
 
- - **post:all**: Allows the account to post to all Mattermost channels including direct messages.
- - **post:channels**: Allows the account to post to all Mattermost public channels.
+- **post:all**: Allows the account to post to all Mattermost channels including direct messages.
+- **post:channels**: Allows the account to post to all Mattermost public channels.
 
 Deactivating Users
 ~~~~~~~~~~~~~~~~~~

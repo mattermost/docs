@@ -42,7 +42,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
       In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
       
-      - Configure desktop notifications in **Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
+      - Configure desktop notifications in **Settings > Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
 
   .. tab:: Mattermost v5.39 and earlier
@@ -70,7 +70,7 @@ By default, you'll get email notifications if you're not actively using Mattermo
 
       In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the global header.
       
-      - Configure email notifications in **Notifications > Email Notifications > Send desktop notifications**, then choose your sound preference.
+      - Configure email notifications in **Settings > Notifications > Email Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
 
   .. tab:: Mattermost v5.39 and earlier
@@ -99,7 +99,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 
       In Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
       
-      - Configure push notifications in **Notifications > Mobile Push Notifications > Send mobile push notifications**.
+      - Configure push notifications in **Settings > Notifications > Mobile Push Notifications > Send mobile push notifications**.
       - Configure when push notifications are sent depending on your availability in **Notifications > Mobile Push Notifications > Trigger push notifications when**.
       
   .. tab:: Mattermost v5.39 and earlier

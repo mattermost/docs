@@ -3280,7 +3280,7 @@ First Name Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.    |
@@ -3291,7 +3291,7 @@ Last Name Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.      |
@@ -3302,7 +3302,7 @@ Nickname Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +--------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.   |
@@ -3313,7 +3313,7 @@ Position Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
@@ -4970,11 +4970,11 @@ Enable Incoming Webhooks
 
 |all-plans| |cloud| |self-hosted|
 
-Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, view samples, and to let the community know about integrations you have built.
+Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
-**True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any Public or Private channels that you have access to.
+**True**: Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu. The webhook URLs created can be used by external applications to create posts in any Public or Private channels that you have access to.
 
-**False**: The **Integrations > Incoming Webhooks** section of Account Settings is hidden and all incoming webhooks are disabled.
+**False**: The **Integrations > Incoming Webhooks** section of the Mattermost Product menu is hidden and all incoming webhooks are disabled.
 
 .. important::
    Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
@@ -4988,11 +4988,11 @@ Enable Outgoing Webhooks
 
 |all-plans| |cloud| |self-hosted|
 
-Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and view samples.
+Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and viewing samples.
 
-**True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**.
+**True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, select **Integrations** from the Mattermost Product menu.
 
-**False**: The **Integrations > Outgoing Webhooks** section of Account Settings is hidden and all outgoing webhooks are disabled.
+**False**: The **Integrations > Outgoing Webhooks** of the Mattermost Product menu is hidden and all outgoing webhooks are disabled.
 
 .. important:: 
    Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
@@ -5060,7 +5060,7 @@ Enable Personal Access Tokens
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
+**True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Profile > Security**. They can be used to authenticate against the API and give full access to the account.
 
 To manage who can create personal access tokens or to search users by token ID, go to the **System Console > Users** page.
 
@@ -5550,7 +5550,7 @@ Allow Authentication Transfer
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Users can change their sign-in method to any that is enabled on the server, either via **Account Settings > Security** or the APIs.
+**True**: Users can change their sign-in method to any that is enabled on the server, either via **Profile > Security** or the APIs.
 
 **False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
 
