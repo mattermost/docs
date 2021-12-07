@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added thread replies to search results when collapsed reply threads feature is enabled.
+ - Added thread replies to search results when Collapsed Reply Threads is enabled.
  - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
 
 #### Performance
