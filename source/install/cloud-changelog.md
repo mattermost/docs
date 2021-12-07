@@ -30,6 +30,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the status menu unexpectedly closed when selecting the "Disable Notifications Until" header.
 
 ### Known Issues
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - Spacing of ``from:`` autocomplete items are off [MM-40447](https://mattermost.atlassian.net/browse/MM-40447).
  - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
