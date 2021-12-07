@@ -17,7 +17,6 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Added thread replies to search results when collapsed reply threads feature is enabled.
  - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
- - Government related references are now shown for Government type licenses.
 
 #### Performance
  - Added a general performance fix for loading the web application and typing.
@@ -31,6 +30,8 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the status menu unexpectedly closed when selecting the "Disable Notifications Until" header.
 
 ### Known Issues
+ - Spacing of ``from:`` autocomplete items are off [MM-40447](https://mattermost.atlassian.net/browse/MM-40447).
+ - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
