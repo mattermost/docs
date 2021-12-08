@@ -22,7 +22,7 @@ Our templates provide some default card properties that can be customized or rem
 
 The default name for a new property is the name of the property type (e.g. **Date**, **URL**) and properties are automatically added to the filter list at the top of the board. You can use this to toggle which properties you see displayed on each card preview. 
 
-To rename a property field, open up a card and select **New Property**. Enter the new name in the field provided. The change is saved immediately and applied across all cards.
+To rename a property field, open up a card and select the property name. Enter the new name in the field provided. The change is saved immediately and applied across all cards.
 
 Mention people
 --------------
@@ -46,7 +46,7 @@ To create a new a new property field open a card and select **Add a property**. 
 
 Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later. To rename a property, open a card and select the property name to open an editable field. Your changes are saved immediately, and applied across all cards on the current board.
 
-To delete properties you no longer need, select the property, then choose Delete. You'll be asked to confirm that you want to removes that property from every card on the current board.
+To delete properties you no longer need, select the property, then choose **Delete**. You'll be asked to confirm that you want to remove that property from every card on the current board.
 
 Once you have card properties defined, you have full control over which properties are visible on the board. Select **Properties** at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don't want to see.
 
