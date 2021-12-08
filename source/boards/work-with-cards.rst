@@ -42,7 +42,7 @@ Add and manage properties
 
 To create a new a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
 
-Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later. You can rename a property at any time by opening a card, then selecting **New Property**. Your changes are saved immediately, and applied across all cards on the current board.
+Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later. To rename a property, open a card and select the property name to open an editable field. Your changes are saved immediately, and applied across all cards on the current board.
 
 To delete properties you no longer need, select the property, then choose Delete. You'll be asked to confirm that you want to removes that property from every card on the current board.
 
