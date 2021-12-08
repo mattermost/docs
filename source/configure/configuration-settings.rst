@@ -2067,17 +2067,17 @@ To ensure that users can contact you for assistance, set this value to an email 
 | This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-Terms of Service link
-^^^^^^^^^^^^^^^^^^^^^^
+Terms of Use link
+^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-Configurable link to Terms of Service your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
+Configurable link to Terms of Use your organization may provide to end users on the footer of Mattermost sign-up and login pages. By default, links to a `Terms of Use <https://mattermost.com/terms-of-use/>`__ page hosted on ``mattermost.com``. If changing the link to a different Terms of Use, make sure to include the "Mattermost Acceptable Use Policy" notice to end users that must also be shown to users from the "Terms of Use" link.
 
-In version 5.17 and later, this setting does not change the terms of service link in **Main Menu > About Mattermost**, which refers to the Mattermost Terms of Service.
+From Mattermost v5.17, this setting doesn't change the terms of use link displayed in the **About Mattermost** dialog, which refers to the Mattermost Terms of Use.
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input. |
+| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://mattermost.com/terms-of-use/"`` with string input.        |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link
@@ -6865,46 +6865,12 @@ Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Ma
 | This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-Custom User Attributes
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-custom-attributes/blob/master/README.md>`__.
-
-GitHub
-^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md>`__.
-
-Jira
-^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-jira/blob/master/README.md>`__.
-
-Net Promoter Score
-^^^^^^^^^^^^^^^^^^
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Learn more `in our documentation <https://docs.mattermost.com/manage/user-satisfaction-surveys.html>`__.
-
 Welcome Bot
 ^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
+The settings for the WelcomeBot plugin aren't available in the System Console, and can only be set in ``config.json``.
 
 Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-welcomebot/blob/master/README.md>`__.
 
