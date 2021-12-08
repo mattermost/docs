@@ -18,7 +18,7 @@ Work with Cards
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Cards can have different configuration fields, depending on the type of board you've selected. For example, in a Roadmap board you'll find the cards include an option for **Type** where you can add categories such as Bug, Triage, etc. A Task board doesn't include a Type field, but includes **Status** and **Priority**. All cards have a **New Property** field. For this field, you can select the type from the drop-down menu. It'll then be added to your card.
+Our templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include a **Status** and **Priority** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
 
 The default name for a new property is the name of the property type (e.g. **Date**, **URL**) and properties are automatically added to the filter list at the top of the board. You can use this to toggle which properties you see displayed on each card preview. 
 
