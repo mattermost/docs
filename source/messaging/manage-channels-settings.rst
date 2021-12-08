@@ -188,7 +188,7 @@ See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://
 Click to open threads
 ~~~~~~~~~~~~~~~~~~~~~
 
-By default, selecting any part of a message opens the reply thread in the right pane. You can disable this behavior. When disabled, reply to a message or select the replies count to open the reply thread in the right pane.
+By default, selecting any part of a message opens the reply thread in the right hand sidebar. You can disable this behavior in **Settings > Display > Click to open threads**. When disabled, reply to a message or select the replies count to open the reply thread.
 
 Channel display
 ~~~~~~~~~~~~~~~
