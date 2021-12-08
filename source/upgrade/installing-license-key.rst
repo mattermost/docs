@@ -25,14 +25,13 @@ You can use the System Console, the mmctl, or the CLI to add or change a Matterm
     .. tab:: Using System Console
 
         1. Go go **System Console > About > Edition and License**.
-        2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
-        3. Upload the new license key file.
+        2. Upload your license key file.
 
         Once the key is uploaded and installed, the details of your license are displayed.
 
     .. tab:: Using mmctl
 
-        Use the `mmctl license upload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ command to to upload a new license or replace an existing license file with a new one. When complete, restart the Mattermost server. If you're running in a `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ environment, the new license file must be updated to every node.
+        Use the `mmctl license upload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license-upload>`__ command to upload a new license or replace an existing license file with a new one. When complete, restart the Mattermost server. If you're running in a `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ environment, the new license file must be updated to every node.
 
         .. code-block:: none
 
@@ -60,6 +59,11 @@ Changing an existing license key
 ---------------------------------
 
 Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is displayed in the **Total Active Users** field. The license is rejected if this value is greater than the value allowed by the license key.
+
+Then, follow these steps to change your license key:
+        1. Go go **System Console > About > Edition and License**.
+        2. Select **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
+        3. Upload your license key file.
 
 License key storage
 -------------------
