@@ -6059,7 +6059,7 @@ Developer Flags
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This configuration setting specifies a list of strings where each string is a flag used to set the content security policy for the Mattermost web app. Each flag must be in the format ``flag=true`` (e.g. ``unsafe-eval=true,unsafe-inline=true``). This configuration setting is disabled by default and requires `Developer Mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled.
+This configuration setting specifies a list of strings where each string is a flag used to set the content security policy for the Mattermost Web App. Each flag must be in the format ``flag=true`` (e.g. ``unsafe-eval=true,unsafe-inline=true``). This configuration setting is disabled by default and requires `Developer Mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled.
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ServiceSettings.DeveloperFlags": ""`` with string input.  |
