@@ -63,7 +63,7 @@ Work with property types
 Calculations
 ------------
 
-When you view a board in table view, you can use calculations to answer basic metric questions without needing to create complex reports. Hover over the bottom of a column to display the **Calculate** feature, then select the arrow to open the menu options.
+When you view a board in table, Kanban, or Board view, you can use calculations to answer basic metric questions without needing to create complex reports. Hover over the bottom of a column to display the **Calculate** feature, then select the arrow to open the menu options.
 
 You can use calculations to quickly see:
 
