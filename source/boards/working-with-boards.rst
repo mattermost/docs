@@ -35,11 +35,18 @@ All changes you make to boards and cards are saved immediately.
 Changing views
 --------------
 
+* Calendar view
+
+* Table view
+
 For this exercise, select the **Project Tasks** template. The first view of the new board is a table of all tasks.
 
 * Select **By Status** in the sidebar to see a board view.
 * Select **Properties** and enable **Priority** and **Date created** to add those properties to the card display.
 * You can also change the **Group By**, **Filter**, and **Sort** settings of the view.
+
+* Status view
+
 
 Adding cards
 ------------
