@@ -1,12 +1,12 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.48.1 Release](#release)
-- [1.48.0 Release](#release)
-- [1.47.2 Release](#id1)
-- [1.47.1 Release](#id6)
-- [1.47.0 Release](#id11)
-- [1.46.0 Release](#release)
+- [1.48.1 Release](#id1)
+- [1.48.0 Release](#id2)
+- [1.47.2 Release](#id7)
+- [1.47.1 Release](#id10)
+- [1.47.0 Release](#id15)
+- [1.46.0 Release](#id24)
 
 ## 1.49.0 Release
 
