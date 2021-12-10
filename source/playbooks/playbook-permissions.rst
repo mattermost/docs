@@ -25,7 +25,7 @@ In the context of Playbooks, members are users of Mattermost who belong to the t
 
 **Playbook Admin**
 
-In the context of Playbooks, Playbook Admins are also members, but have elevated permissions to change playbook and run visibility and functional settings. The Playbook Admin role is a default role, and members need to be promoted to the role from within Playbooks. The Playbook Admin role then applies across the Playbooks platform. They do not have access to the System Console and their privileges are managed by System Admin.
+In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility and functional settings. The Playbook Admin role is a default role, and members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook. They do not have access to the System Console and their privileges are managed by System Admin.
 
 Manage playbook visibility
 --------------------------
