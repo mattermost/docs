@@ -21,7 +21,7 @@ Roles
 
 **Member**
 
-In the context of Playbooks, members are users of Mattermost who belong to the team within which the run is active and who may have a vested interest in the run. Depending on the permissions granted, members can have the same privileges as Playbook Admins or restricted privileges. Members are also referred to as participants in a run.
+In the context of Playbooks, members are users of Mattermost who belong to a playbook or are a Playbook Admin.
 
 **Playbook Admin**
 
