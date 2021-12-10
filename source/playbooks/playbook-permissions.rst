@@ -16,12 +16,16 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 
 For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
 
-Roles
------
+Playbooks roles
+---------------
 
 **Member**
 
 In the context of Playbooks, members are users of Mattermost who belong to a playbook or are a Playbook Admin.
+
+**Participant**
+
+In the context of Playbooks, participants belong to or take part in a run. They can be a member or a Playbook Admin.
 
 **Playbook Admin**
 
