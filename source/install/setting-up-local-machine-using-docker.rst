@@ -106,10 +106,6 @@ If you don't have Docker installed, follow the step-by-step instructions below b
          docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
        
     3. When Docker is done fetching the image, open http://localhost:8065/ in your browser.
-  
-  .. tab:: Arch Linux
-  
-    To install the preview on Arch Linux, see the `installation steps <https://wiki.archlinux.org/index.php/Mattermost#With_Docker>`__ on the Arch Linux wiki.
 
 Setting up SMTP email (Recommended) 
 -----------------------------------
@@ -124,17 +120,19 @@ See the `Configuration Settings <https://docs.mattermost.com/configure/configura
 Updating Docker Preview
 -----------------------
 
-To delete your existing Docker preview and run a new version, run the following commands: 
+You update your Docker preview instance, you must first stop and delete your existing Docker preview by running the following commands: 
 
 .. code:: bash
 
    docker stop mattermost-preview
    docker rm -v mattermost-preview
 
+Once the container is stopped and deleted, you can run a new version of the container.
+
 Accessing Your Container
 ------------------------
 
-To access a shell on the container, run the following command:
+To access a shell inside the container, run the following command:
 
 .. code:: bash
 
