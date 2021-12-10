@@ -185,15 +185,20 @@ Collapsed Reply Threads (Beta) offers an enhanced experience for users communica
 
 See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
-Quick reactions to messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Click to open threads
+~~~~~~~~~~~~~~~~~~~~~
 
-You can react to messages quickly with your most recently-used emojis by hovering over a message.
+By default, selecting any part of a message opens the reply thread in the right hand sidebar. You can disable this behavior in **Settings > Display > Click to open threads**. When disabled, reply to a message or select the replies count to open the reply thread.
 
 Channel display
 ~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
+
+Quick reactions to messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can react to messages quickly with your most recently-used emojis by hovering over a message.
 
 Language
 ~~~~~~~~
