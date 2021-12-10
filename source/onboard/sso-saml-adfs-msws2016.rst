@@ -12,10 +12,10 @@ This document provides steps to configure SAML 2.0 with Microsoft ADFS for Matte
 Prerequisites
 -------------
 
- - An Active Directory instance where all users have specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
- - A running Microsoft Server. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
- - An SSL certificate to sign your ADFS login page.
- - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`__.
+- An Active Directory instance where all users have specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
+- A running Microsoft Server. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
+- An SSL certificate to sign your ADFS login page.
+- ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`__.
 
 On your ADFS installation, open the ADFS console. Select **Service**, then select **Endpoints**. In the **Type** column, search for ``SAML 2.0/WS-Federation`` and note down the value of **URL Path** column. This is also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls``.
 
@@ -203,7 +203,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 6. (Optional) If you configured ``First Name`` Attribute and the ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
+You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement about how the migration will work to your users.
 

@@ -471,11 +471,8 @@ redirects = {
         "https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels",
     "administration/config-settings.html#push-notification-contents": 
         "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
-    "administration/config-settings.html#push-notification-contents": "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
     "administration/config-settings#gitlab-settings": "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
     "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
-    "administration/config-settings#push-notification-contents": 
-        "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
     "administration/config-settings#gitlab-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
     "administration/config-settings#google-settings":
@@ -815,9 +812,11 @@ redirects = {
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
     "guides/install-deploy-upgrade-scale": "https://docs.mattermost.com/guides/deployment.html",
-    "guides/setup-onboard-manage-comply.html": "https://docs.mattermost.com/guides/administration.html",
-    "messaging/welcome-to-mattermost-messaging.html": "https://docs.mattermost.com/overview/index.html",
-    "messaging/accessing-your-workspace.html": "https://docs.mattermost.com/messaging/signing-in.html",
+    "guides/setup-onboard-manage-comply": "https://docs.mattermost.com/guides/administration.html",
+    "messaging/welcome-to-mattermost-messaging": "https://docs.mattermost.com/overview/index.html",
+    "messaging/accessing-your-workspace": "https://docs.mattermost.com/messaging/signing-in.html",
+    "messaging/managing-account-settings": "https://docs.mattermost.com/messaging/channel-user-settings.html",
+    "messaging/channel-settings": "https://docs.mattermost.com/messaging/channel-preferences.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
     "about/license-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
