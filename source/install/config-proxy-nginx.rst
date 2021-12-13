@@ -62,7 +62,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
        # @see: https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
        ssl_early_data on;
 
-       ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+       ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384';
        ssl_prefer_server_ciphers on;
        ssl_session_cache shared:SSL:50m;
        # HSTS (ngx_http_headers_module is required) (15768000 seconds = six months)
@@ -124,7 +124,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
       default "";
     }
 
-4. Remove the existing default sites-enabled file.
+1. Remove the existing default sites-enabled file.
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
