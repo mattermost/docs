@@ -62,7 +62,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
     By default, this setting becomes your global setting applied to all channels you're a member of.
 
-  .. tab:: Mattermost v5.39 and earlier
+ .. tab:: Mattermost v5.39 and earlier
 
     In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
       

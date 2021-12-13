@@ -815,9 +815,9 @@ Enable users to search the contents of documents attached to messages. Mattermos
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
-+---------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExtractContent": true`` with options ``true`` and ``false``.          |
++--------------------------------------------------------------------------------------------------------------------+
 
 To extend content search support to include file formats including RTF, DOC, and PAGES, and to take advantage of improved server performance during PDF extraction, you must install `these dependencies <https://github.com/sajari/docconv#dependencies>`__. If you choose not to install these dependencies, you'll see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. 
 
@@ -845,9 +845,9 @@ This configuration setting enables users to search the contents of compressed ZI
 
 **False**: The contents of documents within ZIP files aren't returned in search results.
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.ArchiveRecursion": false`` with options ``true`` and ``false``.       |
-+---------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ArchiveRecursion": false`` with options ``true`` and ``false``.       |
++--------------------------------------------------------------------------------------------------------------------+
 
 .. note::
   - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
@@ -1514,9 +1514,9 @@ Where:
   - Logs are recorded asynchronously to reduce latency to the caller. 
   - Advanced logging supports hot-reloading of logger configuration.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.  |
++----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Options outlined in `this text file <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`__ are described in the following table.
 
@@ -2623,9 +2623,9 @@ Enable LaTeX Code Block Rendering
 
 **False**: Disables rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted.
 
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableLatex": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------+
 
 Enable Inline LaTeX Rendering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2636,9 +2636,9 @@ Enable Inline LaTeX Rendering
 
 **False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableInlineLatex": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableInlineLatex": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^
@@ -5995,9 +5995,9 @@ System Admins can set the default appearance of Collapsed Reply Threads for thei
 
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
++---------------------------------------------------------------------------------------------------------------------------+
 
 Use Channel Name in Email Notifications (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6051,6 +6051,26 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 .. note::
 
    Enabling this configuration setting doesn’t retroactively follow threads for older actions taken prior to the setting being enabled. For example, if a user comments on an old thread, they automatically follow the thread if this setting is enabled regardless of whether the thread existed when this setting was disabled.
+
+Developer Flags
+^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting specifies a list of strings where each string is a flag used to set the content security policy (CSP) for the Mattermost Web App. Each flag must be in the format ``flag=true`` (e.g. ``unsafe-eval=true,unsafe-inline=true``). Not recommended for production environments.
+
+The following values are currently supported:
+
+- ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
+- ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
+
+This configuration setting is disabled by default and requires `Developer Mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
+
++----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
++----------------------------------------------------------------------------------------+
 
 WebSocket URL
 ^^^^^^^^^^^^^^
@@ -6241,9 +6261,9 @@ This configuration setting enables users to search documents attached to message
 
 **False**: File-based searches are disabled.
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableFileSearch": true`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileSearch": true`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
 
 Enable User Status Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6631,9 +6651,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Maxiumum image resolution size for message attachments in pixels. 
 
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.MaxImageResolution": 33177600`` with numerical input.     |
-+---------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
++--------------------------------------------------------------------------------------------------------+
 
 File Settings
 ~~~~~~~~~~~~~~
@@ -7258,32 +7278,6 @@ The minimum version of the Android React Native app that is required to be used.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Latest Desktop Version
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The latest version of the desktop app that is recommended for use. 
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DesktopLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Minimum Destop Version
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum version of the desktop app that is required to be used. 
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DesktopMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Latest iOS Version
