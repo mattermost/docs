@@ -54,7 +54,7 @@ By default, playbooks are Public. This means that any member of the team can vie
 Restrict who can convert playbooks from Public to Private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this example, you can control whether Members can convert playbooks from Public to Private.
+You can control whether Members can convert playbooks from Public to Private.
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, check **Convert Playbooks**.
