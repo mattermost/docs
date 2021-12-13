@@ -40,20 +40,19 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
  .. tab:: Mattermost v6.0 onwards
 
-      In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
+    In Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
       
       - Configure desktop notifications in **Settings > Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
       - By default, all channels use the global setting configured in **Notifications**.
 
-  .. tab:: Mattermost v5.39 and earlier
+ .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+    In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
       
-      - Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
-      - By default, all channels use the global setting configured in **Account Settings**.
+    - Configure desktop notifications in **Account Settings > Notifications > Desktop Notifications > Send desktop notifications**, then choose your sound preference.
+    - By default, all channels use the global setting configured in **Account Settings**.
   
-     Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
-
+    Configure desktop notifications in specific channels in the channel menu via **Notification Preferences > Send desktop notifications**.
 
 **Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
 
