@@ -34,7 +34,7 @@ In the context of Playbooks, Playbook Admins are also members, and may have elev
 Manage playbook visibility
 --------------------------
 
-The default Playbooks settings are completely open and the default settings allow all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management.
+The default Playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management.
 
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
