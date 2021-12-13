@@ -16,6 +16,10 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 
 For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
 
+.. note::
+
+  Before changing permissions, ensure that you or another member have Admin access in Playbooks otherwise changing configurations could result in being unable to use Playbooks.
+
 Playbooks roles
 ---------------
 
@@ -39,11 +43,18 @@ The default Playbooks settings are completely open which enable all members to p
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the following example, only Playbook Admins can edit playbooks. Team members can view Public and Private playbooks and runs, but can't edit playbooks, check off tasks, or remove members from runs.
+In the following example, only Playbook Admins can edit playbooks. Team members can view Public and Private playbooks and runs, but can't edit playbooks, check off tasks, or remove members from runs. They also can't create Public or Private playbooks.
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Public Playbooks** and uncheck **Manage Private Playbooks**.
 3. Scroll down to the **Playbook Admin** section and confirm that **Manage Public Playbooks** and **Manage Private Playbooks** are checked.
+4. Select **Save**.
+
+You can also set permissions for read-only playbooks that do allow members to create new public or private playbooks.
+
+1. Go to **System Console > User Management > Permissions**.
+2. In the **All Members** section, uncheck **Manage Public Playbooks** and uncheck **Manage Private Playbooks**.
+3. Then, check **Create Public Playbook** and **Create Private Playbook**.
 4. Select **Save**.
 
 Manage how playbooks are accessed
@@ -54,7 +65,7 @@ A Public playbook and its associated runs can be viewed by any member of the tea
 Restrict who can convert playbooks from Public to Private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can control whether Members can convert playbooks from Public to Private.
+You can control whether Members can convert playbooks from public to private.
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, check **Convert Playbooks**.
