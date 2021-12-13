@@ -50,7 +50,10 @@ Step 1: Add an OpenID Connect application to your GitLab account
 
    If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
 
-  c. Select the scopes: ``openid``, ``profile``, and ``email``.
+  c. Select scopes.
+  
+     - For Mattermost Team Edition, select "read_user".
+     - For all other Mattermost subscription plans, select ``openid``, ``profile``, and ``email``.
 
 3. Select **Save application**.
 
@@ -65,9 +68,11 @@ Step 2: Configure Mattermost for GitLab SSO
 4. The **Discovery Endpoint** for OpenID Connect with GitLab is prepopulated with ``https://gitlab.com/.well-known/openid-configuration``.
 5. Paste the **Application ID** from GitLab as the **Client ID** in Mattermost.
 6. Paste the **Application Secret Key** from GitLab as the **Client Secret** in Mattermost. 
-7. Select **Save**.
+7. Update the ``config.json`` file to specify the scopes selected for the ``GitLabSettings`` property. Changes to this setting require a server restart before taking effect.
+8. Select **Save**.
 
 .. note::
+
   When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.
 
 (Optional) Step 3: Force users to sign up using SSO only
