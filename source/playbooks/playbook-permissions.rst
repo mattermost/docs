@@ -73,6 +73,6 @@ Control who can start runs
 By default, all Members can start a run using a playbook. This setting restricts that action to Playbook Admins.
 
 1. Go to **System Console > User Management > Permissions**.
-2. In the **All Members** section, uncheck **Manage Runs**.
-3. Scroll down to **Playbook Admin** and ensure that **Manage Runs** is checked.
+2. In the **All Members** section, uncheck **Manage Runs**. This also unchecks **Create Runs**.
+3. Scroll down to **Playbook Admin** and ensure that **Manage Runs** and **Create Runs** are checked.
 4. Select **Save**.
