@@ -39,7 +39,7 @@ The default Playbooks settings are completely open which enable all members to p
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the following example, Playbook Admins can edit playbooks and start runs. Team members can view Public and Private playbooks and runs, but can't edit playbooks, check off tasks, or remove members from runs.
+In the following example, only Playbook Admins can edit playbooks. Team members can view Public and Private playbooks and runs, but can't edit playbooks, check off tasks, or remove members from runs.
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Public Playbooks** and uncheck **Manage Private Playbooks**.
