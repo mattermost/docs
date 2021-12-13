@@ -3,12 +3,42 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2021-12-08](#release-2021-12-08)
 - [Release 2021-12-01](#release-2021-12-01)
 - [Release 2021-11-23](#release-2021-11-23)
 - [Release 2021-11-11](#release-2021-11-11)
 - [Release 2021-11-10](#release-2021-11-10)
 - [Release 2021-10-27](#release-2021-10-27)
-- [Release 2021-10-13](#release-2021-10-13)
+
+## Release 2021-12-08
+
+### Improvements
+
+#### User Interface (UI)
+ - Added thread replies to search results when Collapsed Reply Threads is enabled.
+ - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
+
+#### Performance
+ - Added a general performance fix for loading the web application and typing.
+ - Improved performance while typing by moving some autocomplete layout calculations.
+ - Improved performance by reducing DOM usage during render.
+ - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+
+### Bug Fixes
+ - Fixed slow channel loading for instances with website link previews enabled.
+ - Fixed an issue where the webapp crashed sometimes when selecting an image file from "Recent files".
+ - Fixed an issue where the status menu unexpectedly closed when selecting the "Disable Notifications Until" header.
+
+### Known Issues
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - Spacing of ``from:`` autocomplete items are off [MM-40447](https://mattermost.atlassian.net/browse/MM-40447).
+ - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2021-12-01
 
