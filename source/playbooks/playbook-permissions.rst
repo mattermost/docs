@@ -49,7 +49,7 @@ In the following example, only Playbook Admins can edit playbooks. Team members 
 Manage how playbooks are accessed
 ---------------------------------
 
-By default, playbooks are Public. This means that any member of the team can view the playbook and associated runs. Playbooks can be converted from Public to Private, but once a playbook is Private it can't be converted back to Public.
+A Public playbook and its associated runs can be viewed by any member of the team. Playbooks can be converted from Public to Private, but once a playbook is Private it can't be converted back to Public.
 
 Restrict who can convert playbooks from Public to Private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
