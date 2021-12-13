@@ -101,7 +101,7 @@ If you don't have Docker installed, follow the step-by-step instructions below b
 Setting up SMTP email (Recommended)
 -----------------------------------
 
-The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. To see the product's full functionality, we recommend enabling SMTP email. See the `SMTP Email Setup <https://docs.mattermost.com/configure/smtp-email.html>`__ documentation for details.
+The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. 
 
 Configuration Settings
 ----------------------
@@ -119,10 +119,10 @@ To update your Mattermost preview image and container, you must first stop and d
   docker stop mattermost-preview
   docker rm mattermost-preview
 
-Once the new image is pulled and the container is stopped and deleted you need to run the `docker run` command from above.
+Once the new image is pulled and the container is stopped and deleted you need to run the ``docker run`` command from above.
 
 .. note::
-  On Linux add a `sudo` in front of the `docker` commands.
+  On Linux add a ``sudo`` in front of the ``docker`` commands.
 
 Accessing Your Container
 ------------------------
