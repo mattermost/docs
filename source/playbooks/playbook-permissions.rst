@@ -29,7 +29,7 @@ In the context of Playbooks, participants belong to or take part in a run. They 
 
 **Playbook Admin**
 
-In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility and functional settings. The Playbook Admin role is a default role, and members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook. They do not have access to the System Console and their privileges are managed by System Admin.
+In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. The Playbook Admin role is a default role, and members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook. They do not have access to the System Console and their privileges are managed by the System Admin.
 
 Manage playbook visibility
 --------------------------
