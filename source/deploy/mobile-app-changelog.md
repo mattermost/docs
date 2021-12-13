@@ -13,7 +13,7 @@ Latest Mattermost Mobile Apps releases:
 The v1.49.0 release is currently re-scheduled for January 2022.
 
 ## 1.48.1 Release
-- Release Date:      , 2021
+- Release Date: December 14, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
@@ -27,7 +27,6 @@ The v1.49.0 release is currently re-scheduled for January 2022.
  - Fixed a crash on collapsed reply threads when opening the Gallery view from within a Thread.
  - Fixed an issue with clearing and grouping of push notifications when collapsed reply threads is enabled.
  - Fixed an issue with opening the YouTube app from within Mattermost.
- - Fixed a crash on markdown table images and added SVG support for markdown inline images.
 
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
