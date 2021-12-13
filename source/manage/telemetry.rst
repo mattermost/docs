@@ -169,6 +169,8 @@ The following list details the types of Playbooks metadata we collect:
 - ``Action``: The type of action performed against the run: ``create``, ``end``, ``restart``, ``change_stage``, ``change_commander``, ``update_status``, ``add_timeline_event_from_post``, ``update_retrospective``, ``publish_retrospective``, ``remove_timeline_event``.
 - ``Public``: When starting a run, ``true`` if it is public, and ``false`` if it is private.
 - ``ReminderTimerSeconds``: The next timer for the reminder to update the status, in seconds. It's tracked only when ``Action`` equals ``update_status``.
+- ``FollowRun``:
+- ``UnfollowRun``:
 
 **Data collected in tasks events**
 
@@ -192,6 +194,8 @@ The following list details the types of Playbooks metadata we collect:
 - ``BroadcastChannelID``: Unique identifier of the channel where the status updates will be broadcasted.
 - ``UsesReminderMessageTemplate``: ``true`` if the playbook has a template for the reminder message, ``false`` otherwise.
 - ``Action``: The type of action performed against this playbook: ``create``, ``update``, ``delete``.
+- ``AutoFollow``:
+- ``AutoFollowOptOut``:
   
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, disable the feature in **System Console > Environment > Logging**.
 
