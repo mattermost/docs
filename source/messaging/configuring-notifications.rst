@@ -33,7 +33,7 @@ You can configure your Mattermost account for how and when you want to be notifi
 
   Not getting a notification? See our `FAQ to view the notification flow chart <https://docs.mattermost.com/about/faq-notifications.html>`__ to see what other factors can influence whether a notification gets triggered.
 
-Desktop Notifications
+Desktop notifications
 ----------------------
 
 Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Edge, Firefox, and Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`__. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop Apps.
