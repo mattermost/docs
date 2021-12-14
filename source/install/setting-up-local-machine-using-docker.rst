@@ -98,15 +98,10 @@ If you don't have Docker installed, follow the step-by-step instructions below b
 
     3. When Docker is done fetching the image and starting the container, open ``http://localhost:8065/`` in your browser.
 
-Setting up SMTP email (Recommended)
------------------------------------
-
-The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. 
-
 Configuration Settings
 ----------------------
 
-See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
+The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
 
 Updating Mattermost Preview
 ---------------------------
