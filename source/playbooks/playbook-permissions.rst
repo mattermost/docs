@@ -16,9 +16,11 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 
 For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
 
+In the context of Playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with Playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments.
+
 .. note::
 
-  Before changing permissions, ensure that you or another member have Admin access in Playbooks otherwise changing configurations could result in being unable to use Playbooks.
+  Permissions are applied across Playbooks as a whole, so it's important to set your roles up first before editing permissions. To ensure that you don't lose access to playbooks, navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin** 
 
 Playbooks roles
 ---------------
@@ -33,10 +35,10 @@ In the context of Playbooks, participants belong to or take part in a run. They 
 
 **Playbook Admin**
 
-In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. The Playbook Admin role is a default role, and members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook. They do not have access to the System Console and their privileges are managed by the System Admin.
+In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the System Admin. Members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook.
 
-Manage playbook visibility
---------------------------
+Playbooks permissions
+---------------------
 
 The default Playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management.
 
