@@ -35,18 +35,28 @@ All changes you make to boards and cards are saved immediately.
 Changing views
 --------------
 
-* Calendar view
+You can change boards views to adjust how your cards are represented. To add a new view to a board, select the menu next to the current view name. Scroll down and select **+ Add view**, then select the new visualization you'd like to use.
 
-* Table view
+Board view
+~~~~~~~~~~
+
+This is a vertical list view where cards are sorted by columns. The column names are editable and you can drag cards between columns. Board vie
+
+Calendar view
+~~~~~~~~~~~~~
+
+Use Calendar View to organize your cards by date in a calendar grid view. To use this view, cards need to have the **Date** property added. If cards don't have that property, they'll be sorted and displayed by the card creation time. 
+
+Table view
+~~~~~~~~~~
+
+Each column corresponds to a card property. You can edit cells directly or you can select **Open** to open the card editor for that row. All changes you make to boards and cards are saved immediately.
 
 For this exercise, select the **Project Tasks** template. The first view of the new board is a table of all tasks.
 
 * Select **By Status** in the sidebar to see a board view.
 * Select **Properties** and enable **Priority** and **Date created** to add those properties to the card display.
 * You can also change the **Group By**, **Filter**, and **Sort** settings of the view.
-
-* Status view
-
 
 Adding cards
 ------------
@@ -70,13 +80,3 @@ Dragging cards
 Drag cards from one column to another to change their group-by property. For example, drag a card to the **Completed** column to mark it as completed. When a board is unsorted, you can drag a card to a specific row in a column.
 
 For sorted boards, dragging a card to a column will auto-sort it using the specified sort settings.
-
-Adding new views 
-----------------
-
-Select the dropdown next to the view name, and then select **Add view** to add a new view.
-
-Table views 
------------
-
-Each column corresponds to a card property. You can edit cells directly or you can select **Open** to open the card editor for that row. All changes you make to boards and cards are saved immediately.
