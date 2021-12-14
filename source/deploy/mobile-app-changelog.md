@@ -25,7 +25,7 @@ The v1.49.0 release is currently re-scheduled for January 2022.
 
 #### All apps
  - Fixed a crash on collapsed reply threads when opening the Gallery view from within a Thread.
- - Fixed an issue with clearing and grouping of push notifications when collapsed reply threads is enabled.
+ - Fixed an issue with clearing and grouping of push notifications when Collapsed Reply Threads is enabled.
  - Fixed an issue with opening the YouTube app from within Mattermost.
 
 ### Known Issues
