@@ -18,6 +18,9 @@ Configuring Notifications
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+.. |gear-icon| image:: ../images/gear-icon.png
+  :alt: Select the Gear icon to access your user preferences.
+
 Notifications in Mattermost alert you to unread messages and mentions. Desktop, email, and mobile push notifications notify you of activity in Mattermost. 
 
 You can configure your Mattermost account for how and when you want to be notified of Mattermost activity. When you join a team, Mattermost will notify you of messages directed at you, including when someone:
@@ -44,25 +47,25 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
   .. tab:: Mattermost v6.0 onwards
 
-    From Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
+    From Mattermost v6.0, **Desktop Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
     Configure desktop notifications in **Settings > Notifications > Desktop Notifications**. 
-
-    +---------------------------+--------------------------------------------------------------------------------------------+
-    | **Notification Option**   | **You'll receive...**                                                                      |
-    +===========================+============================================================================================+
-    | **For all activity**      | Desktop notifications for all channel activity.                                            |
-    +---------------------------+--------------------------------------------------------------------------------------------+
-    | **Only for mentions**     | - Desktop notifications for @mentions and direct messages/group messages only.             |
-    |                           | - To receive reply thread notifications, enable **Notify me about threads I'm following**. |
-    |                           | - Choose your notification sound preference.                                               |
-    +---------------------------+--------------------------------------------------------------------------------------------+
-    | **Never**                 | No desktop notifications.                                                                  |
-    +---------------------------+--------------------------------------------------------------------------------------------+
+    
+    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | **Notification Option**   | **You'll receive...**                                                                                                                                                                                                                            |
+    +===========================+==================================================================================================================================================================================================================================================+
+    | **For all activity**      | Desktop notifications for all channel activity.                                                                                                                                                                                                  |
+    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | **Only for mentions**     | - Desktop notifications for @mentions and direct messages/group messages only.                                                                                                                                                                   |
+    |                           | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
+    |                           | - Choose your notification sound preference.                                                                                                                                                                                                     |
+    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | **Never**                 | No desktop notifications.                                                                                                                                                                                                                        |
+    +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
     By default, this setting becomes your global setting applied to all channels you're a member of.
 
- .. tab:: Mattermost v5.39 and earlier
+  .. tab:: Mattermost v5.39 and earlier
 
     In Mattermost versions up to 5.39, access **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
       
@@ -86,19 +89,19 @@ Open messages from email notifications in the Mattermost Desktop App, Mobile App
 
   .. tab:: Mattermost v6.0 onwards
 
-    From Mattermost v6.0, **Email Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the global header.
+    From Mattermost v6.0, **Email Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the global header.
       
     Configure email notifications in **Settings > Notifications > Email Notifications**.
 
-    +---------------------------+--------------------------------------------------------------------------------------------+
-    | **Notification Option**   | **You'll receive...**                                                                      |
-    +===========================+============================================================================================+
-    | **Immediately**           | - Email notifications for @mentions and direct messages/group messages when you're         |
-    |                           |   offline or away for more than five minutes.                                              |
-    |                           | - To receive reply thread notifications, enable **Notify me about threads I'm following**. |
-    +---------------------------+--------------------------------------------------------------------------------------------+
-    | **Never**                 | No email notifications.                                                                    |
-    +---------------------------+--------------------------------------------------------------------------------------------+
+    +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | **Notification Option**   | **You'll receive...**                                                                                                                                                                                                                           |
+    +===========================+=================================================================================================================================================================================================================================================+
+    | **Immediately**           | - Email notifications for @mentions and direct messages/group messages when you're                                                                                                                                                              |
+    |                           |   offline or away for more than five minutes.                                                                                                                                                                                                   |
+    |                           | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**. |
+    +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | **Never**                 | No email notifications.                                                                                                                                                                                                                         |
+    +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
     This setting becomes your global setting applied to all channels you're a member of.
 
@@ -120,20 +123,20 @@ Mobile push notifications appear on the lock screen of your mobile device if the
 
   .. tab:: Mattermost v6.0 onwards
 
-      From Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** icon in the Global Header.
+      From Mattermost v6.0, **Mobile Push Notifications** have moved. Access **Notifications** by selecting the **Gear** |gear-icon| icon in the Global Header.
       
       Configure the activities that trigger mobile push notifications in **Settings > Notifications > Mobile Push Notifications > Send mobile push notifications**.
 
-      +----------------------------------------+---------------------------------------------------------------------------------------------+
-      | **Notification Option**                | **You'll receive...**                                                                       |
-      +========================================+=============================================================================================+
-      | **For all activity**                   | - Mobile notifications for all activity.                                                    |
-      +----------------------------------------+---------------------------------------------------------------------------------------------+
-      | **For mentions and direct messages**   | - Mobile notifications for @mentions and direct messages/group messages only.               |
-      |                                        | - To receive reply thread notifications, enable **Notify me about threads I'm following**.  |
-      +----------------------------------------+---------------------------------------------------------------------------------------------+
-      | **Never**                              | No mobile notifications.                                                                    |
-      +----------------------------------------+---------------------------------------------------------------------------------------------+
+      +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | **Notification Option**                | **You'll receive...**                                                                                                                                                                                                                            |
+      +========================================+==================================================================================================================================================================================================================================================+
+      | **For all activity**                   | - Mobile notifications for all activity.                                                                                                                                                                                                         |
+      +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | **For mentions and direct messages**   | - Mobile notifications for @mentions and direct messages/group messages only.                                                                                                                                                                    |
+      |                                        | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
+      +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | **Never**                              | No mobile notifications.                                                                                                                                                                                                                         |
+      +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
       Configure when mobile push notifications are triggered in **Settings > Notifications > Mobile Push Notifications > Trigger push notifications when**.
 

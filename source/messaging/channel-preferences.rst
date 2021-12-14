@@ -31,7 +31,7 @@ Change the following channel notification settings by selecting **Notification P
 Mute channel
 ~~~~~~~~~~~~~
 
-By default, all channels are unmuted. This means that desktop, email, and push notifications display for all channels, and when you're mentioned, mention badges display in the Channel Sidebar. To mute the current channel and disable all desktop, email, and push notifications, enable the **Mute Channel** option, then select **Save**. You will continue to see mention badges when you mute a channel.
+Muting turns off desktop, email, and push notifications for a channel, and the channel will only be marked as unread in the channel sidebar if you're mentioned. To mute the current channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen. By default, all channels are unmuted.
 
 .. tip::
 
