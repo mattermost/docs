@@ -49,7 +49,7 @@ Notify teammates
 
 Let teammates know when they're needed by typing ``@username``.
 
-Link to Channels
+Link to channels
 ----------------
 
 Create a link to a Public Channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). From Mattermost v6.2, channel members also see Private Channel names returned.
