@@ -189,4 +189,4 @@ When this setting is on you will still receive notifications for direct mentions
 
 .. note::
   
-If you've muted a channel and enabled **Ignore mentions for @channel, @here and @all**, then you won't receive notifications (whether they're direct or channel-wide). However, if you are directly mentioned in the muted channel, a badge counter is displayed in the sidebar. 
+If you've muted a channel and enabled **Ignore mentions for @channel, @here and @all**, then you won't receive notifications (whether they're direct or channel-wide). However, if you're directly mentioned in the muted channel, a badge counter is displayed in the sidebar.
