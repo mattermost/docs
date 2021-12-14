@@ -1,6 +1,6 @@
 ..  _docker-local-machine:
 
-Local Machine Setup using Docker 
+Local Machine Setup using Docker
 ================================
 
 |all-plans| |self-hosted|
@@ -15,16 +15,15 @@ Local Machine Setup using Docker
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality on a single machine. 
+The following instructions use Docker to install Mattermost in *Preview Mode* using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__ for exploring product functionality on a single local machine.
 
-**Note:** This configuration should not be used in production, as it uses a known password string, contains other non-production configuration settings, and does not support upgrade. 
-
-If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <https://docs.mattermost.com/install/prod-docker.html>`__.
+.. important::
+  This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, keeps no persitent data (all data lives inside the container) and doesn't support upgrades. For a production installation with Docker, see the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__.
 
 .. note::
-  If you have any problems installing Mattermost, see
-  the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/help/getting-started/managing-members.html#inviting-team-members>`__ and other `getting started information <https://docs.mattermost.com/guides/user.html#getting-started>`__. To submit an improvement or correction, select  **Edit** at the top of this page.
-  
+  If you have problems installing Mattermost, see
+  the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/messaging/managing-members.html>`__ and additional `getting started information for Channels <https://docs.mattermost.com/guides/channels.htmld>`__.
+
 One-line Docker install
 -----------------------
 
@@ -32,113 +31,103 @@ If you have Docker set up, Mattermost installs in one line:
 
 .. code:: bash
 
-   docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
- 
-When Docker is done fetching the image, open http://localhost:8065/ in your browser. Otherwise, follow the step-by-step instructions:
+  docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-macOS
-~~~~~
+When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
-1. Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__ 
+If you don't have Docker installed, follow the step-by-step instructions below based on your operating system.
 
-2. Run:
+.. tabs::
 
-.. code:: bash
+  .. tab:: macOS
 
-   docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
+    1. Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__
 
-3. When Docker is done fetching the image, open ``http://localhost:8065/`` in your browser.
+    2. Start the Mattermost container:
 
-Windows 10
-~~~~~~~~~~
+    .. code:: bash
 
-1. Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__
+      docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-2. Run:
+    3. When Docker is done fetching the image and starting the container, open ``http://localhost:8065/`` in your browser.
 
-.. code:: bash
+  .. tab:: Windows 10
 
-   docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
+    1. Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__
 
-3. When Docker is done fetching the image, open ``http://localhost:8065/`` in your browser.
+    2. Start the Mattermost container:
 
-Ubuntu
-~~~~~~
+    .. code:: bash
 
-1. Follow the instructions at https://docs.docker.com/installation/ubuntulinux/ or use the summary below:
+      docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-.. code:: bash
+    3. When Docker is done fetching the image and starting the container, open ``http://localhost:8065/`` in your browser.
 
-   sudo apt-get update
-   sudo apt-get install wget
-   wget -qO- https://get.docker.com/ | sh
-   sudo usermod -aG docker <username>
-   sudo service docker start
-   newgrp docker
+  .. tab:: Ubuntu
 
-2. Start Docker container:
+    1. Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
 
-.. code:: bash
+    .. code:: bash
 
-   docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
+      sudo apt update
+      sudo apt install docker.io
+      sudo systemctl start docker
 
-3. When Docker is done fetching the image, open ``http://localhost:8065/`` in your browser.
+    2. Start the Mattermost container:
 
-Fedora
-~~~~~~
+    .. code:: bash
 
-1. Follow the instructions at https://docs.docker.com/engine/installation/linux/fedora/ or use the summary below:
+      sudo docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-.. code:: bash
-      
-   sudo dnf -y install dnf-plugins-core
-   sudo dnf config-manager \
-   --add-repo \
-   https://download.docker.com/linux/fedora/docker-ce.repo
-   sudo dnf install docker-ce docker-compose git # Accepting the new docker repository key
-   sudo usermod -aG docker <username>
-   sudo systemctl start docker
- 
-2. Start Docker container: 
+    3. When Docker is done fetching the image and starting the container, open ``http://localhost:8065/`` in your browser.
 
-.. code:: bash
-      
-   docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
-       
-3. When Docker is done fetching the image, open http://localhost:8065/ in your browser.
+  .. tab:: Fedora
 
-Arch Linux
-~~~~~~~~~~
+    1. Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
 
-To install the preview on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost#With_Docker>`__ on the Arch Linux wiki.
+    .. code:: bash
 
-Setting up SMTP email (Recommended) 
+      sudo dnf install moby-engine
+      sudo systemctl start docker
+
+    2. Start the Mattermost container:
+
+    .. code:: bash
+
+      sudo docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
+
+    3. When Docker is done fetching the image and starting the container, open ``http://localhost:8065/`` in your browser.
+
+Setting up SMTP email (Recommended)
 -----------------------------------
 
-The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. To see the product's full functionality, enabling SMTP email is recommended.
-
-.. include:: ../configure/smtp-email.rst 
-  :start-after: How to Enable Email
+The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. 
 
 Configuration Settings
 ----------------------
 
-See `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ documentation to customize your deployment.
+See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
 
-Updating Docker Preview
------------------------
+Updating Mattermost Preview
+---------------------------
 
-To delete your existing Docker preview and run a new version use: 
+To update your Mattermost preview image and container, you must first stop and delete your existing **mattermost-preview** container by running the following commands:
 
 .. code:: bash
 
-   docker stop mattermost-preview
-   docker rm -v mattermost-preview
+  docker pull mattermost/mattermost-preview
+  docker stop mattermost-preview
+  docker rm mattermost-preview
+
+Once the new image is pulled and the container is stopped and deleted you need to run the ``docker run`` command from above.
+
+.. note::
+  On Linux add a ``sudo`` in front of the ``docker`` commands.
 
 Accessing Your Container
 ------------------------
 
-If you wish to gain access to a shell on the container use:
+To access a shell inside the container, run the following command:
 
 .. code:: bash
 
