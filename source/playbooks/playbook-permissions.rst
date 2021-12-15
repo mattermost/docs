@@ -29,10 +29,6 @@ Playbook roles
 
 In the context of Playbooks, members are users of Mattermost who belong to a playbook or are a Playbook Admin.
 
-**Participant**
-
-In the context of Playbooks, participants belong to or take part in a run. They can be a member or a Playbook Admin.
-
 **Playbook Admin**
 
 In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the System Admin. Members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook.
