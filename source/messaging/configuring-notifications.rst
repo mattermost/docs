@@ -141,7 +141,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
       Configure when mobile push notifications are triggered in **Settings > Notifications > Mobile Push Notifications > Trigger push notifications when**.
 
       +---------------------------------+-----------------------------------------------------------------------------------+
-      | **Notification Option**         | **You'll receive...**                                                             |
+      | **Notification option**         | **You'll receive...**                                                             |
       +=================================+===================================================================================+
       | **Online, away or offline**     | Mobile notifications at all times, regardless of your current Mattermost status.  |
       +---------------------------------+-----------------------------------------------------------------------------------+
