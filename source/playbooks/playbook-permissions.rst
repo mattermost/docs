@@ -3,7 +3,7 @@ Roles and Permissions
 
 There are different ways to access and interact with playbooks, and access is controlled in the System Console in the form of permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access, visibility, and roles. Two permission schemes are provided in Mattermost:
 
-* **System Scheme:** Applies permissions universally across all teams and channels.
+* **System Scheme:** Applies permissions universally across all teams, channels, and playbooks.
 * **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
 
 You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Playbook Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
