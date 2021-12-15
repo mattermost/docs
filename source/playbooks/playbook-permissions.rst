@@ -27,7 +27,7 @@ Playbook roles
 
 **Member**
 
-In the context of Playbooks, members are users of Mattermost who belong to a playbook or are a Playbook Admin.
+In the context of Playbooks, members are users of Mattermost who are added to a playbook.
 
 **Playbook Admin**
 
