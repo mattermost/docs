@@ -73,7 +73,7 @@ To restrict this action so only Playbook Admins can convert playbooks from publi
 
 1. Go to **System Console > User Management > Permissions**.
 2. Scroll down to **Playbook Admin**.
-3. Uncheck **Convert Playbooks**.
+3. Check **Convert Playbooks**.
 4. Select **Save**.
 
 I want to control who starts a run
