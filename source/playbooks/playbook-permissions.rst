@@ -11,7 +11,7 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 * **Guests:** If Guest Accounts are enabled, permissions apply to guest users in all channels, in all teams.
 * **All Members:** Permissions apply to all members, including Admins, in all channels, in all teams.
 * **Channel Administrators:** Permissions apply to all Channel Admins in all channels, in all teams.
-* **Playbook Admins:** Permissions apply to all Playbook Admins in all channels, in all teams.
+* **Playbook Admins:** Permissions apply to all Playbook Admins for all playbooks, in all teams.
 * **Team Administrators:** Permissions apply to all Team Admins, in all teams.
 
 For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
