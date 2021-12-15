@@ -41,7 +41,7 @@ The default Playbooks settings are completely open which enable all members to p
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the following example, only Playbook Admins can edit playbooks. Team members can view Public and Private playbooks and runs, but can't edit playbooks, check off tasks, or remove members from runs. They also can't create Public or Private playbooks.
+In the following example, only Playbook Admins can edit playbooks. Team members can view public and private playbooks and runs, but can't edit playbooks, check off tasks, or remove members from runs. They also can't create public or private playbooks.
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Public Playbooks** and uncheck **Manage Private Playbooks**.
@@ -55,13 +55,13 @@ You can also set permissions for read-only playbooks that do allow members to cr
 3. Then, check **Create Public Playbook** and **Create Private Playbook**.
 4. Select **Save**.
 
-Manage how playbooks are accessed
----------------------------------
+I want to manage how playbooks are accessed
+--------------------------------------------
 
-A Public playbook and its associated runs can be viewed by any member of the team. Playbooks can be converted from Public to Private, but once a playbook is Private it can't be converted back to Public.
+A public playbook and its associated runs can be viewed by any member of the team. Playbooks can be converted from public to private, but once a playbook is private it can't be converted back to public.
 
-Restrict who can convert playbooks from Public to Private
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I want to restrict who can convert playbooks from public to private
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can control whether Members can convert playbooks from public to private.
 
@@ -69,17 +69,17 @@ You can control whether Members can convert playbooks from public to private.
 2. In the **All Members** section, check **Convert Playbooks**.
 3. Select **Save**.
 
-To restrict this action so only Playbook Admins can convert playbooks from Public to Private:
+To restrict this action so only Playbook Admins can convert playbooks from public to private:
 
 1. Go to **System Console > User Management > Permissions**.
 2. Scroll down to **Playbook Admin**.
 3. Uncheck **Convert Playbooks**.
 4. Select **Save**.
 
-Control who can start runs
---------------------------
+I want to control who starts a run
+----------------------------------
 
-By default, all Members can start a run using a playbook. This setting restricts that action to Playbook Admins.
+By default, all Members can start a run using a playbook. If you want to restrict who can start a run, one option is to make a playbook private. Alternatively, you can restrict starting runs so that only Playbook Admins can do so:
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Runs**. This also unchecks **Create Runs**.
