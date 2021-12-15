@@ -55,7 +55,7 @@ When `Desktop App <https://mattermost.com/download/#mattermostApps>`__ notificat
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
-- And when `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/messaging/organizing-conversations.html#start-or-reply-to-threads>`__.
+- And when `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/messaging/organizing-conversations.html#start-or-reply-to-threads>`__.
 
 Notification Sound
 ^^^^^^^^^^^^^^^^^^
@@ -98,7 +98,7 @@ By default, you receive notifications when someone posts a message that contains
 Reply Notifications
 ~~~~~~~~~~~~~~~~~~~
 
-When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in. 
+When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in. 
 
 - You are considered to start a thread when you post a message to which other members of your team reply. 
 - You are considered to participate in a thread when you post a message using the `Reply button <https://docs.mattermost.com/messaging/messaging-basics.html>`__ in an pre-existing thread.

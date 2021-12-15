@@ -628,7 +628,7 @@ redirects = {
     "help/settings/custom-emoji": 
         "https://docs.mattermost.com/messaging/using-custom-emoji.html",
     "help/settings/account-settings": 
-        "https://docs.mattermost.com/messaging/managing-account-settings.html",
+        "https://docs.mattermost.com/messaging/manage-channels-settings.html",
     "help/settings/theme-colors": 
         "https://docs.mattermost.com/messaging/customizing-theme-colors.html",
     "help/settings/desktop-app-options": 
@@ -644,7 +644,7 @@ redirects = {
     "help/getting-started/light-install": 
         "https://docs.mattermost.com/getting-started/light-install.html",
     "help/settings/account-settings#link-preview": 
-        "https://docs.mattermost.com/messaging/managing-account-settings.html#website-link-previews",
+        "https://docs.mattermost.com/messaging/manage-channels-settings.html#website-link-previews",
     "incident-collaboration/playbook-planning": 
         "https://docs.mattermost.com/incident-collaboration/setting-up-playbooks.html",
     "help/settings/custom-emoji": 
@@ -815,7 +815,7 @@ redirects = {
     "guides/setup-onboard-manage-comply": "https://docs.mattermost.com/guides/administration.html",
     "messaging/welcome-to-mattermost-messaging": "https://docs.mattermost.com/overview/index.html",
     "messaging/accessing-your-workspace": "https://docs.mattermost.com/messaging/signing-in.html",
-    "messaging/managing-account-settings": "https://docs.mattermost.com/messaging/channel-user-settings.html",
+    "messaging/managing-account-settings": "https://docs.mattermost.com/messaging/manage-channels-settings.html",
     "messaging/channel-settings": "https://docs.mattermost.com/messaging/channel-preferences.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
