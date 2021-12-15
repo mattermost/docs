@@ -1,12 +1,40 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.48.0 Release](#release)
-- [1.47.2 Release](#id1)
-- [1.47.1 Release](#id6)
-- [1.47.0 Release](#id11)
-- [1.46.0 Release](#id20)
-- [1.45.1 Release](#id28)
+- [1.48.1 Release](#id1)
+- [1.48.0 Release](#id2)
+- [1.47.2 Release](#id7)
+- [1.47.1 Release](#id10)
+- [1.47.0 Release](#id15)
+- [1.46.0 Release](#id24)
+
+## 1.49.0 Release
+
+The v1.49.0 release is currently re-scheduled for January 2022.
+
+## 1.48.1 Release
+- Release Date: December 15, 2021
+- Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed a crash on collapsed reply threads when opening the Gallery view from within a Thread.
+ - Fixed an issue with clearing and grouping of push notifications when Collapsed Reply Threads is enabled.
+ - Fixed an issue with opening the YouTube app from within Mattermost.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
+ - Various known issues with Collapsed Reply Threads (Beta) feature:
+   - New messages banner should only count root posts.
+   - Clicking on a permalink adds the thread replies in the channel view.
+   - Threads item unread state (bolding) does not persist when deleting documents and data.
 
 ## 1.48.0 Release
 - Release Date: November 16, 2021
