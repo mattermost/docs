@@ -89,7 +89,7 @@ Channel header
 
 A channel header refers to text that displays under a channel name at the top of the screen. A channel header can be up to 1024 characters in length and is often used to summarize the channel's focus or to provide links to frequently accessed documents, tools, or websites. 
 
-Change the channel header by selecting **Edit Channel Header**. You can use markdown to `format channel header text <https://docs.mattermost.com/messaging/formatting-text.html>`__ using the same markdown for messages. Any channel member can change a channel header, unless the System Admin has `restricted permissions to do so <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
+Change the channel header by selecting **Edit Channel Header**. You can use Markdown to `format channel header text <https://docs.mattermost.com/messaging/formatting-text.html>`__ using the same Markdown for messages. Any channel member can change a channel header, unless the System Admin has `restricted permissions to do so <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
 
 .. image:: ../images/channel-header.png
         :alt: Channel headers can include links to documents, tools, or websites.
