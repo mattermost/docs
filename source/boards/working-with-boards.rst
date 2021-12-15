@@ -47,7 +47,7 @@ Calendar view
 
 To use this view, cards need to have the **Date** property added.
 
-If cards don't have a **Date** property, they'll be sorted and displayed by the card creation date (default). These cards can't be moved around the board until a **Date** property is added. This property can be a due date, milestone, and so on.
+If cards don't have a custom **Date** property, they'll be sorted and displayed by the card creation date (default). These cards can't be moved around the board until a custom **Date** property is added.
 
 .. note:: 
   
