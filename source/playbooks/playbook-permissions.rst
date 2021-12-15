@@ -20,7 +20,7 @@ In the context of Playbooks, members are assigned a role and based on the select
 
 .. note::
 
-  Permissions are applied across Playbooks as a whole, so it's important to set your roles up first before editing permissions. To ensure that you don't lose access to playbooks, navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin** 
+Permissions are applied across Playbooks as a whole, so it's important to set your roles up first before editing permissions. To ensure that you don't lose access to playbooks, navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin** 
 
 Playbook roles
 ---------------
