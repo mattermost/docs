@@ -6042,7 +6042,7 @@ Automatically Follow Threads
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__. If you are experiencing adverse server performance impacts, please consult this `support article <XXXXXX>`_ for recommended remediation.   
+This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__. If you are experiencing adverse server performance impacts, please consult this `support article <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ for recommended remediation.   
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
 
