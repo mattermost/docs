@@ -28,7 +28,6 @@ Mattermost v6.2.0 contains a low level security fix. [Upgrading](https://docs.ma
 ### Highlights
 
 #### Playbook Updates
- - Added more granular control of playbooks access with new Playbooks permission schemes.
  - Added the ability to follow playbook runs to stay informed about the procedures you care about.
  - Added other improvements including the ability to search playbooks, share URLs of individual runs and playbooks, and filter runs by playbook.
 
