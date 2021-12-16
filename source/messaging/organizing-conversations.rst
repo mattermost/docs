@@ -39,7 +39,7 @@ Known issues
 
     Collapsed Reply Threads is available as an early beta in Mattermost Cloud and Mattermost Server v5.37 and later. It's expected that you may experience bugs and server performance implications as we stabilize the feature. In particular, please be aware of these important known issues and risks:
 
-    - Collapsed Reply Threads is a complex feature that will increase demand on your server and database resources. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is `promoted to general availability in Q1 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_. Learn more about these `performance considerations here <XXXXXXX KB article>`_.   
+    - Collapsed Reply Threads is a complex feature that will increase demand on your server and database resources. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's `promoted to general availability in Q1 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.   
     - When enabling Collapsed Reply Threads for the first time, you may see channels or threads you’ve seen before appear as unread. To resolve this:
       
       - View any unread channels or use ALT+SHIFT+UP/DOWN to navigate to unread channels with the keyboard. Work in-progress ticket: `MM-35494 <https://mattermost.atlassian.net/browse/MM-35494>`__
