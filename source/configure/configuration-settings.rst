@@ -563,7 +563,7 @@ Minimum Hashtag Length
 
 |all-plans| |self-hosted|
 
-The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html_.
+The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>__.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
@@ -621,7 +621,7 @@ Enable Elasticsearch Indexing
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
+**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html>`__.
 
 **False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, we recommend you purge and rebuild the index to ensure complete search results.
 
@@ -636,7 +636,7 @@ Server Connection Address
 
 *Available in legacy Enterprise Edition E20*
 
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html>`__.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
@@ -4752,7 +4752,7 @@ Gfycat display style
 
 |all-plans| |self-hosted|
 
-Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <Gfycat display style>`__ documentation for details.
+Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
 
 
 GIPHY display style
@@ -5401,7 +5401,7 @@ This button initiates a compliance export job immediately. You can monitor the s
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <configure/configuration-settings.html#compliance-export>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
+Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <https://docs.mattermost.com/configure/configuration-settings.html#compliance-monitoring>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 

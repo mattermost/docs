@@ -56,7 +56,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 11. Select **Finish**. 
 
-12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable `this configuration setting <https://docs.mattermost.com/administration/prev-config-settings.html#override-saml-bind-data-with-ad-ldap-information>`__ later when once setup is complete.
+12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable `this configuration setting <https://docs.mattermost.com/configure/configuration-settings.html#override-saml-bind-data-with-ad-ldap-information>`__ later when once setup is complete.
 
 13. On the next screen, select the **Sign On** tab, then select **View Setup Instructions**.
 

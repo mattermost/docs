@@ -87,7 +87,7 @@ Customize Channels
    Set Status and Availability </messaging/setting-your-status-availability>
    Configure Notifications </messaging/configuring-notifications>
    Organize the Sidebar </messaging/organizing-your-sidebar>
-   Manage Your Profile </messaging/profile-settings>
+   Manage Your Profile </messaging/manage-profile-settings>
    Manage Channels Settings </messaging/manage-channels-settings>
    Theme Colors </messaging/customizing-theme-colors>
    Desktop App Configurations </messaging/managing-desktop-app-options>

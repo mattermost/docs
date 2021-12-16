@@ -293,9 +293,9 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for",
     "administration/config-settings#data-retention-policy": 
         "https://docs.mattermost.com/configure/configuration-settings.html#data-retention-policy",
-    "administration/command-line-tools.html#mattermost-channel-restore": 
+    "administration/command-line-tools#mattermost-channel-restore": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore",
-    "administration/mmctl-cli-tool.html#mmctl-channel-modify": 
+    "administration/mmctl-cli-tool#mmctl-channel-modify": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-modify",
     "administration/config-settings#post-edit-time-limit": 
         "https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit",
@@ -319,19 +319,21 @@ redirects = {
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
     "administration/config-settings#enable-legacy-sidebar": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
-    "administration/config-settings.html#post-edit-time-limit": 
+    "administration/config-settings#post-edit-time-limit": 
         "https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit",
-    "administration/config-settings.html#default-channels-experimental": 
+    "administration/config-settings#default-channels-experimental": 
         "https://docs.mattermost.com/configure/configuration-settings.html#default-channels-experimental",
-    "administration/command-line-tools.html#mattermost-group-team-list": 
+    "administration/config-settings#ad-ldap": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap",
+    "administration/command-line-tools#mattermost-group-team-list": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-list",
-    "administration/command-line-tools.html#mattermost-group-team-enable": 
+    "administration/command-line-tools#mattermost-group-team-enable": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-enable",
-    "administration/command-line-tools.html#mattermost-group-channel-enable": 
+    "administration/command-line-tools#mattermost-group-channel-enable": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-enable",
-    "administration/command-line-tools.html#mattermost-group-team-disable": 
+    "administration/command-line-tools#mattermost-group-team-disable": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-team-disable",
-    "administration/command-line-tools.html#mattermost-group-channel-disable": 
+    "administration/command-line-tools#mattermost-group-channel-disable": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-disable",
     "administration/config-settings#logging": 
         "https://docs.mattermost.com/configure/configuration-settings.html#standard-logging",
@@ -401,11 +403,11 @@ redirects = {
     "deployment/ldap-group-sync#add-default-teams-or-channels-for-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
     "deployment/team-channel-management#profile": "https://docs.mattermost.com/manage/team-channel-members.html#profile",
-    "deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group": 
+    "deployment/ldap-group-sync#add-default-teams-or-channels-for-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
-    "deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group": 
+    "deployment/ldap-group-sync#add-default-teams-or-channels-for-the-group": 
         "https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#adding-default-teams-or-channels-for-the-group",
-    "deployment/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap": 
+    "deployment/sso-saml-okta#configure-saml-synchronization-with-ad-ldap": 
         "https://docs.mattermost.com/onboard/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap",
     "administration/config-settings#files": 
         "https://docs.mattermost.com/configure/configuration-settings.html#file-storage",
@@ -467,14 +469,12 @@ redirects = {
         "https://docs.mattermost.com/comply/custom-terms-of-service.html",
     "administration/mobile-changelog": 
         "https://docs.mattermost.com/deploy/mobile-app-changelog.html",
-    "administration/config-settings.html#allow-users-to-view-archived-channels-beta": 
-        "https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels",
-    "administration/config-settings.html#push-notification-contents": 
+    "administration/config-settings#allow-users-to-view-archived-channels-beta": 
+        "https://docs.mattermost.com/configure/config-settings.html#allow-users-to-view-archived-channels",
+    "administration/config-settings#push-notification-contents": 
         "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",
     "administration/config-settings#gitlab-settings": "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
     "administration/config-settings": "https://docs.mattermost.com/configure/configuration-settings.html",
-    "administration/config-settings#gitlab-settings":
-        "https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings",
     "administration/config-settings#google-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#google-settings",
     "administration/config-settings#office-365-settings":
@@ -498,7 +498,8 @@ redirects = {
     "administration/config-settings#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
     "configure/config-ssl-http2-apache2": "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
-    "configure/configuration-settings#enable-latex-rendering": "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
+    "configure/configuration-settings#enable-latex-rendering": 
+        "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
     "configure/configuration-settings#terms-of-service-link": 
         "https://docs.mattermost.com/configure/configuration-settings.html#terms-of-use-link",
     "cloud/cloud-administration/cloud-changelog": "https://docs.mattermost.com/install/cloud-changelog.html",
@@ -581,9 +582,9 @@ redirects = {
     "guides/cloud-admin-guide": "https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html",
     "guides/administrator#mattermost-integrations": "https://developers.mattermost.com/integrate/getting-started/",
     "guides/integration": "https://developers.mattermost.com/integrate/other-integrations/",
-    "guides/install-deploy-upgrade-scale.html#install-mattermost":
+    "guides/install-deploy-upgrade-scale#install-mattermost":
         "https://docs.mattermost.com/guides/deployment.html#install-guides",
-    "guides/administrator.html#installing-mattermost": "https://docs.mattermost.com/guides/deployment.html#install-guides",
+    "guides/administrator#installing-mattermost": "https://docs.mattermost.com/guides/deployment.html#install-guides",
     "help/apps/desktop-changelog": "https://docs.mattermost.com/install/desktop-app-changelog.html",
     "help/getting-started/welcome-to-mattermost": "https://docs.mattermost.com/guides/channels.html",
     "messaging/welcome-to-mattermost-messaging": "https://docs.mattermost.com/guides/channels.html",
@@ -736,7 +737,7 @@ redirects = {
     "mobile/mobile-overview#use-an-emm-provider-with-managed-app-configuration":
         "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
     "mobile/mobile-hpns": "https://docs.mattermost.com/deploy/mobile-hpns.html",
-    "mobile/mobile-faq.html#how-do-push-notifications-work":
+    "mobile/mobile-faq#how-do-push-notifications-work":
         "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work",
     "mobile/mobile-testing-notifications": "https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
     "mobile/deploy-mobile-apps-using-emm-provider": "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
@@ -819,7 +820,8 @@ redirects = {
     "messaging/channel-settings": "https://docs.mattermost.com/messaging/channel-preferences.html",
     "guides/messaging": "https://docs.mattermost.com/guides/channels.html",
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
-    "about/license-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
+    "about/license-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": 
+        "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
     "configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37"
 }
 
