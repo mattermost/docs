@@ -35,7 +35,7 @@ Guests can:
 - Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)
 - Favorite channels
 - Mute channels
-- Update their account settings
+- Update their profile
 
 Guests cannot:
 
@@ -132,7 +132,7 @@ Guest Identification
 
 Guests are identified with a **Guest** badge. This badge is visible in various places on the interface and mobile apps, such as on a guest’s profile and next to their name on user lists, including @mentions. When guests are added to a channel, a system message informs other channel members that the added user is a guest.
 
-Channels containing guests will have their header automatically updated with a message stating: *This channel has guests*.
+Channels containing guests display the message: *This channel has guests*.
 
 .. image:: ../images/Guest_Badges.png
 
@@ -211,7 +211,7 @@ Currently, you cannot. This feature may be added at a later stage.
 Can MFA be applied selectively?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If MFA is enforced for your users, it can be applied to Guest Accounts. Guests can configure MFA in **Account Settings > Security**. If MFA is not enforced for your users, it can't be applied to Guest Accounts.
+If MFA is enforced for your users, it can be applied to Guest Accounts. Guests can configure MFA in by going to their avatar and selecting **Profile > Security**. If MFA is not enforced for your users, it can't be applied to Guest Accounts.
 
 Has the Guest Accounts feature been reviewed by an external security firm?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
