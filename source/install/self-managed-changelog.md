@@ -12,7 +12,11 @@ Latest Mattermost Releases:
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-12-16**
+**v6.2.1, release day TBD**
+
+Investigating a SIGSEGV error after upgrading to v6.2.0 when plugins are disabled in configuration. We recommend enabling plugins when upgrading to v6.2.0.
+
+**v6.2.0, released 2021-12-16**
 
 Mattermost v6.2.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
