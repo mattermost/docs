@@ -585,6 +585,7 @@ redirects = {
     "guides/install-deploy-upgrade-scale#install-mattermost":
         "https://docs.mattermost.com/guides/deployment.html#install-guides",
     "guides/administrator#installing-mattermost": "https://docs.mattermost.com/guides/deployment.html#install-guides",
+    "help/apps/desktop-guide": "https://docs.mattermost.com/messaging/managing-desktop-app-servers.html",
     "help/apps/desktop-changelog": "https://docs.mattermost.com/install/desktop-app-changelog.html",
     "help/getting-started/welcome-to-mattermost": "https://docs.mattermost.com/guides/channels.html",
     "messaging/welcome-to-mattermost-messaging": "https://docs.mattermost.com/guides/channels.html",
