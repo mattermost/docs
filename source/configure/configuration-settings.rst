@@ -6046,7 +6046,7 @@ This setting has been added as a requirement to support `Collapsed Reply Threads
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
 
-**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled.  If you plan to enable Collapsed Reply Threads for your instance, it is not recommended to disable this setting since the server-side tracking of followed threads and unread states is critical to create a smooth transition for end-users when enabling Collapsed Reply Threads in the future.  
+**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled. If you plan to enable Collapsed Reply Threads for your instance, we don't recommend disabling this setting since the server-side tracking of followed threads and unread states is critical to create a smooth transition for end-users when enabling Collapsed Reply Threads in the future.  
 
 .. note::
 
