@@ -130,7 +130,7 @@ Install mmctl
 
 |all-plans| |cloud| |self-hosted|
 
-The mmctl tool is installed with Mattermost from v6.0. For customers using Mattermost prior to v6.0, there are different methods available to install mmctl.
+The mmctl tool comes bundled with the Mattermost package from v6.0. For customers that want to setup it independently from the package, or for versions prior to v6.0, there are different methods available to install mmctl.
 
 **Using brew (Linux, macOS)**
 
