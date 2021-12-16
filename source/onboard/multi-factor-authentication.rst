@@ -10,6 +10,16 @@ Multi-factor Authentication
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
 
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
   :target: https://mattermost.com/download
@@ -37,24 +47,9 @@ Enabling MFA
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+System Admins can enable this option by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This option is enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
-
-Once enabled, users can opt to use MFA on their account in the `Account Settings <https://docs.mattermost.com/messaging/managing-account-settings.html>`__ menu under **Security > Multi-factor Authentication**.
+Once enabled, users can opt to `set up multi-factor authentication <https://docs.mattermost.com/messaging/manage-profile-settings.html#multi-factor-authentication>`__ on their account by selecting **Profile > Security > Multi-factor Authentication** from their avatar.
 
 .. include:: common-disable-mfa.rst
 
@@ -62,26 +57,6 @@ Enforcing MFA
 --------------
 
 |enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 *Available in legacy Mattermost Enterprise Edition E10*
 

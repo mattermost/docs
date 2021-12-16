@@ -59,7 +59,7 @@ Mattermost has eight regions that can be focused for navigation. Use **F6** (Des
 Message Navigation
 ------------------
 
-When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages. Press **TAB** to navigate through message actions.
+When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages and reply threads. Press **TAB** to navigate through message actions.
 
 .. image:: ../images/message-navigation.gif
   :alt: Navigate through Mattermost messages using a keyboard.
