@@ -170,7 +170,7 @@ Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slac
 
 The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
 
-**3. Convert Slack Import to Mattermost Bulk Export Format**
+**4. Convert Slack Import to Mattermost Bulk Export Format**
 
 Now that you have a Slack export file with emails and attachments you have to convert it to the Mattermost format using ``mmetl``. Download the latest release of ``mmetl`` for your OS and architecture `here <https://github.com/mattermost/mmetl/releases/>`__ and extract it to your $PATH like with ``slack-advanced-exporter``. The same caveat applies.
 
@@ -188,7 +188,7 @@ Next you have to create a zip file with the ``mattermost_import.jsonl`` file and
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 
-**4. Import into Mattermost**
+**5. Import into Mattermost**
 
 Now you can start the import process. Once you have ``mmctl`` installed and authenticated use this command to upload ``mattermost-bulk-export.zip``:
 
