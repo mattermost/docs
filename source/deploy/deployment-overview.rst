@@ -12,7 +12,7 @@ The following Mattermost network diagram illustrates a private cloud deployment 
 Requirements and Installation Guides
 -------------------------------------
 
-Mattermost supports workplace messaging for teams using one to three servers with instructions available in the Install Guides section of this documentation. See the `Software and Hardware Requirements <https://docs.mattermost.com/install/software-hardware-requirements.htm>`__ documentation for server sizing estimates.
+Mattermost supports workplace messaging for teams using one to three servers with instructions available in the Install Guides section of this documentation. See the `Software and Hardware Requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ documentation for server sizing estimates.
 
 User Experience
 ----------------
