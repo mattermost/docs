@@ -151,7 +151,7 @@ This adds the channel to a **Favorites** list at the top of the channel sidebar,
 Muting and unmuting a channel
 -----------------------------
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Mute Channel**. 
+By default, channel muting is turned off for all channels. To mute or unmute a channel, select the channel name at the top of the center pane to access the channel menu, then choose **Mute channel**.
 
 Once a channel is muted:
 

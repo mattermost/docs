@@ -59,7 +59,7 @@ Please take note of the ``Application ID``, ``Application Secret Key``, ``User A
 Deploy GitLab Helm Chart
 -------------------------
 
-To deploy the GitLab Helm Chart, follow the instructions described `here <https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`__.
+To deploy the GitLab Helm Chart, follow the instructions described in the `GitLab cloud native Helm Chart <https://docs.gitlab.com/charts/>`__ documentation.
 
 Here's a light way to install it:
 

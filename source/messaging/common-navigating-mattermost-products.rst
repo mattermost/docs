@@ -12,8 +12,8 @@ Where is everything?
 
 While Channels, Boards, and Playbooks feature unique functionality within the Global Header, the following features are shared across all three products:
 
-* Account Settings
-* Status and Availability
+* Your user profile
+* Your status and availability
 * Product menu
 
 In addition to this documentation, take a look at the Mattermost onboarding tips/tutorials available immediately after installation/upgrade. Note that once the tips/tutorials are dismissed, you won't be able to access them again.
@@ -21,11 +21,14 @@ In addition to this documentation, take a look at the Mattermost onboarding tips
 Account Settings
 ----------------
 
-The Account Settings menu has been split into Account Settings and Settings.
+The Account Settings menu has been split into **Profile** and **Settings**.
 
-Your **Profile** and **Security** settings can be found in Account Settings, while **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are in the settings menu.
+Your **Profile** and **Security** settings can be found in **Profile**. Select your avatar in the top-right corner of Mattermost, then choose **Profile**.
 
-To open Account Settings, select your avatar in the top-right corner of Mattermost, then choose Account Settings. The Settings menu is located to the left of your avatar
+Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are found in **Settings**. In Channels, select the |gear-icon| in the Global Header, to the left of your avatar, to access Channels settings. 
+
+.. |gear-icon| image:: ../images/gear-icon.png
+  :alt: Select the Gear icon to access Channel settings.
 
 Status and availability
 -----------------------

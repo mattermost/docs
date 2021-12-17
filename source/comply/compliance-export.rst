@@ -112,7 +112,7 @@ If the compliance export job is run automatically, manually via the System Conso
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
 
-When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/administration/config-settings.html?#local-storage-directory>`__.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
+When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory>`__.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
 
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
