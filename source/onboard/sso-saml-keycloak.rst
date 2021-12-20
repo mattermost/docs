@@ -98,15 +98,14 @@ Configure SAML for Mattermost
     
         ``openssl pkcs12 -in keystore.p12 -out mattermost.crt -nodes``
 
-    
     b. Generate the ``.key`` file from the ``.p12`` file.
     
         ``openssl pkcs12 -in keystore.p12 -out mattermost.key -nodes -nocerts``
-    
-    
+        
     c. Upload both of these files within the Mattermost System Console. Make sure to select **Upload**.
-        - **Service Provider Private Key**: ``mattermost.key``
-        - **Service Provider Private Certificate**: ``mattermost.crt``
+    
+      - **Service Provider Private Key**: ``mattermost.key``
+      - **Service Provider Private Certificate**: ``mattermost.crt``
 
 .. image:: ../../source/images/keycloak_6_mattermost_encryption.png
 
