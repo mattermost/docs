@@ -29,8 +29,8 @@ Mattermost desktop applications are available for Windows, Mac, and Linux operat
 
 Below is a list of additional resources:
 
-- `Guide for configuring your desktop app experience <https://docs.mattermost.com/help/apps/desktop-guide.html>`__
-- `Changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`__
+- `Guide for configuring your desktop app experience <https://docs.mattermost.com/messaging/managing-desktop-app-options.html>`__
+- `Changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__
 - `Source code <https://github.com/mattermost/desktop>`__
 - Contributor’s guide (coming soon)
 

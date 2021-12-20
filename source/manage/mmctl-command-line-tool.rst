@@ -23,9 +23,9 @@ mmctl Command Line Tool
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication is done with either login credentials or an authentication token. This mmctl tool replaces the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__ from Mattermost v6.0.
+The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included from Mattermost v6.0, and it replaces the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
-Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be deprecated.
+Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
@@ -65,7 +65,7 @@ For more information on what's changed in mmctl for Mattermost v6.0, see the `Ma
 
 .. note::
    
-   You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v.6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
+   You can continue to use existing options available from Mattermost v5.38 and earlier releases. However, we strongly recommend that customers upgrading to Mattermost v6.0 or later make use of the latest option syntax to take full advantage of the security and scaleability improvements available.
 
 mmctl usage notes
 -----------------
@@ -130,7 +130,7 @@ Install mmctl
 
 |all-plans| |cloud| |self-hosted|
 
-There are different methods available to install mmctl.
+The mmctl tool comes bundled with the Mattermost package from v6.0. For customers that want to setup it independently from the package, or for versions prior to v6.0, there are different methods available to install mmctl.
 
 **Using brew (Linux, macOS)**
 

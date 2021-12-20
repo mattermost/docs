@@ -563,7 +563,7 @@ Minimum Hashtag Length
 
 |all-plans| |self-hosted|
 
-The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html_.
+The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>__.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
@@ -621,7 +621,7 @@ Enable Elasticsearch Indexing
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
+**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html>`__.
 
 **False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, we recommend you purge and rebuild the index to ensure complete search results.
 
@@ -636,7 +636,7 @@ Server Connection Address
 
 *Available in legacy Enterprise Edition E20*
 
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html/>`__.
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html>`__.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
@@ -815,9 +815,9 @@ Enable users to search the contents of documents attached to messages. Mattermos
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.ExtractContent": true`` with options ``true`` and ``false``.          |
-+---------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExtractContent": true`` with options ``true`` and ``false``.          |
++--------------------------------------------------------------------------------------------------------------------+
 
 To extend content search support to include file formats including RTF, DOC, and PAGES, and to take advantage of improved server performance during PDF extraction, you must install `these dependencies <https://github.com/sajari/docconv#dependencies>`__. If you choose not to install these dependencies, you'll see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. 
 
@@ -845,9 +845,9 @@ This configuration setting enables users to search the contents of compressed ZI
 
 **False**: The contents of documents within ZIP files aren't returned in search results.
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.ArchiveRecursion": false`` with options ``true`` and ``false``.       |
-+---------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ArchiveRecursion": false`` with options ``true`` and ``false``.       |
++--------------------------------------------------------------------------------------------------------------------+
 
 .. note::
   - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
@@ -1514,9 +1514,9 @@ Where:
   - Logs are recorded asynchronously to reduce latency to the caller. 
   - Advanced logging supports hot-reloading of logger configuration.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``LogSettings.AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.        |                                                        
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.  |
++----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Options outlined in `this text file <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`__ are described in the following table.
 
@@ -2623,9 +2623,9 @@ Enable LaTeX Code Block Rendering
 
 **False**: Disables rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted.
 
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableLatex": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------+
 
 Enable Inline LaTeX Rendering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2636,9 +2636,9 @@ Enable Inline LaTeX Rendering
 
 **False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableInlineLatex": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableInlineLatex": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^
@@ -3280,7 +3280,7 @@ First Name Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.    |
@@ -3291,7 +3291,7 @@ Last Name Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.      |
@@ -3302,7 +3302,7 @@ Nickname Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +--------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.   |
@@ -3313,7 +3313,7 @@ Position Attribute
 
 |enterprise| |professional| |cloud| |self-hosted|
 
-(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position in **Account Settings**.
+(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position as part of their :doc:`profile settings </messaging/manage-profile-settings>`.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
@@ -4752,7 +4752,7 @@ Gfycat display style
 
 |all-plans| |self-hosted|
 
-Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <Gfycat display style>`__ documentation for details.
+Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
 
 
 GIPHY display style
@@ -4970,11 +4970,11 @@ Enable Incoming Webhooks
 
 |all-plans| |cloud| |self-hosted|
 
-Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, view samples, and to let the community know about integrations you have built.
+Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
-**True**: Incoming webhooks will be allowed. To manage incoming webhooks, go to **Account Settings > Integrations**. The webhook URLs created in Account Settings can be used by external applications to create posts in any Public or Private channels that you have access to.
+**True**: Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu. The webhook URLs created can be used by external applications to create posts in any Public or Private channels that you have access to.
 
-**False**: The **Integrations > Incoming Webhooks** section of Account Settings is hidden and all incoming webhooks are disabled.
+**False**: The **Integrations > Incoming Webhooks** section of the Mattermost Product menu is hidden and all incoming webhooks are disabled.
 
 .. important::
    Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
@@ -4988,11 +4988,11 @@ Enable Outgoing Webhooks
 
 |all-plans| |cloud| |self-hosted|
 
-Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and view samples.
+Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and viewing samples.
 
-**True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, go to **Account Settings > Integrations**.
+**True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, select **Integrations** from the Mattermost Product menu.
 
-**False**: The **Integrations > Outgoing Webhooks** section of Account Settings is hidden and all outgoing webhooks are disabled.
+**False**: The **Integrations > Outgoing Webhooks** of the Mattermost Product menu is hidden and all outgoing webhooks are disabled.
 
 .. important:: 
    Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
@@ -5060,7 +5060,7 @@ Enable Personal Access Tokens
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
+**True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Profile > Security**. They can be used to authenticate against the API and give full access to the account.
 
 To manage who can create personal access tokens or to search users by token ID, go to the **System Console > Users** page.
 
@@ -5401,7 +5401,7 @@ This button initiates a compliance export job immediately. You can monitor the s
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <configure/configuration-settings.html#compliance-export>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
+Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <https://docs.mattermost.com/configure/configuration-settings.html#compliance-monitoring>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 
@@ -5550,7 +5550,7 @@ Allow Authentication Transfer
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Users can change their sign-in method to any that is enabled on the server, either via **Account Settings > Security** or the APIs.
+**True**: Users can change their sign-in method to any that is enabled on the server, either via **Profile > Security** or the APIs.
 
 **False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
 
@@ -5987,17 +5987,21 @@ Collapsed Reply Threads (Beta)
 
 |all-plans| |cloud| |self-hosted|
 
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and are disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
 
 System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
 
-**Enabled (Default Off)**: Enable Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
+**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
+
+.. note::
+
+   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you are well versed with the `known issues <https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you cannot easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it is `promoted to general availability in Q1 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
 
 **Disabled**: Disable Collapsed Reply Threads functionality.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
++---------------------------------------------------------------------------------------------------------------------------+
 
 Use Channel Name in Email Notifications (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6038,19 +6042,39 @@ Automatically Follow Threads
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__, and may affect server performance. We recommend that you review our `documentation on hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`__ to ensure your servers are appropriately scaled for the size of your user base.
+This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__. If you are experiencing adverse server performance impacts, please consult this `support article <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ for recommended remediation.   
 
-**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.   
+**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
 
-**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled.
+**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled. If you plan to enable Collapsed Reply Threads for your instance, we don't recommend disabling this setting since the server-side tracking of followed threads and unread states is critical to create a smooth transition for end-users when enabling Collapsed Reply Threads in the future.  
+
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will now automatically be followed to the thread.  
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
-.. note::
+Developer Flags
+^^^^^^^^^^^^^^^
 
-   Enabling this configuration setting doesn’t retroactively follow threads for older actions taken prior to the setting being enabled. For example, if a user comments on an old thread, they automatically follow the thread if this setting is enabled regardless of whether the thread existed when this setting was disabled.
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting specifies a list of strings where each string is a flag used to set the content security policy (CSP) for the Mattermost Web App. Each flag must be in the format ``flag=true`` (e.g. ``unsafe-eval=true,unsafe-inline=true``). Not recommended for production environments.
+
+The following values are currently supported:
+
+- ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
+- ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
+
+This configuration setting is disabled by default and requires `Developer Mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
+
++----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
++----------------------------------------------------------------------------------------+
 
 WebSocket URL
 ^^^^^^^^^^^^^^
@@ -6241,9 +6265,9 @@ This configuration setting enables users to search documents attached to message
 
 **False**: File-based searches are disabled.
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableFileSearch": true`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileSearch": true`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
 
 Enable User Status Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6631,9 +6655,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Maxiumum image resolution size for message attachments in pixels. 
 
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileSettings.MaxImageResolution": 33177600`` with numerical input.     |
-+---------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
++--------------------------------------------------------------------------------------------------------+
 
 File Settings
 ~~~~~~~~~~~~~~
@@ -7258,32 +7282,6 @@ The minimum version of the Android React Native app that is required to be used.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Latest Desktop Version
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The latest version of the desktop app that is recommended for use. 
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DesktopLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Minimum Destop Version
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum version of the desktop app that is required to be used. 
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DesktopMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Latest iOS Version

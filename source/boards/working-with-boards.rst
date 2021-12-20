@@ -35,6 +35,33 @@ All changes you make to boards and cards are saved immediately.
 Changing views
 --------------
 
+You can change boards views to adjust how your cards are represented. To add a new view to a board, select the menu next to the current view name. Scroll down and select **+ Add view**, then select the new visualization you'd like to use.
+
+Board view
+~~~~~~~~~~
+
+This is a vertical list view where cards are sorted by columns. The column names are editable and you can drag cards between columns.
+
+Calendar view
+~~~~~~~~~~~~~
+
+To use this view, cards need to have the **Date** property added.
+
+If cards don't have a custom **Date** property, they'll be sorted and displayed by the card creation date (default). These cards can't be moved around the board until a custom **Date** property is added.
+
+.. note:: 
+  
+  If your cards do have a **Date** property and you're not able to move them around, you may be displaying them by **Created Time** or **Last Updated Time**.
+
+* To add a new card, select the **+** sign in the top-left corner of the relevant date.
+* To create a date range event, select a start date and then drag to the end date to create a card for that date range event.
+* To add a date range to an existing card, hover over the side of the card to display the arrow and drag to the left or right to create a date range.
+
+Table view
+~~~~~~~~~~
+
+Each column corresponds to a card property. You can edit cells directly or you can select **Open** to open the card editor for that row. All changes you make to boards and cards are saved immediately.
+
 For this exercise, select the **Project Tasks** template. The first view of the new board is a table of all tasks.
 
 * Select **By Status** in the sidebar to see a board view.
@@ -63,13 +90,3 @@ Dragging cards
 Drag cards from one column to another to change their group-by property. For example, drag a card to the **Completed** column to mark it as completed. When a board is unsorted, you can drag a card to a specific row in a column.
 
 For sorted boards, dragging a card to a column will auto-sort it using the specified sort settings.
-
-Adding new views 
-----------------
-
-Select the dropdown next to the view name, and then select **Add view** to add a new view.
-
-Table views 
------------
-
-Each column corresponds to a card property. You can edit cells directly or you can select **Open** to open the card editor for that row. All changes you make to boards and cards are saved immediately.

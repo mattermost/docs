@@ -67,14 +67,14 @@ Manage Teams, Channels, and Members
    Team Settings </messaging/team-settings>
    Manage Team Members </messaging/managing-members>
    Manage Channels </messaging/managing-channels>
-   Channel Settings </messaging/channel-settings>
+   Set Channel Preferences </messaging/channel-preferences>
    Organize Channels </messaging/organizing-channels>
 
 * :doc:`Create Teams </messaging/creating-teams>` - Create teams to group your organization’s users together.
 * :doc:`Team Settings </messaging/team-settings>` - Configure team names, descriptions, icons, and invite settings.
 * :doc:`Manage Team Members </messaging/managing-members>` - Invite users to teams, configure user roles, and disable user access.
 * :doc:`Manage Channels </messaging/managing-channels>` - Create, join, rename, leave, favorite, mute, and archive Channels.
-* :doc:`Channel Settings </messaging/channel-settings>` - Customize notification, headers, names, and descriptions of Channels.
+* :doc:`Set Channel Preferences </messaging/channel-preferences>` - Customize notification, headers, names, and descriptions of Channels.
 * :doc:`Organize Channels </messaging/organizing-channels>` - Organize and navigate Channels.
 
 Customize Channels
@@ -87,7 +87,8 @@ Customize Channels
    Set Status and Availability </messaging/setting-your-status-availability>
    Configure Notifications </messaging/configuring-notifications>
    Organize the Sidebar </messaging/organizing-your-sidebar>
-   Account Settings </messaging/managing-account-settings>
+   Manage Your Profile </messaging/manage-profile-settings>
+   Manage Channels Settings </messaging/manage-channels-settings>
    Theme Colors </messaging/customizing-theme-colors>
    Desktop App Configurations </messaging/managing-desktop-app-options>
    Manage Server Connections </messaging/managing-desktop-app-servers>
@@ -95,8 +96,9 @@ Customize Channels
 * :doc:`Set Status and Availability </messaging/setting-your-status-availability>` - Indicate your availability and set custom statuses.
 * :doc:`Configure Notifications </messaging/configuring-notifications>` - Configure message alerts and desktop, email, and push notifications.
 * :doc:`Organize the Sidebar </messaging/organizing-your-sidebar>` - Organize conversations in the sidebar to keep your workspace efficient.
-* :doc:`Account Settings </messaging/managing-account-settings>` - Configure profile, security, notifications, themes, language, and more.
-* :doc:`Theme Colors </messaging/customizing-theme-colors>` - Import themes or create your own custom theme.
+* :doc:`Manage Your Profile </messaging/manage-profile-settings>` - Configure your user profile and security preferences.
+* :doc:`Manage Channels Settings </messaging/manage-channels-settings>` - Configure Channels notifications, display preferences, language, and more.
+* :doc:`Theme Colors </messaging/customizing-theme-colors>` - Import, configure, or create new themes.
 * :doc:`Desktop App Configurations </messaging/managing-desktop-app-options>` - Configure settings on the Windows, Mac, and Linux Desktop Apps.
 * :doc:`Manage Server Connections </messaging/managing-desktop-app-servers>` - Manage your connections to multiple Mattermost servers.
 

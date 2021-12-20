@@ -21,10 +21,21 @@ Channels Basics
 Write messages
 --------------
 
-Write messages using the text input box at the bottom of the screen. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. 
+Write messages using the text input box at the bottom of Mattermost. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. 
 
-To send messages on CTRL+ENTER and use ENTER to insert new lines go to **Main Menu > Account Settings > Advanced** > **Send messages on CTRL+ENTER**.
+.. tabs::
 
+  .. tab:: Mattermost v6.0 onwards
+
+      You can use ENTER to insert new lines, and CTRL+ENTER to send messages instead. Select the |gear-icon| to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+
+      .. |gear-icon| image:: ../images/gear-icon.png
+        :alt: Select the Gear icon to open the Settings dialog.
+
+  .. tab:: Mattermost v5.39 and earlier
+
+      In Mattermost versions up to v5.39, you can use ENTER to insert new lines, and CTRL+ENTER to send messages instead. Select the three horizontal lines at the top of the channel sidebar (also known as a hamburger menu) to go to **Account Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+      
 Reply to messages
 ------------------
 
@@ -37,6 +48,11 @@ Notify teammates
 ----------------
 
 Let teammates know when they're needed by typing ``@username``.
+
+Link to channels
+----------------
+
+Create a link to a Public Channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). From Mattermost v6.2, channel members also see Private Channel names returned.
 
 Format your messages
 --------------------
