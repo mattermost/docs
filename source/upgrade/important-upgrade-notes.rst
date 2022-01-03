@@ -14,7 +14,7 @@ Important Upgrade Notes
   :alt: Available for Mattermost Self-Hosted deployments.
 
 .. important::
-   - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
+   - Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle in April 15, 2022. Upgrading to Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
    - The "version" CLI command will be deprecated in a future release.
    - Upgrading Mattermost can result in an error “ERROR: default for column "column_name" cannot be cast automatically to type jsonb” if you have non-JSON data in a column. This can also happen if the database data has been manipulated by external processes (e.g. plugins) and in cases where improper input data could get silently truncated due to varchar limits. The data in the affected database column has to be manually fixed.
 
