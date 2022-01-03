@@ -12,13 +12,11 @@ Latest Mattermost Releases:
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**v6.2.1, release day TBD**
-
-Investigating a SIGSEGV error after upgrading to v6.2.0 when plugins are disabled in configuration. We recommend enabling plugins when upgrading to v6.2.0.
-
-**v6.2.0, released 2021-12-16**
-
-Mattermost v6.2.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- **v6.2.1, released 2021-12-17**
+  - Mattermost v6.2.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where a SIGSEGV error occurred after upgrading to v6.2.0 when plugins were disabled in configuration.
+- **v6.2.0, released 2021-12-16**
+  - Mattermost v6.2.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Important Upgrade Notes
  -  Channel results in the channel autocomplete will include private channels. Customers using [Bleve](https://docs.mattermost.com/deploy/bleve-search.html) or [Elasticsearch](https://docs.mattermost.com/scale/elasticsearch.html) for autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete. Note that only channel members will see private channel names in autocomplete results.
@@ -28,7 +26,6 @@ Mattermost v6.2.0 contains a low level security fix. [Upgrading](https://docs.ma
 ### Highlights
 
 #### Playbook Updates
- - Added more granular control of playbooks access with new Playbooks permission schemes.
  - Added the ability to follow playbook runs to stay informed about the procedures you care about.
  - Added other improvements including the ability to search playbooks, share URLs of individual runs and playbooks, and filter runs by playbook.
 
@@ -107,6 +104,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v6.2 is built with Go ``v1.16.7``.
 
 ### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
@@ -125,9 +123,17 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.1 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2021-11-16**
-
-Mattermost v6.1.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+- **v6.1.1, released 2021-12-17**
+  - Mattermost v6.1.1 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a general performance fix for loading the web application and typing.
+  - Improved performance while typing by moving some autocomplete layout calculations.
+  - Improved performance by reducing DOM usage during render.
+  - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+  - Fixed slow channel loading for instances with website link previews enabled.
+  - Fixed an issue with Focalboard where an empty white screen appeared in Mattermost desktop app on reload.
+  - Fixed an issue where v6.1 reported an incorrect mmctl version.
+- **v6.1, released 2021-11-16**
+  - Mattermost v6.1.0 contains low level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Important Upgrade Notes
  - Please refer to [the schema migration analysis](https://gist.github.com/streamer45/997b726a86b5d2a624ac2af435a66086) when upgrading to v6.1.
@@ -247,6 +253,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@mattermost/react-native-paste-input`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - Created permalinks from saved posts do not correctly redirect to the correct team [MM-39816](https://mattermost.atlassian.net/browse/MM-39816).
  - Recent Mentions search sometimes includes incorrect results [MM-39867](https://mattermost.atlassian.net/browse/MM-39867).
  - Experimental timezones and custom statuses can cause an increase in CPU usage and database connections for servers with an E20 license. A current workaround is to disable custom statuses or to disable experimental timezones.
@@ -254,7 +261,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``Ctrl/Cmd+Shift+A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -268,6 +274,14 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.0.4, released 2021-12-17**
+  - Mattermost v6.0.4 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a general performance fix for loading the web application and typing.
+  - Improved performance while typing by moving some autocomplete layout calculations.
+  - Improved performance by reducing DOM usage during render.
+  - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+  - Fixed slow channel loading for instances with website link previews enabled.
+  - Fixed an issue where v6.0 reported an incorrect mmctl version.
 - **v6.0.3, released 2021-11-15**
   - Mattermost v6.0.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a possible panic during data retention jobs when ``DataRetentionSettings.EnableMessageDeletion`` was set to ``true`` [MM-39378](https://mattermost.atlassian.net/browse/MM-39378).
@@ -524,6 +538,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@types/redux-mock-store`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - Webapp sometimes crashes when clicking an image from "Recent files" [MM-38239](https://mattermost.atlassian.net/browse/MM-38239).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
@@ -533,7 +548,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Indigo theme glitch may occur when returning from Playbooks [MM-38910](https://mattermost.atlassian.net/browse/MM-38910).
  - **System Console > Channels > Channel Management** has an option to toggle group management in Team Edition, Starter, and Professional [MM-39216](https://mattermost.atlassian.net/browse/MM-39216).
  - Experimental timezones and custom statuses can cause an increase in CPU usage and database connections for servers with an E20 license. A current workaround is to disable custom statuses or to disable experimental timezones.
- - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -547,6 +561,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v5.39 - [Quality Release](https://docs.mattermost.com/upgrade/release-definitions.html#quality-release)
 
+- **v5.39.3, released 2021-12-17**
+  - Mattermost v5.39.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a general performance fix for loading the web application and typing.
+  - Improved performance while typing by moving some autocomplete layout calculations.
+  - Improved performance by reducing DOM usage during render.
+  - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+  - Fixed an issue where v5.39 reported an incorrect mmctl version.
 - **v5.39.2, released 2021-11-15**
   - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v5.39.1, released 2021-10-27**
@@ -629,8 +650,8 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - Experimental timezones and custom statuses can cause an increase in CPU usage and database connections for servers with an E20 license. A current workaround is to disable custom statuses or to disable experimental timezones.
- - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Pinned posts are no longer highlighted [MM-34870](https://mattermost.atlassian.net/browse/MM-34870).
  - Google login fails on the Classic mobile apps.
@@ -784,9 +805,9 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - The server version for v5.38.2 for Team Edition is reported as ``5.39.2``.
  - Deleted posts get displayed in channels without new activity after the data retention job is run [MM-36574](https://mattermost.atlassian.net/browse/MM-36574).
- - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
  - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
@@ -803,6 +824,12 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.37.6, released 2021-12-17**
+  - Mattermost v5.37.6 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a general performance fix for loading the web application and typing.
+  - Improved performance while typing by moving some autocomplete layout calculations.
+  - Improved performance by reducing DOM usage during render.
+  - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
 - **v5.37.5, released 2021-11-30**
   - Fixed an issue where OpenID redirect did not work when hosting Mattermost on a subdirectory [MM-40151](https://mattermost.atlassian.net/browse/MM-40151).
   - Fixed an issue where v5.37 reported an incorrect mmctl version.
@@ -946,9 +973,9 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 10. Changes to ``mattermost-server/model`` for naming consistency.
 
 ### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - When upgrading to 5.37.0, the Incident Collaboration plugin may not be automatically installed in some cases.
  - Add Members modal is incorrectly themed on the Mattermost Dark theme [MM-37220](https://mattermost.atlassian.net/browse/MM-37220).
- - Known issues related to the new collapsed reply threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
  - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
