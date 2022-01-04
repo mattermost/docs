@@ -6653,7 +6653,7 @@ Maximum Image Resolution
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Maxiumum image resolution size for message attachments in pixels. 
+Maximum image resolution size for message attachments in pixels. 
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
