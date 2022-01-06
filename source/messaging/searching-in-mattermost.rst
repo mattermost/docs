@@ -190,4 +190,5 @@ PostgreSQL:
 MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot don't return results.
+- Avoid using underline ``_`` symbol to `perform a wildcard search <https://docs.mattermost.com/messaging/searching-in-mattermost.html#wildcard>`__. Use the asterisk ``*`` symbol instead.
 - Stop words that are excluded from search in MySQL include: ``"a", "about", "an", "are", "as", "at", "be", "by", "com", "de", "en", "for", "from", "how", "i", "in", "is", "it", "la", "of", "on", "or", "that", "the", "this", "to", "was", "what", "when", "where", "who", "will", "with", "und", "the", "www"``.
