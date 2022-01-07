@@ -9,7 +9,7 @@ Get Started
     :maxdepth: 1
     :hidden:
 
-    Quick Install Guide </getting-started/light-install>
+    Getting Started with Mattermost is Easy </install/getting-started-with-mattermost>
     Run Mattermost via Docker </install/setting-up-local-machine-using-docker>
     Administrator Tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
@@ -19,13 +19,13 @@ Get Started
 
 These guides will get you up and running with Mattermost in minutes.
 
-* :doc:`Quick Install Guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
+* :doc:`Getting Started with Mattermost is Easy </install/getting-started-with-mattermost>` - Deploy in minutes using Docker or Omnibus.
 * :doc:`Run Mattermost via Docker </install/setting-up-local-machine-using-docker>` - Launch a Mattermost server instantly to test functionality and build integrations.
-* :doc:`Administrator Tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
+* :doc:`Administrator Tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you'll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
 * :doc:`Enterprise Roll Out Checklist </getting-started/enterprise-roll-out-checklist>` - Learn how to roll Mattermost out to thousands of users.
-* :doc:`Welcome Email Template </getting-started/welcome-email-to-end-users>` - Use our sample email template when you’re ready to invite users to your server.
+* :doc:`Welcome Email Template </getting-started/welcome-email-to-end-users>` - Use our sample email template when you're ready to invite users to your server.
 
 Install Guides
 --------------
