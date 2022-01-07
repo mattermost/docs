@@ -153,7 +153,7 @@ Guests can:
 - Use slash commands (with the exception of those used to invite members).
 - Favorite channels.
 - Mute channels.
-- Update their account settings.
+- Update their profile.
 
 Guests cannot:
 

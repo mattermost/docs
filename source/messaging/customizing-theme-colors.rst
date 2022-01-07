@@ -30,7 +30,7 @@ The colors of the Mattermost user interface are customizable.
       
   .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Theme**.
+      In Mattermost versions up to 5.39, navigate to **Settings > Display > Theme**.
      
 You can import your theme colors from Slack, customize the colors yourself, or choose from four standard themes designed by the Mattermost team.
 
@@ -126,7 +126,7 @@ You can export a theme from Mattermost by copying the theme values from the Cust
       
   .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
+      In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
   
 Importing a Custom Theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,7 +143,7 @@ Copy existing theme values, then go to:
 
   .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to 5.39, navigate to **Account Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
+      In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
   
 Custom Theme Examples
 ~~~~~~~~~~~~~~~~~~~~~

@@ -22,7 +22,7 @@ The following instructions use Docker to install Mattermost in *Preview Mode* us
 
 .. note::
   If you have problems installing Mattermost, see
-  the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/messaging/managing-members.html>`__ and additional `getting started information for Channels <https://docs.mattermost.com/guides/channels.htmld>`__.
+  the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/messaging/managing-members.html>`__ and additional `getting started information for Channels <https://docs.mattermost.com/guides/channels.html>`__.
 
 One-line Docker install
 -----------------------
