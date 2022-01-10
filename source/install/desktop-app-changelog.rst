@@ -30,6 +30,11 @@ Latest Mattermost Desktop App releases:
 Release v5.0
 --------------
 
+- **v5.0.3, release TBD**
+ - Fixed an issue where a user might get an erroneous "Your session has expired" error and be unable to login.
+ - Fixed an issue where the app could crash while trying to reload a page that is currently loading.
+ - Fixed an issue where OS-level shortcuts could cause an unexpected focus behaviour in the app.
+ - Fixed an issue where Linux users might not see the **Add Server** modal.
 - **v5.0.2, released 2021-11-15**
  - Fixed an issue where the Desktop app crashed intermittently when switching between tabs while a tab was loading.
  - Fixed an issue where the app didn't raise the window from the tray icon when clicking on the taskbar icon.
