@@ -8,7 +8,6 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 - [Release v6.1 - Feature Release](#release-v6.1-feature-release)
 - [Release v6.0 - Feature Release](#release-v6.0-feature-release)
 - [Release v5.39 - Quality Release](#release-v5-39-quality-release)
-- [Release v5.37 - Extended Support Release](#release-v5-37-extended-support-release)
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
