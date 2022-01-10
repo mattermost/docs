@@ -831,7 +831,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Mattermost"
-copyright = "2015-2021 Mattermost"
+copyright = "2015-2022 Mattermost"
 author = "Mattermost"
 
 # The version info for the project you're documenting, acts as replacement for

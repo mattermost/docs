@@ -130,7 +130,7 @@ Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
 
 .. note::
   
-  This method is the recommended way to import Slack's corporate export file. It can be used from Mattermost v5.0.
+  This method is the recommended way to import Slack's corporate export file, but will work with any Slack export file. It can be used for Mattermost v5.0+.
 
 **1. Prepare your Mattermost Server**
 
@@ -154,19 +154,19 @@ Next, follow these steps to create a bot token:
 
 **3. Download file attachments and email addresses**
 
-The Slack export does not include file attachments and email addresses, so you must use ``slack-advanced-exporter`` to download them. Download the latest release of ``slack-advanced-exporter`` for your OS and architecture `here <https://github.com/icelander/slack-advanced-exporter/releases/>`__ and extract it.
+The Slack export does not include file attachments and email addresses, so you must use ``slack-advanced-exporter`` to download them. Download the latest release of ``slack-advanced-exporter`` for your OS and architecture `here <https://github.com/grundleborg/slack-advanced-exporter/releases/>`__ and extract it.
 
 Once it's installed, run these commands. Replace ``<SLACK TOKEN>`` with the Slack token you generated earlier and ``<SLACK EXPORT FILE>`` with the `path <https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/>`__ to your file.
 
 .. note::
 
-    - You'll end up with two files. The file ``export-with-attachments.zip`` will not have user emails and cannot be imported.
-    - The first command can take a long time if you have a large number of file uploads. If it's interrupted delete the file generated (if any) and start again.
+    - You'll end up with two files (``export-with-emails.zip`` and ``export-with-emails-and-attachments.zip``). The file ``export-with-emails.zip`` will not have attachments.
+    - The second command can take a long time if you have a large number of file uploads. If it's interrupted, delete the file generated (if any), and start again.
 
 .. code:: bash
 
-    slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-attachments.zip fetch-attachments
-    slack-advanced-exporter --input-archive export-with-attachments.zip --output-archive export-with-emails-and-attachments.zip fetch-emails --api-token <SLACK TOKEN>
+    slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-emails.zip fetch-emails --api-token <SLACK TOKEN>
+    slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-emails-and-attachments.zip fetch-attachments
 
 The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
 
