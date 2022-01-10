@@ -39,7 +39,7 @@ Download Group Policy and MSI Installer files
 
 3. Navigate to the release page for `version v5.0.3 <https://github.com/mattermost/desktop/releases/tag/v5.0.3>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.0.2.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.0.3.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
 
