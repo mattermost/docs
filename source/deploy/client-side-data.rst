@@ -7,9 +7,9 @@ Mobile Web Experience
 **1. What data is stored?**
   Similar to a desktop web browser, data may be stored in the mobile web browser cache which resides on the storage system of the device operating system which is protected by security measures in the physical device and its operating system.
 **2. How is the data protected?**
-  Security for mobile web experience is similar to the security for a desktop web experience.
+  Security for mobile web experience is similar to the security for desktop web experience.
 **3. When is the data deleted?**
-  If you log out or your account is deactivated, the data in the browser cache may reside until the cache expires or the temporary file system store on the operating system is cleared, depending on your operating system.
+  If you log out or your account is deactivated, the data in the browser cache may reside until the cache expires or the temporary file system stored on the operating system is cleared, depending on your operating system.
 
 
 Mobile App Experience
