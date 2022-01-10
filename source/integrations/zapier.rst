@@ -19,7 +19,7 @@ Zapier is authorized using OAuth2.0. The setup guide requires that a System Admi
 Enable Zapier on your Mattermost Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first time you set up Zapier on your Mattermost instance you will be required to enable an OAuth 2.0 application which can be used by everyone on your server. Your System Admin must execute these steps.
+The first time you set up Zapier on your Mattermost instance, you will be required to enable an OAuth 2.0 application that can be used by everyone on your server. Your System Admin must execute these steps.
 
 To learn more about OAuth 2.0 applications, including what permissions they have access to, see the `OAuth 2.0 documentation <https://docs.mattermost.com/developer/oauth-2-0-applications.html>`__.
 
@@ -98,8 +98,8 @@ Here are some useful tips we recommend to get the most out of Zapier integration
 
 - **Markdown:** Mattermost supports the use of `Markdown. <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ in Zapier integrations. For example, use `heading markdown <https://docs.mattermost.com/help/messaging/formatting-text.html#headings>`__ for Jira issue titles.
 - **Custom Icons:** Use different icons for different services and Zapier integrations.
-- **Hashtags:** Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a Jira ticket number in hashtags. This makes all conversation on a specific ticket instantly searchable by clicking the hashtag.
-- **Quick Links:** Link back to the service that fired the zap through the use of Markdown `embedded links <https://docs.mattermost.com/help/messaging/formatting-text.html#links>`__. For example, in our zaps we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
+- **Hashtags:** Use hashtags to make your Zapier posts searchable. Use different hashtags for different services and Zapier integrations. For example, use the dynamic fields available in Zapier to include ticket a Jira ticket number in hashtags. This makes all conversations on a specific ticket instantly searchable by clicking the hashtag.
+- **Quick Links:** Link back to the service that fired the zap through the use of Markdown `embedded links <https://docs.mattermost.com/help/messaging/formatting-text.html#links>`__. For example, in our zaps, we embed a link back to the service within the timestamp so it’s easy to take action on any zap.
 
 Examples
 ~~~~~~~~
