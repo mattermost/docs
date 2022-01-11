@@ -46,7 +46,7 @@ Latest Mattermost Releases:
  - Added a new dialog for Remove License confirmation.
  - The **Renew Now** button is no longer shown if the license ID does not exist in the portal. Instead, **Contact Sales** is shown.
 
-#### Administration
+ - System Admins are now able to upgrade the server to the Enterprise edition and request the trial license with a single click for a simplified user experience.
  - The config setting ``ServiceSettings.EnableReliableWebSockets`` has promoted to general availability. For compatibility with older clients, the server will always return ``true`` for the ``/v4/config/client`` endpoint.
  - Added server support for receiving binary (messagepack encoded) websocket messages.
  - Added server support for receiving binary (messagepack encoded) WebSocket messages.
