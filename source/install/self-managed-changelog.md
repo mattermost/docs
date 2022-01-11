@@ -23,7 +23,7 @@ Latest Mattermost Releases:
 #### Playbook Updates
  - Granular permission schemes (Enterprise Edition) enable more granular control of playbook access.
  - Playbooks is now completely translatable with over a dozen languages in-progress.
- - Channel noise is reduced and only notifications that matter are received with the updated Playbooks notifications.
+ - (Enterprise Edition) Granular permission schemes enable more access control of playbooks.
 
 #### Boards Updates
  - GA
