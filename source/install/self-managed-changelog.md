@@ -34,7 +34,7 @@ Latest Mattermost Releases:
  - Webapp plugins can now register components in the App Bar on the right-hand side of the screen. This feature is hidden behind a feature flag and disabled by default.
  - Added thread replies to search results when Collapsed Reply Threads is enabled.
  - Updated “Terms of Service” terminology to “Terms of Use” product-wide.
- - Clarified Latex Rendering config setting descriptions and fixed a broken product documentation link.
+ - Added threaded replies to search results when Collapsed Reply Threads is enabled.
  - Updated the “One-click reactions on messages” user setting to “Quick reactions on messages”.
  - Added tab focus support to the global header and user avatars.
  - Added a new Replies banner to the right-hand side Thread viewer.
