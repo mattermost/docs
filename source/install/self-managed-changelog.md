@@ -8,7 +8,6 @@ Latest Mattermost Releases:
 - [Release v6.2 - Feature Release](#release-v6-2-feature-release)
 - [Release v6.1 - Feature Release](#release-v6-1-feature-release)
 - [Release v6.0 - Feature Release](#release-v6-0-feature-release)
-- [Release v5.39 - Quality Release](#release-v5-39-quality-release)
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
