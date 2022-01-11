@@ -83,7 +83,6 @@ Restarting the Mattermost server will automatically reschedule the job to run af
 
 ### Known Issues
  - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
- - **Permissions > Team Override Scheme** may not load properly [MM-40591](https://mattermost.atlassian.net/browse/MM-40591).
  - "New Replies" banner may display on the right-hand side for a thread that's entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
