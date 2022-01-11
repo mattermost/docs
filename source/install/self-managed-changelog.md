@@ -25,7 +25,7 @@ Latest Mattermost Releases:
  - Playbooks is now completely translatable with over a dozen languages in-progress.
  - (Enterprise Edition) Granular permission schemes enable more access control of playbooks.
 
-#### Boards Updates
+ - All in-channel notifications are removed, with high-value notifications being delivered via direct message from the Playbooks Bot to reduce channel noise. 
  - GA
 
 ### Improvements
