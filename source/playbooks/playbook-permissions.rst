@@ -1,7 +1,7 @@
 Roles and Permissions
 =====================
 
-There are different ways to access and interact with playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility. 
+There are different ways for teams to access and interact with playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility.
 
 Permissions are provided using:
 
@@ -12,7 +12,7 @@ For more information about System and Team Override Schemes, refer to the `Advan
 
 In the context of Playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with Playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments.
 
-The default permission scheme is applied across Playbooks as a whole. However, there are no permissions that are specific to runs.
+Permissions are applied only to playbooks - there are no permissions that are specific to runs.
 
 Playbook roles
 ---------------
@@ -27,7 +27,7 @@ In the context of Playbooks, Playbook Admins are also members, and may have elev
 
 .. note::
 
-Before you make changes to permissions and to ensure that you don't lose access to playbooks, you should change your role to Admin. To do this, navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
+Before you make changes to permissions and to ensure that you don't lose access to playbooks, . To do this, navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
 
 Playbooks permissions
 ---------------------
@@ -52,9 +52,9 @@ You can also set permissions for read-only playbooks that do allow members to cr
 4. Select **Save**.
 
 I want to manage how playbooks are accessed
---------------------------------------------
+-------------------------------------------
 
-A public playbook and its associated runs can be viewed by any member of the team. Playbooks can be converted from public to private, but once a playbook is private it can't be converted back to public.
+A public playbook and its associated runs can be viewed by any member of a team. Playbooks can be converted from public to private, but once a playbook is private it can't be converted back to public.
 
 I want to restrict who can convert playbooks from public to private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
