@@ -95,7 +95,27 @@ When it comes to mobile data privacy, many organizations prioritize secure handl
 
 This poses a potential risk for organizations that operate under strict compliance requirements and cannot expose message data to external entities. To solve this, in Mattermost v5.18 and later, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data (available in Mattermost Enterprise). Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. 
 
-External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. If your organization has strict privacy or compliance needs, the `ID-Only Push Notification <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
+External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. If your organization has strict privacy or compliance needs, the `ID-Only Push Notification <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.  
+
+The following payload shows an example of the json that is transmitted to the push notification service when using the ID-Only setting:
+
+  .. code-block:: json
+  
+    {
+        "ack_id": "nnfbqk5bnffe5karxuzs8o5rec",
+        "platform": "apple_rn",
+        "server_id": "aoej8izzfffr9e67d6uz3g387h",
+        "device_id": "32f198dbdd7427be7e6f03ba721ffdceba58c3f0bfa9c4655a6e7cc8271ba539",
+        "post_id": "77d9cs9aq3b1fpoepbdbmqfs4c",
+        "category": "CAN_REPLY",
+        "message": "You've received a new message.",
+        "badge": 3,
+        "channel_id": "et3ghiycm7g7bb41ihg85pqgah",
+        "type": "message",
+        "sender_id": "g774dzud4tgaxgphso4wm8xrxe",
+        "version": "v2",
+        "is_id_loaded": true
+    }
 
 What are my options for securing the mobile apps?
 -------------------------------------------------
