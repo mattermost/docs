@@ -50,7 +50,7 @@ Latest Mattermost Releases:
 #### Administration
  - The config setting ``ServiceSettings.EnableReliableWebSockets`` has promoted to general availability. For compatibility with older clients, the server will always return ``true`` for the ``/v4/config/client`` endpoint.
  - Added server support for receiving binary (messagepack encoded) websocket messages.
- - Removed dead struct ``ManifestExecutables``.
+ - Added server support for receiving binary (messagepack encoded) WebSocket messages.
  - Added new flag ``showTeamSidebar`` in ``registerProducts``, which, when set to ``true``, displays the team sidebar in the product.
  - Memberlist logs and buckets are now parsed by DEBUG, INFO, WARN, or ERROR appropriately.
  - Increased key length in plugin KV store to 150.
