@@ -8,32 +8,36 @@ Latest Mattermost Releases:
 - [Release v6.2 - Feature Release](#release-v6-2-feature-release)
 - [Release v6.1 - Feature Release](#release-v6-1-feature-release)
 - [Release v6.0 - Feature Release](#release-v6-0-feature-release)
+- [Release v5.37 - Extended Support Release](#release-v5.37-extended-support-release)
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 **Release Day: 2022-01-16**
 
 ### Important Upgrade Notes
- - Mattermost v6.3 adds an asynchronous job to fix an issue that resulted in channels with join/leave messages being unexpectedly marked as unread when enabling Collapsed Reply Threads. After the upgrade, the job is started automatically when the server restarts, and the job executes in the background so the Mattermost server will not experience downtime. We recommend upgrading during off-peak hours as you may experience higher than average server and database resource utilization while the job is in progress. In our testing, the job takes approximately 3 hours per ~4 million rows in the ChannelMembership table using a PostgreSQL database.
- - You may check the progress of the job by executing this database query: ``select * from Jobs where type = 'fix_channel_unreads_for_crt' order by lastactivityat desc;``. The data column will display the number of channel memberships fixed (``BadChannelMembershipsFixed``), the number of channel memberships checked (``TotalChannelMembershipsChecked``), and the current Channel and User ID pair that is being processed.
- - If you are experiencing severely high server and database resource utilization, first update the Systems table to stop the job from restarting
+
+Mattermost v6.3 adds an asynchronous job to fix an issue that resulted in channels with join/leave messages being unexpectedly marked as unread when enabling Collapsed Reply Threads. After the upgrade, the job is started automatically when the server restarts, and the job executes in the background so the Mattermost server will not experience downtime. We recommend upgrading during off-peak hours as you may experience higher than average server and database resource utilization while the job is in progress. In our testing, the job takes approximately 3 hours per ~4 million rows in the ChannelMembership table using a PostgreSQL database.
+
+You may check the progress of the job by executing this database query: ``select * from Jobs where type = 'fix_channel_unreads_for_crt' order by lastactivityat desc;``. The data column will display the number of channel memberships fixed (``BadChannelMembershipsFixed``), the number of channel memberships checked (``TotalChannelMembershipsChecked``), and the current Channel and User ID pair that is being processed.
+
+If you are experiencing severely high server and database resource utilization, first update the Systems table to stop the job from restarting
 ``INSERT INTO Systems VALUES ('fix_crt_channel_unreads', true);``, then restart the Mattermost application to kill the existing job. Once the job is complete, it will not run again and resource usage will return to average levels.
- - Restarting the Mattermost server will automatically reschedule the job to run after a few minutes, if the ``fix_crt_channel_unreads`` key is not set to ``true`` in the Systems table. If that key is set, then deleting it from the Systems table will reschedule the job after a few minutes. Once the job is complete, it will not run again and resource usage will return to average levels.
+
+Restarting the Mattermost server will automatically reschedule the job to run after a few minutes, if the ``fix_crt_channel_unreads`` key is not set to ``true`` in the Systems table. If that key is set, then deleting it from the Systems table will reschedule the job after a few minutes. Once the job is complete, it will not run again and resource usage will return to average levels.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
 #### Playbook Updates
- - Granular permission schemes (Enterprise Edition) enable more access control of playbooks.
+ - (Enterprise Edition) Granular permission schemes enable more access control of playbooks.
  - Playbooks is now completely translatable with over a dozen languages in-progress.
  - All in-channel notifications are removed, with high-value notifications being delivered via direct message from the Playbooks Bot to reduce channel noise. 
- - GA - TBD
 
 #### Boards Updates
- - Boards is now officially promoted to General Availability (GA).
- - Added the ability to follow cards and get a message notification with details of all the changes made on the card.
- - The ability to quickly identify users and assign them tasks with avatars is now supported in the person properties. 
+ - Boards is now officially in General Availability (GA).
+ - Ability to follow cards and get a message notification with details of all the changes made on the card.
+ - Ability to quickly identify users and assign them tasks with avatars now supported in the person properties.
  - Newest comments are now sorted at the top to easily find the most recent comment.
 
 ### Improvements
