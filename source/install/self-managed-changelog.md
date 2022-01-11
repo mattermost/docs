@@ -44,7 +44,7 @@ Latest Mattermost Releases:
 #### Enterprise Edition
  - The **Renew Now** button is no longer shown if the license ID does not exist in the portal.
  - Added a new dialog for Remove License confirmation.
- - System Admins are now able to upgrade the server to the Enterprise edition and request the trial license with a single selection to enhance product adoption with an improved user experience.
+ - The **Renew Now** button is no longer shown if the license ID does not exist in the portal. Instead, **Contact Sales** is shown.
 
 #### Administration
  - The config setting ``ServiceSettings.EnableReliableWebSockets`` has promoted to general availability. For compatibility with older clients, the server will always return ``true`` for the ``/v4/config/client`` endpoint.
