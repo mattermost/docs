@@ -70,7 +70,7 @@ Latest Mattermost Releases:
 
 #### Changes to Team Edition and Enterprise Edition:
 - The config setting ``ServiceSettings.EnableReliableWebSockets`` was removed.
-
+- The config setting ``ServiceSettings.EnableReliableWebSockets`` was removed, and the ability to buffer messages during a connection loss has been promoted to general availability. This setting is enabled for older clients to maintain backwards compatibility.
 ### Go Version
  - v6.3 is built with Go ``v1.16.7``.
 
