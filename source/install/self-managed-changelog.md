@@ -20,10 +20,9 @@ Mattermost v6.3 adds an asynchronous job to fix an issue that resulted in channe
 
 You may check the progress of the job by executing this database query: ``select * from Jobs where type = 'fix_channel_unreads_for_crt' order by lastactivityat desc;``. The data column will display the number of channel memberships fixed (``BadChannelMembershipsFixed``), the number of channel memberships checked (``TotalChannelMembershipsChecked``), and the current Channel and User ID pair that is being processed.
 
-If you are experiencing severely high server and database resource utilization, first update the Systems table to stop the job from restarting
-``INSERT INTO Systems VALUES ('fix_crt_channel_unreads', true);``, then restart the Mattermost application to kill the existing job. Once the job is complete, it will not run again and resource usage will return to average levels.
+In the unlikely event that you experience severely high server and database resource utilization during the job, you may killstop the job by executing ``INSERT INTO Systems VALUES ('fix_crt_channel_unreads', true);`` and then restarting your Mattermost application server. Similarly, to reschedule the job you can remove the ``fix_crt_channel_unreads`` value from the Systems table and the job will be rescheduled to resume from where it left off on the next application server restart.
 
-Restarting the Mattermost server will automatically reschedule the job to run after a few minutes, if the ``fix_crt_channel_unreads`` key is not set to ``true`` in the Systems table. If that key is set, then deleting it from the Systems table will reschedule the job after a few minutes. Once the job is complete, it will not run again and resource usage will return to average levels.
+Once the job is complete, it will not run again and resource usage will return to average levels.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
