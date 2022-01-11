@@ -14,7 +14,11 @@ Latest Mattermost Releases:
 **Release Day: 2022-01-16**
 
 ### Important Upgrade Notes
- - An asynchronous job was added to fix an issue with Collapsed Reply Threads that resulted in unexpected unread channels. The job may result in an increase in server and database resource usage. Depending on the size of your Mattermost database, this job could take several hours to complete. In our internal testing it took about 3 hours to check and fix a ``ChannelMembership`` table with about 4 million rows in a PostgreSQL database.
+ - Mattermost v6.3 adds an asynchronous job to fix an issue that resulted in channels with join/leave messages being unexpectedly marked as unread when enabling Collapsed Reply Threads. After the upgrade, the job is started automatically when the server restarts, and the job executes in the background so the Mattermost server will not experience downtime. We recommend upgrading during off-peak hours as you may experience higher than average server and database resource utilization while the job is in progress. In our testing, the job takes approximately 3 hours per ~4 million rows in the ChannelMembership table using a PostgreSQL database.
+ - You may check the progress of the job by executing this database query: ``select * from Jobs where type = 'fix_channel_unreads_for_crt' order by lastactivityat desc;``. The data column will display the number of channel memberships fixed (``BadChannelMembershipsFixed``), the number of channel memberships checked (``TotalChannelMembershipsChecked``), and the current Channel and User ID pair that is being processed.
+ - If you are experiencing severely high server and database resource utilization, first update the Systems table to stop the job from restarting
+``INSERT INTO Systems VALUES ('fix_crt_channel_unreads', true);``, then restart the Mattermost application to kill the existing job. Once the job is complete, it will not run again and resource usage will return to average levels.
+ - Restarting the Mattermost server will automatically reschedule the job to run after a few minutes, if the ``fix_crt_channel_unreads`` key is not set to ``true`` in the Systems table. If that key is set, then deleting it from the Systems table will reschedule the job after a few minutes.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -24,17 +28,21 @@ Latest Mattermost Releases:
  - Granular permission schemes (Enterprise Edition) enable more granular control of playbook access.
  - Playbooks is now completely translatable with over a dozen languages in-progress.
  - (Enterprise Edition) Granular permission schemes enable more access control of playbooks.
-
  - All in-channel notifications are removed, with high-value notifications being delivered via direct message from the Playbooks Bot to reduce channel noise. 
- - GA
+ - GA - TBD
+
+#### Boards Updates
+ - Boards is now officially promoted to General Availability (GA).
+ - Added the ability to follow cards and get a message notification with details of all the changes made on the card.
+ - The ability to quickly identify users and assign them tasks with avatars is now supported in the person properties.
+ - Newest comments are now sorted at the top to easily find the most recent comment.
 
 ### Improvements
 
 #### User Interface (UI)
  - Webapp plugins can now register components in the App Bar on the right-hand side of the screen. This feature is hidden behind a feature flag and disabled by default.
- - Added thread replies to search results when Collapsed Reply Threads is enabled.
- - Updated “Terms of Service” terminology to “Terms of Use” product-wide.
  - Added threaded replies to search results when Collapsed Reply Threads is enabled.
+ - Updated “Terms of Service” terminology to “Terms of Use” product-wide.
  - Updated the “One-click reactions on messages” user setting to “Quick reactions on messages”.
  - Added tab focus support to the global header and user avatars.
  - Added a new Replies banner to the right-hand side Thread viewer.
@@ -42,13 +50,10 @@ Latest Mattermost Releases:
  - Invite to team modal now auto-focuses its email search input.
 
 #### Enterprise Edition
- - The **Renew Now** button is no longer shown if the license ID does not exist in the portal.
- - Added a new dialog for Remove License confirmation.
  - The **Renew Now** button is no longer shown if the license ID does not exist in the portal. Instead, **Contact Sales** is shown.
-
+ - Added a new dialog for Remove License confirmation.
  - System Admins are now able to upgrade the server to the Enterprise edition and request the trial license with a single click for a simplified user experience.
- - The config setting ``ServiceSettings.EnableReliableWebSockets`` has promoted to general availability. For compatibility with older clients, the server will always return ``true`` for the ``/v4/config/client`` endpoint.
- - Added server support for receiving binary (messagepack encoded) websocket messages.
+ - The config setting ``ServiceSettings.EnableReliableWebSockets`` was removed, and the ability to buffer messages during a connection loss has been promoted to general availability. This setting is enabled for older clients to maintain backwards compatibility.
  - Added server support for receiving binary (messagepack encoded) WebSocket messages.
  - Added new flag ``showTeamSidebar`` in ``registerProducts``, which, when set to ``true``, displays the team sidebar in the product.
  - Memberlist logs and buckets are now parsed by DEBUG, INFO, WARN, or ERROR appropriately.
@@ -68,16 +73,14 @@ Latest Mattermost Releases:
 ### config.json
 
 #### Changes to Team Edition and Enterprise Edition:
-- The config setting ``ServiceSettings.EnableReliableWebSockets`` was removed.
 - The config setting ``ServiceSettings.EnableReliableWebSockets`` was removed, and the ability to buffer messages during a connection loss has been promoted to general availability. This setting is enabled for older clients to maintain backwards compatibility.
 ### Go Version
  - v6.3 is built with Go ``v1.16.7``.
 
 ### Known Issues
-### Known Issues
  - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
  - **Permissions > Team Override Scheme** may not load properly [MM-40591](https://mattermost.atlassian.net/browse/MM-40591).
-  - "New Replies" banner may display on the right-hand side for a thread that's entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
+ - "New Replies" banner may display on the right-hand side for a thread that's entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
