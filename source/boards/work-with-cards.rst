@@ -34,6 +34,15 @@ Share card previews
 
 When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
 
+Receive updates
+---------------
+
+You can follow cards and get a message notification with details of all the changes made on the card. Automatically follow cards you create and @mention someone to add them as a follower.
+
+They'll receive notifications when updates are made, such as: 
+
+To unfollow a card:
+
 Customize card properties
 -------------------------
 
