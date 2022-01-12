@@ -51,11 +51,6 @@ You can also set permissions for read-only playbooks that do allow members to cr
 3. Then, check **Create Public Playbook** and **Create Private Playbook**.
 4. Select **Save**.
 
-I want to manage how playbooks are accessed
--------------------------------------------
-
-A public playbook and its associated runs can be viewed by any member of a team. Playbooks can be converted from public to private, but once a playbook is private it can't be converted back to public.
-
 I want to restrict who can convert playbooks from public to private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
