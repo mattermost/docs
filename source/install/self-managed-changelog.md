@@ -14,18 +14,6 @@ Latest Mattermost Releases:
 
 **Release Day: 2022-01-16**
 
-### Important Upgrade Notes
-
-Mattermost v6.3 adds an asynchronous job to fix an issue that resulted in channels with join/leave messages being unexpectedly marked as unread when enabling Collapsed Reply Threads. After the upgrade, the job is started automatically when the server restarts, and the job executes in the background so the Mattermost server will not experience downtime. We recommend upgrading during off-peak hours as you may experience higher than average server and database resource utilization while the job is in progress. In our testing, the job takes approximately 3 hours per ~4 million rows in the ChannelMembership table using a PostgreSQL database.
-
-You may check the progress of the job by executing this database query: ``select * from Jobs where type = 'fix_channel_unreads_for_crt' order by lastactivityat desc;``. The data column will display the number of channel memberships fixed (``BadChannelMembershipsFixed``), the number of channel memberships checked (``TotalChannelMembershipsChecked``), and the current Channel and User ID pair that is being processed.
-
-In the unlikely event that you experience severely high server and database resource utilization during the job, you may killstop the job by executing ``INSERT INTO Systems VALUES ('fix_crt_channel_unreads', true);`` and then restarting your Mattermost application server. Similarly, to reschedule the job you can remove the ``fix_crt_channel_unreads`` value from the Systems table and the job will be rescheduled to resume from where it left off on the next application server restart.
-
-Once the job is complete, it will not run again and resource usage will return to average levels.
-
-**IMPORTANT:** If you upgrade from a release earlier than v6.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
-
 ### Highlights
 
 #### Playbook Updates
