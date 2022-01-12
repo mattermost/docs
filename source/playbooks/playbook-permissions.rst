@@ -77,7 +77,7 @@ By default, all Members can start a run using a playbook. You can restrict this 
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Runs**. This also unchecks **Create Runs**.
-3. Scroll down to **Playbook Admin** and ensure that **Manage Runs** and **Create Runs** are checked.
+3. Scroll down to **Playbook Admin** and ensure that **Manage Runs** is checked.
 4. Select **Save**.
 
 If you want to continue to allow Members to edit playbooks, an alternative to this configuration is to make the playbook private.
