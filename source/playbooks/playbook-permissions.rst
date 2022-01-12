@@ -62,7 +62,7 @@ You can control whether Members can convert playbooks from public to private.
 2. In the **All Members** section, check **Convert Playbooks**.
 3. Select **Save**.
 
-To restrict this action so only Playbook Admins can convert playbooks from public to private:
+Alternatively, to restrict this action so only Playbook Admins can convert playbooks from public to private, uncheck the setting above and:
 
 1. Go to **System Console > User Management > Permissions**.
 2. Scroll down to **Playbook Admin**.
