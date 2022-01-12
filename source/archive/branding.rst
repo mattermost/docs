@@ -69,7 +69,7 @@ Mattermost Team Edition Description
 
 When redistributing the open source Mattermost Team Edition binary, the following description may be used:
 
-  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://mattermost.com/download/>`__.
+  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://mattermost.com/deploy/>`__.
 
 Mattermost Enterprise Edition Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

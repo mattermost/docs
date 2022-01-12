@@ -21,7 +21,7 @@ Messages that begin with ``/`` are interpreted as slash commands. The commands w
 Built-in Commands
 -----------------
 
-Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are available in the `latest Mattermost release <https://mattermost.com/download>`__:
+Each Mattermost installation comes with some built-in slash commands that are ready to use. These commands are available in the `latest Mattermost release <https://mattermost.com/deploy>`__:
 
 .. csv-table::
     :header: "Command", "Description", "Example"
