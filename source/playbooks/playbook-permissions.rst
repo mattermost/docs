@@ -27,7 +27,7 @@ In the context of Playbooks, Playbook Admins are also members, and may have elev
 
 .. note::
 
-Before you make changes to permissions and to ensure that you don't lose access to playbooks, . To do this, navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
+Before you make system or team changes to permissions, ensure that you don't lose access to your existing playbooks. Navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
 
 Playbooks permissions
 ---------------------
