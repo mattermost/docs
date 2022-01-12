@@ -44,6 +44,8 @@ In the following example, only Playbook Admins can edit playbooks. Team members 
 3. Scroll down to the **Playbook Admin** section and confirm that **Manage Public Playbooks** and **Manage Private Playbooks** are checked.
 4. Select **Save**.
 
+Restricting who can create playbooks
+-------------------------------------
 You can also set permissions for read-only playbooks that do allow members to create new public or private playbooks.
 
 1. Go to **System Console > User Management > Permissions**.
