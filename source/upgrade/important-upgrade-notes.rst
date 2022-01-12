@@ -14,7 +14,7 @@ Important Upgrade Notes
   :alt: Available for Mattermost Self-Hosted deployments.
 
 .. important::
-   - Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
+   - Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle in April 15, 2022. Upgrading to Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
    - The "version" CLI command will be deprecated in a future release.
    - `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ is currently in beta. Before enabling the feature, please ensure you are well versed in the `known issues <https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues>`__, particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's `promoted to general availability in Q1 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`__. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
 
