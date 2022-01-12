@@ -32,7 +32,7 @@ Before you make system or team changes to permissions, ensure that you don't los
 Playbooks permissions
 ---------------------
 
-The default Playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management.
+The default Playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management. Note that even with the default settings, private playbooks restrict these actions to members of the playbook.
 
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
