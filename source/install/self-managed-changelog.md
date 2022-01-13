@@ -52,7 +52,7 @@ Latest Mattermost Releases:
  - Increased key length in plugin KV store to 150.
 
 ### Bug Fixes
- - Fixed an issue where when selecting the **Upgrade to Enterprise Edition** option, the upgrade progress bar and the **Restart** button were no longer shown once the progress reached 100%.
+ - Fixed an issue where when selecting the **Upgrade to Enterprise Edition** option. The upgrade progress bar and the **Restart** button were no longer shown once the progress reached 100%.
  - Fixed an issue where the user avatar wasn’t removed from the participants list after the user’s only post in a thread was deleted.
  - Fixed an issue with the exit animation on the invitation modal.
  - Fixed an issue where the status menu unexpectedly closed when selecting the “Disable Notifications Until” header.
