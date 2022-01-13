@@ -15,30 +15,24 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - The Renew Now button is no longer shown if the license id does not exist in the portal.
- - Updated the About Mattermost Team Edition modal to change the community link from `mattermost.org` to `mattermost.com/community/`.
  - Invite to team modal now auto-focuses its email search input.
- - Added a new dialog for Remove License confirmation.
  - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
  - Updated **Account Settings** terminology to **Settings**.
- - Added Accept-Language header to generate link previews in the Default Server language.
- - Added a new modal for the upload license workflow in the **System Console > Edition and License** page.
- - The "Invite Members" button is now hidden when the Direct Message category is collapsed.
+ - Added Accept-Language header to generate link previews in the default Server language.
+ - The **Invite Members** button is now hidden when the Direct Message category is collapsed.
 
 #### Administration
- - Plugins are re-initialized only when Plugin related config changes happen. This improves performance by avoiding plugin initialization which is quite costly.
- - Added server support for receiving binary (messagepack encoded) websocket messages.
+ - Improved plugins performance by re-initializing only upon plugin configuration changes.
+ - Added server support for receiving binary (messagepack-encoded) websocket messages.
  - Removed dead struct ``ManifestExecutables``.
  - Added new flag ``showTeamSidebar`` in ``registerProducts``, which, when set to ``true``, displays the team sidebar in the product.
  - Increased key length in plugin KV store to 150.
- - Admins are now able to upgrade the server to the enterprise version and request the trial license with a single button click enhancing product adoption by an improved user experience.
- - Added support for exporting and importing the type and ``edit_at`` of a post.
+ - Added support for exporting and importing the post type and ``edit_at`` of a post details.
  - Added support for ``postgresql`` schema designator.
  - A new schema migrations system was added.
 
 ### Bug Fixes
- - Fixed an issue where when clicking the Upgrade to Enterprise Edition button, the upgrade progress bar and the restart button were no longer shown once the progress reached 100%.
- - Fixed an issue where the user avatar wasn’t removed from the participants list after the user’s post was deleted and they had no other posts in the thread.
+ - Fixed an issue where the user avatar wasn’t removed from the participants list after the user’s only post in a thread was deleted.
  - Fixed an issue with the exit animation on the invitation modal.
  - Fixed an issue where the file preview modal info bar showed the channel id instead of the channel name for Direct Messages.
  - Fixed an issue with post hover menu overlap.
