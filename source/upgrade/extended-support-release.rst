@@ -61,7 +61,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.5 <https://releases.mattermost.com/5.37.5/mattermost-5.37.5-linux-amd64.tar.gz>`_    |                                                     |
+| 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.6 <https://releases.mattermost.com/5.37.6/mattermost-5.37.6-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.31        | Feature        | January 16, 2021 | October 15, 2021 | `5.31.9 <https://releases.mattermost.com/5.31.9/mattermost-5.31.9-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -81,7 +81,7 @@ How do I restore a previous Extended Support Release?
 Before you perform an upgrade, please ensure you have done a full back up of your current version.  You can restore the database and previous version if you need to revert an upgrade.  Please note that previous ESR versions are subject to an end of support date.
 
 Why is an Extended Support Release supported for nine months and not longer?
--------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 We chose nine months because the overhead for maintaining an ESR is high (and becomes higher the longer the support window is).
 If we increase the support window, it decreases how much we can develop the product. We specifically chose "ESR" instead of "LTS", since it is not intended to be a multi-year long term support release. The nine months support timeframe will not be extended in any case.

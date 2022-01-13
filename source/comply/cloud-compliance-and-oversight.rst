@@ -1,6 +1,8 @@
 Compliance Reporting and Oversight
 ==================================
 
+.. This page is intentionally NOT accessible from the LHS.
+
 |cloud|
 
 .. |cloud| image:: ../images/cloud-badge.png
