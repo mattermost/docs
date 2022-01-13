@@ -22,8 +22,8 @@ Latest Mattermost Cloud releases:
  - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
  - Updated **Account Settings** terminology to **Settings**.
  - Added Accept-Language header to generate link previews in the Default Server language.
- - UX improvements to the **System console > licensing page**: added a new modal for the upload license workflow.
- - Hide the "Invite Members" button when the DM category is collapsed
+ - Added a new modal for the upload license workflow in the **System Console > Edition and License** page.
+ - The "Invite Members" button is now hidden when the Direct Message category is collapsed.
 
 #### Administration
  - Plugins are re-initialized only when Plugin related config changes happen. This improves performance by avoiding plugin initialization which is quite costly.
@@ -52,7 +52,6 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
- - Spacing of ``from:`` autocomplete items are off [MM-40447](https://mattermost.atlassian.net/browse/MM-40447).
  - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
