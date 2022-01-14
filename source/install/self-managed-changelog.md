@@ -71,6 +71,7 @@ Latest Mattermost Releases:
  - v6.3 is built with Go ``v1.16.7``.
 
 ### Known Issues
+ - Mattermost Boards may fail to start in v6.3.0. Please see this [GitHub Issue](https://github.com/mattermost/focalboard/issues/2119) for a workaround and discussions.
  - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
  - "New Replies" banner may display on the right-hand side for a thread that's entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
