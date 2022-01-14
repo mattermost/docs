@@ -19,7 +19,7 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v5.31 Extended Support Release has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 Extended Support Release or later is required.
+  Support for Mattermost Server v5.37 Extended Support Release is coming to the end of its life cycle on April 15, 2022. Upgrading to Mattermost Server v6.3 Extended Support Release or later is required.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -61,6 +61,8 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
+| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.0 <https://releases.mattermost.com/6.3.0/mattermost-6.3.0-linux-amd64.tar.gz>`_       |                                                     |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.6 <https://releases.mattermost.com/5.37.6/mattermost-5.37.6-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.31        | Feature        | January 16, 2021 | October 15, 2021 | `5.31.9 <https://releases.mattermost.com/5.31.9/mattermost-5.31.9-linux-amd64.tar.gz>`_    |                                                     |

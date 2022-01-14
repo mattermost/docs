@@ -20,11 +20,13 @@ During each monthly release, Mattermost backports high severity or high impact s
 
 .. important::
 
-  Support for Mattermost Server v5.31 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle as of October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
+  Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle on April 15, 2022. Upgrading to Mattermost Server v6.3 or later is required.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
+| 6.4         | Feature               |  2022-02-16              | 2022-05-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 6.3         | Feature               |  2022-01-16              | 2022-10-15               | Yes                      |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 6.2         | Feature               |  2021-12-16              | 2022-03-15               |                          |
