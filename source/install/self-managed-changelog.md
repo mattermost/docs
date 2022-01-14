@@ -12,7 +12,10 @@ Latest Mattermost Releases:
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-**Release Day: 2022-01-16**
+- **v6.3.1, release day TBD**
+  - Investigating an issue where Boards cannot be enabled on v6.3.0.
+- **v6.3.0, released 2022-01-16**
+  - Original 6.3.0 release
 
 ### Highlights
 
