@@ -23,13 +23,6 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Improved plugins performance by re-initializing only upon plugin configuration changes.
- - Added server support for receiving binary (messagepack-encoded) websocket messages.
- - Removed dead struct ``ManifestExecutables``.
- - Added new flag ``showTeamSidebar`` in ``registerProducts``, which, when set to ``true``, displays the team sidebar in the product.
- - Increased key length in plugin KV store to 150.
- - Added support for exporting and importing the post type and ``edit_at`` of a post details.
- - Added support for ``postgresql`` schema designator.
- - A new schema migrations system was added.
 
 ### Bug Fixes
  - Fixed an issue where the user avatar wasn’t removed from the participants list after the user’s only post in a thread was deleted.
