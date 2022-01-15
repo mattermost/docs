@@ -56,7 +56,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the user avatar wasn’t removed from the participants list after the user’s only post in a thread was deleted.
  - Fixed an issue with the exit animation on the invitation modal.
  - Fixed an issue where the status menu unexpectedly closed when selecting the “Disable Notifications Until” header.
- - Fixed an issue where using CMD/CTRL + SHIFT + F in global threads did not add a search term automatically.
+ - Fixed an issue where using `CMD/CTRL + SHIFT + F` in global threads did not add a search term automatically.
  - Fixed the alignment of the “X” button in the “message deleted” system message.
  - Fixed an issue where the long post “Show More/Less” background was broken in the Thread viewer.
  - Changed Client4 to properly set Content-Type as application/json on API calls.
