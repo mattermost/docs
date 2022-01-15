@@ -12,7 +12,10 @@ Latest Mattermost Releases:
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-**Release Day: 2022-01-16**
+- **v6.3.1, release day TBD**
+  - Investigating an issue where Mattermost Boards may fail to start in v6.3.0. Please see this [GitHub Issue](https://github.com/mattermost/focalboard/issues/2119) for a workaround and discussions.
+- **v6.3.0, released 2022-01-16**
+  - Original 6.3.0 release
 
 ### Highlights
 
