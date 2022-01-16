@@ -473,7 +473,7 @@ Does Mattermost support multi-region High Availability deployment?
 Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
 
 What does Mattermost recommend for disaster recovery of the databases?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When deploying Mattermost in a High Availability configuration, we recommend using a database load balancer between Mattermost and your database. Depending on your deployment this needs more or less consideration.
 
@@ -485,14 +485,14 @@ Troubleshooting
 Capturing High Availability Troubleshooting Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When deploying Mattermost in a High Availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks. 
+When deploying Mattermost in a High Availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks. 
 
 You may be asked to provide this data to Mattermost for analysis and troubleshooting purposes.
 
 .. note::
 
   - Ensure that server log files are being created. You can find more on working with Mattermost logs `here <https://docs.mattermost.com/install/troubleshooting.html#review-mattermost-logs>`__.
-  - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
+  - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
   - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster.
 
 Red Server Status

@@ -3,12 +3,17 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2022-01-11](#release-2022-01-11)
 - [Release 2021-12-08](#release-2021-12-08)
 - [Release 2021-12-01](#release-2021-12-01)
 - [Release 2021-11-23](#release-2021-11-23)
 - [Release 2021-11-11](#release-2021-11-11)
 - [Release 2021-11-10](#release-2021-11-10)
-- [Release 2021-10-27](#release-2021-10-27)
+
+## Release 2022-01-11
+
+### Bug Fixes
+ - Fixed an issue where the license expired announcement banner was unexpectedly displaying for Cloud workspaces.
 
 ## Release 2021-12-08
 
@@ -22,7 +27,7 @@ Latest Mattermost Cloud releases:
  - Added a general performance fix for loading the web application and typing.
  - Improved performance while typing by moving some autocomplete layout calculations.
  - Improved performance by reducing DOM usage during render.
- - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+ - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel has guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
 
 ### Bug Fixes
  - Fixed slow channel loading for instances with website link previews enabled.

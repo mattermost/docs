@@ -7,10 +7,10 @@ In a production setting, use a proxy server for greater security and performance
 
 The main benefits of using a proxy are as follows:
 
-  -  SSL termination
-  -  HTTP to HTTPS redirect
-  -  Port mapping ``:80`` to ``:8065``
-  -  Standard request logs
+-  SSL termination
+-  HTTP to HTTPS redirect
+-  Port mapping ``:80`` to ``:8065``
+-  Standard request logs
 
 **Introduction**
 
@@ -22,10 +22,10 @@ NGINX is a popular web server and is responsible for hosting some of the largest
 
 2. Install NGINX.
 
-Because NGINX is available in Ubuntu’s default repositories, it's possible to install it from these repositories using the ``apt`` packaging system. First, update your local ``apt`` package index for access to the most recent package listings. Then, install ``nginx``:
+Because NGINX is available in Ubuntu's default repositories, it's possible to install it from these repositories using the ``apt`` packaging system. First, update your local ``apt`` package index for access to the most recent package listings. Then, install ``nginx``:
 
-  ``sudo apt update``
-  ``sudo apt install nginx``
+``sudo apt update``
+``sudo apt install nginx``
 
 After accepting the procedure, ``apt`` will install NGINX and any required dependencies to your server.
 
@@ -33,30 +33,30 @@ After accepting the procedure, ``apt`` will install NGINX and any required depen
 
 .. image:: /images/install_nginx_welcome.png
 
-  If you see this page, you've successfully installed NGINX on your web server. This page is included with NGINX to show you that the server is running correctly.
+If you see this page, you've successfully installed NGINX on your web server. This page is included with NGINX to show you that the server is running correctly.
 
-  Or you can also verify it by:
+Or you can also verify it by:
 
-  ``curl http://localhost``
+``curl http://localhost``
 
-  If NGINX is running, you see the following output:
+If NGINX is running, you see the following output:
 
-  .. code-block:: html
+.. code-block:: html
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>Welcome to nginx!</title>
-    .
-    .
-    .
-    <p><em>Thank you for using nginx.</em></p>
-    </body>
-    </html>
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <title>Welcome to nginx!</title>
+  .
+  .
+  .
+  <p><em>Thank you for using nginx.</em></p>
+  </body>
+  </html>
 
 **Managing the NGINX process**
 
-Now that you have your web server up and running, let’s review some basic management commands. These are all run in the command line interface.
+Now that you have your web server up and running, let's review some basic management commands. These are all run in the command line interface.
 
 To stop your web server, use:
 

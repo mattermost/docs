@@ -56,7 +56,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 11. Select **Finish**. 
 
-12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable `this configuration setting <https://docs.mattermost.com/administration/prev-config-settings.html#override-saml-bind-data-with-ad-ldap-information>`__ later when once setup is complete.
+12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable `this configuration setting <https://docs.mattermost.com/configure/configuration-settings.html#override-saml-bind-data-with-ad-ldap-information>`__ later when once setup is complete.
 
 13. On the next screen, select the **Sign On** tab, then select **View Setup Instructions**.
 
@@ -107,7 +107,7 @@ Alternatively you can enter the following fields manually:
 
 8. (Optional) If you configured ``First Name`` Attribute and ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-Once complete, and to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
+Once complete, and to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement for your users to explain how the migration will work.
 

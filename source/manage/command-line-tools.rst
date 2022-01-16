@@ -944,7 +944,7 @@ mattermost group
 -----------------
 
   Description
-    Commands for managing Mattermost groups.  For more information on Mattermost groups please see `this documentation. <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`_
+    Commands for managing Mattermost groups.  For more information on Mattermost groups please see `this documentation. <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
 
   Child Commands
     -  `mattermost group channel`_ - Management of Mattermost groups linked to channels
@@ -2545,7 +2545,7 @@ mattermost webhook move-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Move an existing outgoing webhook to another team by specifying its id. If the outgoing webhook is triggered by a keyword then assiging a channel is optional.  If the outgoing webhook is associated to a specific channel prior to moving, a channel must be specified within the new team.
+    Move an existing outgoing webhook to another team by specifying its id. If the outgoing webhook is triggered by a keyword then assigning a channel is optional.  If the outgoing webhook is associated to a specific channel prior to moving, a channel must be specified within the new team.
 
   Format
     .. code-block:: none

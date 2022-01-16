@@ -29,7 +29,7 @@ Installation Guide
 Download Group Policy and MSI Installer files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Using a newly created Windows VM or dedicated Windows computer – make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise).
+1. Using a newly created Windows VM or dedicated Windows computer, make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise).
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00001.png
 

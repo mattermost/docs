@@ -39,7 +39,7 @@ Create a OneLogin Connection App for Mattermost SSO
 
   .. image:: ../../source/images/onelogin_3_configuration_1.png
   
-  b. In System Console,  `enable encryption <https://docs.mattermost.com/administration/prev-config-settings.html#enable-encryption>`__, then click **Save**. You're redirected to the **Info** tab. From there, select the **Configuration** tab to access the **SAML Encryption** field.
+  b. In System Console,  `enable encryption <https://docs.mattermost.com/configure/configuration-settings.html#enable-encryption>`__, then select **Save**. You're redirected to the **Info** tab. From there, select the **Configuration** tab to access the **SAML Encryption** field.
 
   c. Paste the Public Key that you generated earlier into the **SAML Encryption** field at the bottom of the page. This field displays in OneLogin only when encryption is enabled in Mattermost.
 
@@ -144,7 +144,7 @@ Configure SAML Sign-in for Mattermost
 
 8. (Optional) If you configured ``First Name`` Attribute and ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
+To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement to your users detailing how the migration will work.
 

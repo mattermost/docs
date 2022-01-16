@@ -72,7 +72,8 @@ The following chart highlights the end user features of Mattermost and their sup
     **OTHER**
     "Localization for 16 languages", "X", "X", "X"
     "Custom user interface themes", "X", "X", "X"
-    "Account settings", "X", "X", "O"
+    "User profile settings", "X", "X", "X"
+    "Channel settings", "X", "X", "X"
 
 ..  _feature-quality-levels:
 

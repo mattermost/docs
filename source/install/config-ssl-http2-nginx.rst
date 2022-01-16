@@ -210,7 +210,7 @@ See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for add
        # @see: https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_early_data
        ssl_early_data on;
 
-       ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA;
+       ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES256-SHA;
        ssl_prefer_server_ciphers on;
        ssl_session_cache shared:SSL:50m;
        # HSTS (ngx_http_headers_module is required) (15768000 seconds = six months)
@@ -234,7 +234,7 @@ See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for add
 
    }
 
-15. Check that your SSL certificate is set up correctly.
+1.  Check that your SSL certificate is set up correctly.
 
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html.
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.

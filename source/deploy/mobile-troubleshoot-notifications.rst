@@ -11,7 +11,7 @@ If you did not receive a push notification when :doc:`testing push notifications
 
 3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
 
-4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
+4. Go to **Profile** > **Security** > **View and Logout of Active Sessions** to confirm that there is a session for the native mobile app matching your login time.
 
 5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
 
@@ -26,4 +26,4 @@ If you did not receive a push notification when :doc:`testing push notifications
 
   To conserve disk space, once your push notification issue is resolved, go to  **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level from **DEBUG** to **Errors Only**.
 
-If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Account Settings > Security > View and Log Out of Active Sessions**. Otherwise, the `DeviceId` won't get registered in the `Sessions` table and notifications won't be delivered.
+If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the `DeviceId` won't get registered in the `Sessions` table and notifications won't be delivered.
