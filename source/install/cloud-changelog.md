@@ -38,6 +38,8 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the "Leave Channel" button didn't work from the channel sidebar 3-dot menu when clicking on it a second time.
 
 ### Known Issues
+ - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
+ - Some plugin full screen modals are broken [MM-40625](https://mattermost.atlassian.net/browse/MM-40625).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
