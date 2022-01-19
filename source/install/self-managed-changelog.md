@@ -93,6 +93,9 @@ Latest Mattermost Releases:
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.2.2, 
+  - Fixed 6.0 migration for installations where the Users.Timezone column has a default.
+  - Fixed an issue where attempting to parse an empty flag would result in a spurious log line which would clog up the console.
 - **v6.2.1, released 2021-12-17**
   - Mattermost v6.2.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where a SIGSEGV error occurred after upgrading to v6.2.0 when plugins were disabled in configuration.
@@ -205,6 +208,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.1 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.1.2, 
+  - Fixed 6.0 migration for installations where the Users.Timezone column has a default.
 - **v6.1.1, released 2021-12-17**
   - Mattermost v6.1.1 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a general performance fix for loading the web application and typing.
