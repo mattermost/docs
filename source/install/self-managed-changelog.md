@@ -13,7 +13,11 @@ Latest Mattermost Releases:
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 - **v6.3.1, release day TBD**
+  - Medium
   - Investigating an issue where Mattermost Boards may fail to start in v6.3.0. Please see this [GitHub Issue](https://github.com/mattermost/focalboard/issues/2119) for a workaround and discussions.
+  - Added the ability to normalize DNs if they're returned with different attribute letter casing for LDAP users vs LDAP group members [MM-40753](https://mattermost.atlassian.net/browse/MM-40753).
+  - * UI: Remove the channel file related buttons if file attachments are disabled on the server [MM-38054](https://mattermost.atlassian.net/browse/MM-38054).
+  - Fixed a bug causing team sidebar to always show up in products when running in subpath
 - **v6.3.0, released 2022-01-16**
   - Original 6.3.0 release
 
@@ -94,7 +98,7 @@ Latest Mattermost Releases:
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v6.2.2, 
-  - Fixed 6.0 migration for installations where the Users.Timezone column has a default.
+  - Fixed 6.0 migration for installations where the Users.Timezone column has a default [MM-39297](https://mattermost.atlassian.net/browse/MM-39297).
   - Fixed an issue where attempting to parse an empty flag would result in a spurious log line which would clog up the console.
 - **v6.2.1, released 2021-12-17**
   - Mattermost v6.2.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -209,7 +213,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v6.1 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v6.1.2, 
-  - Fixed 6.0 migration for installations where the Users.Timezone column has a default.
+  - Fixed 6.0 migration for installations where the Users.Timezone column has a default [MM-39297](https://mattermost.atlassian.net/browse/MM-39297).
 - **v6.1.1, released 2021-12-17**
   - Mattermost v6.1.1 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a general performance fix for loading the web application and typing.
@@ -916,6 +920,8 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **v5.37.7,
+  - Added support for channel moderation in Professional sku licenses. 
 - **v5.37.6, released 2021-12-17**
   - Mattermost v5.37.6 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a general performance fix for loading the web application and typing.
