@@ -77,6 +77,17 @@
     {%- endif %}
   {%- endblock %}
 
+  <!-- Swiftype Search-->
+  <script>
+  window['SwiftypeObject'] = "_st";
+  var _st = function(){
+      _st.q = [arguments];
+  };
+  _st('install','Hxat6NPk3oUDZDszHuga','2.0.0');
+  </script>
+  <script src='//s.swiftypecdn.com/install/v2/st.js'></script>
+  <!-- End Swiftype Search-->
+
   	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -128,7 +139,12 @@
             {% endif %}
           {% endif %}
 
-          {% include "searchbox.html" %}
+          <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" placeholder="Search docs" class="st-default-search-input searchfield">
+            <input type="hidden" name="check_keywords" value="yes">
+            <input type="hidden" name="area" value="default">
+          </form>
+          {# {% include "searchbox.html" %} #}
 
           {% endblock %}
         </div>

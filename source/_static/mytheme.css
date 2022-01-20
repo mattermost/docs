@@ -641,6 +641,8 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .wy-side-nav-search input[type=text] {
 	border: 1px solid #ddd;
+    width: 80%;
+	padding-left: 28px;
 }
 
 .wy-side-nav-search {
@@ -648,6 +650,10 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	position: fixed;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #ddd;
+}
+
+.searchfield {
+	padding-left: 28px;
 }
 
 /* header .links__icon {

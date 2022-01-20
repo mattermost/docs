@@ -4,6 +4,18 @@
 {%- extends "layout-notoc.html" %}
 {% set title = _('Mattermost Documentation') %}
 
+{% block extrahead %}
+    {{ super() }}
+    <script>
+            window['SwiftypeObject'] = "_st";
+            var _st = function(){
+                _st.q = [arguments];
+            };
+            _st('install','Hxat6NPk3oUDZDszHuga','2.0.0');
+    </script>
+    <script src='//s.swiftypecdn.com/install/v2/st.js'></script>
+{% endblock %}
+
 {% block body %}
 
     <style>
@@ -319,6 +331,7 @@
             padding: 20px 20px 15px;
             background-color: white;
             box-shadow: 0px 0px 33px 2px rgba(0, 0, 0, 0.2);
+            padding-left: 28px;
         }
 
         .redesign-landing .landing-search input[type="text"] {
@@ -336,8 +349,8 @@
                 padding: 20px;
             }
             .redesign-landing .landing-search input[type="text"] {
-                width: 600px;
-                padding: 10px 20px;
+                width: 550px;
+                padding: 10px 25px;
             }
         }
     </style>
@@ -350,7 +363,7 @@
             </div>
             <div class="landing-search" role="search">
                 <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
-                    <input type="text" name="q" placeholder="What are you looking for?" />
+                    <input type="text" name="q" placeholder="What are you looking for?" class="st-default-search-input" autofocus />
                     <input type="hidden" name="check_keywords" value="yes" />
                     <input type="hidden" name="area" value="default" />
                 </form>
