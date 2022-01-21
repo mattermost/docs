@@ -2,7 +2,7 @@
 variables:
   AWS_DEFAULT_REGION: "us-east-1"
 
-  IMAGE_BUILD: cimg/python:3.7
+  IMAGE_BUILD: python:3.7
   IMAGE_AWS_CI: $CI_REGISTRY/images/aws-ci:2.1.1-1
 
 stages:
