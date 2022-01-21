@@ -1,0 +1,49 @@
+# This run in the mattermost gitlab internal instace
+variables:
+  AWS_DEFAULT_REGION: "us-east-1"
+
+  IMAGE_BUILD: cimg/python:3.7s
+  IMAGE_AWS_CI: $CI_REGISTRY/images/aws-ci:2.1.1-1
+
+stages:
+  - build
+  - deploy
+
+build-package:
+  stage: build
+  image: $IMAGE_BUILD
+  before_script:
+    - pip install pipenv
+    - pipenv install --dev
+  script:
+    - make html
+  artifacts:
+    paths:
+      - ./build/html
+    expire_in: 2 hours
+  only:
+    refs:
+      - master
+      - staging
+
+s3-release-prod:
+  image: $IMAGE_AWS_CI
+  stage: deploy
+  script:
+    - aws s3 cp build/html s3://docs.mattermost.com/ --recursive --cache-control no-cache --acl public-read
+  needs:
+    - build-package
+  only:
+    refs:
+      - master
+
+s3-release-staging:
+  image: $IMAGE_AWS_CI
+  stage: deploy
+  script:
+    - aws s3 cp build/html s3://docs-stagging.mattermost.com/ --recursive --cache-control no-cache --acl public-read
+  needs:
+    - build-package
+  only:
+    refs:
+      - staging

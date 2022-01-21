@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+      - staging
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+
+    - name: Run Python deps
+      run: |
+        pip install pipenv
+        pipenv install --dev
+
+    - name: Run build
+      run: make html
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: build/html
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: doc-logs
+        path: build/*.log
