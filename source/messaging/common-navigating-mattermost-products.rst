@@ -50,7 +50,7 @@ Use the arrows to the right of the Product menu to show the last channel/next ch
 Server list
 -----------
 
-If you're using multiple servers (e.g., you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are located. To change servers, select the menu and then select the server you want to use.
+If you're using multiple servers (e.g: you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are located. To change servers, select the menu and then select the server you want to use.
 
 What else has changed?
 ----------------------
