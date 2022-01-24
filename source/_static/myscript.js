@@ -13,9 +13,9 @@ $(document).ready(function () {
 		<div class='c-thermometer-modal__container'> \
 			<div> \
 				<div class='c-thermometer-modal__content'> \
-					<h3>Share your thoughts</h3> \
-					<p>Your feedback helps us improve. Share your thoughts with us here or join the DGW - Documentation Working Group channel on our Community server.</p> \
-					<textarea maxlength='186' rows='4' placeholder='Leave your feedback here'></textarea> \
+				<h3>Share your thoughts</h3> \
+				<p>Your feedback helps us improve. Have a request? <a href='https://mattermost.uservoice.com/forums/306457-general' target='blank'> Share product feature requests here.</a></p> \
+				<textarea maxlength='186' rows='4' placeholder='Enter your documentation feedback here'></textarea> \
 					<div class='c-thermometer-modal__textarea-footer'> \
 						<div></div> \
 						<div class='c-thermometer-modal__counter'> \
