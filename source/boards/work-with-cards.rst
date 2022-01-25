@@ -34,6 +34,19 @@ Share card previews
 
 When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
 
+Receive updates
+---------------
+
+When you create a card, you automatically follow it. When changes are made to the card, you'll get a message notification with details of the changes.
+
+You can @mention someone on a card to add them as a follower. This can be a card you've created or someone else's card. Lastly, you can also follow cards manually using the **Follow** option on the top-right corner of a card. To unfollow a card, select **Following**.
+
+When updates are made to a card you're following, you'll receive a Direct Message from the boards bot with a summary of the change (e.g. Bob changed status from **In progress** to **Done**) and a link to the card for more detailed information.
+
+.. note::
+
+  You won't get a notification of your own changes made to a card, even if you're following that card.
+
 Customize card properties
 -------------------------
 
@@ -42,7 +55,7 @@ Cards can contain different data fields depending on the purpose of the board. F
 Add and manage properties
 -------------------------
 
-To create a new a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
+To create a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
 
 Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later. To rename a property, open a card and select the property name to open an editable field. Your changes are saved immediately, and applied across all cards on the current board.
 

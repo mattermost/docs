@@ -6906,19 +6906,6 @@ Audit settings
 
 The audit settings output audit records to syslog (local or remote server via TLS) and/or to a local file. Both are disabled by default. They can be enabled simultaneously.
 
-Enable Reliable Websockets
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to make websocket messages more reliable by buffering messages during a connection loss and then re-transmitting all unsent messages when the connection is revived. This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------+
-
 Remote Clusters
 ^^^^^^^^^^^^^^^
 
