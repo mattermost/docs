@@ -29,6 +29,7 @@ Latest Mattermost Cloud releases:
  - 6.3.1 fixes
  - Fixed a bug that caused a gap to appear on the left-hand side in products using the team sidebar.
  - Fixed an issue with collapsed reply threads where clearing a deleted root post left the right-hand side blank.
+ - Fixed an issue where the **Add** channel member button text was cut off in Safari.
 
 ### Known Issues
  - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
