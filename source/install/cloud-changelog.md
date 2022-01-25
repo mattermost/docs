@@ -3,12 +3,44 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2022-02-01](#release-2022-02-01)
 - [Release 2022-01-25](#release-2022-01-25)
 - [Release 2022-01-11](#release-2022-01-11)
 - [Release 2021-12-08](#release-2021-12-08)
 - [Release 2021-12-01](#release-2021-12-01)
 - [Release 2021-11-23](#release-2021-11-23)
-- [Release 2021-11-11](#release-2021-11-11)
+
+## Release 2022-02-01
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated prepackaged Boards version to 0.12.1.
+ - Added Boards support for Global Retention Policy.
+ - Added collapsed reply threads tour functionality, after modifying tutorial tip component to support multiple tours.
+ - Added the current product name to invoice.
+ - Added support for metered billing invoices.
+ - Added a keyboard shortcut to open the expanded right-hand side.
+
+#### Bug Fixes
+ - Fixed an issue where the user menu header was visible when custom statuses are disabled.
+ - Fixed an issue where the markdown preview link was not hidden in read-only channels.
+ - Fixed an issue where Cloud admins were unable to download an invoice via the Desktop App.
+ - 6.3.1 fixes
+ - Fixed a bug that caused a gap to appear on the left-hand side in products using the team sidebar.
+ - Fixed an issue with collapsed reply threads where clearing a deleted root post left the right-hand side blank.
+
+### Known Issues
+ - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
+ - Some plugin full screen modals are broken [MM-40625](https://mattermost.atlassian.net/browse/MM-40625).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-01-25
 
