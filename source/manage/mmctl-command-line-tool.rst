@@ -937,14 +937,14 @@ Create a channel.
 
 .. code-block:: sh
 
-   channel create --team myteam --name mynewchannel --display_name "My New Channel"
-   channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+   channel create --team myteam --name mynewchannel --display-name "My New Channel"
+   channel create --team myteam --name mynewprivatechannel --display-name "My New Private Channel" --private
 
 **Options**
 
 .. code-block:: sh
    
-   --display_name string   Channel Display Name
+   --display-name string   Channel Display Name
    --header string         Channel header
    -h, --help              help for create
    --name string           Channel Name
@@ -5160,7 +5160,7 @@ Add specified users to a team.
 
 .. code-block:: sh
 
-   team add myteam user@example.com username
+   team users add myteam user@example.com username
 
 **Options**
 
@@ -5198,7 +5198,7 @@ Remove specified users from a team.
 
 .. code-block:: sh
 
-   team remove myteam user@example.com username
+   team users remove myteam user@example.com username
 
 **Options**
 
