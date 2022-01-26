@@ -497,6 +497,7 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443",
     "administration/config-settings#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
+    "administration/config-settings#session-lengths": "https://docs.mattermost.com/configure/configuration-settings.html#session-lengths",
     "configure/config-ssl-http2-apache2": "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
     "configure/configuration-settings#enable-latex-rendering": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
