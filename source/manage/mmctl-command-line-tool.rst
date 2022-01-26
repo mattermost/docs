@@ -5198,7 +5198,7 @@ Remove specified users from a team.
 
 .. code-block:: sh
 
-   team remove myteam user@example.com username
+   team users remove myteam user@example.com username
 
 **Options**
 
