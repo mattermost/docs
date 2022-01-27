@@ -3,12 +3,51 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2022-01-25](#release-2022-01-25)
 - [Release 2022-01-11](#release-2022-01-11)
 - [Release 2021-12-08](#release-2021-12-08)
 - [Release 2021-12-01](#release-2021-12-01)
 - [Release 2021-11-23](#release-2021-11-23)
 - [Release 2021-11-11](#release-2021-11-11)
-- [Release 2021-11-10](#release-2021-11-10)
+
+## Release 2022-01-25
+
+### Improvements
+
+#### User Interface (UI)
+ - Invite to team modal now auto-focuses its email search input.
+ - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
+ - Updated **Account Settings** terminology to **Settings**.
+ - Added Accept-Language header to generate link previews in the default Server language.
+ - The **Invite Members** button is now hidden when the Direct Message category is collapsed.
+
+#### Administration
+ - Improved plugins performance by re-initializing only upon plugin configuration changes.
+
+### Bug Fixes
+ - Fixed an issue where the user avatar wasn’t removed from the participants list after the user’s only post in a thread was deleted.
+ - Fixed an issue with the exit animation on the invitation modal.
+ - Fixed an issue where the file preview modal info bar showed the channel id instead of the channel name for Direct Messages.
+ - Fixed an issue with post hover menu overlap.
+ - Changed Client4 to properly set Content-Type as application/json on API calls.
+ - Fixed an issue to add a loader when fetching data from the backend in the channel switcher if there are no results matching local data.
+ - Fixed an issue where the **Get a Public Link** button in the file preview modal was hidden if the image was an external link.
+ - Fixed an issue where the click effect on **Copy** invite link button was incorrect.
+ - Reinstalling a previously-enabled plugin now correctly reports enabled status as false.
+ - Fixed an issue where the Ctrl/Cmd+Shift+A hotkey to open **Settings** didn't work in desktop view.
+ - Fixed an issue where the "Leave Channel" button didn't work from the channel sidebar 3-dot menu when clicking on it a second time.
+
+### Known Issues
+ - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
+ - Some plugin full screen modals are broken [MM-40625](https://mattermost.atlassian.net/browse/MM-40625).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-01-11
 
