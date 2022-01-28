@@ -1,17 +1,25 @@
 Import your data
 ================
 
+You can import data from other tools to use with Boards.
+
 Import from Asana
 -----------------
 
-This node app converts an Asana json archive into a Focalboard archive. To use:
+This node app converts an Asana JSON archive into a ``.focalboard`` archive.
 
-    From the Asana Board Menu, select Export / Print, and JSON
-    Save it locally, e.g. to asana.json
-    Run npm install from within focalboard/webapp
-    Run npm install from within focalboard/import/asana
-    Run npx ts-node importAsana.ts -i <asana.json> -o archive.focalboard
-    In Focalboard, click Settings, then Import archive and select archive.focalboard
+1. Log into your Asana account.
+2. From the Asana Board Menu, select **Export/Print > JSON** to create an archive file (which you'll use in Boards).
+3. Save the file locally, e.g. to ``asana.json``.
+4. In your local copy of Boards, open a terminal window.
+5. Navigate to ``focalboard/webapp``.
+6. Run ``npm install``.
+7. Change directory to ``focalboard/import/asana``.
+8. Run ``npm install``.
+9. Run ``npx ts-node importAsana.ts -i <asana.json> -o archive.focalboard``.
+10. Open Boards and select **Settings > Import archive** and select ``archive.focalboard``.
+11. Select **Upload**.
+12. Return to your board and confirm that your Asana data is now displaying.
 
 Import scope
 ^^^^^^^^^^^^
@@ -21,7 +29,7 @@ Currently, the script imports all cards from a single board, including their sec
 Import from Notion
 ------------------
 
-This node app converts a Notion CSV and markdown export into a Focalboard archive. To use:
+This node app converts a Notion CSV and markdown export into a ``.focalboard`` archive.
 
 1. From a Notion Board, open the ... menu at the top right
 2. Select `Export` and pick `Markdown & CSV` as the export format
