@@ -4,11 +4,11 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 - [Release 2022-02-01](#release-2022-02-01)
+- [Release 2022-01-27](#release-2022-01-27)
 - [Release 2022-01-25](#release-2022-01-25)
 - [Release 2022-01-11](#release-2022-01-11)
 - [Release 2021-12-08](#release-2021-12-08)
 - [Release 2021-12-01](#release-2021-12-01)
-- [Release 2021-11-23](#release-2021-11-23)
 
 ## Release 2022-02-01
 
@@ -42,6 +42,11 @@ Latest Mattermost Cloud releases:
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-01-27
+
+#### Bug Fixes
+ - Fixed an issue where replying to posts, pinning posts and editing posts did not work.
 
 ## Release 2022-01-25
 
