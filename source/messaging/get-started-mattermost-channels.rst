@@ -1,6 +1,12 @@
 Get Started with Mattermost Channels
 ====================================
-Access Mattermost Channels by selecting **Channels** from the [product list].
+
+Access Mattermost Channels by selecting **Channels** from the Product list |product-list| icon.
+
+.. |product-list| image:: ../images/products_E82F.svg
+  :height: 24px
+  :width: 24px
+  :alt: Navigate between Channels, Playbooks, and Boards using the Product list icon.
 
 Channels are where you can communicate with your team about various topics or projects. 
 Channels and channel management tools are available in the channel sidebar to the left. 
