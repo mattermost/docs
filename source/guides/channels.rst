@@ -7,6 +7,17 @@ Mattermost Channels provide 1:1 and group messaging that features integrated voi
 
 This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
 
+New to Mattermost Channels?
+---------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   Getting started with Mattermost Channels </messaging/get-started-mattermost-channels>
+
+* :doc:`Getting Started with Mattermost Channels </messaging/get-started-mattermost-channels>`
+
 Access Your Workspace
 ---------------------
 
