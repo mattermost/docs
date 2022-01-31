@@ -6054,9 +6054,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
    Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will now automatically be followed to the thread.  
 
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------+
 
 Developer Flags
 ^^^^^^^^^^^^^^^
