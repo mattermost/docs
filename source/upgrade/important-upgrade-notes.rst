@@ -21,6 +21,8 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v6.4                                               | New schema migrations                                                                                                                                            |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v6.2                                               | Channel results in the channel autocomplete will include private channels. Customers using `Bleve <https://docs.mattermost.com/deploy/bleve-search.html>`_ or    |
 |                                                    | `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`_ for autocomplete will have to reindex their data to get the new results. Since this can  |
 |                                                    | take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete. Note that only channel|
