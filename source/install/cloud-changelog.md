@@ -17,17 +17,17 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Updated prepackaged Boards version to 0.12.1.
  - Added Boards support for Global Retention Policy.
- - Added a Collapsed Reply Threads tour functionality.
+ - Added Collapsed Reply Threads (Beta) tour functionality.
  - Added the current product name information to invoices.
  - Added support for metered billing invoices.
- - Added a keyboard shortcut to open the expanded right-hand side.
+ - Added a keyboard shortcut to open and expand the right-hand pane.
 
 #### Bug Fixes
- - Fixed an issue where the user menu header was visible when custom statuses was disabled.
- - Fixed an issue where the markdown preview link was not hidden in read-only channels.
+ - Fixed an issue where the user menu header was visible when custom statuses were disabled.
+ - Fixed an issue where the markdown **Preview** link was not hidden in read-only channels.
  - Fixed an issue where Cloud admins were unable to download an invoice via the Desktop App.
  - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
- - Fixed an issue with Collapsed Reply Threads where clearing a deleted root post left the right-hand side blank.
+ - Fixed an issue with Collapsed Reply Threads (Beta) where clearing a deleted root post left the right-hand side blank.
  - Fixed an issue where the **Add** channel member button text was cut off in Safari.
 
 ### Known Issues
@@ -44,7 +44,7 @@ Latest Mattermost Cloud releases:
 ## Release 2022-01-27
 
 ### Bug Fixes
- - Fixed an issue where replying to posts, pinning posts and editing posts did not work.
+ - Fixed an issue where replying to posts, pinning posts, and editing posts did not work.
 
 ## Release 2022-01-25
 
