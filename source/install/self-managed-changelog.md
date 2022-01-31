@@ -24,6 +24,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
  -  [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html), available in beta, are known to have a negative impact on server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling [``ThreadAutoFollow``](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) and [``CollapsedThreads``](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta) until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
 
+IMPORTANT: If you upgrade from a release earlier than v6.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ### Highlights
 
 #### Playbook Updates
