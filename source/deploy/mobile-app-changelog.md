@@ -1,16 +1,38 @@
 # Mattermost Mobile Apps Changelog
 
 Latest Mattermost Mobile Apps releases:
+- [1.49.0 Release](#id1)
 - [1.48.2 Release](#id1)
 - [1.48.1 Release](#id2)
 - [1.48.0 Release](#id7)
 - [1.47.2 Release](#id12)
 - [1.47.1 Release](#id15)
-- [1.47.0 Release](#id20)
 
 ## 1.49.0 Release
+- Release Date: February 16, 2022
+- Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
-The v1.49.0 release is currently re-scheduled for February 2022.
+### Compatibility
+ - **Upgrade to server version v5.37.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.31 has ended and upgrading to server ESR v5.37.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added SVG support for markdown inline images.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue where the date picker jumped back to the current month after the past date selection.
+ - Fixed a crash issue on markdown table images.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
+ - Various known issues with Collapsed Reply Threads (Beta) feature:
+   - New messages banner should only count root posts.
+   - Clicking on a permalink adds the thread replies in the channel view.
+   - Threads item unread state (bolding) does not persist when deleting documents and data.
 
 ## 1.48.2 Release
 - Release Date: January 6, 2022
