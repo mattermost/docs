@@ -4,11 +4,92 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v5.37. 
 
 Latest Mattermost Releases:
+- [Release v6.4 - Feature Release](#release-v6-4-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
 - [Release v6.2 - Feature Release](#release-v6-2-feature-release)
 - [Release v6.1 - Feature Release](#release-v6-1-feature-release)
-- [Release v6.0 - Feature Release](#release-v6-0-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5.37-extended-support-release)
+
+## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2022-02-16**
+
+### Important Upgrade Notes
+ - 
+
+**IMPORTANT:** If you upgrade from a release earlier than v6.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Playbook Updates
+
+
+#### Boards Updates
+ - Added Boards support for Global Retention Policy.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated **Account Settings** terminology to **Settings**.
+ - Added Accept-Language header to generate link previews in the default Server language.
+ - The **Invite Members** button is now hidden when the Direct Message category is collapsed.
+ - Added Collapsed Reply Threads (Beta) tour functionality.
+ - Added the current product name information to invoices.
+ - Added support for metered billing invoices.
+ - Added a keyboard shortcut to open and expand the right-hand pane.
+ - UX improvements to the **System console > licensing page**: added a new modal for the upload license workflow.
+
+#### Administration
+ - Improved plugins performance by re-initializing only upon plugin configuration changes.
+ - Removed dead struct ``ManifestExecutables``.
+ - Added support for exporting and importing the post type and ``edit_at`` post details.
+ - Added support for ``postgresql`` schema designator.
+ - New schema migrations.
+
+### Bug Fixes
+ - Fixed an issue where the user menu header was visible when custom statuses were disabled.
+ - Fixed an issue where the markdown **Preview** link was not hidden in read-only channels.
+ - Fixed an issue where Cloud admins were unable to download an invoice via the Desktop App.
+ - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
+ - Fixed an issue with Collapsed Reply Threads (Beta) where clearing a deleted root post left the right-hand side blank.
+ - Fixed an issue where the **Add** channel member button text was cut off in Safari.
+ - Fixed an issue where the file preview modal info bar showed the channel id instead of the channel name for Direct Messages.
+ - Fixed an issue to add a loader when fetching data from the backend in the channel switcher if there are no results matching local data.
+ - Fixed an issue where the **Get a Public Link** button in the file preview modal was hidden if the image was an external link.
+ - Fixed an issue where the click effect on **Copy** invite link button was incorrect.
+ - Reinstalling a previously-enabled plugin now correctly reports enabled status as false.
+ - Fixed an issue where the Ctrl/Cmd+Shift+A hotkey to open **Settings** didn't work in desktop view.
+ - Fixed an issue where the "Leave Channel" button didn't work from the channel sidebar 3-dot menu when clicking on it a second time.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - EnableBoardsDeletion, BoardsRetentionDays
+
+### API Changes
+ - 
+ 
+### Go Version
+ - v6.4 is built with Go ``v1.16.7``.
+
+### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - When selecting the **Upgrade to Enterprise Edition** button, the upgrade progress bar and the restart button are no longer shown once progress reaches 100%. Users can't restart the server directly from the Mattermost user interface, and must restart the server manually.
+
+### Contributors
+ - 
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
