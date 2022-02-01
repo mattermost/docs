@@ -25,7 +25,7 @@ Using Boards begins with selecting the type of board you want to use. A board co
 
 * To add a new board, select **+ Add Board** in the bottom left corner of the screen. 
 * To rename a board, select the title area to edit it.
-* To display the board description, hover over the board's name to activate the **show**/**hide** toggle.
+* To display or edit the board description, hover over the board's name to activate the **show**/**hide** toggle.
 * Boards and cards are created with random icons by default. To change or remove icons, select the icon then choose the appropriate action.
 
 Select the headers to sort them or insert new properties.

@@ -25,10 +25,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v6.3.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.1/mattermost-6.3.1-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.3.1/mattermost-6.3.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``945c1266c01c42eb964cdfb8c027bb1832e4869d404a7e4613bfcae55a69af5e``
-  - GPG Signature: https://releases.mattermost.com/6.3.1/mattermost-6.3.1-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v6.3.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.2/mattermost-6.3.2-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.3.2/mattermost-6.3.2-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``771828605816f8a2ad7cdafed69afb6c0f4aefd8025e929e6d32160e19debafd``
+  - GPG Signature: https://releases.mattermost.com/6.3.2/mattermost-6.3.2-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v6.2.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-2-feature-release>`__ - `Download <https://releases.mattermost.com/6.2.2/mattermost-6.2.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.2.2/mattermost-6.2.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``aae1bb38c11a8e1d65c79eafca34e30261492a83c6d1bb483efd0ff455e7c65a``
@@ -282,10 +282,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-Mattermost Team Edition v6.3.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.1/mattermost-team-6.3.1-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.3.1/mattermost-team-6.3.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``3a612b3d8045a58bf845747a6ba7bd2a9ed5e8a7d2ee076a92e463dafadf7f72``
-  - GPG Signature: https://releases.mattermost.com/6.3.1/mattermost-team-6.3.1-linux-amd64.tar.gz.sig
+Mattermost Team Edition v6.3.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.2/mattermost-team-6.3.2-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.3.2/mattermost-team-6.3.2-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``51c2c395befff385b3f91026c8d4299557c51ddfde6b4cdfd3c8ff6899da7fd5``
+  - GPG Signature: https://releases.mattermost.com/6.3.2/mattermost-team-6.3.2-linux-amd64.tar.gz.sig
 Mattermost Team Edition v6.2.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-2-feature-release>`__ - `Download <https://releases.mattermost.com/6.2.2/mattermost-team-6.2.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.2.2/mattermost-team-6.2.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``855a2502b590da796164eb5fadbf3448773ed9458d7e4e2b6161a859721d889d``
