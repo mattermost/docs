@@ -19,6 +19,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Added SVG support for markdown inline images.
+ - Added the logic to create an Android app bundle along with the APK file on running the build command.
 
 ### Bug Fixes
 
