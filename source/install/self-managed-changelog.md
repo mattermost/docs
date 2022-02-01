@@ -15,7 +15,7 @@ Latest Mattermost Releases:
 **Release Day: 2022-02-16**
 
 ### Important Upgrade Notes
- - 
+ - A new schema migration system has been introduced. **Before updating to this version, it is strongly recommended to have a database backup**. The new migration system applies to all migrations. Therefore, it is expected to have a rather slow start when the application runs for the first time after the update. The new migration system adds two new tables to the database, ``db_migrations`` and ``db_lock``, which are used by the migrations engine. The applied migrations are added to the ``db_migrations`` table. In case of an error while applying the migrations, please check this table first. If you encounter an issue please file [an Issue](https://github.com/mattermost/mattermost-server/issues) by including the failing migration name, database driver/version, and the server log errors.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -44,7 +44,6 @@ Latest Mattermost Releases:
  - Removed dead struct ``ManifestExecutables``.
  - Added support for exporting and importing the post type and ``edit_at`` post details.
  - Added support for ``postgresql`` schema designator.
- - New schema migrations.
 
 ### Bug Fixes
  - Fixed an issue where the user menu header was visible when custom statuses were disabled.
