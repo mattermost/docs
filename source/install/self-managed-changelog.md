@@ -14,7 +14,7 @@ Latest Mattermost Releases:
 
 - **v6.3.3, release **
   - Mattermost v6.3.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
-  - The default for ``ThreadAutoFollow`` has been changed to "false". This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
+  - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
   - Collapsed Reply Threads will only be kept up to date if ``ThreadAutoFollow`` config is set to true [MM-41350](https://mattermost.atlassian.net/browse/MM-41350).
 - **v6.3.2, released 2022-01-28**
   - Fixed an issue where MySQL installations re-triggered the v6.0 migration on server restart [MM-41330](https://mattermost.atlassian.net/browse/MM-41330).
@@ -110,7 +110,7 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
 
 - **v6.2.3, release **
   - Mattermost v6.2.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
-  - The default for ``ThreadAutoFollow`` has been changed to "false". This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
+  - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
   - Collapsed Reply Threads will only be kept up to date if ``ThreadAutoFollow`` config is set to true [MM-41350](https://mattermost.atlassian.net/browse/MM-41350).
   - Fixed an issue where MySQL installations re-triggered the v6.0 migration on server restart [MM-41330](https://mattermost.atlassian.net/browse/MM-41330).
 - **v6.2.2, released 2022-01-21**
@@ -231,7 +231,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **v6.1.3, release **
   - Mattermost v6.1.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
-  - The default for ``ThreadAutoFollow`` has been changed to "false". This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
+  - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
   - Collapsed Reply Threads will only be kept up to date if ``ThreadAutoFollow`` config is set to true [MM-41350](https://mattermost.atlassian.net/browse/MM-41350).
   - Fixed an issue where MySQL installations re-triggered the v6.0 migration on server restart [MM-41330](https://mattermost.atlassian.net/browse/MM-41330).
 - **v6.1.2, released 2022-01-21**
@@ -947,7 +947,7 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 - **v5.37.8, release **
   - Mattermost v5.37.8 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
-  - The default for ``ThreadAutoFollow`` has been changed to "false". This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
+  - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
   - Collapsed Reply Threads will only be kept up to date if ``ThreadAutoFollow`` config is set to true [MM-41350](https://mattermost.atlassian.net/browse/MM-41350).
   - Fixed an issue where Actiance compliance jobs caused the Mattermost server process to crash with a panic [MM-41245](https://mattermost.atlassian.net/browse/MM-41245).
 - **v5.37.7, released 2022-01-21**
