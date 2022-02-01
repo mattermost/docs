@@ -4,6 +4,19 @@ Deprecated Configuration Settings
 Service Settings
 ----------------
 
+Enable Reliable Websockets
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*This configuration setting has been deprecated, and the ability to buffer messages during a connection loss has been promoted to general availability from Mattermost v6.3. This setting is enabled for older clients to maintain backwards compatibility.*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable this setting to make websocket messages more reliable by buffering messages during a connection loss and then re-transmitting all unsent messages when the connection is revived. 
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableReliableWebsockets": true`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------+
+
 Data Prefetch
 ^^^^^^^^^^^^^^
 
@@ -136,6 +149,7 @@ Allow Team Administrators to edit others' posts
 **False**: Only System Admins can edit other users' posts.
 
 .. note::
+
    System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
 
 Enable Team Creation

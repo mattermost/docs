@@ -214,12 +214,14 @@ Changelogs
     :maxdepth: 1
     :hidden:
 
-    Mattermost </install/self-managed-changelog>
+    Mattermost Self-Hosted </install/self-managed-changelog>
+    Mattermost Legacy Self-Hosted </install/legacy-self-hosted-changelog>
     Mattermost Cloud </install/cloud-changelog>
     Mobile Apps </deploy/mobile-app-changelog>
     Desktop Apps </install/desktop-app-changelog>
 
-* :doc:`Mattermost </install/self-managed-changelog>`
+* :doc:`Mattermost Self-Hosted </install/self-managed-changelog>`
+* :doc:`Mattermost Legacy Self-Hosted </install/legacy-self-hosted-changelog>`
 * :doc:`Mattermost Cloud </install/cloud-changelog>`
 * :doc:`Mobile Apps </deploy/mobile-app-changelog>`
 * :doc:`Desktop Apps </install/desktop-app-changelog>`
