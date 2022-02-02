@@ -5995,9 +5995,9 @@ System Admins can set the default appearance of Collapsed Reply Threads for thei
 
 .. note::
 
-   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you are well versed with the `known issues <https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you cannot easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it is `promoted to general availability in Q1 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
+   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you are well versed with the `known issues <https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you cannot easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it is `promoted to general availability in Q2 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
 
-**Disabled**: Disable Collapsed Reply Threads functionality.
+**Disabled**: Disables Collapsed Reply Threads front-end functionality. To disable all backend operations and thread tracking for Collapsed Reply Threads, you must also disable the `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`__ configuration setting.
 
 +---------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
@@ -6041,20 +6041,22 @@ Automatically Follow Threads
 |all-plans| |self-hosted|
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__. If you are experiencing adverse server performance impacts, please consult this `support article <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ for recommended remediation.   
+ 
+.. important::
+    
+    This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ and may affect server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling ``ThreadAutoFollow`` until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`_.
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
 
-**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled. If you plan to enable Collapsed Reply Threads for your instance, we don't recommend disabling this setting since the server-side tracking of followed threads and unread states is critical to create a smooth transition for end-users when enabling Collapsed Reply Threads in the future.  
+**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
 
 .. note::
 
    Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will now automatically be followed to the thread.  
 
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------+
 
 Developer Flags
 ^^^^^^^^^^^^^^^
