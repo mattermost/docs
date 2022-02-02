@@ -259,7 +259,7 @@ Upgrading Mattermost Server
 
   .. code-block:: sh
          
-    sudo chown -R mattermost:mattermost {install-path}/mattermost
+    sudo chown -R mattermost:mattermost mattermost
      
 .. note::
     
@@ -270,8 +270,7 @@ Upgrading Mattermost Server
 
   .. code-block:: sh
 
-    cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+    sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
 
 11. Start your Mattermost server.
 
