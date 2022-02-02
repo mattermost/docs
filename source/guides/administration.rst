@@ -176,6 +176,7 @@ Self-Hosted Server Management
     Health Check </manage/health-checks>
     Announcement Banner </manage/announcement-banner>
     Bulk Export Tool </manage/bulk-export-tool>
+    Hide Emojis from the Emoji Picker </manage/hide-emojis>
 
 * :doc:`Managing Team and Channel Members </manage/team-channel-members>` - Manage synchronization, moderation, and membership settings.
 * :doc:`Statistics </manage/statistics>` - Get statistics about your Mattermost server usage.
@@ -184,6 +185,7 @@ Self-Hosted Server Management
 * :doc:`Health Check </manage/health-checks>` - Configure health probes for your Mattermost server.
 * :doc:`Announcement Banner </manage/announcement-banner>` - Display notices to your users via an announcement banner.
 * :doc:`Bulk Export Tool </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.
+* :doc:`Hide Emojis from the Emoji Picker </manage/hide-emojis>` - Learn how to hide default emojis from the Mattermost Emoji Picker.
 
 Self-Hosted Compliance
 ^^^^^^^^^^^^^^^^^^^^^^
