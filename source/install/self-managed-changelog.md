@@ -93,7 +93,6 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
 
 ### Known Issues
  - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
- - "New Replies" banner may display on the right-hand side for a thread that's entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Account Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
  - Known issues related to the Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
