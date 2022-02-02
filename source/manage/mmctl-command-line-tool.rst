@@ -72,6 +72,9 @@ mmctl usage notes
 
 - System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
 - ``mmctl`` comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
+
+  - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
+  - If the ``bin`` folder is missing from your ``$PATH``, you must specify the full path to mmctl when running mmctl commands. Otherwise, you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``.
 - Parameters in CLI commands are order-specific.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
