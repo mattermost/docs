@@ -46,6 +46,7 @@ Latest Mattermost Releases:
  - Added support for ``postgresql`` schema designator.
 
 ### Bug Fixes
+ - Fixed an issue where the "Make channel admin" option did not display without a license.
  - Fixed an issue where the user menu header was visible when custom statuses were disabled.
  - Fixed an issue where the "New Replies" banner on the right-hand side was displayed for a thread that was entirely visible.
  - Fixed an issue where the markdown **Preview** link was not hidden in read-only channels.
