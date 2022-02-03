@@ -25,18 +25,18 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v6.3.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.2/mattermost-6.3.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.3.2/mattermost-6.3.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``771828605816f8a2ad7cdafed69afb6c0f4aefd8025e929e6d32160e19debafd``
-  - GPG Signature: https://releases.mattermost.com/6.3.2/mattermost-6.3.2-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v6.2.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-2-feature-release>`__ - `Download <https://releases.mattermost.com/6.2.2/mattermost-6.2.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.2.2/mattermost-6.2.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``aae1bb38c11a8e1d65c79eafca34e30261492a83c6d1bb483efd0ff455e7c65a``
-  - GPG Signature: https://releases.mattermost.com/6.2.2/mattermost-6.2.2-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v6.1.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-1-feature-release>`__ - `Download <https://releases.mattermost.com/6.1.2/mattermost-6.1.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.1.2/mattermost-6.1.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``6cf3db09a81a9076e6041d41197474d1e000951dda9ecffdc63b582026b8fe67``
-  - GPG Signature: https://releases.mattermost.com/6.1.2/mattermost-6.1.2-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v6.3.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.3/mattermost-6.3.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.3.3/mattermost-6.3.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``3a0f43506c84e1c59817b1103fff2ccc8ad63352ddaa7a6a73e1d6f8bed7029a``
+  - GPG Signature: https://releases.mattermost.com/6.3.3/mattermost-6.3.3-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v6.2.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-2-feature-release>`__ - `Download <https://releases.mattermost.com/6.2.3/mattermost-6.2.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.2.3/mattermost-6.2.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``c8ead357ad481bba269410c449105097915344a8cfbc6b1fb807f0a83c74bcd2``
+  - GPG Signature: https://releases.mattermost.com/6.2.3/mattermost-6.2.3-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v6.1.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-1-feature-release>`__ - `Download <https://releases.mattermost.com/6.1.3/mattermost-6.1.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.1.3/mattermost-6.1.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``b0d7b2792b5ff6ee510eac9a4f57cbf30a82c495d495f2d873bf9d00fe39a3ae``
+  - GPG Signature: https://releases.mattermost.com/6.1.3/mattermost-6.1.3-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v6.0.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-0-feature-release>`__ - `Download <https://releases.mattermost.com/6.0.4/mattermost-6.0.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.0.4/mattermost-6.0.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``23ca2886e0ec0a785920cd78d47284b8eff543ee8ba07df5cdd4042acd549246``
@@ -49,10 +49,10 @@ Mattermost Enterprise Edition v5.38.4 - `View Changelog <https://docs.mattermost
   - ``https://releases.mattermost.com/5.38.4/mattermost-5.38.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``ffb0f544222550c8477bbb83df35379da6a0280d1d0501c2569c839db9cb22c6``
   - GPG Signature: https://releases.mattermost.com/5.38.4/mattermost-5.38.4-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v5.37.7 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-37-extended-support-release>`__ - `Download <https://releases.mattermost.com/5.37.7/mattermost-5.37.7-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/5.37.7/mattermost-5.37.7-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``139f276cbcdef6ac500e1bec14126278820002f313bf709747c37e10746b825b``
-  - GPG Signature: https://releases.mattermost.com/5.37.7/mattermost-5.37.7-linux-amd64.tar.gz.sig
+Mattermost Enterprise Edition v5.37.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-37-extended-support-release>`__ - `Download <https://releases.mattermost.com/5.37.8/mattermost-5.37.8-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.37.8/mattermost-5.37.8-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``d95b8736177654de7a2806ca264943298b1e65f4032e63cb1feac908406d88d3``
+  - GPG Signature: https://releases.mattermost.com/5.37.8/mattermost-5.37.8-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.36.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-36-feature-release>`__ - `Download <https://releases.mattermost.com/5.36.2/mattermost-5.36.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.36.2/mattermost-5.36.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``fc5e03ada4f04290230e56411f3aecefa0d3a21317fc08b355193a1702bf1136``
@@ -282,18 +282,18 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-Mattermost Team Edition v6.3.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.2/mattermost-team-6.3.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.3.2/mattermost-team-6.3.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``51c2c395befff385b3f91026c8d4299557c51ddfde6b4cdfd3c8ff6899da7fd5``
-  - GPG Signature: https://releases.mattermost.com/6.3.2/mattermost-team-6.3.2-linux-amd64.tar.gz.sig
-Mattermost Team Edition v6.2.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-2-feature-release>`__ - `Download <https://releases.mattermost.com/6.2.2/mattermost-team-6.2.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.2.2/mattermost-team-6.2.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``855a2502b590da796164eb5fadbf3448773ed9458d7e4e2b6161a859721d889d``
-  - GPG Signature: https://releases.mattermost.com/6.2.2/mattermost-team-6.2.2-linux-amd64.tar.gz.sig
-Mattermost Team Edition v6.1.2 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-1-feature-release>`__ - `Download <https://releases.mattermost.com/6.1.2/mattermost-team-6.1.2-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/6.1.2/mattermost-team-6.1.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``928d75119a88781e0e0e2d0957dbb6ee2b44d202ffbb9793bf1891c7bca3b412``
-  - GPG Signature: https://releases.mattermost.com/6.1.2/mattermost-team-6.1.2-linux-amd64.tar.gz.sig
+Mattermost Team Edition v6.3.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-3-extended-support-release>`__ - `Download <https://releases.mattermost.com/6.3.3/mattermost-team-6.3.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.3.3/mattermost-team-6.3.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``1e61f04968d13180d28fd76a9b917fa828d77847edb9956f5f3a52dca7804b3f``
+  - GPG Signature: https://releases.mattermost.com/6.3.3/mattermost-team-6.3.3-linux-amd64.tar.gz.sig
+Mattermost Team Edition v6.2.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-2-feature-release>`__ - `Download <https://releases.mattermost.com/6.2.3/mattermost-team-6.2.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.2.3/mattermost-team-6.2.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``257801b2c0c5c9f5b543b9be4f7759568c5d58391624d3f3fef1e35297c6845b``
+  - GPG Signature: https://releases.mattermost.com/6.2.3/mattermost-team-6.2.3-linux-amd64.tar.gz.sig
+Mattermost Team Edition v6.1.3 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-1-feature-release>`__ - `Download <https://releases.mattermost.com/6.1.3/mattermost-team-6.1.3-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.1.3/mattermost-team-6.1.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``942f2a051b25a36e32e9b5da19bc8cf3ba54fb6febeffe71ba1db72dbf242520``
+  - GPG Signature: https://releases.mattermost.com/6.1.3/mattermost-team-6.1.3-linux-amd64.tar.gz.sig
 Mattermost Team Edition v6.0.4 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-0-feature-release>`__ - `Download <https://releases.mattermost.com/6.0.4/mattermost-team-6.0.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.0.4/mattermost-team-6.0.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``11b26d3b2b1f6367118da3c21c7ab46e289c900a8860870a1b07b1a46c71fa24``
@@ -306,10 +306,10 @@ Mattermost Team Edition v5.38.4 - `View Changelog <https://docs.mattermost.com/i
   - ``https://releases.mattermost.com/5.38.4/mattermost-team-5.38.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``03d083280e8764010505a4f07810531907265335a0115745bf32cd7250fe858e``
   - GPG Signature: https://releases.mattermost.com/5.38.4/mattermost-team-5.38.4-linux-amd64.tar.gz.sig
-Mattermost Team Edition v5.37.7 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-37-extended-support-release>`__ - `Download <https://releases.mattermost.com/5.37.7/mattermost-team-5.37.7-linux-amd64.tar.gz?src=arc>`__
-  - ``https://releases.mattermost.com/5.37.7/mattermost-team-5.37.7-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``85ac7a4dd16d2c54d614957451e534a8bc6ff43f3561dac2306973b05358794c``
-  - GPG Signature: https://releases.mattermost.com/5.37.7/mattermost-team-5.37.7-linux-amd64.tar.gz.sig
+Mattermost Team Edition v5.37.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v5-37-extended-support-release>`__ - `Download <https://releases.mattermost.com/5.37.8/mattermost-team-5.37.8-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/5.37.8/mattermost-team-5.37.8-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``4371816958453a21ba7dfec457820f2416fc1d2d54d249b1091d1f5daa67dc2e``
+  - GPG Signature: https://releases.mattermost.com/5.37.8/mattermost-team-5.37.8-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.36.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-36-feature-release>`__ - `Download <https://releases.mattermost.com/5.36.2/mattermost-team-5.36.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.36.2/mattermost-team-5.36.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``dff78b91a2c36b948470f0b6df247bbc9bb489cce531fa1d239367a1448afc74``
