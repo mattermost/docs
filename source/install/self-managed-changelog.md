@@ -67,6 +67,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - EnableBoardsDeletion, BoardsRetentionDays
+
+#### API Changes
+ - The ``api/v4/config/migrate`` API endpoint has been removed in favor of the mmctl ``--local`` endpoint. API clients won't be able to access this endpoint without having physical access to the server.
  
 ### Go Version
  - v6.4 is built with Go ``v1.16.7``.
