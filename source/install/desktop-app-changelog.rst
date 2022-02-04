@@ -30,7 +30,7 @@ Latest Mattermost Desktop App releases:
 Release v5.0
 --------------
 
-- **v5.0.4, release **
+- **v5.0.4, release 2022-02-04**
  - Fixed an issue where Desktop App toast notifications did't work in v5.0.3.
  - Restored 'Minimize to tray' option for Windows, and added the ability to override the tray icon colour.
 - **v5.0.3, released 2022-02-01**
