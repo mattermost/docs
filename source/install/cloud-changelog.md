@@ -3,12 +3,48 @@
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
+- [Release 2022-02-16](#release-2022-02-16)
 - [Release 2022-02-03](#release-2022-02-03)
 - [Release 2022-01-27](#release-2022-01-27)
 - [Release 2022-01-25](#release-2022-01-25)
 - [Release 2022-01-11](#release-2022-01-11)
 - [Release 2021-12-08](#release-2021-12-08)
-- [Release 2021-12-01](#release-2021-12-01)
+
+## Release 2022-02-16
+
+### Improvements
+
+#### User Interface (UI)
+ - If a user is part of more than one team, the user is now able to use the channel switcher to search channels across teams.
+ - Updated the recommended minimum supported Firefox version to v91+.
+ - Clarified in-product error string "Oops!" as "Unable to continue" for both translators and target audiences in cases where a user doesn't have sufficient permissions to add users or guests.
+ - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
+ - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**. 
+ - Added the ability to send unsanitized user to the source user on ``user_updated`` event.
+ - In the compact view, the sender's username is now always shown on posts.
+ - Added a "Create board" button to the Channel Intro section.
+ - The post menu is now only rendered on the root post when hovered upon.
+ - Updated a library used for storing drafts and other data in browser storage.
+
+#### Performance
+ - Reduced the number of menu components listening for keyboard and mouse events.
+ - Rerendering of ``CustomStatusEmoji`` component is now avoided on post hovering.
+
+#### Bug Fixes
+ - Fixed an issue where the reply notification setting was still in effect even when Collapsed Reply Threads was enabled.
+ - Fixed an issue where running "mmctl config migrate" reset the configuration settings to defaults if the settings were already in the database.
+ - Fixed an issue where the custom status menu option was missing the "x" to clear status.
+ - Fixed an issue where the password reset link was valid for 1 hour instead of 24hours.
+
+### Known Issues
+ - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-02-03
 
