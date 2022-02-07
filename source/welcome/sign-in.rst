@@ -1,30 +1,33 @@
-Signing In
-==========
+Sign In to Mattermost
+=====================
 
-To sign in, navigate to the Mattermost sign-in screen. You'll receive a Mattermost URL from your System Admin or from an email invitation.
+You'll receive a Mattermost URL from your System Admin or from an email invitation. Once you have your organization's Mattermost URL, navigate to that URL in a browser, then enter your credentials.
 
 .. tip::
-  We recommend bookmarking the Mattermost URL provided by your System Admin or through an email invitation so signing in to Mattermost is easy in the future.
+  We recommend bookmarking the Mattermost URL so signing in to Mattermost is easy in the future.
 
 After signing in, the team that appears first on your team sidebar will open. If you have not joined a team, the Team Selection page opens where you can view a list of teams that you can join.
 
-Email Address or Username Sign In
----------------------------------
+Reset your password
+--------------------
+
+If you've forgotten your password, you can reset on the sign-in screen by selecting **I forgot my password**, or by contacting your System Admin for help.
+
+Email address or username
+--------------------------
 
 When enabled by your System Admin, you can sign in with the username or email address used to create your account.
-
-If you've forgotten your password, you can reset it by selecting **I forgot my password** on the sign-in screen, or contact your System Admin for help resetting your password.
 
 .. image:: ../images/sign-in_with_email.png
   :alt: Sign in to Mattermost with your username or email address, or reset your password.
 
-Single Sign-On
---------------
+Single Sign-On (SSO)
+--------------------
   
 When enabled by your System Admin, you can sign in using your GitLab, Google, Office 365, AD/LDAP, or SAML credentials.
 
-GitLab Single Sign-On (SSO)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GitLab SSO
+~~~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
 
@@ -58,8 +61,8 @@ When enabled by your System Admin, you can sign in with your GitLab account usin
 .. image:: ../images/sign-in-gitlab.png
   :alt: Sign in to Mattermost using your GitLab credentials.
 
-Google Single Sign-On (SSO)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Google SSO
+~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -70,8 +73,8 @@ When enabled by your System Admin, you can sign in with your Google account usin
 .. image:: ../images/sign-in-google-apps.png
   :alt: Sign in to Mattermost using your Google Apps credentials.
 
-Office 365 Single Sign-On (SSO)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Office 365 SSO
+~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -82,8 +85,8 @@ When enabled by your System Admin, you can sign in with your Office 365 account 
 .. image:: ../images/sign-in-office365.png
   :alt: Sign in to Mattermost with your Office 365 credentials.
 
-AD/LDAP Sign In (SSO)
-~~~~~~~~~~~~~~~~~~~~~
+AD/LDAP SSO
+~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -94,8 +97,8 @@ When enabled by your System Admin, you can sign in with your AD/LDAP credentials
 .. image:: ../images/sign-in_with_ldap.png
   :alt: Sign in to Mattermost with your AD/LDAP credentials.
 
-SAML Single Sign-On (SSO)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+SAML SSO
+~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
 

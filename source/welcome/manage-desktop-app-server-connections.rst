@@ -1,5 +1,5 @@
-Manage Servers
-==============
+Manage Desktop App server connections
+=====================================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -74,3 +74,4 @@ Using the Mattermost Desktop App, you can connect to multiple Mattermost servers
 
     1. On Windows, go to **... > File > Settings**. On Mac, go to **Mattermost > Preferences**.
     2. Next to the server or team that you want to remove, select **Remove**.
+

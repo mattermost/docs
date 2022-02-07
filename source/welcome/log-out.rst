@@ -1,5 +1,5 @@
-Navigating Between Teams
-========================
+Log out of Mattermost
+=====================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -18,7 +18,4 @@ Navigating Between Teams
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can navigate between teams you have joined using the team sidebar that appears to the left of your channel list.
-
-.. image:: ../images/team-sidebar.png
-  :alt: Navigating between teams in Mattermost.
+You can log out of Mattermost from your avatar. Select **Log Out** to log out of all teams on the server.

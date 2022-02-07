@@ -1,5 +1,5 @@
-Manage Profile Settings
-=======================
+Manage your Mattermost profile
+==============================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -18,7 +18,7 @@ Manage Profile Settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can configure your profile and security preferences by selecting **Profile** from your Avatar in the Global Header.
+You can configure your profile and security preferences by selecting **Profile** from your avatar in the global header.
 
 .. tabs::
 
@@ -79,7 +79,7 @@ Settings to configure your password, view access history, and view or logout of 
 Password
 ~~~~~~~~
 
-You may change your password if you’ve logged in by email. If you are signing in using a single sign-on service, the password field is not editable, and you must access your SSO service’s account settings to update your password.
+You may change your password if you've logged in by email. If you are signing in using a single sign-on service, the password field is not editable, and you must access your SSO service's account settings to update your password.
 
 Multi-factor Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

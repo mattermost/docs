@@ -18,6 +18,7 @@ Mattermost Product Documentation
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
    Mattermost Administration <guides/administration>
+   Welcome to Mattermost <guides/welcome-to-mattermost>
    Channels <guides/channels>
    Playbooks <guides/playbooks>
    Boards <guides/boards>

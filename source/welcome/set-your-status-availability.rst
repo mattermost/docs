@@ -1,5 +1,5 @@
-Setting Your Status and Availability
-====================================
+Set your status and availability
+=================================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -20,7 +20,7 @@ Setting Your Status and Availability
 
 Let your team know whether you're available by setting a custom status and your availability in Mattermost.
 
-Setting a custom status
+Set a custom status
 -----------------------
 
 Set a custom status to add an optional emoji to a descriptive status message. Other members can see your status anywhere they can see your name, such as the Channel Sidebar and in conversations. 
@@ -46,7 +46,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
   - If custom statuses aren't available, you can request your System Admin to enable this feature in **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**.
   - Custom statuses will be available in the Mattermost Mobile App in a future release. 
 
-Clearing a custom status
+Clear a custom status
 ------------------------
 
 To clear a custom status, select your Avatar, then select **Clear Status**, or select the **Clear** option next to your current status.
@@ -64,8 +64,8 @@ To set your availability, select your Avatar, then specify your availability as 
 
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within Direct Messages. 
 
-Setting Do Not Disturb
-----------------------
+Set your status as Do Not Disturb
+---------------------------------
 
 From Mattermost v6.1, set your availability to **Do Not Disturb** to disable all desktop, email, and push notifications when you are unavailable or need to concentrate. 
 
