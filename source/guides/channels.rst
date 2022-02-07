@@ -14,9 +14,9 @@ New to Mattermost Channels?
    :maxdepth: 1
    :hidden:
 
-   Getting started with Mattermost Channels </messaging/get-started-mattermost-channels>
+   Get started with Channels </messaging/get-started-mattermost-channels>
 
-* :doc:`Getting Started with Mattermost Channels </messaging/get-started-mattermost-channels>`
+* :doc:`Get started with Channels </messaging/get-started-mattermost-channels>`
 
 Access Your Workspace
 ---------------------
