@@ -30,6 +30,9 @@ Latest Mattermost Desktop App releases:
 Release v5.0
 --------------
 
+- **v5.0.4, release 2022-02-04**
+ - Fixed an issue where Desktop App toast notifications didn't work in v5.0.3.
+ - Restored **Minimize to tray** option for Windows, and added the ability to override the tray icon color.
 - **v5.0.3, released 2022-02-01**
  - Fixed an issue where a user might get an erroneous "Your session has expired" error and be unable to login.
  - Fixed an issue where the app could crash while trying to reload a page that is currently loading.
