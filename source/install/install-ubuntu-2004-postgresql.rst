@@ -1,4 +1,4 @@
-.. _install-ubuntu-1804-postgresql:
+.. _install-ubuntu-2004-postgresql:
 
 Installing PostgreSQL Database Server
 -------------------------------------
