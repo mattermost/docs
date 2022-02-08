@@ -15,7 +15,7 @@ $(document).ready(function () {
 				<div class='c-thermometer-modal__content'> \
 				<h3>Share your thoughts</h3> \
 				<p>Your feedback helps us improve. Have a request? <a href='https://mattermost.uservoice.com/forums/306457-general' target='blank'> Share product feature requests here.</a></p> \
-				<textarea maxlength='186' rows='4' placeholder='Enter your documentation feedback here'></textarea> \
+				<textarea maxlength='186' rows='4' placeholder='Share your documentation feedback here'></textarea> \
 					<div class='c-thermometer-modal__textarea-footer'> \
 						<div></div> \
 						<div class='c-thermometer-modal__counter'> \
