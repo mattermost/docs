@@ -23,14 +23,14 @@ Latest Mattermost Releases:
 
 #### Playbook Updates
  - The Starter plan no longer has a limit to the number of playbooks that can be created.
- - Teams can now export any playbook to JSON with just one-click so they can be easily shared with other Mattermost servers or even backup under version control.
+ - Teams can now export any playbook to JSON with a single click to share them with other Mattermost servers or to back them up under version control.
 
 #### Boards Updates
  - Redesigned the Boards template selector to help users find the best template for projects.
- - Board archives now support images, so all the image attachments on cards will be included the next time a board archive is exported/imported.
+ - Board archives now support images. All image attachments on cards will be included the next time a board archive is exported and imported.
  - Added card badges to indicate the type of content in a card, such as the description, comments, and checklists, without needing to open the card.
  - The entire text on URL properties is now clickable, so users can easily open links from a card without needing to click on a small link icon.
- - GIF file types are now supported as an image attachment in card descriptions.
+ - GIF file types are now supported as image attachments in card descriptions.
 
 ### Improvements
 
@@ -42,10 +42,10 @@ Latest Mattermost Releases:
  - Added the current product name information to invoices.
  - Added support for metered billing invoices.
  - Added a keyboard shortcut to open and expand the right-hand pane.
- - UX improvements to the **System console > licensing page**: added a new modal for the upload license workflow.
+ - UX improvements to the **System Console > Licensing** page: added a new modal for the upload license workflow.
 
 #### Administration
- - Improved plugins performance by re-initializing only upon plugin configuration changes.
+ - Improved plugins performance by re-initializing only after plugin configuration changes.
  - Removed dead struct ``ManifestExecutables``.
  - Added support for exporting and importing the post type and ``edit_at`` post details.
  - Added support for ``postgresql`` schema designator.
@@ -89,7 +89,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
- - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
