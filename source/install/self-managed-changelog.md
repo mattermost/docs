@@ -22,8 +22,7 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Playbook Updates
- - The Starter plan no longer has a limit to the number of playbooks that can be created.
- - Teams can now export any playbook to JSON with a single click to share them with other Mattermost servers or to back them up under version control.
+ - The Team and Starter plans no longer has a limit to the number of playbooks that can be created.
 
 #### Boards Updates
  - Redesigned the Boards template selector to help users find the best template for projects.
