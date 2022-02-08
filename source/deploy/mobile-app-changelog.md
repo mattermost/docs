@@ -19,20 +19,20 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Added SVG support for markdown inline images.
- - Added the logic to create an Android app bundle along with the APK file on running the build command.
 
 ### Bug Fixes
 
 #### All apps
  - Fixed an issue where the date picker jumped back to the current month after the past date selection.
  - Fixed a crash issue on markdown table images.
+ - Fixed an issue with Collapsed Reply Threads where clicking on a permalink added the thread replies in the channel view.
+ - Fixed an issue with Collapsed Reply Threads where link previews disappeared when a thread was created.
 
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issues with Collapsed Reply Threads (Beta) feature:
    - New messages banner should only count root posts.
-   - Clicking on a permalink adds the thread replies in the channel view.
    - Threads item unread state (bolding) does not persist when deleting documents and data.
 
 ## 1.48.2 Release
