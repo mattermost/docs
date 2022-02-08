@@ -22,10 +22,15 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Playbook Updates
-
+ - The Starter plan no longer has a limit to the number of playbooks that can be created.
+ - Teams can now export any playbook to JSON with just one-click so they can be easily shared with other Mattermost servers or even backup under version control.
 
 #### Boards Updates
- - Added Boards support for Global Retention Policy.
+ - Redesigned the Boards template selector to help users find the best template for projects.
+ - Board archives now support images, so all the image attachments on cards will be included the next time a board archive is exported/imported.
+ - Added card badges to indicate the type of content in a card, such as the description, comments, and checklists, without needing to open the card.
+ - The entire text on URL properties is now clickable, so users can easily open links from a card without needing to click on a small link icon.
+ - GIF file types are now supported as an image attachment in card descriptions.
 
 ### Improvements
 
