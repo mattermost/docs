@@ -16,7 +16,21 @@ This node app converts an Asana JSON archive into a ``.focalboard`` archive.
 6. Run ``npm install``.
 7. Change directory to ``focalboard/import/asana``.
 8. Run ``npm install``.
-9. Run ``npx ts-node importAsana.ts -i <asana.json> -o archive.focalboard``.
+9. Run ``npx ts-node importAsana.ts -i <asana.json> -o archive.focalboard``. This generates the following data:
+
+.. code-block::
+   
+    My-MacbookPro:asana macbook$ npx ts-node importAsana.ts -i ~/Downloads/asana.json -o archive.focalboard
+    Board: 1:1 Meeting Agenda Test
+    Card: [READ ME] Instructions for using this project
+    Card: [EXAMPLE TASK] Feedback on design team presentation
+    Card: [EXAMPLE TASK] Finalize monthly staffing plan
+    Card: [EXAMPLE TASK] Review Q2 launch video outline
+    Card: [EXAMPLE TASK] Mentor a peer
+    
+    Found 5 card(s).
+    Exported to archive.focalboard
+
 10. Open Boards and select **Settings > Import archive** and select ``archive.focalboard``.
 11. Select **Upload**.
 12. Return to your board and confirm that your Asana data is now displaying.
@@ -103,4 +117,3 @@ This node app converts a Todoist json archive into a Focalboard archive. To use:
 4. Run ``npm install`` from within ``focalboard/import/todoist``
 5. Run ``npx ts-node importTodoist.ts -i <path-to-todoist.json> -o archive.focalboard`` (also from within ``focalboard/import/todoist``)
 6. In Focalboard, click `Settings`, then ``Import archive`` and select ``archive.focalboard``
-
