@@ -1,4 +1,3 @@
-
 Deployment Solution Programs 
 ============================
 
@@ -61,12 +60,12 @@ Documentation
 
   Include the following information in text, markdown, HTML or other format. Square brackets [] indicate optional statements depending on the configuration of your solution:
  
-      This deployment solution installs [and upgrades] a Mattermost server to provide secure, private cloud messaging for teams and enterprises. More information is available at: https://about.mattermost.com
+      This deployment solution installs [and upgrades] a Mattermost server to provide secure, private cloud messaging for teams and enterprises. More information is available at: https://mattermost.com
  
       Following automated deployment, the following steps are required to make your system production-ready:
       
-      - [Configure SSL for Mattermost](https://about.mattermost.com/ssl-configuration/)
-      - [Configure SMTP email for Mattermost](https://about.mattermost.com/smtp-configuration/)
+      - [Configure SSL for Mattermost](https://docs.mattermost.com/install/config-ssl-http2-nginx.html)
+      - [Configure SMTP email for Mattermost](https://docs.mattermost.com/configure/smtp-email.html)
 
 2. **Unofficial deployment options should be documented**. Unofficial deployment configurations, such as use of Linux operating systems that are not officially supported, should be documented in the README.
 
