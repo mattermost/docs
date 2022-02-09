@@ -25,6 +25,11 @@ You'll be using the `mmctl export <https://docs.mattermost.com/manage/mmctl-comm
 
 Once mmctl is installed, we can generate the export from the source instance.
 
+AWS Region
+----------
+
+Currently, Mattermost Cloud data resides in the aws-us-east-1 region. Please contact feedback-cloud[at]mattermost.com to share feedback about additional data residencies with the product team.
+
 Authenticate
 ------------
 
