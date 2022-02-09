@@ -11,7 +11,7 @@ This node app converts an Asana JSON archive into a ``.focalboard`` archive.
 1. Log into your Asana account.
 2. Select the drop-down menu next to the Asana board's name. Then select **Export/Print > JSON**. This will create an archive file which you'll use in Boards.
 3. Save the file locally, e.g. to ``asana.json``.
-4. In your local copy of Boards, open a terminal window.
+4. Open a terminal window on your local machine.
 5. Navigate to ``focalboard/webapp``.
 6. Run ``npm install``.
 7. Change directory to ``focalboard/import/asana``.
