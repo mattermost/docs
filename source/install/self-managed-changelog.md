@@ -54,7 +54,6 @@ Latest Mattermost Releases:
  - Fixed an issue where the user menu header was visible when custom statuses were disabled.
  - Fixed an issue where the "New Replies" banner on the right-hand side was displayed for a thread that was entirely visible.
  - Fixed an issue where the markdown **Preview** link was not hidden in read-only channels.
- - Fixed an issue where Cloud admins were unable to download an invoice via the Desktop App.
  - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
  - Fixed an issue with Collapsed Reply Threads (Beta) where clearing a deleted root post left the right-hand side blank.
  - Fixed an issue where the **Add** channel member button text was cut off in Safari.
