@@ -25,19 +25,28 @@ Latest Mattermost Cloud releases:
  - Added a "Create board" button to the Channel Intro section.
  - The post menu is now only rendered on the root post when hovered upon.
  - Updated a library used for storing drafts and other data in browser storage.
+ - Updated Playbooks version to 1.24.1.
+ - Enabled performance telemetry tracking for production deployments not running in developer mode. Disabled when telemetry is toggled off.
 
 #### Performance
  - Reduced the number of menu components listening for keyboard and mouse events.
  - Rerendering of ``CustomStatusEmoji`` component is now avoided on post hovering.
+ - Removes collapsed sidebar menu from the DOM on sidebar collapse and vise versa on sidebar expand.
+ - Re-rendering of TextBox links component below post box while typing is now avoided.
+
+#### Plugins
+ - Added an ``OnInstall()`` plugin hook.
+ - Added an ``OnSendDailyTelemetry()`` plugin hook.
 
 #### Bug Fixes
  - Fixed an issue where the reply notification setting was still in effect even when Collapsed Reply Threads was enabled.
  - Fixed an issue where running "mmctl config migrate" reset the configuration settings to defaults if the settings were already in the database.
  - Fixed an issue where the custom status menu option was missing the "x" to clear status.
  - Fixed an issue where the password reset link was valid for 1 hour instead of 24hours.
+ - Fixed an issue where the Mattermost import failed if an export contained a soft deleted team.
+ - Fixed an issue where search results in the right-hand side did not clear when changing screens from file results to any other.
 
 ### Known Issues
- - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
