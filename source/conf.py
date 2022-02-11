@@ -120,10 +120,6 @@ redirects = {
         "https://docs.mattermost.com/comply/compliance-export.html",
 "administration/config-in-database.html":
         "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
-"administration/custom-terms-of-service.html": 
-        "https://docs.mattermost.com/comply/custom-terms-of-service.html",
-"administration/custom-terms-of-service.html": 
-        "https://docs.mattermost.com/comply/custom-terms-of-service.html",
 "administration/data-retention.html": 
         "https://docs.mattermost.com/comply/data-retention-policy.html",
 "administration/devops-command-center.html": 
