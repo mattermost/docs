@@ -20,11 +20,10 @@ Latest Mattermost Cloud releases:
  - Updated the recommended minimum supported Firefox version to v91+.
  - Clarified in-product error string "Oops!" as "Unable to continue" for both translators and target audiences in cases where a user doesn't have sufficient permissions to add users or guests.
  - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
- - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**. 
  - Added the ability to send unsanitized user to the source user on ``user_updated`` event.
  - In the compact view, the sender's username is now always shown on posts.
- - Added a "Create board" button to the Channel Intro section.
- - The post menu is now only rendered on the root post when hovered upon.
+ - Added a **Create board** button to the Channel Intro section.
+ - The post menu is now only rendered on the root post on hover over.
  - Updated a library used for storing drafts and other data in browser storage.
  - Updated Playbooks version to 1.24.1.
  - Enabled performance telemetry tracking for production deployments not running in developer mode. This telemetry tracking is disabled when telemetry is toggled off.
@@ -44,7 +43,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where running "mmctl config migrate" reset the configuration settings to defaults if the settings were already in the database.
  - Fixed an issue where the custom status menu option was missing the "x" to clear status.
  - Fixed an issue where the password reset link was valid for 1 hour instead of 24hours.
- - Fixed an issue where the Mattermost import failed if an export contained a soft deleted team.
+ - Fixed an issue where the Mattermost import failed if an export contained a soft-deleted team.
  - Fixed an issue where search results in the right-hand side did not clear when changing screens from file results to any other.
 
 ### Known Issues
