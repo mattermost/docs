@@ -120,10 +120,6 @@ redirects = {
         "https://docs.mattermost.com/comply/compliance-export.html",
 "administration/config-in-database.html":
         "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
-"administration/custom-terms-of-service.html": 
-        "https://docs.mattermost.com/comply/custom-terms-of-service.html",
-"administration/custom-terms-of-service.html": 
-        "https://docs.mattermost.com/comply/custom-terms-of-service.html",
 "administration/data-retention.html": 
         "https://docs.mattermost.com/comply/data-retention-policy.html",
 "administration/devops-command-center.html": 
@@ -330,14 +326,15 @@ redirects = {
 # Configure redirects
 "configure/config-ssl-http2-apache2.html": 
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
-"configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37",
+"configure/configuring-apache2.html": 
+        "https://forum.mattermost.org/c/docs/37",
 "configure/configuration-settings.html#compliance-export-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
 "configure/configuration-settings.html#custom-terms-of-service-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#custom-terms-of-service",
 "configure/configuration-settings.html#enable-latex-rendering": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
- "configure/configuration-settings.html#guest-access-beta": 
+"configure/configuration-settings.html#guest-access-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#guest-access",
 "configure/configuration-settings.html#plugins-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#plugins",
@@ -351,7 +348,7 @@ redirects = {
 	"https://docs.mattermost.com/onboard/multi-factor-authentication.html",
 "deployment/admin-roles.html": 
 	"https://docs.mattermost.com/onboard/system-admin-roles.html",
- "deployment/atlassian-integrations.html":
+"deployment/atlassian-integrations.html":
         "https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#atlassian-integrations",
 "deployment/advanced-permissions.html#read-only-channels": 
         "https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels",
