@@ -1,7 +1,7 @@
 Import your data
 ================
 
-You can import data from other tools to use with Boards.
+You can import data from other tools to use with Boards. [Contribute code](https://www.focalboard.com/contribute/getting-started/) to expand this.
 
 Import from Asana
 -----------------
@@ -11,12 +11,11 @@ This node app converts an Asana JSON archive into a ``.focalboard`` archive.
 1. Log into your Asana account.
 2. Select the drop-down menu next to the Asana board's name. Then select **Export/Print > JSON**. This will create an archive file which you'll use in Boards.
 3. Save the file locally, e.g. to ``asana.json``.
-4. Open a terminal window on your local machine.
-5. Navigate to ``focalboard/webapp``.
-6. Run ``npm install``.
-7. Change directory to ``focalboard/import/asana``.
-8. Run ``npm install``.
-9. Run ``npx ts-node importAsana.ts -i <asana.json> -o archive.focalboard``. This generates the following data:
+4. Open a terminal window on your local machine and navigate to ``focalboard/webapp``.
+5. Run ``npm install``.
+6. Change directory to ``focalboard/import/asana``.
+7. Run ``npm install``.
+8. Run ``npx ts-node importAsana.ts -i <asana.json> -o archive.focalboard``. This generates the following data:
 
 .. code-block::
    
@@ -31,28 +30,35 @@ This node app converts an Asana JSON archive into a ``.focalboard`` archive.
     Found 5 card(s).
     Exported to archive.focalboard
 
-10. In Boards, open the board you want to use for the export.
-11. Select **Settings > Import archive** and select ``archive.focalboard``.
-12. Select **Upload**.
-13. Return to your board and confirm that your Asana data is now displaying.
+9. In Boards, open the board you want to use for the export.
+10. Select **Settings > Import archive** and select ``archive.focalboard``.
+11. Select **Upload**.
+12. Return to your board and confirm that your Asana data is now displaying.
+
+If you don't see your Asana data, an the error should be displayed. You can also check log files for errors.
 
 Import scope
 ^^^^^^^^^^^^
 
-Currently, the script imports all cards from a single board, including their section (column) membership, names, and notes. Contribute code to expand this.
+Currently, the script imports all cards from a single board, including their section (column) membership, names, and notes.
 
 Import from Notion
 ------------------
 
 This node app converts a Notion CSV and markdown export into a ``.focalboard`` archive.
 
-1. From a Notion Board, open the ... menu at the top right
-2. Select `Export` and pick `Markdown & CSV` as the export format
-3. Save it locally, and unzip the folder e.g. to `notion-export`
-4. Run `npm install` from within `focalboard/webapp`
-5. Run `npm install` from within `focalboard/import/notion`
-6. Run `npx ts-node importNotion.ts -i <path to the notion-export folder> -o archive.focalboard`
-7. In Focalboard, click `Settings`, then `Import archive` and select `archive.focalboard`
+1. From a Notion Board, open the **...** menu at the top right corner of the board.
+2. Select `Export` and pick `Markdown & CSV` as the export format.
+3. Save the generated file locally, and unzip the folder.
+4. Open a terminal window on your local machine and navigate to ``focalboard/webapp``.
+5. Run ``npm install``.
+6. Change directory to `focalboard/import/notion`.
+5. Run ``npm install``.
+6. Run ``npx ts-node importNotion.ts -i <path to the notion-export folder> -o archive.focalboard``. This generates the following data:
+7. In Boards, open the board you want to use for the export.
+8. Select **Settings > Import archive** and select ``archive.focalboard``.
+9. Select **Upload**.
+10. Return to your board and confirm that your Notion data is now displaying.
 
 Import scope
 ^^^^^^^^^^^^
@@ -60,9 +66,6 @@ Import scope
 Currently, the script imports all cards from a single board, including their properties and markdown content.
 
 The Notion export format does not preserve property types, so the script currently imports all card properties as a Select type. You can change the type after importing into Focalboard.
-
-[Contribute code](https://www.focalboard.com/contribute/getting-started/) to expand this.
-
 
 Import from Jira
 ----------------
