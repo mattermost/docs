@@ -38,8 +38,6 @@ Latest Mattermost Releases:
  - Added Accept-Language header to generate link previews in the default Server language.
  - The **Invite Members** button is now hidden when the Direct Message category is collapsed.
  - Added Collapsed Reply Threads (Beta) tour functionality.
- - Added the current product name information to invoices.
- - Added support for metered billing invoices.
  - Added a keyboard shortcut to open and expand the right-hand pane.
  - UX improvements to the **System Console > Licensing** page: added a new modal for the upload license workflow.
 
