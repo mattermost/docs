@@ -31,9 +31,10 @@ This node app converts an Asana JSON archive into a ``.focalboard`` archive.
     Found 5 card(s).
     Exported to archive.focalboard
 
-10. Open Boards and select **Settings > Import archive** and select ``archive.focalboard``.
-11. Select **Upload**.
-12. Return to your board and confirm that your Asana data is now displaying.
+10. In Boards, open the board you want to use for the export.
+11. Select **Settings > Import archive** and select ``archive.focalboard``.
+12. Select **Upload**.
+13. Return to your board and confirm that your Asana data is now displaying.
 
 Import scope
 ^^^^^^^^^^^^
