@@ -72,7 +72,7 @@ redirects = {
 # Ensure that all redirects end in a comma, except for the very last redirect.
 
 # About redirects
-"about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities.": 
+"about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": 
     "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
 
 # Administration redirects resulting from the June 2021 docs reorganization project.
@@ -150,7 +150,7 @@ redirects = {
         "https://docs.mattermost.com/upgrade/important-upgrade-notes.html",
 "administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
-"administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app.":
+"administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-web-app",
 "administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import": 
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
@@ -201,7 +201,7 @@ redirects = {
 "administration/config-settings.html#aggregate-search-indexes":
         "https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes",
 "administration/config-settings.html#allow-users-to-view-archived-channels-beta":
-        "https://docs.mattermost.com/configure/config-settings.html#allow-users-to-view-archived-channels",
+        "https://docs.mattermost.com/configure/configuration-settings.html#allow-users-to-view-archived-channels",
 "administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental":
         "https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental",
 "administration/config-settings.html#ad-ldap": 
