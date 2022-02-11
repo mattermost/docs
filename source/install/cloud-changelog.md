@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - If a user is part of more than one team, the user is now able to use the channel switcher to search channels across teams.
+ - Users are now able to use the channel switcher to search channels across teams if the users are part of more than one team.
  - Updated the recommended minimum supported Firefox version to v91+.
  - Clarified in-product error string "Oops!" as "Unable to continue" for both translators and target audiences in cases where a user doesn't have sufficient permissions to add users or guests.
  - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
@@ -27,13 +27,13 @@ Latest Mattermost Cloud releases:
  - The post menu is now only rendered on the root post when hovered upon.
  - Updated a library used for storing drafts and other data in browser storage.
  - Updated Playbooks version to 1.24.1.
- - Enabled performance telemetry tracking for production deployments not running in developer mode. Disabled when telemetry is toggled off.
+ - Enabled performance telemetry tracking for production deployments not running in developer mode. This telemetry tracking is disabled when telemetry is toggled off.
 
 #### Performance
  - Reduced the number of menu components listening for keyboard and mouse events.
  - Rerendering of ``CustomStatusEmoji`` component is now avoided on post hovering.
- - Removes collapsed sidebar menu from the DOM on sidebar collapse and vise versa on sidebar expand.
- - Re-rendering of TextBox links component below post box while typing is now avoided.
+ - Removed the collapsed sidebar menu from the DOM on sidebar collapse and expand.
+ - Re-rendering of ``TextBox`` links component below the post box while typing is now avoided.
 
 #### Plugins
  - Added an ``OnInstall()`` plugin hook.
