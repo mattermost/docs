@@ -18,15 +18,16 @@ Templates
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Templates provide you with a predefined structure so that you can get started quickly. Alternatively, you can create your own board and card templates.
+Templates provide you with a predefined structure so that you can get started quickly. Alternatively, you can create your own board and card templates. When you create a new board, select each template's name to preview it and make sure it suits your requirements.
 
 Board templates 
 ---------------
 
 Board templates include:
 
-* **Personal Goals**: Personal Goals are sorted by status (To Do, Doing, Done) and can be viewed by date.
-* **Meeting Notes**: Meeting notes use default types (Ad Hoc, Standup, Weekly Sync) and can be sorted by type or table view. 
+* **Content Calendar**: Plan and organize your content creation and publication schedule.
+* **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later. 
+* **Personal Goals**: Categorize and plan your personal goals.
 * **Personal Tasks**: Personal Tasks are sorted by status (To Do, Doing, Done) but do not have a date view.
 * **Project Tasks**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
 * **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
