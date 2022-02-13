@@ -25,9 +25,8 @@ Board templates
 
 Board templates include:
 
-* **Meeting Notes**: Meeting notes use default types (Ad Hoc, Standup, Weekly Sync) and can be sorted by type or table view. 
-* **New board template**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
 * **Personal Goals**: Personal Goals are sorted by status (To Do, Doing, Done) and can be viewed by date.
+* **Meeting Notes**: Meeting notes use default types (Ad Hoc, Standup, Weekly Sync) and can be sorted by type or table view. 
 * **Personal Tasks**: Personal Tasks are sorted by status (To Do, Doing, Done) but do not have a date view.
 * **Project Tasks**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
 * **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
