@@ -28,3 +28,12 @@ To share a board with others:
 Anyone with the link will be able to view the board.
 
 Select **Regenerate Token** if you want to invalidate all the previously shared links. Confirm the action to regenerate the token.
+
+Import and export a board
+-------------------------
+
+You can share a board with other teams by exporting it, sending the archived file, and having them import it. The exported and imported board archives include card image attachments.
+
+From v6.4, the archive format is changing with a new .boardarchive extension and all new exports will only be in this format. 
+
+Please note: The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.
