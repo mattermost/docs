@@ -20,7 +20,15 @@ Work with Cards
 
 Our templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include a **Status** and **Priority** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
 
-The default name for a new property is the name of the property type (e.g. **Date**, **URL**) and properties are automatically added to the filter list at the top of the board. You can use this to toggle which properties you see displayed on each card preview. 
+Card descriptions
+-----------------
+
+Card descriptions can include visual elements such as images or GIFs. These images and GIFs are also included in card import and export data.
+
+Rename a card property
+----------------------
+
+The default name for a new property is the name of the property type (e.g. **Date**, **URL**) and properties are automatically added to the filter list at the top of the board. You can use this to toggle which properties you see displayed on each card preview.
 
 To rename a property field, open up a card and select the property name. Enter the new name in the field provided. The change is saved immediately and applied across all cards.
 
