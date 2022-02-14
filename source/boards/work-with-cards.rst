@@ -28,7 +28,7 @@ Card descriptions can include text with Markdown formatting, checkboxes, and vis
 Customize card properties
 -------------------------
 
-Cards can contain different data fields depending on the purpose of the board. For example, in a **Roadmap** board, cards include a **Type** field where you can add categories such as **Bug**, **Triage**, etc. In a **Task** board, cards include **Status** and **Priority** fields instead.
+Cards can contain different data fields depending on the purpose of the board. For example, in a **Roadmap** board, cards include a **Type** field where you can add categories such as **Bug**, **Triage**, etc. In a **Task** board, cards include the **Estimated Hours** field instead.
 
 Add and manage properties
 -------------------------
