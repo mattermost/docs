@@ -14,6 +14,8 @@ Latest Mattermost Releases:
 
 **Release Day: 2022-02-16**
 
+Mattermost v6.4.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
+
 ### Important Upgrade Notes
  - A new schema migration system has been introduced, so we strongly recommend backing up the database before updating the server to this version. The new migration system will run through all existing migrations to record them to a new table. This will only happen for the first run in order to migrate the application to the new system. The table where migration information is stored is called ``db_migrations``. Additionally, a ``db_lock`` table is used to prevent multiple installations from running migrations in parallel. Any downtime depends on how many records the database has and whether there are missing migrations in the schema. In case of an error while applying the migrations, please check this table first. If you encounter an issue please file [an Issue](https://github.com/mattermost/mattermost-server/issues) by including the failing migration name, database driver/version, and the server logs.
 
@@ -22,7 +24,7 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Playbook Updates
- - The Team and Starter plans no longer has a limit to the number of playbooks that can be created.
+ - The Team and Starter plans no longer have a limit to the number of playbooks that can be created.
 
 #### Boards Updates
  - Redesigned the Boards template selector to help users find the best template for projects.
