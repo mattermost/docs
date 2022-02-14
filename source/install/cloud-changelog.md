@@ -13,16 +13,18 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-02-16
 
+### Compatibility
+ - Updated the recommended minimum supported Firefox version to v91+.
+
 ### Improvements
 
 #### User Interface (UI)
  - Users are now able to use the channel switcher to search channels across teams if the users are part of more than one team.
- - Updated the recommended minimum supported Firefox version to v91+.
  - Clarified in-product error string "Oops!" as "Unable to continue" for both translators and target audiences in cases where a user doesn't have sufficient permissions to add users or guests.
  - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
- - Added the ability to send unsanitized user to the source user on ``user_updated`` event.
+ - Added the ability to send an unsanitized user to the source user on ``user_updated`` event.
  - In the compact view, the sender's username is now always shown on posts.
- - Added a **Create board** button to the Channel Intro header.
+ - Added a **Create board** button to the Channel intro header.
  - The post menu is now only rendered on the root post on hover over.
  - Updated a library used for storing drafts and other data in browser storage.
  - Updated Playbooks version to 1.24.1.
@@ -31,7 +33,7 @@ Latest Mattermost Cloud releases:
 
 #### Performance
  - Reduced the number of menu components listening for keyboard and mouse events.
- - Rerendering of ``CustomStatusEmoji`` component is now avoided on post hovering.
+ - Re-rendering of ``CustomStatusEmoji`` component is now avoided on post hovering.
  - Removed the collapsed sidebar menu from the DOM on sidebar collapse and expand.
  - Re-rendering of ``TextBox`` links component below the post box while typing is now avoided.
 
@@ -41,9 +43,9 @@ Latest Mattermost Cloud releases:
 
 #### Bug Fixes
  - Fixed an issue where the reply notification setting was still in effect even when Collapsed Reply Threads was enabled.
- - Fixed an issue where running "mmctl config migrate" reset the configuration settings to defaults if the settings were already in the database.
+ - Fixed an issue where running ``mmctl config migrate`` reset the configuration settings to defaults if the settings were already in the database.
  - Fixed an issue where the custom status menu option was missing the "x" to clear status.
- - Fixed an issue where the password reset link was valid for 1 hour instead of 24hours.
+ - Fixed an issue where the password reset link was valid for 1 hour instead of 24 hours.
  - Fixed an issue where the Mattermost import failed if an export contained a soft-deleted team.
  - Fixed an issue where search results in the right-hand side did not clear when changing screens from file results to any other.
 
