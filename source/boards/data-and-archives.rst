@@ -52,7 +52,7 @@ This node app converts a Notion CSV and markdown export into a ``.focalboard`` a
 3. Save the generated file locally, and unzip the folder.
 4. Open a terminal window on your local machine and navigate to ``focalboard/webapp``.
 5. Run ``npm install``.
-6. Change directory to `focalboard/import/notion`.
+6. Change directory to ``focalboard/import/notion``.
 5. Run ``npm install``.
 6. Run ``npx ts-node importNotion.ts -i <path to the notion-export folder> -o archive.focalboard``. This generates the following data:
 7. In Boards, open the board you want to use for the export.
