@@ -47,7 +47,7 @@ Work with property types
 * **Checkboxes** are useful for agenda items that are regularly revisited in weekly sprint or grooming meetings.
 * **Multi-select** allows you to create badges to indicate things like status.
 * **Numbers** are useful to capture metrics such as task sizing or effort estimates.
-* **Person** provides a quick way to capture user assignments.
+* **Person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
 * **URL** can be used to provide a link to a pull request or relevant website.
 * **Created time/Created by/Last updated time/Last updated by** are good ways order tasks in order of recency.
 
