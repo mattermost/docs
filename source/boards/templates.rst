@@ -29,7 +29,7 @@ Board templates include:
 * **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later. 
 * **Personal Goals**: Categorize and plan your personal goals.
 * **Personal Tasks**: Organize your life and track your personal tasks.
-* **Project Tasks**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
+* **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
 * **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
 * **Empty Board**: If none of those boards fit your use case, you can use a blank template and customize it as needed.
 
