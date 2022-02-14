@@ -25,6 +25,37 @@ Card descriptions
 
 Card descriptions can include visual elements such as images or GIFs. These images and GIFs are also included in card import and export data.
 
+Customize card properties
+-------------------------
+
+Cards can contain different data fields depending on the purpose of the board. For example, in a **Roadmap** board, cards include a **Type** field where you can add categories such as **Bug**, **Triage**, etc. In a **Task** board, cards include **Status** and **Priority** fields instead.
+
+Add and manage properties
+-------------------------
+
+To create a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
+
+Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later. To rename a property, open a card and select the property name to open an editable field. Your changes are saved immediately, and applied across all cards on the current board.
+
+To delete properties you no longer need, select the property, then choose **Delete**. You'll be asked to confirm that you want to remove that property from every card on the current board.
+
+Once you have card properties defined, you have full control over which properties are visible on the board. Select **Properties** at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don't want to see.
+
+Work with property types
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* **Checkboxes** are useful for agenda items that are regularly revisited in weekly sprint or grooming meetings.
+* **Multi-select** allows you to create badges to indicate things like status.
+* **Numbers** are useful to capture metrics such as task sizing or effort estimates.
+* **Person** provides a quick way to capture user assignments.
+* **URL** can be used to provide a link to a pull request or relevant website.
+* **Created time/Created by/Last updated time/Last updated by** are good ways order tasks in order of recency.
+
+Card badges
+-----------
+
+Card badges are a quick way to view card details without opening up a card. To add them, select **Properties > Comments and Description**. Icons related to the card description and comments will be displayed. The comment icon displays a number indicating how many comments have been added to a card. When a new comment is added, that number is updated. Select either icon to open the card and view the details.
+
 Rename a card property
 ----------------------
 
@@ -54,32 +85,6 @@ When updates are made to a card you're following, you'll receive a Direct Messag
 .. note::
 
   You won't get a notification of your own changes made to a card, even if you're following that card.
-
-Customize card properties
--------------------------
-
-Cards can contain different data fields depending on the purpose of the board. For example, in a **Roadmap** board, cards include a **Type** field where you can add categories such as **Bug**, **Triage**, etc. In a **Task** board, cards include **Status** and **Priority** fields instead.
-
-Add and manage properties
--------------------------
-
-To create a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
-
-Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later. To rename a property, open a card and select the property name to open an editable field. Your changes are saved immediately, and applied across all cards on the current board.
-
-To delete properties you no longer need, select the property, then choose **Delete**. You'll be asked to confirm that you want to remove that property from every card on the current board.
-
-Once you have card properties defined, you have full control over which properties are visible on the board. Select **Properties** at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don't want to see.
-
-Work with property types
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* **Checkboxes** are useful for agenda items that are regularly revisited in weekly sprint or grooming meetings.
-* **Multi-select** allows you to create badges to indicate things like status.
-* **Numbers** are useful to capture metrics such as task sizing or effort estimates.
-* **Person** provides a quick way to capture user assignments.
-* **URL** can be used to provide a link to a pull request or relevant website.
-* **Created time/Created by/Last updated time/Last updated by** are good ways order tasks in order of recency.
 
 Calculations
 ------------
