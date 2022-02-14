@@ -22,7 +22,7 @@ Latest Mattermost Cloud releases:
  - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
  - Added the ability to send unsanitized user to the source user on ``user_updated`` event.
  - In the compact view, the sender's username is now always shown on posts.
- - Added a **Create board** button to the Channel Intro section.
+ - Added a **Create board** button to the Channel Intro header.
  - The post menu is now only rendered on the root post on hover over.
  - Updated a library used for storing drafts and other data in browser storage.
  - Updated Playbooks version to 1.24.1.
