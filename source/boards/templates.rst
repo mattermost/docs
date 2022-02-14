@@ -38,7 +38,7 @@ Editing board templates
 
 You can rename all of the fields provided, hide them, delete them, and change the default color.
 
-To create a board template select **+ Add Board**, then select **+ New template**. To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
+To create a custom board template select **+ Add Board**, then select **+ New template**. To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
 
 Create a new template
 ~~~~~~~~~~~~~~~~~~~~~
