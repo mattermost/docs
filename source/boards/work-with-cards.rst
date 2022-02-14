@@ -18,12 +18,12 @@ Work with Cards
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Our templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include a **Status** and **Priority** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
+Our templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include an **Estimated Hours** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
 
 Card descriptions
 -----------------
 
-Card descriptions can include visual elements such as images or GIFs. These images and GIFs are also included in card import and export data.
+Card descriptions can include text with Markdown formatting, checkboxes, and visual elements such as images or GIFs. These images and GIFs are also included in card import and export data.
 
 Customize card properties
 -------------------------
@@ -79,9 +79,8 @@ When you share a link to a card within Mattermost, the card details are automati
 Receive updates
 ---------------
 
-When you create a card, you automatically follow it. When changes are made to the card, you'll get a message notification with details of the changes.
 
-You can @mention someone on a card to add them as a follower. This can be a card you've created or someone else's card. Lastly, you can also follow cards manually using the **Follow** option on the top-right corner of a card. To unfollow a card, select **Following**.
+When you create a card, you automatically follow it. You can @mention someone on a card to add them as a follower. This can be a card you've created or someone else's card. Lastly, you can also follow cards manually using the **Follow** option on the top-right corner of a card. To unfollow a card, select **Following**.
 
 When updates are made to a card you're following, you'll receive a Direct Message from the boards bot with a summary of the change (e.g. Bob changed status from **In progress** to **Done**) and a link to the card for more detailed information.
 

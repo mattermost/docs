@@ -23,14 +23,14 @@ Templates provide you with a predefined structure so that you can get started qu
 Board templates 
 ---------------
 
-Board templates include:
+Standard board templates include:
 
 * **Content Calendar**: Plan and organize your content creation and publication schedule.
 * **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later. 
 * **Personal Goals**: Categorize and plan your personal goals.
 * **Personal Tasks**: Organize your life and track your personal tasks.
 * **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
-* **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
+* **Roadmap**: Plan your roadmap and manage your releases more efficiently.
 * **Empty Board**: If none of those boards fit your use case, you can use a blank template and customize it as needed.
 
 Editing board templates
@@ -48,9 +48,9 @@ If none of the available templates suit your requirements, you can create your o
 Share a template
 ----------------
 
-If you'd like to re-use a board, you can export it and then import the archive file in the channel of your choosing.
+If you'd like to re-use a board as a template, you can export it and then import the archive file in the channel of your choosing.
 
-To do this, select the **...** in the toolbar at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the channel where you'd like to add the exported board. Select the gear icon next to your profile avatar, and choose **Import archive**. The board you created will be added to this channel.
+To do this, select the **...** in the toolbar at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the channel where you'd like to add the exported board. Select the Gear icon next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
 
 Card templates
 --------------
