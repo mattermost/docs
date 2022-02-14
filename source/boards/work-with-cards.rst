@@ -54,7 +54,10 @@ Work with property types
 Card badges
 -----------
 
-Card badges are a quick way to view card details without opening up a card. To add them, select **Properties > Comments and Description**. Icons related to the card description and comments will be displayed. The comment icon displays a number indicating how many comments have been added to a card. When a new comment is added, that number is updated. Select either icon to open the card and view the details.
+Card badges are a quick way to view card details without opening up a card. To add them, select **Properties > Comments and Description**. Icons related to the card description, comments, and checkboxes will be displayed on cards with the respective content. Open the card to view the details.
+- The description icon indicates that a card has a text description.
+- The comment icon displays a number indicating how many comments have been added to a card. When a new comment is added, that number is updated.
+- The checkbox icon displays the number of items checked off relative to the total number of checkboxes within the card. When an item is checked off, the icon is automatically updated.
 
 Rename a card property
 ----------------------
