@@ -28,7 +28,7 @@ Board templates include:
 * **Content Calendar**: Plan and organize your content creation and publication schedule.
 * **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later. 
 * **Personal Goals**: Categorize and plan your personal goals.
-* **Personal Tasks**: Personal Tasks are sorted by status (To Do, Doing, Done) but do not have a date view.
+* **Personal Tasks**: Organize your life and track your personal tasks.
 * **Project Tasks**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
 * **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
 * **Empty Board**: If none of those boards fit your use case, you can use a blank template and customize it as needed.
