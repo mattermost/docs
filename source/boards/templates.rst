@@ -40,6 +40,18 @@ You can rename all of the fields provided, hide them, delete them, and change th
 
 To create a board template select **+ Add Board**, then select **+ New template**. To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
 
+Create a new template
+~~~~~~~~~~~~~~~~~~~~~
+
+If none of the available templates suit your requirements, you can create your own using the **Empty Board** option. Note that boards (and templates) are channel-specific so whichever channel you create your board in, is where you'll find it.
+
+Share a template
+----------------
+
+If you'd like to re-use a board, you can export it and then import the archive file in the channel of your choosing.
+
+To do this, select the **...** in the toolbar at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the channel where you'd like to add the exported board. Select the gear icon next to your profile avatar, and choose **Import archive**. The board you created will be added to this channel.
+
 Card templates
 --------------
 
