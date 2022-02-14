@@ -26,6 +26,7 @@ Latest Mattermost Cloud releases:
  - The post menu is now only rendered on the root post on hover over.
  - Updated a library used for storing drafts and other data in browser storage.
  - Updated Playbooks version to 1.24.1.
+ - Update Boards version to 0.14.0.
  - Enabled performance telemetry tracking for production deployments not running in developer mode. This telemetry tracking is disabled when telemetry is toggled off.
 
 #### Performance
