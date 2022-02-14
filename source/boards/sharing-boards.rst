@@ -32,7 +32,7 @@ Select **Regenerate Token** if you want to invalidate all the previously shared 
 Import and export a board
 -------------------------
 
-You can share a board with other teams by exporting it, sending the archived file, and having them import it. The exported and imported board archives include card image attachments.
+You can share a board with other channels or teams by exporting it, sending the archived file, and having them import it. The exported and imported board archives include card image attachments.
 
 From v6.4, the archive format is changing with a new .boardarchive extension and all new exports will only be in this format. 
 
