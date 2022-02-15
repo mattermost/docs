@@ -41,4 +41,6 @@ To do this, select the **...** in the toolbar at the top of the board. Then sele
 
 From v6.4, the archive format is changing with a new ``.boardarchive`` extension and all new exports will only be in this format. 
 
-Please note: The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.
+.. note::
+
+  The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.
