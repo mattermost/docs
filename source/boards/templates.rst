@@ -31,7 +31,6 @@ Standard board templates include:
 * **Personal Tasks**: Organize your life and track your personal tasks.
 * **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
 * **Roadmap**: Plan your roadmap and manage your releases more efficiently.
-* **Empty Board**: If none of those boards fit your use case, you can use a blank template and customize it as needed.
 
 Editing board templates
 ~~~~~~~~~~~~~~~~~~~~~~~
