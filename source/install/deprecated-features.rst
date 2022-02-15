@@ -16,7 +16,7 @@ Removed features by Mattermost version
 Mattermost Server v6.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- 'Legacy Command Line Tools <https://docs.mattermost.com/manage/command-line-tools.html>`__. Most commands have been replaced by `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`_ and new commands have been added over the last few months, making this tool a full and robust replacement.
+- `Legacy Command Line Tools <https://docs.mattermost.com/manage/command-line-tools.html>`__. Most commands have been replaced by `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`_ and new commands have been added over the last few months, making this tool a full and robust replacement.
 - `Slack Import via the web app <https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app>`_. The Slack import tool accessible via the Team Setting menu is being replaced by the mmetl tool that is much more comprehensive for the types of data it can assist in uploading.
 - MySQL versions below 5.7.12. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached `EOL in February 2021 <https://www.mysql.com/support/eol-notice.html>`_.
 - Elasticsearch 5 and 6. `Versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020 <https://www.elastic.co/support/eol>`_. Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
