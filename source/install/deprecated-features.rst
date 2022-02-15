@@ -78,7 +78,7 @@ Mattermost Server v5.0.0
 - All API v3 endpoints removed. API v3 endpoints are no longer supported as of Mattermost v4.6 release on January 16th, 2018, and are replaced by API v4 endpoints which were released on July 16th, 2017. See `https://api.mattermost.com <https://api.mattermost.com>`_ to learn more.
 - Desktop Notification Duration in Account Settings removed due to inconsistencies on various browsers and operating systems.
 - An unused “ExtraUpdateAt” field removed from the channel model.
- - ``platform`` binary renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, also renamed from platform to mattermost.
+- ``platform`` binary renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, also renamed from platform to mattermost.
 - Slash commands configured to receive a GET request now have the payload encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly.
 - A new ``config.json`` setting to whitelist types of protocols for auto-linking added.
 - A new ``config.json`` setting to disable the `permanent APIv4 delete team parameter <https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput>`_ added. The setting is off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Admin can enable the API v4 endpoint from the ``config.json`` file.
@@ -92,9 +92,11 @@ Mattermost Server v4.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 - System Console settings in **Files > Images**, including:
+  
   - Image preview height and width
   - Profile picture height and width
   - Image thumbnail height and width
+
 - Font setting in **Account Settings > Display**
 - Teammate Name Display setting moved to the System Console
 
@@ -103,6 +105,7 @@ Mattermost Server v3.8.0
 
 - Old CLI tool (replaced by `an upgraded CLI tool <https://docs.mattermost.com/administration/command-line-tools.html>`_)
 - APIv3 endpoints:
+  
   - “GET at /channels/more” (replaced by “/channels/more/{offset}/{limit}”)
   - “POST at /channels/update_last_viewed_at” (replaced by “/channels/view”)
   - “POST at /channels/set_last_viewed_at” (replaced by “/channels/view”)
