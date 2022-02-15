@@ -18,39 +18,17 @@ Work with Cards
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Our templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include a **Status** and **Priority** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
+Our templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include an **Estimated Hours** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
 
-The default name for a new property is the name of the property type (e.g. **Date**, **URL**) and properties are automatically added to the filter list at the top of the board. You can use this to toggle which properties you see displayed on each card preview. 
+Card descriptions
+-----------------
 
-To rename a property field, open up a card and select the property name. Enter the new name in the field provided. The change is saved immediately and applied across all cards.
-
-Mention people
---------------
-
-You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/messaging/mentioning-teammates.html>`__ the same way you would in Channels. The team member you mention will receive a Direct Message notification from the Boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
-
-Share card previews
--------------------
-
-When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
-
-Receive updates
----------------
-
-When you create a card, you automatically follow it. When changes are made to the card, you'll get a message notification with details of the changes.
-
-You can @mention someone on a card to add them as a follower. This can be a card you've created or someone else's card. Lastly, you can also follow cards manually using the **Follow** option on the top-right corner of a card. To unfollow a card, select **Following**.
-
-When updates are made to a card you're following, you'll receive a Direct Message from the boards bot with a summary of the change (e.g. Bob changed status from **In progress** to **Done**) and a link to the card for more detailed information.
-
-.. note::
-
-  You won't get a notification of your own changes made to a card, even if you're following that card.
+Card descriptions can include text with Markdown formatting, checkboxes, and visual elements such as images or GIFs. These images and GIFs are also included in card import and export data.
 
 Customize card properties
 -------------------------
 
-Cards can contain different data fields depending on the purpose of the board. For example, in a **Roadmap** board, cards include a **Type** field where you can add categories such as **Bug**, **Triage**, etc. In a **Task** board, cards include **Status** and **Priority** fields instead.
+Cards can contain different data fields depending on the purpose of the board. For example, in a **Roadmap** board, cards include a **Type** field where you can add categories such as **Bug**, **Triage**, etc. In a **Task** board, cards include the **Estimated Hours** field instead.
 
 Add and manage properties
 -------------------------
@@ -69,9 +47,46 @@ Work with property types
 * **Checkboxes** are useful for agenda items that are regularly revisited in weekly sprint or grooming meetings.
 * **Multi-select** allows you to create badges to indicate things like status.
 * **Numbers** are useful to capture metrics such as task sizing or effort estimates.
-* **Person** provides a quick way to capture user assignments.
+* **Person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
 * **URL** can be used to provide a link to a pull request or relevant website.
 * **Created time/Created by/Last updated time/Last updated by** are good ways order tasks in order of recency.
+
+Card badges
+-----------
+
+Card badges are a quick way to view card details without opening up a card. To add them, select **Properties > Comments and Description**. Icons related to the card description, comments, and checkboxes will be displayed on cards with the respective content. Open the card to view the details.
+
+- The description icon indicates that a card has a text description.
+- The comment icon displays a number indicating how many comments have been added to a card. When a new comment is added, that number is updated.
+- The checkbox icon displays the number of items checked off relative to the total number of checkboxes within the card. When an item is checked off, the icon is automatically updated.
+
+Rename a card property
+----------------------
+
+The default name for a new property is the name of the property type (e.g. **Date**, **URL**) and properties are automatically added to the filter list at the top of the board. You can use this to toggle which properties you see displayed on each card preview.
+
+To rename a property field, open up a card and select the property name. Enter the new name in the field provided. The change is saved immediately and applied across all cards.
+
+Mention people
+--------------
+
+You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/messaging/mentioning-teammates.html>`__ the same way you would in Channels. The team member you mention will receive a Direct Message notification from the Boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
+
+Share card previews
+-------------------
+
+When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
+
+Receive updates
+---------------
+
+When you create a card, you automatically follow it. You can @mention someone on a card to add them as a follower. This can be a card you've created or someone else's card. Lastly, you can also follow cards manually using the **Follow** option on the top-right corner of a card. To unfollow a card, select **Following**.
+
+When updates are made to a card you're following, you'll receive a Direct Message from the boards bot with a summary of the change (e.g. Bob changed status from **In progress** to **Done**) and a link to the card for more detailed information.
+
+.. note::
+
+  You won't get a notification of your own changes made to a card, even if you're following that card.
 
 Calculations
 ------------
