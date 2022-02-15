@@ -24,6 +24,7 @@ Mattermost Server v6.0.0
 - `DisableLegacyMFAEndpoint <https://docs.mattermost.com/administration/config-settings.html#disable-legacy-mfa-api-endpoint>`_ configuration setting.
 - `Experimental Timezone <https://docs.mattermost.com/administration/config-settings.html#timezone>`_ configuration setting.
 - All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access custom, collapsible channel categories among many other channel organization features. The settings being deprecated include:
+  
   - `EnableLegacySidebar <https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar>`_
   - `ExperimentalTownSquareIsReadOnly <https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental>`_
   - `ExperimentalHideTownSquareinLHS <https://docs.mattermost.com/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental>`_
@@ -31,6 +32,7 @@ Mattermost Server v6.0.0
   - `CloseUnusedDirectMessages <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_
   - `ExperimentalChannelOrganization <https://docs.mattermost.com/administration/config-settings.html#sidebar-organization>`_
   - `ExperimentalChannelSidebarOrganization <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features>`_
+
 - `All configuration settings previously marked as “Deprecated” <https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings>`_.
 - Changes to mattermost-server/model for naming consistency.
 
