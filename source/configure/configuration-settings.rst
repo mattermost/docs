@@ -806,7 +806,7 @@ Enable Document Search by Content
 
 |all-plans| |self-hosted|
 
-Enable users to search the contents of documents attached to messages. Mattermost self-hosted deployments include support for PDF, PPTX, DOCX, ODT, HTML, and plain text documents. Improved server performance during PDF extraction is available through the installation of a third-party dependency. Additional file support for RTF, DOC, and PAGES documents is available through the installation of third-party dependencies. 
+Enable users to search the contents of documents attached to messages. Mattermost self-hosted deployments include support for PDF, PPTX, DOCX, ODT, HTML, and plain text documents. Improved server performance during PDF extraction and additional file support for RTF, DOC, and PAGES documents is available through the installation of third-party dependencies. 
 
 **True**: Documents are searchable by their content.  
 
