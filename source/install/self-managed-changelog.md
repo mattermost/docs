@@ -28,7 +28,7 @@ Mattermost v6.4.0 contains low severity level security fixes. [Upgrading](https:
 
 #### Boards Updates
  - Redesigned the Boards template selector to help users find the best template for projects.
- - Board archives now support images. All image attachments on cards will be included the next time a board archive is exported and imported.
+ - Board archives now support images. All image attachments on cards will be included the next time a board archive is exported and imported. The archive format is changing with a new ``.boardarchive`` extension and all-new exports will only be in this format.
  - Added card badges to indicate the type of content in a card, such as the description, comments, and checklists, without needing to open the card.
  - The entire text on URL properties is now clickable, so users can easily open links from a card without needing to click on a small link icon.
  - GIF file types are now supported as image attachments in card descriptions.
