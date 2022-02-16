@@ -18,27 +18,38 @@ Templates
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Templates provide you with a predefined structure so that you can get started quickly. Alternatively, you can create your own board and card templates.
+Templates provide you with a predefined structure so that you can get started quickly. Alternatively, you can create your own board and card templates. When you create a new board, select each template's name to preview it and make sure it suits your requirements.
 
 Board templates 
 ---------------
 
-Board templates include:
+Standard board templates include:
 
-* **Meeting Notes**: Meeting notes use default types (Ad Hoc, Standup, Weekly Sync) and can be sorted by type or table view. 
-* **New board template**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
-* **Personal Goals**: Personal Goals are sorted by status (To Do, Doing, Done) and can be viewed by date.
-* **Personal Tasks**: Personal Tasks are sorted by status (To Do, Doing, Done) but do not have a date view.
-* **Project Tasks**: This template includes statuses (Next Up, In Progress, Completed, Archived) and priority (High, Medium, Low).
-* **Roadmap**: This template allows you to filter using Bugs, By Sprint, By Status, Epics, Tasks, Tasks by Status. It also includes a priority filter.
-* **Empty Board**: If none of those boards fit your use case, you can use a blank template and customize it as needed.
+* **Content Calendar**: Plan and organize your content creation and publication schedule.
+* **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later. 
+* **Personal Goals**: Categorize and plan your personal goals.
+* **Personal Tasks**: Organize your life and track your personal tasks.
+* **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
+* **Roadmap**: Plan your roadmap and manage your releases more efficiently.
 
 Editing board templates
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 You can rename all of the fields provided, hide them, delete them, and change the default color.
 
-To create a board template select **+ Add Board**, then select **+ New template**. To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
+To create a custom board template select **+ Add Board**, then select **+ New template**. To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
+
+Create a new template
+~~~~~~~~~~~~~~~~~~~~~
+
+If none of the available templates suit your requirements, you can create your own using the **Empty Board** option. Note that boards (and templates) are channel-specific so whichever channel you create your board in, is where you'll find it.
+
+Share a template
+----------------
+
+If you'd like to re-use a board as a template, you can export it and then import the archive file in the channel of your choosing.
+
+To do this, select the **...** in the toolbar at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the channel where you'd like to add the exported board. Select the Gear icon next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
 
 Card templates
 --------------
