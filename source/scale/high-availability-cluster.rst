@@ -314,7 +314,7 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 
 8. **tcp_keepalives_interval**: 1
 
-9. If you have beefy server with more than 32 CPUs, please set these options to utilize more CPU for your server:
+9. If you have high-spec server with more than 32 CPUs, please set these options to utilize more CPU for your server:
 
   **max_worker_processes**: 12
   
