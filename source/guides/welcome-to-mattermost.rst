@@ -1,10 +1,10 @@
 Welcome to Mattermost
 =====================
 
-Introductory welcome message to end users here
+If it's your first day as a Mattermost user, we recommend starting here to learn how to access and customize your workspace, familiarize yourself with the concept of teams and user roles, and learn how to get started with Channels, Boards, and Playbooks.
 
-Access Mattermost
-------------------
+Access your Mattermost workspace
+--------------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -17,7 +17,26 @@ Access Mattermost
 * :doc:`Sign in to Mattermost </welcome/sign-in>` - Sign into a Mattermost workspace to connect with your teammates. 
 * :doc:`Keyboard shortcuts </welcome/keyboard-shortcuts>` - Learn keyboard shortcuts for Mattermost product navigation and accessibility.
 * :doc:`Log out of Mattermost </welcome/log-out>` - Log out of all of your teams on the server.
-   
+
+Mattermost basics
+-----------------
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   About teams </welcome/about-teams>
+   About user roles </welcome/about-user-roles>
+   Get started with Mattermost Channels </messaging/get-started-mattermost-channels>
+   Get started with Mattermost Playbooks
+   Get started with Mattermost Boards
+
+* :doc:`About teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates can collaborate in Mattermost.
+* :doc:`About user roles </welcome/about-user-roles>` - Learn more about the six types of user roles and their permissions in Mattermost.
+* :doc:`Get started with Mattermost Channels </channels/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
+* :doc:`Get started with Mattermost Playbooks </playbooks/get-started-mattermost-playbooks>` - Learn how to X using Mattermost Playbooks.
+* :doc:`Get started with Mattermost Boards <boards/get-started-mattermost-boards>` - Learn how to X using Mattermost Boards.
+
 Customize your Mattermost experience
 ------------------------------------
    
@@ -37,21 +56,3 @@ Customize your Mattermost experience
 * :doc:`Customize your Desktop App experience </welcome/customize-desktop-app-experience>` - Learn about additional options in the Desktop App you can customize.
 * :doc:`Manage Desktop app server connections </welcome/manage-desktop-app-server-connections>` - Learn how to connect to multiple Mattermost servers using the Mattermost Desktop App. 
    
-Mattermost basics
------------------
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   About teams </welcome/about-teams>
-   About user roles </welcome/about-user-roles>
-   Get started with Mattermost Channels </messaging/get-started-mattermost-channels>
-   Get started with Mattermost Playbooks
-   Get started with Mattermost Boards
-
-* :doc:`About teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates can collaborate in Mattermost.
-* :doc:`About user roles </welcome/about-user-roles>` - Learn more about the six types of user roles and their permissions in Mattermost.
-* :doc:`Get started with Mattermost Channels </messaging/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
-* :doc:`Get started with Mattermost Playbooks </playbooks/get-started-mattermost-playbooks>` - Learn how to X using Mattermost Playbooks.
-* :doc:`Get started with Mattermost Boards <boards/get-started-mattermost-boards>` - Learn how to X using Mattermost Boards.

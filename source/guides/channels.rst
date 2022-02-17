@@ -1,30 +1,55 @@
 Mattermost Channels
 ===================
 
-Mattermost Channels provide 1:1 and group messaging that features integrated voice/video conferencing, file, image, and link sharing, rich markdown formatting, and a fully searchable message history. Keep all of your team’s communications in one place and remove information and organizational silos.
+Mattermost Channels provide 1:1 and group messaging that features integrated voice/video conferencing, file, image, and link sharing, rich markdown formatting, and a fully searchable message history. 
+
+With Mattermost Channels, you can keep all of your team's communications in one place and remove information and organizational silos. This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
 
 .. image:: ../images/Channels_Hero.png
 
-This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
+Channels, Messages, and Conversations
+-------------------------------------
 
-Access Your Workspace
----------------------
+Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. See the `Channel Types </channels/create-channels.html>`__ documentation for more information.
+
+Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
+
+Work with Channels
+------------------
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Log In to Your Workspace </messaging/signing-in>
-   About Teams, Channels, and Messages </messaging/about-teams-channels-messages>
-   Navigate Between Teams </messaging/navigating-between-teams>
-   Log Out of Mattermost </messaging/logging-out>
+   Channel Types </channels/channel-types>
+   Create Channels </channels/create-channels>
+   Rename a Channel </channels/rename-channels>
+   Channel Naming Conventions </channels/channel-naming-conventions>
+   Convert Public Channels to Private </channels/convert-public-channels>
+   Join and Leave Channels </channels/join-leave-channels>
+   Manage Channel Members </channels/manage-channel-members>
+   Find Channels </channels/find-channels>
+   Navigate Between Channels </channels/find-channels>
+   Favorite Channels </channels/favorite-channels>
+   Customize Your Channel Sidebar </channels/customize-channel-sidebar>
+   Archive and Unarchive Channels </channels/archive-unarchive-channels>
+   Set Channel Preferences </channels/set-channel-preferences>
 
-* :doc:`Log In to Your Workspace </messaging/signing-in>` - Sign into a Mattermost server and navigate teams, channels, and messages to connect with your teammates. 
-* :doc:`About Teams, Channels, and Messages </messaging/about-teams-channels-messages>` - Find out how to access all of the Mattermost Channels capabilities.
-* :doc:`Navigate Between Teams </messaging/navigating-between-teams>` - Learn how to navigate between Mattermost Teams.
-* :doc:`Log Out of Mattermost </messaging/logging-out>` - Look here if you get stuck trying to log out.
+* :doc:`Channel Types </channels/channel-types>`
+* :doc:`Create Channels </channels/create-channels>`
+* :doc:`Rename a Channel </channels/rename-channels>`
+* :doc:`Channel Naming Conventions </channels/channel-naming-conventions>`
+* :doc:`Convert Public Channels to Private </channels/convert-public-channels>`
+* :doc:`Join and Leave Channels </channels/join-leave-channels>`
+* :doc:`Manage Channel Members </channels/manage-channel-members>`
+* :doc:`Find Channels </channels/find-channels>`
+* :doc:`Navigate Between Channels </channels/navigate-between-channels>`
+* :doc:`Favorite Channels </channels/favorite-channels>`
+* :doc:`Customize Your Channel Sidebar </channels/customize-your-channel-sidebar>`
+* :doc:`Archive and Unarchive Channels </channels/archive-unarchive-channels>`
+* :doc:`Set Channel Preferences </channels/set-channel-preferences>`
 
-Work With Messages
+Work with Messages
 ------------------
 .. toctree::
    :maxdepth: 1
@@ -55,6 +80,27 @@ Work With Messages
 * :doc:`Save Messages </messaging/saving-messages>` - Save messages to follow up later.
 * :doc:`Pin Messages </messaging/pinning-messages>` - Pin useful messages to the top of a channel.
 * :doc:`Search </messaging/searching-in-mattermost>` - Use search to find messages, replies, and contents of files across Mattermost Channels.
+
+Work with Conversations
+-----------------------
+
+
+Customize your channels workspace
+---------------------------------
+
+
+Keyboard accessibility
+----------------------
+
+
+Extend Mattermost Channels functionality
+-----------------------------------------
+
+
+
+
+
+
 
 Manage Teams, Channels, and Members
 -----------------------------------

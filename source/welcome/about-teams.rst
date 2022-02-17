@@ -38,7 +38,7 @@ However, some Mattermost customers prefer multiple team deployments for the foll
 Team sidebar
 ------------
 
-If you belong to more than one team, a team sidebar displays to the left of the channel sidebar. You can drag teams to reorder them in the sidebar. You can also use keyboard shortcuts to navigate between teams.
+If you belong to more than one team, a team sidebar displays to the left of the channel sidebar. Drag teams to reorder them in the sidebar. You can also use keyboard shortcuts to navigate between teams.
 
 .. image:: ../images/team-sidebar.png
   :alt: Navigating between teams in Mattermost.
