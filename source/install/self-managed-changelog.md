@@ -12,7 +12,10 @@ Latest Mattermost Releases:
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2022-02-16**
+- **v6.4.1, release < >**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
+- **v6.4.0, released 2022-02-16**
+  - Original 6.4.0 release
 
 Mattermost v6.4.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -100,6 +103,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.4, release < >**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
+  - Removed the collapsed sidebar menu from DOM on sidebar collapse and expand.
+  - The right-hand side dot menu of root posts are now rendered to DOM only when hovered upon.
+  - The re-rendering of the ``CustomStatusEmoji`` component is now avoided on post hover.
+  - The re-rendering of the ``TextBox`` links component below post box is now avoided while typing.
+  - Reduced the number of post components listening for keyboard and mouse events.
 - **v6.3.3, released 2022-02-03**
   - Mattermost v6.3.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
@@ -197,6 +207,8 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.2.4, release < >**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
 - **v6.2.3, released 2022-02-03**
   - Mattermost v6.2.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
