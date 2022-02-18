@@ -105,7 +105,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 - **v6.3.4, release < >**
   - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
-  - Removed the collapsed sidebar menu from DOM on sidebar collapse and expand.
   - The right-hand side dot menu of root posts are now rendered to DOM only when hovered upon.
   - The re-rendering of the ``CustomStatusEmoji`` component is now avoided on post hover.
   - The re-rendering of the ``TextBox`` links component below post box is now avoided while typing.
