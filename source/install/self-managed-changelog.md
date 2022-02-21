@@ -100,7 +100,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **v6.3.4, release < >**
+- **v6.3.4, released 2022-02-21**
   - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
   - The right-hand side dot menu of root posts are now rendered to DOM only when hovered upon.
   - The re-rendering of the ``CustomStatusEmoji`` component is now avoided on post hover.
@@ -203,7 +203,7 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v6.2.4, release < >**
+- **v6.2.4, released 2022-02-21**
   - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
 - **v6.2.3, released 2022-02-03**
   - Mattermost v6.2.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
