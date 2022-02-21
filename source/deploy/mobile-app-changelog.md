@@ -29,6 +29,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with Collapsed Reply Threads where link previews disappeared when a thread was created.
 
 ### Known Issues
+ - Some files (such as PDFs) fail to open/download on v1.49.0 [MM-41968](https://mattermost.atlassian.net/browse/MM-41968).
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issues with Collapsed Reply Threads (Beta) feature:
