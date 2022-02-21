@@ -12,10 +12,7 @@ Latest Mattermost Releases:
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-- **v6.4.1, release < >**
-  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
-- **v6.4.0, released 2022-02-16**
-  - Original 6.4.0 release
+**Release Day: 2022-02-16**
 
 Mattermost v6.4.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
