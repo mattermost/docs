@@ -27,7 +27,7 @@ Latest Mattermost Cloud releases:
  - Removed extra telemetry events that were tracked during page loads.
  - Enterprise features are now highlighted after starting an Enterprise Trial.
  - Added a feature card slide for Playbooks.
- - Removed ``admin-advisor`` bot ability to notify admins about missing support email.
+ - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
 
 #### Performance
  - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
