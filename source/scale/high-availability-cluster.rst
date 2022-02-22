@@ -326,7 +326,7 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 
 10. **autovacuum_max_workers**: 4
 
-11. **maintenance_work_mem**: 1GB (Reduce this to 512MB if your server has lower than 32GB of RAM)
+11. **maintenance_work_mem**: 1GB (reduce this to 512MB if your server has less than 32GB of RAM)
 
 12. **autovacuum_vacuum_cost_limit**: 500
 
