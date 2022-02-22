@@ -4,12 +4,57 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-03-02](#release-2022-03-02)
 - [Release 2022-02-16](#release-2022-02-16)
 - [Release 2022-02-10](#release-2022-02-10)
 - [Release 2022-02-03](#release-2022-02-03)
 - [Release 2022-01-27](#release-2022-01-27)
 - [Release 2022-01-25](#release-2022-01-25)
-- [Release 2022-01-11](#release-2022-01-11)
+
+## Release 2022-03-02
+
+### Highlights
+
+#### Custom User Groups
+ - Added the APIs and app, store, and authorization methods to create and delete custom groups and to add and remove custom group members.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a use case onboarding checklist which is displayed to first admin users. Also added a status that displays whether the first admin onboarding has been completed and added an in-app migration to determine whether existing installations completed the first admin onboarding.
+ - Added a new tutorial tour tip component to use a new React-tippy library.
+ - Added a new plugin registry entry to append menu items to the user guide dropdown.
+ - Removed extra telemetry events that were tracked during page loads.
+ - Enterprise features are now highlighted after starting an Enterprise Trial.
+ - Added a feature card slide for Playbooks.
+ - Removed ``admin-advisor`` bot ability to notify admins about missing support email.
+
+#### Performance
+ - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
+ - Fixed a memory leak caused by the post textbox.
+
+#### Administration
+ - The ``mattermost version`` CLI command has been deprecated and does not interact with the database anymore. Therefore the database version is not going to be printed. Also, the database migrations are not going to be applied with the version sub command. A new db migrate sub command is added to enable administrators to trigger migrations.
+
+#### Bug Fixes
+ - Fixed an issue with clicking images in the slack message attachment.
+ - Fixed an issue that caused Rudder to create their cookies on the top-level domain when Mattermost was installed on a subdomain.
+ - Fixed an issue where **Total Posts** and **Active Users With Posts** graphs did not render in **System Console** > **Team Statistics**.
+ - Fixed an issue where telemetry events attempted to get sent even when blocked by an ad blocker.
+ - Fixed an issue where the channel switcher stopped showing search results when the first few characters were removed.
+ - Fixed an issue where notification sounds didn't trigger on the Desktop App.
+ - Fixed an issue where users got multiple sounds for a single notification on the Linux Desktop App.
+ - Fixed an issue where posting frequent messages to followed threads caused jittery typing.
+ - Fixed an issue where the **Edition and License** page displayed a prompt to upgrade to Enterprise for servers that already had an E20 license.
+ - Fixed an issue where the **Add to channel** permission was available in private channels for non-admin users.
+
+### Known Issues
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-02-16
 
