@@ -12,7 +12,11 @@ Latest Mattermost Releases:
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2022-02-16**
+- **v6.4.1, release day TBD**
+  - Investigating an issue with a "Failed to apply database migrations" error when updating from 6.3 to 6.4 ([link to GitHub Issue](https://github.com/mattermost/mattermost-server/issues/19602)).
+  - Fixing a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
+- **v6.4.0, released 2022-02-16**
+  - Original 6.4.0 release
 
 Mattermost v6.4.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
@@ -83,7 +87,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``msgpack/msgpack`` and ``pako`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - Inline images display as broken in Safari 13 & 14 and Catalina [MM-41657](https://mattermost.atlassian.net/browse/MM-41657).
+ - The "Welcome to Mattermost" onboarding screen displays to existing users after upgrade to v6.4.0 [MM-41945](https://mattermost.atlassian.net/browse/MM-41945).
  - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -100,6 +104,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.4, released 2022-02-21**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
+  - The right-hand side dot menu of root posts are now rendered to DOM only when hovered upon.
+  - The re-rendering of the ``CustomStatusEmoji`` component is now avoided on post hover.
+  - The re-rendering of the ``TextBox`` links component below post box is now avoided while typing.
+  - Reduced the number of post components listening for keyboard and mouse events.
 - **v6.3.3, released 2022-02-03**
   - Mattermost v6.3.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
@@ -197,6 +207,8 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.2.4, released 2022-02-21**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
 - **v6.2.3, released 2022-02-03**
   - Mattermost v6.2.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
@@ -526,7 +538,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The deprecated settings include:
 
    - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
-   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental) (Please see [channel moderation settings](https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels), which allow you to set any channel as read-only, including Town Square) 
    - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
    - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
    - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
