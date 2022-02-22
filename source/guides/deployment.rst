@@ -219,12 +219,14 @@ Changelogs
     Mattermost Cloud </install/cloud-changelog>
     Mobile Apps </deploy/mobile-app-changelog>
     Desktop Apps </install/desktop-app-changelog>
+    Deprecated Features </install/deprecated-features>
 
 * :doc:`Mattermost Self-Hosted </install/self-managed-changelog>`
 * :doc:`Mattermost Legacy Self-Hosted </install/legacy-self-hosted-changelog>`
 * :doc:`Mattermost Cloud </install/cloud-changelog>`
 * :doc:`Mobile Apps </deploy/mobile-app-changelog>`
 * :doc:`Desktop Apps </install/desktop-app-changelog>`
+* :doc:`Deprecated Features </install/deprecated-features>`
 
 Other Resources
 ---------------
