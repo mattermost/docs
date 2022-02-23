@@ -82,7 +82,6 @@ Mattermost undergoes extensive penetration testing, security reviews, and `secur
 - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts <https://docs.mattermost.com/configure/configuration-settings.html#public-link-salt>`__.
 - Optionally add `advanced passwords requirements <https://docs.mattermost.com/configure/configuration-settings.html#password-requirements>`__ with minimum numbers of symbols, numbers, lower, and uppercase letters.
 - Optionally restrict `creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (Mattermost Enterprise and Mattermost Professional).
-- Optionally restrict `sending team invites to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (Mattermost Enterprise and Mattermost Professional).
 
 Security Updates
 -----------------

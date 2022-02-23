@@ -28,7 +28,7 @@ Copyright and Licensing of ``/mattermost-server`` open source code
 Other considerations
 ~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost has a default `Terms of Use <https://docs.mattermost.com/administration/config-settings.html#terms-of-service-link>`__ agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default `Terms of Use <https://docs.mattermost.com/configure/configuration-settings.html#terms-of-use-link>`__ agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
