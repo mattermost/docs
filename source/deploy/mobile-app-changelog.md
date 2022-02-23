@@ -19,7 +19,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Bug Fixes
 
-#### All apps
+#### Android specific
  - Fixed an issue on Android where document files did not open.
 
 ## 1.49.0 Release
