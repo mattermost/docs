@@ -22,7 +22,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_1_new_app.png
 
-5. Enter **General Settings** for the application, including **App name** and **App logo** (optional). It's recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one `from our page <https://mattermost.org/brand-guidelines/>`__.
+5. Enter **General Settings** for the application, including **App name** and **App logo** (optional). It's recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one `from our page <https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines>`__.
 
 	.. image:: ../../source/images/okta_2_general_settings.png
 

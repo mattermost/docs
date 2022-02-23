@@ -20,7 +20,7 @@ Create a OneLogin Connection App for Mattermost SSO
 
   .. image:: ../../source/images/onelogin_1_new_app.png
 
-  d. In the **Display Name** field, enter a name for the application, then optionally upload an app icon. You can use the Mattermost logo for the icon, which you can download from `Branding Guidelines <https://mattermost.org/brand-guidelines/>`__ page.
+  d. In the **Display Name** field, enter a name for the application, then optionally upload an app icon. You can use the Mattermost logo for the icon, which you can download from `Branding Guidelines <https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines>`__ page.
 
   .. image:: ../../source/images/onelogin_2_basic_configuration.png
 

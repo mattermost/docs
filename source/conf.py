@@ -198,7 +198,7 @@ redirects = {
     "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
     "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
-    "install/prod-windows-2012": "https://forum.mattermost.org/t/production-install-on-windows-server/12232",
+    "install/prod-windows-2012": "https://forum.mattermost.com/t/production-install-on-windows-server/12232",
     "administration/telemetry": "https://docs.mattermost.com/manage/telemetry.html",
     "administration/changelog": "https://docs.mattermost.com/install/self-managed-changelog.html",
     "administration/command-line-tools": "https://docs.mattermost.com/manage/command-line-tools.html",
@@ -498,7 +498,7 @@ redirects = {
     "administration/config-settings#smtp-email-server": 
         "https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server",
     "administration/config-settings.html#session-lengths": "https://docs.mattermost.com/configure/configuration-settings.html#session-lengths",
-    "configure/config-ssl-http2-apache2": "https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
+    "configure/config-ssl-http2-apache2": "https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
     "configure/configuration-settings#enable-latex-rendering": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
     "configure/configuration-settings#terms-of-service-link": 
@@ -731,7 +731,7 @@ redirects = {
     "install/outbound-proxy": "https://docs.mattermost.com/configure/using-outbound-proxy.html",
     "install/i18n": "https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
     "install/config-apache2": "https://docs.mattermost.com/configure/configuring-apache2.html",
-    "install/prod-docker": "https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
+    "install/prod-docker": "https://forum.mattermost.com/t/deploy-mattermost-on-docker/12231",
     "install/enterprise-install-upgrade#changing-a-license-key": "https://docs.mattermost.com/upgrade/installing-license-key.html",
     "integrations/jira": "https://mattermost.gitbook.io/plugin-jira/",
     "integrations/zoom": "https://mattermost.gitbook.io/plugin-zoom/",
@@ -824,7 +824,7 @@ redirects = {
     "focalboard/installing-boards": "https://docs.mattermost.com/guides/boards.html",
     "about/license-and-subscription#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": 
         "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
-    "configure/configuring-apache2.html": "https://forum.mattermost.org/c/docs/37"
+    "configure/configuring-apache2.html": "https://forum.mattermost.com/c/docs/37"
 }
 
 # The master toctree document.

@@ -77,7 +77,7 @@ When Mattermost is deployed outside a firewall, Admins must be aware that their 
 Mattermost undergoes extensive penetration testing, security reviews, and `security updates <https://mattermost.com/security-updates/>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided:
 
 - Limit communications to specific users, private channels, or team-wide public channels.
-- Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.org", etc."
+- Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.com", etc."
 - Choose whether to restrict or enable `cross-origin requests <https://docs.mattermost.com/configure/configuration-settings.html#enable-cross-origin-requests-from>`__.
 - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts <https://docs.mattermost.com/configure/configuration-settings.html#public-link-salt>`__.
 - Optionally add `advanced passwords requirements <https://docs.mattermost.com/configure/configuration-settings.html#password-requirements>`__ with minimum numbers of symbols, numbers, lower, and uppercase letters.

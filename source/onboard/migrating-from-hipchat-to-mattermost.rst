@@ -8,7 +8,7 @@ Step 1:  Set up your Mattermost Instance
 
 - `Go to Mattermost download page <https://mattermost.com/deploy/>`__ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
 
-Questions? Please visit our `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for help. 
+Questions? Please visit our `troubleshooting forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ for help. 
 
 Step 2:  Export your data from HipChat Data Center or HipChat Server
 ---------------------------------------------------------------------
@@ -41,7 +41,7 @@ Step 3: Import your data into Mattermost
 
 2. You are also encouraged to use the HipChat import tool created by Herzum: https://github.com/herzum/HC2MM.
 
-If you’re interested in contributing or testing any community contributed solution, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
+If you’re interested in contributing or testing any community contributed solution, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.com.
 
 3. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`__ for partner recommendations for your region to assist in your import. 
   

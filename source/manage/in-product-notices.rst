@@ -82,4 +82,4 @@ The Admin Advisor notices are run on a schedule based on specific triggers.
 - Selecting **Acknowledge** in the Admin Advisor banner closes the advisory and does not send your details to Mattermost.
 - Closing the notification bot removes the conversation from your Direct Messages list.
 
-We welcome your feedback on this feature. Please visit `our forum <https://forum.mattermost.org/t/new-admin-advisor-notifications-in-mattermost-v5-26/10263/6>`_ if you have any questions or feedback.
+We welcome your feedback on this feature. Please visit `our forum <https://forum.mattermost.com/t/new-admin-advisor-notifications-in-mattermost-v5-26/10263/6>`_ if you have any questions or feedback.
