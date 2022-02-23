@@ -21,31 +21,27 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added a use case onboarding checklist which is displayed to first admin users. Also added a status that displays whether the first admin onboarding has been completed and added an in-app migration to determine whether existing installations completed the first admin onboarding.
- - Added a new tutorial tour tip component to use a new React-tippy library.
+ - Added a new onboarding experience for first System Admin user.
+ - Added new tutorial tours for Channels, Boards and Playbooks to help orient first time users.
  - Added a new plugin registry entry to append menu items to the user guide dropdown.
  - Removed extra telemetry events that were tracked during page loads.
- - Enterprise features are now highlighted after starting an Enterprise Trial.
  - Added a feature card slide for Playbooks.
  - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
+ - Inactive server email notifications will now be sent to users occasionally if they haven't interacted with their server for 100 hours or more.
 
 #### Performance
  - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
  - Fixed a memory leak caused by the post textbox.
 
-#### Administration
- - The ``mattermost version`` CLI command has been deprecated and does not interact with the database anymore. Therefore the database version is not going to be printed. Also, the database migrations are not going to be applied with the version sub command. A new db migrate sub command is added to enable administrators to trigger migrations.
-
 #### Bug Fixes
- - Fixed an issue with clicking images in the slack message attachment.
+ - Fixed an issue with clicking images in the message attachment.
  - Fixed an issue that caused Rudder to create their cookies on the top-level domain when Mattermost was installed on a subdomain.
  - Fixed an issue where **Total Posts** and **Active Users With Posts** graphs did not render in **System Console** > **Team Statistics**.
  - Fixed an issue where telemetry events attempted to get sent even when blocked by an ad blocker.
  - Fixed an issue where the channel switcher stopped showing search results when the first few characters were removed.
- - Fixed an issue where notification sounds didn't trigger on the Desktop App.
+ - Fixed an issue where notification sounds didn't trigger on the Desktop App for new accounts.
  - Fixed an issue where users got multiple sounds for a single notification on the Linux Desktop App.
  - Fixed an issue where posting frequent messages to followed threads caused jittery typing.
- - Fixed an issue where the **Edition and License** page displayed a prompt to upgrade to Enterprise for servers that already had an E20 license.
  - Fixed an issue where the **Add to channel** permission was available in private channels for non-admin users.
 
 ### Known Issues
