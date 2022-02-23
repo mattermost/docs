@@ -38,6 +38,8 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v6.2.3, the default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to   |
 |                                                    | ``true``.                                                                                                                                                        |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Mattermost Boards requires ``EnableReliableWebSockets`` setting to be manually set to ``true`` for real-time updates to appear correctly.                        |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v6.1                                               | Please refer to `the schema migration analysis <https://gist.github.com/streamer45/997b726a86b5d2a624ac2af435a66086>`_ when upgrading to v6.1.                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -53,6 +55,8 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | In v6.1.3, the default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to   |
 |                                                    | ``true``.                                                                                                                                                        |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Mattermost Boards requires ``EnableReliableWebSockets`` setting to be manually set to ``true`` for real-time updates to appear correctly.                        |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v6.0                                               | Longer migration times can be expected.                                                                                                                          |
 |                                                    |                                                                                                                                                                  |
@@ -116,6 +120,8 @@ Important Upgrade Notes
 |                                                    |  - Support for left-hand side-specific bot icons was dropped.                                                                                                    |
 |                                                    |  - Removed a deprecated "Backend" field from the plugin manifest.                                                                                                |
 |                                                    |  - Converted the "Executables" field in the plugin manifest to a map.                                                                                            |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Mattermost Boards requires ``EnableReliableWebSockets`` setting to be manually set to ``true`` for real-time updates to appear correctly.                        |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.38.0                                            | The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config reload`` command, which |
 |                                                    | must be run to apply configuration changes after they are made on disk. This change improves configuration performance and robustness.                           |
