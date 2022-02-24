@@ -84,7 +84,7 @@ With Unix socket
 
   .. code-block:: bash
 
-     sudo -u postgres createuser mattermost
+     sudo -u postgres createdb -O mattermost mattermostdb
 
 - Setup the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf``:
 
@@ -98,7 +98,7 @@ With Unix socket
 
   .. code-block:: bash
 
-     sudo -u mattermost psql --dbname=mattermostdb --username=mattermost
+     sudo -u mattermost psql --dbname=mattermostdb
 
 
 Configuring Mattermost
