@@ -22,6 +22,7 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Added a new onboarding experience for first System Admin user.
+ - Added a dashboard that displays the health of the server.
  - Added new tutorial tours for Channels, Boards and Playbooks to help orient first time users.
  - Added a new plugin registry entry to append menu items to the user guide dropdown.
  - Removed extra telemetry events that were tracked during page loads.
