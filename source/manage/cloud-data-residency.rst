@@ -7,7 +7,7 @@ Mattermost Cloud resides in the ``aws-us-east-1`` region, located in Virginia, U
 - Boards and cards
 - Playbooks and event runs
 - User accounts and profiles 
-- Files (ex., images, docs, etc.) uploaded to the Mattermost Service
+- Files (e.g., images, docs, etc.) uploaded to the Mattermost Service
 - Plugin, app- or bot-generated messages and files
 - Data used to measure user count, usage, and revenue
 - Data used for analytics and to measure quality of service, ex. sanitized logs
