@@ -1,5 +1,5 @@
-Favorite Channels
-=================
+Mark Channels as Favorites
+==========================
 
 |all-plans| |cloud| |self-hosted|
 

@@ -22,3 +22,11 @@ To see all available public channels you can join, select the **+** icon at the 
 
 .. tip:: 
     Select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, as well as all direct and group messages.
+
+Revisit recent channels
+-----------------------
+
+Use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
+
+- Select the left arrow to go back one page. 
+- Select the right arrow to go forward one page.

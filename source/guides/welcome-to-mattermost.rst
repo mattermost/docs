@@ -26,12 +26,16 @@ Mattermost basics
    :hidden:
 
    About teams </welcome/about-teams>
+   Team settings </welcome/team-settings>
+   Team keyboard shortcuts </welcome/team-keyboard-shortcuts>
    About user roles </welcome/about-user-roles>
    Get started with Mattermost Channels </messaging/get-started-mattermost-channels>
    Get started with Mattermost Playbooks
    Get started with Mattermost Boards
 
-* :doc:`About teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates can collaborate in Mattermost.
+* :doc:`About teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates collaborate together in Mattermost.
+* :doc:`Team settings </welcome/team-settings>` - Configure team names, descriptions, icons, and invitation settings.
+* :doc:`Team keyboard shortcuts </welcome/team-keyboard-shortcuts>` Make a more efficient use of your keyboard with keyboard shortcuts.
 * :doc:`About user roles </welcome/about-user-roles>` - Learn more about the six types of user roles and their permissions in Mattermost.
 * :doc:`Get started with Mattermost Channels </channels/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
 * :doc:`Get started with Mattermost Playbooks </playbooks/get-started-mattermost-playbooks>` - Learn how to X using Mattermost Playbooks.
@@ -55,4 +59,14 @@ Customize your Mattermost experience
 * :doc:`Customize your Mattermost theme </welcome/customize-your-theme>` - Customize your Mattermost user interface to suit your preferences. 
 * :doc:`Customize your Desktop App experience </welcome/customize-desktop-app-experience>` - Learn about additional options in the Desktop App you can customize.
 * :doc:`Manage Desktop app server connections </welcome/manage-desktop-app-server-connections>` - Learn how to connect to multiple Mattermost servers using the Mattermost Desktop App. 
-   
+
+Interface changes in v6.0
+--------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   What changed in Mattermost v6.0? </welcome/what-changed-in-v60>
+
+* :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the many ways we've improved your Mattermost experience from v6.0.

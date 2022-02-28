@@ -86,4 +86,6 @@ Direct Message channels with deactivated users are hidden in users' sidebars, bu
 
 Mattermost is designed as a system-of-record, so there isn't an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
 
-Note that AD/LDAP user accounts cannot be deactivated from Mattermost; they must be deactivated from your Active Directory.
+.. note::
+
+    AD/LDAP user accounts can't be deactivated from Mattermost; they must be deactivated from your Active Directory.
