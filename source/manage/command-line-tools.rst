@@ -2381,8 +2381,7 @@ mattermost version
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl system version <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-system-version>`__.
-
+   From Mattermost v6.0, this command has been replaced with the mmctl command `mmctl system version <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-system-version>`__. From Mattermost v6.5, this CLI command no longer interacts with the database and been deprecated in favor of the ``mattermost db migrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-migrate>)__ CLI command.
 
 Description
     Displays Mattermost version information.
