@@ -28,7 +28,6 @@ Latest Mattermost Cloud releases:
  - Removed extra telemetry events that were tracked during page loads.
  - Added a feature card slide for Playbooks.
  - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
- - Inactive server email notifications will now be sent to users occasionally if they haven't interacted with their server for 100 hours or more.
 
 #### Performance
  - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
@@ -47,7 +46,6 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - Pressing Enter opens the onboarding tutorial tip [MM-42188](https://mattermost.atlassian.net/browse/MM-42188).
- - Inactive Server Email Notification sends duplicate emails of every admin to original admin [MM-42121](https://mattermost.atlassian.net/browse/MM-42121).
  - Some Permission checkboxes have been moved to different categories in the System Console [MM-42020](https://mattermost.atlassian.net/browse/MM-42020).
  - Unread channels names and sidebar item render on top of channel options menu [MM-41952](https://mattermost.atlassian.net/browse/MM-41952).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
