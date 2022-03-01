@@ -24,7 +24,7 @@ Now that the system is up to date, you can start installing the components that 
 3. Remove the service file: ``sudo rm /lib/systemd/system/mattermost.service``
 4. Reload systemctl: ``systemctl daemon-reload``
   
-**Warnings: Commands are irreversible**
+**Warning: The following commands are permanent and irreversible:**
  
 1. *Permanently* remove the Mattermost directory: ``sudo rm -rf /opt/mattermost``
 2. *Permanently* delete database: ``DROP DATABASE mattermost;``
