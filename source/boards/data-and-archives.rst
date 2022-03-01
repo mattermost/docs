@@ -6,7 +6,7 @@ You can import data from other tools to use with Boards. [Contribute code](https
 Import from Asana
 -----------------
 
-This node app converts an Asana JSON archive into a ``.focalboard`` archive.
+This node app converts an Asana JSON archive into a ``.boardarchive`` file.
 
 1. Log into your Asana account.
 2. Select the drop-down menu next to the Asana board's name. Then select **Export/Print > JSON**. This will create an archive file which you'll use in Boards.
