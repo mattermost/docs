@@ -45,7 +45,7 @@ Currently, the script imports all cards from a single board, including their sec
 Import from Notion
 ------------------
 
-This node app converts a Notion CSV and markdown export into a ``.focalboard`` archive.
+This node app converts a Notion CSV and markdown export into a ``.boardarchive`` file.
 
 1. From a Notion Board, open the **...** menu at the top right corner of the board.
 2. Select `Export` and pick `Markdown & CSV` as the export format.
@@ -70,7 +70,7 @@ The Notion export format does not preserve property types, so the script current
 Import from Jira
 ----------------
 
-This node app converts a Jira ``.XML`` export into a ``.focalboard`` archive.
+This node app converts a Jira ``.XML`` export into a ``.boardarchive`` file.
 
 1. Open Jira advanced search, and search for all the items to export.
 2. Select **Export > Export XML.
@@ -101,7 +101,7 @@ The following aren't currently imported:
 Import from Trello
 ------------------
 
-This node app converts a Trello ``.json`` archive into a ``.focalboard`` archive.
+This node app converts a Trello ``.json`` archive into a ``.boardarchive`` file.
 
 1. From the Trello Board Menu, select **...Show Menu**.
 2. Select **More > Print and Export > Export to JSON**.
@@ -124,7 +124,7 @@ Currently, the script imports all cards from a single board, including their lis
 Import from Todoist
 -------------------
 
-This node app converts a Todoist ``.json`` archive into a ``.focalboard`` archive.
+This node app converts a Todoist ``.json`` archive into a ``.boardarchive`` file.
 
 1. Visit the open source Todoist data export service at https://darekkay.com/todoist-export/.
 2. From the **Options** menu, select **Export As > JSON (all data)**.
