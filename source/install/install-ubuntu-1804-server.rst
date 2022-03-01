@@ -27,4 +27,4 @@ Now that the system is up to date, you can start installing the components that 
 **Warning: The following commands are permanent and irreversible:**
  
 1. *Permanently* remove the Mattermost directory: ``sudo rm -rf /opt/mattermost``
-2. *Permanently* delete database: ``DROP DATABASE mattermost;``
+2. *Permanently* delete the database: ``DROP DATABASE mattermost;``
