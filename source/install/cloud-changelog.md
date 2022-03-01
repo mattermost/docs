@@ -46,8 +46,11 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the **Add to channel** permission was available in private channels for non-admin users.
 
 ### Known Issues
+ - Pressing Enter opens the onboarding tutorial tip [MM-42188](https://mattermost.atlassian.net/browse/MM-42188).
+ - Inactive Server Email Notification sends duplicate emails of every admin to original admin [MM-42121](https://mattermost.atlassian.net/browse/MM-42121).
+ - Some Permission checkboxes have been moved to different categories in the System Console [MM-42020](https://mattermost.atlassian.net/browse/MM-42020).
+ - Unread channels names and sidebar item render on top of channel options menu [MM-41952](https://mattermost.atlassian.net/browse/MM-41952).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
- - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
