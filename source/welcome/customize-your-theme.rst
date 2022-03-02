@@ -46,7 +46,7 @@ In Mattermost, select **Import theme colors from Slack**, then paste the color v
 Custom themes
 -------------
 
-Select **Custom Theme**, then expand the `Sidebar Styles <https://docs.mattermost.com/help/settings/theme-colors.html#sidebar-styles>`__, `Center Channel Styles <https://docs.mattermost.com/help/settings/theme-colors.html#center-channel-styles>`__, and `Link and Button Styles <https://docs.mattermost.com/help/settings/theme-colors.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
+Select **Custom Theme**, then expand the `Sidebar Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#sidebar-styles>`__, `Center Channel Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#center-channel-styles>`__, and `Link and Button Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
 
 Your custom theme changes are applied in Mattermost as you make them. Select **Save** to confirm your theme changes. Discard your changes by exiting the **Display Settings** window and selecting **Yes, Discard**.
 

@@ -30,12 +30,12 @@ What can you customize?
 
 You can customize your sidebar in the following ways:
 
-- `Create custom categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#creating-custom-categories>`_.
-- `Group and order channels into your categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#organizing-channels-in-categories>`_.
-- `Mute and unmute entire categories <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#muting-and-unmuting-categories>`_.
-- `Sort channels in each category <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#sorting-channels-in-categories>`_ manually, alphabetically, or by recent activity.
-- `Filter your sidebar to view unread channels only <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#group-unread-channels-separately>`_, or choose to group unread messages into an **Unreads** category.
-- `Manage your Direct Messages <https://docs.mattermost.com/help/getting-started/organizing-your-sidebar.html#managing-direct-messages>`_ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
+- `Create custom categories <#create-custom-categories>`__.
+- `Group and order channels into your categories <#organize-channels-in-categories>`__.
+- `Mute and unmute entire categories <#mute-and-unmute-categories>`__.
+- `Sort channels in each category <#sort-channels-in-categories>`__ manually, alphabetically, or by recent activity.
+- `Filter your sidebar to view unread channels only <#group-unread-channels-separately>`__, or choose to group unread messages into an **Unreads** category.
+- `Manage your Direct Messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
 
   .. image:: ../images/channel_sidebar_updates.gif
 

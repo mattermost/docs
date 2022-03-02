@@ -24,14 +24,14 @@ Work with channels
    Channel Types </channels/channel-types> 
    Create Channels </channels/create-channels>
    Channel Naming Conventions </channels/channel-naming-conventions> 
-   Rename a Channel </channels/rename-channels> - 
-   Convert Public Channels to Private </channels/convert-public-channels> - 
+   Rename a Channel </channels/rename-channels>
+   Convert Public Channels to Private </channels/convert-public-channels>
    Join and Leave Channels </channels/join-leave-channels>
    Manage Channel Members </channels/manage-channel-members>
-   Find Channels </channels/find-channels> - 
+   Find Channels </channels/find-channels> 
    Navigate Between Channels </channels/find-channels>
    Mark Channels as Favorites </channels/favorite-channels>
-   Customize Your Channel Sidebar </channels/customize-channel-sidebar>
+   Customize Your Channel Sidebar </channels/customize-your-channel-sidebar>
    Archive and Unarchive Channels </channels/archive-unarchive-channels>
    Set Channel Preferences </channels/set-channel-preferences>
 

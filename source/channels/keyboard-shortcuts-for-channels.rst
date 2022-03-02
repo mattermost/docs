@@ -13,7 +13,7 @@ Navigation shortcuts for Mattermost Channels
 The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 
 .. note::
-  See our `Keyboard Accessibility <https://docs.mattermost.com/messaging/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen reader users.
+  See our `Keyboard Accessibility in Channels <https://docs.mattermost.com/channels/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen reader users.
 
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
 | On Windows                 | On Mac                    | Description                                                                      |

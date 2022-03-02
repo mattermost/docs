@@ -18,7 +18,7 @@ Customize your Desktop App experience
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-In addition to your Profile settings and `Mattermost Settings <https://docs.mattermost.com/messaging/managing-account-settings.html>`__, the Mattermost Desktop App provides additional options to customize your experience.
+In addition to your Profile settings and `Mattermost Settings <https://docs.mattermost.com/channels/channels-settings.html>`__, the Mattermost Desktop App provides additional options to customize your experience.
 
 The options appear on the **Settings** page, available on Windows and Linux from **... > File > Settings**, or on macOS from **Mattermost > Preferences**.
 

@@ -18,7 +18,7 @@ Channel Naming Conventions
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The importance of organizing your conversations increases as Channels spreads to thousands of users. When you're choosing channel names, consider the following recommendations:
+The importance of organizing your conversations increases as Channels spreads to thousands of users. When you're choosing channel names or :doc:`renaming existing channels </channels/rename-channels>`, consider the following recommendations:
 
 Basic structure
 ---------------
@@ -102,7 +102,7 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 3. Header links
 
-When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the `channel header <https://docs.mattermost.com/messaging/channel-settings.html#channel-header>`__.
+When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the channel header. See our `documentation <https://docs.mattermost.com/channels/set-channel-preferences.html#channel-header>`__ to learn more about working with channel headers. 
 
 When it's time to meet, your team can click the conference link to connect.
 

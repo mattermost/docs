@@ -18,7 +18,7 @@ Set Channel Preferences
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-For each channel you're a member of, you can set notification preferences as well as the channel's header, purpose, and name. See the `Create Channels <channels/create-channels.html>`__ documentation for details on `renaming channels </channels/create-channels.html#rename-a-channel>`__ and `channel naming convention recommendations </channels/create-channels.html#channel-naming-conventions>`__.
+For each channel you're a member of, you can set notification preferences as well as the channel's header, purpose, and name. See the documentation for details on :doc:`renaming channels <channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
 
 .. image:: ../images/channel-preferences.png
     :alt: Select the channel name at the top of the screen to set preferences for each channel you belong to.
@@ -50,26 +50,26 @@ To unmute the channel, select the channel name again to access the drop-down men
 Ignore mentions for @channel, @here and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, you'll receive mention notifications every time someone on your team `mentions an entire channel <https://docs.mattermost.com/messaging/mentioning-teammates.html>`__ using ``@channel``, ``@all``, or ``@here``. 
+By default, you'll receive mention notifications every time someone on your team `mentions an entire channel <https://docs.mattermost.com/channels/mention-people.html>`__ using ``@channel``, ``@all``, or ``@here``. 
 
 To stop receiving mention notifications, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted. 
 
 Send desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, your `desktop notification preferences <https://docs.mattermost.com/messaging/manage-channels-settings.html#desktop-notifications>`__ configured in **Settings** apply to all channels. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`__.
+By default, your `desktop notification preferences <https://docs.mattermost.com/channels/channels-settings.html#notifications>`__ configured in **Settings** apply to all channels. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`__.
 
 To customize desktop notifications per channel, edit **Send desktop notifications**, choose one of the following options, then select **Save**:
 
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Notification option**   | **You'll receive...**                                                                                                                                                                                                                            |
 +===========================+==================================================================================================================================================================================================================================================+
-| **Global default (None)** | Desktop notifications based on your `Settings <https://docs.mattermost.com/messaging/manage-channels-settings.html>`__ configuration.                                                                                                            |
+| **Global default (None)** | Desktop notifications based on your `Settings <https://docs.mattermost.com/channels/channels-settings.html>`__ configuration.                                                                                                                    |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **For all activity**      | Desktop notifications for every new message.                                                                                                                                                                                                     |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Only for mentions**     | - Desktop notifications for @mentions only.                                                                                                                                                                                                      |
-|                           | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
+|                           | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.          |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Never**                 | No desktop notifications.                                                                                                                                                                                                                        |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -84,12 +84,12 @@ To customize mobile push notifications per channel, edit **Send mobile push noti
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Notification option**      | **You'll receive...**                                                                                                                                                                                                                            |
 +==============================+==================================================================================================================================================================================================================================================+
-| **Global default (Mention)** | Mobile notifications based on your `Settings <https://docs.mattermost.com/messaging/manage-channels-settings.html>`__ configuration.                                                                                                             |
+| **Global default (Mention)** | Mobile notifications based on your `Settings <https://docs.mattermost.com/channels/channels-settings.html>`__ configuration.                                                                                                                     |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **For all activity**         | Mobile notifications for every new message.                                                                                                                                                                                                      |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Only for mentions**        | - Mobile notifications for @mentions only.                                                                                                                                                                                                       |
-|                              | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.  |
+|                              | - When you've `enabled Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.          |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Never**                    | No desktop notifications.                                                                                                                                                                                                                        |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -30,7 +30,7 @@ Enable Collapsed Reply Threads (Beta)
 
 Your System Admin must enable the Collapsed Reply Threads beta feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta>`__ documentation for details. Before enabling, please ensure you are well versed with the known issues, particularly relating to database resource requirements and server performance implications. 
 
-Once this feature is enabled in the System Console, you can `enable this feature for your account <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ by going to **Settings > Display > Collapsed Reply Threads (Beta)**.
+Once this feature is enabled in the System Console, you can `enable this feature for your account <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ by going to **Settings > Display > Collapsed Reply Threads (Beta)**.
 
 Known issues
 ------------
@@ -63,7 +63,7 @@ Replies are collapsed under the first message of a thread. To reply to a thread,
 Follow threads and messages
 ---------------------------
 
-You can follow particular messages and threads so that any reply activity triggers `notifications <https://docs.mattermost.com/messaging/managing-account-settings.html#notifications>`__. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or by accessing the **More Actions** menu.
+You can follow particular messages and threads so that any reply activity triggers `notifications <https://docs.mattermost.com/channels/channels-settings.html#notifications>`__. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or by accessing the **More Actions** menu.
 
 .. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies.

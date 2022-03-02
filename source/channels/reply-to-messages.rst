@@ -18,7 +18,7 @@ Reply to Messages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. You can `edit and delete messages <send-messages.html#edit-or-delete-messages>`__ after you've sent them.
+Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. You can `edit and delete messages <https://docs.mattermost.com/channels/send-messages.html#edit-or-delete-messages>`__ after you've sent them.
 
 .. |reply-arrow| image:: ../images/reply-arrow.png
   :alt: Reply icon.
@@ -48,5 +48,4 @@ To shrink the right-hand sidebar to its original width, select the same **Collap
 Work with Collapsed Reply Threads
 ---------------------------------
 
-An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost self-hosted customers from v5.37. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more.
-
+An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost self-hosted customers from v5.37. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels.html#organize-conversations>`__ documentation to learn more.
