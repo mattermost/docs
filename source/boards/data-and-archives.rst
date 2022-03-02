@@ -73,7 +73,7 @@ Import from Jira
 This node app converts a Jira ``.XML`` export into a ``.boardarchive`` file.
 
 1. Open Jira advanced search, and search for all the items to export.
-2. Select **Export > Export XML.
+2. Select **Export > Export XML**.
 3. Save the generated file locally, e.g. to ``jira_export.xml``.
 4. Open a terminal window on your local machine and navigate to ``focalboard/webapp``.
 5. Run ``npm install``.
