@@ -90,7 +90,9 @@ Latest Mattermost Releases:
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added a new ``EnableClientPerformanceDebugging`` config setting.
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added a new ``EnableClientPerformanceDebugging`` setting to enable some options for users on the web app to enable and disable different parts of the web app to help us isolate performance issues while debugging.
+   - Added a new ``EnableCustomGroups`` setting to create and delete custom groups and to add and remove custom group members.
 
 #### API Changes
  - Added new endpoint GET /api/v4/users/invalid_emails. This endpoint will return a list of non-guest users who are not in your whitelisted domains on a server where EnableOpenServer is false.
