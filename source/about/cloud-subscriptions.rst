@@ -48,7 +48,7 @@ What happens when my 14-day trial period ends?
 
 At the end of the 14-day trial, you will lose access to your workspace until you have added your payment information to continue using your Mattermost Cloud workspace.
 
-If you have not added your payment information within 30 days, we will delete your Cloud workspace permanently and you will lose any associated data.
+If you do not add your payment information within 30 days, we will delete your Cloud workspace permanently and you will lose any associated data.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
