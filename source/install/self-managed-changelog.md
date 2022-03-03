@@ -12,12 +12,17 @@ Latest Mattermost Releases:
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2022-02-16**
+- **v6.4.1, released 2022-02-25**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
+- **v6.4.0, released 2022-02-16**
+  - Original 6.4.0 release
 
 Mattermost v6.4.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
 
 ### Important Upgrade Notes
- - A new schema migration system has been introduced, so we strongly recommend backing up the database before updating the server to this version. The new migration system will run through all existing migrations to record them to a new table. This will only happen for the first run in order to migrate the application to the new system. The table where migration information is stored is called ``db_migrations``. Additionally, a ``db_lock`` table is used to prevent multiple installations from running migrations in parallel. Any downtime depends on how many records the database has and whether there are missing migrations in the schema. In case of an error while applying the migrations, please check this table first. If you encounter an issue please file [an Issue](https://github.com/mattermost/mattermost-server/issues) by including the failing migration name, database driver/version, and the server logs.
+ - A new schema migration system has been introduced, so we strongly recommend backing up the database before updating the server to this version. The new migration system will run through all existing migrations to record them to a new table. This will only happen for the first run in order to migrate the application to the new system. The table where migration information is stored is called ``db_migrations``. Additionally, a ``db_lock`` table is used to prevent multiple installations from running migrations in parallel. Any downtime depends on how many records the database has and whether there are missing migrations in the schema. In case of an error while applying the migrations, please check this table first. If you encounter an issue please file [an Issue](https://github.com/mattermost/mattermost-server/issues) by including the failing migration name, database driver/version, and the server logs. 
+ - On MySQL and MariaDB, if you encounter an error "Failed to apply database migrations" when upgrading to v6.4.0, it means that there is a mismatch between the table collation and the default database collation. You can manually fix this by changing the database collation with ``ALTER DATABASE <YOUR_DB_NAME> COLLATE = 'utf8mb4_general_ci',``. Then do the server upgrade again and the migration will be successful. 
+ - It has been commonly observed on MySQL 8+ systems to have an error ``Error 1267: Illegal mix of collations`` when upgrading. This is typically caused by the database and the tables having different collations. If you get this error, please change the collations to have the same value with, for example, ``ALTER DATABASE <db_name> COLLATE = '<collation>'``.                     
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -28,7 +33,7 @@ Mattermost v6.4.0 contains low severity level security fixes. [Upgrading](https:
 
 #### Boards Updates
  - Redesigned the Boards template selector to help users find the best template for projects.
- - Board archives now support images. All image attachments on cards will be included the next time a board archive is exported and imported.
+ - Board archives now support images. All image attachments on cards will be included the next time a board archive is exported and imported. The archive format is changing with a new ``.boardarchive`` extension and all new exports will only be in this format.
  - Added card badges to indicate the type of content in a card, such as the description, comments, and checklists, without needing to open the card.
  - The entire text on URL properties is now clickable, so users can easily open links from a card without needing to click on a small link icon.
  - GIF file types are now supported as image attachments in card descriptions.
@@ -83,7 +88,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``msgpack/msgpack`` and ``pako`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - Inline images display as broken in Safari 13 & 14 and Catalina [MM-41657](https://mattermost.atlassian.net/browse/MM-41657).
+ - The "Welcome to Mattermost" onboarding screen displays to existing users after upgrade to v6.4.0 [MM-41945](https://mattermost.atlassian.net/browse/MM-41945).
  - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
@@ -100,6 +105,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.4, released 2022-02-21**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
+  - The right-hand side dot menu of root posts are now rendered to DOM only when hovered upon.
+  - The re-rendering of the ``CustomStatusEmoji`` component is now avoided on post hover.
+  - The re-rendering of the ``TextBox`` links component below post box is now avoided while typing.
+  - Reduced the number of post components listening for keyboard and mouse events.
 - **v6.3.3, released 2022-02-03**
   - Mattermost v6.3.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
@@ -197,6 +208,8 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.2.4, released 2022-02-21**
+  - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
 - **v6.2.3, released 2022-02-03**
   - Mattermost v6.2.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.org/responsible-disclosure-policy/).
   - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
@@ -526,7 +539,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The deprecated settings include:
 
    - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
-   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental) (Please see [channel moderation settings](https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels), which allow you to set any channel as read-only, including Town Square) 
    - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
    - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
    - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)

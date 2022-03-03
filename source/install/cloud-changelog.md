@@ -4,12 +4,55 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-03-02](#release-2022-03-02)
 - [Release 2022-02-16](#release-2022-02-16)
 - [Release 2022-02-10](#release-2022-02-10)
 - [Release 2022-02-03](#release-2022-02-03)
 - [Release 2022-01-27](#release-2022-01-27)
 - [Release 2022-01-25](#release-2022-01-25)
-- [Release 2022-01-11](#release-2022-01-11)
+
+## Release 2022-03-02
+
+### Highlights
+
+#### Custom User Groups
+ - Added the APIs and app, store, and authorization methods to create and delete custom groups and to add and remove custom group members.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a new onboarding experience for first System Admin user.
+ - Added a dashboard that displays the health of the server.
+ - Added new tutorial tours for Channels, Boards and Playbooks to help orient first time users.
+ - Added a new plugin registry entry to append menu items to the user guide dropdown.
+ - Removed extra telemetry events that were tracked during page loads.
+ - Added a feature card slide for Playbooks.
+ - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
+
+#### Performance
+ - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
+ - Fixed a memory leak caused by the post textbox.
+
+#### Bug Fixes
+ - Fixed an issue with clicking images in the message attachment.
+ - Fixed an issue that caused Rudder to create their cookies on the top-level domain when Mattermost was installed on a subdomain.
+ - Fixed an issue where **Total Posts** and **Active Users With Posts** graphs did not render in **System Console** > **Team Statistics**.
+ - Fixed an issue where telemetry events attempted to get sent even when blocked by an ad blocker.
+ - Fixed an issue where the channel switcher stopped showing search results when the first few characters were removed.
+ - Fixed an issue where notification sounds didn't trigger on the Desktop App for new accounts.
+ - Fixed an issue where users got multiple sounds for a single notification on the Linux Desktop App.
+ - Fixed an issue where posting frequent messages to followed threads caused jittery typing.
+ - Fixed an issue where the **Add to channel** permission was available in private channels for non-admin users.
+
+### Known Issues
+ - Pressing Enter opens the onboarding tutorial tip [MM-42188](https://mattermost.atlassian.net/browse/MM-42188).
+ - Some Permission checkboxes have been moved to different categories in the System Console [MM-42020](https://mattermost.atlassian.net/browse/MM-42020).
+ - Unread channels names and sidebar item render on top of channel options menu [MM-41952](https://mattermost.atlassian.net/browse/MM-41952).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-02-16
 
