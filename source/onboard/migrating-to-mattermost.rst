@@ -202,16 +202,22 @@ Run this command to list the available imports:
 
     mmctl import list available
 
-Finally, run this command to process the import. Replace ``<IMPORT FILE NAME>`` with the name you got from the ``mmctl import list available`` command:
+Run this command to process the import. Replace ``<IMPORT FILE NAME>`` with the name you got from the ``mmctl import list available`` command:
 
 .. code:: bash
 
-    mmctl import process <IMPORT FILE NAME>    
+    mmctl import process <IMPORT FILE NAME>
+    
+Finally, run this command to view the status of the import process job. If the job status shows as ``pending``, then wait before running the command again. The ``--json`` flag is required to view the possible error message. Replace ``<JOB ID>`` with the id you got from the ``mmctl import list process`` command:
+
+.. code:: bash
+
+    mmctl import job show <JOB ID> --json
 
 Debugging Imports
 -----------------
 
-If you run into problems your best bet is to use the ``mattermost bulk import`` command, since the ``mmctl`` import process does not give you any debugging information, even in the Mattermost server logs.
+The ``mmctl import job show`` shows a detailed error message. If you run into problems which the error message does not help to resolve, your best bet is to use the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
 
 Migrating from Slack using the Mattermost Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
