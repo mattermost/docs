@@ -195,7 +195,7 @@ redirects = {
 "administration/user-provisioning.html":
         "https://docs.mattermost.com/onboard/user-provisioning-workflows.html",
 "administration/config-in-database.html#create-an-environment-file": 
-       "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for",
+       "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-creation-for",
 "administration/config-settings.html": 
         "https://docs.mattermost.com/configure/configuration-settings.html",  
 "administration/config-settings.html#aggregate-search-indexes":
@@ -203,7 +203,7 @@ redirects = {
 "administration/config-settings.html#allow-users-to-view-archived-channels-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#allow-users-to-view-archived-channels",
 "administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental":
-        "https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#autoclose-direct-messages-in-sidebar",
 "administration/config-settings.html#ad-ldap": 
         "https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap",
 "administration/config-in-database.html":   
@@ -223,7 +223,7 @@ redirects = {
 "administration/config-settings.html#enable-high-availability-mode":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode",
 "administration/config-settings.html#enable-legacy-sidebar":
-        "https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-legacy-sidebar",
 "administration/config-settings.html#enable-link-previews":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews",
 "administration/config-settings.html#enable-local-mode": 
@@ -231,15 +231,15 @@ redirects = {
 "administration/config-settings.html#enable-local-mode-socket-location": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location",   
 "administration/config-settings.html#enable-public-channel-renaming-for": 
-        "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-renaming-for",
 "administration/config-settings.html#enable-public-channel-creation-for": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for",
 "administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
-        "https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar",
 "administration/config-settings.html#environment":
         "https://docs.mattermost.com/configure/configuration-settings.html#environment-variables",
 "administration/config-settings.html#experimental-sidebar-features":
-        "https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#experimental-sidebar-features",
 "administration/config-settings.html#files": 
         "https://docs.mattermost.com/configure/configuration-settings.html#file-storage", 
 "administration/config-settings.html#forward-port-80-to-443":
@@ -267,9 +267,9 @@ redirects = {
 "administration/config-settings.html#openid-connect-other-settings":
         "https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings",
 "administration/config-settings.html#policy": 
-        "https://docs.mattermost.com/configure/configuration-settings.html#policy",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#policy",
 "administration/config-settings#post-edit-time-limit.html": 
-    "https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit",
+    "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#post-edit-time-limit",
 "administration/config-settings.html#push-notification-contents": 
         "https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents",  
 "administration/config-settings.html#rate-limiting": 
@@ -277,7 +277,7 @@ redirects = {
 "administration/config-settings.html#session-lengths": 
 	"https://docs.mattermost.com/configure/configuration-settings.html#session-lengths",
 "administration/config-settings.html#sidebar-organization":
-        "https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#sidebar-organization",
 "administration/config-settings#site-configuration.html":
         "https://docs.mattermost.com/configure/configuration-settings.html#site-configuration",
 "administration/config-settings.html#site-url":
@@ -289,11 +289,11 @@ redirects = {
 "administration/config-settings.html#teammate-name-display": 
         "https://docs.mattermost.com/configure/configuration-settings.html#teammate-name-display",
 "administration/config-settings.html#timezone": 
-        "https://docs.mattermost.com/configure/configuration-settings.html#timezone",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#timezone",
 "administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental":
-        "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar",
 "administration/config-settings.html#town-square-is-read-only-experimental":
-        "https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#town-square-is-read-only",
 "administration/config-settings.html#user-filter": 
         "https://docs.mattermost.com/configure/configuration-settings.html#user-filter",
 
