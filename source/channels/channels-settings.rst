@@ -219,6 +219,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - български - Bulgarian
 - Pусский - Russian
 - Yкраїнська - Ukrainian
+- فارسی - Persian
 - 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
