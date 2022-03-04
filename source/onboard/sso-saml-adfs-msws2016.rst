@@ -46,11 +46,11 @@ If you would like to set up encryption for your SAML connection, select **Browse
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_005.png
 
-6. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL** in the following format:``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
+6. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL** in the following format:``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_006.png
 
-7. On the **Configure Identifiers** screen, enter the **Relying party trust identifier**. This identifies the claims being requested. The **SAML 2.0 SSO service URL** format should be ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` matches your `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_. Then choose **Next**. 
+7. On the **Configure Identifiers** screen, enter the **Relying party trust identifier**. This identifies the claims being requested. The **SAML 2.0 SSO service URL** format should be ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` matches your `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`_. Then choose **Next**. 
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_007.png
 

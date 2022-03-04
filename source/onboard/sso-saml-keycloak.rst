@@ -113,7 +113,7 @@ Configure SAML for Mattermost
 
 .. image:: ../../source/images/keycloak_7_mattermost_request_signing.png
 
-6. Set attributes for the SAML Assertions, which will update user information in Mattermost. Attributes for email and username are required to match the values you configured in Keycloak in steps 9 and 10. See `documentation on SAML configuration settings <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`__ for more detail.
+6. Set attributes for the SAML Assertions, which will update user information in Mattermost. Attributes for email and username are required to match the values you configured in Keycloak in steps 9 and 10. See `documentation on SAML configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#saml>`__ for more detail.
 
     - **Email Attribute**: ``email``
     - **Username Attribute**:  ``username``
@@ -127,7 +127,7 @@ You’re done! If you’d like to confirm SAML SSO is successfully enabled, swit
 
 It's also recommended to post an announcement about how the migration will work for users.
 
-You may also configure SAML for Keycloak by editing ``config.json``. Before starting the Mattermost server, edit ``config.json`` to enable SAML based on `SAML configuration settings <http://docs.mattermost.com/administration/config-settings.html#saml-enterprise>`__. You must restart the Mattermost server for the changes to take effect.
+You may also configure SAML for Keycloak by editing ``config.json``. Before starting the Mattermost server, edit ``config.json`` to enable SAML based on `SAML configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#saml>`__. You must restart the Mattermost server for the changes to take effect.
 
 .. include:: sso-saml-ldapsync.rst
 
