@@ -24,26 +24,28 @@ Select an existing card to open it or create a new card.
 Description
 -----------
 
-The card description can be anything that 
+Use the description to provide context around the reason for the card. Cards are visible to anyone who can access the board, so if there's sensitive information it's best not to include it here. You can add links to external documentation, as well as at-mention teammates.
 
 Comments
 --------
 
+Comments are a helpful way to add additional information to a card, and comments are time and date stamped so they're easy to track. Comments are listed in descending order from most recent to oldest.
 
-How to save/enter a comment.
-Comments date/time stamped.
-What order are they in.
+To add a comment, select the **Comment** field. When you're finished, select **Save**.
 
 Properties
 ----------
 
-You can create properties for your cards that suit the way you're using them. If you're planning a project, you might want to have properties such as **Due date**, **Assigned to**, and **Priority**. Properties are displayed on the card when you open it, and you can also choose to display your cards based on their properties.
+You can create properties for your cards that suit the way you're using them. If you're planning a project, you might want to have properties such as **Due date**, **Assigned to**, and **Priority**. Properties are displayed on the card when you open it, and you can also choose to display your cards based on their properties, using filters.
 
 Properties can be renamed and deleted.
-
 
 Views
 -----
 
+View are a great way to assess your board from various angles. Some views are linear, while others are closer to Kanban style. Views with a more linear display, such as the task view, display less context but are easier to scroll through. Use a view such as **By Status** to see all the cards, presented in swimlanes, with more details, in the form of properties, displayed.
+
 Share
 -----
+
+Once you've created a board and cards, you can generate a link 
