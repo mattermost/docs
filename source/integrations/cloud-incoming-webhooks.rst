@@ -46,7 +46,7 @@ If you're running `cURL on Windows <https://curl.haxx.se/windows/>`__, ensure in
 
   curl -i -X POST -H "Content-Type: application/json" -d "{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}" http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`__ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__. The following payload gives an example webhook that uses additional parameters and formatting options:
+See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`__ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__. The following payload gives an example webhook that uses additional parameters and formatting options:
 
 .. code-block:: text
 
@@ -100,9 +100,9 @@ Tips and Best Practices
 Share Your Integration
 -----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://integrations.mattermost.com/>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://apps.mattermost.com/submit-an-integration/>`__ in our `app directory <https://apps.mattermost.com/submit-an-integration/>`__.
 
-The `app directory <https://integrations.mattermost.com/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization, and deployment to your private cloud or self-managed infrastructure.
+The `app directory <https://apps.mattermost.com/submit-an-integration/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization, and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------

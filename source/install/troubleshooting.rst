@@ -21,7 +21,7 @@ Depending on the type of error or problem you're experiencing, refer to the sect
 
 Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__.
 
-Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
+Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__.
 
 Important Notes
 ---------------
@@ -85,7 +85,7 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ can often be found and applied.
+You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ can often be found and applied.
 
 Connect to Another Server
 -------------------------
@@ -113,7 +113,7 @@ When opening a Support ticket, it's important that you provide us with as much i
 
 C.L.U.E.S. represents all of the information that can clarify your issue. With these details, we can begin searching for a cause, whether it's a simple configuration change or a product bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`__ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
+Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`__ and the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__.
 
 General Guidelines for Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
