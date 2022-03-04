@@ -24,7 +24,7 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Custom User Groups
+#### Custom User Groups (Beta)
  - Added the APIs and app, store, and authorization methods to create and delete custom groups and to add and remove custom group members.
 
 #### Playbook Updates
