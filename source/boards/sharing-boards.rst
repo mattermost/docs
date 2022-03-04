@@ -28,3 +28,16 @@ To share a board with others:
 Anyone with the link will be able to view the board.
 
 Select **Regenerate Token** if you want to invalidate all the previously shared links. Confirm the action to regenerate the token.
+
+Import and export a board
+-------------------------
+
+If you'd like to re-use a board, you can export it as an archive file, and then import the archive file in the channel of your choosing. Exported and imported board archives include card image attachments.
+
+To do this, select the **...** in the toolbar at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the channel where you'd like to add the exported board. Select the Gear icon next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
+
+From v6.4, the archive format is changing with a new ``.boardarchive`` extension and all new exports will only be in this format. 
+
+.. note::
+
+  The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.
