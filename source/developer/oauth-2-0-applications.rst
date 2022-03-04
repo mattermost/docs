@@ -25,8 +25,8 @@ OAuth 2.0 applications are off by default and can be enabled by the System Admin
 
 1. Log in to your Mattermost server as the System Administrator.
 2. Go to **System Console > Integrations > Integration Management**.
-3. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
-4. (Optional) If you'd like to allow external applications to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-webhooks-and-slash-commands-to-override-profile-picture-iconss>`__ to **True**.
+3. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/configure/configuration-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
+4. (Optional) If you'd like to allow external applications to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ to **True**.
 5. (Optional) If you'd like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set `Restrict managing integrations to Admins <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__ to **False**.
 
 Register an OAuth 2.0 Application

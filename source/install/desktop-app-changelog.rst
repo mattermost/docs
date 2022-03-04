@@ -55,7 +55,7 @@ Release v5.0
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
-**Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+**Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -138,7 +138,7 @@ Release v4.7
  - Fixed an issue where the window would flash on Windows and Linux when a new mention arrived regardless of the setting to turn it on/off.
  - Added desktop notifications for followed threads.
 - **v4.7.1, released 2021-08-03**
- - Mattermost v4.7.1 contains a medium level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+ - Mattermost v4.7.1 contains a medium level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
  - Added support to allow users to specify a different download location for Hunspell dictionaries.
  - Fixed an issue where the notification badge did not get cleared when reading a channel with unread messages until navigating away from the channel.
  - Fixed an issue where the top bar menu, and the minimize, maximize and close icons did not work on 4.7.0 on Windows 10 if GPU acceleration was disabled.
@@ -147,7 +147,7 @@ Release v4.7
 - **v4.7.0, released 2021-06-23**
  - Original v4.7.0 release
 
-**Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+**Note:** Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -313,7 +313,7 @@ Release v4.5
 
 - **v4.5.1, released 2020-07-13**
 
- - Mattermost v4.5.1 contains a high level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+ - Mattermost v4.5.1 contains a high level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 - **v4.5.0, released 2020-06-16**
 
@@ -409,7 +409,7 @@ Release v4.4
 
  - Original v4.4.0 release
 
-**Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+**Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Changes** 
 
@@ -483,7 +483,7 @@ Release v4.3
 
 - **v4.3.2, released 2019-11-29**
 
- - Mattermost v4.3.0 contains a low level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`_.
+ - Mattermost v4.3.0 contains a low level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
  - Fixed an issue where the app started into white screen after a system reboot on Windows. `MM-19649 <https://mattermost.atlassian.net/browse/MM-19649>`_
  - Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
  - Fixed an issue where users were unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
@@ -498,7 +498,7 @@ Release v4.3
 
  - Original v4.3.0 release
 
-**Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+**Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Change** 
 
@@ -612,7 +612,7 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
-- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/download/#mattermostApps>`_ is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`_.
+- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/download/#mattermostApps>`_ is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
 
 Release v4.2.1
 ----------------------------
@@ -638,7 +638,7 @@ Release v4.2.0
 - **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`__ 
 - **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.0>`__
 
-**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.org/responsible-disclosure-policy/>`__.
+**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading <https://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 Improvements
 ~~~~~~~~~~~~~~~
