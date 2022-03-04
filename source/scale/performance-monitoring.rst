@@ -112,9 +112,9 @@ Getting Started
 ---------------
 
 To help you get started, you can download three sample dashboards shared in Grafana:
-
+- `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582>`__, which contains detailed charts for performance monitoring including applicataion, cluster, job server, and system metrics.
+- `Mattermost Collapsed Reply Threads Metrics <https://grafana.com/grafana/dashboards/15581>`__, wwhich contains detailed metrics on the queries involved in our **beta** collapsed reply threads feature.
 - `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashboards/2539>`__, which contains key metrics for monitoring performance and system health.
-- `Mattermost Performance Monitoring <https://grafana.com/grafana/dashboards/2542>`__, which contains detailed charts for performance monitoring.
 - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/grafana/dashboards/2545>`__, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 
 See `this guide <https://grafana.com/docs/grafana/v7.5/dashboards/export-import/>`__ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
