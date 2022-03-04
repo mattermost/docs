@@ -5,19 +5,23 @@ Access Mattermost Boards from the Product Menu and select **Boards**.
 
 Boards are used for planning projects collaboratively. You can access the list of channels and their boards from the drop-down menu in the left-hand sidebar. Boards are made up of cards, and cards can have a wide range of purposes.
 
+
+
 Create a board
 --------------
 
 When you first start using Boards, you need to create a board. You can select a template from the options provided or you can create an empty board. The only difference is that a template will be populated with sample cards and properties and in an empty template you start from scratch.
 
-Each board is linked to the channel it was created in. 
+To find a board, open Boards and select the drop-down menu in the sidebar. Each board is linked to the channel it was created in. This includes direct messages and group messages.
 
 Create a card
 -------------
 
 Cards are like sticky notes. You can arrange them in various ways, using different views. You can also give them mutiple areas of information called properties. Adding and using properties makes it easier to organize and find cards, using filters based on card properties.
 
-Cards are populated using the Description field, and you can use Markdown to add formatting. You can add comments to a card in the Comments section.
+Once you've chosen a board template, you'll find pre-populated cards. You can use and edit those, or create new ones.
+
+Use the Description field to add details, and you can use Markdown to add formatting. You can add comments to a card in the Comments section.
 
 Select an existing card to open it or create a new card.
 
@@ -48,4 +52,4 @@ View are a great way to assess your board from various angles. Some views are li
 Share
 -----
 
-Once you've created a board and cards, you can generate a link 
+Once you've created a board and cards, you can generate a link which can be shared publicly or within only your team.
