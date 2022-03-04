@@ -102,6 +102,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Websocket Changes
  - Refactored `user-update` websocket event handler to prevent extra get request to server for unsanitized user.
+ - Added a new ``ReliableClusterSend`` field to ``model.WebsocketBroadcast`` to allow sending events through the cluster using the reliable channel.
 
 ### Go Version
  - v6.5 is built with Go ``v1.16.7``.
