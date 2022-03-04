@@ -5,8 +5,6 @@ Access Mattermost Boards from the Product Menu and select **Boards**.
 
 Boards are used for planning projects collaboratively. You can access the list of channels and their boards from the drop-down menu in the left-hand sidebar. Boards are made up of cards, and cards can have a wide range of purposes.
 
-
-
 Create a board
 --------------
 
@@ -14,14 +12,14 @@ When you first start using Boards, you need to create a board. You can select a 
 
 To find a board, open Boards and select the drop-down menu in the sidebar. Each board is linked to the channel it was created in. This includes direct messages and group messages.
 
+To learn more about boards and templates, visit XXX.
+
 Create a card
 -------------
 
 Cards are like sticky notes. You can arrange them in various ways, using different views. You can also give them mutiple areas of information called properties. Adding and using properties makes it easier to organize and find cards, using filters based on card properties.
 
-Once you've chosen a board template, you'll find pre-populated cards. You can use and edit those, or create new ones.
-
-Use the Description field to add details, and you can use Markdown to add formatting. You can add comments to a card in the Comments section.
+Once you've chosen a board template, you'll find pre-populated cards. You can use and edit those, or create new ones. Use the Description field to add details, and you can use Markdown to add formatting. You can add comments to a card in the Comments section.
 
 Select an existing card to open it or create a new card.
 
@@ -44,10 +42,23 @@ You can create properties for your cards that suit the way you're using them. If
 
 Properties can be renamed and deleted.
 
+To learn more about properties, visit XXX.
+
 Views
 -----
 
 View are a great way to assess your board from various angles. Some views are linear, while others are closer to Kanban style. Views with a more linear display, such as the task view, display less context but are easier to scroll through. Use a view such as **By Status** to see all the cards, presented in swimlanes, with more details, in the form of properties, displayed.
+
+You can also choose views such as a calendar view, which gives you a view of your work overlaid on a calendar grid.
+
+To learn more about views, visit XXX.
+
+Filters and sorting
+-------------------
+
+Once your cards have been created and properties applied, you can filter them. Each board can have unique filters based on the type of board in use. You can also sort your cards by the properties you've created. Filtering and sorting can be done in any view.
+
+To learn more about views, visit XXX.
 
 Share
 -----
