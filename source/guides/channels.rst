@@ -29,7 +29,7 @@ Work with channels
    Join and Leave Channels </channels/join-leave-channels>
    Manage Channel Members </channels/manage-channel-members>
    Find Channels </channels/find-channels> 
-   Navigate Between Channels </channels/find-channels>
+   Navigate Between Channels </channels/navigate-between-channels>
    Mark Channels as Favorites </channels/favorite-channels>
    Customize Your Channel Sidebar </channels/customize-your-channel-sidebar>
    Archive and Unarchive Channels </channels/archive-unarchive-channels>

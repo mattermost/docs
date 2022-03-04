@@ -375,7 +375,7 @@ Math Formulas
       
   .. tab:: Using LaTeX in Code Blocks
 
-    Create formulas as code blocks by using LaTeX in a ``latex`` `Code Block`_. 
+    Create formulas as code blocks by using LaTeX in a ``latex`` `code blocks <#code-blocks>`__. 
 
     .. note::
 

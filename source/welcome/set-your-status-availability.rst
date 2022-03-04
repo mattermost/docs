@@ -1,4 +1,4 @@
-Set your status and availability
+Set Your Status and Availability
 =================================
 
 |all-plans| |cloud| |self-hosted|

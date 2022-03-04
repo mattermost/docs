@@ -64,7 +64,7 @@ Set up a connection app for Mattermost SSO
 
 .. image:: ../../source/images/keycloak_4_create_username_attribute.png
 
-  10. Get the metadata URL from Keycloak:
+10. Get the metadata URL from Keycloak:
 
     a. Within your Realm, select **Realm Settings**.
     b. At the bottom of the **General** tab you should see a **SAML 2.0 Identity Provider Metadata** endpoint. Right-click and copy this URL. Store for the next step.

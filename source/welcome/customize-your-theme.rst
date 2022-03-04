@@ -1,6 +1,6 @@
 .. _theme-colors:
 
-Customize your Mattermost theme
+Customize Your Mattermost Theme
 ===============================
 
 |all-plans| |cloud| |self-hosted|

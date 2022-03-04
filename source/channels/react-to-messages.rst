@@ -1,5 +1,5 @@
 React to Messages using Emojis
-=============================
+==============================
 
 |all-plans| |cloud| |self-hosted|
 

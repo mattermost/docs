@@ -791,7 +791,7 @@ mattermost db init
        MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
        
 mattermost db migrate
-------------------
+---------------------
 
   Description
     Migrates the database schema if there are any unapplied migrations.

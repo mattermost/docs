@@ -39,7 +39,7 @@ Navigational keyboard shortcuts help you use Mattermost without requiring a mous
 | ENTER                                  | Take action on the focused element                                               |
 +----------------------------------------+----------------------------------------------------------------------------------+
 
-Region Navigation
+Region navigation
 ------------------
 
 Mattermost has eight regions that can be focused for navigation. Use **F6** (in the Desktop App) or **CTRL+F6** (in a browser) repeatedly to move focus and loop through the regions in this order:
