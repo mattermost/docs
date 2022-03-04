@@ -55,11 +55,11 @@ PC Web
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Chrome", "v89+", "v89+"
-    "Firefox", "v78+", "v78+"
+    "Firefox", "v78+", "v91+"
     "Safari", "v12+", "v12+"
     "Edge", "v44+", "v44+"
 
-`*` Support for Internet Explorer (IE11) has been removed in Mattermost 5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
+`*` Support for Internet Explorer (IE11) has been removed in Mattermost 5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
 
 Mobile Apps
 ^^^^^^^^^^^

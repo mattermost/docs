@@ -296,7 +296,7 @@ Recommended Configuration Settings
 
 If you're using Postgres as the choice of database, we recommend the following configuration optimizations on your Mattermost server.
 
-The following configuration was tested on an AWS Aurora r5.xlarge instance of Postgres 11.7.
+The following configuration was tested on an AWS Aurora r5.xlarge instance of Postgres 11.7. There are also some general optimizations mentioned which requires servers of higher specifications.
 
 1. **max_connections**: If you are using read-replicas set reader connections to 1024, and writer connections to 256. If you are using a single instance, then only setting it to 1024 should be sufficient. If the instance of lower capacity than r5.xlarge, then set it to a lower number. Also tune the `MaxOpenConns` setting under the `SqlSettings` of Mattermost app accordingly.
 
@@ -313,6 +313,22 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 7. **tcp_keepalives_idle**: 5
 
 8. **tcp_keepalives_interval**: 1
+
+9. If you have high-spec server with more than 32 CPUs, please set these options to utilize more CPU for your server:
+
+  **max_worker_processes**: 12
+  
+  **max_parallel_workers_per_gather**: 4
+  
+  **max_parallel_workers**: 12
+  
+  **max_parallel_maintenance_workers**: 4
+
+10. **autovacuum_max_workers**: 4
+
+11. **maintenance_work_mem**: 1GB (reduce this to 512MB if your server has less than 32GB of RAM)
+
+12. **autovacuum_vacuum_cost_limit**: 500
 
 Note that if you are using pgbouncer or any similar connection pooling proxy in front of your DB, then the keepalive settings should be applied to the proxy instead and revert the keepalive settings for the DB back to defaults.
 
@@ -503,7 +519,7 @@ When High Availability is enabled, the System Console displays the server status
 A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same configuration file to function properly.
-- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server` for any server that needs to be upgraded.
+- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the High Availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.com/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server` for any server that needs to be upgraded.
 - **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect

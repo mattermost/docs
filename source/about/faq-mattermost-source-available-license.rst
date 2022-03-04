@@ -46,12 +46,12 @@ Can I still contribute?
 
 Yes, we continue to welcome all contributions. Mattermost may select some contributions as enterprise features and license them under the Mattermost Source Available License. We will aim to communicate such decisions as early as possible in the contribution process.
 
-As with all Mattermost repositories, you will still need to sign the `Mattermost CLA <https://mattermost.org/mattermost-contributor-agreement/>`__. We will not accept contributions without signing the Mattermost CLA.
+As with all Mattermost repositories, you will still need to sign the `Mattermost CLA <https://mattermost.com/contribute/>`__. We will not accept contributions without signing the Mattermost CLA.
 
-Do I need to re-sign the `Mattermost CLA <https://mattermost.org/mattermost-contributor-agreement/>`__?
+Do I need to re-sign the `Mattermost CLA <https://mattermost.com/contribute/>`__?
 -------------------------------------------------------------------------------------------------------
 
-No, if you have already signed the `Mattermost CLA <https://mattermost.org/mattermost-contributor-agreement/>`__, you do not need to sign it again.
+No, if you have already signed the `Mattermost CLA <https://mattermost.com/contribute/>`__, you do not need to sign it again.
 
 Can I compile your plugins by myself?
 -------------------------------------

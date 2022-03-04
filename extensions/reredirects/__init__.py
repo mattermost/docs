@@ -190,7 +190,9 @@ class Reredirects:
         """
         for doc, target in status_iterator(to_be_redirected, 'writing redirects...', 'darkgreen',
                                            len(to_be_redirected.items())):
-            redirect_file_abs = Path(self.app.outdir).joinpath(doc).with_suffix(".html")
+            if not str(doc).endswith(".html"):
+                doc += ".html"
+            redirect_file_abs = Path(self.app.outdir).joinpath(doc)
             self._create_redirect_file(redirect_file_abs, target)
 
     @staticmethod

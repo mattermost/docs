@@ -71,7 +71,7 @@ You can customize and distribute your own Mattermost Desktop application by conf
 
 .. code-block:: none
 
-      helpLink: 'https://about.mattermost.com/default-desktop-app-documentation/'
+      helpLink: 'https://docs.mattermost.com/messaging/managing-desktop-app-servers.html'
       helpLink: ''
 
 ``enableServerManagement``
