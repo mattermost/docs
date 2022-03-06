@@ -42,9 +42,9 @@ Links
 
 Create labeled links by putting the desired text in square brackets ``[ ]`` and the associated link in round brackets ``( )``.
 
-``[Check out Mattermost!](https://about.mattermost.com/)``
+``[Check out Mattermost!](https://mattermost.com/)``
 
-Renders as: `Check out Mattermost! <https://about.mattermost.com/>`__
+Renders as: `Check out Mattermost! <https://mattermost.com/>`__
 
 Headings
 --------
@@ -97,8 +97,8 @@ Make an ordered list by using numbers instead:
 .. code-block:: none
 
   1. Item one
-  1. Item two
-  1. item three
+  2. Item two
+  3. item three
 
 Renders as:
 

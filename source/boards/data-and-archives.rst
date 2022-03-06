@@ -1,7 +1,7 @@
 Import your data
 ================
 
-You can import data from other tools to use with Boards. [Contribute code](https://www.focalboard.com/contribute/getting-started/) to expand this.
+You can import data from other tools to use with Boards. `Contribute code <https://mattermost.github.io/focalboard/>`_ to expand this.
 
 Import from Asana
 -----------------
@@ -15,11 +15,11 @@ This node app converts an Asana JSON archive into a ``.boardarchive`` file.
 5. Run ``npm install``.
 6. Change directory to ``focalboard/import/asana``.
 7. Run ``npm install``.
-8. From within the same folder, run ``npx ts-node importAsana.ts -i <asana.json> -o archive.focalboard``. This generates the following data:
+8. From within the same folder, run ``npx ts-node importAsana.ts -i <asana.json> -o archive.boardarchive``. This generates the following data:
 
 .. code-block::
    
-    My-MacbookPro:asana macbook$ npx ts-node importAsana.ts -i ~/Downloads/asana.json -o archive.focalboard
+    My-MacbookPro:asana macbook$ npx ts-node importAsana.ts -i ~/Downloads/asana.json -o archive.boardarchive
     Board: 1:1 Meeting Agenda Test
     Card: [READ ME] Instructions for using this project
     Card: [EXAMPLE TASK] Feedback on design team presentation
@@ -28,10 +28,10 @@ This node app converts an Asana JSON archive into a ``.boardarchive`` file.
     Card: [EXAMPLE TASK] Mentor a peer
     
     Found 5 card(s).
-    Exported to archive.focalboard
+    Exported to archive.boardarchive
 
 9. In Boards, open the board you want to use for the export.
-10. Select **Settings > Import archive** and select ``archive.focalboard``.
+10. Select **Settings > Import archive** and select ``archive.boardarchive``.
 11. Select **Upload**.
 12. Return to your board and confirm that your Asana data is now displaying.
 
@@ -52,13 +52,13 @@ This node app converts a Notion CSV and markdown export into a ``.boardarchive``
 3. Save the generated file locally, and unzip the folder.
 4. Open a terminal window on your local machine and navigate to ``focalboard/webapp``.
 5. Run ``npm install``.
-6. Change directory to `focalboard/import/notion`.
-5. Run ``npm install``.
-6. From within the same folder, run ``npx ts-node importNotion.ts -i <path to the notion-export folder> -o archive.focalboard``.
-7. In Boards, open the board you want to use for the export.
-8. Select **Settings > Import archive** and select ``archive.focalboard``.
-9. Select **Upload**.
-10. Return to your board and confirm that your Notion data is now displaying.
+6. Change directory to ``focalboard/import/notion``.
+7. Run ``npm install``.
+8. From within the same folder, run ``npx ts-node importNotion.ts -i <path to the notion-export folder> -o archive.boardarchive``.
+9. In Boards, open the board you want to use for the export.
+10. Select **Settings > Import archive** and select ``archive.boardarchive``.
+11. Select **Upload**.
+12. Return to your board and confirm that your Notion data is now displaying.
 
 Import scope
 ^^^^^^^^^^^^
@@ -73,15 +73,15 @@ Import from Jira
 This node app converts a Jira ``.XML`` export into a ``.boardarchive`` file.
 
 1. Open Jira advanced search, and search for all the items to export.
-2. Select **Export > Export XML.
+2. Select **Export > Export XML**.
 3. Save the generated file locally, e.g. to ``jira_export.xml``.
 4. Open a terminal window on your local machine and navigate to ``focalboard/webapp``.
 5. Run ``npm install``.
 6. Change directory to ``focalboard/import/jira`.
 7. Run ``npm install``.
-8. From within the same folder, run ``npx ts-node importJira.ts -i <path-to-jira.xml> -o archive.focalboard``.
+8. From within the same folder, run ``npx ts-node importJira.ts -i <path-to-jira.xml> -o archive.boardarchive``.
 9. In Boards, open the board you want to use for the export.
-10. Select **Settings > Import archive** and select ``archive.focalboard``.
+10. Select **Settings > Import archive** and select ``archive.boardarchive``.
 11. Select **Upload**.
 12. Return to your board and confirm that your Jira data is now displaying.
 
@@ -110,9 +110,9 @@ This node app converts a Trello ``.json`` archive into a ``.boardarchive`` file.
 5. Run ``npm install``.
 6. Change directory to ``focalboard/import/trello``.
 7. Run ``npm install``.
-8. From within the same folder, run ``npx ts-node importTrello.ts -i <path-to-trello.json> -o archive.focalboard``.
+8. From within the same folder, run ``npx ts-node importTrello.ts -i <path-to-trello.json> -o archive.boardarchive``.
 9. In Boards, open the board you want to use for the export.
-10. Select **Settings > Import archive** and select ``archive.focalboard``.
+10. Select **Settings > Import archive** and select ``archive.boardarchive``.
 11. Select **Upload**.
 12. Return to your board and confirm that your Trello data is now displaying.
 
@@ -135,8 +135,8 @@ This node app converts a Todoist ``.json`` archive into a ``.boardarchive`` file
 7. Run ``npm install``.
 8. Change directory to ``focalboard/import/todoist``.
 9. Run ``npm install``.
-10. From within the same folder, run ``npx ts-node importTodoist.ts -i <path-to-todoist.json> -o archive.focalboard``.
+10. From within the same folder, run ``npx ts-node importTodoist.ts -i <path-to-todoist.json> -o archive.boardarchive``.
 11. In Boards, open the board you want to use for the export.
-12. Select **Settings > Import archive** and select ``archive.focalboard``.
+12. Select **Settings > Import archive** and select ``archive.boardarchive``.
 13. Select **Upload**.
 14. Return to your board and confirm that your Todoist data is now displaying.

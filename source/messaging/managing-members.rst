@@ -25,7 +25,7 @@ Inviting team members
 
 If you have the required permissions, you can add people to your team via a direct invite, a public team invite link, or if they already have an account on the server, you can add them to the team yourself.
 
-From Mattermost v5.16, System Admins can `enable guest access <https://docs.mattermost.com/deployment/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When guest access is enabled, you can invite guests or users external to the organization, such as vendors or customers.
+From Mattermost v5.16, System Admins can `enable guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When guest access is enabled, you can invite guests or users external to the organization, such as vendors or customers.
 
 Direct invites
 ~~~~~~~~~~~~~~
