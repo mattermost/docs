@@ -13,7 +13,7 @@ Deploy Mattermost using a multi-node configuration with `Docker Compose <https:/
 
 For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <https://docs.mattermost.com/install/docker-local-machine.html>`__.
 
-If you have any problems installing, see the `troubleshooting guide <https://mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click **Edit** at the top of this page.
+If you have any problems installing, see the `troubleshooting guide <https://forum.mattermost.com/c/trouble-shoot>`__. To submit an improvement or correction, click **Edit** at the top of this page.
 
 Docker Setup on Ubuntu
 -----------------------
@@ -85,7 +85,7 @@ To verify the current Docker network use the following command to list it (you c
 
 6. (Optional) To enable enterprise features, go to **System Console > Edition and License** and select **Start trial**.
 
-7. **Configure your Server** based on the `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html>`__.
+7. **Configure your Server** based on the `configuration settings documentation <https://docs.mattermost.com/configure/configuration-settings.html>`__.
 
 Once you've saved your configurations, start an Enterprise E20 trial via **Main Menu > System Console > Edition and License > Start trial**.
 

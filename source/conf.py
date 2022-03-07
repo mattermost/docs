@@ -667,8 +667,6 @@ redirects = {
 "integrations/zoom.html": 
         "https://mattermost.gitbook.io/plugin-zoom/",
 
-
-
 # Messaging redirects
 # Important Note: More redirects will be added in FY23 Q1/Q2 when the messages directory is migrated to channels to align with branding.
 "messaging/accessing-your-workspace.html": 

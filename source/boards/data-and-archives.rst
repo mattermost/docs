@@ -1,7 +1,7 @@
 Import your data
 ================
 
-You can import data from other tools to use with Boards. `Contribute code <https://www.focalboard.com/contribute/getting-started>`_ to expand this.
+You can import data from other tools to use with Boards. `Contribute code <https://mattermost.github.io/focalboard/>`_ to expand this.
 
 Import from Asana
 -----------------
