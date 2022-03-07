@@ -23,7 +23,7 @@ Retrospectives help teams identify areas of improvement in workflows. Each time 
 Configuring retrospectives before a run
 ----------------------------------------
 
-Open Playbooks and select the **Playbooks** tab. Select the playbook and then select **Edit**. Select **Templates** and scroll down to the **Retrospective Reminder Interval** and **Retrospective Template** fields.
+Open Playbooks and select the **Playbooks** tab. Select the playbook and then select **Edit**. Select **Retrospective**. Move the toggle to **Enable Retrospective**.
 
 You can set a reminder to fill out the retrospective after a run is finished. The configured template is pre-populated in the run's retrospective.
 
@@ -31,6 +31,11 @@ Use the run timeline to help write an accurate retrospective. Events such as own
 
 .. image:: ../images/Retro.gif
    :alt: Create and publish retrospective reports.
+
+Metrics
+~~~~~~~
+
+Use metrics to identify key areas in which you want to measure performance and improvement.
 
 Channel export
 ~~~~~~~~~~~~~~
