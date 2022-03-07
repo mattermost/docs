@@ -25,30 +25,36 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Custom User Groups (Beta)
- - Added the APIs and app, store, and authorization methods to create and delete custom groups and to add and remove custom group members.
+ - Added the ability to mention a group of members in a workspace who need to be notified at once. Users can create groups, edit group details, join groups, archive groups, and add group members.
+
+#### Cross-team Channel Navigation
+ - You can now find and jump to channels across all your teams by typing any channel name in the Find Channels modal.
+
+#### Workspace Optimizations
+ - System Admins can now review their overall health and growth scores and take recommended actions for ensuring their workspace is running smoothly, so users can get the most out of Mattermost.
 
 #### Playbook Updates
  - 
 
 #### Boards Updates
- - 
+ - Added a new onboarding tour for Boards.
+ - Improved the share boards user interface.
+ - A link to Boards is now included in the channel intro whenever a new channel or direct message is started.
+ - Added in-app links to import Help Docs.
 
 ### Improvements
 
 #### User Interface (UI)
  - Added an Enterprise trial activation tour point.
  - Added a new onboarding experience for first System Admin user.
- - Added a dashboard that displays the health of the server.
  - Added new tutorial tours for Channels, Boards and Playbooks to help orient first time users.
  - Removed extra telemetry events that were tracked during page loads.
  - Added a feature card slide for Playbooks.
  - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
- - Users are now able to use the channel switcher to search channels across teams if the users are part of more than one team.
  - Clarified in-product error string "Oops!" as "Unable to continue" for both translators and target audiences in cases where a user doesn't have sufficient permissions to add users or guests.
  - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
  - Added the ability to send an unsanitized user to the source user on ``user_updated`` event.
  - In the compact view, the sender's username is now always shown on posts.
- - Added a **Create board** button to the Channel intro header.
  - The post menu is now only rendered on the root post on hover over.
  - Updated a library used for storing drafts and other data in browser storage.
  - Enabled performance telemetry tracking for production deployments not running in developer mode. This telemetry tracking is disabled when telemetry is toggled off.
