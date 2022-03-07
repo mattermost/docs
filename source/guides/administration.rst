@@ -72,6 +72,7 @@ Workspace Management
 * :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.
 * :doc:`User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
 * :doc:`Managing Team and Channel Members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
+* :doc:`Workspace Migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 
 Workspace Compliance
 ^^^^^^^^^^^^^^^^^^^^
