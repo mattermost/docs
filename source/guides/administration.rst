@@ -67,12 +67,14 @@ Workspace Management
     User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>
     Managing Team and Channel Members </manage/cloud-team-and-channel>
     Workspace Migration </manage/cloud-data-export>
+    Cloud Data Residency </manage/cloud-data-residency>
 
 * :doc:`Mattermost Cloud Billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
 * :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.
 * :doc:`User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
 * :doc:`Managing Team and Channel Members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
 * :doc:`Workspace Migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
+* :doc:`Cloud Data Residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 
 Workspace Compliance
 ^^^^^^^^^^^^^^^^^^^^
