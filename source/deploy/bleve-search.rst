@@ -55,7 +55,7 @@ The following conditions are applied when using Bleve search:
 * **Unquoted terms:** Search terms that contain non-alphanumeric characters/special characters outside of quotation marks are removed. For example, using ``abcd "**" && abc`` as a search term will return results for a search for ``abcd "**" abc`` as the ``&&`` characters weren't within the quotation marks.
 * **Wildcard search:** Wildcard search (e.g., ``abc*``) is supported.
 
-How Does Search Work with Bleve Disabled?
+How does search work with Bleve disabled?
 -------------------------------------------
 
 Mattermost performs full text searches against the database unless you have an `Enterprise license <https://docs.mattermost.com/about/deployments-and-editions.html#mattermost-enterprise>`__ and you have `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ configured.
