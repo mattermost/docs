@@ -58,4 +58,4 @@ The following conditions are applied when using Bleve search:
 How does search work with Bleve disabled?
 -------------------------------------------
 
-Mattermost performs full text searches against the database unless you have an `Enterprise license <https://docs.mattermost.com/about/deployments-and-editions.html#mattermost-enterprise>`__ and you have `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ configured.
+Mattermost performs full text searches against the database unless you have an `Enterprise license <https://docs.mattermost.com/about/deployments-and-editions.html#mattermost-enterprise>`__ and `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ configured.
