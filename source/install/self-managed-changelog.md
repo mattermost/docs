@@ -12,6 +12,9 @@ Latest Mattermost Releases:
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.4.2, release day TBD**
+  - 
+  - Fixed an issue where the webapp did not route notifications correctly when the computer was locked.
 - **v6.4.1, released 2022-02-25**
   - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
 - **v6.4.0, released 2022-02-16**
@@ -105,6 +108,12 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.5, release **
+  -  
+  - Improved the performance of code for storing users in the webapp.
+  - Fixed a memory leak caused by the post textbox.
+  - Removed the collapsed sidebar menu from the DOM on sidebar collapse and expand.
+  - Fixed an issue with disabling and re-enabling Custom Terms of Service.
 - **v6.3.4, released 2022-02-21**
   - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
   - The right-hand side dot menu of root posts are now rendered to DOM only when hovered upon.
@@ -208,6 +217,8 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
 
 ## Release v6.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html)
 
+- **v6.2.5, release **
+  - 
 - **v6.2.4, released 2022-02-21**
   - Fixed a major web and desktop app performance issue for users with a large accumulated number of Direct Messages and Group Messages.
 - **v6.2.3, released 2022-02-03**
