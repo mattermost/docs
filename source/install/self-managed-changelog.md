@@ -61,6 +61,7 @@ Latest Mattermost Releases:
  - Inactive server email notifications will now be sent to users occasionally if they haven't interacted with their server for 100 hours or more.
 
 #### Performance
+ - Improved performance of Collapsed Reply Threads when backend is enabled but frontend is disabled.
  - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
  - Fixed a memory leak caused by the post textbox.
  - Reduced the number of menu components listening for keyboard and mouse events.
