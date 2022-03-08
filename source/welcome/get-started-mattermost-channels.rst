@@ -8,15 +8,14 @@ Access Mattermost Channels by selecting **Channels** from the **Product list** |
   :width: 24px
   :alt: Navigate between Channels, Playbooks, and Boards using the Product list icon.
 
-Channels are where you can communicate with your team about various topics or projects. 
-Channels and channel management tools are available in the channel sidebar to the left. 
+Channels are where you can communicate with your team about various topics or projects. The channels you're a member of and useful channel management tools are available in the channel sidebar to the left. 
 
-See [XXX] for details on the many ways you can use Channels to enable team collaboration.
+See our `Mattermost Channels <https://docs.mattermost.com/guides/channels.html>`__ documentation for details on the many ways you can use Channels to enable team collaboration.
 
 Channels and direct messages
 ----------------------------
 
-Everyone who joins a Mattermost workspace is automatically added to two default channels: **Town Square** and **Off-Topic**. 
+Everyone who joins a Mattermost workspace is automatically added to two default channels: **Town Square** and **Off-Topic**. See our `Channel Types <https://docs.mattermost.com/channels/channel-types.html>`__ documentation for details.
 
 - **Town Square** is great for your team-wide communications, such as announcements.
 - **Off-Topic** is great for fun, social, non-work-related conversations. 
@@ -31,7 +30,7 @@ Start a new direct or group message by selecting the **Plus** |plus| icon next t
   :alt: The Plus icon provides access to channel and direct message functionality.
 
 .. tip:: 
-    Direct and group messages are also channels in Mattermost, so many of the [preferences available for channels] are also available for direct messages. 
+    Direct and group messages are also channels in Mattermost, so many of the `preferences available for channels <https://docs.mattermost.com/channels/set-channel-preferences.html>`__ are also available for direct messages. 
 
 Create and join channels
 ------------------------
@@ -54,16 +53,16 @@ Channels are either **public** or **private**.
 To see all available public channels you can join, select the **Plus** |plus| icon at the top of the channel sidebar, then select **Browse Channels**. Search for channels by name or scroll through the list. Select **Join** next to any channel to become a member of that channel.
 
 .. tip:: 
-    Select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, as well as all direct and group messages.
+    Select **Find Channel** in the channel sidebar to see a list of recently visited channels and to jump to specific channels quickly by name, including public and private channels, as well as all direct and group messages.
 
-To create a new public or private channel, select the **Plus** |plus| icon, then select **Create New Channel**. Anyone can create new channels, unless the System Admin has [restricted permissions] to do so. See [XXX] for more information on creating channels.
+To create a new public or private channel, select the **Plus** |plus| icon, then select **Create New Channel**. Anyone can create new channels, unless the System Admin has `restricted permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to do so. See our `Create Channels <https://docs.mattermost.com/channels/create-channels.html>`__ documentation for more information.
 
-As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See [XXX] for information on customizing your channel sidebar.
+As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See `Customize Your Channel Sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__ for details.
 
 Invite people to the team
 -------------------------
 
-You can invite members of your organization, as well as external guests such as vendors or project partners, to a Mattermost team. Anyone can invite people to the team, unless the System Admin has [disabled this option] or [restricted permissions] to do so. 
+You can invite members of your organization, as well as external guests such as vendors or project partners, to a Mattermost team. Anyone can invite people to the team, unless the System Admin has `disabled this option <https://docs.mattermost.com/configure/configuration-settings.html#enable-account-creation>`__ or `restricted permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to do so. 
 
 To invite people to a team, select the **Plus** |plus| icon, then select **Invite People**. 
 
@@ -73,7 +72,7 @@ To invite people to a team, select the **Plus** |plus| icon, then select **Invit
 .. tip:: 
     To extend an invitation to a larger group of people, you can share a team invitation link rather than sending individual invitations. Select the **Plus** |plus| icon, then select **Invite People**, then copy the invite link to your clipboard.
 
-All email invitations contain a single-use link that expires after 48 hours. System Admins can also [invalidate all active invitation links]. See [XXX] for more information on inviting people to your Mattermost workspace.
+All email invitations contain a single-use link that expires after 48 hours. System Admins can also invalidate all active invitation links. See our `Invite people to teams <https://docs.mattermost.com/welcome/about-teams.html#invite-people-to-teams>`__ documemtation for details on inviting people to your Mattermost workspace.
 
 Send messages
 -------------
@@ -93,8 +92,8 @@ Customize your Mattermost experience
 
 You can customize many aspects of your Mattermost experience, including the types of notifications you receive, how unread channels are organized, the number of direct messages to show, your Mattermost theme, and more!
 
-- Select your user avatar in the top-right corner of the Mattermost screen to manage your profile, status, and availability. See [XXX] for more information on managing your profile.
-- Select the **Settings** |gear| icon to manage your notifications, display, channel sidebar options, and more. See [XXX] for more information on managing your Mattermost preferences.
+- Select your user avatar in the top-right corner of the Mattermost screen to manage your profile, status, and availability. See `Manage Your Mattermost Profile <https://docs.mattermost.com/welcome/manage-your-profile.html>`__ for more information on managing your profile.
+- Select the **Settings** |gear| icon to manage your notifications, display, channel sidebar options, and more. See `Customize Your Channels Experience <https://docs.mattermost.com/channels/channels-settings.html>`__ for more information on managing your Mattermost preferences.
 
 .. |gear| image:: ../images/settings-outline_F08BB.svg
   :height: 24px
