@@ -19,7 +19,7 @@ If you'd prefer to start with a blank template, the next few sections are for yo
 Configure your playbook
 -----------------------
 
-Playbooks are configurable and editable. You can add tasks to checklists, include automation behaviors, and provide insights into your processes in the form of metrics.
+Playbooks are configurable and editable. You can add tasks to checklists, include automation behaviors, and provide insights into your processes in the form of metrics. Here are some tips and tricks that will help you.
 
 Tasks and checklists
 ~~~~~~~~~~~~~~~~~~~~
