@@ -4,12 +4,61 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-03-16](#release-2022-03-16)
 - [Release 2022-03-02](#release-2022-03-02)
 - [Release 2022-02-16](#release-2022-02-16)
 - [Release 2022-02-10](#release-2022-02-10)
 - [Release 2022-02-03](#release-2022-02-03)
 - [Release 2022-01-27](#release-2022-01-27)
-- [Release 2022-01-25](#release-2022-01-25)
+
+## Release 2022-03-16
+
+### Compatibility
+ - Updated Safari recommended minimum version to v14.1+.
+
+### Improvements
+
+#### User Interface (UI)
+ - The support email field was from "Customization" to "Notifications" in the System Console. Also, the support email is now required to be set when configuring email notifications.
+ - The ping endpoint can now receive a device ID, which will report whether the device is able to receive push notifications.
+ - Added a loading indicator to the Threads global list each time more posts are fetched on infinite scroll.
+ - Added a search guidance to the Threads global list when no more posts can be loaded. This is only shown if you’ve scrolled to load older posts and then reach the end of the list.
+ - Added support for inline editing of posts.
+ - Added accessibility support for custom statuses.
+ - Feature flags are now automatically refreshed when the server undergoes a restart.
+ - Added nested previews for permalinks.
+ - Added a sort order to the category API, and included category data in the websocket category update event.
+ - Updated the plugin registry's ``registerCallButtonAction`` method to allow for displaying custom calls buttons in the channel header.
+ - Added a debugging setting to turn off client-side plugins for the current user.
+ - Tooltip is now only displayed when text is too long in the announcement banner.
+ - When restricting direct messages to users on the same team, bots are now excluded from that restriction.
+
+#### Performance
+ - Fixed a potential memory leak in the sidebar when using accessibility hotkeys.
+ - Virtualized the emoji picker and added other performance improvements to the emoji picker.
+ - Improved the performance of storing users in webapp.
+ - Fixed a small memory leak in the System Console.
+
+#### Bug Fixes
+ - Fixed a scan error on column name "LastRootPostAt": converting NULL to int64.
+ - Fixed an issue where selecting a custom status from Recent statuses used the original expiration time.
+ - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
+ - Fixed an issue where moving up or down in the channel switcher didn’t work as expected when Global Threads was in the background.
+ - Fixed an issue where clicking Enter opened the onboarding tutorial tip.
+ - Fixed an issue where some permission checkboxes had been moved to different categories in the System Console.
+ - Fixed an issue where a blank screen occurred upon leaving a currently open unread channel with the channel unread grouping enabled.
+ - Fixed an issue related to disabling and re-enabling Custom Terms of Service.
+ - Fixed an issue where hannel links on hover overlapped the channels menus.
+ - Fixed the positioning of the post menu in mobile web view.
+ - Fixed an issue where closing the keyboard shortcut modal by "ctrl/cmd + /" didn’t work.
+ - Fixed an issue where the channel keyboard navigation was broken in the Threads view.
+
+### Known Issues
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-03-02
 
