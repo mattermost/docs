@@ -24,7 +24,7 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Custom User Groups (Beta)
+#### Custom User Groups (Beta; Professional and Enterprise Plans)
  - Added the ability to mention a group of members in a workspace who need to be notified at once. Users can create groups, edit group details, join groups, archive groups, and add group members.
 
 #### Cross-team Channel Navigation
@@ -126,7 +126,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
 
 ### Contributors
-
+ - 
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
