@@ -34,7 +34,8 @@ Latest Mattermost Releases:
  - System Admins can now review their overall health and growth scores and take recommended actions for ensuring their workspace is running smoothly, so users can get the most out of Mattermost.
 
 #### Playbook Updates
- - 
+ - Added a new onboarding tour for Playbooks.
+ - Existing playbooks can now be duplicated by copying and modifying your colleague’s processes. Playbooks can also be exported.
 
 #### Boards Updates
  - Added a new onboarding tour for Boards.
@@ -45,6 +46,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Added Persian as an official supported language (Beta).
  - Added an Enterprise trial activation tour point.
  - Added a new onboarding experience for first System Admin user.
  - Added new tutorial tours for Channels, Boards, and Playbooks to help orient first time users.
