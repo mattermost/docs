@@ -71,4 +71,4 @@ Import
 Import from Slack
 ~~~~~~~~~~~~~~~~~
 
-You can import channels and users from Slack into Mattermost. Please review our documentation on `Slack Import <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack>`__ for more details.
+From v6.0, this feature has been deprecated. See our `Migration Guide <https://docs.mattermost.com/onboard/migrating-to-mattermost.html>`__ for details on migrating to Mattermost from other solutions, including `Slack <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack>`__. 

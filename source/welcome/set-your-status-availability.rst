@@ -54,8 +54,8 @@ To clear a custom status, select your Avatar, then select **Clear Status**, or s
 .. image:: ../images/clear-custom-status.png
   :alt: Clear your custom status.
 
-Setting your availability
--------------------------
+Set your availability
+---------------------
 
 To set your availability, select your Avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
 
