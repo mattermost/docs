@@ -88,7 +88,7 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 .. code-block:: bash
 
     cd /opt/gitlab/embedded/service/mattermost
-    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
 
 .. note::
    
@@ -791,7 +791,7 @@ mattermost db init
        MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
        
 mattermost db migrate
-------------------
+---------------------
 
   Description
     Migrates the database schema if there are any unapplied migrations.
@@ -2381,7 +2381,7 @@ mattermost version
 
 .. note::
 
-   From Mattermost v6.5, this CLI command no longer interacts with the database. The ``mattermost db migrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-migrate>)__ CLI command has been introduced to trigger schema migrations.
+   From Mattermost v6.5, this CLI command no longer interacts with the database. The ``mattermost db migrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-migrate>`__ CLI command has been introduced to trigger schema migrations.
 
 Description
     Displays Mattermost version information.
