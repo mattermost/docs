@@ -4,12 +4,17 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-03-08](#release-2022-03-08)
 - [Release 2022-03-02](#release-2022-03-02)
 - [Release 2022-02-16](#release-2022-02-16)
 - [Release 2022-02-10](#release-2022-02-10)
 - [Release 2022-02-03](#release-2022-02-03)
 - [Release 2022-01-27](#release-2022-01-27)
-- [Release 2022-01-25](#release-2022-01-25)
+
+## Release 2022-03-08
+
+### Bug Fixes
+ - Fixed an issue where imports failed when the channel display name was empty.
 
 ## Release 2022-03-02
 
@@ -84,7 +89,7 @@ Latest Mattermost Cloud releases:
  - Added an ``OnInstall()`` plugin hook.
  - Added an ``OnSendDailyTelemetry()`` plugin hook.
 
-#### Bug Fixes
+### Bug Fixes
  - Fixed an issue where the reply notification setting was still in effect even when Collapsed Reply Threads was enabled.
  - Fixed an issue where running ``mmctl config migrate`` reset the configuration settings to defaults if the settings were already in the database.
  - Fixed an issue where the custom status menu option was missing the "x" to clear status.
@@ -103,7 +108,7 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-02-10
 
-#### Bug Fixes
+### Bug Fixes
  - Fixed an issue where an emoji import failed when the emoji name conflicted with a system emoji.
 
 ## Release 2022-02-03
@@ -118,7 +123,7 @@ Latest Mattermost Cloud releases:
  - Added support for metered billing invoices.
  - Added a keyboard shortcut to open and expand the right-hand pane.
 
-#### Bug Fixes
+### Bug Fixes
  - Fixed an issue where the user menu header was visible when custom statuses were disabled.
  - Fixed an issue where the markdown **Preview** link was not hidden in read-only channels.
  - Fixed an issue where Cloud admins were unable to download an invoice via the Desktop App.
