@@ -2,11 +2,11 @@
 
 Latest Mattermost Mobile Apps releases:
 - [1.50.0 Release](#release)
-- [1.49.1 Release](#release)
-- [1.49.0 Release](#id1)
-- [1.48.2 Release](#id4)
-- [1.48.1 Release](#id9)
-- [1.48.0 Release](#id14)
+- [1.49.1 Release](#id1)
+- [1.49.0 Release](#id4)
+- [1.48.2 Release](#id10)
+- [1.48.1 Release](#id15)
+- [1.48.0 Release](#id20)
 
 ## 1.50.0 Release
 - Release Date: March 16, 2022
