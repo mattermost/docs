@@ -18,7 +18,7 @@ Latest Mattermost Releases:
  - Updated the recommended minimum supported Firefox version to v91+.
 
 ### Important Upgrade Notes
- - The ``mattermost version`` CLI command has been deprecated and does not interact with the database anymore. Therefore the database version is not going to be printed. Also, the database migrations are not going to be applied with the version sub command. A new db migrate sub command is added to enable administrators to trigger migrations.
+ - The ``mattermost version`` CLI command has been deprecated and does not interact with the database anymore. Therefore the database version is not going to be printed. Also, the database migrations are not going to be applied with the version sub command. [A new db migrate sub command](https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-migrate) is added to enable administrators to trigger migrations.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
