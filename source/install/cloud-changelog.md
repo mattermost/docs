@@ -34,6 +34,7 @@ Latest Mattermost Cloud releases:
  - When restricting direct messages to users on the same team, bots are now excluded from that restriction.
 
 #### Performance
+ - Improved performance of Collapsed Reply Threads when backend is enabled but frontend is disabled.
  - Fixed a potential memory leak in the sidebar when using accessibility hotkeys.
  - Virtualized the emoji picker and added other performance improvements to the emoji picker.
  - Improved the performance of storing users in webapp.
