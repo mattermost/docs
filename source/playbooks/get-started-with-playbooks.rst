@@ -12,13 +12,21 @@ The first step is to choose the right template for your use case. There are pre-
 
 You can also choose a blank template and start from scratch - this is a good option if your use case is unique.
 
-Lastly, if you're unsure which option to choose, take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together.
+Lastly, if you're unsure which option to choose, take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together. If you're taking this option, you can stop reading here and enjoy the test run.
 
-Playbook concepts
------------------
+If you'd prefer to start with a blank template, the next few sections are for you. It helps if you have a repeatable process in mind so you can apply what you know in order to get the most out of playbooks, but it's not a prerequisite.
 
-If you're taking this option, here are some tips and tricks. 
+Configure your playbook
+-----------------------
 
-First, make sure you have a repeatable process in mind - simply because this makes more sense. The primary goal of a playbook is to have a visible, editable workflow that stakeholders are able to access without having to be in the thick of things.
+Playbooks are configurable and editable. You can add tasks to checklists, include automation behaviors, and provide insights into your processes in the form of metrics.
 
-Application and learning
+Tasks and checklists
+~~~~~~~~~~~~~~~~~~~~
+
+Actions
+~~~~~~~
+
+Retrospectives
+~~~~~~~~~~~~~
+
