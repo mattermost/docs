@@ -19,10 +19,10 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - The support email field was from "Customization" to "Notifications" in the System Console. Also, the support email is now required to be set when configuring email notifications.
+ - The support email field has moved from **Customization** to **Notifications** in the System Console. Also, a support email is now required when configuring email notifications.
  - The ping endpoint can now receive a device ID, which will report whether the device is able to receive push notifications.
- - Added a loading indicator to the Threads global list each time more posts are fetched on infinite scroll.
- - Added a search guidance to the Threads global list when no more posts can be loaded. This is only shown if you’ve scrolled to load older posts and then reach the end of the list.
+ - Added a loading indicator to the **Threads** global list each time more posts are fetched on infinite scroll.
+ - Added search guidance to the **Threads** global list when no more posts can be loaded. This is only shown if you’ve scrolled to load older posts and reach the end of the list.
  - Added support for inline editing of posts.
  - Added accessibility support for custom statuses.
  - Feature flags are now automatically refreshed when the server undergoes a restart.
@@ -44,13 +44,13 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where selecting a custom status from Recent statuses used the original expiration time.
  - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
  - Fixed an issue where moving up or down in the channel switcher didn’t work as expected when Global Threads was in the background.
- - Fixed an issue where clicking Enter opened the onboarding tutorial tip.
+ - Fixed an issue where pressing ENTER opened the onboarding tutorial tip.
  - Fixed an issue where some permission checkboxes had been moved to different categories in the System Console.
  - Fixed an issue where a blank screen occurred upon leaving a currently open unread channel with the channel unread grouping enabled.
  - Fixed an issue related to disabling and re-enabling Custom Terms of Service.
- - Fixed an issue where hannel links on hover overlapped the channels menus.
+ - Fixed an issue where channel links on hover overlapped the channels menus.
  - Fixed the positioning of the post menu in mobile web view.
- - Fixed an issue where closing the keyboard shortcut modal by "ctrl/cmd + /" didn’t work.
+ - Fixed an issue where closing the keyboard shortcut modal by "CTRL/CMD + /" didn’t work.
  - Fixed an issue where the channel keyboard navigation was broken in the Threads view.
 
 ### Known Issues
