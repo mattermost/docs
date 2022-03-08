@@ -59,7 +59,7 @@ PC Web
     "Safari", "v14+", "v14+"
     "Edge", "v44+", "v44+"
 
-`*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
+`*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
 Mobile Apps
 ^^^^^^^^^^^
