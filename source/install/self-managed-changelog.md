@@ -25,10 +25,10 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Custom User Groups (Beta; Professional and Enterprise Plans)
- - Added the ability to mention a group of members in a workspace who need to be notified at once. Users can create groups, edit group details, join groups, archive groups, and add group members.
+ - Added the ability to mention a group of members at a time in a workspace. Users can create groups, edit group details, join groups, archive groups, and add group members.
 
 #### Cross-team Channel Navigation
- - You can now find and jump to channels across all your teams by typing any channel name in the Find Channels modal.
+ - You can now find and jump to channels across all your teams by typing any channel name in the **Find Channels** modal.
 
 #### Workspace Optimizations
  - System Admins can now review their overall health and growth scores and take recommended actions for ensuring their workspace is running smoothly, so users can get the most out of Mattermost.
@@ -47,7 +47,7 @@ Latest Mattermost Releases:
 #### User Interface (UI)
  - Added an Enterprise trial activation tour point.
  - Added a new onboarding experience for first System Admin user.
- - Added new tutorial tours for Channels, Boards and Playbooks to help orient first time users.
+ - Added new tutorial tours for Channels, Boards, and Playbooks to help orient first time users.
  - Removed extra telemetry events that were tracked during page loads.
  - Added a feature card slide for Playbooks.
  - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
