@@ -47,18 +47,27 @@ To learn more about properties, visit XXX.
 Views
 -----
 
-View are a great way to assess your board from various angles. Some views are linear, while others are closer to Kanban style. Views with a more linear display, such as the task view, display less context but are easier to scroll through. Use a view such as **By Status** to see all the cards, presented in swimlanes, with more details, in the form of properties, displayed.
+View are a great way to assess your board from various angles and allow your team to visualize the same cards and data from different perspectives, so they can stay up-to-date in the way that works best for them. Some views are linear, while others are closer to Kanban style. Views with a more linear display, such as the task view, display less context but are easier to scroll through. 
 
-You can also choose views such as a calendar view, which gives you a view of your work overlaid on a calendar grid.
+To add a new view, go to Add a new view from the view drop-down, then select from any of the following views:
+
+- Board: Adds a Kanban board, similar to this one, that allows your team to organize cards in swimlanes grouped by any property of your choosing. This view helps you visualize your project progress.
+- Table: Displays cards in a table format with rows and columns. Use this view to get an overview of all your project tasks. Easily view and compare the state of all properties across all cards without needing to open individual cards.
+- Gallery: Displays cards in a gallery format, so you can manage and organize cards with image attachments.
+- Calendar: Adds a calendar view to easily visualize your cards by dates and keep track of deadlines.
 
 To learn more about views, visit XXX.
 
 Filters and sorting
 -------------------
 
-Once your cards have been created and properties applied, you can filter them. Each board can have unique filters based on the type of board in use. You can also sort your cards by the properties you've created. Filtering and sorting can be done in any view.
+You can organize and find the cards you're looking for with our filter, sort, and grouping options. From the Board header, you can quickly toggle on different properties, change the group display, set filters, and change how the cards are sorted. Combine views with filters to make unique boards for specific items. For example, you can create a **By milestone** board and then use a filter to only display items for specific milestones. 
 
-To learn more about views, visit XXX.
+You can add multiple properties to a filter. When you add multiple properties to filter, it is an "AND" statement - so it would only display when both conditions are true. 
+
+You can also add multiple values within the same property, which is an "OR" statement
+
+To learn more about filters, visit XXX.
 
 Share
 -----
