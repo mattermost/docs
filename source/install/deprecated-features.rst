@@ -6,9 +6,7 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Mattermost Server version TBD**
 
-- The “version” CLI command will be deprecated in a future release.
 
 Removed features by Mattermost version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
