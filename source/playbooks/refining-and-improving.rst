@@ -35,7 +35,11 @@ Use the run timeline to help write an accurate retrospective. Events such as own
 Metrics
 ~~~~~~~
 
-Use metrics to identify key areas in which you want to measure performance and improvement.
+Use metrics to identify key areas in which you want to measure performance and improvement, and extract valuable insights. 
+
+These metrics can be anything that's of interest to you and your team. For example, for a software release playbook you might want to have a metric tracking how many bugs were detected during a run. The output of the metrics you've added is provided in the retrospective and, over time, you can use the data to examine anomalies and refine goals.
+
+Another example is a support incident playbook. A metric such as time to resolution can be applied and used to identify areas that need more refinement such as tasks that might work better if they're split up so the goal is reached faster.
 
 Channel export
 ~~~~~~~~~~~~~~
