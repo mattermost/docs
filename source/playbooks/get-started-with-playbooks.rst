@@ -18,13 +18,19 @@ The first step is to choose the right template for your use case. There are pre-
 
 In the incident response template, the template contains items that are relevant to incident resolution.
 
-Tasks and checklists
---------------------
-
-Tasks and checklists are the foundation of a template and a workflow. In an incident, it's critical to get stakeholders together as soon as possible so one of the first tasks is to add the on-call engineer to the channel, followed by starting a bridge call.
-
 Keywords
 --------
 
-One way to start a playbook run is to configure keywords. These keywords prompt a user to start the run when they're used. In the incident response playbook, the keywords are specific to critical incidents, for example ``sev-1`` and ``#incident``. It's unlikely that someone would use those terms in general conversation and, even if they do, they can elect not to start the playbook run when prompted.
+The most important part of a run is getting it started. An easy way to start a playbook run is to configure keywords. These keywords prompt a user to start the run when they're used. In the incident response playbook, the keywords are specific to critical incidents, for example ``sev-1`` and ``#incident``. It's unlikely that someone would use those terms in general conversation and, even if they do, they can elect not to start the playbook run when prompted.
 
+Tasks and checklists
+--------------------
+
+Tasks and checklists are the foundation of a template and a workflow. In an incident, it's critical to get stakeholders together as soon as possible so one of the first tasks is to add the on-call engineer to the channel, followed by starting a bridge call. When you're setting up these tasks you can add slash commands, at-mentions, and integrations with tools such as Zoom to make the initiation as seamless as possible.
+
+Status updates
+--------------
+
+Regular updates are important communication tools, especially in the middle of an outage. Channels can get very busy and overwhelming, and if you have more than one incident at a time it's often too noisy for stakeholders to keep track of everything.
+
+Use the **Broadcast update to other channels** to cut through the noise and share critical information with both channel members and other users in a dedicated channel.
