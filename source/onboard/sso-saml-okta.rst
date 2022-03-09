@@ -22,13 +22,13 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_1_new_app.png
 
-5. Enter **General Settings** for the application, including **App name** and **App logo** (optional). It's recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one `from our page <https://mattermost.org/brand-guidelines/>`__.
+5. Enter **General Settings** for the application, including **App name** and **App logo** (optional). It's recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one `from our page <https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines>`__.
 
 	.. image:: ../../source/images/okta_2_general_settings.png
 
 6. Enter **SAML Settings**, including:
 
- - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
+ - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__.
  - **Audience URI:** For instance, ``mattermost``
  - **Name ID format:** ``unspecified``
  - **Application username:** ``Email``
@@ -43,7 +43,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_5_advanced_saml_settings.png
 
-9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our `documentation on SAML configuration settings <https://docs.mattermost.com/administration/config-settings.html#saml>`__. Email and username attributes are required. For SAML with Okta, an `ID attribute <https://docs.mattermost.com/administration/config-settings.html#id17>`__ is also required, and that ID must be mapped to ``user.id``. 
+9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our `documentation on SAML configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#saml>`__. Email and username attributes are required. For SAML with Okta, an `ID attribute <https://docs.mattermost.com/configure/configuration-settings.html#id-attribute>`__ is also required, and that ID must be mapped to ``user.id``. 
 
 	.. image:: ../../source/images/okta_6_attribute_statements.png
 

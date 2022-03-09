@@ -78,7 +78,7 @@ Once saved, your emoji is added to the list of Custom Emoji.
 
   If you can't see the **Custom Emoji** option, then your Mattermost System Admin may have restricted access to certain users. Contact your Mattermost System Admin for help.
       
-  For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+  For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
   
 Using Custom Emojis
 ~~~~~~~~~~~~~~~~~~~
