@@ -47,7 +47,6 @@ Latest Mattermost Releases:
 
 #### User Interface (UI)
  - Added Persian as an official supported language (Beta).
- - Added an Enterprise trial activation tour point.
  - Added a new onboarding experience for first System Admin user.
  - Added new tutorial tours for Channels, Boards, and Playbooks to help orient first time users.
  - Removed extra telemetry events that were tracked during page loads.
