@@ -26,7 +26,7 @@ The most important part of a run is getting it started. An easy way to start a p
 Tasks and checklists
 --------------------
 
-Tasks and checklists are the foundation of a template and a workflow. In an incident, it's critical to get stakeholders together as soon as possible so one of the first tasks is to add the on-call engineer to the channel, followed by starting a bridge call. When you're setting up these tasks you can add slash commands, at-mentions, and integrations with tools such as Zoom to make the initiation as seamless as possible.
+Tasks and checklists are the foundation of a template and a workflow. In an incident, it's critical to get stakeholders together as soon as possible, so one of the first tasks is to add the on-call engineer to the channel, followed by starting a bridge call. When you're setting up these tasks, you can add slash commands, at-mentions, and integrations with tools such as Zoom to make the initiation as seamless as possible.
 
 Status updates
 --------------
