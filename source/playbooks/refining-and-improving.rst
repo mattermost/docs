@@ -35,7 +35,7 @@ Use the run timeline to help write an accurate retrospective. Events such as own
 Metrics
 ~~~~~~~
 
-Use metrics to identify key areas in which you want to measure performance and improvement, and extract valuable insights. 
+Use metrics to identify key areas where you want to extract valuable insights by measuring performance and improvement. 
 
 These metrics can be anything that's of interest to you and your team. For example, for a software release playbook you might want to have a metric tracking how many bugs were detected during a run. The output of the metrics you've added is provided in the retrospective and, over time, you can use the data to examine anomalies and refine goals.
 
