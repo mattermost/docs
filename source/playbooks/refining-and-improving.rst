@@ -39,7 +39,7 @@ Use metrics to identify key areas where you want to extract valuable insights by
 
 These metrics can be anything that's of interest to you and your team. For example, for a software release playbook you might want to have a metric tracking how many bugs were detected during a run. The output of the metrics you've added is provided in the retrospective and, over time, you can use the data to examine anomalies and refine goals.
 
-Another example is a support incident playbook. A metric such as time to resolution can be applied and used to identify areas that need more refinement such as tasks that might work better if they're split up so the goal is reached faster.
+Another example is a support incident playbook. The time to resolution metric can be applied and used to identify areas that need more refinement, such as tasks that might work better if they're split up so goals are reached faster.
 
 Metrics are enabled when you enable retrospectives. Calibrate the type of metric you want to measure, and once a run is finished you can view the output in the retrospective. You can have multiple metrics configured per playbook and you can edit them at any time.
 
