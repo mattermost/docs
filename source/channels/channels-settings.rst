@@ -34,7 +34,7 @@ You can customize your Channels experience in the following ways in **Settings**
       - Access **Profile** and **Security** settings from your Avatar in the Global Header.
       - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the Gear |gear-icon| icon in the Global Header.
 
-      .. |gear-icon| image:: ../images/gear-icon.png
+      .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
         :alt: Select the Gear icon to open the Settings dialog.
 
   .. tab:: Mattermost v5.39 and earlier

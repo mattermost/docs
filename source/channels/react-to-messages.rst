@@ -32,7 +32,6 @@ Emojis are small, digital images or icons used to communicate or express concept
 
     .. image:: ../images/emojiautocomplete.png
         :alt: Emoji Autocomplete
-        :scale: 80
 
 Select recent emojis
 --------------------

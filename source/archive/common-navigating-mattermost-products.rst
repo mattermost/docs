@@ -27,7 +27,7 @@ Your **Profile** and **Security** settings can be found in **Profile**. Select y
 
 Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are found in **Settings**. In Channels, select the |gear-icon| in the Global Header, to the left of your avatar, to access Channels settings. 
 
-.. |gear-icon| image:: ../images/gear-icon.png
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Select the Gear icon to access Channel settings.
 
 Status and availability

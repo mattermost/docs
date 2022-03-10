@@ -114,7 +114,6 @@ You can apply search modifiers to any search to reduce the number of results ret
   * For example, searching ``website on: 2018-09-01`` returns messages or files containing the term ``website`` posted on September 1, 2018.
 
 .. image:: ../images/calendar2.png
-  :width: 300 px
 
 Exclusions
 ~~~~~~~~~~

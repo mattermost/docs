@@ -32,7 +32,7 @@ Mattermost can automatically detect and display messages written using right-to-
 
       If you prefer to use ENTER to insert new lines and CTRL+ENTER to send messages instead, select the **Gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
-      .. |gear-icon| image:: ../images/gear-icon.png
+      .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
         :alt: Select the Gear icon to open the Settings dialog.
 
   .. tab:: Mattermost v5.39 and earlier

@@ -20,7 +20,7 @@ Reply to Messages
 
 Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. You can `edit and delete messages <https://docs.mattermost.com/channels/send-messages.html#edit-or-delete-messages>`__ after you've sent them.
 
-.. |reply-arrow| image:: ../images/reply-arrow.png
+.. |reply-arrow| image:: ../images/reply-outline_F0F20.svg
   :alt: Reply icon.
 
 .. image:: ../images/reply-to-message.png
