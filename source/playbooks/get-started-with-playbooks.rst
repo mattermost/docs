@@ -31,6 +31,6 @@ Tasks and checklists are the foundation of a template and a workflow. In an inci
 Status updates
 --------------
 
-Regular updates are important communication tools, especially in the middle of an outage. Channels can get very busy and overwhelming, and if you have more than one incident at a time it's often too noisy for stakeholders to keep track of everything.
+Regular updates are important communication tools, especially in the middle of an incident like an outage. Channels can get very busy and overwhelming, and if you have more than one incident at a time, it's often too noisy for stakeholders to keep track of everything.
 
 Use the **Broadcast update to other channels** option to cut through the noise and share critical information with both channel members and other users in a dedicated channel.
