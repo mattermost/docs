@@ -41,7 +41,7 @@ These metrics can be anything that's of interest to you and your team. For examp
 
 Another example is a support incident playbook. The time to resolution metric can be applied and used to identify areas that need more refinement, such as tasks that might work better if they're split up so goals are reached faster.
 
-When you delete configured metrics from a playbook, the data is not delete but you will no longer see those metrics in the dashboard. In addition, the corresponding metric field will be removed from the retrospective form and from published retrospectives.
+When you delete configured metrics from a playbook, the data isn't deleted, but you no longer see those metrics in the dashboard. In addition, the corresponding metric field is removed from the retrospective form and from published retrospectives.
 
 Metrics dashboard
 ^^^^^^^^^^^^^^^^^
