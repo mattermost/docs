@@ -58,6 +58,9 @@ The playbook dashboard reports on each metric for all runs by showing:
 
 The lower half of the page shows a list of finished runs with metrics values. You can filter or sort a list by metrics values.
 
+.. image:: ../images/playbook-metrics.png
+   :alt: View and assess metrics for your playbook.
+
 Channel export
 ~~~~~~~~~~~~~~
 
