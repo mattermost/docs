@@ -23,7 +23,7 @@ Retrospectives help teams identify areas of improvement in workflows. Each time 
 Configuring retrospectives before a run
 ----------------------------------------
 
-Open Playbooks and select the **Playbooks** tab. Select the playbook and then select **Edit**. Select **Retrospective**. Move the toggle to **Enable Retrospective**.
+Open Playbooks and select the **Playbooks** tab. Locate the playbook you want to modify, select the **...** icon under **Actions** and then select **Edit**. In the next screen, select **Retrospective**. Move the toggle to **Enable Retrospective**.
 
 You can set a reminder to fill out the retrospective after a run is finished. The configured template is pre-populated in the run's retrospective.
 
