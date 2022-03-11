@@ -80,7 +80,7 @@ U.S. Trade Compliance
 Mattermost, Inc. implements a number of controls and processes to comply with U.S. trade compliance laws.
 
 1. **IP blocking:** We use IP blocking to deny access from certain countries to our commercial systems, such as signing up for our commercial and proprietary offerings.
-2. **Automated compliance scanning:** We use an automated export compliance tool called Descartes. In Salesforce account records there is a prominent “Descartes” box in the top right indicating safety levels. Accounts that are flagged need to be signed-off by Tim Quock, VP Finance, who is connected with our `export compliance counsel <https://docs.google.com/document/d/14KzrhszTlaibtM4APezTS8CFb1vaHxRsnkV9ZFef-Uc/edit>`_.
+2. **Automated compliance scanning:** We use an automated export compliance tool called Descartes. In Salesforce account records there is a prominent **Descartes** box in the top right indicating safety levels. Accounts that are flagged need to be signed-off by Tim Quock, VP Finance, who is connected with our `export compliance counsel <https://docs.google.com/document/d/14KzrhszTlaibtM4APezTS8CFb1vaHxRsnkV9ZFef-Uc/edit>`_.
 3. **Manual compliance review:** At times announcements about changes to sanctions regulations happen faster than our export compliance tool can adapt. In the cases where sanctions have been announced, we can proactively review our business and make changes to enforce sanctions ahead of the automated solution being updated.
 
 **What is the process to end a customer or reseller relationship due to new U.S. sanctions?**
