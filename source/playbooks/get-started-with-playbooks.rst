@@ -7,7 +7,9 @@ Playbooks are workflows that can be repeated and refined over time. They can be 
 
 You can also choose a blank template and start from scratch - this is a good option if your use case is unique.
 
-Lastly, if you're unsure which option to choose, take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together. If you're taking this option, you can stop reading here and enjoy the test run.
+.. tip:: 
+
+    If you're unsure which option to choose, take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together. If you're taking this option, you can stop reading here and enjoy the test run.
 
 When you get started with Playbooks, it helps to have a repeatable process in mind up front. As a working example, we'll refer to an incident response playbook and discuss its moving parts.
 
