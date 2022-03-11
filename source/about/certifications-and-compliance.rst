@@ -74,6 +74,21 @@ Adherence with accessibility standards is assisted in the following ways:
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 - **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__ so that it may be resolved.
 
+U.S. Trade Compliance 
+-------------------------------
+
+Mattermost, Inc. implements a number of controls and processes to comply with U.S. trade compliance laws. 
+
+1) IP Blocking - We use IP blocking to deny access from certain countries to our commercial systems, such as signing up for our commercial and proprietary offerings. 
+
+2) Automated compliance scanning - We use an automated export compliance tool called Descartes. In Salesforce account records there is a prominent “Descartes” box in the top right indicating safety levels. Accounts that are flagged need to be signed-off by Tim Quock, VP Finance, who is connected with our `export compliance counsel <https://docs.google.com/document/d/14KzrhszTlaibtM4APezTS8CFb1vaHxRsnkV9ZFef-Uc/edit>`_. 
+
+3) Manual compliance review - At times announcements about changes to sanctions regulations happen faster than our export compliance tool can adapt. In the cases where sanctions have been announced, we can proactively review our business and make changes to enforce sanctions ahead of the automated solution being updated. 
+
+**What is the process to end a customer or reseller relationship due to new U.S. sanctions?**
+
+The customer is contacted via email with either manually or through an automated process with compliance@mattermost.com cc'd and the communication is written back into SFDC for record keeping. 
+
 U.S. Export Compliance Overview
 -------------------------------
 
@@ -120,22 +135,6 @@ General Information
 
 Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`__ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`__ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
 the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ (“export controlled”).
-
-Trade Compliance 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost, Inc. implements a number of controls and processes to comply with U.S. trade compliance laws. 
-
-1) IP Blocking - We use IP blocking to deny access from certain countries to our commercial systems, such as signing up for our commercial and proprietary offerings. 
-
-2) Automated compliance scanning - We use an automated export compliance tool called Descartes. In Salesforce account records there is a prominent “Descartes” box in the top right indicating safety levels. Accounts that are flagged need to be signed-off by Tim Quock, VP Finance, who is connected with our `export compliance counsel<https://docs.google.com/document/d/14KzrhszTlaibtM4APezTS8CFb1vaHxRsnkV9ZFef-Uc/edit>`_. 
-
-3) Manual compliance review - At times announcements about changes to sanctions regulations happen faster than our export compliance tool can adapt. In the cases where sanctions have been announced, we can proactively review our business and make changes to enforce sanctions ahead of the automated solution being updated. 
-
-**What is the process to end a customer or reseller relationship due to new U.S. sanctions?**
-
-The customer is contacted via email with either manually or through an automated process with compliance@mattermost.com cc'd and the communication is written back into SFDC for record keeping. 
-
 
 Export Classification and Licensing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
