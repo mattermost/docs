@@ -43,6 +43,21 @@ Another example is a support incident playbook. The time to resolution metric ca
 
 When you delete configured metrics from a playbook, the data is not delete but you will no longer see those metrics in the dashboard. In addition, the corresponding metric field will be removed from the retrospective form and from published retrospectives.
 
+Metrics dashboard
+^^^^^^^^^^^^^^^^^
+
+For each run, you can enter an actual value per metric under the retrospective section. You can edit it any many times as you'd like until you've published the retrospective at which point both the metrics and report will no longer be editable. The final value only shows up in the playbook dashboard once the retrospective has been published.
+
+The playbook dashboard reports on each metric for all runs by showing:
+
+- Average value for all runs
+- The last 10-run average value and difference with prev 10-run average
+- The value range for all runs
+- The target value
+- The actual values chart for last 10-runs
+
+The lower half of the page shows a list of finished runs with metrics values. You can filter or sort a list by metrics values.
+
 Channel export
 ~~~~~~~~~~~~~~
 
