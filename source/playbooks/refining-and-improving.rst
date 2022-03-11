@@ -46,7 +46,9 @@ When you delete configured metrics from a playbook, the data is not delete but y
 Metrics dashboard
 ^^^^^^^^^^^^^^^^^
 
-For each run, you can enter an actual value per metric under the retrospective section. You can edit it any many times as you'd like until you've published the retrospective at which point both the metrics and report will no longer be editable. The final value only shows up in the playbook dashboard once the retrospective has been published.
+For each run, you can enter a value per metric under the retrospective section. This value can be based on whatever you are measuring, such as number of bugs found per run. 
+
+You can edit this value as many times as you'd like - for example to ensure you have the correct parameters for your metric - until you've published the retrospective at which point both the metrics and report will no longer be editable. The final value only shows up in the playbook dashboard once the retrospective has been published.
 
 The playbook dashboard reports on each metric for all runs by showing:
 
