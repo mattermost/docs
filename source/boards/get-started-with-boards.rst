@@ -1,9 +1,16 @@
 Get Started with Mattermost Boards
 ==================================
 
-Access Mattermost Boards from the Product Menu and select **Boards**.
+Access Mattermost Boards by selecting **Boards** from the **Product list** |product-list| icon.
+
+.. |product-list| image:: ../images/products_E82F.svg
+  :height: 24px
+  :width: 24px
+  :alt: Navigate between Channels, Playbooks, and Boards using the Product list icon.
 
 Boards are used for planning projects collaboratively. You can access the list of channels and their boards from the drop-down menu in the left-hand sidebar. Boards are made up of cards, and cards can have a wide range of purposes.
+
+See our `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ documentation for details on the many ways you can use Channels to enable team collaboration.
 
 Create a board
 --------------
@@ -12,7 +19,7 @@ When you first start using Boards, you need to create a board. You can select a 
 
 To find a board, open Boards and select the drop-down menu in the sidebar. Each board is linked to the channel it was created in. This includes direct messages and group messages.
 
-To learn more about boards and templates, visit XXX.
+See the `working with boards <https://docs.mattermost.com/boards/working-with-boards.html>`_ and `templates <https://docs.mattermost.com/boards/templates.html>`_ documentation for more information.
 
 Create a card
 -------------
@@ -22,6 +29,8 @@ Cards are like sticky notes. You can arrange them in various ways, using differe
 Once you've chosen a board template, you'll find pre-populated cards. You can use and edit those, or create new ones. Use the Description field to add details, and you can use Markdown to add formatting. You can add comments to a card in the Comments section.
 
 Select an existing card to open it or create a new card.
+
+See the `cards documentation <https://docs.mattermost.com/boards/work-with-cards.html>`_ for more information about working with cards.
 
 Description
 -----------
@@ -42,7 +51,7 @@ You can create properties for your cards that suit the way you're using them. If
 
 Properties can be renamed and deleted.
 
-To learn more about properties, visit XXX.
+See the `properties <https://docs.mattermost.com/boards/work-with-cards.html#add-and-manage-properties>`_ documentation for more information.
 
 Views
 -----
@@ -56,20 +65,15 @@ To add a new view, go to Add a new view from the view drop-down, then select fro
 - Gallery: Displays cards in a gallery format, so you can manage and organize cards with image attachments.
 - Calendar: Adds a calendar view to easily visualize your cards by dates and keep track of deadlines.
 
-To learn more about views, visit XXX.
+See the `working with views <https://docs.mattermost.com/boards/working-with-boards.html#changing-views> documentation for more information.
 
 Filters and sorting
 -------------------
 
-You can organize and find the cards you're looking for with our filter, sort, and grouping options. From the Board header, you can quickly toggle on different properties, change the group display, set filters, and change how the cards are sorted. Combine views with filters to make unique boards for specific items. For example, you can create a **By milestone** board and then use a filter to only display items for specific milestones. 
-
-You can add multiple properties to a filter. When you add multiple properties to filter, it is an "AND" statement - so it would only display when both conditions are true. 
-
-You can also add multiple values within the same property, which is an "OR" statement
-
-To learn more about filters, visit XXX.
+You can organize and find the cards you're looking for with our filter, sort, and grouping options. From the Board header, you can quickly toggle on different properties, change the group display, set filters, and change how the cards are sorted. Combine views with filters to make unique boards for specific items. For example, you can create a **By milestone** board and then use a filter to only display items for specific milestones.
 
 Share
 -----
 
-Once you've created a board and cards, you can generate a link which can be shared publicly or within only your team.
+Once you've created a board and cards, you can generate a link which can be shared publicly or within only your team. To share a board, select Share at the top right of the Board view. Copy the link to share the board internally with your team or generate public link that can be accessed by anyone externally.
+
