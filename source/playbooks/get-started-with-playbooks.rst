@@ -1,7 +1,12 @@
 Get started with Mattermost Playbooks
 =====================================
 
-Access Mattermost playbooks from the Product Menu and select **Playbooks**.
+Access Mattermost Playbooks by selecting **Playbooks** from the **Product list** |product-list| icon.
+
+.. |product-list| image:: ../images/products_E82F.svg
+  :height: 24px
+  :width: 24px
+  :alt: Navigate between Channels, Playbooks, and Boards using the Product list icon.
 
 Playbooks are workflows that can be repeated and refined over time. They can be applied to a range of situations and give stakeholders visibility into progress, process, and metrics. Playbooks are configurable and editable. You can add tasks to checklists, include automation behaviors, and provide insights into your processes in the form of metrics.
 
