@@ -25,7 +25,7 @@ To share a board with others:
 3. The following two options are available:
 
    * Copy the internal link to **Share an editable view with users who have permissions to the board**.
-   * Switch to the **Publish** tab and set the toggle on to **Publish and share a "read-only" link with everyone on the web**.
+   * On the **Publish** tab, you can share a read-only link online with everyone.
 
 4. Copy the link provided.
 
