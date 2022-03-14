@@ -20,7 +20,7 @@ View, sort, and filter
 
 There are a number of ways you can visualize your boards amd cards. The type of template you choose provides a set of view options.
 
-You can organize and find the cards you're looking for with our filter, sort, and grouping options. From the Board header, you can quickly toggle on different properties, change the group display, set filters, and change how the cards are sorted. Combine views with filters to make unique boards for specific items. For example, you can create a **By milestone** board and then use a filter to only display items for specific milestones.
+You can organize cards and narrow your focus on key work items with our filter, sort, and grouping options. From the Board header, you can quickly toggle on different properties to display, change the card grouping, apply filters, and adjust how the cards are sorted.
 
 You can filter by multiple properties as well as multiple values within the same property. When filtering by multiple properties, **all conditions** that you've selected need to be true in order for the filtered results to display. For example, if you want to filter your view to only display cards associated with a Status of "Not Started" and a Priority of "High", you would add both of them to that filter.
 
