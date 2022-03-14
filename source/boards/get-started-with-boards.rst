@@ -24,7 +24,7 @@ See the `working with boards <https://docs.mattermost.com/boards/working-with-bo
 Create a card
 -------------
 
-Cards are like sticky notes. You can arrange them in various ways, using different views. You can also give them mutiple areas of information called properties. Adding and using properties makes it easier to organize and find cards, using filters based on card properties.
+Cards are like sticky notes. You can arrange them in various ways, using different views. You can also give them multiple areas of information called properties. Adding and using properties makes it easier to organize and find cards using filters based on card properties.
 
 Once you've chosen a board template, you'll find pre-populated cards. You can use and edit those, or create new ones. Use the Description field to add details, and you can use Markdown to add formatting. You can add comments to a card in the Comments section.
 
