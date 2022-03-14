@@ -19,7 +19,7 @@ When you first start using Boards, you need to create a board. You can select a 
 
 To find a board, open Boards and select the drop-down menu in the sidebar. You can search for a workspace or browse through all existing workspaces. Each workspace is linked to the channel it was created in. This includes direct messages and group messages.
 
-See the `working with boards <https://docs.mattermost.com/boards/working-with-boards.html>`_ and `templates <https://docs.mattermost.com/boards/templates.html>`_ documentation for more information.
+See the `Working with Boards <https://docs.mattermost.com/boards/working-with-boards.html>`_ and `templates <https://docs.mattermost.com/boards/templates.html>`_ documentation for more information.
 
 Create a card
 -------------
@@ -30,7 +30,7 @@ Once you've chosen a board template, you'll find pre-populated cards. You can us
 
 Select an existing card to open it or create a new card.
 
-See the `cards documentation <https://docs.mattermost.com/boards/work-with-cards.html>`_ for more information about working with cards.
+See the `Work with Cards documentation <https://docs.mattermost.com/boards/work-with-cards.html>`_ for more information about working with cards.
 
 Description
 -----------
@@ -51,7 +51,7 @@ You can create properties for your cards that suit the way you're using them. If
 
 Properties can be renamed and deleted.
 
-See the `properties <https://docs.mattermost.com/boards/work-with-cards.html#add-and-manage-properties>`_ documentation for more information.
+See the `Properties <https://docs.mattermost.com/boards/work-with-cards.html#add-and-manage-properties>`_ documentation for more information.
 
 Views
 -----
@@ -76,4 +76,3 @@ Share
 -----
 
 Once you've created a board and cards, you can generate a link which can be shared publicly or within only your team. To share a board, select **Share** at the top right of the Board view. Copy the link to share the board internally with your team or generate public link that can be accessed by anyone externally.
-
