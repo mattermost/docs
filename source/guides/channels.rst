@@ -34,6 +34,7 @@ Work with channels
    Customize Your Channel Sidebar </channels/customize-your-channel-sidebar>
    Archive and Unarchive Channels </channels/archive-unarchive-channels>
    Set Channel Preferences </channels/set-channel-preferences>
+   Channels Settings </channels/channels-settings>
 
 * :doc:`Channel Types </channels/channel-types>` - Learn more about the types of channels available in Mattermost.
 * :doc:`Create Channels </channels/create-channels>`  - Create channels to organize discussion by topic, project, or focus.
@@ -48,6 +49,7 @@ Work with channels
 * :doc:`Customize Your Channel Sidebar </channels/customize-your-channel-sidebar>` - Organize conversations in the sidebar to keep your workspace efficient.
 * :doc:`Archive and Unarchive Channels </channels/archive-unarchive-channels>` - Keep the number of available channels manageable. 
 * :doc:`Set Channel Preferences </channels/set-channel-preferences>` - Customize notifications, headers, names, and channel descriptions.
+* :doc:`Customize Your Mattermost Channels Experience </channels/channels-settings>` - Learn how to customize Mattermost Channels based on your preferences.
 
 Work with messages
 ------------------
@@ -57,6 +59,7 @@ Work with messages
 
    Send Messages </channels/send-messages>
    Reply to Messages </channels/reply-to-messages>
+   Organize Conversations </channels/organize-conversations>
    React to Messages using Emojis </channels/react-to-messages>
    Mention People </channels/mention-people>
    Mark Messages as Unread </channels/mark-messages-unread>
@@ -68,6 +71,7 @@ Work with messages
 
 * :doc:`Send Messages </channels/send-messages>` - Send messages to other Mattermost users.
 * :doc:`Reply to Messages </channels/reply-to-messages>` - Communicate with your team in Mattermost.
+* :doc:`Organize Conversations with Collapsed Reply Threads </channels/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
 * :doc:`React to Messages using Emojis </channels/react-to-messages>` - Use emojis to express concepts, emotions, and physical gestures in your messages.
 * :doc:`Mention People </channels/mention-people>` - Get the attention of specific people.
 * :doc:`Mark Messages as Unread </channels/mark-messages-unread>` - Change messages to an unread state for easy follow-up.
@@ -76,28 +80,6 @@ Work with messages
 * :doc:`Share Links to Messages </channels/share-links>` - Share links to messages across channels.
 * :doc:`Save and Pin Messages </channels/save-pin-messages>` - Mark useful messages for easy retrieval in the future.
 * :doc:`Search for Messages </channels/search-for-messages>` - Use search to find messages, replies, and contents of files across Mattermost Channels.
-
-Organize conversations
------------------------
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   Organize Conversations with Collapsed Reply Threads </channels/organize-conversations>
-
-* :doc:`Organize Conversations with Collapsed Reply Threads </channels/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
-
-Customize your Channels experience
-----------------------------------
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   Channels Settings </channels/channels-settings>
-
-* :doc:`Customize Your Mattermost Channels Experience </channels/channels-settings>` - Learn how to customize Mattermost Channels based on your preferences.
 
 Keyboard accessibility
 ----------------------
@@ -108,9 +90,11 @@ Keyboard accessibility
 
    Keyboard Accessibility in Channels </channels/keyboard-accessibility>
    Keyboard Shortcuts for Channels </channels/keyboard-shortcuts-for-channels>
+   Run Slash Commands </channels/run-slash-commands>
 
 * :doc:`Keyboard Accessibility in Channels </channels/keyboard-accessibility>` - Access regions of your Mattermost workspace.
 * :doc:`Keyboard Shortcuts for Channels </channels/keyboard-shortcuts-for-channels>` - Make a more efficient use of your keyboard with keyboard shortcuts.
+* :doc:`Run Slash Commands </channels/run-slash-commands>` - Perform actions in Mattermost by typing into the text input box.
 
 Extend Channels functionality
 -----------------------------
@@ -119,8 +103,7 @@ Extend Channels functionality
    :maxdepth: 1
    :hidden:
 
-   Extend Channels functionality </channels/extend-channels-functionality>
-   Run slash commands </channels/run-slash-commands>
+   Extend Functionality with Integrations </channels/extend-channels-functionality>
+   
 
-* :doc:`Extend Channels functionality </channels/extend-channels-functionality>` - Find open source integrations to common tools in the Mattermost Marketplace.
-* :doc:`Run slash commands </channels/run-slash-commands>` - Perform actions in Mattermost by typing into the text input box.
+* :doc:`Extend Channels with Integrations </channels/extend-channels-functionality>` - Find open source integrations to common tools in the Mattermost Marketplace.
