@@ -8,16 +8,6 @@ Optimize Your Mattermost Workspace
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
   :target: https://mattermost.com/download
@@ -28,6 +18,41 @@ Optimize Your Mattermost Workspace
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-With workspace optimizations, System Admins can review their overall workspace health and growth scores, and take recommended actions for ensuring their workspace is running smoothly and that their users get the most of Mattermost.
+With workspace optimizations, System Admins can review their workspace health and growth scores, then take advantage of recommended actions for ensuring their workspace is running smoothly and teams are maximizing productivity. 
 
+System Admins can access their workspace optimization page in the System Console by going to **Reporting > Workspace Optimization**.
 
+.. image:: ../images/workspace-optimization.png
+  :alt: Review your workspace health and growth scores, then take advantage of recommended optimizations.
+
+Recommendations
+---------------
+
+The following optimization areas can alert you to workspace suggestions, warnings, or problems that may require your attention:
+
++-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Optimization category | Suggestions, Warnings, or Problems Detected                                                              | Additional Information                                                                                                                                               |
++=======================+==========================================================================================================+======================================================================================================================================================================+
+| Mattermost release    | Are you on the latest Mattermost release?                                                                | You're notified when updates are available.                                                                                                                          |
+|                       |                                                                                                          | See the `Upgrade Mattermost <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ product documentation for details on upgrading your workspace. |
++-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration issues  | - **SSL**: Should your workspace be more secure with SSL?                                                | See the product documentation to learn more:                                                                                                                         |
+|                       |                                                                                                          |                                                                                                                                                                      |
+|                       | - **Session Length**: The default value may not provide an optimal user experience.                      | - `Set up SSL <https://docs.mattermost.com/onboard/ssl-client-certificate.html>`__                                                                                   |
+|                       |                                                                                                          | - `Configure session length <https://docs.mattermost.com/configure/configuration-settings.html#session-lengths>`__                                                   |
++-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Workspace access      | Is the Mattermost workspace may not be accessible to users?                                              | If your web server settings don't pass a live URL test, your workspace may not be accessible to others.                                                              |
+|                       |                                                                                                          | See the `Environment Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#environment>`__ product documentation to learn more:  |
++-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Search performance    | As your user base grows, is search getting slower?                                                       | See the `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ product documentation to learn more.                                                |
++-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Data privacy          | Do you need more control and insights into your data?                                                    | See the product documentation to learn more:                                                                                                                         |
+|                       |                                                                                                          |                                                                                                                                                                      |
+|                       |                                                                                                          | - `Data Retention <https://docs.mattermost.com/comply/data-retention-policy.html>`__                                                                                 |
+|                       |                                                                                                          | - `Compliance Export <https://docs.mattermost.com/comply/compliance-export.html>`__                                                                                  |
++-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| User authentication   | - **AD/LDAP**: As your user base grows, would you benefit from easier onboarding,                        | See the product documentation to learn more:                                                                                                                         |
+|                       |   automated deactivations, and role assignments?                                                         |                                                                                                                                                                      |
+|                       |                                                                                                          | - `AD/LDAP <https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap>`__                                                                            |
+|                       | - **Guest Accounts**: Do you want to control user access to channels and teams with guest accounts?      | - `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__                                                                                       |
++-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
