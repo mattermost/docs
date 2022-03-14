@@ -150,11 +150,11 @@ GitLab announcement proposal
 
   ### GitLab Mattermost 4.7
 
-  GitLab 10.6 includes [Mattermost 4.7](https://about.mattermost.com/releases/mattermost-4-7/), an [open source Slack-alternative](https://about.mattermost.com/) whose newest release includes enhanced image preview and thumbnails, faster load times, upgraded desktop app, plus much more.
+  GitLab 10.6 includes [Mattermost 4.7](https://mattermost.com/blog/mattermost-4-7-enhanced-image-preview/), an [open source Slack-alternative](https://mattermost.com/) whose newest release includes enhanced image preview and thumbnails, faster load times, upgraded desktop app, plus much more.
 
   This version also includes [security updates](https://mattermost.com/security-updates/) and upgrading is recommended.
 
 GitLab forum responses
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-See `sample forum responses listed here <https://docs.mattermost.com/process/community-guidelines.html#sample-responses>`__.
+See `sample forum responses listed here <https://handbook.mattermost.com/contributors/contributors/guidelines/community-playbook>`__.
