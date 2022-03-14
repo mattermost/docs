@@ -17,7 +17,7 @@ Create a board
 
 When you first start using Boards, you need to create a board. You can select a template from the options provided or you can create an empty board. The only difference is that a template will be populated with sample cards, properties, and views, and in an empty template you start from scratch.
 
-To find a board, open Boards and select the drop-down menu in the sidebar. Each board is linked to the channel it was created in. This includes direct messages and group messages.
+To find a board, open Boards and select the drop-down menu in the sidebar. You can search for a workspace or browse through all existing workspaces. Each workspace is linked to the channel it was created in. This includes direct messages and group messages.
 
 See the `working with boards <https://docs.mattermost.com/boards/working-with-boards.html>`_ and `templates <https://docs.mattermost.com/boards/templates.html>`_ documentation for more information.
 
