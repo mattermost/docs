@@ -58,7 +58,7 @@ Views
 
 View are a great way to assess your board from various angles and allow your team to visualize the same cards and data from different perspectives, so they can stay up-to-date in the way that works best for them. Some views are linear, while others are closer to Kanban style. Views with a more linear display, such as the table view, display less context but are easier to scroll through. 
 
-To add a new view, go to Add a new view from the view drop-down, then select from any of the following views:
+To add a new view, go to **Add a new view** from the view drop-down, then select from any of the following views:
 
 - Board: Adds a Kanban board that allows your team to organize cards in swimlanes grouped by any property of your choosing. This view helps you visualize your project progress.
 - Table: Displays cards in a table format with rows and columns. Use this view to get an overview of all your project tasks. Easily view and compare the state of all properties across all cards without needing to open individual cards.
