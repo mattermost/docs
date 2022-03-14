@@ -65,7 +65,7 @@ To add a new view, go to Add a new view from the view drop-down, then select fro
 - Gallery: Displays cards in a gallery format, so you can manage and organize cards with image attachments.
 - Calendar: Adds a calendar view to easily visualize your cards by dates and keep track of deadlines.
 
-See the `working with views <https://docs.mattermost.com/boards/working-with-boards.html#changing-views> documentation for more information.
+See the `Working with Views <https://docs.mattermost.com/boards/working-with-boards.html#changing-views>`__ documentation for more information.
 
 Filters and sorting
 -------------------
