@@ -62,7 +62,7 @@ To add a new view, go to **Add a new view** from the view drop-down, then select
 
 - Board: Adds a Kanban board that allows your team to organize cards in swimlanes grouped by any property of your choosing. This view helps you visualize your project progress.
 - Table: Displays cards in a table format with rows and columns. Use this view to get an overview of all your project tasks. Easily view and compare the state of all properties across all cards without needing to open individual cards.
-- Gallery: Displays cards in a gallery format, so you can manage and organize cards with image attachments.
+- **Gallery**: Displays cards in a gallery format, so you can manage and organize cards with image attachments.
 - **Calendar**: Adds a calendar view to easily visualize your cards by dates and keep track of deadlines.
 
 See the `Working with Views <https://docs.mattermost.com/boards/working-with-boards.html#changing-views>`__ documentation for more information.
