@@ -1,7 +1,7 @@
 Manage Custom Groups
 ====================
 
-|enterprise| |professional| |cloud| |self-hosted|
+|enterprise| |professional| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
@@ -13,17 +13,12 @@ Manage Custom Groups
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-From Mattermost v6.5, a beta release of custom groups enables you to create and manage custom user groups in Mattermost Channels. A custom group is a group of up to 30 members in a team or a workspace who often need to be notified together as a group. 
+From Mattermost v6.5, a beta release of custom groups enables self-hosted customers to create and manage custom user groups in Mattermost Channels. A custom group is a group of up to 30 members in a team or a workspace who often need to be notified together as a group. 
 
 When you mention a custom group, you’ll notify everyone in the group without having to mention members individually. You can mention a group's unique name the same way you @mention another Mattermost member. See the `Mention People in Messages <https://docs.mattermost.com/channels/mention-people.html>`__ documentation for details.
 
@@ -44,7 +39,7 @@ Create a custom group
 
 1. Select **+** from the top of the channel sidebar, then select **Create New User Group**.
 
-2. Specify a name and mention. The mention is the handle you use to @mention a notification to the group. Group names must be unique. If a name is in use as a channel name, display name, or another custom group's name within a Mattermost deployment, it won't be available.
+2. Specify a name and mention. The mention is the handle you use to @mention a notification to the group. Group names must be unique across the Mattermost workspace. If a name is in use as a channel name, display name, or another custom group's name, it won't be available.
 
 3. Search for and select members to add to the custom user group, then select **Create Group**.
 
