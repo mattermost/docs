@@ -111,3 +111,14 @@ You can change a playbook's configuration at any time, but changes will only be 
  * To access the playbook dashboard, select the hyperlinked playbook name.
 
 4. Configure the playbook the same way a playbook is created or edited.
+
+Copying and reusing playbooks
+-----------------------------
+
+Playbooks are repeatable workflows and sometimes it's easier to copy and improve rather than start from scratch. You can do this by duplicating a playbook in the **Playbooks** screen. Select the **...** under **Actions** and then select **Duplicate**. The copied playbook will have **Copy of** appended to its original name which you can edit.
+
+You can also import playbooks between teams. From the **Playbooks** screen, select **Import**. Choose the team you're importing to, then select the JSON file.
+
+Lastly, if you want to create a backup of your playbook in JSON format, you can export it. To do this from the Playbooks screen, select the **...** under **Actions** and then select **Export**. Save the file to an appropriate location. The exported file can be used with your source control tool, to manage changes made to the playbook and allow you to rollback to previous versions.
+
+
