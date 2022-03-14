@@ -18,7 +18,7 @@ View, sort, and filter
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-There are a number of ways you can visualize your boards amd cards. The type of template you choose provides a set of view options.
+There are a number of ways you can visualize your boards and cards. The type of template you choose provides a set of view options.
 
 You can organize cards and narrow your focus on key work items with our filter, sort, and grouping options. From the Board header, you can quickly toggle on different properties to display, change the card grouping, apply filters, and adjust how the cards are sorted.
 
