@@ -21,7 +21,7 @@ Sharing Boards
 To share a board with others:
 
 1. Open a board in any view.
-2. On the top-right of the board select **Share board**.
+2. Select **Share board** in the top-right corner of the board.
 3. The following two options are available:
 
    * On the **Share** tab, you can share an editable view link with users who have permissions to the board.
