@@ -22,7 +22,9 @@ To share a board with others:
 
 1. Open a board in any view.
 2. On the top-right of the board select **Share board**.
-3. Set the toggle on to **Publish to web and share this board with anyone**.
+3. Copy the internal link to **Share an editable view with users who have permissions to the board**.
+-- OR --
+4. Switch to the Publish tab and set the toggle on to **Publish and share a "read-only" link with everyone on the web**.
 5. Copy the link provided.
 
 Anyone with the link will be able to view the board.
