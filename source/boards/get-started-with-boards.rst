@@ -75,5 +75,5 @@ You can organize and find the cards you're looking for with our filter, sort, an
 Share
 -----
 
-Once you've created a board and cards, you can generate a link which can be shared publicly or within only your team. To share a board, select Share at the top right of the Board view. Copy the link to share the board internally with your team or generate public link that can be accessed by anyone externally.
+Once you've created a board and cards, you can generate a link which can be shared publicly or within only your team. To share a board, select **Share** at the top right of the Board view. Copy the link to share the board internally with your team or generate public link that can be accessed by anyone externally.
 
