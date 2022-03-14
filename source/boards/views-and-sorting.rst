@@ -24,7 +24,7 @@ You can organize cards and narrow your focus on key work items with our filter, 
 
 You can filter by multiple properties as well as multiple values within the same property. When filtering by multiple properties, **all conditions** that you've selected need to be true in order for the filtered results to display. For example, if you want to filter your view to only display cards associated with a Status of "Not Started" and a Priority of "High", you would add both of them to that filter.
 
-When filtering by multiple values within the same property, **any condition** that you've selected can be true for the filtered results to display.  For example, if you filter your view by Priority values of "High" and "Medium", your board will display any cards with either of those property values.
+When filtering by multiple values within the same property, **any condition** that you've selected can be true for the filtered results to display. For example, if you filter your view by Priority values of "High" and "Medium", your board will display any cards with either of those property values.
 
 Additionally, you can adjust whether you want to include or exclude specific values within a property, or only display properties with empty or populated results.
 
