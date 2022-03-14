@@ -40,7 +40,7 @@ Use the description to provide context around the reason for the card. Cards are
 Comments
 --------
 
-Comments are a helpful way to add additional information to a card, and comments are time and date stamped so they're easy to track. Comments are listed in descending order from most recent to oldest.
+Comments are a helpful way to provide feedback or ask questions related to a card, and comments are time and date stamped so they're easy to track. Comments are listed in descending order from most recent to oldest.
 
 To add a comment, select the **Comment** field. When you're finished, select **Save**.
 
