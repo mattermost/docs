@@ -12,6 +12,8 @@ Playbooks are workflows that can be repeated and refined over time. They can be 
 
 When you get started with Playbooks, it helps to have a repeatable process in mind up front. As a working example, we'll refer to an incident response playbook and discuss its moving parts.
 
+Visit the `Mattermost Playbooks documentation <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`_ to learn more.
+
 Choose a template
 -----------------
 
@@ -31,7 +33,7 @@ It's important to make it easy to start a run. One way to do this is by setting 
 Welcome message
 ---------------
 
-Create a welcome message so that when members join your run, it's easy for them to see where they're needed and where to find the relevant information.
+Create a welcome message so that when members join your run, it's easy for them to see where they're needed and where to find the relevant information. This is especially important during a time-sensitive incident to eliminate confusion and help members ramp up quickly.
 
 Tasks and checklists
 --------------------
@@ -51,4 +53,3 @@ Retrospective
 -------------
 
 When an incident is over, create a retrospective that captures the impact of the event. You can also add metrics, such as how long it took to resolve the incident, which you can apply to other, similar incidents to see where you can improve and refine your workflows.
-
