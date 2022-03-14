@@ -26,4 +26,8 @@ You can filter by multiple properties as well as multiple values within the same
 
 When filtering by multiple values within the same property, **any condition** that you've selected can be true for the filtered results to display.  For example, if you filter your view by Priority values of "High" and "Medium", your board will display any cards with either of those property values.
 
-Lastly, you can adjust whether you want to include or exclude results, and have empty or populated results.
+Additionally, you can adjust whether you want to include or exclude specific values within a property, or only display properties with empty or populated results.
+
+Lastly, you can combine views with filters to create unique display options without having to constantly reapply filters. Each view retains all the applied filters, groups, and sort options, allowing you to create multiple views with unique filters.  For example, you can create a **By milestone** view under a board, and use a filter to only display items for specific milestones.
+
+**Please Note**: Groups and filters currently only support the `SELECT` property type.
