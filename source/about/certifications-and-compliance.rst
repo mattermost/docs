@@ -74,6 +74,29 @@ Adherence with accessibility standards is assisted in the following ways:
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 - **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__ so that it may be resolved.
 
+U.S. Trade Compliance 
+---------------------
+
+Mattermost, Inc. implements a number of controls and processes to comply with U.S. trade compliance laws. 
+
+1. **IP blocking:** We use IP blocking to deny access from certain countries to our commercial systems, such as signing up for our commercial and proprietary offerings. 
+
+2. **Automated compliance scanning:** We use an automated export compliance tool called Descartes. In Salesforce account records there is a prominent **Descartes** box in the top right indicating safety levels. Accounts that are flagged need to be signed-off by Tim Quock, VP Finance, who is connected with our `export compliance counsel <https://docs.google.com/document/d/14KzrhszTlaibtM4APezTS8CFb1vaHxRsnkV9ZFef-Uc/edit>`_.
+
+3. **Manual compliance review:** At times announcements about changes to sanctions regulations happen faster than our export compliance tool can adapt. In the cases where sanctions have been announced, we can proactively review our business and make changes to enforce sanctions ahead of the automated solution being updated.
+
+4. **Legal restrictions:** Our commercial software contains legal terms that apply to both administrators and end users prohibiting use that would violate U.S. sanctions law. 
+
+U.S. trade laws referenced here can be found online at: https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list 
+
+If you feel your organization is miscategorized under U.S. sanctions, please email compliance@mattermost.com. 
+
+What is the process to end a customer relationship due to new U.S. sanctions?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The customer is contacted via email with either manually or through an automated process with compliance@mattermost.com cc'd and the communication is written back into SFDC for record keeping.
+
+
 U.S. Export Compliance Overview
 -------------------------------
 
@@ -137,7 +160,7 @@ Mattermost Enterprise Edition software is found under `ECCN 5D002 <https://www.b
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
 **Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories.
-with specific prohibitions, such as Russia and Venezuela. Details can be
+with specific prohibitions, such as Venezuela. Details can be
 located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`__ and `OFAC <https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx>`__. The countries and their sanctions are subject to change.
 
 **WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its business partners may not export to parties involved
