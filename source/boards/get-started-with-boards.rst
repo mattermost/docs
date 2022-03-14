@@ -56,7 +56,7 @@ See the `properties <https://docs.mattermost.com/boards/work-with-cards.html#add
 Views
 -----
 
-View are a great way to assess your board from various angles and allow your team to visualize the same cards and data from different perspectives, so they can stay up-to-date in the way that works best for them. Some views are linear, while others are closer to Kanban style. Views with a more linear display, such as the task view, display less context but are easier to scroll through. 
+View are a great way to assess your board from various angles and allow your team to visualize the same cards and data from different perspectives, so they can stay up-to-date in the way that works best for them. Some views are linear, while others are closer to Kanban style. Views with a more linear display, such as the table view, display less context but are easier to scroll through. 
 
 To add a new view, go to Add a new view from the view drop-down, then select from any of the following views:
 
