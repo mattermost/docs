@@ -17,7 +17,7 @@ The Basics
    Navigate Mattermost </playbooks/navigating-mattermost>
    Get Started with Playbooks </playbooks-get-started-with-playbooks>
    Access Playbooks </playbooks/getting-started>
-   Playbooks Permissions </playbooks/playbooks-permissions>
+   Playbook Permissions </playbook/playbooks-permissions>
    Plan Playbooks </playbooks/setting-up-playbooks>
    Run Playbooks </playbooks/running-playbooks>
    Notifications and Updates </playbooks/notifications-and-updates>
@@ -27,7 +27,7 @@ The Basics
 * :doc:`Navigate Mattermost </playbooks/navigating-mattermost>` - Find your way around Mattermost.
 * :doc:`Get Started with Playbooks </playbooks-get-started-with-playbooks>` - Get started with Mattermost Playbooks.
 * :doc:`Access Playbooks </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
-* :doc:`Playbooks Permissions </playbooks/playbooks-permissions>` - Configure and granulate access controls for playbooks.
+* :doc:`Playbook Permissions </playbooks/playbook-permissions>` - Configure and granulate access controls for playbooks.
 * :doc:`Plan Playbooks </playbooks/setting-up-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage permissions for your team.
 * :doc:`Run Playbooks </playbooks/running-playbooks>` - Initiate Playbooks, make announcements, and get information about your workflows.
 * :doc:`Notifications and Updates </playbooks/notifications-and-updates>` - Keep track of all your active runs and tasks.
