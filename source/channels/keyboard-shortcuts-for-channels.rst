@@ -5,7 +5,7 @@ Keyboard shortcuts for Mattermost Channels help you make a more efficient use of
 
 .. tip::
 
-  Display a list of available keyboard shortcuts by pressing CTRL+/ (CMD+/ on Mac), or use the ``/shortcuts`` slash command.
+  Display a list of available keyboard shortcuts by pressing CTRL+/ (CMD+/ on macOS), or use the ``/shortcuts`` slash command.
 
 Navigation shortcuts for Mattermost Channels
 --------------------------------------------

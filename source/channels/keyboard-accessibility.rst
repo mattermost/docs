@@ -42,7 +42,7 @@ Navigational keyboard shortcuts help you use Mattermost without requiring a mous
 Region navigation
 ------------------
 
-Mattermost has eight regions that can be focused for navigation. Use **F6** (in the Desktop App) or **CTRL+F6** (in a browser) repeatedly to move focus and loop through the regions in this order:
+Mattermost has eight regions that can be focused for navigation. Use F6 (in the Desktop App) or CTRL+F6 (in a browser) repeatedly to move focus and loop through the regions in this order:
 
 1. Message list region
 2. Message input region
@@ -59,7 +59,7 @@ Mattermost has eight regions that can be focused for navigation. Use **F6** (in 
 Message navigation
 ------------------
 
-When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages and reply threads. Press **TAB** to navigate through message actions.
+When the message list region is focused, use the UP or DOWN arrow keys to navigate through messages and reply threads. Press TAB to navigate through message actions.
 
 .. image:: ../images/message-navigation.gif
   :alt: Navigate through Mattermost messages using a keyboard.
@@ -84,7 +84,7 @@ For example, a message read by a screen reader may sound like the following:
 Channel sidebar navigation
 --------------------------
 
-When the channel sidebar region is focused, use the **UP** or **DOWN** arrow keys to focus individual sidebar sections, such as Favorites, Public Channels, Private Channels and Direct Messages. Press **TAB** to navigate through channels or other buttons within a sidebar section.
+When the channel sidebar region is focused, use the UP or DOWN arrow keys to focus individual sidebar sections, such as Favorites, public channels, private channels, and direct messages. Press TAB to navigate through channels or other buttons within a sidebar section.
 
 .. image:: ../images/channel-sidebar-navigation.gif
   :alt: Navigate the Mattermost channel sidebar using a keyboard.

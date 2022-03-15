@@ -23,7 +23,7 @@ You'll find four types of channels in Mattermost: public channels, private chann
 Public channels
 ---------------
 
-Public channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two public Channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and Leave Channels </channels/join-leave-channels>` documentation for details on discovering and joining other channels.
+Public channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and Leave Channels </channels/join-leave-channels>` documentation for details on discovering and joining other channels.
 
 .. |globe-icon| image:: ../images/globe-icon.png
    :alt: A globe icon indicates a public channel.
@@ -31,7 +31,7 @@ Public channels are open to everyone on a team and are identified with a |globe-
 Private channels
 ----------------
 
-Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a |lock-icon| icon. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition these permissions can be restricted to the Channel Admins and System Admins.
+Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
 
 Channel members can choose to leave private channels at any time.
 

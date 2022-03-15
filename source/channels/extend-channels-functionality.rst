@@ -21,7 +21,7 @@ Developer tools
 - `GitHub <https://mattermost.com/marketplace/github-plugin/>`__: Subscribe to repositories, then stay updated with reviews and assignments in Mattermost.
 - `GitLab <https://mattermost.com/marketplace/gitlab-plugin/>`__: Subscribe to repositories, then stay updated with reviews and assignments in Mattermost.
 - `Jenkins <https://mattermost.com/marketplace/jenkins-plugin-2/>`__: Interact with jobs and builds with slash commands.
-- `Jira <https://mattermost.com/marketplace/jira-plugin/>`__: Create tickets from Mattermost messages, and get notified of updates in Jira.
+- `Jira <https://mattermost.com/marketplace/jira-plugin/>`__: Create tickets from messages, and get notified of updates in Jira.
 - `Opsgenie <https://mattermost.com/marketplace/opsgenie/>`__: Send and receive updates, as well as acknowledge, close, or assign issues in Mattermost.
 - `PagerDuty Notifier <https://mattermost.com/marketplace/pagerduty/>`__: Send events from PagerDuty to Mattermost.
 - `Zendesk App <https://mattermost.com/marketplace/zendesk-app/>`__: Create tickets and receive ticket updates within Mattermost.

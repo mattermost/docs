@@ -50,7 +50,7 @@ The following example sends a special mention notification to Alice, whose usern
 
   @alice how did your interview go with the new candidate?
 
-If the person you mentioned doesn't belong to the channel, a System Message is posted to let you know. This is a temporary message, and you are the only one who can see it. To add the mentioned person to the channel, open the dropdown menu next to the channel name and select **Add Members**.
+If the person you mentioned doesn't belong to the channel, a System Message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
 
 @channel and @all
 -----------------
@@ -87,9 +87,9 @@ You can ignore channel-wide mentions in specific channels by enabling the **Chan
 
 |enterprise| |cloud| |self-hosted|
 
-This beta feature enables System Admins to configure custom mentions for `LDAP synced groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ via the Group Configuration page. This beta functionality is also supported on the mobile app (from v1.34) if the AD/LDAP Groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
+This beta feature enables System Admins to configure custom mentions for `LDAP synced groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ via the Group Configuration page. This beta functionality is also supported on the Mobile App (from v1.34) if the AD/LDAP Groups feature is enabled. The Mobile App supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
 
-Once enabled for a specific group, users can mention and notify the entire group in a channel (similar to ``@channel`` or ``@all``). Members of the group in that channel will receive a notification. If members of the group mentioned are not members of the channel, the user who posted the mention is prompted to invite them.
+Once enabled for a specific group, users can mention and notify the entire group in a channel (similar to ``@channel`` or ``@all``). Members of the group in that channel will receive a notification. If members of the group mentioned aren't members of the channel, the user who posted the mention is prompted to invite them.
 
 Group mention identifiers (slugs) use the LDAP group name by default. To customize/rename the slug:
 

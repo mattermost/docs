@@ -18,7 +18,7 @@ Organize Conversations using Collapsed Reply Threads
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Threads are a key part of the messaging experience in Mattermost Channels. They're used to organize conversations and enable users to discuss topics without adding noise to channels or Direct Messages.
+Threads are a key part of the messaging experience in Mattermost Channels. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
 
 Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Our goal is to improve users’ ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
 
@@ -28,7 +28,7 @@ Collapsed Reply Threads (Beta) offers an enhanced experience for users communica
 Enable Collapsed Reply Threads (Beta)
 -------------------------------------
 
-Your System Admin must enable the Collapsed Reply Threads beta feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta>`__ documentation for details. Before enabling, please ensure you are well versed with the known issues, particularly relating to database resource requirements and server performance implications. 
+Your System Admin must enable the Collapsed Reply Threads beta feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta>`__ documentation for details. Before enabling, please ensure you are well-versed with the known issues, particularly relating to database resource requirements and server performance implications. 
 
 Once this feature is enabled in the System Console, you can `enable this feature for your account <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ by going to **Settings > Display > Collapsed Reply Threads (Beta)**.
 
@@ -89,7 +89,7 @@ Select **Unreads** to filter your followed threads by only those with unread rep
 Tutorial video
 ---------------
 
-For additional details about working with the Beta release of Collapsed Reply Threads, see our `tutorial video on YouTube <https://www.youtube.com/watch?v=hnD0Zj-mIbs>`_. 
+For additional details about working with the beta release of Collapsed Reply Threads, see our `tutorial video on YouTube <https://www.youtube.com/watch?v=hnD0Zj-mIbs>`_. 
 
 .. raw:: html
 

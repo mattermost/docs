@@ -22,8 +22,8 @@ Conversations in Mattermost are crucial to company productivity and success. Kee
 
 Here's how your sidebar is set up by default:
 
-- All Public and Private Channels you've joined are listed in the **Channels** category, sorted alphabetically.
-- All your Direct Messages and Group Messages are listed in the **Direct Messages** category, sorted by recent activity.
+- All public and private channels you've joined are listed in the **Channels** category, sorted alphabetically.
+- All your direct messages and group messages are listed in the **Direct Messages** category, sorted by recent activity.
 
 What can you customize?
 -----------------------
@@ -35,7 +35,7 @@ You can customize your sidebar in the following ways:
 - `Mute and unmute entire categories <#mute-and-unmute-categories>`__.
 - `Sort channels in each category <#sort-channels-in-categories>`__ manually, alphabetically, or by recent activity.
 - `Filter your sidebar to view unread channels only <#group-unread-channels-separately>`__, or choose to group unread messages into an **Unreads** category.
-- `Manage your Direct Messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
+- `Manage your direct messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
 
   .. image:: ../images/channel_sidebar_updates.gif
 
@@ -46,7 +46,7 @@ Create custom categories to group channels together for quicker and easier navig
 
 To create categories, select the **+** symbol at the top of the sidebar. Or, select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
-Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and Direct Messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
+Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and direct messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
 
 Make categories work for you
 ----------------------------
@@ -60,9 +60,9 @@ Make categories work for you
 
 - Drag to reorder entire categories to prioritize important conversations. 
 
-**Categories can contain Direct Message conversations**
+**Categories can contain direct message conversations**
 
-- Select and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.
+- Select and drag direct messages into any category. You can also multi-select direct messages to drag them together as a group.
 
 Rename categories
 ~~~~~~~~~~~~~~~~~
@@ -76,7 +76,7 @@ Delete categories
 1. Select the **Category options** icon in the sidebar, then select **Delete Category**.
 2. Select **Delete** to confirm or select **X** to cancel.
 
-All channels and Direct Message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined. 
+All channels and direct message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined. 
 
 Organize channels in categories
 -------------------------------
@@ -88,22 +88,22 @@ Drag and drop selections
 
 To select multiple channels:
 
-- Select sequential channels and/or Direct Messages by pressing and holding SHIFT+Select. 
-- Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
-- Press ESC to clear channel or Direct Message selections.
+- Select sequential channels and/or direct messages by pressing and holding SHIFT+Select. 
+- Select non-sequential channels and/or direct messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
+- Press ESC to clear channel or direct message selections.
 
-Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Messages between or within categories. 
+Using the Mattermost Web or Desktop App, drag selected channels and/or direct messages between or within categories. 
 
 .. tip::
 
-  Multi-selected channels and Direct Messages move together as a group in the order they originally appeared. 
+  Multi-selected channels and direct messages move together as a group in the order they originally appeared. 
 
 .. image:: ../images/multi-select-drag.gif
 
 Move selections
 ~~~~~~~~~~~~~~~
 
-In addition to selecting and dragging, you can specify a category destination for selected channels and/or Direct Messages. To do this, select the **Channel options** icon in the sidebar and then select **Move to**.
+In addition to selecting and dragging, you can specify a category destination for selected channels and/or direct messages. To do this, select the **Channel options** icon in the sidebar and then select **Move to**.
 
 .. image:: ../images/multi-select-move.gif
 
@@ -154,21 +154,21 @@ When enabled, unread channels with mentions will sort to the top of the category
   
   If you prefer to see only unread channels in their respective categories, we recommend collapsing your custom categories and disabling **Group unread channels separately** under **Settings > Sidebar**.
 
-Manage Direct Messages
+Manage direct messages
 ----------------------
 
-To sort your Direct Messages, select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
+To sort your direct messages, select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
 
-How many Direct Messages to display?
+How many direct messages to display?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Control how many Direct Message conversations display in the **Direct Messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
+Control how many direct message conversations display in the **Direct Messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
 
-To configure the number of Direct Messages to display, go to **Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
+To configure the number of direct messages to display, go to **Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
 
 Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older Direct Messages.
 
 .. image:: ../images/dm-display.gif
 
 .. note::
-  Direct Message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
+  Direct message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.

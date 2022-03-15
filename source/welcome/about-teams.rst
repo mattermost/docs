@@ -136,7 +136,6 @@ If someone you want to add to your team already has an account on the server, yo
    - If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
    - System Admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**.
 
-
 Remove people from teams
 ------------------------
 
@@ -151,6 +150,6 @@ A System Admin can also remove users from teams via **System Console > Users**, 
 Leave a team
 ------------
 
-Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all Public channels and Private channels on the team.
+Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
 
 They will only be able to rejoin the team if it is set to `"Allow any user with an account on this server to join this team" <https://docs.mattermost.com/welcome/team-settings.html#allow-anyone-to-join-this-team>`__ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.

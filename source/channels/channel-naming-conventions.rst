@@ -25,9 +25,9 @@ Basic structure
 
 - Channel names appear in menus where users select which conversations to join.
 - Channel names are unique.
-- Channel names have a 64 character limit to ensure readability on both desktop and mobile devices.
-- An additional 128 characters are available to add a "Channel Purpose" visible when users are selecting channels.
-- An additional 1024 characters are available for describing the channel in detail in the "Channel Header".
+- Channel names have a 64-character limit to ensure readability on both desktop and mobile devices.
+- An additional 128 characters are available to add a **Channel Purpose** visible when users are selecting channels.
+- An additional 1024 characters are available for describing the channel in detail in the **Channel Header**.
 
 Scoping names
 -------------
@@ -50,7 +50,7 @@ You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-T
 
 .. tip:: 
    
-   Shorten words, particularly categories, by removing vowels, endings and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
+   Shorten words, particularly categories, by removing vowels, endings, and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
 
 Good naming can take a team up to several thousand channels without significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accommodate the large number of channels.
 
@@ -72,7 +72,7 @@ Keeping names clear and short lets users navigate large collections of channels 
 Topic channels
 ~~~~~~~~~~~~~~
 
-Topics are broad categories for organizing discussions. Topics are similar to how a user might create a folder for organizing emails or documents. Examples: Recruiting, Interviews, Legal Reviews, Documentation
+Topics are broad categories for organizing discussions. Topics are similar to how a user might create a folder for organizing emails or documents. Examples: Recruiting, Interviews, Legal Reviews, Documentation.
 
 Users can join and leave topic-based channels, as well as add colleagues to have topic-based discussions.
 
@@ -102,9 +102,9 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 3. Header links
 
-When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the channel header. See our `documentation <https://docs.mattermost.com/channels/set-channel-preferences.html#channel-header>`__ to learn more about working with channel headers. 
+When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts, or BlueJeans in the channel header. See our `documentation <https://docs.mattermost.com/channels/set-channel-preferences.html#channel-header>`__ to learn more about working with channel headers. 
 
-When it's time to meet, your team can click the conference link to connect.
+When it's time to meet, your team can select the conference link to connect.
 
 Sub-team channels
 ~~~~~~~~~~~~~~~~~

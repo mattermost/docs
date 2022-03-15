@@ -50,7 +50,7 @@ Links
 Channel links
 ~~~~~~~~~~~~~
 
-Create a link to a Public Channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). From Mattermost v6.2, channel members also see Private Channel names returned.
+Create a link to a public channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). From Mattermost v6.2, channel members also see private channel names returned.
 
 Labeled links
 ~~~~~~~~~~~~~

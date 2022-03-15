@@ -88,11 +88,11 @@ You can apply search modifiers to any search to reduce the number of results ret
 
 - Use ``from:`` to find messages or files from specific users. 
 
-  * For example, searching ``from:john.smith`` only returns content from your Direct Message history with John Smith.
+  * For example, searching ``from:john.smith`` only returns content from your direct message history with John Smith.
 
-- Use ``in:`` to find messages or files posted in specific Public channels, Private channels, Direct Messages, or Group Messages. You can specify channels by display name or channel ID. 
+- Use ``in:`` to find messages or files posted in specific public channels, private channels, direct messages, or group messages. You can specify channels by display name or channel ID. 
   
-  * For example, searching ``Mattermost in:town-square`` only returns results in the Town Square Public channel that contains the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns results that contains the term ``Mattermost`` in your Direct Message history with John Smith.
+  * For example, searching ``Mattermost in:town-square`` only returns results in the Town Square public channel that contains the term ``Mattermost``, while searching ``Mattermost in:john.doe`` only returns results that contains the term ``Mattermost`` in your direct message history with John Smith.
 
 ``before:``, ``after:``, and ``on:``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

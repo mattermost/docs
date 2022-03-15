@@ -47,7 +47,7 @@ To unmute the channel, select the channel name again to access the drop-down men
 
   Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar.
 
-Ignore mentions for @channel, @here and @all
+Ignore mentions for @channel, @here, and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, you'll receive mention notifications every time someone on your team `mentions an entire channel <https://docs.mattermost.com/channels/mention-people.html>`__ using ``@channel``, ``@all``, or ``@here``. 
