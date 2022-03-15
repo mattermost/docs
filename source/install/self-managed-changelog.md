@@ -14,6 +14,8 @@ Latest Mattermost Releases:
 
 **Release Day: 2022-03-16**
 
+Mattermost v6.5.0 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Compatibility
  - Updated the recommended minimum supported Firefox version to v91+.
 
@@ -131,7 +133,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
 
 ### Contributors
- - 
+ - To be added.
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
