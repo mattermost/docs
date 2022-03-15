@@ -130,9 +130,9 @@ which would render in Mattermost as:
 
 .. image:: ../images/weatherBot.png
   
-11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__.
+11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__.
 
-Messages with advanced formatting can be created by including an `attachment array <https://docs.mattermost.com/developer/message-attachments.html>`_ and `interactive message buttons <https://docs.mattermost.com/developer/interactive-messages.html>`_ in the JSON payload.
+Messages with advanced formatting can be created by including an `attachment array <https://developers.mattermost.com/integrate/admin-guide/admin-message-attachments/>`_ and `interactive message buttons <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/>`_ in the JSON payload.
 
 .. note::
   
@@ -151,9 +151,9 @@ Tips and Best Practices
 Share Your Integration
 ----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://apps.mattermost.com/submit-an-integration/>`__ in our `app directory <https://mattermost.com/marketplace/>`__.
 
-The `app directory <https://about.mattermost.com/default-app-directory>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
+The `app directory <https://mattermost.com/marketplace/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
 Slack Compatibility
 -------------------

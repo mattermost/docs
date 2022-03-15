@@ -28,7 +28,7 @@ When you decide to use the pre-built Mattermost Mobile apps, you have two ways t
 Using Public App Stores
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Your users can download the Mattermost Mobile app as an `iOS app <https://about.mattermost.com/mattermost-ios-app/>`__ or an `Android app <https://about.mattermost.com/mattermost-android-app/>`__ from a public app store. When users launch the Mattermost Mobile app, they must enter the address of your Mattermost server to connect their Mobile app to the server.
+Your users can download the Mattermost Mobile app as an `iOS app <https://apps.apple.com/us/app/mattermost/id1257222717>`__ or an `Android app <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ from a public app store. When users launch the Mattermost Mobile app, they must enter the address of your Mattermost server to connect their Mobile app to the server.
 
 Using an EMM Provider
 ~~~~~~~~~~~~~~~~~~~~~
