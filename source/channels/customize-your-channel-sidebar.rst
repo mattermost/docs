@@ -46,7 +46,7 @@ Create custom categories to group channels together for quicker and easier navig
 
 To create categories, select the **+** symbol at the top of the sidebar. Or, select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
-Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and Direct Messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
+Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and direct messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
 
 Make categories work for you
 ----------------------------
