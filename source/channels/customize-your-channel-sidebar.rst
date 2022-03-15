@@ -154,7 +154,7 @@ When enabled, unread channels with mentions will sort to the top of the category
   
   If you prefer to see only unread channels in their respective categories, we recommend collapsing your custom categories and disabling **Group unread channels separately** under **Settings > Sidebar**.
 
-Manage Direct Messages
+Manage direct messages
 ----------------------
 
 To sort your Direct Messages, select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
