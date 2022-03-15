@@ -84,7 +84,7 @@ For example, a message read by a screen reader may sound like the following:
 Channel sidebar navigation
 --------------------------
 
-When the channel sidebar region is focused, use the **UP** or **DOWN** arrow keys to focus individual sidebar sections, such as Favorites, Public Channels, Private Channels and Direct Messages. Press **TAB** to navigate through channels or other buttons within a sidebar section.
+When the channel sidebar region is focused, use the UP or DOWN arrow keys to focus individual sidebar sections, such as Favorites, public channels, private channels, and direct messages. Press TAB to navigate through channels or other buttons within a sidebar section.
 
 .. image:: ../images/channel-sidebar-navigation.gif
   :alt: Navigate the Mattermost channel sidebar using a keyboard.
