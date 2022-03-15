@@ -92,7 +92,7 @@ To select multiple channels:
 - Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
 - Press ESC to clear channel or Direct Message selections.
 
-Using the Mattermost Web or Desktop App, drag selected channels and/or Direct Messages between or within categories. 
+Using the Mattermost Web or Desktop App, drag selected channels and/or direct messages between or within categories. 
 
 .. tip::
 
