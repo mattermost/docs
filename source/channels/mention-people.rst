@@ -50,7 +50,7 @@ The following example sends a special mention notification to Alice, whose usern
 
   @alice how did your interview go with the new candidate?
 
-If the person you mentioned doesn't belong to the channel, a System Message is posted to let you know. This is a temporary message, and you are the only one who can see it. To add the mentioned person to the channel, open the dropdown menu next to the channel name and select **Add Members**.
+If the person you mentioned doesn't belong to the channel, a System Message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
 
 @channel and @all
 -----------------
