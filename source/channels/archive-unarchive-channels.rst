@@ -26,7 +26,7 @@ Select the channel name at the top of the center pane to access the drop-down me
 
 When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons at a later stage. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
-In addition to this, when a channel is archived, by default the contents cannot be viewed, shared, or searched. If you want to be able to view or search the channel later, either:
+In addition to this, when a channel is archived, by default the contents can't be viewed, shared, or searched. If you want to be able to view or search the channel later, either:
 
 1. Ask your System Admin to set ``ExperimentalViewArchivedChannels`` to ``true`` in ``config.json`` to allow users to view, share, and search for content of channels that have been archived; or
 2. Leave the channel open, but post a message in the channel saying it's considered archived: such as ``# This channel is archived.``
