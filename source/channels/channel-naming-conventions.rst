@@ -50,7 +50,7 @@ You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-T
 
 .. tip:: 
    
-   Shorten words, particularly categories, by removing vowels, endings and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
+   Shorten words, particularly categories, by removing vowels, endings, and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
 
 Good naming can take a team up to several thousand channels without significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accommodate the large number of channels.
 
