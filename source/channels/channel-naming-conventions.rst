@@ -72,7 +72,7 @@ Keeping names clear and short lets users navigate large collections of channels 
 Topic channels
 ~~~~~~~~~~~~~~
 
-Topics are broad categories for organizing discussions. Topics are similar to how a user might create a folder for organizing emails or documents. Examples: Recruiting, Interviews, Legal Reviews, Documentation
+Topics are broad categories for organizing discussions. Topics are similar to how a user might create a folder for organizing emails or documents. Examples: Recruiting, Interviews, Legal Reviews, Documentation.
 
 Users can join and leave topic-based channels, as well as add colleagues to have topic-based discussions.
 
