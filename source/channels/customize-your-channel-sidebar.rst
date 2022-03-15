@@ -157,7 +157,7 @@ When enabled, unread channels with mentions will sort to the top of the category
 Manage direct messages
 ----------------------
 
-To sort your Direct Messages, select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
+To sort your direct messages, select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
 
 How many direct messages to display?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
