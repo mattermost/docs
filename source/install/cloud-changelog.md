@@ -55,9 +55,9 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the channel keyboard navigation was broken in the Threads view.
 
 ### Known Issues
+ - In compact message view, the inline post edit help text and emoji picker are not aligned [MM-42402](https://mattermost.atlassian.net/browse/MM-42402).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
