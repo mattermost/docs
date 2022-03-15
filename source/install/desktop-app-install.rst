@@ -23,18 +23,18 @@ Mattermost desktop applications are available for Windows, Mac, and Linux operat
 - Connect to multiple Mattermost servers from a single interface, and navigate between servers using keyboard shortcuts.
 - Auto-start Mattermost when a user logs into their machine.
 - (Windows) Add Mattermost to Start menu, Taskbar, and System Tray.
-- (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if app is already installed.
+- (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if the app is already installed.
 - (Mac) Add Mattermost to the Dock.
 - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
 
 Below is a list of additional resources:
 
-- `Guide for configuring your desktop app experience <https://docs.mattermost.com/messaging/managing-desktop-app-options.html>`__
+- `Guide for configuring your desktop app experience <https://docs.mattermost.com/welcome/customize-desktop-app-experience.html>`__
 - `Changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__
 - `Source code <https://github.com/mattermost/desktop>`__
 - `Contributor’s guide <https://developers.mattermost.com/contribute/desktop>`__
 
-You can `download the Mobile Apps directly from our Downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+You can `download the desktop apps directly from our Downloads page <https://mattermost.com/download/>`__. You may also use the following installation guides for Windows, Mac, and Linux.
 
 .. include:: ../upgrade/upgrading-to-v60.rst
 
@@ -48,9 +48,7 @@ Windows 8.1+
 
   - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-setup-5.0.4-win.exe>`__
 
-2. From the **\Downloads** folder right-click on the file ``mattermost-desktop-setup-5.0.4-win.exe`` and select **Open**.
-
-This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
+2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.0.4-win.exe`` and select **Open** to start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
 MSI Installer and Group Policies (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,19 +105,15 @@ Unofficial, community-driven ``.deb`` packages are available.
 
 1. Download the latest version of the Mattermost Desktop App:
 
-  - 64-bit systems
-  `mattermost-desktop-5.0.4-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-amd64.deb>`__
-  - 32-bit systems
-  `mattermost-desktop-5.0.4-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i386.deb>`__
+  - 64-bit systems `mattermost-desktop-5.0.4-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-amd64.deb>`__
+  - 32-bit systems `mattermost-desktop-5.0.4-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
-  - 64-bit systems
-  ``sudo dpkg -i mattermost-desktop-5.0.4-linux-amd64.deb``
-  - 32-bit systems
-  ``sudo dpkg -i mattermost-desktop-5.0.4-linux-i386.deb``
+  - 64-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-amd64.deb``
+  - 32-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-i386.deb``
 
-3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then select the Mattermost icon.
+3. To run Mattermost, open a new terminal window, enter **mattermost**, then select the Mattermost icon.
 
 Linux rpm files (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -128,19 +122,15 @@ Unofficial, community-driven ``.rpm`` packages are available.
 
 1. Download the latest version of the Mattermost Desktop App:
 
-  - 32-bit systems
-  `mattermost-desktop-5.0.4-linux-i686.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i686.rpm>`__
-  - 64-bit systems
-  `mattermost-desktop-5.0.4-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-x86_64.rpm>`__
+  - 32-bit systems `mattermost-desktop-5.0.4-linux-i686.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i686.rpm>`__
+  - 64-bit systems `mattermost-desktop-5.0.4-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-x86_64.rpm>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
-  - 32-bit systems
-  ``sudo rpm -i mattermost-desktop-5.0.4-linux-i686.rpm``
-  - 64-bit systems
-  ``sudo rpm -i mattermost-desktop-5.0.4-linux-x86_64.rpm``
+  - 32-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-i686.rpm``
+  - 64-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-x86_64.rpm``
 
-3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then select the Mattermost icon.
+3. To run Mattermost, open a new terminal window, enter **mattermost**, then select the Mattermost icon.
 
 Arch Linux-based systems
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +146,7 @@ A snap is available for systems that have Snapcraft installed. Snapcraft is inst
 
   ``sudo snap install mattermost-desktop --beta``
 
-2. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then select the Mattermost icon.
+2. To run Mattermost, open a new terminal window, enter **mattermost**, then select the Mattermost icon.
 
 Troubleshooting
 ---------------
@@ -202,7 +192,7 @@ This issue can occur when ``localStorage`` has an unexpected state. To resolve t
 
 - Windows: Open Windows File Explorer, go to the ``%APPDATA%\Mattermost`` folder, then delete the ``Local Storage`` folder.
 - Mac: Open Finder, go to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
-- Linux: Open the File Manager, go to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
+- Linux: Open the File Manager, go to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder. Linux file managers may hide folders starting with a period by default. You can delete them from the terminal using ``rm -rf ~/.config/Mattermost``.
       
 Desktop App constantly asks to log in to Mattermost server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,7 +201,7 @@ This issue can occur after a crash or unexpected shutdown of the desktop app tha
 
 - Windows: Open Windows File Explorer, go to the ``%APPDATA%\\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 - Mac: Open Finder, go to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
-- Linux: Open the file manager, go to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Linux: Open the file manager, go to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files. Linux file managers may hide folders starting with a period by default. You can delete them from the terminal using ``rm -rf ~/.config/Mattermost``.
 
 "Internal error: BrowserWindow 'unresponsive' event has been emitted"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,8 +234,6 @@ To access the Developer Tools Console, follow these instructions:
 You can open an additional set of developer tools for each server you have added to the desktop app. The tools can be opened by pasting this command in the Developer Tools Console you opened with the steps described above:
 
 ``document.getElementsByTagName("webview")[0].openDevTools();`` 
-
-When you have more than one server added to the Desktop App, you need to change the ``0`` in the command above to the number corresponding to the server you want to open in the Developer Tools Console, starting with ``0`` on the left.
 
 Windows
 ~~~~~~~
