@@ -18,7 +18,7 @@ Channel Naming Conventions
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-The importance of organizing your conversations increases as Channels spreads to thousands of users. When you're choosing channel names or :doc:`renaming existing channels </channels/rename-channels>`, consider the following recommendations:
+All organizations are different and have different communication needs. The importance of organizing your conversations increases as your user base grows. The following are ideas for how you might want to name, group, and structure your channels. If you change your mind about a channel's name, you can :doc:`rename it </channels/rename-channels>`. 
 
 Basic structure
 ---------------
