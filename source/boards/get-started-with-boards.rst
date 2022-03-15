@@ -61,7 +61,7 @@ View are a great way to assess your board from various angles and allow your tea
 To add a new view, go to **Add a new view** from the view drop-down, then select from any of the following views:
 
 - **Board**: Adds a Kanban board that allows your team to organize cards in swim lanes grouped by any property of your choosing. This view helps you visualize your project progress.
-- Table: Displays cards in a table format with rows and columns. Use this view to get an overview of all your project tasks. Easily view and compare the state of all properties across all cards without needing to open individual cards.
+- **Table**: Displays cards in a table format with rows and columns. Use this view to get an overview of all your project tasks. Easily view and compare the state of all properties across all cards without needing to open individual cards.
 - **Gallery**: Displays cards in a gallery format, so you can manage and organize cards with image attachments.
 - **Calendar**: Adds a calendar view to easily visualize your cards by dates and keep track of deadlines.
 
