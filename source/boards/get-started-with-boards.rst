@@ -1,7 +1,7 @@
 Get Started with Mattermost Boards
 ==================================
 
-Access Mattermost Boards by selecting **Boards** from the **Product list** |product-list| icon.
+Access Mattermost Boards by selecting **Boards** from the **Product menu** |product-list| icon.
 
 .. |product-list| image:: ../images/products_E82F.svg
   :height: 24px
