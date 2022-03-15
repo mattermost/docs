@@ -24,7 +24,7 @@ Archive a channel
 Anyone can archive the Public channels or Private channels they belong to, unless the System Admin has restricted the permissions.
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. 
 
-When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons at a later stage. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
+When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. Because of this, the URL of a newly created channel can't be the same URL as an archived channel.
 
 In addition to this, when a channel is archived, by default the contents can't be viewed, shared, or searched. If you want to be able to view or search the channel later, either:
 
