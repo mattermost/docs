@@ -136,7 +136,6 @@ If someone you want to add to your team already has an account on the server, yo
    - If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
    - System Admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**.
 
-
 Remove people from teams
 ------------------------
 
