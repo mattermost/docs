@@ -62,7 +62,7 @@ Make categories work for you
 
 **Categories can contain direct message conversations**
 
-- Select and drag Direct Messages into any category. You can also multi-select Direct Messages to drag them together as a group.
+- Select and drag direct messages into any category. You can also multi-select direct messages to drag them together as a group.
 
 Rename categories
 ~~~~~~~~~~~~~~~~~
