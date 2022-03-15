@@ -42,7 +42,7 @@ Navigational keyboard shortcuts help you use Mattermost without requiring a mous
 Region navigation
 ------------------
 
-Mattermost has eight regions that can be focused for navigation. Use **F6** (in the Desktop App) or **CTRL+F6** (in a browser) repeatedly to move focus and loop through the regions in this order:
+Mattermost has eight regions that can be focused for navigation. Use F6 (in the Desktop App) or CTRL+F6 (in a browser) repeatedly to move focus and loop through the regions in this order:
 
 1. Message list region
 2. Message input region
