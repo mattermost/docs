@@ -159,7 +159,7 @@ Manage Direct Messages
 
 To sort your Direct Messages, select the **Channel options** icon in the sidebar, then select **Sort** and choose from **Alphabetically** or **Recent Activity**.
 
-How many Direct Messages to display?
+How many direct messages to display?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Control how many Direct Message conversations display in the **Direct Messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
