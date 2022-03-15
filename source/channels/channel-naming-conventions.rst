@@ -104,7 +104,7 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts, or BlueJeans in the channel header. See our `documentation <https://docs.mattermost.com/channels/set-channel-preferences.html#channel-header>`__ to learn more about working with channel headers. 
 
-When it's time to meet, your team can click the conference link to connect.
+When it's time to meet, your team can select the conference link to connect.
 
 Sub-team channels
 ~~~~~~~~~~~~~~~~~
