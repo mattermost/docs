@@ -96,7 +96,7 @@ Using the Mattermost Web or Desktop App, drag selected channels and/or direct me
 
 .. tip::
 
-  Multi-selected channels and Direct Messages move together as a group in the order they originally appeared. 
+  Multi-selected channels and direct messages move together as a group in the order they originally appeared. 
 
 .. image:: ../images/multi-select-drag.gif
 
