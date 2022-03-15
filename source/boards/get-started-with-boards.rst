@@ -10,7 +10,7 @@ Access Mattermost Boards by selecting **Boards** from the **Product menu** |prod
 
 Boards are used for planning projects collaboratively. You can access the list of channels and their boards from the drop-down menu in the left-hand sidebar. Boards are made up of cards, and cards can have a wide range of purposes.
 
-See our `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ documentation for details on the many ways you can use Channels to enable team collaboration.
+See our `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ documentation for details on the many ways you can use Boards to enable team collaboration.
 
 Create a board
 --------------
