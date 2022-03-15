@@ -27,7 +27,7 @@ Basic structure
 - Channel names are unique.
 - Channel names have a 64 character limit to ensure readability on both desktop and mobile devices.
 - An additional 128 characters are available to add a **Channel Purpose** visible when users are selecting channels.
-- An additional 1024 characters are available for describing the channel in detail in the "Channel Header".
+- An additional 1024 characters are available for describing the channel in detail in the **Channel Header**.
 
 Scoping names
 -------------
