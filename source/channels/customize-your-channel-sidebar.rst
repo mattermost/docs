@@ -22,7 +22,7 @@ Conversations in Mattermost are crucial to company productivity and success. Kee
 
 Here's how your sidebar is set up by default:
 
-- All Public and Private Channels you've joined are listed in the **Channels** category, sorted alphabetically.
+- All public and private channels you've joined are listed in the **Channels** category, sorted alphabetically.
 - All your Direct Messages and Group Messages are listed in the **Direct Messages** category, sorted by recent activity.
 
 What can you customize?
