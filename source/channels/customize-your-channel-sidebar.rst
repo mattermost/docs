@@ -89,7 +89,7 @@ Drag and drop selections
 To select multiple channels:
 
 - Select sequential channels and/or direct messages by pressing and holding SHIFT+Select. 
-- Select non-sequential channels and/or Direct Messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
+- Select non-sequential channels and/or direct messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
 - Press ESC to clear channel or direct message selections.
 
 Using the Mattermost Web or Desktop App, drag selected channels and/or direct messages between or within categories. 
