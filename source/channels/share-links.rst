@@ -20,7 +20,7 @@ Share Links to Messages
 
 You can share links to messages in Mattermost by selecting the **More Actions** option next to a message, then selecting **Copy Link**. Paste the link into a message to share the link with others. Sharing links to messages generates a preview of the message which helps minimize context switching. 
 
-Previews respect channel membership permissions, so they’re only visible to users who have access to the original message. If the link is to a message in a Public Channel, any member of the team can see the message preview. If the link is to a message in a Private Channel or Direct Message, only members in that channel can see the message preview.
+Previews respect channel membership permissions, so they’re only visible to users who have access to the original message. If the link is to a message in a public channel, any member of the team can see the message preview. If the link is to a message in a private channel or direct message, only members in that channel can see the message preview.
 
 .. image:: ../images/permalink-previews.png
    :alt: Mattermost generates previews of links shared in Channels.
