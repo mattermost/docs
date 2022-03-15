@@ -4,11 +4,136 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v5.37. 
 
 Latest Mattermost Releases:
+- [Release v6.5 - Feature Release](#release-v6-5-feature-release)
 - [Release v6.4 - Feature Release](#release-v6-4-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
 - [Release v6.2 - Feature Release](#release-v6-2-feature-release)
-- [Release v6.1 - Feature Release](#release-v6-1-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5.37-extended-support-release)
+
+## Release v6.5 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2022-03-16**
+
+Mattermost v6.5.0 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Compatibility
+ - Updated the recommended minimum supported Firefox version to v91+.
+
+### Important Upgrade Notes
+ - The ``mattermost version`` CLI command does not interact with the database anymore. Therefore the database version is not going to be printed. Also, the database migrations are not going to be applied with the version sub command. [A new db migrate sub command](https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-migrate) is added to enable administrators to trigger migrations.
+
+**IMPORTANT:** If you upgrade from a release earlier than v6.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Custom User Groups (Beta; Professional and Enterprise Plans)
+ - Added the ability to mention a group of members at a time in a workspace. Users can create groups, edit group details, join groups, archive groups, and add group members.
+
+#### Cross-team Channel Navigation
+ - You can now find and jump to channels across all your teams by typing any channel name in the **Find Channels** modal.
+
+#### Workspace Optimizations
+ - System Admins can now review their overall health and growth scores and take recommended actions for ensuring their workspace is running smoothly, so users can get the most out of Mattermost.
+
+#### Playbook Updates
+ - Added a new onboarding tour for Playbooks.
+ - Existing playbooks can now be duplicated by copying and modifying your colleague’s processes. Playbooks can also be exported.
+
+#### Boards Updates
+ - Added a new onboarding tour for Boards.
+ - Improved the share boards user interface.
+ - A link to Boards is now included in the channel intro whenever a new channel or direct message is started.
+ - Added in-app links to import Help Docs.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Persian as an official supported language (Beta).
+ - Added a new onboarding experience for first System Admin user.
+ - Added new tutorial tours for Channels, Boards, and Playbooks to help orient first time users.
+ - Removed extra telemetry events that were tracked during page loads.
+ - Added a feature card slide for Playbooks.
+ - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
+ - Clarified in-product error string "Oops!" as "Unable to continue" for both translators and target audiences in cases where a user doesn't have sufficient permissions to add users or guests.
+ - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
+ - Added the ability to send an unsanitized user to the source user on ``user_updated`` event.
+ - In the compact view, the sender's username is now always shown on posts.
+ - The post menu is now only rendered on the root post on hover over.
+ - Updated a library used for storing drafts and other data in browser storage.
+ - Enabled performance telemetry tracking for production deployments not running in developer mode. This telemetry tracking is disabled when telemetry is toggled off.
+ - Inactive server email notifications will now be sent to users occasionally if they haven't interacted with their server for 100 hours or more.
+
+#### Performance
+ - Improved database performance when ``ThreadAutoFollow`` is enabled but ``CollapsedThreads`` is disabled. Learn more about ``ThreadAutoFollow`` and Collapsed Reply Threads [here](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta).
+ - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
+ - Fixed a memory leak caused by the post textbox.
+ - Reduced the number of menu components listening for keyboard and mouse events.
+ - Re-rendering of ``CustomStatusEmoji`` component is now avoided on post hovering.
+ - Removed the collapsed sidebar menu from the DOM on sidebar collapse and expand.
+ - Re-rendering of ``TextBox`` links component below the post box while typing is now avoided.
+
+#### Plugins
+ - Added an ``OnInstall()`` plugin hook.
+ - Added an ``OnSendDailyTelemetry()`` plugin hook.
+ - Added a new plugin registry entry to append menu items to the user guide dropdown.
+
+### Bug Fixes
+ - Fixed an issue with clicking images in the message attachment.
+ - Fixed an issue that caused Rudder to create their cookies on the top-level domain when Mattermost was installed on a subdomain.
+ - Fixed an issue where **Total Posts** and **Active Users With Posts** graphs did not render in **System Console** > **Team Statistics**.
+ - Fixed an issue where telemetry events attempted to get sent even when blocked by an ad blocker.
+ - Fixed an issue where the channel switcher stopped showing search results when the first few characters were removed.
+ - Fixed an issue where notification sounds didn't trigger on the Desktop App for new accounts.
+ - Fixed an issue where users got multiple sounds for a single notification on the Linux Desktop App.
+ - Fixed an issue where posting frequent messages to followed threads caused jittery typing.
+ - Fixed an issue where the **Add to channel** permission was available in private channels for non-admin users.
+ - Fixed an issue where the reply notification setting was still in effect even when Collapsed Reply Threads was enabled.
+ - Fixed an issue where running ``mmctl config migrate`` reset the configuration settings to defaults if the settings were already in the database.
+ - Fixed an issue where the custom status menu option was missing the "x" to clear status.
+ - Fixed an issue where the password reset link was valid for 1 hour instead of 24 hours.
+ - Fixed an issue where the Mattermost import failed if an export contained a soft-deleted team.
+ - Fixed an issue where search results in the right-hand side did not clear when changing screens from file results to any other.
+ - Fixed an issue where an emoji import failed when the emoji name conflicted with a system emoji.
+ - Fixed an issue where the **Edition and License** page displayed a prompt to upgrade to Enterprise for servers that already had an E20 license.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added a new ``EnableClientPerformanceDebugging`` setting to enable some options for users on the web app to enable and disable different parts of the web app to help us isolate performance issues while debugging.
+   - Added a new ``EnableCustomGroups`` setting to create and delete custom groups and to add and remove custom group members.
+
+#### API Changes
+ - Added new endpoint GET /api/v4/users/invalid_emails. This endpoint will return a list of non-guest users who are not in your whitelisted domains on a server where EnableOpenServer is false.
+ - Added new API endpoint ``POST /system/onboarding/complete`` to complete onboarding.
+ - Added a new API endpoint ``GET api/v4/latest_version`` to fetch the latest Mattermost version.
+ - Modified an existing API endpoint ``${baseUrl}/api/v4/channels/search?system_console=false`` and added additional parameters ``${baseUrl}/api/v4/users/me/channels`` to fetch all the channel across teams and ``${baseUrl}/api/v4/users/${userId/channel_members`` to fetch all the channel_members across teams).
+
+#### Websocket Changes
+ - Refactored `user-update` websocket event handler to prevent extra get request to server for unsanitized user.
+ - Added a new ``ReliableClusterSend`` field to ``model.WebsocketBroadcast`` to allow sending events through the cluster using the reliable channel.
+
+### Go Version
+ - v6.5 is built with Go ``v1.16.7``.
+
+### Known Issues
+ - The new onboarding menu icon obscures System Console menu items [MM-42353](https://mattermost.atlassian.net/browse/MM-42353).
+ - For Custom Groups, the user activity doesn't sync in two sessions [MM-42242](https://mattermost.atlassian.net/browse/MM-42242).
+ - For Custom Groups, the last action popup menu is cut off [MM-42189](https://mattermost.atlassian.net/browse/MM-42189).
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+
+### Contributors
+ - To be added.
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
