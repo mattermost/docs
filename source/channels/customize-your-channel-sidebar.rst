@@ -35,7 +35,7 @@ You can customize your sidebar in the following ways:
 - `Mute and unmute entire categories <#mute-and-unmute-categories>`__.
 - `Sort channels in each category <#sort-channels-in-categories>`__ manually, alphabetically, or by recent activity.
 - `Filter your sidebar to view unread channels only <#group-unread-channels-separately>`__, or choose to group unread messages into an **Unreads** category.
-- `Manage your Direct Messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
+- `Manage your direct messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar.
 
   .. image:: ../images/channel_sidebar_updates.gif
 
