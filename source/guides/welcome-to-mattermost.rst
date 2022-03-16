@@ -25,7 +25,7 @@ Mattermost basics
    :maxdepth: 1
    :hidden:
 
-   Get Started with Mattermost Channels </messaging/get-started-mattermost-channels>
+   Get Started with Mattermost Channels </welcome/get-started-mattermost-channels>
    Get Started with Mattermost Playbooks </playbooks/get-started-with-playbooks>
    Get Started with Mattermost Boards </boards/get-started-with-boards>
    Manage Custom Groups </welcome/manage-custom-groups>
