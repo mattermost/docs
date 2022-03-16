@@ -61,7 +61,7 @@ Mattermost v6.5.0 contains medium severity level security fixes. [Upgrading](htt
  - The post menu is now only rendered on the root post on hover over.
  - Updated a library used for storing drafts and other data in browser storage.
  - Enabled performance telemetry tracking for production deployments not running in developer mode. This telemetry tracking is disabled when telemetry is toggled off.
- - Inactive server email notifications will now be sent to users occasionally if they haven't interacted with their server for 100 hours or more. These emails are sent only to System Admins. Inactivity is determined by reviewing all activity on the server. This feature can also be disabled using the ``Mattermost_FeatureFlags_EnableInactivityCheckJob`` feature flag.
+ - Inactive server email notifications will now be sent to System Admins occasionally if they haven't interacted with their server for 100 hours or more.  Inactivity is determined by reviewing all activity on the server. This feature can also be disabled using the ``Mattermost_FeatureFlags_EnableInactivityCheckJob`` feature flag.
 
 #### Performance
  - Improved database performance when ``ThreadAutoFollow`` is enabled but ``CollapsedThreads`` is disabled. Learn more about ``ThreadAutoFollow`` and Collapsed Reply Threads [here](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta).
