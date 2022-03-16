@@ -26,8 +26,8 @@ Mattermost basics
    :hidden:
 
    Get Started with Mattermost Channels </messaging/get-started-mattermost-channels>
-   Get Started with Mattermost Playbooks </playbooks/get-started-mattermost-playbooks>
-   Get Started with Mattermost Boards </boards/get-started-mattermost-boards>
+   Get Started with Mattermost Playbooks </playbooks/get-started-with-playbooks>
+   Get Started with Mattermost Boards </boards/get-started-with-boards>
    Manage Custom Groups </welcome/manage-custom-groups>
    About Teams </welcome/about-teams>
    Team Settings </welcome/team-settings>
@@ -37,7 +37,7 @@ Mattermost basics
 
 * :doc:`Get Started with Mattermost Channels </welcome/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
 * :doc:`Get Started with Mattermost Playbooks </playbooks/get-started-with-playbooks>` - Learn how to create and refine repeatable, measurable workflows for a range of scenarios using Mattermost Playbooks.
-* :doc:`Get Started with Mattermost Boards <boards/get-started-with-boards>` - Learn how to create and manage projects using customizable cards to increase your team's productivity using Mattermost Boards.
+* :doc:`Get Started with Mattermost Boards </boards/get-started-with-boards>` - Learn how to create and manage projects using customizable cards to increase your team's productivity using Mattermost Boards.
 * :doc:`Manage Custom Groups </welcome/manage-custom-groups>` - Learn how to define custom groups of users, such as a team or department, you can @mention in Mattermost.  
 * :doc:`About Teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates collaborate together in Mattermost.
 * :doc:`Team Settings </welcome/team-settings>` - Configure team names, descriptions, icons, and invitation settings.
