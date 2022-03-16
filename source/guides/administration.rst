@@ -15,23 +15,23 @@ The Basics
     :maxdepth: 1
     :hidden:
 
-    Optimize Your Workspace </configure/optimize-your-workspace>
-    Mattermost Configuration Settings </configure/configuration-settings>
-    Mattermost Deprecated Configuration Settings </configure/deprecated-configuration-settings>
-    Workspace Configuration for Cloud Deployments </configure/cloud-site-configuration>
-    Advanced Permissions </onboard/advanced-permissions>
-    Guest Accounts </onboard/guest-accounts>
-    System Admin Roles </onboard/system-admin-roles>
+    Optimize your workspace </configure/optimize-your-workspace>
+    Mattermost configuration settings </configure/configuration-settings>
+    Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
+    Workspace configuration for Cloud deployments </configure/cloud-site-configuration>
+    Advanced permissions </onboard/advanced-permissions>
+    Guest accounts </onboard/guest-accounts>
+    System Admin roles </onboard/system-admin-roles>
     OpenID </onboard/sso-openidconnect>
     Google SSO </onboard/sso-google>
     Office 365 SSO </onboard/sso-office>
     GitLab SSO </onboard/sso-gitlab>
     Multi-factor Authentication </onboard/multi-factor-authentication>
-    Active Directory / LDAP </onboard/ad-ldap>
+    Active Directory/LDAP </onboard/ad-ldap>
 
 These resources will help you get started with your Mattermost workspace.
 
-* Visit the :doc:`Workspace Optimization </configure/optimize-your-workspace>` page in the System Console to review health and growth scores for your Mattermost workspace and take recommended actions.
+* Visit the :doc:`Workspace optimization </configure/optimize-your-workspace>` page in the System Console to review health and growth scores for your Mattermost workspace and take recommended actions.
 * **Configuration Overview** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers </configure/configuration-settings>` and :doc:`Mattermost cloud workspaces </configure/cloud-site-configuration>`.
 * **Authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`Gitlab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory / LDAP </onboard/ad-ldap>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
 * **User Permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`system admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
@@ -47,16 +47,16 @@ Workspace Setup and Configuration
     :maxdepth: 1
     :hidden:
 
-    Site Configuration </configure/cloud-site-configuration>
+    Site configuration </configure/cloud-site-configuration>
     SAML Single Sign-On </onboard/cloud-sso-saml>
-    SAML SSO Technical Documentation </onboard/cloud-sso-saml-technical>
-    AD/LDAP Groups </onboard/cloud-groups>
-    Shared Channels </onboard/shared-channels>
+    SAML SSO technical documentation </onboard/cloud-sso-saml-technical>
+    AD/LDAP groups </onboard/cloud-groups>
+    Shared channels </onboard/shared-channels>
 
-* :doc:`Site Configuration </configure/cloud-site-configuration>` - Set up and configure your Mattermost Cloud workspace.
+* :doc:`Site configuration </configure/cloud-site-configuration>` - Set up and configure your Mattermost Cloud workspace.
 * :doc:`SAML Single Sign-On </onboard/cloud-sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider. Refer to the :doc:`SAML reference documentation </onboard/cloud-sso-saml-technical>` for technical implementation details.
-* :doc:`AD/LDAP Groups </onboard/cloud-groups>` - Sync AD/LDAP groups with Mattermost roles and teams.
-* :doc:`Shared Channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
+* :doc:`AD/LDAP groups </onboard/cloud-groups>` - Sync AD/LDAP groups with Mattermost roles and teams.
+* :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
 
 Workspace Management
 ^^^^^^^^^^^^^^^^^^^^
@@ -64,19 +64,19 @@ Workspace Management
     :maxdepth: 1
     :hidden:
 
-    Mattermost Cloud Billing </manage/cloud-billing>
+    Mattermost Cloud billing </manage/cloud-billing>
     Statistics </manage/cloud-reporting>
-    User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>
-    Managing Team and Channel Members </manage/cloud-team-and-channel>
-    Workspace Migration </manage/cloud-data-export>
-    Cloud Data Residency </manage/cloud-data-residency>
+    User Satisfaction surveys </manage/cloud-user-satisfaction-surveys>
+    Managing team and channel members </manage/cloud-team-and-channel>
+    Workspace migration </manage/cloud-data-export>
+    Cloud data residency </manage/cloud-data-residency>
 
-* :doc:`Mattermost Cloud Billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
+* :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
 * :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.
-* :doc:`User Satisfaction Surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
-* :doc:`Managing Team and Channel Members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
-* :doc:`Workspace Migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
-* :doc:`Cloud Data Residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
+* :doc:`User Satisfaction surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
+* :doc:`Managing team and channel members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
+* :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
+* :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 
 Workspace Compliance
 ^^^^^^^^^^^^^^^^^^^^
@@ -84,9 +84,9 @@ Workspace Compliance
     :maxdepth: 1
     :hidden:
 
-    Data Retention Policy </comply/cloud-data-retention-policy>
+    Data retention policy </comply/cloud-data-retention-policy>
 
-* :doc:`Data Retention Policy </comply/cloud-data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
+* :doc:`Data retention policy </comply/cloud-data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
 
 Self-Hosted Admin
 -----------------
@@ -96,16 +96,16 @@ This section of the guide is for admins of self-hosted Mattermost servers. If yo
 Self-Hosted Setup and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Initial Setup
+Initial setup
 """""""""""""
 .. toctree::
     :maxdepth: 1
     :hidden:
 
-    Configuration Overview </configure/configuration-settings>
-    Custom Branding Tools </configure/custom-branding-tools>
+    Configuration overview </configure/configuration-settings>
+    Custom branding tools </configure/custom-branding-tools>
     Customize Mattermost </configure/customizing-mattermost>
-    SMTP Email Setup </configure/smtp-email>
+    SMTP email setup </configure/smtp-email>
 
 * :doc:`Configuration Overview </configure/configuration-settings>` - Set up and configure your Mattermost Cloud workspace.
 * :doc:`Custom Branding Tools </configure/custom-branding-tools>` - Change Mattermost branding, site name, and description. 
