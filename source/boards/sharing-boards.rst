@@ -20,10 +20,16 @@ Sharing Boards
 
 To share a board with others:
 
-1. Open a board in any view.
-2. On the top-right of the board select the options menu **...**, then select **Share board**.
-3. Set the toggle on to **Publish to web and share this board with anyone**.
-4. Copy the link provided.
+1. Go to **System Console > Mattermost Boards**.
+2. Set **Enable Publicly-Shared Boards** to **true**.
+3. Open a board in any view.
+4. Select **Share board** in the top-right corner of the board.
+5. The following two options are available:
+
+   * On the **Share** tab, you can share an editable view link with users who have permissions to the board.
+   * On the **Publish** tab, you can share a read-only link online with everyone.
+
+6. Copy the link provided.
 
 Anyone with the link will be able to view the board.
 
