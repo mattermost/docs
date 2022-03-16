@@ -19,8 +19,6 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Added support for markdown inline image custom sizes.
- - Added support for showing the release status when uploading a build to Google Play store.
- - Added the support for submitting an Android app bundle to Google Play store.
 
 ### Bug Fixes
 
