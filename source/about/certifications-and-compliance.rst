@@ -1,4 +1,4 @@
-Certifications and Compliance Overview
+Certifications and compliance overview
 ========================================
 
 This overview summarizes how Mattermost can help users in support of their internal compliance initiatives, including:
@@ -6,12 +6,12 @@ This overview summarizes how Mattermost can help users in support of their inter
 - GDPR Compliance
 - U.S. Export Compliance
 
-GDPR Compliance
+GDPR compliance
 ----------------
 
 The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements.
 
-Continual Commitment to the Principles of GDPR
+Continual commitment to the principles of GDPR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
@@ -23,7 +23,7 @@ Mattermost is a collaboration hub for highly-trusted organizations and is commit
 
 To stay up to date with our efforts, please subscribe to `our regular newsletter <https://mattermost.com/newsletter/>`__.
 
-Security Infrastructure
+Security infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost enables organizations to protect their information, and the information of their users and customers, through self-hosted communication infrastructure that has been developed with a high standard of security. The features of this security infrastructure include:
@@ -33,7 +33,7 @@ Mattermost enables organizations to protect their information, and the informati
 - **Security Reviews** conducted by both our own internal security review team and external security researchers.
 - **ISO 27001 Standards** which are met to achieve alignment with international security guidelines.
 
-Contractual Obligations
+Contractual obligations
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost adheres to contractual obligations for ensuring the proper management of data through:

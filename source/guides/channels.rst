@@ -88,9 +88,9 @@ Keyboard accessibility
    :maxdepth: 1
    :hidden:
 
-   Keyboard Accessibility in Channels </channels/keyboard-accessibility>
-   Keyboard Shortcuts for Channels </channels/keyboard-shortcuts-for-channels>
-   Run Slash Commands </channels/run-slash-commands>
+   Keyboard accessibility in Channels </channels/keyboard-accessibility>
+   Keyboard shortcuts for Channels </channels/keyboard-shortcuts-for-channels>
+   Run slash commands </channels/run-slash-commands>
 
 * :doc:`Keyboard accessibility in Channels </channels/keyboard-accessibility>` - Access regions of your Mattermost workspace.
 * :doc:`Keyboard shortcuts for Channels </channels/keyboard-shortcuts-for-channels>` - Make a more efficient use of your keyboard with keyboard shortcuts.
