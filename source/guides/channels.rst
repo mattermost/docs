@@ -10,7 +10,7 @@ With Mattermost Channels, you can keep all of your team's communications in one 
 Channels, messages, and conversations
 -------------------------------------
 
-Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. See the `Channel Types </channels/create-channels.html>`__ documentation for more information.
+Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. See the `Channel Types </channels/channel-types.html>`__ documentation for more information.
 
 Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
 

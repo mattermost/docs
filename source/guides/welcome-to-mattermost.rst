@@ -34,7 +34,6 @@ Mattermost basics
    Team keyboard shortcuts </welcome/team-keyboard-shortcuts>
    About user roles </welcome/about-user-roles>
 
-
 * :doc:`Get started with Mattermost Channels </channels/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
 * :doc:`Get started with Mattermost Playbooks </playbooks/get-started-mattermost-playbooks>` - Learn how to create and refine repeatable, measurable workflows for a range of scenarios using Mattermost Playbooks.
 * :doc:`Get started with Mattermost Boards <boards/get-started-mattermost-boards>` - Learn how to create and manage projects using customizable cards to increase your team's productivity using Mattermost Boards.
