@@ -71,7 +71,7 @@ Team Override Scheme
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-On systems with multiple `Mattermost teams <https://docs.mattermost.com/messaging/creating-teams.html>`__, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
+On systems with multiple `Mattermost teams <https://docs.mattermost.com/welcome/about-teams.html#create-a-team>`__, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
 
@@ -219,10 +219,6 @@ Example: As the default for the entire system, only allow users to edit their ow
 2. Select **Edit Scheme**.
 3. In the **All Members**, **Channel Administrators**, and **Team Administrators** panels, in the **Manage Posts** section, check the box for **Edit Posts**.
 4. From any panel, select the gear button to set the global time limit to ``300`` seconds.
-
-.. note::
-
-  The post edit time limit is a `global config variable <https://docs.mattermost.com/configure/configuration-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
 
 Integration management
 ~~~~~~~~~~~~~~~~~~~~~~
