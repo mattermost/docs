@@ -21,7 +21,7 @@ The first step is to choose the right template for your use case. There are pre-
 
 .. tip:: 
 
-    If you're unsure which option to choose, take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together. If you're taking this option, you can stop reading here and enjoy the test run. You can also choose a blank template and start from scratch - this is a good option if your use case is unique.
+    Take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together. If you're taking this option, you can stop reading here and enjoy the test run. You can also choose a blank template and start from scratch - this is a good option if your use case is unique.
 
 In the incident response template, the template contains items that are relevant to incident resolution. These are general items to help you get started.
 
