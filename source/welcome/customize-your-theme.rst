@@ -1,7 +1,7 @@
 .. _theme-colors:
 
-Theme Colors
-============
+Customize Your Mattermost Theme
+===============================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -36,26 +36,26 @@ You can import your theme colors from Slack, customize the colors yourself, or c
 
 Any color changes you make are applied to all teams that you belong to. In Mattermost Enterprise, you can choose to apply the theme to the current team only, allowing you to have a different theme for each team.
 
-Import Theme from Slack
+Import theme from Slack
 -----------------------
 
 To import a theme, in Slack, go to **Preferences > Themes**, select **Create a custom theme**, then copy the theme color values.
 
 In Mattermost, select **Import theme colors from Slack**, then paste the color values into the input box and select **Submit**. Any theme settings that are not customizable in Slack will default to the “Mattermost” standard theme settings. Select **Save** to confirm your theme changes.
 
-Custom Themes
+Custom themes
 -------------
 
-Select **Custom Theme**, then expand the `Sidebar Styles <https://docs.mattermost.com/help/settings/theme-colors.html#sidebar-styles>`__, `Center Channel Styles <https://docs.mattermost.com/help/settings/theme-colors.html#center-channel-styles>`__, and `Link and Button Styles <https://docs.mattermost.com/help/settings/theme-colors.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
+Select **Custom Theme**, then expand the `Sidebar Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#sidebar-styles>`__, `Center Channel Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#center-channel-styles>`__, and `Link and Button Styles <https://docs.mattermost.com/welcome/customize-your-theme.html#link-and-button-styles>`__ options to customize individual interface colors, such as backgrounds, links, text, and borders. 
 
 Your custom theme changes are applied in Mattermost as you make them. Select **Save** to confirm your theme changes. Discard your changes by exiting the **Display Settings** window and selecting **Yes, Discard**.
 
-Standard Themes
+Standard themes
 ---------------
 
 Select **Theme Colors** to choose from four standard themes designed by the Mattermost team. To make custom adjustments on the four standard theme colors, select a standard theme, then select **Custom Theme** to further customize that standard theme based on your preferences. Select **Save** to confirm your theme changes.
 
-Sidebar Styles
+Sidebar styles
 ~~~~~~~~~~~~~~
 
 Sidebar BG
@@ -85,7 +85,7 @@ Mention Jewel BG
 Mention Jewel Text
 	Text color on the mention jewel indicating the number of unread mentions. This is also the text color on the “Unread Posts Below/Above” indicator.
 
-Center Channel Styles
+Center channel styles
 ~~~~~~~~~~~~~~~~~~~~~
 
 Center Channel BG
@@ -103,7 +103,7 @@ Mention Highlight Link
 Code Theme
 	Background and syntax colors for all code blocks.
 
-Link and Button Styles
+Link and button styles
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Link Color
@@ -113,7 +113,7 @@ Button BG
 Button Text
 	Text color appearing on the rectangular background for all high priority UI buttons.
 
-Exporting a Custom Theme
+Export a custom theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can export a theme from Mattermost by copying the theme values from the Custom Theme menu.
@@ -128,7 +128,7 @@ You can export a theme from Mattermost by copying the theme values from the Cust
 
       In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme**, then select **Copy Theme Colors** to export the theme's color values.
   
-Importing a Custom Theme
+Import a custom theme
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can import a theme into Mattermost by pasting the theme values into the Custom Theme menu.
@@ -145,7 +145,7 @@ Copy existing theme values, then go to:
 
       In Mattermost versions up to 5.39, navigate to **Settings > Display > Custom Theme** to paste the theme values into the **Copy and paste to share theme colors** field. Select **Save** to confirm your theme changes.
   
-Custom Theme Examples
+Custom theme examples
 ~~~~~~~~~~~~~~~~~~~~~
 
 Customize your theme colors and share them with others by copying and pasting theme values into the input box. Below are some example themes with their corresponding theme values.
@@ -263,3 +263,8 @@ Night Owl Dark Theme
 .. code-block:: none
 
   {"sidebarBg":"#011627","sidebarText":"#d6deeb","sidebarUnreadText":"#d6deeb","sidebarTextHoverBg":"#1d3b53","sidebarTextActiveBorder":"#ff2c83","sidebarTextActiveColor":"#82aaff","sidebarHeaderBg":"#1d3b53","sidebarHeaderTextColor":"#d6deeb","onlineIndicator":"#addb67","awayIndicator":"#ffbc42","dndIndicator":"#f74343","mentionBg":"#d6deeb","mentionBg":"#d6deeb","mentionColor":"#145dbf","centerChannelBg":"#011627","centerChannelColor":"#d6deeb","newMessageSeparator":"#ff8800","linkColor":"#2389d7","buttonBg":"#166de0","buttonColor":"#011627","errorTextColor":"#fd5960","mentionHighlightBg":"#0b2942","mentionHighlightLink":"#82aaff","codeTheme":"solarized-dark"}
+
+Dark Theme (Desktop app only)
+-----------------------------
+
+The Mattermost Desktop App respects the System Preferences appearance setting of your computer's operating system to set the theme of the title bar.

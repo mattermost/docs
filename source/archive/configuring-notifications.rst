@@ -18,7 +18,7 @@ Configuring Notifications
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-.. |gear-icon| image:: ../images/gear-icon.png
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Select the Gear icon to access your user preferences.
 
 Notifications in Mattermost alert you to unread messages and mentions. Desktop, email, and mobile push notifications notify you of activity in Mattermost. 

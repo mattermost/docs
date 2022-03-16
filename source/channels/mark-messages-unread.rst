@@ -1,5 +1,5 @@
-Log Out of Mattermost
-=====================
+Mark Messages as Unread
+=======================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -18,6 +18,6 @@ Log Out of Mattermost
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can log out of Mattermost from the **Main Menu** (the three lines next to your username). 
+If you read a message but don't have time to address it right away, you can mark that message as unread. Marking a message as unread bolds the channel in your sidebar, and adds the new messages line above the marked message. 
 
-Select **Logout** to log out of all teams on the server.
+To mark a message as unread, select the **More Actions** link next to a message, then select **Mark as Unread**.

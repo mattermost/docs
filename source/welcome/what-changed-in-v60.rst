@@ -1,4 +1,7 @@
-In Mattermost v6.0, we’ve introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.
+What Changed in Mattermost v6.0?
+================================
+
+In Mattermost v6.0, we introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.
 
 The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the Mattermost platform in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks. You'll notice that going forward, when you open Playbooks and Boards, they display as tabs in the window header for easier access.
 
@@ -18,7 +21,7 @@ While Channels, Boards, and Playbooks feature unique functionality within the Gl
 
 In addition to this documentation, take a look at the Mattermost onboarding tips/tutorials available immediately after installation/upgrade. Note that once the tips/tutorials are dismissed, you won't be able to access them again.
 
-Account Settings
+Account settings
 ----------------
 
 The Account Settings menu has been split into **Profile** and **Settings**.
@@ -27,13 +30,13 @@ Your **Profile** and **Security** settings can be found in **Profile**. Select y
 
 Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are found in **Settings**. In Channels, select the |gear-icon| in the Global Header, to the left of your avatar, to access Channels settings. 
 
-.. |gear-icon| image:: ../images/gear-icon.png
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Select the Gear icon to access Channel settings.
 
 Status and availability
 -----------------------
 
-Let your team know your online status using `custom status and availability settings <https://docs.mattermost.com/messaging/setting-your-status-availability.html#>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
+Let your team know your online status using `custom status and availability settings <https://docs.mattermost.com/welcome/set-your-status-availability.html>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
 
 Product menu
 ------------

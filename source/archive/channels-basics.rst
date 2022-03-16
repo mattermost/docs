@@ -29,7 +29,7 @@ Write messages using the text input box at the bottom of Mattermost. Press ENTER
 
       You can use ENTER to insert new lines, and CTRL+ENTER to send messages instead. Select the |gear-icon| to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
-      .. |gear-icon| image:: ../images/gear-icon.png
+      .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
         :alt: Select the Gear icon to open the Settings dialog.
 
   .. tab:: Mattermost v5.39 and earlier
