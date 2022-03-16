@@ -1,4 +1,4 @@
-Self-Hosted Subscriptions
+Self-Hosted subscriptions
 =========================
 
 Purchase a subscription

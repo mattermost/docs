@@ -1,8 +1,8 @@
-Cloud Subscriptions
+Cloud subscriptions
 ===================
 
 Purchase a Cloud subscription
--------------------------------
+------------------------------
 
 Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan.
 

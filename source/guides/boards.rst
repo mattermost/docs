@@ -17,9 +17,9 @@ The Basics
    Navigating Mattermost </boards/navigating-mattermost>
    Enable Boards </boards/getting-started>
    Access Boards </boards/accessing-boards>
-   Work With Boards </boards/working-with-boards>
-   Work with Cards </boards/work-with-cards>
-   Share Boards </boards/sharing-boards>
+   Work with boards </boards/working-with-boards>
+   Work with cards </boards/work-with-cards>
+   Share boards </boards/sharing-boards>
    Migrate to Boards </boards/data-and-archives>
    Templates </boards/templates>
 
