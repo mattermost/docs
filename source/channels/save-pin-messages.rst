@@ -1,4 +1,4 @@
-Save and Pin Messages
+Save and pin messages
 =====================
 
 |all-plans| |cloud| |self-hosted|

@@ -1,4 +1,4 @@
-Format Messages
+Format messages
 ===============
 
 |all-plans| |cloud| |self-hosted|

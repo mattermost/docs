@@ -1,4 +1,4 @@
-Customize Your Channel Sidebar
+Customize your channel sidebar
 ==============================
 
 |all-plans| |cloud| |self-hosted|

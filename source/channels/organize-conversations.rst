@@ -1,4 +1,4 @@
-Organize Conversations using Collapsed Reply Threads
+Organize conversations using Collapsed Reply Threads
 ====================================================
 
 |all-plans| |cloud| |self-hosted|
