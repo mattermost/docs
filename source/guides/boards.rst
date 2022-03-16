@@ -14,7 +14,9 @@ The Basics
    :hidden:
 
    Overview </boards/overview>
-   Get Started </boards/getting-started>
+   Get Started </boards/get-started-with-boards>
+   Navigating Mattermost </boards/navigating-mattermost>
+   Enable Boards </boards/getting-started>
    Access Boards </boards/accessing-boards>
    Work With Boards </boards/working-with-boards>
    Work with Cards </boards/work-with-cards>
@@ -23,7 +25,9 @@ The Basics
    Templates </boards/templates>
 
 * :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
-* :doc:`Get Started </boards/getting-started>` - Enable Boards for your Mattermost instance.
+* :doc:`Get Started </boards/get-started-with-boards>` - Get started with Mattermost Boards.
+* :doc:`Navigating Mattermost </boards/navigating-mattermost>` - Find your way around Mattermost.
+* :doc:`Enable Boards </boards/getting-started>` - Enable Boards for your Mattermost instance.
 * :doc:`Access Boards </boards/accessing-boards>` - Use Mattermost Channels to access your Boards.
 * :doc:`Work With Boards </boards/working-with-boards>` - Create new Boards and manage their properties.
 * :doc:`Work with Cards </boards/work-with-cards>` - Learn about the different property types in cards.
