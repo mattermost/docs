@@ -14,7 +14,6 @@ The Basics
    :hidden:
 
    Overview </playbooks/overview>
-   Get Started </playbooks/get-started-with-playbooks>
    Navigate Mattermost </playbooks/navigating-mattermost>
    Access Playbooks </playbooks/getting-started>
    Playbook Permissions </playbook/playbooks-permissions>
@@ -24,7 +23,6 @@ The Basics
    Retrospectives </playbooks/refining-and-improving>
    
 * :doc:`Playbooks Overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
-* :doc:`Get Started </playbooks/get-started-with-playbooks>` - Get started with Mattermost Playbooks.
 * :doc:`Navigate Mattermost </playbooks/navigating-mattermost>` - Find your way around Mattermost.
 * :doc:`Access Playbooks </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
 * :doc:`Playbook Permissions </playbooks/playbook-permissions>` - Configure and granulate access controls for playbooks.
