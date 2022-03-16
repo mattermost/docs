@@ -15,6 +15,7 @@ The Basics
     :maxdepth: 1
     :hidden:
 
+    Optimize Your Workspace </configure/optimize-your-workspace>
     Mattermost Configuration Settings </configure/configuration-settings>
     Mattermost Deprecated Configuration Settings </configure/deprecated-configuration-settings>
     Workspace Configuration for Cloud Deployments </configure/cloud-site-configuration>
@@ -28,8 +29,9 @@ The Basics
     Multi-factor Authentication </onboard/multi-factor-authentication>
     Active Directory / LDAP </onboard/ad-ldap>
 
-These resources will help you get started with your Mattermost server.
+These resources will help you get started with your Mattermost workspace.
 
+* Visit the :doc:`Workspace Optimization </configure/optimize-your-workspace>` page in the System Console to review health and growth scores for your Mattermost workspace and take recommended actions.
 * **Configuration Overview** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers </configure/configuration-settings>` and :doc:`Mattermost cloud workspaces </configure/cloud-site-configuration>`.
 * **Authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`Gitlab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory / LDAP </onboard/ad-ldap>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
 * **User Permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`system admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
