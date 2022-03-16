@@ -5,7 +5,7 @@ Service Settings
 ----------------
 
 Enable Reliable Websockets
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This configuration setting has been deprecated, and the ability to buffer messages during a connection loss has been promoted to general availability from Mattermost v6.3. This setting is enabled for older clients to maintain backwards compatibility.*
 
@@ -18,7 +18,7 @@ Enable this setting to make websocket messages more reliable by buffering messag
 +---------------------------------------------------------------------------------------------------------------------+
 
 Data Prefetch
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 *Removed in February 16, 2021 release*
 
@@ -31,7 +31,7 @@ Data Prefetch
 +---------------------------------------------------------------------------------------------------------------------+
 
 Segment Write Key
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 *Removed in March 16, 2017 release*
 
@@ -42,7 +42,7 @@ For deployments seeking additional tracking of system behavior using Segment.com
 +--------------------------------------------------------------------------------------------+
 
 Limit Access to Config Settings Prior to Login
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in December 16, 2018 release*
 
@@ -55,7 +55,7 @@ Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.
 +-----------------------------------------------------------------------------------------------------------------------------+
 
 Disable Legacy MFA API Endpoint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -79,7 +79,7 @@ SQL Settings
 -------------
 
 Amazon S3 Bucket Endpoint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
 
@@ -90,7 +90,7 @@ Set an endpoint URL for Amazon S3 buckets.
 +-----------------------------------------------------------------------------------------------+
 
 Amazon S3 Location Constraint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
 
@@ -103,7 +103,7 @@ Amazon S3 Location Constraint
 +------------------------------------------------------------------------------------------------------------------------+
 
 Amazon S3 Lowercase Bucket
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
 
@@ -119,7 +119,7 @@ Users and Teams
 ---------------
 
 Enable Team Directory
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in May 16th, 2016 release*
 
@@ -132,7 +132,7 @@ Enable Team Directory
 +---------------------------------------------------------------------------------------------------------------+
 
 Allow Team Administrators to edit others' posts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -153,7 +153,7 @@ Allow Team Administrators to edit others' posts
    System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
 
 Enable Team Creation
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -177,7 +177,7 @@ SAML 2.0
 --------
 
 Use New SAML Library
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 *Removed in December 16, 2020 release*
 
@@ -193,7 +193,7 @@ Legacy Sidebar
 --------------
 
 Enable Legacy Sidebar
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -216,7 +216,7 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 +----------------------------------------------------------------------------------------------------------------+
 
 Experimental Sidebar Features
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated. Not used in Mattermost v5.32 and later*
 
@@ -234,7 +234,7 @@ Experimental Sidebar Features
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Sidebar Organization
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -263,7 +263,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 +-----------------------------------------------------------------------------------------------------------------------------+
 
 Enable X to Leave Channels from Left-Hand Sidebar
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -292,7 +292,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 +---------------------------------------------------------------------------------------------------------------------------+
 
 Autoclose Direct Messages in Sidebar
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -324,7 +324,7 @@ Town Square
 -----------
 
 Town Square is Hidden in Left-Hand Sidebar
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -353,7 +353,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 +-----------------------------------------------------------------------------------------------------------------------------+
 
 Town Square is Read-Only
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -381,7 +381,7 @@ Custom Emoji
 ------------
 
 Restrict Custom Emoji Creation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -409,7 +409,7 @@ Timezone
 --------
 
 Timezone
-^^^^^^^^^
+~~~~~~~~
 
 *This configuration setting has been promoted to General Availability and is no longer configurable in Mattermost v6.0 and later.*
 
@@ -427,7 +427,7 @@ High-Availability
 -----------------
 
 Inter-Node Listen Address
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated. Not used in Mattermost v4.0 and later*
 
@@ -438,7 +438,7 @@ The address the Mattermost Server will listen on for inter-node communication. W
 +-----------------------------------------------------------------------------------------------------+
 
 Inter-Node URLs
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 *Deprecated. Not used in Mattermost v4.0 and later*
 
@@ -452,7 +452,7 @@ REST API V3
 -----------
 
 Allow use of API v3 endpoints
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -466,7 +466,7 @@ Integrations
 ------------
 
 Restrict managing integrations to Admins
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -502,7 +502,7 @@ Policy
    Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ page instead of configuration settings.
 
 Enable sending team invites from
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -523,7 +523,7 @@ Set policy on who can invite others to a team using the **Send Email Invite**, *
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable public channel creation for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -544,7 +544,7 @@ Restrict the permission level required to create public channels.
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable public channel renaming for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -567,7 +567,7 @@ Restrict the permission level required to rename and set the header or purpose f
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable public channel deletion for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -590,7 +590,7 @@ Restrict the permission level required to delete Public channels. Deleted channe
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable private channel creation for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -611,7 +611,7 @@ Restrict the permission level required to create Private channels.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable private channel renaming for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -634,7 +634,7 @@ Restrict the permission level required to rename and set the header or purpose f
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable managing of private channel members for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -657,7 +657,7 @@ Set policy on who can add and remove members from Private channels.
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable private channel deletion for
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -680,7 +680,7 @@ Restrict the permission level required to delete Private channels. Deleted chann
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow which users to delete messages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -701,7 +701,7 @@ Restrict the permission level required to delete messages. Team Admins, Channel 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow users to edit their messages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in June 16, 2018 release*
 
@@ -722,7 +722,7 @@ Set the time limit that users have to edit their messages after posting.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Post edit time limit
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 When post editing is permitted, setting this to ``-1`` allows editing any time, and setting this to a positive integer restricts editing time in seconds. If post editing is disabled, this setting does not apply.
 
@@ -734,7 +734,7 @@ Images
 ------
 
 Attachment Thumbnail Width
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
 
@@ -745,7 +745,7 @@ Width of thumbnails generated from uploaded images. Updating this value changes 
 +-------------------------------------------------------------------------------------------+
 
 Attachment Thumbnail Height
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
 
@@ -756,7 +756,7 @@ Height of thumbnails generated from uploaded images. Updating this value changes
 +--------------------------------------------------------------------------------------------+
 
 Image Preview Width
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
 
@@ -767,7 +767,7 @@ Maximum width of preview image. Updating this value changes how preview images r
 +------------------------------------------------------------------------------------------+
 
 Image Preview Height
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
 
@@ -778,7 +778,7 @@ Maximum height of preview image. Setting this value to ``0`` instructs Mattermos
 +----------------------------------------------------------------------------------------+
 
 Profile Picture Width
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
 
@@ -789,7 +789,7 @@ The width to which profile pictures are resized after being uploaded via **Accou
 +-----------------------------------------------------------------------------------------+
 
 Profile Picture Height
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
 
@@ -799,11 +799,11 @@ The height to which profile pictures are resized after being uploaded via **Acco
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input. |
 +------------------------------------------------------------------------------------------+
 
-Display Settings (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Experimental Display Settings
+-----------------------------
 
 Supported Timezones Path
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in April 16, 2019 release*
 

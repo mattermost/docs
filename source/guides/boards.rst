@@ -15,18 +15,20 @@ The Basics
 
    Overview </boards/overview>
    Navigating Mattermost </boards/navigating-mattermost>
-   Get Started </boards/getting-started>
+   Enable Boards </boards/getting-started>
    Access Boards </boards/accessing-boards>
    Work With Boards </boards/working-with-boards>
    Work with Cards </boards/work-with-cards>
-   Share Boards </boards/sharing-boards> 
+   Share Boards </boards/sharing-boards>
+   Migrate to Boards </boards/data-and-archives>
    Templates </boards/templates>
 
 * :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
 * :doc:`Navigating Mattermost </boards/navigating-mattermost>` - Find your way around Mattermost.
-* :doc:`Get Started </boards/getting-started>` - Enable Boards for your Mattermost instance.
+* :doc:`Enable Boards </boards/getting-started>` - Enable Boards for your Mattermost instance.
 * :doc:`Access Boards </boards/accessing-boards>` - Use Mattermost Channels to access your Boards.
 * :doc:`Work With Boards </boards/working-with-boards>` - Create new Boards and manage their properties.
 * :doc:`Work with Cards </boards/work-with-cards>` - Learn about the different property types in cards.
 * :doc:`Share Boards </boards/sharing-boards>` - Share Boards with your team and manage sharing settings. 
+* :doc:`Migrate to Boards </boards/data-and-archives>` - Migrate your data from other tools into Mattermost Boards.
 * :doc:`Templates </boards/templates>` - Customize your Boards and Cards with Templates.

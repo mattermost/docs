@@ -1210,7 +1210,7 @@ To confirm push notifications are working:
 
 1. Go to **System Console > Notifications > Environment > Push Notification Server > Enable Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
 2. Set **Push Notification Server** to ``https://push.mattermost.com`` if using Enterprise Edition. If using Team Edition, set the value to ``https://push-test.mattermost.com``.
-3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__ and log in to your team site.
+3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://apps.apple.com/us/app/mattermost/id1257222717>`__ or the `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and log in to your team site.
 4. Close the app on your device, and close any other connections to your team site.
 5. Wait 5 minutes and have another team member send you a direct message, which should trigger a push notification to the Mattermost app on your mobile device.
 6. You should receive a push notification on your device alerting you of the direct message.
@@ -1220,7 +1220,7 @@ If you did not receive an alert:
 1. Set **System Console > Environment > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
 2. Repeat the above steps.
 3. Go to **System Console > Reporting > Server Logs** and copy the log output into a file.
-4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
+4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
 
 .. _high-availability:
 
@@ -1826,7 +1826,7 @@ Session length for SSO authentication (days)
 
 This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
@@ -2051,7 +2051,7 @@ Help link
 Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation are hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
 
 +---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"HelpLink": "https://about.mattermost.com/default-help/"`` with string input. |
+| This feature's ``config.json`` setting is ``"HelpLink": "https://docs.mattermost.com/"`` with string input.               |
 +---------------------------------------------------------------------------------------------------------------------------+
 
 Support Email
@@ -2085,12 +2085,12 @@ Privacy Policy link
 
 |all-plans| |self-hosted|
 
-Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on about.mattermost.com.
+Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on mattermost.com.
 
 In version 5.17 and later, this setting does not change the privacy policy link in **Main Menu > About Mattermost**, which refers to the Mattermost Privacy Policy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input. |
+| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://mattermost.com/privacy-policy/"`` with string input.               |
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 
 About Link
@@ -2098,10 +2098,10 @@ About Link
 
 |all-plans| |self-hosted|
 
-Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on about.mattermost.com.
+Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on mattermost.com.
 
 +-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AboutLink": "https://about.mattermost.com/default-about/"`` with string input. |
+| This feature's ``config.json`` setting is ``"AboutLink": "https://mattermost.com/platform-overview/"`` with string input.   |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
 Report a Problem link
@@ -2111,16 +2111,16 @@ Report a Problem link
 
 Set the link for the support website.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`` with string input. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute#report-a-bug"`` with string input.    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
+Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/download/"`` with string input. |
@@ -2133,9 +2133,9 @@ Android App Download Link
 
 Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AndroidAppDownloadLink": "https://play.google.com/store/apps/details?id=com.mattermost.rn"`` with string input. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 iOS App Download Link
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2144,9 +2144,9 @@ iOS App Download Link
 
 Configurable link to download the iOS app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"`` with string input. |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IosAppDownloadLink": "https://apps.apple.com/us/app/mattermost/id1257222717"`` with string input. |
++------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Localization
 ~~~~~~~~~~~~~
@@ -2162,9 +2162,9 @@ Default language for system messages and logs.
 
 Changes to this setting require a server restart before taking effect.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Default Client Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2173,9 +2173,9 @@ Default Client Language
 
 Default language for newly-created users and pages where the user hasn't logged in.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^
@@ -2187,9 +2187,9 @@ Sets which languages are available for users in **Settings > Display > Language*
 .. note::
   Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``.  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``.  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Users and Teams
 ~~~~~~~~~~~~~~~
@@ -2804,7 +2804,7 @@ Restrict account creation to specified email domains
 
 |all-plans| |cloud| |self-hosted|
 
-Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
+Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
 
 This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``.
 
@@ -3458,7 +3458,7 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`__ to learn more.
+**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Synchronization of SAML accounts with AD/LDAP is disabled.
 
@@ -6057,6 +6057,19 @@ This setting isn't available in the System Console and can only be set in ``conf
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
+
+Custom User Groups
+^^^^^^^^^^^^^^^^^^
+
+|enterprise| |professional| |cloud| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting controls the ability for users to create custom user groups. This configuration setting is disabled by default.
+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableCustomGroups": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------+
 
 Developer Flags
 ^^^^^^^^^^^^^^^
