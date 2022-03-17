@@ -140,7 +140,7 @@ Every Mattermost user can configure Mattermost notifications based on how and wh
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | Automatic Direct Message Replies | Enable `Automatic Replies <https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies>`__            |
 |                                  | by going to **System Console > Experimental > Features** to allow all users to set an automated custom message that will             |
-|                                  | be sent once per day in response to Direct Messages.                                                                                 |
+|                                  | be sent once per day in response to direct messages.                                                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable file attachments and search
