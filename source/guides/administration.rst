@@ -26,7 +26,7 @@ The basics
     Google SSO </onboard/sso-google>
     Office 365 SSO </onboard/sso-office>
     GitLab SSO </onboard/sso-gitlab>
-    Multi-factor Authentication </onboard/multi-factor-authentication>
+    Multi-factor authentication </onboard/multi-factor-authentication>
     Active Directory/LDAP </onboard/ad-ldap>
 
 These resources will help you get started with your Mattermost workspace.
@@ -217,8 +217,8 @@ Other resources
     Generate a support packet </manage/generating-support-packet>
     mmctl command line tool </manage/mmctl-command-line-tool>
     Migration announcement email template </onboard/migration-announcement-email>
-    Advanced Permissions: Backend infrastructure </onboard/advanced-permissions-backend-infrastructure>
-    Command Line Tools </manage/command-line-tools>
+    Advanced permissions: Backend infrastructure </onboard/advanced-permissions-backend-infrastructure>
+    Command line tools </manage/command-line-tools>
     Scripts </manage/scripts>
 
 If the information above doesn’t solve your problem, look at these other resources to find something that meets your needs. Alternatively, you can also :doc:`get help </guides/get-help>` from our community or via premium support services.
@@ -227,6 +227,6 @@ If the information above doesn’t solve your problem, look at these other resou
 * :doc:`Generate a support packet </manage/generating-support-packet>` - Generate configuration information, logs, plugin details, and data dependencies to provide when contacting Mattermost support.
 * :doc:`mmctl command line tool </manage/mmctl-command-line-tool>` - Use mmctl to manage self-hosted Mattermost servers from the command line.
 * :doc:`Migration announcement email template </onboard/migration-announcement-email>` - Use this email template to notify your users about migrating to Mattermost.
-* :doc:`Advanced Permissions: Backend infrastructure </onboard/advanced-permissions-backend-infrastructure>` - Read our technical guide on modifying self-hosted Mattermost installations to create custom permissions schemes.
+* :doc:`Advanced permissions: Backend infrastructure </onboard/advanced-permissions-backend-infrastructure>` - Read our technical guide on modifying self-hosted Mattermost installations to create custom permissions schemes.
 * :doc:`Command line tools </manage/command-line-tools>` - Learn how to use the command line to manage self-hosted Mattermost servers.
 * :doc:`Scripts </manage/scripts>` - Explore a selection of example scripts you can use to manage self-hosted Mattermost servers.
