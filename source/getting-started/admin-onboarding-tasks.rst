@@ -65,7 +65,7 @@ From Mattermost v6.5, you can review a dashboard featuring insights related to t
 
 - Mattermost Enterprise customers can `enable Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ for optimized search performance at enterprise-scale. `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results. `Set up an Elasticsearch server <https://docs.mattermost.com/scale/elasticsearch.html#setting-up-an-elasticsearch-server>`__ and `enable Elasticsearch <https://docs.mattermost.com/configure/configuration-settings.html#elasticsearch>`__.
 
-High availability with PostgreSQL databases
+High Availability with PostgreSQL databases
 -------------------------------------------
 
 Customers with high availability Mattermost environments using PostgreSQL should also consider specific configuration optimizations. See our `High Availability Cluster recommendations <https://docs.mattermost.com/scale/high-availability-cluster.html#recommended-configuration-settings>`__ documentation for details.
