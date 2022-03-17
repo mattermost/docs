@@ -68,7 +68,7 @@ From Mattermost v6.5, you can review a dashboard featuring insights related to t
 High Availability with PostgreSQL databases
 -------------------------------------------
 
-Customers with high availability Mattermost environments using PostgreSQL should also consider specific configuration optimizations. See our `High Availability Cluster recommendations <https://docs.mattermost.com/scale/high-availability-cluster.html#recommended-configuration-settings>`__ documentation for details.
+Customers with High Availability Mattermost environments using PostgreSQL should also consider specific configuration optimizations. See our `High Availability Cluster recommendations <https://docs.mattermost.com/scale/high-availability-cluster.html#recommended-configuration-settings>`__ documentation for details.
 
 Integrate with your directory services
 --------------------------------------
