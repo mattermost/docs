@@ -113,7 +113,7 @@ Unofficial, community-driven ``.deb`` packages are available.
   - 64-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-amd64.deb``
   - 32-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-i386.deb``
 
-3. To run Mattermost, open a new terminal window, enter **mattermost**, then select the Mattermost icon.
+3. Run Mattermost as a desktop app.
 
 Linux rpm files (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -130,7 +130,7 @@ Unofficial, community-driven ``.rpm`` packages are available.
   - 32-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-i686.rpm``
   - 64-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-x86_64.rpm``
 
-3. To run Mattermost, open a new terminal window, enter **mattermost**, then select the Mattermost icon.
+3. Run Mattermost as a desktop app.
 
 Arch Linux-based systems
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +146,7 @@ A snap is available for systems that have Snapcraft installed. Snapcraft is inst
 
   ``sudo snap install mattermost-desktop --beta``
 
-2. To run Mattermost, open a new terminal window, enter **mattermost**, then select the Mattermost icon.
+2. Run Mattermost as a desktop app.
 
 Troubleshooting
 ---------------
