@@ -23,34 +23,32 @@ Mattermost desktop applications are available for Windows, Mac, and Linux operat
 - Connect to multiple Mattermost servers from a single interface, and navigate between servers using keyboard shortcuts.
 - Auto-start Mattermost when a user logs into their machine.
 - (Windows) Add Mattermost to Start menu, Taskbar, and System Tray.
-- (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if app is already installed.
+- (Windows/Mac) Deep link to the desktop app via ``mattermost://`` protocol if the app is already installed.
 - (Mac) Add Mattermost to the Dock.
 - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
 
 Below is a list of additional resources:
 
-- `Guide for configuring your desktop app experience <https://docs.mattermost.com/messaging/managing-desktop-app-options.html>`__
+- `Guide for configuring your desktop app experience <https://docs.mattermost.com/welcome/customize-desktop-app-experience.html>`__
 - `Changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__
 - `Source code <https://github.com/mattermost/desktop>`__
 - `Contributor’s guide <https://developers.mattermost.com/contribute/desktop>`__
 
-You can `download the Mobile Apps directly from our Downloads page <https://mattermost.com/download/#mattermostApps>`__. You may also use the following installation guides for Windows, Mac, and Linux.
+You can `download the desktop apps directly from our Downloads page <https://mattermost.com/download/>`__. You may also use the following installation guides for Windows, Mac, and Linux.
 
 .. include:: ../upgrade/upgrading-to-v60.rst
 
 .. contents::
     :backlinks: top
 
-Windows 10+, Windows 8.1+
--------------------------
+Windows 8.1+
+-------------
 
 1. Download the latest version of the Mattermost desktop app:
 
   - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-setup-5.0.4-win.exe>`__
 
-2. From the **\Downloads** folder right-click on the file ``mattermost-desktop-setup-5.0.4-win.exe`` and select **Open**.
-
-This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
+2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.0.4-win.exe`` and select **Open** to start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
 MSI Installer and Group Policies (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,8 +91,8 @@ Generic Linux package
 
 1. Download the latest version of the Mattermost desktop app:
 
- - 64-bit systems: `mattermost-desktop-5.0.4-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-x64.tar.gz>`__
- - 32-bit systems: `mattermost-desktop-5.0.4-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-ia32.tar.gz>`__
+  - 64-bit systems: `mattermost-desktop-5.0.4-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-x64.tar.gz>`__
+  - 32-bit systems: `mattermost-desktop-5.0.4-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -107,19 +105,15 @@ Unofficial, community-driven ``.deb`` packages are available.
 
 1. Download the latest version of the Mattermost Desktop App:
 
-- 64-bit systems
-  `mattermost-desktop-5.0.4-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-amd64.deb>`__
-- 32-bit systems
-  `mattermost-desktop-5.0.4-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i386.deb>`__
+  - 64-bit systems `mattermost-desktop-5.0.4-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-amd64.deb>`__
+  - 32-bit systems `mattermost-desktop-5.0.4-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
-- 64-bit systems
-  ``sudo dpkg -i mattermost-desktop-5.0.4-linux-amd64.deb``
-- 32-bit systems
-  ``sudo dpkg -i mattermost-desktop-5.0.4-linux-i386.deb``
+  - 64-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-amd64.deb``
+  - 32-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-i386.deb``
 
-3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
+3. Run Mattermost as a desktop app.
 
 Linux rpm files (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -128,19 +122,15 @@ Unofficial, community-driven ``.rpm`` packages are available.
 
 1. Download the latest version of the Mattermost Desktop App:
 
-- 32-bit systems
-  `mattermost-desktop-5.0.4-linux-i686.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i686.rpm>`__
-- 64-bit systems
-  `mattermost-desktop-5.0.4-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-x86_64.rpm>`__
+  - 32-bit systems `mattermost-desktop-5.0.4-linux-i686.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i686.rpm>`__
+  - 64-bit systems `mattermost-desktop-5.0.4-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-x86_64.rpm>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
-- 32-bit systems
-  ``sudo rpm -i mattermost-desktop-5.0.4-linux-i686.rpm``
-- 64-bit systems
-  ``sudo rpm -i mattermost-desktop-5.0.4-linux-x86_64.rpm``
+  - 32-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-i686.rpm``
+  - 64-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-x86_64.rpm``
 
-3. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
+3. Run Mattermost as a desktop app.
 
 Arch Linux-based systems
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +146,7 @@ A snap is available for systems that have Snapcraft installed. Snapcraft is inst
 
   ``sudo snap install mattermost-desktop --beta``
 
-2. To run Mattermost, open **Dash** (located at the top left corner), enter **mattermost**, then click the Mattermost icon.
+2. Run Mattermost as a desktop app.
 
 Troubleshooting
 ---------------
@@ -191,8 +181,8 @@ To resolve this issue, you can reset the desktop app screen location by deleting
 
 **To reset the desktop app screen location**
 
-1. If the desktop app is running, right-click the Mattermost icon in the task bar and click **Close Window**.
-2. Open Windows File Explorer, and navigate to the ``%APPDATA%\\Mattermost`` folder.
+1. If the desktop app is running, right-click the Mattermost icon in the task bar, then select **Close Window**.
+2. Open Windows File Explorer, and go to the ``%APPDATA%\\Mattermost`` folder.
 3. Delete the file ``bounds-info.json``.
 
 Desktop App constantly refreshes the page
@@ -200,23 +190,23 @@ Desktop App constantly refreshes the page
 
 This issue can occur when ``localStorage`` has an unexpected state. To resolve the issue:
 
-- Windows: Open Windows File Explorer, navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``Local Storage`` folder.
-- Mac: Open Finder, navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
-- Linux: Open the File Manager, navigate to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
+- Windows: Open Windows File Explorer, go to the ``%APPDATA%\Mattermost`` folder, then delete the ``Local Storage`` folder.
+- Mac: Open Finder, go to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
+- Linux: Open the File Manager, go to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder. Linux file managers may hide folders starting with a period by default. You can delete them from the terminal using ``rm -rf ~/.config/Mattermost``.
       
 Desktop App constantly asks to log in to Mattermost server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This issue can occur after a crash or unexpected shutdown of the desktop app that causes the app data to be corrupted. To resolve the issue:
 
-- Windows: Open Windows File Explorer, navigate to the ``%APPDATA%\\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
-- Mac: Open Finder, navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
-- Linux: Open the file manager, navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Windows: Open Windows File Explorer, go to the ``%APPDATA%\\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Mac: Open Finder, go to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Linux: Open the file manager, go to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files. Linux file managers may hide folders starting with a period by default. You can delete them from the terminal using ``rm -rf ~/.config/Mattermost``.
 
 "Internal error: BrowserWindow 'unresponsive' event has been emitted"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Clicking **Show Details** on the dialog provides logs. Ways to resolve the issue:
+Selecting **Show Details** on the dialog provides logs. Ways to resolve the issue:
 
 1. Clear the cache via **View > Clear Cache and Reload** or CTRL+SHIFT+R.
 2. Go to App Settings via **File > Settings** or CTRL+COMMA  and unselect hardware acceleration.
@@ -231,19 +221,19 @@ For further assistance, review the `Troubleshooting forum <https://forum.matterm
 Reporting Issues
 ----------------
 
-When reporting bugs found in the Mattermost desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`__. To access the Developer Tools Console, follow these instructions:
+When reporting bugs found in the Mattermost Desktop App, it's helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`__. 
 
-1. In the menu bar, go to **View > Toggle Developer Tools**.
+To access the Developer Tools Console, follow these instructions:
+
+1. In the menu bar, go to **View > Developer Tools for Current Tab**.
 2. Select the **Console** tab.
-3. Right-click the log window and select **Save As**.
-4. Save the file and then send it along with a description of your issue.
-5. Go to **View > Toggle Developer Tools** to disable the Developer Tools.
+3. Right-click the log entry, then select **Save As**.
+4. Save the file, then send it along with a description of your issue.
+5. Close the console to disable the Developer Tools.
 
 You can open an additional set of developer tools for each server you have added to the desktop app. The tools can be opened by pasting this command in the Developer Tools Console you opened with the steps described above:
 
 ``document.getElementsByTagName("webview")[0].openDevTools();`` 
-
-Note that if you have more than one server added to the desktop client, you need to change the 0 to the number corresponding to the server you want to open in the Developer Tools Console, starting with 0 from the left.
 
 Windows
 ~~~~~~~
@@ -259,4 +249,4 @@ macOS
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/avKDRodDS3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-To submit an improvement or correction to this documentation, click **Edit** at the top of this page.
+To submit an improvement or correction to this documentation, select **Edit** at the top of this page.
