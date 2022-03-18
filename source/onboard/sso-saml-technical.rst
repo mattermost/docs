@@ -1,6 +1,6 @@
 .. _sso-saml-technical:
 
-SAML Single-Sign-On: Technical Documentation
+SAML Single Sign-On: Technical documentation
 ============================================
 
 |enterprise| |professional| |cloud| |self-hosted|
@@ -45,7 +45,7 @@ For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :d
   :backlinks: top
   :local:
 
-SAML Providers
+SAML providers
 --------------
 
 **Identity Providers (IdP)**: An identity provider performs the authentication. When a user clicks to log in, the identity provider confirms who the user is, and sends data to the service provider with the proper authorization to access the site.
@@ -56,7 +56,7 @@ SAML Providers
 
 *Examples*: Mattermost, Zendesk, Zoom, Salesforce.
 
-SAML Request (AuthNRequest)
+SAML request (AuthNRequest)
 ---------------------------
 
 When Mattermost initiates an SP-initiated SAML request flow, it generates a **HTTP-Redirect** binding request to the IdP that contains an XML payload as a base64 string
@@ -92,7 +92,7 @@ AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case
       </samlsig:Signature>
   </samlp:AuthnRequest>
 
-SAML Responses
+SAML responses
 --------------
 
 There are different types of SAML responses sent by the IdP to the SP. The response contains the Assertion with the NameID and attributes of a user.

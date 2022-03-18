@@ -1,4 +1,4 @@
-Shared Channels (Experimental)
+Shared channels (experimental)
 ==============================
 
 |enterprise| |cloud| |self-hosted|
@@ -18,11 +18,11 @@ Shared Channels (Experimental)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Shared Channels bring people together from multiple Mattermost installations, such as teams collaborating with external partners and customers using multiple Mattermost instances in a federated architecture.
+Shared channels bring people together from multiple Mattermost installations, such as teams collaborating with external partners and customers using multiple Mattermost instances in a federated architecture.
 
 Mattermost System Admins use slash commands to establish secure connections between Mattermost instances, then invite secured connections to shared channels.
 
-Shared Channels behave like regular channels, offering the same user experience and functionality as Public and Private channels. All members using secure connections, including local members and remote members, can `send and receive messages <https://docs.mattermost.com/messaging/sending-receiving-messages.html>`__, `use emojis <https://docs.mattermost.com/help/messaging/emoji.html>`__ to react to messages, `share files <https://docs.mattermost.com/messaging/sharing-files.html>`__, and `search message history <https://docs.mattermost.com/messaging/searching-in-mattermost.html>`__. Content is synchronized in real-time across all participating Mattermost instances.
+Shared channels behave like regular channels, offering the same user experience and functionality as public and private channels. All members using secure connections, including local members and remote members, can `send and receive messages <https://docs.mattermost.com/messaging/sending-receiving-messages.html>`__, `use emojis <https://docs.mattermost.com/help/messaging/emoji.html>`__ to react to messages, `share files <https://docs.mattermost.com/messaging/sharing-files.html>`__, and `search message history <https://docs.mattermost.com/messaging/searching-in-mattermost.html>`__. Content is synchronized in real-time across all participating Mattermost instances.
 
 A channel’s permissions and access continues to be governed by each server separately. Channel moderation permissions can be applied to a shared channel and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
@@ -31,7 +31,7 @@ Set up shared channels
 
 The process of sharing channels involves the following three steps:
 
-1. System Admins must enable Shared Channels functionality for their Mattermost instance. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#enable-shared-channels-experimental>`__ documentation for details.
+1. System Admins must enable shared channels functionality for their Mattermost instance. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#enable-shared-channels-experimental>`__ documentation for details.
 
 2. System Admins `use a slash command <https://docs.mattermost.com/messaging/executing-slash-commands.html>`__ to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
 

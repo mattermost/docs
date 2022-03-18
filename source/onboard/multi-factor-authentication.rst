@@ -1,6 +1,6 @@
 ..  _auth_mfa:
 
-Multi-factor Authentication
+Multi-factor authentication
 ===========================
 
 |all-plans| |cloud| |self-hosted|
