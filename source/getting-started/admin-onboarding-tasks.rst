@@ -13,13 +13,13 @@ Administrator Onboarding Tasks
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Once you've successfully `installed <https://docs.mattermost.com/guides/deployment.html#install-guides>`__ or `upgraded <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ Mattermost, before rolling out Mattermost to your organization, take some time to review your workspace configuration to deliver the best possible Mattermost user experience.
+Once you've successfully `installed <https://docs.mattermost.com/guides/deployment.html#install-guides>`__ or `upgraded <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ Mattermost, before rolling out Mattermost to your organization, it's important to take some time to review your workspace configuration to deliver the best possible Mattermost user experience.
 
-We recommend the following configuration settings to ensure that:
+We recommend reviewing configuration settings to ensure that:
 
-- your workspace is accessible and performant, notifications are enabled, and key user features are enabled.
-- the right people see and do the right things in Mattermost
-- your users can sign in easily
+- `Your workspace is accessible and performant <#review-mattermost-workspace-configuration>`__.
+- `The right people see and do the right things in Mattermost <#configure-user-permissions>`__.
+- `Users can sign in to Mattermost quickly and easily <#configure-user-authentication>`__.
 
 We also encourage you to explore all of the settings available in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation for details on all supported options.
 
@@ -27,11 +27,13 @@ We also encourage you to explore all of the settings available in the System Con
   
   - Looking for more structure and guidance to plan out your Mattermost rollout? See our `Enterprise roll out checklist <https://docs.mattermost.com/getting-started/enterprise-roll-out-checklist.html>`__ documentation for details. 
   - You can also manage Mattermost configuration settings in a ``config.json`` configuration file, located in the ``mattermost/config`` directory. See our `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation for details on ``config.json`` file equivalents.
+  - Anything you can do through the Mattermost interface you can also do through the `Mattermost REST API <https://api.mattermost.com/>`__. 
+  - You can share important announcements within Mattermost by `displaying an announcement banner <https://docs.mattermost.com/manage/announcement-banner.html>`__ visible to all users.
 
 Review Mattermost workspace configuration
 -----------------------------------------
 
-1. First, visit the **System Console > Environment** page to ensure your workspace is accessible and performant, and that notifications are enabled. 
+1. First, visit the **System Console > Environment** page to ensure your workspace is accessible and performant. 
 
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Go to...                     | To...                                                                                                                                                                                               |
@@ -47,7 +49,8 @@ Review Mattermost workspace configuration
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **SMTP**                     | Enable real-time Mattermost notifications for your users. See the `SMTP <https://docs.mattermost.com/configure/configuration-settings.html#smtp>`__ documentation for details.                      |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Push Notification Server** | Enable real-time mobile push notifications and `control the content included in notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.    |
+| **Push Notification Server** | Real-time `mobile push notifications <https://docs.mattermost.com/configure/configuration-settings.html#enable-push-notifications>`__ are enabled by default.                                       |
+|                              | You can control the `content included in notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.                                           |
 |                              | See the `Push Notification server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-server>`__ documentation for details.                                        |
 |                              |                                                                                                                                                                                                     |
 |                              | **Additional notification notes:**                                                                                                                                                                  |
@@ -59,36 +62,19 @@ Review Mattermost workspace configuration
 |                              | content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device.                                                           |
 |                              | The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__.                                                                 |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Session Lengths**          | Extend user sessions to keep your users logged in while active on Mattermost.                                                                                                                       |
-|                              | See the `Session Lengths <https://docs.mattermost.com/configure/configuration-settings.html#extend-session-length-with-activity>`__ documentation for details.                                      |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-2. Next, visit the **System Console > Site Configuration** page to enable features that your users will love:
+2. Next, visit the **System Console > Site Configuration** page to customize key links and enhance file sharing functionality:
 
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Go to...                       | To...                                                                                                                                                                                                 |
 +================================+=======================================================================================================================================================================================================+
-| **Customization**              | Brand and customize how your users interact with your Mattermost workspace.                                                                                                                           |
+| **Customization**              | Brand and customize how your users interact with your Mattermost workspace by:                                                                                                                        |
 |                                |                                                                                                                                                                                                       |
-|                                | - Customize the `Support Email <https://docs.mattermost.com/configure/configuration-settings.html#support-email>`__ used in email notifications and onboarding tutorials for support questions.       |
-|                                | - Customize the `Help Link <https://docs.mattermost.com/configure/configuration-settings.html#help-link>`__ used on Mattermost sign in and sign-up pages to link to your help desk ticketing system.  |
+|                                | - Customizing the `Support Email <https://docs.mattermost.com/configure/configuration-settings.html#support-email>`__ for email notifications, and onboarding tutorials, and support questions.       |
+|                                | - Customizing the `Help Link <https://docs.mattermost.com/configure/configuration-settings.html#help-link>`__ to link to your help desk ticketing system.                                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Notifications**              | Enable email notifications.                                                                                                                                                                           |
-|                                | See the `Email Notifications <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-notifications>`__ documentation for details.                                             |
-|                                |                                                                                                                                                                                                       |
-|                                | `Send email notifications in batches <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-batching>`__ to avoid overwhelming your users with too many emails.              |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Emoji**                      | Empower your users to express themselves with emojis by `enabling a standard set of emoji <https://docs.mattermost.com/configure/configuration-settings.html#enable-emoji-picker>`__,                 |
-|                                | and by `enabling custom emojis <https://docs.mattermost.com/configure/configuration-settings.html#enable-custom-emoji>`__.                                                                            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Posts**                      | Enable link previews to provide your users with a visual glimpse of link content.                                                                                                                     |
-|                                | See the `Link Previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ configuration settings documentation for details.                                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **File Sharing and Downloads** | Enable file sharing to let your users attach files or images to messages.                                                                                                                             |
-|                                | You are in full control of the `maximum size of file attachments <https://docs.mattermost.com/configure/configuration-settings.html#maximum-image-resolution>`__.                                     |
-|                                |                                                                                                                                                                                                       |
-|                                | Once you’ve enabled file attachments, extend Mattermost Channels search to include file contents by                                                                                                   |
-|                                | `enabling document search by content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__.                                                        |
+| **File Sharing and Downloads** | `File sharing <https://docs.mattermost.com/configure/configuration-settings.html#allow-file-sharing>`__ is enabled by default.                                                                        |
+|                                | You can control of the `maximum size of file attachments <https://docs.mattermost.com/configure/configuration-settings.html#maximum-image-resolution>`__.                                             |
 |                                |                                                                                                                                                                                                       |
 |                                | If your organization frequently works with SVG files, `enable previews of SVG attachments <https://docs.mattermost.com/configure/configuration-settings.html#enable-svgs>`__.                         |
 |                                |                                                                                                                                                                                                       |
@@ -98,9 +84,12 @@ Review Mattermost workspace configuration
 
 3. From Mattermost v6.5, you can also review a dashboard of insights related to the health of your Mattermost workspace by going to **System Console > Reporting > Workplace Optimization**. See the `Optimize your Mattermost workspace <https://docs.mattermost.com/configure/optimize-your-workspace.html>`__ documentation for details. 
 
- - On the dashboard, you can see whether there's a Mattermost update you should install. Mattermost releases regular updates to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. The `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ provides all information about changes in each version. When you upgrade your Mattermost server frequently, your users can access new features, improved user experiences, bug fixes, security fixes, and Mobile App compatibility. Upgrading your Mattermost server only takes a few minutes. See the `Upgrade Guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ for step-by-step instructions.
+.. image:: ../images/workspace-optimization.png
+    :alt: Review a dashboard of insights related to the health of your Mattermost workspace.
 
- - Mattermost Enterprise customers can `enable Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ for optimized search performance at enterprise-scale. `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results. `Set up an Elasticsearch server <https://docs.mattermost.com/scale/elasticsearch.html#setting-up-an-elasticsearch-server>`__ and `enable Elasticsearch <https://docs.mattermost.com/configure/configuration-settings.html#elasticsearch>`__.
+On the dashboard, you can see whether there's a Mattermost update you should install. Mattermost releases regular updates to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. The `Mattermost Changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ provides all information about changes in each version. When you upgrade your Mattermost server frequently, your users can access new features, improved user experiences, bug fixes, security fixes, and Mobile App compatibility. Upgrading your Mattermost server only takes a few minutes. See the `Upgrade Guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ for step-by-step instructions.
+
+Mattermost Enterprise customers can `enable Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ for optimized search performance at enterprise-scale. `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results. `Set up an Elasticsearch server <https://docs.mattermost.com/scale/elasticsearch.html#setting-up-an-elasticsearch-server>`__ and `enable Elasticsearch <https://docs.mattermost.com/configure/configuration-settings.html#elasticsearch>`__.
 
 Now you have a functional, performant Mattermost workspace. Next, you want to control product access. 
 
@@ -109,18 +98,19 @@ Configure user permissions
 
 Once your Mattermost workspace is configured for your needs, focus next on ensuring the right people can see and do the right things in Mattermost, such as creating teams and managing channels, by controlling product access with `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, `learning about teams <https://docs.mattermost.com/welcome/about-teams.html>`__, and `working with channels <https://docs.mattermost.com/guides/channels.html#work-with-channels>`__.
 
+.. image:: ../images/advanced-permissions.png
+    :alt: Control product access with granular Mattermost permissions.
+
 .. tip::
 
-  Mattermost won’t limit you to the number of teams you can create; however, a public and an internal team are typically sufficient. See our `Creating Teams <https://docs.mattermost.com/messaging/creating-teams.html>`__ documentation for details.
+  Mattermost won’t limit you to the number of teams you can create; however, a public team and an internal team are typically sufficient. See our `Creating Teams <https://docs.mattermost.com/welcome/about-teams.html#create-a-team>`__ and our `Team Settings <https://docs.mattermost.com/welcome/team-settings.html>`__ documentation for details.
 
-Now you have controls in place over who can do what and where based on the roles and areas of ownership in your organization. Next you want to make it easy for your users to get into Mattermost every day.
+With permissions, you have controls in place over who can do what and where based on the roles and areas of ownership in your organization. Next you want to make it easy for your users to get into Mattermost every day.
 
 Configure user authentication
 -----------------------------
 
-You want to ensure that it's easy for your users to log into Mattermost by automating onboarding and account provisioning for them through directory services integrations.
-
-You likely already have your users grouped by role, location, or level. Mattermost provides identity management, single sign-on, and automatic account provisioning to make it easy for you to integrate with your existing identity and access management (IAM) services and systems with `Active Directory and LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `SAML 2.0 SSO <https://docs.mattermost.com/onboard/sso-saml.html>`__ integrations featuring providers like `Active Directory Federation Services <https://docs.mattermost.com/onboard/ad-ldap.html#configure-ad-ldap-deployments-with-multiple-domains>`__, `Okta <https://docs.mattermost.com/onboard/sso-saml-okta.html>`__, `GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__, `Google <https://docs.mattermost.com/onboard/sso-google.html>`__, and `Office 365 <https://docs.mattermost.com/onboard/sso-office.html>`__
+Make onboarding and account provisioning easier through automation with directory services integrations. You likely already have your users grouped by role, location, or level. Mattermost provides identity management, single sign-on, and automatic account provisioning to make it easy for you to integrate with your existing identity and access management (IAM) services and systems with `Active Directory and LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `SAML 2.0 SSO <https://docs.mattermost.com/onboard/sso-saml.html>`__. These integrations feature providers like `Active Directory Federation Services <https://docs.mattermost.com/onboard/ad-ldap.html#configure-ad-ldap-deployments-with-multiple-domains>`__, `Okta <https://docs.mattermost.com/onboard/sso-saml-okta.html>`__, `GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__, `Google <https://docs.mattermost.com/onboard/sso-google.html>`__, and `Office 365 <https://docs.mattermost.com/onboard/sso-office.html>`__
 
 - Begin to onboard users by `enabling account creation <https://docs.mattermost.com/configure/configuration-settings.html#enable-account-creation>`__ or by connecting an authentication service to assist with user provisioning.
 
@@ -128,72 +118,10 @@ You likely already have your users grouped by role, location, or level. Mattermo
 
 - See our `migration guide <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migration-guide>`_ and `bulk loading documentation <https://docs.mattermost.com/onboard/bulk-loading-data.html>`_ for additional details.
 
+Extend Mattermost functionality with integrations
+-------------------------------------------------
 
-Streamline conversations with channels
---------------------------------------
-
-1. Channels can be public and open, private and restrictive, direct with another user, direct with multiple users, or read-only. 
-
- - You can convert channels from private to public and from public to private as needed. 
- - Read-only channels are perfect for announcements because it’s easy to recall that information later. Update `channel moderation settings <https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels>`__ to set any channel as read-only.
-
-2. When creating any channel, we recommend using Markdown to populate the channel header with useful information and links relevant to all channel members, such as specifications, agendas, or other shared files. In addition, a soft channel naming convention helps users create and name new channels consistency, and find those channels easily later.
-
-3. All users can create their own personal channel categories. See our `Creating Custom Categories <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#creating-custom-categories>`__ documentation for details.
-
-4. Within a channel, pinning messages is an efficient way to find and reference important messages later, such as setup, onboarding, or troubleshooting steps. All users can save messages for later follow-up or reference.
-
-Manage your notifications
---------------------------
-
-Every Mattermost user can configure Mattermost notifications based on how and when to be notified of Mattermost activity by selecting **Settings > Notifications**. Help your users focus on what matters most with the following notification optimization settings:
-
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Option                           | Recommendations                                                                                                                      |
-+==================================+======================================================================================================================================+
-| Desktop Notifications            | For efficient focus, select the following options:                                                                                   |
-|                                  |                                                                                                                                      |
-|                                  | - Only for mentions and direct messages                                                                                              |
-|                                  | - Notify me about threads I’m following                                                                                              |
-|                                  |                                                                                                                                      |
-|                                  | Tips:                                                                                                                                |
-|                                  |                                                                                                                                      |
-|                                  | - A notification sound can be enabled or disabled based on preference.                                                               |
-|                                  | - For deployments with Collapsed Reply Threads (Beta) enabled:                                                                       |
-|                                  |   - Follow threads of interest on demand.                                                                                            |
-|                                  |   - Unfollow threads that become less relevant over time.                                                                            |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Email Notifications              | Valuable to new users, but may be noisy for experienced users.                                                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Mobile Push Notifications        | For efficient focus, select the following options:                                                                                   |
-|                                  |                                                                                                                                      |
-|                                  | - Only for mentions and direct messages                                                                                              |
-|                                  | - Trigger push notifications can be updated based on specific circumstances, such as when in meetings or workshops.                  |
-|                                  | - Notify me about threads I’m following                                                                                              |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Words that Trigger Mentions      | Specify any additional non-case sensitive words to be notified on, such as hashtags, subjects, or customer names.                    |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Reply notifications              | For deployments with Collapsed Reply Threads (Beta) disabled, each user can choose to receive notifications when someone replies to  |
-|                                  | a thread the user started or both started and participated in.                                                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Automatic Direct Message Replies | Enable `Automatic Replies <https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies>`__            |
-|                                  | by going to **System Console > Experimental > Features** to allow all users to set an automated custom message that will             |
-|                                  | be sent once per day in response to direct messages.                                                                                 |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable file attachments and search
-----------------------------------
-
-When you `enable file sharing <https://docs.mattermost.com/configure/configuration-settings.html#allow-file-sharing>`__, your Mattermost users can attach files or images to their messages. You are in full control of the `maximum size of file attachments <https://docs.mattermost.com/configure/configuration-settings.html#maximum-image-resolution>`__. If your organization frequently works with SVG files, `enable previews of SVG attachments <https://docs.mattermost.com/configure/configuration-settings.html#enable-svgs>`__. 
-
-- For additional security and protection with file attachments, a `ClamAV antivirus <https://mattermost.com/marketplace/antivirus-plugin/>`__ integration is available which scans files uploaded to Mattermost.
-
-- Once you’ve enabled file attachments, extend Mattermost Channels search to include file contents by `enabling document search by content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__.
-
-Extend Mattermost with integrations
------------------------------------
-
-Mattermost features powerful collaboration using context-rich actions. When you extend Mattermost functionality with integrations like `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__, `Jira <https://mattermost.com/marketplace/jira-plugin/>`__, `GitHub <https://mattermost.com/marketplace/github-plugin/>`__ or `GitLab <https://mattermost.com/marketplace/gitlab-plugin/>`__, moving around the ecosystem and staying informed is as simple as sending a message and subscribing channels to project or repository updates. 
+Once you've explored the many ways you can configure your Mattermost workspace, and considered our workspace recommendations, you may want to explore many more ways you can extend your Mattermost functionality with integrations. Mattermost features powerful collaboration using context-rich actions. When you extend Mattermost functionality with integrations like `Zoom <https://mattermost.com/marketplace/zoom-plugin/>`__, `Jira <https://mattermost.com/marketplace/jira-plugin/>`__, `GitHub <https://mattermost.com/marketplace/github-plugin/>`__ or `GitLab <https://mattermost.com/marketplace/gitlab-plugin/>`__, moving around the ecosystem and staying informed is as simple as sending a message and subscribing channels to project or repository updates. 
 
 More common Mattermost integrations your users may love:
 
@@ -207,13 +135,6 @@ More common Mattermost integrations your users may love:
 Visit the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to learn about the many ways you can extend Mattermost functionality for your needs. To enable and manage plugins, go to **System Console > Plugins**. Then, download plugins from the Mattermost Marketplace.
 
 To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, to go **System Console > Integrations**. See our `developer and integrator documentation <https://developers.mattermost.com/integrate/other-integrations/>`__ for details. 
-
-Did you know?
--------------
-
-- Anything you can do through the Mattermost interface you can also do through the `Mattermost REST API <https://api.mattermost.com/>`__. 
-- You can share important announcements within Mattermost by `displaying an announcement banner <https://docs.mattermost.com/manage/announcement-banner.html>`__ visible to all users.
-- You can `organize discussions as threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ to make asynchronous collaboration easier.
 
 Important Mattermost administration notes 
 -----------------------------------------
