@@ -21,8 +21,8 @@ Latest Mattermost Cloud releases:
  - Improved the license upload flow.
  - Added performance metrics related to plugin loading on page load.
  - Changed the Mattermost indigo theme to match the dark theme in code blocks.
- - Added  the``threadAutoFollow`` configuration setting to the **System Console**.
- - The start menu start-trial CTA presents a modal exposing the benefits the client gets by starting the trial, encouraging admins to request a trial license and engage them with the product.
+ - Added a ``Automatically Follow Threads`` configuration setting to the **System Console** to expose the ``threadAutoFollow`` config setting to the User Interface.
+ - The Start Trial CTA presents a modal exposing the benefits the client gets by starting the trial, encouraging admins to request a trial license and engage them with the product.
  - Updated in-product links to legacy domain about.mattermost.com.
  - The **More Actions** menu was restructured.
  - Added a copy button when hovering over code blocks.
