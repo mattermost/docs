@@ -59,7 +59,7 @@ Server installation
 * `More server install guides <https://docs.mattermost.com/guides/deployment.html#other-resources>`__
 
 Desktop and Mobile App installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -78,6 +78,7 @@ Desktop and Mobile App installation
 
 Deployment guide
 ----------------
+
 The deployment guide is for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure. 
 
 Server deployment
