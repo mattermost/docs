@@ -58,7 +58,7 @@ Server installation
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
 * `More server install guides <https://docs.mattermost.com/guides/deployment.html#other-resources>`__
 
-Desktop/Mobile App installation
+Desktop and Mobile App installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. toctree::
     :maxdepth: 1
