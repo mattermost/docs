@@ -40,4 +40,4 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Deployments and editions </about/deployments-and-editions>` - Learn more about Mattermost deployment options.
 * :doc:`Corporate directory integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
 * :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
-* :doc:`Frequently Asked Questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
+* :doc:`Frequently asked questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
