@@ -7,7 +7,7 @@ Mattermost Boards enable your team to manage projects and tasks via a familiar K
 
 This Mattermost Boards User Guide is for anyone who needs help using Mattermost project and task management capabilities.
 
-The Basics
+The basics
 ----------
 
 .. toctree::
@@ -25,7 +25,7 @@ The Basics
 * :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
 * :doc:`Enable Boards </boards/getting-started>` - Enable Boards for your Mattermost instance.
 * :doc:`Access Boards </boards/accessing-boards>` - Use Mattermost Channels to access your Boards.
-* :doc:`Work With boards </boards/working-with-boards>` - Create new Boards and manage their properties.
+* :doc:`Work with boards </boards/working-with-boards>` - Create new Boards and manage their properties.
 * :doc:`Work with cards </boards/work-with-cards>` - Learn about the different property types in cards.
 * :doc:`Share boards </boards/sharing-boards>` - Share Boards with your team and manage sharing settings. 
 * :doc:`Migrate to Boards </boards/data-and-archives>` - Migrate your data from other tools into Mattermost Boards.

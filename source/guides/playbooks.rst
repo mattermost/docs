@@ -7,7 +7,7 @@ Mattermost Playbooks are pre-built, configurable checklists that define a repeat
    
 This Mattermost Playbooks User Guide is for anyone who needs help using Mattermost workflow capabilities.
    
-The Basics
+The basics
 ----------
 
 .. toctree::
@@ -26,5 +26,5 @@ The Basics
 * :doc:`Playbook permissions </playbooks/playbook-permissions>` - Configure and granulate access controls for playbooks.
 * :doc:`Plan playbooks </playbooks/setting-up-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage permissions for your team.
 * :doc:`Run playbooks </playbooks/running-playbooks>` - Initiate Playbooks, make announcements, and get information about your workflows.
-* :doc:`Notifications and ppdates </playbooks/notifications-and-updates>` - Keep track of all your active runs and tasks.
+* :doc:`Notifications and updates </playbooks/notifications-and-updates>` - Keep track of all your active runs and tasks.
 * :doc:`Retrospectives </playbooks/refining-and-improving>` - Use retrospectives to improve your workflows and provide detailed insight into your Playbooks.
