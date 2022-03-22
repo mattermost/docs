@@ -8,7 +8,7 @@ Frequently Asked Questions (FAQ)
     faq-general.rst
     Community questions <faq-community>
     Notifications <faq-notifications>
-    Video, qudio, and screen sharing <faq-video-audio-screensharing>
+    Video, audio, and screen sharing <faq-video-audio-screensharing>
     Enterprise questions <faq-enterprise>
     Mattermost Source Available License <faq-mattermost-source-available-license>
     Integrations <faq-integrations>
