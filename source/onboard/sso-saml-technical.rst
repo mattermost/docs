@@ -1,6 +1,6 @@
 .. _sso-saml-technical:
 
-SAML Single Sign-On: Technical documentation
+SAML Single Sign-On: technical documentation
 ============================================
 
 |enterprise| |professional| |cloud| |self-hosted|
