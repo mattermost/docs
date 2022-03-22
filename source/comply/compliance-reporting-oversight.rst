@@ -29,7 +29,7 @@ Daily compliance reports may also be generated, supporting integration with comp
 
 By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded.
 
-Enabling dompliance reporting 
+Enabling compliance reporting 
 -----------------------------
 
 To enable the option to generate daily compliance reports:
