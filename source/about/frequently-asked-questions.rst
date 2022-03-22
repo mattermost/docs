@@ -10,7 +10,7 @@ Frequently Asked Questions (FAQ)
     Notifications <faq-notifications>
     Video, audio, and screen sharing <faq-video-audio-screensharing>
     Enterprise questions <faq-enterprise>
-    Mattermost Source Available License <faq-mattermost-source-available-license>
+    Mattermost source available license <faq-mattermost-source-available-license>
     Integrations <faq-integrations>
     Use cases <faq-use-cases>
     Product questions <faq-product>
