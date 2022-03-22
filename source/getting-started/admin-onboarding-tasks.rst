@@ -1,4 +1,4 @@
-Administrator Onboarding Tasks
+Administrator onboarding tasks
 ==============================
 
 |all-plans| |self-hosted|

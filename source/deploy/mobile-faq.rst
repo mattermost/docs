@@ -1,4 +1,4 @@
-Mobile Apps FAQ
+Mobile apps FAQ
 ===============
 
 .. contents::

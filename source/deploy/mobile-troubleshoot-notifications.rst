@@ -1,6 +1,6 @@
 :orphan:
 
-Troubleshooting Push Notifications
+Troubleshooting push notifications
 ==================================
 
 If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:

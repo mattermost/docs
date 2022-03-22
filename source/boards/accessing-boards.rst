@@ -1,4 +1,4 @@
-Access your Boards
+Access your boards
 ==================
 
 |all-plans| |cloud| |self-hosted|

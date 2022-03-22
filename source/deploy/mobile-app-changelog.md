@@ -1,4 +1,4 @@
-# Mattermost Mobile Apps Changelog
+# Mattermost mobile apps changelog
 
 Latest Mattermost Mobile Apps releases:
 - [1.50.0 Release](#release)
