@@ -97,7 +97,7 @@ What is the process to end a customer relationship due to new U.S. sanctions?
 The customer is contacted via email with either manually or through an automated process with compliance@mattermost.com cc'd and the communication is written back into SFDC for record keeping.
 
 
-U.S. Export Compliance overview
+U.S. export compliance overview
 -------------------------------
 
 Summary Table
