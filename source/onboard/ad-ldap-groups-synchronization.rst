@@ -73,7 +73,6 @@ After the AD/LDAP groups have been synchronized, go to **System Console > User M
 .. image:: ../images/Group_filter.png
 
 .. note::
-
    The sync process does not create Mattermost groups. Mattermost groups are created when you “link” the AD/LDAP group as outlined in the next section **Linking AD/LDAP groups to Mattermost groups**. Existing AD/LDAP users are added to the Mattermost groups on the next synchronization and new users are added on their first login.
 
 On subsequent synchronizations and once groups are linked:
@@ -141,7 +140,6 @@ For new users, default teams and channels will be added when they log in for the
 It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took six seconds for an organization with 200,000 users and 30,000 linked groups.
 
 .. note::
-
    Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. They will not be re-added if they were manually removed or removed themselves. To manage a team or Private channel membership with synchronized groups, please see `this documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#synchronizing-teams-and-channels>`_.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
@@ -247,8 +245,8 @@ Assigning roles to group members
 Group members can be assigned predefined roles by System Admins, which are applied across the group during the scheduled sychronization. The roles are:
 
 - Member (default)
-- Team Admin (in Teams)
-- Channel Admin (in Channels)
+- Team Admin (in teams)
+- Channel Admin (in channels)
 
 The permissions for each role can be viewed and modified in **System Console > Permissions**.
 
@@ -277,7 +275,6 @@ Roles are updated on the next scheduled AD/LDAP synchronization.
 Roles are updated on the next scheduled AD/LDAP synchronization.
 
 .. note:: 
-
    Members who have been synced as part of a group cannot have their role changed via **View Members** in Mattermost.
 
 Add or remove groups from teams
@@ -318,7 +315,7 @@ To remove the management of members by synchronized groups in a team, disable **
 
 To remove the management of members by synchronized groups in a channel, disable **Sync Group Members** under **System Console > User Management > Channels > Channel Management**. Alternatively, you can also run the `group channel disable CLI command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-disable>`__, or run the `mmctl group channel disable command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable>`__.
 
-Frequently Asked Questions
+Frequently asked questions
 --------------------------
 
 Why do my LDAP users and groups exist in Mattermost, but my groups have no members?
@@ -327,8 +324,7 @@ Why do my LDAP users and groups exist in Mattermost, but my groups have no membe
 In order for Mattermost to detect group membership correctly, and to automatically add users to the group configured in the System Console, you must use one of the following AD/LDAP attributes to represent group members in Mattermost: ``member`` or ``uniqueMember``. These attributes use a ``Distinguished Name`` as the value on groups.
 
 .. note::
-
-  LDAP installations that use ``memberUid`` to indicate group membership are not supported because ``memberUid`` is an attribute of an object class ``posixGroup`` that does not use ``Distinguished Names`` as the value on groups.
+   LDAP installations that use ``memberUid`` to indicate group membership are not supported because ``memberUid`` is an attribute of an object class ``posixGroup`` that does not use ``Distinguished Names`` as the value on groups.
 
 Why can't my existing users see the teams and channels they have been synced to?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -5,7 +5,7 @@ This guide is for people who administer an existing Mattermost server. It’s di
 
 * `The basics <https://docs.mattermost.com/guides/administration.html#the-basics>`__ - An overview of standard configurations and features.
 * `Cloud admin <https://docs.mattermost.com/guides/administration.html#cloud-admin>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
-* `Self-Hosted admin <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
+* `Self-hosted admin <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
 
 If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, refer to the :doc:`Mattermost Deployment Guide </guides/deployment>`.
 
@@ -31,10 +31,10 @@ The basics
 
 These resources will help you get started with your Mattermost workspace.
 
-* Visit the :doc:`Workspace optimization </configure/optimize-your-workspace>` page in the System Console to review health and growth scores for your Mattermost workspace and take recommended actions.
-* **Configuration overview** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers </configure/configuration-settings>` and :doc:`Mattermost cloud workspaces </configure/cloud-site-configuration>`.
-* **Authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`Gitlab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory / LDAP </onboard/ad-ldap>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
-* **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`system admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
+* Visit the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console to review health and growth scores for your Mattermost workspace and take recommended actions.
+* **Configuration overview** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers </configure/configuration-settings>` and :doc:`Mattermost Cloud workspaces </configure/cloud-site-configuration>`.
+* **Authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`GitLab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
+* **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 
 Cloud admin
 -----------
@@ -73,7 +73,7 @@ Workspace management
 
 * :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
 * :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.
-* :doc:`User Satisfaction surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
+* :doc:`User satisfaction surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
 * :doc:`Managing team and channel members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
@@ -152,17 +152,17 @@ Advanced user management configurations
     :maxdepth: 1
     :hidden:
 
-    AD/LDAP Groups </onboard/ad-ldap-groups-synchronization>
-    Guest Accounts </onboard/guest-accounts>
-    Using AD/LDAP Synchronized Groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
+    AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
+    Guest accounts </onboard/guest-accounts>
+    Using AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
     SAML Single Sign-On </onboard/sso-saml>
     SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>
     SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
 
-* :doc:`AD/LDAP Groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
-* :doc:`Guest Accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
-* :doc:`Using AD/LDAP Synchronized Groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
+* :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
+* :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
+* :doc:`Using AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
 * :doc:`SAML Single Sign-On </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
 * :doc:`SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
 * :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
@@ -177,7 +177,7 @@ Self-hosted server management
     Managing team and channel members </manage/team-channel-members>
     Statistics </manage/statistics>
     In-product notices </manage/in-product-notices>
-    User Satisfaction surveys </manage/user-satisfaction-surveys>
+    User satisfaction surveys </manage/user-satisfaction-surveys>
     Health check </manage/health-checks>
     Announcement banner </manage/announcement-banner>
     Bulk export tool </manage/bulk-export-tool>
@@ -185,7 +185,7 @@ Self-hosted server management
 * :doc:`Managing team and channel members </manage/team-channel-members>` - Manage synchronization, moderation, and membership settings.
 * :doc:`Statistics </manage/statistics>` - Get statistics about your Mattermost server usage.
 * :doc:`In-product notices </manage/in-product-notices>` - Get notified about Mattermost updates via in-app notices.
-* :doc:`User Satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
+* :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
 * :doc:`Health check </manage/health-checks>` - Configure health probes for your Mattermost server.
 * :doc:`Announcement banner </manage/announcement-banner>` - Display notices to your users via an announcement banner.
 * :doc:`Bulk export tool </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.

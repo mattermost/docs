@@ -1,6 +1,6 @@
 .. _ldap-group-constrained-team-channel:
 
-Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership
+Using AD/LDAP synchronized groups to manage team or private channel membership
 ------------------------------------------------------------------------------
 
 |enterprise| |cloud| |self-hosted|
@@ -24,9 +24,9 @@ Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership
 
 Mattermost groups created with `synchronized AD/LDAP groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`_ can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.
 
-For instance, you may have a AD/LDAP group that contains your development team that you want to synchronize to a developer team.  By using this feature, new developers will get added to the team when they are added to the synchronized AD/LDAP group and they will be removed from the team when removed from the AD/LDAP group.
+For instance, you may have an AD/LDAP group that contains your development team that you want to synchronize to a developer team.  By using this feature, new developers will get added to the team when they are added to the synchronized AD/LDAP group and they will be removed from the team when removed from the AD/LDAP group.
 
-Similarly, you may have a AD/LDAP group that contains your leadership team that you want to synchronize to a private channel for coordination and updates. This feature will help control the membership of the channel so that users outside of the synchronized group are prevented from being added to the channel mistakenly.
+Similarly, you may have an AD/LDAP group that contains your leadership team that you want to synchronize to a private channel for coordination and updates. This feature will help control the membership of the channel so that users outside of the synchronized group are prevented from being added to the channel mistakenly.
 
 On teams that are managed by synchronized groups, users outside of the group are restricted from:
 
@@ -37,7 +37,7 @@ Similarly on private channels that are managed by synchronized groups, users out
 
  - Invitation through a mention
  - Invitation through the ``/invite`` slash command
- - Being added to the channel with “add members”
+ - Being added to the channel with **Add members**
 
 Users can remove themselves from teams and private channels managed by synchronized groups.
 
@@ -48,7 +48,7 @@ To manage membership of a private team with synchronized groups:
 
 1. Navigate to **System Console > User Management > Teams**. 
 2. Select the team you want to manage with group synchronization.
-3. Under **Team Management**, enable **Sync Group Members**. If **Anyone can join this team** is enabled or if specific email domains are set, they will be disabled by the Sync Group Members feature.
+3. Under **Team Management**, enable **Sync Group Members**. If **Anyone can join this team** is enabled or if specific email domains are set, they will be disabled by the sync group members feature.
 4. Add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
 5. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
 6. Select **Save**. Members will be updated on the next scheduled AD/LDAP synchronization.
@@ -76,7 +76,7 @@ Alternatively you can use the CLI tool to set a private channel to be managed by
 Add or remove groups from teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the management of the team is converted to be managed by synchronized groups, a Team or System Admin can add additional groups from **Main Menu > Add Groups to Team**.  This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the team on subsequent synchronizations. Team Admins will be prevented from changing the team to public by enabling **Team Settings > Allow any user with an account on this server to join this team**.
+Once the management of the team is converted to be managed by synchronized groups, a Team or System Admin can add additional groups from **Main Menu > Add Groups to Team**. This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the team on subsequent synchronizations. Team Admins will be prevented from changing the team to public by enabling **Team Settings > Allow any user with an account on this server to join this team**.
 
 Team or System Admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
@@ -110,7 +110,7 @@ To remove the management of members by synchronized groups in a team, disable **
 
 To remove the management of members by synchronized groups in a channel, disable **Sync Group Members** under **System Console > User Management > Channels > Channel Management**, or run the `group channel disable CLI command <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-group-channel-disable>`_.
 
-Frequently Asked Questions
+Frequently asked questions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Why aren’t public channels supported with this feature?**
