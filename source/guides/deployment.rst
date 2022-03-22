@@ -134,15 +134,15 @@ Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 
 **Mobile Apps**
 
-* :doc:`Using Mattermost’s pre-built Mobile Apps </deploy/use-prebuilt-mobile-apps>` - Connect users to your Mattermost server with our prebuilt apps for Android and iOS.
-* :doc:`Deploy Mattermost Mobile Apps </deploy/mobile-overview>` - Learn the basics of how to customize and deploy Mattermost to the Enterprise.
+* :doc:`Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>` - Connect users to your Mattermost server with our prebuilt apps for Android and iOS.
+* :doc:`Deploy Mattermost mobile apps </deploy/mobile-overview>` - Learn the basics of how to customize and deploy Mattermost to the Enterprise.
 * :doc:`Mobile push notifications </deploy/mobile-hpns>` - Set up mobile push notifications. 
 * :doc:`Building and distributing your own custom Mattermost mobile apps </deploy/build-custom-mobile-apps>` - Build custom mobile Mattermost apps.
 * :doc:`Deploying mobile apps using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` - Deploy with Enterprise Mobile Management software to enforce security policies and enforce specific versions of the Mattermost mobile apps.
-* :doc:`AppConfig for EMM solutions with Mattermost Mobile Apps </deploy/mobile-appconfig>` - Learn how AppConfig provides an easy way to configure enterprise mobile applications.
+* :doc:`AppConfig for EMM solutions with Mattermost mobile apps </deploy/mobile-appconfig>` - Learn how AppConfig provides an easy way to configure enterprise mobile applications.
 * :doc:`Mobile VPN options </deploy/consider-mobile-vpn-options>` - Learn how to use the Mattermost mobile apps with Mobile VPNs.
-* :doc:`Mobile Apps FAQ </deploy/mobile-faq>`
-* :doc:`Client-side data storage FAQ </deploy/client-side-data>`
+* :doc:`Mobile apps frequently asked questions </deploy/mobile-faq>`
+* :doc:`Client-side data storage frequently asked questions </deploy/client-side-data>`
 
 Upgrade Mattermost
 ------------------
