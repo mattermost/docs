@@ -26,7 +26,7 @@ To solve this, use the ``response-message`` configuration property to send back 
 
 If your script doesn't take very long to run you can use the ``include-command-output-in-response`` property to send that output to the Mattermost server.
 
-Authenticating Requests
+Authenticating requests
 -----------------------
 
 Mattermost can be configured to send a token with an outgoing webhook to make sure that your webhook only responds to authorized requests. To enable this, use the following in your webhook configuration:

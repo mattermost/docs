@@ -1,15 +1,12 @@
 .. _use-kubernetes-mattermost:
 
-Using Mattermost Operator Functionality
+Using Mattermost operator functionality
 ---------------------------------------
 
-Rolling Upgrades
+Rolling upgrades
 ~~~~~~~~~~~~~~~~
 
-The Mattermost Kubernetes Operator supports rolling upgrades, so you can upgrade
-your Mattermost deployment with zero downtime. This process
-requires at least two replicas as a rolling upgrade cannot be performed if there is only one pod.
-Replicas are created when a user count is selected and exceeds 100.
+The Mattermost Kubernetes operator supports rolling upgrades, so you can upgrade your Mattermost deployment with zero downtime. This process requires at least two replicas as a rolling upgrade cannot be performed if there is only one pod. Replicas are created when a user count is selected and exceeds 100.
 
 New Mattermost releases are announced via our community server, as well as social media and email.
 
@@ -26,8 +23,7 @@ Apply the changes with ``kubectl``:
 
   $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
 
-The operator initiates a job in the Kubernetes cluster and once migration is complete the pods are restarted. If necessary,
-a database migration is also performed.
+The operator initiates a job in the Kubernetes cluster and once migration is complete the pods are restarted. If necessary, a database migration is also performed.
 
 To view information about the running job, use
 

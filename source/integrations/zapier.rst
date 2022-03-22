@@ -11,12 +11,12 @@ This documentation includes:
 - `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id6>`__: Tips from the Mattermost team on formatting Zapier integration messages.
 - `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id8>`__: Advice on troubleshooting common setup issues.
 
-Zapier Setup Guide
+Zapier setup guide
 -------------------
 
 Zapier is authorized using OAuth2.0. The setup guide requires that a System Admin register the Zapier app on their Mattermost server and can then optionally allow any users with a Zapier account to create integrations.
 
-Enable Zapier on your Mattermost Instance
+Enable Zapier on your Mattermost instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first time you set up Zapier on your Mattermost instance you will be required to enable an OAuth 2.0 application which can be used by everyone on your server. Your System Admin must execute these steps.
@@ -32,7 +32,7 @@ Enable OAuth 2.0
   a. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
   b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
 
-Register Zapier as an OAuth 2.0 Application
+Register Zapier as an OAuth 2.0 application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Go to **Main Menu** > **Integrations**.
@@ -51,7 +51,7 @@ You'll be provided with a **Client ID** and **Client Secret**. Save these values
 
 .. image:: ../images/zapier-oauth.png
 
-Create a Zap
+Create a zap
 ~~~~~~~~~~~~~
 
 1. `Sign up <https://zapier.com/sign-up/>`__ for a free Zapier account or `log in <https://zapier.com/app/login>`__ if you already have one.
@@ -91,7 +91,7 @@ Create a Zap
 
   e. **Test the Zap**: You may want to test your zap formatting in a Private Channel before posting in a channel that is visible to your entire team.
 
-Message Formatting Tips
+Message formatting tips
 -----------------------
 
 Here are some useful tips we recommend to get the most out of Zapier integration:
@@ -128,7 +128,7 @@ The Mattermost team has over 50 zaps integrated on our `Community Contributors t
 
 .. image:: ../images/zapier-ch2.png
 
-Troubleshooting Guide
+Troubleshooting guide
 ---------------------
 
 Possible solutions to common issues encountered during setup.
@@ -172,7 +172,7 @@ Cannot connect a Mattermost account
 
   .. image:: ../images/zapier-error3.png
 
-Deauthorize the Zapier App
+Deauthorize the Zapier app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you'd like to deauthorize Zapier so it can no longer post through your connected account, go to **Account Settings > Security > OAuth 2.0 Applications**, then click **Deauthorize** on the Zapier app.
