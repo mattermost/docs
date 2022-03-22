@@ -1,4 +1,4 @@
-Desktop Application Changelog
+Desktop application changelog
 ==============================
 
 |all-plans| |cloud| |self-hosted|

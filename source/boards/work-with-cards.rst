@@ -1,4 +1,4 @@
-Work with Cards
+Work with cards
 ===============
 
 |all-plans| |cloud| |self-hosted|

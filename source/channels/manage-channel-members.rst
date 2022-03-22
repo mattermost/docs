@@ -1,4 +1,4 @@
-Manage Channel Members
+Manage channel members
 =======================
 
 |all-plans| |cloud| |self-hosted|

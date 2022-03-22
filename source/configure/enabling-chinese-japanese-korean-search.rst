@@ -1,6 +1,6 @@
 ..  _i18n:
 
-Chinese, Japanese, and Korean Search
+Chinese, Japanese, and Korean search
 ======================================
 
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.

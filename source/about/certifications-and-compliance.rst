@@ -1,4 +1,4 @@
-Certifications and Compliance Overview
+Certifications and compliance overview
 ========================================
 
 This overview summarizes how Mattermost can help users in support of their internal compliance initiatives, including:
@@ -6,12 +6,12 @@ This overview summarizes how Mattermost can help users in support of their inter
 - GDPR Compliance
 - U.S. Export Compliance
 
-GDPR Compliance
+GDPR compliance
 ----------------
 
 The following overview summarizes how Mattermost software can be used to assist in compliance programs covering the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__) and how Mattermost, Inc., itself, adheres to regulatory requirements.
 
-Continual Commitment to the Principles of GDPR
+Continual commitment to the principles of GDPR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
@@ -23,7 +23,7 @@ Mattermost is a collaboration hub for highly-trusted organizations and is commit
 
 To stay up to date with our efforts, please subscribe to `our regular newsletter <https://mattermost.com/newsletter/>`__.
 
-Security Infrastructure
+Security infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost enables organizations to protect their information, and the information of their users and customers, through self-hosted communication infrastructure that has been developed with a high standard of security. The features of this security infrastructure include:
@@ -33,7 +33,7 @@ Mattermost enables organizations to protect their information, and the informati
 - **Security Reviews** conducted by both our own internal security review team and external security researchers.
 - **ISO 27001 Standards** which are met to achieve alignment with international security guidelines.
 
-Contractual Obligations
+Contractual obligations
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost adheres to contractual obligations for ensuring the proper management of data through:
@@ -41,30 +41,30 @@ Mattermost adheres to contractual obligations for ensuring the proper management
 - **GDPR-Compliant Data Processing Addendum** included with Mattermost’s standard terms.
 - **Mattermost Privacy Policy** sharing how data is handled on the online infrastructure controlled by Mattermost, Inc.
 
-Privacy Measures
+Privacy measures
 ~~~~~~~~~~~~~~~~~
 
 Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
-Product Features
+Product features
 ~~~~~~~~~~~~~~~~
 
 Mattermost supports features that ensure data management and data portability.
 
-Data Management
+Data management
 ^^^^^^^^^^^^^^^^
 
 - **Data Retention:** Use `data retention <https://docs.mattermost.com/comply/data-retention-policy.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
 - **Profile Deletion:** Delete a user’s personal information via `mmctl user delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete>`__, or via `the CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete>`__. Both the mmctl and the CLI command permanently deletes all user information including messages created by the user.
 - **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `our Mobile App deployment documentation <https://docs.mattermost.com/deploy/mobile-overview.html>`__ to learn more.
 
-Data Portability
+Data portability
 ^^^^^^^^^^^^^^^^^
 
 - **Data Import:** Use the `bulk loading tool <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/onboard/migrating-from-hipchat-to-mattermost.html>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
 - **Data Export:** Use `compliance exports <https://docs.mattermost.com/comply/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
 
-Accessibility Compliance
+Accessibility compliance
 -------------------------
 
 Adherence with accessibility standards is assisted in the following ways:
@@ -74,7 +74,7 @@ Adherence with accessibility standards is assisted in the following ways:
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 - **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__ so that it may be resolved.
 
-U.S. Trade Compliance 
+U.S. trade compliance 
 ---------------------
 
 Mattermost, Inc. implements a number of controls and processes to comply with U.S. trade compliance laws. 
@@ -92,12 +92,12 @@ U.S. trade laws referenced here can be found online at: https://www.bis.doc.gov/
 If you feel your organization is miscategorized under U.S. sanctions, please email compliance@mattermost.com. 
 
 What is the process to end a customer relationship due to new U.S. sanctions?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The customer is contacted via email with either manually or through an automated process with compliance@mattermost.com cc'd and the communication is written back into SFDC for record keeping.
 
 
-U.S. Export Compliance Overview
+U.S. export compliance overview
 -------------------------------
 
 Summary Table
@@ -138,13 +138,13 @@ jurisdictions in which you operate. Although Mattermost cannot provide advice on
 
 This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`__ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`__.
 
-General Information
+General information
 ~~~~~~~~~~~~~~~~~~~~
 
 Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`__ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`__ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
 the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ (“export controlled”).
 
-Export Classification and Licensing
+Export classification and licensing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although what is subject to the Export Administration Regulations is quite broad, that does not mean an export license
@@ -184,7 +184,7 @@ This information is subject to change without notice. The materials on this site
 advice or to be used as a substitute for specific legal advice. You should not act (or refrain from acting) based upon
 information on this site without obtaining professional advice regarding particular facts and circumstances.
 
-Frequently Asked Questions
+Frequently asked questions
 --------------------------
 
 To be compliant with GDPR, do I need to remove message contents of email notifications?
@@ -196,8 +196,8 @@ Based on our interpretation of GDPR, it is not required to hide message contents
 2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect communication between the Mattermost server and the SMTP email server.
 3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to `disable notifications completely <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-notifications>`__ on your Mattermost server. To use Mattermost in production with no email notifications, you also need to `disable a "preview mode" notice banner <https://docs.mattermost.com/configure/configuration-settings.html#enable-preview-mode-banner>`__.
 
-What information is shared when I click **Contact us** on a Mattermost Admin Advisor notification?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What information is shared when I select **Contact us** on a Mattermost Admin Advisor notification?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Selecting **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 

@@ -1,4 +1,4 @@
-Create Channels
+Create channels
 ===============
 
 |all-plans| |cloud| |self-hosted|

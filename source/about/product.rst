@@ -1,4 +1,4 @@
-Mattermost Overview
+Mattermost overview
 ===================
 
 **Mattermost** is an open source platform for secure communication, collaboration, and orchestration of work across teams and tools.
@@ -56,6 +56,7 @@ Project workflows include use cases driving milestone achievement such as projec
 
 About the Mattermost open source project
 -----------------------------------------
+
 At its core, Mattermost is an open source alternative to proprietary SaaS collaboration for teams. The software, developed in partnership with thousands of contributors from around the world, is designed to increase the agility, efficiency, and innovation in high trust organizations while keeping data and operations under IT control.
 
 Core committers, including both community contributors and paid staff at Mattermost, Inc., determine the project roadmap. For enterprises with needs beyond the scope of the open-source project, commercial plans are available from Mattermost, Inc. Partnership with our core committer community, along with revenue from our commercial plans, which ensures the continued improvement of all editions.

@@ -1,4 +1,4 @@
-Find Channels
+Find channels
 =============
 
 |all-plans| |cloud| |self-hosted|

@@ -1,4 +1,4 @@
-Mattermost Keyboard Shortcuts
+Mattermost keyboard shortcuts
 =============================
 
 |all-plans| |cloud| |self-hosted|

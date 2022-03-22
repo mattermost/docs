@@ -1,4 +1,4 @@
-Getting Started
+Getting started
 ===============
 
 |all-plans| |cloud| |self-hosted|

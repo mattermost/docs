@@ -1,4 +1,4 @@
-Advanced Permissions
+Advanced permissions
 ====================
 
 |all-plans| |cloud| |self-hosted|
@@ -46,7 +46,7 @@ Permissions structure
 
 The Mattermost System Console provides a number of elements for Admins to control the permissions in their system.
 
-System Scheme
+System scheme
 ~~~~~~~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
@@ -64,7 +64,7 @@ You can access the System Scheme interface by going to **System Console > User M
 
 .. image:: ../images/system-scheme.png
 
-Team Override Scheme
+Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
@@ -83,7 +83,7 @@ You can access the Team Override Scheme interface by going to **System Console >
 
 .. image:: ../images/team-scheme.png
 
-Channel Permissions 
+Channel permissions 
 --------------------
 
 The channel permissions interface is accessed in **System Console > User Management > Channels**.
@@ -127,7 +127,7 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 7. Select **Save**.
 8. Select the back arrow to return to the **Permission Schemes** menu.
 
-Public and Private channel management
+Public and private channel management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Restrict who can rename channels and edit channel header and purposes**
@@ -160,12 +160,12 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
   iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
   
-Convert Public channels to Private channels
+Convert public channels to private channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Allow all members to convert Public channels to Private channels**
+**Allow all members to convert public channels to private channels**
 
-Example: Set the default setting to allow all members, Team Admins, and Channel Admins to convert Public channels to Private.
+Example: Set the default setting to allow all members, Team Admins, and Channel Admins to convert public channels to private.
 
 1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
@@ -188,7 +188,7 @@ Read only channels
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
-**Create an Announcement Channel where only channel admins are able to post.**
+**Create an announcement channel where only channel admins are able to post.**
 
 1. Create a new channel (either Public or Private).
 2. Navigate to **System Console > User Management > Channels**.

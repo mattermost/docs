@@ -1,4 +1,4 @@
-Convert Public Channels to Private Channels
+Convert public channels to private channels
 ===========================================
 
 |all-plans| |cloud| |self-hosted|

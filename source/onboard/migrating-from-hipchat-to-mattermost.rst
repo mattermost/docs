@@ -3,22 +3,22 @@ Migrating from HipChat to Mattermost
 
 You can migrate HipChat users and message histories to Mattermost using the following guidelines.
 
-Step 1:  Set up your Mattermost Instance
+Step 1:  Set up your Mattermost instance
 -----------------------------------------
 
 - `Go to Mattermost download page <https://mattermost.com/deploy/>`__ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
 
 Questions? Please visit our `troubleshooting forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ for help. 
 
-Step 2:  Export your data from HipChat Data Center or HipChat Server
+Step 2:  Export your data from HipChat Server or HipChat Data Center
 ---------------------------------------------------------------------
 
-HipChat Server/HipChat Data Server
+HipChat Server/HipChat Data Center
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you’re able to upgrade HipChat Server or HipChat Data Center to the latest version, we recommend using Group Export Dashboard to export your data. If you’re unable to upgrade, see Command Line Interface procedure below. 
 
-*Using the Group Export Dashboard:*
+*Using the Group Export Dashboard*
 
 #. Log in to your Hipchat Server (e.g. hipchat.yourcompany.com).
 #. Click on **Server Admin > Export**.
@@ -26,7 +26,7 @@ If you’re able to upgrade HipChat Server or HipChat Data Center to the latest 
 #. In the **Password** and **Confirm Password** fields, create a password to protect your archive files (Store this password as it is not saved anywhere else).
 #. Click **Export**. Once the export is done, you will receive an email with a link to download the file.
 
-*If you’re unable to use the Group Export Dashboard, use the Command Line Interface to export:*
+*If you’re unable to use the Group Export Dashboard, use the command line interface to export*
 
 #. Go to **CLI**.
 #. Enter ``hipchat export --export  -p your_password``.

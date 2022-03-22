@@ -1,4 +1,4 @@
-Data Retention Policy
+Data retention policy
 =====================
 
 |enterprise| |cloud|
@@ -22,7 +22,7 @@ With a data retention policy, you can set a custom policy to manage how long mes
 .. toctree::
     :maxdepth: 2
 
-Configuring a Data Retention Policy
+Configuring a data retention policy
 -----------------------------------
 
 To set a custom data retention policy:

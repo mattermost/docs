@@ -1,6 +1,6 @@
 ..  _docker-local-machine:
 
-Local Machine Setup using Docker
+Local machine setup using Docker
 ================================
 
 |all-plans| |self-hosted|
@@ -103,7 +103,7 @@ Configuration Settings
 
 The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
 
-Updating Mattermost Preview
+Updating Mattermost preview
 ---------------------------
 
 To update your Mattermost preview image and container, you must first stop and delete your existing **mattermost-preview** container by running the following commands:
@@ -119,7 +119,7 @@ Once the new image is pulled and the container is stopped and deleted you need t
 .. note::
   On Linux add a ``sudo`` in front of the ``docker`` commands.
 
-Accessing Your Container
+Accessing your container
 ------------------------
 
 To access a shell inside the container, run the following command:

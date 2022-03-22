@@ -1,5 +1,5 @@
 
-Configuring Transport Encryption
+Configuring transport encryption
 =================================
 
 |enterprise| |self-hosted|

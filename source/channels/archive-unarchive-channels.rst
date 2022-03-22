@@ -1,4 +1,4 @@
-Archive and Unarchive Channels
+Archive and unarchive channels
 ==============================
 
 |all-plans| |cloud| |self-hosted|

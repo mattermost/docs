@@ -1,4 +1,4 @@
-Mattermost Workspace Migration
+Mattermost workspace migration
 ==============================
 
 This document outlines the process for migrating from Mattermost Cloud to a Mattermost self-hosted instance. In the future, a process for migrating from Mattermost self-hosted to Mattermost Cloud will also be documented and provided here.

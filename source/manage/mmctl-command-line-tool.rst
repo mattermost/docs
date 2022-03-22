@@ -1,4 +1,4 @@
-mmctl Command Line Tool
+mmctl command line tool
 =======================
 
 |all-plans| |cloud| |self-hosted|

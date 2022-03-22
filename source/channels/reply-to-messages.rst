@@ -1,4 +1,4 @@
-Reply to Messages
+Reply to messages
 =================
 
 |all-plans| |cloud| |self-hosted|

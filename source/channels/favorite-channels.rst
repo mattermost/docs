@@ -1,4 +1,4 @@
-Mark Channels as Favorites
+Mark channels as favorites
 ==========================
 
 |all-plans| |cloud| |self-hosted|
