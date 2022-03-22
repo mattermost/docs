@@ -1,4 +1,4 @@
-Manage Custom Groups
+Manage custom groups
 ====================
 
 |enterprise| |professional| |cloud| |self-hosted|

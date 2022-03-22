@@ -1,4 +1,4 @@
-Get Started with Mattermost Channels
+Get started with Mattermost Channels
 ====================================
 
 Access Mattermost Channels by selecting **Channels** from the **Product list** |product-list| icon.

@@ -1,4 +1,4 @@
-Team Settings
+Team settings
 =============
 
 |all-plans| |cloud| |self-hosted|
