@@ -1,4 +1,4 @@
-Advanced permissions: Backend infrastructure
+Advanced permissions: backend infrastructure
 =============================================
 
 |all-plans| |cloud| |self-hosted|
