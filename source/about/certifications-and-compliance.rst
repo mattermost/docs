@@ -184,7 +184,7 @@ This information is subject to change without notice. The materials on this site
 advice or to be used as a substitute for specific legal advice. You should not act (or refrain from acting) based upon
 information on this site without obtaining professional advice regarding particular facts and circumstances.
 
-Frequently Asked Questions
+Frequently asked questions
 --------------------------
 
 To be compliant with GDPR, do I need to remove message contents of email notifications?

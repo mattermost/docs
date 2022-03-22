@@ -1,4 +1,4 @@
-Video, qudio, and screen sharing questions
+Video, audio, and screen sharing questions
 ==========================================
 
 What support is available for video and audio calling and screen sharing?

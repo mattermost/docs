@@ -40,7 +40,7 @@ Renew your subscription
 
 Monthly Cloud subscriptions renew automatically.
 
-Frequently Asked Questions
+Frequently asked questions
 ---------------------------
 
 What happens when my 14-day trial period ends?

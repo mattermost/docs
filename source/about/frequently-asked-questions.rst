@@ -1,4 +1,4 @@
-Frequently Asked Questions (FAQ)
+Frequently asked questions (FAQ)
 =================================
 
 .. toctree::
