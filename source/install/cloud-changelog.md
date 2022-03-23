@@ -28,6 +28,7 @@ Latest Mattermost Cloud releases:
  - Added a right-hand side panel to see and interact with channel information.
  - Added a post menu item to copy raw text.
  - Added additional performance debugging settings.
+ - The default for ``ThreadAutoFollow`` has been changed to ``true``. This does not affect existing configurations where this value is already set to ``false``.
 
 #### Performance
  - Improved performance when clearing notifications with Collapsed Reply Threads enabled.
