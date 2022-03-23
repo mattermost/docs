@@ -2054,19 +2054,6 @@ Configurable link to a Help page your organization may provide to end users. By 
 | This feature's ``config.json`` setting is ``"HelpLink": "https://docs.mattermost.com/"`` with string input.               |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-Support Email
-^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
-
-Set an email address for feedback or support requests.
-
-To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
 Terms of Use link
 ^^^^^^^^^^^^^^^^^^
 
@@ -2399,12 +2386,25 @@ Email Notification Contents
 | This feature's ``config.json`` setting is ``"EmailNotificationContentsType": "full"`` with options ``"full"`` and ``"generic"`` for the above settings, respectively.             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Support Email Address
+^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+Set an email address for feedback or support requests. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
+
+To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
+
++-------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
++-------------------------------------------------------------------------------------+
+
 Notification Display Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-Name displayed on email account used when sending notification emails from Mattermost system.
+Name displayed on email account used when sending notification emails from Mattermost system. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FeedbackName": ""`` with string input. |
@@ -2415,7 +2415,7 @@ Notification From Address
 
 |all-plans| |cloud| |self-hosted|
 
-Address displayed on email account used when sending notification emails from within Mattermost.
+Address displayed on email account used when sending notification emails from within Mattermost. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
 So you don't miss messages, please make sure to change this value to an email your system administrator receives, such as ``"admin@yourcompany.com"``.
 
