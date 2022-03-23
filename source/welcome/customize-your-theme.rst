@@ -64,6 +64,8 @@ Sidebar Text
   	Text color of read channels in the Channels pane, and tabs in the Account and Team settings navigation sidebar.
 Sidebar Header BG
  	Background color of the header above the Channels pane and all dialog window headers.
+Team Sidebar BG
+	Background color of the Global Header (available from Mattermost v6.0).
 Sidebar Header Text
  	Text color of the header above the Channels pane and all dialog window headers.
 Sidebar Unread Text
