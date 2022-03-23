@@ -139,7 +139,7 @@ Copy existing theme values, then go to:
 
   .. tab:: Mattermost v6.0 onwards
 
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
+      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and paste the theme values into the **Copy and paste to share theme colors** field. 
 
   .. tab:: Mattermost v5.39 and earlier
 
