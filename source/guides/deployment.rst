@@ -160,7 +160,6 @@ Upgrade Mattermost
     Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>
     Version archive </upgrade/version-archive>
 
-
 Stay up to date with the latest features and improvements.
 
 * :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
@@ -172,7 +171,6 @@ Stay up to date with the latest features and improvements.
 * :doc:`Extended Support Release </upgrade/extended-support-release>` - Get information about releases that have extended release support.
 * :doc:`Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>` - Find out how to roll back to older versions of Mattermost.
 * :doc:`Version archive </upgrade/version-archive>` - Download binaries for every release.
-
 
 Scale Mattermost
 ----------------
@@ -204,7 +202,6 @@ Troubleshooting guides
     Troubleshooting mobile applications </deploy/mobile-troubleshoot>
     MySQL installation troubleshooting </install/trouble_mysql>
 
-
 * :doc:`General troubleshooting </install/troubleshooting>`
 * :doc:`Troubleshooting mobile applications </deploy/mobile-troubleshoot>`
 * :doc:`MySQL installation troubleshooting </install/trouble_mysql>`
@@ -229,8 +226,8 @@ Changelogs
 * :doc:`Desktop Apps </install/desktop-app-changelog>`
 * :doc:`Deprecated features </install/deprecated-features>`
 
-Other resources
----------------
+Additional server install guides
+--------------------------------
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -241,7 +238,6 @@ Other resources
     AWS Elastic Beanstalk Docker setup </install/setting-up-aws-elastic-beanstalk-docker>
     Install Mattermost Team Edition in GitLab Helm Chart </install/installing-team-edition-helm-chart>
     Open source components </upgrade/open-source-components>
-
 
 * :doc:`Install on Ubuntu 18.04 LTS </install/installing-ubuntu-1804-LTS>`
 * :doc:`Install on RHEL 7 </install/install-rhel-7>`
