@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - For Apps, calls are now separated between submit, form, refresh and lookup calls.
+ - For Apps, calls are now separated between submit, form, refresh and lookup calls. If any users have created their own Apps, they have to be updated to the new system.
  - A new field was added to the client configuration to let clients know the database schema version of the server. The applied database migrations have also been added to the **System Console**.
  - Logs from third-party libraries are now included in the default logging configuration.
  - Added performance metrics related to plugin loading on page load.
