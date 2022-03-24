@@ -1,4 +1,4 @@
-Incoming Webhooks
+Incoming webhooks
 =================
 
 .. note::
@@ -21,7 +21,7 @@ Use `curl <https://curl.haxx.se/>`__, a simple command line tool for sending HTT
 .. toctree::
    :maxdepth: 2
 
-Simple Incoming Webhook
+Simple incoming webhook
 -----------------------
 
 Let's learn how to create a simple incoming webhook that posts the following message to Mattermost.
@@ -76,7 +76,7 @@ Messages with advanced formatting can be created by including an :doc:`attachmen
   
   Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override profile picture icons. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
-Tips and Best Practices
+Tips and best practices
 ------------------------
 
 1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`__.
@@ -97,14 +97,14 @@ Tips and Best Practices
 
 7. When using the ``icon_emoji`` parameter - the user profile image is replaced by the emoji provided. This will also override the ``icon_url`` parameter if both are provided. 
 
-Share Your Integration
+Share your integration
 -----------------------
 
 If you've built an integration for Mattermost, please consider `sharing your work <https://apps.mattermost.com/submit-an-integration/>`__ in our `app directory <https://apps.mattermost.com/submit-an-integration/>`__.
 
 The `app directory <https://apps.mattermost.com/submit-an-integration/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization, and deployment to your private cloud or self-managed infrastructure.
 
-Slack Compatibility
+Slack compatibility
 -------------------
 
 Mattermost makes it easy to migrate integrations written for Slack to Mattermost. 
@@ -164,7 +164,7 @@ If your integration prints the JSON payload data instead of rendering the genera
 
 For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
-Frequently Asked Questions
+Frequently asked questions
 --------------------------
 
 How do I send a webhook post to a direct message channel?

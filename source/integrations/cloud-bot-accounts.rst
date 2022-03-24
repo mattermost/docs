@@ -1,5 +1,5 @@
 
-Bot Accounts
+Bot accounts
 =============
 
 Use bot accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the `personal access tokens feature <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`_.
@@ -31,8 +31,8 @@ If you would like to see improvements to bot accounts, `let us know in the Featu
   :depth: 1
   :local:
 
-Configuration Settings
-------------------------
+Configuration settings
+----------------------
 
 By default, plugins can create and manage bot accounts. To enable bot account creation through the user interface or the RESTful API:
 
@@ -41,7 +41,7 @@ By default, plugins can create and manage bot accounts. To enable bot account cr
 
 Once set, System Administrators can create bot accounts for integrations using the **Integrations > Bot Accounts** link in the description provided.
 
-Bot Account Creation
+Bot account creation
 --------------------
 
 Below are different ways to create bot accounts. After the bot account is created, make sure to:
@@ -49,7 +49,7 @@ Below are different ways to create bot accounts. After the bot account is create
 1. Copy the generated bot access token for your integration.
 2. Add the bot account to teams and channels you want it to interact in.
 
-User Interface (UI)
+User interface (UI)
 ~~~~~~~~~~~~~~~~~~~
 
 1. Go to **Main Menu > Integrations > Bot Accounts**.

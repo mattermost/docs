@@ -1,4 +1,4 @@
-Mattermost Community Collaboration Server
+Mattermost community collaboration server
 =========================================
 
 Mattermost hosts a collaboration and chat server at `community.mattermost.com <https://community.mattermost.com/login>`__ to connect our team with our larger contributor and user community. This server is open to everyone, and we welcome anyone who wants to participate in our community to sign up.

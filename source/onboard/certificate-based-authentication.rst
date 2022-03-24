@@ -1,4 +1,4 @@
-Certificate-Based Authentication
+Certificate-based authentication
 ================================
 
 |enterprise| |cloud| |self-hosted|

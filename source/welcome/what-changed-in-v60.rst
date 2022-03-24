@@ -1,4 +1,4 @@
-What Changed in Mattermost v6.0?
+What changed in Mattermost v6.0?
 ================================
 
 In Mattermost v6.0, we introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.

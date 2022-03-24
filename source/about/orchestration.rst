@@ -1,4 +1,4 @@
-Deployment Solution Programs 
+Deployment solution programs 
 ============================
 
 Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions, including other open source projects as well as in commercial solutions.
@@ -38,7 +38,7 @@ Upgrade                                                   Yes
 
 Requirement details are outline below:
 
-Deployment Solution Program Requirements 
+Deployment solution program requirements 
 ----------------------------------------
 
 Installation 
@@ -69,7 +69,7 @@ Documentation
 
 2. **Unofficial deployment options should be documented**. Unofficial deployment configurations, such as use of Linux operating systems that are not officially supported, should be documented in the README.
 
-Security Updates 
+Security updates 
 ~~~~~~~~~~~~~~~~
 
 1. **Document commitment to providing security updates.** README or equivalent states `We highly recommend users subscribe to the Mattermost security updates email list. When notified of a security update, the maintainers of this deployment solution will make an effort to update to the secure version within 10 days.`

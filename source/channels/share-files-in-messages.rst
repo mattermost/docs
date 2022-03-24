@@ -1,4 +1,4 @@
-Share Files in Messages
+Share files in messages
 =======================
 
 |all-plans| |cloud| |self-hosted|

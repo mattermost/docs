@@ -1,4 +1,4 @@
-User Satisfaction Surveys
+User satisfaction surveys
 =========================
 
 |all-plans| |self-hosted|

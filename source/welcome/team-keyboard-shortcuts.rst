@@ -1,4 +1,4 @@
-Team Keyboard Shortcuts
+Team keyboard shortcuts
 =======================
 
 |all-plans| |cloud| |self-hosted|

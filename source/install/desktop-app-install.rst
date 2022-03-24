@@ -1,4 +1,4 @@
-Desktop Application Install Guides
+Desktop application install guides
 ==================================
 
 |all-plans| |cloud| |self-hosted|

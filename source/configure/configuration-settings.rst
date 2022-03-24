@@ -1,4 +1,4 @@
-Configuration Settings
+Configuration settings
 ======================
 
 Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
@@ -13,7 +13,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
    See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.
 
-Configuration in Database
+Configuration in database
 --------------------------
 
 |all-plans| |self-hosted|
@@ -45,7 +45,7 @@ Configuration in Database
 
 Storing configuration in the database is supported from v5.10 and later. Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
 
-Environment Variables
+Environment variables
 ---------------------
 
 |all-plans| |self-hosted|
@@ -69,7 +69,7 @@ The name of the environment variable for any setting can be derived from the nam
    - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
    - Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
    
-Override Mattermost License File
+Override Mattermost license file
 --------------------------------
 
 |all-plans| |self-hosted|
@@ -83,7 +83,7 @@ When starting the server, specify the license key as ``MM_LICENSE`` with the con
    
    In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
 
-Load Custom Configuration Defaults
+Load custom configuration defaults
 ----------------------------------
 
 |all-plans| |self-hosted|

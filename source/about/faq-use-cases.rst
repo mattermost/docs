@@ -1,4 +1,4 @@
-Use Case Questions
+Use case questions
 ==================
 
 Does Mattermost support external guests?

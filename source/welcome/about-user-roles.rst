@@ -1,4 +1,4 @@
-About User Roles
+About user roles
 ================
 
 |all-plans| |cloud| |self-hosted|

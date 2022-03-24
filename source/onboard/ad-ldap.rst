@@ -1,4 +1,4 @@
-Active Directory/LDAP Setup
+Active directory/LDAP setup
 ===========================
 
 |enterprise| |professional| |cloud| |self-hosted|
@@ -99,12 +99,12 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 .. note::
    Make sure that at least one LDAP user is in Mattermost or the sync will not complete.
 
-Configure AD/LDAP Sign-in Using Filters
+Configure AD/LDAP sign-in using filters
 ----------------------------------------
 
 Using filters assigns roles to specified users on login. To access AD/LDAP filter settings navigate to **System Console > AD/LDAP**.
 
-User Filter
+User filter
 ~~~~~~~~~~~
 
 (Optional) Enter an AD/LDAP filter to use when searching for user objects. Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.
@@ -117,7 +117,7 @@ When the user accesses Mattermost, they log in with same username and password t
 
 Filters can also be used for excluding users who belong to certain groups. For Active Directory, the query to filter out groups is ``(&(memberof=cn=ACME_ALL,ou=Users,dc=sademo,dc=com)(!(memberof=cn=DEV_OPS,ou=Users,dc=sademo,dc=com)))``.
 
-Guest Filter
+Guest filter
 ~~~~~~~~~~~~
 
 (Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost workspace. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
@@ -133,7 +133,7 @@ When a guest logs in for the first time they are presented with a default landin
 
 See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information about this feature.
 
-Admin Filter
+Admin filter
 ~~~~~~~~~~~~
 
 (Optional) Enter an AD/LDAP filter to use for designating System Admins. The users selected by the query will have access to your Mattermost workspace as System Admins. By default, System Admins have complete access to the Mattermost System Console. Existing members that are identified by this attribute will be promoted from member to System Admin upon next login.
@@ -182,7 +182,7 @@ When I first set up and synchronize AD/LDAP, are the users automatically created
 
 No, each user is created on their first login.
 
-When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and not complete?
+When I try to synchronize AD/LDAP, why does the status show as ``Pending`` and not complete?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to **true**.
@@ -245,7 +245,7 @@ This means the query sent back to the AD/LDAP server returned no results. We rec
 
 If you're still having issues, you can `contact Mattermost Support <https://mattermost.com/support/>`__  for additional troubleshooting.
 
-I updated a user account in AD/LDAP, and they can no longer log in to Mattermost.
+I updated a user account in AD/LDAP, and they can no longer log in to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message ``An account with that email already exists``, or a new Mattermost account is created when they try to log in - this means the **ID Attribute** for their account has changed.

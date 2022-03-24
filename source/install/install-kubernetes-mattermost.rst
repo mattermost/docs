@@ -1,6 +1,6 @@
 .. _install-kubernetes-mattermost:
 
-Deploying a Mattermost Installation
+Deploying a Mattermost installation
 -----------------------------------
 
 .. warning::
@@ -248,7 +248,7 @@ If you just want to try it out on your local machine without configuring the dom
 
 And navigate to http://localhost:8065.
 
-Restoring an Existing Mattermost MySQL Database
+Restoring an existing Mattermost MySQL database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Mattermost Operator can be used in a backup and restore scenario to apply an existing Mattermost MySQL database to a new Mattermost installation, in its own namespace. This can also be helpful in the event that you need to revert your Mattermost instance's database to the most recent backup point, on your existing installation. In both cases, you will need a backup of your database.

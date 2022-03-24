@@ -41,12 +41,12 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
 
 In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
-Using SAML Attributes to Apply Roles
+Using SAML attributes to apply roles
 ------------------------------------
 
 You can use attributes to assign roles to specified users on login. To access the SAML attribute settings navigate to **System Console > Authentication > SAML 2.0**.
 
-Username Attribute
+Username attribute
 ~~~~~~~~~~~~~~~~~~
 
 (Optional) Enter a SAML assertion filter to use when searching for users.
@@ -57,10 +57,10 @@ Username Attribute
 
 When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.
 
-Guest Attribute
+Guest attribute
 ~~~~~~~~~~~~~~~
 
-When enabled, the Guest Attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost workspace. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
+When enabled, the guest attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost workspace. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 If a Mattermost Guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the Guest Attribute added, the synchronization processes will automatically demote the member user to the guest role.
 
@@ -74,7 +74,7 @@ When a guest logs in for the first time they are presented with a default landin
 
 See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information about this feature.
 
-Admin Attribute
+Admin attribute
 ~~~~~~~~~~~~~~~
 
 (Optional) The attribute in the SAML Assertion for designating System Admins. The users selected by the query will have access to your Mattermost workspace as System Admins. By default, System Admins have complete access to the Mattermost System Console.
@@ -88,10 +88,10 @@ Existing members that are identified by this attribute will be promoted from mem
 
 **Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However, if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
-Configuration Assistance
+Configuration assistance
 -------------------------
 
-We are open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we cannot guarantee your connection will work with Mattermost.
+We're open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we can't guarantee your connection will work with Mattermost.
 
 To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 

@@ -1,4 +1,4 @@
-Mattermost Cloud Data Residency
+Mattermost Cloud data residency
 ===============================
 
 Mattermost Cloud resides in the ``aws-us-east-1`` region, located in Virginia, United States. The following customer data will be stored at rest in this data center when using Mattermost Cloud:
@@ -15,4 +15,4 @@ Mattermost Cloud resides in the ``aws-us-east-1`` region, located in Virginia, U
 
 Additional data regions are considered, including ``aws-eu-central-1`` located in Frankfurt, Germany.
 
-If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`_, or consider `deploying one of our Self-Hosted options <https://mattermost.com/deploy>`_ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`_ for deploying and hosting your Mattermost server.
+If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`_, or consider `deploying one of our self-hosted options <https://mattermost.com/deploy>`_ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`_ for deploying and hosting your Mattermost server.

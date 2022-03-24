@@ -39,7 +39,7 @@ To re-activate the account:
 
 See :ref:`technical description of SAML synchronization with AD/LDAP <sso-saml-technical>` for more details.
 
-Override SAML Data with AD/LDAP Data
+Override SAML data with AD/LDAP data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alternatively, you can choose to override SAML bind data with AD/LDAP information. For more information on binding a user with the SAML ID Attribute, please refer to this `documentation <https://docs.mattermost.com/onboard/sso-saml-okta.html#how-to-bind-authentication-to-id-attribute-instead-of-email>`__.

@@ -1,4 +1,4 @@
-Rename Channels
+Rename channels
 ===============
 
 |all-plans| |cloud| |self-hosted|

@@ -1,4 +1,4 @@
-Set Channel Preferences
+Set channel preferences
 =======================
 
 |all-plans| |cloud| |self-hosted|
