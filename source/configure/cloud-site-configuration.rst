@@ -1,4 +1,4 @@
-Site Configuration
+Site configuration
 ==================
 
 |all-plans| |cloud|
@@ -13,7 +13,7 @@ Site Configuration
   :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
-Announcement Banner
+Announcement banner
 -------------------
 
 You can display an announcement banner notification that's visible to all users on the system.
@@ -56,7 +56,7 @@ Under **System Console > Permissions > Edit Scheme**:
 
 Select **Save** to apply your changes.
 
-In-Product Notices
+In-product notices
 ------------------
 
 Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases. Notices are used to raise awareness of new features as part of our monthly release cadence. 
@@ -66,12 +66,12 @@ Users will only receive notices that specifically apply to them. For example, if
 .. image:: ../images/notices.png
   :alt: Shows in-product notices for users and administrators.
 
-Administrator Notices
+Administrator notices
 ^^^^^^^^^^^^^^^^^^^^^
 
 System Admins may receive notices about recommended configuration options to optimize the user experience of their workspace. Disable admin notices by going to  **System Console > Site Configuration > Notices**, setting **Enable Admin Notices** to **false**, then selecting **Save**.
 
-End User Notices
+End user notices
 ^^^^^^^^^^^^^^^^
 
 End user notices are used to inform users and System Admins of new feature enhancements and when new desktop versions are available. Disable end user notices by going to **System Console > Site Configuration > Notices**, setting **Enable End User Notices** to **false**, then selecting **Save**.
@@ -86,7 +86,7 @@ How often will users receive notices?
 
 Notices are used to raise awareness of new features as part of Mattermost's release cadence. Users will only receive notices that specifically apply to them. For example, if a user is already running the latest Desktop App version, they will not receive an upgrade notice.
 
-File Sharing and Downloads
+File sharing and downloads
 --------------------------
 
 Control file sharing and downloads in your workspace and on mobile devices using the following three settings under **System Console > Site Configuration > File Sharing and Downloads**:
@@ -144,7 +144,7 @@ You can also control whether all `in-line images <https://docs.mattermost.com/he
 
 Select **Save** to apply your changes.
 
-Users and Teams
+Users and teams
 ---------------
 
 Control the following users and teams settings under **System Console > Site Configuration > Users and Teams**:

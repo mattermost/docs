@@ -1,4 +1,4 @@
-Additional System Admin Roles
+Additional System Admin roles
 ==============================
 
 |enterprise| |cloud| |self-hosted|
@@ -70,7 +70,7 @@ When a user is assigned a system role, they have role-based access to the System
   - Read Only
      - All pages within the System Console
 
-Assigning Admin Roles
+Assigning admin roles
 ---------------------
 
 System Admins can assign roles using the System Console or the mmctl tool. This can be done either locally or remotely.
@@ -147,7 +147,7 @@ System Admins can assign roles using the System Console or the mmctl tool. This 
 
   ``mmctl permissions role unassign system_manager bob-smith``
 
-Editing Privileges of Admin Roles (Advanced)
+Editing privileges of admin roles (advanced)
 --------------------------------------------
 
 Each of the admin roles have defined, default privileges as outlined above. 
@@ -222,7 +222,7 @@ For example, to reset the permissions of the ``system_read_only_admin`` role:
 
 ``mmctl permissions reset system_read_only_admin``
 
-Admin Roles and Privileges
+Admin roles and privileges
 ---------------------------
 
 **Roles**
@@ -234,7 +234,7 @@ Admin Roles and Privileges
 **Privileges**
 
 +------------------------+--------------------------------------------------------------------------+
-| System Console Section | Permissions                                                              |
+| System Console section | Permissions                                                              |
 +========================+==========================================================================+
 | About                  |  - PERMISSION_SYSCONSOLE_READ_ABOUT_EDITION_AND_LICENSE                  |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_ABOUT_EDITION_AND_LICENSE                 |

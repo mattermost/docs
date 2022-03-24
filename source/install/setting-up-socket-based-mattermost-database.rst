@@ -1,4 +1,4 @@
-Using Sockets for Database
+Using sockets for database
 ==========================
 
 |all-plans| |self-hosted|
@@ -99,7 +99,6 @@ With Unix socket
   .. code-block:: bash
 
      sudo -u mattermost psql --dbname=mattermostdb
-
 
 Configuring Mattermost
 ----------------------

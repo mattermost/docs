@@ -1,4 +1,4 @@
-Configuration Settings
+Configuration settings
 ======================
 
 Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
@@ -13,7 +13,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
    See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.
 
-Configuration in Database
+Configuration in database
 --------------------------
 
 |all-plans| |self-hosted|
@@ -45,7 +45,7 @@ Configuration in Database
 
 Storing configuration in the database is supported from v5.10 and later. Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
 
-Environment Variables
+Environment variables
 ---------------------
 
 |all-plans| |self-hosted|
@@ -69,7 +69,7 @@ The name of the environment variable for any setting can be derived from the nam
    - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
    - Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
    
-Override Mattermost License File
+Override Mattermost license file
 --------------------------------
 
 |all-plans| |self-hosted|
@@ -83,7 +83,7 @@ When starting the server, specify the license key as ``MM_LICENSE`` with the con
    
    In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
 
-Load Custom Configuration Defaults
+Load custom configuration defaults
 ----------------------------------
 
 |all-plans| |self-hosted|
@@ -1826,7 +1826,7 @@ Session length for SSO authentication (days)
 
 This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
@@ -2162,9 +2162,9 @@ Default language for system messages and logs.
 
 Changes to this setting require a server restart before taking effect.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Default Client Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2173,9 +2173,9 @@ Default Client Language
 
 Default language for newly-created users and pages where the user hasn't logged in.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^
@@ -2187,9 +2187,9 @@ Sets which languages are available for users in **Settings > Display > Language*
 .. note::
   Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``.  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``.  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Users and Teams
 ~~~~~~~~~~~~~~~
@@ -6057,6 +6057,19 @@ This setting isn't available in the System Console and can only be set in ``conf
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
+
+Custom User Groups
+^^^^^^^^^^^^^^^^^^
+
+|enterprise| |professional| |cloud| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting controls the ability for users to create custom user groups. This configuration setting is disabled by default.
+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableCustomGroups": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------+
 
 Developer Flags
 ^^^^^^^^^^^^^^^

@@ -1,4 +1,4 @@
-OAuth 2.0 Applications
+OAuth 2.0 applications
 ======================
 
 OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from external applications. The authorization allows 
@@ -19,7 +19,7 @@ You must register your application in Mattermost to generate OAuth 2.0 credentia
 
 If you would like to set up a Zapier integration with OAuth 2.0, see our `Zapier documentation <https://docs.mattermost.com/integrations/zapier.html>`__ to learn more.
 
-Enable OAuth 2.0 Applications
+Enable OAuth 2.0 applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OAuth 2.0 applications are off by default and can be enabled by the System Administrator as follows:
@@ -34,12 +34,12 @@ OAuth 2.0 applications are off by default and can be enabled by the System Admin
 
 5. (Optional) If you would like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set `Restrict managing integrations to Admins <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__ to **False**.
 
-Register an OAuth 2.0 Application
+Register an OAuth 2.0 application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Go to **Main Menu** > **Integrations**
 
-2. Click **OAuth 2.0 Applications**, then click **Add OAuth 2.0 Application**
+2. Select **OAuth 2.0 Applications**, then click **Add OAuth 2.0 Application**
 
 3. Set **Is Trusted**: When set to **Yes**, your application is considered trusted by Mattermost. This means Mattermost doesn't require users to accept authorization when signing to third-party applications. When set to **No**, users will be provided with the following page to accept or deny authorization when authenticating for the first time.
 

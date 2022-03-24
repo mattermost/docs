@@ -1,4 +1,4 @@
-iOS Setup
+iOS setup
 =========
 
 |all-plans| |cloud| |self-hosted|

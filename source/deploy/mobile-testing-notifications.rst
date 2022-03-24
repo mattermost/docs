@@ -1,4 +1,4 @@
-Testing Push Notifications
+Testing push notifications
 ==========================
 
 |all-plans| |cloud| |self-hosted|
