@@ -127,7 +127,7 @@ Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
 
-For Mattermost v6.4+:
+From Mattermost v6.4:
 
 The new migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
 
