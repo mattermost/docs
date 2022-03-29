@@ -7,8 +7,8 @@ Configure the network environment in which Mattermost is deployed. Configure thi
     
     |system-console| indicates a configuration setting you can control through the System Console.
 
-    |config-json| indicates a configuration setting available only in the ``config.json`` file.
-    
+    |config-json| indicates a configuration setting you can control in the ``config.json`` file.
+
     Changes to configuration settings in this section require a server restart before taking effect.
 
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
