@@ -43,6 +43,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue on Collapsed Reply Threads compact message view where clicking on the thread footer avatar did not open the profile modal.
 
 ### Known Issues
+ - The archived channels search doesn't work as expected [MM-42889](https://mattermost.atlassian.net/browse/MM-42889).
  - Actions menu has inconsistent shading on hover on dark theme [MM-42869](https://mattermost.atlassian.net/browse/MM-42869).
  - Actions menu: "x" and the link inside the tooltip don't work [MM-42769](https://mattermost.atlassian.net/browse/MM-42769).
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
