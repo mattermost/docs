@@ -4,6 +4,11 @@ Web Server configuration
 Configure the network environment in which Mattermost is deployed. Configure this feature by going to **System Console >** **Environment > Web Server**, or within the config.json file as described in the following table. 
 
 .. note::
+    
+    |system-console| indicates a configuration setting you can control through the System Console.
+
+    |config-json| indicates a configuration setting available only in the ``config.json`` file.
+    
     Changes to configuration settings in this section require a server restart before taking effect.
 
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
