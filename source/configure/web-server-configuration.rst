@@ -377,6 +377,60 @@ Option C
 |                                          |                   | Select the **Purge All Caches ** button in the System Console to purge all caches.                                                                                                                                                                                                               |                                                                  |
 +------------------------------------------+-------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
+Option D
+--------
+
+Site URL
+--------
+
+|all-plans| |self-hosted| |system-console| |config-json|
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+| **Description & supported values**                                                                                                                                  | ``config.json`` **setting & environment variable** |
++=====================================================================================================================================================================+====================================================+
+| The URL that users will use to access Mattermost. Can contain a subpath from Mattermost v5.1, such as ``https://example.com/company/mattermost``.                   | ``".ServiceSettings.SiteURL": "",``                |
+|                                                                                                                                                                     |                                                    |
+| If Site URL isn't set, the following features will not operate correctly:                                                                                           | ``MM_SERVICESETTINGS_SITEURL``                     |
+|                                                                                                                                                                     |                                                    |
+| * Email notifications will contain broken links, and email batching will not work.                                                                                  |                                                    |
+| * Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.                                                                                |                                                    |
+| * Plugins may not work as expected.                                                                                                                                 |                                                    |
+|                                                                                                                                                                     |                                                    |
+| This field is required, and the port number is required if it’s not a standard port such as ``80`` or ``443``.                                                      |                                                    |
+|                                                                                                                                                                     |                                                    |
+| Select the **Test Live URL** button in the System Console to validate the Site URL.                                                                                 |                                                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+
+Listen address
+--------------
+
+|all-plans| |self-hosted| |system-console| |config-json|
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+| **Description & supported values**                                                                                                                                  | ``config.json`` **setting & environment variable** |
++=====================================================================================================================================================================+====================================================+
+| The address and port to which to bind and listen.                                                                                                                   | ``".ServiceSettings.ListenAddress": ":8065",``     |
+|                                                                                                                                                                     |                                                    |
+| * Specifying ``:8065`` will bind to all network interfaces.                                                                                                         | ``MM_SERVICESETTINGS.LISTENADDRESS``               |
+| * Specifying ``127.0.0.1:8065`` will only bind to the network interface having that IP address.                                                                     |                                                    |
+| * If you choose a port of a lower level (called “system ports” or “well-known ports”, in the range of ``0-1023``), you must have permissions to bind to that port.] |                                                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+
+Forward port 80 to 443
+----------------------
+
+|all-plans| |self-hosted| |system-console| |config-json|
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+| **Description & supported values**                                                                                                                                  | ``config.json`` **setting & environment variable** |
++=====================================================================================================================================================================+====================================================+
+| Forward insecure traffic from port 80 to port 442.                                                                                                                  | ``".ServiceSettings.Forward80To443: false",``      |
+|                                                                                                                                                                     |                                                    |
+| * **true**: Forwards all insecure traffic from port 80 to secure port 443.                                                                                          | ``MM_SERVICESETTINGS_FORWARD80TO443``              |
+| * **false**: **(Default)** When using a proxy such as NGINX in front of Mattermost, this setting is unnecessary and should be set to ``false``.                     |                                                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+
+
 .. inline image assets
 
 .. |all-plans| image:: ../images/all-plans-badge.png
