@@ -1,8 +1,8 @@
-Cloud Subscriptions
+Cloud subscriptions
 ===================
 
 Purchase a Cloud subscription
--------------------------------
+------------------------------
 
 Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan.
 
@@ -40,8 +40,15 @@ Renew your subscription
 
 Monthly Cloud subscriptions renew automatically.
 
-Frequently Asked Questions
+Frequently asked questions
 ---------------------------
+
+What happens when my 14-day trial period ends?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+At the end of the 14-day trial, you will lose access to your workspace until you have added your payment information to continue using your Mattermost Cloud workspace.
+
+If you do not add your payment information within 30 days, we will delete your Cloud workspace permanently and you will lose any associated data.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +76,9 @@ To cancel your subscription, please `contact us <https://customers.mattermost.co
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud Enterprise will support data residency based on feedback from our customers. We appreciate feedback from our customers on regional support.
+Mattermost Cloud Enterprise will support data residency based on feedback from our customers.
+
+If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`_, or consider `deploying one of our Self-Hosted options <https://mattermost.com/deploy>`_ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`_ for deploying and hosting your Mattermost server.
 
 How is Mattermost Cloud secured?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

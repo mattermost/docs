@@ -1,4 +1,4 @@
-Light Install Guide
+Light install guide
 ===================
 
 |all-plans| |self-hosted|
@@ -50,7 +50,7 @@ When your server is up and running, navigate to it via the domain name (e.g. ``m
 
 If you have any problems installing Mattermost Omnibus, see the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__ for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
-Add Users
+Add users
 ---------
 
 Next, add people to your team by sending them an invitation:
@@ -61,7 +61,7 @@ Next, add people to your team by sending them an invitation:
 
 When the invitee receives the email with the link, it’s a single click to join your server, chat to you in the channel you’ve created, or create their own channels. More information about adding users is available `here <https://docs.mattermost.com/messaging/managing-members.html#managing-members>`_.
 
-Create a Notifications Hub
+Create a notifications hub
 --------------------------
 
 Create a `“heartbeat” channel <https://community.mattermost.com/core/channels/community-heartbeat>`_ and integrate your most-used apps and plugins with Mattermost to send status updates and critical notifications in one place.

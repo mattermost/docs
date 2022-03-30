@@ -1,4 +1,4 @@
-Notifications Questions
+Notifications questions
 =======================
 
 What determines if a desktop notification should be triggered?

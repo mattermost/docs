@@ -1,4 +1,4 @@
-Self-Hosted Subscriptions
+Self-hosted subscriptions
 =========================
 
 Purchase a subscription
@@ -103,7 +103,7 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
   
    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Frequently Asked Questions
+Frequently asked questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 How do I renew my license subscription if I don't have internet access?

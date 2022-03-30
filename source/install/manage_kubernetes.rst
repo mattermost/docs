@@ -2,7 +2,7 @@
 
 .. _manage_kubernetes:
 
-Managing the Mattermost Kubernetes Operator
+Managing the Mattermost Kubernetes operator
 ============================================
 
 CLI commands

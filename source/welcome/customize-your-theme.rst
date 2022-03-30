@@ -1,6 +1,6 @@
 .. _theme-colors:
 
-Customize Your Mattermost Theme
+Customize your Mattermost theme
 ===============================
 
 |all-plans| |cloud| |self-hosted|
@@ -64,6 +64,8 @@ Sidebar Text
   	Text color of read channels in the Channels pane, and tabs in the Account and Team settings navigation sidebar.
 Sidebar Header BG
  	Background color of the header above the Channels pane and all dialog window headers.
+Team Sidebar BG
+	Background color of the Global Header (available from Mattermost v6.0).
 Sidebar Header Text
  	Text color of the header above the Channels pane and all dialog window headers.
 Sidebar Unread Text
@@ -139,7 +141,7 @@ Copy existing theme values, then go to:
 
   .. tab:: Mattermost v6.0 onwards
 
-      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and then select **Copy Theme Colors**.
+      In Mattermost v6.0, navigate to **Settings > Display > Theme**, select **Custom Theme** and paste the theme values into the **Copy and paste to share theme colors** field. 
 
   .. tab:: Mattermost v5.39 and earlier
 

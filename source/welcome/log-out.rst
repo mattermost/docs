@@ -1,4 +1,4 @@
-Log Out of Mattermost
+Log out of Mattermost
 =====================
 
 |all-plans| |cloud| |self-hosted|

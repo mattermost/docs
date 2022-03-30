@@ -19,7 +19,7 @@ Prerequisites
 
 On your ADFS installation, open the ADFS console. Select **Service**, then select **Endpoints**. In the **Type** column, search for ``SAML 2.0/WS-Federation`` and note down the value of **URL Path** column. This is also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls``.
 
-Add a Relying Party Trust
+Add a relying party trust
 -------------------------
 
 1. Open the ADFS management snap-in, then select **AD FS > Relying Party Trusts > Add Relying Party Trust** from the right sidebar. You can also right-click **Relying Party Trusts**, then select **Add Relying Party Trust** from the context menu.
@@ -72,7 +72,7 @@ Add your **SAML 2.0 SSO service URL** using this same process.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_011.png
 
-Create Claim Rules
+Create claim rules
 ------------------
 
 1. In the **Issuance Transform Rules** tab of the **Claim Rules** editor, select **Add Rule…**.
@@ -125,7 +125,7 @@ where ``<display-name>``is the name you specified in step 4 when you added a rel
 
 This action adds the signature to SAML messages, making verification successful.
 
-Export Identity Provider Certificate
+Export identity provider certificate
 -------------------------------------
 
 Next, export the identity provider certificate, which will be later uploaded to Mattermost to finish SAML configuration.
@@ -156,7 +156,7 @@ Next, export the identity provider certificate, which will be later uploaded to 
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_007.png
 
-Configure SAML Sign-in for Mattermost
+Configure SAML Sign-On for Mattermost
 --------------------------------------
 
 Create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``.

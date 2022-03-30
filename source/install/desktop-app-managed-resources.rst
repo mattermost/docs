@@ -1,4 +1,4 @@
-Desktop Managed Resources
+Desktop managed resources
 ==========================
 
 |all-plans| |self-hosted|

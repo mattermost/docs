@@ -1,4 +1,4 @@
-Mark Messages as Unread
+Mark messages as unread
 =======================
 
 |all-plans| |cloud| |self-hosted|

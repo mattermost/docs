@@ -1,4 +1,4 @@
-Create a Playbook
+Create a playbook
 ==================
 
 |all-plans| |cloud| |self-hosted|

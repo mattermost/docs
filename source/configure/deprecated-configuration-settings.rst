@@ -1,10 +1,10 @@
-Deprecated Configuration Settings
+Deprecated configuration settings
 =================================
 
-Service Settings
+Service settings
 ----------------
 
-Enable Reliable Websockets
+Enable reliable websockets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This configuration setting has been deprecated, and the ability to buffer messages during a connection loss has been promoted to general availability from Mattermost v6.3. This setting is enabled for older clients to maintain backwards compatibility.*
@@ -17,7 +17,7 @@ Enable this setting to make websocket messages more reliable by buffering messag
 | This feature's ``config.json`` setting is ``"EnableReliableWebsockets": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Data Prefetch
+Data prefetch
 ~~~~~~~~~~~~~
 
 *Removed in February 16, 2021 release*
@@ -30,7 +30,7 @@ Data Prefetch
 | This feature's ``config.json`` setting is ``"ExperimentalDataPrefetch": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Segment Write Key
+Segment write key
 ~~~~~~~~~~~~~~~~~
 
 *Removed in March 16, 2017 release*
@@ -41,7 +41,7 @@ For deployments seeking additional tracking of system behavior using Segment.com
 | This feature's ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input. |
 +--------------------------------------------------------------------------------------------+
 
-Limit Access to Config Settings Prior to Login
+Limit access to config settings prior to login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in December 16, 2018 release*
@@ -54,7 +54,7 @@ Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.
 | This feature's ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
-Disable Legacy MFA API Endpoint
+Disable legacy MFA API endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -75,10 +75,10 @@ Disable Legacy MFA API Endpoint
 | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-SQL Settings
+SQL settings
 -------------
 
-Amazon S3 Bucket Endpoint
+Amazon S3 bucket endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
@@ -102,7 +102,7 @@ Amazon S3 Location Constraint
 | This feature's ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
-Amazon S3 Lowercase Bucket
+Amazon S3 lowercase bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
@@ -115,10 +115,10 @@ Amazon S3 Lowercase Bucket
 | This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Users and Teams
+Users and teams
 ---------------
 
-Enable Team Directory
+Enable team directory
 ~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in May 16th, 2016 release*
@@ -131,8 +131,8 @@ Enable Team Directory
 | This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Allow Team Administrators to edit others' posts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Allow Team Admins to edit others' posts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -152,7 +152,7 @@ Allow Team Administrators to edit others' posts
 
    System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
 
-Enable Team Creation
+Enable team creation
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -176,7 +176,7 @@ Enable Team Creation
 SAML 2.0
 --------
 
-Use New SAML Library
+Use new SAML library
 ~~~~~~~~~~~~~~~~~~~~
 
 *Removed in December 16, 2020 release*
@@ -189,10 +189,10 @@ Use New SAML Library
 | This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Legacy Sidebar
+Legacy sidebar
 --------------
 
-Enable Legacy Sidebar
+Enable legacy sidebar
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -215,7 +215,7 @@ This setting re-enables the legacy sidebar functionality for all users on this s
 | This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``. |
 +----------------------------------------------------------------------------------------------------------------+
 
-Experimental Sidebar Features
+Experimental sidebar features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated. Not used in Mattermost v5.32 and later*
@@ -233,7 +233,7 @@ Experimental Sidebar Features
 | This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Sidebar Organization
+Sidebar organization
 ~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -262,7 +262,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 | This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
-Enable X to Leave Channels from Left-Hand Sidebar
+Enable X to leave channels from left hand sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -291,7 +291,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 | This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-Autoclose Direct Messages in Sidebar
+Autoclose direct messages in sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -323,7 +323,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 Town Square
 -----------
 
-Town Square is Hidden in Left-Hand Sidebar
+Town Square is hidden in left hand sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -352,7 +352,7 @@ We strongly recommend that you leave the **Enable Legacy Sidebar** configuration
 | This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
-Town Square is Read-Only
+Town Square is read-only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -365,7 +365,7 @@ Town Square is Read-Only
       
       Available in legacy Enterprise Edition E10 and higher.
 
-**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, react using emojis,  pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
+**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, react using emojis, pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
 
 **False**: Anyone can post in Town Square.
 
@@ -377,10 +377,10 @@ Town Square is Read-Only
 | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------------+
 
-Custom Emoji
+Custom emoji
 ------------
 
-Restrict Custom Emoji Creation
+Restrict custom emoji creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -423,10 +423,10 @@ Select the timezone used for timestamps in the user interface and email notifica
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
-High-Availability
+High Availability
 -----------------
 
-Inter-Node Listen Address
+Inter-node listen address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated. Not used in Mattermost v4.0 and later*
@@ -490,7 +490,6 @@ Restrict managing integrations to Admins
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
-
 
 Policy
 ------
@@ -733,7 +732,7 @@ When post editing is permitted, setting this to ``-1`` allows editing any time, 
 Images
 ------
 
-Attachment Thumbnail Width
+Attachment thumbnail width
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -744,7 +743,7 @@ Width of thumbnails generated from uploaded images. Updating this value changes 
 | This feature's ``config.json`` setting is ``"ThumbnailWidth": 120`` with numerical input. |
 +-------------------------------------------------------------------------------------------+
 
-Attachment Thumbnail Height
+Attachment thumbnail height
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -755,7 +754,7 @@ Height of thumbnails generated from uploaded images. Updating this value changes
 | This feature's ``config.json`` setting is ``"ThumbnailHeight": 100`` with numerical input. |
 +--------------------------------------------------------------------------------------------+
 
-Image Preview Width
+Image preview width
 ~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -766,7 +765,7 @@ Maximum width of preview image. Updating this value changes how preview images r
 | This feature's ``config.json`` setting is ``"PreviewWidth": 1024`` with numerical input. |
 +------------------------------------------------------------------------------------------+
 
-Image Preview Height
+Image preview height
 ~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -777,7 +776,7 @@ Maximum height of preview image. Setting this value to ``0`` instructs Mattermos
 | This feature's ``config.json`` setting is ``"PreviewHeight": 0`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
-Profile Picture Width
+Profile picture width
 ~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -788,7 +787,7 @@ The width to which profile pictures are resized after being uploaded via **Accou
 | This feature's ``config.json`` setting is ``"ProfileWidth": 128`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
 
-Profile Picture Height
+Profile picture height
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -799,10 +798,10 @@ The height to which profile pictures are resized after being uploaded via **Acco
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input. |
 +------------------------------------------------------------------------------------------+
 
-Experimental Display Settings
+Experimental display settings
 -----------------------------
 
-Supported Timezones Path
+Supported timezones path
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in April 16, 2019 release*

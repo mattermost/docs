@@ -1,4 +1,4 @@
-Reply to Messages
+Reply to messages
 =================
 
 |all-plans| |cloud| |self-hosted|
@@ -48,4 +48,4 @@ To shrink the right-hand sidebar to its original width, select the same **Collap
 Work with Collapsed Reply Threads
 ---------------------------------
 
-An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost self-hosted customers from v5.37. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels.html#organize-conversations>`__ documentation to learn more.
+An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost self-hosted customers from v5.37. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels#organize-conversations.html>`__ documentation to learn more.

@@ -1,4 +1,4 @@
-Welcome Email to End Users
+Welcome email to end users
 ===========================
 
 |all-plans| |cloud| |self-hosted|
@@ -22,7 +22,7 @@ To make it easy for your end users to start using Mattermost right away, we crea
 
 Remember to replace all the items below in bold with your information.
 
-Email Template
+Email template
 ---------------
 
 From: **[company name]** IT Team

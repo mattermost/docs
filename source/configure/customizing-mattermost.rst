@@ -24,8 +24,8 @@ If customizing Mattermost, please avoid branding that could be confused with the
 
 While you're welcome to add your own copyright notice in the user interface if you feel it is warranted by your changes, we ask that you do not remove the Mattermost, Inc. copyright notice from the login footer or from the About dialog.
 
-Mattermost Webapp
------------------
+Mattermost Web App
+------------------
 
 The Mattermost webapp is licensed under the Apache 2.0 license. To modify and use with the Mattermost server, you can:
 
@@ -51,10 +51,10 @@ There are a few things you can customize in the Mattermost server without forkin
 2. Customize or hide help and support links by modifying your `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
 3. Customize the email notifications by editing the HTML files in ``/templates``.
 
-Mattermost Mobile Applications
-------------------------------
+Mattermost mobile apps
+----------------------
 
-The Mattermost mobile applications can be customized if you choose to build the apps yourself. 
+The Mattermost mobile apps can be customized if you choose to build the apps yourself. 
 
 To brand the mobile apps: 
 
@@ -65,10 +65,10 @@ To brand the mobile apps:
 
 While most organizations deploy to internal enterprise app stores, you are welcome to deploy to iTunes and Google Play as long as the branding is not confusable with official Mattermost products.
 
-Mattermost Desktop Applications
--------------------------------
+Mattermost desktop apps
+-----------------------
 
-The Mattermost desktop applications can be customized if you choose to build the apps yourself. 
+The Mattermost desktop apps can be customized if you choose to build the apps yourself. 
 
 To brand the desktop apps: 
 

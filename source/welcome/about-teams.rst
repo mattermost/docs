@@ -1,4 +1,4 @@
-About Teams
+About teams
 ===========
 
 |all-plans| |cloud| |self-hosted|

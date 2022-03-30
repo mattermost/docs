@@ -1,4 +1,4 @@
-Channel Naming Conventions
+Channel naming conventions
 ==========================
 
 |all-plans| |cloud| |self-hosted|

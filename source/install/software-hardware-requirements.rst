@@ -1,6 +1,6 @@
 ..  _requirements:
 
-Software and Hardware Requirements
+Software and hardware requirements
 ==================================
 
 |all-plans| |self-hosted|
@@ -20,7 +20,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 .. contents::
     :backlinks: top
 
-Deployment Overview
+Deployment overview
 -------------------
 
 Please see the `Mattermost Deployment Overview <https://docs.mattermost.com/deploy/deployment-overview.html>`__ documentation for a summary of software systems whose requirements are described in this document.
@@ -28,13 +28,13 @@ Please see the `Mattermost Deployment Overview <https://docs.mattermost.com/depl
 .. image:: ../images/network_diagram.png
    :alt: Mattermost Network Diagram
 
-Software Requirements
+Software requirements
 ---------------------
 
-Client Software
+Client software
 ~~~~~~~~~~~~~~~
 
-Desktop Apps
+Desktop apps
 ^^^^^^^^^^^^
 
 .. csv-table::
@@ -48,7 +48,7 @@ Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 
 
 `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-PC Web
+PC web
 ^^^^^^
 
 .. csv-table::
@@ -56,12 +56,12 @@ PC Web
 
     "Chrome", "v89+", "v89+"
     "Firefox", "v91+", "v91+"
-    "Safari", "v12+", "v12+"
+    "Safari", "v12+", "v14.1+"
     "Edge", "v44+", "v44+"
 
 `*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
-Mobile Apps
+Mobile apps
 ^^^^^^^^^^^
 
 .. csv-table::
@@ -72,7 +72,7 @@ Mobile Apps
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-Mobile Web
+Mobile web
 ^^^^^^^^^^
 
 .. csv-table::
@@ -81,17 +81,17 @@ Mobile Web
     "iOS", "iOS 12.1+ with Safari 12+ or Chrome 89+"
     "Android", "Android 7+ with Chrome 89+"
 
-Email Client
+Email client
 ^^^^^^^^^^^^
 
 -  *Desktop clients:* Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+
 -  *Web based clients:* Office 365, Outlook, Gmail, Yahoo, AOL
 -  *Mobile clients:* iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS)
 
-Server Software
+Server software
 ~~~~~~~~~~~~~~~
 
-Mattermost Server Operating System
+Mattermost server operating system
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
@@ -99,7 +99,7 @@ Mattermost Server Operating System
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
 
-Database Software
+Database software
 ^^^^^^^^^^^^^^^^^
 
 For Mattermost v6.0:
@@ -127,6 +127,10 @@ Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
 
+From Mattermost v6.4:
+
+The new migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
+
 **MySQL 8 Support**:
 
 In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
@@ -147,7 +151,7 @@ If this change isn't made, tables in the database may end up having different co
 
 In MySQL versions 8.0.0 - 8.0.11 ``ADMIN`` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12.
 
-Hardware Requirements
+Hardware requirements
 ---------------------
 
 Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
@@ -156,7 +160,7 @@ Moreover, memory requirements can be driven by peak file sharing activity. Recom
 
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
-Hardware Requirements for Team Deployments
+Hardware requirements for team deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
@@ -166,10 +170,10 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 .. _hardware-sizing-for-enterprise:
 
-Hardware Requirements for Enterprise Deployments (Multi-Server)
+Hardware requirements for enterprise deployments (multi-server)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Scale Requirements
+Scale requirements
 ^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`__.
@@ -178,7 +182,7 @@ It is highly recommended that pilots are run before enterprise-wide deployments 
 
 Mattermost's `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
 
-System Requirements
+System requirements
 ^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
@@ -188,7 +192,7 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported in Mattermost v6.0. Previous Mattermost versions of Mattermost, including v5.39 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. `Learn more here <https://docs.mattermost.com/scale/elasticsearch.html>`__.
 - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/configure/configuration-settings.html#file-storage>`__.
 
-Alternate Storage Calculations
+Alternate storage calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As an alternative to recommended storage sizing above, you can forecast your own storage usage. Begin with a Mattermost server approximately 600 MB to 800 MB in size including operating system and database, then add the multiplied product of:

@@ -1,6 +1,6 @@
 ..  _docker-ebs:
 
-AWS Elastic Beanstalk Docker Setup
+AWS Elastic Beanstalk Docker setup
 ==================================
 
 |all-plans| |self-hosted|
