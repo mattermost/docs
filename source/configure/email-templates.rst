@@ -1,4 +1,4 @@
-Email Templates
+Email templates
 ===============
 
 |all-plans| |cloud| |self-hosted|
@@ -37,7 +37,7 @@ The corresponding strings for each prop can be found in the ``i18n`` folder.
 Available templates
 -------------------
 
-Email Footer
+Email footer
 ~~~~~~~~~~~~
 
 **Purpose**:

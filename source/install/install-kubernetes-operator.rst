@@ -1,6 +1,6 @@
 .. _install-kubernetes-operator:
 
-Installing the Operators
+Installing the operators
 ------------------------
 
 The operators are installed using ``kubectl`` and each operator is created in its own namespace. You can install and run multiple Mattermost installations in the same cluster using different namespaces.

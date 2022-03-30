@@ -118,7 +118,7 @@ Set up Mattermost Server
 
 1. For the purposes of this guide we will assume this server has an IP address of 10.0.0.2.
 
-2. `Download <https://mattermost.org/download/>`__ the latest Mattermost Server by opening your favorite browser and navigating to ``https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-windows-amd64.zip`` where `X.X.X` is the latest Mattermost release version. For example, 3.4.0.
+2. `Download <https://mattermost.com/download/>`__ the latest Mattermost Server by opening your favorite browser and navigating to ``https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-windows-amd64.zip`` where `X.X.X` is the latest Mattermost release version. For example, 3.4.0.
 
 3. Create the storage directory for files. We assume you will have attached a large drive for storage of images and files. For this setup we will assume the directory is located at ``c:\mattermost\data``. Your directory structure should look similar to the image below.
 

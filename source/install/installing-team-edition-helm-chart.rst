@@ -59,7 +59,7 @@ Please take note of the ``Application ID``, ``Application Secret Key``, ``User A
 Deploy GitLab Helm Chart
 -------------------------
 
-To deploy the GitLab Helm Chart, follow the instructions described `here <https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`__.
+To deploy the GitLab Helm Chart, follow the instructions described in the `GitLab cloud native Helm Chart <https://docs.gitlab.com/charts/>`__ documentation.
 
 Here's a light way to install it:
 
@@ -79,7 +79,7 @@ Here's a light way to install it:
 
 Once you've deployed the GitLab instance, follow the instructions for the `initial login <https://docs.gitlab.com/charts/installation/deployment.html#initial-login>`__.
 
-If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <https://mattermost.org/troubleshoot/>`__ and we'll be happy to help.
+If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <https://docs.mattermost.com/install/troubleshooting.html>`__ and we'll be happy to help.
 
 Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart
 ----------------------------------------------------------------

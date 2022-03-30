@@ -1,6 +1,6 @@
 ..  _docker-local-machine:
 
-Local Machine Setup using Docker
+Local machine setup using Docker
 ================================
 
 |all-plans| |self-hosted|
@@ -18,11 +18,11 @@ Local Machine Setup using Docker
 The following instructions use Docker to install Mattermost in *Preview Mode* using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__ for exploring product functionality on a single local machine.
 
 .. important::
-  This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, keeps no persitent data (all data lives inside the container) and doesn't support upgrades. For a production installation with Docker, see the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__.
+  This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, keeps no persistent data (all data lives inside the container) and doesn't support upgrades. For a production installation with Docker, see the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__.
 
 .. note::
   If you have problems installing Mattermost, see
-  the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/messaging/managing-members.html>`__ and additional `getting started information for Channels <https://docs.mattermost.com/guides/channels.htmld>`__.
+  the `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/messaging/managing-members.html>`__ and additional `getting started information for Channels <https://docs.mattermost.com/guides/channels.html>`__.
 
 One-line Docker install
 -----------------------
@@ -98,17 +98,12 @@ If you don't have Docker installed, follow the step-by-step instructions below b
 
     3. When Docker is done fetching the image and starting the container, open ``http://localhost:8065/`` in your browser.
 
-Setting up SMTP email (Recommended)
------------------------------------
-
-The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. 
-
 Configuration Settings
 ----------------------
 
-See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
+The default single-container Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
 
-Updating Mattermost Preview
+Updating Mattermost preview
 ---------------------------
 
 To update your Mattermost preview image and container, you must first stop and delete your existing **mattermost-preview** container by running the following commands:
@@ -124,7 +119,7 @@ Once the new image is pulled and the container is stopped and deleted you need t
 .. note::
   On Linux add a ``sudo`` in front of the ``docker`` commands.
 
-Accessing Your Container
+Accessing your container
 ------------------------
 
 To access a shell inside the container, run the following command:

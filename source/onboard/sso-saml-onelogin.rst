@@ -9,7 +9,7 @@ The following process provides steps to configure SAML 2.0 with OneLogin for Mat
 
 .. include:: sso-saml-before-you-begin.rst
 
-Create a OneLogin Connection App for Mattermost SSO
+Create a OneLogin connection app for Mattermost SSO
 ---------------------------------------------------
 
 1. Add a SAML test connector app.
@@ -20,7 +20,7 @@ Create a OneLogin Connection App for Mattermost SSO
 
   .. image:: ../../source/images/onelogin_1_new_app.png
 
-  d. In the **Display Name** field, enter a name for the application, then optionally upload an app icon. You can use the Mattermost logo for the icon, which you can download from `Branding Guidelines <https://mattermost.org/brand-guidelines/>`__ page.
+  d. In the **Display Name** field, enter a name for the application, then optionally upload an app icon. You can use the Mattermost logo for the icon, which you can download from `Branding Guidelines <https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines>`__ page.
 
   .. image:: ../../source/images/onelogin_2_basic_configuration.png
 
@@ -33,13 +33,13 @@ Create a OneLogin Connection App for Mattermost SSO
 
     - **RelayState**: leave blank
     - **Audience**: leave blank
-    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
+    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__.
     - **ACS (Consumer) URL Validator**: ``https:\/\/<your-mattermost-url>\/login\/sso\/saml``
     - **ACS (Consumer) URL**: ``https://<your-mattermost-url>/login/sso/saml``
 
   .. image:: ../../source/images/onelogin_3_configuration_1.png
   
-  b. In System Console,  `enable encryption <https://docs.mattermost.com/administration/prev-config-settings.html#enable-encryption>`__, then click **Save**. You're redirected to the **Info** tab. From there, select the **Configuration** tab to access the **SAML Encryption** field.
+  b. In System Console,  `enable encryption <https://docs.mattermost.com/configure/configuration-settings.html#enable-encryption>`__, then select **Save**. You're redirected to the **Info** tab. From there, select the **Configuration** tab to access the **SAML Encryption** field.
 
   c. Paste the Public Key that you generated earlier into the **SAML Encryption** field at the bottom of the page. This field displays in OneLogin only when encryption is enabled in Mattermost.
 
@@ -105,7 +105,7 @@ Create a OneLogin Connection App for Mattermost SSO
 
 5. Save all your changes.
 
-Configure SAML Sign-in for Mattermost
+Configure SAML Sign-On for Mattermost
 --------------------------------------
 
 1. Start the Mattermost server, then sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
@@ -144,7 +144,7 @@ Configure SAML Sign-in for Mattermost
 
 8. (Optional) If you configured ``First Name`` Attribute and ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
+To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement to your users detailing how the migration will work.
 

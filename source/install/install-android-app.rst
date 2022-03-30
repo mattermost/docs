@@ -1,4 +1,4 @@
-Android Setup
+Android setup
 =============
 
 |all-plans| |cloud| |self-hosted|
@@ -29,7 +29,7 @@ Your Mattermost teams can be accessed on Android mobile devices by downloading t
 
 .. _Okta: https://developer.okta.com/docs/guides/saml_guidance.html
 .. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx
-.. _documentation: https://docs.mattermost.com/deployment/sso-saml.html
+.. _documentation: https://docs.mattermost.com/onboard/sso-saml.html
 .. _App Store: https://geo.itunes.apple.com/us/app/mattermost/id984966508?mt=8
 .. _Google Play Store: https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en
 

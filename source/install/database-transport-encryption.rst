@@ -1,5 +1,5 @@
 
-Configuring Database Transport Encryption
+Configuring database transport encryption
 ==========================================
 
 |enterprise| |self-hosted|
@@ -26,7 +26,7 @@ Prerequisites
 - Confirmed connectivity between Mattermost and MySQL server.
 - Authentication credentials for Mattermost user on MySQL server.
 
-Example Environment
+Example environment
 -------------------
 
 In this scenario there is one Mattermost application server and one MySQL server, both running Ubuntu 18.04, with the following IPs:
@@ -70,7 +70,6 @@ Last but not least, restart the server and confirm it is up and running:
     Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Stopped MySQL Community Server.
     Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Starting MySQL Community Server...
     Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Started MySQL Community Server.
-
 
 Configuring Mattermost
 ----------------------

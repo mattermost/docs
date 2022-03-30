@@ -1,4 +1,4 @@
-Managing Team and Channel Members
+Managing team and channel members
 =================================
 
 System Admins can manage channel configuration in the System Console.
@@ -19,6 +19,16 @@ Teams
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
 
+.. |enterprise| image:: ../images/enterprise-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |professional| image:: ../images/professional-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in the Mattermost Professional subscription plan.
+
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
   :target: https://mattermost.com/download
@@ -33,97 +43,37 @@ To view and manage team information, navigate to **System Console > Teams**. Tea
 
 Select a team to view its configuration options.
 
-Team Profile
+Team profile
 ~~~~~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 The name and description of the team.
 
 System Admins can archive or unarchive the team from within **User Management > Teams > Team Management**. Archiving a team makes its contents inaccessible for all users. All related information is archived, including posts from the database. Before archiving a team, we recommend that you perform a database backup.
 
-Archiving a Team
+Archiving a team
 ^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Select **Archive Team**, then select **Save**. Select **Archive** when prompted to confirm the team archive.
 
 Alternatively, System Admins can use the mmctl ``mmctl team archive`` to archive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive>`__ for details.
 
-Unarchiving a Team
+Unarchiving a team
 ^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Select **Unarchive Team**, then select **Save**.
 
 Alternatively, System Admins can use the mmctl ``mmctl team restore`` to unarchive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-restore>`__ for details.
 
-Team Management
+Team management
 ~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, invitation limitations can be selected.
@@ -133,42 +83,12 @@ Groups
 
 |enterprise| |cloud| |self-hosted|
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 You can add and remove groups, as well as promote or demote group members to Team Admin/Member roles.
 
 Members
 ~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role. Use the role **Filter** to refine your search results. You can use one filter, or combine filters to search by multiple roles:
 
@@ -181,21 +101,6 @@ Channels
 --------
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 To view and manage channel information, navigate to **System Console > Channels**. Channels can be managed by **Group Sync** or **Manual Invites**. The type of management in use may affect the management options available for that channel. Use the **Filter** to refine your search results. You can use one filter, or combine filters to search by channel and management type:
 
@@ -212,70 +117,20 @@ Profile
 
 |all-plans| |cloud| |self-hosted|
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 The name and description of the channel. To archive the channel, select **Archive Channel > Save**. The channel is still searchable in the **Channels** list. To unarchive the channel, select **Unarchive Channel** and **Save**.
 
-Channel Management
+Channel management
 ~~~~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
-Channel Moderation
+Channel moderation
 ~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 Channel moderation settings allow Admins to restrict actions within specific channels. These actions include:
 
@@ -302,7 +157,7 @@ The availability of channel moderation settings can also be affected by existing
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
-**Create an Announcement Channel where only Channel Admins are able to post (read-only).**
+**Create an anouncement channel where only Channel Admins are able to post (read-only).**
 
 1. Create a new channel (either Public or Private).
 2. Navigate to **System Console > User Management > Channels**.
@@ -318,42 +173,12 @@ Groups
 
 |enterprise| |cloud| |self-hosted|
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 You can add and remove groups, as well as promote or demote group members to Team Admin/Member roles.
 
 Members
 ~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role. Use the role **Filter** to refine your search results. You can use one filter, or combine filters to search by multiple roles:
 

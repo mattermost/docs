@@ -1,5 +1,4 @@
-
-Deployment Solution Programs 
+Deployment solution programs 
 ============================
 
 Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions, including other open source projects as well as in commercial solutions.
@@ -39,7 +38,7 @@ Upgrade                                                   Yes
 
 Requirement details are outline below:
 
-Deployment Solution Program Requirements 
+Deployment solution program requirements 
 ----------------------------------------
 
 Installation 
@@ -61,16 +60,16 @@ Documentation
 
   Include the following information in text, markdown, HTML or other format. Square brackets [] indicate optional statements depending on the configuration of your solution:
  
-      This deployment solution installs [and upgrades] a Mattermost server to provide secure, private cloud messaging for teams and enterprises. More information is available at: https://about.mattermost.com
+      This deployment solution installs [and upgrades] a Mattermost server to provide secure, private cloud messaging for teams and enterprises. More information is available at: https://mattermost.com
  
       Following automated deployment, the following steps are required to make your system production-ready:
       
-      - [Configure SSL for Mattermost](https://about.mattermost.com/ssl-configuration/)
-      - [Configure SMTP email for Mattermost](https://about.mattermost.com/smtp-configuration/)
+      - [Configure SSL for Mattermost](https://docs.mattermost.com/install/config-ssl-http2-nginx.html)
+      - [Configure SMTP email for Mattermost](https://docs.mattermost.com/configure/smtp-email.html)
 
 2. **Unofficial deployment options should be documented**. Unofficial deployment configurations, such as use of Linux operating systems that are not officially supported, should be documented in the README.
 
-Security Updates 
+Security updates 
 ~~~~~~~~~~~~~~~~
 
 1. **Document commitment to providing security updates.** README or equivalent states `We highly recommend users subscribe to the Mattermost security updates email list. When notified of a security update, the maintainers of this deployment solution will make an effort to update to the secure version within 10 days.`
@@ -80,7 +79,7 @@ Security Updates
 Branding 
 ~~~~~~~~
 
-1. **Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://mattermost.org/brand-guidelines/) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials.
+1. **Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials.
 
 Upgrade 
 ~~~~~~~

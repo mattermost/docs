@@ -1,10 +1,10 @@
-AppConfig for EMM Solutions with Mattermost Mobile Apps
+AppConfig for EMM solutions with Mattermost mobile apps
 =======================================================
 
 What is AppConfig?
 ------------------
 
-AppConfig is a standard approach for app configuration and management introduced by the AppConfig Community, a group of leading EMM providers and app developers who have come together to make it easier for developers and customers to drive mobility in business. The community’s mission is to streamline the adoption and deployment of mobile enterprise applications by providing a standard approach to app configuration and management, building upon the extensive app security and configuration frameworks available in the OS. 
+AppConfig is a standard approach for app configuration and management introduced by the AppConfig Community, a group of leading EMM providers and app developers who have come together to make it easier for developers and customers to drive mobility in business. The community's mission is to streamline the adoption and deployment of mobile enterprise applications by providing a standard approach to app configuration and management, building upon the extensive app security and configuration frameworks available in the OS. 
 
 AppConfig provides an easy way to configure enterprise mobile applications with any of the EMM providers listed on the `AppConfig website <https://www.appconfig.org/members/>`__.
 
@@ -12,7 +12,7 @@ Mattermost mobile apps can be configured in your EMM solution using AppConfig wi
 
 .. _appconfig-table:
 
-Mattermost AppConfig Values
+Mattermost AppConfig values
 ---------------------------
 
 The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template <mattermost-specfile.xml>` of the configuration file for use with your EMM provider. 
@@ -22,7 +22,7 @@ The following table shows all the configuration options that can be sent from th
 +========================+=================================================================================================================================================================================================================+========+===============+==================+=============+==========================+
 | inAppPinCode           | Require users to authenticate as the owner of the phone before using the app. Prompts for fingerprint or passcode when the app first opens and when the app has been in the background for more than five minutes.| String | ``false``   | ``true | false`` | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| blurApplicationScreen  | Blur the app when it’s set to background to protect any confidential on-screen information. On Android, it also prevents taking screenshots of the app.                                                         | String | ``false``     | ``true | false`` | Yes         | Yes                      |
+| blurApplicationScreen  | Blur the app when it's set to background to protect any confidential on-screen information. On Android, it also prevents taking screenshots of the app.                                                         | String | ``false``     | ``true | false`` | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 | jailbreakDetection     | Disable app launch on jailbroken or rooted devices.                                                                                                                                                             | String | ``false``     | ``true | false`` | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
@@ -30,7 +30,7 @@ The following table shows all the configuration options that can be sent from th
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 | serverUrl              | Set a default Mattermost server URL.                                                                                                                                                                            | String |               | URL              | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| allowOtherServers      | Allow the user to change the above server URL.                                                                                                                                                                  | String | ``true``      | ``true | false`` | Yes         | Yes                      |
+| allowOtherServers      | Allow the user to change the above server URL. If set to true users will automatically connect when launching the app                                                                                                                                                                  | String | ``true``      | ``true | false`` | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 | username               | Set the username or email address to use to authenticate against the Mattermost Server.                                                                                                                         | String |               |                  | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
@@ -43,7 +43,7 @@ The following table shows all the configuration options that can be sent from th
 | inAppSessionAuth       | Use the app's internal browser for SSO instead of an external browser.                                                                                                                                          | String | ``false``     | ``true | false`` | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 
-Other AppConfig Settings
+Other AppConfig settings
 ------------------------
 
 As part of AppConfig, EMM administrators can set the following additional configuration options for the Mattermost mobile apps:

@@ -1,6 +1,6 @@
 .. _install-kubernetes-cluster:
 
-Setting Up a Kubernetes Cluster
+Setting Up a Kubernetes cluster
 -------------------------------
 
 Prerequisites
@@ -15,7 +15,7 @@ It’s recommended that you have a basic understanding of Kubernetes concepts (s
 
 If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
 
-Confirm Resource Requirements
+Confirm resource requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Running Mattermost in Kubernetes requires different resources based on your total number of users. The table below details the minimum Kubernetes cluster resources that Mattermost requires at different scales.

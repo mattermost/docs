@@ -1,4 +1,4 @@
-Advanced Permissions: Backend Infrastructure
+Advanced permissions: backend infrastructure
 =============================================
 
 |all-plans| |cloud| |self-hosted|
@@ -28,8 +28,8 @@ This document outlines the backend server infrastructure for permissions in Matt
   :backlinks: top
   :local:
   
-Entity Definitions
---------------------
+Entity definitions
+------------------
 
 Permissions
 ~~~~~~~~~~~~
@@ -61,21 +61,21 @@ A **context** is an instance of a scope. For example, a channel called "Develope
 When determining whether a user is allowed to carry out a given action in a given context, the union of the permissions of all roles that user has been assigned in the current context and its parent contexts is calculated. This enables permissions to cascade down the scope hierarchy. For example, if a users is granted the ``manage_public_channel_properties`` permission in a role in the system context, then the user has permissions to manage public channel properties in all channels, in all teams, of which they are a member.
 
 Schemes
-~~~~~~~~~
+~~~~~~~
 
 Schemes describe the default roles applied to users in a context, and all child contexts. Schemes are either defined specifically for a context, or if they are not specified, the relevant parts of the parent context’s scheme are applied, ultimately climbing the hierarchy to the System Scheme, which serves the purpose of providing the system-wide defaults. For example, if Team A does not have a team-scoped scheme defined, the System Scheme will provide the defaults for all contexts in Team A.
 
 Additionally, the lowest-scoped scheme always takes precedence in the context. For example, if Team B has a team-scoped scheme, that scheme takes precedence over the System Scheme defaults for all contexts in Team B. 
 
-Data Structure
-----------------
+Data structure
+--------------
 
 Permissions
 ~~~~~~~~~~~~
 
 Permissions in Mattermost are a property of the server code base and are not created or modified dynamically. The current set of permissions are as described in the table below.
 
-**Mattermost Permissions**
+**Mattermost permissions**
 
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Name (i18n)                                  | Scope   | Description                                                                                                                                                                                           |
@@ -231,14 +231,14 @@ Permissions in Mattermost are a property of the server code base and are not cre
 | manage_remote_clusters                       | system  | Add, remove, and view remote clusters for shared channels.                                                                                                                                            |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-``Roles`` Field
+``Roles`` field
 ~~~~~~~~~~~~~~~~
 
 Roles are applied to objects that represents that user’s membership in a context. These are referenced in the ``Roles`` field of the ``User``, ``TeamMember``, ``ChannelMember`` and ``Schemes`` Tables.
 
 In the ``TeamMember`` and ``ChannelMember`` tables, it's the ``Roles`` field that contains custom roles and the ``SchemeAdmin`` and ``SchemeUser`` booleans that indicate the member object should inherit the respective roles from the relevant scheme, either the default or custom scheme assigned to the relevant team.
 
-``Roles`` Table
+``Roles`` table
 ~~~~~~~~~~~~~~~~
 
 Roles are dynamic and user configurable, necessitating a database table with the following fields:
@@ -615,7 +615,7 @@ The following built-in roles and associated permissions are available:
 - create_public_channel
 - create_private_channel
 
-``Schemes`` Table
+``Schemes`` table
 ~~~~~~~~~~~~~~~~~~
 
 Schemes are dynamic and user configurable, necessitating a database table with the following fields:

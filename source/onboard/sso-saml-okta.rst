@@ -9,7 +9,7 @@ The following process provides steps to configure SAML 2.0 with Okta for Matterm
 
 .. include:: sso-saml-before-you-begin.rst
 
-Set Up a Connection App for Mattermost Single Sign-On
+Set Up a connection app for Mattermost Single Sign-On
 -----------------------------------------------------
 
 1. Sign in to Okta as an administrator.
@@ -22,13 +22,13 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_1_new_app.png
 
-5. Enter **General Settings** for the application, including **App name** and **App logo** (optional). It's recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one `from our page <https://mattermost.org/brand-guidelines/>`__.
+5. Enter **General Settings** for the application, including **App name** and **App logo** (optional). It's recommended to display the application icon to users, including in the Okta Mobile app. If you’d like to use a Mattermost logo for the application, you can download one `from our page <https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines>`__.
 
 	.. image:: ../../source/images/okta_2_general_settings.png
 
 6. Enter **SAML Settings**, including:
 
- - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
+ - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__.
  - **Audience URI:** For instance, ``mattermost``
  - **Name ID format:** ``unspecified``
  - **Application username:** ``Email``
@@ -43,7 +43,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_5_advanced_saml_settings.png
 
-9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our `documentation on SAML configuration settings <https://docs.mattermost.com/administration/config-settings.html#saml>`__. Email and username attributes are required. For SAML with Okta, an `ID attribute <https://docs.mattermost.com/administration/config-settings.html#id17>`__ is also required, and that ID must be mapped to ``user.id``. 
+9. Enter attribute statements used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our `documentation on SAML configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#saml>`__. Email and username attributes are required. For SAML with Okta, an `ID attribute <https://docs.mattermost.com/configure/configuration-settings.html#id-attribute>`__ is also required, and that ID must be mapped to ``user.id``. 
 
 	.. image:: ../../source/images/okta_6_attribute_statements.png
 
@@ -56,7 +56,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 11. Select **Finish**. 
 
-12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable `this configuration setting <https://docs.mattermost.com/administration/prev-config-settings.html#override-saml-bind-data-with-ad-ldap-information>`__ later when once setup is complete.
+12. In the Mattermost System Console, go to **Authentication > SAML 2.0**, then set **Override SAML bind data with AD/LDAP information** to **false** if currently set to **true**. You can re-enable `this configuration setting <https://docs.mattermost.com/configure/configuration-settings.html#override-saml-bind-data-with-ad-ldap-information>`__ later when once setup is complete.
 
 13. On the next screen, select the **Sign On** tab, then select **View Setup Instructions**.
 
@@ -70,7 +70,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_9_view_instructions.png
 
-Configure SAML Sign-in for Mattermost
+Configure SAML Sign-On for Mattermost
 --------------------------------------
 
 Start the Mattermost server and sign into Mattermost as a System Admin. Go to **System Console > Authentication > SAML 2.0**, then paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** field and select **Get SAML Metadata from IdP**.
@@ -107,7 +107,7 @@ Alternatively you can enter the following fields manually:
 
 8. (Optional) If you configured ``First Name`` Attribute and ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-Once complete, and to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
+Once complete, and to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement for your users to explain how the migration will work.
 

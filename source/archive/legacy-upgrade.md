@@ -30,8 +30,8 @@ If you're upgrading a server that's already running a supported version, See [Up
 **Upgrading from 3.0.0 and later**
 
 1. Download the latest version of Team Edition server and note any compatibility procedures:
-      1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
-      2. Download [the latest version of the Mattermost Server](https://mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
+      1. Review past and upcoming deprecation notices [listed on our website](https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features#definition-of-a-deprecated-feature).
+      2. Download [the latest version of the Mattermost Server](https://mattermost.com/deploy/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Team Edition**: `wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz`
 2. Stop the Mattermost server
       1. Consider posting an announcement to active teams about stopping the Mattermost server for an upgrade.
@@ -81,7 +81,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 **Upgrading from 3.0.0 and later**
 
 1. Download the latest version of Enterprise Edition server and note any compatibility procedures:
-      1. Review past and upcoming deprecation notices [listed on our website](https://about.mattermost.com/deprecated-features/).
+      1. Review past and upcoming deprecation notices [listed on our website](https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features#definition-of-a-deprecated-feature).
       2. Download [the latest version of the Mattermost Server](https://mattermost.com/download/). In the following command, replace `X.X.X` with the version that you want to download:
           - **Enterprise Edition:** `wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz`
 2. Stop the Mattermost server

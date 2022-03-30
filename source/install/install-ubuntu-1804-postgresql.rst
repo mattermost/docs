@@ -1,6 +1,6 @@
 .. _install-ubuntu-1804-postgresql:
 
-Installing PostgreSQL Database Server
+Installing PostgreSQL database server
 -------------------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.

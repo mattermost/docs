@@ -1,4 +1,4 @@
-Architecture Overview
+Architecture overview
 =====================
 
 |all-plans| |self-hosted|
@@ -13,7 +13,7 @@ Architecture Overview
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deployment/deployment.html>`__.
+This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deploy/deployment-overview.html>`__.
 
 .. toctree::
     :maxdepth: 2
@@ -34,7 +34,7 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 
 .. image:: ../images/architecture_basics.png
 
-Push Notification Service
+Push notification service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Mattermost `hosted push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__ and `compile their mobile applications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to use that service.
@@ -70,7 +70,7 @@ If a WSS connection is not available and HTTPS is substituted, the system will a
 
 .. image:: ../images/architecture_with_protocol.png
 
-Mattermost Services Ports
+Mattermost services ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following table lists the Mattermost services ports for Mattermost Server, push proxy, and mobile app clients. System Admins with clients that need to speak to the Mattermost server without a proxy can open specific firewall ports as needed.
@@ -113,7 +113,7 @@ The following table lists the Mattermost services ports for Mattermost Server, p
 
 In order to receive push notifications, your network must allow traffic on `port 5223 for iOS devices <https://support.apple.com/en-us/HT203609>`__ and `ports 5228-5230 for Android <https://firebase.google.com/docs/cloud-messaging/concept-options#messaging-ports-and-your-firewall>`__.
 
-High Availability and Scalability
+High Availability and scalability
 ---------------------------------
 
 Mattermost Enterprise supports:
@@ -135,7 +135,7 @@ Moreover, search replicas are also supported to handle search queries.
 
 .. image:: ../images/architecture_high_availability.png
 
-Reference Architectures
+Reference architectures
 -----------------------
 
 The following diagrams show the suggested architecture configurations enterprise deployments of Mattermost at different scales. These diagrams are meant as guidelines for typical Mattermost deployments. Hardware and infrastructure requirements can vary significantly based on usage and policies.
@@ -146,37 +146,37 @@ Each generalized diagram represents a full High Availability deployment across a
 
 Each AWS diagram represents a full High Availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
 
-5,000 Users on Enterprise - General
+5,000 users on Enterprise - General
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kUsers.png
 
-5,000 Users on Enterprise - AWS
+5,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment5kaws.png
 
-10,000 Users on Enterprise - General
+10,000 users on Enterprise - General
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kUsers.png
 
-10,000 Users on Enterprise - AWS
+10,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment10kaws.png
 
-25,000 Users on Enterprise - General
+25,000 users on Enterprise - General
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kUsers.png
 
-25,000 Users on Enterprise - AWS
+25,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment25kaws.png
 
-50,000 Users on Enterprise - AWS
+50,000 users on Enterprise - AWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/MattermostDeployment50kaws.png

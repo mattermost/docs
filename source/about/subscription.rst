@@ -1,4 +1,4 @@
-Subscription Overview
+Subscription overview
 =====================
 
 Mattermost offers features through `Starter, Professional, or Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or cloud, and the plan as Starter, Professional, or Enterprise. 
@@ -7,7 +7,7 @@ Mattermost self-hosted deployments require a license to be applied to access fea
 
 Mattermost Cloud is a software-as-as-service. You can simply sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
 
-General Frequently Asked Questions
+General frequently asked questions
 -----------------------------------
 
 Are my credit card details safe?

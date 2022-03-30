@@ -1,6 +1,6 @@
 .. _guest-accounts:
 
-Guest Accounts
+Guest accounts
 ==============
 
 |enterprise| |professional| |cloud| |self-hosted|
@@ -27,7 +27,7 @@ Guest Accounts
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-Guest Accounts are a way to collaborate with individuals (such as vendors and contractors) outside of your organization by controlling their access to channels and team members. For example, Guest Accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
+Guest accounts are a way to collaborate with individuals (such as vendors and contractors) outside of your organization by controlling their access to channels and team members. For example, guest accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 
 Guests can:
 
@@ -35,18 +35,18 @@ Guests can:
 - Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)
 - Favorite channels
 - Mute channels
-- Update their account settings
+- Update their profile
 
 Guests cannot:
 
-- Discover Public channels
+- Discover public channels
 - Join open teams
-- Create Direct Messages or Group Messages with members who aren’t within the same channel
+- Create direct messages or group messages with members who aren’t within the same channel
 - Invite people
 
 Additionally, guests are not automatically added to the default ``Town-square`` and ``Off-topic`` channels upon logging in and need to be invited/added to them manually.
 
-Enabling Guest Accounts
+Enabling guest accounts
 ------------------------
 
 1. Go to **System Console > Authentication > Guest Access**.
@@ -58,16 +58,16 @@ Enabling Guest Accounts
 
   If you have team domain restrictions, you also need to add your guest domain in **System Console > User Management > Teams**. Select a team, then enable **Only specific email domains can join this team**.
 
-Guest Authentication
+Guest authentication
 ---------------------
 
 Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
 
 Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`_ and `SAML Single-Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`__.
 
-Converting a member user to a guest will not change the channels they are in. However, they will be restricted from discovering additional channels and are unable to Direct Message/Group Message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
+Converting a member user to a guest will not change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
 
-Inviting Guests to the Mattermost Server via Email
+Inviting guests to the Mattermost server via email
 ---------------------------------------------------
 
 Guests can be invited into one or more Mattermost channels within a team by System Admins and other roles that have the correct permission to invite guests. A guest can be invited into channels on multiple teams.
@@ -87,7 +87,7 @@ To invite guests into one or more Mattermost channels:
 
 .. image:: ../images/Guest_Invite_Screen.png
 
-Configuring AD/LDAP Authentication
+Configuring AD/LDAP authentication
 ----------------------------------
 
 When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
@@ -101,7 +101,7 @@ If a Mattermost guest user has the ``guest`` role removed in the AD/LDAP system,
 
 When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost System Admin. 
 
-Configuring SAML 2.0 Authentication
+Configuring SAML 2.0 authentication
 ------------------------------------
 
 When enabled, the **Guest Attribute** in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
@@ -115,10 +115,10 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost System Admin.
 
-Guest Permission Settings
+Guest permission settings
 -------------------------
 
-In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the System Admins can invite guests. 
+In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the System Admins can invite guests.
 
 There are `additional permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ in Mattermost Enterprise that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
 
@@ -127,31 +127,31 @@ There are `additional permissions <https://docs.mattermost.com/onboard/advanced-
  - Post reactions
  - Create private channels with members they are allowed to collaborate with
 
-Guest Identification
+Guest identification
 ---------------------
 
 Guests are identified with a **Guest** badge. This badge is visible in various places on the interface and mobile apps, such as on a guest’s profile and next to their name on user lists, including @mentions. When guests are added to a channel, a system message informs other channel members that the added user is a guest.
 
-Channels containing guests will have their header automatically updated with a message stating: *This channel has guests*.
+Channels containing guests display the message: *This channel has guests*.
 
 .. image:: ../images/Guest_Badges.png
 
-Managing Guests
+Managing guests
 ---------------
 
-Adding Guests to Additional Channels
+Adding guests to additional channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Users with the permissions to invite guests can **Invite Guests** to additional channels. A system message will be posted in the channels to let other members know a guest user has been added.
 
-Removing Guests from Channels and Teams
+Removing guests from channels and teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Guests can be removed from a channel through **Manage members**, or by using the ``/kick`` or ``/remove`` slash commands.
 
 When a guest has been removed from all channels within a team, and if they belong to other teams, they will default into the last channel on the last team they have accessed. If they are removed from all channels on all teams, they'll be taken to a screen letting them know they have no channels assigned.
 
-Promoting and Demoting User Roles
+Promoting and demoting user roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 System Admins can demote a member to a guest by updating their role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. 
@@ -164,36 +164,36 @@ System Admins can also promote a guest to member by updating their role in **Sys
   
   You can filter the list in **System Console > User Management > Users** to view all guests in the system.
 
-Disabling Guest Accounts
+Disabling guest accounts
 ------------------------
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access**, then set **Enable Guest Access** to **False**. To deactivate individual Guest Accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual Guest Accounts by selecting **Activate**.
+To disable the guest accounts feature, go to **System Console > Authentication > Guest Access**, then set **Enable Guest Access** to **False**. To deactivate individual guest accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual Guest Accounts by selecting **Activate**.
 
 From Mattermost Server version 5.18 and in Mattermost Cloud:
 
-- Wwhen a single Guest Account is deactivated or the Guest Account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the Guest Account feature leaves current Guest Accounts as active until they are manually deactivated.
-- If you're using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
-- Similarly, for SAML, when the Guest Access setting is disabled, the Guest Attribute and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted to a member user upon their next login.
+- Wwhen a single guest account is deactivated or the guest account feature is disabled, guests are marked as ``inactive``, are logged out of Mattermost, and all guest sessions are revoked. In Mattermost Server versions prior to 5.18, disabling the guest account feature leaves current guest accounts as active until they are manually deactivated.
+- If you're using AD/LDAP and the guest access setting is disabled, the ``guest`` filter and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the filter as an authentication method. If a previous guest's credentials match the user filter (the only filter which is active when guest access is disabled), they will be reactivated and promoted to a member user upon their next login.
+- Similarly, for SAML, when the guest access setting is disabled, the ``guest`` attribute and existing guest users in System Console are deactivated. Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's credentials match the user attribute (the only attribute which is active when guest access is disabled), they will be reactivated and promoted to a member user upon their next login.
 
-You can disable individual guest accounts in **System Console > User Management** via **Manage Members**. When a single Guest Account is disabled or the feature is disabled, the guest will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
+You can disable individual guest accounts in **System Console > User Management** via **Manage Members**. When a single guest account is disabled or the feature is disabled, the guest will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
 
-Reinstating Guest Accounts
+Reinstating guest accounts
 --------------------------
 
-When Guest Access is re-enabled for AD/LDAP, the Guest Filter is reinstated. 
+When guest access is re-enabled for AD/LDAP, the ``guest`` filter is reinstated. 
 
-New users matching the Guest Filter will be authenticated as new guest users on login.
+New users matching the ``guest`` filter will be authenticated as new guest users on login.
 
-Previous guest users will be activated with the next synchronization. If their credentials still match the Guest Filter, they will retain their guest status. If they no longer match the Guest Filter but do match the User Filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when Guest Access was disabled, and now are identified by the Guest Filter once again, they will automatically be demoted to Guest upon their login.
+Previous guest users will be activated with the next synchronization. If their credentials still match the ``guest`` filter, they will retain their guest status. If they no longer match the ``guest`` filter but do match the ``user`` filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when guest access was disabled, and now are identified by the ``guest`` filter once again, they will automatically be demoted to Guest upon their login.
 
-Similarly, for SAML, when Guest Access is re-enabled, the SAML Guest Attribute is reinstated. New users matching the Guest Attribute will be authenticated as new guest users on login.
+Similarly, for SAML, when guest access is re-enabled, the SAML ``guest`` attribute is reinstated. New users matching the ``guest`` attribute will be authenticated as new guest users on login.
 
-Previous guest users will be activated with the next synchronization.  If their credentials still match the Guest Attribute, they will retain their guest status. If they no longer match the Guest Attribute but do match the User Filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when Guest Access was disabled, and now are identified by the Guest Attribute once again, they will automatically be demoted to Guest upon their login.
+Previous guest users will be activated with the next synchronization. If their credentials still match the ``guest`` attribute, they will retain their guest status. If they no longer match the ``guest`` attribute but do match the ``user`` filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when guest access was disabled, and now are identified by the ``guest`` attribute once again, they will automatically be demoted to guest upon their login.
 
 Frequently Asked Questions
 ---------------------------
 
-How am I charged for Guest Accounts?
+How am I charged for guest accounts?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Guests are charged as a user seat.
@@ -211,12 +211,12 @@ Currently, you cannot. This feature may be added at a later stage.
 Can MFA be applied selectively?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If MFA is enforced for your users, it can be applied to Guest Accounts. Guests can configure MFA in **Account Settings > Security**. If MFA is not enforced for your users, it can't be applied to Guest Accounts.
+If MFA is enforced for your users, it can be applied to guest accounts. Guests can configure MFA in by going to their avatar and selecting **Profile > Security**. If MFA is not enforced for your users, it can't be applied to guest accounts.
 
-Has the Guest Accounts feature been reviewed by an external security firm?
+Has the guest accounts feature been reviewed by an external security firm?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Guest Account feature was reviewed by the Mattermost security team. We do not have an external firm review scheduled but will include this feature in future reviews.
+The guest account feature was reviewed by the Mattermost security team. We do not have an external firm review scheduled but will include this feature in future reviews.
 
 How can I validate my guests' identity?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

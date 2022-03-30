@@ -1,4 +1,4 @@
-Backup and Disaster Recovery 
+Backup and disaster recovery 
 =============================
 
 |all-plans| |self-hosted|
@@ -41,7 +41,7 @@ Please note that to make a 'clean' backup you need to stop Mattermost during the
 
 To restore a Mattermost instance from backup, restore your database, ``config.json`` file, and optionally locally stored user files into the locations from which they were backed up.
 
-Disaster Recovery 
+Disaster recovery 
 -----------------
 
 An appropriate disaster recovery plan weighs the benefits of mitigating specific risks against the cost and complexity of setting up disaster recovery infrastructure and automation.

@@ -1,7 +1,7 @@
-Client-side Data Storage FAQ
+Client-side data storage FAQ
 ============================
 
-Mobile Web Experience
+Mobile web experience
 ---------------------
 
 **1. What data is stored?**
@@ -12,18 +12,17 @@ Mobile Web Experience
   If you log out or your account is deactivated, the data in the browser cache may reside until the cache expires or the temporary file system store on the operating system is cleared, depending on your operating system.
 
 
-Mobile App Experience
+Mobile app experience
 ---------------------
 
-To speed up initial loading time, Mattermost mobile apps cache data locally on the device for v1.1 and later. Below are common questions on cached data: 
+To speed up initial loading time, Mattermost mobile apps cache data locally on the device for v1.1 and later. Below are common questions on cached data:
 
 **1. What data is stored locally with the new mobile apps on a mobile device?**
-
   The data that can be found on the device depends solely on whether or not the user is logged in to the Mattermost server, and is independent of the state of the device's connection or the state of the app. While logged in, anything that the user is normally allowed to see is eligible for storage on the device, which includes the following content:
 
-  - messages
-  - files and images that are attached to messages
-  - avatars, usernames, and email addresses of people in the currently open channel
+  - Messages
+  - Files and images that are attached to messages
+  - Avatars, usernames, and email addresses of people in the currently open channel
 
   In addition, metadata that the app uses for keeping track of its operations is also cached. The metadata includes user IDs, channel IDs, team IDs, and message IDs.
   
@@ -33,7 +32,7 @@ To speed up initial loading time, Mattermost mobile apps cache data locally on t
   Push notification storage is managed by the operating system on the device. Mattermost can be configured to send limited amounts of information that does not include the message text or channel name, and it can also be configured to not send push notifications at all.
 
 **3. Where is the data stored and how is that data protected?**
-  The data is stored in the app's local storage. It is protected by the security measures that a device normally provides to the apps that are installed on it.
+  The data is stored in the app's local storage. It's protected by the security measures that a device normally provides to the apps that are installed on it.
 
 **4. How long is the data stored?**
   Data is stored until the user logs out, or until it is purged during normal cache management. Deactivating a user account forces a logout and subsequent purging of data from the device.
@@ -47,11 +46,11 @@ To speed up initial loading time, Mattermost mobile apps cache data locally on t
 **7. What data is stored on a mobile device after an account is deactivated in the following cases:**
   a. *The mobile device is connected with app running.*
 
-    All the data listed in Questions 1 and 2, but within 60 seconds after an account is deactivated on the server, all app data is deleted from the cache.
+    All the data listed in questions 1 and 2, but within 60 seconds after an account is deactivated on the server, all app data is deleted from the cache.
 
   b. *The mobile device is disconnected with app running.*
 
-    All the data listed in Questions 1 and 2, but within 60 seconds after the device reconnects, all app data is deleted from the cache.
+    All the data listed in questions 1 and 2, but within 60 seconds after the device reconnects, all app data is deleted from the cache.
 
   c. *The mobile device is connected with the app not running.*
 

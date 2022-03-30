@@ -1,14 +1,286 @@
-# Mattermost Cloud Changelog
+# Mattermost Cloud changelog
 
 This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/get-started/), an enterprise-grade SaaS offering hosted by Mattermost.
 
 Latest Mattermost Cloud releases:
-- [Release 2021-12-08](#release-2021-12-08)
-- [Release 2021-12-01](#release-2021-12-01)
-- [Release 2021-11-23](#release-2021-11-23)
-- [Release 2021-11-11](#release-2021-11-11)
-- [Release 2021-11-10](#release-2021-11-10)
-- [Release 2021-10-27](#release-2021-10-27)
+
+- [Release 2022-03-30](#release-2022-03-30)
+- [Release 2022-03-16](#release-2022-03-16)
+- [Release 2022-03-08](#release-2022-03-08)
+- [Release 2022-03-02](#release-2022-03-02)
+- [Release 2022-02-16](#release-2022-02-16)
+- [Release 2022-02-10](#release-2022-02-10)
+
+## Release 2022-03-30
+
+### Improvements
+
+#### User Interface (UI)
+ - For Apps, calls are now separated between submit, form, refresh and lookup calls. If any users have created their own Apps, they have to be updated to the new system.
+ - Logs from third-party libraries are now included in the default logging configuration.
+ - Added performance metrics related to plugin loading on page load.
+ - Changed the Mattermost indigo theme to match the dark theme in code blocks.
+ - Added a ``Automatically Follow Threads`` configuration setting to the **System Console** to expose the ``threadAutoFollow`` config setting to the User Interface.
+ - Updated in-product links to legacy domain about.mattermost.com.
+ - The **More Actions** menu was restructured.
+ - Added a copy button when hovering over code blocks.
+ - Added a right-hand side panel to see and interact with channel information.
+ - Added a post menu item to copy raw text.
+ - Added additional performance debugging settings.
+ - The default for ``ThreadAutoFollow`` has been changed to ``true``. This does not affect existing configurations where this value is already set to ``false``.
+
+#### Performance
+ - Improved performance when clearing notifications with Collapsed Reply Threads enabled.
+
+#### Bug Fixes
+ - Fixed an issue where ``ThreadStore.GetThreadsForUser`` did not count correctly when no team ID was specified.
+ - Fixed an issue where ``zip`` file creation failed when adding attachments.
+ - Fixed an issue where emoji short codes written in Markdown were not added to recently used emojis.
+ - Fixed the positioning of SVGs in admin onboarding when the screen doesn't have a previous button.
+ - Fixed an issue with the displayed channel name in the channel tutorial tip.
+ - Fixed an issue with the clickable area for emojis in the emoji picker to match the interface.
+ - Fixed an issue where usernames with periods in the channel switcher input showed Group Messages over matching Direct Messages.
+ - Fixed an issue on Collapsed Reply Threads compact message view where clicking on the thread footer avatar did not open the profile modal.
+
+### Known Issues
+ - The archived channels search doesn't work as expected [MM-42889](https://mattermost.atlassian.net/browse/MM-42889).
+ - Actions menu has inconsistent shading on hover on dark theme [MM-42869](https://mattermost.atlassian.net/browse/MM-42869).
+ - Actions menu: "x" and the link inside the tooltip don't work [MM-42769](https://mattermost.atlassian.net/browse/MM-42769).
+ - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-03-16
+
+### Compatibility
+ - Updated Safari recommended minimum version to v14.1+.
+
+### Improvements
+
+#### User Interface (UI)
+ - The support email field has moved from **Customization** to **Notifications** in the System Console. Also, a support email is now required when configuring email notifications.
+ - The ping endpoint can now receive a device ID, which will report whether the device is able to receive push notifications.
+ - Added a loading indicator to the **Threads** global list each time more posts are fetched on infinite scroll.
+ - Added search guidance to the **Threads** global list when no more posts can be loaded. This is only shown if you’ve scrolled to load older posts and reach the end of the list.
+ - Added support for inline editing of posts.
+ - Added accessibility support for custom statuses.
+ - Feature flags are now automatically refreshed when the server undergoes a restart.
+ - Added nested previews for permalinks.
+ - Added a sort order to the category API, and included category data in the websocket category update event.
+ - Updated the plugin registry's ``registerCallButtonAction`` method to allow for displaying custom calls buttons in the channel header.
+ - Added a debugging setting to turn off client-side plugins for the current user.
+ - Tooltip is now only displayed when text is too long in the announcement banner.
+ - When restricting direct messages to users on the same team, bots are now excluded from that restriction.
+
+#### Performance
+ - Improved performance of Collapsed Reply Threads when backend is enabled but frontend is disabled.
+ - Fixed a potential memory leak in the sidebar when using accessibility hotkeys.
+ - Virtualized the emoji picker and added other performance improvements to the emoji picker.
+ - Improved the performance of storing users in webapp.
+ - Fixed a small memory leak in the System Console.
+
+#### Bug Fixes
+ - Fixed a scan error on column name "LastRootPostAt": converting NULL to int64.
+ - Fixed an issue where selecting a custom status from Recent statuses used the original expiration time.
+ - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
+ - Fixed an issue where moving up or down in the channel switcher didn’t work as expected when Global Threads was in the background.
+ - Fixed an issue where pressing ENTER opened the onboarding tutorial tip.
+ - Fixed an issue where some permission checkboxes had been moved to different categories in the System Console.
+ - Fixed an issue where a blank screen occurred upon leaving a currently open unread channel with the channel unread grouping enabled.
+ - Fixed an issue related to disabling and re-enabling Custom Terms of Service.
+ - Fixed an issue where channel links on hover overlapped the channels menus.
+ - Fixed the positioning of the post menu in mobile web view.
+ - Fixed an issue where closing the keyboard shortcut modal by "CTRL/CMD + /" didn’t work.
+ - Fixed an issue where the channel keyboard navigation was broken in the Threads view.
+
+### Known Issues
+ - In compact message view, the inline post edit help text and emoji picker are not aligned [MM-42402](https://mattermost.atlassian.net/browse/MM-42402).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-03-08
+
+### Bug Fixes
+ - Fixed an issue where imports failed when the channel display name was empty.
+
+## Release 2022-03-02
+
+### Highlights
+
+#### Custom User Groups
+ - Added the APIs and app, store, and authorization methods to create and delete custom groups and to add and remove custom group members.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a new onboarding experience for first System Admin user.
+ - Added a dashboard that displays the health of the server.
+ - Added new tutorial tours for Channels, Boards and Playbooks to help orient first time users.
+ - Added a new plugin registry entry to append menu items to the user guide dropdown.
+ - Removed extra telemetry events that were tracked during page loads.
+ - Added a feature card slide for Playbooks.
+ - Removed ``admin-advisor`` bot's ability to notify admins about missing support email.
+
+#### Performance
+ - Improved perceived typing performance by moving heavy code around and effective memoization related to the textbox component.
+ - Fixed a memory leak caused by the post textbox.
+
+#### Bug Fixes
+ - Fixed an issue with clicking images in the message attachment.
+ - Fixed an issue that caused Rudder to create their cookies on the top-level domain when Mattermost was installed on a subdomain.
+ - Fixed an issue where **Total Posts** and **Active Users With Posts** graphs did not render in **System Console** > **Team Statistics**.
+ - Fixed an issue where telemetry events attempted to get sent even when blocked by an ad blocker.
+ - Fixed an issue where the channel switcher stopped showing search results when the first few characters were removed.
+ - Fixed an issue where notification sounds didn't trigger on the Desktop App for new accounts.
+ - Fixed an issue where users got multiple sounds for a single notification on the Linux Desktop App.
+ - Fixed an issue where posting frequent messages to followed threads caused jittery typing.
+ - Fixed an issue where the **Add to channel** permission was available in private channels for non-admin users.
+
+### Known Issues
+ - Pressing Enter opens the onboarding tutorial tip [MM-42188](https://mattermost.atlassian.net/browse/MM-42188).
+ - Some Permission checkboxes have been moved to different categories in the System Console [MM-42020](https://mattermost.atlassian.net/browse/MM-42020).
+ - Unread channels names and sidebar item render on top of channel options menu [MM-41952](https://mattermost.atlassian.net/browse/MM-41952).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-02-16
+
+### Compatibility
+ - Updated the recommended minimum supported Firefox version to v91+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Users are now able to use the channel switcher to search channels across teams if the users are part of more than one team.
+ - Clarified in-product error string "Oops!" as "Unable to continue" for both translators and target audiences in cases where a user doesn't have sufficient permissions to add users or guests.
+ - Removed incorrect in-product string text from the **Send full message contents** email notification option description displayed via **System Console > Site Configuration > Notifications**.
+ - Added the ability to send an unsanitized user to the source user on ``user_updated`` event.
+ - In the compact view, the sender's username is now always shown on posts.
+ - Added a **Create board** button to the Channel intro header.
+ - The post menu is now only rendered on the root post on hover over.
+ - Updated a library used for storing drafts and other data in browser storage.
+ - Updated Playbooks version to 1.24.1.
+ - Update Boards version to 0.14.0.
+ - Enabled performance telemetry tracking for production deployments not running in developer mode. This telemetry tracking is disabled when telemetry is toggled off.
+
+#### Performance
+ - Reduced the number of menu components listening for keyboard and mouse events.
+ - Re-rendering of ``CustomStatusEmoji`` component is now avoided on post hovering.
+ - Removed the collapsed sidebar menu from the DOM on sidebar collapse and expand.
+ - Re-rendering of ``TextBox`` links component below the post box while typing is now avoided.
+
+#### Plugins
+ - Added an ``OnInstall()`` plugin hook.
+ - Added an ``OnSendDailyTelemetry()`` plugin hook.
+
+### Bug Fixes
+ - Fixed an issue where the reply notification setting was still in effect even when Collapsed Reply Threads was enabled.
+ - Fixed an issue where running ``mmctl config migrate`` reset the configuration settings to defaults if the settings were already in the database.
+ - Fixed an issue where the custom status menu option was missing the "x" to clear status.
+ - Fixed an issue where the password reset link was valid for 1 hour instead of 24 hours.
+ - Fixed an issue where the Mattermost import failed if an export contained a soft-deleted team.
+ - Fixed an issue where search results in the right-hand side did not clear when changing screens from file results to any other.
+
+### Known Issues
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-02-10
+
+### Bug Fixes
+ - Fixed an issue where an emoji import failed when the emoji name conflicted with a system emoji.
+
+## Release 2022-02-03
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated prepackaged Boards version to 0.12.1.
+ - Added Boards support for Global Retention Policy.
+ - Added Collapsed Reply Threads (Beta) tour functionality.
+ - Added the current product name information to invoices.
+ - Added support for metered billing invoices.
+ - Added a keyboard shortcut to open and expand the right-hand pane.
+
+### Bug Fixes
+ - Fixed an issue where the user menu header was visible when custom statuses were disabled.
+ - Fixed an issue where the markdown **Preview** link was not hidden in read-only channels.
+ - Fixed an issue where Cloud admins were unable to download an invoice via the Desktop App.
+ - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
+ - Fixed an issue with Collapsed Reply Threads (Beta) where clearing a deleted root post left the right-hand side blank.
+ - Fixed an issue where the **Add** channel member button text was cut off in Safari.
+
+### Known Issues
+ - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-01-27
+
+### Bug Fixes
+ - Fixed an issue where replying to posts, pinning posts, and editing posts did not work.
+
+## Release 2022-01-25
+
+### Improvements
+
+#### User Interface (UI)
+ - Invite to team modal now auto-focuses its email search input.
+ - Updated "Terms of Service" terminology to "Terms of Use" product-wide.
+ - Updated **Account Settings** terminology to **Settings**.
+ - Added Accept-Language header to generate link previews in the default Server language.
+ - The **Invite Members** button is now hidden when the Direct Message category is collapsed.
+
+#### Administration
+ - Improved plugins performance by re-initializing only upon plugin configuration changes.
+
+### Bug Fixes
+ - Fixed an issue where the user avatar wasn’t removed from the participants list after the user’s only post in a thread was deleted.
+ - Fixed an issue with the exit animation on the invitation modal.
+ - Fixed an issue where the file preview modal info bar showed the channel id instead of the channel name for Direct Messages.
+ - Fixed an issue with post hover menu overlap.
+ - Changed Client4 to properly set Content-Type as application/json on API calls.
+ - Fixed an issue to add a loader when fetching data from the backend in the channel switcher if there are no results matching local data.
+ - Fixed an issue where the **Get a Public Link** button in the file preview modal was hidden if the image was an external link.
+ - Fixed an issue where the click effect on **Copy** invite link button was incorrect.
+ - Reinstalling a previously-enabled plugin now correctly reports enabled status as false.
+ - Fixed an issue where the Ctrl/Cmd+Shift+A hotkey to open **Settings** didn't work in desktop view.
+ - Fixed an issue where the "Leave Channel" button didn't work from the channel sidebar 3-dot menu when clicking on it a second time.
+
+### Known Issues
+ - Announcement banner can cause the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).
+ - Some plugin full screen modals are broken [MM-40625](https://mattermost.atlassian.net/browse/MM-40625).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - "New Replies" banner is displayed in the right-hand side for a thread that is entirely visible [MM-40317](https://mattermost.atlassian.net/browse/MM-40317).
+ - Member type is missing from autocomplete [MM-38989](https://mattermost.atlassian.net/browse/MM-38989).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - ``CMD+/`` does not close the shortcuts modal [MM-38971](https://mattermost.atlassian.net/browse/MM-38971).
+ - ``CTRL/CMD + SHIFT + A`` shortcut does not open **Settings** [MM-38236](https://mattermost.atlassian.net/browse/MM-38236).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-01-11
+
+### Bug Fixes
+ - Fixed an issue where the license expired announcement banner was unexpectedly displaying for Cloud workspaces.
 
 ## Release 2021-12-08
 
@@ -22,7 +294,7 @@ Latest Mattermost Cloud releases:
  - Added a general performance fix for loading the web application and typing.
  - Improved performance while typing by moving some autocomplete layout calculations.
  - Improved performance by reducing DOM usage during render.
- - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+ - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel has guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
 
 ### Bug Fixes
  - Fixed slow channel loading for instances with website link previews enabled.

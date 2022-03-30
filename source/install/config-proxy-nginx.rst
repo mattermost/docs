@@ -1,6 +1,6 @@
 .. _config-proxy-nginx:
 
-Configuring NGINX as a proxy for Mattermost Server
+Configuring NGINX as a proxy for Mattermost server
 --------------------------------------------------
 
 NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
@@ -152,7 +152,7 @@ By default, the Mattermost server accepts connections on port 8065 from every ma
 
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
 
-NGINX Configuration FAQ
+NGINX configuration FAQ
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Why are Websocket connections returning a 403 error?

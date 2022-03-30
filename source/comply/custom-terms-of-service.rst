@@ -1,6 +1,6 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service
+Custom terms of service
 =======================
 
 |enterprise| |cloud| |self-hosted|
@@ -24,7 +24,7 @@ Custom Terms of Service
 
 System Admins can outline custom Terms of Service for their team members to accept before they can access Mattermost on web, desktop, or mobile.
 
-Configuring Terms of Service
+Configuring terms of service
 ----------------------------
 
 To enable custom terms of service:
@@ -49,7 +49,7 @@ What happens if I update my terms of service text?
 
 There will be no impact to your end users. Users will simply be required to accept the new terms on next login or page refresh.
 
-What happens if a user doesn't accept the Terms of Service?
+What happens if a user doesn't accept the terms of service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users won't be able to log in if they don't accept the Terms of Service.
