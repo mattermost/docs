@@ -21,6 +21,7 @@ Latest Mattermost Mobile Apps releases:
  - Apps calls are now separated between submit, form, refresh and lookup calls.
 
 ### Improvements
+ - Users are now taken directly to the SSO login if only one SSO login method is enabled.
  - Calls are now enabled on mobile if the server has Calls enabled.
  - For Calls, added "raise hand" functionality and a screensharing icon.
  - Added a speakerphone button to the Calls interface.
