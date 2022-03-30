@@ -4,11 +4,130 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v5.37. 
 
 Latest Mattermost Releases:
+- [Release v6.6 - Feature Release](#release-v6-6-feature-release)
 - [Release v6.5 - Feature Release](#release-v6-5-feature-release)
 - [Release v6.4 - Feature Release](#release-v6-4-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
-- [Release v6.2 - Feature Release](#release-v6-2-feature-release)
 - [Release v5.37 - Extended Support Release](#release-v5.37-extended-support-release)
+
+## Release v6.6 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2022-04-16**
+
+### Compatibility
+ - Updated Safari recommended minimum version to v14.1+.
+
+### Important Upgrade Notes
+ - For Apps, calls are now separated between submit, form, refresh and lookup calls. If any users have created their own Apps, they have to be updated to the new system.
+ - The default for ``ThreadAutoFollow`` has been changed to ``true``. This does not affect existing configurations where this value is already set to ``false``.
+
+**IMPORTANT:** If you upgrade from a release earlier than v6.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Actions Restructure
+ - The **More Actions** menu was restructured.
+
+#### Channel Info
+ - Added a right-hand side panel to see and interact with channel information.
+
+#### Inline Post Editing
+ - Added support for inline editing of posts.
+
+#### Nested Permalink Previews
+ - Added nested previews for permalinks.
+
+#### Playbook Updates
+ - 
+
+#### Boards Updates
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed the Mattermost indigo theme to match the dark theme in code blocks.
+ - Updated in-product links to legacy domain about.mattermost.com.
+ - Added a copy button when hovering over code blocks.
+ - Added a post menu item to copy raw text.
+ - Added a loading indicator to the **Threads** global list each time more posts are fetched on infinite scroll.
+ - Added search guidance to the **Threads** global list when no more posts can be loaded. This is only shown if you’ve scrolled to load older posts and reach the end of the list.
+ - Added accessibility support for custom statuses.
+ - Tooltip is now only displayed when text is too long in the announcement banner.
+ - When restricting direct messages to users on the same team, bots are now excluded from that restriction.
+ 
+#### Performance
+ - Improved performance when clearing notifications with Collapsed Reply Threads enabled.
+ - Improved performance of Collapsed Reply Threads when backend is enabled but frontend is disabled.
+ - Fixed a potential memory leak in the sidebar when using accessibility hotkeys.
+ - Virtualized the emoji picker and added other performance improvements to the emoji picker.
+ - Improved the performance of storing users in webapp.
+ - Fixed a small memory leak in the **System Console**.
+
+#### Plugins
+ - Updated the plugin registry's ``registerCallButtonAction`` method to allow for displaying custom calls buttons in the channel header.
+ - Added a debugging setting to turn off client-side plugins for the current user.
+ - Added performance metrics related to plugin loading on page load.
+
+#### Administration
+ - Improved the license upload flow.
+ - The Start Trial CTA presents a modal exposing the benefits the client gets by starting the trial, encouraging Admins to request a trial license and engage them with the product.
+ - A new field was added to the client configuration to let clients know the database schema version of the server. The applied database migrations have also been added to the **System Console**.
+ - Added a ``Automatically Follow Threads`` configuration setting to the **System Console** to expose the ``threadAutoFollow`` config setting to the User Interface.
+ - An error is now shown on the email invitation modal if SMTP is not configured but email invitations are ``true``.
+ - Logs from third-party libraries are now included in the default logging configuration.
+ - Added additional performance debugging settings.
+ - The support email field has moved from **Customization** to **Notifications** in the System Console. Also, a support email is now required when configuring email notifications.
+ - The ping endpoint can now receive a device ID, which will report whether the device is able to receive push notifications.
+ - Feature flags are now automatically refreshed when the server undergoes a restart.
+ - Added a sort order to the category API, and included category data in the websocket category update event.
+
+### Bug Fixes
+ - Fixed an issue where ``ThreadStore.GetThreadsForUser`` did not count correctly when no team ID was specified.
+ - Fixed an issue where ``zip`` file creation failed when adding attachments.
+ - Fixed an issue where emoji short codes written in Markdown were not added to recently used emojis.
+ - Fixed the positioning of SVGs in admin onboarding when the screen doesn't have a previous button.
+ - Fixed an issue with the displayed channel name in the channel tutorial tip.
+ - Fixed an issue with the clickable area for emojis in the emoji picker to match the interface.
+ - Fixed an issue where usernames with periods in the channel switcher input showed Group Messages over matching Direct Messages.
+ - Fixed an issue on Collapsed Reply Threads compact message view where clicking on the thread footer avatar did not open the profile modal.
+ - Fixed a scan error on column name "LastRootPostAt": converting NULL to int64.
+ - Fixed an issue where selecting a custom status from Recent statuses used the original expiration time.
+ - Fixed an issue that caused a gap to appear on the left-hand side in products using the team sidebar.
+ - Fixed an issue where moving up or down in the channel switcher didn’t work as expected when Global Threads was in the background.
+ - Fixed an issue where pressing ENTER opened the onboarding tutorial tip.
+ - Fixed an issue where some permission checkboxes had been moved to different categories in the System Console.
+ - Fixed an issue where a blank screen occurred upon leaving a currently open unread channel with the channel unread grouping enabled.
+ - Fixed an issue related to disabling and re-enabling Custom Terms of Service.
+ - Fixed an issue where channel links on hover overlapped the channels menus.
+ - Fixed the positioning of the post menu in mobile web view.
+ - Fixed an issue where closing the keyboard shortcut modal by "CTRL/CMD + /" didn’t work.
+ - Fixed an issue where the channel keyboard navigation was broken in the Threads view.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - The default for ``ThreadAutoFollow`` has been changed to ``true``. This does not affect existing configurations where this value is already set to ``false``.
+
+### Go Version
+ - v6.6 is built with Go ``v1.16.7``.
+
+### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q1 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+
+### Contributors
+ - 
 
 ## Release v6.5 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
