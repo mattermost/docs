@@ -1,4 +1,4 @@
-Mention People in Messages
+Mention people in messages
 ==========================
 
 |all-plans| |cloud| |self-hosted|

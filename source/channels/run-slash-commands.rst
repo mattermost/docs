@@ -1,4 +1,4 @@
-Run Slash Commands
+Run slash commands
 ==================
 
 |all-plans| |cloud| |self-hosted|

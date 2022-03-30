@@ -1,4 +1,4 @@
-Keyboard Shortcuts for Channels
+Keyboard shortcuts for Channels
 ===============================
 
 Keyboard shortcuts for Mattermost Channels help you make a more efficient use of your keyboard.

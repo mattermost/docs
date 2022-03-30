@@ -1,4 +1,4 @@
-Manage Desktop App Server Connections
+Manage Desktop App server connections
 =====================================
 
 |all-plans| |cloud| |self-hosted|

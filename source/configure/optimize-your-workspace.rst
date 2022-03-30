@@ -1,4 +1,4 @@
-Optimize Your Mattermost Workspace
+Optimize your Mattermost workspace
 ==================================
 
 |all-plans| |cloud| |self-hosted|

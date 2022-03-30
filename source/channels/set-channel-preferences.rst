@@ -1,4 +1,4 @@
-Set Channel Preferences
+Set channel preferences
 =======================
 
 |all-plans| |cloud| |self-hosted|
@@ -109,7 +109,7 @@ Channel purpose
 
 A channel purpose refers to text that displays when users select **View Info** for a channel. A channel purpose can be up to 250 characters in length and is often used to help users decide whether to join the channel. 
 
-Change the channel purpose by selecting **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
+Change the channel purpose by selecting **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so using advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
 
 .. image:: ../images/channel-purpose.png
     :alt: Channel purpose helps users decide if they want to join the channel based on its scope or focus.
@@ -119,4 +119,4 @@ Channel name
 
 A channel name must be at least two characters, and can be up to 64 characters in length. `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported.
 
-Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the System Admin has `restricted permissions to do so <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
+Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the System Admin has `restricted permissions to do so using advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.

@@ -1,4 +1,4 @@
-Channel Types
+Channel types
 =============
 
 |all-plans| |cloud| |self-hosted|

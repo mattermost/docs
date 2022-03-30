@@ -1,6 +1,6 @@
 .. _bulk-export:
 
-Bulk Export Tool
+Bulk export tool
 ================
 
 |all-plans| |self-hosted|

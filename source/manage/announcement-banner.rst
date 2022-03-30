@@ -1,4 +1,4 @@
-Announcement Banner
+Announcement banner
 ===================
 
 |enterprise| |professional| |cloud| |self-hosted|

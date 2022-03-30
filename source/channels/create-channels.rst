@@ -1,4 +1,4 @@
-Create Channels
+Create channels
 ===============
 
 |all-plans| |cloud| |self-hosted|
@@ -21,7 +21,7 @@ Create Channels
 Create a public or private channel
 -----------------------------------
 
-Anyone can create public channels or private channels, unless the System Admin has `restricted permissions to do so <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for>`__.
+Anyone can create public channels or private channels, unless the System Admin has `restricted permissions to do so using advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
 
 Select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 

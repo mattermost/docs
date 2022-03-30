@@ -1,4 +1,4 @@
-Sign In to Mattermost
+Sign in to Mattermost
 =====================
 
 |all-plans| |cloud| |self-hosted|

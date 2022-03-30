@@ -1,4 +1,4 @@
-Sharing Boards
+Sharing boards
 ==============
 
 |all-plans| |cloud| |self-hosted|

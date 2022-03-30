@@ -1,4 +1,4 @@
-SAML Single-Sign-On: Technical Documentation
+SAML Single-Sign-On: technical documentation
 ============================================
 
 Security Assertion Markup Language (SAML) is an open standard that allows identity providers (IdP), like OneLogin, to pass authorization credentials to service providers (SP), like Mattermost.
@@ -13,7 +13,7 @@ Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL f
   :backlinks: top
   :local:
 
-SAML Providers
+SAML providers
 --------------
 
 **Identity Providers (IdP):** An identity provider performs the authentication. When a user clicks to log in, the identity provider confirms who the user is, and sends data to the service provider with the proper authorization to access the site.
@@ -24,7 +24,7 @@ SAML Providers
 
 *Examples*: Mattermost, Zendesk, Zoom, Salesforce.
 
-SAML Request (AuthNRequest)
+SAML request (AuthNRequest)
 ---------------------------
 
 When Mattermost initiates an SP-initiated SAML request flow, it generates a **HTTP-Redirect** binding request to the IdP that contains an XML payload as a base64 string:
@@ -60,7 +60,7 @@ AuthNRequests can also be signed by Mattermost in which case the XML payload is 
       </samlsig:Signature>
   </samlp:AuthnRequest>
 
-SAML Responses
+SAML responses
 --------------
 
 There are different types of SAML responses sent by the IdP to the SP. The response contains the Assertion with the NameID and attributes of a user. Below is a table of the different types of responses. Each response type is fully supported except when the SAML assertion is signed while the SAML response itself is not:

@@ -1,4 +1,4 @@
-React to Messages using Emojis
+React to messages using emojis
 ==============================
 
 |all-plans| |cloud| |self-hosted|

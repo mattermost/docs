@@ -1,6 +1,6 @@
 ..  _troubleshooting:
 
-Troubleshooting Mattermost Issues
+Troubleshooting Mattermost issues
 =================================
 
 |all-plans| |self-hosted|
@@ -23,19 +23,19 @@ Enterprise Edition customers have Premier Support and can open a support ticket 
 
 Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__.
 
-Important Notes
+Important notes
 ---------------
 
 - Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised.
 - Any manipulation of the database must be done using the built in command line tools.
 - Start simple with the step-by-step install guides for your operating system.
 
-General Troubleshooting
+General troubleshooting
 -----------------------
 
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-Review Mattermost Logs
+Review Mattermost logs
 ~~~~~~~~~~~~~~~~~~~~~~
 
 You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`__.
@@ -70,7 +70,7 @@ The browser-based app does not produce additional log files. If the app has to b
 
 Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
 
-Review Mattermost Environment
+Review Mattermost environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
@@ -87,20 +87,20 @@ Put together a timeline to eliminate events prior to the error/problem occurring
 
 You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ can often be found and applied.
 
-Connect to Another Server
+Connect to another server
 -------------------------
 
 1. Create an account at https://community.mattermost.com.
 2. Erase your mobile application and reinstall it.
 3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to test whether the connection is working.
 
-Connect with Another Device
+Connect with another device
 ---------------------------
 
 - If you have another mobile device available, try connecting with that to see if your issue still reproduces.
 - If you don’t have another device available, check with other teammates to see if they are having the same issue.
 
-Opening a Support Ticket for Self-Hosted Deployments
+Opening a support ticket for self-hosted deployments
 -----------------------------------------------------
 
 When opening a Support ticket, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
@@ -115,7 +115,7 @@ C.L.U.E.S. represents all of the information that can clarify your issue. With t
 
 Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`__ and the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__.
 
-General Guidelines for Information
+General guidelines for information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow these guidelines when providing diagnostic data to us:
@@ -349,7 +349,7 @@ Elasticsearch server
  - Elasticsearch 7.9 with these plugins
  - analysis-icu
 
-Steps to Reproduce
+Steps to reproduce
 ~~~~~~~~~~~~~~~~~~
 
 What it is

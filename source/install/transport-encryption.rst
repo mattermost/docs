@@ -1,5 +1,5 @@
 
-Configuring Transport Encryption
+Configuring transport encryption
 =================================
 
 |enterprise| |self-hosted|
@@ -18,8 +18,7 @@ The components of the Mattermost setup are shown in the following diagram, inclu
 
 .. note::
 
-  The transport between the Application servers is not used by default and requires additional setup steps. Enhancing the core product to include automatic
-encryption between cluster nodes is in progress and planned for a later release.
+  The transport between the Application servers is not used by default and requires additional setup steps. Enhancing the core product to include automatic encryption between cluster nodes is in progress and planned for a later release.
 
 .. image:: ../images/transport-encryption.png
 

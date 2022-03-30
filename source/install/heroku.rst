@@ -1,13 +1,13 @@
 :orphan:
 
-Mattermost Preview using Heroku
+Mattermost preview using Heroku
 ===============================
 
 Quickly set up Mattermost in Preview Mode to explore product functionality using Heroku.
 
 This configuration is not recommended for use in production, as it currently does not support email notifications. Also note that for persistent file storage AmazonS3 must be used, as local storage will be deleted periodically when the Heroku process restarts.
 
-Heroku Installation
+Heroku installation
 --------------------
 
 1. Sign up for a free account on `Heroku <https://www.heroku.com/>`__

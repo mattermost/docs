@@ -1,4 +1,4 @@
-Work with Cards
+Work with cards
 ===============
 
 |all-plans| |cloud| |self-hosted|
@@ -70,7 +70,7 @@ To rename a property field, open up a card and select the property name. Enter t
 Mention people
 --------------
 
-You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/messaging/mentioning-teammates.html>`__ the same way you would in Channels. The team member you mention will receive a Direct Message notification from the Boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
+You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/channels/mention-people.html>`__ the same way you would in Channels. The team member you mention will receive a Direct Message notification from the Boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
 
 Share card previews
 -------------------

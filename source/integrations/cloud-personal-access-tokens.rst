@@ -1,5 +1,5 @@
 
-Personal Access Tokens
+Personal access tokens
 ======================
 
 Personal access tokens function similar to session tokens and can be used by integrations to `authenticate against the REST API <https://api.mattermost.com/#tag/authentication>`__. It is the most commonly used type of token for integrations.
@@ -9,7 +9,7 @@ Personal access tokens function similar to session tokens and can be used by int
   :depth: 1
   :local:
 
-Creating a Personal Access Token
+Creating a personal access token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Enable personal access tokens in **System Console > Integrations > Integration Management**.
@@ -47,7 +47,7 @@ You may optionally allow the account to post to any channel in your Mattermost w
 .. image:: ../images/access_token_settings.png
   :width: 500 px
 
-Revoking a Personal Access Token
+Revoking a personal access token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A personal access token can be revoked by deleting the token from either the user's account settings or from the System Console. Once deleted, all sessions using the token are deleted, and any attempts to use the token to interact with the Mattermost workspace are blocked.
@@ -68,8 +68,8 @@ System Console
 2. Identify the access token you want to revoke, then select **Delete**. 
 3. Confirm the deletion.
 
-Frequently Asked Questions (FAQ)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Frequently asked questions 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 How do personal access tokens differ from regular session tokens?
 ..................................................................

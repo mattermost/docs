@@ -1,4 +1,4 @@
-Administrator Onboarding Tasks
+Administrator onboarding tasks
 ==============================
 
 |all-plans| |self-hosted|
@@ -15,7 +15,7 @@ Administrator Onboarding Tasks
 
 This document provides instructions for common administrator tasks, including some recommendations on tasks to prepare your Mattermost deployment to onboard users.
 
-Getting Started Tasks
+Getting started tasks
 ---------------------
 
 1. Once you've installed and deployed Mattermost, ensure all configuration settings are appropriately set under **System Console > Environment** including:
@@ -42,7 +42,7 @@ These settings can also be set in the ``config.json`` file.  Please see our `con
 
 If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our `Enterprise roll out checklist <https://docs.mattermost.com/getting-started/enterprise-roll-out-checklist.html>`__.
 
-Important Administration Notes 
+Important administration notes 
 ------------------------------
 
 **DO NOT manipulate the Mattermost database**
@@ -50,7 +50,7 @@ Important Administration Notes
 - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
 - If you need to permanently delete a team or user, use the `mattermost user delete <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete>`__ CLI command, or use the `mmctl user delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ command.
 
-Common Tasks
+Common tasks
 ------------
 
 **Creating System Admin account from the command line**
@@ -77,7 +77,7 @@ Common Tasks
 
   [2017/05/19 16:51:40 UTC] [INFO] License key valid unlocking enterprise features.
       
-User Experience Optimizations
+User experience optimizations
 -----------------------------
 
 We highly recommend the following best practices, configuration options, and features for an optimal Mattermost user experience.
@@ -117,7 +117,7 @@ To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, to 
 
 Keep your desktop and mobile users logged in and `extend user sessions automatically <https://mattermost.com/blog/session-expiry-experience/>`__ by setting **System Console > Sessions > Extend session length with activity** to **true**. See the `Extend session length with activity <https://docs.mattermost.com/configure/configuration-settings.html#extend-session-length-with-activity>`__ configuration settings documentation for details.
 
-**4. Enable Full Content Push Notifications**
+**4. Enable full content push notifications**
 
 Enable push notifications on mobile devices to deliver messages in real time by setting **System Console > Push Notification Server > Enable Push Notifications** to **Use TPNS**. See the `Push notification server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-server>`__ configuration settings documentation for details.
 
@@ -129,7 +129,7 @@ Enable full content push notifications, including the sender’s name, the chann
 
   - Mattermost Enterprise customers can `enable ID-Only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ so push notification content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device. The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__ while allowing team members to benefit from mobile push notifications.
 
-**5. Enable Custom Emoji**
+**5. Enable custom emoji**
 
 `Emojis <https://docs.mattermost.com/messaging/using-emoji.html>`__ enable users to express concepts such as emotions and physical gestures in messages. Enable the emoji picker by setting **System Console > Emoji > Enable Emoji Picker** to **true**. See the `Enable emoji picker <https://docs.mattermost.com/configure/configuration-settings.html#enable-emoji-picker>`__ configuration settings documentation for details.
 

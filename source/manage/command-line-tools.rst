@@ -1,4 +1,4 @@
-Command Line Tools
+Command line tools
 ==================
 
 |all-plans| |self-hosted|
