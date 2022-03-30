@@ -386,7 +386,7 @@ Site URL
 |all-plans| |self-hosted| |system-console| |config-json|
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
-| **Description & supported values**                                                                                                                                  | ``config.json`` **setting & environment variable** |
+| |system-console|  |config-json|                                                                                                                                     | **File setting & environment variable**            |
 +=====================================================================================================================================================================+====================================================+
 | The URL that users will use to access Mattermost. Can contain a subpath from Mattermost v5.1, such as ``https://example.com/company/mattermost``.                   | ``".ServiceSettings.SiteURL": "",``                |
 |                                                                                                                                                                     |                                                    |
@@ -404,10 +404,8 @@ Site URL
 Listen address
 --------------
 
-|all-plans| |self-hosted| |system-console| |config-json|
-
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
-| **Description & supported values**                                                                                                                                  | ``config.json`` **setting & environment variable** |
+| |all-plans| |self-hosted| |system-console| |config-json|                                                                                                            | **File setting & environment variable**            |
 +=====================================================================================================================================================================+====================================================+
 | The address and port to which to bind and listen.                                                                                                                   | ``".ServiceSettings.ListenAddress": ":8065",``     |
 |                                                                                                                                                                     |                                                    |
@@ -422,7 +420,7 @@ Forward port 80 to 443
 |all-plans| |self-hosted| |system-console| |config-json|
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------+
-| **Description & supported values**                                                                                                                                  | ``config.json`` **setting & environment variable** |
+| **Description & supported values**                                                                                                                                  | **File setting & environment variable**            |
 +=====================================================================================================================================================================+====================================================+
 | Forward insecure traffic from port 80 to port 442.                                                                                                                  | ``".ServiceSettings.Forward80To443: false",``      |
 |                                                                                                                                                                     |                                                    |
