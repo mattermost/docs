@@ -1629,6 +1629,10 @@ Standard Logging
 
 Access the following configuration settings in the System Console by going to **Environment > Logging**.
 
+.. note::
+
+  Standard logging in Mattermost supports the ability to output logs to the console and file targets. Mattermost Enterprise customers can specify additional log target types, such as TCP configuration options using Audit log v2. See the `Audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation and the `Advanced audit logging configuration <https://docs.mattermost.com/configure/configuration-settings.html#advanced-audit-logging-configuration>`__ documentation for additional details.
+
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^
 
