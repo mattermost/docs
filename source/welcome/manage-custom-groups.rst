@@ -27,15 +27,11 @@ Custom Groups (Beta) enables Mattermost users to create and manage custom user g
 
 When you mention a custom group, you’ll notify everyone in the group without having to mention members individually. You can mention a group's unique name the same way you @mention another Mattermost member. See the `Mention People in Messages <https://docs.mattermost.com/channels/mention-people.html>`__ documentation for details.
 
-.. tip::
-
-  Custom groups can also be used with the ``/invite`` slash command to quickly invite a group of users to a channel. 
-
 Custom groups reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
 .. note:: 
   
-  - The ability to create custom user groups will be available in a future release. @mentions for custom user groups work the same as `LDAP-synced groups <https://docs.mattermost.com/channels/mention-people.html#groupname>`__ on mobile.
+  - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups work the same as `LDAP-synced groups <https://docs.mattermost.com/channels/mention-people.html#groupname>`__ on mobile.
 
   - System Admins need to enable this feature. See our `Mattermost Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#custom-user-groups>`__ documentation for details. 
 
