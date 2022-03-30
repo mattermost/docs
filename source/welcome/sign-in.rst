@@ -28,10 +28,11 @@ Sign In to Mattermost
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You'll receive a Mattermost URL from your System Admin or from an email invitation. Once you have your organization's Mattermost URL, navigate to that URL in a browser, then enter your credentials.
+You'll receive link to access Mattermost from your Mattermost System Admin or through an email invitation. Once you have your organization's Mattermost link, navigate to that URL in a browser, then enter your user credentials.
 
 .. tip::
-  We recommend bookmarking the Mattermost URL so signing in to Mattermost is easy in the future.
+  - We recommend bookmarking the Mattermost URL so signing in to Mattermost is easy in the future.
+  - Can't find your Mattermost link? Ask your company's IT department or your Mattermost System Admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
 After signing in, the team that appears first on your team sidebar will open. If you have not joined a team, the Team Selection page opens where you can view a list of teams that you can join.
 
