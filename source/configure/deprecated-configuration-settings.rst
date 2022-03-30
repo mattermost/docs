@@ -419,7 +419,7 @@ Select the timezone used for timestamps in the user interface and email notifica
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
-High-Availability
+High Availability
 -----------------
 
 Inter-Node Listen Address
