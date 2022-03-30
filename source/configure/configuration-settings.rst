@@ -6335,9 +6335,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
 
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDeletion`` is set to ``true``.
-
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
@@ -6356,9 +6353,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDeletion`` is set to ``true``.
 
 Enable API Channel Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
