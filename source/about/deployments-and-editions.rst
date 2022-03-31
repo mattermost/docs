@@ -39,7 +39,7 @@ We use "Offerings" to refer to sets of features and entitlements available eithe
 
 3) Mattermost Enterprise - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite. 
 
-*Self-Hosted Offerings* - For customers using our service in a self-hosted deployment, the free Mattermost offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
+*Self-Hosted Offerings* - For customers using our service in a self-hosted deployment, the Mattermost Free offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 *Cloud Offerings* - On-demand cloud deployments of our offerings are available via the Mattermost pricing page at: https://mattermost.com/pricing/
 
