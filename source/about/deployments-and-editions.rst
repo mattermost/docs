@@ -50,7 +50,7 @@ Mattermost Free
 
 Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
-*Self-Hosted Offerings* - The **Mattermost Free** feature set is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/
+*Self-Hosted Offerings* - The **Mattermost Free** feature set is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
 
 *Cloud Offerings* - The **Mattermost Free** feature set is also available in Cloud as "Cloud Starter" which provides the functionality of Mattermost Free to unlimited users with a flat-rate $149/year to cover hosting cost. Purchase via our online form: https://mattermost.com/pricing/starter-plan/
 
