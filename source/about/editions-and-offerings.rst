@@ -28,20 +28,20 @@ Our commercial, self-hosted software is called Mattermost Enterprise Edition, an
 
 Once you’ve downloaded and installed Mattermost Enterprise Edition within your preferred environment, you have the option to use it as-is in a "free" mode, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial**, or request a trial online at https://mattermost.com/trial/.
 
-Mattermost Offerings 
+Mattermost offerings 
 --------------------
 
 We use "Offerings" to refer to sets of features and entitlements available either free or as a paid subscription service. We have three primary offerings available to both our self-hosted and cloud communities: 
 
-1) Mattermost Free - This a free version of our collaboration suite designed for single teams. 
+1) **Mattermost Free** - This a free version of our collaboration suite designed for single teams. 
 
-2) Mattermost Professional - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams. 
+2) **Mattermost Professional** - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams. 
 
-3) Mattermost Enterprise - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite. 
+3) **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite. 
 
 *Self-Hosted Offerings* - For customers using our service in a self-hosted deployment, the Mattermost Free offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
-*Cloud Offerings* - On-demand cloud deployments of our offerings are available via the Mattermost pricing page at: https://mattermost.com/pricing/
+*Cloud Offerings* - On-demand cloud deployments of our offerings are available via the Mattermost pricing page at: https://mattermost.com/pricing/.
 
 More details on our offerings below: 
 
@@ -125,8 +125,8 @@ This offering includes all the features of Mattermost Professional, plus:
 
 See a complete list of features `here <https://mattermost.com/pricing/>`__.
 
-Other Mattermost Offerings 
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Other Mattermost offerings 
+--------------------------
 
 Mattermost introduced a new pricing and packaging structure on October 13, 2021. The packages listed below will reach end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new packages, but we will honor existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Please contact our `Sales team <https://mattermost.com/contact-us/>`__ with questions.
 
