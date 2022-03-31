@@ -140,7 +140,7 @@ Mattermost Enterprise Edition E20
 
 Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability and compliance features are offered in Mattermost Enterprise.
 
-Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user sign-in; Compliance exports of message histories with oversight protection; Custom retention policies for messages and files; High Availability support with multi-node database deployment; Horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; Advanced performance monitoring; Eligibility for Premier Support add-on.
+Features include: advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user sign-in; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
 
 Packaging decisions
 -------------------
