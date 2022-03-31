@@ -41,9 +41,6 @@ Latest Mattermost Releases:
 #### Playbook Updates
  - 
 
-#### Boards Updates
- - 
-
 ### Improvements
 
 #### User Interface (UI)
