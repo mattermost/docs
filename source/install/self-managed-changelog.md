@@ -81,6 +81,7 @@ Latest Mattermost Releases:
  - The ping endpoint can now receive a device ID, which will report whether the device is able to receive push notifications.
  - Feature flags are now automatically refreshed when the server undergoes a restart.
  - Added a sort order to the category API, and included category data in the websocket category update event.
+ - Permissions for private playbooks are now hidden unless running an Enterprise license.
 
 ### Bug Fixes
  - Fixed an issue where ``ThreadStore.GetThreadsForUser`` did not count correctly when no team ID was specified.
