@@ -103,7 +103,7 @@ Mattermost Enterprise
 
 Mattermost Enterprise is an enterprise-grade collaboration system that supports and helps you scale your mission-critical enterprise workflows, meet strict enterprise security, compliance, and privacy requirements, as well as provide executive reporting, dashboards, and productivity metrics.
 
-The **Mattermost Enterprise** feature set is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition, who purchase via the Mattermost sales organization (see: https://mattermost.com/contact-sales/), and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/. For our cloud community, the Mattermost Professional feature set can be purchased online on demand at https://mattermost.com/pricing/
+The **Mattermost Enterprise** feature set is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition, who purchase via the Mattermost sales organization (see: https://mattermost.com/contact-sales/), and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/. For our cloud community, the Mattermost Professional feature set can be purchased online on demand at https://mattermost.com/pricing/.
 
 This offering includes all the features of Mattermost Professional, plus: 
 
