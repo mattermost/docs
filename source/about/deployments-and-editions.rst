@@ -108,7 +108,7 @@ The **Mattermost Enterprise** feature set is available to our self-hosted commun
 This offering includes all the features of Mattermost Professional, plus: 
 
 - `Shared channels with other Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
-- `Configurable playbook permissions, analytics dashboards and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`_.
+- `Configurable playbook permissions, analytics dashboards, and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`__.
 - `AD/LDAP Group synchronization <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
 - `Automated compliance exports and reporting <https://docs.mattermost.com/comply/compliance-export.html>`__.
 - `Custom EMM providers via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__.
