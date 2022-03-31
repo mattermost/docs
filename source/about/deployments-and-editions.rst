@@ -26,7 +26,7 @@ Mattermost Enterprise Edition
 
 Our commercial, self-hosted software is called "Mattermost Enterprise Edition" and is available as a Linux Binary that deploys identically to our open source version--including upgrading in an identical fashion--with two key differences: a) It contains code for advanced commercial features, which can be unlocked with a valid license key, and b) it is offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business. 
 
-Once you’ve downloaded and installed Mattermost Enterprise Edition within your preferred environment, you have the option to use it as-is in a "free" mode, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial** or request a trial online at https://mattermost.com/trial/.
+Once you’ve downloaded and installed Mattermost Enterprise Edition within your preferred environment, you have the option to use it as-is in a "free" mode, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial**, or request a trial online at https://mattermost.com/trial/.
 
 Mattermost Offerings 
 --------------------
