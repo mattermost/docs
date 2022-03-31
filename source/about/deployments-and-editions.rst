@@ -133,7 +133,7 @@ Mattermost introduced a new pricing and packaging structure on October 13, 2021.
 Mattermost Enterprise Edition E10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. Features include: Active Directory/LDAP Single Sign-on; OAuth 2.0 authentication for team creation, account creation, and user sign-in; Encrypted push notifications with service level agreements (SLAs) via HPNS; Advanced access control policy; Next business day support via online ticketing system; Scale to handle hundreds of users per team.
+Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. Features include: Active Directory/LDAP Single Sign-on; OAuth 2.0 authentication for team creation, account creation, and user sign-in; encrypted push notifications with service level agreements (SLAs) via HPNS; advanced access control policy; next business day support via online ticketing system; scale to handle hundreds of users per team.
 
 Mattermost Enterprise Edition E20
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
