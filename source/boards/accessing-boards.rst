@@ -18,7 +18,7 @@ Access your boards
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Select **Boards** from the **Product menu** |product-list| icon in the top-left corner of Mattermost to access all your boards as well as boards in channels you belong to.
+Select **Boards** from the **Product list** |product-list| icon in the top-left corner of Mattermost to access all your boards as well as boards in channels you belong to.
 
 .. |product-list| image:: ../images/products_E82F.svg
   :height: 24px
