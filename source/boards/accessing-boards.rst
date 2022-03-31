@@ -20,6 +20,11 @@ Access your boards
 
 Select **Boards** from the **Product menu** |product-list| icon in the top-left corner of Mattermost to access all your boards as well as boards in channels you belong to.
 
+.. |product-list| image:: ../images/products_E82F.svg
+  :height: 24px
+  :width: 24px
+  :alt: Navigate between Channels, Playbooks, and Boards using the Product list icon.
+
 Boards uses channel-based permissions, meaning that all members of the associated channel can access (read/write) the boards for that channel.
 
 To create private boards: 
