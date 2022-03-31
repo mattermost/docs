@@ -29,6 +29,7 @@ Latest Mattermost Mobile Apps releases:
  - Changed the search bar in manual timezone selection view to be consistent with the rest of the app.
  - The mobile app no longer attempts to fetch thread bindings when the ``AppsEnabled`` feature flag is ``false``.
  - The mobile app will now only fetch App bindings if the Apps plugin is enabled.
+ - Added support for allowing 1-character channel names.
 
 ### Bug Fixes
 
