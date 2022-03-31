@@ -19,7 +19,7 @@ The following instructions use Docker to install Mattermost in *Preview Mode* us
 
 This local ``mattermost-preview`` image is a self-contained image (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. It also uses a known password string, contains other non-production configuration settings, keeps no persistent data (all data lives inside the container) and doesn't support upgrades.
 
-**This image shouldn't be used in production environments.** For a production installation with Docker, see the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__. 
+**This image shouldn't be used in production environments.** For a production installation with Docker, see the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__.
 
 .. note::
   If you have problems installing Mattermost, see
