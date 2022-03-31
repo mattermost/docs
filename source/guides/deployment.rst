@@ -10,7 +10,7 @@ Get Started
     :hidden:
 
     Quick Install Guide </getting-started/light-install>
-    Run Mattermost Locally via Docker </install/setting-up-local-machine-using-docker>
+    Run Mattermost locally via Docker </install/setting-up-local-machine-using-docker>
     Administrator Tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
