@@ -1,53 +1,58 @@
-Mattermost deployments and editions
-===================================
+Mattermost Editions and Offerings 
+=================================
 
-Mattermost deployment options
------------------------------
+Mattermost is an open core platform. 
 
-Mattermost provides additional benefits in our commercial editions to support the hosting and growth needs of an organization. You can explore these commercial features through a `trial <https://mattermost.com/get-started/>`__ with Mattermost self-hosted or Mattermost Cloud deployment options.
+This means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud deployment modes. 
 
-Mattermost self-hosted 
-~~~~~~~~~~~~~~~~~~~~~~
+We use "Editions" to refer to one of two code bases, either open source or commercial, used to deliver our offerings. We use "Offerings" to refer to sets of features and entitlements available either free or as a paid subscription service. 
 
-Mattermost self-hosted provides Mattermost within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premises in private clouds and virtual or physical servers.
-
-Once you’ve downloaded and installed Mattermost within your preferred environment, you have the option to use it as-is, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial** or request a trial online at https://mattermost.com/trial/.
-
-Mattermost Cloud
-~~~~~~~~~~~~~~~~
-
-Mattermost Cloud delivers Mattermost as software-as-a-service in a highly secure, hosted environment designed for privacy-conscious enterprises and developer collaboration.
-
-To get started with a 14-day free trial of Mattermost Cloud online, visit https://customers.mattermost.com/cloud/signup. Signing up requires you to create an account with a business email and specify a domain for the workspace. Once you sign up and create your workspace, a wizard will help you get started completing your profile, inviting team members, and integrating with your favorite developer tools.
-
-Mattermost editions
+Self-Hosted Editions 
 --------------------
 
-The Mattermost platform is offered under four editions to meet the needs of organizations of all sizes.
+Self-hosted editions support deploying Mattermost within IT-controlled private environments in public clouds, including AWS, Azure, GCP and Oracle Cloud, as well as on-premises in private clouds and virtual or physical servers.
 
-Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Starter, Professional, and Enterprise plans. Mattermost Starter can be used for free without a subscription as commercial software that’s functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a subscription is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`__.
-
-Our open source, self-hosted Team Edition will remain free forever with features that align with our self-hosted Mattermost Starter plan. We do not currently offer a free edition of Mattermost Cloud, however, we provide it at a low cost to make it a valuable option for teams with budgetary limitations.
-
-Self-hosted and Cloud deployments of the various Mattermost plans have equivalent features, aside from a few cases where a feature is specific to the deployment model. For example, Omnibus or Kubernetes deployment tools are only available for our self-hosted offering as they are specific to self-hosting Mattermost.
-
-For a complete list of features and pricing across plans, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`__.
-
-Mattermost Team Edition
-~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost Team Edition 
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
 
-The open source Mattermost Team Edition is functionally identical to Mattermost Starter, but there's no ability to unlock additional features.
+Mattermost Team Edition is also bundled inside of the free Mattermost Enterprise Edition code base, which provides the same funcitionality as Mattermost Team Edition, with the additional benefit of being able to trial as well as upgrade into an expanded set of features available with paid subscription, such as "Mattermost Professional" and "Mattermost Enterprise". 
 
-We generally recommend installing Mattermost Starter, even if you don't currently need a subscription. This provides the flexibility to seamlessly unlock additional features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
+Because of the benefits of Mattermost Enterprise Edition we recommend installing it over Mattermost Team Edition, even if you don’t currently need a subscription, so you'll have the flexibility to trial or enable additional features should you need them. However, if you only want to install software with a fully open source license, then Mattermost Team Edition is the best choice.
 
-To get started, `download the open-source Mattermost Team Edition server <https://docs.mattermost.com/upgrade/version-archive.html#mattermost-team-edition>`__ under an MIT license.
+Mattermost Enterprise Edition 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Starter 
-~~~~~~~~~~~~~~~~~~
+Our commercial, self-hosted software is called "Mattermost Enterprise Edition" and is available as a Linux Binary that deploys identically to our open source version--including upgrading in an identical fashion--with two key differences: a) It contains code for advanced commercial features, which can be unlocked with a valid license key, and b) it is offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business. 
 
-Mattermost Starter is a collaboration solution to improve your technical team’s productivity, ship software faster with higher quality, and improve alignment between team members.
+Once you’ve downloaded and installed Mattermost Enterprise Edition within your preferred environment, you have the option to use it as-is in a "free" mode, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial** or request a trial online at https://mattermost.com/trial/.
+
+Mattermost Offerings 
+--------------------
+
+We use "Offerings" to refer to sets of features and entitlements available either free or as a paid subscription service. We have three primary offerings available to both our self-hosted and cloud communities: 
+
+1) Mattermost Free - This a free version of our collaboration suite designed for single teams. 
+
+2) Mattermost Professional - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams. 
+
+3) Mattermost Enterprise - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite. 
+
+*Self-Hosted Offerings* - For customers using our service in a self-hosted deployment, the "Mattermost Free" offering is available in both our open source and commercial code bases (called "Mattermost Team Edition" and "Mattermost Enterprise Edition" respectively). The "Mattermost Professional" and "Mattermost Enterprise" are only available after deploying our "Mattermost Enterprise Edition" code base and applying a valid license key that comes with a subscription purchase, or a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/
+
+*Cloud Offerings* - On-demand cloud deployments of our offerings are available via the Mattermost pricing page at: https://mattermost.com/pricing/
+
+More details on our offerings below: 
+
+Mattermost Free 
+---------------
+
+Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
+
+*Self-Hosted Offerings* - The **Mattermost Free** feature set is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/
+
+*Cloud Offerings* - The **Mattermost Free** feature set is also available in Cloud as "Cloud Starter" which provides the functionality of Mattermost Free to unlimited users with a flat-rate $149/year to cover hosting cost. Purchase via our online form: https://mattermost.com/pricing/starter-plan/
 
 Features include:
 
@@ -69,11 +74,15 @@ Features include:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Professional 
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
-Mattermost Professional is a collaboration solution that enables you to build and scale your sophisticated developer workflows across multiple cross-functional teams to deliver mission-critical software.
+Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated developer workflows across multiple cross-functional teams to deliver mission-critical software.
 
-Building on the features in Starter plan, it also offers:
+*Self-Hosted Offerings* - The **Mattermost Professional** feature set is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see `deployment guides <https://docs.mattermost.com/guides/deployment.html#install-guides>`_), who purchase the appropriate subscription license key either through `online purchase <https://mattermost.com/pricing/>`_, through a `channel reseller <https://mattermost.com/partners/#resellers>`_ or by contacting `the Mattermost sales organization <https://mattermost.com/contact-sales/>`_, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/. 
+
+*Cloud Offerings* - For our cloud community, the Mattermost Professional feature set can be purchased online on demand at https://mattermost.com/pricing/
+
+This offering includes all the features of Mattermost Free, plus: 
 
 - `Guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`__.
 - Unlimited playbooks, retrospective reports and timelines.
@@ -90,11 +99,13 @@ Building on the features in Starter plan, it also offers:
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
 Mattermost Enterprise 
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Mattermost Enterprise is an enterprise-grade collaboration system that supports and helps you scale your mission-critical enterprise workflows, meet strict enterprise security, compliance, and privacy requirements, as well as provide executive reporting, dashboards, and productivity metrics.
 
-Building on the features in Professional plan, it also offers:
+The **Mattermost Enterprise** feature set is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition, who purchase via the Mattermost sales organization (see: https://mattermost.com/contact-sales/), and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/. For our cloud community, the Mattermost Professional feature set can be purchased online on demand at https://mattermost.com/pricing/
+
+This offering includes all the features of Mattermost Professional, plus: 
 
 - `Shared channels with other Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
 - `Configurable playbook permissions, analytics dashboards and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`_.
@@ -114,42 +125,22 @@ Building on the features in Professional plan, it also offers:
 
 See a complete list of features `here <https://mattermost.com/pricing/>`__.
 
-Mattermost legacy Enterprise Editions
---------------------------------------
+Other Mattermost Offerings 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost introduced a new pricing and packaging structure on October 13, 2021. The packages listed below will reach end-of-life on October 31, 2023.
-
-We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new packages, but we will honor existing pricing and features for renewals and expansions of E10/20 until October 31, 2022.
-
-Please contact our `Sales team <https://mattermost.com/contact-us/>`__ with questions.
+Mattermost introduced a new pricing and packaging structure on October 13, 2021. The packages listed below will reach end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new packages, but we will honor existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Please contact our `Sales team <https://mattermost.com/contact-us/>`__ with questions.
 
 Mattermost Enterprise Edition E10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional.
-
-- Active Directory/LDAP Single Sign-on.
-- OAuth 2.0 authentication for team creation, account creation, and user sign-in.
-- Encrypted push notifications with service level agreements (SLAs) via HPNS.
-- Advanced access control policy.
-- Next business day support via online ticketing system.
-- Scale to handle hundreds of users per team.
+Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. Features include: Active Directory/LDAP Single Sign-on; OAuth 2.0 authentication for team creation, account creation, and user sign-in; Encrypted push notifications with service level agreements (SLAs) via HPNS; Advanced access control policy; Next business day support via online ticketing system; Scale to handle hundreds of users per team.
 
 Mattermost Enterprise Edition E20
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability and compliance features are offered in Mattermost Enterprise.
 
-- Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services.
-- Active Directory/LDAP group synchronization.
-- OpenID Connect authentication for team creation, account creation, and user sign-in.
-- Compliance exports of message histories with oversight protection.
-- Custom retention policies for messages and files.
-- High Availability support with multi-node database deployment.
-- Horizontal scaling through cluster-based deployment.
-- Elasticsearch support for highly efficient database searches in a cluster environment.
-- Advanced performance monitoring.
-- Eligibility for Premier Support add-on.
+Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user sign-in; Compliance exports of message histories with oversight protection; Custom retention policies for messages and files; High Availability support with multi-node database deployment; Horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; Advanced performance monitoring; Eligibility for Premier Support add-on.
 
 Packaging decisions
 -------------------
