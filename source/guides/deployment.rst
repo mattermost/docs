@@ -9,7 +9,7 @@ Get started
     :maxdepth: 1
     :hidden:
 
-    Quick Install Guide </getting-started/light-install>
+    Quick install guide </getting-started/light-install>
     Run Mattermost locally via Docker </install/setting-up-local-machine-using-docker>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
