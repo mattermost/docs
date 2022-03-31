@@ -1,4 +1,4 @@
-Customize Your Channels Experience
+Customize your Channels experience
 ==================================
 
 |all-plans| |cloud| |self-hosted|

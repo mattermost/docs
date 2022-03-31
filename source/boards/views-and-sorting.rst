@@ -1,4 +1,4 @@
-View, Sort, and Filter
+View, sort, and filter
 ======================
 
 |all-plans| |cloud| |self-hosted|

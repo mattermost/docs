@@ -1,6 +1,6 @@
 .. _user-provisoning:
 
-Provisioning Workflows
+Provisioning workflows
 ======================
 
 This document provides an overview of user provisioning and deprovisioning workflows in Mattermost.
@@ -18,16 +18,16 @@ There are currently three recommended user provisioning workflows in Mattermost:
 
   Mattermost plans to release a new feature in early 2019 that will enable organizations to synchronize users to teams and channels based on group membership.
 
-Mattermost User Identifier
+Mattermost user identifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The User Identifier used to uniquely identify users in Mattermost depends on the method of authentication:
+The user identifier used to uniquely identify users in Mattermost depends on the method of authentication:
 
 - **Email/password**: Email address or username. Created by the user or previously described account pre-provisioning process.
 - **AD/LDAP**: Configure a unique and unchanging ID Attribute from the AD/LDAP server to be used in Mattermost. If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one.
 - **SAML 2.0**: Selected during configuration. You may use an Id Attribute instead of email to bind the user. We recommend choosing an ID that is unique and will not change over time.
 
-User Deprovisioning
+User deprovisioning
 --------------------
 
 Users in Mattermost can be deactivated in the following ways:

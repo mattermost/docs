@@ -1,4 +1,4 @@
-Configuring Apache2 (Unofficial)
+Configuring Apache2 (unofficial)
 ================================
 
 .. This page is intentionally NOT accessible from the LHS. Unofficial content will be moved to the User Forum.

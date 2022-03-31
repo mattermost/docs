@@ -1,6 +1,6 @@
 :orphan:
 
-Mobile Apps FAQ
+Mobile apps FAQ
 ================
 
 Can I connect to multiple Mattermost servers using the mobile apps?

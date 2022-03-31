@@ -1,6 +1,6 @@
 ..  _outbound_proxy:
 
-Using an Outbound Proxy
+Using an outbound proxy
 =======================
 
 |all-plans| |self-hosted|
@@ -38,7 +38,7 @@ The ``NO_PROXY`` environment variable can be set to prevent certain requests fro
 
 When a domain name is specified, the domain and all of its subdomains are matched, however a domain name with a leading ``.`` only matches the subdomains. For example, ``example.com`` matches both ``example.com`` and ``sub.example.com`` while ``.example.com`` only matches the latter.
 
-Sample Configuration
+Sample configuration
 --------------------
 
 To set these environment variables while running the Mattermost server via ``systemd``, modify the ``mattermost.service`` like this:

@@ -1,4 +1,4 @@
-Search for Messages
+Search for messages
 ===================
 
 |all-plans| |cloud| |self-hosted|

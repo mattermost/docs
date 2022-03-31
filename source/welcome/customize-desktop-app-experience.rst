@@ -1,4 +1,4 @@
-Customize Your Desktop App Experience
+Customize your Desktop App experience
 =====================================
 
 |all-plans| |cloud| |self-hosted|

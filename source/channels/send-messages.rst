@@ -1,4 +1,4 @@
-Send Messages
+Send messages
 =============
 
 |all-plans| |cloud| |self-hosted|

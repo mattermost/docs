@@ -1,4 +1,4 @@
-Android Setup
+Android setup
 =============
 
 |all-plans| |cloud| |self-hosted|

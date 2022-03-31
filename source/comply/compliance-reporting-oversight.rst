@@ -1,4 +1,4 @@
-Compliance Reporting and Oversight
+Compliance reporting and oversight
 ==================================
 
 .. This page is intentionally NOT accessible from the LHS.
@@ -29,7 +29,7 @@ Daily compliance reports may also be generated, supporting integration with comp
 
 By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded.
 
-Enabling Compliance Reporting 
+Enabling compliance reporting 
 -----------------------------
 
 To enable the option to generate daily compliance reports:
@@ -48,7 +48,7 @@ After enabling compliance reporting:
 
 Your system will now export all new messages posted within a 24-hour period as a ``.csv`` file to the location specified in **Compliance Report Directory**. This feature can be used in conjunction with centralized compliance reporting systems that move.
 
-Run Compliance Reports  
+Run compliance reports  
 ----------------------
 
 Compliance reports are exports of all messages in Mattermost that match the report criteria. To run a report:
@@ -147,7 +147,7 @@ Compliance query results stored in ``posts.csv`` file
 | PostFilenames       | Comma separated list of filesnames attached to post           | ["/f../ho.png","/f../hi.png"] |
 +---------------------+---------------------------------------------------------------+-------------------------------+
 
-Global Relay Support
+Global Relay support
 --------------------
 
 Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files.

@@ -1,4 +1,4 @@
-Mattermost Deployments and Editions
+Mattermost deployments and editions
 ===================================
 
 Mattermost deployment options

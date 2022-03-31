@@ -1,4 +1,4 @@
-Bleve Search (Experimental)
+Bleve search (experimental)
 ===========================
 
 |all-plans| |cloud| |self-hosted|
@@ -47,7 +47,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
   Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__, or using the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
 
-Using Bleve Search
+Using Bleve search
 ------------------
 
 The following conditions are applied when using Bleve search:

@@ -1,4 +1,4 @@
-Migration Guide
+Migration guide
 ===============
 
 |all-plans| |self-hosted|
@@ -21,7 +21,7 @@ This guide summarizes different approaches to migrating from one Mattermost depl
   :backlinks: top
   :local:
 
-Migrating Mattermost Server
+Migrating Mattermost server
 ----------------------------
 
 The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated.
@@ -48,10 +48,10 @@ The following instructions migrate Mattermost from one server to another by back
 
 Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`__.
 
-Migrating to Mattermost From Other Messaging Solutions
+Migrating to Mattermost from other messaging solutions
 ------------------------------------------------------
 
-Migrating From Bespoke Messaging Solutions to Mattermost
+Migrating from bespoke messaging solutions to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many enterprises run bespoke, unsupported, lightly documented messaging systems driven by the initial excitement of the product's promise.
@@ -60,7 +60,7 @@ Often the solutions were championed by tech-savvy early adopters who loved a few
 
 Over time, management moves to an IT team, where an unsupported solution becomes problematic to maintain and secure. Mattermost is often selected to replace bespoke solutions by IT and DevOps teams as a stable, enterprise-grade, commercially-supported solution on an open source platform that meets and exceeds the flexibility and innovation of bespoke solutions.
 
-Why IT Teams Choose to Leave Bespoke Solutions
+Why IT teams choose to leave bespoke solutions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Because messaging solutions in technical teams often contain confidential and highly exploitable data, messaging solutions become a security concern that could impact all of an organization's technical infrastructure.
@@ -79,7 +79,7 @@ When early adopters of a bespoke solutions ask IT to "take over" and assume the 
 
 Often at this point, IT teams accelerate their exploration of Mattermost as a long-term solution, given the `thousands of organizations (many in mission critical, high security industries) that have switched <https://mattermost.com/customers/>`__.
 
-Why IT Teams Choose Mattermost over Bespoke Solutions
+Why IT teams choose Mattermost over bespoke solutions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost is designed to replace bespoke messaging solutions through a platform that is unmatched in flexibility. From the `hundreds of open source projects extending and customizing Mattermost through APIs and drivers <https://github.com/search?utf8=✓&q=mattermost&type=>`__, to an innovative client and server plugin framework for adapting the Mattermost user experience to the specific workflows and needs, thousands of high performance teams rely on Mattermost daily.
@@ -92,7 +92,7 @@ In addition, IT teams prefer Mattermost for its specific `security assurances <h
 4. To keep IT teams safe, Mattermost waits 14 days after releasing a security patch before disclosing the specific details of the vulnerability each addresses.
 5. A `Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__ is available to supplement internal security reviews with confidential reports from external security researchers, with a recognition program for security research contributions after the security patch is properly released.
 
-Bringing Data from Bespoke Solutions into Mattermost 
+Bringing data from bespoke solutions into Mattermost 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Migrating from bespoke messengers to Mattermost can be challenging. Because of the difficulty of upgrading and maintaining bespoke solutions, the format for storing data is unpredictable, and the community around any single legacy release is small.
@@ -125,14 +125,14 @@ Slack offers two ways to `export your data from their product <https://get.slack
 
   As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the following documentation, please let the Mattermost Product Team know by `filing an issue <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__.
 
-Migrating from Slack Using the Mattermost mmetl Tool and Bulk Import
+Migrating from Slack using the Mattermost mmetl tool and bulk import
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
   
   This method is the recommended way to import Slack's corporate export file, but will work with any Slack export file. It can be used for Mattermost v5.0+.
 
-**1. Prepare your Mattermost Server**
+**1. Prepare your Mattermost server**
 
 We recommend you create a new team in Mattermost to hold the imported Slack data. You can import this into an existing team, but ensure there are no channel name collisions. Also, make sure that all users in Mattermost have the same username as in Slack, otherwise the import will fail. Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
 
@@ -214,7 +214,7 @@ Finally, run this command to view the status of the import process job. If the j
 
     mmctl import job show <JOB ID> --json
 
-Debugging Imports
+Debugging imports
 -----------------
 
 The ``mmctl import job show`` shows a detailed error message. If you run into problems which the error message does not help to resolve, your best bet is to use the ``mattermost bulk import`` command. The ``mmctl`` import process does not give you any additional debugging information, even in the Mattermost server logs.
@@ -233,7 +233,7 @@ Migrating from Slack using the Mattermost Web App
 2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team Admin or System Admin permission is required to access this menu option.
 3. Choose **Select file** to upload the Slack export file and select **Import**.
 
-Migrating from Slack Using the Mattermost CLI
+Migrating from Slack using the Mattermost CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
@@ -248,7 +248,7 @@ Migrating from Slack Using the Mattermost CLI
 
   To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
 
-Using the Imported Team
+Using the imported team
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 * During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the System Admin will need to update these manually.

@@ -1,4 +1,4 @@
-Manage Your Mattermost Profile
+Manage your Mattermost profile
 ==============================
 
 |all-plans| |cloud| |self-hosted|

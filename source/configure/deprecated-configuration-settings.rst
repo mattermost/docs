@@ -1,10 +1,10 @@
-Deprecated Configuration Settings
+Deprecated configuration settings
 =================================
 
-Service Settings
+Service settings
 ----------------
 
-Enable Reliable Websockets
+Enable reliable websockets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This configuration setting has been deprecated, and the ability to buffer messages during a connection loss has been promoted to general availability from Mattermost v6.3. This setting is enabled for older clients to maintain backwards compatibility.*
@@ -17,7 +17,7 @@ Enable this setting to make websocket messages more reliable by buffering messag
 | This feature's ``config.json`` setting is ``"EnableReliableWebsockets": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Data Prefetch
+Data prefetch
 ~~~~~~~~~~~~~
 
 *Removed in February 16, 2021 release*
@@ -30,7 +30,7 @@ Data Prefetch
 | This feature's ``config.json`` setting is ``"ExperimentalDataPrefetch": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Segment Write Key
+Segment write key
 ~~~~~~~~~~~~~~~~~
 
 *Removed in March 16, 2017 release*
@@ -41,7 +41,7 @@ For deployments seeking additional tracking of system behavior using Segment.com
 | This feature's ``config.json`` setting is ``"SegmentDeveloperKey": ""`` with string input. |
 +--------------------------------------------------------------------------------------------+
 
-Limit Access to Config Settings Prior to Login
+Limit access to config settings prior to login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in December 16, 2018 release*
@@ -54,7 +54,7 @@ Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.
 | This feature's ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
-Disable Legacy MFA API Endpoint
+Disable legacy MFA API endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -67,18 +67,18 @@ Disable Legacy MFA API Endpoint
       
       This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
+      **True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
 
-**False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
+      **False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
 
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
+      +--------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
+      +--------------------------------------------------------------------------------------------------------------+
 
-SQL Settings
+SQL settings
 -------------
 
-Amazon S3 Bucket Endpoint
+Amazon S3 bucket endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
@@ -102,7 +102,7 @@ Amazon S3 Location Constraint
 | This feature's ``config.json`` setting is ``"AmazonS3LocationConstraint": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
-Amazon S3 Lowercase Bucket
+Amazon S3 lowercase bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in November 16th, 2016 release*
@@ -115,10 +115,10 @@ Amazon S3 Lowercase Bucket
 | This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Users and Teams
+Users and teams
 ---------------
 
-Enable Team Directory
+Enable team directory
 ~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in May 16th, 2016 release*
@@ -131,8 +131,8 @@ Enable Team Directory
 | This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Allow Team Administrators to edit others' posts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Allow Team Admins to edit others' posts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -144,15 +144,15 @@ Allow Team Administrators to edit others' posts
       
       This permission is stored in the database and can be modified using the System Console user interface.
 
-**True**: Team Admins and System Admins can edit other users' posts.
+      **True**: Team Admins and System Admins can edit other users' posts.
 
-**False**: Only System Admins can edit other users' posts.
+      **False**: Only System Admins can edit other users' posts.
 
-.. note::
+      .. note::
 
-   System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
+         System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
 
-Enable Team Creation
+Enable team creation
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -165,18 +165,18 @@ Enable Team Creation
       
       After upgrading to v4.9 (released April 16, 2018), changing this ``config.json`` value no longer takes effect because this permission has been migrated to the database. This permission can be modified using the System Console user interface.
 
-**True**: Ability to create a new team is enabled for all users.
+      **True**: Ability to create a new team is enabled for all users.
 
-**False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden.
+      **False**: Only System Admins can create teams from the team selection page. The **Create A New Team** button is hidden.
 
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
+      +---------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``. |
+      +---------------------------------------------------------------------------------------------------------------+
 
 SAML 2.0
 --------
 
-Use New SAML Library
+Use new SAML library
 ~~~~~~~~~~~~~~~~~~~~
 
 *Removed in December 16, 2020 release*
@@ -189,10 +189,10 @@ Use New SAML Library
 | This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Legacy Sidebar
+Legacy sidebar
 --------------
 
-Enable Legacy Sidebar
+Enable legacy sidebar
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -203,19 +203,19 @@ Enable Legacy Sidebar
 
    .. tab:: Mattermost v5.39 and earlier
       
-      Not available in Mattermost Cloud.
+      *Not available in Mattermost Cloud*
 
-This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
+      This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
-**False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      **False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
-**True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
+      **True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
 
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``. |
-+----------------------------------------------------------------------------------------------------------------+
+      +----------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"EnableLegacySidebar": false`` with options ``true`` or ``false``. |
+      +----------------------------------------------------------------------------------------------------------------+
 
-Experimental Sidebar Features
+Experimental sidebar features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated. Not used in Mattermost v5.32 and later*
@@ -233,7 +233,7 @@ Experimental Sidebar Features
 | This feature's ``config.json`` setting is ``"ExperimentalChannelSidebarOrganization": off`` with options ``off``, ``default_on`` and ``default_off``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Sidebar Organization
+Sidebar organization
 ~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -244,25 +244,25 @@ Sidebar Organization
 
    .. tab:: Mattermost v5.39 and earlier
       
-      Not available in Mattermost Cloud.
+      *Not available in Mattermost Cloud*
 
-This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
-.. note::
+      .. note::
 
-  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#organizing-your-sidebar>`__ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#organizing-your-sidebar>`__ for more information about these features.
 
-**True**: Enables channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
+      **True**: Enables channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
 
-**False**: Hides the channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**.
+      **False**: Hides the channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**.
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false``. |
+      +-----------------------------------------------------------------------------------------------------------------------------+
 
-Enable X to Leave Channels from Left-Hand Sidebar
+Enable X to leave channels from left hand sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -273,25 +273,25 @@ Enable X to Leave Channels from Left-Hand Sidebar
 
    .. tab:: Mattermost v5.39 and earlier
       
-      Not available in Mattermost Cloud.
+      *Not available in Mattermost Cloud*
 
-This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
 
-.. note::
+      .. note::
 
-  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
-**True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
+      **True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
 
-**False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
+      **False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
 
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------------+
+      +---------------------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"EnableXToLeaveChannelsFromLHS": false`` with options ``true`` and ``false``. |
+      +---------------------------------------------------------------------------------------------------------------------------+
 
-Autoclose Direct Messages in Sidebar
+Autoclose direct messages in sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -302,28 +302,28 @@ Autoclose Direct Messages in Sidebar
 
    .. tab:: Mattermost v5.39 and earlier
       
-      Not available in Mattermost Cloud.
+      *Not available in Mattermost Cloud*
 
-This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
-.. note::
+      .. note::
 
-  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
-**True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Settings > Sidebar**.
+      **True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Settings > Sidebar**.
 
-**False**: Conversations remain in the sidebar until they are manually closed.
+      **False**: Conversations remain in the sidebar until they are manually closed.
 
-+-----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false``. |
+      +-----------------------------------------------------------------------------------------------------------------------+
 
 Town Square
 -----------
 
-Town Square is Hidden in Left-Hand Sidebar
+Town Square is hidden in left hand sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -336,51 +336,47 @@ Town Square is Hidden in Left-Hand Sidebar
       
       Available in legacy Enterprise Edition E10 and higher.
 
-This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
-.. note::
+      .. note::
 
-  This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
+         This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
-**True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
+      **True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
 
-**False**: Town Square is always visible in the left-hand sidebar even if all messages have been read.
+      **False**: Town Square is always visible in the left-hand sidebar even if all messages have been read.
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false``. |
+      +-----------------------------------------------------------------------------------------------------------------------------+
 
-Town Square is Read-Only
+Town Square is read-only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
    .. tab:: Mattermost v6.0 onwards
       
-      Deprecated. Not used in Mattermost v6.0 and later.
+      In Mattermost v.6.0, this feature has been deprecated in favor of `channel moderation <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation>`__ which allows you to set any channel as read-only, including Town Square.
 
    .. tab:: Mattermost v5.39 and earlier
       
       Available in legacy Enterprise Edition E10 and higher.
 
-**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, react using emojis,  pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
+      **True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, react using emojis,  pin messages to Town Square, nor are they able to change the channel name, header, or purpose.
 
-**False**: Anyone can post in Town Square.
+      **False**: Anyone can post in Town Square.
+  
+      +------------------------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``. |
+      +------------------------------------------------------------------------------------------------------------------------------+
 
-.. note::
-
-  In Mattermost v.6.0, this feature has been deprecated in favor of `channel moderation settings <https://docs.mattermost.com/onboard/advanced-permissions.html#read-only-channels-e20>`_ which allow you to set any channel as read-only, including Town Square 
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
-
-Custom Emoji
+Custom emoji
 ------------
 
-Restrict Custom Emoji Creation
+Restrict custom emoji creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -395,15 +391,15 @@ Restrict Custom Emoji Creation
 
       Available in legacy Enterprise Edition E10 and E20.
 
-**Allow everyone to create custom emoji**: Allows everyone to add custom emojis from the emoji picker.
+      **Allow everyone to create custom emoji**: Allows everyone to add custom emojis from the emoji picker.
 
-**Allow System and Team Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System or Team Admins.
+      **Allow System and Team Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System or Team Admins.
 
-**Only allow System Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System Admins.
+      **Only allow System Admins to create custom emoji**: The **Custom Emoji** option is hidden from the emoji picker for users who are not System Admins.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``"all"``, ``"admin"``, and ``"system_admin"`` for the above settings, respectively. |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``"all"``, ``"admin"``, and ``"system_admin"`` for the above settings, respectively. |
+      +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Timezone
 --------
@@ -423,10 +419,10 @@ Select the timezone used for timestamps in the user interface and email notifica
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
-High-Availability
+High Availability
 -----------------
 
-Inter-Node Listen Address
+Inter-node listen address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated. Not used in Mattermost v4.0 and later*
@@ -490,7 +486,6 @@ Restrict managing integrations to Admins
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
-
 
 Policy
 ------
@@ -733,7 +728,7 @@ When post editing is permitted, setting this to ``-1`` allows editing any time, 
 Images
 ------
 
-Attachment Thumbnail Width
+Attachment thumbnail width
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -744,7 +739,7 @@ Width of thumbnails generated from uploaded images. Updating this value changes 
 | This feature's ``config.json`` setting is ``"ThumbnailWidth": 120`` with numerical input. |
 +-------------------------------------------------------------------------------------------+
 
-Attachment Thumbnail Height
+Attachment thumbnail height
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -755,7 +750,7 @@ Height of thumbnails generated from uploaded images. Updating this value changes
 | This feature's ``config.json`` setting is ``"ThumbnailHeight": 100`` with numerical input. |
 +--------------------------------------------------------------------------------------------+
 
-Image Preview Width
+Image preview width
 ~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -766,7 +761,7 @@ Maximum width of preview image. Updating this value changes how preview images r
 | This feature's ``config.json`` setting is ``"PreviewWidth": 1024`` with numerical input. |
 +------------------------------------------------------------------------------------------+
 
-Image Preview Height
+Image preview height
 ~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -777,7 +772,7 @@ Maximum height of preview image. Setting this value to ``0`` instructs Mattermos
 | This feature's ``config.json`` setting is ``"PreviewHeight": 0`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
-Profile Picture Width
+Profile picture width
 ~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -788,7 +783,7 @@ The width to which profile pictures are resized after being uploaded via **Accou
 | This feature's ``config.json`` setting is ``"ProfileWidth": 128`` with numerical input. |
 +-----------------------------------------------------------------------------------------+
 
-Profile Picture Height
+Profile picture height
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in July 16th, 2017 release*
@@ -799,10 +794,10 @@ The height to which profile pictures are resized after being uploaded via **Acco
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input. |
 +------------------------------------------------------------------------------------------+
 
-Experimental Display Settings
+Experimental display settings
 -----------------------------
 
-Supported Timezones Path
+Supported timezones path
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Removed in April 16, 2019 release*

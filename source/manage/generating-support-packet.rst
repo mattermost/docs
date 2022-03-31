@@ -1,4 +1,4 @@
-Generating a Support Packet
+Generating a support packet
 ===========================
 
 |enterprise| |professional| |cloud| |self-hosted|

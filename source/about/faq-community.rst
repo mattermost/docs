@@ -1,4 +1,4 @@
-Mattermost Community Questions
+Mattermost community questions
 ==============================
 
 How can I contribute to Mattermost?

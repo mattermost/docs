@@ -9,7 +9,7 @@ Statistics on users, posts, and channels are tracked for each system and team. E
 
 For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
 
-Site Statistics
+Site statistics
 ---------------
 
 |all-plans| |self-hosted|
@@ -93,7 +93,7 @@ Channel Types
 Posts, Files and Hashtags
     This chart displays the number of posts containing files, hashtags, or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
 
-Team Statistics
+Team statistics
 ---------------
 
 |all-plans| |self-hosted|
