@@ -39,7 +39,7 @@ If there's no translation layer, Mattermost won't understand the data you're sen
 What are attachments?
 ---------------------
 
-When "attachments" are mentioned in Mattermost integrations documentation, it refers to Slack's Message Attachments functionality. These "attachments" can be optionally added as an array in the data sent by an integration, and are used to customize the formatting of the message.
+When "attachments" are mentioned in Mattermost integrations documentation, it refers to Slack's message attachments functionality. These "attachments" can be optionally added as an array in the data sent by an integration, and are used to customize the formatting of the message.
 
 Mattermost doesn't currently support the ability to attach files to a post made by an integration.
 
