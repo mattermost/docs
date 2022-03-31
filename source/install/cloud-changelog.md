@@ -4,12 +4,53 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
 - [Release 2022-03-08](#release-2022-03-08)
 - [Release 2022-03-02](#release-2022-03-02)
 - [Release 2022-02-16](#release-2022-02-16)
 - [Release 2022-02-10](#release-2022-02-10)
-- [Release 2022-02-03](#release-2022-02-03)
+
+## Release 2022-03-30
+
+### Improvements
+
+#### User Interface (UI)
+ - For Apps, calls are now separated between submit, form, refresh and lookup calls. If any users have created their own Apps, they have to be updated to the new system.
+ - Logs from third-party libraries are now included in the default logging configuration.
+ - Added performance metrics related to plugin loading on page load.
+ - Changed the Mattermost indigo theme to match the dark theme in code blocks.
+ - Added a ``Automatically Follow Threads`` configuration setting to the **System Console** to expose the ``threadAutoFollow`` config setting to the User Interface.
+ - Updated in-product links to legacy domain about.mattermost.com.
+ - The **More Actions** menu was restructured.
+ - Added a copy button when hovering over code blocks.
+ - Added a right-hand side panel to see and interact with channel information.
+ - Added a post menu item to copy raw text.
+ - Added additional performance debugging settings.
+ - The default for ``ThreadAutoFollow`` has been changed to ``true``. This does not affect existing configurations where this value is already set to ``false``.
+
+#### Performance
+ - Improved performance when clearing notifications with Collapsed Reply Threads enabled.
+
+#### Bug Fixes
+ - Fixed an issue where ``ThreadStore.GetThreadsForUser`` did not count correctly when no team ID was specified.
+ - Fixed an issue where ``zip`` file creation failed when adding attachments.
+ - Fixed an issue where emoji short codes written in Markdown were not added to recently used emojis.
+ - Fixed the positioning of SVGs in admin onboarding when the screen doesn't have a previous button.
+ - Fixed an issue with the displayed channel name in the channel tutorial tip.
+ - Fixed an issue with the clickable area for emojis in the emoji picker to match the interface.
+ - Fixed an issue where usernames with periods in the channel switcher input showed Group Messages over matching Direct Messages.
+ - Fixed an issue on Collapsed Reply Threads compact message view where clicking on the thread footer avatar did not open the profile modal.
+
+### Known Issues
+ - The archived channels search doesn't work as expected [MM-42889](https://mattermost.atlassian.net/browse/MM-42889).
+ - Actions menu has inconsistent shading on hover on dark theme [MM-42869](https://mattermost.atlassian.net/browse/MM-42869).
+ - Actions menu: "x" and the link inside the tooltip don't work [MM-42769](https://mattermost.atlassian.net/browse/MM-42769).
+ - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-03-16
 
