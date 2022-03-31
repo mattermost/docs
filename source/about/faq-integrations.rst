@@ -32,7 +32,7 @@ Slack compatible means that Mattermost accepts integrations that have a payload 
 What if I have a webhook from somewhere other than Slack?
 ---------------------------------------------------------
 
-If you have an integration that outputs a payload in a different format, you''' need to write an intermediate application to act as a translation layer to change it to the format Mattermost uses. Since there’s currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
+If you have an integration that outputs a payload in a different format, you need to write an intermediate application to act as a translation layer to change it to the format Mattermost uses. Since there’s currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
 
 If there's no translation layer, Mattermost won't understand the data you're sending.
 
