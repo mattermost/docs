@@ -41,9 +41,6 @@ Latest Mattermost Mobile Apps releases:
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
- - Various known issues with Collapsed Reply Threads (Beta) feature:
-   - New messages banner should only count root posts.
-   - Threads item unread state (bolding) does not persist when deleting documents and data.
 
 ## 1.50.1 Release
 - Release Date: March 21, 2022
