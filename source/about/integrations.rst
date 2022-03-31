@@ -26,7 +26,7 @@ Mattermost provides complete access to `server APIs <https://api.mattermost.com/
 Plugins 
 -------
 
-Plugins are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. These powerful integrations are written in Go and React and they’re ideal for customers wanting to change the behavior of the server, desktop, and web apps without forking the core codebase to suit their organization’s needs.  
+Plugins are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. These powerful integrations are written in Go and React and they’re ideal for customers wanting to change the behavior of the Mattermost server, desktop, and web apps without forking the core codebase to suit their organization’s needs.
 
 Prebuilt plugins are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `build your own plugin <https://developers.mattermost.com/integrate/plugins/>`__.
 
