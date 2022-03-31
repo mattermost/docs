@@ -11,7 +11,7 @@ Get started
 
     Quick Install Guide </getting-started/light-install>
     Run Mattermost locally via Docker </install/setting-up-local-machine-using-docker>
-    Administrator Tasks </getting-started/admin-onboarding-tasks>
+    Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
     Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>
