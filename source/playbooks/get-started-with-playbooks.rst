@@ -1,7 +1,7 @@
 Get started with Mattermost Playbooks
 =====================================
 
-Access Mattermost Playbooks by selecting **Playbooks** from the **Product list** |product-list| icon.
+Access Mattermost Playbooks by selecting **Playbooks** from the **Product menu** |product-list|.
 
 .. |product-list| image:: ../images/products_E82F.svg
   :height: 24px
