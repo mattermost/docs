@@ -85,7 +85,7 @@ Mattermost Professional is the set of collaboration features that enables you to
 This offering includes all the features of Mattermost Free, plus: 
 
 - `Guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`__.
-- Unlimited playbooks, retrospective reports and timelines.
+- Unlimited playbooks, retrospective reports, and timelines.
 - `Active Directory/LDAP Single Sign-on and user synchronization <https://docs.mattermost.com/onboard/ad-ldap.html>`__.
 - Single Sign-on with SAML, `Google <https://docs.mattermost.com/onboard/sso-google.html>`__, `Office365 <https://docs.mattermost.com/onboard/sso-office.html>`__ or `OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__.
 - `MFA enforcement <https://docs.mattermost.com/onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
