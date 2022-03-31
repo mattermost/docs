@@ -154,7 +154,7 @@ When a guest has been removed from all channels within a team, and if they belon
 Promoting and Demoting User Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-System Admins can demote a member from a member to a guest by updating the user's role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. System Admins should also purge all of the demoted guest's sessions by selecting the guest user, then selecting **Revoke Sessions**.
+System Admins can demote a user from a member to a guest by updating the user's role in **System Console > User Management > Users**. Select the member, then select **Demote to Guest**. System Admins should also purge all of the demoted guest's sessions by selecting the guest user, then selecting **Revoke Sessions**.
 
 The demoted guest user retains their existing channel and team memberships, but is restricted from discovering public channels and collaborating with users outside of the channels they're in. This is useful if you're already collaborating with external contractors, and want to restrict their abilities within Mattermost.
 
