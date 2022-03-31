@@ -679,6 +679,8 @@ redirects = {
         "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
 "integrations/zoom.html": 
         "https://mattermost.gitbook.io/plugin-zoom/",
+"integrations/integration-faq.html":
+        "https://docs.mattermost.com/about/faq-integrations.html"
 
 
 # Messaging redirects
