@@ -7,7 +7,7 @@ This means we develop both an open source, self-hosted edition of our software p
 
 We use "Editions" to refer to one of two compiled code bases, either open source or commercial, used to deliver our offerings. We use "Offerings" to refer to sets of features and entitlements available either free or as a paid subscription service. 
 
-Self-Hosted Editions 
+Self-hosted editions 
 --------------------
 
 Self-hosted editions support deploying Mattermost within IT-controlled private environments in public clouds, including AWS, Azure, GCP and Oracle Cloud, as well as on-premises in private clouds and virtual or physical servers.
