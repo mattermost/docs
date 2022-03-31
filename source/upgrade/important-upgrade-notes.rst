@@ -33,7 +33,7 @@ Important Upgrade Notes
 |                                                    | downtime depends on how many records the database has and whether there are missing migrations in the schema. If you encounter an issue please file              |
 |                                                    | `an Issue <https://github.com/mattermost/mattermost-server/issues>`_ by including the failing migration name, database driver/version, and the server logs.      |
 |                                                    |                                                                                                                                                                  |
-|                                                    | On MySQL and MariaDB, if you encounter an error "Failed to apply database migrations" when upgrading to v6.4.0, it means that there is a mismatch between the    |
+|                                                    | On MySQL, if you encounter an error "Failed to apply database migrations" when upgrading to v6.4.0, it means that there is a mismatch between the                |
 |                                                    | table collation and the default database collation. You can manually fix this by changing the database collation with                                            |
 |                                                    | ``ALTER DATABASE <YOUR_DB_NAME> COLLATE = 'utf8mb4_general_ci',``. Then do the server upgrade again and the migration will be successful.                        |   
 |                                                    |                                                                                                                                                                  |
