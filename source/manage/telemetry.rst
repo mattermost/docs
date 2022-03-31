@@ -16,7 +16,7 @@ We use the data for the following purposes:
 - To help improve the quality of Mattermost software and related services.
 - To make design decisions for future releases.
 
-Security Update Check Feature
+Security update check feature
 -----------------------------
 
 New threats to system security constantly arise. To alert you of relevant, high priority security updates, Mattermost servers are configured to share diagnostic information with Mattermost Inc. so that we can provide appropriate alerts.
@@ -38,7 +38,7 @@ The following data is collected once every 24 hours:
 
 To opt out, disable the feature in **System Console > Environment > SMTP**. When the feature is disabled, you will not receive any security alerts.
 
-Error and Diagnostics Reporting Feature
+Error and diagnostics reporting feature
 ---------------------------------------
 
 Mattermost error and diagnostic data is collected for the following purposes:
@@ -51,7 +51,7 @@ Mattermost error and diagnostic data is collected for the following purposes:
 
   Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. From Mattermost v5.23 the segment endpoint is being deprecated in favor of ``https://pdat.matterlytics.com``, a custom Rudder domain. To opt out, you can disable the feature in **System Console > Environment > Logging > Enable Diagnostics and Error Reporting**. Starting in Mattermost v5.26, when this feature is enabled, any 500 errors will be automatically sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint.
 
-Deployment and Server Configuration Data
+Deployment and server configuration data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reporting Frequency
@@ -143,7 +143,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
   - *Collapsed Reply Threads:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
 
-Playbooks Telemetry
+Playbooks telemetry
 -------------------
 
 The following list details the types of Playbooks metadata we collect:
@@ -196,7 +196,7 @@ The following list details the types of Playbooks metadata we collect:
   
 Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, disable the feature in **System Console > Environment > Logging**.
 
-Boards Telemetry
+Boards telemetry
 ----------------
 
 The following list details the type of Boards metadata we collect and is sent every 24 hours.
@@ -242,7 +242,7 @@ Load Board View
 - ``Event``: Type of the event. Only the ``view`` event is currently monitored.
 - ``View Type`` (``board``, ``table``, ``gallery``).
 
-Apps Framework Telemetry
+Apps framework telemetry
 ------------------------
 
 The following list details the types of Apps Framework metadata we collect:
@@ -268,7 +268,7 @@ The following list details the types of Apps Framework metadata we collect:
 
 - ``UserActualID``: User ID of the user completing the OAuth flow.
 
-Android Mobile App Performance Monitoring
+Android Mobile App performance monitoring
 -----------------------------------------
 
 To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending `diagnostic information <https://docs.mattermost.com/configure/configuration-settings.html#enable-diagnostics-and-error-reporting>`__.

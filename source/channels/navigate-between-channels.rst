@@ -1,4 +1,4 @@
-Navigate Channels
+Navigate channels
 =================
 
 |all-plans| |cloud| |self-hosted|

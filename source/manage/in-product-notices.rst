@@ -1,4 +1,4 @@
-In-Product Notices
+In-product notices
 ==================
 
 |all-plans| |cloud| |self-hosted|
@@ -39,7 +39,7 @@ End user notices are used to inform users and Admins of new feature enhancements
 
 .. image:: ../images/notices.png
 
-Frequently Asked Questions (FAQs)
+Frequently asked questions (FAQs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Are notices enabled by default?

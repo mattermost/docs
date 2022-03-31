@@ -1,4 +1,4 @@
-Integration Questions
+Integration questions
 =====================
 
 Can I use Mattermost to add messaging functionality to my proprietary SaaS service?

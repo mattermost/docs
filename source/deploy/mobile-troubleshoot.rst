@@ -1,5 +1,5 @@
-Troubleshooting Mobile Applications
-===================================
+Troubleshooting mobile apps
+===========================
 
 .. contents::
   :backlinks: top

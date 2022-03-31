@@ -1,4 +1,4 @@
-Join and Leave Channels
+Join and leave channels
 =======================
 
 |all-plans| |cloud| |self-hosted|

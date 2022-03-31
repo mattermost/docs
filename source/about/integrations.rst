@@ -1,5 +1,5 @@
 
-Integrations Overview
+Integrations overview
 =====================
 
 Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization’s needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
@@ -36,7 +36,7 @@ You can deploy interactive bots to help users with processes and tasks with Matt
 
 Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can `build your own <https://docs.mattermost.com/integrations/cloud-bot-accounts.html>`_.
 
-Custom Slash Commands
+Custom slash commands
 ---------------------
 
 Slash commands bring the power of developer command-line tools, to channels in Mattermost. Enable your users to trigger custom actions such as creating a Jira ticket or GitHub PR directly from within Mattermost.  . The Mattermost slash command format is compatible with Slack's format, so you can easily port commands from Slack.
@@ -50,7 +50,7 @@ Easily integrate events from external systems with a webhook that will post mess
 
 Learn about `incoming webhooks <https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#incoming-webhooks>`__ and `outgoing webhooks <https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#outgoing-webhooks>`__.
 
-Interactive Messages
+Interactive messages
 --------------------
 
 Mattermost supports interactive message buttons and menus for incoming and outgoing webhooks, custom slash commands, and plugins via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity. Interactive messages can be used together with slash commands, custom apps, and plugins. 
@@ -67,7 +67,7 @@ Mattermost's Zap connector enables you to connect to over 2,000 public cloud ser
 
 Learn about `Mattermost-Zapier integration <https://docs.mattermost.com/integrations/zapier.html>`__.
 
-Source Code Customizations
+Source code customizations
 --------------------------
 As an open source project, we support your ability to modify the source code for the server or web app to make changes and customizations to meet your specific needs. 
 

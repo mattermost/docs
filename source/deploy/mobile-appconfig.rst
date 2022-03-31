@@ -1,4 +1,4 @@
-AppConfig for EMM Solutions with Mattermost Mobile Apps
+AppConfig for EMM solutions with Mattermost mobile apps
 =======================================================
 
 What is AppConfig?
@@ -12,7 +12,7 @@ Mattermost mobile apps can be configured in your EMM solution using AppConfig wi
 
 .. _appconfig-table:
 
-Mattermost AppConfig Values
+Mattermost AppConfig values
 ---------------------------
 
 The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template <mattermost-specfile.xml>` of the configuration file for use with your EMM provider. 
@@ -43,7 +43,7 @@ The following table shows all the configuration options that can be sent from th
 | inAppSessionAuth       | Use the app's internal browser for SSO instead of an external browser.                                                                                                                                          | String | ``false``     | ``true | false`` | Yes         | Yes                      |
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 
-Other AppConfig Settings
+Other AppConfig settings
 ------------------------
 
 As part of AppConfig, EMM administrators can set the following additional configuration options for the Mattermost mobile apps:

@@ -1,4 +1,4 @@
-Notifications and Updates
+Notifications and updates
 =========================
 
 |all-plans| |cloud| |self-hosted|

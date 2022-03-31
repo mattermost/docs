@@ -1,4 +1,4 @@
-Share Links to Messages
+Share links to messages
 =======================
 
 |all-plans| |cloud| |self-hosted|

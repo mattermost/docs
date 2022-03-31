@@ -1,6 +1,6 @@
 .. _ediscovery:
 
-Electronic Discovery
+Electronic discovery
 =====================
 
 |enterprise| |self-hosted|
@@ -28,7 +28,7 @@ Each of the options is discussed in detail below.
 .. note::
   Litigation hold (also known as legal hold) is an extension of eDiscovery where in addition to searching for records, no electronically stored information nor paper documents may be discarded if they may be deemed relevant for a present or future legal case.
 
-Mattermost Compliance Exports
+Mattermost compliance exports
 -----------------------------
 
 Mattermost Enterprise has compliance report export capabilities.
@@ -101,7 +101,7 @@ When the export process is complete (the execution time is based on the number o
 
 When sending the request, you need to get the report ID from the response returned by Mattermost when the report was created. You also need to supply a name to save that file as. In the example above, the file will be saved as ``report-zip.zip``.
 
-Mattermost Database
+Mattermost database
 -------------------
 
 Selecting messages from the Mattermost database using standard SQL is quite easy. If you know the username, the following query can be used to select all messages for the specified user:

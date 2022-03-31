@@ -1,6 +1,6 @@
 :orphan:
 
-Advanced Permissions
+Advanced permissions
 ====================
 
 Mattermost System Admins can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
@@ -17,12 +17,12 @@ This document describes the types of permissions that can be given to users of M
   :backlinks: top
   :local:
   
-Permissions Structure
+Permissions structure
 ----------------------
 
 The Mattermost System Console provides a number of elements for Admins to control the permissions in their system. 
 
-System Scheme 
+System scheme 
 ^^^^^^^^^^^^^
 
 You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
@@ -38,7 +38,7 @@ You can access the System Scheme interface in **System Console > User Management
 
 .. image:: ../images/system-scheme.png
 
-Team Override Schemes 
+Team override schemes 
 ^^^^^^^^^^^^^^^^^^^^^
 
 On systems with multiple `Mattermost teams <https://docs.mattermost.com/help/getting-started/creating-teams.html>`_, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
@@ -53,12 +53,12 @@ You can access the Team Override Scheme interface in **System Console > User Man
 
 .. image:: ../images/team-scheme.png
 
-Channel Permissions 
+Channel permissions 
 --------------------
 
 The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
-Supplementary Roles
+Supplementary roles
 ^^^^^^^^^^^^^^^^^^^
 
 *Available in a future release.*
@@ -70,7 +70,7 @@ Recipes
 
 This section provides some examples of common permissions use cases for team management, channel management, and overall permissions. 
 
-Team Management
+Team management
 ^^^^^^^^^^^^^^^
 
 **Only allow Admins, in specific team, to add members**
@@ -92,7 +92,7 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 7. Select **Save**. 
 8. Select the back arrow to return to the **Permission Schemes** menu. 
 
-Public and Private Channel Management
+Public and private channel management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Restrict who can rename channels and edit channel header and purposes**
@@ -125,12 +125,12 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
   c. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
   d. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
 
-Convert Public channels to Private channels
+Convert public channels to private channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Allow all members to convert Public channels to Private channels**
+**Allow all members to convert public channels to private channels**
 
-Example: Set the default setting to allow all members, Team Admins, and Channel Admins to convert Public channels to Private.
+Example: Set the default setting to allow all members, Team Admins, and Channel Admins to convert public channels to private.
 
 1. Navigate to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
@@ -151,7 +151,7 @@ Read only channels
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
-**Create an Announcement Channel where only channel admins are able to post.**
+**Create an announcement channel where only channel admins are able to post.**
 
 1. Create a new channel (either Public or Private).
 2. Navigate to **System Console > User Management > Channels**.
@@ -162,7 +162,7 @@ The channel is available for all members and guests to access, but guests can on
 
 The channel is available for all members and guests to access but only admins can post.
 
-Post Management
+Post management
 ^^^^^^^^^^^^^^^
 
 **Restrict who can delete posts**
@@ -187,7 +187,7 @@ Example: As the default for the entire system, only allow users to edit their ow
 
   The post edit time limit is a `global config variable <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time limit applies system-wide to all teams and roles.
 
-Integration Management
+Integration management
 ^^^^^^^^^^^^^^^^^^^^^^
 
 **Restrict managing webhooks and slash commands**

@@ -1,4 +1,4 @@
-Keyboard Accessibility
+Keyboard accessibility
 =======================
 
 |all-plans| |cloud| |self-hosted|

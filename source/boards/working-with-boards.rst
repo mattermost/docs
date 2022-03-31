@@ -1,4 +1,4 @@
-Working with Boards
+Working with boards
 ===================
 
 |all-plans| |cloud| |self-hosted|

@@ -1,4 +1,4 @@
-Rename Channels
+Rename channels
 ===============
 
 |all-plans| |cloud| |self-hosted|
@@ -18,7 +18,7 @@ Rename Channels
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions to do so <https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
+Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions to do so using advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
 
 In the Desktop App, select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted for two values:
 
