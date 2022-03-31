@@ -19,7 +19,7 @@ Latest Mattermost Releases:
  - Updated Safari recommended minimum version to v14.1+.
 
 ### Important Upgrade Notes
- - For Apps, calls are now separated between submit, form, refresh and lookup calls. If any users have created their own Apps, they have to be updated to the new system.
+ - The Apps Framework protocol for binding/form submissions has changed, by separating the single `call` into separate `submit`, `form`, `refresh` and `lookup` calls. If any users have created their own Apps, they have to be updated to the new system.
  - The default for ``ThreadAutoFollow`` has been changed to ``true``. This does not affect existing configurations where this value is already set to ``false``.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
