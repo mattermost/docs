@@ -992,6 +992,9 @@ mmctl channel delete
 
 Permanently delete channels along with all related information including posts from the database.
 
+.. note::
+   Requires the `Enable API Channel Deletion <https://docs.mattermost.com/configure/configuration-settings.html#enable-api-channel-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
+
 **Format**
 
 .. code-block:: sh
