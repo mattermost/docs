@@ -24,6 +24,7 @@ Latest Mattermost Mobile Apps releases:
  - Users are now taken directly to the SSO login if only one SSO login method is enabled.
  - Calls are now enabled on mobile if the server has Calls enabled.
  - For Calls, added "raise hand" functionality and a screensharing icon.
+ - "Default Enabled Calls" and "Allow Enable Calls" server settings are now respected by Calls on mobile.
  - Added a speakerphone button to the Calls interface.
  - Added support for link highlighting for capitalized link schemes, such as ``Https://`` instead of ``https://``.
  - Changed the search bar in manual timezone selection view to be consistent with the rest of the app.
