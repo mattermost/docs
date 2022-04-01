@@ -73,11 +73,13 @@ redirects = {
 
 # About redirects
 "about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities": 
-    "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
+        "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
+"about/deployments-and-editions.html":
+        "https://docs.mattermost.com/about/editions-and-offerings.html",
 
 # Administration redirects resulting from the June 2021 docs reorganization project.
-"administration/announcement-banner.html": 
-    "https://docs.mattermost.com/manage/announcement-banner.html",
+"administration/announcement-banner.html":
+        "https://docs.mattermost.com/manage/announcement-banner.html",
 "administration/audit-log.html": 
         "https://docs.mattermost.com/comply/audit-log.html",
 "administration/backup.html": 
