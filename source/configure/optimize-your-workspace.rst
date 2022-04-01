@@ -32,7 +32,7 @@ The highest score possible is 100. Your score is calculated based on the type of
 
 Each item on the dashboard is calculated based on its individual impact score which differ depending on whether they are suggestions, warnings, or problems. For example, if SSL encryption isn't configured in your workspace, Mattermost reports that as a problem, and that problem reduces your score until that problem is addressed. Suggestions impact your score less than warnings, and warnings impact less than problems.
 
-Want to improve your overall workspace optimization score? Take action towards the the suggestions, warnings, and problems reported on this dashboard. We recommend the following workspace optimizations.
+Want to improve your overall workspace optimization score? Take action towards the suggestions, warnings, and problems reported on this dashboard. We recommend the following workspace optimizations.
 
 Recommendations
 ---------------
