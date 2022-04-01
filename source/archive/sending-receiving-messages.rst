@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _sending-messages:
 
 Sending and Receiving Messages

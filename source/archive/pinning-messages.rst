@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _pinning-messages:
 
 Pinning Messages

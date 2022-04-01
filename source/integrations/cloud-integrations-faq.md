@@ -1,3 +1,4 @@
+:nosearch:
 
 # Integrations FAQ
 

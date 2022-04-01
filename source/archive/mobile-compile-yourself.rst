@@ -1,3 +1,5 @@
+:nosearch:
+
 Build Your Own Version of the Mattermost Mobile Apps
 ====================================================
 
