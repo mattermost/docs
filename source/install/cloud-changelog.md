@@ -4,12 +4,49 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
 - [Release 2022-03-08](#release-2022-03-08)
 - [Release 2022-03-02](#release-2022-03-02)
 - [Release 2022-02-16](#release-2022-02-16)
-- [Release 2022-02-10](#release-2022-02-10)
+
+## Release 2022-04-13
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a new Activity & Insights feature, consisting of usage and behaviour data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
+ - The elasticsearch indexing job is resumable now. Stopping a server while the job is running will put the job in pending status and will resume the job when the server starts. The job can still be explicitly canceled via the **System Console**.
+ - Added a new stats field under the channel object for graphql.
+ - Added a configuration setting ``EmailSettings.EnableInactivityEmail`` to add the ability to toggle sending inactivity email notification to Admins.
+ - Added Files and Pinned Messages to the right-hand side Channel Info.
+ - Updated the New Channel modal.
+ - Added another 'Active' filter for users and Admins in **System Console > User Management > Users**.
+ - Elasticsearch and Bleve indexing have been revamped to be much more efficient and faster. The config parameter ``BulkIndexingTimeWindowSeconds`` for both elasticsearch and bleve is now deprecated and no longer used. A new config parameter called ``BatchSize`` has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload. 
+ - Removed cloud user limit count.
+ - ``api/v4/file/s3_test`` now requires ``FileSettings`` to be all set to run.
+ - ``api/v4/email/test`` now requires ``EmailSettings`` to be all set to run.
+ - Added a ``threadsOnly`` query parameter for getting user threads.
+
+#### Performance
+ - Added an index to the ``UserGroups DisplayName`` for improved autosuggest query performance.
+ - Improved the performance of permission selectors.
+
+#### Bug Fixes
+ - Restored the rendering of main menu items from plugins in non-mobile view.
+ - Fixed the overflow of text in **Manage Channel Members** modal title.
+ - Fixed an issue where pagination was broken in **System Console > Groups**.
+ - Fixed an issue where thread updates did not show correctly after the computer woke up.
+ - Fixed an issue where a negative unread count sometimes appeared with Collapsed Reply Threads enabled.
+ - Fixed an issue where the modal to create a Custom Group got closed when pressing ENTER.
+
+### Known Issues
+ - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-03-30
 
