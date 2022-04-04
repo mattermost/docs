@@ -286,7 +286,7 @@ Preview pre-release features
 
 Turn on preview features to view them early, ahead of their official release:
 
-- **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
+- **Show markdown preview option in message input box** Enabling this displays a **Preview** option when typing in the text input box. Selecting **Preview** shows what the Markdown formatting in the message looks like before the message is sent.
 
 Performance Debugging
 ~~~~~~~~~~~~~~~~~~~~~
