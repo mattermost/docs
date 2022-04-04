@@ -5989,7 +5989,7 @@ Automatically Follow Threads
  
 .. important::
 
-    This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling this configuration setting until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
+    This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. If you can't easily scale up and tune your database, or if you're running the Mattermost application server and database server on the same machine, we recommended disabling this configuration setting until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
 
