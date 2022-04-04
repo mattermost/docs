@@ -1,4 +1,4 @@
-:orphan:
+:nosearch:
 
 About Mattermost
 ================
@@ -14,7 +14,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/product.rst
    /about/security.rst
    /about/integrations.rst
-   /about/deployments-and-editions.rst
+   /about/editions-and-offerings.rst
    /about/subscription.rst
    /about/self-hosted-subscriptions.rst
    /about/cloud-subscriptions.rst
@@ -33,7 +33,7 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
-* :doc:`Deployments and editions </about/deployments-and-editions>` - Learn more about Mattermost deployment options.
+* :doc:`Mattermost editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost deployment options.
 * :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions.
 * :doc:`Self-Hosted subscriptions </about/self-hosted-subscriptions>` - Learn about Mattermost self-hosted subscriptions.
 * :doc:`Cloud subscriptions </about/cloud-subscriptions>` - Learn about Mattermost Cloud subscriptions.
