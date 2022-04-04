@@ -1,12 +1,7 @@
 GitLab Single Sign-On
 =====================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+|cloud| |self-hosted|
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
@@ -18,12 +13,7 @@ GitLab Single Sign-On
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-*Not available in Cloud Starter*
-
-Migrating from OAuth 2.0 to OpenID Connect
--------------------------------------------
-
-OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to product documentation to `convert your existing OAuth configuration <https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html>`__ for GitLab to the OpenID Connect standard. 
+*Not available in Mattermost Cloud Starter*
 
 Configuring GitLab as a Single Sign-On (SSO) service
 ----------------------------------------------------
@@ -31,7 +21,10 @@ Configuring GitLab as a Single Sign-On (SSO) service
 Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in.
 
 .. note::  
-  Only the default GitLab SSO is officially supported. "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required, they're not officially supported, and they're known not to work in some cases. 
+  - Only the default GitLab SSO is officially supported. 
+  - "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required, they're not officially supported, and they're known not to work in some cases. 
+  - Mattermost's open source Team Edition supports the OAuth 2.0 standard.
+  - Mattermost Professional and Enterprise support the OpenID Connect standard.
 
 Step 1: Add an OpenID Connect application to your GitLab account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,7 +43,10 @@ Step 1: Add an OpenID Connect application to your GitLab account
 
    If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
 
-  c. Select the scopes: ``openid``, ``profile``, and ``email``.
+  c. Select scopes.
+  
+     - For Mattermost Team Edition, select ``read_user`` and ``openid``.
+     - For Mattermost Enterprise, select ``openid``, ``profile``, and ``email``.
 
 3. Select **Save application**.
 
@@ -65,9 +61,11 @@ Step 2: Configure Mattermost for GitLab SSO
 4. The **Discovery Endpoint** for OpenID Connect with GitLab is prepopulated with ``https://gitlab.com/.well-known/openid-configuration``.
 5. Paste the **Application ID** from GitLab as the **Client ID** in Mattermost.
 6. Paste the **Application Secret Key** from GitLab as the **Client Secret** in Mattermost. 
-7. Select **Save**.
+7. Update the ``config.json`` file to specify the scopes selected for the ``GitLabSettings`` property. At a minimum, ``openid`` is a required scope for the connector to work. Changes to this setting require a server restart before taking effect. 
+8. Select **Save**.
 
 .. note::
+
   When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.
 
 (Optional) Step 3: Force users to sign up using SSO only

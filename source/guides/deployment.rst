@@ -10,7 +10,7 @@ Get started
     :hidden:
 
     Quick install guide </getting-started/light-install>
-    Run Mattermost via Docker </install/setting-up-local-machine-using-docker>
+    Installing Mattermost via Docker </install/setting-up-local-machine-using-docker>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
@@ -21,7 +21,7 @@ These guides will get you up and running with Mattermost in minutes.
 
 * :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
 * :doc:`Run Mattermost via Docker </install/setting-up-local-machine-using-docker>` - Launch a Mattermost server instantly to test functionality and build integrations.
-* :doc:`Install Mattermost from Source </install/install-source>` - Install Mattermost server from a compressed tarball.
+* :doc:`Install Mattermost from Tar </install/install-source>` - Install Mattermost server from a compressed tarball.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
@@ -40,7 +40,7 @@ Server installation
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Local Docker setup </install/setting-up-local-machine-using-docker>
+    Installing Mattermost via Docker </install/setting-up-local-machine-using-docker>
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
@@ -50,7 +50,7 @@ Server installation
 
 
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>`
-* :doc:`Local Docker setup </install/setting-up-local-machine-using-docker>`
+* :ref:`Deploy Mattermost on Docker`
 * :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
 * :doc:`Kubernetes </install/install-kubernetes>`
