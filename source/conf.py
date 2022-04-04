@@ -671,6 +671,8 @@ redirects = {
         "https://docs.mattermost.com/install/database-transport-encryption.html",
 "install/transport-encryption/config-mattermost.html":
         "https://docs.mattermost.com/install/proxy-to-mattermost-transport-encryption.html",
+"install/docker-local-machine.html":
+        "install/install-docker.html",
 
 
 # Integrations redirects.

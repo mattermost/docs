@@ -1,6 +1,6 @@
 ..  _docker-local-machine:
 
-Installing Mattermost via Docker
+Install Mattermost via Docker
 ================================
 
 |all-plans| |self-hosted|
@@ -14,11 +14,6 @@ Installing Mattermost via Docker
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
-
-.. important::
-  Follow the `preview instructions <#preview-mattermost>`__ to deploy Mattermost on Docker in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__. **Preview Mode** is for exploring product functionality on a single local machine. This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, keeps no persistent data (all data lives inside the container), and doesn't support upgrades.
-  
-  **When you're ready to use Mattermost, follow the** `production instructions <#deploy-mattermost>`__ **to deploy Mattermost on Docker in your production environment.**
 
 Prerequisites
 -------------
@@ -58,6 +53,10 @@ If you don't have Docker installed, follow the instructions below based on your 
 
 Preview Mattermost on Docker
 ----------------------------
+.. important::
+  Follow the `preview instructions <#preview-mattermost>`__ to deploy Mattermost on Docker in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__. **Preview Mode** is for exploring product functionality on a single local machine. This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, keeps no persistent data (all data lives inside the container), and doesn't support upgrades.
+  
+  **When you're ready to use Mattermost, follow the** `production instructions <#deploy-mattermost>`__ **to deploy Mattermost on Docker in your production environment.**
 
 After you install Docker, you can preview Mattermost with one command:
 
@@ -65,7 +64,7 @@ After you install Docker, you can preview Mattermost with one command:
 
   docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-When Docker is done fetching the image, navigate to http://localhost:8065/ in your browser to preview Mattermost. **This deployment is not designed for production use.** When you're ready to use Mattermost, follow the `production instructions <#deploy-mattermost>`__ to deploy Mattermost on Docker.
+When Docker is done fetching the image, navigate to http://localhost:8065/ in your browser to preview Mattermost.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
@@ -93,8 +92,8 @@ To access a shell inside the container, run the following command:
 
 .. _Deploy Mattermost on Docker:
 
-Deploy Mattermost on Docker
----------------------------
+Deploy Mattermost on Docker For Production Use
+----------------------------------------------
 
 .. important::
   To deploy Mattermost for production, `docker-compose >= 1.28 <https://docs.docker.com/compose/install/>`__ needs to be installed.
