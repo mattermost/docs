@@ -19,9 +19,9 @@ This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__.
+If you have a `paid subscription to a Mattermost offering <https://docs.mattermost.com/about/editions-and-offerings.html>`_, such as `Mattermost Professional <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
-Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__.
+Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
 
 Important notes
 ---------------
@@ -107,7 +107,9 @@ Connect with another device
 Opening a support ticket for self-hosted deployments
 ----------------------------------------------------
 
-When opening a Support ticket, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
+If you have a `paid subscription to a Mattermost offering <https://docs.mattermost.com/about/editions-and-offerings.html>`_, such as `Mattermost Professional <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+
+When opening a Support ticket as part of your paid subscription, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
 
 * Configurations
 * Logs
@@ -116,8 +118,6 @@ When opening a Support ticket, it's important that you provide us with as much i
 * Steps to reproduce
 
 C.L.U.E.S. represents all of the information that can clarify your issue. With these details, we can begin searching for a cause, whether it's a simple configuration change or a product bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
-
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`__ and the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__.
 
 General guidelines for information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
