@@ -29,7 +29,7 @@ Mattermost will also have the right to place the name and logo of the nonprofit 
 To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__.
 
 
-Mattermost Educational License Program
+Mattermost educational license program
 ======================================
 
 For academic licensing, please see: https://mattermost.com/education/
