@@ -8,7 +8,7 @@ Mattermost self-hosted deployments require a license to be applied to access fea
 Mattermost Cloud is a software-as-a-service product. You can sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
 
 Mattermost Non-Profit License Program
-======================================
+------------------------------------------
 
 The Mattermost Nonprofit License enables eligible charities, open source projects, and nonprofit organizations to apply the benefits of the self-hosted Mattermost Professional offering towards advancing their missions with special nonprofit pricing.
 
