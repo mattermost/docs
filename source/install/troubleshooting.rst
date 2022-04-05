@@ -36,11 +36,12 @@ General troubleshooting
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
 Review Mattermost logs
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`__.
 
-**Mattermost Server**
+Mattermost Server logs 
+----------------------
 
 - Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
 - You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
@@ -54,7 +55,8 @@ If filesystem access is not possible, navigate to **System Console > Reporting >
 
 You can find more on logging settings `here <https://docs.mattermost.com/configure/configuration-settings.html#standard-logging>`__.
 
-**Mattermost Desktop App**
+Mattermost Desktop App logs
+---------------------------
 
 The desktop app log file can be found in the user directory:
 
@@ -62,11 +64,13 @@ The desktop app log file can be found in the user directory:
 - **Linux:** ``~/.local/share/Mattermost/logs``
 - **MacOS:** ``~/Library/Logs/Mattermost``
 
-**Mattermost Browser App**
+Mattermost Browser App logs
+---------------------------
 
-The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser.
+The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser for action history. 
 
-**Mattermost Push Notification Service**
+Mattermost Push Notification Service logs
+-----------------------------------------
 
 Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
 
@@ -101,7 +105,7 @@ Connect with another device
 - If you don’t have another device available, check with other teammates to see if they are having the same issue.
 
 Opening a support ticket for self-hosted deployments
------------------------------------------------------
+----------------------------------------------------
 
 When opening a Support ticket, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
 
