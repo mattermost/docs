@@ -26,17 +26,11 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Apps Framework V1
- - 
+#### Apps Framework 1.0: General Availability
+ - The App Framework allows developers to build integrations with Mattermost that seamlessly work across Mattermost’s desktop and mobile clients, can be coded in any language developers are comfortable with.
 
 #### Actions Restructure
- - The **More Actions** menu was restructured.
-
-#### Channel Info
- - Added a right-hand side panel to see and interact with channel information.
-
-#### Inline Post Editing
- - Added support for inline editing of posts.
+ - The **Actions** menu was restructured to reduce clutter.
 
 #### Nested Permalink Previews
  - Added nested previews for permalinks.
@@ -47,6 +41,8 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Added a right-hand side Channel Info panel to see and interact with channel information.
+ - Added support for inline editing of posts.
  - Changed the Mattermost indigo theme to match the dark theme in code blocks.
  - Updated in-product links to legacy domain about.mattermost.com.
  - Added a copy button when hovering over code blocks.
