@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _template-mm-rollout:
 
 Mattermost Rollout Template

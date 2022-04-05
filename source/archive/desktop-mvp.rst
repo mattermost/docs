@@ -1,3 +1,5 @@
+:nosearch:
+
 Desktop MVP
 ===========
 

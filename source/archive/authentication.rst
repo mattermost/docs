@@ -1,3 +1,4 @@
+:nosearch:
 
 Multi-Factor Authentication
 ---------------------------

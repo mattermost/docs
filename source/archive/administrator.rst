@@ -1,3 +1,4 @@
+:nosearch:
 
 Self-Managed Administrator's Guide
 ==================================
