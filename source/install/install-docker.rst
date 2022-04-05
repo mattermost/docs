@@ -169,8 +169,13 @@ To add the PKI chain, uncomment this line in your ``.env`` file and ensure it po
 
 .. code:: bash
 
-  # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+  #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
 
+Then uncomment this line in your ``docker-compose.yml`` file and ensure it points to the same ``pki_chain.pem`` file:
+
+.. code:: bash
+
+  # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
 6. Deploy
 ^^^^^^^^^
