@@ -2,7 +2,7 @@
 
 Mattermost is an open source developer collaboration suite offering workplace messaging across web, desktop and mobile, project management, incident management and integration with toolchains and apps.
 
-You can run Mattermost as an MIT-licensed Linux binary working with MySQL or PostgreSQL, available in [open source and commercial editions and offerings](https://docs.mattermost.com/about/deployments-and-editions.html) via cloud and self-hosted environments. 
+You can run Mattermost as an MIT-licensed Linux binary working with MySQL or PostgreSQL via cloud and self-hosted environments. 
 
 ## :cloud: Cloud Deployment 
 
