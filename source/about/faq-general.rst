@@ -45,4 +45,4 @@ This includes:
 - We are not permitted to provide you technical support for our software. Moreover, we cannot answer questions about our software.
 - We are not permitted to provide our software, including any updates, upgrades or cloud-hosted versions to your organization. We must ask that you do not use any software or online services provided by Mattermost, Inc., including any versions that have been provided online to the general public.
 
-We deeply apologize for the inconvenience. We must abide by United States laws. We hope after sanctions are lifted that we can support your interest once again. Please reach out to legal@mattermost.com for any questions around current export limitations.
+We deeply apologize for the inconvenience. We must abide by United States laws. We hope after sanctions are lifted that we can support your interest once again. Please reach out to compliance@mattermost.com for any questions around current export limitations.
