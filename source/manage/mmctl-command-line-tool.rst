@@ -5499,7 +5499,7 @@ Manage users.
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
       -  `mmctl user username`_ - Change username of the user
-      -  `mmctl user verify`_ - Verify user's email address
+      -  `mmctl user verify`_ - Mark user's email as verified
 
 **Options**
 
@@ -6242,7 +6242,7 @@ mmctl user verify
 
 **Description**
 
-Verify the user's email address.
+Mark user's email as verified without requiring user to complete email verification path.
 
 **Format**
 
