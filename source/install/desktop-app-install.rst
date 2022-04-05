@@ -58,7 +58,7 @@ Download the latest version of the Mattermost desktop app MSI installer (Beta):
 - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-x64.msi>`__
 - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-x86.msi>`__
 
-`See here <https://docs.mattermost.com/install/desktop-msi-gpo.html>`__ for instructions on installing the Mattermost desktop app via an MSI installer and configuring supported Group Policies.
+`See here <https://docs.mattermost.com/install/desktop-msi-gpo.html>`__ for instructions on installing the Mattermost desktop app via an MSI installer and configuring supported Group Policies. Changes to Group Policies require Mattermost to be restarted for those changes to take effect.
 
 The following Group Policies are available:
 
