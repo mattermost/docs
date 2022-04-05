@@ -24,7 +24,7 @@ To be eligible, an organization needs to be an official nonprofit or charity; as
 
 Mattermost will also have the right to place the name and logo of the nonprofit or charitable institution on our website and marketing materials. 
 
-**How can we apply?**
+**How to apply?**
 
 To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__.
 
