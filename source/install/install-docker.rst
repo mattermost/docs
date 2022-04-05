@@ -160,7 +160,7 @@ To include the certificate and key, ensure these lines in your ``.env`` file poi
   CERT_PATH=./volumes/web/cert/cert.pem
   KEY_PATH=./volumes/web/cert/key-no-password.pem
 
-4. Configure SSO with GitLab *(optional)*:
+5. Configure SSO with GitLab *(optional)*:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to use SSO with GitLab and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
