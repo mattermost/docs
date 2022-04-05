@@ -20,7 +20,7 @@ Get started
 These guides will get you up and running with Mattermost in minutes.
 
 * :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
-* :doc:`Docker Deployment </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
+* :doc:`Docker deployment </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
