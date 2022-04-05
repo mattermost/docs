@@ -21,6 +21,8 @@ Latest Mattermost Cloud releases:
  - Updated the New Channel modal.
  - Added another 'Active' filter for users and Admins in **System Console > User Management > Users**.
  - Removed cloud user limit count.
+
+#### Administration
  - ``api/v4/file/s3_test`` now requires ``FileSettings`` to be all set to run.
  - ``api/v4/email/test`` now requires ``EmailSettings`` to be all set to run.
  - Added a ``threadsOnly`` query parameter for getting user threads.
