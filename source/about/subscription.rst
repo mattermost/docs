@@ -12,7 +12,7 @@ Mattermost Non-Profit License Program
 
 The Mattermost Nonprofit License enables eligible charities, open source projects and nonprofit organizations to apply the benefits of the self-hosted Mattermost Professional offering to advancing their missions with special nonprofit pricing.
 
-**What included?**
+**What's included?**
 
 A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website and in our marketing materials.
 
