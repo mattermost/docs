@@ -17,13 +17,10 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Added a new Activity & Insights feature, consisting of usage and behaviour data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
- - The elasticsearch indexing job is resumable now. Stopping a server while the job is running will put the job in pending status and will resume the job when the server starts. The job can still be explicitly canceled via the **System Console**.
- - Added a new stats field under the channel object for graphql.
  - Added a configuration setting ``EmailSettings.EnableInactivityEmail`` to add the ability to toggle sending inactivity email notification to Admins.
  - Added Files and Pinned Messages to the right-hand side Channel Info.
  - Updated the New Channel modal.
  - Added another 'Active' filter for users and Admins in **System Console > User Management > Users**.
- - Elasticsearch and Bleve indexing have been revamped to be much more efficient and faster. The config parameter ``BulkIndexingTimeWindowSeconds`` for both elasticsearch and bleve is now deprecated and no longer used. A new config parameter called ``BatchSize`` has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload. 
  - Removed cloud user limit count.
  - ``api/v4/file/s3_test`` now requires ``FileSettings`` to be all set to run.
  - ``api/v4/email/test`` now requires ``EmailSettings`` to be all set to run.
