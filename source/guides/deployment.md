@@ -46,7 +46,7 @@ Install Mattermost Server and Mattermost Desktop and Mobile Applications in envi
 
 ##### Additional Self-Hosted Installation Guides: 
 
-Install single-node (Preview/Evaluation mode) or multi-node (Production mode) deployments on other platforms: 
+Install 1 to 3 server evaluation or production deployments on other platforms: 
 
 - [Ubuntu 20.04 LTS](https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html), [Red Hat Enterprise Linux 8 (RHEL 8)](https://docs.mattermost.com/install/install-rhel-8.html), [Debian Buster](https://docs.mattermost.com/install/install-debian.html), [CentOS](https://docs.mattermost.com/install/install-centos-oracle-scientific.html), [Oracle Linux](https://docs.mattermost.com/install/install-centos-oracle-scientific.html), [Scientific Linux](https://docs.mattermost.com/install/install-centos-oracle-scientific.html) 
 
