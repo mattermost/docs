@@ -92,7 +92,7 @@ To access a shell inside the container, run the following command:
 
 .. _Deploy Mattermost on Docker:
 
-Deploy Mattermost on Docker For Production Use
+Deploy Mattermost on Docker For production use
 ----------------------------------------------
 
 .. important::
