@@ -32,7 +32,7 @@ Configuring OpenID Connect Single Sign-On
 
 |self-hosted|
 
-For details on configuring Mattermost to use a service provider as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in OpenID Connect, refer to the following documentation:
+For details on configuring Mattermost to use a service provider as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in using OpenID Connect, refer to the following documentation:
 
 - `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`_
 - `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__
