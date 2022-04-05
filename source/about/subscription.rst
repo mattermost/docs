@@ -5,7 +5,7 @@ Mattermost offers features through `Mattermost Professional and Mattermost Enter
 
 Mattermost self-hosted deployments require a license to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscriptions. When you purchase a subscription, a license is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details. 
 
-Mattermost Cloud is a software-as-as-service. You can sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
+Mattermost Cloud is a software-as-a-service product. You can sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
 
 Mattermost Non-Profit License Program
 ======================================
