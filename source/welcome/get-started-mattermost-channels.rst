@@ -1,7 +1,7 @@
 Get started with Mattermost Channels
 ====================================
 
-Access Mattermost Channels by selecting **Channels** from the **Product list** |product-list| icon.
+Access Mattermost Channels by selecting **Channels** from the **product menu** |product-list|.
 
 .. |product-list| image:: ../images/products_E82F.svg
   :height: 24px
