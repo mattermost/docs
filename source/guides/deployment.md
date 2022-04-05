@@ -12,7 +12,7 @@ Cloud is the fastest, easiest way to try out the Mattermost suite:
 
 ## Self-Hosted Deployment 
 
-Prefer 100% control of your deployment and data? Self-hosted Mattermost for teams of 10 to 10,000 (or more).
+Want 100% control of your deployment and data? Self-host Mattermost for teams of 50 to 50,000 (or more).
 
 ### Getting Started 
 
