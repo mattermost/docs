@@ -29,7 +29,7 @@ Once you're deployed, learn about:
 - [Implementation Plan Template](https://docs.mattermost.com/getting-started/implementation-plan.html) - Use this plan template to organize a production rollout to hundreds of users, from project goals, end user groups, technical environment, deployment steps, staffing, training and support. 
 - [Enterprise Roll Out Guide](https://docs.mattermost.com/getting-started/enterprise-roll-out-checklist.html) - Extend your implementation plan to a rollout to serveral thousand users with analytics, performance monitoring and performance tuning.
 
-### :construction_worker: Install Guides 
+### :construction_worker: Install Guide
 
 Install Mattermost Server and Mattermost Desktop and Mobile Applications in environments meeting [software and hardware requirements](https://docs.mattermost.com/install/software-hardware-requirements.html).
 
@@ -63,4 +63,10 @@ Need help installing on server, desktop or mobile?
 - Free peer-to-peer support is available in our [troubleshooting forum](https://forum.mattermost.com/c/trouble-shoot) and on our [community server](https://community.mattermost.com/core/channels/peer-to-peer-help). 
 - If you have a [paid subscription to a Mattermost offering](https://docs.mattermost.com/about/editions-and-offerings.html) you can also [open support tickets online](https://support.mattermost.com/hc/en-us/requests/new). 
 
+### :construction_worker: Deployment Guide
 
+The deployment guide is for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure.
+
+#### Server deployment
+
+[Deployment overview](https://docs.mattermost.com/deploy/deployment-overview.html) - Learn the basics of the Mattermost user experience, communication protocols, network access, data storage, and deployment options.
