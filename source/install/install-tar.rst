@@ -134,4 +134,4 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
     ``sudo systemctl enable mattermost.service``
 
-Once you're Mattermost server is up and running, take a look at the `available configuration options <https://docs.mattermost.com/guides/deployment.html#deployment-guide./>`__ 
+Once you're Mattermost server is up and running, take a look at the `available configuration options <https://docs.mattermost.com/guides/deployment.html#deployment-guide./>`__.
