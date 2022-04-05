@@ -30,7 +30,9 @@ How is the overall score calculated?
 
 The highest score possible is 100. Your score is calculated based on the type of issue reported and the level of potential security risk introduced to your Mattermost deployment if ignored. 
 
-Each item on the dashboard is calculated based on its individual impact score which differ depending on whether they are suggestions, warnings, or problems. For example, if SSL encryption isn't configured in your workspace, Mattermost reports that as a problem, and that problem reduces your score until that problem is addressed. Suggestions impact your score less than warnings, and warnings impact less than problems.
+Each item on the dashboard is calculated based on its individual impact score. These differ depending on whether they're problems, warnings, or suggestions. For example, if SSL encryption isn't configured in your workspace, Mattermost reports that as a problem, which reduces your score until it's addressed. 
+
+Warnings impact your score less than problems, and suggestions have the least impact on your score.
 
 Want to improve your overall workspace optimization score? Take action towards the suggestions, warnings, and problems reported on this dashboard. We recommend the following workspace optimizations.
 
