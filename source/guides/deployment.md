@@ -26,8 +26,13 @@ If you'd like 100% control over your deployment and data, try one of the followi
 
 Install Mattermost on a single-node (Preview/Evaluation mode) or multi-node (Production mode) deployment on a range of platforms including: 
 
-- Ubuntu 20.04 LTS
-- Red Hat Enterprise Linux 8 (RHEL 8), 
-- Debian Buster
-- CentOS, Oracle Linux, and Scientific Linux
+- [Ubuntu 20.04 LTS](https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html), [Red Hat Enterprise Linux 8 (RHEL 8)](https://docs.mattermost.com/install/install-rhel-8.html), [Debian Buster](https://docs.mattermost.com/install/install-debian.html), [CentOS](https://docs.mattermost.com/install/install-centos-oracle-scientific.html), [Oracle Linux](https://docs.mattermost.com/install/install-centos-oracle-scientific.html), [Scientific Linux](https://docs.mattermost.com/install/install-centos-oracle-scientific.html) 
+
+### Troubleshooting 
+
+Need help installing? 
+- Check out our [troubleshooting guide](https://docs.mattermost.com/install/troubleshooting.html#review-mattermost-logs) to review logs for common errors and fixes. 
+- If you have a [paid subscription to a Mattermost offering](https://docs.mattermost.com/about/editions-and-offerings.html), such as [Mattermost Professional](https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-professional) or [Mattermost Enterprise](https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise) you're entitled to open support tickets via our [online support portal](https://support.mattermost.com/hc/en-us/requests/new). 
+- Additionally, peer-to-peer support is available for all Mattermost users in our [troubleshooting forum](https://forum.mattermost.com/c/trouble-shoot) and on our [community server](https://community.mattermost.com/core/channels/peer-to-peer-help). 
+
 
