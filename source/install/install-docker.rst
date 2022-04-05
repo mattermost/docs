@@ -172,7 +172,7 @@ To add the PKI chain, uncomment this line in your ``.env`` file and ensure it po
   # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
 
-5. Deploy
+6. Deploy
 ^^^^^^^^^
 
 Without using the included Nginx:
