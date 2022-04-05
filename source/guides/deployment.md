@@ -42,7 +42,7 @@ Install Mattermost Server and Mattermost Desktop and Mobile Applications in envi
 
 - [Local Machine Docker Preview (Recommended for evaluation only)](https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html) - For evaluation only--Preview Mattermost locally on **Mac, Windows, Ubuntu or Fedora** using a single-node Docker image. NOTE: Should only be used for evaluation, not production use. 
 
-- [Kubernetes Operator (Recommended for 500+ users)](https://docs.mattermost.com/install/install-kubernetes.html) - Deploy Mattermost in a Kubernetes-based production environment such as **Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine, DigitalOcean Kubernetes** or on self-hosted Kubernetes infrastructure. High availability mode requires [Mattermost Enterprise](https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise-edition). 
+- [Kubernetes Operator (Recommended for 500+ users)](https://docs.mattermost.com/install/install-kubernetes.html) - Deploy to self-hosted Kubernetes production environment or services like **Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine, DigitalOcean Kubernetes** or on self-hosted Kubernetes infrastructure. High availability mode requires [Mattermost Enterprise](https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise-edition). 
 
 ##### Additional Self-Hosted Installation Guides: 
 
