@@ -501,17 +501,6 @@ The maximum number of idle connections held open to the database.
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
-Maximum Connection Idle Timeout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum time a database connection can remain idle.
-
-+------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
-+------------------------------------------------------------------------------------------------------+
-
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -534,19 +523,6 @@ The number of seconds to wait for a response from the database after opening a c
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-Disable Database Search
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
-
-**False**: Database search is not disabled.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
-+-------------------------------------------------------------------------------------------------------------------------+
-
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -558,6 +534,17 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 | This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with numerical input.              |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+Maximum Connection Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The maximum time a database connection can remain idle.
+
++------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
++------------------------------------------------------------------------------------------------------+
+
 Minimum Hashtag Length
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -568,21 +555,6 @@ The minimum number of characters in a hashtag. This must be greater than or equa
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
 +-------------------------------------------------------------------------------------------------------------------------+
-
-At Rest Encrypt Key
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
-
-When using High Availability, the salt must be identical in each instance of Mattermost.
-
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
-+------------------------------------------------------------------------------------------+
 
 SQL Statement Logging (Trace)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -607,6 +579,41 @@ Recycle Database Connections
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20 seconds.
 
 The workflow for failover without downing the server is to change the database line in the ``config.json`` file, select **Reload Configuration from Disk** in the **Environment > Database** section, then select **Recycle Database Connections**.
+
+Disable Database Search
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
+
+**False**: Database search is not disabled.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Applied Schema Migrations
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost**  from the product menu to review the current database schema version applied to your deployment.
+
+At Rest Encrypt Key
+^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
+
+When using High Availability, the salt must be identical in each instance of Mattermost.
+
+No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
++------------------------------------------------------------------------------------------+
 
 Elasticsearch
 ~~~~~~~~~~~~~~
