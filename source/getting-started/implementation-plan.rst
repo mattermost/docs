@@ -19,14 +19,9 @@ Implementation plan
 1.1 Purpose
 ~~~~~~~~~~~
 
-Mattermost is an open source, private cloud alternative to proprietary SaaS collaboration solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You've chosen to implement Mattermost in our supported `editions:`_
+Mattermost is an open source, private cloud alternative to proprietary SaaS collaboration solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You've chosen to implement Mattermost in our supported `editions and offerings:`_
 
-.. _`editions:`: https://mattermost.com/product/
-
-- Team Edition
-
-- Mattermost Professional adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/onboard/ad-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/configure/configuration-settings.html#policy>`__, and next business day support.
-- Mattermost Enterprise includes Professional features plus `SAML 2.0 Authentication <https://docs.mattermost.com/onboard/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/comply/compliance-reporting-oversight.html>`__, `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__, `Data Retention Policy <https://docs.mattermost.com/comply/data-retention-policy.html>`__, and enterprise class support.
+.. _`editions and offerings:`: https://docs.mattermost.com/about/editions-and-offerings.html
 
 The purpose of this Implementation Plan is to:
 
