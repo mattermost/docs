@@ -1932,6 +1932,19 @@ Enable Developer Mode
 | This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
+Enable Client Performance Debugging
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: User-specific performance debugging features can be enabled from **Settings > Advanced > Performance Debugging**. These settings only affect the user who enables them. See the `Performance Debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__ product documentation to learn more.
+
+**False**: Disables and hides debugging features from **Settings > Advanced > Performance Debugging**.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
+
 Allow Untrusted Internal Connections To
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
