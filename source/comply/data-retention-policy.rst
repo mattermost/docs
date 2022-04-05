@@ -1,4 +1,4 @@
-Data Retention Policy
+Data retention Policy
 =====================
 
 |enterprise| |self-hosted|
@@ -22,7 +22,7 @@ In Mattermost Enterprise, you can set a global retention policy as well as custo
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
 
-Configuring a Global Data Retention Policy
+Configuring a global data retention policy
 -------------------------------------------
 
 To set a global data retention policy in Mattermost v5.38 and later:
@@ -35,7 +35,7 @@ To set a global data retention policy in Mattermost v5.38 and later:
 
 Select **Save**. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
-Configuring a Custom Data Retention Policy
+Configuring a custom data retention policy
 -------------------------------------------
 
 To set a custom data retention policy in Mattermost v5.38 and later:
@@ -49,7 +49,7 @@ To set a custom data retention policy in Mattermost v5.38 and later:
 
 Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
-Running a Deletion Job Manually
+Running a deletion job manually
 --------------------------------
 You can also run the deletion job manually at any time by selecting **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
 
@@ -89,7 +89,6 @@ Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This usually means another data retention job is in progress. You can verify this in the deletion job table in  **System Console > Compliance > Data Retention Policy**.
-
 
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,6 +1,6 @@
 ..  _docker-ebs:
 
-AWS Elastic Beanstalk Docker Setup
+AWS Elastic Beanstalk Docker setup
 ==================================
 
 |all-plans| |self-hosted|
@@ -27,12 +27,11 @@ The Elastic Beanstalk application creation process used here is the easy *Gettin
 5.  Select **Docker** for the Platform.
 6.  Choose **Docker running on 64bit Amazon Linux 2** for the **Platform** branch. Note that multi-container Docker is now deprecated.
 7.  Leave the platform version preselected as **3.4.8 (Recommended)**.
-7.  For **Application code**, select **Upload your code**.
-8.  Download the ``Dockerrun.aws.json`` file from
+8.  For **Application code**, select **Upload your code**.
+9.  Download the ``Dockerrun.aws.json`` file from
     https://raw.githubusercontent.com/mattermost/mattermost-docker-preview/master/Dockerrun.aws.json.
-9.  Set a unique **Version Label**, choose **Local File**, then select **Choose file** button to browse for the downloaded file in the previous step. You should see a *File successfully uploaded* message.
-10. Select **Create Application**.
-11. It may take a few minutes for Beanstalk to launch your environment. If the launch is successful, you will see a see a large green checkmark and the **Health status** displayed in green.
+10.  Set a unique **Version Label**, choose **Local File**, then select **Choose file** button to browse for the downloaded file in the previous step. You should see a *File successfully uploaded* message.
+11. Select **Create Application**. It may take a few minutes for Beanstalk to launch your environment. If the launch is successful, you will see a see a large green checkmark and the **Health status** displayed in green.
 12. Test your environment by selecting the domain link next to your application name at the top of the dashboard. Alternatively, enter the domain into your browser in the form of ``http://<your-ebs-application-url>.elasticbeanstalk.com``. You can also map your own domain if you prefer. When everything is working correctly, the domain navigates you to the Mattermost Sign In page. Enjoy exploring Mattermost!
 
 Configuration Settings

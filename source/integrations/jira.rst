@@ -1,4 +1,4 @@
-Jira Plugin 
+Jira plugin 
 ===========
 
 The Jira/Mattermost plugin documentation is currently being updated and relocated to a `new location <https://mattermost.gitbook.io/jira-plugin/>`_.

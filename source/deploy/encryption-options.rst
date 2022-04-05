@@ -1,4 +1,4 @@
-Encryption Options
+Encryption options
 ==================
 
 |all-plans| |self-hosted|
@@ -28,7 +28,7 @@ Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on all da
 
 Connections to Active Directory/LDAP can `optionally be secured with TLS or stunnel <https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap-port>`__.
 
-Gossip Encryption (Experimental)
+Gossip encryption (experimental)
 --------------------------------
 
 In a High Availability mode, Mattermost supports encryption of cluster data in-transit when using the gossip protocol.  
@@ -43,7 +43,7 @@ Database
 
 Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. Encryption options at the disk level are documented both for `MySQL <https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-encryption/>`__ and `PostgreSQL <https://www.postgresql.org/docs/10/encryption-options.html>`__.
 
-File Storage
+File storage
 ~~~~~~~~~~~~~
 
 For local storage or storage via Minio, encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server.

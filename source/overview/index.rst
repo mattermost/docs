@@ -16,7 +16,7 @@ Below is an overview of our products, features, security, integrations, licensin
    /about/subscription.rst
    /about/self-hosted-subscriptions.rst
    /about/cloud-subscriptions.rst
-   /about/deployments-and-editions.rst
+   /about/editions-and-offerings.rst
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
@@ -31,13 +31,13 @@ Mattermost contains three key tools:
 
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
 
-* :doc:`Product Overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
+* :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
-* :doc:`Subscription Overview </about/subscription>` - Learn about Mattermost subscriptions.
-* :doc:`Self-Hosted Subscriptions </about/self-hosted-subscriptions>` - Learn more about Mattermost self-hosted subscriptions.
-* :doc:`Cloud Subscriptions </about/cloud-subscriptions>` - Learn more about Mattermost Cloud subscriptions.
-* :doc:`Deployments and Editions </about/deployments-and-editions>` - Learn more about Mattermost deployment options.
-* :doc:`Corporate Directory Integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
-* :doc:`Certifications and Compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
-* :doc:`Frequently Asked Questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
+* :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions.
+* :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` - Learn more about Mattermost self-hosted subscriptions.
+* :doc:`Cloud subscriptions </about/cloud-subscriptions>` - Learn more about Mattermost Cloud subscriptions.
+* :doc:`Mattermost editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost editions and product offerings.
+* :doc:`Corporate directory integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
+* :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
+* :doc:`Frequently asked questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.

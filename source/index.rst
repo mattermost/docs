@@ -4,7 +4,7 @@
    landing page.  Updates to this top-level item must also
    be transposed in the 'templates/index.html' file.
 
-Mattermost Product Documentation
+Mattermost product documentation
 --------------------------------
 
 .. _`mattermost.org/download`: https://mattermost.com/download/
@@ -17,10 +17,11 @@ Mattermost Product Documentation
 
    About Mattermost <overview/index>
    Deploy Mattermost <guides/deployment>
-   Mattermost Administration <guides/administration>
-   Channels <guides/channels>
-   Playbooks <guides/playbooks>
-   Boards <guides/boards>
-   Mattermost for Developers <https://developers.mattermost.com/>
-   Get Help With Mattermost <guides/get-help>
-   Community Chat <guides/community-chat>
+   Mattermost administration <guides/administration>
+   Welcome to Mattermost <guides/welcome-to-mattermost>
+   Mattermost Channels <guides/channels>
+   Mattermost Playbooks <guides/playbooks>
+   Mattermost Boards <guides/boards>
+   Mattermost for developers <https://developers.mattermost.com/>
+   Get help with Mattermost <guides/get-help>
+   Community chat <guides/community-chat>

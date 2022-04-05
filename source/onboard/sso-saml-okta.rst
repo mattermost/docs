@@ -9,7 +9,7 @@ The following process provides steps to configure SAML 2.0 with Okta for Matterm
 
 .. include:: sso-saml-before-you-begin.rst
 
-Set Up a Connection App for Mattermost Single Sign-On
+Set Up a connection app for Mattermost Single Sign-On
 -----------------------------------------------------
 
 1. Sign in to Okta as an administrator.
@@ -70,7 +70,7 @@ Set Up a Connection App for Mattermost Single Sign-On
 
 	.. image:: ../../source/images/okta_9_view_instructions.png
 
-Configure SAML Sign-in for Mattermost
+Configure SAML Sign-On for Mattermost
 --------------------------------------
 
 Start the Mattermost server and sign into Mattermost as a System Admin. Go to **System Console > Authentication > SAML 2.0**, then paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** field and select **Get SAML Metadata from IdP**.

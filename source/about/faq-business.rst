@@ -1,4 +1,4 @@
-Business Questions
+Business questions
 ==================
 
 How can I create an open source derivative work of Mattermost?

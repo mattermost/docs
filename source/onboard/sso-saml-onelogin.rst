@@ -9,7 +9,7 @@ The following process provides steps to configure SAML 2.0 with OneLogin for Mat
 
 .. include:: sso-saml-before-you-begin.rst
 
-Create a OneLogin Connection App for Mattermost SSO
+Create a OneLogin connection app for Mattermost SSO
 ---------------------------------------------------
 
 1. Add a SAML test connector app.
@@ -105,7 +105,7 @@ Create a OneLogin Connection App for Mattermost SSO
 
 5. Save all your changes.
 
-Configure SAML Sign-in for Mattermost
+Configure SAML Sign-On for Mattermost
 --------------------------------------
 
 1. Start the Mattermost server, then sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.

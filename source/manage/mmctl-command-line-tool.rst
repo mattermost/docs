@@ -1,4 +1,4 @@
-mmctl Command Line Tool
+mmctl command line tool
 =======================
 
 |all-plans| |cloud| |self-hosted|
@@ -4690,7 +4690,7 @@ System management commands for interacting with the server state and configurati
       -  `mmctl system getbusy`_ - Get the current busy state
       -  `mmctl system setbusy`_ - Set the busy state to ``true``
       -  `mmctl system status`_ - Print the status of the server
-      -  `mmctl system version`_ - Print the remote server version
+      -  `mmctl system version`_ - Print the remote server version build number
 
 **Options**
 
@@ -4860,7 +4860,7 @@ mmctl system version
 
 **Description**
 
-Print the server version of the currently connected Mattermost instance.
+Print the server version build number of the currently connected Mattermost instance.
 
 **Format**
 
@@ -5499,7 +5499,7 @@ Manage users.
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
       -  `mmctl user username`_ - Change username of the user
-      -  `mmctl user verify`_ - Verify user's email address
+      -  `mmctl user verify`_ - Mark user's email as verified
 
 **Options**
 
@@ -6242,7 +6242,7 @@ mmctl user verify
 
 **Description**
 
-Verify the user's email address.
+Mark user's email as verified without requiring user to complete email verification path.
 
 **Format**
 

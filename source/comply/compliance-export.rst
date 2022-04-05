@@ -1,4 +1,4 @@
-Compliance Export
+Compliance export
 =================
 
 |enterprise| |cloud| |self-hosted|
@@ -39,7 +39,7 @@ Enterprise deployments with a requirement to archive history beyond the data ret
   
    This feature replaces the existing :doc:`Compliance Reporting Oversight <compliance-reporting-oversight>` We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
    
-Set Up Guide
+Set up guide
 ------------
 
 Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. \

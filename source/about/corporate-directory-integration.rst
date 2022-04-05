@@ -1,4 +1,4 @@
-Corporate Directory Integration 
+Corporate directory integration 
 ================================
 
 Mattermost offers advanced security and authentication options for integrating with corporate directories. This guide outlines the options available.

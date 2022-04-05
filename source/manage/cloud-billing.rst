@@ -1,4 +1,4 @@
-Mattermost Cloud Billing
+Mattermost Cloud billing
 ========================
 
 |all-plans| |cloud|
@@ -19,7 +19,7 @@ You will be billed for registered users in your workspace. A registered user is 
 
 Customers who signed up for a Mattermost Cloud workspace from our October 2020 launch can continue to use their Cloud instance free of charge for up to ten registered users; however, these customers must upgrade to a per-user pricing model after reaching 11 or more registered users. New Mattermost Cloud workspaces can trial Mattermost Cloud free for 14 days before being required to upgrade to a monthly per-user subscription. 
 
-Billing Period
+Billing period
 --------------
 
 After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
@@ -39,7 +39,7 @@ The prorated subscription cost for the user added on day 11 is $6.67 USD.
 
 Similarly, if you make a registered user inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
 
-Viewing and Managing Billing Details
+Viewing and managing billing details
 ------------------------------------
 
 You can view your billing details in **System Console > Billing & Account**.
