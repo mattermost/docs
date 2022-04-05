@@ -34,7 +34,7 @@ Each item on the dashboard is calculated based on its individual impact score. T
 
 Warnings impact your score less than problems, and suggestions have the least impact on your score.
 
-Want to improve your overall workspace optimization score? Take action towards the suggestions, warnings, and problems reported on this dashboard. We recommend the following workspace optimizations.
+Want to improve your overall workspace optimization score? Take action towards the problems, warnings, and suggestions reported on this dashboard. We recommend the following workspace optimizations.
 
 Recommendations
 ---------------
