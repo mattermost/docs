@@ -20,7 +20,7 @@ Following the three-year free license, the institution can renew the license eve
 
 **Who's eligible?**
 
-To be eligible, an organization needs to be an official nonprofit or charity; as well as non-government, non-academic and non-commercial in nature, with no religious affiliation; and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
+To be eligible, an organization needs to be an official nonprofit or charity; as well as non-government, non-academic, and non-commercial in nature, with no religious affiliation; and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
 
 Mattermost will also have the right to place the name and logo of the nonprofit or charitable institution on our website and marketing materials. 
 
