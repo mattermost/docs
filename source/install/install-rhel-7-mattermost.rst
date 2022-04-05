@@ -78,7 +78,7 @@ Assume that the IP address of this server is 10.10.10.2
 
       [Unit]
       Description=Mattermost
-      After=syslog.target network.target postgresql-9.4.service
+      After=syslog.target network.target postgresql.service
 
       [Service]
       Type=notify
@@ -94,7 +94,7 @@ Assume that the IP address of this server is 10.10.10.2
       WantedBy=multi-user.target
 
     .. note::
-      If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
+      If you are using MySQL, replace ``postgresql.service`` by ``mysqld.service`` in the ``[unit]`` section.
 
   c. Set the service file permissions.
 
