@@ -38,11 +38,11 @@ The following guides walk through installing the Mattermost Server and Mattermos
 
 ##### Most Popular Self-Hosted Installation Guides: 
 
-- [Mattermost Omnibus (Fastest, easiest, self-hosted option)](https://docs.mattermost.com/getting-started/light-install.html) - If you have root access on a clean server running **Ubuntu 18.04 or 20.04** this is the fastest, easiest self-hosted deployment option for both evaluation and production-ready use. 
+- [Mattermost Omnibus (Recommended for up to 1,000 users)](https://docs.mattermost.com/getting-started/light-install.html) - If you have root access on a clean server running **Ubuntu 18.04 or 20.04** this is the fastest, easiest self-hosted deployment option.
 
-- [Local Machine Docker Preview](https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html) - For evaluation only--Preview Mattermost locally on **Mac, Windows, Ubuntu or Fedora** using a single-node Docker image. Includes instructions for users new to Docker. NOTE: Should only be used for evaluation, not production use. 
+- [Local Machine Docker Preview (Recommended for evaluation only)](https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html) - For evaluation only--Preview Mattermost locally on **Mac, Windows, Ubuntu or Fedora** using a single-node Docker image. Includes instructions for users new to Docker. NOTE: Should only be used for evaluation, not production use. 
 
-- [Kubernetes Operator](https://docs.mattermost.com/install/install-kubernetes.html) - Deploy Mattermost in a Kubernetes-based production environment such as **Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine,  DigitalOcean Kubernetes** or on self-hosted Kubernetes infrastructure. 
+- [Kubernetes Operator (Recommended for 500+ users)](https://docs.mattermost.com/install/install-kubernetes.html) - Deploy Mattermost in a Kubernetes-based production environment such as **Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine, DigitalOcean Kubernetes** or on self-hosted Kubernetes infrastructure. High availability mode requires [Mattermost Enterprise](https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise-edition). 
 
 ##### Additional Self-Hosted Installation Guides: 
 
@@ -52,10 +52,10 @@ Install single-node (Preview/Evaluation mode) or multi-node (Production mode) de
 
 #### Desktop and Mobile App Installation 
 
-- [Mattermost Desktop App Setup](https://docs.mattermost.com/install/desktop-app-install.html) - Full install guide for Windows, macOS, and Linux (Ubuntu, Debian, Arch, Snapcraft)--also see [simple install instructions](https://docs.mattermost.com/install/desktop-app-install.html).
+- [Mattermost Desktop App Setup](https://docs.mattermost.com/install/desktop-app-install.html) - Full install guide for Windows, macOS, and Linux--also see [simple instructions](https://docs.mattermost.com/install/desktop-app-install.html).
 - [iOS Setup](https://docs.mattermost.com/install/install-ios-app.html) - Install iOS app on Apple iPhone, iPad, and iPod devices.
 - [Android Setup](https://docs.mattermost.com/install/install-android-app.html) - Install Android app on Android phone and tablet devices. 
-- [Test Mobile Push Notifications](https://docs.mattermost.com/deploy/mobile-testing-notifications.html) - Verify that push notifications can flow properly from your Mattermost server to your Mattermost mobile devices. 
+- [Test Mobile Push Notifications](https://docs.mattermost.com/deploy/mobile-testing-notifications.html) - Verify that push notifications can flow properly from server to mobile devices. 
 
 #### Troubleshooting 
 
