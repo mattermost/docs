@@ -121,9 +121,9 @@ When you're ready to install Mattermost server for production use, you have two 
 
         To add the PKI chain, uncomment the following line in your ``.env`` file and ensure it points to your ``pki_chain.pem`` file:
 
-            .. code:: bash
+          .. code:: bash
   
-                # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+            # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
       6. Deploy Mattermost.
 
@@ -161,13 +161,159 @@ When you're ready to install Mattermost server for production use, you have two 
 
         1. Log in to the server that will host Mattermost Server and open a terminal window.
 
-        2. Run the following command:
+        2. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+  
+          .. code:: bash
 
-         .. code:: bash
+            wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
-            sudo systemctl enable mattermost.service
+        3. Extract the Mattermost Server files.
+  
+          .. code:: bash
+            
+            tar -xvzf mattermost*.gz
 
-        3. Once you're Mattermost server is up and running, see the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
+        4. Move the extracted file to the ``/opt`` directory.
+  
+          .. code:: bash
+            
+            sudo mv mattermost /opt
+
+        5. Create the storage directory for files.
+        
+          .. code:: bash
+            
+            sudo mkdir /opt/mattermost/data
+  
+        .. note::
+    
+            The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
+
+        6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
+  
+          a. Create the Mattermost user and group:
+        
+            .. code:: bash
+
+                sudo useradd --system --user-group mattermost
+  
+          b. Set the user and group *mattermost* as the owner of the Mattermost files:
+    
+            .. code:: bash
+            
+                sudo chown -R mattermost:mattermost /opt/mattermost
+  
+          c. Give write permissions to the *mattermost* group:
+        
+            .. code:: bash
+            
+                sudo chmod -R g+w /opt/mattermost
+
+        7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
+  
+           **If you are using PostgreSQL:**
+
+            Set ``"DriverName"`` to ``"postgres"``
+            Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values: ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10",``
+  
+           **If you are using MySQL:**
+
+            Set ``"DriverName"`` to ``"mysql"``
+            Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``: ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
+
+        8. Test the Mattermost server to make sure everything works.
+    
+          a. Change to the Mattermost directory:
+            
+            .. code:: bash
+            
+                cd /opt/mattermost
+            
+          b. Start the Mattermost server as the user mattermost:
+            
+            .. code:: bash
+            
+                sudo -u mattermost bin/mattermost
+  
+        When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
+
+        9. Set up Mattermost to use *systemd* for starting and stopping.
+  
+          a. Create a *systemd* unit file:
+    
+            .. code:: bash
+            
+                sudo touch /lib/systemd/system/mattermost.service
+  
+          b. Open the unit file as root in a text editor, and copy the following lines into the file:
+  
+            .. code-block:: none
+
+                [Unit]
+                Description=Mattermost
+                After=network.target
+                After=postgresql.service
+                BindsTo=postgresql.service
+                [Service]
+                Type=notify
+                ExecStart=/opt/mattermost/bin/mattermost
+                TimeoutStartSec=3600
+                KillMode=mixed
+                Restart=always
+                RestartSec=10
+                WorkingDirectory=/opt/mattermost
+                User=mattermost
+                Group=mattermost
+                LimitNOFILE=49152
+                [Install]
+                WantedBy=multi-user.target
+  
+            .. note::
+    
+                * If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in 2 places in the ``[Unit]`` section.
+                * If you have installed MySQL or PostgreSQL on a dedicated server, you need to remove the ``After=mysql.service`` and ``BindsTo=mysql.service`` or the ``After=postgresql.service`` and ``BindsTo=postgresql.service`` lines in the ``[Unit]`` section or the Mattermost service won't start.
+    
+          c. Make systemd load the new unit.
+    
+            .. code:: bash
+            
+                sudo systemctl daemon-reload
+  
+          d. Check to make sure that the unit was loaded.
+    
+            .. code:: bash
+            
+                sudo systemctl status mattermost.service
+    
+          You should see an output similar to the following:
+    
+          .. code-block:: none
+                
+            mattermost.service - Mattermost
+            Loaded: loaded (/lib/systemd/system/mattermost.service; disabled; vendor preset: enabled)
+            Active: inactive (dead)
+  
+          e. Start the service.
+    
+            .. code:: bash
+            
+                sudo systemctl start mattermost.service
+  
+          f. Verify that Mattermost is running.
+    
+            .. code:: bash
+            
+                curl http://localhost:8065
+    
+            You should see the HTML that's returned by the Mattermost server. Note: in case firewall is used, external requests to port 8065 may be blocked. Use ``sudo ufw allow 8065`` to open port 8065.
+  
+          g. Set Mattermost to start on machine start up.
+
+            .. code:: bash
+            
+                sudo systemctl enable mattermost.service
+
+        Once you're Mattermost server is up and running, see the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
 
 Prepare for your Mattermost deployment
 --------------------------------------
