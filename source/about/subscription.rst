@@ -33,7 +33,7 @@ To apply for the Mattermost Nonprofit License, `please complete this form <https
 
 
 Mattermost educational license program
-======================================
+-------------------------------------
 
 For academic licensing, please see: https://mattermost.com/education/
 
