@@ -6373,9 +6373,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
 
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDeletion`` is set to ``true``.
-
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^
 
