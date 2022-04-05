@@ -6044,6 +6044,24 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
 
+Enable Shared Channels
+^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart. 
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
+   - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
+
 Settings configurable only in ``config.json``
 ----------------------------------------------
 
@@ -7701,24 +7719,4 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Shared Channels
-^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-
-Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel. 
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-   - Both configuration settings must be enabled in order to share channels with secure connections.
-   - Enabling Shared Channels functionality requires a server restart.
-   - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.
