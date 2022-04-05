@@ -26,6 +26,9 @@ Latest Mattermost Releases:
 
 ### Highlights
 
+#### Apps Framework V1
+ - 
+
 #### Actions Restructure
  - The **More Actions** menu was restructured.
 
