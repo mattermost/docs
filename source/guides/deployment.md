@@ -24,9 +24,8 @@ Here's the two fastest ways to start:
 
 Once you're deployed, learn about:  
 
-- [Administrator tasks](https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html) - Configure vital settings on your Mattermost server to prepare for end user onboarding. Customize a [Welcome email template](https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html) to bring different groups in sequentially.
+- [Administrator tasks](https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html) - Configure your Mattermost server to strike the right balance between convenience and secure-by-default settings ahead of end user onboarding. 
 - [Architectural Overview](https://docs.mattermost.com/deploy/deployment-overview.html) - Understand user authentication, notifications, data management services, network connectivity, high availability architectures from 5,000 to 50,000+ users. 
-- [Software and Hardware Requirements](https://docs.mattermost.com/install/software-hardware-requirements.html) - Size and plan the software and hardware you'll need to deploy in production.
 - [Implementation Plan Template](https://docs.mattermost.com/getting-started/implementation-plan.html) - Use this plan template to organize a production rollout to hundreds of users, from project goals, end user groups, technical environment, deployment steps, staffing, training and support. 
 - [Enterprise Roll Out Guide](https://docs.mattermost.com/getting-started/enterprise-roll-out-checklist.html) - Extend your implementation plan to a rollout to serveral thousand users with analytics, performance monitoring and performance tuning.
 
