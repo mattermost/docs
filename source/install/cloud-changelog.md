@@ -16,7 +16,6 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added a new Activity & Insights feature, consisting of usage and behaviour data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
  - Added a configuration setting ``EmailSettings.EnableInactivityEmail`` to add the ability to toggle sending inactivity email notification to Admins.
  - Added Files and Pinned Messages to the right-hand side Channel Info.
  - Updated the New Channel modal.
