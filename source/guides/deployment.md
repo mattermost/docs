@@ -63,7 +63,7 @@ Need help installing on server, desktop or mobile?
 - Free peer-to-peer support is available in our [troubleshooting forum](https://forum.mattermost.com/c/trouble-shoot) and on our [community server](https://community.mattermost.com/core/channels/peer-to-peer-help). 
 - If you have a [paid subscription to a Mattermost offering](https://docs.mattermost.com/about/editions-and-offerings.html) you can also [open support tickets online](https://support.mattermost.com/hc/en-us/requests/new). 
 
-### :construction_worker: Deployment Guide
+### :trolleybus: Deployment Guide
 
 The deployment guide is for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure.
 
