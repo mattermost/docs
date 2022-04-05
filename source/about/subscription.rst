@@ -19,7 +19,8 @@ A three-year subscription to our Mattermost Professional self-hosted offering fo
 
 Following the three-year free license, the institution can renew the license every three years for an additional $250 USD subscription fee.
 
-**Who's eligible?**
+Who's eligible?
+~~~~~~~~~~~
 
 To be eligible, an organization needs to be an official nonprofit or charity; as well as non-government, non-academic, and non-commercial in nature, with no religious affiliation; and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
 
