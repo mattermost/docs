@@ -37,9 +37,9 @@ Install Mattermost Server and Mattermost Desktop and Mobile Applications in envi
 
 ##### Most Popular Self-Hosted Installation Guides: 
 
-- [Mattermost Omnibus (Recommended for up to 1,000 users)](https://docs.mattermost.com/getting-started/light-install.html) - If you have root access on a clean server running **Ubuntu 18.04 or 20.04** this is the fastest, easiest self-hosted deployment option.
+- [Mattermost Omnibus (Recommended for up to 1,000 users)](https://docs.mattermost.com/getting-started/light-install.html) - The fastest, easiest self-hosted deployment option if you have root on a clean Ubuntu server.
 
-- [Local Machine Docker Preview (Recommended for evaluation only)](https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html) - For evaluation only--Preview Mattermost locally on **Mac, Windows, Ubuntu or Fedora** using a single-node Docker image. NOTE: Should only be used for evaluation, not production use. 
+- [Local Machine Docker Preview (Recommended for evaluation only)](https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html) - Preview Mattermost locally on **Mac, Windows, Ubuntu or Fedora** using a single-node Docker image. NOTE: Should only be used for evaluation, not production use. 
 
 - [Kubernetes Operator (Recommended for 500+ users)](https://docs.mattermost.com/install/install-kubernetes.html) - Deploy to self-hosted Kubernetes production environment or services like **Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine, DigitalOcean Kubernetes** or on self-hosted Kubernetes infrastructure.
 
