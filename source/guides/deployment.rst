@@ -3,24 +3,187 @@ Deploy Mattermost
 
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
-Get started
------------
+Preview Mattermost using Docker
+-------------------------------
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+You can install Mattermost server in **Preview Mode** to explore Mattermost product functionality on a single local machine.
+
+.. important::
+
+    **Preview Mode** shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your preview deployment.
+
+1. Install `Docker <https://www.docker.com/get-started/>`__.
+
+2. Follow the `preview instructions <#preview-mattermost>`__ to deploy Mattermost on Docker in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__. 
+
+3. After you install Docker, preview Mattermost with the following command:
+
+    .. code:: bash
+
+        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
+
+4. When Docker is done fetching the image, navigate to ``http://localhost:8065/`` in your browser to preview Mattermost.
+
+Deploy Mattermost for production use
+------------------------------------
+
+Encountering issues with your Docker deployment? See the `Deployment Troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+When you're ready to install Mattermost server for production use, you have two options: deploy using Docker Compose, or install from a compressed tarball.
+
+.. tabs::
+
+    .. tab:: Using Docker
+
+      You must install `docker-compose 1.28 or greater <https://docs.docker.com/compose/install/>`__ to deploy Mattermost for production use. 
+
+      1. Clone the repository and enter the directory:
+
+        .. code:: bash
+        
+            git clone https://github.com/mattermost/docker
+            cd docker
+
+      2. Create your ``.env`` file by copying and adjusting the ``env.example`` file:
+
+        .. code:: bash
+        
+            cp env.example .env
+
+        .. important::
+    
+            At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+
+      3. Create the required directories and set their permissions:
+
+        .. code:: bash
+        
+            mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
+            sudo chown -R 2000:2000 ./volumes/app/mattermost
+
+      4. Configure TLS for NGINX *(optional)*. If you're not using the included NGINX reverse proxy, you can skip this step.
+
+          **If creating a new certificate and key:**
+
+            .. code:: bash
+  
+                bash scripts/issue-certificate.sh -d <YOUR_MM_DOMAIN> -o ${PWD}/certs
+
+          To include the certificate and key, uncomment the following lines in your ``.env`` file and ensure they point to the appropriate files:
+
+            .. code:: bash
+  
+                #CERT_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/fullchain.pem
+                #KEY_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/privkey.pem
+
+          **If using a pre-existing certificate and key:**
+
+            .. code:: bash
+  
+                mkdir -p ./volumes/web/cert
+                cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
+                cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
+
+          To include the certificate and key, ensure the following lines in your ``.env`` file points to the appropriate files:
+
+            .. code:: bash
+  
+                CERT_PATH=./volumes/web/cert/cert.pem
+                KEY_PATH=./volumes/web/cert/key-no-password.pem
+
+      5. Configure SSO with GitLab *(optional)*:
+
+        If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid a ``Token request failed: certificate signed by unknown authority`` error.
+
+        To add the PKI chain, uncomment the following line in your ``.env`` file and ensure it points to your ``pki_chain.pem`` file:
+
+            .. code:: bash
+  
+                # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+
+      6. Deploy Mattermost.
+
+          **Without using the included NGINX:**
+
+            .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
+
+          To access your new Mattermost deploy, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
+
+          To shut down your deployment:
+
+            .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
+
+          **Using the included NGINX:**
+
+            .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
+
+          To access your new Mattermost deploy via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
+
+          To shut down your deployment:
+
+            .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml down
+    
+    .. tab:: From Tar
+
+        These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball. This guide assumes the IP address of the Mattermost server is 10.10.10.2.
+
+        1. Log in to the server that will host Mattermost Server and open a terminal window.
+
+        2. Run the following command:
+
+         .. code:: bash
+
+            sudo systemctl enable mattermost.service
+
+        3. Once you're Mattermost server is up and running, see the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
+
+Prepare for your Mattermost deployment
+--------------------------------------
+
 .. toctree::
     :maxdepth: 1
     :hidden:
 
-    Quick install guide </getting-started/light-install>
-    Run Mattermost via Docker </install/setting-up-local-machine-using-docker>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
     Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>
     Welcome email template </getting-started/welcome-email-to-end-users>
 
-These guides will get you up and running with Mattermost in minutes.
+These guides will help you prepare for your Mattermost deployment.
 
-* :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
-* :doc:`Run Mattermost via Docker </install/setting-up-local-machine-using-docker>` - Launch a Mattermost server instantly to test functionality and build integrations.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
@@ -60,6 +223,9 @@ Server installation
 
 Desktop and Mobile App installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These guides will get you up and running with Mattermost desktop and mobile apps in minutes.
+
 .. toctree::
     :maxdepth: 1
     :hidden:
