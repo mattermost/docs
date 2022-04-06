@@ -16,16 +16,12 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added a configuration setting ``EmailSettings.EnableInactivityEmail`` to add the ability to toggle sending inactivity email notification to Admins.
  - Added Files and Pinned Messages to the right-hand side Channel Info.
- - Updated the New Channel modal.
- - Added another 'Active' filter for users and Admins in **System Console > User Management > Users**.
- - Removed cloud user limit count.
+ - Improved the New Channel modal user interface.
 
 #### Administration
- - ``api/v4/file/s3_test`` now requires ``FileSettings`` to be all set to run.
- - ``api/v4/email/test`` now requires ``EmailSettings`` to be all set to run.
- - Added a ``threadsOnly`` query parameter for getting user threads.
+ - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
+ - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
 
 #### Performance
  - Added an index to the ``UserGroups DisplayName`` for improved autosuggest query performance.
