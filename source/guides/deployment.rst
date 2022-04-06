@@ -53,6 +53,7 @@ Server installation
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>`
 * :ref:`Deploy Mattermost on Docker`
 * :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
+* :doc:`Install Mattermost from Tar </install/install-tar>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
 * :doc:`Kubernetes </install/install-kubernetes>`
 * :doc:`Debian Buster </install/install-debian>`
