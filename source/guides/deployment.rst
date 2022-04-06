@@ -305,15 +305,19 @@ When you're ready to install Mattermost server for production use, you have thre
                 CERT_PATH=./volumes/web/cert/cert.pem
                 KEY_PATH=./volumes/web/cert/key-no-password.pem
 
-      5. Configure SSO with GitLab *(optional)*:
+      5. Configure SSO with GitLab *(optional)*. If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
+      
+            To add the PKI chain, uncomment this line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
 
-        If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid a ``Token request failed: certificate signed by unknown authority`` error.
-
-        To add the PKI chain, uncomment the following line in your ``.env`` file and ensure it points to your ``pki_chain.pem`` file.
-
-        .. code:: bash
+            .. code:: bash
   
-            # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+                S#GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
+        
+            Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
+
+            .. code:: bash
+
+                # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
       6. Deploy Mattermost.
 
