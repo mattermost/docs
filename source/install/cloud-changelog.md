@@ -16,18 +16,13 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - For Apps, calls are now separated between submit, form, refresh and lookup calls. If any users have created their own Apps, they have to be updated to the new system.
- - Logs from third-party libraries are now included in the default logging configuration.
- - Added performance metrics related to plugin loading on page load.
- - Changed the Mattermost indigo theme to match the dark theme in code blocks.
- - Added a ``Automatically Follow Threads`` configuration setting to the **System Console** to expose the ``threadAutoFollow`` config setting to the User Interface.
- - Updated in-product links to legacy domain about.mattermost.com.
- - The **More Actions** menu was restructured.
- - Added a copy button when hovering over code blocks.
+ - The **More Actions** menu was restructured to reduce the clutter from Plugins and Apps.
+ - Made it easier to copy code blocks by adding a copy button on hover.
  - Added a right-hand side panel to see and interact with channel information.
- - Added a post menu item to copy raw text.
- - Added additional performance debugging settings.
- - The default for ``ThreadAutoFollow`` has been changed to ``true``. This does not affect existing configurations where this value is already set to ``false``.
+ - Changed the Mattermost indigo theme to match the dark theme in code blocks.
+ - Updated in-product links from legacy domain about.mattermost.com to mattermost.com.
+ - Made it easier to copy a message via a new **Copy Text** post menu item.
+ - The default for ``ThreadAutoFollow`` has been changed to ``true`` with performance improvements to prepare for the enabling of Collapsed Reply Threads by default in a later release. This does not affect existing configurations where this value is already set to ``false``.
 
 #### Performance
  - Improved performance when clearing notifications with Collapsed Reply Threads enabled.
