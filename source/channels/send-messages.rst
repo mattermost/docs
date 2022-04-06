@@ -20,11 +20,15 @@ Send messages
 
 Compose a message by typing into the text box at the bottom of Mattermost. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. You can also `edit and delete messages <#edit-or-delete-messages>`__ after you've sent them.
 
+.. tip::
+  
+  When you send messages in a channel, depending on the channel actions configured, specific words in the post can trigger a prompt to run a playbook. Contact the Channel Admin for details.
+
 Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
 
 .. note::
   
-  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
+  Your System Admin may restrict messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
 .. tabs::
 

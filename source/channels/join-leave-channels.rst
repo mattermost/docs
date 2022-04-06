@@ -26,6 +26,10 @@ To join a public channel, select the **+** symbol at the top of the channel side
 
 To join a private channel, you need to be added to the channel by a member of that channel.
 
+.. tip::
+  
+  When you join new channels, depending on the channel actions configured, you may see a welcome message, and the channels may be added to `a category in your channel sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__. Contact the Channel Admin for details.
+
 Leave a channel
 ---------------
 
