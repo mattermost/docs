@@ -35,7 +35,10 @@ Latest Mattermost Releases:
  - Added nested previews for permalinks.
 
 #### Playbook Updates
- - 
+ - Added retrospective metrics to track up to four key metrics that indicate performance of every run.
+
+#### Triggers and Actions
+ - Channel admins can now configure certain actions to be executed automatically based on trigger conditions without writing any code.
 
 ### Improvements
 
