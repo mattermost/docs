@@ -54,6 +54,7 @@ Latest Mattermost Releases:
  - Added accessibility support for custom statuses.
  - Tooltip is now only displayed when text is too long in the announcement banner.
  - When restricting direct messages to users on the same team, bots are now excluded from that restriction.
+ - Brazilian Portuguese language support was downgraded to Beta.
  
 #### Performance
  - Improved performance when clearing notifications with Collapsed Reply Threads enabled.
