@@ -18,7 +18,7 @@ Preview Mattermost using Docker
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can install Mattermost server in **Preview Mode** to explore Mattermost product functionality on a single local machine.
+You can install Mattermost server in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__ image to explore Mattermost product functionality on a single local machine.
 
 .. important::
 
@@ -26,15 +26,13 @@ You can install Mattermost server in **Preview Mode** to explore Mattermost prod
 
 1. Install `Docker <https://www.docker.com/get-started/>`__.
 
-2. Follow the `preview instructions <#preview-mattermost>`__ to deploy Mattermost on Docker in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__. 
+2. After you install Docker, run the following command in a terminal window:
 
-3. After you install Docker, preview Mattermost with the following command:
+  .. code:: bash
 
-    .. code:: bash
+    docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
-        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
-
-4. When Docker is done fetching the image, navigate to ``http://localhost:8065/`` in your browser to preview Mattermost.
+3. When Docker is done fetching the image, navigate to ``http://localhost:8065/`` in your browser to preview Mattermost.
 
 Deploy Mattermost for production use
 ------------------------------------
@@ -53,111 +51,13 @@ Encountering issues with your Docker deployment? See the `Deployment Troubleshoo
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-When you're ready to install Mattermost server for production use, you have two options: deploy using Docker Compose, or install from a compressed tarball.
+When you're ready to install Mattermost server for production use, you have three options: deploy from a compressed tarball, deploy using Omnibus, or deploy using Docker.
 
 .. tabs::
 
-    .. tab:: Using Docker
-
-      You must install `docker-compose 1.28 or greater <https://docs.docker.com/compose/install/>`__ to deploy Mattermost for production use. 
-
-      1. Clone the repository and enter the directory:
-
-        .. code:: bash
-        
-            git clone https://github.com/mattermost/docker
-            cd docker
-
-      2. Create your ``.env`` file by copying and adjusting the ``env.example`` file:
-
-        .. code:: bash
-        
-            cp env.example .env
-
-        .. important::
-    
-            At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
-
-      3. Create the required directories and set their permissions:
-
-        .. code:: bash
-        
-            mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
-            sudo chown -R 2000:2000 ./volumes/app/mattermost
-
-      4. Configure TLS for NGINX *(optional)*. If you're not using the included NGINX reverse proxy, you can skip this step.
-
-          **If creating a new certificate and key:**
-
-            .. code:: bash
-  
-                bash scripts/issue-certificate.sh -d <YOUR_MM_DOMAIN> -o ${PWD}/certs
-
-          To include the certificate and key, uncomment the following lines in your ``.env`` file and ensure they point to the appropriate files:
-
-            .. code:: bash
-  
-                #CERT_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/fullchain.pem
-                #KEY_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/privkey.pem
-
-          **If using a pre-existing certificate and key:**
-
-            .. code:: bash
-  
-                mkdir -p ./volumes/web/cert
-                cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
-                cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
-
-          To include the certificate and key, ensure the following lines in your ``.env`` file points to the appropriate files:
-
-            .. code:: bash
-  
-                CERT_PATH=./volumes/web/cert/cert.pem
-                KEY_PATH=./volumes/web/cert/key-no-password.pem
-
-      5. Configure SSO with GitLab *(optional)*:
-
-        If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid a ``Token request failed: certificate signed by unknown authority`` error.
-
-        To add the PKI chain, uncomment the following line in your ``.env`` file and ensure it points to your ``pki_chain.pem`` file:
-
-          .. code:: bash
-  
-            # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
-
-      6. Deploy Mattermost.
-
-          **Without using the included NGINX:**
-
-            .. code:: bash
-  
-                sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
-
-          To access your new Mattermost deploy, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
-
-          To shut down your deployment:
-
-            .. code:: bash
-  
-                sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
-
-          **Using the included NGINX:**
-
-            .. code:: bash
-  
-                sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
-
-          To access your new Mattermost deploy via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
-
-          To shut down your deployment:
-
-            .. code:: bash
-  
-                sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml down
-    
     .. tab:: From Tar
 
-        These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball. This guide assumes the IP address of the Mattermost server is 10.10.10.2.
+        These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball, and assume the IP address of the Mattermost server is 10.10.10.2.
 
         1. Log in to the server that will host Mattermost Server and open a terminal window.
 
@@ -191,19 +91,19 @@ When you're ready to install Mattermost server for production use, you have two 
 
         6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
   
-          a. Create the Mattermost user and group:
+          a. Create the Mattermost user and group.
         
             .. code:: bash
 
                 sudo useradd --system --user-group mattermost
   
-          b. Set the user and group *mattermost* as the owner of the Mattermost files:
+          b. Set the user and group *mattermost* as the owner of the Mattermost files.
     
             .. code:: bash
             
                 sudo chown -R mattermost:mattermost /opt/mattermost
   
-          c. Give write permissions to the *mattermost* group:
+          c. Give write permissions to the *mattermost* group.
         
             .. code:: bash
             
@@ -223,13 +123,13 @@ When you're ready to install Mattermost server for production use, you have two 
 
         8. Test the Mattermost server to make sure everything works.
     
-          a. Change to the Mattermost directory:
+          a. Change to the Mattermost directory.
             
             .. code:: bash
             
                 cd /opt/mattermost
             
-          b. Start the Mattermost server as the user mattermost:
+          b. Start the Mattermost server as the user mattermost.
             
             .. code:: bash
             
@@ -239,13 +139,13 @@ When you're ready to install Mattermost server for production use, you have two 
 
         9. Set up Mattermost to use *systemd* for starting and stopping.
   
-          a. Create a *systemd* unit file:
+          a. Create a *systemd* unit file.
     
             .. code:: bash
             
                 sudo touch /lib/systemd/system/mattermost.service
   
-          b. Open the unit file as root in a text editor, and copy the following lines into the file:
+          b. Open the unit file as root in a text editor, and copy the following lines into the file.
   
             .. code-block:: none
 
@@ -313,7 +213,139 @@ When you're ready to install Mattermost server for production use, you have two 
             
                 sudo systemctl enable mattermost.service
 
-        Once you're Mattermost server is up and running, see the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
+        Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
+        
+    .. tab:: Using Omnibus
+
+        Mattermost Omnibus is a `Debian <https://www.debian.org/>`__ package that bundles the  components of a Mattermost deployment into a single installation. The package leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components, and uses a custom CLI and ansible recipes to link the components together and configure them.
+
+        Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost.
+
+        1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
+
+          .. code-block:: none
+
+            curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
+
+        2. Install the Omnibus package.
+
+          .. code-block:: none
+
+            sudo apt install mattermost-omnibus -y
+
+        To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server. 
+
+        3. Open a browser, navigate to your Mattermost domain by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
+
+        4. Create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+
+        .. note:: 
+
+            We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
+
+        **Update Mattermost Omnibus**
+
+        Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
+    
+    .. tab:: Using Docker
+
+      You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`__ (release 1.28 or later) Follow the steps in the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__ or follow the steps below.
+      
+      1. In a terminal window, clone the repository and enter the directory.
+
+        .. code:: bash
+        
+            git clone https://github.com/mattermost/docker
+            cd docker
+
+      2. Create your ``.env`` file by copying and adjusting the ``env.example`` file.
+
+        .. code:: bash
+        
+            cp env.example .env
+
+        .. important::
+    
+            At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+
+      3. Create the required directories and set their permissions.
+
+        .. code:: bash
+        
+            mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
+            sudo chown -R 2000:2000 ./volumes/app/mattermost
+
+      4. Configure TLS for NGINX *(optional)*. If you're not using the included NGINX reverse proxy, you can skip this step.
+
+          **If creating a new certificate and key:**
+
+          .. code:: bash
+  
+                bash scripts/issue-certificate.sh -d <YOUR_MM_DOMAIN> -o ${PWD}/certs
+
+          To include the certificate and key, uncomment the following lines in your ``.env`` file and ensure they point to the appropriate files.
+
+          .. code:: bash
+  
+                #CERT_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/fullchain.pem
+                #KEY_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/privkey.pem
+
+          **If using a pre-existing certificate and key:**
+
+          .. code:: bash
+  
+                mkdir -p ./volumes/web/cert
+                cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
+                cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
+
+          To include the certificate and key, ensure the following lines in your ``.env`` file points to the appropriate files.
+
+          .. code:: bash
+  
+                CERT_PATH=./volumes/web/cert/cert.pem
+                KEY_PATH=./volumes/web/cert/key-no-password.pem
+
+      5. Configure SSO with GitLab *(optional)*:
+
+        If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid a ``Token request failed: certificate signed by unknown authority`` error.
+
+        To add the PKI chain, uncomment the following line in your ``.env`` file and ensure it points to your ``pki_chain.pem`` file.
+
+        .. code:: bash
+  
+            # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+
+      6. Deploy Mattermost.
+
+          **Without using the included NGINX:**
+
+          .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
+
+          To access your new Mattermost deploy, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
+
+          To shut down your deployment:
+
+          .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
+
+          **Using the included NGINX:**
+
+          .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
+
+          To access your new Mattermost deploy via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
+
+          To shut down your deployment:
+
+          .. code:: bash
+  
+                sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml down
+      
+      7. Create your first Mattermost System Admin user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
 
 Prepare for your Mattermost deployment
 --------------------------------------
