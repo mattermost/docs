@@ -22,7 +22,13 @@ Anyone can create public, private, direct, and group channels, unless the System
 
 .. tip::
 
-  The person who creates a channel automatically becomes the Channel Admin. Channel Admins can access **Channel Actions** from the channel name drop-down menu in the center pane to configure automatic actions when users `join the channel <https://docs.mattermost.com/channels/join-leave-channels.html#join-a-channel>`__ or `post a message <https://docs.mattermost.com/channels/send-messages.html>`__ to the channel. Automatic actions include displaying a temporary welcome message for new channel members, automatically adding the channel to a `category in the user's channel sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__, and prompting a playbook to run based on the contents of a message.
+  The person who creates a channel automatically becomes the Channel Admin. Channel Admins can access **Channel Actions** from the channel name drop-down menu in the center pane to configure automatic actions when users `join the channel <https://docs.mattermost.com/channels/join-leave-channels.html#join-a-channel>`__ or `post a message <https://docs.mattermost.com/channels/send-messages.html>`__ to the channel. 
+  
+  Automatic actions include:
+  
+  - Displaying a temporary welcome message for new channel members.
+  - Automatically adding the channel to a `category in the user's channel sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__.
+  - Prompting a playbook to run based on the contents of a message.
 
 Create a public or private channel
 -----------------------------------
