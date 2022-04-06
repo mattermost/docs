@@ -18,7 +18,7 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Breaking Changes
- - The Apps Framework protocol for binding/form submissions has changed, by separating the single `call` into separate `submit`, `form`, `refresh` and `lookup` calls.
+ - The [Apps Framework protocol](https://developers.mattermost.com/integrate/apps/) for binding/form submissions has changed, by separating the single `call` into separate `submit`, `form`, `refresh` and `lookup` calls. If any users have created their own Apps, they have to be updated to the new system.
 
 ### Improvements
  - Users are now taken directly to the SSO login if only one SSO login method is enabled.
