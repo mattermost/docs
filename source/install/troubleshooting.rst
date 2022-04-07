@@ -36,7 +36,7 @@ Deployment troubleshooting
 Docker deployments
 ~~~~~~~~~~~~~~~~~~
 
-If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, `re-reate the required directories and set their permissions <https://docs.mattermost.com/guides/deployment.html#deploy-mattermost-for-production-use>`__, then skip the following command:
+If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, `re-create the required directories and set their permissions <https://docs.mattermost.com/guides/deployment.html#deploy-mattermost-for-production-use>`__, then skip the following command:
 
 .. code:: bash
 
