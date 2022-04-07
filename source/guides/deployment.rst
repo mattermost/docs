@@ -22,7 +22,7 @@ You can install Mattermost server in **Preview Mode** using the `Mattermost Dock
 
 .. important::
 
-    **Preview Mode** shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your preview deployment.
+    **Preview Mode** shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your preview deployment.
 
 1. Install `Docker <https://www.docker.com/get-started/>`__.
 
