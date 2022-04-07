@@ -1,4 +1,4 @@
-Mattermost Performance Alerting Guide
+Mattermost performance alerting guide
 ======================================
 
 |enterprise| |cloud| |self-hosted|
@@ -48,7 +48,7 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
 
 If you would also like to get email alerts, you can follow `these instructions <https://grafana.com/docs/grafana/latest/alerting/>`__ to set that up.
 
-**Configuring Alerts**
+**Configuring alerts**
 
 The `Mattermost dashboards <https://grafana.com/dashboards?search=mattermost>`__ for Grafana come with some partially pre-configured alerts on the following charts:
 
@@ -84,7 +84,7 @@ By default, the alerts are configured to check the average of a chart over the l
 
 The sections below describe each chart in more detail.
 
-CPU Utilization Rate
+CPU utilization rate
 ---------------------
 
 CPU Utilization Rate is fairly straightforward. CPU Utilization Rate tracks the CPU usage of the app servers as a percentage. The maximum percentage is based on the number of CPU cores or vCPUs your app server has. For example, if you have four CPU cores and your app server was at 100% utilization rate on all four cores, the graph would show 400% for that app server.
@@ -97,7 +97,7 @@ For example, on our community server, we have the threshold set to 15%:
 
 This value is below our maximum CPU usage and above our average usage at peak times. Therefore, we will get alerts if we begin experiencing unusually high CPU usage.
 
-Memory Usage
+Memory usage
 -------------
 
 Memory Usage tracks the megabytes of RAM that your app servers are using. Set the threshold similar to the CPU Utilization Rate: below maximum available memory and above your average usage during peak times.
@@ -117,7 +117,7 @@ Here’s how we have it set on our Community server:
 
 .. image:: ../images/perf-7.png
 
-Number of API Errors per Second
+Number of API errors per second
 --------------------------------
 
 Any 4xx or 5xx HTTP response status codes are counted as a REST API error. API errors themselves are not necessarily a problem. There are many legitimate reasons for an API error to occur, such as users’ sessions expiring or clients requesting to see if a resource exists and is being given a ``404 Not Found`` response. It is normal to have some API errors that scale with your installation base.
@@ -128,7 +128,7 @@ Here’s how it’s set on our Community server:
 
 .. image:: ../images/perf-8.png
 
-Mean API Request Time
+Mean API request time
 ----------------------
 
 The Mean API Request Time is the average amount of time a REST API request to the Mattermost app server takes to complete. If an app server starts to perform poorly, you’ll likely see a rise in the mean request time as it takes longer to complete requests. This could also happen if your database can’t sustain the load from the app servers. It may also be indicative of an issue between the app servers and your proxy.
@@ -139,7 +139,7 @@ Here’s how it’s set on our community server:
 
 .. image:: ../images/perf-9-b.png
 
-Plugin Hooks
+Plugin hooks
 -------------
 
 You can trace hooks and plugin API calls with Prometheus. Below are some examples of hooks and API Prometheus metrics that you may want to be aware of when troubleshooting or monitoring your server's performance.
@@ -171,7 +171,7 @@ You can trace hooks and plugin API calls with Prometheus. Below are some example
   mattermost_plugin_api_time_bucket{api_name="AddUserToChannel",plugin_id="com.mattermost.plugin-incident-response",success="true",le="0.005"} 0
   mattermost_plugin_api_time_bucket{api_name="AddUserToChannel",plugin_id="com.mattermost.plugin-incident-response",success="true",le="0.01"} 0
 
-Other Alerts
+Other alerts
 -------------
 
 If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation <https://docs.mattermost.com/scale/performance-monitoring.html#statistics>`_.
