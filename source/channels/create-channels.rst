@@ -38,8 +38,6 @@ To create a public or private channel, select the **+** symbol at the top of the
 .. image:: ../images/create-new-channel.png
     :alt: Create a channel.
 
-
-
 Create a direct or group message
 --------------------------------
 
