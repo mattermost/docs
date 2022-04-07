@@ -55,7 +55,7 @@ When you're ready to install Mattermost server for production use, you have thre
 
 .. tabs::
 
-    .. tab:: From Tar
+    .. tab:: Tar
 
         These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball, and assume the IP address of the Mattermost server is 10.10.10.2.
 
@@ -215,7 +215,7 @@ When you're ready to install Mattermost server for production use, you have thre
 
         Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
         
-    .. tab:: Using Omnibus
+    .. tab:: Ubuntu
 
         Mattermost Omnibus is a `Debian <https://www.debian.org/>`__ package that bundles the  components of a Mattermost deployment into a single installation. The package leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components, and uses a custom CLI and ansible recipes to link the components together and configure them.
 
@@ -247,7 +247,7 @@ When you're ready to install Mattermost server for production use, you have thre
 
         Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
     
-    .. tab:: Using Docker
+    .. tab:: Docker
 
       You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`__ (release 1.28 or later) Follow the steps in the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__ or follow the steps below.
       
