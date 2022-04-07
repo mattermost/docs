@@ -114,7 +114,7 @@ Make onboarding and account provisioning easier through automation with director
 
 - Begin to onboard users by `enabling account creation <https://docs.mattermost.com/configure/configuration-settings.html#enable-account-creation>`__ or by connecting an authentication service to assist with user provisioning.
 
-- For bulk onboarding, enable `AD/LDAP Group Synchronization <https://docs.mattermost.com/configure/configuration-settings.html#enable-ad-ldap-group-sync>`__ to ensure new users are added to default teams and channels as they join Mattermost. See our `AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation to learn more.
+- For bulk onboarding, enable `AD/LDAP group synchronization <https://docs.mattermost.com/configure/configuration-settings.html#enable-ad-ldap-group-sync>`__ to ensure new users are added to default teams and channels as they join Mattermost. See our `AD/LDAP groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation to learn more.
 
 - See our `migration guide <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migration-guide>`_ and `bulk loading documentation <https://docs.mattermost.com/onboard/bulk-loading-data.html>`_ for additional details.
 
