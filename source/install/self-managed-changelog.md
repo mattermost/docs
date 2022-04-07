@@ -84,6 +84,7 @@ Latest Mattermost Releases:
  - Permissions for private playbooks are now hidden unless running an Enterprise license.
 
 ### Bug Fixes
+ - Fixed an issue where the channel switcher displayed channels from teams the Admin was no longer part of.
  - Fixed an issue where ``ThreadStore.GetThreadsForUser`` did not count correctly when no team ID was specified.
  - Fixed an issue where ``zip`` file creation failed when adding attachments.
  - Fixed an issue where emoji short codes written in Markdown were not added to recently used emojis.
