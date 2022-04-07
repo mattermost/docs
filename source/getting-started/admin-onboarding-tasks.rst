@@ -82,7 +82,7 @@ Review Mattermost workspace configuration
 |                                | integration is available which scans files uploaded to Mattermost.                                                                                                                                    |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-3. From Mattermost v6.5, you can also review a dashboard of insights related to the health of your Mattermost workspace by going to **System Console > Reporting > Workplace Optimization**. See the `Optimize your Mattermost workspace <https://docs.mattermost.com/configure/optimize-your-workspace.html>`__ documentation for details. 
+3. From Mattermost v6.5, you can also review a dashboard of insights related to the health of your Mattermost workspace by going to **System Console > Reporting > Workplace Optimization**. See the `optimize your Mattermost workspace <https://docs.mattermost.com/configure/optimize-your-workspace.html>`__ documentation for details. 
 
 .. image:: ../images/workspace-optimization.png
     :alt: Review a dashboard of insights related to the health of your Mattermost workspace.
