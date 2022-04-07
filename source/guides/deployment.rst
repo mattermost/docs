@@ -213,7 +213,7 @@ When you're ready to install Mattermost server for production use, you have thre
             
                 sudo systemctl enable mattermost.service
 
-        Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
+        Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your production deployment.
         
     .. tab:: Using Omnibus
 
