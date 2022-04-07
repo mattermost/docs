@@ -145,7 +145,7 @@ When you're ready to install Mattermost server for production use, you have thre
             
                 sudo touch /lib/systemd/system/mattermost.service
   
-          b. Open the unit file as root in a text editor, and copy the following lines into the file.
+          b. Open the unit file as *root* in a text editor, and copy the following lines into the file.
   
             .. code-block:: none
 
