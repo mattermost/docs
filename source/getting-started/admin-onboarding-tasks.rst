@@ -21,7 +21,7 @@ We recommend reviewing configuration settings to ensure that:
 - `The right people see and do the right things in Mattermost <#configure-user-permissions>`__.
 - `Users can sign in to Mattermost quickly and easily <#configure-user-authentication>`__.
 
-We also encourage you to explore all of the settings available in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation for details on all supported options.
+We also encourage you to explore all of the settings available in the System Console. See our `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation for details on all supported options.
 
 .. tip::
   
