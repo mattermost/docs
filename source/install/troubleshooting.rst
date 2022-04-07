@@ -59,7 +59,7 @@ Postgres issues
 
 You can change the Postgres username and/or password (recommended) in the ``.env`` file.
 
-TLS & NGINX issues
+TLS and NGINX issues
 ~~~~~~~~~~~~~~~~~~
 
 For an in-depth guide to configuring the TLS certificate and key for NGINX, please refer to `this document in the repository <https://github.com/mattermost/docker/blob/main/docs/issuing-letsencrypt-certificate.md>`__.
