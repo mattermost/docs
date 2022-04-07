@@ -116,7 +116,7 @@ When you're ready to install Mattermost server for production use, you have thre
             Set ``"DriverName"`` to ``"postgres"``
             Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values: ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10",``
   
-           **If you are using MySQL:**
+           **If you're using MySQL:**
 
             Set ``"DriverName"`` to ``"mysql"``
             Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``: ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
