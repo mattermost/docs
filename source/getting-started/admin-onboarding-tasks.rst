@@ -103,7 +103,7 @@ Once your Mattermost workspace is configured for your needs, focus next on ensur
 
 .. tip::
 
-  Mattermost won’t limit you to the number of teams you can create; however, a public team and an internal team are typically sufficient. See our `Creating Teams <https://docs.mattermost.com/welcome/about-teams.html#create-a-team>`__ and our `Team Settings <https://docs.mattermost.com/welcome/team-settings.html>`__ documentation for details.
+  Mattermost won’t limit you to the number of teams you can create; however, a public team and an internal team are typically sufficient. See our `creating teams <https://docs.mattermost.com/welcome/about-teams.html#create-a-team>`__ and our `team settings <https://docs.mattermost.com/welcome/team-settings.html>`__ documentation for details.
 
 With permissions, you have controls in place over who can do what and where based on the roles and areas of ownership in your organization. Next you want to make it easy for your users to get into Mattermost every day.
 
