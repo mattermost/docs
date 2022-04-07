@@ -171,7 +171,7 @@ When you're ready to install Mattermost server for production use, you have thre
             .. note::
     
                 * If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in 2 places in the ``[Unit]`` section.
-                * If you have installed MySQL or PostgreSQL on a dedicated server, you need to remove the ``After=mysql.service`` and ``BindsTo=mysql.service`` or the ``After=postgresql.service`` and ``BindsTo=postgresql.service`` lines in the ``[Unit]`` section or the Mattermost service won't start.
+                * If you've installed MySQL or PostgreSQL on a dedicated server, you need to remove the ``After=mysql.service`` and ``BindsTo=mysql.service`` or the ``After=postgresql.service`` and ``BindsTo=postgresql.service`` lines in the ``[Unit]`` section or the Mattermost service won't start.
     
           c. Make systemd load the new unit.
     
