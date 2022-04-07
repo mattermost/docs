@@ -134,7 +134,7 @@ More common Mattermost integrations your users may love:
 
 Visit the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to learn about the many ways you can extend Mattermost functionality for your needs. To enable and manage plugins, go to **System Console > Plugins**. Then, download plugins from the Mattermost Marketplace.
 
-To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, to go **System Console > Integrations**. See our `developer and integrator documentation <https://developers.mattermost.com/integrate/other-integrations/>`__ for details. 
+To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, go to **System Console > Integrations**. See our `developer and integrations documentation <https://developers.mattermost.com/integrate/other-integrations/>`__ for details.
 
 Important Mattermost administration notes 
 -----------------------------------------
