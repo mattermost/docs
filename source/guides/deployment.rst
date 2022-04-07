@@ -341,7 +341,7 @@ When you're ready to install Mattermost server for production use, you have thre
   
                 sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
 
-          To access your new Mattermost deploy via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
+          To access your new Mattermost deployment via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
 
           To shut down your deployment:
 
