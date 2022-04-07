@@ -327,7 +327,7 @@ When you're ready to install Mattermost server for production use, you have thre
   
                 sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
 
-          To access your new Mattermost deploy, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
+          To access your new Mattermost deployment, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
 
           To shut down your deployment:
 
