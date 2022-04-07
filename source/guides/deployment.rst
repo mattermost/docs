@@ -205,7 +205,7 @@ When you're ready to install Mattermost server for production use, you have thre
             
                 curl http://localhost:8065
     
-            You should see the HTML that's returned by the Mattermost server. Note: in case firewall is used, external requests to port 8065 may be blocked. Use ``sudo ufw allow 8065`` to open port 8065.
+            You should see the HTML that's returned by the Mattermost server. If a firewall is used, external requests to port 8065 may be blocked. Use ``sudo ufw allow 8065`` to open port 8065.
   
           g. Set Mattermost to start on machine start up.
 

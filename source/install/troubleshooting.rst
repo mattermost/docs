@@ -42,6 +42,8 @@ If you're deploying the Mattermost server using Docker on an M1 Mac and encounte
 
    sudo chown -R 2000:2000 ./volumes/app/mattermost
 
+On M1 systems, this permission change causes the deploy to stop working, so we recommend skipping this step altogether.
+
 If you're experiencing issues deploying on Docker generally, ensure the docker daemon is enabled and running:
 
 .. code:: bash
