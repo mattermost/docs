@@ -111,7 +111,7 @@ When you're ready to install Mattermost server for production use, you have thre
 
         7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file in a text editor and make the following changes:
   
-           **If you are using PostgreSQL:**
+           **If you're using PostgreSQL:**
 
             Set ``"DriverName"`` to ``"postgres"``
             Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values: ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10",``
