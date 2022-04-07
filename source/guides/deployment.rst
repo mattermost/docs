@@ -235,7 +235,7 @@ When you're ready to install Mattermost server for production use, you have thre
 
         To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server. 
 
-        3. Open a browser, navigate to your Mattermost domain by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
+        3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
 
         4. Create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
 
