@@ -31,15 +31,15 @@ When you're ready to install Mattermost server for production use, you have thre
 
 .. tabs::
 
-    .. tab:: Using Docker
+    .. tab:: Docker
 
       .. include:: ../install/common-prod-deploy-docker.rst
 
-    .. tab:: Using an Ubuntu option
+    .. tab:: Ubuntu
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
 
-    .. tab:: From Tar
+    .. tab:: Tar
 
       .. include:: ../install/common-prod-deploy-tar.rst   
 

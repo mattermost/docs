@@ -62,7 +62,7 @@ Encountering issues with your Docker deployment? See the `Docker deployment trou
 
             .. code:: bash
   
-                S#GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
+                #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
         
             Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
 
