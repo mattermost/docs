@@ -1,7 +1,7 @@
 ..  _docker-local-machine:
 
 Install Mattermost via Docker
-================================
+==============================
 
 |all-plans| |self-hosted|
 
@@ -51,23 +51,10 @@ If you don't have Docker installed, follow the instructions below based on your 
 
 .. _Preview Mattermost on Docker:
 
-Preview Mattermost on Docker
-----------------------------
-.. important::
-  Follow the `preview instructions <#preview-mattermost>`__ to deploy Mattermost on Docker in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__. **Preview Mode** is for exploring product functionality on a single local machine. This configuration shouldn't be used in production, as it uses a known password string, contains other non-production configuration settings, keeps no persistent data (all data lives inside the container), and doesn't support upgrades.
-  
-  **When you're ready to use Mattermost, follow the** `production instructions <#deploy-mattermost>`__ **to deploy Mattermost on Docker in your production environment.**
+.. include:: common-local-deploy-docker.rst
 
-After you install Docker, you can preview Mattermost with one command:
-
-.. code:: bash
-
-  docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
-
-When Docker is done fetching the image, navigate to http://localhost:8065/ in your browser to preview Mattermost.
-
-Troubleshooting
-^^^^^^^^^^^^^^^
+Troubleshooting your preview deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **Preview Mode** Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
 
@@ -95,126 +82,29 @@ To access a shell inside the container, run the following command:
 Deploy Mattermost on Docker for production use
 ----------------------------------------------
 
-.. important::
-  To deploy Mattermost for production, `docker-compose >= 1.28 <https://docs.docker.com/compose/install/>`__ needs to be installed.
+.. include:: common-prod-deploy-docker.rst
 
-1. Clone the repository and enter the directory:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Upgrade from ``mattermost-docker``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+For an in-depth guide to upgrading from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__, please refer to `this document <https://github.com/mattermost/docker/blob/main/scripts/UPGRADE.md>`__. For additional help pr questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
 
-  git clone https://github.com/mattermost/docker
-  cd docker
+Installing a different version of Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2. Create your ``.env`` file by copying and adjusting the ``env.example`` file:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Shut down your deployment.
 
-.. code:: bash
+2. Run ``git pull`` to fetch any recent changes to the repository, paying attention to any potential ``env.example`` changes.
 
-  cp env.example .env
+3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <(https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
 
-.. important::
-  At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+4. Redeploy Mattermost.
 
-3. Create the required directories and set their permissions:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code:: bash
-
-  mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
-  sudo chown -R 2000:2000 ./volumes/app/mattermost
-
-4. Configure TLS for Nginx *(optional)*:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. important::
-  If you're not using the included Nginx reverse proxy, skip this step.
-
-If creating a new certificate and key:
-""""""""""""""""""""""""""""""""""""""
-
-.. code:: bash
-
-  bash scripts/issue-certificate.sh -d <YOUR_MM_DOMAIN> -o ${PWD}/certs
-
-To include the certificate and key, uncomment these lines in your ``.env`` file and ensure they point to the appropriate files:
-
-.. code:: bash
-
-  #CERT_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/fullchain.pem
-  #KEY_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/privkey.pem
-
-If using a pre-existing certificate and key:
-""""""""""""""""""""""""""""""""""""""""""""
-
-.. code:: bash
-
-  mkdir -p ./volumes/web/cert
-  cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
-  cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
-
-To include the certificate and key, ensure these lines in your ``.env`` file points to the appropriate files:
-
-.. code:: bash
-
-  CERT_PATH=./volumes/web/cert/cert.pem
-  KEY_PATH=./volumes/web/cert/key-no-password.pem
-
-5. Configure SSO with GitLab *(optional)*:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you want to use SSO with GitLab and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
-
-To add the PKI chain, uncomment this line in your ``.env`` file and ensure it points to your ``pki_chain.pem`` file:
-
-.. code:: bash
-
-  #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
-
-Then uncomment this line in your ``docker-compose.yml`` file and ensure it points to the same ``pki_chain.pem`` file:
-
-.. code:: bash
-
-  # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
-
-6. Deploy
-^^^^^^^^^
-
-Without using the included Nginx:
-"""""""""""""""""""""""""""""""""
-
-.. code:: bash
-
-  sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
-
-To access your new Mattermost deploy, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
-
-To shut down your deployment:
-
-.. code:: bash
-
-  sudo docker-compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
-
-Using the included Nginx:
-"""""""""""""""""""""""""
-
-.. code:: bash
-
-  sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
-
-To access your new Mattermost deploy via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
-
-To shut down your deployment:
-
-.. code:: bash
-
-  sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml down
-
-Troubleshooting
-^^^^^^^^^^^^^^^
+Troubleshooting your production deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Docker
-""""""
+^^^^^^
 
 If deploying on an M1 Mac and encountering permission issues in the Docker container, `redo the third step <#create-the-required-directores-and-set-their-permissions>`__ and skip this command:
 
@@ -235,32 +125,16 @@ To remove all data and settings for your Mattermost deployment:
   sudo rm -rf ./volumes
 
 Postgres
-""""""""
+^^^^^^^^
 
 You can change the Postgres username and/or password (recommended) in the ``.env`` file.
 
 TLS & Nginx
-"""""""""""
+^^^^^^^^^^^
 
 For an in-depth guide to configuring the TLS certificate and key for Nginx, please refer to `this document in the repository <https://github.com/mattermost/docker/blob/main/docs/issuing-letsencrypt-certificate.md>`__.
 
-Installing a different version of Mattermost
-""""""""""""""""""""""""""""""""""""""""""""
-
-1. `Follow the appropriate step <#deploy>`__ to shut down your deployment.
-
-2. Run ``git pull`` to fetch any recent changes to the repository, paying attention to any potential ``env.example`` changes.
-
-3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <(https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
-
-4. `Follow the appropriate step <#deploy>`__ to redeploy Mattermost.
-
-Upgrading from ``mattermost-docker``
-""""""""""""""""""""""""""""""""""""
-
-For an in-depth guide to upgrading from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__, please refer to `this document <https://github.com/mattermost/docker/blob/main/scripts/UPGRADE.md>`__. For additional help pr questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
-
 Further help
-""""""""""""
+~~~~~~~~~~~~~
 
 If you encounter other problems while installing Mattermost, please refer to our `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. 
