@@ -38,6 +38,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue with Calls banner locations for earlier iPhone models.
  - Fixed an issue where users were not able to scroll down to view custom themes.
  - Fixed a bug that resulted in dropping the Call state when switching to another app and returning.
+ - Fixed an issue where some messages could have been cut off if the markdown used had two or more links with an ``=`` sign.
 
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
