@@ -20,6 +20,7 @@ Deploy Mattermost for production use
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+
 When you're ready to install Mattermost server for production use, you have three options: deploy using Docker, deploy using a Ubuntu option, or deploy from a compressed tarball.
 
 .. tip::
