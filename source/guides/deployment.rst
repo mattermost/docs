@@ -80,7 +80,7 @@ Server installation
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Installing Mattermost via Docker </install/install-docker>
+    Install Mattermost via Docker </install/install-docker>
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
