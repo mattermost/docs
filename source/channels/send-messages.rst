@@ -22,7 +22,7 @@ Compose a message by typing into the text box at the bottom of Mattermost. Press
 
 .. tip::
   
-  When you send messages in a channel, depending on the channel actions configured, specific words in the post can trigger a prompt to run a playbook. Contact the Channel Admin for details.
+  When you send messages in a channel, depending on the `channel actions configured <https://docs.mattermost.com/channels/create-channels.html>`__, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
 
 Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your System Admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
 
