@@ -1,37 +1,38 @@
 Mattermost bundles the components of a Mattermost deployment into a single installation, called Omnibus. Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
 
-        1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
+1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
-          .. code-block:: none
+   .. code-block:: none
 
-            curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
+    curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
 
-        2. Install the Omnibus package.
+2. Install the Omnibus package.
 
-          .. code-block:: none
+   .. code-block:: none
 
-            sudo apt install mattermost-omnibus -y
+    sudo apt install mattermost-omnibus -y
 
-        To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server. 
+  To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server. 
 
-        .. note::
+    .. note::
 
-          If you encounter ``EXPKEYSIG``, this indicates that the certificate is expired. Obtain a new certificate, then run the following commands to replace your existing certificate:
+      If you encounter ``EXPKEYSIG``, this indicates that the certificate is expired. Obtain a new certificate, then run the following commands to replace your existing certificate:
 
-            .. code-block:: none
+       .. code-block:: none
 
-              sudo apt-key remove 44774B28
-              sudo curl -o- https://deb.packages.mattermost.com/pubkey.gpg | sudo apt-key add -
-              sudo apt update
+        sudo apt-key remove 44774B28
+        sudo curl -o- https://deb.packages.mattermost.com/pubkey.gpg | sudo apt-key add -
+        sudo apt update
 
-        3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
+3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
 
-        4. Create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+4. Create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
 
-        .. note:: 
+   .. note:: 
 
-            We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
+    We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
 
-        **Update Mattermost Omnibus**
+Update Mattermost Omnibus
+-------------------------
 
-        Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
+Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.

@@ -76,7 +76,7 @@ Server installation
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Local Docker setup </install/setting-up-local-machine-using-docker>
+    Docker setup </install/install-docker>
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
@@ -86,7 +86,7 @@ Server installation
 
 
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>`
-* :doc:`Local Docker setup </install/setting-up-local-machine-using-docker>`
+* :doc:`Docker setup </install/install-docker>`
 * :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
 * :doc:`Kubernetes </install/install-kubernetes>`
