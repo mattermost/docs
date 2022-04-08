@@ -40,7 +40,7 @@ Server installation
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Installing Mattermost via Docker </install/setting-up-local-machine-using-docker>
+    Install Mattermost via Docker </install/setting-up-local-machine-using-docker>
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Install Mattermost from Tar </install/install-tar>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
