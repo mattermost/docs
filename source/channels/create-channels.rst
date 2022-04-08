@@ -28,7 +28,7 @@ Anyone can create public, private, direct, and group channels, unless the System
   
   - Displaying a temporary welcome message for new channel members.
   - Automatically adding the channel to a `category in the user's channel sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__.
-  - Prompting a playbook to run based on the contents of a message.
+  - Prompting to run a playbook based on the contents of a message.
 
 Create a public or private channel
 -----------------------------------
