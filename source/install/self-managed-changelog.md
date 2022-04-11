@@ -29,13 +29,13 @@ Latest Mattermost Releases:
  - The [Apps Framework](https://developers.mattermost.com/integrate/apps/) allows developers to build integrations with Mattermost that seamlessly work across Mattermost’s desktop and mobile clients. Apps can be developed using any programming language, as opposed to plugins which must be developed in Go.
 
 #### Triggers and Actions
- - Channel admins can now configure certain actions to be executed automatically based on trigger conditions without writing any code.
+ - Channel admins can now configure [certain actions](https://docs.mattermost.com/channels/create-channels.html) to be executed automatically based on trigger conditions without writing any code.
 
 #### Actions Restructure
  - The **Actions** menu was restructured to reduce the clutter from Plugins and Apps.
 
 #### Playbook Updates
- - Added retrospective metrics to track up to four key metrics that indicate performance of every run.
+ - Added retrospective metrics (Enterprise edition) to track up to four key metrics that indicate performance of every run.
 
 ### Improvements
 
@@ -84,6 +84,7 @@ Latest Mattermost Releases:
  - Permissions for private playbooks are now hidden unless running an Enterprise license.
 
 ### Bug Fixes
+ - Fixed an error that occured when a non-logged-in user attempted to view a page that required being logged in while MFA was required on the server.
  - Fixed an issue where the channel switcher displayed channels from teams the Admin was no longer part of.
  - Fixed an issue where ``ThreadStore.GetThreadsForUser`` did not count correctly when no team ID was specified.
  - Fixed an issue where ``zip`` file creation failed when adding attachments.
