@@ -20,12 +20,29 @@ Notifications and updates
 
 There are multiple ways to receive updates and notifications.
 
+Status updates
+--------------
+
+Status updates ensure that stakeholders remain informed about the playbook run’s progress. To post a status update:
+
+1. Select **Toggle Playbook List** from the channel header.
+2. Select **Post update**.
+   - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
+   - If this is a subsequent status update, the message from the last status update will be pre-populated here.
+3. Optionally set a reminder to prompt for the next status update.
+   - If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
+   - If this is a subsequent status update, the last reminder timer will be pre-populated here.
+4. Select **Post update** to post your status update.
+
+If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot.
+The most recent status post will also appear in the right-hand sidebar of the run channel. To correct or remove a status post, edit or delete the post as needed. Note that status updates that are broadcast to another channel won’t be updated or removed if the original post is edited or deleted.
+
 Follow runs and playbooks
 -------------------------
 
-Follow specific playbooks to receive updates on important events such as when a run is started and finished, as well as status and retrospective updates every time that playbook is run. This is a good option if you're interested in all instances of a specific workflow, such as an outage resolution playbook.
+Follow specific playbooks to receive updates on important events such as when a run is started and finished, as well as status and retrospective updates every time that playbook is run. This is a good option if you’re interested in all instances of a specific workflow, such as an outage resolution playbook.
 
-As a stakeholder, you can also choose to follow only a specific run. This means that while you don't have to participate in the run, you'll receive updates and can decide what, if any, actions to take. This is a good option if you're only interested in a single instance of a procedure. For example, you may want to only follow customer onboarding for one specific customer instead of all onboarding runs.
+As a stakeholder, you can also choose to follow only a specific run. This means that while you don’t have to participate in the run, you’ll receive updates and can decide what, if any, actions to take. This is a good option if you’re only interested in a single instance of a procedure. For example, you may want to only follow customer onboarding for one specific customer instead of all onboarding runs.
 
 Daily digest
 ------------
