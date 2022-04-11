@@ -20,9 +20,14 @@ Overview
 
 Mattermost Playbooks are a collaboration tool that define a repeatable process for teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
+Mattermost Playbooks is included in Mattermost self-hosted and Mattermost Cloud workspace. You can access Playbooks via the product menu in the top-left corner of Mattermost.
+
+To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select Runs from the navigation bar. and choose a run to view its overview. Select Go to channel to open the run’s channel.
+
 Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. 
 
 Playbooks are made up of:
+
 - **Checklists**: The list of tasks to be completed for the run. Checklists can be edited ad-hoc during a run.
 - **Templates**: Templates for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
 - **Actions**: Automation options for inviting members, webhooks, welcome messages, channel export settings, and more.
@@ -48,6 +53,7 @@ To open a playbook and view its statistics, select the playbook name. To begin a
 
 Templates
 ~~~~~~~~~
+
 Creating a playbook from scratch can be daunting, even if you have the process mapped out. One way to get started quickly is to use one of the pre-configured templates available. These templates are populated with content and settings to provide guidance and are customizable.
 
 Playbook Templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
@@ -61,9 +67,3 @@ View run details
 ~~~~~~~~~~~~~~~~
 
 When you’re in a channel with an active run, select the Toggle Run Details icon in the channel header to open the RHS to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
-
-Where are they?
-^^^^^^^^^^^^^^^
-Mattermost Playbooks is included in Mattermost self-hosted and Mattermost Cloud workspace. You can access Playbooks via the product menu in the top-left corner of Mattermost.
-
-To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select Runs from the navigation bar. and choose a run to view its overview. Select Go to channel to open the run’s channel.
