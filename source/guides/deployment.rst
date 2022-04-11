@@ -52,7 +52,6 @@ Prepare for your Mattermost deployment
 
     Quick install guide </getting-started/light-install>
     Preview Mattermost via Docker </install/install-docker>
-    Install Mattermost from Tar </install/install-tar>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
@@ -63,7 +62,6 @@ These guides will help you prepare for your Mattermost deployment.
 
 * :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
 * :doc:`Preview Mattermost via Docker </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
-* :doc:`Install Mattermost from Tar </install/install-tar>` - Install Mattermost server from a compressed tarball.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.

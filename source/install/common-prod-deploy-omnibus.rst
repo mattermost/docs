@@ -1,37 +1,40 @@
-Mattermost bundles the components of a Mattermost deployment into a single installation, called Omnibus. Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
+.. important::
 
-        1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
+    Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
 
-          .. code-block:: none
+1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
-            curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
+   .. code-block:: none
 
-        2. Install the Omnibus package.
+    curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
 
-          .. code-block:: none
+2. Install the Omnibus package.
 
-            sudo apt install mattermost-omnibus -y
+   .. code-block:: none
 
-        To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server. 
+    sudo apt install mattermost-omnibus -y
 
-        .. note::
+  To issue the certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server. 
 
-          If you encounter ``EXPKEYSIG``, this indicates that the certificate is expired. Obtain a new certificate, then run the following commands to replace your existing certificate:
+    .. note::
 
-            .. code-block:: none
+      If you encounter ``EXPKEYSIG``, this indicates that the certificate is expired. Obtain a new certificate, then run the following commands to replace your existing certificate:
 
-              sudo apt-key remove 44774B28
-              sudo curl -o- https://deb.packages.mattermost.com/pubkey.gpg | sudo apt-key add -
-              sudo apt update
+       .. code-block:: none
 
-        3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
+        sudo apt-key remove 44774B28
+        sudo curl -o- https://deb.packages.mattermost.com/pubkey.gpg | sudo apt-key add -
+        sudo apt update
 
-        4. Create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+3. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name. 
 
-        .. note:: 
+4. Create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
 
-            We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
+   .. note:: 
 
-        **Update Mattermost Omnibus**
+    We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
 
-        Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
+Update Mattermost Omnibus
+-------------------------
+
+Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
