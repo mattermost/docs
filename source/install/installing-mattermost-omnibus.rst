@@ -13,51 +13,10 @@ Installing Mattermost Omnibus
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Overview
----------
+.. include:: common-prod-deploy-omnibus.rst
 
-Mattermost Omnibus is a Debian package that packages the individual components of a Mattermost deployment into a single installation process. The package leverages the ``apt`` package manager to install and keep the components of the platform updated, using a custom CLI and ansible recipes to link those components together and configure them.
-
-Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. Support for RedHat/CentOS distributions will be available in future versions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost.
-
-Prerequisites
--------------
-
-- A clean Ubuntu server (18.04 or 20.04)
-- A domain name pointing to that server
-- Root level access to the server
-
-Configuring Mattermost Omnibus Repositories
--------------------------------------------
-
-The Omnibus repositories are configured using a cURL command:
-
-``curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash``
-
-This command configures the repositories needed for a ``PostgreSQL`` database, an ``nginx`` web server to act as a proxy, and ``certbot`` to issue and renew the SSL certificate. It also configures the Mattermost Omnibus repository so that you can run the install command.
-
-Installing Mattermost Omnibus
+Configure Mattermost Omnibus
 -----------------------------
-
-If you're installing Omnibus, and have a domain and SSL use:
-
-``sudo apt install mattermost-omnibus -y``
-
-In order to issue that certificate, the installer requests a domain name and an email address from you. These are used to generate the certificate and deliver any related communications respectively.
-
-After all the packages are installed, Omnibus runs the ansible scripts that configure all the platform components and starts the server. To access Mattermost, open a browser, navigate to your domain, and create the System Admin user to start using the platform.
-
-Updating Mattermost Omnibus
----------------------------
-
-Mattermost Omnibus is integrated with the ``apt`` package manager. When a new Mattermost version is released, run:
-
-``sudo apt update && sudo apt upgrade``
-
-This downloads the latest version of Mattermost and updates your Mattermost platform.
-
-Configuring Mattermost Omnibus
--------------------------------
 
 .. note::
   
@@ -81,7 +40,7 @@ The properties that you can configure in this file are:
 
 After modifying the ``mmomni.yml`` configuration file, you need to run ``mmomni reconfigure`` for Omnibus to apply the changes and restart Mattermost.
 
-Using a custom NGINX template
+Use a custom NGINX template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Omnibus generates an ``nginx`` configuration depending on how the different properties of the ``mmomni.yml`` file are set. However, you may need to customize the configuration further to support other use cases, such as using custom SSL certificates. For those cases, Omnibus supports using a custom ``nginx`` template to generate its configuration. 
@@ -94,7 +53,7 @@ Please be careful when using this feature, as making changes to the custom templ
 
 This feature is available from Mattermost Omnibus version 5.32.0.
 
-Removing Mattermost Omnibus
+Remove Mattermost Omnibus
 ---------------------------
 
 If you wish to remove Mattermost and Mattermost Omnibus completely for any reason, you can run this command:
