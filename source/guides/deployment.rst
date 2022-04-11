@@ -50,6 +50,8 @@ Prepare for your Mattermost deployment
     :maxdepth: 1
     :hidden:
 
+    Quick install guide </getting-started/light-install>
+    Install Mattermost via Docker </install/install-docker>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
@@ -58,6 +60,8 @@ Prepare for your Mattermost deployment
 
 These guides will help you prepare for your Mattermost deployment.
 
+* :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
+* :doc:`Docker deployment </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
@@ -76,7 +80,7 @@ Server installation
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Local Docker setup </install/setting-up-local-machine-using-docker>
+    Install Mattermost via Docker </install/install-docker>
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
@@ -86,7 +90,7 @@ Server installation
 
 
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>`
-* :doc:`Local Docker setup </install/setting-up-local-machine-using-docker>`
+* :ref:`Deploy Mattermost on Docker`
 * :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
 * :doc:`Kubernetes </install/install-kubernetes>`
