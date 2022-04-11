@@ -96,7 +96,7 @@ At this point, we are not planning on letting customers pay for extended support
 How do we notify customers about new and deprecated Extended Support Releases?
 ------------------------------------------------------------------------------
 
-For a new upcoming ESR, we send out an email announcement on or close to release day. We also add a reminder on our release announcement, changelog, and via a Forum post (`see example <https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>>`_).
+For a new upcoming ESR, we send out an email announcement on or close to release day. We also add a reminder on our release announcement, changelog, and via a Forum post (`see example <https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>`_).
 
 For a deprecated ESR, we send out an email announcement three months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.com/>`_.
 
