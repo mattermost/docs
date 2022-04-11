@@ -23,7 +23,7 @@ Install a production-ready Mattermost system on 1 to 3 machines.
   :backlinks: top
   :local:
 
-.. include:: install-debian-server.rst
+.. include:: install-tar.rst
 .. include:: install-debian-mysql.rst
 .. include:: install-debian-postgresql.rst
 .. include:: install-debian-mattermost.rst
