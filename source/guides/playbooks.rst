@@ -18,12 +18,11 @@ The basics
    Notifications and updates </playbooks/notifications-and-updates>
    Metrics and goals </playbooks/metrics-and-goals>
    Permissions </playbooks/playbook-permissions>
-   Notifications and updates </playbooks/notifications-and-updates>
-   Retrospectives </playbooks/refining-and-improving>
+   Reusing and sharing playbooks </playbooks/reusing-and-sharing-playbooks>
    
 * :doc:`Playbooks overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
 * :doc:`Customize a playbook </playbooks/customize-a-playbook>` - Customize a playbook for successful runs.
 * :doc:`Notifications and updates </playbooks/notifications-and-updates>` - Keep track of all your active runs and tasks.
 * :doc:`Metrics and goals </playbooks/metrics-and-goals>` - Use retrospectives to improve your workflows and provide detailed insight into your Playbooks.
 * :doc:`Permissions </playbooks/playbook-permissions>` - Configure and granulate access controls for playbooks.
-* :doc:`Reusing and sharing playbooks </playbooks/setting-up-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage 
+* :doc:`Reusing and sharing playbooks </playbooks/reusing-and-sharing-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage 
