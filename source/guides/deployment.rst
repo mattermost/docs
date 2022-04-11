@@ -51,7 +51,8 @@ Prepare for your Mattermost deployment
     :hidden:
 
     Quick install guide </getting-started/light-install>
-    Install Mattermost via Docker </install/setting-up-local-machine-using-docker>
+    Preview Mattermost via Docker </install/install-docker>
+    Install Mattermost from Tar </install/install-tar>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
@@ -61,7 +62,7 @@ Prepare for your Mattermost deployment
 These guides will help you prepare for your Mattermost deployment.
 
 * :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
-* :doc:`Run Mattermost via Docker </install/setting-up-local-machine-using-docker>` - Launch a Mattermost server instantly to test functionality and build integrations.
+* :doc:`Preview Mattermost via Docker </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Install Mattermost from Tar </install/install-tar>` - Install Mattermost server from a compressed tarball.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
@@ -81,7 +82,7 @@ Server installation
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Install Mattermost via Docker </install/setting-up-local-machine-using-docker>
+    Install Mattermost via Docker </install/install-docker>
     Mattermost Omnibus </install/installing-mattermost-omnibus>
     Install Mattermost from Tar </install/install-tar>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
@@ -92,7 +93,7 @@ Server installation
 
 
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>`
-* :ref:`Deploy Mattermost on Docker`
+* :doc:`Deploy Mattermost on Docker </install/install-docker>`
 * :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
 * :doc:`Install Mattermost from Tar </install/install-tar>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
