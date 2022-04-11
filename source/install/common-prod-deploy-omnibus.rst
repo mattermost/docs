@@ -18,7 +18,7 @@
 
     .. note::
 
-      If you encounter ``EXPKEYSIG``, this indicates that the certificate is expired. Obtain a new certificate, then run the following commands to replace your existing certificate:
+      If you encounter ``EXPKEYSIG``, this indicates that the certificate is expired. To obtain a new certificate, run the following commands:
 
        .. code-block:: none
 
