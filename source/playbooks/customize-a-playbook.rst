@@ -16,6 +16,23 @@ You can change a playbook’s configuration at any time, but changes will only b
    - To access the playbook dashboard, select the hyperlinked playbook name.
 4. Configure the playbook the same way a playbook is created or edited.
 
+Make checklists
+----------------
+
+1. Open Playbooks and select the **Playbooks** tab.
+2. Start a **Blank Playbook**, or use the built-in template.
+3. Name your playbook and provide a description.
+4. Select the **Checklists** tab.
+
+  You can start with the default checklist and edit it or you can delete it and select **+ New checklist**.
+
+    * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+    * Drag and drop to reorganize checklists and tasks.
+    * Add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
+    * Add a slash command to the task that can be executed by members of the playbook as needed.
+
+5. Choose **Save**.
+
 Assign tasks and due dates
 --------------------------
 
