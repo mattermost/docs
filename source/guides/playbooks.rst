@@ -14,7 +14,7 @@ The basics
    :hidden:
 
    Overview </playbooks/overview>
-   Access playbooks </playbooks/getting-started>
+   Customize a playbook </playbooks/customize-a-playbook>
    Playbook permissions </playbook/playbooks-permissions>
    Plan playbooks </playbooks/setting-up-playbooks>
    Run playbooks </playbooks/running-playbooks>
@@ -22,7 +22,7 @@ The basics
    Retrospectives </playbooks/refining-and-improving>
    
 * :doc:`Playbooks overview </playbooks/overview>` - Learn about Mattermost Playbooks features.
-* :doc:`Access playbooks </playbooks/getting-started>` - Enable Playbooks for your Mattermost instance and learn how to set them up.
+* :doc:`Customize a playbook </playbooks/customize-a-playbook>` - Customize a playbook for successful runs.
 * :doc:`Playbook permissions </playbooks/playbook-permissions>` - Configure and granulate access controls for playbooks.
 * :doc:`Plan playbooks </playbooks/setting-up-playbooks>` - Create checklists, templates, and actions, for your Playbooks and manage permissions for your team.
 * :doc:`Run playbooks </playbooks/running-playbooks>` - Initiate Playbooks, make announcements, and get information about your workflows.
