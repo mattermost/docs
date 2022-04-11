@@ -470,6 +470,8 @@ redirects = {
 # Getting Started redirects
 "getting-started/implementation_plan.html": 
         "https://docs.mattermost.com/getting-started/implementation-plan.html",
+"getting-started/light-install.html":
+        "https://docs.mattermost.com/guides/deployment.html",
 "getting-started/welcome_email.html": 
         "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
 
@@ -659,6 +661,8 @@ redirects = {
 	"https://forum.mattermost.org/t/production-install-on-windows-server/12232",
 "install/requirements.html": 
         "https://docs.mattermost.com/install/software-hardware-requirements.html",
+"install/setting-up-local-machine-using-docker.html":
+        "https://docs.mattermost.com/guides/deployment.html",
 "install/sockets-db.html": 
         "https://docs.mattermost.com/install/setting-up-socket-based-mattermost-database.html",
 "install/smtp-email-setup.html": 

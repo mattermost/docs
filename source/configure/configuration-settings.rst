@@ -6108,7 +6108,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 This configuration setting controls the ability for users to create custom user groups. This configuration setting is disabled by default.
 
 +----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableCustomGroups": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"EnableCustomGroups": true`` with options ``true`` and ``false``.  |
 +----------------------------------------------------------------------------------------------------------------+
 
 Developer Flags
