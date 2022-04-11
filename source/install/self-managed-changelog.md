@@ -139,6 +139,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
+- **v6.4.3, released **
+  - Fixed an issue where 
 - **v6.4.2, released 2022-03-10**
   - Mattermost v6.4.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where the webapp did not route notifications correctly when the computer was locked.
