@@ -128,7 +128,7 @@ Select **Theme Colors** to select from four standard themes designed by the Matt
 
 Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**.
 
-In Enterprise editions, if you belong to multiple teams, you can optionally select the checkbox **Apply new theme to all my teams** to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
+In Enterprise edition, if you belong to multiple teams, you can optionally select the checkbox **Apply new theme to all my teams** to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
 
 Learn more about the custom theme color selectors `here <https://docs.mattermost.com/welcome/customize-your-theme.html>`__.
 
