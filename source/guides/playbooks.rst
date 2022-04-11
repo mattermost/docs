@@ -6,9 +6,6 @@ Mattermost Playbooks are pre-built, configurable checklists that define a repeat
 .. image:: ../images/Playbooks_Hero.png
    
 This Mattermost Playbooks User Guide is for anyone who needs help using Mattermost workflow capabilities.
-   
-The basics
-----------
 
 .. toctree::
    :hidden:
