@@ -26,7 +26,7 @@ The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elastics
 
 .. important::
 
-  For Mattermost v6.0, a minimum of Elasticsearch v7.x is supported. 
+  For Mattermost v6.0, Elasticsearch v7.x is supported. 
   Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
     
 Deployment guide
