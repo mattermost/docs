@@ -22,7 +22,7 @@ Mattermost Playbooks is a collaboration tool that defines a repeatable process t
 
 Mattermost Playbooks is included in Mattermost self-hosted and Mattermost Cloud workspace. You can access Playbooks via the product menu in the top-left corner of Mattermost.
 
-To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select Runs from the navigation bar. and choose a run to view its overview. Select Go to channel to open the run’s channel.
+To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select **Runs** from the navigation bar, then choose a run to view its overview. Select **Go to channel** to open the run’s channel.
 
 Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. 
 
