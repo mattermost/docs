@@ -56,7 +56,7 @@ Templates
 
 Creating a playbook from scratch can be daunting, even if you have the process mapped out. One way to get started quickly is to use one of the pre-configured templates available. These templates are populated with content and settings to provide guidance and are customizable.
 
-Playbook Templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
+Playbook templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
 
 What’s a run?
 ^^^^^^^^^^^^^
