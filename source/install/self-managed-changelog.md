@@ -15,6 +15,8 @@ Latest Mattermost Releases:
 
 **Release Day: 2022-04-16**
 
+Mattermost v6.6.0 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Compatibility
  - Updated Safari recommended minimum version to v14.1+.
 
