@@ -18,7 +18,7 @@ Overview
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Mattermost Playbooks are a collaboration tool that define a repeatable process for teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
+Mattermost Playbooks is a collaboration tool that defines a repeatable process to enable teams to achieve specific and predictable outcomes. With playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
 Mattermost Playbooks is included in Mattermost self-hosted and Mattermost Cloud workspace. You can access Playbooks via the product menu in the top-left corner of Mattermost.
 
