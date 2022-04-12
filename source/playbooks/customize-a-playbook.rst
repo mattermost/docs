@@ -12,7 +12,7 @@ You can change a playbook’s configuration at any time, but changes will only b
 2. Find the playbook to be edited.
    - Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
 3. Select the name of the playbook.
-   - To edit the playbook directly select the Actions menu next to the playbook name, then select Edit.
+   - To edit the playbook directly select the actions menu next to the playbook name, then select **Edit**.
    - To access the playbook dashboard, select the hyperlinked playbook name.
 4. Configure the playbook the same way a playbook is created or edited.
 
