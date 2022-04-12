@@ -24,7 +24,7 @@ Make checklists
 3. Name your playbook and provide a description.
 4. Select the **Checklists** tab.
 
-  You can start with the default checklist and edit it or you can delete it and select **+ New checklist**.
+  You can start with the default checklist and edit it, or you can delete it and select **+ New checklist**.
 
     * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
     * Drag and drop to reorganize checklists and tasks.
