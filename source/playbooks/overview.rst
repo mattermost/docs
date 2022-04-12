@@ -66,4 +66,4 @@ To access runs, select the Product menu in the top-left corner of Mattermost, th
 View run details
 ~~~~~~~~~~~~~~~~
 
-When you’re in a channel with an active run, select the Toggle Run Details icon in the channel header to open the RHS to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
+When you’re in a channel with an active run, select the **Toggle Run Details** icon in the channel header to open the right-hand pane to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
