@@ -61,7 +61,7 @@ Playbook Templates are basic workflows that you can use to get started quickly. 
 What’s a run?
 ^^^^^^^^^^^^^
 
-To access runs, select the Product menu in the top-left corner of Mattermost, then select Playbooks. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
+To access runs, select the product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
 
 View run details
 ~~~~~~~~~~~~~~~~
