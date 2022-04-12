@@ -24,4 +24,4 @@ This Mattermost Playbooks User Guide is for anyone who needs help using Mattermo
 * :doc:`Metrics and goals </playbooks/metrics-and-goals>` - Use retrospectives to improve your workflows and provide detailed insight into your Playbooks.
 * :doc:`Permissions </playbooks/playbook-permissions>` - Configure and granulate access controls for playbooks.
 * :doc:`Reusing and sharing playbooks </playbooks/reusing-and-sharing-playbooks>` - Reuse and share playbooks with your organization.
-* :docs:`Interact with playbooks </playbooks/interact-with-playbooks>` - Interact with playbooks using slash commands and the REST API. 
+* :doc:`Interact with playbooks </playbooks/interact-with-playbooks>` - Interact with playbooks using slash commands and the REST API. 
