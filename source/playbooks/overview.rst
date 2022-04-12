@@ -49,7 +49,7 @@ There are other parts of a playbook, such as automation settings, and metrics. B
 Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a dedicated channel. 
 
 Part of setting up a playbook includes configuring how the playbook manages the creation of this channel as well as how stakeholders are notified.
-To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select Run next to that playbook’s name.
+To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** beside that playbook’s name.
 
 Templates
 ~~~~~~~~~
