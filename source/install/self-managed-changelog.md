@@ -35,7 +35,7 @@ Latest Mattermost Releases:
  - The **Actions** menu was restructured to reduce the clutter from Plugins and Apps.
 
 #### Playbook Updates
- - Added retrospective metrics (Enterprise edition) to track up to four key metrics that indicate performance of every run.
+ - Added [retrospective metrics](https://docs.mattermost.com/playbooks/metrics-and-goals.html) (Enterprise edition) to track up to four key metrics that indicate performance of every run.
 
 ### Improvements
 
