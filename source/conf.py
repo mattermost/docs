@@ -1078,7 +1078,17 @@ redirects = {
 "overview/security.html": 
         "https://docs.mattermost.com/about/security.html",
 
-
+	
+# Playbooks redirects
+"playbooks/getting-started.html":
+	"https://docs.mattermost.com/playbooks/overview.html",
+"playbooks/setting-up-playbooks.html":
+	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
+"playbooks/running-playbooks.html":
+	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
+"playbooks/refining-and-improving.html":
+	"https://docs.mattermost.com/playbooks/metrics-and-goals.html",
+	
 # Process redirects
 # Important Note: The process directory and its contents are scheduled to be archived by FY23 Q2 since all applicable content has been moved from docs.mm.com to handbook.mm.com.
 "process/accepting-pull-request.html":
