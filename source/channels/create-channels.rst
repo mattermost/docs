@@ -18,7 +18,7 @@ Create channels
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Anyone can create public, private, direct, and group channels, unless the System Admin has `restricted permissions to do so using advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
+Anyone can create public channels, private channels, direct messages, and group messages unless the System Admin has `restricted permissions to do so using advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
 
 .. tip::
 
