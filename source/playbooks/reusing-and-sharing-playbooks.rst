@@ -27,4 +27,4 @@ To import a playbook, go to the Playbooks screen, and select **Import**. Choose 
 Channel export
 ^^^^^^^^^^^^^^
 
-Exporting the contents of a channel requires the channel export plugin. See the Channel Export plugin documentation for more information.
+Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
