@@ -18,7 +18,6 @@ Reuse and sharing playbooks
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-
 Playbooks are repeatable workflows and sometimes it’s easier to copy and improve rather than start from scratch. 
 
 You can do this by duplicating a playbook in the Playbooks screen. Select the **...** under **Actions** and then select **Duplicate**. The copied playbook will have **Copy of** appended to its original name which you can edit.
