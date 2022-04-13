@@ -28,9 +28,9 @@ Each playbook represents a recurring outcome or specific goal that your teams co
 
 Playbooks are made up of:
 
-- **Checklists**: The list of tasks to be completed for the run. :doc:`Checklists </playbooks/customize-a-playbook.html#make-checklists>` can be edited ad-hoc during a run.
-- **Templates**: :doc:`Templates </playbooks/overview.html#templates>` for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
-- **Actions**: :doc:`Automation options </playbooks/customize-a-playbook.html#actions>` for inviting members, creating webhooks, editing welcome messages, and more.
+- **Checklists**: The list of tasks to be completed for the run. :doc:`Checklists </playbooks/customize-a-playbook>` can be edited ad-hoc during a run.
+- **Templates**: :doc:`Templates </playbooks/overview>` for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
+- **Actions**: :doc:`Automation options </playbooks/customize-a-playbook>` for inviting members, creating webhooks, editing welcome messages, and more.
 - **Permissions**: Manage :doc:`permissions </playbooks/playbook-permissions>` at a channel and a playbook level.
 
 Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. 
