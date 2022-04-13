@@ -20,8 +20,8 @@ Metrics and goals
 
 Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review. Retrospective components are customized per playbook.
 
-Configuring retrospectives before a run
-----------------------------------------
+Configure retrospectives before a run
+-------------------------------------
 
 Open Playbooks and select the **Playbooks** tab. Locate the playbook you want to modify, select the **...** icon under **Actions** and then select **Edit**. In the next screen, select **Retrospective**. Move the toggle to **Enable Retrospective**.
 
@@ -33,7 +33,7 @@ Use the run timeline to help write an accurate retrospective. Events such as own
    :alt: Create and publish retrospective reports.
 
 Metrics
-~~~~~~~
+-------
 
 Use metrics to identify key areas where you want to extract valuable insights by measuring performance and improvement. Metrics are enabled when you enable retrospectives. Calibrate the type of metric you want to measure, and once a run is finished you can view the output in the retrospective. You can have multiple metrics configured per playbook and you can edit them at any time. Metrics can be configured based on numeric, time, or value input.
 
@@ -64,6 +64,6 @@ The lower half of the page shows a list of finished runs with metrics values. Yo
    :alt: View and assess metrics for your playbook.
 
 Channel export
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://mattermost.gitbook.io/channel-export-plugin>`_ for more information.
