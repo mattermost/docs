@@ -1,5 +1,5 @@
-Reuse and sharing playbooks
-===========================
+Reuse and share playbooks
+=========================
 
 |all-plans| |cloud| |self-hosted|
 
