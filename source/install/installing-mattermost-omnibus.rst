@@ -1,5 +1,5 @@
-Installing Mattermost Omnibus
-=============================
+Install Mattermost Omnibus
+==========================
 
 |all-plans| |self-hosted|
 

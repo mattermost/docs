@@ -239,7 +239,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **v6.3.7, released **
+- **v6.3.7, released 2022-04-13**
   - Fixed an issue where users were able to attempt to create private playbooks with the Professional license.
 - **v6.3.6, released 2022-03-24**
   - Fixed an issue with a slow delete of posts and ``context deadline exceeded`` errors after upgrading to v6.3.
