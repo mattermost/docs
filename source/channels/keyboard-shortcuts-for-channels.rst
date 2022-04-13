@@ -84,15 +84,15 @@ Formatting shortcuts
 
 The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 
-+------------+-----------+-------------------------+
-| On Windows | On Mac    | Description             |
-+============+===========+=========================+
-| CTRL+B     | CMD+B     | Bold text.              |
-+------------+-----------+-------------------------+
-| CTRL+I     | CMD+I     | Italicize text.         |
-+------------+-----------+-------------------------+
-| CTRL+ALT+K | CMD+ALT+K | Format text as a link.  |
-+------------+-----------+-------------------------+
++------------+--------------+-------------------------+
+| On Windows | On Mac       | Description             |
++============+==============+=========================+
+| CTRL+B     | CMD+B        | Bold text.              |
++------------+--------------+-------------------------+
+| CTRL+I     | CMD+I        | Italicize text.         |
++------------+--------------+-------------------------+
+| CTRL+ALT+K | CMD+OPTION+K | Format text as a link.  |
++------------+--------------+-------------------------+
 
 Accessibility nagivation shortcuts
 ----------------------------------

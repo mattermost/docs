@@ -25,6 +25,17 @@ System Admins can access their workspace optimization page in the System Console
 .. image:: ../images/workspace-optimization.png
   :alt: Review your workspace health and growth scores, then take advantage of recommended optimizations.
 
+How is the overall score calculated?
+------------------------------------
+
+The highest score possible is 100. Your score is calculated based on the type of issue reported and the level of potential security risk introduced to your Mattermost deployment if ignored. 
+
+Each item on the dashboard is calculated based on its individual impact score. These differ depending on whether they're problems, warnings, or suggestions. For example, if SSL encryption isn't configured in your workspace, Mattermost reports that as a problem, which reduces your score until it's addressed. 
+
+Warnings impact your score less than problems, and suggestions have the least impact on your score.
+
+Want to improve your overall workspace optimization score? Take action towards the problems, warnings, and suggestions reported on this dashboard. We recommend the following workspace optimizations.
+
 Recommendations
 ---------------
 
@@ -54,5 +65,5 @@ The following optimization areas can alert you to workspace suggestions, warning
 | User authentication   | - **AD/LDAP**: As your user base grows, would you benefit from easier onboarding,                        | See the product documentation to learn more:                                                                                                                         |
 |                       |   automated deactivations, and role assignments?                                                         |                                                                                                                                                                      |
 |                       |                                                                                                          | - `AD/LDAP <https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap>`__                                                                            |
-|                       | - **Guest Accounts**: Do you want to control user access to channels and teams with guest accounts?      | - `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__                                                                                       |
+|                       | - **Guest accounts**: Do you want to control user access to channels and teams with guest accounts?      | - `Guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__                                                                                       |
 +-----------------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
