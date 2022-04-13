@@ -1084,7 +1084,7 @@ redirects = {
 	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
 "playbooks/running-playbooks.html":
 	"https://docs.mattermost.com/playbooks/customize-a-playbook.html",
-"/playbooks/refining-and-improving.html":
+"playbooks/refining-and-improving.html":
 	"https://docs.mattermost.com/playbooks/metrics-and-goals.html",
 	
 # Process redirects
