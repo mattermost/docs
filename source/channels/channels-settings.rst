@@ -288,6 +288,11 @@ Turn on preview features to view them early, ahead of their official release:
 
 - **Show markdown preview option in message input box** Turning this on will show a **Preview** option when typing in the text input box. Select **Preview** to see what the Markdown formatting in the message looks like before the message is sent.
 
+Performance Debugging
+~~~~~~~~~~~~~~~~~~~~~
+
+Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `Enable Client Performance Debugging <https://docs.mattermost.com/configure/configuration-settings.html>`__ is enabled.
+
 Deactivate account
 ~~~~~~~~~~~~~~~~~~
 

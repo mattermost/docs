@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _interactive-messages:
 
 Interactive Messages: Buttons and Menus

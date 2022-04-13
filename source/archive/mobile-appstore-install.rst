@@ -1,3 +1,5 @@
+:nosearch:
+
 Install from Apple App Store and Google Play
 ============================================
 

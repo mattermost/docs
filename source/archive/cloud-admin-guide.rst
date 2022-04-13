@@ -1,3 +1,4 @@
+:nosearch:
 
 Cloud Administrator's Guide
 ============================

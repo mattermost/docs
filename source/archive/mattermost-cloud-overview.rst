@@ -1,3 +1,4 @@
+:nosearch:
 
 Mattermost Cloud Overview
 =========================
