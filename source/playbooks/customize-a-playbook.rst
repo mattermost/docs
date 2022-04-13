@@ -1,6 +1,23 @@
 Customize your playbook
 =======================
 
+|all-plans| |cloud| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/download
+  :alt: Available for Mattermost Cloud deployments.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
 Playbooks are highly customizable to align with your workflow.
 
 Edit a playbook
@@ -10,10 +27,14 @@ You can change a playbook’s configuration at any time, but changes will only b
 
 1. Go to **Product menu > Playbooks**.
 2. Find the playbook to be edited.
+
    - Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
+
 3. Select the name of the playbook.
+
    - To edit the playbook directly select the actions menu next to the playbook name, then select **Edit**.
    - To access the playbook dashboard, select the hyperlinked playbook name.
+
 4. Configure the playbook the same way a playbook is created or edited.
 
 Make checklists
