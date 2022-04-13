@@ -4,12 +4,43 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
 - [Release 2022-03-08](#release-2022-03-08)
 - [Release 2022-03-02](#release-2022-03-02)
 - [Release 2022-02-16](#release-2022-02-16)
-- [Release 2022-02-10](#release-2022-02-10)
+
+## Release 2022-04-13
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Files and Pinned Messages to the right-hand side Channel Info.
+ - Improved the New Channel modal user interface.
+
+#### Administration
+ - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
+ - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
+
+#### Performance
+ - Added an index to the ``UserGroups DisplayName`` for improved autosuggest query performance.
+ - Improved the performance of permission selectors.
+
+#### Bug Fixes
+ - Restored the rendering of main menu items from plugins in non-mobile view.
+ - Fixed the overflow of text in **Manage Channel Members** modal title.
+ - Fixed an issue where pagination was broken in **System Console > Groups**.
+ - Fixed an issue where thread updates did not show correctly after the computer woke up.
+ - Fixed an issue where a negative unread count sometimes appeared with Collapsed Reply Threads enabled.
+ - Fixed an issue where the modal to create a Custom Group got closed when pressing ENTER.
+
+### Known Issues
+ - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-03-30
 
