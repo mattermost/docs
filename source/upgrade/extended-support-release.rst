@@ -61,7 +61,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.6 <https://releases.mattermost.com/6.3.6/mattermost-6.3.6-linux-amd64.tar.gz>`_       |                                                     |
+| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.7 <https://releases.mattermost.com/6.3.7/mattermost-6.3.7-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.9 <https://releases.mattermost.com/5.37.9/mattermost-5.37.9-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -96,7 +96,7 @@ At this point, we are not planning on letting customers pay for extended support
 How do we notify customers about new and deprecated Extended Support Releases?
 ------------------------------------------------------------------------------
 
-For a new upcoming ESR, we send out an email announcement on or close to release day. We also add a reminder on our release announcement, changelog, and via a Forum post (`see example <https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>>`_).
+For a new upcoming ESR, we send out an email announcement on or close to release day. We also add a reminder on our release announcement, changelog, and via a Forum post (`see example <https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>`_).
 
 For a deprecated ESR, we send out an email announcement three months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.com/>`_.
 

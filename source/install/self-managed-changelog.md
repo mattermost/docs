@@ -15,7 +15,7 @@ Latest Mattermost Releases:
 
 **Release Day: 2022-03-16**
 
-Mattermost v6.5.0 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost v6.5.0 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Compatibility
  - Updated the recommended minimum supported Firefox version to v91+.
@@ -234,6 +234,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.7, released 2022-04-13**
+  - Fixed an issue where users were able to attempt to create private playbooks with the Professional license.
 - **v6.3.6, released 2022-03-24**
   - Fixed an issue with a slow delete of posts and ``context deadline exceeded`` errors after upgrading to v6.3.
   - Fixed an issue where the announcement banner caused the top team to be partially obstructed [MM-40887](https://mattermost.atlassian.net/browse/MM-40887).

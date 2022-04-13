@@ -3,24 +3,65 @@ Deploy Mattermost
 
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
-Get started
------------
+.. include:: ../install/common-local-deploy-docker.rst
+
+Deploy Mattermost for production use
+------------------------------------
+
+|all-plans| |self-hosted|
+
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
+
+
+When you're ready to install Mattermost server for production use, you have three options: deploy using Docker, deploy using a Ubuntu option, or deploy from a compressed tarball.
+
+.. tip::
+
+  * See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
+  
+  * Encountering issues with your deployment? See the `Deployment Troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
+
+.. tabs::
+
+    .. tab:: Docker
+
+      .. include:: ../install/common-prod-deploy-docker.rst
+
+    .. tab:: Ubuntu
+
+      .. include:: ../install/common-prod-deploy-omnibus.rst
+
+    .. tab:: Tar
+
+      .. include:: ../install/common-prod-deploy-tar.rst   
+
+Prepare for your Mattermost deployment
+--------------------------------------
+
 .. toctree::
     :maxdepth: 1
     :hidden:
 
     Quick install guide </getting-started/light-install>
-    Run Mattermost via Docker </install/setting-up-local-machine-using-docker>
+    Preview Mattermost via Docker </install/install-docker>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
     Implement Mattermost </getting-started/implementation-plan>
     Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>
     Welcome email template </getting-started/welcome-email-to-end-users>
 
-These guides will get you up and running with Mattermost in minutes.
+These guides will help you prepare for your Mattermost deployment.
 
 * :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
-* :doc:`Run Mattermost via Docker </install/setting-up-local-machine-using-docker>` - Launch a Mattermost server instantly to test functionality and build integrations.
+* :doc:`Preview Mattermost via Docker </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
@@ -39,8 +80,9 @@ Server installation
     :hidden:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Local Docker setup </install/setting-up-local-machine-using-docker>
+    Install Mattermost via Docker </install/install-docker>
     Mattermost Omnibus </install/installing-mattermost-omnibus>
+    Install Mattermost from Tar </install/install-tar>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
     Debian Buster </install/install-debian>
@@ -49,8 +91,9 @@ Server installation
 
 
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>`
-* :doc:`Local Docker setup </install/setting-up-local-machine-using-docker>`
+* :doc:`Deploy Mattermost on Docker </install/install-docker>`
 * :doc:`Mattermost Omnibus </install/installing-mattermost-omnibus>`
+* :doc:`Install Mattermost from Tar </install/install-tar>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
 * :doc:`Kubernetes </install/install-kubernetes>`
 * :doc:`Debian Buster </install/install-debian>`
@@ -60,6 +103,9 @@ Server installation
 
 Desktop and Mobile App installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These guides will get you up and running with Mattermost desktop and mobile apps in minutes.
+
 .. toctree::
     :maxdepth: 1
     :hidden:
