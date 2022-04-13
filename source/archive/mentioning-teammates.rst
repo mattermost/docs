@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _mentioning-teammates:
 
 Mentioning Teammates

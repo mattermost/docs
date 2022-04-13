@@ -1,3 +1,5 @@
+:nosearch:
+
 OAuth 2.0 Applications
 ======================
 

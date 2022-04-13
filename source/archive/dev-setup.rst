@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _dev-setup:
 
 Developer Setup

@@ -1,3 +1,5 @@
+:nosearch:
+
 ..  _mobile-developer-setup:
 
 Mobile Developer Setup

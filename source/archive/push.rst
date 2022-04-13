@@ -1,3 +1,5 @@
+:nosearch:
+
 Mobile Applications Guide
 =========================
 

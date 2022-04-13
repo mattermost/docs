@@ -1,3 +1,4 @@
+:nosearch:
 
 Mobile Apps FAQ
 ===============
