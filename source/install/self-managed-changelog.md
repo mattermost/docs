@@ -15,6 +15,7 @@ Latest Mattermost Releases:
 
 - **v6.5.1, released **
   - Fixed an issue on schema migrations where the Mattermost server failed to restart after having an error in the migration process.
+  - Fixed an issue where the Get trial endpoint did not seem to complete.
 - **v6.5.0, released 2022-03-16**
   - Original 6.5.0 release
 
