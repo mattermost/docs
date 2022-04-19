@@ -30,7 +30,7 @@ Latest Mattermost Desktop App releases:
 Release v5.1
 --------------
 
-- **Release day: 2022-05-16**
+**Release day: 2022-05-16**
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
