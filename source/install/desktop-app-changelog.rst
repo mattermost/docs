@@ -47,46 +47,62 @@ Breaking Changes / Upgrade Notes
 Highlights
 ~~~~~~~~~~~~~~~
 
-- 
+- Added a Desktop App auto-updater. The app now automatically checks for new updates on app start up.
 
 Improvements
 ~~~~~~~~~~~~~~~
 
-MacOS
+Linux
 ^^^^^^
-- 
+
+- Updated the Linux closing behaviour to allow the app to close complely when pressing ``X``.
+- Changed the default setting for **Leave app running in notification area when application window is closed** on Linux to ``false`` by default.
 
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added support for Mattermost Calls for the desktop app.
+- Added support for Calls for the Desktop App.
 - Added a new config setting "Launch app minimized" to be able to auto-launch the app minimized when the application is launched on startup.
 - When the **Add Server** modal pops up for the first time when the app is launched, the modal now stays open instead of closes on mouse click until the first server has been added.
-- 
+- Added a new setting/preference to always open the Desktop App in full screen.
+- The app now uses ``ctrl+=`` and ``cmd+=`` to zoom in to match the behavior of Chrome and Firefox.
+- Changed the wording in the **File > View** menu from ``Tab`` to ``Server`` to reflect recent changes in the user interface.
+- Added the ability to copy the version string into clipboard from **Menu > Help > Version**.
+- Added a menu item **Window > Show Servers** to show a list of servers.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v
+- Major version upgrade of Electron to v18.0.3. Electron is the underlying technology used to build the Desktop app.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Linux
 ^^^^^^^^^^^^^
-- 
+- Fixed an issue where the app window and taskbar did not flash when notifications were received.
 
 All Platforms
 ^^^^^^^^^^^^^
 - Fixed an issue where customized URIs were not supported on the desktop app.
-- Fixed an issue where parsed, but technically invalid URIs were not able to be opened in the browser.
-- Fixed an issue where being on a channel with an asterisk at the front would cause unreads to return a false positive.
-- Added a disclaimer for the window flashing behaviour on Linux
+- Fixed an issue where parsed, but technically invalid URIs could not be opened in the browser.
+- Fixed an issue where a channel name with an asterisk at the front would cause unreads to return a false positive.
+- Fixed an issue where opening a new tab view caused the original view to go to the requested link as well.
+- Fixed an issue where users could add the same server name or URL twice.
+- Fixed an issue where the URL view prevented users from clicking a button directly above it.
+- Fixed an issue where the tray icon theme toggle was not hidden when the icon itself wasn't enabled.
+- Fixed an issue where a redundant icon was present in Windows 10+ notifications.
+- Fixed an issue where unreads on a different team wouldn't trigger an unread badge in the Desktop App.
+- Fixed an issue where retrying to load tabs indefinitely instead of stopping after a few tries was not supported.
+- Fixed issues with the loading screen to make it more reliable.
+- Fixed an issue where ``Shift+Alt`` moved the focus to the top menu.
+- Fixed an issue where external links at the bottom of the page were not clickable.
+- Fixed an issue where mentions/unreads did not take precedence when setting the badge/tray icon.
+- Fixed an issue where the macOS dock would stay open after clicking the tray icon.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
@@ -95,7 +111,7 @@ Known Issues
 Contributors
 ~~~~~~~~~~~~~~
 
-- `devinbinnie <https://github.com/devinbinnie>`_, 
+- `ChristophKaser <https://github.com/ChristophKaser>`_, `coltoneshaw <https://github.com/coltoneshaw>`_, `devinbinnie <https://github.com/devinbinnie>`_, `JulienTant <https://github.com/JulienTant>`_, `oh6hay <https://github.com/oh6hay>`_, `Profesor08 <https://github.com/Profesor08>`_, `shadowshot-x <https://github.com/shadowshot-x>`_, `streamer45 <https://github.com/streamer45>`_, `svelle <https://github.com/svelle>`_ , `Willyfrog <https://github.com/Willyfrog>`_.
 
 Release v5.0
 --------------
