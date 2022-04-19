@@ -34,12 +34,12 @@ Latest Mattermost Cloud releases:
 
 #### Bug Fixes
  - Fixed an issue where the ``UpdateUser`` API endpoint required a ``create_at`` field.
- - Fixed an issue where permalinks to Direct and Group Message posts did not show a preview.
+ - Fixed an issue where permalinks to direct and group message posts did not show a preview.
  - Fixed an issue where a mention badge was present when marking a root post with a mention as unread on the right-hand side with Collapsed Reply Threads enabled.
  - Fixed an issue where copy links did not fire a track callback until the copy link was actually clicked.
  - Fixed an issue where the public link to generate the API was getting called even if public links were disabled.
  - Fixed an issue with onboarding page view events.
- - Fixed an issue where the custom emoji "Next" button was out of view when a banner was present.
+ - Fixed an issue where the custom emoji **Next** button was out of view when a banner was present.
  - Fixed an issue where it would appear that a user had a negative number of unread threads.
  - Fixed an issue where marking the last post in a thread as unread didn't mark the thread as unread.
 
