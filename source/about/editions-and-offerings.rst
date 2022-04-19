@@ -109,23 +109,21 @@ Mattermost Enterprise is an enterprise-grade collaboration system that supports 
 
 This offering includes all the features of Mattermost Professional, plus: 
 
-- `Shared channels with other Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
-- `Configurable playbook permissions, analytics dashboards, and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`__.
-- `AD/LDAP Group synchronization <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
-- `Automated compliance exports and reporting <https://docs.mattermost.com/comply/compliance-export.html>`__.
-- `Custom EMM providers via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__.
-- `Custom user terms of service <https://docs.mattermost.com/comply/custom-terms-of-service.html>`__.
-- `ID-only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.
-- `Global and custom retention policies for messages and files <https://docs.mattermost.com/comply/data-retention-policy.html>`__.
-- `Custom system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__.
-- `Granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__.
+- `Enterprise-scale search with dedicated indexing and usage resourcing via cluster support <https://docs.mattermost.com/scale/elasticsearch.html>`__.
+- `Sychronization of access controls, channels and teams with AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+- `eDiscovery and compliance export automation <https://docs.mattermost.com/comply/compliance-export.html>`__.
+- `Enterprise mobile device management with custom EMM support via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__.
+- `Advanced legal controls with customizable end-user terms of service and re-acceptance duration <https://docs.mattermost.com/comply/custom-terms-of-service.html>`__.
+- `Private mobility with ID-only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.
+- `Enhanced compliance with global and custom retention policies for messages and files <https://docs.mattermost.com/comply/data-retention-policy.html>`__.
+- `Granular administrative control with custom system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__.
+- `Advanced configuration of playbook permissions, analytics dashboards, and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`__.
+- `Enhanced compliance controls with granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__.
+- `Advanced collaboration with shared channels across Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
 - `High availability support with multi-node database deployment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 - `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
-- `Elasticsearch support for highly efficient database searches in a cluster environment <https://docs.mattermost.com/scale/elasticsearch.html>`__.
 - `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
-
-See a complete list of features `here <https://mattermost.com/pricing/>`__.
 
 Other Mattermost offerings 
 --------------------------
