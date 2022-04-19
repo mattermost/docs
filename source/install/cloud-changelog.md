@@ -22,7 +22,7 @@ Latest Mattermost Cloud releases:
  - Added the ability to have one-character long channel names.
 
 #### Administration
- - Added a new config cleanup job to regularly remove outdated entries from the database. The threshold for this setting can be adjusted with ``JobSettings.CleanupConfigThresholdDays``.
+ - Added a new cleanup job to regularly remove outdated config entries from the database. The threshold for this setting can be adjusted with ``JobSettings.CleanupConfigThresholdDays``.
  - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
  - Added ``fromWebhook`` property to the webapp plugin API.
  - Added new API endpoints ``GET /api/v4/teams/:team_id/top/reactions`` and ``GET /api/v4/users/me/top/reactions`` to get top reactions for a team and user.
