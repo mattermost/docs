@@ -110,7 +110,7 @@ Mattermost Enterprise is an enterprise-grade collaboration system that supports 
 This offering includes all the features of Mattermost Professional, plus: 
 
 - `Enterprise-scale search with dedicated indexing and usage resourcing via cluster support <https://docs.mattermost.com/scale/elasticsearch.html>`__.
-- `Sychronization of access controls, channels and teams with AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+- `Sychronization of access controls, channels, and teams with AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
 - `eDiscovery and compliance export automation <https://docs.mattermost.com/comply/compliance-export.html>`__.
 - `Enterprise mobile device management with custom EMM support via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__.
 - `Advanced legal controls with customizable end-user terms of service and re-acceptance duration <https://docs.mattermost.com/comply/custom-terms-of-service.html>`__.
