@@ -4,12 +4,51 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-04-13](#release-2022-04-27)
 - [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
 - [Release 2022-03-08](#release-2022-03-08)
 - [Release 2022-03-02](#release-2022-03-02)
-- [Release 2022-02-16](#release-2022-02-16)
+
+## Release 2022-04-27
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the channel members list to the right-hand side Channel Info modal.
+ - Added the ability to invite new users to a team from the **Add to channel** modal.
+ - To be able to download images and copy public links for images quicker, a copy URL and download buttons were added to image thumbnails.
+ - Added the ability to have one-character long channel names.
+
+#### Administration
+ - Added a new config cleanup job to regularly remove outdated entries from the database. The threshold for this setting can be adjusted with ``JobSettings.CleanupConfigThresholdDays``.
+ - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
+ - Added ``fromWebhook`` property to the webapp plugin API.
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/reactions`` and ``GET /api/v4/users/me/top/reactions`` to get top reactions for a team and user.
+ - Bumped Go to v1.18.
+
+#### Performance
+ - Improved the performance of ``GetTeamsUnreadForUser`` when Collapsed Reply Threads is enabled.
+ - Improved the performance of configuration read/writes if the configuration is stored on a database.
+
+#### Bug Fixes
+ - Fixed an issue where the ``UpdateUser`` API endpoint required a ``create_at`` field.
+ - Fixed an issue where permalinks to Direct and Group Message posts did not show a preview.
+ - Fixed an issue where a mention badge was present when marking a root post with a mention as unread on the right-hand side with Collapsed Reply Threads enabled.
+ - Fixed an issue where copy links did not fire a track callback until the copy link was actually clicked.
+ - Fixed an issue where the public link to generate the API was getting called even if public links were disabled.
+ - Fixed an issue with onboarding page view events.
+ - Fixed an issue where the custom emoji "Next" button was out of view when a banner was present.
+ - Fixed an issue where it would appear that a user had a negative number of unread threads.
+ - Fixed an issue where marking the last post in a thread as unread didn't mark the thread as unread.
+
+### Known Issues
+ - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-04-13
 
