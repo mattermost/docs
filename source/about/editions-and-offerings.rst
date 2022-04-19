@@ -118,7 +118,7 @@ This offering includes all the features of Mattermost Professional, plus:
 - `Enhanced compliance with global and custom retention policies for messages and files <https://docs.mattermost.com/comply/data-retention-policy.html>`__.
 - `Granular administrative control with custom system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__.
 - `Advanced configuration of playbook permissions, analytics dashboards, and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`__.
-- `Enhanced compliance controls with granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__.
+- `Enhanced compliance controls and granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__.
 - `Advanced collaboration with shared channels across Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
 - `High availability support with multi-node database deployment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 - `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
