@@ -20,12 +20,82 @@ Desktop application changelog
 
 Latest Mattermost Desktop App releases:
 
+- `Release v5.1 <#id1>`_
 - `Release v5.0 <#id1>`_
 - `Release v4.7 <#id3>`_
 - `Release v4.6 <#id21>`_
 - `Release v4.5 <#id33>`_
 - `Release v4.4 <#id49>`_
-- `Release v4.3 <#id68>`_
+
+Release v5.1
+--------------
+
+- **Release day: 2022-05-16**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
+Breaking Changes / Upgrade Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- 
+
+Improvements
+~~~~~~~~~~~~~~~
+
+MacOS
+^^^^^^
+- 
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added support for Mattermost Calls for the desktop app.
+- Added a new config setting "Launch app minimized" to be able to auto-launch the app minimized when the application is launched on startup.
+- When the **Add Server** modal pops up for the first time when the app is launched, the modal now stays open instead of closes on mouse click until the first server has been added.
+- 
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^^^^^^^^
+- 
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where customized URIs were not supported on the desktop app.
+- Fixed an issue where parsed, but technically invalid URIs were not able to be opened in the browser.
+- Fixed an issue where being on a channel with an asterisk at the front would cause unreads to return a false positive.
+- Added a disclaimer for the window flashing behaviour on Linux
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade `MM-37807 <https://mattermost.atlassian.net/browse/MM-37807>`_.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `devinbinnie <https://github.com/devinbinnie>`_, 
 
 Release v5.0
 --------------
