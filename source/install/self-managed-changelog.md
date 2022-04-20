@@ -13,7 +13,10 @@ Latest Mattermost Releases:
 
 ## Release v6.6 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
-**Release Day: 2022-04-16**
+- **v6.6.1, released **
+  - Fixed an issue with null values in the OAuthApps table's MattermostAppID column, which was introduced in 6.6.0.
+- **v6.6.0, released 2022-04-16**
+  - Original 6.6.0 release
 
 Mattermost v6.6.0 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
