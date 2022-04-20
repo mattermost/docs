@@ -42,7 +42,7 @@ Mattermost v6.6.0 contains a low severity level security fix. [Upgrading](https:
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls v0.4.8 with Mattermost server v6.6 (closed Beta). To participate in Beta testing, please contact Mattermost.
+ - Pre-packaged Calls v0.4.8 with Mattermost server v6.6 (closed Beta). To participate in Beta testing, please contact [Mattermost](https://mattermost.com/contact-sales/).
  - Added nested previews for permalinks.
  - Added a right-hand side Channel Info panel to see and interact with channel information.
  - Added support for inline editing of posts.
