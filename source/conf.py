@@ -315,7 +315,7 @@ redirects = {
 "cloud/cloud-administration/custom-terms-of-service.html":
         "https://docs.mattermost.com/comply/cloud-custom-terms-of-service.html",
 "cloud/cloud-reporting.html": 
-	"https://docs.mattermost.com/manage/cloud-reporting.html",
+	"https://docs.mattermost.com/manage/statistics.html",
 "cloud/cloud-administration/data-retention-policy.html":
         "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
 "cloud/cloud-administration/site-configuration.html":
@@ -681,12 +681,23 @@ redirects = {
 
 # Integrations redirects.
 # Important Note: The integrations directory and its contents are scheduled to be archived by FY23 Q2 since all applicable content has been moved from docs.mm.com to developers.mm.com.
+"integrations/cloud-bot-accounts.html":
+        "https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/",
+"integrations/cloud-embedding.html":
+        "https://developers.mattermost.com/integrate/admin-guide/admin-embedding/",
+"integrations/cloud-oauth-2-0-applications.html":
+        "https://developers.mattermost.com/integrate/admin-guide/admin-oauth2/",
+"integrations/cloud-personal-access-tokens.html":
+        "https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/",
+"integrations/cloud-webhook.html":
+        "https://developers.mattermost.com/integrate/admin-guide/admin-golang-webhook/",
 "integrations/jira.html": 
         "https://mattermost.gitbook.io/plugin-jira/",
 "integrations/net-promoter-score.html": 
         "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
 "integrations/zoom.html": 
         "https://mattermost.gitbook.io/plugin-zoom/",
+
 
 
 # Messaging redirects

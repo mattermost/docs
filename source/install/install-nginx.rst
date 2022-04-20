@@ -1,7 +1,8 @@
+:nosearch:
 .. _install-nginx:
 
-Installing NGINX server
------------------------
+Install NGINX server
+--------------------
 
 In a production setting, use a proxy server for greater security and performance of Mattermost.
 
@@ -12,11 +13,13 @@ The main benefits of using a proxy are as follows:
 -  Port mapping ``:80`` to ``:8065``
 -  Standard request logs
 
-**Introduction**
+Introduction
+~~~~~~~~~~~~
 
 NGINX is a popular web server and is responsible for hosting some of the largest and highest-traffic sites on the internet. It's more resource-friendly than Apache in most cases, and can be used as a web server or reverse proxy.
 
-**To install NGINX on Ubuntu Server:**
+Install NGINX on Ubuntu Server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Log in to the server that will host the proxy and open a terminal window.
 
@@ -54,7 +57,8 @@ If NGINX is running, you see the following output:
   </body>
   </html>
 
-**Managing the NGINX process**
+Manage the NGINX process
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now that you have your web server up and running, let's review some basic management commands. These are all run in the command line interface.
 
@@ -82,7 +86,8 @@ To re-enable the service to start up at boot, use:
 
 ``sudo systemctl enable nginx``
 
-**What to do next**
+What to do next
+^^^^^^^^^^^^^^^
 
 1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` to point to the NGINX server.
 2. Configure NGINX to proxy connections from the internet to the Mattermost server.

@@ -24,7 +24,12 @@ Deploying the Mattermost Operator on Kubernetes is the recommended installation 
 It is possible to manage MySQL database and MinIO file store using the Mattermost Operator, but it is not recommended for production usage.
 
 .. include:: install-kubernetes-cluster.rst
+  :start-after: :nosearch:
 .. include:: install-kubernetes-operator.rst
+  :start-after: :nosearch:
 .. include:: install-kubernetes-mattermost.rst
+  :start-after: :nosearch:
 .. include:: use-kubernetes-mattermost.rst
+  :start-after: :nosearch:
 .. include:: faq_kubernetes.rst
+  :start-after: :nosearch:

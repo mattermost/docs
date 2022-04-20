@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _use-kubernetes-mattermost:
 
 Using Mattermost operator functionality

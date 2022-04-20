@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _install-kubernetes-mattermost:
 
 Deploying a Mattermost installation

@@ -1,12 +1,17 @@
 Data retention Policy
 =====================
 
-|enterprise| |self-hosted|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/download
+  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30

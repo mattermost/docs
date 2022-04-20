@@ -48,15 +48,8 @@ Workspace setup and configuration
     :hidden:
 
     Site configuration </configure/cloud-site-configuration>
-    SAML Single Sign-On </onboard/cloud-sso-saml>
-    SAML SSO technical documentation </onboard/cloud-sso-saml-technical>
-    AD/LDAP groups </onboard/cloud-groups>
-    Shared channels </onboard/shared-channels>
 
 * :doc:`Site configuration </configure/cloud-site-configuration>` - Set up and configure your Mattermost Cloud workspace.
-* :doc:`SAML Single Sign-On </onboard/cloud-sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider. Refer to the :doc:`SAML reference documentation </onboard/cloud-sso-saml-technical>` for technical implementation details.
-* :doc:`AD/LDAP groups </onboard/cloud-groups>` - Sync AD/LDAP groups with Mattermost roles and teams.
-* :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
 
 Workspace management
 ^^^^^^^^^^^^^^^^^^^^
@@ -65,16 +58,16 @@ Workspace management
     :hidden:
 
     Mattermost Cloud billing </manage/cloud-billing>
-    Statistics </manage/cloud-reporting>
-    User Satisfaction surveys </manage/cloud-user-satisfaction-surveys>
-    Managing team and channel members </manage/cloud-team-and-channel>
+    Statistics </manage/statistics>
+    User satisfaction surveys </manage/user-satisfaction-surveys>
+    Managing team and channel members </manage/team-channel-members>
     Workspace migration </manage/cloud-data-export>
     Cloud data residency </manage/cloud-data-residency>
 
 * :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
-* :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.
-* :doc:`User satisfaction surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
-* :doc:`Managing team and channel members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
+* :doc:`Statistics </manage/statistics>` - Get statistics about Mattermost usage.
+* :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
+* :doc:`Managing team and channel members </manage/team-channel-members>` - Manage synchronization, moderation, and membership settings.
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 

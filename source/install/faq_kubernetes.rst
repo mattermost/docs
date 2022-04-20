@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _faq_kubernetes:
 
 Frequently Asked Questions
