@@ -31,7 +31,7 @@ Mattermost v6.6.0 contains a low severity level security fix. [Upgrading](https:
  - The [Apps Framework](https://developers.mattermost.com/integrate/apps/) allows developers to build integrations with Mattermost that seamlessly work across Mattermost’s desktop and mobile clients. Apps can be developed using any programming language, as opposed to plugins which must be developed in Go.
 
 #### Triggers and Actions
- - Channel admins can now configure [certain actions](https://docs.mattermost.com/channels/create-channels.html) to be executed automatically based on trigger conditions without writing any code.
+ - Channel admins can now configure [certain actions](https://docs.mattermost.com/channels/create-channels.html) to be executed automatically based on trigger conditions without writing any code. Users running an older Playbooks release need to upgrade their Playbooks instance to at least v1.26 to take advantage of the channel actions functionality.
 
 #### Actions Restructure
  - The **Actions** menu was restructured to reduce the clutter from Plugins and Apps.
@@ -42,7 +42,7 @@ Mattermost v6.6.0 contains a low severity level security fix. [Upgrading](https:
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls v0.4.8 with Mattermost server v6.6.
+ - Pre-packaged Calls v0.4.8 with Mattermost server v6.6 (closed Beta). To participate in Beta testing, please contact [Mattermost](https://mattermost.com/contact-sales/).
  - Added nested previews for permalinks.
  - Added a right-hand side Channel Info panel to see and interact with channel information.
  - Added support for inline editing of posts.
@@ -123,6 +123,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@tippyjs/react``, ``react-popper``, ``react-slidedown`` and ``smooth-scroll-into-view-if-needed`` , and removed ``prettier`` and ``xregexp`` from https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
+ - Oauth 2.0 applications may disappear after upgrading to v6.6.0 [MM-43500](https://mattermost.atlassian.net/browse/MM-43500).
  - On subpath, 404 can be seen on OpenID or SAML redirect after changing login method. The login change is successful, and manually adding the subpath name into the URL opens the expected page [MM-43114](https://mattermost.atlassian.net/browse/MM-43114).
  - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
