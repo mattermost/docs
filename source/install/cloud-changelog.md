@@ -21,19 +21,15 @@ Latest Mattermost Cloud releases:
  - To be able to download images and copy public links for images quicker, a copy URL and download buttons were added to image thumbnails.
  - Added the ability to have one-character long channel names.
 
-#### Administration
- - Added a new cleanup job to regularly remove outdated config entries from the database. The threshold for this setting can be adjusted with ``JobSettings.CleanupConfigThresholdDays``.
+#### API Changes for Custom Integrations
  - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
- - Added ``fromWebhook`` property to the webapp plugin API.
  - Added new API endpoints ``GET /api/v4/teams/:team_id/top/reactions`` and ``GET /api/v4/users/me/top/reactions`` to get top reactions for a team and user.
- - Bumped Go to v1.18.
+ - Fixed an issue where the ``UpdateUser`` API endpoint required a ``create_at`` field.
 
 #### Performance
  - Improved the performance of ``GetTeamsUnreadForUser`` when Collapsed Reply Threads is enabled.
- - Improved the performance of configuration read/writes if the configuration is stored on a database.
 
 #### Bug Fixes
- - Fixed an issue where the ``UpdateUser`` API endpoint required a ``create_at`` field.
  - Fixed an issue where permalinks to direct and group message posts did not show a preview.
  - Fixed an issue where a mention badge was unexpectedly present in addition to the thread item bolding when marking a root post with a mention as unread on the right-hand side with Collapsed Reply Threads enabled.
  - Fixed an issue where the public link to generate the API was getting called even if public links were disabled.
