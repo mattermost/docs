@@ -31,7 +31,7 @@ Mattermost v6.6.0 contains a low severity level security fix. [Upgrading](https:
  - The [Apps Framework](https://developers.mattermost.com/integrate/apps/) allows developers to build integrations with Mattermost that seamlessly work across Mattermost’s desktop and mobile clients. Apps can be developed using any programming language, as opposed to plugins which must be developed in Go.
 
 #### Triggers and Actions
- - Channel admins can now configure [certain actions](https://docs.mattermost.com/channels/create-channels.html) to be executed automatically based on trigger conditions without writing any code.
+ - Channel admins can now configure [certain actions](https://docs.mattermost.com/channels/create-channels.html) to be executed automatically based on trigger conditions without writing any code. Users running an older Playbooks release need to upgrade their Playbooks instance to at least v1.26 to take advantage of the channel actions functionality.
 
 #### Actions Restructure
  - The **Actions** menu was restructured to reduce the clutter from Plugins and Apps.
