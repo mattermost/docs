@@ -1,3 +1,5 @@
+:nosearch:
+
 Upgrading Mattermost Server with a Script
 =========================================
 

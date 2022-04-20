@@ -1,3 +1,5 @@
+:nosearch:
+
 Incident Response and Monitoring Tools
 ======================================
 

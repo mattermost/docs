@@ -1,3 +1,5 @@
+:nosearch:
+
 User Experience Guidelines
 ==========================
 

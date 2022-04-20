@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _api:
 
 API

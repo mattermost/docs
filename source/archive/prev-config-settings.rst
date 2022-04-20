@@ -1,3 +1,5 @@
+:nosearch:
+
 Configuration Settings Prior to v5.12
 =====================================
 
