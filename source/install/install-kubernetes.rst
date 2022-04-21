@@ -25,11 +25,15 @@ It is possible to manage MySQL database and MinIO file store using the Mattermos
 
 .. include:: install-kubernetes-cluster.rst
   :start-after: :nosearch:
+
 .. include:: install-kubernetes-operator.rst
   :start-after: :nosearch:
+
 .. include:: install-kubernetes-mattermost.rst
   :start-after: :nosearch:
+
 .. include:: use-kubernetes-mattermost.rst
   :start-after: :nosearch:
+  
 .. include:: faq_kubernetes.rst
   :start-after: :nosearch:

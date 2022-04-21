@@ -1,5 +1,4 @@
 :nosearch:
-
 Configure TLS on Mattermost server
 -----------------------------------
 

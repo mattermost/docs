@@ -77,9 +77,9 @@ Workspace compliance
     :maxdepth: 1
     :hidden:
 
-    Data retention policy </comply/cloud-data-retention-policy>
+    Data retention policy </comply/data-retention-policy>
 
-* :doc:`Data retention policy </comply/cloud-data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
+* :doc:`Data retention policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
 
 Self-hosted admin
 -----------------

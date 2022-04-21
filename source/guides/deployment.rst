@@ -4,7 +4,7 @@ Deploy Mattermost
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
 .. include:: ../install/common-local-deploy-docker.rst
-  :start-from: :nosearch:
+  :start-after: :nosearch:
 
 Deploy Mattermost for production use
 ------------------------------------
@@ -35,17 +35,17 @@ When you're ready to install Mattermost server for production use, you have thre
     .. tab:: Docker
 
       .. include:: ../install/common-prod-deploy-docker.rst
-        :start-from: :nosearch:
+        :start-after: :nosearch:
 
     .. tab:: Ubuntu
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
-        :start-from: :nosearch:
+        :start-after: :nosearch:
 
     .. tab:: Tar
 
       .. include:: ../install/common-prod-deploy-tar.rst
-        :start-from: :nosearch:   
+        :start-after: :nosearch:   
 
 Prepare for your Mattermost deployment
 --------------------------------------

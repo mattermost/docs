@@ -1,5 +1,4 @@
 :nosearch:
-
 .. _config-ssl-http2-nginx:
 
 Configure NGINX with SSL and HTTP/2

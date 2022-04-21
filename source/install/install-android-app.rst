@@ -34,4 +34,5 @@ Your Mattermost teams can be accessed on Android mobile devices by downloading t
 .. _Google Play Store: https://play.google.com/store/apps/details?id=com.mattermost.mattermost&hl=en
 
 .. include:: ../upgrade/upgrading-to-v60.rst
+  :start-after: :nosearch:
 

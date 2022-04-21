@@ -1,4 +1,4 @@
-Data retention Policy
+Data retention policy
 =====================
 
 |enterprise| |cloud| |self-hosted|
@@ -27,8 +27,8 @@ In Mattermost Enterprise, you can set a global retention policy as well as custo
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
 
-Configuring a global data retention policy
--------------------------------------------
+Configure a global data retention policy
+-----------------------------------------
 
 To set a global data retention policy in Mattermost v5.38 and later:
 
@@ -40,8 +40,8 @@ To set a global data retention policy in Mattermost v5.38 and later:
 
 Select **Save**. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
-Configuring a custom data retention policy
--------------------------------------------
+Configure a custom data retention policy
+----------------------------------------
 
 To set a custom data retention policy in Mattermost v5.38 and later:
 
@@ -54,11 +54,13 @@ To set a custom data retention policy in Mattermost v5.38 and later:
 
 Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
-Running a deletion job manually
---------------------------------
+Run a deletion job manually
+----------------------------
+
 You can also run the deletion job manually at any time by selecting **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
 
 .. note::
+  
   If using data retention and `ElasticSearch <https://docs.mattermost.com/scale/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
 
 Frequently Asked Questions (FAQs)

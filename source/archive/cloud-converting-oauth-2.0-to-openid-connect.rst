@@ -4,6 +4,7 @@ Converting OAuth 2.0 to OpenID Connect
 =======================================
 
 .. include:: common-converting-oauth-to-openidconnect.rst
+    :start-after: :nosearch:
 
 Configuring OpenID Connect Single Sign-On
 -----------------------------------------

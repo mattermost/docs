@@ -1,5 +1,4 @@
 :nosearch:
-
 Configure Mattermost server
 ----------------------------
 

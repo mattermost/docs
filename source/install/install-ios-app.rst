@@ -29,3 +29,4 @@ Your Mattermost teams can be accessed on iOS mobile devices via the Mattermost M
    b. Enter your **Email or Username** and **Password** provided by your Mattermost System Admin. Select **Sign in**.
 
 .. include:: ../upgrade/upgrading-to-v60.rst
+  :start-after: :nosearch:

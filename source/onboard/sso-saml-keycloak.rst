@@ -130,5 +130,7 @@ It's also recommended to post an announcement about how the migration will work 
 You may also configure SAML for Keycloak by editing ``config.json``. Before starting the Mattermost server, edit ``config.json`` to enable SAML based on `SAML configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#saml>`__. You must restart the Mattermost server for the changes to take effect.
 
 .. include:: sso-saml-ldapsync.rst
+    :start-after: :nosearch:
 
 .. include:: sso-saml-faq.rst
+	:start-after: :nosearch:
