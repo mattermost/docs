@@ -102,13 +102,11 @@ For a deprecated ESR, we send out an email announcement three months in advance.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`_.
 
-Desktop and Mobile App Server Compatibility
+Desktop and Mobile App Compatibility
 ---------------------------------------------
 
-For an optimal user experience, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version. The latest versions include the latest security fixes, and are compatible with the oldest supported extended support release of Mattermost Server to ensure backwards compatibility.
+Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the Mobile App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
 
 Please review the `Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`_ and the `Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
-
-However, earlier 4.x versions of Mattermost Desktop App, and earlier v1.x versions of the Mobile App, will continue to be supported with a Mattermost v6.0 Server.
 
 See more details in our `release lifecycle documentation <https://docs.mattermost.com/upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
