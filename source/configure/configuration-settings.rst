@@ -6622,7 +6622,7 @@ Clean Up Outdated Database Entries
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Defines the threshold in days beyond which outdated entries are removed from the database. This setting applies to both MySQL and PostgreSQL databases.
+Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both MySQL and PostgreSQL databases.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
