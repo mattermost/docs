@@ -46,7 +46,9 @@ Mattermost doesn't currently support the ability to attach files to a post made 
 Where can I find existing integrations?
 ---------------------------------------
 
-[Visit the Mattermost Marketplace](https://mattermost.com/marketplace) to access open source integrations to common tools like Jira, Jenkins, and GitLab, along with interactive bot applications, and other communication tools that are freely available for use and customization.
+[Visit the Mattermost Marketplace](https://mattermost.com/marketplace) to access open source integrations to common tools like Jira, Jenkins, and GitLab, along with interactive bot applications, and other communication tools that are freely available for use and customization. 
+
+Alternatively, within Mattermost, when logged in as an Administrator, you can click on the "Marketplace" option in the main menu and easily install plugins or apps from there. 
 
 Where should I install my integrations?
 ---------------------------------------
