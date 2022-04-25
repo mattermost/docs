@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _bot-accounts:
 
 Bot Accounts

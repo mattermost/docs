@@ -1,3 +1,5 @@
+:nosearch:
+
 Set Up Mattermost with MobileIron EMM
 =====================================
 

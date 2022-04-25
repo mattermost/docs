@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _personal_access_tokens:
 
 Personal Access Tokens

@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _interactive-dialogs:
 
 Interactive Dialogs

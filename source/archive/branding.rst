@@ -1,3 +1,4 @@
+:nosearch:
 
 Mattermost Branding and Naming Guidelines
 ============================================

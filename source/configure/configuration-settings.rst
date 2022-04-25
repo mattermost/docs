@@ -501,17 +501,6 @@ The maximum number of idle connections held open to the database.
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
-Maximum Connection Idle Timeout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum time a database connection can remain idle.
-
-+------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
-+------------------------------------------------------------------------------------------------------+
-
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -534,19 +523,6 @@ The number of seconds to wait for a response from the database after opening a c
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-Disable Database Search
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
-
-**False**: Database search is not disabled.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
-+-------------------------------------------------------------------------------------------------------------------------+
-
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -558,6 +534,17 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 | This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with numerical input.              |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+Maximum Connection Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The maximum time a database connection can remain idle.
+
++------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
++------------------------------------------------------------------------------------------------------+
+
 Minimum Hashtag Length
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -568,21 +555,6 @@ The minimum number of characters in a hashtag. This must be greater than or equa
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
 +-------------------------------------------------------------------------------------------------------------------------+
-
-At Rest Encrypt Key
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
-
-When using High Availability, the salt must be identical in each instance of Mattermost.
-
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
-+------------------------------------------------------------------------------------------+
 
 SQL Statement Logging (Trace)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -607,6 +579,41 @@ Recycle Database Connections
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20 seconds.
 
 The workflow for failover without downing the server is to change the database line in the ``config.json`` file, select **Reload Configuration from Disk** in the **Environment > Database** section, then select **Recycle Database Connections**.
+
+Disable Database Search
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
+
+**False**: Database search is not disabled.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Applied Schema Migrations
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost**  from the product menu to review the current database schema version applied to your deployment.
+
+At Rest Encrypt Key
+^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
+
+When using High Availability, the salt must be identical in each instance of Mattermost.
+
+No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
++------------------------------------------------------------------------------------------+
 
 Elasticsearch
 ~~~~~~~~~~~~~~
@@ -811,7 +818,7 @@ Enable users to search the contents of documents attached to messages. Mattermos
 **True**: Documents are searchable by their content.  
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
@@ -1629,6 +1636,10 @@ Standard Logging
 
 Access the following configuration settings in the System Console by going to **Environment > Logging**.
 
+.. note::
+
+  Standard logging in Mattermost supports the ability to output logs to the console and file targets. Mattermost Enterprise customers can specify additional log target types, such as TCP configuration options using audit log v2. See the `audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation and the `advanced audit logging configuration <https://docs.mattermost.com/configure/configuration-settings.html#advanced-audit-logging-configuration>`__ documentation for additional details.
+
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1928,6 +1939,19 @@ Enable Developer Mode
 | This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
+Enable Client Performance Debugging
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: User-specific performance debugging features can be enabled from **Settings > Advanced > Performance Debugging**. These settings only affect the user who enables them. See the `Performance Debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__ product documentation to learn more.
+
+**False**: Disables and hides debugging features from **Settings > Advanced > Performance Debugging**.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
+
 Allow Untrusted Internal Connections To
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2053,19 +2077,6 @@ Configurable link to a Help page your organization may provide to end users. By 
 +---------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"HelpLink": "https://docs.mattermost.com/"`` with string input.               |
 +---------------------------------------------------------------------------------------------------------------------------+
-
-Support Email
-^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
-
-Set an email address for feedback or support requests.
-
-To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
 
 Terms of Use link
 ^^^^^^^^^^^^^^^^^^
@@ -2399,12 +2410,25 @@ Email Notification Contents
 | This feature's ``config.json`` setting is ``"EmailNotificationContentsType": "full"`` with options ``"full"`` and ``"generic"`` for the above settings, respectively.             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Support Email Address
+^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+Set an email address for feedback or support requests. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
+
+To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
+
++-------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
++-------------------------------------------------------------------------------------+
+
 Notification Display Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-Name displayed on email account used when sending notification emails from Mattermost system.
+Name displayed on email account used when sending notification emails from Mattermost system. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FeedbackName": ""`` with string input. |
@@ -2415,7 +2439,7 @@ Notification From Address
 
 |all-plans| |cloud| |self-hosted|
 
-Address displayed on email account used when sending notification emails from within Mattermost.
+Address displayed on email account used when sending notification emails from within Mattermost. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
 So you don't miss messages, please make sure to change this value to an email your system administrator receives, such as ``"admin@yourcompany.com"``.
 
@@ -5982,20 +6006,41 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+Automatically Follow Threads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+ 
+.. important::
+
+    This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. If you can't easily scale up and tune your database, or if you're running the Mattermost application server and database server on the same machine, we recommended disabling this configuration setting until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
+
+**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
+
+**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
+
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
 Collapsed Reply Threads (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
 
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
 
 System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
 
-**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
+**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
 
 .. note::
 
-   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you are well versed with the `known issues <https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you cannot easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it is `promoted to general availability in Q2 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
+   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you clearly understand the `known issues <https://docs.mattermost.com/channels/organize-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you can't easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it's `promoted to general availability in Q2 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
 
 **Disabled**: Disables Collapsed Reply Threads front-end functionality. To disable all backend operations and thread tracking for Collapsed Reply Threads, you must also disable the `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`__ configuration setting.
 
@@ -6027,6 +6072,24 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
 
+Enable Shared Channels
+^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart. 
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
+   - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
+
 Settings configurable only in ``config.json``
 ----------------------------------------------
 
@@ -6034,29 +6097,6 @@ There are a number of settings customizable in ``config.json`` which are unavail
 
 Service Settings
 ~~~~~~~~~~~~~~~~
-
-Automatically Follow Threads
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
- 
-.. important::
-    
-    This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ and may affect server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling ``ThreadAutoFollow`` until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`_.
-
-**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
-
-**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
-
-.. note::
-
-   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will now automatically be followed to the thread.  
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThreadAutoFollow": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
 
 Custom User Groups
 ^^^^^^^^^^^^^^^^^^
@@ -6335,9 +6375,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
 
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDeletion`` is set to ``true``.
-
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
@@ -6357,9 +6394,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDeletion`` is set to ``true``.
-
 Enable API Channel Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6374,9 +6408,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDeletion`` is set to ``true``.
 
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^
@@ -7693,24 +7724,4 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Shared Channels
-^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-
-Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel. 
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-   - Both configuration settings must be enabled in order to share channels with secure connections.
-   - Enabling Shared Channels functionality requires a server restart.
-   - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.

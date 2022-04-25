@@ -1,3 +1,5 @@
+:nosearch:
+
 Plugins (Beta)
 ===============
 

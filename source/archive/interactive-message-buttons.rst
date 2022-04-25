@@ -1,3 +1,5 @@
+:nosearch:
+
 Interactive Message Buttons
 ============================
 

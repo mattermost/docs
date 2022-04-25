@@ -1,12 +1,62 @@
 # Mattermost mobile apps changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.50.1 Release](#release)
-- [1.50.0 Release](#id1)
-- [1.49.1 Release](#id5)
-- [1.49.0 Release](#id8)
-- [1.48.2 Release](#id14)
-- [1.48.1 Release](#id19)
+- [1.51.1 Release](#release)
+- [1.51.0 Release](#id1)
+- [1.50.1 Release](#id5)
+- [1.50.0 Release](#id9)
+- [1.49.1 Release](#id15)
+- [1.49.0 Release](#id18)
+
+## 1.51.1 Release
+- Release Date: April 22, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue with logging in when multiple SSO methods are enabled while email/password is disabled.
+
+## 1.51.0 Release
+- Release Date: April 16, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Breaking Changes
+ - The [Apps Framework protocol](https://developers.mattermost.com/integrate/apps/) for binding/form submissions has changed, by separating the single `call` into separate `submit`, `form`, `refresh` and `lookup` calls. If any users have created their own Apps, they have to be updated to the new system.
+
+### Improvements
+ - Users are now taken directly to the SSO login if only one SSO login method is enabled.
+ - Calls are now enabled on mobile if the server has Calls enabled.
+ - For Calls, added "raise hand" functionality and a screensharing icon.
+ - "Default Enabled Calls" and "Allow Enable Calls" server settings are now respected by Calls on mobile.
+ - Added a speakerphone button to the Calls interface.
+ - Added support for link highlighting for capitalized link schemes, such as ``Https://`` instead of ``https://``.
+ - Changed the search bar in manual timezone selection view to be consistent with the rest of the app.
+ - The mobile app no longer attempts to fetch thread bindings when the ``AppsEnabled`` feature flag is ``false``.
+ - The mobile app will now only fetch App bindings if the Apps plugin is enabled.
+ - Added support for allowing 1-character channel names.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue with Calls banner locations for earlier iPhone models.
+ - Fixed an issue where users were not able to scroll down to view custom themes.
+ - Fixed a bug that resulted in dropping the Call state when switching to another app and returning.
+ - Fixed an issue where some messages could have been cut off if the markdown used had two or more links with an ``=`` sign.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
 
 ## 1.50.1 Release
 - Release Date: March 21, 2022

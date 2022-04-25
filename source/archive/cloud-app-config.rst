@@ -1,3 +1,5 @@
+:nosearch:
+
 Config for EMM Solutions with Mattermost Mobile Apps
 =====================================================
 

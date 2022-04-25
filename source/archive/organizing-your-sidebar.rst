@@ -1,3 +1,4 @@
+:nosearch:
 
 Organizing Your Sidebar
 =======================

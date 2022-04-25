@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _slash-commands:
 
 Slash Commands

@@ -1,3 +1,5 @@
+:nosearch:
+
 Executing Slash Commands
 ========================
 
