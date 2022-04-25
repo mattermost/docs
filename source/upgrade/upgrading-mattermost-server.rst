@@ -30,7 +30,7 @@ We strongly recommend that you:
 
 .. important::
 
-  Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle on April 15, 2022. Upgrading to Mattermost Server v6.3 Extended Support Release or later is required.
+  Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle on April 15, 2022. Upgrading to Mattermost Server v6.3 Extended Support Release or later is required.
 
 Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
@@ -141,7 +141,7 @@ Before you begin
 
 **Read these instructions carefully from start to finish.** 
 
-Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
+Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
 
 **Gather the following information before starting the upgrade:**
 
@@ -259,7 +259,7 @@ Upgrading Mattermost Server
 
   .. code-block:: sh
          
-    sudo chown -R mattermost:mattermost {install-path}/mattermost
+    sudo chown -R mattermost:mattermost mattermost
      
 .. note::
     
@@ -270,8 +270,7 @@ Upgrading Mattermost Server
 
   .. code-block:: sh
 
-    cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+    sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
 
 11. Start your Mattermost server.
 

@@ -1,3 +1,4 @@
+:nosearch:
 
 Mattermost Branding and Naming Guidelines
 ============================================
@@ -16,7 +17,7 @@ Mattermost Visual Design Guidelines
 Mattermost Logo
 -------------------------------
 
-For details on Mattermost logo usage guidelines please visit: https://mattermost.org/brand-guidelines/
+For details on Mattermost logo usage guidelines please visit: https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines
 
 Mattermost User Experience
 -------------------------------

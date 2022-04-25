@@ -1,4 +1,4 @@
-Configuration in the Mattermost Database
+Configuration in the Mattermost database
 ========================================
 
 |all-plans| |self-hosted|
@@ -23,7 +23,7 @@ Benefits to using this option:
 * Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
 * Automatically deploy SAML certificates and keys to all servers in the cluster.
 
-How to Migrate Configuration to the Database
+How to migrate configuration to the database
 --------------------------------------------
 
 These instructions cover migrating the Mattermost configuration to the database and updating your ``systemd`` configuration to load it from the database.

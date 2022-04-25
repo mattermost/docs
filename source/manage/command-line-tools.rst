@@ -1,4 +1,4 @@
-Command Line Tools
+Command line tools
 ==================
 
 |all-plans| |self-hosted|
@@ -88,7 +88,7 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 .. code-block:: bash
 
     cd /opt/gitlab/embedded/service/mattermost
-    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost --config=/var/opt/gitlab/mattermost/config.json version
+    sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
 
 .. note::
    
@@ -789,6 +789,23 @@ mattermost db init
     .. code-block:: none
     
        MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
+       
+mattermost db migrate
+---------------------
+
+  Description
+    Migrates the database schema if there are any unapplied migrations.
+
+  Format
+    .. code-block:: none
+
+      mattermost db migrate
+
+  Examples
+    
+    .. code-block:: none
+
+       mattermost db migrate
 
 mattermost export
 -----------------
@@ -2364,8 +2381,7 @@ mattermost version
 
 .. note::
 
-   In Mattermost v6.0, this command has been replaced with the mmctl command `mmctl system version <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-system-version>`__.
-
+   From Mattermost v6.5, this CLI command no longer interacts with the database. The ``mattermost db migrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-db-migrate>`__ CLI command has been introduced to trigger schema migrations.
 
 Description
     Displays Mattermost version information.
@@ -2754,7 +2770,7 @@ CLI Documentation:
               platform -migrate_accounts -from_auth email -to_auth ldap -match_field username
 
       -upgrade_db_30                   Upgrades the database from a version 2.x schema to version 3 see
-                                        https://mattermost.org/upgrade-to-3-0/
+                                        https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html
 
           Example:
               platform -upgrade_db_30
@@ -2774,4 +2790,4 @@ If you have Bleve search indexing enabled, temporarily disable it in **System Co
 
 Bleve does not support multiple processes opening and manipulating the same index. Therefore, if the Mattermost server is running, an attempt to run the CLI will lock when trying to open the indeces.
 
-If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <https://mattermost.org/troubleshoot/>`__ to get help.
+If you are not using the Bleve search indexing, feel free to post in our `Troubleshooting forum <https://docs.mattermost.com/install/troubleshooting.html>`__ to get help.

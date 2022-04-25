@@ -1,4 +1,4 @@
-Security Overview
+Security overview
 ==================
 
 Security in Mattermost software is continually reviewed by developers, IT administrators, and security researchers accountable for deploying the software in their organizations.
@@ -10,12 +10,12 @@ Multiple rounds of penetration testing and security analysis, in addition to int
 
 To expand on each:
 
-Security Features
+Security features
 ------------------
 
 Mattermost offers a host of features to help keep your private cloud communications secure.
 
-Private Cloud Deployment with Secure Mobile Apps
+Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with MySQL or PostgreSQL as database. Remote access can be enabled through the use of `VPN clients on PC and mobile devices <https://docs.mattermost.com/deploy/deployment-overview.html#behind-a-vpn>`__ so that Mattermost can be used outside your private network.
@@ -24,14 +24,14 @@ Private Cloud Deployment with Secure Mobile Apps
 - User sessions across web, PC, and mobile can be `remotely revoked through profile settings <https://docs.mattermost.com/messaging/manage-profile-settings.html#view-and-logout-of-active-sessions>`__, or via the System Console by deactivating accounts.
 - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`__.
 
-Centralized Security and Administration
+Centralized security and administration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Manage users, teams, access control, and system settings in a web-based `System Console user interface <https://docs.mattermost.com/configure/configuration-settings.html>`__.
 - Centralized authentication through AD/LDAP and SAML (Mattermost Enterprise and Mattermost Professional).
 - Synchronize users and groups through the built-in `AD/LDAP integration <https://docs.mattermost.com/onboard/ad-ldap.html>`_ (Mattermost Enterprise).
 
-Transmission Security
+Transmission security
 ~~~~~~~~~~~~~~~~~~~~~~
 
 - Mattermost supports TLS encryption using AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server across both LAN and internet.
@@ -42,7 +42,7 @@ Transmission Security
 - Option to `exclude message contents from push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ to comply with strict compliance policies, such as US HIPAA standards.
 - Ability to exclude or include the `contents of messages in push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ to avoid disclosure on locked mobile screens, and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps (relevant to compliance standards such as HIPAA).
 
-Integrity and Audit Controls
+Integrity and audit controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - By default, Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for "deleting" messages and channels remove the data only from the user interface; the data is retained within your database. If your compliance guidelines require it, you can turn off users' ability to edit and delete their messages after they are posted.
@@ -52,7 +52,7 @@ Integrity and Audit Controls
 - `Ad hoc compliance reports of messaging by user, date range, and keyword, including edited and deleted messages <https://docs.mattermost.com/comply/compliance-reporting-oversight.html>`__ are available (Mattermost Enterprise). To protect against unauthorized use, all ad hoc report requests are logged.
 - Daily compliance reports compatible with third-party compliance solutions such as `Global Relay and Actiance <https://docs.mattermost.com/comply/compliance-export.html>`__ are also available (Mattermost Enterprise).
 
-Authentication Safeguards
+Authentication safeguards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - To protect against brute force attacks, you can set `rate limiting on APIs <https://docs.mattermost.com/configure/configuration-settings.html#rate-limiting>`__, varied by query frequency, memory store size, remote address, and headers.
@@ -63,7 +63,7 @@ Authentication Safeguards
 - Mattermost supports integrated authentication with `Active Directory and LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ (Mattermost Enterprise and Mattermost Professional) as well as `SAML 2.0 SSO integration <https://docs.mattermost.com/onboard/sso-saml.html>`__ with providers including `Active Directory Federation Services <https://docs.mattermost.com/onboard/ad-ldap.html#configure-ad-ldap-deployments-with-multiple-domains>`__,  `Okta <https://docs.mattermost.com/onboard/sso-saml-okta.html>`__, among others (Mattermost Enterprise and Mattermost Professional).
 - The ability to require `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is also available (Mattermost Enterprise and Mattermost Professional).
 
-Access Control Policy
+Access control policy
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To prevent account enumeration, if a user logs in and enters incorrect login details a generic error is presented.
@@ -77,14 +77,13 @@ When Mattermost is deployed outside a firewall, Admins must be aware that their 
 Mattermost undergoes extensive penetration testing, security reviews, and `security updates <https://mattermost.com/security-updates/>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided:
 
 - Limit communications to specific users, private channels, or team-wide public channels.
-- Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.org", etc."
+- Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/configure/configuration-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.com", etc."
 - Choose whether to restrict or enable `cross-origin requests <https://docs.mattermost.com/configure/configuration-settings.html#enable-cross-origin-requests-from>`__.
 - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts <https://docs.mattermost.com/configure/configuration-settings.html#public-link-salt>`__.
 - Optionally add `advanced passwords requirements <https://docs.mattermost.com/configure/configuration-settings.html#password-requirements>`__ with minimum numbers of symbols, numbers, lower, and uppercase letters.
 - Optionally restrict `creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (Mattermost Enterprise and Mattermost Professional).
-- Optionally restrict `sending team invites to Team Admins, System Admins, or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`__ (Mattermost Enterprise and Mattermost Professional).
 
-Security Updates
+Security updates
 -----------------
 
 Security updates address newly discovered attacks reported to Mattermost, Inc. by the security research community. Disclosures are made confidentially, under the Mattermost responsible disclosure policy, allowing for Mattermost, Inc. to provide security updates to the community prior to public disclosure.
@@ -97,7 +96,7 @@ For more information, please see:
 - `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__
    - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
 
-Security Policies
+Security policies
 -----------------
 
 For information on internal security policies, development guidelines, business continuity plans, and common security-related questions from enterprises, please see our `Security Policies <https://handbook.mattermost.com/operations/operations/company-policies/security-policies>`__ documentation.

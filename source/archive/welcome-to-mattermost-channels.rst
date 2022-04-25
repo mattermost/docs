@@ -1,3 +1,5 @@
+:nosearch:
+
 Welcome to Mattermost Channels!
 ===============================
 

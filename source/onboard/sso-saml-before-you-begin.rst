@@ -1,4 +1,4 @@
-Before You Begin
+Before you begin
 ----------------
 
 Before you begin, you need generate encryption certificates for encrypting the SAML connection.

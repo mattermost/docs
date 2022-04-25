@@ -1,4 +1,4 @@
-Mobile Push Notifications
+Mobile push notifications
 =========================
 
 A push proxy is a key technology behind notification transmission that enables notifications between the server and a Mobile app. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work>`__ to learn more about how push notifications work.
@@ -73,7 +73,7 @@ Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Ho
   - The HPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you build your own mobile apps, you must also `host your own Mattermost push proxy server <#id4>`_.
   - You must ensure that the push proxy can be reached on the correct port. For HPNS, it's port 443 from the Mattermost server.
 
-Enable HPNS for Existing Deployments
+Enable HPNS for existing deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configuring your existing Mattermost instance to use the Mattermost HPNS is a single, one-time step. 
@@ -101,7 +101,7 @@ Configuring your existing Mattermost instance to use the Mattermost HPNS is a si
 
 After setup, test push notifications to confirm they are working.
 
-ID-Only Push Notifications
+ID-only push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
@@ -112,7 +112,7 @@ When enabled, a message containing only an ID is transmitted. Once the mobile cl
 
 See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ documentation to learn more about the ID-only push notifications configuration setting. See our `Mobile Apps FAQ documentation <https://docs.mattermost.com/deploy/mobile-faq.html#how-can-i-use-id-only-push-notifications-to-protect-notification-content-from-being-exposed-to-third-party-services>`__ for details on using ID-only push notifications for data privacy.
 
-Host Your Own Push Proxy Service
+Host your own push proxy service
 --------------------------------
 
 Customers building their own custom mobile apps must host their own push proxy service using one of the following methods:

@@ -1,6 +1,6 @@
 ..  _ee-install:
 
-Enterprise Install and Upgrade
+Enterprise install and upgrade
 ===============================
 
 |enterprise| |self-hosted|
@@ -34,7 +34,7 @@ To install Mattermost Enterprise Edition directly please use one of the followin
 Upgrading to Mattermost Enterprise Edition
 --------------------------------------------
 
-Checking your Mattermost Edition and Version
+Checking your Mattermost edition and version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you're already running Mattermost v5.39 or earlier, you can check the Mattermost edition and version from the command line using:
@@ -80,7 +80,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
 If you need to migrate Team Edition prior to install, `please follow the migration guide <https://docs.mattermost.com/onboard/migrating-to-mattermost.html>`__.
 
-Upgrading Enterprise Edition to a Newer Version
+Upgrading Enterprise Edition to a newer version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upgrade a previous version of Mattermost Enterprise Edition to a later version by following the `upgrade procedure <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__.
@@ -102,7 +102,7 @@ During the upgrade process, the Mattermost Enterprise Edition binary file that m
 
 The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can now activate an Enterprise Edition trial or upload a license.
 
-Permissions and Limitations
+Permissions and limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you're using a package manager, such as GitLab Omnibus, to manage your Mattermost installation the Mattermost system user won't have sufficient permissions to perform the upgrade. If this is the case, you'll need to change the file permissions manually.

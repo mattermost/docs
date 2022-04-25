@@ -26,10 +26,10 @@ The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elastics
 
 .. important::
 
-  For Mattermost v6.0, a minimum of Elasticsearch v7.x is supported. 
+  For Mattermost v6.0, Elasticsearch v7.x is supported. 
   Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
     
-Deployment Guide
+Deployment guide
 ----------------
 
 Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
@@ -40,7 +40,7 @@ Elasticsearch allows you to search large volumes of data quickly, in near real-t
 .. note::
     From Mattermost v5.26, you can filter inactive users, search by user role, and also search for terms inside links. This update introduces a breaking change which affects the "from" part of the search. To avoid this, reindex your Elasticsearch instance/cluster prior to upgrading.
     
-Setting Up an Elasticsearch Server
+Setting up an Elasticsearch server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The set up process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`__.
@@ -98,7 +98,7 @@ Limitations
 3. AWS Elasticsearch implementations have a limit of 1000 days of post history that is searchable.
 4. Search results are limited to a user's team and channel membership. This is enforced by the Mattermost server. The entities are indexed in Elasticsearch in a way that allows Mattermost to filter them when querying, so the Mattermost server narrows down the results on every Elasticsearch request applying those filters.
 
-Frequently Asked Questions (FAQ)
+Frequently asked questions (FAQ)
 --------------------------------
 
 Do I need to use Elasticsearch?

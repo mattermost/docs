@@ -1,4 +1,4 @@
-Slash Commands
+Slash commands
 ==============
 
 .. note::
@@ -16,7 +16,7 @@ Messages that begin with ``/`` are interpreted as slash commands. The commands w
 .. toctree::
    :maxdepth: 2
 
-Built-in Commands
+Built-in commands
 -----------------
 
 Each Mattermost installation comes with some built-in slash commands that are ready to use:
@@ -52,7 +52,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/shortcuts", "Display a list of keyboard shortcuts", "/shortcuts"
     "/shrug *{message}*", "Add ``¯\_(ツ)_/¯`` to your message", "/shrug oh well"
 
-Custom Slash Command
+Custom slash command
 --------------------
 
 Suppose you want to write an external application that is able to check the weather for certain cities. By creating a custom slash command, and setting up the application to handle the HTTP POST or GET from the command, you can let your users check the weather in their city using your command, say ``/weather toronto week``.
@@ -130,9 +130,9 @@ which would render in Mattermost as:
 
 .. image:: ../images/weatherBot.png
   
-11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__.
+11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__.
 
-Messages with advanced formatting can be created by including an `attachment array <https://docs.mattermost.com/developer/message-attachments.html>`_ and `interactive message buttons <https://docs.mattermost.com/developer/interactive-messages.html>`_ in the JSON payload.
+Messages with advanced formatting can be created by including an `attachment array <https://developers.mattermost.com/integrate/admin-guide/admin-message-attachments/>`_ and `interactive message buttons <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/>`_ in the JSON payload.
 
 .. note::
   
@@ -140,7 +140,7 @@ Messages with advanced formatting can be created by including an `attachment arr
   
   Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your Mattermost System Admin. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
-Tips and Best Practices
+Tips and best practices
 ------------------------
 
 1. Slash commands are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`__.
@@ -148,14 +148,14 @@ Tips and Best Practices
 3. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's JSON format <https://docs.mattermost.com/integrations/cloud-slash-commands.html#translate-slack-s-data-format-to-mattermost>`__.
 4. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost workspace and responds with in the required JSON format.
 
-Share Your Integration
+Share your integration
 ----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory>`__.
+If you've built an integration for Mattermost, please consider `sharing your work <https://apps.mattermost.com/submit-an-integration/>`__ in our `app directory <https://mattermost.com/marketplace/>`__.
 
-The `app directory <https://about.mattermost.com/default-app-directory>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
+The `app directory <https://mattermost.com/marketplace/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or self-managed infrastructure.
 
-Slack Compatibility
+Slack compatibility
 -------------------
 
 Mattermost makes it easy to migrate integrations written for Slack to Mattermost.

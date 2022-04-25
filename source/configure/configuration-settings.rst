@@ -1,4 +1,4 @@
-Configuration Settings
+Configuration settings
 ======================
 
 Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
@@ -13,7 +13,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
    See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.
 
-Configuration in Database
+Configuration in database
 --------------------------
 
 |all-plans| |self-hosted|
@@ -45,7 +45,7 @@ Configuration in Database
 
 Storing configuration in the database is supported from v5.10 and later. Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
 
-Environment Variables
+Environment variables
 ---------------------
 
 |all-plans| |self-hosted|
@@ -69,7 +69,7 @@ The name of the environment variable for any setting can be derived from the nam
    - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
    - Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
    
-Override Mattermost License File
+Override Mattermost license file
 --------------------------------
 
 |all-plans| |self-hosted|
@@ -83,7 +83,7 @@ When starting the server, specify the license key as ``MM_LICENSE`` with the con
    
    In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
 
-Load Custom Configuration Defaults
+Load custom configuration defaults
 ----------------------------------
 
 |all-plans| |self-hosted|
@@ -501,17 +501,6 @@ The maximum number of idle connections held open to the database.
 | This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
-Maximum Connection Idle Timeout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum time a database connection can remain idle.
-
-+------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
-+------------------------------------------------------------------------------------------------------+
-
 Maximum Open Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -534,19 +523,6 @@ The number of seconds to wait for a response from the database after opening a c
 | This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-Disable Database Search
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
-
-**False**: Database search is not disabled.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
-+-------------------------------------------------------------------------------------------------------------------------+
-
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -558,6 +534,17 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 | This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with numerical input.              |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+Maximum Connection Idle Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The maximum time a database connection can remain idle.
+
++------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
++------------------------------------------------------------------------------------------------------+
+
 Minimum Hashtag Length
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -568,21 +555,6 @@ The minimum number of characters in a hashtag. This must be greater than or equa
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
 +-------------------------------------------------------------------------------------------------------------------------+
-
-At Rest Encrypt Key
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
-
-When using High Availability, the salt must be identical in each instance of Mattermost.
-
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
-+------------------------------------------------------------------------------------------+
 
 SQL Statement Logging (Trace)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -607,6 +579,41 @@ Recycle Database Connections
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20 seconds.
 
 The workflow for failover without downing the server is to change the database line in the ``config.json`` file, select **Reload Configuration from Disk** in the **Environment > Database** section, then select **Recycle Database Connections**.
+
+Disable Database Search
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
+
+**False**: Database search is not disabled.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Applied Schema Migrations
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost**  from the product menu to review the current database schema version applied to your deployment.
+
+At Rest Encrypt Key
+^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
+
+When using High Availability, the salt must be identical in each instance of Mattermost.
+
+No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
++------------------------------------------------------------------------------------------+
 
 Elasticsearch
 ~~~~~~~~~~~~~~
@@ -806,12 +813,12 @@ Enable Document Search by Content
 
 |all-plans| |self-hosted|
 
-Enable users to search the contents of documents attached to messages. Mattermost self-hosted deployments include support for PDF, PPTX, DOCX, ODT, HTML, and plain text documents. Improved server performance during PDF extraction is available through the installation of a third-party dependency. Additional file support for RTF, DOC, and PAGES documents is available through the installation of third-party dependencies. 
+Enable users to search the contents of documents attached to messages. Mattermost self-hosted deployments include support for PDF, PPTX, DOCX, ODT, HTML, and plain text documents. Improved server performance during PDF extraction and additional file support for RTF, DOC, and PAGES documents is available through the installation of third-party dependencies. 
 
 **True**: Documents are searchable by their content.  
 
 .. note::
-   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. If this command is not run, users can search older files based on file name only.
+   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
 
 **False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
 
@@ -1210,7 +1217,7 @@ To confirm push notifications are working:
 
 1. Go to **System Console > Notifications > Environment > Push Notification Server > Enable Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
 2. Set **Push Notification Server** to ``https://push.mattermost.com`` if using Enterprise Edition. If using Team Edition, set the value to ``https://push-test.mattermost.com``.
-3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__ and log in to your team site.
+3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://apps.apple.com/us/app/mattermost/id1257222717>`__ or the `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and log in to your team site.
 4. Close the app on your device, and close any other connections to your team site.
 5. Wait 5 minutes and have another team member send you a direct message, which should trigger a push notification to the Mattermost app on your mobile device.
 6. You should receive a push notification on your device alerting you of the direct message.
@@ -1220,7 +1227,7 @@ If you did not receive an alert:
 1. Set **System Console > Environment > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
 2. Repeat the above steps.
 3. Go to **System Console > Reporting > Server Logs** and copy the log output into a file.
-4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
+4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
 
 .. _high-availability:
 
@@ -1629,6 +1636,10 @@ Standard Logging
 
 Access the following configuration settings in the System Console by going to **Environment > Logging**.
 
+.. note::
+
+  Standard logging in Mattermost supports the ability to output logs to the console and file targets. Mattermost Enterprise customers can specify additional log target types, such as TCP configuration options using audit log v2. See the `audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation and the `advanced audit logging configuration <https://docs.mattermost.com/configure/configuration-settings.html#advanced-audit-logging-configuration>`__ documentation for additional details.
+
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1826,7 +1837,7 @@ Session length for SSO authentication (days)
 
 This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
@@ -1923,6 +1934,19 @@ Enable Developer Mode
 **True**: Javascript errors are shown in a purple bar at the top of the user interface. Not recommended for use in production.
 
 **False**: Users are not alerted to Javascript errors.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
+
+Enable Client Performance Debugging
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: User-specific performance debugging features can be enabled from **Settings > Advanced > Performance Debugging**. These settings only affect the user who enables them. See the `Performance Debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__ product documentation to learn more.
+
+**False**: Disables and hides debugging features from **Settings > Advanced > Performance Debugging**.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
@@ -2051,21 +2075,8 @@ Help link
 Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation are hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
 
 +---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"HelpLink": "https://about.mattermost.com/default-help/"`` with string input. |
+| This feature's ``config.json`` setting is ``"HelpLink": "https://docs.mattermost.com/"`` with string input.               |
 +---------------------------------------------------------------------------------------------------------------------------+
-
-Support Email
-^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
-
-Set an email address for feedback or support requests.
-
-To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
 
 Terms of Use link
 ^^^^^^^^^^^^^^^^^^
@@ -2085,12 +2096,12 @@ Privacy Policy link
 
 |all-plans| |self-hosted|
 
-Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on about.mattermost.com.
+Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on mattermost.com.
 
 In version 5.17 and later, this setting does not change the privacy policy link in **Main Menu > About Mattermost**, which refers to the Mattermost Privacy Policy.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input. |
+| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://mattermost.com/privacy-policy/"`` with string input.               |
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 
 About Link
@@ -2098,10 +2109,10 @@ About Link
 
 |all-plans| |self-hosted|
 
-Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on about.mattermost.com.
+Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on mattermost.com.
 
 +-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AboutLink": "https://about.mattermost.com/default-about/"`` with string input. |
+| This feature's ``config.json`` setting is ``"AboutLink": "https://mattermost.com/platform-overview/"`` with string input.   |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
 Report a Problem link
@@ -2111,16 +2122,16 @@ Report a Problem link
 
 Set the link for the support website.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`` with string input. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute#report-a-bug"`` with string input.    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
+Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/download/"`` with string input. |
@@ -2133,9 +2144,9 @@ Android App Download Link
 
 Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/"`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AndroidAppDownloadLink": "https://play.google.com/store/apps/details?id=com.mattermost.rn"`` with string input. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 iOS App Download Link
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2144,9 +2155,9 @@ iOS App Download Link
 
 Configurable link to download the iOS app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"`` with string input. |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IosAppDownloadLink": "https://apps.apple.com/us/app/mattermost/id1257222717"`` with string input. |
++------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Localization
 ~~~~~~~~~~~~~
@@ -2162,9 +2173,9 @@ Default language for system messages and logs.
 
 Changes to this setting require a server restart before taking effect.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Default Client Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2173,9 +2184,9 @@ Default Client Language
 
 Default language for newly-created users and pages where the user hasn't logged in.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^
@@ -2187,9 +2198,9 @@ Sets which languages are available for users in **Settings > Display > Language*
 .. note::
   Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``"es"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"zh_CN"``, and ``"zh_TW"``.  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``.  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Users and Teams
 ~~~~~~~~~~~~~~~
@@ -2399,12 +2410,25 @@ Email Notification Contents
 | This feature's ``config.json`` setting is ``"EmailNotificationContentsType": "full"`` with options ``"full"`` and ``"generic"`` for the above settings, respectively.             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Support Email Address
+^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+Set an email address for feedback or support requests. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
+
+To ensure that users can contact you for assistance, set this value to an email address your System Admin receives, such as ``"support@yourcompany.com"``. This address is displayed on email notifications and during the Getting Started tutorial.
+
++-------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
++-------------------------------------------------------------------------------------+
+
 Notification Display Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-Name displayed on email account used when sending notification emails from Mattermost system.
+Name displayed on email account used when sending notification emails from Mattermost system. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FeedbackName": ""`` with string input. |
@@ -2415,7 +2439,7 @@ Notification From Address
 
 |all-plans| |cloud| |self-hosted|
 
-Address displayed on email account used when sending notification emails from within Mattermost.
+Address displayed on email account used when sending notification emails from within Mattermost. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
 So you don't miss messages, please make sure to change this value to an email your system administrator receives, such as ``"admin@yourcompany.com"``.
 
@@ -2804,7 +2828,7 @@ Restrict account creation to specified email domains
 
 |all-plans| |cloud| |self-hosted|
 
-Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.org").
+Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
 
 This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``.
 
@@ -3458,7 +3482,7 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`__ to learn more.
+**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Synchronization of SAML accounts with AD/LDAP is disabled.
 
@@ -5982,22 +6006,43 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+Automatically Follow Threads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+ 
+.. important::
+
+    This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. If you can't easily scale up and tune your database, or if you're running the Mattermost application server and database server on the same machine, we recommended disabling this configuration setting until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
+
+**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
+
+**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
+
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
 Collapsed Reply Threads (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
 
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/messaging/organizing-conversations.html>`__ documentation to learn more about this feature.
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
 
 System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
 
-**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/messaging/managing-account-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
+**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
 
 .. note::
 
-   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you are well versed with the `known issues <https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you cannot easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it is `promoted to general availability in Q1 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
+   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you clearly understand the `known issues <https://docs.mattermost.com/channels/organize-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you can't easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it's `promoted to general availability in Q2 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
 
-**Disabled**: Disable Collapsed Reply Threads functionality.
+**Disabled**: Disables Collapsed Reply Threads front-end functionality. To disable all backend operations and thread tracking for Collapsed Reply Threads, you must also disable the `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`__ configuration setting.
 
 +---------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
@@ -6027,6 +6072,24 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
 
+Enable Shared Channels
+^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart. 
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
+   - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
+
 Settings configurable only in ``config.json``
 ----------------------------------------------
 
@@ -6035,26 +6098,18 @@ There are a number of settings customizable in ``config.json`` which are unavail
 Service Settings
 ~~~~~~~~~~~~~~~~
 
-Automatically Follow Threads
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Custom User Groups
+^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+|enterprise| |professional| |cloud| |self-hosted|
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting has been added as a requirement to support `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`__. If you are experiencing adverse server performance impacts, please consult this `support article <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ for recommended remediation.   
+This configuration setting controls the ability for users to create custom user groups. This configuration setting is disabled by default.
 
-**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
-
-**False**: Threads are not automatically followed and Collapsed Reply Threads cannot be enabled. If you plan to enable Collapsed Reply Threads for your instance, we don't recommend disabling this setting since the server-side tracking of followed threads and unread states is critical to create a smooth transition for end-users when enabling Collapsed Reply Threads in the future.  
-
-.. note::
-
-   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will now automatically be followed to the thread.  
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableCustomGroups": true`` with options ``true`` and ``false``.  |
++----------------------------------------------------------------------------------------------------------------+
 
 Developer Flags
 ^^^^^^^^^^^^^^^
@@ -6320,9 +6375,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
 
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPITeamDeletion`` is set to ``true``.
-
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
@@ -6342,9 +6394,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPIUserDeletion`` is set to ``true``.
-
 Enable API Channel Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6359,9 +6408,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-  mmctl local mode ignores this setting and behaves as though ``EnableAPIChannelDeletion`` is set to ``true``.
 
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^
@@ -7678,24 +7724,4 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Shared Channels
-^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-
-Shared Channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any Public and Private channel. 
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-   - Both configuration settings must be enabled in order to share channels with secure connections.
-   - Enabling Shared Channels functionality requires a server restart.
-   - System Admins for Cloud deployments can submit a request to have this configuration setting enabled in their Cloud instance.

@@ -1,3 +1,5 @@
+:nosearch:
+
 Mattermost Incident Collaboration
 =================================
 

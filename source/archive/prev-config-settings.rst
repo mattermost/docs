@@ -1,3 +1,5 @@
+:nosearch:
+
 Configuration Settings Prior to v5.12
 =====================================
 
@@ -1298,7 +1300,7 @@ The attribute in the AD/LDAP server used as a unique identifier in Mattermost. I
 
 If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one.
 
-If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`__ CLI tool.
+If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate>`__ CLI tool.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
@@ -1394,7 +1396,7 @@ Enable Login With SAML
 Enable Synchronizing SAML Accounts With AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`__ to learn more.
+**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Synchronization of SAML accounts with AD/LDAP is disabled.
 
@@ -1405,7 +1407,7 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 Override SAML Bind Data with AD/LDAP Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`__ to learn more.
+**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Mattermost uses the email attribute to bind users to SAML. 
 
@@ -2223,7 +2225,7 @@ Enable integrations to override profile picture icons
 Enable Personal Access Tokens
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: When ``true``, users can create `personal access tokens <https://about.mattermost.com/default-user-access-tokens>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
+**True**: When ``true``, users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
 
 To manage who can create personal access tokens or to search users by token ID, go to the **System Console > Users** page.
 
@@ -2262,7 +2264,7 @@ Management
 Enable Plugins
 ^^^^^^^^^^^^^^
 
-**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your Mattermost server. See `documentation <https://about.mattermost.com/default-plugins>`__ to learn more.
+**True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality or customize the user interface of your Mattermost server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
 
 **False**: Disables plugins on your Mattermost server.
 
@@ -2897,27 +2899,27 @@ Legal and Support links will be hidden in the user interface if these fields are
 Terms of Service link
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on about.mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
+Configurable link to Terms of Service your organization may provide to end users. By default, links to a Terms of Service page hosted on mattermost.com. If changing the link to a different Terms of Service, make sure to include the "Mattermost Conditions of Use" notice to end users that must also be shown to users from the "Terms of Service" link.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://about.mattermost.com/default-terms/"`` with string input.                                 |
+| This feature's ``config.json`` setting is ``"TermsOfServiceLink": "https://mattermost.com/terms-of-use/"`` with string input.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link
 ^^^^^^^^^^^^^^^^^^^^
 
-Configurable link to Privacy Policy your organization may provide to end users. By default, links to a Privacy Policy page hosted on about.mattermost.com.
+Configurable link to Privacy Policy your organization may provide to end users. By default, links to a Privacy Policy page hosted on mattermost.com.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://about.mattermost.com/default-privacy-policy/"`` with string input.                         |
+| This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://mattermost.com/privacy-policy/"`` with string input.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on about.mattermost.com.
+Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on mattermost.com.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AboutLink": "https://about.mattermost.com/default-about/"`` with string input.                                                              |
+| This feature's ``config.json`` setting is ``"AboutLink": "https://mattermost.com/platform-overview/"`` with string input.                                                              |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Help link
@@ -2926,15 +2928,15 @@ Help link
 Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__ .
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"HelpLink": "https://about.mattermost.com/default-help/"`` with string input.                                                                |
+| This feature's ``config.json`` setting is ``"HelpLink": "https://docs.mattermost.com/"`` with string input.                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Report a Problem link
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 Set the link for the support website.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://about.mattermost.com/default-report-a-problem/"`` with string input.                                            |
+| This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute#report-a-bug"`` with string input.                                            |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Support Email
@@ -2983,7 +2985,7 @@ Mattermost App Links
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configurable link to a download page for Mattermost Apps. When a link is present, an option to "Download Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on about.mattermost.com where users can download the iOS, Android, and Desktop clients. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html?highlight=enterprise%20app#push-notifications-and-mobile-devices>`__ for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
+Configurable link to a download page for Mattermost Apps. When a link is present, an option to "Download Apps" will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you are using an `Enterprise App Store <https://docs.mattermost.com/deployment/push.html#push-notifications-and-mobile-devices>`__ for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/download/#mattermostApps"`` with string input.                                                            |
@@ -3081,7 +3083,7 @@ Compliance Export (Beta)
 Enable Compliance Export
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://about.mattermost.com/default-compliance-export-documentation>`__.
+**True**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://docs.mattermost.com/comply/compliance-export.html>`__.
 
 **False**: Mattermost doesn't generate a compliance export file.
 
@@ -4353,7 +4355,7 @@ Plugin Settings (Beta)
 Enable Plugin Uploads
 ^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`__ to learn more.
+**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
 
 **False**: Disables plugin uploads on your Mattermost server.
 

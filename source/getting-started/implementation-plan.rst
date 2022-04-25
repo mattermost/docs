@@ -1,4 +1,4 @@
-Implementation Plan
+Implementation plan
 ===================
 
 |all-plans| |self-hosted|
@@ -19,14 +19,9 @@ Implementation Plan
 1.1 Purpose
 ~~~~~~~~~~~
 
-Mattermost is an open source, private cloud alternative to proprietary SaaS collaboration solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You've chosen to implement Mattermost in our supported `editions:`_
+Mattermost is an open source, private cloud alternative to proprietary SaaS collaboration solutions designed to offer organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall. You've chosen to implement Mattermost in our supported `editions and offerings:`_
 
-.. _`editions:`: https://mattermost.com/product/
-
-- Team Edition
-
-- Mattermost Professional adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/onboard/ad-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/configure/custom-branding-tools.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/configure/configuration-settings.html#policy>`__, and next business day support.
-- Mattermost Enterprise includes Professional features plus `SAML 2.0 Authentication <https://docs.mattermost.com/onboard/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/comply/compliance-reporting-oversight.html>`__, `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__, `Data Retention Policy <https://docs.mattermost.com/comply/data-retention-policy.html>`__, and enterprise class support.
+.. _`editions and offerings:`: https://docs.mattermost.com/about/editions-and-offerings.html
 
 The purpose of this Implementation Plan is to:
 
@@ -34,12 +29,12 @@ The purpose of this Implementation Plan is to:
 - Outline the process for implementing the solution (key personnel, tasks, schedule, etc.);
 - Identify support required during the implementation process.
 
-2 System Overview
+2 System overview
 -----------------
 
 This section provides a brief overview of the system to be implemented, including a description of the system and its organization.
 
-2.1 System Description
+2.1 System description
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is a collaboration solution designed to remove organizational friction. You're implementing Mattermost in order to:
@@ -54,8 +49,7 @@ In this implementation, you are planning to deploy Mattermost to **[NUMBER OF US
 2. **[TEAM 2]**
 3. **[TEAM 3]**
 
-
-2.2  System Organization
+2.2  System organization
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 A Mattermost Enterprise implementation consists of the following system components:
@@ -94,7 +88,7 @@ A recommended installation of Mattermost Enterprise E20 configured with a redund
 .. note::
   See the `Mattermost hardware sizing guidance <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__ documentation for details. 
 
-2.3 Project References
+2.3 Project references
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides a bibliography of key project references and deliverables that have been produced before this point in the project development.
@@ -111,12 +105,12 @@ This section provides a bibliography of key project references and deliverables 
 
 Provide a glossary of all terms and abbreviations used in the manual.  If it is several pages in length, it may be placed in an appendix.
 
-3 Management Overview
+3 Management overview
 ---------------------
 
 The subsequent sections provide a brief description of the implementation and major tasks involved in this section.
 
-3.1 Description of Implementation
+3.1 Description of implementation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 3.2 Team
@@ -124,7 +118,7 @@ The subsequent sections provide a brief description of the implementation and ma
 
 In this section, identify the System Proponent, the name of the responsible organization(s), and titles and telephone numbers of the staff who serve as points of contact for the system implementation.  These points of contact could include the Project Manager. Program Manager, Security Manager.  Database Administrator, Configuration Management Manager, or other managers with responsibilities relating to the system implementation.  The site implementation representative for each field installation or implementation site should also be included, if appropriate.  List all managers and staff with whom the implementation must be coordinated.
 
-3.2.1 Team Members
+3.2.1 Team members
 ^^^^^^^^^^^^^^^^^^
 
 +----------+-----------------+----------------------+--------------+
@@ -137,15 +131,15 @@ In this section, identify the System Proponent, the name of the responsible orga
 |          |                 |                      |              |
 +----------+-----------------+----------------------+--------------+
 
-3.3 Major Tasks
-~~~~~~~~~~~~~~~
+3.3 Major tasks
+~~~~~~~~~~~~~~
 
 This section provides a brief description of each major task required for the implementation of the system. Add as many subsections as necessary to this section to describe all the major tasks adequately. The tasks described in this section are not site-specific, but generic or overall project tasks that are required to install hardware and software, prepare data, and verify the system. 
 
-3.3.1 Create System Architecture Document
+3.3.1 Create system architecture document
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The System Architecture Document is used to document the environments that Mattermost will be deployed to including:
+The system architecture document is used to document the environments that Mattermost will be deployed to including:
 
 - The environment (development, staging, production, etc.)
 - Server, or virtual machine, specifications
@@ -154,19 +148,19 @@ The System Architecture Document is used to document the environments that Matte
 
 **Reference**: https://docs.mattermost.com/deploy/deployment-overview.html
 
-3.3.2 Gather Required Software and Documentation
+3.3.2 Gather required software and documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Gather all of the software and documentation required for a successful implementation of the Mattermost platform and place it within the organization’s configuration management system.
 
-3.3.3 Prepare Deployment Environments
+3.3.3 Prepare deployment environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Build out the required deployment environments (development, staging, production, etc.) and implement configuration management (using a tool like Chef, Puppet, Salt, etc.)
 
 **Reference**: https://docs.mattermost.com/install/software-hardware-requirements.html
 
-3.3.4 Install Software
+3.3.4 Install software
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Install and configure Mattermost and its component software (MySQL or PostgreSQL, Nginx or another proxy, etc.)
@@ -175,14 +169,14 @@ Install and configure Mattermost and its component software (MySQL or PostgreSQL
 
 Install in High Availability (Available in Mattermost Enterprise): https://docs.mattermost.com/scale/high-availability-cluster.html 
 
-3.3.5 Test Deployment
+3.3.5 Test deployment
 ^^^^^^^^^^^^^^^^^^^^^
 
 Verify that the software has been deployed successfully in each environment. Create, or update, automated tests to verify deployments.
 
 **Reference**: https://docs.mattermost.com/manage/health-checks.html
 
-3.3.6 Bulk Load Data
+3.3.6 Bulk load data
 ^^^^^^^^^^^^^^^^^^^^
 
 Large quantities of data can be imported from a JSON file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing system, or for pre-populating a new installation with data.
@@ -190,32 +184,32 @@ Large quantities of data can be imported from a JSON file into Mattermost at the
 You can import the following data types:
 
 - Teams
-- Channels (Public and Private)
+- Channels (public and private)
 - Users
-- Users’ Team memberships
-- Users’ Channel memberships
+- Users’ team memberships
+- Users’ channel memberships
 - Users’ notification preferences
 - Posts (regular, non-reply posts)
-- Direct Message and Group Message channels
-- Direct Messages and Group Messages
+- Direct message and group message channels
+- Direct messages and group messages
 
 **Reference**: https://docs.mattermost.com/onboard/bulk-loading-data.html 
 
-3.3.7 Implement Backup
+3.3.7 Implement backup
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Implement backup procedures to protect data stored within the Mattermost database, files uploaded by users, and the Mattermost ``config.json`` file.
 
 **Reference**: https://docs.mattermost.com/deploy/backup-disaster-recovery.html
 
-3.3.8 Implement Monitoring
+3.3.8 Implement monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Enterprise supports integrated health and performance monitoring with Prometheus and Grafana. A guide to the statistics collected and reported on is available in the reference below:
 
 **Reference**: https://docs.mattermost.com/scale/performance-monitoring.html
 
-3.3.9 AD/LDAP Setup
+3.3.9 AD/LDAP setup
 ^^^^^^^^^^^^^^^^^^^^
 
 Available in Mattermost Professional and Enterprise subscription plans.
@@ -224,7 +218,7 @@ Mattermost supports AD/LDAP integration for user authentication and user attribu
 
 **Reference**: https://docs.mattermost.com/onboard/ad-ldap.html 
 
-3.3.10 Multi-Factor Authentication
+3.3.10 Multi-factor authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Available in Mattermost Professional and Enterprise subscription plans.
@@ -242,14 +236,14 @@ Mattermost can be configured to act as a SAML 2.0 Service Provider. Mattermost o
 
 **Reference**: https://docs.mattermost.com/onboard/sso-saml.html
 
-3.3.12 Train Administrators
+3.3.12 Train administrators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Train administrators on the tasks required to manage Mattermost.
 
 **Reference**: https://docs.mattermost.com/guides/administration.html
 
-3.3.13 Update Legal and Support Settings
+3.3.13 Update legal and support settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support** in prior versions or **System Console** > **Site Configuration** > **Customization** in versions after 5.12.
@@ -257,7 +251,7 @@ Mattermost has configuration settings for the terms of service, privacy policy, 
 .. image:: ../images/legal_and_support_settings.png
 	:alt: Legal and Support settings 
 
-3.3.14 Onboard Users
+3.3.14 Onboard users
 ^^^^^^^^^^^^^^^^^^^^
 
 Send all users a welcome email with instructions on how to get started using Mattermost including links to the mobile applications and the User Guide.
@@ -266,7 +260,7 @@ Send all users a welcome email with instructions on how to get started using Mat
 - Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
 - Channels Guide: https://docs.mattermost.com/guides/channels.html 
 
-3.4 Implementation Schedule
+3.4 Implementation schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this section, provide a schedule of activities to be accomplished during implementation.  Show the required tasks (described in Section 3.3, Major Tasks) in chronological order, with the beginning and end dates of each task.
@@ -300,7 +294,7 @@ In this section, provide a schedule of activities to be accomplished during impl
 
 If appropriate for the system to be implemented, include an overview of the system security features and requirements during the implementation.
 
-3.5.1 System Security Features
+3.5.1 System security features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Mattermost platform will be secured in the following ways:
@@ -315,17 +309,17 @@ The Mattermost platform will be secured in the following ways:
 
 **Reference**: https://docs.mattermost.com/about/security.html
 
-3.5.2 Security During Implementation
+3.5.2 Security during implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section addresses security issues specifically related to the implementation effort, if any. For example, if LAN servers or workstations will be installed at a site with sensitive data preloaded on non-removable hard disk drives, address how security would be provided for the data on these devices during shipping, transport, and installation because theft of the devices could compromise the sensitive data.
 
-4 Implementation Support
+4 Implementation support
 ------------------------
 
 This section describes the support software, materials, equipment, and facilities required for the implementation, as well as the personnel requirements and training necessary for the implementation.  The information provided in this section is not site-specific.  If there are additional support requirements not covered by the subsequent sections, others may be added as needed.
 
-4.1 Hardware, Software, Facilities, and Materials
+4.1 Hardware, software, facilities, and materials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this section, list support software, materials, equipment, and facilities required for the implementation, if any.
@@ -355,12 +349,12 @@ This section provides a list of required support materials, such as magnetic tap
 
 This section describes personnel requirements and any known or proposed staffing requirements, if appropriate.  Also describe the training, if any, to be provided for the implementation staff.
 
-4.2.1 Personnel Requirements and Staffing
+4.2.1 Personnel requirements and staffing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In this section, describe the number of personnel, length of time needed, types of skills, and skill levels for the staff required during the implementation period.  If particular staff members have been selected or proposed for the implementation, identify them and their roles in the implementation.
 
-4.2.2 Training of Implementation Staff
+4.2.2 Training of implementation staff
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This section addresses the training, if any, necessary to prepare staff for implementing and maintaining the system; it does not address user training, which is the subject of the Training Plan. Describe the type and amount of training required for each of the following areas, if appropriate, for the system:
@@ -375,14 +369,14 @@ If training will be provided by one or more commercial vendors, identify them, t
  
 If the training will be provided by State staff, provide the course name(s) and an outline of the content of each course.  Identify the resources, support materials, and proposed instructors required to teach the course(s).
 
-4.3 Performance Monitoring 
+4.3 Performance monitoring 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Available in Mattermost Enterprise.
 
 This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/scale/performance-monitoring.html
 
-4.4 Configuration Management Interface
+4.4 Configuration management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes the interactions required with the Configuration Management (CM) representative on CM-related issues, such as when software listings will be distributed, and how to confirm that libraries have been moved from the development to the production environment.

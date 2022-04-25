@@ -1,4 +1,4 @@
-Health Check
+Health check
 ============
 
 |all-plans| |self-hosted|
@@ -19,7 +19,7 @@ Before you begin, you should have a running Mattermost server. If you don't, you
 
 You can perform a health check with two methods:
 
-``/ping`` APIv4 Endpoint
+``/ping`` APIv4 endpoint
 -------------------------
 
 From Mattermost v3.10 and later, you can use the `GET /system/ping APIv4 endpoint <https://api.mattermost.com/#tag/system%2Fpaths%2F~1system~1ping%2Fget>`__ to check for system health.
@@ -41,7 +41,7 @@ This endpoint can also be provided to schedulers like `Kubernetes <https://kuber
   // GetPing
   status, err := Client.GetPing()
 
-Mattermost Probe
+Mattermost probe
 ----------------
 
 The `Mattermost Probe <https://github.com/csduarte/mattermost-probe>`__ constantly pings a Mattermost server using a variety of probes.

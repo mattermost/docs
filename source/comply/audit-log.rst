@@ -1,4 +1,4 @@
-Audit Log v2 (Experimental)
+Audit log v2 (experimental)
 ===========================
 
 |enterprise| |self-hosted|
@@ -96,8 +96,9 @@ The example below specifies one log target that outputs to the console using a p
 
 See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file.  
 
-Log Target Types
+Log target types
 ~~~~~~~~~~~~~~~~
+
 Log target types include Console, Syslog, File, or TCP. 
 
 **Console configuration options:**
@@ -146,8 +147,9 @@ Log target types include Console, Syslog, File, or TCP.
     
 To temporarily disable a log target its type can be set to "none".
 
-Log Formatters
-~~~~~~~~~~~~~~~~~~~
+Log formatters
+~~~~~~~~~~~~~~~
+
 Mattermost currently supports three log formats: plain, JSON, and `GELF <https://docs.graylog.org/en/4.0/pages/gelf.html>`__.
 
 **Plain configuration options:**
@@ -187,7 +189,7 @@ Mattermost currently supports three log formats: plain, JSON, and `GELF <https:/
   
        "hostname", "string", "string", "Provides a custom hostname to be output in log records, otherwise hostname is taken from the operating system."
 
-Log Levels 
+Log levels 
 ~~~~~~~~~~~
 
 **Level configuration options:**

@@ -3,7 +3,7 @@ Statistics
 
 Statistics on users, posts, and channels are tracked for each system and team. 
 
-Site Statistics
+Site statistics
 ---------------
 
 |all-plans| |cloud|
@@ -47,7 +47,7 @@ Total Posts from Bots (graph)
 Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
 
-Team Statistics
+Team statistics
 ---------------
 
 |all-plans| |cloud|
