@@ -17,7 +17,7 @@ A webhook is a way for one app to send real-time data to another app.
 
 In Mattermost, incoming webhooks receive data from external applications and make a post in a specified channel. They're great for setting up notifications that are sent into a Mattermost channel when something happens in an external application.
 
-Outgoing webhooks take data from Mattermost and send it to an external application. The receiving server of the outgoing webhook can then post a response back in Mattermost. They're great for listening for a specific word, and then notifying external applications when a trigger word is used.
+Outgoing webhooks are triggered based on a rule in Mattermost and takes data (the message, and some contextual info) from Mattermost and send it to an external application. The receiving server of the outgoing webhook can then post a response back in Mattermost. They're great for listening for a specific word, and then notifying external applications when a trigger word is used.
 
 What's a slash command?
 -----------------------
