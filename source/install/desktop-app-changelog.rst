@@ -73,7 +73,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v18.0.3. Electron is the underlying technology used to build the Desktop app.
+- Major version upgrade of Electron to v23.0.8. Electron is the underlying technology used to build the Desktop app.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,6 +99,7 @@ All Platforms
 - Fixed an issue where external links at the bottom of the page were not clickable.
 - Fixed an issue where mentions/unreads did not take precedence when setting the badge/tray icon.
 - Fixed an issue where the macOS dock would stay open after clicking the tray icon.
+- Fixed an issue where the URL view would persist once the user had moved their mouse off of an external URL.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
