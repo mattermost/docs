@@ -1,12 +1,26 @@
 # Mattermost mobile apps changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.51.0 Release](#release)
-- [1.50.1 Release](#id1)
-- [1.50.0 Release](#id5)
-- [1.49.1 Release](#id11)
-- [1.49.0 Release](#id14)
-- [1.48.2 Release](#id20)
+- [1.51.1 Release](#release)
+- [1.51.0 Release](#id1)
+- [1.50.1 Release](#id5)
+- [1.50.0 Release](#id9)
+- [1.49.1 Release](#id15)
+- [1.49.0 Release](#id18)
+
+## 1.51.1 Release
+- Release Date: April 22, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Bug Fixes
+
+#### All apps
+ - Fixed an issue with logging in when multiple SSO methods are enabled while email/password is disabled.
 
 ## 1.51.0 Release
 - Release Date: April 16, 2022
