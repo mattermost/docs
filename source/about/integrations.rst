@@ -31,7 +31,7 @@ Plugins are the most comprehensive way to add new features and customization to 
 Prebuilt plugins are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `build your own plugin <https://developers.mattermost.com/integrate/plugins/>`__.
 
 .. note::
-    Mattermost plugins aren't available in Mattermost Cloud deployments.
+    Custom Mattermost plugins aren't available in Mattermost Cloud deployments - you are limited to the plugins that are available in the Cloud Marketplace.
 
 Bots
 -----
