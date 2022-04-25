@@ -27,7 +27,7 @@ A slash command is similar to an outgoing webhook, but instead of listening to a
 What does Slack-compatible mean?
 --------------------------------
 
-Slack compatible means that Mattermost accepts integrations that have a payload in the same format as Slack. If you have a Slack integration, you should be able to set it up in Mattermost without changing the format.   
+Slack compatible means that Mattermost accepts integrations that have a payload in the same format as Slack's legacy "Message Attachment" payload. If you have a Slack integration, you should be able to set it up in Mattermost without changing the format of the message being sent over.   
 
 What if I have a webhook from somewhere other than Slack?
 ---------------------------------------------------------
