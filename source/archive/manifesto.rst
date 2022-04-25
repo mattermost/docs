@@ -1,3 +1,5 @@
+:nosearch:
+
 About the Mattermost Open Source Project 
 ========================================
 

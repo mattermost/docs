@@ -1,3 +1,5 @@
+:nosearch:
+
 :orphan:
 
 Mattermost Integration Guide

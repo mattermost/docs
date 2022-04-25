@@ -1,3 +1,5 @@
+:nosearch:
+
 Custom Terms of Service (Beta)
 ==============================
 

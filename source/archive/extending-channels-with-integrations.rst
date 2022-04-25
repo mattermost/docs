@@ -1,3 +1,5 @@
+:nosearch:
+
 Extending Channels with Integrations
 ====================================
 

@@ -1,3 +1,5 @@
+:nosearch:
+
 Guest Accounts (Beta)
 =====================
 

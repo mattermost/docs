@@ -1,3 +1,5 @@
+:nosearch:
+
 Core Team Handbook
 ==================
 

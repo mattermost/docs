@@ -1,3 +1,5 @@
+:nosearch:
+
 About Teams, Channels, and Messages
 ===================================
 
