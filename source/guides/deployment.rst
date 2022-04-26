@@ -21,7 +21,7 @@ Deploy Mattermost for production use
   :alt: Available for Mattermost Self-Hosted deployments.
 
 
-When you're ready to install Mattermost server for production use, you have three options: deploy using Docker, deploy using a Ubuntu option, or deploy from a compressed tarball.
+When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
 
 .. tip::
 
@@ -31,17 +31,22 @@ When you're ready to install Mattermost server for production use, you have thre
 
 .. tabs::
 
-    .. tab:: Docker
-
-      .. include:: ../install/common-prod-deploy-docker.rst
-
     .. tab:: Ubuntu
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
-
+        
     .. tab:: Tar
 
       .. include:: ../install/common-prod-deploy-tar.rst   
+        
+    .. tab:: Kubernetes
+
+      .. include:: ../install/common-prod-deploy-kubernetes.rst
+    
+    .. tab:: Docker
+
+      .. include:: ../install/common-prod-deploy-docker.rst
+    
 
 Prepare for your Mattermost deployment
 --------------------------------------
