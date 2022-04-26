@@ -19,6 +19,7 @@ Announcement banner
 You can display an announcement banner notification that's visible to all users on the system.
 
 .. image:: ../images/announcement-banner-1106x272.png
+  :alt: Display announcement banner notification in Mattermost
   :width: 1106
   :height: 272
   :alt: Shows the announcement banner at the top of the user's screen.
