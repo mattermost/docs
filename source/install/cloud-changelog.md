@@ -39,6 +39,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where marking the last post in a thread as unread didn't mark the thread as unread.
 
 ### Known Issues
+ - The Cloud login screen is not centered [MM-43719](https://mattermost.atlassian.net/browse/MM-43719).
  - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
  - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
