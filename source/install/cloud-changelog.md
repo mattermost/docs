@@ -31,7 +31,7 @@ Latest Mattermost Cloud releases:
 
 #### Bug Fixes
  - Fixed an issue where permalinks to direct and group message posts did not show a preview.
- - Fixed an issue where a mention badge was unexpectedly present in addition to the thread item bolding when marking a root post with a mention as unread on the right-hand side with Collapsed Reply Threads enabled.
+ - Fixed an issue when Collapsed Reply Threads are enabled where marking a root post with a mention as unread displayed both a mention badge and the thread item being bolded.
  - Fixed an issue where the public link to generate the API was getting called even if public links were disabled.
  - Fixed an issue with onboarding page view events.
  - Fixed an issue where the custom emoji **Next** button was out of view when a banner was present.
