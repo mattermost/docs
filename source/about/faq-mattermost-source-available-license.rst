@@ -18,7 +18,7 @@ In all cases, any third party components remain licensed under their original li
 An example directory layout, using an Enterprise license, is shown below:
 
 .. image:: ../images/source-available-license.png
-:alt: Get source access under Mattermost Source Available License
+:alt: Get source access under Mattermost Source Available License.
 
 Why are you changing the licensing model?
 -----------------------------------------
