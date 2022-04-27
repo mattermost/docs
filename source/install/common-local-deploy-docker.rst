@@ -1,3 +1,5 @@
+:nosearch:
+
 Preview Mattermost using Docker
 -------------------------------
 

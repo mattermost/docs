@@ -182,3 +182,4 @@ The process described below needs to be completed prior to proceeding with the M
   Once complete, access your Mattermost instance and confirm that the database has been restored.
 
 .. include:: faq_kubernetes.rst
+  :start-after: :nosearch:
