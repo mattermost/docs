@@ -14,6 +14,7 @@ Latest Mattermost Releases:
 ## Release v6.6 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v6.6.1, released **
+  - Replaced an expired GPG key which is used to verify the enterprise binary.
   - Fixed an issue with null values in the OAuthApps table's MattermostAppID column, which was introduced in 6.6.0 [MM-43500](https://mattermost.atlassian.net/browse/MM-43500).
   - Fixed an issue where the Workspace Optimization dashboard mentioned that the workspace had reached over 100 users, when it only had 16 users [MM-43215](https://mattermost.atlassian.net/browse/MM-43215). 
 - **v6.6.0, released 2022-04-16**
