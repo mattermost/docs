@@ -32,16 +32,19 @@ Download group policy and MSI installer files
 1. Using a newly created Windows VM or dedicated Windows computer, make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise).
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00001.png
+      :alt: Make sure to use a Windows version that supports Edit Group Policy
 
 2. Navigate to the `Mattermost Desktop <https://github.com/mattermost/desktop>`__ repo on `Github.com <https://github.com/>`__.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
+      :alt: Navigate to the `Mattermost Desktop repo on `Github.com
 
 3. Navigate to the release page for `version v5.0.4 <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
 
 4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.0.4.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
+      :alt: Download the source.zip file as well to extract group policy files.
 
 Installing group policy files locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,22 +52,27 @@ Installing group policy files locally
 1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.0.4.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
+      :alt: Browse to the folder the above files were downloaded to and unzip the desktop-5.0.4.zip file in place
 
 2. Navigate to the unzipped ``desktop-5.0.4\resources\windows\gpo`` folder and copy the contents.
 
-   .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
+   .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png 
+      :alt: Navigate to the unzipped desktop-5.0.4\resources\windows\gpo folder and copy the contents.
 
 3. Navigate to the ``C:\Windows\PolicyDefinitions`` folder and paste the files copied in the last step. 
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00006.png
+      :alt: Navigate to the C:\Windows\PolicyDefinitions folder and paste the files copied in the last step.
 
 4. Verify the ``mattermost.admx`` file is in the ``C:\Windows\PolicyDefinitions`` folder.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00007.png
+      :alt: Verify the mattermost.admx file is in the C:\Windows\PolicyDefinitions folder.
 
 5. Verify the ``mattermost.adml`` file is in the ``C:\Windows\PolicyDefinitions\en-US`` folder.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00008.png
+      :alt: Verify the mattermost.adml file is in the C:\Windows\PolicyDefinitions\en-US folder.
 
 Notes:
 
@@ -77,6 +85,7 @@ Configure Mattermost using group policy settings
 1. Run the ``Edit group policy`` application by clicking ``Start``, typing ``gpedit`` into the search field and clicking on the resulting ``Edit group policy`` search option.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00009.png
+      :alt: Run the Edit group policy application by clicking Start, typing gpedit into the search field and clicking on the resulting Edit group policy search option.
 
 2. In the ``Edit group policy`` window, navigate to ``Local Computer Policy\Computer Configuration\Administrative Templates\Mattermost``. A list of the available policies can be found `here <https://docs.mattermost.com/install/desktop.html#group-policies-gpo-and-msi-installer-support-alpha>`_. In this example, double click on ``DefaultServerList`` to set one or more default servers that will appear on app launch. 
 
@@ -85,12 +94,15 @@ Configure Mattermost using group policy settings
 3. In the resulting window for ``DefaultServerList``, click on ``Enabled`` to turn the feature on and then click on the ``Show…`` button in the ``Options:`` section of the window to add default servers.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00011.png
+   
+      :alt: In the resulting window for ``DefaultServerList``, click on ``Enabled`` to turn the feature on and then click on the ``Show…`` button in the ``Options:`` section of the window to add default servers.
 
 4. In the resulting window, add desired Mattermost servers using a memorable name (i.e. Community) and the web url of the Mattermost server (i.e. https://community.mattermost.com).
 
 5. Click the ``OK`` button twice and close the ``Edit group policy`` application.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00012.png
+      :alt: Click the ``OK`` button twice and close the ``Edit group policy`` application.
 
 Verify group policy settings have been applied
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,6 +116,7 @@ Verify group policy settings have been applied
 3. Close the ``Registry Editor`` once verified.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00014.png
+      :alt: Close the ``Registry Editor`` once verified.
 
 Install Mattermost Desktop using the MSI installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,14 +124,17 @@ Install Mattermost Desktop using the MSI installer
 1. Back in the folder the MSI installer was downloaded to, double click on the MSI installer to begin the Mattermost Desktop installation process.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00015.png
+      :alt: Double click on the MSI installer to begin the Mattermost Desktop installation process.
 
 2. Installation of the MSI requires admin permission, so accept the resulting request to allow the installer to make changes to your device.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00016.png
+      :alt: Accept the resulting request to allow the installer to make changes to your device.
 
 3. Click the ``Finish`` button when the installation is complete.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00017.png
+      :alt: Click the ``Finish`` button when the installation is complete.
 
 Verify group policy settings in the installed Desktop App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,6 +144,7 @@ Verify group policy settings in the installed Desktop App
 2. Verify the app loads the first server defined in the ``Edit group policy`` app.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00018.png
+      :alt: Verify the app loads the first server defined in the Edit group policy app.
 
 Silent installation guide
 -------------------------
