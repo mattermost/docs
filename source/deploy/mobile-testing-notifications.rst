@@ -27,6 +27,7 @@ Then use the following instructions to confirm push notifications are working pr
 2. (iOS) When the app asks whether you wish to receive notifications, **confirm you want to receive notifications**.
 
   .. image:: ../images/mobile_push_prompt.png
+     :alt: Confirm if you want to receive push notifications from Mattermost
     :width: 300 px
 
 3. Confirm push notifications are enabled for “Account A”.
@@ -34,13 +35,16 @@ Then use the following instructions to confirm push notifications are working pr
   A. Go to the notification settings menu in the mobile app.
 
   .. image:: ../images/mobile_notification_settings.png
+     :alt: Confirm enabling of push notification - Clicking on settings icon > Account Settings > Notifications
 
   B. Check that the mobile push notifications are set to send.
 
   .. image:: ../images/mobile_push_send_for.png
+     :alt: Mobile push notifications are set to send when there is any activity in Mattermost
     :width: 300 px
 
   .. image:: ../images/mobile_push_send_when.png
+     :alt: Mobile push notifications are set to send when your online status matches the selection above in Mattermost
     :width: 300 px
 
 4. Have “Account A” put the app to background or close the app.
