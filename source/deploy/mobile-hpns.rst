@@ -90,7 +90,8 @@ Configuring your existing Mattermost instance to use the Mattermost HPNS is a si
 - Mattermost Enterprise Edition: ``https://push.mattermost.com``
 
 .. image:: ../images/mobile_hpns.png
-
+   :alt: Configure your existing Mattermost instance to use the Mattermost HPNS through System Console > Environment > Push Notification Server
+   
 5. Review the Mattermost Terms of Service and the Mattermost Privacy Policy, then select the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy" to acknowledge that you understand the terms of use.
 
 .. note:: 
