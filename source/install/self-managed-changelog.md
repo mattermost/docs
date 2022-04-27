@@ -16,8 +16,8 @@ Latest Mattermost Releases:
 - **v6.6.1, released **
   - Mattermost v6.6.1 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Replaced an expired GPG key which is used to verify the enterprise binary.
-  - Fixed an issue with null values in the OAuthApps table's MattermostAppID column, which was introduced in 6.6.0 [MM-43500](https://mattermost.atlassian.net/browse/MM-43500).
-  - Fixed an issue where the Workspace Optimization dashboard mentioned that the workspace had reached over 100 users, when it only had 16 users [MM-43215](https://mattermost.atlassian.net/browse/MM-43215). 
+  - Fixed an issue with null values in the OAuthApps table's MattermostAppID column, which was introduced in v6.6.0 [MM-43500](https://mattermost.atlassian.net/browse/MM-43500).
+  - Fixed an issue where the Workspace Optimization dashboard mentioned that the workspace had reached over 100 users, when fewer than 100 users were registered [MM-43215](https://mattermost.atlassian.net/browse/MM-43215).
 - **v6.6.0, released 2022-04-16**
   - Original 6.6.0 release
 
