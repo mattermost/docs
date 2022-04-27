@@ -293,6 +293,7 @@ In a proxy-aware configuration, a `pre-proxy relay <https://docs.mattermost.com/
 See a sample architectural overview below: 
 
 .. image:: ../images/mobile-pre-proxy-relay.png
+   :alt: Deploy Mattermost in a proxy-aware configuration with a pre-proxy relay
 
 This enables the **pre-proxy relay** to act as the `APNS <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the pre-proxy relay via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the pre-proxy relay.
 
@@ -312,6 +313,7 @@ Ths **post-proxy relay** `can be configured using the Mattermost Push Proxy inst
 In place of a DMZ, you can also host in a trusted cloud environment such as AWS or Azure depending on your internal approvals and policies. 
 
 .. image:: ../images/mobile-post-proxy-relay.png
+   :alt: Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment
 
 Whitelist Mattermost push notification proxy to bypass your corporate proxy server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
