@@ -61,7 +61,7 @@ Linux
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added support for Calls for the Desktop App.
+- Added the ability in Calls to select which window to share when screensharing.
 - Added a new config setting "Launch app minimized" to be able to auto-launch the app minimized when the application is launched on startup.
 - When the **Add Server** modal pops up for the first time when the app is launched, the modal now stays open instead of closes on mouse click until the first server has been added.
 - Added a new setting/preference to always open the Desktop App in full screen.
@@ -73,7 +73,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v23.0.8. Electron is the underlying technology used to build the Desktop app.
+- Major version upgrade of Electron to v18.0.3. Electron is the underlying technology used to build the Desktop app.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
