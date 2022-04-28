@@ -148,6 +148,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v6.5 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v6.5.1, released **
+  - Mattermost v6.5.1 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/). 
   - Fixed an issue on schema migrations where the Mattermost server failed to restart after having an error in the migration process.
   - Fixed an issue where the Get trial endpoint did not seem to complete.
 - **v6.5.0, released 2022-03-16**
@@ -279,6 +280,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v6.4 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 - **v6.4.3, released **
+  - Mattermost v6.4.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue on schema migrations where the Mattermost server failed to restart after having an error in the migration process.
 - **v6.4.2, released 2022-03-10**
   - Mattermost v6.4.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -378,6 +380,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 - **v6.3.8, released **
+  - Mattermost v6.3.8 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Ping endpoint now can receive a device ID, which will report whether the device is able to receive push notifications.
 - **v6.3.7, released 2022-04-13**
   - Fixed an issue where users were able to attempt to create private playbooks with the Professional license.
