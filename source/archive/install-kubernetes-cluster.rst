@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _install-kubernetes-cluster:
 
 Setting Up a Kubernetes cluster

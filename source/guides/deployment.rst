@@ -3,8 +3,6 @@ Deploy Mattermost
 
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
-.. include:: ../install/common-local-deploy-docker.rst
-
 Deploy Mattermost for production use
 ------------------------------------
 
@@ -21,7 +19,7 @@ Deploy Mattermost for production use
   :alt: Available for Mattermost Self-Hosted deployments.
 
 
-When you're ready to install Mattermost server for production use, you have three options: deploy using Docker, deploy using a Ubuntu option, or deploy from a compressed tarball.
+When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
 
 .. tip::
 
@@ -31,17 +29,26 @@ When you're ready to install Mattermost server for production use, you have thre
 
 .. tabs::
 
-    .. tab:: Docker
-
-      .. include:: ../install/common-prod-deploy-docker.rst
-
     .. tab:: Ubuntu
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
-
+        :start-after: :nosearch:
+        
     .. tab:: Tar
 
-      .. include:: ../install/common-prod-deploy-tar.rst   
+      .. include:: ../install/common-prod-deploy-tar.rst
+        :start-after: :nosearch: 
+        
+    .. tab:: Kubernetes
+
+      .. include:: ../install/common-prod-deploy-kubernetes.rst
+        :start-after: :nosearch:
+    
+    .. tab:: Docker
+
+      .. include:: ../install/common-prod-deploy-docker.rst
+        :start-after: :nosearch:
+    
 
 Prepare for your Mattermost deployment
 --------------------------------------
@@ -85,10 +92,10 @@ Server installation
     Install Mattermost from Tar </install/install-tar>
     Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>
     Kubernetes </install/install-kubernetes>
+    About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>
     Debian Buster </install/install-debian>
     RHEL 8 </install/install-rhel-8>
     CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>
-
 
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>`
 * :doc:`Deploy Mattermost on Docker </install/install-docker>`
@@ -96,6 +103,7 @@ Server installation
 * :doc:`Install Mattermost from Tar </install/install-tar>`
 * :doc:`Ubuntu 20.04 LTS </install/installing-ubuntu-2004-LTS>`
 * :doc:`Kubernetes </install/install-kubernetes>`
+* :doc:`About the Mattermost Kubernetes Operator </install/mattermost-kubernetes-operator>`
 * :doc:`Debian Buster </install/install-debian>`
 * :doc:`RHEL 8 </install/install-rhel-8>`
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
