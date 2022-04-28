@@ -83,7 +83,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``JobSettings`` in ``config.json``:
     - Added a new cleanup job to regularly remove outdated config entries from the database. The threshold for this setting can be adjusted with ``CleanupConfigThresholdDays``.
  - Under ``BatchSize`` in ``config.json``:
-    - Elasticsearch and Bleve indexing have been revamped to be much more efficient and faster. The config parameter BulkIndexingTimeWindowSeconds for both elasticsearch and bleve is now deprecated and no longer used. A new config parameter called BatchSize has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload.
+    - Elasticsearch and Bleve indexing have been revamped to be much more efficient and faster. The config parameter ``BulkIndexingTimeWindowSeconds`` for both Elasticsearch and bleve is now deprecated and no longer used. A new config parameter called ``BatchSize`` has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload.
 
 #### API Changes
  - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
