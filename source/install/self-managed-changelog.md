@@ -11,6 +11,111 @@ Latest Mattermost Releases:
 - [Release v6.4 - Feature Release](#release-v6-4-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
 
+## Release v6.7 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2022-05-16**
+
+### Important Upgrade Notes
+ - New schema changes were introduced in the form of a new index. The following notes the test results for the schema changes:
+    - MySQL 7M Posts - ~17s (Instance: db.r5.xlarge)
+    - MySQL 9M Posts - 2min 12s (Instance: db.r5.large)
+    - Postgres 7M Posts - ~9s  (Instance: db.r5.xlarge)
+ - For customers wanting a zero downtime upgrade, they are welcome to apply this index prior to doing the upgrade. This is fully backwards compatible and will not acquire any table lock or affect any existing operations on the table. 
+    - For MySQL: `CREATE INDEX idx_posts_create_at_id on Posts(CreateAt, Id) LOCK=NONE;`
+    - For Postgres: `CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_create_at_id on posts(createat, id);`
+
+**IMPORTANT:** If you upgrade from a release earlier than v6.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Playbooks Updates
+ - 
+
+#### Boards Updates
+ - 
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Files and Pinned Messages to the right-hand side Channel Info.
+ - Improved the New Channel modal user interface.
+ - Added the channel members list to the right-hand side Channel Info modal.
+ - Added the ability to invite new users to a team from the **Add to channel** modal.
+ - To be able to download images and copy public links for images quicker, a copy URL and download buttons were added to image thumbnails.
+ - Added the ability to have one-character long channel names.
+ 
+#### Performance
+ - Improved the performance of ``GetTeamsUnreadForUser`` when Collapsed Reply Threads is enabled.
+ - Added an index to the ``UserGroups DisplayName`` for improved autosuggest query performance.
+ - Improved the performance of permission selectors.
+ - Improved the performance of configuration read/writes if the configuration is stored on a database.
+
+#### Administration
+ - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
+ - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
+ - Added a ``threadsOnly`` query parameter for getting user threads.
+ - The Elasticsearch indexing job is resumable now. Stopping a server while the job is running will put the job in pending status and will resume the job when the server starts. The job can still be explicitly canceled via the **System Console**.
+ - Added a new stats field under the channel object for graphql.
+ - Added a new “License" button in **System Console > Edition and License**.
+
+### Bug Fixes
+ - Fixed an issue where permalinks to direct and group message posts did not show a preview.
+ - Fixed an issue when Collapsed Reply Threads are enabled where marking a root post with a mention as unread displayed both a mention badge and the thread item being bolded.
+ - Fixed an issue where the public link to generate the API was getting called even if public links were disabled.
+ - Fixed an issue with onboarding page view events.
+ - Fixed an issue where the custom emoji **Next** button was out of view when a banner was present.
+ - Fixed an issue where it would appear that a user had a negative number of unread threads.
+ - Fixed an issue where marking the last post in a thread as unread didn't mark the thread as unread.
+ - Restored the rendering of main menu items from plugins in non-mobile view.
+ - Fixed the overflow of text in **Manage Channel Members** modal title.
+ - Fixed an issue where pagination was broken in **System Console > Groups**.
+ - Fixed an issue where thread updates did not show correctly after the computer woke up.
+ - Fixed an issue where a negative unread count sometimes appeared with Collapsed Reply Threads enabled.
+ - Fixed an issue where the modal to create a Custom Group got closed when pressing ENTER.
+ - Fixed an issue where group mention did not get highlighted in Professional License.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``EmailSettings`` in ``config.json``:
+    - Added ``EnableInactivityEmail`` setting to be able to disable inactive server email notifications.
+ - Under ``JobSettings`` in ``config.json``:
+    - Added a new cleanup job to regularly remove outdated config entries from the database. The threshold for this setting can be adjusted with ``CleanupConfigThresholdDays``.
+ - Under ``BatchSize`` in ``config.json``:
+    - Elasticsearch and Bleve indexing have been revamped to be much more efficient and faster. The config parameter BulkIndexingTimeWindowSeconds for both elasticsearch and bleve is now deprecated and no longer used. A new config parameter called BatchSize has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload.
+
+#### API Changes
+ - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/reactions`` and ``GET /api/v4/users/me/top/reactions`` to get top reactions for a team and user.
+ - Fixed an issue where the ``UpdateUser`` API endpoint required a ``create_at`` field.
+ - ``api/v4/file/s3_test`` now requires ``FileSettings`` to be all set to run.
+ - ``api/v4/email/test`` now requires ``EmailSettings`` to be all set to run.
+ - Added ``fromWebhook`` property to the webapp plugin API.
+
+### Go Version
+ - v6.7 is built with Go ``v1.18.0``.
+
+### Open Source Components
+ - 
+
+### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+
+### Contributors
+
+
+
 ## Release v6.6 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 **Release Day: 2022-04-16**
