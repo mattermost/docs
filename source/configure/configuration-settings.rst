@@ -5238,43 +5238,31 @@ Changes to properties in this section require a server restart before taking eff
 Access the following configuration settings in the System Console by going to **Compliance > Data Retention Policies**.
 
 
-Global retention policy for messages
+Global Retention Policy for Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |enterprise| |cloud| |self-hosted|
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps messages and files across all teams and channels. Doesn't apply to custom retention policies.
+Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for messages <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration setting to be set to ``true``.
 
-If **Days** or **Years** is chosen, set how many days or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum time is one day.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-and
+By default, messages are kept forever. If **Days** or **Years** is chosen, set how many days or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum time is one day.
 
 +-------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with numerical input. |
 +-------------------------------------------------------------------------------------------------+
 
-Global retention policy for files
+Global Retention Policy for Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |enterprise| |cloud| |self-hosted|
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies.
+Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for files <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ configuration setting to be set to ``true``.
 
-If **Days** or **Years** is chosen, set how many days or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------+
-
-and
+By default, messages are kept forever. If **Days** or **Years** is chosen, set how many days or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileRetentionDays": 365`` with numerical input. |
@@ -6094,6 +6082,39 @@ Settings configurable only in ``config.json``
 ----------------------------------------------
 
 There are a number of settings customizable in ``config.json`` which are unavailable in the System Console and require updating from the file itself.
+
+Data Retention Policies
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Global Retention Policy for Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |cloud| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+**True**: Messages can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+
+**False**: Messages can't be deleted as part of a scheduled data retention job.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------+
+
+Enable Global Retention Policy for Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |cloud| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+**True**: Files can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+
+**False**: Files can't be deleted as part of a scheduled data retention job.
+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------+
 
 Service Settings
 ~~~~~~~~~~~~~~~~
