@@ -15,6 +15,9 @@ Latest Mattermost Releases:
 
 **Release Day: 2022-05-16**
 
+### Compatibility
+ - Updated Chrome recommended minimum version to v100+.
+
 ### Important Upgrade Notes
  - New schema changes were introduced in the form of a new index. The following notes the test results for the schema changes:
     - MySQL 7M Posts - ~17s (Instance: db.r5.xlarge)
