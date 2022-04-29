@@ -101,7 +101,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v6.7 is built with Go ``v1.18.0``.
 
 ### Open Source Components
- - 
+ - Added ``react-native-math-view`` to https://github.com/mattermost/mattermost-mobile.
+ - Removed ``flux`` and ``react-slidedown`` from https://github.com/mattermost/mattermost-webapp.
+ - Added ``@mattermost/compass-icons``, ``bootstrap-dark``, ``fs-extra``, and ``pretty-bytes`` to https://github.com/mattermost/desktop.
 
 ### Known Issues
  - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
