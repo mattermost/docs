@@ -47,10 +47,14 @@ Breaking Changes / Upgrade Notes
 Highlights
 ~~~~~~~~~~~~~~~
 
-- Added a Desktop App auto-updater. The app now automatically checks for new updates on app start up.
+- Added a Desktop App auto-updater. The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
 
 Improvements
 ~~~~~~~~~~~~~~~
+
+Mac
+^^^^^^
+- Mattermost can now be installed on the Mac App Store (link). Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
 
 Linux
 ^^^^^^
@@ -105,8 +109,6 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
-- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
-- Pressing Enter multiple times during Basic Authentication causes a crash.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
 
 Contributors
