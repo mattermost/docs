@@ -319,8 +319,6 @@ redirects = {
 	"https://docs.mattermost.com/manage/cloud-reporting.html",
 "cloud/cloud-administration/data-retention-policy.html":
         "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
-"cloud/cloud-administration/site-configuration.html":
-        "https://docs.mattermost.com/configure/cloud-site-configuration.html",
 "cloud/cloud-administration/saml-technical.html": 
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
 "cloud/cloud-administration/sso-saml.html": 
