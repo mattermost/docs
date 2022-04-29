@@ -37,6 +37,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Updated the NPS plugin to version 1.2.0.
  - Added Files and Pinned Messages to the right-hand side Channel Info.
  - Improved the New Channel modal user interface.
  - Added the channel members list to the right-hand side Channel Info modal.
