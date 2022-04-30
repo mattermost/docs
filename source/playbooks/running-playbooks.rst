@@ -25,7 +25,7 @@ Lastly, if you've configured a broadcast channel and enabled it, when the playbo
  
 
 .. image:: ../images/Playbook-dashboard.png
-   :alt: View and track playbook information.
+   :alt: View and track playbook information through Toggle Playbook List icon in a channel header
 
 Join a playbook run
 -------------------
@@ -47,7 +47,7 @@ If you aren't able to open the checklists to see completed tasks, hover over any
 * To execute a slash command associated with a task, select **Run** next to the listed slash command. Configured slash commands may be run as often as necessary.
 
 .. image:: ../images/IC-ad-hoc-tasks.gif
-
+   :alt: Work with checklist through playbook run
 Change owners
 ~~~~~~~~~~~~~
 
