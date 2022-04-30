@@ -144,16 +144,19 @@ To enable Team Admins to access their team's statistics:
 1. Go to **System Console > User Management > System Roles**, then edit the **Viewer** System Admin role. 
 
 .. image:: ../images/edit-viewer-system-admin-role.png
+   :alt: Enable Team Admins to access their team's statistics by going through System Console > User Management > System Roles
 
 2. Under **Privileges**, expand the **Reporting** section, set **Team Statistics** to **Read only**, then set **Site Statistics** and **Server Logs** to **No access**.
 
 3. Set all other privileges to **No access** to restrict all users with the **Viewer** role to access only the **Team Statistics** page in the System Console.   
 
 .. image:: ../images/restrict-role-access.png
+   :alt: Restrict all users with the Viewer role by giving No Access privileges
 
 4. Under **Assigned People**, select **Add People** to assign Team Admins to the **Viewer** role, and enable them to access their team's statistics.
 
 .. image:: ../images/assign-people-to-system-role.png
+   :alt: Select Add People under Assigned People to assign Team Admins to the Viewer role
 
 5. Select **Save**.
 
