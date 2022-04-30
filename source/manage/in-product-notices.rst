@@ -29,7 +29,8 @@ Administrator notices
 Administrator notices inform System Admins when a new server version is available, when external dependencies are being deprecated, or when server upgrades are recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
 
 .. image:: ../images/notices_admin.png
-
+   :alt: Administrator notices inform System Admins when a new server version is available
+   
 Administrator notices can be disabled in the **System Console > Notices** page.
 
 End user notices
@@ -38,6 +39,7 @@ End user notices
 End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
 
 .. image:: ../images/notices.png
+   :alt: End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available.
 
 Frequently asked questions (FAQs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,8 +70,10 @@ Admin Advisor notices are designed to provide guidance and assist in choosing fe
 When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 .. image:: ../images/mattermost_admin_advisor_banner.png
+   :alt: Admin Advisor notices are triggered based on usage such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 .. image:: ../images/mattermost_admin_advisor_bot.png
+   :alt: System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support.
 
 System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
 
