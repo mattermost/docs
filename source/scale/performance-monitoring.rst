@@ -75,7 +75,7 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
-  :alt: Performance monitoring options available in the System Console
+  :alt: Enable performance monitoring options through System Console > Environment > Performance Monitoring > Enable Performance Monitoring > true
 
 4. To test that the server is running, go to ``<ip>:<port>/metrics``.
 
