@@ -269,4 +269,4 @@ Night Owl Dark Theme
 Dark Theme (Desktop app only)
 -----------------------------
 
-The Mattermost Desktop App respects the System Preferences appearance setting of your computer's operating system to set the theme of the title bar.
+The Mattermost Desktop App applies the System Preferences appearance setting of your computer's operating system to set your Mattermost instance to Light or Dark Mode.
