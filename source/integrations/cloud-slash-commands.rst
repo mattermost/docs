@@ -73,6 +73,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 7. Select **Save**. On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../images/slash_commands_token.png
+   :alt: Add custom slash commands
   :width: 500 px
 
 8. Next, write your external application. Include a function which receives HTTP POST or HTTP GET requests from Mattermost. The request will look something like this:
@@ -129,6 +130,7 @@ If your integration sends back a JSON response, make sure it returns the ``appli
 which would render in Mattermost as:
 
 .. image:: ../images/weatherBot.png
+   :alt: This is how using slash commands for your integrations bot gets rendered in Mattermost
   
 11. You're all set! See `developer documentation <https://developers.mattermost.com/integrate/slash-commands>`__ for details on what parameters are supported by slash commands. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__.
 
