@@ -63,20 +63,24 @@ To configure alerts, set an appropriate threshold and enable notifications. Enab
 1. For each chart, click on the chart name and click **Edit**:
 
 .. image:: ../images/perf-1.png
+   :alt: Edit pre-configuration on CPU Utilization Rate
 
 2. Then click on the **Alert** tab:
 
-.. image:: ../images/perf-2.png
+.. image:: ../images/perf-2.png 
+   :alt: Clicking on Alert tab
 
 3. The alert threshold, which will be discussed in the sections below, is the last field under **Conditions** (the one set to 600 in the screenshot above).
 
 See the sections below for how to set the threshold for each individual chart. If you would like to add your own custom alert conditions, configure them here.
 
 .. image:: ../images/perf-3.png
+   :Configure your own custom alert conditions
 
 4. To enable the notifications for any alerts, click on the **Notification** tab on the left and select **Mattermost Alerts Channel** under **Send to**:
 
 .. image:: ../images/perf-4.png
+   :alt: Enable notifications for any alerts by Notification > Send to > Mattermost Alert Channels 
 
 Enter a message if you would like to add more context to the alert.
 
@@ -94,6 +98,7 @@ It’s best to set the alert threshold based on your average CPU utilization and
 For example, on our community server, we have the threshold set to 15%:
 
 .. image:: ../images/perf-5.png
+   :alt: Set the alert threshold based on your average CPU utilization
 
 This value is below our maximum CPU usage and above our average usage at peak times. Therefore, we will get alerts if we begin experiencing unusually high CPU usage.
 
@@ -105,6 +110,7 @@ Memory Usage tracks the megabytes of RAM that your app servers are using. Set th
 Here’s how we have the alert set on our Community server: 
 
 .. image:: ../images/perf-6.png
+   :alt: Set the alert threshold for Memory Usage that tracks the megabytes of RAM that your app servers are using
 
 Number of Goroutines
 ---------------------
@@ -116,6 +122,7 @@ Set the threshold somewhere above the average number of goroutines you see durin
 Here’s how we have it set on our Community server:
 
 .. image:: ../images/perf-7.png
+   :alt: Set the threshold somewhere above the average number of goroutines you see during peak load times.
 
 Number of API errors per second
 --------------------------------
@@ -127,6 +134,7 @@ That said, errors against the REST API can be indicative of deployment and other
 Here’s how it’s set on our Community server:
 
 .. image:: ../images/perf-8.png
+   :alt: Set the threshold alerts for Number of API errors per second
 
 Mean API request time
 ----------------------
@@ -138,6 +146,7 @@ You’ll want to set the alert threshold a little above what the mean request ti
 Here’s how it’s set on our community server:
 
 .. image:: ../images/perf-9-b.png
+   :alt: Set threshold alerts a little above what the mean request time is during your peak load times.
 
 Plugin hooks
 -------------
