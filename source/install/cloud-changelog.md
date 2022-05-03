@@ -29,7 +29,6 @@ Latest Mattermost Cloud releases:
  - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels``.
 
 #### Bug Fixes
- - Fixed an issue where Workspace Optimization did not load on subpath servers.
  - Fixed an issue with ADA Accessibility where screen readers did not TAB to or read "This channel has guests" in the channel header bar.
  - Fixed an issue where the at-mention autosuggest of users was no longer grouped by channel membership status.
  - Fixed an issue where the New Messages toast was not fully clickable in the mobile web view.
