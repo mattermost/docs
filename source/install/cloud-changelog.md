@@ -4,12 +4,49 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-05-11](#release-2022-05-11)
 - [Release 2022-04-28](#release-2022-04-28)
 - [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
 - [Release 2022-03-08](#release-2022-03-08)
-- [Release 2022-03-02](#release-2022-03-02)
+
+## Release 2022-05-11
+
+### Improvements
+
+#### User Interface (UI)
+ - For toggling the channel Info in the right-hand side, a shortcut ``CTRL(or cmd)+Alt+I`` was added.
+ - Added an "Unread Channels" section to the channel switcher and included "Threads" in the results.
+
+#### Performance
+ - Improved the performance of aggregate queries related to Collapsed Reply Threads.
+
+#### Administration
+ - An email is now sent to Cloud Admins after upgrading their workspace.
+ - Added a new ``ConnectionId`` field to ``model.WebsocketBroadcast`` that allows broadcasting a message only to a specific connection.
+ - Timestamps are now enabled in the default audit configuration.
+ - Updated the **System Console** session lengths configurations to use the new hours unit, replacing the day. Also added ``ServiceSettings`` config changes:
+    - ``SessionLengthWebInDays`` changed to ``SessionLengthWebInHours``.
+    - ``SessionLengthMobileInDays`` changed to ``SessionLengthMobileInHours``.
+    - ``SessionLengthSSOInDays`` changed ``SessionLengthSSOInHours``.
+
+#### API Changes
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels``.
+
+#### Bug Fixes
+ - Fixed an issue where Workspace Optimization did not load on subpath servers.
+ - Fixed an issue with the timing of selector performance metrics.
+ - Fixed an issue with ADA Accessibility where screen readers did not TAB to or read "This channel has guests" in the channel header bar.
+ - Fixed an issue where the S3 **Test Connection** button deceptively failed unless the user pressed **Save** first.
+ - Fixed an issue where the at-mention autosuggest of users was no longer grouped by channel membership status.
+ - Fixed an issue where an error was logged when ``SendEmailNotifications`` was not true.
+ - Fixed an issue where the New Messages toast was not fully clickable in the mobile web view.
+
+### Known Issues
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-04-28
 
