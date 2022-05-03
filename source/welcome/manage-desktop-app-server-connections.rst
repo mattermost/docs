@@ -24,10 +24,9 @@ Using the Mattermost Desktop App, you can connect to multiple Mattermost servers
 
   .. tab:: Mattermost Desktop App v5.0 onwards
   
-    The **Server** list is located in the top left corner of the window and displays all servers available in your Desktop App environment. Drag to reorder the servers in the list. 
-    From the **Server** list, you can add, edit, and remove servers.
+    The **Server** list is located in the top left corner of the window and displays all servers available in your Desktop App environment. Drag to reorder the servers in the list. You can also navigate the server options using `keyboard shortcuts <https://docs.mattermost.com/welcome/keyboard-shortcuts.html>`__. From the **Server** list, you can add, edit, and remove servers.
     
-    **Adding Servers**
+    **Add a server**
     
     1. Select **Add a server**.
 
@@ -41,7 +40,7 @@ Using the Mattermost Desktop App, you can connect to multiple Mattermost servers
       .. image:: ../images/desktop-server-add2.png
           :alt: Connect the Desktop App to another Mattermost Server using options located in the top left corner of the Mattermost screen.
     
-    **Editing Servers**
+    **Edit a server**
     
     1. Hover over a server and select the **Edit** icon.
 
@@ -50,7 +49,7 @@ Using the Mattermost Desktop App, you can connect to multiple Mattermost servers
 
     2. Modify the server's display name or URL, then select **Save**.
     
-    **Removing Servers**
+    **Remove a server**
     
     Removing a server from your Desktop App doesn't delete its data. You can add the server back any time.
     
@@ -65,7 +64,7 @@ Using the Mattermost Desktop App, you can connect to multiple Mattermost servers
   
     Each server appears as a separate tab at the top of the window. Drag to reorder the server tabs. From the Server Management section, you can add, edit, and remove servers. 
 
-    **Adding Servers**
+    **Add a server**
 
     To add a new server to your Desktop App environment:
 
@@ -74,19 +73,19 @@ Using the Mattermost Desktop App, you can connect to multiple Mattermost servers
     3. In the **URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
     4. Select **Add**.
 
-    **Editing Servers**
+    **Edit a server**
 
     To edit a server in your Desktop App environment:
 
-    1. On Windows, go to **... > File > Settings**. On Mac, go to **Mattermost > Preferences**.
+    1. On Windows and Linux, go to **... > File > Settings**. On Mac, go to **Mattermost > Preferences**.
     2. Next to the server you want to update, select **Edit**.
     3. Edit **Name** and/or **URL**.
     4. Select **Save**.
 
-    **Removing Servers**
+    **Remove a server**
 
     To remove a server from your Desktop App environment:
 
-    1. On Windows, go to **... > File > Settings**. On Mac, go to **Mattermost > Preferences**.
+    1. On Windows and Linux, go to **... > File > Settings**. On Mac, go to **Mattermost > Preferences**.
     2. Next to the server or team that you want to remove, select **Remove**.
 
