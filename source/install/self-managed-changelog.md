@@ -57,9 +57,11 @@ Latest Mattermost Releases:
  - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
  - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
  - Added a ``threadsOnly`` query parameter for getting user threads.
- - The Elasticsearch indexing job is resumable now. Stopping a server while the job is running will put the job in pending status and will resume the job when the server starts. The job can still be explicitly canceled via the **System Console**.
  - Added a new stats field under the channel object for graphql.
- - Added a new “License" button in **System Console > Edition and License**.
+ - To allow Admins to add a new license without having to first remove the old one, a new “License" button was added to **System Console > Edition and License**.
+
+#### Enterprise Edition
+ - The Elasticsearch indexing job is resumable now. Stopping a server while the job is running will put the job in pending status and will resume the job when the server starts. The job can still be explicitly canceled via the **System Console**.
 
 ### Bug Fixes
  - Fixed an issue where permalinks to direct and group message posts did not show a preview.
