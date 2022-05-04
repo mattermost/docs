@@ -1155,7 +1155,9 @@ redirects = {
 "process/sg_rest_markup.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
 "process/software-requirements.html":
-        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements"
+        "https://handbook.mattermost.com/operations/research-and-development/product/development-process/software-requirements",
+"process/support.html#general-questions-for-any-issues":
+        "https://support.mattermost.com/hc/en-us/articles/360060662492-Opening-a-Support-Ticket-for-Self-Managed-Deployments"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 
