@@ -32,10 +32,9 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Playbooks Updates
- - 
-
-#### Boards Updates
- - 
+ - To keep procedures on track while reducing noise, task due dates can now be added to playbook runs (Professional and Enterprise editions).
+ - To stay informed about how teams use Playbooks in your servers, usage statistics can now be set up for playbooks.
+ - When a new member joins a channel, the refactored channel actions now allow a temporary welcome message to be automatically sent and the channel to be automatically categorized for each user.
 
 ### Improvements
 
@@ -119,8 +118,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Boards export and reimport duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
 
 ### Contributors
-
-
+ - 
 
 ## Release v6.6 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
