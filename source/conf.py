@@ -331,18 +331,38 @@ redirects = {
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html": 
         "https://forum.mattermost.org/c/docs/37",
+"configure/configuration-settings.html#channels":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
 "configure/configuration-settings.html#compliance-export-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
 "configure/configuration-settings.html#custom-terms-of-service-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#custom-terms-of-service",
 "configure/configuration-settings.html#enable-latex-rendering": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
+"configure/configuration-settings.html#groups":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
 "configure/configuration-settings.html#guest-access-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#guest-access",
+"configure/configuration-settings.html#permissions":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
 "configure/configuration-settings.html#plugins-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#plugins",
+"configuration-settings.html#reporting":
+        "https://docs.mattermost.com/configure/reporting-configuration-settings.html",
+"configure/configuration-settings.html#site-statistics":
+        "https://docs.mattermost.com/configure/reportingconfiguration-settings.html",
+"configure/configuration-settings.html#server-logs":
+        "https://docs.mattermost.com/configure/reportingconfiguration-settings.html",
+"configure/configuration-settings.html#teams":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
+"configure/configuration-settings.html#team-statistics":
+        "https://docs.mattermost.com/configure/reportingconfiguration-settings.html",
 "configure/configuration-settings.html#terms-of-service-link": 
         "https://docs.mattermost.com/configure/configuration-settings.html#terms-of-use-link",
+"configure/configuration-settings.html#user-management":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
+"configure/configuration-settings.html#users":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
 
 # Deployment redirects
 "deployment/advanced-permissions.html": 
