@@ -19,11 +19,11 @@ Latest Mattermost Releases:
  - Updated Chrome recommended minimum version to v100+.
 
 ### Important Upgrade Notes
- - New schema changes were introduced in the form of a new index. The following notes the test results for the schema changes:
+ - New schema changes were introduced in the form of a new index. The following summarizes the test results measuring how long it took for the database queries to run with these schema changes:
     - MySQL 7M Posts - ~17s (Instance: db.r5.xlarge)
     - MySQL 9M Posts - 2min 12s (Instance: db.r5.large)
     - Postgres 7M Posts - ~9s  (Instance: db.r5.xlarge)
- - For customers wanting a zero downtime upgrade, they are welcome to apply this index prior to doing the upgrade. This is fully backwards compatible and will not acquire any table lock or affect any existing operations on the table. 
+ - For customers wanting a zero downtime upgrade, they are welcome to apply this index prior to doing the upgrade. This is fully backwards compatible and will not acquire any table lock or affect any existing operations on the table. Run the following to apply this index:
     - For MySQL: `CREATE INDEX idx_posts_create_at_id on Posts(CreateAt, Id) LOCK=NONE;`
     - For Postgres: `CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_create_at_id on posts(createat, id);`
 
@@ -39,13 +39,13 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Updated the NPS plugin to version 1.2.0.
  - Added Files and Pinned Messages to the right-hand side Channel Info.
  - Improved the New Channel modal user interface.
  - Added the channel members list to the right-hand side Channel Info modal.
  - Added the ability to invite new users to a team from the **Add to channel** modal.
- - To be able to download images and copy public links for images quicker, a copy URL and download buttons were added to image thumbnails.
- - Added the ability to have one-character long channel names.
+ - To be able to download images and copy public links for images more quickly, a copy URL and download buttons were added to image thumbnails.
+ - Added the ability to have one character long channel names.
+ - Updated the NPS plugin to version 1.2.0 to add a new **Give Feedback** menu item to the **Help** menu to send feedback at anytime.
  
 #### Performance
  - Improved the performance of ``GetTeamsUnreadForUser`` when Collapsed Reply Threads is enabled.
@@ -57,7 +57,6 @@ Latest Mattermost Releases:
  - To add the ability to toggle sending inactivity email notification to Admins, a configuration setting ``EmailSettings.EnableInactivityEmail`` was added.
  - To filter out inactive users in the System Console, an **Active** filter was added for users and Admins in **System Console > User Management > Users**.
  - Added a ``threadsOnly`` query parameter for getting user threads.
- - Added a new stats field under the channel object for graphql.
  - To allow Admins to add a new license without having to first remove the old one, a new “License" button was added to **System Console > Edition and License**.
 
 #### Enterprise Edition
@@ -88,7 +87,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``JobSettings`` in ``config.json``:
     - Added a new cleanup job to regularly remove outdated config entries from the database. The threshold for this setting can be adjusted with ``CleanupConfigThresholdDays``.
  - Under ``ElasticsearchSettings`` in ``config.json``:
-    - Elasticsearch and Bleve indexing have been revamped to be much more efficient and faster. The config parameter ``BulkIndexingTimeWindowSeconds`` for both Elasticsearch and bleve is now deprecated and no longer used. A new config parameter called ``BatchSize`` has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload.
+    - Elasticsearch (Enterprise Edition) and Bleve indexing have been revamped to be much more efficient and faster. The config parameter ``BulkIndexingTimeWindowSeconds`` for both Elasticsearch and Bleve is now deprecated and no longer used. A new config parameter called ``BatchSize`` has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload.
 
 #### API Changes
  - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
