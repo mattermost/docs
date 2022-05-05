@@ -132,17 +132,48 @@ Upload or remove license files. For more information on Mattermost Licensing, pl
 Reporting
 ---------
 
-See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation.
+See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on:
+
+- `Site statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics>`__
+- `Team statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics>`__
+- `Server logs <https://docs.mattermost.com/configure/reporting-configuration-settings.html#server-logs>`__
 
 User Management
 ---------------
 
-See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation.
+See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on:
+
+- `Users <https://docs.mattermost.com/configure/user-management-configuration-settings.html#users>`__
+- `Groups <https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups>`__
+- `Teams <https://docs.mattermost.com/configure/user-management-configuration-settings.html#teams>`__
+- `Channels <https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels>`__
+- `Permissions <https://docs.mattermost.com/configure/user-management-configuration-settings.html#permissions>`__
+- `System roles <https://docs.mattermost.com/configure/user-management-configuration-settings.html#system-roles>`__
 
 Environment
 -----------
 
-See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation.
+Web server
+~~~~~~~~~~
+
+See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on:
+
+- `Site URL <https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url>`__
+- `Listen address <https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address>`__
+- `Forward port 80 to 443 <https://docs.mattermost.com//configure/web-server-configuration-settings.html#forward-port-80-to-443>`__
+- `Connection security <https://docs.mattermost.com/configure/web-server-configuration-settings.html#connection-security>`__
+- `TLS certificate file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-certificate-file>`__
+- `TLS key file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tsl-key-file>`__
+- `Use Let's Encrypt <https://docs.mattermost.com/configure/web-server-configuration-settings.html#use-let-s-encrypt>`__
+- `Let's Encrypt certificate cache file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#let-s-encrypt-certificate-cache-file>`__
+- `Read timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#read-timeout>`__
+- `Write timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout>`__
+- `Idle timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#idle-timeout>`__
+- `Webserver mode <https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode>`__
+- `Enable insecure outgoing connections <https://docs.mattermost.com/configure/web-server-configuration-settings.html#enable-insecure-outgoing-connections>`__
+- `Managed resource paths <https://docs.mattermost.com/configure/web-server-configuration-settings.html#managed-resource-paths>`__
+- `Reload configuration from disk <https://docs.mattermost.com/configure/web-server-configuration-settings.html#reload-configuration-from-disk>`__
+- `Purge all caches <https://docs.mattermost.com/configure/web-server-configuration-settings.html#purge-all-caches>`__
 
 Database
 ~~~~~~~~

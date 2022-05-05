@@ -2,27 +2,27 @@ Web server configuration settings
 =================================
 
 .. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
+  :scale: 25
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
 
 .. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
+  :scale: 25
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
 .. |professional| image:: ../images/professional-badge.png
-  :scale: 30
+  :scale: 25
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Professional subscription plan.
 
 .. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
+  :scale: 25
   :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
+  :scale: 25
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
@@ -194,11 +194,10 @@ Write timeout
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
-| If using HTTP (insecure), this is the maximum time     | - System Config path: **Environment > Web Server**                          |
+| - If using HTTP (insecure), this is the maximum time   | - System Config path: **Environment > Web Server**                          |
 | allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeoutTimeout: 300",`` |
 | until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUTTIMEOUT``          |
-|                                                        |                                                                             |
-| If using HTTPS, it's the total time from when the      |                                                                             |
+| - If using HTTPS, it's the total time from when the    |                                                                             |
 | connection is accepted until the response is written.  |                                                                             |
 | accepted to when the request body is fully read.       |                                                                             |
 |                                                        |                                                                             |
