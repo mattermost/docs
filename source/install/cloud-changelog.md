@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - For toggling the channel Info in the right-hand side, a shortcut CTRL/CMD+ALT+I was added.
+ - For toggling the channel information in the right-hand pane, a shortcut CTRL/CMD+ALT+I was added.
  - Added an "Unread Channels" section to the channel switcher and included "Threads" in the results.
 
 #### Performance
@@ -31,7 +31,7 @@ Latest Mattermost Cloud releases:
 #### Bug Fixes
  - Fixed an issue with ADA Accessibility where screen readers did not TAB to or read "This channel has guests" in the channel header bar.
  - Fixed an issue where the at-mention autosuggest of users was no longer grouped by channel membership status.
- - Fixed an issue where the New Messages toast was not fully clickable in the mobile web view.
+ - Fixed an issue where the New Messages toast was not fully tappable in the mobile web view.
 
 ### Known Issues
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
