@@ -178,177 +178,21 @@ See the :doc:`web server configuration settings </configure/web-server-configura
 Database
 ~~~~~~~~
 
-Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Database**.
+See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on:
 
-Driver Name
-^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
-
-**mysql**: Enables driver to MySQL database.
-
-**postgres**: Enables driver to PostgreSQL database.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DriverName": "mysql"`` with string input. |
-+----------------------------------------------------------------------------------------+
-
-Data Source
-^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This is the connection string to the master database. This setting can only be changed from the ``config.json`` file. 
-
-.. note::
-   
-   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
-
-**MySQL Database**
-
-When **DriverName** is set to ``mysql``, using ``collation`` is recommended over using ``charset``. 
-
-To specify collation:
-
-.. code-block:: none
-
-  "SqlSettings": {
-      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",
-      [...]
-    }
-
-If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:
-
-.. code-block:: none
-
-  "SqlSettings": {
-      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
-      [...]
-    }
-
-.. note::
-   
-   If you're using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software Requirements <https://docs.mattermost.com/install/requirements.html#database-software>`__ documentation for details on MySQL 8.0 support.
-   
-**PostgreSQL Database**
-
-When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. 
-
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSource": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
-
-Maximum Idle Connections
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum number of idle connections held open to the database.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input. |
-+----------------------------------------------------------------------------------------+
-
-Maximum Open Connections
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum number of open connections held open to the database.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxOpenConns": 300`` with numerical input. |
-+-----------------------------------------------------------------------------------------+
-
-Query Timeout
-^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Connection Lifetime
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum lifetime for a connection to the database, in milliseconds. Use this setting to configure the maximum amount of time a connection to the database may be reused. Defaults to an hour (3,600,000 milliseconds).
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with numerical input.              |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Connection Idle Timeout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum time a database connection can remain idle.
-
-+------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
-+------------------------------------------------------------------------------------------------------+
-
-Minimum Hashtag Length
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>__.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-SQL Statement Logging (Trace)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Executing SQL statements are written to the log for development.
-
-**False**: SQL statements are not written to the log.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Trace": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
-
-Recycle Database Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This button reconnects to the database listed in the configuration settings. All old connections are closed after 20 seconds.
-
-The workflow for failover without downing the server is to change the database line in the ``config.json`` file, select **Reload Configuration from Disk** in the **Environment > Database** section, then select **Recycle Database Connections**.
-
-Disable Database Search
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
-
-**False**: Database search is not disabled.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-Applied Schema Migrations
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost**  from the product menu to review the current database schema version applied to your deployment.
+- `Driver name <https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name>`__
+- `Data source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__
+- `Maximum idle connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-idle-connections>`__
+- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
+- `Maximum open connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-open-connections>`__
+- `Query timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#query-timeout>`__
+- `Maximum connection lifetime <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-lifetime>`__
+- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
+- `Minimum hashtag length <https://docs.mattermost.com/configure/database-configuration-settings.html#minimum-hashtag-length>`__
+- `SQL statement logging <https://docs.mattermost.com/configure/database-configuration-settings.html#sql-statement-logging>`__
+- `Recycle database connections <https://docs.mattermost.com/configure/database-configuration-settings.html#recycle-database-connections>`__
+- `Disable database search <https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search>`__
+- `Applied schema migrations <https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations>`__
 
 At Rest Encrypt Key
 ^^^^^^^^^^^^^^^^^^^
