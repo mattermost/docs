@@ -34,7 +34,6 @@ Latest Mattermost Releases:
 #### Playbooks Updates
  - To keep procedures on track while reducing noise, task due dates can now be added to playbook runs (Professional and Enterprise editions).
  - To stay informed about how teams use Playbooks in your servers, usage statistics can now be set up for playbooks.
- - When a new member joins a channel, the refactored channel actions now allow a temporary welcome message to be automatically sent and the channel to be automatically categorized for each user.
 
 ### Improvements
 
