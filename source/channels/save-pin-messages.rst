@@ -21,7 +21,7 @@ Save and pin messages
 You have two ways to flag a post to make it easy to find later: `saving messages <#save-messages>`__ and `pinning messages <#pin-messages>`__. 
 
 - Saving a message saves it for only you. 
-- Pinning a message flags it for an entire channel.
+- Pinning a message flags it for an entire channel. test
 
 Save messages
 --------------
