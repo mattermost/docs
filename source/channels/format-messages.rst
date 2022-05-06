@@ -390,4 +390,4 @@ Math Formulas
     Renders as:
 
     .. image:: ../images/latex-codeblock.png
-      :alt: A LaTeX code block math equation sample.
+      :alt: A LaTeX code block math equation sample. Test
