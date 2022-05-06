@@ -21,11 +21,11 @@ Desktop application changelog
 Latest Mattermost Desktop App releases:
 
 - `Release v5.1 <#id1>`_
-- `Release v5.0 <#id3>`_
-- `Release v4.7 <#id20>`_
-- `Release v4.6 <#id38>`_
-- `Release v4.5 <#id50>`_
-- `Release v4.4 <#id66>`_
+- `Release v5.0 <#id4>`_
+- `Release v4.7 <#id21>`_
+- `Release v4.6 <#id39>`_
+- `Release v4.5 <#id51>`_
+- `Release v4.4 <#id68>`_
 
 Release v5.1
 --------------
@@ -47,7 +47,7 @@ Breaking Changes / Upgrade Notes
 Highlights
 ~~~~~~~~~~~~~~~
 
-- Added a Desktop App auto-updater. The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
+- Added `a Desktop App auto-updater <https://docs.mattermost.com/install/desktop-app-install.html>`_. The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
 
 Improvements
 ~~~~~~~~~~~~~~~
