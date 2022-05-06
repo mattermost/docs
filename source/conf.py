@@ -1114,6 +1114,8 @@ redirects = {
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/dot-release",
 "process/engineer-expectations.html":
         "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+"process/working-at-mattermost.html":
+	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
 "process/end-user-documentation.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
 "process/feature-release.html":
