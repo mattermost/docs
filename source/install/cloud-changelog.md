@@ -19,9 +19,6 @@ Latest Mattermost Cloud releases:
  - For toggling the channel information in the right-hand pane, a shortcut CTRL/CMD+ALT+I was added.
  - Added an "Unread Channels" section to the channel switcher and included "Threads" in the results.
 
-#### Performance
- - Improved the performance of aggregate queries related to Collapsed Reply Threads.
-
 #### Administration
  - An email is now sent to Cloud Admins after upgrading their workspace.
 
