@@ -45,6 +45,7 @@ Latest Mattermost Releases:
  - Added the ability to invite new users to a team from the **Add to channel** modal.
  - To be able to download images and copy public links for images more quickly, a copy URL and download buttons were added to image thumbnails.
  - Added the ability to have one character long channel names.
+ - Pre-packaged Calls v0.4.9 with Mattermost server v6.7 (closed Beta). To participate in Beta testing, please contact [Mattermost](https://mattermost.com/contact-sales/).
  - Updated the NPS plugin to version 1.2.0 to add a new **Give Feedback** menu item to the **Help** menu to send feedback at anytime.
  
 #### Performance
