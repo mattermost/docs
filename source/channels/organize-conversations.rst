@@ -20,7 +20,7 @@ Organize conversations using Collapsed Reply Threads
 
 Threads are a key part of the messaging experience in Mattermost Channels. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
 
-Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages that includes a unified threads inbox to read all conversations in one view. Our goal is to improve users’ ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
+Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages that includes a unified threads inbox to read all conversations in one view. Our goal is to improve users’ ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused. test
 
 .. image:: ../images/collapsed-reply-threads.gif
   :alt: Organize conversations using Collapsed Reply Threads.
