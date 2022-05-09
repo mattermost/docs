@@ -2619,6 +2619,8 @@ Link previews are disabled for this list of comma-separated domains (e.g. “git
 Enable message link previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
 **True**: Links to messages generate a preview for any users with access to the original message. 
 
 **False**: Links to messages don't include a preview.
@@ -2629,6 +2631,8 @@ Enable message link previews
 
 Enable SVGs
 ^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
 
 **True**: Enables users to see previews of SVG file attachments and SVG image links.
 
