@@ -39,11 +39,6 @@ Compatibility
 
 - Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
 
-Breaking Changes / Upgrade Notes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- 
-
 Highlights
 ~~~~~~~~~~~~~~~
 
