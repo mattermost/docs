@@ -32,7 +32,7 @@ System Admins can display a notice that's visible to all users on the system via
 
 By default, users can dismiss the banner until they log in again or until you update the banner. You can `configure Mattermost to prevent users from dismissing the banner <https://docs.mattermost.com/configure/configuration-settings.html#allow-banner-dismissal>`__. 
 
-Update the banner by either changing the text of the banner or by re-enabling the banner after it has been disabled. You can also control the text color and the background color. 
+Update the banner by either changing the text of the banner or by re-enabling the banner after it's been disabled. You can also control the text color and the background color.
 
 Configure an announcement banner
 ---------------------------------
