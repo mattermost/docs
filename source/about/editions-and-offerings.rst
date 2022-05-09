@@ -33,26 +33,26 @@ Mattermost offerings
 
 We use "Offerings" to refer to sets of features and entitlements available either free or as a paid subscription service. We have three primary offerings available to both our self-hosted and cloud communities: 
 
-1) **Mattermost Free** - This a free version of our collaboration suite designed for single teams. 
+1) **Mattermost Starter** - This a free version of our collaboration suite designed for single teams. 
 
 2) **Mattermost Professional** - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams. 
 
 3) **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite. 
 
-*Self-Hosted Offerings* - For customers using our service in a self-hosted deployment, the Mattermost Free offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
+*Self-Hosted Offerings* - For customers using our service in a self-hosted deployment, the Mattermost Starter offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 *Cloud Offerings* - On-demand cloud deployments of our offerings are available via the Mattermost pricing page at: https://mattermost.com/pricing/.
 
 More details on our offerings below: 
 
-Mattermost Free 
----------------
+Mattermost Starter
+-------------------
 
-Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
+Mattermost Starter is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
-*Self-Hosted Offerings* - The **Mattermost Free** feature set is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
+*Self-Hosted Offerings* - The **Mattermost Starter** feature set is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
 
-*Cloud Offerings* - The **Mattermost Free** feature set is also available in Cloud as "Cloud Starter" which provides the functionality of Mattermost Free to unlimited users with a flat-rate $149/year to cover hosting cost. Start an `online trial <https://mattermost.com/pricing/starter-plan/>`_ of cloud features before purchasing. 
+*Cloud Offerings* - The **Mattermost Starter** feature set is also available in Cloud as "Cloud Starter" which provides the functionality of Mattermost Starter to unlimited users with a flat-rate $149/year to cover hosting cost. Start an `online trial <https://mattermost.com/pricing/starter-plan/>`_ of cloud features before purchasing. 
 
 Features include:
 
@@ -82,7 +82,7 @@ Mattermost Professional is the set of collaboration features that enables you to
 
 *Cloud Offerings* - For our cloud community, the Mattermost Professional feature set is available through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__
 
-This offering includes all the features of Mattermost Free, plus: 
+This offering includes all the features of Mattermost Starter, plus: 
 
 - `Guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`__.
 - Unlimited playbooks, retrospective reports, and timelines.
@@ -109,23 +109,21 @@ Mattermost Enterprise is an enterprise-grade collaboration system that supports 
 
 This offering includes all the features of Mattermost Professional, plus: 
 
-- `Shared channels with other Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
-- `Configurable playbook permissions, analytics dashboards, and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`__.
-- `AD/LDAP Group synchronization <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
-- `Automated compliance exports and reporting <https://docs.mattermost.com/comply/compliance-export.html>`__.
-- `Custom EMM providers via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__.
-- `Custom user terms of service <https://docs.mattermost.com/comply/custom-terms-of-service.html>`__.
-- `ID-only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.
-- `Global and custom retention policies for messages and files <https://docs.mattermost.com/comply/data-retention-policy.html>`__.
-- `Custom system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__.
-- `Granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__.
+- `Enterprise-scale search with dedicated indexing and usage resourcing via cluster support <https://docs.mattermost.com/scale/elasticsearch.html>`__.
+- `Sychronization of access controls, channels, and teams with AD/LDAP Groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+- `eDiscovery and compliance export automation <https://docs.mattermost.com/comply/compliance-export.html>`__.
+- `Enterprise mobile device management with custom EMM support via AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__.
+- `Advanced legal controls with customizable end-user terms of service and re-acceptance duration <https://docs.mattermost.com/comply/custom-terms-of-service.html>`__.
+- `Private mobility with ID-only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.
+- `Enhanced compliance with global and custom retention policies for messages and files <https://docs.mattermost.com/comply/data-retention-policy.html>`__.
+- `Granular administrative control with custom system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__.
+- `Advanced configuration of playbook permissions, analytics dashboards, and channel exports <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`__.
+- `Enhanced compliance controls and granular audit logs with data export <https://docs.mattermost.com/comply/audit-log.html>`__.
+- `Advanced collaboration with shared channels across Mattermost instances <https://docs.mattermost.com/onboard/shared-channels.html>`__.
 - `High availability support with multi-node database deployment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 - `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
-- `Elasticsearch support for highly efficient database searches in a cluster environment <https://docs.mattermost.com/scale/elasticsearch.html>`__.
 - `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
-
-See a complete list of features `here <https://mattermost.com/pricing/>`__.
 
 Other Mattermost offerings 
 --------------------------

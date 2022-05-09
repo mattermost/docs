@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.abspath("../extensions"))
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = "3.4.3"
+needs_sphinx = "4.4"
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -39,7 +39,8 @@ extensions = [
     # The original sphinx_sitemap extension can be found at:
     # https://pypi.org/project/sphinx-sitemap/
     "sitemap",
-    "sphinx_tabs.tabs"
+    "sphinx_tabs.tabs",
+    "sphinx_copybutton"
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -318,8 +319,6 @@ redirects = {
 	"https://docs.mattermost.com/manage/cloud-reporting.html",
 "cloud/cloud-administration/data-retention-policy.html":
         "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
-"cloud/cloud-administration/site-configuration.html":
-        "https://docs.mattermost.com/configure/cloud-site-configuration.html",
 "cloud/cloud-administration/saml-technical.html": 
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
 "cloud/cloud-administration/sso-saml.html": 
@@ -645,6 +644,8 @@ redirects = {
 	"https://docs.mattermost.com/upgrade/installing-license-key.html",
 "install/i18n.html": 
 	"https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
+"install/install-kubernetes-mattermost":
+        "https://docs.mattermost.com/install/mattermost-kubernetes-operator",
 "install/install-ubuntu-1804.html": 
         "https://docs.mattermost.com/install/installing-ubuntu-1804-LTS.html",
 "install/install-ubuntu-2004.html": 
@@ -687,6 +688,8 @@ redirects = {
         "https://docs.mattermost.com/manage/user-satisfaction-surveys.html",
 "integrations/zoom.html": 
         "https://mattermost.gitbook.io/plugin-zoom/",
+"integrations/integration-faq.html":
+        "https://docs.mattermost.com/about/faq-integrations.html",
 
 
 # Messaging redirects
@@ -1109,6 +1112,8 @@ redirects = {
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/dot-release",
 "process/engineer-expectations.html":
         "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+"process/working-at-mattermost.html":
+	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
 "process/end-user-documentation.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
 "process/feature-release.html":

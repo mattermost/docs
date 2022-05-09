@@ -2619,6 +2619,8 @@ Link previews are disabled for this list of comma-separated domains (e.g. “git
 Enable message link previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
 **True**: Links to messages generate a preview for any users with access to the original message. 
 
 **False**: Links to messages don't include a preview.
@@ -2629,6 +2631,8 @@ Enable message link previews
 
 Enable SVGs
 ^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
 
 **True**: Enables users to see previews of SVG file attachments and SVG image links.
 
@@ -6116,6 +6120,22 @@ Enable Global Retention Policy for Files
 | This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------+
 
+Email Settings
+~~~~~~~~~~~~~~
+
+Disable Inactive Server Email Notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
++-------------------------------------------------------------------------------------------------------------------+
+
 Service Settings
 ~~~~~~~~~~~~~~~~
 
@@ -6634,6 +6654,19 @@ Defines the threshold in hours beyond which older completed database jobs are re
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
++--------------------------------------------------------------------------------------------------------------------+
+
+Clean Up Outdated Database Entries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
+
+Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both MySQL and PostgreSQL databases.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
 
 SQL Settings
@@ -7305,9 +7338,6 @@ When not set, every user is added to the ``off-topic`` and ``town-square`` chann
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Email Settings
-~~~~~~~~~~~~~~
 
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

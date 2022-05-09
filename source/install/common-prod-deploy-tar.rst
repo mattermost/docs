@@ -1,3 +1,5 @@
+:nosearch:
+
 These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball, and assume the IP address of the Mattermost server is 10.10.10.2.
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
