@@ -319,8 +319,6 @@ redirects = {
 	"https://docs.mattermost.com/manage/cloud-reporting.html",
 "cloud/cloud-administration/data-retention-policy.html":
         "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
-"cloud/cloud-administration/site-configuration.html":
-        "https://docs.mattermost.com/configure/cloud-site-configuration.html",
 "cloud/cloud-administration/saml-technical.html": 
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
 "cloud/cloud-administration/sso-saml.html": 
@@ -1114,6 +1112,8 @@ redirects = {
         "https://handbook.mattermost.com/operations/research-and-development/product/release-process/dot-release",
 "process/engineer-expectations.html":
         "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+"process/working-at-mattermost.html":
+	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
 "process/end-user-documentation.html":
         "https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure",
 "process/feature-release.html":
