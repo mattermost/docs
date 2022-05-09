@@ -6099,6 +6099,23 @@ Settings configurable only in ``config.json``
 
 There are a number of settings customizable in ``config.json`` which are unavailable in the System Console and require updating from the file itself.
 
+Email Settings
+~~~~~~~~~~~~~~
+
+Disable Inactive Server Email Notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
++-------------------------------------------------------------------------------------------------------------------+
+
+
 Service Settings
 ~~~~~~~~~~~~~~~~
 
@@ -7301,9 +7318,6 @@ When not set, every user is added to the ``off-topic`` and ``town-square`` chann
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Email Settings
-~~~~~~~~~~~~~~
 
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
