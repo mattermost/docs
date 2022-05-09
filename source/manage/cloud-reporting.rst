@@ -20,23 +20,56 @@ Site statistics
 
 System statistics are viewable under **System Console > Reporting > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
-Total Users
-    The total number of active accounts created on your system. Excludes deactivated accounts.
+Total Active Users
+   The total number of active accounts created on your system. Excludes deactivated accounts.
 
 Total Teams
-    The total number of teams created on your system.
+   The total number of teams created on your system.
 
 Total Channels
-    The total number of public channels and private channels created in all the teams on your system, including deleted channels. Doesn't include direct message channels.
+   The total number of public channels and private channels created in all the teams on your system, including deleted channels. Doesn't include direct message channels.
 
 Total Posts
-    The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
+   The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
+
+Total Sessions
+   The total number of
+    
+Total Commands
+   The total number of
+    
+Incoming Webhooks
+   The total number of 
+    
+Outgoing Webhooks
+   The total number of
 
 Daily Active Users
-  The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users.
+   The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users.
 
 Monthly Active Users
-  The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users.
+   The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users.
+  
+WebSocket Conns
+   The total number of
+   
+Master DB Conns
+   The total number of
+   
+Replica DB Conns
+   The total number of
+
+Playbook count
+    The total number of playbooks on this server.
+
+Playbook runs count
+    The total number of runs (active and complete) on this server.
+  
+Channel Types (chart)
+    The total number of public and private channels on this server.
+    
+Posts, Files and Hashtags (chart)
+    The total number of posts with files, posts with hashtags, and posts with only text on this server.
 
 Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
