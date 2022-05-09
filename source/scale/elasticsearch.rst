@@ -63,7 +63,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and to gen
 
   .. important::
 
-    Complete bulk indexing before enabling Elasticsearch in the next step. Otherwise, search results will be incomplete. 
+    Complete bulk indexing before enabling Elasticsearch in the next step. Otherwise, search results will be incomplete.
 
 6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``. When this setting is ``false``, database search is used for all search queries.
 
