@@ -73,6 +73,7 @@ All Platforms
 - Changed the wording in the **File > View** menu from ``Tab`` to ``Server`` to reflect recent changes in the user interface.
 - Added the ability to copy the version string into clipboard from **Menu > Help > Version**.
 - Added a menu item **Window > Show Servers** to show a list of servers.
+- Removed the reference to the flashing window on the Settings page to avoid confusion when the window doesn't flash.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
