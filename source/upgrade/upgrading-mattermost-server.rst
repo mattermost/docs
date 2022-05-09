@@ -24,7 +24,7 @@ Upgrade to Mattermost v6.7
 Mattermost v6.7 introduces schema changes in the form of a new index. The following notes our test results for the schema changes:
 
 - MySQL 7M Posts - ~17s (Instance: db.r5.xlarge)
-- MySQL 9M Posts - 2min 12s (Instance: db.r5.large)
+- MySQL 9M Posts - 2min 12s (instance: db.r5.large)
 - Postgres 7M Posts - ~9s  (Instance: db.r5.xlarge)
 
 Customers wanting a zero downtime upgrade can apply this index prior to doing the upgrade. This is fully backwards-compatible and will not acquire any table lock or affect any existing operations on the table.
