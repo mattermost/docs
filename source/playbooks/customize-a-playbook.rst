@@ -57,12 +57,13 @@ Make checklists
 Assign tasks and due dates
 --------------------------
 
-In some workflows, there are time constraints on tasks and others may have more flexible timeframes.
+In some workflows, there are time constraints on tasks and others may have more flexible timeframes. Associating tasks with deliverable dates provides visibility into workloads and helps run members be accountable during the run.
 
-Tasks can be assigned to run members, with a due date. Select the **Toggle Run Details** icon to open the **Run Details** screen. Hover over the task you’d like to edit and select the calendar icon to assign a due date.
+To assign a due date to a task, select the **Toggle Run Details** icon to open the **Run Details** screen. Hover over the task you’d like to edit and select the calendar icon to assign a due date. Due dates can be used to sort tasks in the run overview.
 
-When a due date is assigned to a task, the user will receive reminders about the task in their Playbooks daily digest. When the task is completed, it’s removed from the daily digest reminders. 
+When a due date is assigned to a task, the user will receive reminders about the task in their Playbooks daily digest. When the task is completed, it’s removed from the daily digest reminders. Users can refresh their list of assigned tasks at any time using the ``/playbooks to-do`` slash command.
 
+Due dates can be entered in text (e.g., "two minutes ago") or numerically (e.g., "15 March 2023").
 Broadcast channels
 ------------------
 
