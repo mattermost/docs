@@ -24,7 +24,7 @@ Step 2: Configure Mattermost for an OpenID Connect SSO
 .. note::
   When Mattermost is configured to use OpenID Connect for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect must be the authoritative source for these user attributes.
   
-  Frequently Asked Questions
+Frequently Asked Questions
 --------------------------
 
 How can I use LDAP attributes or Groups with OpenID?
