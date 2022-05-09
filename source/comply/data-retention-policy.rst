@@ -1,4 +1,4 @@
-Data retention Policy
+Data retention policy
 =====================
 
 |enterprise| |self-hosted|
@@ -19,7 +19,8 @@ By default, Mattermost stores all message history providing an unlimited search 
 
 In Mattermost Enterprise, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and Direct Messages
 
-.. warning:: 
+.. warning::
+
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
 
 Configuring a global data retention policy
@@ -51,12 +52,13 @@ Save the settings. Messages and files older than the duration you set will be de
 
 Running a deletion job manually
 --------------------------------
+
 You can also run the deletion job manually at any time by selecting **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
 
 .. note::
   If using data retention and `ElasticSearch <https://docs.mattermost.com/scale/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
 
-Frequently Asked Questions (FAQs)
+Frequently asked questions (FAQs)
 ---------------------------------
 
 What happens when a message is deleted?
@@ -114,8 +116,8 @@ What happens when the data retention period is changed?
 
 Data retention runs once a day at the time specified in the ``config.json`` file. Changing the retention period does not automatically schedule any additional run of the data retention job - it only updates how long data is kept in Mattermost.
 
-Does the System Administrator get any notification when the data retention period is changed?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Does the System Admin get any notification when the data retention period is changed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, the new config is updated, but the System Admin does not receive any feedback on what the effects will be (e.g. reporting of how many messages are to be deleted).
 
