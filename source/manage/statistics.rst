@@ -87,6 +87,12 @@ Master DB Conns
 Replica DB Conns
     The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/scale/high-availability-cluster.html#database-configuration>`__.
 
+Playbook count
+    The total number of playbooks on this server.
+
+Playbook runs count
+    The total number of runs (active and complete) on this server.
+
 Channel Types
     This chart displays the number of public channels and private channels in a visual format, including channels that might have been deleted.
 
