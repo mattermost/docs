@@ -23,7 +23,7 @@ Upgrade to Mattermost v6.7
 
 Mattermost v6.7 introduces schema changes in the form of a new index. The following notes our test results for the schema changes:
 
-- MySQL 7M Posts - ~17s (Instance: db.r5.xlarge)
+- MySQL 7M Posts - ~17s (instance: db.r5.xlarge)
 - MySQL 9M Posts - 2min 12s (instance: db.r5.large)
 - Postgres 7M Posts - ~9s  (instance: db.r5.xlarge)
 
