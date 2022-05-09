@@ -126,7 +126,7 @@ redirects = {
 "administration/data-retention.html": 
         "https://docs.mattermost.com/comply/data-retention-policy.html",
 "administration/devops-command-center.html": 
-        "https://docs.mattermost.com/guides/incident-collaboration.html",
+        "https://docs.mattermost.com/guides/playbooks.html",
 "administration/downgrade.html": 
         "https://docs.mattermost.com/upgrade/downgrading-mattermost-server.html",
 "administration/ediscovery.html#mattermost-restful-api": 
@@ -312,9 +312,9 @@ redirects = {
 "cloud/cloud-integrations/cloud-slash-commands.html": 
 	"https://docs.mattermost.com/channels/run-slash-commands.html",
 "cloud/cloud-administration/compliance-export.html": 
-	"https://docs.mattermost.com/comply/cloud-compliance-export.html",
+	"https://docs.mattermost.com/comply/compliance-export.html",
 "cloud/cloud-administration/custom-terms-of-service.html":
-        "https://docs.mattermost.com/comply/cloud-custom-terms-of-service.html",
+        "https://docs.mattermost.com/comply/custom-terms-of-service.html",
 "cloud/cloud-reporting.html": 
 	"https://docs.mattermost.com/manage/cloud-reporting.html",
 "cloud/cloud-administration/data-retention-policy.html":
@@ -979,6 +979,8 @@ redirects = {
         "https://docs.mattermost.com/channels/search-for-messages.html#notes-about-all-searches",
 "messaging/searching-in-mattermost.html#technical-notes":
         "https://docs.mattermost.com/channels/search-for-messages.html#technical-notes-about-searching",
+"messaging/sending-messages.html":
+        "https://docs.mattermost.com/channels/send-messages.html",
 "messaging/sending-receiving-messages.html":
         "https://docs.mattermost.com/channels/send-messages.html",
 "messaging/sending-receiving-messages.html#send-a-message":
