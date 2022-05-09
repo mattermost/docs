@@ -122,9 +122,9 @@ Ubuntu and Debian-based systems
 
   .. tab:: Install from Mattermost Repository
 
-    Community-driven ``.deb`` packages are published into Mattermost Repository.
+    Community-driven ``.deb`` packages are published in the Mattermost repository.
     
-    1. In a terminal window, run the following command to configure the Mattermost Repository.
+    1. In a terminal window, run the following command to configure the Mattermost repository.
 
       ``curl -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo bash``
 
