@@ -23,7 +23,7 @@ Latest Mattermost Releases:
     - MySQL 7M Posts - ~17s (Instance: db.r5.xlarge)
     - MySQL 9M Posts - 2min 12s (Instance: db.r5.large)
     - Postgres 7M Posts - ~9s  (Instance: db.r5.xlarge)
- - For customers wanting a zero downtime upgrade, they are welcome to apply this index prior to doing the upgrade. This is fully backwards compatible and will not acquire any table lock or affect any existing operations on the table. Run the following to apply this index:
+ - For customers wanting a zero downtime upgrade, they are encouraged to apply this index prior to doing the upgrade. This is fully backwards compatible and will not acquire any table lock or affect any existing operations on the table when run manually. Else, the queries will run during the upgrade process and will lock the table in non-MySQL environments. Run the following to apply this index:
     - For MySQL: `CREATE INDEX idx_posts_create_at_id on Posts(CreateAt, Id) LOCK=NONE;`
     - For Postgres: `CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_create_at_id on posts(createat, id);`
 
@@ -32,7 +32,7 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Playbooks Updates
- - To keep procedures on track while reducing noise, task due dates can now be added to playbook runs (Professional and Enterprise editions).
+ - To keep procedures on track while reducing noise, task due dates can now be added to playbook runs (Professional and Enterprise subscriptions).
  - To stay informed about how teams use Playbooks in your servers, usage statistics can now be set up for playbooks.
 
 ### Improvements
@@ -59,7 +59,7 @@ Latest Mattermost Releases:
  - Added a ``threadsOnly`` query parameter for getting user threads.
  - To allow Admins to add a new license without having to first remove the old one, a new “License" button was added to **System Console > Edition and License**.
 
-#### Enterprise Edition
+#### Enterprise Subscription
  - The Elasticsearch indexing job is resumable now. Stopping a server while the job is running will put the job in pending status and will resume the job when the server starts. The job can still be explicitly canceled via the **System Console**.
 
 ### Bug Fixes
@@ -76,7 +76,8 @@ Latest Mattermost Releases:
  - Fixed an issue where thread updates did not show correctly after the computer woke up.
  - Fixed an issue where a negative unread count sometimes appeared with Collapsed Reply Threads enabled.
  - Fixed an issue where the modal to create a Custom Group got closed when pressing ENTER.
- - Fixed an issue where group mention did not get highlighted in Professional License.
+ - Fixed an issue where group mention did not get highlighted in Professional subscription.
+ - Fixed an issue where users were unable to edit posts with markdown code blocks.
    
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -87,7 +88,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``JobSettings`` in ``config.json``:
     - Added a new cleanup job to regularly remove outdated config entries from the database. The threshold for this setting can be adjusted with ``CleanupConfigThresholdDays``.
  - Under ``ElasticsearchSettings`` in ``config.json``:
-    - Elasticsearch (Enterprise Edition) and Bleve indexing have been revamped to be much more efficient and faster. The config parameter ``BulkIndexingTimeWindowSeconds`` for both Elasticsearch and Bleve is now deprecated and no longer used. A new config parameter called ``BatchSize`` has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload.
+    - Elasticsearch (Enterprise subscription) and Bleve indexing have been revamped to be much more efficient and faster. The config parameter ``BulkIndexingTimeWindowSeconds`` for both Elasticsearch and Bleve is now deprecated and no longer used. A new config parameter called ``BatchSize`` has been introduced instead. This parameter controls the number of objects that can be indexed in a single batch. This makes things more efficient and maintains a constant workload.
 
 #### API Changes
  - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
