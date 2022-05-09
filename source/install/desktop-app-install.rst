@@ -101,19 +101,39 @@ Generic Linux package
 Ubuntu and Debian-based systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Unofficial, community-driven ``.deb`` packages are available.
+.. tabs::
 
-1. Download the latest version of the Mattermost Desktop App:
+  .. tab:: Install as a Deb Package
 
-  - 64-bit systems `mattermost-desktop-5.0.4-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-amd64.deb>`__
-  - 32-bit systems `mattermost-desktop-5.0.4-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i386.deb>`__
+    Unofficial, community-driven ``.deb`` packages are available.
 
-2. At the command line, execute one of the following commands depending on the package that you downloaded:
+    1. Download the latest version of the Mattermost Desktop App:
 
-  - 64-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-amd64.deb``
-  - 32-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-i386.deb``
+      - 64-bit systems `mattermost-desktop-5.0.4-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-amd64.deb>`__
+      - 32-bit systems `mattermost-desktop-5.0.4-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i386.deb>`__
 
-3. Run Mattermost as a desktop app.
+    2. At the command line, execute one of the following commands depending on the package that you downloaded:
+
+      - 64-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-amd64.deb``
+      - 32-bit systems ``sudo dpkg -i mattermost-desktop-5.0.4-linux-i386.deb``
+
+    3. Run Mattermost as a desktop app.
+
+
+  .. tab:: Install from Mattermost Repository
+
+    Community-driven ``.deb`` packages are published into Mattermost Repository.
+    
+    1. In a terminal window, run the following command to configure the Mattermost Repository.
+
+      ``curl -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo bash``
+
+    2. Install the Mattermost Desktop package.
+
+      ``sudo apt install mattermost-desktop``
+
+    3. Run Mattermost as a desktop app.
+
 
 Linux rpm files (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~
