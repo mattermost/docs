@@ -6620,7 +6620,7 @@ Clean Up Outdated Database Entries
 
 |all-plans| |self-hosted|
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
+This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
 
 Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both MySQL and PostgreSQL databases.
 
