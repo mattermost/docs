@@ -33,7 +33,7 @@ Private channels
 
 Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
 
-Channel members can choose to leave private channels at any time.
+Channel members can choose to leave private channels at any time. test
 
 .. |lock-icon| image:: ../images/lock-icon.png
    :alt: A lock icon indicates a private channel.
