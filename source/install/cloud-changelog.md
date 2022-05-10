@@ -18,6 +18,7 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - For toggling the channel information in the right-hand pane, a shortcut CTRL/CMD+ALT+I was added.
  - Added an "Unread Channels" section to the channel switcher and included "Threads" in the results.
+ - Added pre-packaged Calls v0.5.1.
 
 #### Administration
  - An email is now sent to Cloud Admins after upgrading their workspace.
