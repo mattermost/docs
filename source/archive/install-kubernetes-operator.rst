@@ -1,4 +1,4 @@
-.. _install-kubernetes-operator:
+:nosearch:
 
 Installing the operators
 ------------------------

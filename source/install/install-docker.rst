@@ -52,6 +52,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 .. _Preview Mattermost on Docker:
 
 .. include:: common-local-deploy-docker.rst
+  :start-after: :nosearch:
 
 Troubleshooting your preview deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,6 +84,7 @@ Deploy Mattermost on Docker for production use
 ----------------------------------------------
 
 .. include:: common-prod-deploy-docker.rst
+  :start-after: :nosearch:
 
 Upgrade from ``mattermost-docker``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
