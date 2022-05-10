@@ -18,7 +18,7 @@ Format messages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can format your messages in Mattermost using Markdown to control `text styling <#text-style>`__, `links <#links>`__, `headings <#headings>`__, `lists <#lists>`__, `code blocks <#code-blocks>`__, `in-line code <#in-line-code>`__, `in-line images <#in-line-images>`__, `horizontal lines <#horizontal-lines>`__, `block quotes <#block-quotes>`__, `tables <#tables>`__, and `math formulas <#math-formulas>`__. Markdown makes it easy to format messages: type a message as you normally would, then use formatting syntax to render the message a specific way. For a guide to using Markdown in Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
+You can format your messages in Mattermost using Markdown to control `text styling <#text-style>`__, `links <#links>`__, `headings <#headings>`__, `lists <#lists>`__, `code blocks <#code-blocks>`__, `in-line code <#in-line-code>`__, `in-line images <#in-line-images>`__, `horizontal lines <#horizontal-lines>`__, `block quotes <#block-quotes>`__, `tables <#tables>`__, and `math formulas <#math-formulas>`__. Markdown makes it easy to format messages: type a message as you normally would, then use formatting syntax to render the message a specific way. For a guide to using Markdown in Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_. test
 
 .. image:: ../images/messagesTable1.png
    :alt: Formatting markdown controls the look and feel of text messages.
