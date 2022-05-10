@@ -7,8 +7,8 @@ SOURCEDIR       = source
 BUILDDIR        = build
 WARNINGSFILE    = $(BUILDDIR)/warnings.log
 SPHINXOPTS      ?= -j auto
-SPHINXBUILD     ?= /home/mustafa/.local/bin/pipenv run sphinx-build
-SPHINXAUTOBUILD ?= /home/mustafa/.local/bin/pipenv run sphinx-autobuild
+SPHINXBUILD     ?= pipenv run sphinx-build
+SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 
 # Put it first so that "make" without argument is like "make help".
 help:
