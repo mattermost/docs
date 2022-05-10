@@ -78,6 +78,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the modal to create a Custom Group got closed when pressing ENTER.
  - Fixed an issue where group mention did not get highlighted in Professional subscription.
  - Fixed an issue where users were unable to edit posts with markdown code blocks.
+ - Fixed an issue where sending test (empty) notifications was allowed even when the ``SendPushNotifications`` config setting was set to ``false``.
    
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
