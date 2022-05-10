@@ -93,7 +93,7 @@ Need help installing on server, desktop or mobile?
 # :trolleybus: Upgrade Guide
 
 -----------------
-### :trolleybus: Deployment Guide
+# :trolleybus: Deployment Guide
 
 The deployment guide is for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure.
 
