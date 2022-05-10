@@ -7559,20 +7559,18 @@ Timeout in seconds for Elasticsearch calls.
 | This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with numerical input.       |
 +-------------------------------------------------------------------------------------------------------+
 
-Bulk Indexing Time Window
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Batch Size
+^^^^^^^^^^^
 
 |enterprise| |self-hosted|
 
-*Available in legacy Enterprise Edition E20*
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. 
+Sets the number of objects that can be indexed in a single batch.
 
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
-+-----------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.       |
++----------------------------------------------------------------------------------------------+
 
 Trace
 ^^^^^^
@@ -7592,18 +7590,18 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 Bleve Settings
 ~~~~~~~~~~~~~~
 
-Bulk Indexing Time Window Seconds
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BatchSize
+^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. 
+Sets the number of objects that can be indexed in a single batch.
 
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
-+-------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.      |
++---------------------------------------------------------------------------------------------+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~
