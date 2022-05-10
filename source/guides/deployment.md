@@ -90,7 +90,17 @@ Need help installing on server, desktop or mobile?
 
 -----------------
 
+# :trolleybus: User Guide
+
+[ Use cases go here ] 
+
+-----------------
+
 # :trolleybus: Upgrade Guide
+
+- [ Release cadence ] 
+- [ How to upgrade ] 
+- [ How to communicate about downtime and announce new features ] 
 
 -----------------
 # :trolleybus: Deployment Guide
