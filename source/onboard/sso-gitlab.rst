@@ -66,7 +66,8 @@ Step 2: Configure Mattermost for GitLab SSO
 
 .. note::
 
-  When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.
+  - When Mattermost is configured to use OpenID Connect or OAuth 2.0 for user authentication, the following user attribute changes can't be made through the Mattermost API: first name, last name, or username. OpenID Connect or OAuth 2.0 must be the authoritative source for these user attributes.
+  - If you are using Mattermost behind a load balancer and you have SSL configured, you may need to set `X-Forwarded-Proto` header to https at your load balancer.
 
 (Optional) Step 3: Force users to sign up using SSO only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

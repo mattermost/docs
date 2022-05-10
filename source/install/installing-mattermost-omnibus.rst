@@ -14,6 +14,7 @@ Install Mattermost Omnibus
   :alt: Available for Mattermost Self-Hosted deployments.
 
 .. include:: common-prod-deploy-omnibus.rst
+  :start-after: :nosearch:
 
 Configure Mattermost Omnibus
 -----------------------------
