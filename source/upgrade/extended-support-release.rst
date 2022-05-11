@@ -114,4 +114,12 @@ Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the 
 
 Please review the `Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`_ and the `Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
++-------------+------------------+-----------------------------------------+----------------------------------------+
+| ESR Version | Release Date     | Desktop App Minimum Supported Version   | Mobile App Minimum Supported Version   |
++=============+==================+=========================================+========================================+
+| 6.3         | January 16, 2022 | Desktop app v5.0                        | Mobile app v1.48.0                     |
++-------------+------------------+-----------------------------------------+----------------------------------------+
+| 5.37        | July 16, 2021    | Desktop app v4.7                        | Mobile app v1.45.0                     |
++-------------+------------------+-----------------------------------------+----------------------------------------+
+
 See more details in our `release lifecycle documentation <https://docs.mattermost.com/upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
