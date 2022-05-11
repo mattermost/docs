@@ -48,8 +48,9 @@ Site URL
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | **Notes**:                                                                                                                    |   
 |                                                                                                                               |
-| - From Mattermost v5.1, the URL may contain a subpath, such as "https://example.com/company/mattermost".                      |
-| - If Site URL is not set, the following features will not operate correctly:                                                  |
+| - The URL may contain a subpath, such as "https://example.com/company/mattermost".                                            |
+| - If you change the Site URL value, log out of the Desktop App, and sign back in using the new domain.                        |
+| - If Site URL is not set:                                                                                                     |
 |                                                                                                                               |
 |   - Email notifications will contain broken links, and email batching will not work.                                          |
 |   - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.                                        |
