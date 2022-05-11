@@ -90,7 +90,7 @@ Replica DB Conns
 Total Playbooks
     The total number of playbooks on this server.
 
-Playbook runs count
+Total Playbook Runs
     The total number of runs (active and complete) on this server.
 
 Channel Types
