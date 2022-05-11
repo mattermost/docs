@@ -87,7 +87,7 @@ Master DB Conns
 Replica DB Conns
     The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/scale/high-availability-cluster.html#database-configuration>`__.
 
-Playbook count
+Total Playbooks
     The total number of playbooks on this server.
 
 Playbook runs count
