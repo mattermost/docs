@@ -115,10 +115,6 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     3. Drag the Mattermost application to the **Applications** folder.
 
-    .. tip::
-      
-      `Homebrew <https://brew.sh>`__ users can install with ``brew install --cask mattermost``.
-
   .. tab:: Windows 8.1+
 
     1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-setup-5.0.4-win.exe>`__
@@ -132,7 +128,7 @@ You can `download the Desktop App directly from our Downloads page <https://matt
     - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-x64.msi>`__
     - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-x86.msi>`__
 
-    See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-gpo.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
+    See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
     The following group policies are available:
 
@@ -142,6 +138,8 @@ You can `download the Desktop App directly from our Downloads page <https://matt
     | Enable Server Management   | If disabled, management of servers in the app settings are disabled.        | 4.3 or later                    |
     +----------------------------+-----------------------------------------------------------------------------+---------------------------------+
     | Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later                    |
+    +----------------------------+-----------------------------------------------------------------------------+---------------------------------+
+    | Automatic Updates          | If disabled, automatic Desktop App updates are disabled.                    | 5.1 or later                    |
     +----------------------------+-----------------------------------------------------------------------------+---------------------------------+
 
 Update the Mattermost Desktop App
@@ -155,8 +153,8 @@ For the best experience, we recommend keeping your Desktop App updated to the la
 
     Depending on the distribution you're using, your Desktop App updates automatically when a new release is available.
 
-    - Ubuntu: A Debian repository is available to configure and install. TBD
-    - RedHat: An RPM repo is in progress. TBD
+    - Ubuntu: A Debian repository is available to configure and install.
+    - RedHat: An RPM repository is in progress.
     - All others: An unofficial AppImage distribution supports automatic updates.
 
     **Check your Desktop App version**
@@ -192,10 +190,8 @@ For the best experience, we recommend keeping your Desktop App updated to the la
     
     If a newer release of the Desktop App is available, you're prompted to install it.
 
-
-
-
-
+    .. tip::
+      Automatic Desktop App updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html>`__ for details.
 
 Troubleshooting your Desktop App installation
 ----------------------------------------------
