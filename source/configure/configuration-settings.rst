@@ -2619,6 +2619,8 @@ Link previews are disabled for this list of comma-separated domains (e.g. “git
 Enable message link previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+|all-plans| |cloud| |self-hosted|
+
 **True**: Links to messages generate a preview for any users with access to the original message. 
 
 **False**: Links to messages don't include a preview.
@@ -2629,6 +2631,8 @@ Enable message link previews
 
 Enable SVGs
 ^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
 
 **True**: Enables users to see previews of SVG file attachments and SVG image links.
 
@@ -5238,43 +5242,31 @@ Changes to properties in this section require a server restart before taking eff
 Access the following configuration settings in the System Console by going to **Compliance > Data Retention Policies**.
 
 
-Global retention policy for messages
+Global Retention Policy for Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |enterprise| |cloud| |self-hosted|
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps messages and files across all teams and channels. Doesn't apply to custom retention policies.
+Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for messages <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration setting to be set to ``true``.
 
-If **Days** or **Years** is chosen, set how many days or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum time is one day.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-and
+By default, messages are kept forever. If **Days** or **Years** is chosen, set how many days or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum time is one day.
 
 +-------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with numerical input. |
 +-------------------------------------------------------------------------------------------------+
 
-Global retention policy for files
+Global Retention Policy for Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |enterprise| |cloud| |self-hosted|
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies.
+Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for files <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ configuration setting to be set to ``true``.
 
-If **Days** or **Years** is chosen, set how many days or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------+
-
-and
+By default, messages are kept forever. If **Days** or **Years** is chosen, set how many days or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileRetentionDays": 365`` with numerical input. |
@@ -6095,6 +6087,55 @@ Settings configurable only in ``config.json``
 
 There are a number of settings customizable in ``config.json`` which are unavailable in the System Console and require updating from the file itself.
 
+Data Retention Policies
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Global Retention Policy for Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |cloud| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+**True**: Messages can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+
+**False**: Messages can't be deleted as part of a scheduled data retention job.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------+
+
+Enable Global Retention Policy for Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |cloud| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+**True**: Files can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+
+**False**: Files can't be deleted as part of a scheduled data retention job.
+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------+
+
+Email Settings
+~~~~~~~~~~~~~~
+
+Disable Inactive Server Email Notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting disables the ability to send inactivity email notifications to Mattermost System Admins.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
++-------------------------------------------------------------------------------------------------------------------+
+
 Service Settings
 ~~~~~~~~~~~~~~~~
 
@@ -6613,6 +6654,19 @@ Defines the threshold in hours beyond which older completed database jobs are re
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
++--------------------------------------------------------------------------------------------------------------------+
+
+Clean Up Outdated Database Entries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
+
+Defines the threshold in days beyond which outdated configurations are removed from the database. This setting applies to both MySQL and PostgreSQL databases.
+
++--------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
 
 SQL Settings
@@ -7285,9 +7339,6 @@ When not set, every user is added to the ``off-topic`` and ``town-square`` chann
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Email Settings
-~~~~~~~~~~~~~~
-
 Client Requirement Settings (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -7528,20 +7579,18 @@ Timeout in seconds for Elasticsearch calls.
 | This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with numerical input.       |
 +-------------------------------------------------------------------------------------------------------+
 
-Bulk Indexing Time Window
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Batch Size
+^^^^^^^^^^^
 
 |enterprise| |self-hosted|
 
-*Available in legacy Enterprise Edition E20*
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. 
+Sets the number of objects that can be indexed in a single batch.
 
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
-+-----------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.       |
++----------------------------------------------------------------------------------------------+
 
 Trace
 ^^^^^^
@@ -7561,18 +7610,18 @@ Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or
 Bleve Settings
 ~~~~~~~~~~~~~~
 
-Bulk Indexing Time Window Seconds
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BatchSize
+^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting serves as a performance optimization for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly. 
+Sets the number of objects that can be indexed in a single batch.
 
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
-+-------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.      |
++---------------------------------------------------------------------------------------------+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~

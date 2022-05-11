@@ -33,6 +33,7 @@ You'll receive link to access Mattermost from your Mattermost System Admin or th
 .. tip::
   - We recommend bookmarking the Mattermost URL in your browser of choice so signing in to Mattermost is easy in the future.
   - Can't find your Mattermost link? Ask your company's IT department or your Mattermost System Admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+  - Mattermost Cloud customers can reach Cloud workspaces from the [Cloud Workspace Connection](https://customers.mattermost.com/cloud/connect-workspace) page by specifying their company or domain name.
 
 After signing in, the team that appears first on your team sidebar will open. If you have not joined a team, the Team Selection page opens where you can view a list of teams that you can join.
 
