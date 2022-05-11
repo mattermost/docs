@@ -99,7 +99,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``fromWebhook`` property to the webapp plugin API.
 
 ### Go Version
- - v6.7 is built with Go ``v1.16.7``.
+ - v6.7 is built with Go ``v1.18.1``.
 
 ### Open Source Components
  - Added ``react-native-math-view`` to https://github.com/mattermost/mattermost-mobile.
