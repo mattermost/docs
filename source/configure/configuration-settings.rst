@@ -132,473 +132,67 @@ Upload or remove license files. For more information on Mattermost Licensing, pl
 Reporting
 ---------
 
-View statistics for your overall deployment and specific teams as well as access server logs. Access the following configuration settings in the System Console by going to **Reporting**.
+See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on:
 
-Site Statistics
-~~~~~~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
-
-View statistics on active users, teams, channels, sessions, webhooks, and connections.
-
-Team Statistics
-~~~~~~~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
-
-View statistics per team on the number of active users, as well as Public and Private channels.
-
-Server Logs
-~~~~~~~~~~~~
-
-|all-plans| |self-hosted|
+- `Site statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics>`__
+- `Team statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics>`__
+- `Server logs <https://docs.mattermost.com/configure/reporting-configuration-settings.html#server-logs>`__
 
 User Management
 ---------------
 
-Settings for managing users, user access, groups, and permissions. 
+See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on:
 
-Users
-~~~~~~
-
-|all-plans| |cloud| |self-hosted|
-
-View and manage active and inactive users, and revoke all user sessions. Access individual users to view their User ID, and view the teams they are on and what their role is on a team. Additionally, add the user to other teams without direct access to the team.
-
-Groups
-~~~~~~
-
-|enterprise| |cloud| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-Groups offer System Admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups. See `Groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more details.
-
-Teams
-~~~~~~
-
-|enterprise| |cloud| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-Manage group synchronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization>`__ for more details.
-
-Channels 
-~~~~~~~~~
-
-|enterprise| |cloud| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-Manage group synchronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html#using-ad-ldap-group-synchronization>`__ for more details.
-
-Permissions
-~~~~~~~~~~~
-
-|enterprise| |professional| |cloud| |self-hosted|
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-Advanced permissions offer System Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ for more details.
+- `Users <https://docs.mattermost.com/configure/user-management-configuration-settings.html#users>`__
+- `Groups <https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups>`__
+- `Teams <https://docs.mattermost.com/configure/user-management-configuration-settings.html#teams>`__
+- `Channels <https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels>`__
+- `Permissions <https://docs.mattermost.com/configure/user-management-configuration-settings.html#permissions>`__
+- `System roles <https://docs.mattermost.com/configure/user-management-configuration-settings.html#system-roles>`__
 
 Environment
 -----------
 
-Settings for configuring the network environment in which Mattermost is deployed.
-
-Web Server
+Web server
 ~~~~~~~~~~
 
-Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Web Server**.
-
-
-Site URL
-^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The URL that users will use to access Mattermost. The port number is required if it's not a standard port such as 80 or 443.
-
-**This field is required in Mattermost v3.8 and later.**
-
-In Mattermost v5.1 and later, the URL may contain a subpath, such as ``"https://example.com/company/mattermost"``. System Admins can't update the Site URL value when it's configured through an environment variable. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ product documentation for details.
-
-If Site URL isn't set, the following features will not operate correctly:
-
-- Email notifications will contain broken links, and email batching will not work.
-- Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.
-- Plugins may not work as expected.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                    |
-+-------------------------------------------------------------------------------------------------------------------+
-
-Test Live URL
-^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This button confirms that the value entered into the Site URL is valid and live.
-
-Listen Address
-^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The address and port to which to bind and listen. Specifying ":8065" will bind to all network interfaces. Specifying ``127.0.0.1:8065`` will only bind to the network interface having that IP address.
-
-If you choose a port of a lower level (called "system ports" or "well-known ports", in the range of 0-1023), you must have permissions to bind to that port.
-
-On Linux you can use: ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost`` to allow Mattermost to bind to well-known ports.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input. |
-+-------------------------------------------------------------------------------------------+
-
-Forward port 80 to 443
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Forwards all insecure traffic from port 80 to secure port 443.
-
-**False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to ``false``.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false``.                 |
-+----------------------------------------------------------------------------------------------------------------------------+
-
-Connection Security
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**None**: Mattermost will connect over an unsecured connection.
-
-**TLS**: Encrypts the communication between Mattermost clients and your server. See `documentation <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ for more details.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``"TLS"``.                                   |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-TLS Certificate File
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The path to the certificate file to use for TLS connection security.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TLSCertFile": ""`` with string input. |
-+------------------------------------------------------------------------------------+
-
-TLS Key File
-^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The path to the TLS key file to use for TLS connection security.
-
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TLSKeyFile": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
-
-Use Let's Encrypt
-^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Enable the automatic retrieval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See :doc:`../install/config-tls-mattermost` for more details on setting up Let's Encrypt.
-
-**False**: Manual certificate specification based on the **TLS Certificate File** and **TLS Key File** specified above.
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false``.                      |
-+---------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
-
-Let's Encrypt Certificate Cache File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The path to the file where certificates and other data about the Let's Encrypt service will be stored.
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"`` with string input.  |
-+-----------------------------------------------------------------------------------------------------------------------------------+
-
-Read Timeout
-^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum time allowed in seconds from when the connection is accepted to when the request body is fully read.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReadTimeout": 300`` with numerical input. |
-+----------------------------------------------------------------------------------------+
-
-Write Timeout
-^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-If using HTTP (insecure), this is the maximum time in seconds allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
-+-----------------------------------------------------------------------------------------+
-
-Idle Timeout
-^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set an explicit idle timeout in seconds in the HTTP server. This is the maximum time allowed before an idle connection is disconnected.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdleTimeout": 60`` with numerical input.   |
-+-----------------------------------------------------------------------------------------+
-
-Webserver Mode
-^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. We recommend you enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly.
-
-**gzip**: The Mattermost server will serve static files compressed with gzip to improve performance.
-
-**Uncompressed**: The Mattermost server will serve static files uncompressed.
-
-**Disabled**: The Mattermost server will not serve static files.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"WebserverMode": "gzip"`` with options ``"gzip"``, ``"uncompressed"``, and ``"disabled"``. |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Insecure Outgoing Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Outgoing HTTPS requests can accept unverified, self-signed certificates. For example, outgoing webhooks to a server with a self-signed TLS certificate, using any domain, will be allowed.
-
-**False**: Only secure HTTPS requests are allowed.
-
-.. important::
-   Security note: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableInsecureOutgoingConnections": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
-
-Managed Resource Paths
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A comma-separated list of paths within the Mattermost domain that are managed by a third-party service instead of Mattermost itself. Links to these paths will be opened in a new tab/window by Mattermost apps. For example, if Mattermost is running on ``https://mymattermost.com``, setting this to ``conference`` will cause links such as ``https://mymattermost.com/conference`` to be opened in a new window.
-
-When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of in a browser. See `here <https://docs.mattermost.com/install/desktop-managed-resources.html>`__ for more information.
-
-+---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ManagedResourcePaths": ""`` with string input. |
-+---------------------------------------------------------------------------------------------+
-
-Reload Configuration from Disk
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The workflow for failover without downing the server is to change the database line in the ``config.json`` file, select **Reload Configuration from Disk**, then select **Recycle Database Connections** in the **Database** section.
-
-Purge All Caches
-^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This button purges all the in-memory caches for sessions, accounts, and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
+See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on:
+
+- `Site URL <https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url>`__
+- `Listen address <https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address>`__
+- `Forward port 80 to 443 <https://docs.mattermost.com//configure/web-server-configuration-settings.html#forward-port-80-to-443>`__
+- `Connection security <https://docs.mattermost.com/configure/web-server-configuration-settings.html#connection-security>`__
+- `TLS certificate file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-certificate-file>`__
+- `TLS key file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tsl-key-file>`__
+- `Use Let's Encrypt <https://docs.mattermost.com/configure/web-server-configuration-settings.html#use-let-s-encrypt>`__
+- `Let's Encrypt certificate cache file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#let-s-encrypt-certificate-cache-file>`__
+- `Read timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#read-timeout>`__
+- `Write timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout>`__
+- `Idle timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#idle-timeout>`__
+- `Webserver mode <https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode>`__
+- `Enable insecure outgoing connections <https://docs.mattermost.com/configure/web-server-configuration-settings.html#enable-insecure-outgoing-connections>`__
+- `Managed resource paths <https://docs.mattermost.com/configure/web-server-configuration-settings.html#managed-resource-paths>`__
+- `Reload configuration from disk <https://docs.mattermost.com/configure/web-server-configuration-settings.html#reload-configuration-from-disk>`__
+- `Purge all caches <https://docs.mattermost.com/configure/web-server-configuration-settings.html#purge-all-caches>`__
 
 Database
 ~~~~~~~~
 
-Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Database**.
+See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on:
 
-Driver Name
-^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
-
-**mysql**: Enables driver to MySQL database.
-
-**postgres**: Enables driver to PostgreSQL database.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DriverName": "mysql"`` with string input. |
-+----------------------------------------------------------------------------------------+
-
-Data Source
-^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This is the connection string to the master database. This setting can only be changed from the ``config.json`` file. 
-
-.. note::
-   
-   To enable SSL, add ``&tls=true`` to your database connection string if your SQL driver supports it. Add ``&tls=skip-verify`` if you use self-signed certificates.
-
-**MySQL Database**
-
-When **DriverName** is set to ``mysql``, using ``collation`` is recommended over using ``charset``. 
-
-To specify collation:
-
-.. code-block:: none
-
-  "SqlSettings": {
-      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",
-      [...]
-    }
-
-If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:
-
-.. code-block:: none
-
-  "SqlSettings": {
-      "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",
-      [...]
-    }
-
-.. note::
-   
-   If you're using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software Requirements <https://docs.mattermost.com/install/requirements.html#database-software>`__ documentation for details on MySQL 8.0 support.
-   
-**PostgreSQL Database**
-
-When **DriverName** is set to ``postgres``, use a connection string in the form ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10``. 
-
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSource": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
-
-Maximum Idle Connections
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum number of idle connections held open to the database.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxIdleConns": 10`` with numerical input. |
-+----------------------------------------------------------------------------------------+
-
-Maximum Open Connections
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum number of open connections held open to the database.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxOpenConns": 300`` with numerical input. |
-+-----------------------------------------------------------------------------------------+
-
-Query Timeout
-^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with numerical input.                                  |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Connection Lifetime
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum lifetime for a connection to the database, in milliseconds. Use this setting to configure the maximum amount of time a connection to the database may be reused. Defaults to an hour (3,600,000 milliseconds).
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with numerical input.              |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-Maximum Connection Idle Timeout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum time a database connection can remain idle.
-
-+------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnMaxIdleTimeMilliseconds": 5`` with numerical input. |
-+------------------------------------------------------------------------------------------------------+
-
-Minimum Hashtag Length
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>__.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with numerical input.                           |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-SQL Statement Logging (Trace)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Executing SQL statements are written to the log for development.
-
-**False**: SQL statements are not written to the log.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Trace": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
-
-Recycle Database Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This button reconnects to the database listed in the configuration settings. All old connections are closed after 20 seconds.
-
-The workflow for failover without downing the server is to change the database line in the ``config.json`` file, select **Reload Configuration from Disk** in the **Environment > Database** section, then select **Recycle Database Connections**.
-
-Disable Database Search
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Disables the use of the database to perform searches. Should only be used when other `search engines  <https://docs.mattermost.com/scale/elasticsearch.html>`__ are configured. If this setting is set to ``true`` and another search engine is not configured, it will result in empty search results.
-
-**False**: Database search is not disabled.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableDatabaseSearch": false`` with options ``true`` and ``false``.       |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-Applied Schema Migrations
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost**  from the product menu to review the current database schema version applied to your deployment.
+- `Driver name <https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name>`__
+- `Data source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__
+- `Maximum idle connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-idle-connections>`__
+- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
+- `Maximum open connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-open-connections>`__
+- `Query timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#query-timeout>`__
+- `Maximum connection lifetime <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-lifetime>`__
+- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
+- `Minimum hashtag length <https://docs.mattermost.com/configure/database-configuration-settings.html#minimum-hashtag-length>`__
+- `SQL statement logging <https://docs.mattermost.com/configure/database-configuration-settings.html#sql-statement-logging>`__
+- `Recycle database connections <https://docs.mattermost.com/configure/database-configuration-settings.html#recycle-database-connections>`__
+- `Disable database search <https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search>`__
+- `Applied schema migrations <https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations>`__
 
 At Rest Encrypt Key
 ^^^^^^^^^^^^^^^^^^^

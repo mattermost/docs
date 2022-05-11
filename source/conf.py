@@ -329,18 +329,106 @@ redirects = {
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html": 
         "https://forum.mattermost.org/c/docs/37",
+
+# Configuration settings redirects
+"configure/configuration-settings.html#channels":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels",
+"configure/configuration-settings.html#allow-use-of-api-v3-endpoints":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#allow-use-of-api-v3-endpoints",
+"configure/configuration-settings.html#applied-schema-migrations":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations",
 "configure/configuration-settings.html#compliance-export-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
+"configure/configuration-settings.html#connection-security":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#connection-security",
 "configure/configuration-settings.html#custom-terms-of-service-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#custom-terms-of-service",
+"configure/configuration-settings.html#database":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html",
+"configure/configuration-settings.html#data-source":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#data-source",
+"configure/configuration-settings.html#disable-database-search":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search",
+"configure/configuration-settings.html#driver-name":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name",
+"configure/configuration-settings.html#enable-insecure-outgoing-connections":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#enable-insecure-outgoing-connections",
 "configure/configuration-settings.html#enable-latex-rendering": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
+"configure/configuration-settings.html#environment":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
+"configure/configuration-settings.html#forward-port-80-to-443":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#forward-port-80-to-443",
+"configure/configuration-settings.html#groups":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups",
 "configure/configuration-settings.html#guest-access-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#guest-access",
+"configure/configuration-settings.html#idle-timeout":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#idle-timeout",
+"configure/configuration-settings.html#let-s-encrypt-certificate-cache-file":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#let-s-encrypt-certificate-cache-file",
+"configure/configuration-settings.html#listen-address":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address",
+"configure/configuration-settings.html#managed-resource-paths":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#managed-resource-paths",
+"configure/configuration-settings.html#maximum-connection-idle-timeout":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout",
+"configure/configuration-settings.html#maximum-connection-lifetime":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-lifetime",
+"configure/configuration-settings.html#maximum-idle-connections":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-idle-connections",
+"configure/configuration-settings.html#maximum-open-connections":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-open-connections",
+"configure/configuration-settings.html#minimum-hashtag-length":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#minimum-hashtag-length",
+"configure/configuration-settings.html#purge-all-caches":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#purge-all-caches",
+"configure/configuration-settings.html#permissions":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html#permissions",
 "configure/configuration-settings.html#plugins-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#plugins",
+"configure/configuration-settings.html#query-timeout":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#query-timeout",
+"configure/configuration-settings.html#read-timeout":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#read-timeout",
+"configure/configuration-settings.html#recycle-database-connections":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#recycle-database-connections",
+"configure/configuration-settings.html#reload-configuration-from-disk":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#reload-configuration-from-disk",
+"configuration-settings.html#reporting":
+        "https://docs.mattermost.com/configure/reporting-configuration-settings.html",
+"configure/configuration-settings.html#site-statistics":
+        "https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics",
+"configure/configuration-settings.html#server-logs":
+        "https://docs.mattermost.com/configure/reporting-configuration-settings.html#server-logs",
+"configure/configuration-settings.html#site-url":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url",
+"configure/configuration-settings.html#sql-statement-logging-trace":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#sql-statement-logging",
+"configure/configuration-settings.html#teams":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html#teams",
+"configure/configuration-settings.html#team-statistics":
+        "https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics",
 "configure/configuration-settings.html#terms-of-service-link": 
         "https://docs.mattermost.com/configure/configuration-settings.html#terms-of-use-link",
+"configure/configuration-settings.html#test-live":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
+"configure/configuration-settings.html#tls-certificate-file":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-certificate-file",
+"configure/configuration-settings.html#tls-key-file":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#tsl-key-file",
+"configure/configuration-settings.html#use-let-s-encrypt":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#use-let-s-encrypt",
+"configure/configuration-settings.html#user-management":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
+"configure/configuration-settings.html#users":
+        "https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
+"configure/configuration-settings.html#web-server":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
+"configure/configuration-settings.html#webserver-mode":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode",
+"configure/configuration-settings.html#write-timeout":
+        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout",
 
 # Deployment redirects
 "deployment/advanced-permissions.html": 
