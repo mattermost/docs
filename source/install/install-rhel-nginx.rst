@@ -1,3 +1,4 @@
+:nosearch:
 .. _install-rhel-nginx:
 
 Installing NGINX server

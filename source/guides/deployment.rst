@@ -49,7 +49,6 @@ When you're ready to install Mattermost server for production use, you have four
       .. include:: ../install/common-prod-deploy-docker.rst
         :start-after: :nosearch:
     
-
 Prepare for your Mattermost deployment
 --------------------------------------
 

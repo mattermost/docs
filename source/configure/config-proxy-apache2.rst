@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _config-proxy-apache2:
 
 Configuring Apache2 as a proxy for Mattermost Server (Unofficial)

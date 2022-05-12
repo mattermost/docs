@@ -1,3 +1,5 @@
+:nosearch:
+
 .. _config-ssl-http2-apache2:
 
 Configuring Apache2 with SSL and HTTP/2 (unofficial)

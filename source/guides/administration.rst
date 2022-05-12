@@ -62,16 +62,16 @@ Workspace management
     :hidden:
 
     Mattermost Cloud billing </manage/cloud-billing>
-    Statistics </manage/cloud-reporting>
-    User Satisfaction surveys </manage/cloud-user-satisfaction-surveys>
-    Managing team and channel members </manage/cloud-team-and-channel>
+    Statistics </manage/statistics>
+    User satisfaction surveys </manage/user-satisfaction-surveys>
+    Managing team and channel members </manage/team-channel-members>
     Workspace migration </manage/cloud-data-export>
     Cloud data residency </manage/cloud-data-residency>
 
 * :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
-* :doc:`Statistics </manage/cloud-reporting>` - Get statistics about Mattermost usage.
-* :doc:`User satisfaction surveys </manage/cloud-user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
-* :doc:`Managing team and channel members </manage/cloud-team-and-channel>` - Manage synchronization, moderation, and membership settings.
+* :doc:`Statistics </manage/statistics>` - Get statistics about Mattermost usage.
+* :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
+* :doc:`Managing team and channel members </manage/team-channel-members>` - Manage synchronization, moderation, and membership settings.
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 
@@ -81,9 +81,9 @@ Workspace compliance
     :maxdepth: 1
     :hidden:
 
-    Data retention policy </comply/cloud-data-retention-policy>
+    Data retention policy </comply/data-retention-policy>
 
-* :doc:`Data retention policy </comply/cloud-data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
+* :doc:`Data retention policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
 
 Self-hosted admin
 -----------------

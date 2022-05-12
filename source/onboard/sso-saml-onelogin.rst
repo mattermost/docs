@@ -8,6 +8,7 @@ The following process provides steps to configure SAML 2.0 with OneLogin for Mat
   :local:
 
 .. include:: sso-saml-before-you-begin.rst
+  :start-after: :nosearch:
 
 Create a OneLogin connection app for Mattermost SSO
 ---------------------------------------------------
@@ -151,5 +152,7 @@ We also recommend that you post an announcement to your users detailing how the 
 You can also configure SAML for OneLogin by editing the ``config.json`` file to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
 .. include:: sso-saml-ldapsync.rst
+  :start-after: :nosearch:
 
 .. include:: sso-saml-faq.rst
+  :start-after: :nosearch:

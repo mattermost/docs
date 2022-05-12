@@ -8,6 +8,7 @@ The following process provides steps to configure SAML 2.0 with Okta for Matterm
   :local:
 
 .. include:: sso-saml-before-you-begin.rst
+	:start-after: :nosearch:
 
 Set Up a connection app for Mattermost Single Sign-On
 -----------------------------------------------------
@@ -114,5 +115,7 @@ We also recommend that you post an announcement for your users to explain how th
 You may also configure SAML for Okta by editing the ``config.json`` file to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
 .. include:: sso-saml-ldapsync.rst
+	:start-after: :nosearch:
 
 .. include:: sso-saml-faq.rst
+	:start-after: :nosearch:

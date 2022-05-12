@@ -178,7 +178,7 @@ Upgrade Mattermost Server
 
    .. code-block:: sh
 
-    wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
 3. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file.
 
@@ -313,7 +313,7 @@ Upgrade Team Edition to Enterprise Edition
 
 To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions provided above, making sure that you download the Enterprise Edition of Mattermost Server in Step 2.
 
-Uploade a license key
------------------------
+Upload a license key
+---------------------
 
 When Enterprise Edition is running, open **System Console > About > Editions and License** and upload your license key.

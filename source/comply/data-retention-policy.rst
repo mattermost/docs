@@ -1,12 +1,17 @@
 Data retention policy
 =====================
 
-|enterprise| |self-hosted|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/download
+  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -24,8 +29,8 @@ For scheduled data retention jobs to work, the `global retention policy for file
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
 
-Configuring a global data retention policy
--------------------------------------------
+Configure a global data retention policy
+-----------------------------------------
 
 To set a global data retention policy in Mattermost v5.38 and later:
 
@@ -37,8 +42,8 @@ To set a global data retention policy in Mattermost v5.38 and later:
 
 Select **Save**. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
-Configuring a custom data retention policy
--------------------------------------------
+Configure a custom data retention policy
+----------------------------------------
 
 To set a custom data retention policy in Mattermost v5.38 and later:
 
@@ -51,11 +56,13 @@ To set a custom data retention policy in Mattermost v5.38 and later:
 
 Save the settings. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
 
-Running a deletion job manually
---------------------------------
+Run a deletion job manually
+----------------------------
+
 You can also run the deletion job manually at any time by selecting **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy**.
 
 .. note::
+  
   If using data retention and `ElasticSearch <https://docs.mattermost.com/scale/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
 
 Frequently Asked Questions (FAQs)
