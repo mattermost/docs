@@ -147,9 +147,10 @@ During each monthly release, Mattermost backports high severity or high impact s
 Desktop and Mobile App Server Compatibility
 -------------------------------------------
 
-Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost Server.
+Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost Server.
 
 .. include:: upgrading-to-v60.rst
+  :start-after: :nosearch:
 
 In cases where Mattermost features or functionality involve the operating system, a specific Desktop App or Mobile App version may be required. For example, the Mattermost Desktop App v4.6 includes a setting for choosing desktop notification sounds which requires Mattermost Server v5.28 or later.
 

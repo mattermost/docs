@@ -1,3 +1,5 @@
+:nosearch:
+
 Configuring Google Apps as a Single Sign-On (SSO) service
 ---------------------------------------------------------
 

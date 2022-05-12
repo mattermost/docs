@@ -12,7 +12,7 @@ For advanced metrics for Enterprise deployments, `see performance monitoring doc
 Site statistics
 ---------------
 
-|all-plans| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
@@ -24,11 +24,15 @@ Site statistics
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/download
+  :alt: Available for Mattermost Cloud deployments.
+
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
-
 
 System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
 
@@ -96,7 +100,7 @@ Posts, Files and Hashtags
 Team statistics
 ---------------
 
-|all-plans| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
 Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in Direct Message channels, which are not tied to a team.
 

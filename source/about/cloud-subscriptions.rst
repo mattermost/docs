@@ -44,7 +44,7 @@ Frequently asked questions
 ---------------------------
 
 What happens when my 14-day trial period ends?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At the end of the 14-day trial, you will lose access to your workspace until you have added your payment information to continue using your Mattermost Cloud workspace.
 
@@ -110,3 +110,20 @@ Are S3-managed keys used for server-side encryption?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. Customer-provided keys may be considered for a future release. 
+
+Do you provide cross-region failover in the event of an outage in AWS us-east-1 region?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost Cloud is hosted in AWS `us-east-1` region. Cross-region failover is planned, but not yet in the roadmap. If you have feedback or require cross-region failover, please reach out to our product team via feedback-cloud[at]mattermost.com.
+
+What environments and rings are Cloud offerings deployed with?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`_: Starter, Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
+
+These offerings are deployed in the following ways:
+
+ - **Freemium**: Single application layer, shared infrastructure, shared network, starter group ring.
+ - **Professional**: Single application layer, shared infrastructure, shared network, professional group ring.
+ - **Enterprise**: Single application layer, shared infrastructure, shared network, enterprise group ring.
+ - **Enterprise plus dedicated add-on**: Single application layer, dedicated network via VPC (Virtual Private Cloud), dedicated infrastructure, enterprise group ring.
