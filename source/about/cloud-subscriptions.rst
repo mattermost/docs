@@ -114,7 +114,7 @@ Yes. Customer-provided keys may be considered for a future release.
 Do you provide cross-region failover in the event of an outage in AWS us-east-1 region?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud is hosted in AWS `us-east-1` region. Cross-region failover is planned, but not yet in the roadmap. If you have feedback or require cross-region failover, please reach out to our product team via feedback-cloud@mattermost.com.
+Mattermost Cloud is hosted in AWS `us-east-1` region. Cross-region failover is planned, but not yet in the roadmap. If you have feedback or require cross-region failover, please reach out to our product team via feedback-cloud[at]mattermost.com.
 
 What environments and rings are Cloud offerings deployed with?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
