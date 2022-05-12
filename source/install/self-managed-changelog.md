@@ -15,6 +15,8 @@ Latest Mattermost Releases:
 
 **Release Day: 2022-05-16**
 
+Mattermost v6.7.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Compatibility
  - Updated Chrome recommended minimum version to v100+.
 
