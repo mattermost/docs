@@ -1,7 +1,5 @@
 :nosearch:
 
-.. _install-kubernetes-operator:
-
 Installing the operators
 ------------------------
 
