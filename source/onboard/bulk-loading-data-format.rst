@@ -1,3 +1,4 @@
+:nosearch:
 .. _data-format:
 
 Data format

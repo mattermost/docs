@@ -26,6 +26,7 @@ Converting OAuth 2.0 Service Providers to OpenID Connect
 *Available in legacy Mattermost Enterprise Edition E20*
 
 .. include:: common-converting-oauth-to-openidconnect.rst
+  :start-after: :nosearch:
 
 Configuring OpenID Connect Single Sign-On
 -----------------------------------------

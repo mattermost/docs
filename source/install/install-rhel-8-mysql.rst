@@ -1,3 +1,4 @@
+:nosearch:
 ..  _install-rhel-8-mysql:
 
 Installing MySQL database server
