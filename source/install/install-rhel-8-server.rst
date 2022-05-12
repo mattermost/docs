@@ -1,3 +1,4 @@
+:nosearch:
 ..  _install-rhel-8-server:
 
 Installing Red Hat Enterprise Linux 8
