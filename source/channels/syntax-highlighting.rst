@@ -1,3 +1,5 @@
+:nosearch:
+
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">

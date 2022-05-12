@@ -37,6 +37,7 @@ Below is a list of additional resources:
 You can `download the desktop apps directly from our Downloads page <https://mattermost.com/download/>`__. You may also use the following installation guides for Windows, Mac, and Linux.
 
 .. include:: ../upgrade/upgrading-to-v60.rst
+  :start-after: :nosearch:
 
 .. contents::
     :backlinks: top
