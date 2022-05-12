@@ -52,6 +52,7 @@ System Admins can enable this option by going to **System Console > Authenticati
 Once enabled, users can opt to `set up multi-factor authentication <https://docs.mattermost.com/messaging/manage-profile-settings.html#multi-factor-authentication>`__ on their account by selecting **Profile > Security > Multi-factor Authentication** from their avatar.
 
 .. include:: common-disable-mfa.rst
+  :start-after: :nosearch:
 
 Enforcing MFA
 --------------
