@@ -152,7 +152,7 @@ If you’re using a login method other than email, you’ll need to make the req
 
 **Plugins**
 
-If you’re using plugins that aren’t listed on the Marketplace, they won’t be included in the export and you won’t have access to them going forward.
+If you’re using plugins that aren’t listed on the Marketplace, they won’t be included in the export and you won’t have access to them going forward. You can view the list of plugins `in the Support knowledgebase <https://support.mattermost.com/hc/en-us/articles/5346624843924>`_.
 
 **Data**
 
