@@ -302,6 +302,10 @@ Mattermost Team Edition v6.7.0 - `View Changelog <https://docs.mattermost.com/in
   - ``https://releases.mattermost.com/6.7.0/mattermost-team-6.7.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``5ae7f74ee5aa1f3b0f1597c020eec1460a950ea77f60ce9123d1f8cac96d7beb``
   - GPG Signature: https://releases.mattermost.com/6.7.0/mattermost-team-6.7.0-linux-amd64.tar.gz.sig
+Mattermost Team Edition v6.6.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-6-feature-release>`__ - `Download <https://releases.mattermost.com/6.6.1/mattermost-team-6.6.1-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/6.6.1/mattermost-team-6.6.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``044e3ea02acc14873cd86513f68831a042f3a3ffe25280d24568f97886527751``
+  - GPG Signature: https://releases.mattermost.com/6.6.1/mattermost-team-6.6.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v6.5.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v6-5-feature-release>`__ - `Download <https://releases.mattermost.com/6.5.1/mattermost-team-6.5.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/6.5.1/mattermost-team-6.5.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``fd4c6b7bba8b2683f5773eec797862b32e9a7610f0c4f3deab2747b5098a5553``
