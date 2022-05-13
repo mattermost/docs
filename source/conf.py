@@ -796,6 +796,8 @@ redirects = {
         "https://developers.mattermost.com/integrate/admin-guide/",
 "integrations/embedding.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-embedding/",
+"integrations/cloud-embedding.html":
+	"https://developers.mattermost.com/integrate/admin-guide/admin-embedding/",
 "integrations/integration-faq.html":
         "https://docs.mattermost.com/about/faq-integrations.html",
 "integrations/jira.html": 
