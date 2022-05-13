@@ -108,7 +108,7 @@ Verify group policy settings have been applied
 Install Mattermost Desktop using the MSI installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Within the folder the MSI installer was downloaded to, double0click on the MSI installer to begin the Mattermost Desktop installation process.
+1. Within the folder the MSI installer was downloaded to, double-click on the MSI installer to begin the Mattermost Desktop installation process.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00015.png
 
