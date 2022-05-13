@@ -172,18 +172,17 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     The following group policies are available:
 
-    +--------------------------+------------------------------------------------------------+----------------------+------------------------+------------------+
-    | Group policy             | Description                                                | Required Mattermost  | Setting                | State options    |
-    |                          |                                                            | version              |                        |                  |
-    +==========================+============================================================+======================+========================+==================+
-    | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | EnableServerManagement | - Not Configured |   
-    |                          | app settings are disabled.                                 |                      |                        | - Enabled        |
-    |                          |                                                            |                      |                        | - Disabled       |
-    +--------------------------+------------------------------------------------------------+----------------------+------------------------+                  |
-    | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | DefaultServerList      |                  |
-    +--------------------------+------------------------------------------------------------+----------------------+------------------------+                  |
-    | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | EnableAutoUpdates      |                  |
-    +--------------------------+------------------------------------------------------------+----------------------+------------------------+------------------+
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
+    | Group policy             | Description                                                | Mattermost release   | Setting                    | State options    |
+    +==========================+============================================================+======================+============================+==================+
+    | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` | - Not Configured |   
+    |                          | app settings are disabled.                                 |                      |                            | - Enabled        |
+    |                          |                                                            |                      |                            | - Disabled       |
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
+    | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |                  |
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
+    | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |                  |
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
 
     **Disable automatic updates**      
     
