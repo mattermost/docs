@@ -38,29 +38,36 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
   .. tab:: Ubuntu/Debian
 
-    A ``.deb`` package is available for Debian 8 and for Ubuntu LTS releases 18.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the Desktop App is released, your app updates automatically.
+    A ``.deb`` package is available for Debian 9 and for Ubuntu releases 18.04 LTS or later. Automatic app updates aren’t supported. You must update your app manually.
 
-    **Install the Mattermost Desktop App**
+    1. At the command line, set up the Mattermost repository on your system: 
+
+       .. code-block:: none
     
-    .. code-block:: none
-      
-      curl -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo bash
-      sudo apt install mattermost-desktop
+        curl -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo bash
+
+    2. Install the Mattermost Desktop App: 
     
-    **Disable automatic updates**
+       .. code-block:: none
 
-    Automatic Desktop App updates can be disabled by ... TBD
+        sudo apt install mattermost-desktop
 
-    **Manually check for updates** 
+    3. Update the Mattermost Desktop App: 
+    
+       .. code-block:: none
 
-    1. Select the **More** |more-icon-vertical| icon located in the top left corner of the Desktop App window, then select **File > Settings...**.
-    2. Select **Check for updates**. If a newer release of the Desktop App is available, you're prompted to install it.
+        sudo apt upgrade mattermost-desktop
 
     **Snapcraft package**
 
-    A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`__ on the Snapcraft website.
+    A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`__ on the Snapcraft website for details.
 
-    1. At the command line, execute the following command: ``sudo snap install mattermost-desktop --beta``
+    1. At the command line, execute the following command: 
+    
+       .. code-block:: none
+
+        sudo snap install mattermost-desktop --beta
+
     2. Run Mattermost as a desktop app.
 
     .. tip:: 
@@ -79,24 +86,40 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     2. At the command line, execute one of the following commands based on the package you downloaded:
 
-      - 64-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-x86_64.rpm``
-      - 32-bit systems ``sudo rpm -i mattermost-desktop-5.0.4-linux-i686.rpm``
+      - 64-bit systems:
+      
+        .. code-block:: none
+
+          sudo rpm -i mattermost-desktop-5.0.4-linux-x86_64.rpm
+
+      - 32-bit systems:
+      
+        .. code-block:: none
+        
+          sudo rpm -i mattermost-desktop-5.0.4-linux-i686.rpm
 
     3. Run Mattermost as a desktop app.
 
     **Manually update the Desktop App**
 
-    - 64-bit systems ``sudo rpm -u mattermost-desktop-5.0.4-linux-x86_64.rpm``
-    - 32-bit systems ``sudo rpm -u mattermost-desktop-5.0.4-linux-i686.rpm``
+    - 64-bit systems:
+    
+      .. code-block:: none
+
+        sudo rpm -u mattermost-desktop-5.0.4-linux-x86_64.rpm
+
+    - 32-bit systems:
+    
+      .. code-block:: none
+ 
+        sudo rpm -u mattermost-desktop-5.0.4-linux-i686.rpm
 
     .. tip:: 
       You can review the current version of your Desktop App by selecting the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window, then selecting **Help > Version...**.
 
   .. tab:: Generic Linux
 
-    A beta AppImage distribution of a compressed tarball is available. Automatic app updates are supported and enabled. When a new version of the Desktop App is released, your app updates automatically. 
-
-    **Install the Mattermost Desktop App**
+    A beta AppImage distribution of a compressed tarball is available. Automatic app updates aren’t supported. You must update your app manually. 
 
     1. Download the latest version of the Mattermost Desktop App:
 
@@ -105,24 +128,15 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     2. Extract the archive to a convenient location, then execute ``mattermost-desktop`` located inside the extracted directory.
 
-    3. To create a Desktop launcher, open the file **README.md** and follow the instructions in the **Desktop launcher** section.
-
-    **Disable automatic updates**
-
-    Automatic Desktop App updates can be disabled by ... TBD
-    
-    **Manually check for updates** 
-
-    1. Select the **More** |more-icon-vertical| icon located in the top left corner of the Desktop App window, then select **File > Settings...**.
-    2. Select **Check for updates**.
+    3. To create a Desktop launcher, open the file ``README.md``, and follow the instructions in the **Desktop launcher** section.
 
   .. tab:: macOS
 
-    MacOS 10.15+ is required, and you have two ways to install the Desktop App. How you install the app determines whether it updates automatically.
+    MacOS 10.15+ is required. You have two ways to install the Desktop App, and how you install the app determines whether it updates automatically.
 
     **Install from the App Store**
 
-    You can install the Desktop App from the `App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`__. When you install through the App Store, your Desktop App updates automatically when a new release is available.
+    We recommend that you install the Desktop App from the `App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`__. When you install through the App Store, your Desktop App updates automatically when a new release is available.
 
     **Download the Desktop App from GitHub**
 
@@ -156,28 +170,24 @@ You can `download the Desktop App directly from our Downloads page <https://matt
     - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-x64.msi>`__
     - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-x86.msi>`__
 
-    See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
-
     The following group policies are available:
 
-    +----------------------------+-----------------------------------------------------------------------------+---------------------------------+
-    | Group policy               | Description                                                                 | Required Mattermost version     |
-    +============================+=============================================================================+=================================+
-    | Enable Server Management   | If disabled, management of servers in the app settings are disabled.        | 4.3 or later                    |
-    +----------------------------+-----------------------------------------------------------------------------+---------------------------------+
-    | Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later                    |
-    +----------------------------+-----------------------------------------------------------------------------+---------------------------------+
-    | Automatic Updates          | If disabled, automatic Desktop App updates are disabled.                    | 5.1 or later                    |
-    +----------------------------+-----------------------------------------------------------------------------+---------------------------------+
-
-    **Manually check for updates**
-
-    1. Select the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window, then select **File > Settings...**.
-    2. Select **Check for updates**. If a newer release of the Desktop App is available, you're prompted to install it.
+    +--------------------------+------------------------------------------------------------+----------------------+------------------------+------------------+
+    | Group policy             | Description                                                | Required Mattermost  | Setting                | State options    |
+    |                          |                                                            | version              |                        |                  |
+    +==========================+============================================================+======================+========================+==================+
+    | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | EnableServerManagement | - Not Configured |   
+    |                          | app settings are disabled.                                 |                      |                        | - Enabled        |
+    |                          |                                                            |                      |                        | - Disabled       |
+    +--------------------------+------------------------------------------------------------+----------------------+------------------------+                  |
+    | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | DefaultServerList      |                  |
+    +--------------------------+------------------------------------------------------------+----------------------+------------------------+                  |
+    | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | EnableAutoUpdates      |                  |
+    +--------------------------+------------------------------------------------------------+----------------------+------------------------+------------------+
 
     **Disable automatic updates**      
     
-    Automatic Desktop App updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html>`__ for details.
+    Automatic Desktop App updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
     
 Additional documentation resources
 ----------------------------------
