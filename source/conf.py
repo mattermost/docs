@@ -1410,7 +1410,7 @@ redirects = {
 "process/training.html":
         "https://handbook.mattermost.com",
 "process/working-at-mattermost.html":
-	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding"
+	       "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 
