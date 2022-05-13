@@ -26,6 +26,7 @@ Office 365 Single Sign-On
 *Available in legacy Mattermost Enterprise Edition E20*
 
 .. include:: common-sso-office365.rst
+  :start-after: :nosearch:
 
 Configure Mattermost ``config.json`` for Office 365 SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
