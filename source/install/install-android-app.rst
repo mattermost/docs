@@ -38,3 +38,4 @@ Your Mattermost teams can be accessed on Android mobile devices by downloading t
   For information on managing your Mattermost profile and setting up `multi-factor authentication <https://docs.mattermost.com/welcome/manage-your-profile.html#multi-factor-authentication>`__, see the `manage your Mattermost profile <https://docs.mattermost.com/welcome/manage-your-profile.html#manage-your-mattermost-profile>`__ documentation.
 
 .. include:: ../upgrade/upgrading-to-v60.rst
+  :start-after: :nosearch:

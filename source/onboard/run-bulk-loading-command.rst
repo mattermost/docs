@@ -1,3 +1,4 @@
+:nosearch:
 .. _bulk-loading-data:
 
 Running the bulk loading command

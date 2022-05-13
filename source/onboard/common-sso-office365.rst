@@ -1,3 +1,5 @@
+:nosearch:
+
 Configuring Office 365 as a Single Sign-On (SSO) service
 --------------------------------------------------------
 

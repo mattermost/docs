@@ -328,6 +328,8 @@ redirects = {
 	"https://docs.mattermost.com/comply/compliance-export.html",
 "cloud/cloud-administration/custom-terms-of-service.html":
         "https://docs.mattermost.com/comply/custom-terms-of-service.html",
+"cloud/cloud-reporting.html": 
+	"https://docs.mattermost.com/manage/statistics.html",
 "cloud/cloud-administration/data-retention-policy.html":
         "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
 "cloud/cloud-administration/site-configuration.html":
@@ -1182,6 +1184,8 @@ redirects = {
 # Onboard redirects
 "onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20": 
         "https://docs.mattermost.com/onboard/ad-ldap.html#active-directory-ldap-setup",
+"onboard/migrating-from-hipchat-to-mattermost.html":
+        "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack",
 
 # Overview redirects
 "overview/architecture.html": 

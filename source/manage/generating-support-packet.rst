@@ -26,3 +26,4 @@ Generating a support packet
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
 .. include:: common-support-packet.rst
+  :start-after: :nosearch:

@@ -1,3 +1,5 @@
+:nosearch:
+
 Install Mattermost Server From Tar
 ----------------------------------
 
