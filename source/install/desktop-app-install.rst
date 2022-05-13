@@ -26,7 +26,7 @@ The Mattermost Desktop App is available for Linux, Mac, and Windows operating sy
 - `Connect to multiple Mattermost servers <https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html>`__ from a single interface, and navigate between servers using keyboard shortcuts.
 - `Auto-start Mattermost <https://docs.mattermost.com/welcome/customize-desktop-app-experience.html>`__ when a user logs into their machine.
 - `Add Mattermost <https://docs.mattermost.com/welcome/customize-desktop-app-experience.html>`__ to the Windows Start menu, the Taskbar, the Dock, or the System Tray.
-- (Windows/Mac) `Deep link to the Desktop App <https://docs.mattermost.com/welcome/customize-desktop-app-experience.html>`__ via the ``mattermost://`` protocol if the app is already installed.
+- (Windows/macOS) `Deep link to the Desktop App <https://docs.mattermost.com/welcome/customize-desktop-app-experience.html>`__ via the ``mattermost://`` protocol if the app is already installed.
 - (Linux) `Set up Desktop Entry <https://docs.mattermost.com/welcome/customize-desktop-app-experience.html>`__ for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__.
 
 Install and update the Mattermost Desktop App
