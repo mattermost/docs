@@ -20,12 +20,96 @@ Desktop application changelog
 
 Latest Mattermost Desktop App releases:
 
-- `Release v5.0 <#id1>`_
-- `Release v4.7 <#id3>`_
-- `Release v4.6 <#id21>`_
-- `Release v4.5 <#id33>`_
-- `Release v4.4 <#id49>`_
-- `Release v4.3 <#id68>`_
+- `Release v5.1 <#id1>`_
+- `Release v5.0 <#id4>`_
+- `Release v4.7 <#id21>`_
+- `Release v4.6 <#id39>`_
+- `Release v4.5 <#id51>`_
+- `Release v4.4 <#id68>`_
+
+Release v5.1
+--------------
+
+**Release day: 2022-05-16**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+**Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Added `a Desktop App auto-updater <https://docs.mattermost.com/install/desktop-app-install.html>`_. The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^
+
+- Updated the Linux closing behaviour to allow the app to close complely when pressing ``X``.
+- Changed the default setting for **Leave app running in notification area when application window is closed** on Linux to ``false`` by default.
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added the ability in Calls to select which window to share when screensharing.
+- Added a new config setting "Launch app minimized" to be able to auto-launch the app minimized when the application is launched on startup.
+- When the **Add Server** modal pops up for the first time when the app is launched, the modal now stays open instead of closes on mouse click until the first server has been added.
+- Added a new setting/preference to always open the Desktop App in full screen.
+- The app now uses ``ctrl+=`` and ``cmd+=`` to zoom in to match the behavior of Chrome and Firefox.
+- Changed the wording in the **File > View** menu from ``Tab`` to ``Server`` to reflect recent changes in the user interface.
+- Added the ability to copy the version string into clipboard from **Menu > Help > Version**.
+- Added a menu item **Window > Show Servers** to show a list of servers.
+- Removed the reference to the flashing window on the Settings page to avoid confusion when the window doesn't flash.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v18.0.3. Electron is the underlying technology used to build the Desktop app.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^^^^^^^^
+- Fixed an issue where the app window and taskbar did not flash when notifications were received.
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where customized URIs were not supported on the desktop app.
+- Fixed an issue where parsed, but technically invalid URIs could not be opened in the browser.
+- Fixed an issue where a channel name with an asterisk at the front would cause unreads to return a false positive.
+- Fixed an issue where opening a new tab view caused the original view to go to the requested link as well.
+- Fixed an issue where users could add the same server name or URL twice.
+- Fixed an issue where the URL view prevented users from clicking a button directly above it.
+- Fixed an issue where the tray icon theme toggle was not hidden when the icon itself wasn't enabled.
+- Fixed an issue where a redundant icon was present in Windows 10+ notifications.
+- Fixed an issue where unreads on a different team wouldn't trigger an unread badge in the Desktop App.
+- Fixed an issue where retrying to load tabs indefinitely instead of stopping after a few tries was not supported.
+- Fixed issues with the loading screen to make it more reliable.
+- Fixed an issue where ``Shift+Alt`` moved the focus to the top menu.
+- Fixed an issue where external links at the bottom of the page were not clickable.
+- Fixed an issue where mentions/unreads did not take precedence when setting the badge/tray icon.
+- Fixed an issue where the macOS dock would stay open after clicking the tray icon.
+- Fixed an issue where the URL view would persist once the user had moved their mouse off of an external URL.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Desktop App may become unresponsive and crash when initiating a screen reader `MM-44058 <https://mattermost.atlassian.net/browse/MM-44058>`_.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `ChristophKaser <https://github.com/ChristophKaser>`_, `coltoneshaw <https://github.com/coltoneshaw>`_, `devinbinnie <https://github.com/devinbinnie>`_, `JulienTant <https://github.com/JulienTant>`_, `oh6hay <https://github.com/oh6hay>`_, `Profesor08 <https://github.com/Profesor08>`_, `shadowshot-x <https://github.com/shadowshot-x>`_, `streamer45 <https://github.com/streamer45>`_, `svelle <https://github.com/svelle>`_ , `Willyfrog <https://github.com/Willyfrog>`_.
 
 Release v5.0
 --------------
