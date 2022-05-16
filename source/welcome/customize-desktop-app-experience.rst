@@ -18,37 +18,150 @@ Customize your Desktop App experience
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-In addition to your Profile settings and :doc:`Mattermost Settings </channels/channels-settings>`, the Mattermost Desktop App provides additional options to customize your experience.
+.. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
+  :alt: Use the More icon in the top left corner to access Mattermost Desktop Apps customization settings.
 
-The options appear on the **Settings** page, available on Windows and Linux from **... > File > Settings**, or on macOS from **Mattermost > Preferences**.
+In addition to your `personal profile settings <https://docs.mattermost.com/welcome/manage-your-profile.html>`__ and :doc:`Mattermost Channels settings </channels/channels-settings>`, the Mattermost Desktop App offers the following options to further customize your Mattermost experience.
 
-**Start app on login** (Windows and Linux only)
-    When enabled, the Mattermost application starts when you log in to your machine. This setting is enabled by default.
+.. tabs::
 
-**Check spelling** (Windows and Linux only)
-    When enabled, based on your system language configuration misspelled words in your messages are highlighted. This setting is enabled by default. You must restart the app to change this setting. 
-    
-    In Desktop App v5.0 and later versions, you can select multiple languages. When you go to type, all selected languages show as correct when a word matches one of them, and incorrect if it matches neither. If no language is selected, spell check will be based on the system language. 
-    
-    On macOS, the system language is used instead and multiple language selection is supported through the Operating System directly.
+    .. tab:: Linux
 
-**Show red badge on taskbar icon to indicate unread messages** (Windows and macOS only)
-    When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions or Direct Messages. If disabled, a red badge is only shown for unread mentions (with a number count). This setting is enabled by default.
+        Access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window by selecting **File > Settings...**
 
-**Flash taskbar icon when a new message is received** (Windows and Linux only)
-    Configure whether the taskbar icon flashes for a few messages when a new message is received on any of your active teams and servers. This setting is enabled by default.
-    
-**Bounce the Dock icon when receiving a notification** (macOS only)
-    When enabled, the Dock icon will either bounce once or bounce until the user opens the app when receiving a notification. This setting is enabled by default.
+        .. image:: ../images/desktop-app-settings.jpg
+            :alt: Access Desktop App customization settings by selecting More in the top left corner, then selecting File > Settings.
 
-**Show Mattermost icon in the menu bar** (macOS only)
-    When enabled, Mattermost icon is added to the Mac menu bar. This setting is disabled by default.
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | **Desktop App setting**                                                    | **Description**                                                                                                                            |
+        +============================================================================+============================================================================================================================================+
+        | Start app on login                                                         | The Mattermost Desktop App starts up automatically when you log in to your machine.                                                        |
+        |                                                                            | You can configure the Desktop App not to launch automatically when you log in to your machine.                                             |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Launch app minimized                                                       | You can configure the Mattermost Desktop App to launch minimized in the system tray.                                                       |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Check spelling                                                             | Misspelled words in your messages are highlighted based on the system language. You can disable spell check.                               |
+        |                                                                            |                                                                                                                                            |
+        |                                                                            | You can also specify additional spell check languages. You must restart the app to change this setting.                                    |
+        |                                                                            | When multiple languages are configured:                                                                                                    |
+        |                                                                            |                                                                                                                                            |
+        |                                                                            | - All selected languages show as correct when a word matches at least one selected language.                                               |
+        |                                                                            | - All selected languages show as incorrect when a word matches none of the languages.                                                      |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Use an alternative dictionary URL                                          | You can specify an alternate dictionary for spell check as a site URL.                                                                     |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Flash taskbar icon when a new message is received                          | Your taskbar icon flashes when a new message is received on any of your active teams and servers.                                          |
+        |                                                                            | You can disable the flashing taskbar icon.                                                                                                 |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Show icon in the notification area                                         | The Mattermost icon displays in the notification area. You can hide this icon.                                                             |
+        |                                                                            | You must restart the app to change this setting.                                                                                           |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Icon theme                                                                 | The default icon theme is based on the system preferences appearance setting.                                                              |
+        |                                                                            | You can choose to display a light or dark-themed icon.                                                                                     |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Leave app running in notification center when application window is closed | When you close the Mattermost Desktop App, you're prompted to confirm whether you want to permanently close the app.                       |
+        |                                                                            | You can disable this confirmation or silence it by selecting **Don't ask again**.                                                          |
+        |                                                                            | You can also configure the app to continue running after the window is closed.                                                             |
+        |                                                                            | To silence the notifications, select **Don't show again**.                                                                                 |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Use GPU hardware acceleration                                              | GPU hardware acceleration renders the Mattermost Desktop App interface more efficiently.                                                   |
+        |                                                                            | If you encounter decreased stability, you can disable GPU hardware acceleration. You must restart the app to change this setting.          |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Open app in fullscreen                                                     | You can configure the Mattermost Desktop App to open in fullscreen mode.                                                                   |
+        |                                                                            | You can also toggle this setting using the following CLI command:                                                                          |
+        |                                                                            |                                                                                                                                            |
+        |                                                                            | ``open release/mac/Mattermost.app --args --fullscreen true`` or ``open release/mac/Mattermost.app --args -f true``                         |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Download location                                                          | Specify where you want files to be downloaded on your machine.                                                                             |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+        | Logging level                                                              | You can adjust logging levels to isolate and troubleshoot issues.                                                                          |  
+        |                                                                            | Increasing the log level increases disk space usage and can impact performance.                                                            |
+        +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+    
 
-**Show icon in the notification area** (Linux only)
-    When enabled, the Mattermost icon is added to the Linux notification area. This setting is enabled by default.
+    .. tab:: Mac
 
-**Leave app running in notification center when application window is closed** (Linux only)
-    When enabled, closing the application window leaves the Mattermost Desktop App running in your notification center. This can be useful if you want to check for unread mentions while away from the app. This setting is enabled by default.
-    
-**Use GPU hardware acceleration**
-    When enabled, the Mattermost user interface is rendered more efficiently but can lead to decreased stability for some systems. This setting is enabled by default. You must restart the app to change this setting.
+        Access additional Desktop App customization settings by selecting **Mattermost > Preferences** from the menu bar.
+
+        .. image:: ../images/mac-desktop-app-settings.png
+            :alt: Access Desktop App customization settings by selecting Mattermost from the menu bar, then selecting Preferences.
+
+        +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+        | **Desktop App setting**                                 | **Description**                                                                                                                                          |
+        +=========================================================+==========================================================================================================================================================+
+        | Check spelling                                          | Misspelled words in your messages are highlighted based on the system language. You can disable spell check.                                             |
+        |                                                         |                                                                                                                                                          |
+        |                                                         | You can also specify additional spell check languages. You must restart the app to change this setting.                                                  |
+        |                                                         | When multiple languages are configured:                                                                                                                  |
+        |                                                         |                                                                                                                                                          |
+        |                                                         | - All selected languages show as correct when a word matches at least one selected language.                                                             |
+        |                                                         | - All selected languages show as incorrect when a word matches none of the languages.                                                                    |
+        +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+        | Show red badge on Dock icon to indicate unread messages | A red badge on the Dock icon displays a count of unread messages and mentions.                                                                           |
+        |                                                         | You can configure the Mattermost Desktop App to display a count of mentions only.                                                                        |
+        +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+        | Bounce the Dock icon                                    | When a new message is received on any of your active teams and servers, the Dock icon bounces once or bounces until you open the Mattermost Desktop App. |
+        |                                                         | You can configure the Mattermost Desktop App Dock icon to bounce more, less, or not at all.                                                              |
+        +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+        | Show Mattermost icon in the menu bar                    | The Mattermost icon displays in the notification area.                                                                                                   |
+        |                                                         | You can hide this icon. You must restart the app to change this setting.                                                                                 |
+        +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+        | Use GPU hardware acceleration                           | GPU hardware acceleration renders the Mattermost Desktop App interface more efficiently.                                                                 |
+        |                                                         | If you encounter decreased stability with this enabled, you can disable GPU hardware acceleration. You must restart the app to change this setting.      |
+        +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+        | Open app in fullscreen                                  | You can configure the Mattermost Desktop App to open in fullscreen mode.                                                                                 |
+        |                                                         | You can also toggle this setting using the following CLI command:                                                                                        |
+        |                                                         |                                                                                                                                                          |
+        |                                                         | ``open release/mac/Mattermost.app --args --fullscreen true`` or ``open release/mac/Mattermost.app --args -f true``                                       |
+        +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+    .. tab:: Windows
+
+        Access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the Mattermost window by selecting **File > Settings...**
+
+        .. image:: ../images/desktop-app-settings.jpg
+            :alt: Access Desktop App customization settings by selecting More in the top left corner, then selecting File > Settings.
+
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | **Desktop App setting**                                                  | **Description**                                                                                                                   |
+        +==========================================================================+===================================================================================================================================+
+        | Automatically check for updates                                          | Updates to the Mattermost Desktop App download automatically. You're notified when an update is ready.                            |
+        |                                                                          | You can disable automatic updates through group policy (GPO) settings.                                                            |
+        |                                                                          | You can also manually check for updates by selecting **Check for Updates Now**.                                                   |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Start app on login                                                       | The Mattermost Desktop App starts up automatically when you log in to your machine.                                               |
+        |                                                                          | You can configure the Desktop App not to launch automatically when you log in to your machine.                                    |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Launch app minimized                                                     | You can configure the Mattermost Desktop App to launch minimized in the system tray.                                              |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Check spelling                                                           | Misspelled words in your messages are highlighted based on the system language. You can disable spell check.                      |
+        |                                                                          |                                                                                                                                   |
+        |                                                                          | You can also specify additional spell check languages. You must restart the app to change this setting.                           |
+        |                                                                          |                                                                                                                                   |
+        |                                                                          | When multiple languages are configured:                                                                                           |
+        |                                                                          |                                                                                                                                   |
+        |                                                                          | - All selected languages show as correct when a word matches at least one selected language.                                      |
+        |                                                                          | - All selected languages show as incorrect when a word matches none of the languages.                                             |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Use an alternative dictionary URL                                        | You can specify an alternate dictionary for spell check as a site URL.                                                            |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Icon theme                                                               | The default icon theme is based on the system preferences appearance setting.                                                     |
+        |                                                                          | You can choose to display a light or dark-themed icon.                                                                            |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Leave app running in notification area when application window is closed | When you close the Mattermost Desktop App, you're prompted to confirm whether you want to permanently close the app.              |
+        |                                                                          | You can disable this confirmation or silence it by selecting **Don't ask again**.                                                 |
+        |                                                                          | You can also configure the app to continue running after the window is closed.                                                    |
+        |                                                                          | To silence the notifications, select **Don't show again**.                                                                        |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Use GPU hardware acceleration                                            | GPU hardware acceleration renders the Mattermost Desktop App interface more efficiently.                                          |
+        |                                                                          | If you encounter decreased stability, you can disable GPU hardware acceleration. You must restart the app to change this setting. |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Open app in fullscreen                                                   | You can configure the Mattermost Desktop App to open in fullscreen mode.                                                          |
+        |                                                                          | You can also toggle this setting using the following CLI command:                                                                 |
+        |                                                                          |                                                                                                                                   |
+        |                                                                          | ``open release/mac/Mattermost.app --args --fullscreen true`` or ``open release/mac/Mattermost.app --args -f true``                |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Download location                                                        | Specify where you want files to be downloaded on your machine.                                                                    |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+        | Logging level                                                            | You can adjust logging levels to isolate and troubleshoot issues.                                                                 |
+        |                                                                          | Increasing the log level increases disk space usage and can impact performance.                                                   |
+        +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
