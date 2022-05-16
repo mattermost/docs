@@ -17,7 +17,6 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Insights?
  - To not force users to leave Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in a different tab.
  - Implemented an improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
  - Users are no longer hidden from search results in the "Add members" modal even if they are already in the channel.
