@@ -26,3 +26,4 @@ OpenID Connect Single Sign-On
 *Available in legacy Mattermost Enterprise Edition E20*
 
 .. include:: common-sso-openidconnect.rst
+  :start-after: :nosearch:

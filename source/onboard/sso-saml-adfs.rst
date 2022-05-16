@@ -8,6 +8,7 @@ The following process provides steps to configure SAML 2.0 with Microsoft ADFS f
   :local:
 
 .. include:: sso-saml-before-you-begin.rst
+	:start-after: :nosearch:
 
 The following are basic requirements to use ADFS for Mattermost:
  - An Active Directory instance where all users have a specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
@@ -199,5 +200,7 @@ We recommend that you post an announcement about how the migration will work for
 You may also configure SAML for ADFS by editing the ``config.json`` file to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
 .. include:: sso-saml-ldapsync.rst
+	:start-after: :nosearch:
 
 .. include:: sso-saml-faq.rst
+	:start-after: :nosearch:
