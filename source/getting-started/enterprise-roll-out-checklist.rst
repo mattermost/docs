@@ -13,7 +13,7 @@ Enterprise roll out checklist
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users. 
+This checklist is intended to serve as a guide to organizations rolling out Mattermost to thousands of users. 
 
 Checklist overview
 -------------------

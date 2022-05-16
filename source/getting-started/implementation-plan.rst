@@ -1,5 +1,5 @@
-Implementation plan
-===================
+Implementation plan outline
+===========================
 
 |all-plans| |self-hosted|
 
