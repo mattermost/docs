@@ -134,10 +134,6 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     MacOS 10.15+ is required. You have two ways to install the Desktop App, and how you install the app determines whether it updates automatically.
 
-    **Install from the App Store**
-
-    We recommend that you install the Desktop App from the `App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`__. When you install through the App Store, your Desktop App updates automatically when a new release is available.
-
     **Download the Desktop App from GitHub**
 
     You can `download the Desktop App directly from our GitHub release page <https://github.com/mattermost/desktop/releases>`__. However, when you install the Desktop App this way, you can't manually check for updates, and updates won't be installed automatically.
