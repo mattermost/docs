@@ -18,22 +18,22 @@ Channel types
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You'll find four types of channels in Mattermost: public channels, private channels, direct messages, and group messages.
+You'll find four types of channels in Mattermost: Public Channels, Private Channels, direct messages, and group messages.
 
 Public channels
 ---------------
 
-Public channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and Leave Channels </channels/join-leave-channels>` documentation for details on discovering and joining other channels.
+Public Channels are open to everyone on a team and are identified with a |globe-icon| icon. New team members are automatically added to two Public Channels when they sign up: **Town Square** and **Off-Topic**. See the :doc:`Join and Leave Channels </channels/join-leave-channels>` documentation for details on discovering and joining other channels.
 
 .. |globe-icon| image:: ../images/globe-icon.png
    :alt: A globe icon indicates a public channel.
 
-Private channels
+Private Channels
 ----------------
 
-Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
+Private Channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a |lock-icon| icon. In Team Edition, any member of a Private Channel can add or remove other members from Private Channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
 
-Channel members can choose to leave private channels at any time.
+Channel members can choose to leave Private Channels at any time.
 
 .. |lock-icon| image:: ../images/lock-icon.png
    :alt: A lock icon indicates a private channel.
