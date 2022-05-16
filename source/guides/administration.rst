@@ -19,7 +19,7 @@ The basics
     Mattermost configuration settings </configure/configuration-settings>
     Reporting configuration settings </configure/reporting-configuration-settings>
     User management configuration settings </configure/user-management-configuration-settings>
-    Web Server configuration settings </configure/web-server-configuration-settings>
+    Web server configuration settings </configure/web-server-configuration-settings>
     Database configuration settings </configure/database-configuration-settings>
     Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
     Advanced permissions </onboard/advanced-permissions>
