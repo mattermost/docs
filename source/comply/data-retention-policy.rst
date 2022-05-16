@@ -22,7 +22,9 @@ Data retention policy
 
 By default, Mattermost stores all message history providing an unlimited search history to System Admins and end users.
 
-In Mattermost Enterprise, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and Direct Messages
+In Mattermost Enterprise, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
+
+For scheduled data retention jobs to work, the `global retention policy for files <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ as well as the `global retention policy for messages <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration settings in the ``config.json`` file must be set to ``true``. These configuration settings are disabled by default.
 
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.

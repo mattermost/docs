@@ -12,7 +12,7 @@ Mattermost Cloud subscriptions start with a 14-day trial. When you're near the e
 4. (Optional) Select a subscription plan.
 5. Select **Subscribe**.
 
-Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote. 
+Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote.
 
 View subscription details
 -------------------------
@@ -33,7 +33,7 @@ If you're on a monthly Cloud subscription, you can add more users to your instan
 
 When you subscribe to an annual plan with Mattermost, you may incur retroactive charges on a quarterly basis for the actual number of registered users within your system if you are above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
-If you have more total active users than what you purchased in your annual subscription, we will provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__. 
+If you have more total active users than the number purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__.
 
 Renew your subscription
 -----------------------
@@ -46,9 +46,9 @@ Frequently asked questions
 What happens when my 14-day trial period ends?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the end of the 14-day trial, you will lose access to your workspace until you have added your payment information to continue using your Mattermost Cloud workspace.
+At the end of the 14-day trial, you'll lose access to your workspace until you have added your payment information to continue using your Mattermost Cloud workspace.
 
-If you do not add your payment information within 30 days, we will delete your Cloud workspace permanently and you will lose any associated data.
+If you don't add your payment information within 30 days, we'll delete your Cloud workspace permanently and you'll lose any associated data.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,14 +85,14 @@ How is Mattermost Cloud secured?
 
 Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certified and working towards SOC2 Type 2.
 
-Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC (Virtual Private Cloud) dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. Please contact Mattermost Sales for more information on this option. 
+Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC (Virtual Private Cloud) dedicated to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. Please contact Mattermost Sales for more information on this option.
 
 What are the alternatives, and why should customers choose Mattermost Cloud?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Other SaaS offerings are closed-source and focus on a very broad use case. Mattermost Cloud is built on our open source core offering, allowing customers to view our source code and have a high degree of transparency into Mattermost development processes. Mattermost provides a DevOps-centric offering and has deep integrations and workflows that help builders and operators be more effective.
 
-Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. Other SaaS offerings are multi-tenant, meaning customers share resources. Please contact sales for more inforamtion on this option. 
+Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. Other SaaS offerings are multi-tenant, meaning customers share resources. Please contact sales for more inforamtion on this option.
 
 Is Mattermost Cloud Enterprise a dedicated instance run on AWS systems?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,7 +102,7 @@ Mattermost Cloud Enterprise can be deployed as a dedicated Mattermost environmen
 How is customer data in Mattermost Cloud Enterprise encrypted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost uses AWS-provided functionality to enable encryption-at-rest for both databases and file stores. See `Encrypting Amazon RDS resources - Amazon Relational Database Service <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html>`__ and `Protecting data using server-side encryption - Amazon Simple Storage Service <https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html>`__ for details. 
+Mattermost uses AWS-provided functionality to enable encryption-at-rest for both databases and file stores. See `Encrypting Amazon RDS resources - Amazon Relational Database Service <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html>`__ and `Protecting data using server-side encryption - Amazon Simple Storage Service <https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html>`__ for details.
 
 Whether customer data should be stored in Mattermost Cloud depends heavily on the nature of the data and compliance requirements. We recommend that customers set up their own internal policies or controls around what can and cannot be put into Mattermost.
 

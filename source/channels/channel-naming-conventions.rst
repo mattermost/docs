@@ -29,8 +29,8 @@ Basic structure
 - An additional 128 characters are available to add a **Channel Purpose** visible when users are selecting channels.
 - An additional 1024 characters are available for describing the channel in detail in the **Channel Header**.
 
-Scoping names
--------------
+Scope channel names
+-------------------
 
 It's natural to start with broadly defined channels and let them divide into narrower topics as discussions progress.
 
@@ -52,22 +52,14 @@ You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-T
    
    Shorten words, particularly categories, by removing vowels, endings, and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
 
-Good naming can take a team up to several thousand channels without significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accommodate the large number of channels.
+Good naming can take a team up to several thousand channels without significant confusion. Eventually every organization hits a limit and an additional team might need to be created on the server to accommodate the large number of channels. Keeping names clear and short lets users navigate large collections of channels quickly.
 
-Here are different navigation options and types of channels to consider:
+Here are different navigation options and types of channels to consider.
 
-Navigating channels using the keyboard
+Navigate channels using the keyboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Keyboard shortcuts allow users to jump between channels. 
-
-Entering CTRL+K brings up a dialog where users can type in the first few letters of a channel, triggering auto-complete. Pressing ENTER jumps to the channel directly.
-
-Keeping names clear and short lets users navigate large collections of channels quickly.
-
-.. tip:: 
-   
-   Use ALT+SHIFT+UP and ALT+SHIFT+DOWN to move up and down to the next channel with an unread message.
+Keyboard shortcuts allow users to jump between channels. See the `keyboard shortcuts for Channels <https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html>`__ documentation for all available keyboard shortcuts.
 
 Topic channels
 ~~~~~~~~~~~~~~

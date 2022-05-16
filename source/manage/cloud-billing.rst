@@ -17,7 +17,7 @@ Mattermost Cloud is offered as a pay-as-you-go subscription service.
 
 You will be billed for registered users in your workspace. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**. Registered users will count towards your monthly invoice each day as long as they are not deactivated in the billing period.
 
-Customers who signed up for a Mattermost Cloud workspace from our October 2020 launch can continue to use their Cloud instance free of charge for up to ten registered users; however, these customers must upgrade to a per-user pricing model after reaching 11 or more registered users. New Mattermost Cloud workspaces can trial Mattermost Cloud free for 14 days before being required to upgrade to a monthly per-user subscription. 
+Mattermost Cloud workspaces can trial Mattermost Cloud free for 14 days before being required to upgrade to a monthly per-user subscription. 
 
 Billing period
 --------------
@@ -47,12 +47,12 @@ You can view your billing details in **System Console > Billing & Account**.
 Subscription
 ~~~~~~~~~~~~
 
-The subscription screen outlines the details of your Mattermost Cloud plan, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
+The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
 
 Billing history
 ~~~~~~~~~~~~~~~
 
-The Billing History screen contains a list of all your monthly invoices and payments. Invoices appear immediately after the billing period ends.
+Invoices appear immediately after the billing period ends.
 
 Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated, and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
 
@@ -66,9 +66,9 @@ The **Company Information** screen contains an area to add your company address 
 Payment information
 ~~~~~~~~~~~~~~~~~~~
 
-Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted.
+Mattermost uses a third-party payments processor, Stripe, to safely collect and store your credit card information. 
 
-Mattermost has engaged third party payments processor Stripe to safely collect and store your credit card information. You may only store information pertaining to one credit card.
+Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted. You can only store information for one credit card in your account.
 
 We offer pricing and billing only in U.S. Dollars (USD) at this time. Payment will be made in USD converted using the exchange rate from at the time of the transaction.
 
@@ -80,7 +80,7 @@ Mattermost reserves the right to assess applicable taxes as required by local la
 Failed or late payments
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-You will be notified immediately of failed payments both in-product with a banner and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you will be charged right away for the amount owing from the previous billing period. If payment information is not updated and the account remains in arrears, here's what to expect:
+You'll be notified immediately of failed payments both in-product with a banner and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period. If payment information is not updated and the account remains in arrears, here's what to expect:
 
 .. csv-table::
    :header: "Time in arrears", "Action taken"
