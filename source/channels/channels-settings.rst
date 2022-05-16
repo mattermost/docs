@@ -114,7 +114,7 @@ When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organ
 Automatic direct message replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set an automated custom message that will be sent once per day in response to direct messages. Mentions in public and private channels won't trigger the automated reply. Enabling Automatic Replies sets your availability to **Out of Office** and disables desktop, email, and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies>`__.
+Set an automated custom message that will be sent once per day in response to direct messages. Mentions in Public and Private Channels won't trigger the automated reply. Enabling Automatic Replies sets your availability to **Out of Office** and disables desktop, email, and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/configuration-settings.html#enable-automatic-replies>`__.
 
 Display
 -------
