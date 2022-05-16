@@ -50,4 +50,4 @@ Group messages are channels for conversations among three or more people and up 
 
 .. tip::
 
-   Create a private channel to communicate with more than seven people. 
+   Create a Private Channel to communicate with more than seven people. 
