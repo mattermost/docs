@@ -118,7 +118,7 @@ Project channels
 
 Project channels discuss how groups of people come together to achieve specific outcomes. Examples: Logo Design, Localization, Product Launch.
 
-Projects are often private channels rather than Public Channels and are used to organize a small team around a project brought up in a larger channel. The Project Channel is used to do detailed work, and updates are typically communicated back to larger channels.
+Projects are often private channels rather than public channels and are used to organize a small team around a project brought up in a larger channel. The Project Channel is used to do detailed work, and updates are typically communicated back to larger channels.
 
 Location channels
 ~~~~~~~~~~~~~~~~~~
