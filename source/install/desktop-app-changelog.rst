@@ -49,6 +49,10 @@ Highlights
 Improvements
 ~~~~~~~~~~~~~~~
 
+Mac
+^^^^^^
+- Mattermost can now be installed on the Mac App Store. Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
+
 Linux
 ^^^^^^
 
