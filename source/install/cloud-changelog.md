@@ -4,12 +4,43 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-05-25](#release-2022-05-25)
 - [Release 2022-05-12](#release-2022-05-12)
 - [Release 2022-04-28](#release-2022-04-28)
 - [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
 - [Release 2022-03-08](#release-2022-03-08)
+
+## Release 2022-05-25
+
+### Improvements
+
+#### User Interface (UI)
+ - Insights?
+ - To not force users to leave Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in a different tab.
+ - Implemented an improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
+ - Users are no longer hidden from search results in the "Add members" modal even if they are already in the channel.
+ - Applied new designs for the Login screen:
+     - Default login
+     - OAuth options
+     - Custom branding
+     - MFA token
+ - Changed **Actions** post menu hover text to **Message Actions**.
+
+#### Administration
+ - Enabled ``always-on`` and ``default-on`` for Collapsed Reply Threads system configuration.
+ - Upgraded the minor version of the ElasticSearch development Docker image.
+ - The Support Packet now contains two additional fields in the ``support_packet.yaml`` file: Active users and License-supported users.
+
+#### Bug Fixes
+ - Fixed an issue where the shortcut modal for channel info showed ``Alt`` instead of ``Shift`` for Mac.
+ - Fixed an issue where the **Report a Problem** link was not hidden when a URL wasn't set.
+
+### Known Issues
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-05-12
 
