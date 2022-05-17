@@ -62,7 +62,7 @@ Everyone in your Mattermost workspace can use the custom emojis you upload. From
   
 .. note::
 
-  If you can't see the **Custom Emoji** option, then your Mattermost System Admin may have restricted access to upload custom emoji. Contact your Mattermost System Admin for assistance.
+  If you can't see the **custom emoji** option, then your Mattermost System Admin may have restricted access to upload custom emoji. Contact your Mattermost System Admin for assistance.
   
 To use your custom emoji in a message, select it from the Emoji Picker, or type ``:`` followed by your emoji name to bring it up in the emoji autocomplete. 
   
@@ -72,8 +72,8 @@ Remove custom emojis
 You can remove custom emojis that you uploaded to Mattermost.
   
 1. Open the Emoji Picker.
-2. Select **Custom Emoji**.
-3. If required, use the Search Bar to find your Custom Emoji in the list.
+2. Select **custom emoji**.
+3. If required, use the Search Bar to find your custom emoji in the list.
 4. Under **Actions** select **Delete**.
 5. Choose **Delete** to confirm.
   
