@@ -1,74 +1,35 @@
 Customize Mattermost notifications
 ==================================
 
-all-plans | self-hosted
+|all-plans| |self-hosted|
 
+.. |all-plans| image:: ../images/all-plans-badge.png
+  :scale: 30
+  :target: https://mattermost.com/pricing
+  :alt: Available in Mattermost Free and Starter subscription plans.
 
-Push notifications: https://docs.mattermost.com/deploy/mobile-hpns.html
-Control push notifications content: https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents
+.. |self-hosted| image:: ../images/self-hosted-badge.png
+  :scale: 30
+  :target: https://mattermost.com/deploy
+  :alt: Available for Mattermost Self-Hosted deployments.
 
-Desktop app & browser tab notifications, email notifications, and mobile push notifications: https://docs.mattermost.com/channels/channels-settings.html#notifications
+On this page, you'll learn about Mattermost notifications and how to set notification preferences.
 
+Default notifications
+---------------------
 
-Real-time `mobile push notifications <https://docs.mattermost.com/configure/configuration-settings.html#enable-push-notifications>`__ are enabled by default.                                       |
-|                              | You can control the `content included in notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.                                           |
-|                              | See the `Push notification server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-server>`__ documentation for details.                                        |
-|                              |                                                                                                                                                                                                     |
-|                              | **Additional notification notes:**                                                                                                                                                                  |
-|                              |                                                                                                                                                                                                     |
-|                              | Mattermost subscription plans provide access to Mattermost's Hosted Push Notification Service featuring encrypted TLS connections and production-level uptime service level agreements.             |
-|                              | See the `HPNS <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`__ documentation for details.                                                            |
-|                              |                                                                                                                                                                                                     |
-|                              | Mattermost Enterprise customers can `enable ID-Only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ so push notification       |
-|                              | content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device.                                                           |
-|                              | The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__.         
+By default, when new channel messages, thread responses, mentions, key trigger words, or new direct or group messages are received, Mattermost users are notified in the following ways:
 
-Option
-Recommendations
-Desktop Notifications
-For efficient focus, select the following options:
-Only for mentions and direct messages
-Notify me about threads I’m following
+- **Desktop App notifications** - All users can `personalize Desktop App notifications, <https://docs.mattermost.com/channels/channels-settings.html#desktop-notifications>`__, including collapsed reply thread notifications, based on preference.
+- **Mobile Apps push notifications** - You can `control the contents of push notification <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__, and all users can `personalize push notifications based on preference <https://docs.mattermost.com/channels/channels-settings.html#mobile-push-notifications>`__. Mattermost subscription plans also include access to Mattermost's `Hosted Push Notification Service <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`__ featuring encrypted TLS connections and production-level uptime service level agreements.
+- **Browser tab notifications** - Unread messages and a count of mentions or direct messages is displayed on Chrome, Edge, Firefox, and Safari.
 
-Tips:
-A notification sound can be enabled or disabled based on preference.
-For deployments with Collapsed Reply Threads (Beta) enabled:
-Follow threads of interest on demand.
-Unfollow threads that become less relevant over time.
-Email Notifications
-Valuable to new users, but may be noisy for experienced users.
-Mobile Push Notifications
-For efficient focus, select the following options:
-Only for mentions and direct messages
-Trigger push notifications can be updated based on specific circumstances, such as when in meetings or workshops.
-Notify me about threads I’m following
-Words that Trigger Mentions
-Specify any additional non-case sensitive words to be notified on, such as hashtags, subjects, or customer names.
-Reply notifications
-For deployments with Collapsed Reply Threads (Beta) disabled:
-Receive notifications when someone replies to a thread the user started only, or started and participated in.
-Automatic Direct Message Replies
-Enable Automatic Replies by going to System Console > Experimental > Features to allow all users to set an automated custom message that will be sent once per day in response to Direct Messages.
+Email notifications
+-------------------
 
+You can `enable email notifications <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-notifications>`__ for mentions and direct messages received while users are away from or logged out of Mattermost. If email notifications are too noisy, you can also `enable batched email notifications <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-batching>`__. Email notifications require a configured `SMTP email server <https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__.
 
-**4. Enable full content push notifications**
+What's next?
+------------
 
-Enable push notifications on mobile devices to deliver messages in real time by setting **System Console > Push Notification Server > Enable Push Notifications** to **Use TPNS**. See the `Push notification server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-server>`__ configuration settings documentation for details.
-
-Enable full content push notifications, including the sender’s name, the channel name, and the message text, by setting **System Console > Notifications > Push Notification Contents** to **Full message contents**. See the `Push notification contents <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ configuration settings documentation for details.
-
-.. note::
-
-  - Mattermost subscription plans allow you to `enable HPNS <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`__ that includes production-level uptime SLAs.
-
-  - Mattermost Enterprise customers can `enable ID-Only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ so push notification content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device. The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__ while allowing team members to benefit from mobile push notifications.
-
-
-
-  **8. Enable batched email notifications**
-
-Email notifications can be batched together so users don’t get overwhelmed with too many emails.
-
-Enable email notifications first by setting **System Console > Notifications > Enable Email Notifications** to **true**. See the `Enable email notifications <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-notifications>`__ configuration settings documentation for details. Note that email notifications require an `SMTP email server <https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ to be configured.
-
-Then, enable batched email notifications by setting **System Console > Notifications > Enable Email Batching** to **true**. See the `Enable email batching <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-batching>`__ configuration settings documentation for details. Note that email batching is not available if you are running your deployment in `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
+Now that you've learned about Mattermost notifications, next you'll want to learn how to :doc:`monitor your Mattermost deployment </getting-started/get-started-monitor>` with logging, audit logging, performance monitoring tools, and using workspace optimization tools available from Mattermost v6.5.

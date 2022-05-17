@@ -50,3 +50,8 @@ Then learn how to control product access with `user roles <https://docs.mattermo
 .. tip::
 
   Mattermost won’t limit you to the number of teams you can create; however, a public team and an internal team are typically sufficient. See our `creating teams <https://docs.mattermost.com/welcome/about-teams.html#create-a-team>`__ and our `team settings <https://docs.mattermost.com/welcome/team-settings.html>`__ documentation for more information on working with teams.
+
+What's next?
+------------
+
+Now that you've added Mattermost users, configured user authentication, and are controlling product access through roles and permissions, you'll want to learn about :doc:`Mattermost notifications </getting-started/get-started-notifications>` and where users can configure them based on preference.
