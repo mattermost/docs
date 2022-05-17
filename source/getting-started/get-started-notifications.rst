@@ -4,7 +4,24 @@ Customize Mattermost notifications
 all-plans | self-hosted
 
 
+Push notifications: https://docs.mattermost.com/deploy/mobile-hpns.html
+Control push notifications content: https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents
+
 Desktop app & browser tab notifications, email notifications, and mobile push notifications: https://docs.mattermost.com/channels/channels-settings.html#notifications
+
+
+Real-time `mobile push notifications <https://docs.mattermost.com/configure/configuration-settings.html#enable-push-notifications>`__ are enabled by default.                                       |
+|                              | You can control the `content included in notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__.                                           |
+|                              | See the `Push notification server <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-server>`__ documentation for details.                                        |
+|                              |                                                                                                                                                                                                     |
+|                              | **Additional notification notes:**                                                                                                                                                                  |
+|                              |                                                                                                                                                                                                     |
+|                              | Mattermost subscription plans provide access to Mattermost's Hosted Push Notification Service featuring encrypted TLS connections and production-level uptime service level agreements.             |
+|                              | See the `HPNS <https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns>`__ documentation for details.                                                            |
+|                              |                                                                                                                                                                                                     |
+|                              | Mattermost Enterprise customers can `enable ID-Only push notifications <https://docs.mattermost.com/configure/configuration-settings.html#push-notification-contents>`__ so push notification       |
+|                              | content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device.                                                           |
+|                              | The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__.         
 
 Option
 Recommendations

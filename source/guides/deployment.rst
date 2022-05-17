@@ -58,27 +58,27 @@ Get started with Mattermost
 
     Mattermost architecture </getting-started/architecture-overview>
     Prepare to deploy Mattermost Server </getting-started/get-started-deploy>
-    Make your deployment production ready </getting-started/get-started-configure>
-    Onboard users </getting-started/get-started-add-users>
+    Notes for Mattermost System Admins </getting-started/get-started-system-admin-notes>
+    Ensure your deployment is production ready </getting-started/get-started-configure>
+    Onboard users </getting-started/get-started-onboard-users>
     Welcome email template </getting-started/welcome-email-to-end-users>
     Customize notifications </getting-started/get-started-notifications>
     Monitor your deployment </getting-started/get-started-monitor>
     Extend Mattermost functionality </getting-started/get-started-extend>
-    Notes for Mattermost System Admins </getting-started/get-started-system-admin-notes>
     Implemention plan outline </getting-started/implementation-plan>
     Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>
     
 These guides will help you prepare for and get started with your Mattermost deployment.
 
-* :doc:`Mattermost Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
+* :doc:`Mattermost architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Prepare to deploy Mattermost Server </getting-started/get-started-deploy>` - Learn how to get started with a Mattermost self-hosted deployment.
-* :doc:`Make your Mattermost deployment production-ready </getting-started/get-started-configure>` - Ensure your Matermost deployment is set up for production success.
-* :doc:`Onboard users </getting-started/get-started-add-users>` - Onboard users to your Mattermost deployment.
+* :doc:`Notes for Mattermost System Admins </getting-started/get-started-system-admin-notes>` - Important notes for new Mattermost System Admins.
+* :doc:`Ensure your Mattermost deployment is production-ready </getting-started/get-started-configure>` - Ensure your Matermost deployment is set up for production success.
+* :doc:`Onboard users </getting-started/get-started-onboard-users>` - Onboard users to your Mattermost deployment.
 * :doc:`Welcome email template </getting-started/welcome-email-to-end-users>` - Use our sample email template when you’re ready to invite users to your server.
 * :doc:`Customize notifications </getting-started/get-started-notifications>` - Learn about Mattermost notifications and how to customize them.
 * :doc:`Monitor your Mattermost deployment </getting-started/get-started-monitor>` - Learn how to use Mattermost logging and performance monitoring tools.
 * :doc:`Extend Mattermost functionality </getting-started/get-started-extend>` - Extend Mattermost functionality with plugins, bots, and apps.
-* :doc:`Notes for Mattermost System Admins </getting-started/get-started-system-admin-notes>` - Important notes for Mattermost System Admins.
 * :doc:`Implemention plan outline </getting-started/implementation-plan>` - Review a breakdown of the technical requirements for deploying Mattermost for your team or organization.
 * :doc:`Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>` - Learn how to roll Mattermost out to thousands of users.
 

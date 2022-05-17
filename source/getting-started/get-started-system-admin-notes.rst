@@ -13,11 +13,18 @@ Important notes for Mattermost System Admins
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+On this page, you'll learn how to manage your first few Mattermost user accounts, and how to optimize your self-hosted deployment. See the 
 
-DO NOT manipulate the Mattermost database
-------------------------------------------
+.. important::
 
-In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation. If you need to permanently delete a team or user, use the `mmctl user delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ command, or the `mattermost user delete <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete>`__ CLI command. 
+    **DO NOT manipulate the Mattermost database**
+
+    In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation. If you need to permanently delete a team or user, use the `mmctl user delete <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete>`__ command, or the `mattermost user delete <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-delete>`__ CLI command. 
+
+Onboard users
+-------------
+
+See the :doc:`onboard users </getting-started/get-started-onboard-users>` documentation to learn how to extend Mattermost invitations, enable automatic account creation, integrate with your directory services, and onboard user accounts in bulk.
 
 Promote a user to System Admin role
 -----------------------------------
@@ -42,3 +49,8 @@ From Mattermost v6.5, System Admins review their workspace health and growth sco
 Mattermost releases regular updates to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. The `Mattermost self-hosted changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ provides details about changes within each release. When you upgrade your Mattermost server frequently, your users can access new features, improved user experiences, bug fixes, security fixes, and Mobile App compatibility.
 
 See the `Upgrade Guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ for step-by-step instructions on upgrading your Mattermost server.
+
+What's next?
+------------
+
+Now that you understand how to manage your first Mattermost user accounts and reivew your workspace health and growth scores in the System Console, you'll want to :doc:`review your workspace configuration </getting-started/get-started-configure>` to ensure your Mattermost workspace is production-ready.

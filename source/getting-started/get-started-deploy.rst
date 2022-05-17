@@ -93,4 +93,4 @@ Once your license key is uploaded to your Mattermost server, it's stored in your
 What's next?
 ------------
 
-Now that you've considered your hardware needs, deployed a Mattermost self-hosted workspace, and installed a license key, you'll want to :doc:`review important notes for Mattermost System Admins </getting-started/get-started-system-admin-notes>` before learning how to :doc:`configure your Mattermost deployment </getting-started/get-started-configure>` for production use.
+Now that you've considered your hardware needs, deployed a Mattermost self-hosted workspace, and installed a license key, you'll want to :doc:`review important notes for Mattermost System Admins </getting-started/get-started-system-admin-notes>` before learning how to :doc:`review your workspace configuration </getting-started/get-started-configure>` for production use.
