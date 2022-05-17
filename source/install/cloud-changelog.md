@@ -28,7 +28,7 @@ Latest Mattermost Cloud releases:
  - Changed **Actions** post menu hover text to **Message Actions**.
 
 #### Administration
- - Added ``always-on`` and ``default-on`` System Configuration settings for Collapsed Reply Threads. When enabled (default on), users see Collapsed Reply Threads by default and have the option to disable it in account settings. When always on, users are required to use Collapsed Reply Threads and cannot disable it.
+ - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default on), users see Collapsed Reply Threads by default and have the option to disable it in account settings. When always on, users are required to use Collapsed Reply Threads and cannot disable it. The default state is still ``default-off``.
 
 #### Bug Fixes
  - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
