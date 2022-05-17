@@ -17,9 +17,9 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - To not force users to leave Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in a different tab.
- - Implemented an improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
- - Users are no longer hidden from search results in the "Add members" modal even if they are already in the channel.
+ - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
+ - Improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
+ - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
  - Applied new designs for the Login screen:
      - Default login
      - OAuth options
@@ -29,11 +29,9 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Enabled ``always-on`` and ``default-on`` for Collapsed Reply Threads system configuration.
- - Upgraded the minor version of the ElasticSearch development Docker image.
- - The Support Packet now contains two additional fields in the ``support_packet.yaml`` file: Active users and License-supported users.
 
 #### Bug Fixes
- - Fixed an issue where the shortcut modal for channel info showed ``Alt`` instead of ``Shift`` for Mac.
+ - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
  - Fixed an issue where the **Report a Problem** link was not hidden when a URL wasn't set.
 
 ### Known Issues
