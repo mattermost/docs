@@ -28,11 +28,11 @@ Latest Mattermost Cloud releases:
  - Changed **Actions** post menu hover text to **Message Actions**.
 
 #### Administration
- - Enabled ``always-on`` and ``default-on`` for Collapsed Reply Threads system configuration.
+ - Added ``always-on`` and ``default-on`` System Configuration settings for Collapsed Reply Threads. When enabled (default on), users see Collapsed Reply Threads by default and have the option to disable it in account settings. When always on, users are required to use Collapsed Reply Threads and cannot disable it.
 
 #### Bug Fixes
  - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
- - Fixed an issue where the **Report a Problem** link was not hidden when a URL wasn't set.
+ - Fixed an issue where the **Help > Report a Problem** link was not hidden when a URL was not set for **System Console > Customization > Report a Problem**.
 
 ### Known Issues
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
