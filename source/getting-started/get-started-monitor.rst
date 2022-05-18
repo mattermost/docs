@@ -28,9 +28,9 @@ Mattermost Enterprise customers can track system health for large deployments th
 Workspace optimization tools
 ----------------------------
 
-From Mattermost v6.5, you can review your workspace health and growth scores in the System Console, then take advantage of recommended actions to ensure your workspace is running smoothly. See the `workspace optimizatio <https://docs.mattermost.com/configure/optimize-your-workspace.html>`__ documentation to learn more.
+From Mattermost v6.5, you can review your workspace health and growth scores in the System Console, then take advantage of recommended actions to ensure your workspace is running smoothly. See the `workspace optimization <https://docs.mattermost.com/configure/optimize-your-workspace.html>`__ documentation to learn more.
 
 What's next?
 ------------
 
-Now that you've learned about the tools available to monitor your Mattermost deployment, you'll want to learn how easy it is to extend Mattermost functionality with integrations.
+Now that you've learned about the tools available to monitor your Mattermost deployment, you'll want to learn how easy it is to :doc:`extend Mattermost functionality </getting-started/get-started-extend>` with integrations.
