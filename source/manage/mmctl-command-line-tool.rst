@@ -1,4 +1,4 @@
-mmctl Command Line Tool
+mmctl command line tool
 =======================
 
 |all-plans| |cloud| |self-hosted|
@@ -72,6 +72,9 @@ mmctl usage notes
 
 - System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the repository, or by building it directly. See the `mmctl readme <https://github.com/mattermost/mmctl#install>`__ for details.
 - ``mmctl`` comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
+
+  - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
+  - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
 - Parameters in CLI commands are order-specific.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
@@ -116,6 +119,7 @@ mmctl commands
 .. code-block:: sh
 
        --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+       --disable-pager                disables paged output
        -h, --help                     help for mmctl
        --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
        --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
@@ -268,6 +272,7 @@ Clean the credentials associated with a Mattermost instance.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -306,6 +311,7 @@ Show the currently stored user credentials.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -344,6 +350,7 @@ Delete a named credential.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -382,6 +389,7 @@ Print a list of registered credentials.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -429,6 +437,7 @@ Log in to an instance and store credentials.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -470,6 +479,7 @@ Renew the credentials for a given server.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -508,6 +518,7 @@ Set credentials to use in the following commands.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -647,6 +658,7 @@ Assign the ownership of a bot to another user.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -688,6 +700,7 @@ Create a bot.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -726,6 +739,7 @@ Disable an enabled bot.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -764,6 +778,7 @@ Enable a disabled bot.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -804,6 +819,7 @@ List the bot's users.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -845,6 +861,7 @@ Update bot information.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -912,6 +929,7 @@ Archive channels along with all related information including posts from the dat
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -957,6 +975,7 @@ Create a channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -971,6 +990,9 @@ mmctl channel delete
 **Description**
 
 Permanently delete channels along with all related information including posts from the database.
+
+.. note::
+   Requires the `Enable API Channel Deletion <https://docs.mattermost.com/configure/configuration-settings.html#enable-api-channel-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
 
 **Format**
 
@@ -996,6 +1018,7 @@ Permanently delete channels along with all related information including posts f
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1034,6 +1057,7 @@ List all Public, Private, and archived channels on specified teams. Archived cha
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1072,6 +1096,7 @@ Set the type of a channel from Public to Private. Channel can be specified by ``
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1113,6 +1138,7 @@ Change the Public/Private type of a channel. Channel can be specified by ``[team
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1152,6 +1178,7 @@ Move the provided channels to the specified team. Validate that all users in the
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1194,6 +1221,7 @@ Rename an existing channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1271,6 +1299,7 @@ Search a channel by channel name. Channels can be specified by team (e.g., ``--t
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1309,6 +1338,7 @@ Unarchive a previously archived channel. Channels can be specified by ``[team]:[
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1335,6 +1365,7 @@ Manage channel users.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1373,6 +1404,7 @@ Add users to a channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1413,6 +1445,7 @@ Remove users from a channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1473,6 +1506,7 @@ Archive a slash command. Commands can be specified by command ID.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1522,6 +1556,7 @@ Create a custom slash command for the specified team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1596,6 +1631,7 @@ List all commands on specified teams.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1645,6 +1681,7 @@ Modify a slash command. Commands can be specified by command ID.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1683,6 +1720,7 @@ Move a slash command to a different team. Commands can be specified by command I
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1721,6 +1759,7 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1778,6 +1817,7 @@ To configure your ``bash`` shell to load completions for each session, add the a
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1818,6 +1858,7 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1880,6 +1921,7 @@ Open the editor defined in the EDITOR environment variable to modify the server'
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1918,6 +1960,7 @@ Get the value of a configuration setting by its name in dot notation.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1960,6 +2003,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -1998,6 +2042,7 @@ Patch the server configuration with the specified configuration file.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2036,6 +2081,7 @@ Reload the server configuration and apply new settings.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2075,6 +2121,7 @@ Reset the value of a configuration setting by its name in dot notation or a sett
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2114,6 +2161,7 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2152,6 +2200,7 @@ Print the server configuration and write to STDOUT in JSON format.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2199,6 +2248,7 @@ Update the hard-coded production client asset paths to take into account Matterm
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2234,6 +2284,7 @@ Generate mmctl documentation.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2289,6 +2340,7 @@ Create an export file.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2327,6 +2379,7 @@ Delete an export file.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2370,6 +2423,7 @@ Download export files.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2396,6 +2450,7 @@ List and show export jobs.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2437,6 +2492,7 @@ List export jobs.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2475,6 +2531,7 @@ Show export job.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2507,6 +2564,7 @@ List export files.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2572,6 +2630,7 @@ List content extraction jobs.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2610,6 +2669,7 @@ Show extract job.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2650,6 +2710,7 @@ Start a content extraction job.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2719,6 +2780,7 @@ Disable group constrains in the specified channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2757,6 +2819,7 @@ Enable group constrains in the specified channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2795,6 +2858,7 @@ List the groups associated with a channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2833,6 +2897,7 @@ Show the group constrain status for the specified channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2871,6 +2936,7 @@ List LDAP groups.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2928,6 +2994,7 @@ Disable group constrains in the specified team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -2966,6 +3033,7 @@ Enable group constrains in the specified team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3004,6 +3072,7 @@ List the groups associated with a team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3042,6 +3111,7 @@ Show the group constrain status for the specified team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3093,6 +3163,7 @@ List and show import jobs.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3134,6 +3205,7 @@ List import jobs
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3172,6 +3244,7 @@ Show import job.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3204,6 +3277,7 @@ List all import files.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3242,6 +3316,7 @@ List available import files.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3280,6 +3355,7 @@ List incomplete import files uploads.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3318,6 +3394,7 @@ Start an import job.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3358,6 +3435,7 @@ Upload import files.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3394,6 +3472,7 @@ Perform a relational integrity check which returns information about any orphane
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3454,6 +3533,7 @@ Migrate LDAP ``IdAttribute`` to a new value. Run this utility to change the valu
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3493,6 +3573,7 @@ Synchronize all LDAP users and groups now.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3548,6 +3629,7 @@ Remove the current license and use Mattermost Team Edition.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3586,6 +3668,7 @@ Upload a license and replace the current license.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3622,6 +3705,7 @@ Display logs in a human-readable format. As the log format depends on the server
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3686,6 +3770,7 @@ Add one or more permissions to an existing role.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3729,6 +3814,7 @@ Remove one or more permissions from an existing role.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3772,6 +3858,7 @@ Reset the given role's permissions to the default settings and overwrite custom 
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3820,6 +3907,7 @@ Assign users to a role by username.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3858,6 +3946,7 @@ Show all the information about a role.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3902,6 +3991,7 @@ Unassign users from a role by username. Available in Mattermost Professional and
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -3963,6 +4053,7 @@ Add plugins to your Mattermost server.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4001,6 +4092,7 @@ Delete previously uploaded plugins from your Mattermost server.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4039,6 +4131,7 @@ Disable plugins. Disabled plugins are immediately removed from the user interfac
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4077,6 +4170,7 @@ Enable plugins for use on your Mattermost server.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4120,6 +4214,7 @@ Supply URLs to plugins compressed in a ``.tar.gz`` file. Plugins must be enabled
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4158,6 +4253,7 @@ List all enabled and disabled plugins installed on your Mattermost server.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4217,6 +4313,7 @@ Install a plugin available on the Plugin Marketplace server.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4270,6 +4367,7 @@ Get all plugins available from the Plugin Marketplace server, merging data from 
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4327,6 +4425,7 @@ Create a post.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4369,6 +4468,7 @@ List posts for a channel.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4437,6 +4537,7 @@ Remove System Admin privileges from multiple users:
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4505,6 +4606,7 @@ Resets the AuthData field for SAML users to their email. Run this utility after 
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4571,6 +4673,7 @@ Generate a sample data file and store it locally, or directly import it to the r
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4589,7 +4692,7 @@ System management commands for interacting with the server state and configurati
       -  `mmctl system getbusy`_ - Get the current busy state
       -  `mmctl system setbusy`_ - Set the busy state to ``true``
       -  `mmctl system status`_ - Print the status of the server
-      -  `mmctl system version`_ - Print the remote server version
+      -  `mmctl system version`_ - Print the remote server version build number
 
 **Options**
 
@@ -4627,6 +4730,7 @@ Clear the busy state which re-enables non-critical services.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4665,6 +4769,7 @@ Get the server busy state (high load) and timestamp corresponding to when the se
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4704,6 +4809,7 @@ Set the busy state to ``true`` for the specified number of seconds which disable
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4742,6 +4848,7 @@ Print the server status which is calculated using several basic server healthche
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4755,7 +4862,7 @@ mmctl system version
 
 **Description**
 
-Print the server version of the currently connected Mattermost instance.
+Print the server version build number of the currently connected Mattermost instance.
 
 **Format**
 
@@ -4780,6 +4887,7 @@ Print the server version of the currently connected Mattermost instance.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4843,6 +4951,7 @@ Archive a team along with all related information including posts from the datab
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4886,6 +4995,7 @@ Create a team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4900,6 +5010,9 @@ mmctl team delete
 **Description**
 
 Permanently delete a team along with all related information including posts from the database.
+
+.. note::
+   Requires the `Enable API Team Deletion <https://docs.mattermost.com/configure/configuration-settings.html#enable-api-team-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
 
 **Format**
 
@@ -4925,6 +5038,7 @@ Permanently delete a team along with all related information including posts fro
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -4963,6 +5077,7 @@ List all teams on the server.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5003,6 +5118,7 @@ Modify a team's privacy setting to public or private.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5042,6 +5158,7 @@ Rename an existing team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5080,6 +5197,7 @@ Restore archived teams.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5118,6 +5236,7 @@ Search for teams based on name.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5173,6 +5292,7 @@ Add specified users to a team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5211,6 +5331,7 @@ Remove specified users from a team.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5267,6 +5388,7 @@ Generate token for a user.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5310,6 +5432,7 @@ List the tokens belonging to a user.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5348,6 +5471,7 @@ Revoke tokens for a user.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5380,7 +5504,7 @@ Manage users.
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
       -  `mmctl user username`_ - Change username of the user
-      -  `mmctl user verify`_ - Verify user's email address
+      -  `mmctl user verify`_ - Mark user's email as verified
 
 **Options**
 
@@ -5419,6 +5543,7 @@ Activate users that have been deactivated.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5474,6 +5599,7 @@ Change the password of a user to the one provided. If the user is changing their
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5529,6 +5655,7 @@ Convert user accounts to bots, or convert bots to user accounts.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5588,6 +5715,7 @@ Create a user.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5627,6 +5755,7 @@ Deactivate users. Deactivated users are immediately logged out of all sessions a
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5640,7 +5769,10 @@ mmctl user delete
 
 **Description**
 
-Permanently delete users along with all related information including posts from the database.
+Permanently delete users along with all related information including posts from the database. 
+
+.. note::
+   Requires the `Enable API User Deletion <https://docs.mattermost.com/configure/configuration-settings.html#enable-api-user-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
 
 **Format**
 
@@ -5666,6 +5798,7 @@ Permanently delete users along with all related information including posts from
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5705,6 +5838,7 @@ Permanently delete all users and all related information including posts. This c
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5743,6 +5877,7 @@ Demote a user to a guest.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5780,7 +5915,8 @@ Change the email address associated with a user.
 
 .. code-block:: sh
 
-  --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5820,6 +5956,7 @@ Send an email invite to a user to join a team. You can invite a user to multiple
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5862,6 +5999,7 @@ List all users.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5903,6 +6041,7 @@ Migrate accounts from one authentication provider to another. For example, you c
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5941,6 +6080,7 @@ Promote a guest to a user.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -5979,6 +6119,7 @@ Send users an email to reset their password.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6017,6 +6158,7 @@ Turn off multi-factor authentication for a user. If MFA enforcement is enabled, 
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6055,6 +6197,7 @@ Search for users based on username, email, or user ID.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6093,6 +6236,7 @@ Change the username of the user.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6106,7 +6250,7 @@ mmctl user verify
 
 **Description**
 
-Verify the user's email address.
+Mark user's email as verified without requiring user to complete email verification path.
 
 **Format**
 
@@ -6131,6 +6275,7 @@ Verify the user's email address.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6165,6 +6310,7 @@ Print the version of mmctl.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6233,6 +6379,7 @@ Create an incoming webhook to allow external posting of messages to a specific c
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6282,6 +6429,7 @@ Create an outgoing webhook to allow external posting of messages from a specific
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6320,6 +6468,7 @@ Delete a webhook with a given ID.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6358,6 +6507,7 @@ Print a list of all webhooks.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6401,6 +6551,7 @@ Modify an existing incoming webhook by changing its title, description, channel,
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6447,6 +6598,7 @@ Modify an existing outgoing webhook by changing its title, description, channel,
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6485,6 +6637,7 @@ Show the webhook specified by ``[webhookId]``.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format
@@ -6519,6 +6672,7 @@ Display websocket in a human-readable format.
 .. code-block:: sh
 
    --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
    --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
    --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
    --json                         the output format will be in json format

@@ -1,5 +1,6 @@
-Configuring Mattermost Server
------------------------------
+:nosearch:
+Configure Mattermost server
+----------------------------
 
 Create the System Admin user and set up Mattermost for general use.
 
@@ -9,7 +10,7 @@ Create the System Admin user and set up Mattermost for general use.
 
 3. To open the System Console, select the Product menu in the top-left corner of the navigation panel, then select **System Console**.
 
-4. Set the Site URL:
+4. Set the site URL:
 
   * Open **System Console > Environment > Web Server**.
   * In the **Site URL** field, set the URL that users point their browsers at. For example, *https://mattermost.example.com*. If you're using HTTPS, make sure that you set up TLS, either on Mattermost server or on a proxy.

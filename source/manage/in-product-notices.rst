@@ -1,4 +1,4 @@
-In-Product Notices
+In-product notices
 ==================
 
 |all-plans| |cloud| |self-hosted|
@@ -39,7 +39,7 @@ End user notices are used to inform users and Admins of new feature enhancements
 
 .. image:: ../images/notices.png
 
-Frequently Asked Questions (FAQs)
+Frequently asked questions (FAQs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Are notices enabled by default?
@@ -82,4 +82,4 @@ The Admin Advisor notices are run on a schedule based on specific triggers.
 - Selecting **Acknowledge** in the Admin Advisor banner closes the advisory and does not send your details to Mattermost.
 - Closing the notification bot removes the conversation from your Direct Messages list.
 
-We welcome your feedback on this feature. Please visit `our forum <https://forum.mattermost.org/t/new-admin-advisor-notifications-in-mattermost-v5-26/10263/6>`_ if you have any questions or feedback.
+We welcome your feedback on this feature. Please visit `our forum <https://forum.mattermost.com/t/new-admin-advisor-notifications-in-mattermost-v5-26/10263/6>`_ if you have any questions or feedback.

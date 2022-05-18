@@ -18,17 +18,35 @@ Installing Mattermost on RHEL 8
 You can also use these instructions to install Mattermost on CentOS 8 or Oracle Linux 8. With the exception of the operating system that you install, the process is identical.
 
 .. include:: install-common-intro.rst
+    :start-after: :nosearch:
 
 .. contents:: Install and configure the components in the following order. Note that you need only one database, either MySQL or PostgreSQL.
   :backlinks: top
   :local:
 
 .. include:: install-rhel-8-server.rst
+    :start-after: :nosearch:
+
 .. include:: install-rhel-8-mysql.rst
+    :start-after: :nosearch:
+
 .. include:: install-rhel-8-postgresql.rst
+    :start-after: :nosearch:
+
 .. include:: install-rhel-8-mattermost.rst
+    :start-after: :nosearch:
+
 .. include:: config-mattermost-server.rst
+    :start-after: :nosearch:
+
 .. include:: config-tls-mattermost.rst
+    :start-after: :nosearch:
+
 .. include:: install-rhel-nginx.rst
+    :start-after: :nosearch:
+
 .. include:: config-proxy-nginx.rst
+    :start-after: :nosearch:
+
 .. include:: config-ssl-http2-nginx.rst
+    :start-after: :nosearch:

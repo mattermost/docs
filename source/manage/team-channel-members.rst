@@ -1,4 +1,4 @@
-Managing Team and Channel Members
+Managing team and channel members
 ==================================
 
 *Available in legacy Enterprise Edition E20*
@@ -45,7 +45,7 @@ To view and manage team information, navigate to **System Console > Teams**. Tea
 
 Select a team to view its configuration options.
 
-Team Profile
+Team profile
 ~~~~~~~~~~~~
 
 |all-plans| |cloud| |self-hosted|
@@ -54,7 +54,7 @@ The name and description of the team.
 
 System Admins can archive or unarchive the team from within **User Management > Teams > Team Management**. Archiving a team makes its contents inaccessible for all users. All related information is archived, including posts from the database. Before archiving a team, we recommend that you perform a database backup.
 
-Archiving a Team
+Archiving a team
 ^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
@@ -63,7 +63,7 @@ Select **Archive Team**, then select **Save**. Select **Archive** when prompted 
 
 Alternatively, System Admins can use the mmctl ``mmctl team archive`` to archive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive>`__ for details.
 
-Unarchiving a Team
+Unarchiving a team
 ^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
@@ -72,7 +72,7 @@ Select **Unarchive Team**, then select **Save**.
 
 Alternatively, System Admins can use the mmctl ``mmctl team restore`` to archive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-restore>`__ for details.
 
-Team Management
+Team management
 ~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
@@ -121,7 +121,7 @@ Profile
 
 The name and description of the channel. To archive the channel, select **Archive Channel > Save**. The channel is still searchable in the **Channels** list. To unarchive the channel, select **Unarchive Channel** and **Save**.
 
-Channel Management
+Channel management
 ~~~~~~~~~~~~~~~~~~
 
 |enterprise| |cloud| |self-hosted|
@@ -129,7 +129,7 @@ Channel Management
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
 
-Channel Moderation
+Channel moderation
 ~~~~~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|

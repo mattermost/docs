@@ -1,5 +1,5 @@
 
-Configuring Proxy to Mattermost Transport Encryption
+Configuring proxy to Mattermost transport encryption
 ====================================================
 
 |enterprise| |self-hosted|
@@ -24,7 +24,7 @@ Prerequisites
 - Operational Mattermost server or cluster.
 - Authentication credentials for Mattermost user on application server.
 
-Example Environment
+Example environment
 -------------------
 
 In this scenario there is one Mattermost application server and one NGINX server, both running Ubuntu 18.04, with the following IPs:

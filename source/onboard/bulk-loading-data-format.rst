@@ -1,6 +1,7 @@
+:nosearch:
 .. _data-format:
 
-Data Format
+Data format
 -----------
 
 The input data file must be a valid `JSONL

@@ -1,3 +1,4 @@
+:nosearch:
 
 Self-Managed Administrator's Guide
 ==================================
@@ -268,7 +269,6 @@ Documentation on early previews and unofficial functionality.
    :maxdepth: 1
    :glob:
 
-   /install/prod-windows-2012*
    /install/prod-docker*
    /install/deploy-cloudron*
    /administration/upgrade-script*

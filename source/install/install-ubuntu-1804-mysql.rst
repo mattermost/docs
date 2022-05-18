@@ -1,11 +1,13 @@
+:nosearch:
 .. _install-ubuntu-1804-mysql:
 
-Installing MySQL Database Server
---------------------------------
+Install MySQL database server
+------------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL.
 
-**To install MySQL on Ubuntu Server 18.04:**
+Install MySQL on Ubuntu Server 18.04
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log into the server that will host the database, and open a terminal window.
 
@@ -48,8 +50,5 @@ Install and set up the database for use by the Mattermost server. You can instal
 
    .. note::
     If you have installed MySQL on its own server, you need to edit the ``/etc/mysql/mysql.conf.d/mysqld.cnf`` file and comment out the ``bind-address = 127.0.0.1`` using the ``#`` symbol, then restart your sql server.
-
-
-
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.

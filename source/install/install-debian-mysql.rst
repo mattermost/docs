@@ -1,11 +1,13 @@
+:nosearch:
 .. _install-debian-mysql:
 
-Installing MySQL Database Server
---------------------------------
+Install MySQL database server
+-----------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL.
 
-**To install MySQL on Debian Buster:**
+Install MySQL on Debian Buster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log into the server that will host the database, and open a terminal window.
 

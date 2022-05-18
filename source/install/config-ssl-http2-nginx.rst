@@ -1,7 +1,8 @@
+:nosearch:
 .. _config-ssl-http2-nginx:
 
-Configuring NGINX with SSL and HTTP/2
--------------------------------------
+Configure NGINX with SSL and HTTP/2
+-----------------------------------
 
 NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory. You need to create the file and then enable it. When creating the file, you need the IP address of your Mattermost server and the fully qualified domain name (FQDN) of your Mattermost website.
 
@@ -12,7 +13,7 @@ Although you can configure HTTP/2 without SSL, both Firefox and Chrome browsers 
 You can use any certificate that you want, but these instructions show you how to download and install certificates from `Let's Encrypt <https://letsencrypt.org/>`__, a free certificate authority.
 
 .. note::
-   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
 
 **To configure NGINX as a proxy with SSL and HTTP/2**
 
@@ -242,7 +243,8 @@ See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for add
 NGINX Configuration FAQ
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-**Why are Websocket connections returning a 403 error?**
+Why are Websocket connections returning a 403 error?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* in a text editor and make sure that the host header being set in the proxy is dynamic:
 
@@ -267,7 +269,8 @@ Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain be
 
 For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
 
-**How do I setup an NGINX proxy with the Mattermost Docker installation?**
+How do I setup an NGINX proxy with the Mattermost Docker installation?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Find the name of the Mattermost network and connect it to the NGINX proxy.
 
@@ -302,7 +305,8 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
       - "80"
       - "443"
 
-**Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?**
+Why does NGINX fail when installing Gitlab CE with Mattermost on Azure?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may need to update the Callback URLs for the Application entry of Mattermost inside your GitLab instance.
 
@@ -313,7 +317,8 @@ You may need to update the Callback URLs for the Application entry of Mattermost
 5. Save the changes.
 6. Update the external URL for GitLab and Mattermost in the ``/etc/gitlab/gitlab.rb`` configuration file.
 
-**Why does Certbot fail the http-01 challenge?**
+Why does Certbot fail the http-01 challenge?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: none
 
@@ -331,7 +336,8 @@ If you see the above errors this is typically because certbot was not able to ac
 .. note::
    If you're using Cloudflare you'll need to disable ``force traffic to https``.
 
-**Certbot rate limiting**
+Certbot rate limiting
+^^^^^^^^^^^^^^^^^^^^^^
 
 If you're running certbot as stand-alone you'll see this error:
 

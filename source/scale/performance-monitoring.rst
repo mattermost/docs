@@ -1,4 +1,4 @@
-Performance Monitoring
+Performance monitoring
 ======================
 
 |enterprise| |cloud| |self-hosted|
@@ -24,7 +24,7 @@ Performance monitoring support enables a Mattermost server to track system healt
 
 The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 
-Deployment Guide
+Deployment guide
 ----------------
 
 Details on integrating your Mattermost server with Prometheus and Grafana.
@@ -108,13 +108,13 @@ Installing Grafana
   - For troubleshooting advice, check the `Grafana Troubleshooting page <https://grafana.com/docs/grafana/latest/troubleshooting/>`__. 
   - For user guides and tutorials, check the `Grafana documentation to learn more <https://grafana.com/docs/grafana/latest/>`__.
 
-Getting Started
+Getting started
 ---------------
 
 To help you get started, you can download three sample dashboards shared in Grafana:
-
+- `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582>`__, which contains detailed charts for performance monitoring including application, cluster, job server, and system metrics.
+- `Mattermost Collapsed Reply Threads Metrics <https://grafana.com/grafana/dashboards/15581>`__, which contains detailed metrics on the queries involved in our Collapsed Reply Threads Beta feature.
 - `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashboards/2539>`__, which contains key metrics for monitoring performance and system health.
-- `Mattermost Performance Monitoring <https://grafana.com/grafana/dashboards/2542>`__, which contains detailed charts for performance monitoring.
 - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/grafana/dashboards/2545>`__, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 
 See `this guide <https://grafana.com/docs/grafana/v7.5/dashboards/export-import/>`__ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
@@ -124,17 +124,17 @@ Statistics
 
 Mattermost provides the following performance monitoring statistics to integrate with Prometheus and Grafana.
 
-Custom Mattermost Metrics
+Custom Mattermost metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following is a list of custom Mattermost metrics that can be used to monitor your system's performance:
 
-API Metrics
+API metrics
 ^^^^^^^^^^^
 
 - ``mattermost_api_time``: The total time in seconds to execute a given API handler.
 
-Caching Metrics
+Caching metrics
 ^^^^^^^^^^^^^^^
 
 - ``mattermost_cache_etag_hit_total``: The total number of ETag cache hits for a specific cache.
@@ -148,14 +148,14 @@ The above metrics can be used to calculate ETag and memory cache hit rates over 
 .. image:: ../images/perf_monitoring_caching_metrics.png
    :alt: Caching metrics in Mattermost
 
-Cluster Metrics
+Cluster metrics
 ^^^^^^^^^^^^^^^
 
 - ``mattermost_cluster_cluster_request_duration_seconds``:  The total duration in seconds of the inter-node cluster requests.
 - ``mattermost_cluster_cluster_requests_total``: The total number of inter-node requests.
 - ``mattermost_cluster_event_type_totals``: The total number of cluster requests sent for any type.
 
-Database Metrics
+Database metrics
 ^^^^^^^^^^^^^^^^
 
 - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
@@ -165,7 +165,7 @@ Database Metrics
 - ``mattermost_db_replica_lag_abs``: Absolute lag time based on binlog distance/transaction queue length.
 - ``mattermost_db_replica_lag_time``: The time taken for the replica to catch up.
 
-HTTP Metrics
+HTTP metrics
 ^^^^^^^^^^^^
 
 - ``mattermost_http_errors_total``: The total number of http API errors.
@@ -175,14 +175,14 @@ HTTP Metrics
 .. image:: ../images/perf_monitoring_http_metrics.png
    :alt: HTTP metrics in Mattermost
 
-Login and Session Metrics
+Login and session metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``mattermost_http_websockets_total`` The total number of WebSocket connections to the server.
 - ``mattermost_login_logins_fail_total``: The total number of failed logins.
 - ``mattermost_login_logins_total``: The total number of successful logins.
 
-Mattermost Channels Metrics
+Mattermost Channels metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``mattermost_post_broadcasts_total``: The total number of WebSocket broadcasts sent because a post was created.
@@ -195,7 +195,7 @@ Mattermost Channels Metrics
 .. image:: ../images/perf_monitoring_messaging_metrics.png
    :alt: Messaging metrics in Mattermost
 
-Process Metrics
+Process metrics
 ^^^^^^^^^^^^^^^
 
 - ``mattermost_process_cpu_seconds_total``: Total user and system CPU time spent in seconds.
@@ -205,19 +205,19 @@ Process Metrics
 - ``mattermost_process_start_time_seconds``: Start time of the process since unix epoch in seconds.
 - ``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes.
 
-Search Metrics
+Search metrics
 ^^^^^^^^^^^^^^
 
 - ``mattermost_search_posts_searches_duration_seconds_sum``: The total duration, in seconds, of search query requests.
 - ``mattermost_search_posts_searches_duration_seconds_count``: The total number of search query requests.
 
-WebSocket Metrics
+WebSocket metrics
 ^^^^^^^^^^^^^^^^^
 
 - ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
 - ``mattermost_websocket_event_total``: The total number of WebSocket events sent by type.
     
-Logging Metrics
+Logging metrics
 ^^^^^^^^^^^^^^^
 
 - ``logger_queue_used``: Current logging queue level(s).
@@ -226,7 +226,7 @@ Logging Metrics
 - ``logger_dropped_total``: The total number of logging records dropped.
 - ``logger_blocked_total``: The total number of logging records blocked.
     
-Debugging Metrics
+Debugging metrics
 ^^^^^^^^^^^^^^^^^
 
 - ``mattermost_system_server_start_time``: Server start time. Set to the current time on server start. 
@@ -252,7 +252,7 @@ Use annotations to streamline analysis when a job is long running, such as an LD
 .. note:: 
   Jobs where the runtime is less than the Prometheus polling interval are unlikely to be visible because Grafana is performing range queries over the raw Prometheus timeseries data, and rendering an event each time the value changes.
 
-Standard Go Metrics
+Standard Go metrics
 ~~~~~~~~~~~~~~~~~~~
 
 The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
@@ -287,10 +287,10 @@ where you can replace ``localhost`` with the server name. The profiling reports 
 .. image:: ../images/perf_monitoring_go_metrics.png
    :alt: Mattermost profiling reports
 
-Frequently Asked Questions
+Frequently asked questions
 --------------------------
 
-Why Are Chart Labels Difficult To Distinguish?
+Why are chart labels difficult to distinguish?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The chart labels used in server filters and legends are based on the hostname of your machines. If the hostnames are similar, then it will be difficult to distinguish the labels.

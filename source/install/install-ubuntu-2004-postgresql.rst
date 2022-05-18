@@ -1,13 +1,15 @@
+:nosearch:
 .. _install-ubuntu-2004-postgresql:
 
-Installing PostgreSQL Database Server
--------------------------------------
+Install PostgreSQL Database Server
+-----------------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.
 
 Assume that the IP address of this server is 10.10.10.1.
 
-**To install PostgreSQL on Ubuntu Server 20.04:**
+Install PostgreSQL on Ubuntu Server 20.04
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to the server that will host the database and issue the following command:
 

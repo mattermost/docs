@@ -1,3 +1,5 @@
+:nosearch:
+
 ===========================
 Mobile App Deployment Guide
 ===========================
@@ -43,7 +45,7 @@ If at any point you need additional help, please reach out using the methods bel
 **Documentation**
     We link to a lot of `mobile-specific documentation <https://docs.mattermost.com/mobile/mobile-overview.html>`_ within this guide, but we encourage you to check `all of our documentation <https://docs.mattermost.com/>`_.
 **Forums**
-    For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`_ with steps to reproduce your issue.
+    For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot>`_ with steps to reproduce your issue.
 **GitHub**
     Visit us on `GitHub <https://github.com/mattermost/>`_ to create issues in any of our repositories.
 **Enterprise Support**
@@ -110,7 +112,7 @@ Technical requirements
     Minimum requirements for the Mattermost Server are maintained in our documentation (link above). 
     **However, we do recommend running the latest version** of the Mattermost Server as it contains the most recent features and any applicable security updates.
 
-    If this is not possible, we encourage you to be on the most recent `Extended Support Release version <https://docs.mattermost.com/administration/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
+    If this is not possible, we encourage you to be on the most recent `Extended Support Release version <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost Push Notification Service (MPNS).
 
 `Supported Devices/Mobile Device Requirements <https://docs.mattermost.com/install/requirements.html#mobile-apps>`_
     Basic mobile device requirements are provided in the link above.
@@ -386,7 +388,7 @@ For example we recommend you:
 
 It is often easier to upgrade the mobile apps. However, not all provided updates are compatible with all previous versions of the Mattermost server.
 
-Consult the `Mattermost mobile app changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`_ and `Mattermsot server changelog <https://docs.mattermost.com/administration/changelog.html>`_ for more information.
+Consult the `Mattermost mobile app changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`_ and `Mattermsot server changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ for more information.
 
     **Note:** Only updating the mobile apps, or updating the mobile apps before the Mattermost server, can result in incompatibility.
 
@@ -461,7 +463,7 @@ Once that is complete you can proceed with deployment of your MPNS instance.
 The documentation topics listed below guide installation and configuration for your MPNS.
 
 - `Push Notification Service Installation <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_
-- `Admin Configuration for Push Notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_
+- `Admin Configuration for Push Notifications <https://docs.mattermost.com/configure/configuration-settings.html>`_
 - `Additional FAQs <https://docs.mattermost.com/mobile/mobile-faq.html#>`_
 
 ************************************

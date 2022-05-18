@@ -1,6 +1,6 @@
 .. _bulk-loading:
 
-Bulk Loading Data
+Bulk loading data
 =================
 
 Large quantities of data can be imported from a `JSONL <https://jsonlines.org>`__ file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing system, or for pre-populating a new installation with data.
@@ -8,20 +8,20 @@ Large quantities of data can be imported from a `JSONL <https://jsonlines.org>`_
 You can import the following data types:
 
 - Teams
-- Channels (Public and Private)
+- Channels (public and private)
 - Users
-- Users' Team memberships
-- Users' Channel memberships
+- Users' team memberships
+- Users' channel memberships
 - Users' notification preferences
 - Posts (regular, non-reply posts)
-- Posts' Replies
-- Posts' Reactions
-- Posts' File Attachments
-- Direct Message and Group Message channels
-- Direct Messages and Group Messages
-- Direct Messages from a user to themselves
-- Permissions Schemes
-- Custom Emoji
+- Posts' replies
+- Posts' reactions
+- Posts' file attachments
+- Direct message and group message channels
+- Direct messages and group messages
+- Direct messages from a user to themselves
+- Permissions schemes
+- Custom emoji
 
 Importing additional types of posts is not yet supported.
 
@@ -31,7 +31,16 @@ Importing additional types of posts is not yet supported.
   :depth: 2
 
 .. include:: bulk-loading-about.rst
+  :start-after: :nosearch:
+
 .. include:: run-bulk-loading-command.rst
+  :start-after: :nosearch:
+
 .. include:: bulk-loading-data-format.rst
+  :start-after: :nosearch:
+
 .. include:: bulk-loading-common-issues.rst
+  :start-after: :nosearch:
+
 .. include:: bulk-loading-troubleshooting.rst
+  :start-after: :nosearch:

@@ -1,4 +1,4 @@
-Generating a Support Packet
+Generating a support packet
 ===========================
 
 |enterprise| |professional| |cloud| |self-hosted|
@@ -26,3 +26,4 @@ Generating a Support Packet
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
 .. include:: common-support-packet.rst
+  :start-after: :nosearch:

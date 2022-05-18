@@ -8,6 +8,7 @@ The following process provides steps to configure SAML 2.0 with Microsoft ADFS f
   :local:
 
 .. include:: sso-saml-before-you-begin.rst
+	:start-after: :nosearch:
 
 The following are basic requirements to use ADFS for Mattermost:
  - An Active Directory instance where all users have a specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
@@ -17,7 +18,7 @@ The following are basic requirements to use ADFS for Mattermost:
 
 On your ADFS installation, note down the value of the **SAML 2.0/W-Federation URL** in ADFS Endpoints section, also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls/``.
 
-Add a Relying Party Trust
+Add a relying party trust
 -------------------------
 
 1. In the ADFS management sidebar, go to **AD FS > Trust Relationships > Relying Party Trusts**, then select **Add Relying Party Trust**. A configuration wizard opens for adding a new relying party trust. 
@@ -48,7 +49,7 @@ However, if you would like to set up encryption for your SAML connection, select
 
 	.. image:: ../../source/images/adfs_7_configure_certificate_encryption.png
 
-7. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL**, similar to ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
+7. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL**, similar to ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__.
 
 	.. image:: ../../source/images/adfs_8_configure_url.png
 
@@ -72,7 +73,7 @@ However, if you would like to set up encryption for your SAML connection, select
 
 	.. image:: ../../source/images/adfs_13_finish_trust.png
 
-Create Claim Rules
+Create claim rules
 ------------------
 
 1. In the **Issuance Transform Rules** section of the **Claim Rules** editor, select **Add Rule…** to open an **Add Transform Claim Rule Wizard**.
@@ -125,7 +126,7 @@ where ``<display-name>`` is the name you specified in step 4 when adding a relyi
 
 This action adds the signature to SAML messages, making verification successful.
 
-Export Identity Provider Certificate
+Export identity provider certificate
 -------------------------------------
 
 Next, export the identity provider certificate, which will be later uploaded to Mattermost to finish SAML configuration.
@@ -152,7 +153,7 @@ Next, export the identity provider certificate, which will be later uploaded to 
 
 	.. image:: ../../source/images/adfs_21-3_export_idp_cert_wizard.png
 
-Configure SAML Sign-in for Mattermost
+Configure SAML Sign-On for Mattermost
 --------------------------------------
 
 Create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``.
@@ -199,5 +200,7 @@ We recommend that you post an announcement about how the migration will work for
 You may also configure SAML for ADFS by editing the ``config.json`` file to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
 .. include:: sso-saml-ldapsync.rst
+	:start-after: :nosearch:
 
 .. include:: sso-saml-faq.rst
+	:start-after: :nosearch:

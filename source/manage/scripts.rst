@@ -1,4 +1,4 @@
-Scripts (Unofficial)
+Scripts (unofficial)
 ====================
 
 This repository contains a series of scripts to perform discrete tasks: https://github.com/icelander/mattermost-scripts.

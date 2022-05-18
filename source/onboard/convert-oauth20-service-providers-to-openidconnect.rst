@@ -26,15 +26,16 @@ Converting OAuth 2.0 Service Providers to OpenID Connect
 *Available in legacy Mattermost Enterprise Edition E20*
 
 .. include:: common-converting-oauth-to-openidconnect.rst
+  :start-after: :nosearch:
 
 Configuring OpenID Connect Single Sign-On
 -----------------------------------------
 
 |self-hosted|
 
-For details on configuring Mattermost to use a service provider as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in OpenID Connect, refer to the following documentation:
+For details on configuring Mattermost to use a service provider as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in using OpenID Connect, refer to the following documentation:
 
-- `OpenID Connect Single Sign-On <https://docs.mattermost.com/deployment/sso-openidconnect.html>`_
-- `GitLab Single Sign-On <https://docs.mattermost.com/deployment/sso-gitlab.html>`__
-- `Google Apps Single Sign-On <https://docs.mattermost.com/deployment/sso-google.html>`__
-- `Office 365 Single Sign-On <https://docs.mattermost.com/deployment/sso-office.html>`__
+- `OpenID Connect Single Sign-On <https://docs.mattermost.com/onboard/sso-openidconnect.html>`_
+- `GitLab Single Sign-On <https://docs.mattermost.com/onboard/sso-gitlab.html>`__
+- `Google Apps Single Sign-On <https://docs.mattermost.com/onboard/sso-google.html>`__
+- `Office 365 Single Sign-On <https://docs.mattermost.com/onboard/sso-office.html>`__
