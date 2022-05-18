@@ -14,6 +14,9 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-05-25
 
+### Highlights
+ - To make markdown features more accessible to less technical users, an Advanced Text editor was added with new shortcuts for preview, toggle formatter, opening the emoji picker, strike text, heading, ordered list, and unordered list.
+
 ### Improvements
 
 #### User Interface (UI)
