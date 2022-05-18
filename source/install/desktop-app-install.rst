@@ -136,7 +136,7 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     **Install from the App Store**
 
-    We recommend that you install the Desktop App from the `App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`__. When you install through the App Store, your Desktop App updates automatically when a new release is available.
+    We recommend that you install the Desktop App from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`__. When you install through the App Store, your Desktop App updates automatically when a new release is available.
 
     **Download the Desktop App from GitHub**
 
