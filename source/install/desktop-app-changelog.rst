@@ -49,6 +49,10 @@ Highlights
 Improvements
 ~~~~~~~~~~~~~~~
 
+Mac
+^^^^^^
+- Mattermost can now be installed on the `Mac App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`_. Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
+
 Linux
 ^^^^^^
 
@@ -102,6 +106,7 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- A new config setting "Launch app minimized" does not work on Linux `MM-44339 <https://mattermost.atlassian.net/browse/MM-44339>`_.
 - Desktop App may become unresponsive and crash when initiating a screen reader `MM-44058 <https://mattermost.atlassian.net/browse/MM-44058>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
