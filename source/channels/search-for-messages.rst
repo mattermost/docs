@@ -120,7 +120,7 @@ Exclusions
 
 Use the hyphen ``-`` symbol to exclude terms from your search results. For example, searching ``test -release`` only returns results that include the term ``test`` and exclude the term ``release``.
 
-This exclusion modifier can be used in combination with other modifiers to further refine search results. For example, searching ``test -release -in:release-discussion -from:eric`` returns all results with the term ``test``, excludes posts with the term ``release``, excludes posts made in the ``release-discussion`` channel, and excludes messages sent in Direct Messages by ``eric``.
+This exclusion modifier can be used in combination with other modifiers to further refine search results. For example, searching ``test -release -in:release-discussion -from:eric`` returns all results with the term ``test``, excludes posts with the term ``release``, excludes posts made in the ``release-discussion`` channel, and excludes messages sent in direct messages by ``eric``.
 
 Quotation marks
 ~~~~~~~~~~~~~~~
@@ -174,7 +174,7 @@ Searching Chinese, Korean, and Japanese
 Differences between PostgreSQL and MySQL search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Product menu > About Mattermost** to see which database you’re using.
+By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **product menu > About Mattermost** to see which database you’re using.
 
 For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list.
 
