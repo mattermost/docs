@@ -117,13 +117,11 @@ These guides will get you up and running with Mattermost desktop and mobile apps
     :maxdepth: 1
     :hidden:
 
-    Install the Mattermost Desktop App </install/installing-mattermost-desktop-app>
     Desktop App install guides </install/desktop-app-install>
     iOS setup </install/install-ios-app>
     Android setup </install/install-android-app>
     Testing push notifications </deploy/mobile-testing-notifications>
 
-* :doc:`Install the Mattermost Desktop App </install/installing-mattermost-desktop-app>`
 * :doc:`Desktop App install guides </install/desktop-app-install>`
 * :doc:`iOS setup </install/install-ios-app>`
 * :doc:`Android setup </install/install-android-app>`
