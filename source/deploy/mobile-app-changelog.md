@@ -1,12 +1,30 @@
 # Mattermost mobile apps changelog
 
 Latest Mattermost Mobile Apps releases:
-- [1.51.2 Release](#release)
-- [1.51.1 Release](#id1)
-- [1.51.0 Release](#id5)
-- [1.50.1 Release](#id9)
-- [1.50.0 Release](#id13)
-- [1.49.1 Release](#id19)
+
+- [1.52.0 Release](#release)
+- [1.51.2 Release](#id1)
+- [1.51.1 Release](#id3)
+- [1.51.0 Release](#id7)
+- [1.50.1 Release](#id13)
+- [1.50.0 Release](#id17)
+
+## 1.52.0 Release
+- Release Date: May 16, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Added .m4a audio file preview support via the video player.
+ - Added the ability to render latex code blocks.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
 
 ## 1.51.2 Release
 - Release Date: May 5, 2022

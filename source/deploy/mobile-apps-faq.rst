@@ -1,4 +1,4 @@
-:orphan:
+:nosearch:
 
 Mobile apps FAQ
 ================

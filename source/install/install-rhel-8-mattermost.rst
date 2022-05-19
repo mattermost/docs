@@ -1,3 +1,4 @@
+:nosearch:
 ..  _install-rhel-8-mattermost:
 
 Installing Mattermost Server

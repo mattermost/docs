@@ -1,11 +1,14 @@
+:nosearch:
+
 .. _install-ubuntu-2004-server:
 
-Installing Ubuntu Server 20.04 LTS
-----------------------------------
+Install Ubuntu Server 20.04 LTS
+--------------------------------
 
 Install the 64-bit version of Ubuntu Server on each machine that hosts one or more of the components.
 
-**To install Ubuntu Server 20.04:**
+Install Ubuntu Server 20.04
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. To install Ubuntu Server 20.04, see the `Ubuntu Installation Guide. <https://help.ubuntu.com/20.04/installation-guide/amd64/index.html>`__
 

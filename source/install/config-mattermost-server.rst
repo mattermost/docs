@@ -1,5 +1,6 @@
-Configuring Mattermost server
------------------------------
+:nosearch:
+Configure Mattermost server
+----------------------------
 
 Create the System Admin user and set up Mattermost for general use.
 

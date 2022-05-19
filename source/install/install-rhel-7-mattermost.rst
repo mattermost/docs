@@ -1,13 +1,15 @@
+:nosearch:
 ..  _install-rhel-7-mattermost:
 
-Installing Mattermost Server
-----------------------------
+Install Mattermost Server
+-------------------------
 
 Install Mattermost Server on a 64-bit machine.
 
 Assume that the IP address of this server is 10.10.10.2
 
-**To install Mattermost Server on RHEL 7**
+Install Mattermost Server on RHEL 7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
