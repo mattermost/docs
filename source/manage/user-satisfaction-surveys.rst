@@ -1,12 +1,17 @@
 User satisfaction surveys
 =========================
 
-|all-plans| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
   :alt: Available in Mattermost Free and Starter subscription plans.
+
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/download
+  :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
@@ -90,5 +95,7 @@ Data is only collected when a user selects a score or provides written feedback 
 
 Will this data be sent through my firewall?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|self-hosted|
 
 If Mattermost is hosted in a private network with firewall then data from the User Satisfaction Surveys plugin is not sent unless outbound connections are allowed or specifically configured for this plugin.
