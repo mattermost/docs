@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 ## Release 2022-05-25
 
 ### Highlights
- - To make markdown features more accessible to less technical users, an Advanced Text editor was added with new shortcuts for preview, toggle formatter, opening the emoji picker, strike text, heading, ordered list, and unordered list.
+ - To make markdown features more accessible, an Advanced Text editor was added with new shortcuts to preview, open the emoji picker, strike out text, add headings, format numbered steps, add bullets, and hide the formatting options.
 
 ### Improvements
 
@@ -32,7 +32,7 @@ Latest Mattermost Cloud releases:
  - Enabled the new onboarding task list for end users.
 
 #### Administration
- - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default on), users see Collapsed Reply Threads by default and have the option to disable it in account settings. When always on, users are required to use Collapsed Reply Threads and cannot disable it. The default state is still ``default-off``.
+ - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
 
 #### Bug Fixes
  - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
