@@ -117,9 +117,9 @@ Please review the `Desktop App changelog <https://docs.mattermost.com/install/de
 +-------------+------------------+-----------------------------------------+----------------------------------------+
 | ESR Version | Release Date     | Desktop App Minimum Supported Version   | Mobile App Minimum Supported Version   |
 +=============+==================+=========================================+========================================+
-| 6.3         | January 16, 2022 | Desktop app v5.0                        | Mobile app v1.48.0                     |
+| 6.3         | January 16, 2022 | 5.0.0                                   | 1.48.0                                 |
 +-------------+------------------+-----------------------------------------+----------------------------------------+
-| 5.37        | July 16, 2021    | Desktop app v4.7                        | Mobile app v1.45.0                     |
+| 5.37        | July 16, 2021    | 4.7.0                                   | 1.45.0                                 |
 +-------------+------------------+-----------------------------------------+----------------------------------------+
 
 See more details in our `release lifecycle documentation <https://docs.mattermost.com/upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
