@@ -180,6 +180,13 @@ Upgrade Mattermost Server
 
      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
+or
+
+   .. code-block:: sh
+
+     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-arm64.tar.gz
+
+
 3. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file.
 
    .. code-block:: sh
