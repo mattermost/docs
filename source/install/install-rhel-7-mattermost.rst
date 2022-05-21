@@ -16,6 +16,9 @@ Install Mattermost Server on RHEL 7
 2. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
   ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
+or
+  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-arm64.tar.gz``
+ 
 
 3. Extract the Mattermost Server files.
 
