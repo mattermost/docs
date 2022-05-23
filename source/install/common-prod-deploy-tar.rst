@@ -162,4 +162,4 @@ or
             
       sudo systemctl enable mattermost.service
 
-Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+Once your Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
