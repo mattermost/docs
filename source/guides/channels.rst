@@ -6,7 +6,7 @@ Mattermost Channels provide 1:1 and group messaging that features integrated voi
 With Mattermost Channels, you can keep all of your team's communications in one place and remove information and organizational silos. This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
 
 .. image:: ../images/Channels_Hero.png
-   :alt: Keep all of your team's communications in one place through Mattermost Channels
+   :alt: An example of the Mattermost Channels screen that includes teams, the channel sidebar, an active conversation in the center pane, reply threads in the right-hand pane.
 
 Channels, messages, and conversations
 -------------------------------------
