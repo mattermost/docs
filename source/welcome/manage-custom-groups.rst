@@ -31,8 +31,8 @@ Custom groups reduce noise and improve focus by notifying the right people in a 
 
 .. note:: 
   
+  - Custom Groups functionality is available with Mattermost Professional or Mattermost Enterprise. Legacy Mattermost E10/E20 licenses aren't supported.
   - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups work the same as `LDAP-synced groups <https://docs.mattermost.com/channels/mention-people.html#groupname>`__ on mobile.
-
   - System Admins need to enable this feature. See our `Mattermost Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#custom-user-groups>`__ documentation for details. 
 
 Create a custom group
