@@ -14,6 +14,8 @@ Latest Mattermost Cloud releases:
 ## Release 2022-05-25
 
 ### Highlights
+
+#### Advanced Text Editor
  - To make markdown features more accessible, an Advanced Text editor was added with new shortcuts to preview, open the emoji picker, strike out text, add headings, format numbered steps, add bullets, and hide the formatting options.
 
 ### Improvements
@@ -33,11 +35,14 @@ Latest Mattermost Cloud releases:
 #### Administration
  - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
 
-#### Bug Fixes
+### Bug Fixes
  - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
  - Fixed an issue where the **Help > Report a Problem** link was not hidden when a URL was not set for **System Console > Customization > Report a Problem**.
 
 ### Known Issues
+ - Known issues related to the Advanced Text editor, including text overlapping the preview button when formatting is collapsed [MM-44457](https://mattermost.atlassian.net/browse/MM-44457).
+ - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
  - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
