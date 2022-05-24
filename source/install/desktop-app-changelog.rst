@@ -106,7 +106,7 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost Desktop App v5.1.0 cannot be launched on a Windows multi-user system.
+- Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
 - A new config setting "Launch app minimized" does not work on Linux `MM-44339 <https://mattermost.atlassian.net/browse/MM-44339>`_.
 - Desktop App may become unresponsive and crash when initiating a screen reader `MM-44058 <https://mattermost.atlassian.net/browse/MM-44058>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
