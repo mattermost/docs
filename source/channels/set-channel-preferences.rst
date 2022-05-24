@@ -18,7 +18,7 @@ Set channel preferences
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-For each channel you're a member of, you can set notification preferences as well as the channel's header, purpose, and name. See the documentation for details on :doc:`renaming channels <channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
+For each channel you're a member of, you can set notification preferences as well as the channel's header, purpose, and name. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
 
 .. image:: ../images/channel-preferences.png
     :alt: Select the channel name at the top of the screen to set preferences for each channel you belong to.
@@ -48,7 +48,7 @@ To unmute the channel, select the channel name again to access the drop-down men
   Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar.
 
 Ignore mentions for @channel, @here, and @all
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, you'll receive mention notifications every time someone on your team `mentions an entire channel <https://docs.mattermost.com/channels/mention-people.html>`__ using ``@channel``, ``@all``, or ``@here``. 
 

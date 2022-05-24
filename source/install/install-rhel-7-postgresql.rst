@@ -1,7 +1,8 @@
+:nosearch:
 ..  _install-rhel-7-postgresql:
 
-Installing PostgreSQL database
-------------------------------
+Install PostgreSQL database
+---------------------------
 
 1. Log in to the server that will host the database, and open a terminal window.
 

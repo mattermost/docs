@@ -1,9 +1,7 @@
 :nosearch:
 
-:orphan:
-
-Benefits specific to US-based employees 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Benefits for US-based employees
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 US-based employees' payroll and benefits are arranged through TriNet. The most up to date information is available through the TriNet HRPassport portal and contact forms and numbers listed there. 
 
@@ -17,25 +15,25 @@ This overview is a quick reference guide and does not replace the documentation 
 
 **Vision** - TriNet also offers a high and a low vision plan nationally through two different carriers: Aetna and Vision Service Plan (VSP). These plan options ensure that you can choose the best plan and carrier for your individual vision needs.
 
-The Company pays 100% of premiums for medical, 100% of premiums for dental and 100% of premiums for vision coverage for employee. In addition, the Company funds 50% of premiums for medical, 50% of premiums for dental and 50% of premiums for vision coverage for spouse, dependent, and domestic partner. These contribution amounts are capped at:
+The Company covers health insurance up the following contribution caps: 
 
 **Insurance and Company Contribution Cap**
 
-- Medical Employee Only: $593.00
-- Medical Employee + Spouse: $981.50
-- Medical Employee + Child(ren):	$901.50
-- Medical Employee + Spouse + Child(ren):	$1195.00
+- Medical Employee Only: $362.00
+- Medical Employee + Spouse: $797.00
+- Medical Employee + Child(ren):	$544.50
+- Medical Employee + Spouse + Child(ren):	$724.50
  
-- Group Dental Employee Only: $35.37
-- Group Dental Employee + Spouse: $53.94
-- Group Dental Employee + Child(ren): $53.94
-- Group Dental Employee + Spouse + Child(ren): $72.51
+- Group Dental Employee Only: $38.50
+- Group Dental Employee + Spouse: $78.82
+- Group Dental Employee + Child(ren): $58.64
+- Group Dental Employee + Spouse + Child(ren): $78.82
 
-- Group Vision Employee Only: $9.17
-- Group Vision Employee + Spouse: $13.78
-- Group Vision Employee + Child(ren): $14.42
-- Group Vision Employee + Spouse + Child(ren): $20.30
+- Group Vision Employee Only: $5.94
+- Group Vision Employee + Spouse: $11.86
+- Group Vision Employee + Child(ren): $9.31
+- Group Vision Employee + Spouse + Child(ren): $13.13
 
 Employees are responsible for the remainder of the premium cost, if any. A summary of plan options showing remainder of premium costs after employer contribution will be provided with your offer. 
 
-**401K** - Our 401K retirement savings program is available through `Ubiquity <https://www.myubiquity.com/>`__ after 3-months of full-time employment. 
+We're working on setting up a 401K plan for US employees.

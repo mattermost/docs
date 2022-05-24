@@ -184,6 +184,7 @@ To add syntax highlighting, type the language to be highlighted after the ``````
 Supported languages and their aliases include:
 
 .. include:: syntax-highlighting.rst
+  :start-after: :nosearch:
 
 Example:
 

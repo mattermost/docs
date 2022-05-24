@@ -16,7 +16,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
   See our `Keyboard Accessibility in Channels <https://docs.mattermost.com/channels/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen reader users.
 
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
-| On Windows                 | On Mac                    | Description                                                                      |
+| On Windows & Linux         | On Mac                    | Description                                                                      |
 +============================+===========================+==================================================================================+
 | ALT+UP                     | OPTION+UP                 | Previous channel or direct message in the channel sidebar.                       |
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
@@ -48,11 +48,11 @@ File upload shortcuts
 
 The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
-+------------+--------+-----------------+
-| On Windows | On Mac | Description     |
-+============+========+=================+
-| CTRL+U     | CMD+U  | Upload a file.  |
-+------------+--------+-----------------+
++--------------------+--------+-----------------+
+| On Windows & Linux | On Mac | Description     |
++====================+========+=================+
+| CTRL+U             | CMD+U  | Upload a file.  |
++--------------------+--------+-----------------+
 
 Message shortcuts
 -----------------
@@ -60,7 +60,7 @@ Message shortcuts
 The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +----------------------------------+---------------------------------+-----------------------------------------------------------+
-| On Windows                       | On Mac                          | Description                                               |
+| On Windows & Linux               | On Mac                          | Description                                               |
 +==================================+=================================+===========================================================+
 | CTRL+UP (in empty input field)   | CMD+UP (in empty input field)   | Reprint previous message or slash command you entered.    |
 +----------------------------------+---------------------------------+-----------------------------------------------------------+
@@ -84,15 +84,15 @@ Formatting shortcuts
 
 The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
-+------------+--------------+-------------------------+
-| On Windows | On Mac       | Description             |
-+============+==============+=========================+
-| CTRL+B     | CMD+B        | Bold text.              |
-+------------+--------------+-------------------------+
-| CTRL+I     | CMD+I        | Italicize text.         |
-+------------+--------------+-------------------------+
-| CTRL+ALT+K | CMD+OPTION+K | Format text as a link.  |
-+------------+--------------+-------------------------+
++--------------------+--------------+-------------------------+
+| On Windows & Linux | On Mac       | Description             |
++====================+==============+=========================+
+| CTRL+B             | CMD+B        | Bold text.              |
++--------------------+--------------+-------------------------+
+| CTRL+I             | CMD+I        | Italicize text.         |
++--------------------+--------------+-------------------------+
+| CTRL+ALT+K         | CMD+OPTION+K | Format text as a link.  |
++--------------------+--------------+-------------------------+
 
 Accessibility nagivation shortcuts
 ----------------------------------
@@ -100,7 +100,7 @@ Accessibility nagivation shortcuts
 The following keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +------------------------------+------------------------------+--------------------------------------------------+
-| On Windows                   | On Mac                       | Description                                      |
+| On Windows & Linux           | On Mac                       | Description                                      |
 +==============================+==============================+==================================================+
 | ALT+LEFT                     | CMD+[                        | Go to the previous channel in your history.      |
 +------------------------------+------------------------------+--------------------------------------------------+

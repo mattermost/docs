@@ -1,3 +1,5 @@
+:nosearch:
+
 Configure SAML synchronization with AD/LDAP
 --------------------------------------------
 
