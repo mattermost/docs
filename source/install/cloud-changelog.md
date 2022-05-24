@@ -31,6 +31,7 @@ Latest Mattermost Cloud releases:
      - MFA token
  - Changed **Actions** post menu hover text to **Message Actions**.
  - Enabled the new onboarding task list for end users.
+ - Added pre-packaged Calls v0.5.3.
 
 #### Administration
  - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
