@@ -1,3 +1,5 @@
+:nosearch:
+
 Install the Mattermost Desktop App
 ==================================
 
