@@ -112,6 +112,11 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
 
+- Evaluate external network access requirements
+ 
+ - The `Plugin Marketplace <https://mattermost.com/marketplace>`__ is a service hosted by Mattermost that is a central place to store the current versions of available plugins.  See `Enable Remote Marketplace <https://docs.mattermost.com/configure/configuration-settings.html?#enable-remote-marketplace>`__ configuration setting for information about required external network access.
+ - Mattermost supports external Gif providers.  See `Gif Commands <https://docs.mattermost.com/configure/configuration-settings.html?#gif-commands>`__ for information about required external network access.
+
 3. Create development, staging, and production environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
