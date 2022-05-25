@@ -4,7 +4,7 @@ Mattermost administration guide
 This guide is for people who administer an existing Mattermost server. It’s divided into three parts:
 
 * `The basics <https://docs.mattermost.com/guides/administration.html#the-basics>`__ - An overview of standard configurations and features.
-* `Cloud admin <https://docs.mattermost.com/guides/administration.html#cloud-admin>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
+* `Workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
 * `Self-hosted admin <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
 
 If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, refer to the :doc:`Mattermost Deployment Guide </guides/deployment>`.
@@ -56,7 +56,7 @@ Workspace management
 Self-hosted admin
 -----------------
 
-This section of the guide is for admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the Cloud section of this page.
+This section of the guide is for admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the workspace management section of this page.
 
 Self-hosted setup and configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
