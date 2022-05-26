@@ -16,18 +16,14 @@ Latest Mattermost Releases:
 **Release Day: 2022-06-15**
 
 ### Important Upgrade Notes
- - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in FileInfo table.
+ - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table.
  - CRT GA
  - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
  - Boards: manual refresh on license change
  - The value of ``ServiceSettings.TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
- - Updated the System Console session lengths configurations to use the new hours unit, replacing the days. If anything were to go awry during a customer upgrade it could result in users not being able to log in, which is why it would be good for them to at least be aware of that change and know where to find more details. Furthermore, for customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables:
-    - MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=
-    - MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=
-    - MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=
- - The values would need to be 24x the existing values in days. For example, if MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30 they should set MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720.
+ - Updated the System Console session lengths configurations to use the new hours unit, replacing the days. If anything were to go awry during a customer upgrade it could result in users not being able to log in, which is why it would be good for them to at least be aware of that change and know where to find more details. Furthermore, for customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=``, ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=``, and ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=``. The values would need to be 24x the existing values in days. For example, if MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30 they should set MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720.
 
-**IMPORTANT:** If you upgrade from a release earlier than v6.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from a release earlier than v6.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
@@ -123,13 +119,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ### Go Version
  - v7.0 is built with Go ``v1.18.1``.
 
-### Open Source Components
- - 
-
 ### Known Issues
  - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
- - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
