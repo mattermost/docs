@@ -14,7 +14,6 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             - Administrator Console port 8065, TLS, TCP Inbound
             - SMTP port 10025, TCP/UDP Outbound
 
-       - Database: MySQL v8+ or PostgreSQL v12+
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
