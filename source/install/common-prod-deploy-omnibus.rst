@@ -16,7 +16,6 @@
             - Administrator Console port 8065, TLS, TCP Inbound
             - SMTP port 10025, TCP/UDP Outbound
             
-       - Database: MySQL v8+ or PostgreSQL v12+
 
 1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
