@@ -11,6 +11,130 @@ Latest Mattermost Releases:
 - [Release v6.5 - Feature Release](#release-v6-5-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
 
+## Release v7.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+**Release Day: 2022-06-15**
+
+### Important Upgrade Notes
+ - CRT GA
+ - Moved all channel header icons registered by plugins to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
+ - Boards: manual refresh on license change
+ - The value of ``ServiceSettings.TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+ - Updated the System Console session lengths configurations to use the new hours unit, replacing the days. If anything were to go awry during a customer upgrade it could result in users not being able to log in, which is why it would be good for them to at least be aware of that change and know where to find more details. Furthermore, for customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables:
+    - MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=
+    - MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=
+    - MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=
+ - The values would need to be 24x the existing values in days. For example, if MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30 they should set MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720.
+
+**IMPORTANT:** If you upgrade from a release earlier than v6.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### CRT GA
+ - 
+
+#### Apps framework GA
+ - 
+
+#### App Bar
+ - 
+
+#### Calls Beta
+ - 
+
+#### Updated server hardware requirements
+ - 
+
+#### Playbooks Updates
+ - 
+
+#### Boards Updates
+ - 
+
+#### Advanced Text Editor
+ - To make markdown features more accessible, an Advanced Text editor was added with new shortcuts to preview, open the emoji picker, strike out text, add headings, format numbered steps, add bullets, and hide the formatting options.
+
+### Improvements
+
+#### User Interface (UI)
+ - For toggling the channel information in the right-hand pane, a shortcut CTRL/CMD+ALT+I was added.
+ - Added an "Unread Channels" section to the channel switcher and included "Threads" in the results.
+ - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
+ - Improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
+ - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
+ - Applied new designs for the Login screen:
+     - Default login
+     - OAuth options
+     - Custom branding
+     - MFA token
+ - Changed **Actions** post menu hover text to **Message Actions**.
+ - Enabled the new onboarding task list for end users.
+ - Added a condition to hide legacy Enable post formatting setting if Advanced Text editor is enabled.
+ 
+#### Performance
+ - Improved the performance of aggregate queries related to Collapsed Reply Threads.
+
+#### Administration
+ - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
+ - Timestamps are now enabled in the default audit configuration.
+ - The Support Packet now contains two additional fields in the support_packet.yaml file: Active users and License-supported users.
+ - Upgraded the minor version of the ElasticSearch development Docker image.
+ 
+#### Enterprise Subscription
+ -
+
+### Bug Fixes
+ - Fixed an issue with ADA Accessibility where screen readers did not TAB to or read "This channel has guests" in the channel header bar.
+ - Fixed an issue where the at-mention autosuggest of users was no longer grouped by channel membership status.
+ - Fixed an issue where the New Messages toast was not fully tappable in the mobile web view.
+ - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
+ - Fixed an issue where the **Help > Report a Problem** link was not hidden when a URL was not set for **System Console > Customization > Report a Problem**.
+ - Fixed an issue with the timing of selector performance metrics.
+ - Fixed an issue where the S3 **Test Connection** button deceptively failed unless the user pressed **Save** first.
+ - Fixed an issue where Workspace Optimization did not load on subpath servers.
+ - Fixed an issue where an error was logged when ``SendEmailNotifications`` was not true.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - ServiceSettings config changes:
+   - * SessionLengthWebInDays => SessionLengthWebInHours 
+   - * SessionLengthMobileInDays => SessionLengthMobileInHours
+   - * SessionLengthSSOInDays => SessionLengthSSOInHours
+ - The value of ``ServiceSettings.TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+ - Added a new config setting ExperimentalSettings.EnableAppBar.
+
+
+#### API Changes
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels``.
+
+#### Websocket Event Changes
+ - Added a new ``ConnectionId`` field to ``model.WebsocketBroadcast`` that allows broadcasting a message only to a specific connection.
+ - Added ``PublishWebSocketEvent`` method.
+
+### Go Version
+ - v7.0 is built with Go ``v1.18.1``.
+
+### Open Source Components
+ - 
+
+### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+
+### Contributors
+
+
 ## Release v6.7 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
 **Release Day: 2022-05-16**
