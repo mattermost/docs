@@ -40,7 +40,8 @@ These resources will help you get started with your Mattermost workspace.
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 
 Workspace management
-^^^^^^^^^^^^^^^^^^^^
+--------------------
+
 .. toctree::
     :maxdepth: 1
     :hidden:
