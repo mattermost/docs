@@ -4288,6 +4288,25 @@ Enable Plugin
 
 **False**: Disables the Channel Export plugin on your Mattermost workspace.
 
+Calls
+~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > Calls**.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Enables the calls plugin on your Mattermost workspace.
+
+**False**: Disables the calls plugin on your Mattermost workspace.
+
+Experimental Features
+^^^^^^^^^^^^^^^^^^^^^
+
+You can select whether to use the App Bar for this plugin.
+
 Demo Plugin
 ~~~~~~~~~~~
 
@@ -4308,7 +4327,6 @@ Channel Name
 |all-plans| |self-hosted|
 
 Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
-
 
 Username
 ^^^^^^^^
@@ -4344,7 +4362,7 @@ Display the GIF as an embedded image where the GIF can't be collapsed, or as a c
    `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
 
 GIF Provider
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
@@ -4375,7 +4393,6 @@ Gfycat display style
 |all-plans| |self-hosted|
 
 Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
-
 
 GIPHY display style
 ^^^^^^^^^^^^^^^^^^^
