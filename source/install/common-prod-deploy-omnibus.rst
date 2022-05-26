@@ -9,6 +9,7 @@
     Minimum system requirements include:
     
        - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
+       - Database: MySQL v8+ or PostgreSQL v12+
        - Network ports required: 
        
             - Application ports 80/443, TLS, TCP Inbound
