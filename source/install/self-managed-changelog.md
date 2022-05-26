@@ -17,7 +17,7 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
  - CRT GA
- - Moved all channel header icons registered by plugins to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
+ - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
  - Boards: manual refresh on license change
  - The value of ``ServiceSettings.TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
  - Updated the System Console session lengths configurations to use the new hours unit, replacing the days. If anything were to go awry during a customer upgrade it could result in users not being able to log in, which is why it would be good for them to at least be aware of that change and know where to find more details. Furthermore, for customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables:
@@ -75,13 +75,11 @@ Latest Mattermost Releases:
  - Improved the performance of aggregate queries related to Collapsed Reply Threads.
 
 #### Administration
- - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
  - Timestamps are now enabled in the default audit configuration.
- - The Support Packet now contains two additional fields in the support_packet.yaml file: Active users and License-supported users.
- - Upgraded the minor version of the ElasticSearch development Docker image.
  
 #### Enterprise Subscription
- -
+ - Upgraded the minor version of the ElasticSearch development Docker image.
+ - The Support Packet now contains two additional fields in the support_packet.yaml file: Active users and License-supported users.
 
 ### Bug Fixes
  - Fixed an issue with ADA Accessibility where screen readers did not TAB to or read "This channel has guests" in the channel header bar.
@@ -98,20 +96,23 @@ Latest Mattermost Releases:
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - ServiceSettings config changes:
-   - * SessionLengthWebInDays => SessionLengthWebInHours 
-   - * SessionLengthMobileInDays => SessionLengthMobileInHours
-   - * SessionLengthSSOInDays => SessionLengthSSOInHours
- - The value of ``ServiceSettings.TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
- - Added a new config setting ExperimentalSettings.EnableAppBar.
-
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Changed ``SessionLengthWebInDays`` to ``SessionLengthWebInHours``.
+   - Changed ``SessionLengthMobileInDays`` to ``SessionLengthMobileInHours``.
+   - Changed ``SessionLengthSSOInDays`` to ``SessionLengthSSOInHours``.
+   - The value of ``TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+ - Under ``ExperimentalSettings`` in ``config.json``:
+   - Added a new config setting ``EnableAppBar`` to enable and disable the App Bar.
+   - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
+ - Under ``ServiceSettings`` in ``config.json``:
+ - The default for ``CollapsedThreads`` has been changed to "always_on". This does not affect existing configurations where this value is already set to some other value.
 
 #### API Changes
  - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels``.
 
 #### Websocket Event Changes
  - Added a new ``ConnectionId`` field to ``model.WebsocketBroadcast`` that allows broadcasting a message only to a specific connection.
- - Added ``PublishWebSocketEvent`` method.
+ - Added a new ``PublishWebSocketEvent`` method.
 
 ### Go Version
  - v7.0 is built with Go ``v1.18.1``.
