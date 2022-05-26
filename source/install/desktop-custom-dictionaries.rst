@@ -1,4 +1,4 @@
-Desktop App Custom Dictionaries
+Desktop App custom dictionaries
 ===============================
 
 |all-plans| |self-hosted|

@@ -1,4 +1,4 @@
-Deploy Mattermost Mobile Apps
+Deploy Mattermost mobile apps
 =============================
 
 |all-plans| |cloud| |self-hosted|
@@ -24,22 +24,22 @@ This documentation provides information to help you:
 
 - Determine the ideal mobile deployment model for your organization.
 - Understand what’s required to build your own Mattermost Mobile Apps.
-- Deploy Mattermost Mobile Apps.
+- Deploy Mattermost mobile apps.
 
 .. note::
 
   - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
   - Some features described in this guide are available only in Mattermost Enterprise Edition.
 
-Decision Summary
+Decision summary
 ----------------
 
-When planning for a Mobile app deployment, you have two important decisions to make: 
+When planning for a mobile app deployment, you have two important decisions to make: 
 
 - What app will you deploy - a pre-built app or your own custom build?
 - How will you deploy it?
 
-Mattermost provides official mobile Apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
+Mattermost provides official mobile apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See `Using Mattermost’s Pre-Built Apps <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__ to learn more about using Mattermost pre-built apps.
 
 If you want to control the app's look and feel, or host your own push proxy server, you can build your own mobile apps and manage your own app distribution. See `Building and Distributing Your Own Custom Mattermost Mobile Apps <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to learn more about working with custom built apps.
 
@@ -96,6 +96,6 @@ If you need assistance, please reach out using one or more of the following meth
 
 - **Community:** Join our Mattermost community and post your specific questions in the `Developers: Mobile <https://community-daily.mattermost.com/core/channels/native-mobile-apps>`__ channel.
 - **Documentation:** We link to a lot of mobile-specific documentation within this guide, but we encourage you to visit all of our `product documentation <https://docs.mattermost.com/>`__.
-- **Forums:** For more troubleshooting help, `open a new topic in our forum <https://forum.mattermost.org/c/trouble-shoot>`__ and include the steps to reproduce your issue so we can test on our side.
+- **Forums:** For more troubleshooting help, `open a new topic in our forum <https://forum.mattermost.com/c/trouble-shoot>`__ and include the steps to reproduce your issue so we can test on our side.
 - **GitHub:** `Visit us on GitHub <https://github.com/mattermost/>`__ to create issues in any of our repositories.
 - **Enterprise Support:** If you're a Mattermost Enterprise Edition subscriber, open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/>`__.

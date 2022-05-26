@@ -1,13 +1,15 @@
+:nosearch:
 .. _install-debian-postgresql:
 
-Installing PostgreSQL Database Server
--------------------------------------
+Install PostgreSQL database server
+-----------------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.
 
 Assume that the IP address of this server is 10.10.10.1
 
-**To install PostgreSQL on Debian Buster:**
+Install PostgreSQL on Debian Buster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to the server that will host the database and issue the following command:
 

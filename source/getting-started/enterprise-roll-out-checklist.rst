@@ -1,4 +1,4 @@
-Enterprise Roll Out Checklist
+Enterprise roll out checklist
 ==============================
 
 |all-plans| |self-hosted|
@@ -15,43 +15,43 @@ Enterprise Roll Out Checklist
 
 This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users. 
 
-Checklist Overview
+Checklist overview
 -------------------
 
-  - `Prepare for the Roll Out`_ 
+  - `Prepare for the roll out`_ 
 
-   - `1. Define the Roll Out Project`_ 
-   - `2. Validate Essential Security and Compliance Requirements`_ 
-   - `3. Create Development, Staging, and Production Environments`_ 
-   - `4. Configure and Customize Your Mattermost Site`_  
-   - `5. Test Production Performance and Redundancy`_ 
+   - `1. Define the roll out project`_ 
+   - `2. Validate essential security and compliance requirements`_ 
+   - `3. Create development, staging, and production environments`_ 
+   - `4. Configure and customize your Mattermost site`_  
+   - `5. Test production performance and redundancy`_ 
 
-  - `Roll Out Mattermost`_ 
+  - `Roll out Mattermost`_ 
 
-   - `1. Define Your Team and Channel Strategy`_ 
-   - `2. Enable Key Integrations`_ 
-   - `3. Prepare for User Onboarding`_ 
-   - `4. Deploy Client Apps`_  
-   - `5. Roll Out to Groups of Users`_ 
-   - `6. Drive Adoption`_ 
+   - `1. Define your team and channel strategy`_ 
+   - `2. Enable key integrations`_ 
+   - `3. Prepare for user onboarding`_ 
+   - `4. Deploy client apps`_  
+   - `5. Roll out to groups of users`_ 
+   - `6. Drive adoption`_ 
 
-  - `Review the Roll Out`_ 
+  - `Review the roll out`_ 
 
-   - `1. Review Project Charter Success Metrics`_ 
-   - `2. Review and Analyze Usage`_ 
-   - `3. Analyze System Performance`_ 
-   - `4. Harden Security`_  
-   - `5. Perform Maintenance Tasks`_ 
+   - `1. Review project charter success metrics`_ 
+   - `2. Review and analyze usage`_ 
+   - `3. Analyze system performance`_ 
+   - `4. Harden security`_  
+   - `5. Perform maintenance tasks`_ 
    
-Checklist Details
+Checklist details
 -------------------
 
-Prepare for the Roll Out
+Prepare for the roll out
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Much of the preparation work is focused on ensuring the environment is deployed and secured prior to onboarding users. 
 
-1. Define the Roll Out Project
+1. Define the roll out project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Define key stakeholders and project team members
@@ -70,7 +70,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Get buy-in from project team members and key stakeholders on the project charter 
 
-2. Validate Essential Security and Compliance Requirements
+2. Validate essential security and compliance requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Review Mattermost security features
@@ -112,7 +112,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
 
-3. Create Development, Staging, and Production Environments
+3. Create development, staging, and production environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
@@ -174,7 +174,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Example: https://docs.mattermost.com/getting-started/architecture-overview.html#reference-architectures 
 
-4. Configure and Customize Your Mattermost Site
+4. Configure and customize your Mattermost site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Login to Mattermost and access the System Console to connect your environment to Mattermost
@@ -199,7 +199,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Permissions Resource: https://docs.mattermost.com/onboard/advanced-permissions.html
  - Guest Access Resource: https://docs.mattermost.com/onboard/guest-accounts.html
 
-5. Test Production Performance and Redundancy
+5. Test production performance and redundancy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Define and test disaster recovery policy and processes
@@ -221,11 +221,11 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - Resource: https://docs.mattermost.com/scale/performance-monitoring.html 
 
-Roll Out Mattermost
+Roll out Mattermost
 ~~~~~~~~~~~~~~~~~~~
 Now that you have an environment in place, we recommend working through the following items in an iterative process. You may need to cycle through each of these topics multiple times to make adjustments to suit your organization as you onboard groups of users. 
 
-1. Define Your Team and Channel Strategy
+1. Define your team and channel strategy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Determine and create a team structure for your environment
@@ -241,7 +241,7 @@ Now that you have an environment in place, we recommend working through the foll
 
  - Resource: https://docs.mattermost.com/onboard/migrating-to-mattermost.html
 
-2. Enable Key Integrations
+2. Enable key integrations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Build the list of key integrations and tools used by your teams
@@ -260,7 +260,7 @@ Now that you have an environment in place, we recommend working through the foll
 
  - Resource: https://api.mattermost.com/
 
-3. Prepare for User Onboarding
+3. Prepare for user onboarding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Onboard champion users 
@@ -278,7 +278,7 @@ Now that you have an environment in place, we recommend working through the foll
 
  - Sample email: https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html
 
-4. Deploy Client Apps
+4. Deploy client apps
 ^^^^^^^^^^^^^^^^^^^^^
 
 - Roll out Desktop App 
@@ -296,7 +296,7 @@ Now that you have an environment in place, we recommend working through the foll
 
   - Resource: https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html 
 
-5. Roll Out to Groups of Users
+5. Roll out to groups of users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Provision user accounts
@@ -318,7 +318,7 @@ Now that you have an environment in place, we recommend working through the foll
  - Train on using Mattermost
  - Train on how to use integrations
 
-6. Drive Adoption
+6. Drive adoption
 ^^^^^^^^^^^^^^^^^
 
 - Incrementally roll out to additional user groups
@@ -340,12 +340,12 @@ Now that you have an environment in place, we recommend working through the foll
  - Command Line Tools Resource: https://docs.mattermost.com/manage/command-line-tools.html
  - Database Scripts Resource: https://docs.mattermost.com/manage/scripts.html 
 
-Review the Roll Out 
+Review the roll out 
 ~~~~~~~~~~~~~~~~~~~
 
 We recommend that you review your rollout on a cadence that matches your iterative approach to rolling out to users. Below are some areas to consider.  
 
-1. Review Project Charter Success Metrics
+1. Review project charter success metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Perform end-user surveys and measure satisfaction
@@ -358,7 +358,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Identify usage gaps and address or create a plan for addressing
 
-2. Review and Analyze Usage
+2. Review and analyze usage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Review Project Charter success metrics - identify usage gaps and address or create a plan for addressing
@@ -372,7 +372,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
  - Resources: https://docs.mattermost.com/manage/scripts.html
 
-3. Analyze System Performance
+3. Analyze system performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Monitor trends in CPU/memory usage
@@ -383,7 +383,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Review trends in concurrent sessions 
 
-4. Harden Security
+4. Harden security
 ^^^^^^^^^^^^^^^^^^
 
 - Harden security controls around the web, desktop, and mobile security
@@ -397,7 +397,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
   - Resource: https://docs.mattermost.com/comply/compliance-export.html
 
-5. Perform Maintenance Tasks
+5. Perform maintenance tasks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Monitor for security updates (or sign up for email updates)
 

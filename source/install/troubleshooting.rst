@@ -1,6 +1,6 @@
 ..  _troubleshooting:
 
-Troubleshooting Mattermost Issues
+Troubleshooting Mattermost issues
 =================================
 
 |all-plans| |self-hosted|
@@ -19,28 +19,81 @@ This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__.
+If you have a `paid subscription to a Mattermost offering <https://docs.mattermost.com/about/editions-and-offerings.html>`_, such as `Mattermost Professional <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
-Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
+Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
 
-Important Notes
+Important notes
 ---------------
 
 - Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised.
 - Any manipulation of the database must be done using the built in command line tools.
 - Start simple with the step-by-step install guides for your operating system.
 
-General Troubleshooting
+Deployment troubleshooting
+--------------------------
+
+Docker deployments
+~~~~~~~~~~~~~~~~~~
+
+If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, `re-create the required directories and set their permissions <https://docs.mattermost.com/guides/deployment.html#deploy-mattermost-for-production-use>`__, then skip the following command:
+
+.. code:: bash
+
+   sudo chown -R 2000:2000 ./volumes/app/mattermost
+
+On M1 systems, this permission change causes the deploy to stop working, so we recommend skipping this step altogether.
+
+If you're experiencing issues deploying on Docker generally, ensure the docker daemon is enabled and running:
+
+.. code:: bash
+  
+   sudo systemctl enable --now docker
+
+To remove all data and settings for your Mattermost deployment:
+
+.. code:: bash
+
+   sudo rm -rf ./volumes
+
+Postgres issues
+~~~~~~~~~~~~~~~
+
+You can change the Postgres username and/or password (recommended) in the ``.env`` file.
+
+TLS and NGINX issues
+~~~~~~~~~~~~~~~~~~~~~
+
+For an in-depth guide to configuring the TLS certificate and key for NGINX, please refer to `this document in the repository <https://github.com/mattermost/docker/blob/main/docs/issuing-letsencrypt-certificate.md>`__.
+
+Install a different version of Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Shut down your deployment.
+
+2. Run ``git pull`` to fetch any recent changes to the repository, paying attention to any potential ``env.example`` changes.
+
+3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
+
+4. Redeploy Mattermost.
+
+Upgrading from ``mattermost-docker``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For an in-depth guide to upgrading from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__, please refer to `this document <https://github.com/mattermost/docker/blob/main/scripts/UPGRADE.md>`__. For additional help, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
+
+General troubleshooting
 -----------------------
 
 Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-Review Mattermost Logs
-~~~~~~~~~~~~~~~~~~~~~~
+Review Mattermost logs
+----------------------
 
 You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have `System Admin permissions <https://docs.mattermost.com/help/getting-started/managing-members.html#system-admin>`__.
 
-**Mattermost Server**
+Mattermost Server logs 
+----------------------
 
 - Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
 - You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
@@ -54,7 +107,8 @@ If filesystem access is not possible, navigate to **System Console > Reporting >
 
 You can find more on logging settings `here <https://docs.mattermost.com/configure/configuration-settings.html#standard-logging>`__.
 
-**Mattermost Desktop App**
+Mattermost Desktop App logs
+---------------------------
 
 The desktop app log file can be found in the user directory:
 
@@ -62,15 +116,17 @@ The desktop app log file can be found in the user directory:
 - **Linux:** ``~/.local/share/Mattermost/logs``
 - **MacOS:** ``~/Library/Logs/Mattermost``
 
-**Mattermost Browser App**
+Mattermost Browser App logs
+---------------------------
 
-The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser.
+The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser for action history. 
 
-**Mattermost Push Notification Service**
+Mattermost Push Notification Service logs
+-----------------------------------------
 
 Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
 
-Review Mattermost Environment
+Review Mattermost environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
@@ -85,25 +141,27 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ can often be found and applied.
+You can also search the error messages online. Existing solutions from our `forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ can often be found and applied.
 
-Connect to Another Server
+Connect to another server
 -------------------------
 
 1. Create an account at https://community.mattermost.com.
 2. Erase your mobile application and reinstall it.
 3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to test whether the connection is working.
 
-Connect with Another Device
+Connect with another device
 ---------------------------
 
 - If you have another mobile device available, try connecting with that to see if your issue still reproduces.
 - If you don’t have another device available, check with other teammates to see if they are having the same issue.
 
-Opening a Support Ticket for Self-Hosted Deployments
------------------------------------------------------
+Opening a support ticket for self-hosted deployments
+----------------------------------------------------
 
-When opening a Support ticket, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
+If you have a `paid subscription to a Mattermost offering <https://docs.mattermost.com/about/editions-and-offerings.html>`_, such as `Mattermost Professional <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-professional>`_ or `Mattermost Enterprise <https://docs.mattermost.com/about/editions-and-offerings.html#mattermost-enterprise>`_, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+
+When opening a Support ticket as part of your paid subscription, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
 
 * Configurations
 * Logs
@@ -113,9 +171,7 @@ When opening a Support ticket, it's important that you provide us with as much i
 
 C.L.U.E.S. represents all of the information that can clarify your issue. With these details, we can begin searching for a cause, whether it's a simple configuration change or a product bug. It also helps us when we need to escalate the issue to our developers so they can spend as much time as possible improving our product.
 
-Enterprise Edition customers have Premier Support and can open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. Additionally, peer-to-peer support is available for all Mattermost users on our `Community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`__ and the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__.
-
-General Guidelines for Information
+General guidelines for information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow these guidelines when providing diagnostic data to us:
@@ -349,7 +405,7 @@ Elasticsearch server
  - Elasticsearch 7.9 with these plugins
  - analysis-icu
 
-Steps to Reproduce
+Steps to reproduce
 ~~~~~~~~~~~~~~~~~~
 
 What it is

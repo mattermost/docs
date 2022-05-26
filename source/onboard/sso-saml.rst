@@ -52,12 +52,12 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
 
 In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
-Using SAML Attributes to Apply Roles
+Using SAML attributes to apply roles
 -------------------------------------
 
 You can use attributes to assign roles to specified users on login. To access the SAML attribute settings navigate to **System Console > SAML 2.0**.
 
-Username Attribute
+Username attribute
 ~~~~~~~~~~~~~~~~~~
 
 (Optional) Enter a SAML assertion filter to use when searching for users.
@@ -68,12 +68,12 @@ Username Attribute
 
 When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.
 
-Guest Attribute
+Guest attribute
 ~~~~~~~~~~~~~~~
 
-When enabled, the Guest Attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
+When enabled, the ``guest`` attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
-If a Mattermost Guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the Guest Attribute added, the synchronization processes will automatically demote the member user to the guest role.
+If a Mattermost guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the ``guest`` attribute added, the synchronization processes will automatically demote the member user to the guest role.
 
 1. Enable Guest Access via **System Console > SAML 2.0**.
 2. Navigate to **System Console > Authentication > SAML 2.0**.
@@ -82,9 +82,9 @@ If a Mattermost Guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information about this feature.
+See the `Guest accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information about this feature.
 
-Admin Attribute
+Admin attribute
 ~~~~~~~~~~~~~~~
 
 (Optional) The attribute in the SAML Assertion for designating System Admins. The users selected by the query will have access to your Mattermost server as System Admins. By default, System Admins have complete access to the Mattermost System Console.
@@ -96,7 +96,8 @@ Existing members that are identified by this attribute will be promoted from mem
 3. Complete the **Admin Attribute** field.
 4. Choose **Save**.
 
-**Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
+.. note:: 
+    If the ``admin`` attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
 Roadmap
 -------
@@ -109,7 +110,7 @@ Currently user provisioning and deprovisioning can be handled with SAML sync, bu
 
 For examples, see `Microsoft Azure AD integration with SCIM <https://docs.microsoft.com/en-us/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups>`__ and `Okta user provisioning with SCIM <https://help.okta.com/en/prod/Content/Topics/Apps/Provisioning_Deprovisioning_Overview.htm>`__.
 
-Configuration Assistance
+Configuration assistance
 ------------------------
 
 We are open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we cannot guarantee your connection will work with Mattermost.

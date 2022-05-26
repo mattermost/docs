@@ -1,4 +1,4 @@
-Using Mattermost's Pre-Built Mobile Apps
+Using Mattermost's pre-built mobile apps
 ========================================
 
 |all-plans| |cloud| |self-hosted|
@@ -20,27 +20,27 @@ Using Mattermost's Pre-Built Mobile Apps
 
 We strongly recommend using Mattermost’s pre-built Mobile App. This approach is recommended for all Mattermost customers.
 
-Deployment Options
+Deployment options
 ------------------
 
-When you decide to use the pre-built Mattermost Mobile apps, you have two ways to distribute them: ask your users to download them, or distribute them through an Enterprise Mobile Management (EMM) provider.
+When you decide to use the pre-built Mattermost mobile apps, you have two ways to distribute them: ask your users to download them, or distribute them through an Enterprise Mobile Management (EMM) provider.
   
-Using Public App Stores
+Using public app stores
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Your users can download the Mattermost Mobile app as an `iOS app <https://about.mattermost.com/mattermost-ios-app/>`__ or an `Android app <https://about.mattermost.com/mattermost-android-app/>`__ from a public app store. When users launch the Mattermost Mobile app, they must enter the address of your Mattermost server to connect their Mobile app to the server.
+Your users can download the Mattermost mobile app as an `iOS app <https://apps.apple.com/us/app/mattermost/id1257222717>`__ or an `Android app <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ from a public app store. When users launch the Mattermost Mobile App, they must enter the address of your Mattermost server to connect their mobile app to the server.
 
-Using an EMM Provider
+Using an EMM provider
 ~~~~~~~~~~~~~~~~~~~~~
 
-See our `Deploying Using an EMM Provider <https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html>`__ documentation to learn more about deploying Mattermost Mobile apps through an EMM provider.
+See our `Deploying Using an EMM Provider <https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html>`__ documentation to learn more about deploying Mattermost mobile apps through an EMM provider.
 
-Setting Up Push Notifications
+Setting up push notifications
 -----------------------------
 
 See our `Mobile Push Notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ documentation to learn about setting up push notifications for Mattermost pre-built mobile apps.
 
-Success! Your Public App Store Deployment is Complete
+Success! Your public app store deployment is complete
 -----------------------------------------------------
 
 If you don't need the additional security provided via an EMM provider, your deployment is complete! Feel free to point your users to our `Mattermost Channels <https://docs.mattermost.com/guides/channels.html>`__ product documentation to learn more about using Mattermost Channels.

@@ -1,6 +1,7 @@
+:nosearch:
 ..  _install-rhel-8-mysql:
 
-Installing MySQL Database Server
+Installing MySQL database server
 --------------------------------
 
 Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL.

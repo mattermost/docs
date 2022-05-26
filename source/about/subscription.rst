@@ -1,13 +1,41 @@
-Subscription Overview
+Subscription overview
 =====================
 
-Mattermost offers features through `Starter, Professional, or Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or cloud, and the plan as Starter, Professional, or Enterprise. 
+Mattermost offers features through `Mattermost Professional and Mattermost Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or cloud. 
 
-Mattermost self-hosted deployments require a license to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can easily purchase and manage your Mattermost self-hosted subscriptions. When you purchase a subscription, a license is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details. 
+Mattermost self-hosted deployments require a license to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted licenses. When you complete the purchase process, a license is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
 
-Mattermost Cloud is a software-as-as-service. You can simply sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
+Mattermost Cloud is a software-as-a-service product. You can sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
 
-General Frequently Asked Questions
+Mattermost Non-Profit License Program
+------------------------------------------
+
+The Mattermost Nonprofit License enables eligible charities, open source projects, and nonprofit organizations to apply the benefits of the self-hosted Mattermost Professional offering towards advancing their missions with special nonprofit pricing.
+
+What's included?
+~~~~~~~~~~~~~~~~~
+
+A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website and in our marketing materials.
+
+Following the three-year free license, the institution can renew the license every three years for an additional $250 USD subscription fee.
+
+Who's eligible?
+~~~~~~~~~~~~~~~~
+
+To be eligible, an organization needs to be an official nonprofit or charity; as well as non-government, non-academic, and non-commercial in nature, with no religious affiliation; and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
+
+How to apply?
+~~~~~~~~~~~~~~~
+
+To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__.
+
+Mattermost educational license program
+----------------------------------------
+
+For academic licensing, please see: https://mattermost.com/education/
+
+
+General frequently asked questions
 -----------------------------------
 
 Are my credit card details safe?
@@ -90,21 +118,6 @@ The affected features include, but are not limited to, the following:
     "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions>`__ to reset permissions to default."
     "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
     
-Do you have a program for official non-profits, open source projects, and charities?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes. The Mattermost Nonprofit License enables foundations and other nonprofit organizations that support open source projects or other technology initiatives to apply the benefits of Mattermost Enterprise Edition to advancing their missions with special nonprofit pricing.
-
-To be eligible, an organization needs to be an official nonprofit or charity; as well as non-government, non-academic and non-commercial in nature, with no religious affiliation; and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
-
-Organizations that receive a Mattermost Nonprofit License must make their server publicly-accessible for anyone to sign up and join. Mattermost will also have the right to place the name and logo of the nonprofit or charitable institution on our website.
-
-To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__, or contact us at nonprofit@mattermost.com.
-
-Do you have discounted subscriptions for academic institutions?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes, for academic institutions we offer `Mattermost Enterprise Edition Standard <https://mattermost.com/education/>`__ for no charge to students (staff members pay the regular price). You need to pay for at least 10 staff members in order to qualify for an academic license. Please see `Mattermost Academic Licensing <https://docs.google.com/forms/d/e/1FAIpQLSfdl9fTwahgMQu0hb65A58OWzzR3541VwU-MbT0f3y1ND4QhA/viewform>`__ for more information.
 
 Is there a maximum number of users per subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -26,7 +26,7 @@ You should save the two files that are generated, which will be referred to as t
 
 6 - Enter **General Settings** for the application, including `App name` and `App logo` (optional). It is recommended to display the application icon to users, including in the Okta Mobile app.
 
-If you’d like to use a Mattermost logo for the application, you are free to download one [from our page](https://mattermost.org/brand-guidelines/).
+If you’d like to use a Mattermost logo for the application, you are free to download one [from our page](https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines).
 
 ![okta_2_general_settings](../../source/images/okta_2_general_settings.png)
 
@@ -46,7 +46,7 @@ Then, set **Assertion Encryption** as `Encrypted` and upload the **Service Provi
 
 ![okta_5_advanced_saml_settings.png](../../source/images/okta_5_advanced_saml_settings.png)
 
-9 - Enter attribute statements, which will be used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our [documentation on SAML configuration settings](https://docs.mattermost.com/administration/config-settings.html#saml-enterprise). Email and username attributes are required. For Mattermost servers running 3.3 and earlier, first name and last name attributes are also required.
+9 - Enter attribute statements, which will be used to map attributes between Okta and Mattermost. For more information on which attributes are configurable, see our [documentation on SAML configuration settings](https://docs.mattermost.com/configure/configuration-settings.html#saml). Email and username attributes are required. For Mattermost servers running 3.3 and earlier, first name and last name attributes are also required.
 
 ![okta_6_attribute_statements.png](../../source/images/okta_6_attribute_statements.png)
 
@@ -83,7 +83,7 @@ Furthermore, you **must download the X.509 Public Certificate file** and save it
 
 ![okta_12_mattermost_encryption.png](../../source/images/okta_12_mattermost_encryption.png)
 
-16 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in Okta in step 9. See [documentation on SAML configuration settings](https://docs.mattermost.com/administration/config-settings.html#saml-enterprise) for more detail.
+16 - Set attributes for the SAML Assertions, which will be used to update user information in Mattermost. Attributes for email and username are required and should match the values you entered in Okta in step 9. See [documentation on SAML configuration settings](https://docs.mattermost.com/configure/configuration-settings.html#saml) for more detail.
 
 For Mattermost servers running 3.3 and earlier, the first name and last name attributes are also required fields.
 
@@ -99,7 +99,7 @@ You’re done! If you’d like to confirm SAML SSO is successfully enabled, swit
 
 It is also recommended to post an announcement about how the migration will work to users.
 
-You may also configure SAML for Okta by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](https://docs.mattermost.com/administration/config-settings.html#saml-enterprise). You must restart the Mattermost server for the changes to take effect.
+You may also configure SAML for Okta by editing `config.json`. Before starting the Mattermost server, edit `config.json` to enable SAML based on [SAML configuration settings](https://docs.mattermost.com/configure/configuration-settings.html#saml). You must restart the Mattermost server for the changes to take effect.
 
 ### Troubleshooting
 
@@ -107,7 +107,7 @@ The following are troubleshooting suggestions on common error messages and issue
 
 #### 1. System Administrator locks themselves out of the system
 
-If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](https://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline). 
+If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using [a commandline tool](https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html). 
 
 #### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
@@ -127,4 +127,4 @@ First, ensure you have installed the [XML Security Library](https://www.aleksey.
 
 Second, ensure you have completed each step in our guide above for configuring SAML with Okta.
 
-Lastly, if you are still having trouble with configuration, feel free to post in our [Troubleshooting forum](https://mattermost.org/troubleshoot/) and we'll be happy to help with issues during setup.
+Lastly, if you are still having trouble with configuration, feel free to post in our [Troubleshooting forum](https://forum.mattermost.com/c/trouble-shoot) and we'll be happy to help with issues during setup.

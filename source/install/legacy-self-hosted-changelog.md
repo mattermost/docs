@@ -1,4 +1,5 @@
-# Mattermost Legacy Self-Hosted Changelog
+# Mattermost legacy self-hosted changelog
+
 [Mattermost](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. This changelog summarizes updates for all self-hosted versions of Mattermost prior to v5.37.
 
 ## Latest Mattermost releases

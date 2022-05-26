@@ -9,10 +9,10 @@ Statistics on users, posts, and channels are tracked for each system and team. E
 
 For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
 
-Site Statistics
+Site statistics
 ---------------
 
-|all-plans| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
@@ -24,11 +24,15 @@ Site Statistics
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/download
+  :alt: Available for Mattermost Cloud deployments.
+
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
-
 
 System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
 
@@ -87,16 +91,22 @@ Master DB Conns
 Replica DB Conns
     The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/scale/high-availability-cluster.html#database-configuration>`__.
 
+Total Playbooks
+    The total number of playbooks on this server.
+
+Total Playbook Runs
+    The total number of runs (active and complete) on this server.
+
 Channel Types
     This chart displays the number of public channels and private channels in a visual format, including channels that might have been deleted.
 
 Posts, Files and Hashtags
     This chart displays the number of posts containing files, hashtags, or only text. Posts containing both files and hashtags are counted in both categories, and deleted posts are included.
 
-Team Statistics
+Team statistics
 ---------------
 
-|all-plans| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
 Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in Direct Message channels, which are not tied to a team.
 

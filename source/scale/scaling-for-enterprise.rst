@@ -22,7 +22,7 @@ Mattermost is designed to scale from small teams hosted on a single server to la
 
 Server requirements vary based on usage and it is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs.
 
-Single Machine Deployment
+Single machine deployment
 -------------------------
 
 Organizations can typically run Mattermost on a single server with up to 2,000 users, though more users have been observed based on different usage and server configurations.
@@ -30,7 +30,7 @@ Organizations can typically run Mattermost on a single server with up to 2,000 u
 - See `install guides for step-by-step configuration instructions for single machine setup <https://docs.mattermost.com/guides/deployment.html#install-mattermost>`__.
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/software-hardware-requirements.html>`__.
 
-Multi Machine Deployment
+Multi machine deployment
 ------------------------
 
 Deployments between 2,000 and 10,000 registered users with moderate usage can run on a standard three-machine Mattermost deployment with a proxy, an application server and a database server. At this scale, demands of larger organizations can typically be met by using powerful hardware in a standard configuration.
@@ -38,7 +38,7 @@ Deployments between 2,000 and 10,000 registered users with moderate usage can ru
 - See `install guides for step-by-step configuration instructions for multi-machine setup <https://docs.mattermost.com/guides/deployment.html#install-mattermost>`__.
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/software-hardware-requirements.html>`__.
 
-Cluster-based Deployment
+Cluster-based deployment
 ------------------------
 
 |enterprise| |self-hosted|
@@ -51,7 +51,7 @@ This configuration uses a load balancer to distribute requests from users across
 
 For more information, see `High Availability deployment guide for horizontal scaling setup <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 
-Sample Scaling Guide
+Sample scaling guide
 --------------------
 
 This guide demonstrates how to budget for, and build, large-scale Mattermost deployments.
@@ -63,7 +63,7 @@ Based on the `hardware requirements <https://docs.mattermost.com/install/softwar
 .. image:: ../images/scaling-1.png
    :alt: Mattermost server architecture for a 10,000 user deployment
 
-**Sizing Guide Using AWS**
+**Sizing guide using AWS**
 
 On AWS, we recommend using the following EC2 server types as a baseline:
 
@@ -83,12 +83,12 @@ Here’s an example of the hardware you’ll need for a 10,000-user deployment:
 
 For more information, check out our `Administrator Onboarding Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html#administrator-tasks>`__ documentation.
 
-Hosting Recommendation for 100,000+ users
+Hosting recommendation for 100,000+ users
 -----------------------------------------
 
 The following matrix presents key features for a successful multi-region Mattermost implementation that scales to 100,000 users with support for high availability and geographically based traffic routing in on premises, AWS, and Azure deployments.
 
-To scale to 100,000 users and above, we recommended using `the Mattermost open source load testing framework <https://github.com/mattermost/mattermost-load-test>`__ to simulate usage of your system at full scale.
+To scale to 100,000 users and above, we recommended using `the Mattermost open source load testing framework <https://github.com/mattermost/mattermost-load-test-ng>`__ to simulate usage of your system at full scale.
 
 .. csv-table::
     :header: "Feature", "Self-Hosted", "Amazon AWS", "Azure"

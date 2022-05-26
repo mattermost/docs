@@ -1,4 +1,4 @@
-Announcement Banner
+Announcement banner
 ===================
 
 |enterprise| |professional| |cloud| |self-hosted|
@@ -25,20 +25,26 @@ Announcement Banner
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
-System Admins can display a notice that's visible to all users on the system via an announcement banner.
+System Admins can display a notice that's visible to all users on the system via an announcement banner. The announcement banner is disabled by default, so System Admins must first `enable this feature <https://docs.mattermost.com/configure/configuration-settings.html#enable-announcement-banner>`__ within the System Console or via the ``config.json`` file.
 
-.. image:: ../images/announcement-banner-1106x272.png
-  :width: 1106
-  :height: 272
-  :alt: Shows the announcement banner at the top of the user's screen.
+.. note::
 
-By default, users can dismiss the banner until they log in again or until you update the banner. You can update the banner by either changing the text of the banner or by re-enabling the banner after it has been disabled. You can also control the text color and the background color. A setting in the System Console allows you to prevent users from dismissing the banner.
+   The announcement banner is not displayed in the Boards or Playbooks tabs.
 
-**To enable the banner**
+.. image:: ../images/announcement-banner.png
+  :alt: System Admins can display an announcement banner at the top of the user's screen.
 
-1. Go to **System Console > Site Configuration**, then select **Announcement Banner**.
-2. Set **Enable Announcement Banner** to **true**.
-3. In the **Banner Text** field, enter the text of the announcement that you want to make.
-4. Specify the background and text colors for the banner.
-5. To prevent users from dismissing the banner, select **false** for **Allow Banner Dismissal**.
-6. Select **Save**.
+By default, users can dismiss the banner until they log in again or until you update the banner. You can `configure Mattermost to prevent users from dismissing the banner <https://docs.mattermost.com/configure/configuration-settings.html#allow-banner-dismissal>`__.
+
+Update the banner by either changing the text of the banner or by re-enabling the banner after it's been disabled. You can also control the text color and the background color.
+
+Configure an announcement banner
+---------------------------------
+
+1. Enable the announcement banner by going to **System Console > Site Configuration > Announcement Banner**, and setting **Enable Announcement Banner** to **true**.
+2. In the **Banner Text** field, enter the text of the announcement that you want to make.
+3. Specify the background and text colors for the banner.
+4. To prevent users from dismissing the banner, set **Allow Banner Dismissal** to **false**.
+5. Select **Save**.
+
+To disable the banner, set **Enable Announcement Banner** to **false**.

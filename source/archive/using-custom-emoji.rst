@@ -1,3 +1,5 @@
+:nosearch:
+
 Custom Emoji
 ============
 
@@ -9,7 +11,7 @@ To create and find Custom Emojis, open the **Main Menu** at the top right of the
     
   If you cannot see the **Custom Emoji** option in the menu, then your Mattermost System Admin may have restricted access to certain users. Contact your Mattermost System Admin for help.
     
-  For further assistance, review the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+  For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
 
 Creating Custom Emojis
 ----------------------

@@ -1,4 +1,4 @@
-Get Help With Mattermost
+Get help with Mattermost
 =========================
 
 Get the help you need with Mattermost via robust documentation, extensive community support, and professional support services. If you’re struggling with something on your Mattermost journey, take a look at the following resources:

@@ -1,4 +1,4 @@
-Desktop App Deployment Guide
+Desktop App deployment guide
 =============================
 
 |all-plans| |cloud| |self-hosted|
@@ -29,7 +29,7 @@ This page provides a guide on how to customize and distribute your own Mattermos
   :local:
   :backlinks: entry
 
-Custom Build Configuration
+Custom build configuration
 --------------------------
 
 You can customize and distribute your own Mattermost Desktop application by configuring `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`__.
@@ -71,7 +71,7 @@ You can customize and distribute your own Mattermost Desktop application by conf
 
 .. code-block:: none
 
-      helpLink: 'https://about.mattermost.com/default-desktop-app-documentation/'
+      helpLink: 'https://docs.mattermost.com/messaging/managing-desktop-app-servers.html'
       helpLink: ''
 
 ``enableServerManagement``
@@ -90,7 +90,7 @@ You can customize and distribute your own Mattermost Desktop application by conf
 
 2. To build the application, follow the `Mattermost Desktop Development Guide <https://github.com/mattermost/desktop/blob/master/docs/development.md>`__.
 
-Windows App: Pre-Configuration and Silent Deployment
+Windows App: Pre-configuration and silent deployment
 -----------------------------------------------------
 
 You can distribute the official Windows Desktop App silently to end users, pre-configured with the server URL. You can also set all the `app settings <https://docs.mattermost.com/messaging/managing-desktop-app-options.html>`__ except for the **Start app on login** option.
@@ -148,7 +148,7 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
 
 Once run, the Desktop App is added to the user’s local directory, along with the pre-configured ``config.json`` file. The installer creates a shortcut for the Desktop App in the user's start menu; if a zip version is used, you need to create the shortcut manually.
 
-Windows App: Silently Removing the App
+Windows App: Silently removing the app
 ---------------------------------------
 
 To remove the app silently from a user's computer, you can run the following command:

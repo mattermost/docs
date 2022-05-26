@@ -1,4 +1,4 @@
-Desktop Managed Resources
+Desktop managed resources
 ==========================
 
 |all-plans| |self-hosted|
@@ -16,7 +16,7 @@ Desktop Managed Resources
 The Mattermost Desktop App supports managed resources. A managed resource can be any service available on the same hostname using the same protocol as the Mattermost server.
 
 .. note::
-    Using this feature requires a `custom build of the Mattermost Desktop App <https://docs.mattermost.com/deployment/desktop-app-deployment.html>`_.
+    Using this feature requires a `custom build of the Mattermost Desktop App <https://docs.mattermost.com/deploy/desktop-app.html>`_.
 
 Add the path of a managed resource to your configuration file. When selected, it opens as a pop-up window in the Mattermost Desktop app.
 

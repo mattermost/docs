@@ -1,3 +1,5 @@
+:nosearch:
+
 High Availability Cluster (v3.10 and earlier)
 =============================================
 

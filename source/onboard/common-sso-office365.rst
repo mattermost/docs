@@ -1,7 +1,4 @@
-Migrating from OAuth to OpenID Connect
---------------------------------------
-
-OAuth 2.0 is being deprecated and replaced by OpenID Connect. Refer to the product documentation to `convert your existing OAuth 2.0 service provider configuration <https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html>`__ for Office 365 to the OpenID Connect standard.
+:nosearch:
 
 Configuring Office 365 as a Single Sign-On (SSO) service
 --------------------------------------------------------

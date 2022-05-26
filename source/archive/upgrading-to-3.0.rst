@@ -1,3 +1,5 @@
+:nosearch:
+
 Upgrading to version 3.0
 ========================
 

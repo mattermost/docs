@@ -1,3 +1,4 @@
+:nosearch:
 
 Troubleshooting Mobile Applications
 ===================================
@@ -10,7 +11,7 @@ In line with Microsoft guidance we recommend `configuring intranet forms-based a
 I have a different problem!
 ----------------------------
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're a Cloud subscriber, you may reach our Support team via our `Contact Us page <https://customers.mattermost.com/cloud/contact-us>`_.
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot>`__ with steps to reproduce your issue. If you're a Cloud subscriber, you may reach our Support team via our `Contact Us page <https://customers.mattermost.com/cloud/contact-us>`_.
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app please try the following steps and include the results in your support request:
 
