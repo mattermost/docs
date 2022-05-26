@@ -8,7 +8,39 @@ Latest Mattermost Mobile Apps releases:
 - [1.51.1 Release](#id3)
 - [1.51.0 Release](#id7)
 - [1.50.1 Release](#id13)
-- [1.50.0 Release](#id17)
+
+## 2.0.0 Beta Release
+- Release Date: June 15, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Important Notes
+ - Anyone signed up for our current beta testing program on iOS or Android will get access to mobile v2.0 beta. The update will appear in the Google Play Store or TestFlight the same way beta app updates are distributed today.
+
+### Highlights
+
+#### Multiple Workspaces
+ - Collaborate in multiple workspaces with a redesigned channel and team sidebar for easier navigation.
+
+#### OS Dark Mode Syncing
+ - Enhanced theming support that will sync light and dark modes with your phone’s operating system.
+
+#### Improved Network Reliability
+ - Improved network reliability reducing app hang and errors if internet connectivity is unstable.
+
+#### Improved Performance
+ - The app is more responsive to user input, launches faster and consumes less memory when running.
+
+#### Improved Stability
+ - Improved app stability so users encounter fewer crashes and bugs.
+
+### Known Issues
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
 
 ## 1.52.0 Release
 - Release Date: May 16, 2022
