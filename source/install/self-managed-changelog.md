@@ -16,6 +16,7 @@ Latest Mattermost Releases:
 **Release Day: 2022-06-15**
 
 ### Important Upgrade Notes
+ - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in FileInfo table.
  - CRT GA
  - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
  - Boards: manual refresh on license change
@@ -70,6 +71,11 @@ Latest Mattermost Releases:
  - Changed **Actions** post menu hover text to **Message Actions**.
  - Enabled the new onboarding task list for end users.
  - Added a condition to hide legacy Enable post formatting setting if Advanced Text editor is enabled.
+ - Applied new designs for the Login screen:
+    - Default signup
+    - OAuth options are available
+    - Custom branding is configured
+    - Email verification is enabled
  
 #### Performance
  - Improved the performance of aggregate queries related to Collapsed Reply Threads.
