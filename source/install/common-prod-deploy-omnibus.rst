@@ -8,7 +8,7 @@
 
     Minimum system requirements include:
     
-       - Hardware: 2 vCPUs/cores, 4GB RAM, supporting 1,000-2,000 users
+       - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
        - Network ports required: 
        
             - HTTP/websockets ports 8065/80/443, TLS, TCP Inbound
