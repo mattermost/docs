@@ -11,7 +11,8 @@
        - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
        - Network ports required: 
        
-            - HTTP/websockets ports 8065/80/443, TLS, TCP Inbound
+            - Application ports 80/443, TLS, TCP Inbound
+            - Administrator Console port 8065, TLS, TCP Inbound
             - SMTP port 10025, TCP/UDP Outbound
             
        - Database: MySQL v8+ or PostgreSQL v12+
