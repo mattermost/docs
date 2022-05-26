@@ -1,47 +1,45 @@
-Mattermost editions and offerings 
-=================================
+Mattermost editions and plans 
+=============================
 
 Mattermost is an open core platform. 
 
-This means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud deployment modes. 
+This means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud deployment modes.
 
-We use "Editions" to refer to one of two compiled code bases, either open source or commercial, used to deliver our offerings. We use "Offerings" to refer to sets of features and entitlements available either free or as a paid subscription service. 
+We use "editions" to refer to one of two compiled code bases, either open source or commercial, used to deliver our product. We use "plans" to refer to sets of features and entitlements available either free or as a paid subscription service. Mattermost sells plans for both self-hosted and cloud deployments. Self-hosted deployments will need to upload a license file to activate the subscription.
 
-Self-hosted editions 
+Self-hosted editions
 --------------------
 
 Self-hosted editions support deploying Mattermost within IT-controlled private environments in public clouds, including AWS, Azure, GCP and Oracle Cloud, as well as on-premises in private clouds and virtual or physical servers.
 
-Mattermost Team Edition 
+Mattermost Team Edition
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
 
-Mattermost Team Edition is also bundled inside of the free Mattermost Enterprise Edition code base, which provides the same funcitionality as Mattermost Team Edition, with the additional benefit of being able to trial as well as upgrade into an expanded set of features available with paid subscription, including Mattermost Professional and Mattermost Enterprise. 
+Mattermost Team Edition is also bundled inside of the free Mattermost Enterprise Edition code base, which provides the same functionality as Mattermost Team Edition, with the additional benefit of being able to trial as well as upgrade into an expanded set of features available with paid subscription, including Mattermost Professional and Mattermost Enterprise. 
 
 Because of the benefits of Mattermost Enterprise Edition, we recommend installing it instead of Mattermost Team Edition, even if you don’t currently need a subscription, so you'll have the flexibility to trial or enable additional features should you need them. However, if you only want to install software with a fully open source license, then Mattermost Team Edition is the best choice.
 
 Mattermost Enterprise Edition 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our commercial, self-hosted software is called Mattermost Enterprise Edition, and it's available as a Linux Binary that deploys identically to our open source version -- including upgrading in an identical fashion -- with two key differences: a) It contains code for advanced commercial features, which can be unlocked with a valid license key; and b) it's offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business. 
+Our commercial, self-hosted software is called Mattermost Enterprise Edition, and it's available as a Linux binary that deploys identically to our open source version - including upgrading in an identical fashion - with two key differences: It contains code for advanced commercial features and it's offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business.
 
 Once you’ve downloaded and installed Mattermost Enterprise Edition within your preferred environment, you have the option to use it as-is in a "free" mode, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial**, or request a trial online at https://mattermost.com/trial/.
 
-Mattermost offerings 
---------------------
+Mattermost plans
+----------------
 
-We use "Offerings" to refer to sets of features and entitlements available either free or as a paid subscription service. We have three primary offerings available to both our self-hosted and cloud communities: 
+Mattermosts plans consist of features and entitlements available either free or as a paid subscription service. 
 
-1) **Mattermost Starter** - This a free version of our collaboration suite designed for single teams. 
+We have three primary offerings available to our self-hosted and cloud users: 
 
-2) **Mattermost Professional** - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams. 
+* **Mattermost Starter** - This a free version of our collaboration suite designed for single teams.
 
-3) **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite. 
+* **Mattermost Professional** - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams.
 
-*Self-Hosted Offerings* - For customers using our service in a self-hosted deployment, the Mattermost Starter offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
-
-*Cloud Offerings* - On-demand cloud deployments of our offerings are available via the Mattermost pricing page at: https://mattermost.com/pricing/.
+* **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite.
 
 More details on our offerings below: 
 
@@ -124,6 +122,41 @@ This offering includes all the features of Mattermost Professional, plus:
 - `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
 - `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
+
+Limits
+------
+
+Some Mattermost plans have limits applied to functionality and features.
+
+Mattermost Starter limits
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Platform limits**
+
+- Max 1 team. 
+- Max 10 GB file storage across the platform, with 100MB upload limit. 
+- Max 5 apps/plugins enabled.
+
+**Channels limits**
+
+- Max 10,000 message history limit
+
+**Boards limits**
+
+- Max 5 views per board.
+- Display max 500 most recently created cards on the server.
+
+**Calls limits**
+
+- 1:1 audio calls and screenshare in direct message channels
+
+Mattermost Professional limits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Platform limits**
+
+- Max 250GB file storage limit
+
 
 Other Mattermost offerings 
 --------------------------
