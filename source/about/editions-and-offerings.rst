@@ -5,12 +5,14 @@ Mattermost is an open core platform.
 
 This means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud deployment modes.
 
-We use "editions" to refer to one of two compiled code bases, either open source or commercial, used to deliver our product. We use "plans" to refer to sets of features and entitlements available either free or as a paid subscription service. Mattermost sells plans for both self-hosted and cloud deployments. Self-hosted deployments will need to upload a license file to activate the subscription.
+You can choose between one of two compiled code bases, either open source (Team Edition) or commercial (Enterprise Edition).
+
+We offer a range of plans, which are sets of features and entitlements available either free or as a paid subscription service. Mattermost sells subscriptions for both self-hosted and cloud deployments.
 
 Self-hosted editions
 --------------------
 
-Self-hosted editions support deploying Mattermost within IT-controlled private environments in public clouds, including AWS, Azure, GCP and Oracle Cloud, as well as on-premises in private clouds and virtual or physical servers.
+Self-hosted editions support deploying Mattermost within IT-controlled private environments in public clouds, including AWS, Azure, GCP and Oracle Cloud, as well as on-premises in private clouds and virtual or physical servers. When you're using a self-hosted deployment, a license file is provided and needs to be uploaded to activate your subscription.
 
 Mattermost Team Edition
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,9 +50,8 @@ Mattermost Starter
 
 Mattermost Starter is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
-*Self-Hosted Offerings* - The **Mattermost Starter** feature set is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
-
-*Cloud Offerings* - The **Mattermost Starter** feature set is also available in Cloud as "Cloud Starter" which provides the functionality of Mattermost Starter to unlimited users with a flat-rate $149/year to cover hosting cost. Start an `online trial <https://mattermost.com/pricing/starter-plan/>`_ of cloud features before purchasing. 
+* *Self-hosted deployments* - **Mattermost Starter** is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
+* *Cloud deployments* - **Mattermost Starter** is also available in Cloud as **Cloud Starter**. It provides the functionality of Mattermost Starter to unlimited users with a flat-rate $149/year to cover hosting cost. Start an `online trial <https://mattermost.com/pricing/starter-plan/>`_ of cloud features before purchasing.
 
 Features include:
 
@@ -76,9 +77,8 @@ Mattermost Professional
 
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated developer workflows across multiple cross-functional teams to deliver mission-critical software.
 
-*Self-Hosted Offerings* - The **Mattermost Professional** feature set is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see `deployment guides <https://docs.mattermost.com/guides/deployment.html#install-guides>`__), who purchase the appropriate subscription license key either through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__, through a `channel reseller <https://mattermost.com/partners/#resellers>`__ or by contacting `the Mattermost sales organization <https://mattermost.com/contact-sales/>`__, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/. 
-
-*Cloud Offerings* - For our cloud community, the Mattermost Professional feature set is available through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__
+* *Self-hosted deployments* - **Mattermost Professional** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see `deployment guides <https://docs.mattermost.com/guides/deployment.html#install-guides>`__), who purchase the appropriate subscription license key either through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__, through a `channel reseller <https://mattermost.com/partners/#resellers>`__ or by contacting `the Mattermost sales organization <https://mattermost.com/contact-sales/>`__, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/.
+* *Cloud deployments* - For our cloud community, the Mattermost Professional feature set is available through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__.
 
 This offering includes all the features of Mattermost Starter, plus: 
 
@@ -101,9 +101,8 @@ Mattermost Enterprise
 
 Mattermost Enterprise is an enterprise-grade collaboration system that supports and helps you scale your mission-critical enterprise workflows, meet strict enterprise security, compliance, and privacy requirements, as well as provide executive reporting, dashboards, and productivity metrics.
 
-*Self-Hosted Offerings* - The **Mattermost Enterprise** feature set is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition, who purchase by `contacting the Mattermost sales organization <https://mattermost.com/contact-sales/>`__, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/. 
-
-*Cloud Offerings* - For our cloud community, the Mattermost Enterprise can be purchased by `contacting the Mattermost sales organization <https://mattermost.com/contact-sales/>`__,
+* *Self-hosted deployments* - **Mattermost Enterprise** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition, who purchase by `contacting the Mattermost sales organization <https://mattermost.com/contact-sales/>`__, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/.
+* *Cloud deployments* - For our cloud community, the Mattermost Enterprise can be purchased by `contacting the Mattermost sales organization <https://mattermost.com/contact-sales/>`__.
 
 This offering includes all the features of Mattermost Professional, plus: 
 
@@ -133,13 +132,13 @@ Mattermost Starter limits
 
 **Platform limits**
 
-- Max 1 team. 
-- Max 10 GB file storage across the platform, with 100MB upload limit. 
+- Max 1 team.
+- Max 10 GB file storage across the platform, with 100MB upload limit.
 - Max 5 apps/plugins enabled.
 
 **Channels limits**
 
-- Max 10,000 message history limit
+- Max 10,000 message history limit.
 
 **Boards limits**
 
@@ -148,20 +147,19 @@ Mattermost Starter limits
 
 **Calls limits**
 
-- 1:1 audio calls and screenshare in direct message channels
+- 1:1 audio calls and screenshare in direct message channels.
 
 Mattermost Professional limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Platform limits**
 
-- Max 250GB file storage limit
+- Max 250GB file storage limit.
 
+Other Mattermost plans
+----------------------
 
-Other Mattermost offerings 
---------------------------
-
-Mattermost introduced a new pricing and packaging structure on October 13, 2021. The packages listed below will reach end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new packages, but we will honor existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Please contact our `Sales team <https://mattermost.com/contact-us/>`__ with questions.
+Mattermost introduced a new pricing and packaging structure on October 13, 2021. The plans listed below will reach end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new plans, but we will honor existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Please contact our `Sales team <https://mattermost.com/contact-us/>`__ with questions.
 
 Mattermost Enterprise Edition E10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,12 +171,12 @@ Mattermost Enterprise Edition E20
 
 Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability and compliance features are offered in Mattermost Enterprise.
 
-Features include: advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user sign-in; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
+Features include: Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user sign-in; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
 
-Packaging decisions
--------------------
+Product decisions
+-----------------
 
-As the platform matures and new features are added, they're evaluated to be included in the edition that best aligns with the organizational use cases outlined by the editions above. Multiple factors are considered in determining which tier to include a feature including mission-critical impact, relative value to a single team, cross-functional teams, and the enterprise, as well as security, compliance, and scalability.
+As the platform matures and new features are added, they're evaluated to be included in the plan that best aligns with the organizational use cases outlined by the editions above. Multiple factors are considered in determining the appropriate plan to include a feature including mission-critical impact, relative value to a single team, cross-functional teams, and the enterprise, as well as security, compliance, and scalability.
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer.
 
