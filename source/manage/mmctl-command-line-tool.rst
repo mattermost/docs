@@ -4458,10 +4458,11 @@ List posts for a channel.
 
 .. code-block:: sh
 
-   -f, --follow       Output appended data as new messages are posted to the channel
-   -h, --help         help for list
-   -n, --number int   Number of messages to list (default 20)
-   -i, --show-ids     Show posts ids
+   -f, --follow         Output appended data as new messages are posted to the channel
+   -h, --help           help for list
+   -n, --number int     Number of messages to list (default 20)
+   -i, --show-ids       Show posts ids
+   -s, --since string   List messages posted after a certain time (ISO 8601)
 
 **Options inherited from parent commands**
 
