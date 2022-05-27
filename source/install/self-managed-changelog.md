@@ -17,29 +17,29 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
  - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table.
- - CRT GA
+ - CRT GA upgrade notes?
  - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
  - Boards: manual refresh on license change
- - The value of ``ServiceSettings.TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
- - Updated the System Console session lengths configurations to use the new hours unit, replacing the days. If anything were to go awry during a customer upgrade it could result in users not being able to log in, which is why it would be good for them to at least be aware of that change and know where to find more details. Furthermore, for customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=``, ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=``, and ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=``. The values would need to be 24x the existing values in days. For example, if MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30 they should set MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720.
+ - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+ - The **System Console** session lengths configurations settings were changed to use a new hours unit, replacing the days. If anything goes awry during a server upgrade, it could result in users not being able to log in. For customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=``, ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=``, and ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=``. The values need to be 24x the existing values in days. For example, if ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30``, they should set ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720``.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
-#### CRT GA
+#### Collapsed Reply Threads (General Availability)
  - 
 
-#### Apps framework GA
- - 
+#### Apps Framework (General Availability)
+ - The [Apps Framework](https://developers.mattermost.com/integrate/apps/) allows developers to build integrations with Mattermost that seamlessly work across Mattermost’s desktop and mobile clients. Apps can be developed using any programming language, as opposed to plugins which must be developed in Go.
 
-#### App Bar
- - 
+#### App Bar (Beta)
+ - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins were moved to the new App Bar.
 
-#### Calls Beta
- - 
+#### Calls (Beta)
+ - A built-in voice calling and screen sharing is now available.
 
-#### Updated server hardware requirements
+#### Updated Server Hardware Requirements
  - 
 
 #### Playbooks Updates
@@ -57,21 +57,19 @@ Latest Mattermost Releases:
  - For toggling the channel information in the right-hand pane, a shortcut CTRL/CMD+ALT+I was added.
  - Added an "Unread Channels" section to the channel switcher and included "Threads" in the results.
  - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
- - Improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
  - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
  - Applied new designs for the Login screen:
      - Default login
      - OAuth options
      - Custom branding
      - MFA token
+     - Default signup
+     - OAuth options are available
+     - Custom branding is configured
+     - Email verification is enabled
  - Changed **Actions** post menu hover text to **Message Actions**.
  - Enabled the new onboarding task list for end users.
- - Added a condition to hide legacy Enable post formatting setting if Advanced Text editor is enabled.
- - Applied new designs for the Login screen:
-    - Default signup
-    - OAuth options are available
-    - Custom branding is configured
-    - Email verification is enabled
+ - The legacy ``Enable post formatting`` setting is now hidden when Advanced Text editor is enabled.
  
 #### Performance
  - Improved the performance of aggregate queries related to Collapsed Reply Threads.
@@ -81,7 +79,7 @@ Latest Mattermost Releases:
  
 #### Enterprise Subscription
  - Upgraded the minor version of the ElasticSearch development Docker image.
- - The Support Packet now contains two additional fields in the support_packet.yaml file: Active users and License-supported users.
+ - The Support Packet now contains two additional fields in the ``support_packet.yaml`` file: Active users and License-supported users.
 
 ### Bug Fixes
  - Fixed an issue with ADA Accessibility where screen readers did not TAB to or read "This channel has guests" in the channel header bar.
@@ -102,26 +100,23 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - Changed ``SessionLengthWebInDays`` to ``SessionLengthWebInHours``.
    - Changed ``SessionLengthMobileInDays`` to ``SessionLengthMobileInHours``.
    - Changed ``SessionLengthSSOInDays`` to ``SessionLengthSSOInHours``.
-   - The value of ``TrustedProxyIPHeader`` will default to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+   - The value of ``TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+   - The default for ``CollapsedThreads`` has been changed to ``always_on``. This does not affect existing configurations where this value is already set to some other value.
  - Under ``ExperimentalSettings`` in ``config.json``:
-   - Added a new config setting ``EnableAppBar`` to enable and disable the App Bar.
-   - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
- - Under ``ServiceSettings`` in ``config.json``:
- - The default for ``CollapsedThreads`` has been changed to "always_on". This does not affect existing configurations where this value is already set to some other value.
+   - Added a new config setting ``EnableAppBar`` to enable and disable the new App Bar.
+   - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it.
 
 #### API Changes
- - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels``.
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels`` to get top channels for a team and user.
 
 #### Websocket Event Changes
  - Added a new ``ConnectionId`` field to ``model.WebsocketBroadcast`` that allows broadcasting a message only to a specific connection.
- - Added a new ``PublishWebSocketEvent`` method.
 
 ### Go Version
  - v7.0 is built with Go ``v1.18.1``.
 
 ### Known Issues
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
- - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues), particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it's [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
