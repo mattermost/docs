@@ -125,7 +125,11 @@ This offering includes all the features of Mattermost Professional, plus:
 Limits
 ------
 
-Some Mattermost plans have limits applied to functionality and features.
+Some Mattermost plans have limits applied to functionality and features. These limits are applied across all users in your team. We'll let you know when you're halfway from reaching a limit, as well as when you're closer to it. When limits have been reached, data is archived.
+
+This data is not deleted, and can be accessed when you upgrade to a plan with higher limits.
+
+If you choose to downgrade your plan, for example from Mattermost Professional to Mattermost Starter, the limits will be applied to your existing data.
 
 Mattermost Starter limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~
