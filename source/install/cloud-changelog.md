@@ -4,12 +4,49 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-05-26](#release-2022-05-26)
 - [Release 2022-05-12](#release-2022-05-12)
 - [Release 2022-04-28](#release-2022-04-28)
 - [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
-- [Release 2022-03-08](#release-2022-03-08)
+
+## Release 2022-05-26
+
+### Highlights
+
+#### Advanced Text Editor
+ - To make markdown features more accessible, an Advanced Text editor was added with new shortcuts to preview, open the emoji picker, strike out text, add headings, format numbered steps, add bullets, and hide the formatting options.
+
+### Improvements
+
+#### User Interface (UI)
+ - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
+ - Improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
+ - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
+ - Applied new designs for the Login screen:
+     - Default login
+     - OAuth options
+     - Custom branding
+     - MFA token
+ - Changed **Actions** post menu hover text to **Message Actions**.
+ - Enabled the new onboarding task list for end users.
+ - Added pre-packaged Calls v0.5.3.
+
+#### Administration
+ - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
+
+### Bug Fixes
+ - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
+ - Fixed an issue where the **Help > Report a Problem** link was not hidden when a URL was not set for **System Console > Customization > Report a Problem**.
+
+### Known Issues
+ - Known issues related to the Advanced Text editor, including text overlapping the preview button when formatting is collapsed [MM-44457](https://mattermost.atlassian.net/browse/MM-44457).
+ - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-05-12
 
