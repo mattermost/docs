@@ -28,9 +28,14 @@ Users are restricted from creating teams when at or above the teams limit for th
 ### Improvements
 
 #### User Interface (UI)
- - Added a modal to allow users to switch plans pre-trial.
+ - Added a modal to allow users to switch subscription plans pre-trial.
  - Changed some tooltips to appear when focused instead of just on hover.
- - Added a new config setting ``ExperimentalSettings.EnableAppBar``. Moved all channel header icons registered by plugins to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
+
+#### Administration
+ - The default for ``ServiceSettings.CollapsedThreads`` has been changed to "always_on". This does not affect existing configurations where this value is already set to some other value.
+ - To enable or disable the App Bar, a new config setting ``ExperimentalSettings.EnableAppBar`` was added. All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
+
+#### Performance
  - Reduced the number of calls made to ``viewChannel`` API during regular usage.
 
 ### Bug Fixes
