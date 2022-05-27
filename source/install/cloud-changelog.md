@@ -4,12 +4,45 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-06-15](#release-2022-06-15)
 - [Release 2022-05-26](#release-2022-05-26)
 - [Release 2022-05-12](#release-2022-05-12)
 - [Release 2022-04-28](#release-2022-04-28)
 - [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
-- [Release 2022-03-16](#release-2022-03-16)
+
+## Release 2022-06-15
+
+### Highlights
+
+#### Workspace Limits
+ - Added a new API endpoint ``GET /api/v4/usage/posts`` that returns the current usage limits for messages.
+ - Team Limit changes now propagate automatically.
+ - Added a new endpoint ``DELETE /api/v4/teams/{team_id:[A-Za-z0-9]+}/except`` which archives all teams except for the ``team_id`` passed to the endpoint.
+ - A server configured to use the Cloud Freemium limits now guards against enabling more integrations than the configured limit.
+Users are restricted from creating teams when at or above the teams limit for their plan.
+
+### Insights
+ - ?
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a modal to allow users to switch plans pre-trial.
+ - Changed some tooltips to appear when focused instead of just on hover.
+ - Added a new config setting ``ExperimentalSettings.EnableAppBar``. Moved all channel header icons registered by plugins to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
+ - Reduced the number of calls made to ``viewChannel`` API during regular usage.
+
+### Bug Fixes
+ - Fixed an issue with uploading SVG files.
+ - Fixed an issue where thread posts were not left-aligned in compact message display mode.
+
+### Known Issues
+ - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-05-26
 
@@ -22,7 +55,6 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
- - Improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
  - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
  - Applied new designs for the Login screen:
      - Default login
