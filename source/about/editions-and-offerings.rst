@@ -38,12 +38,12 @@ Mattermost plans consist of features and entitlements available either free or a
 We have three primary plans available to our self-hosted and cloud users: 
 
 * **Mattermost Starter** - This a free version of our collaboration suite designed for single teams.
-
 * **Mattermost Professional** - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams.
-
 * **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite.
 
-More details on our offerings below: 
+For customers using our service in a self-hosted deployment, the Mattermost Starter offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). 
+
+The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 Mattermost Starter
 -------------------
