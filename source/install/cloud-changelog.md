@@ -23,6 +23,7 @@ Latest Mattermost Cloud releases:
 Users are restricted from creating teams when at or above the teams limit for their plan.
  - Fixed API - GET /api/v4/usage/posts, to include user posts only.
  - Improved performance of API - GET /api/v4/usage/posts, by enabling caching of posts count.
+ - Users will be prevented from unarchiving teams if they're at or over the teams limit for their plan.
 
 ### Insights
  - ?
