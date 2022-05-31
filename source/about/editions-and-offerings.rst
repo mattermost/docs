@@ -125,7 +125,7 @@ This offering includes all the features of Mattermost Professional, plus:
 Limits
 ------
 
-Some Mattermost plans have limits applied to functionality and features. Visit `our documentation <https://docs.mattermost.com/onboard/mattermost-limits.html>`_ for more information.
+Some Mattermost plans have limits applied to functionality and features. Visit `our documentation <https://docs.mattermost.com/onboard/mattermost-limits.html>`_ for more information. These limits apply to Cloud environments only.
 
 Other Mattermost plans
 ----------------------
