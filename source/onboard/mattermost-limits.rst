@@ -1,7 +1,7 @@
 Workspace limits
 ================
 
-There may be limits applied to your Mattermost workspace, based on the type of subscription plan you have.
+There may be limits applied to your Mattermost Cloud workspace, based on the type of subscription plan you have. These limits do not apply to self-hosted deployments.
 
 These limits are applied across all users in your team. We'll let you know when you're halfway from reaching a limit, as well as when you're closer to it. 
 
@@ -12,25 +12,25 @@ Mattermost Starter limits
 
 **Platform limits**
 
-- Max 1 team.
-- Max 10 GB file storage across the platform, with 100MB upload limit.
-- Max 5 apps/plugins enabled.
+- 1 team.
+- 10 GB file storage across the platform, with 100MB upload limit.
+- 5 apps/plugins enabled.
 
 **Channels limits**
 
-- Max 10,000 message history limit.
+- 10,000 message history limit.
 
 **Boards limits**
 
-- Max 5 views per board.
-- Display the 500 most recently updated cards on the server.
+- 5 views per board.
+- Only the 500 most recently updated cards on the server are displayed.
 
 Mattermost Professional limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Platform limits**
 
-- Max 250GB file storage limit.
+- 250GB file storage limit.
 
 Frequently Asked Questions
 --------------------------
