@@ -18,7 +18,7 @@ Channel types
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You'll find four types of channels in Mattermost: Public Channels, Private Channels, direct messages, and group messages.
+You'll find four types of channels in Mattermost: public channels, private channels, direct messages, and group messages.
 
 Public channels
 ---------------
