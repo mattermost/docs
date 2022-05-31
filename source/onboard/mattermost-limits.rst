@@ -43,4 +43,4 @@ Currently you don't have to upgrade your plan to get your archived data. You can
 Does Mattermost delete data?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When file limits are reached, your data is archived and is available to you when you upgrade your subscription. However, if you don't log into, or use, your workspace for an extended period of time, your data may be deleted. We'll let you know via about this ahead of time though, so you can take action.
+When file limits are reached, your data is archived. You can export your data. However, if you don't log into, or use, your workspace for an extended period of time, your data may be deleted. We'll let you know via about this ahead of time though, so you can take action.
