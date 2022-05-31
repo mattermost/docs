@@ -8,7 +8,7 @@ These limits are applied across all users in your team. We'll let you know when 
 When limits have been reached, data is archived. This data is not deleted, and can be accessed when you upgrade to a plan with higher limits. If you choose to downgrade your plan, for example from Mattermost Professional to Mattermost Starter, the limits will be applied to your existing data.
 
 Mattermost Starter limits
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 **Platform limits**
 
@@ -26,7 +26,7 @@ Mattermost Starter limits
 - Only the 500 most recently updated cards on the server are displayed.
 
 Mattermost Professional limits
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 **Platform limits**
 
@@ -38,7 +38,7 @@ Frequently Asked Questions
 Can I upgrade my plan to get a copy of my archived data?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently you don't have to upgrade your plan to get your archived data. You can follow the steps provided `in this article <https://docs.mattermost.com/manage/cloud-data-export.html>` to export your data.
+Currently you don't have to upgrade your plan to get your archived data. You can follow the steps provided `in this article <https://docs.mattermost.com/manage/cloud-data-export.html>`_ to export your data.
 
 Does Mattermost delete data?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
