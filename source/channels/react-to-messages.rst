@@ -72,7 +72,7 @@ Remove custom emojis
 You can remove custom emojis that you uploaded to Mattermost.
   
 1. Open the Emoji Picker.
-2. Select **custom emoji**.
+2. Select **Custom Emoji**.
 3. If required, use the Search Bar to find your custom emoji in the list.
 4. Under **Actions** select **Delete**.
 5. Choose **Delete** to confirm.
