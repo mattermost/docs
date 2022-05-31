@@ -35,7 +35,7 @@ Mattermost plans
 
 Mattermosts plans consist of features and entitlements available either free or as a paid subscription service. 
 
-We have three primary offerings available to our self-hosted and cloud users: 
+We have three primary plans available to our self-hosted and cloud users: 
 
 * **Mattermost Starter** - This a free version of our collaboration suite designed for single teams.
 
