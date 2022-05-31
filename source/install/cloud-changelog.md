@@ -37,6 +37,7 @@ Users are restricted from creating teams when at or above the teams limit for th
 
 #### Performance
  - Reduced the number of calls made to ``viewChannel`` API during regular usage.
+ - Added pagination to the ``getPostThread`` API calls.
 
 ### Bug Fixes
  - Fixed an issue with uploading SVG files.
