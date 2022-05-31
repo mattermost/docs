@@ -47,12 +47,12 @@ Workspace management
     :hidden:
 
     Mattermost Cloud billing </manage/cloud-billing>
-    Mattermost limits </onboard/mattermost-limits.rst>
+    Workspace limits </onboard/mattermost-limits>
     Workspace migration </manage/cloud-data-export>
     Cloud data residency </manage/cloud-data-residency>
 
 * :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
-* :doc:`Mattermost limits </onboard/mattermost-limits.rst>` - Understand the data limits on your plan.
+* :doc:`Workspace limits </onboard/mattermost-limits>` - Understand the data limits on your plan.
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 
