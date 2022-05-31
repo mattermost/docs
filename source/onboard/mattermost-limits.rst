@@ -23,7 +23,7 @@ Mattermost Starter limits
 **Boards limits**
 
 - Max 5 views per board.
-- Display max 500 most recently created cards on the server.
+- Display the 500 most recently updated cards on the server.
 
 Mattermost Professional limits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
