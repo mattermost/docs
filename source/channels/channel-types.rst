@@ -31,7 +31,7 @@ Public channels are open to everyone on a team and are identified with a |globe-
 Private channels
 ----------------
 
-Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a |lock-icon| icon. In Team Edition, any member of a Private Channel can add or remove other members from Private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
+Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
 
 Channel members can choose to leave Private Channels at any time.
 
