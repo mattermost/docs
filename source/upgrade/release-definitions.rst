@@ -20,11 +20,6 @@ Feature Release
 
 The Feature Releases have new features added.
 
-Quality Release
-----------------
-
-The Quality Releases used to contain only bug fixes and performance improvements and are more stable than Feature Releases. These used to be odd-numbered releases (e.g., 5.25).
-
 Extended Support Release (ESR)
 ------------------------------
 
@@ -34,3 +29,8 @@ Major Release
 ----------------
 
 Major releases are planned once a year for June. Major releases follow a theme and include multiple new features.
+
+Quality Release
+----------------
+
+The Quality Releases used to contain only bug fixes and performance improvements and were more stable than Feature Releases. These used to be odd-numbered releases (e.g., 5.25).
