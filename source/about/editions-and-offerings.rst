@@ -33,7 +33,7 @@ Once you’ve downloaded and installed Mattermost Enterprise Edition within your
 Mattermost plans
 ----------------
 
-Mattermosts plans consist of features and entitlements available either free or as a paid subscription service. 
+Mattermost plans consist of features and entitlements available either free or as a paid subscription service. 
 
 We have three primary plans available to our self-hosted and cloud users: 
 
