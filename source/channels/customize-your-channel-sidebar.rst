@@ -76,7 +76,7 @@ Delete categories
 1. Select the **Category options** icon in the sidebar, then select **Delete Category**.
 2. Select **Delete** to confirm or select **X** to cancel.
 
-All channels and direct message conversations in the deleted category move back to their default **Channels** and **direct messages** categories. Deleting a category never removes you from channels you have joined. 
+All channels and direct message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined.
 
 Organize channels in categories
 -------------------------------
@@ -162,13 +162,13 @@ To sort your direct messages, select the **Channel options** icon in the sidebar
 How many direct messages to display?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Control how many direct message conversations display in the **direct messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
+Control how many direct message conversations display in the **Direct Messages** category to keep your conversations manageable. You can choose to show all messages or a fixed number of messages.
 
 To configure the number of direct messages to display, go to **Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
 
-Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **direct messages** category. You can always increase the number of conversations displayed to see older direct messages.
+Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of direct messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older direct messages.
 
 .. image:: ../images/dm-display.gif
 
 .. note::
-  Direct message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **direct messages** category.
+  Direct message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.

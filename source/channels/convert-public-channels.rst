@@ -25,7 +25,7 @@ Select the public channel name at the top of the center pane to access the drop-
 .. note::
     Default channels such as ``Town Square`` and ``Off-Topic`` can't be converted to private channels.
 
-Convert Private Channels to Public Channels
+Convert private channels to public channels
 -------------------------------------------
 
 Due to potential security concerns with sharing private channel history, only System Admins can convert private channels to public channels via **System Console > Channels > Edit (Channel Configuration)**. 
