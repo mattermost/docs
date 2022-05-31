@@ -62,7 +62,7 @@ Everyone in your Mattermost workspace can use the custom emojis you upload. From
   
 .. note::
 
-  If you can't see the **custom emoji** option, then your Mattermost System Admin may have restricted access to upload custom emoji. Contact your Mattermost System Admin for assistance.
+  If you can't see the **Custom Emoji** option, then your Mattermost System Admin may have restricted access to upload custom emoji. Contact your Mattermost System Admin for assistance.
   
 To use your custom emoji in a message, select it from the Emoji Picker, or type ``:`` followed by your emoji name to bring it up in the emoji autocomplete. 
   
