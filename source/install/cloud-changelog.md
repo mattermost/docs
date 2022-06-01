@@ -46,6 +46,7 @@ Users are restricted from creating teams when at or above the teams limit for th
  - Fixed an issue with uploading SVG files.
  - Fixed an issue where thread posts were not left-aligned in compact message display mode.
  - Fixed an error about a missing column for the Shared Channels experimental feature.
+ - Fixed an issue where the channel menu drop-down TAB skipped the option "Move to...".
 
 ### Known Issues
  - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
