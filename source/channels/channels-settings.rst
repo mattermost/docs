@@ -31,11 +31,11 @@ You can customize your Channels experience in the following ways in **Settings**
 
       In Mattermost v6.0, **Account Settings** have moved.
 
-      - Access **Profile** and **Security** settings from your Avatar in the Global Header.
-      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the Gear |gear-icon| icon in the Global Header.
+      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the gear |gear-icon| icon in the Global Header.
 
       .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-        :alt: Select the Gear icon to open the Settings dialog.
+        :alt: Select the gear icon to open the Settings dialog.
 
   .. tab:: Mattermost v5.39 and earlier
 
@@ -56,7 +56,7 @@ Send desktop notifications
 
 Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Chrome, Edge, Firefox, and Safari.
 
-When `Desktop App <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages":
+When `desktop app <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages":
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
