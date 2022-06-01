@@ -18,7 +18,7 @@ Mattermost ships with a new version on the 16th of each month in `binary form <h
 Feature release
 ----------------
 
-The Feature Releases have new features added.
+The feature releases have new features added.
 
 Extended Support Release (ESR)
 ------------------------------
@@ -29,8 +29,3 @@ Major release
 -------------
 
 Major releases are planned once a year for June. Major releases follow a theme and include multiple new features.
-
-Quality release
----------------
-
-The Quality Releases used to contain only bug fixes and performance improvements and were more stable than Feature Releases. These used to be odd-numbered releases (e.g., 5.25).
