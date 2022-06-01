@@ -1,4 +1,4 @@
-Release Definitions
+Release definitions
 ===================
 
 |all-plans| |self-hosted|
@@ -15,7 +15,7 @@ Release Definitions
 
 Mattermost ships with a new version on the 16th of each month in `binary form <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`_.
 
-Feature Release
+Feature release
 ----------------
 
 The Feature Releases have new features added.
@@ -25,12 +25,12 @@ Extended Support Release (ESR)
 
 Extended Support Releases are releases that are maintained for a longer period of time. They will receive backports for security fixes and major bug fixes for the length of their life cycle. Read more about `Extended Support Releases here <https://docs.mattermost.com/upgrade/extended-support-release.html>`_.
 
-Major Release
-----------------
+Major release
+-------------
 
 Major releases are planned once a year for June. Major releases follow a theme and include multiple new features.
 
-Quality Release
-----------------
+Quality release
+---------------
 
 The Quality Releases used to contain only bug fixes and performance improvements and were more stable than Feature Releases. These used to be odd-numbered releases (e.g., 5.25).
