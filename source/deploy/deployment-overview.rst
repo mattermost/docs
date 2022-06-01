@@ -4,7 +4,7 @@ Deployment overview
 The following Mattermost network diagram illustrates a private cloud deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
 .. image:: ../images/network_diagram.png
-   :alt: Mattermost network diagram that illustrates a private cloud deployment of Mattermost
+   :alt: Mattermost network diagram shows how the components of a private cloud deployment could be deployed. Includes optional configurations for scaling for larger enterprise organizations.
 
 .. note::
 
