@@ -114,7 +114,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Evaluate external network access requirements
  
- - The `Plugin Marketplace <https://mattermost.com/marketplace>`__ is a service hosted by Mattermost that is a central place to store the current versions of available plugins.  See `Enable Remote Marketplace <https://docs.mattermost.com/configure/configuration-settings.html?#enable-remote-marketplace>`__ configuration setting for information about required external network access.
+ - The `Mattermost Marketplace <https://mattermost.com/marketplace>`__ is a service hosted by Mattermost that functions as a central place to store the current versions of available Mattermost integrations.  See `Enable Remote Marketplace <https://docs.mattermost.com/configure/configuration-settings.html?#enable-remote-marketplace>`__ documentation for details about required external network access.
  - Mattermost supports external Gif providers.  See `Gif Commands <https://docs.mattermost.com/configure/configuration-settings.html?#gif-commands>`__ for information about required external network access.
 
 3. Create development, staging, and production environments
