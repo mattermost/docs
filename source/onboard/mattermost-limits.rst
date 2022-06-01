@@ -26,7 +26,7 @@ Mattermost Starter limits
 
 **Boards limits**
 
-- Maximum 5 views per board.
+- Maximum 5 saved views per board.
 - Only the 500 most recently updated cards on the server are displayed.
 
 Mattermost Professional limits
