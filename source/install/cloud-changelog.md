@@ -21,8 +21,8 @@ Latest Mattermost Cloud releases:
  - Added a new endpoint ``DELETE /api/v4/teams/{team_id:[A-Za-z0-9]+}/except`` which archives all teams except for the ``team_id`` passed to the endpoint.
  - A server configured to use the Cloud Freemium limits now guards against enabling more integrations than the configured limit.
 Users are restricted from creating teams when at or above the teams limit for their plan.
- - Fixed API - GET /api/v4/usage/posts, to include user posts only.
- - Improved performance of API - GET /api/v4/usage/posts, by enabling caching of posts count.
+ - Fixed API ``GET /api/v4/usage/posts`` to include user posts only.
+ - Improved performance of API ``GET /api/v4/usage/posts`` by enabling caching of posts count.
  - Users will be prevented from unarchiving teams if they're at or over the teams limit for their plan.
 
 ### Insights
