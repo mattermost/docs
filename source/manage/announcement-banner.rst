@@ -30,7 +30,7 @@ System Admins can display a notice that's visible to all users on the system via
 .. image:: ../images/announcement-banner-1106x272.png
   :width: 1106
   :height: 272
-  :alt: System Admins can display the announcement banner at the top of the user's screen.
+  :alt: An example of an announcement banner displayed in Mattermost Channels notifying all users that the system will be going down for maintenance later that evening. System Admins enable the banner and customize the text to display, as well as configure whether or not users can dismiss the banner.
 
 By default, users can dismiss the banner until they log in again or until you update the banner. You can update the banner by either changing the text of the banner or by re-enabling the banner after it has been disabled. You can also control the text color and the background color. A setting in the System Console allows you to prevent users from dismissing the banner.
 
