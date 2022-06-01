@@ -11,7 +11,7 @@ Latest Mattermost Releases:
 - [Release v6.5 - Feature Release](#release-v6-5-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
 
-## Release v7.0 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+## Release v7.0 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 **Release Day: 2022-06-15**
 
