@@ -62,7 +62,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.7 <https://releases.mattermost.com/6.3.7/mattermost-6.3.7-linux-amd64.tar.gz>`_       |                                                     |
+| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.8 <https://releases.mattermost.com/6.3.8/mattermost-6.3.8-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.9 <https://releases.mattermost.com/5.37.9/mattermost-5.37.9-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -102,3 +102,25 @@ For a new upcoming ESR, we send out an email announcement on or close to release
 For a deprecated ESR, we send out an email announcement three months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.com/>`_.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`_.
+
+If we upgrade Mobile or Desktop Apps before we upgrade to the latest ESR, will we have compatibility issues?
+------------------------------------------------------------------------------------------------------------
+
+Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost Server.
+
+What Mobile and Desktop App versions are compatible with the latest ESR?
+-----------------------------------------------------------------------
+
+Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the Mobile App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
+
+Please review the `Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`_ and the `Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
+
++-------------+------------------+-----------------------------------------+----------------------------------------+
+| ESR Version | Release Date     | Desktop App Minimum Supported Version   | Mobile App Minimum Supported Version   |
++=============+==================+=========================================+========================================+
+| 6.3         | January 16, 2022 | 5.0.0                                   | 1.48.0                                 |
++-------------+------------------+-----------------------------------------+----------------------------------------+
+| 5.37        | July 16, 2021    | 4.7.0                                   | 1.45.0                                 |
++-------------+------------------+-----------------------------------------+----------------------------------------+
+
+See more details in our `release lifecycle documentation <https://docs.mattermost.com/upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.

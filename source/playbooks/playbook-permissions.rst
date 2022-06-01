@@ -10,6 +10,10 @@ Permissions are provided using:
 
 For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
 
+.. note::
+
+   Some permissions functionality is only available to Mattermost Enterprise customers.
+   
 In the context of Playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with Playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
 Permissions are applied only to playbooks - there are no permissions that are specific to runs.
@@ -45,8 +49,8 @@ In the following example, only Playbook Admins can edit playbooks. Other users c
 3. Scroll down to the **Playbook Admin** section and confirm that **Manage Public Playbooks** and **Manage Private Playbooks** are checked.
 4. Select **Save**.
 
-Restricting who can create playbooks
--------------------------------------
+Restrict who can create playbooks
+---------------------------------
 You can also set permissions for read-only playbooks that do allow members to create new public or private playbooks.
 
 1. Go to **System Console > User Management > Permissions**.

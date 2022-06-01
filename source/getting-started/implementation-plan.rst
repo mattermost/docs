@@ -132,7 +132,7 @@ In this section, identify the System Proponent, the name of the responsible orga
 +----------+-----------------+----------------------+--------------+
 
 3.3 Major tasks
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 This section provides a brief description of each major task required for the implementation of the system. Add as many subsections as necessary to this section to describe all the major tasks adequately. The tasks described in this section are not site-specific, but generic or overall project tasks that are required to install hardware and software, prepare data, and verify the system. 
 

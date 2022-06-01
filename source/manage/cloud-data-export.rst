@@ -5,8 +5,8 @@ This document outlines the process for migrating from Mattermost Cloud to a Matt
 
 Migrating between two installations follows the same process that's documented below, regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**, as long as the instances are running Mattermost v5.33 or later.
 
-Migrating from Cloud to self-hosted
------------------------------------
+Migrate from Cloud to self-hosted
+---------------------------------
 
 If, after completing your 14-day free Cloud trial, you've decided to self-host your own Mattermost deployment, you can migrate your Cloud data to your self-hosted instance.
 
@@ -136,3 +136,87 @@ Then extract the export file to use it by running the following mmctl command:
 Once your migration is complete and you’ve imported your data into your self-hosted instance we recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
 
 If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
+
+Migrate from self-hosted to Cloud
+----------------------------------
+
+When you migrate from self-hosted to Cloud, you'll need to open a ticket with the Mattermost Support team so they can assist you with the process. The information below describes the migration process. Before you get started, visit our `Support site <https://support.mattermost.com/hc/en-us/requests/new>`_ to open a ticket. 
+
+.. note:: This migration process is only available to customers using paid Mattermost editions.
+
+Before you begin your migration, ensure you’re on Mattermost version 6.5 (or later) as this contains the latest version of the server and the mmctl tool which is used to perform the export. You also need to take note of the following information before you begin:
+
+**User Authentication**
+
+If you’re using a login method other than email, you’ll need to make the required changes to your infrastructure so that you can continue your existing authentication method in the cloud. Examples of these methods are LDAP and GitLab SSO.
+
+**Plugins**
+
+If you’re using plugins that aren’t listed on the Marketplace, they won’t be included in the export and you won’t have access to them going forward. You can view the list of plugins `in the Support knowledgebase <https://support.mattermost.com/hc/en-us/articles/5346624843924>`_.
+
+**Data**
+
+The migration only includes data from Channels. No Boards or Playbooks data is exported.
+
+Migration process
+^^^^^^^^^^^^^^^^^
+
+**Export from your self-hosted instance**
+
+Use your administrator credentials to log into your self-hosted Mattermost server. Once you're logged in, run:
+
+.. code:: 
+   
+   $ mmctl export create --attachments
+
+This creates a full export of the server, and includes attached files. If you don’t want to export attached files, leave out ``--attachments``.
+
+This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background until the export is fully created. If successful, the command will immediately output a job ID, like this:
+
+.. code::
+  
+  Export process job successfully created, ID: yfrr9ku5i7fjubeshs1ksrknzc
+
+While the job is running, its status can be checked using the ID that was provided when it was created, and when it's done the output will look similar to this:
+
+.. code::
+
+    $ mmctl export job show yfrr9ku5i7fjubeshs1ksrknzc
+      ID: yfrr9ku5i7fjubeshs1ksrknzc
+      Status: success
+      Created: 2021-11-03 10:44:13 -0500 CDT
+      Started: 2021-11-03 10:44:23 -0500 CDT
+
+The completed file will be downloaded to your desktop as a ``.zip`` file.
+
+
+.. note:: 
+   
+   Do not rename the file as the file name is referenced in log files, which are used by the Support team to validate the exported file.
+
+The Support team will provide you with S3 credentials so you can upload the exported file. Once you’ve uploaded the file, please contact the Support team and let them know.
+
+Create a new workspace on the Mattermost Cloud
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the meantime, you can log into Mattermost Cloud with your Mattermost credentials and create a Cloud workspace. 
+
+.. note:: 
+   
+   Do not create any users in your Mattermost Cloud instance as the migration process performs this task for you.
+
+Importing your data into your Mattermost Cloud instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the export upload to the provided S3 bucket is complete and you’ve shared your Mattermost Cloud instance name/URL, Support can begin the import step.
+
+Depending on the size of the export this process can take some time. Support will contact you as soon as the import is complete. During this time it is highly recommended you do not use your Mattermost Cloud instance.
+
+Start using your Mattermost Cloud instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When the export is complete, you can log into your Cloud instance and can invite your users to log in. 
+
+.. note:: 
+  
+  It’s recommended that you keep your self-hosted Mattermost server until you’ve been using your Cloud instance for a while and all is verified as is as expected.

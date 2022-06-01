@@ -8,6 +8,7 @@ This document provides steps to configure SAML 2.0 with Microsoft ADFS for Matte
   :local:
 
 .. include:: sso-saml-before-you-begin.rst
+	  :start-after: :nosearch:
 
 Prerequisites
 -------------
@@ -210,5 +211,7 @@ We also recommend that you post an announcement about how the migration will wor
 You may also configure SAML for ADFS by editing the ``config.json`` file to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
 .. include:: sso-saml-faq.rst
+	  :start-after: :nosearch:
 
 .. include:: sso-saml-ldapsync.rst
+	  :start-after: :nosearch:

@@ -1,3 +1,5 @@
+:nosearch:
+
 Frequently Asked Questions
 --------------------------
 

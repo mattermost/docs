@@ -20,67 +20,52 @@ Elasticsearch
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts.
-
-The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ as a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__. 
 
 .. important::
+  The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over five million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
 
-  For Mattermost v6.0, Elasticsearch v7.x is supported. 
-  Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
+  For Mattermost v6.0, Elasticsearch v7.x is supported. Previous versions of Mattermost, including v5.38 and earlier releases, support Elasticsearch v5.x, v6.x, and v7.x. 
     
 Deployment guide
 ----------------
 
-Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
-
-.. important::
-    The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance. For deployments with over five million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
+Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
 .. note::
-    From Mattermost v5.26, you can filter inactive users, search by user role, and also search for terms inside links. This update introduces a breaking change which affects the "from" part of the search. To avoid this, reindex your Elasticsearch instance/cluster prior to upgrading.
+    From Mattermost v5.26, you can filter inactive users, search by user role, and also search for terms inside links. This update introduces a breaking change which affects the "from" part of the search. To avoid this, reindex your Elasticsearch instance/cluster prior to upgrading to Mattermost v.5.26 or later.
     
-Setting up an Elasticsearch server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set up an Elasticsearch server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The set up process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`__.
 
-.. note::
+.. important::
   You must install the `ICU Analyzer Plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ when setting up Elasticsearch for Mattermost.
 
-Configuring Elasticsearch in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure Elasticsearch in Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow these steps to connect your Elasticsearch server to Mattermost and to generate the post index.
 
 1. Go to **System Console > Environment > Elasticsearch**.
-2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
+2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch server.
 3. Set the Elasticsearch server connection details:
 
-  a) Enter **Server Connection Address** for the Elasticsearch server you set up earlier.
-  b) (Optional) Enter **Server Username** used to access the Elasticsearch server.
+  a. Enter **Server Connection Address** for the Elasticsearch server you set up earlier.
+  b. (Optional) Enter **Server Username** used to access the Elasticsearch server. For AWS Elasticsearch, leave this field blank.
+  c. (Optional) Enter **Server Password** associated with the username. For AWS Elasticsearch, leave this field blank.
+  d. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically. For AWS Elasticsearch, this field should be set to ``false``.
 
-    - Note: For AWS Elasticsearch leave this field blank.
+4. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch.
 
-  c) (Optional) Enter **Server Password** associated with the username.
+5. Select **Build Index** to build the post index of existing posts. This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime, set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
 
-    - Note: For AWS Elasticsearch leave this field blank.
+  .. important::
 
-  d) Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
+    Complete bulk indexing before enabling Elasticsearch in the next step. Otherwise, search results will be incomplete.
 
-    - Note: For AWS Elasticsearch this field should be set to ``false``.
-
-4. Select **Test Connection** and **Save** the configuration.
-
-  - If the server connection is unsuccessful you will not be able to save the configuration or enable searching with Elasticsearch.
-
-5. Select **Build Index** to build the post index of existing posts.
-
-  - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
-
-6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``.
-
-  - **Note:** Complete bulk indexing before enabling Elasticsearch. Otherwise, search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
+6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``. When this setting is ``false``, database search is used for all search queries.
 
 7. Restart the Mattermost server.
 
@@ -110,6 +95,11 @@ What types of indexes are created?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost creates three types of indexes: users, channels, and posts. Users and channels have one index each. Posts are aggregated by date, into multiple indexes.
+
+Can I pause an Elasticsearch indexing job?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. From Mattermost v.6.7, the Elasticsearch indexing job is resumable. Stopping a server while the Elasticsearch indexing job is running puts the job in pending status. The job resumes when the server restarts. System Admins can cancel an indexing job through the System Console.
 
 Can an index rollover policy be defined?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
