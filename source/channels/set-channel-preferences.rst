@@ -57,7 +57,7 @@ To stop receiving mention notifications, enable the **Ignore mentions for @chann
 Send desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, your `desktop notification preferences <https://docs.mattermost.com/channels/channels-settings.html#notifications>`__ configured in **Settings** apply to all channels. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`__.
+By default, your `desktop notification preferences <https://docs.mattermost.com/channels/channels-settings.html#notifications>`__ configured in **Settings** apply to all channels. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost desktop apps <https://mattermost.com/download/#mattermostApps>`__.
 
 To customize desktop notifications per channel, edit **Send desktop notifications**, choose one of the following options, then select **Save**:
 
