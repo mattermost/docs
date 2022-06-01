@@ -29,7 +29,7 @@ Administrator notices
 Administrator notices inform System Admins when a new server version is available, when external dependencies are being deprecated, or when server upgrades are recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
 
 .. image:: ../images/notices_admin.png
-   :alt: Administrator notices inform System Admins when a new server version is available
+   :alt: An example of an in-product administrator notice announcing that a new server version of Mattermost is available. Admin notices also announce when external dependencies are being deprecated, or when server upgrades or optimizations are recommended.
    
 Administrator notices can be disabled in the **System Console > Notices** page.
 
