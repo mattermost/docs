@@ -75,7 +75,7 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
-  :alt: Performance monitoring options available in the System Console
+  :alt: Enable performance monitoring options in the System Console by going to Environment > Performance Monitoring, then specifying a listen address.
 
 4. To test that the server is running, go to ``<ip>:<port>/metrics``.
 
@@ -98,10 +98,10 @@ Installing Grafana
 
 3. The default HTTP port is ``3000`` and default username and password are ``admin``.
 
-4. Add a Mattermost data source with settings defined in the screenshot below.
+4. Add a Mattermost data source with the following settings as defined in the screenshot below
 
 .. image:: ../images/mattermost_datasource.png
-   :alt: Mattermost data source for Grafana
+   :alt: Mattermost data source configuration settings for a Grafana installation.
 
 .. note:: 
 
@@ -146,7 +146,7 @@ Caching metrics
 The above metrics can be used to calculate ETag and memory cache hit rates over time.
 
 .. image:: ../images/perf_monitoring_caching_metrics.png
-   :alt: Caching metrics in Mattermost
+   :alt: Example caching metrics, including Etag hit rate and mem cache hit rate, in a self-hosted Mattermost deployment.
 
 Cluster metrics
 ^^^^^^^^^^^^^^^
@@ -173,7 +173,7 @@ HTTP metrics
 - ``mattermost_http_requests_total``: The total number of http API requests.
 
 .. image:: ../images/perf_monitoring_http_metrics.png
-   :alt: HTTP metrics in Mattermost
+   :alt: Example HTTP metrics, including number of API errors per minute, number of API requests per minute, and mean request time per minute, in a self-hosted Mattermost deployment.
 
 Login and session metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -193,7 +193,7 @@ Mattermost Channels metrics
 - ``mattermost_post_webhooks_totals``: The total number of webhook posts created.
 
 .. image:: ../images/perf_monitoring_messaging_metrics.png
-   :alt: Messaging metrics in Mattermost
+   :alt: Example Mattermost Channels metrics, including messages per minute, broadcasts per minute, emails sent per minute, mobile push notifications per minute, and number of file attachments per minute, in a self-hosted Mattermost deployment.
 
 Process metrics
 ^^^^^^^^^^^^^^^
@@ -235,17 +235,17 @@ Debugging metrics
 Use ``mattermost_system_server_start_time`` to dynamically add an annotation corresponding to the event.
 
 .. image:: ../images/mattermost_system_server_start_time.png
-   :alt: Mattermost system server start time debugging metrics
+   :alt: Example debugging metrics, including number of messages per second, in a self-hosted Mattermost deployment.
 
 Use ``mattermost_jobs_active`` to display an active jobs chart.
 
 .. image:: ../images/mattermost_active_jobs_chart.png
-   :alt: Mattermost active jobs chart debugging metrics
+   :alt: Example debugging metrics, including active jobs, in a self-hosted Mattermost deployment.
 
 Or, use ``mattermost_jobs_active`` to dynamically add a range annotation corresponding to jobs being active.
 
 .. image:: ../images/mattermost_dynamic_range_annotation.png
-   :alt: Mattermost active jobs debugging metrics
+   :alt: Example debugging metrics, including number of messages per second, in a self-hosted Mattermost deployment.
 
 Use annotations to streamline analysis when a job is long running, such as an LDAP synchronization job. 
 
@@ -285,7 +285,7 @@ where you can replace ``localhost`` with the server name. The profiling reports 
 - ``/debug/pprof/block/`` for block profiling
 
 .. image:: ../images/perf_monitoring_go_metrics.png
-   :alt: Mattermost profiling reports
+   :alt: Example Go metrics for HTTP server runtime profiling data and system monitoring, including memory usage, Go routines, and garbage collection duration, in a self-hosted Mattermost deployment.
 
 Frequently asked questions
 --------------------------
