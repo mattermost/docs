@@ -20,6 +20,10 @@ Metrics and goals
 
 Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review. Retrospective components are customized per playbook.
 
+.. note::
+
+   Some metrics and goals functionality is only available on a paid plan. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
+
 Configure retrospectives before a run
 -------------------------------------
 
