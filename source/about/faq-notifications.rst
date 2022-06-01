@@ -7,7 +7,7 @@ What determines if a desktop notification should be triggered?
 Desktop notifications are triggered under to following conditions. Click to expand the flow chart.
 
 .. image:: ../images/desktop_notification_chart.png
-  :alt: Shows how desktop notifications get triggered through Mattermost app
+  :alt: A flow diagram shows how Mattermost Desktop App notifications are triggered when a message is posted.
   :width: 239px
   :height: 232px
 
@@ -17,7 +17,7 @@ What determines if an email notification should be triggered?
 Email notifications are triggered under to following conditions. Click to expand the flow chart.
 
 .. image:: ../images/email_notification_chart.png
-  :alt: Shows how email notifications get triggered through Mattermost app
+  :alt: A flow diagram shows how Mattermost email notifications are triggered when a message is posted.
   :width: 239px
   :height: 232px
 
@@ -27,7 +27,7 @@ What determines if a mobile push notification should be triggered?
 Mobile push notifications are triggered under to following conditions. Click to expand the flow chart.
 
 .. image:: ../images/push_notification_chart.png
-  :alt: Shows how mobile push notifications get triggered through Mattermost app
+  :alt: A flow diagram shows how Mattermost mobile push notifications are triggered when a message is posted.
   :width: 239px
   :height: 232px
 
