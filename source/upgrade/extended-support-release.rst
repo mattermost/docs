@@ -35,7 +35,7 @@ Please see `Release Lifecycle documentation <https://docs.mattermost.com/upgrade
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
 .. image:: ../images/esr-graphic.png
-   :alt: Mattermost provides an Extended Support Release when a significant number of new features and improvements have been added to the product.
+   :alt: Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.
 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
