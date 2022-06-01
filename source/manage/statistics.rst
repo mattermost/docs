@@ -156,7 +156,7 @@ To enable Team Admins to access their team's statistics:
 4. Under **Assigned People**, select **Add People** to assign Team Admins to the **Viewer** role, and enable them to access their team's statistics.
 
 .. image:: ../images/assign-people-to-system-role.png
-   :alt: Select Add People under Assigned People to assign Team Admins to the Viewer role
+   :alt: On the Viewer page, specify which users can access the Team Statistics page by assigning specific users the Viewer admin role. 
 
 5. Select **Save**.
 
