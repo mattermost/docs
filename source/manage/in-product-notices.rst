@@ -39,7 +39,7 @@ End user notices
 End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
 
 .. image:: ../images/notices.png
-   :alt: End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available.
+   :alt: An example of an end user in-product notice announcing that a new Mattermost Desktop App version is available. End user notices announce when new features and versions are available, and can be disabled.
 
 Frequently asked questions (FAQs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,10 +70,10 @@ Admin Advisor notices are designed to provide guidance and assist in choosing fe
 When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 .. image:: ../images/mattermost_admin_advisor_banner.png
-   :alt: Admin Advisor notices are triggered based on usage such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
+   :alt: An example of an Admin Advisor notice. Admin Advisor notices provide guidance as your deployment scales in size. Admin Advisor notices are disabled from Mattermost v5.35.
 
 .. image:: ../images/mattermost_admin_advisor_bot.png
-   :alt: System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support.
+   :alt: An example of an Admin Advisor notice that includes an option for System Admins to contact Mattermost Support. Admin Advisor notices are disabled from Mattermost v5.35.
 
 System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
 
