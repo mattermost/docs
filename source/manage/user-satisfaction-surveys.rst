@@ -55,7 +55,7 @@ How will I be notified when a survey is scheduled?
 System Admins will receive an email notification and in-product Direct Message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
 .. image:: ../images/nps-admin.png
-   :alt: You can be notified via email and in-product direct message about scheduled date of survey from Surveybot
+   :alt: When user satisfaction surveys are enabled in the System Console, Mattermost sends out user satisfaction surveys following every server upgrade. System Admins are notified about upcoming surveys by email notification and through an in-product message from a system bot.
 
 Survey Data
 -----------
