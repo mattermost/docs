@@ -20,17 +20,10 @@ Performance monitoring
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__.
+Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__. The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
 
-The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
-
-Deployment guide
-----------------
-
-Details on integrating your Mattermost server with Prometheus and Grafana.
-
-Installing Prometheus
-----------------------
+Install Prometheus
+-------------------
 
 1. `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux, and Windows. For installation instructions, see the `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
 
@@ -75,22 +68,22 @@ Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP addres
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
-  :alt: Performance monitoring options available in the System Console
+  :alt: Enable performance monitoring options in the System Console by going to Environment > Performance Monitoring, then specifying a listen address.
 
 4. To test that the server is running, go to ``<ip>:<port>/metrics``.
 
 .. note::
    A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP.
 
-1. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus. For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
+5. Finally, run ``vi prometheus.yml`` to finish configuring Prometheus. For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
 
-2. Once the service has started, you can access the data in ``<localhost>:<port>/graph``. While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
+6. Once the service has started, you can access the data in ``<localhost>:<port>/graph``. While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
 
 .. note:: 
   For troubleshooting advice, check the `Prometheus FAQ page <https://prometheus.io/docs/introduction/faq/>`__.
 
-Installing Grafana
--------------------
+Install Grafana
+----------------
 
 1. `Download a precompiled binary for Grafana <https://grafana.com/docs/grafana/latest/installation/debian/>`__ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac. For install instructions, see `Grafana install guides <https://grafana.com/docs/grafana/latest/installation/debian/>`__
 
@@ -98,10 +91,10 @@ Installing Grafana
 
 3. The default HTTP port is ``3000`` and default username and password are ``admin``.
 
-4. Add a Mattermost data source with settings defined in the screenshot below.
+4. Add a Mattermost data source with the following settings as defined in the screenshot below
 
 .. image:: ../images/mattermost_datasource.png
-   :alt: Mattermost data source for Grafana
+   :alt: Mattermost data source configuration settings for a Grafana installation.
 
 .. note:: 
 
@@ -112,6 +105,7 @@ Getting started
 ---------------
 
 To help you get started, you can download three sample dashboards shared in Grafana:
+
 - `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582>`__, which contains detailed charts for performance monitoring including application, cluster, job server, and system metrics.
 - `Mattermost Collapsed Reply Threads Metrics <https://grafana.com/grafana/dashboards/15581>`__, which contains detailed metrics on the queries involved in our Collapsed Reply Threads Beta feature.
 - `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashboards/2539>`__, which contains key metrics for monitoring performance and system health.
@@ -146,7 +140,7 @@ Caching metrics
 The above metrics can be used to calculate ETag and memory cache hit rates over time.
 
 .. image:: ../images/perf_monitoring_caching_metrics.png
-   :alt: Caching metrics in Mattermost
+   :alt: Example caching metrics, including Etag hit rate and mem cache hit rate, in a self-hosted Mattermost deployment.
 
 Cluster metrics
 ^^^^^^^^^^^^^^^
@@ -173,7 +167,7 @@ HTTP metrics
 - ``mattermost_http_requests_total``: The total number of http API requests.
 
 .. image:: ../images/perf_monitoring_http_metrics.png
-   :alt: HTTP metrics in Mattermost
+   :alt: Example HTTP metrics, including number of API errors per minute, number of API requests per minute, and mean request time per minute, in a self-hosted Mattermost deployment.
 
 Login and session metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -193,7 +187,7 @@ Mattermost Channels metrics
 - ``mattermost_post_webhooks_totals``: The total number of webhook posts created.
 
 .. image:: ../images/perf_monitoring_messaging_metrics.png
-   :alt: Messaging metrics in Mattermost
+   :alt: Example Mattermost Channels metrics, including messages per minute, broadcasts per minute, emails sent per minute, mobile push notifications per minute, and number of file attachments per minute, in a self-hosted Mattermost deployment.
 
 Process metrics
 ^^^^^^^^^^^^^^^
@@ -235,17 +229,17 @@ Debugging metrics
 Use ``mattermost_system_server_start_time`` to dynamically add an annotation corresponding to the event.
 
 .. image:: ../images/mattermost_system_server_start_time.png
-   :alt: Mattermost system server start time debugging metrics
+   :alt: Example debugging metrics, including number of messages per second, in a self-hosted Mattermost deployment.
 
 Use ``mattermost_jobs_active`` to display an active jobs chart.
 
 .. image:: ../images/mattermost_active_jobs_chart.png
-   :alt: Mattermost active jobs chart debugging metrics
+   :alt: Example debugging metrics, including active jobs, in a self-hosted Mattermost deployment.
 
 Or, use ``mattermost_jobs_active`` to dynamically add a range annotation corresponding to jobs being active.
 
 .. image:: ../images/mattermost_dynamic_range_annotation.png
-   :alt: Mattermost active jobs debugging metrics
+   :alt: Example debugging metrics, including number of messages per second, in a self-hosted Mattermost deployment.
 
 Use annotations to streamline analysis when a job is long running, such as an LDAP synchronization job. 
 
@@ -285,7 +279,7 @@ where you can replace ``localhost`` with the server name. The profiling reports 
 - ``/debug/pprof/block/`` for block profiling
 
 .. image:: ../images/perf_monitoring_go_metrics.png
-   :alt: Mattermost profiling reports
+   :alt: Example Go metrics for HTTP server runtime profiling data and system monitoring, including memory usage, Go routines, and garbage collection duration, in a self-hosted Mattermost deployment.
 
 Frequently asked questions
 --------------------------

@@ -4,12 +4,109 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-05-26](#release-2022-05-26)
+- [Release 2022-05-12](#release-2022-05-12)
+- [Release 2022-04-28](#release-2022-04-28)
 - [Release 2022-04-13](#release-2022-04-13)
 - [Release 2022-03-30](#release-2022-03-30)
 - [Release 2022-03-16](#release-2022-03-16)
-- [Release 2022-03-08](#release-2022-03-08)
-- [Release 2022-03-02](#release-2022-03-02)
-- [Release 2022-02-16](#release-2022-02-16)
+
+## Release 2022-05-26
+
+### Highlights
+
+#### Advanced Text Editor
+ - To make markdown features more accessible, an Advanced Text editor was added with new shortcuts to preview, open the emoji picker, strike out text, add headings, format numbered steps, add bullets, and hide the formatting options.
+
+### Improvements
+
+#### User Interface (UI)
+ - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
+ - Improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
+ - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
+ - Applied new designs for the Login screen:
+     - Default login
+     - OAuth options
+     - Custom branding
+     - MFA token
+ - Changed **Actions** post menu hover text to **Message Actions**.
+ - Enabled the new onboarding task list for end users.
+ - Added pre-packaged Calls v0.5.3.
+
+#### Administration
+ - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it. The default state is still ``default-off``.
+
+### Bug Fixes
+ - Fixed an issue where the shortcut modal for channel info showed ``ALT`` instead of ``SHIFT`` for Mac.
+ - Fixed an issue where the **Help > Report a Problem** link was not hidden when a URL was not set for **System Console > Customization > Report a Problem**.
+
+### Known Issues
+ - Known issues related to the Advanced Text editor, including text overlapping the preview button when formatting is collapsed [MM-44457](https://mattermost.atlassian.net/browse/MM-44457).
+ - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-05-12
+
+### Improvements
+
+#### User Interface (UI)
+ - For toggling the channel information in the right-hand pane, a shortcut CTRL/CMD+ALT+I was added.
+ - Added an "Unread Channels" section to the channel switcher and included "Threads" in the results.
+ - Added pre-packaged Calls v0.5.1.
+
+#### Administration
+ - An email is now sent to Cloud Admins after upgrading their workspace.
+
+#### API Changes
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels``.
+
+#### Bug Fixes
+ - Fixed an issue with ADA Accessibility where screen readers did not TAB to or read "This channel has guests" in the channel header bar.
+ - Fixed an issue where the at-mention autosuggest of users was no longer grouped by channel membership status.
+ - Fixed an issue where the New Messages toast was not fully tappable in the mobile web view.
+
+### Known Issues
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-04-28
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the channel members list to the right-hand side Channel Info modal.
+ - Added the ability to invite new users to a team from the **Add to channel** modal.
+ - To be able to download images and copy public links for images quicker, a copy URL and download buttons were added to image thumbnails.
+ - Added the ability to have one-character long channel names.
+
+#### API Changes for Custom Integrations
+ - Added a new API endpoint ``POST /api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}`` to set a thread as unread by post id.
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/reactions`` and ``GET /api/v4/users/me/top/reactions`` to get top reactions for a team and user.
+ - Fixed an issue where the ``UpdateUser`` API endpoint required a ``create_at`` field.
+
+#### Performance
+ - Improved the performance of ``GetTeamsUnreadForUser`` when Collapsed Reply Threads is enabled.
+
+#### Bug Fixes
+ - Fixed an issue where permalinks to direct and group message posts did not show a preview.
+ - Fixed an issue when Collapsed Reply Threads are enabled where marking a root post with a mention as unread displayed both a mention badge and the thread item being bolded.
+ - Fixed an issue where the public link to generate the API was getting called even if public links were disabled.
+ - Fixed an issue with onboarding page view events.
+ - Fixed an issue where the custom emoji **Next** button was out of view when a banner was present.
+ - Fixed an issue where it would appear that a user had a negative number of unread threads.
+ - Fixed an issue where marking the last post in a thread as unread didn't mark the thread as unread.
+
+### Known Issues
+ - The Cloud login screen is not centered [MM-43719](https://mattermost.atlassian.net/browse/MM-43719).
+ - Shortcut keys for **Add Reaction** and **Save** are missing in mobile web view [MM-42715](https://mattermost.atlassian.net/browse/MM-42715).
+ - Image link previews may show a blank space [MM-40448](https://mattermost.atlassian.net/browse/MM-40448).
+ - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
+ - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-04-13
 

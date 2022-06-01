@@ -1,3 +1,5 @@
+:nosearch:
+
 Use the System Console to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped. 
 
 .. note:: 
@@ -25,4 +27,4 @@ You'll be notified if any packet files are unavailable during packet generation.
 
   When sanitizing Support Packet data, replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
-  LDAP groups are not included during support packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file.
+  LDAP groups are not included during support packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file.
