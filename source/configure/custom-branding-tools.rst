@@ -21,7 +21,7 @@ Custom branding tools
 Use custom branding tools to present a Mattermost experience that's tailored to the branding of your organization.
 
 .. figure:: ../images/custom-branding-tools.png
-   :alt: Use custom branding tools for your organization to present Mattermost experience
+   :alt: Text and imagery on the Mattermost log in page can be customized to present a branded Mattermost experience for your organization.
 
 Enable custom branding
 ----------------------
