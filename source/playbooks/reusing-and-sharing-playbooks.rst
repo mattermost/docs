@@ -31,4 +31,4 @@ Exporting the contents of a channel requires the channel export plugin. See the 
 
 .. note::
 
-   Channel export is only available on Mattermost Enterprise. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
+   Channel export is only available to Mattermost Enterprise customers. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
