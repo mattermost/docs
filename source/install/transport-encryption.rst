@@ -21,7 +21,7 @@ The components of the Mattermost setup are shown in the following diagram, inclu
   The transport between the Application servers is not used by default and requires additional setup steps. Enhancing the core product to include automatic encryption between cluster nodes is in progress and planned for a later release.
 
 .. image:: ../images/transport-encryption.png
-   :alt: Components of the Mattermost setup where all transports rely on TLS encryption
+   :alt: Components of the Mattermost setup where all transports rely on TLS encryption.
 
 The configuration guides are split up into the following documents:
 
