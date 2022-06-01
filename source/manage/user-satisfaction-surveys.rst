@@ -68,7 +68,7 @@ Once the survey is triggered on the server, all users will receive an in-product
 Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their experience. Selecting a score and providing feedback are optional, and the survey can be ignored without interrupting usage of Mattermost.
 
 .. image:: ../images/nps-survey.png
-   :alt: You can select a 0-10 score on how likely they are to recommend Mattermost
+   :alt: Once Mattermost sends out a user satisfaction survey, all users receive an in-product message from a system bot the next time they log in or refresh Mattermost. The in-product message asks users to rate how likely they'd recommend Mattermost.
 
 What data is collected?
 ~~~~~~~~~~~~~~~~~~~~~~~
