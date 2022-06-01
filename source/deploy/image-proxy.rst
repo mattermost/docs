@@ -50,5 +50,5 @@ For example, if the image proxy is located at ``https://image-proxy.mattermost.c
  - **Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string used for the sample ``atmos/camo`` deployment.
 
 .. image:: ../images/image-proxy.png
-   :alt: Deploy atmos/camo image proxy through System Console > Files > Storage
+   :alt: Enable and configure an atmos/camo image proxy in the System Console by going to Environment > Image Proxy, specifying atmos/camo as the proxy type, providing the URL of the remote image proxy server, and by specifying the CAMO_KEY secret string.
   
