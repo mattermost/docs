@@ -26,7 +26,7 @@ Deployment overview
 Please see the `Mattermost Deployment Overview <https://docs.mattermost.com/deploy/deployment-overview.html>`__ documentation for a summary of software systems whose requirements are described in this document.
 
 .. image:: ../images/network_diagram.png
-   :alt: Mattermost Network Diagram
+   :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
 
 Software requirements
 ---------------------
@@ -54,7 +54,7 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v89+", "v89+"
+    "Chrome", "v100+", "v100+"
     "Firefox", "v91+", "v91+"
     "Safari", "v14.1+", "v14.1+"
     "Edge", "v44+", "v44+"

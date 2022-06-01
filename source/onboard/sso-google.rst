@@ -26,6 +26,7 @@ Google Single Sign-On
 *Available in legacy Mattermost Enterprise Edition E20*
 
 .. include:: common-sso-google.rst
+  :start-after: :nosearch:
 
 Configure Mattermost ``config.json`` for Google Apps SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

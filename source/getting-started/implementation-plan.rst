@@ -70,6 +70,7 @@ A Mattermost Enterprise implementation consists of the following system componen
 The following diagram is a high-level illustration of the Mattermost platform and how its various components interact with each other within a network:
 
 .. image:: ../images/network_diagram.png
+   :alt: Mattermost network diagram shows how the various system components of the Mattermost platform interact with each other within a network deployment.
 
 **Reference**: https://docs.mattermost.com/deploy/deployment-overview.html
 
@@ -132,7 +133,7 @@ In this section, identify the System Proponent, the name of the responsible orga
 +----------+-----------------+----------------------+--------------+
 
 3.3 Major tasks
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 This section provides a brief description of each major task required for the implementation of the system. Add as many subsections as necessary to this section to describe all the major tasks adequately. The tasks described in this section are not site-specific, but generic or overall project tasks that are required to install hardware and software, prepare data, and verify the system. 
 

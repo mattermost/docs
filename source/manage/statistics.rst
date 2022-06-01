@@ -12,7 +12,7 @@ For advanced metrics for Enterprise deployments, `see performance monitoring doc
 Site statistics
 ---------------
 
-|all-plans| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
@@ -24,11 +24,15 @@ Site statistics
   :target: https://mattermost.com/pricing
   :alt: Available in the Mattermost Enterprise subscription plan.
 
+.. |cloud| image:: ../images/cloud-badge.png
+  :scale: 30
+  :target: https://mattermost.com/download
+  :alt: Available for Mattermost Cloud deployments.
+
 .. |self-hosted| image:: ../images/self-hosted-badge.png
   :scale: 30
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
-
 
 System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
 
@@ -87,6 +91,12 @@ Master DB Conns
 Replica DB Conns
     The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/scale/high-availability-cluster.html#database-configuration>`__.
 
+Total Playbooks
+    The total number of playbooks on this server.
+
+Total Playbook Runs
+    The total number of runs (active and complete) on this server.
+
 Channel Types
     This chart displays the number of public channels and private channels in a visual format, including channels that might have been deleted.
 
@@ -96,7 +106,7 @@ Posts, Files and Hashtags
 Team statistics
 ---------------
 
-|all-plans| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
 Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in Direct Message channels, which are not tied to a team.
 
@@ -144,16 +154,19 @@ To enable Team Admins to access their team's statistics:
 1. Go to **System Console > User Management > System Roles**, then edit the **Viewer** System Admin role. 
 
 .. image:: ../images/edit-viewer-system-admin-role.png
+   :alt: Enable Team Admins to access their team's statistics in the System Console by going to User Management > System Roles, and making changes to the Viewer role.
 
 2. Under **Privileges**, expand the **Reporting** section, set **Team Statistics** to **Read only**, then set **Site Statistics** and **Server Logs** to **No access**.
 
 3. Set all other privileges to **No access** to restrict all users with the **Viewer** role to access only the **Team Statistics** page in the System Console.   
 
 .. image:: ../images/restrict-role-access.png
+   :alt: On the Viewer page, restrict user access to the Team Statistics page by expanding the Reporting section, setting Site Statistics and Server Logs to No Access, and setting all other privileges to No Access. 
 
 4. Under **Assigned People**, select **Add People** to assign Team Admins to the **Viewer** role, and enable them to access their team's statistics.
 
 .. image:: ../images/assign-people-to-system-role.png
+   :alt: On the Viewer page, specify which users can access the Team Statistics page by assigning specific users the Viewer admin role. 
 
 5. Select **Save**.
 

@@ -1,3 +1,5 @@
+.. Redirecting users trying to access this page to /onboard/migrating-to-mattermost.html#migrating-from-slack
+
 Migrating from HipChat to Mattermost
 =====================================
 

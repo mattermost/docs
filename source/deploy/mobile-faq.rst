@@ -117,6 +117,14 @@ The following payload shows an example of the json that is transmitted to the pu
         "is_id_loaded": true
     }
 
+where the following definitions are applied:
+
+- ``ack_id``: An ephemeral identifier generated per notification that determines whether the notification sent was received by the device (using same method that generates identifiers to the rest of the models in the server). This information is available in the ``notifications.log`` file on the Mattermost server. The ``ack_id`` is only used for receipt delivery from the mobile app to the Mattermost server to confirm whether the notification sent was received. 
+- ``server_id``: A server identifier created on the server, called ``DiagnosticId``. In the future, this value will be used in the mobile app (for multi-server support) to identify which server the notification belongs to.
+- ``device_id``: The token that APNs and FCM return when you allow the device to receive notifications. So when the user logs into Mattermost, Mattermost sends this ``device_id`` to attach it to the session. If the session is terminated, the ``device_id`` is no longer present in the server database because the session record is removed. When the user logs back in, the ``device_id`` is registered again with the same value because the identifier is specific to the device. This value won't be the same across apps or devices owned by the same person, but will be the same for each session the user creates from the same app on the same device.
+- ``version``: Tells the mobile app how data is structured so it can parse it properly. Current value is ``v2``.
+- ``is_id_loaded``: (Mattermost Enterprise only) When true, the mobile app look for the contents of the notification on the server because those details are not part of the payload. 
+
 What are my options for securing the mobile apps?
 -------------------------------------------------
 
@@ -293,6 +301,7 @@ In a proxy-aware configuration, a `pre-proxy relay <https://docs.mattermost.com/
 See a sample architectural overview below: 
 
 .. image:: ../images/mobile-pre-proxy-relay.png
+   :alt: The Mattermost push notification service is designed to send traffic directly to the Apple Push Notification Service (APNS) and Google Fire Cloud Messaging (FCM) services. However, if your organization requires a corporate proxy to scan and audit all outbound traffic, you can deploy Mattermost in a proxy-aware configuration with a pre-proxy relay. The relay accepts messages from the Mattermost Push Proxy, and forwards them to a corporate proxy that enforces your internal IT requirements before delivering the notification to a mobile device. This configuration requires a trusted root certificate.
 
 This enables the **pre-proxy relay** to act as the `APNS <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the pre-proxy relay via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the pre-proxy relay.
 
@@ -312,6 +321,7 @@ Ths **post-proxy relay** `can be configured using the Mattermost Push Proxy inst
 In place of a DMZ, you can also host in a trusted cloud environment such as AWS or Azure depending on your internal approvals and policies. 
 
 .. image:: ../images/mobile-post-proxy-relay.png
+   :alt: The Mattermost push notification service is designed to send traffic directly to the Apple Push Notification Service (APNS) and Google Fire Cloud Messaging (FCM) services. However, if your organization doesn't support HTTP/2 requests to send push notifications to mobile devices, you can deploy a post-proxy relay to take messages form the Mattermost server, transform it from the incompatible format, and relay it to its final destination. The post-proxy relay can be configured using connection restrictions to meet your custom security and compliance requirements.
 
 Whitelist Mattermost push notification proxy to bypass your corporate proxy server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
