@@ -18,7 +18,7 @@ In all cases, any third party components remain licensed under their original li
 An example directory layout, using an Enterprise license, is shown below:
 
 .. image:: ../images/source-available-license.png
-   :alt: Get source access under Mattermost Source Available License.
+   :alt: An example directory layout shows how Enterprise subscription plan restrictions apply to Mattermost source code based on where the Mattermost Source Available license file appears in the Mattermost deployment directory.
 Why are you changing the licensing model?
 -----------------------------------------
 
