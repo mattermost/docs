@@ -4097,6 +4097,11 @@ Enable Remote Marketplace
 | This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
+This setting only takes effect when ``"EnableMarketplace": true``.
+
+.. note::
+   For the Remote Marketplace to operate, each host running the Mattermost service requires network access to the marketplace service endpoint (hosted at ``https://api.integrations.mattermost.com``, see `Marketplace URL <#marketplace-url>`__ ).
+
 Marketplace URL
 ^^^^^^^^^^^^^^^^
 

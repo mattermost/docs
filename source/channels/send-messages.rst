@@ -28,13 +28,13 @@ Mattermost can automatically detect and display messages written using right-to-
 
 .. note::
   
-  Your System Admin may restrict messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
+  Your System Admin may restrict messaging actions, such as editing or deleting messages, by configuring `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
 .. tabs::
 
   .. tab:: Mattermost v6.0 onwards
 
-      If you prefer to use ENTER to insert new lines and CTRL+ENTER to send messages instead, select the **Gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+      If you prefer to use ENTER to insert new lines and CTRL+ENTER to send messages instead, select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
       .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
         :alt: Select the Gear icon to open the Settings dialog.
