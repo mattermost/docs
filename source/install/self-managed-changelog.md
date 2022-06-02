@@ -47,8 +47,9 @@ Latest Mattermost Releases:
 #### Boards Updates
  - 
 
-#### Advanced Text Editor
- - To make markdown features more accessible, an Advanced Text editor was added with new shortcuts to preview, open the emoji picker, strike out text, add headings, format numbered steps, add bullets, and hide the formatting options.
+#### Message Formatting Toolbar
+
+ - The new formatting toolbar makes markdown accessible to everyone with easy to use controls for commonly used formatting, such as bold, headings, links and more.
 
 ### Improvements
 
@@ -100,10 +101,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - Changed ``SessionLengthMobileInDays`` to ``SessionLengthMobileInHours``.
    - Changed ``SessionLengthSSOInDays`` to ``SessionLengthSSOInHours``.
    - The value of ``TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+   - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it.
    - The default for ``CollapsedThreads`` has been changed to ``always_on``. This does not affect existing configurations where this value is already set to some other value.
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Added a new config setting ``EnableAppBar`` to enable and disable the new App Bar.
-   - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it.
 
 #### API Changes
  - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels`` to get top channels for a team and user.
@@ -116,10 +117,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
- - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
- - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
