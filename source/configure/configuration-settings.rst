@@ -5676,6 +5676,25 @@ Shared channels enables the ability to establish secure connections between Matt
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
+Enable App Bar
+^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+This setting enables the App Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
+
+.. note::
+  
+  Integrations currently registered to the channel bar will move to the App Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the developer documentation for details on registering integrations to the App Bar.
+
+**True**: All integration icons move from the channel header to the App Bar with the exception of the beta calls feature.
+
+**False**: All integration icons display in the channel header.
+
++----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------+
+
 Settings configurable only in ``config.json``
 ----------------------------------------------
 

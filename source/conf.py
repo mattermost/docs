@@ -317,6 +317,10 @@ redirects = {
 "boards/navigating-mattermost-boards.html":
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
 
+# Channels redirects
+"channels/sign-in.html":
+        "https://docs.mattermost.com/welcome/log-in.html",
+
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html": 
 	"https://docs.mattermost.com/install/cloud-changelog.html",

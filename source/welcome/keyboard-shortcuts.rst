@@ -60,6 +60,8 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     +-------------------------+-----------------+------------------------------------------------------------------------------------+
     | CTRL+SHIFT+TAB          | CMD+SHIFT+TAB   | Navigate to the previous product tab based on your current position.               |
     +-------------------------+-----------------+------------------------------------------------------------------------------------+
+    | CTRL+SHIFT+I            | CMD+SHIFT+I     | Show or hide the channel information pane.                                         |
+    +-------------------------+-----------------+------------------------------------------------------------------------------------+
 
   .. tab:: Desktop App v4.7 and earlier
 
