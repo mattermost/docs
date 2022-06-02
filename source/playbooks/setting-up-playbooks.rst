@@ -77,7 +77,7 @@ Keywords
 When you use the **Keywords** action any team member who has access to the playbook and who uses one of the listed keywords will see a message like this:
 
 .. image:: ../images/Playbook-keyword-monitoring.png
-   :alt: With the help of keyword action any team member who has access to playbooks and uses listed keywords will be notified by a playbook bot
+   :alt: Set up keyword triggers to run playbooks when specified keywords are detected in Channel posts.
 
 If you find your keywords result in too many false positives, consider refining your list and also consider that URLs used by run members may also contain monitored keywords.
 
