@@ -728,7 +728,7 @@ redirects = {
 "help/getting-started/creating-teams.html": 
 	"https://docs.mattermost.com/welcome/about-teams.html#create-a-team",
 "help/getting-started/install-desktop-app.html":
-        "https://docs.mattermost.com/install/installing-mattermost-desktop-app.html",
+        "https://docs.mattermost.com/install/desktop-app-install.html",
 "help/messaging/emoji.html": 
         "https://docs.mattermost.com/channels/react-to-messages.html",
 "help/messaging/executing-commands.html": 
@@ -835,6 +835,8 @@ redirects = {
 	"https://docs.mattermost.com/upgrade/installing-license-key.html",
 "install/i18n.html": 
 	"https://docs.mattermost.com/configure/enabling-chinese-japanese-korean-search.html",
+"install/installing-mattermost-desktop-app.html":
+        "https://docs.mattermost.com/install/desktop-app-install.html",
 "install/install-kubernetes-cluster.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/install-kubernetes-mattermost":
