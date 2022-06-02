@@ -91,7 +91,6 @@ This offering includes all the features of Mattermost Starter, plus:
 - `Read-only announcement channels <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20>`__.
 - `System-wide announcement banners <https://docs.mattermost.com/manage/announcement-banner.html>`__.
 - O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
-- 99.9% uptime SLA guarantee (Cloud only).
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing>`__.
@@ -121,6 +120,7 @@ This offering includes all the features of Mattermost Professional, plus:
 - `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
 - `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
+- 99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
 Limits
 ------
