@@ -1,5 +1,5 @@
-Make calls (beta)
-=================
+Make a call (beta)
+==================
 
 |enterprise| |cloud| |self-hosted|
 
@@ -18,13 +18,14 @@ Make calls (beta)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
   
-Mattermost calls is built-in voice calling and screen sharing functionality, available in Channels, and is currently in beta. It’s available and on by default in Mattermost Cloud. For self-hosted deployments it's available as a plugin and needs to be enabled.
+You can use Mattermost calls for voice calling and screen sharing functionality in channels, group messages, and direct messages. It’s available and on by default in Mattermost Cloud. For self-hosted deployments it's available as a plugin and needs to be enabled <link to config doc>.
 
-You can:
-
-- Start or join a call in any channel, group message, or direct message that you’re a part of.
 - Use Calls on desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (ie. Channels, Boards, and Playbooks) while on a call.
+
+To start a call, select **Start call** in the channel header. Anyone in the channel can join a call. If someone from outside of the organization wants to join a call they are not currently able to, unless they're provided with a guest account and added to the channel.
+
+Each call has a unique URL. Open the channel, group message, or direct message where you’d like to have a call and then select **Start call** on the top-right corner.
 
 Limitations
 -----------
@@ -36,11 +37,6 @@ Configuration
 -------------
 
 For Mattermost self-hosted customers, the calls plugin needs to be enabled in the System Console. Additional configuration is also available.
-
-To start a call, select **Start call** in the channel header. Anyone in the channel can join a call. If someone from outside of the organization wants to join a call they are not currently able to, unless they're provided with a guest account and added to the channel.
-
-Each call has a unique URL 
-Open the channel, group message, or direct message where you’d like to have a call and then select **Start Call** on the top-right corner.
 
 How do I start a call on the mobile app?
 ----------------------------------------
