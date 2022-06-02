@@ -46,7 +46,7 @@ Create custom categories to group channels together for quicker and easier navig
 
 To create categories, select the **+** symbol at the top of the sidebar. Or, select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
-Next, type a category name, select **Create**, then drag any channels or Direct Messages into this new category. You can also multi-select channels and direct messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
+Next, type a category name, select **Create**, then drag any channels or direct messages into this new category. You can also multi-select channels and direct messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
 
 Make categories work for you
 ----------------------------
@@ -76,7 +76,7 @@ Delete categories
 1. Select the **Category options** icon in the sidebar, then select **Delete Category**.
 2. Select **Delete** to confirm or select **X** to cancel.
 
-All channels and direct message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined. 
+All channels and direct message conversations in the deleted category move back to their default **Channels** and **Direct Messages** categories. Deleting a category never removes you from channels you have joined.
 
 Organize channels in categories
 -------------------------------
@@ -92,7 +92,7 @@ To select multiple channels:
 - Select non-sequential channels and/or direct messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
 - Press ESC to clear channel or direct message selections.
 
-Using the Mattermost Web or Desktop App, drag selected channels and/or direct messages between or within categories. 
+Using the Mattermost web or desktop app, drag selected channels and/or direct messages between or within categories. 
 
 .. tip::
 
@@ -166,7 +166,7 @@ Control how many direct message conversations display in the **Direct Messages**
 
 To configure the number of direct messages to display, go to **Settings > Sidebar**, then set **Number of direct messages to show**. Or select the **Channel options** icon in the sidebar, then select **Show**.
 
-Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of Direct Messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older Direct Messages.
+Choose from **All direct messages**, or choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the number of direct messages configured, older messages are hidden from the **Direct Messages** category. You can always increase the number of conversations displayed to see older direct messages.
 
 .. image:: ../images/dm-display.gif
 

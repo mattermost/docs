@@ -43,7 +43,7 @@ To shrink the right-hand sidebar to its original width, select the same **Collap
 
 .. note::
   
-  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
+  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
 Work with Collapsed Reply Threads
 ---------------------------------
