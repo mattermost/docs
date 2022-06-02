@@ -66,6 +66,7 @@ Latest Mattermost Releases:
  - Changed **Actions** post menu hover text to **Message Actions**.
  - Enabled the new onboarding task list for end users.
  - The legacy ``Enable post formatting`` setting is now hidden when Advanced Text editor is enabled.
+ - Updated Apps Framework to version 1.1.0 to add improved logging.
  
 #### Performance
  - Improved the performance of aggregate queries related to Collapsed Reply Threads.
