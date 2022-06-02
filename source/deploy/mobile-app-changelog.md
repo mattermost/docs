@@ -20,6 +20,7 @@ Latest Mattermost Mobile Apps releases:
 
 ### Improvements
  - Added Calls Cloud Freemium limits.
+ - Added a handler for a new ``call_end`` event.
 
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
