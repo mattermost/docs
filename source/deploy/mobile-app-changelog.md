@@ -19,7 +19,7 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Important Notes
- - Anyone signed up for our current beta testing program on iOS or Android will get access to mobile v2.0 beta. The update will appear in the Google Play Store or TestFlight the same way beta app updates are distributed today.
+ - Anyone signed up for our current [beta testing program](https://github.com/mattermost/mattermost-mobile#testing) on iOS or Android will get access to mobile v2.0 beta. The update will appear in the Google Play Store or TestFlight the same way beta app updates are distributed today.
 
 ### Highlights
 
