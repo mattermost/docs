@@ -16,7 +16,7 @@ Latest Mattermost Releases:
 **Release Day: 2022-06-15**
 
 ### Important Upgrade Notes
- - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table.
+ - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table. For MySQL, it takes around 19s for a table of size 0.7M rows. For PostgreSQL, it takes around 1.3ms for a table of size 0.7M rows.
  - CRT GA upgrade notes?
  - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
  - Boards: manual refresh on license change
@@ -30,20 +30,19 @@ Latest Mattermost Releases:
 #### Collapsed Reply Threads (General Availability)
  - 
 
-#### Apps Framework (General Availability)
- - The [Apps Framework](https://developers.mattermost.com/integrate/apps/) allows developers to build integrations with Mattermost that seamlessly work across Mattermost’s desktop and mobile clients. Apps can be developed using any programming language, as opposed to plugins which must be developed in Go.
+#### Calls (Beta)
+ - A built-in voice calling and screen sharing is now available. This is a Channels-specific integration.
 
 #### App Bar (Beta)
- - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins were moved to the new App Bar.
-
-#### Calls (Beta)
- - A built-in voice calling and screen sharing is now available.
+ - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins were moved to the new App Bar. It is recommended to enable the App Bar for servers with Calls enabled.
 
 #### Updated Server Hardware Requirements
  - 
 
 #### Playbooks Updates
- - 
+ - Users can now easily keep processes up-to-date with the inline playbook editor.
+ - Added a new statistics dashboard that displays the number of Playbooks and run instances within the server alongside other system statistics in the System Console.
+ - Run triggers and actions now give more control over where status updates are posted throughout a run.
 
 #### Boards Updates
  - 
