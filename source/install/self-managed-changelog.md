@@ -18,8 +18,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
  - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table. For MySQL, it takes around 19s for a table of size 0.7M rows. For PostgreSQL, it takes around 1.3ms for a table of size 0.7M rows.
  - CRT GA upgrade notes?
- - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
- - Boards: manual refresh on license change
+ - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there. A new config setting ``EnableAppBar`` enables this functionality. The setting defaults to ``false`` for self-hosted deployments.
  - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
  - The **System Console** session lengths configurations settings were changed to use a new hours unit, replacing the days. If anything goes awry during a server upgrade, it could result in users not being able to log in. For customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=``, ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=``, and ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=``. The values need to be 24x the existing values in days. For example, if ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30``, they should set ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720``.
 
@@ -43,9 +42,6 @@ Latest Mattermost Releases:
  - Users can now easily keep processes up-to-date with the inline playbook editor.
  - Added a new statistics dashboard that displays the number of Playbooks and run instances within the server alongside other system statistics in the System Console.
  - Run triggers and actions now give more control over where status updates are posted throughout a run.
-
-#### Boards Updates
- - 
 
 #### Message Formatting Toolbar
 
