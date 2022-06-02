@@ -33,7 +33,6 @@ Desktop
 Mobile
 -------
 
- - Mattermost Mobile v2.0.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/gekidou/NOTICE.txt>`_.
  - Mattermost Mobile v1.53.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.53/NOTICE.txt>`_.
  - Mattermost Mobile v1.52.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.52/NOTICE.txt>`_.
  - Mattermost Mobile v1.51.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-1.51/NOTICE.txt>`_.
