@@ -26,9 +26,6 @@ Latest Mattermost Mobile Apps releases:
 #### Multiple Workspaces
  - Collaborate in multiple workspaces with a redesigned channel and team sidebar for easier navigation.
 
-#### OS Dark Mode Syncing
- - Enhanced theming support that will sync light and dark modes with your phone’s operating system.
-
 #### Improved Network Reliability
  - Improved network reliability reducing app hang and errors if internet connectivity is unstable.
 
@@ -39,6 +36,7 @@ Latest Mattermost Mobile Apps releases:
  - Improved app stability so users encounter fewer crashes and bugs.
 
 ### Known Issues
+ - On iOS, the icon badge number may not reflect the correct mention count accross all servers.
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
 
