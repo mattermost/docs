@@ -278,7 +278,7 @@ This setting controls whether post formatting is rendered. When **On**, posts wi
 
 .. note::
 
-  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html>`__.
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
 Enable join/leave messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -294,7 +294,7 @@ Turn on preview features to view them early, ahead of their official release.
 
 .. note::
 
-  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html>`__.
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
 Performance Debugging
 ~~~~~~~~~~~~~~~~~~~~~
