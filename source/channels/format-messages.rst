@@ -127,11 +127,7 @@ The message formatting toolbar offers the following formatting options:
 
 Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
 
-You can hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to display the formatting options.
-
-.. tip::
-
-  Heading size is determined by the number ``#`` symbols added to the beginning of the text. In the message formatting toolbar, the **Heading**  |headings-icon| icon defaults to a Heading 3 with ``###``. Remove ``#`` symbols to increase the heading size, and add ``#`` symbols (to a total of six symbols for Heading 6 formatting) to decrease the heading size.
+You can hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options.
 
 Use Markdown
 -------------
