@@ -43,7 +43,7 @@ Latest Mattermost Releases:
  - Run triggers and actions now give more control over where status updates are posted throughout a run.
 
 #### Message Formatting Toolbar
- - The new formatting toolbar makes markdown accessible to everyone with easy to use controls for commonly used formatting, such as bold, headings, links and more.
+ - The [new formatting toolbar](https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar) makes markdown accessible to everyone with easy to use controls for commonly used formatting, such as bold, headings, links and more.
 
 ### Improvements
 
