@@ -45,7 +45,7 @@ Users are restricted from creating teams when at or above the teams limit for th
      - Custom branding
      - MFA token
  - Changed some tooltips to appear when focused instead of just on hover.
- - The legacy ``Enable post formatting`` setting is now hidden when Advanced Text editor is enabled.
+ - The legacy ``Enable post formatting`` setting is now hidden when the Message Formatting Toolbar is enabled.
  - Updated Apps Framework to version 1.1.0 to add improved logging.
 
 #### Administration
