@@ -25,8 +25,6 @@ Important Upgrade Notes
 |                                                    | All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component |
 |                                                    | there. A new config setting ``EnableAppBar`` enables this functionality. The setting defaults to ``false`` for self-hosted deployments.                          |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | CRT GA                                                                                                                                                           |
-|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions.         |
 |                                                    | Customers are requested to check for these values in their config and set them to nil if necessary.                                                              |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
