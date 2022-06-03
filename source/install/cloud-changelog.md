@@ -47,6 +47,7 @@ Users are restricted from creating teams when at or above the teams limit for th
  - Fixed an issue where the channel menu drop-down TAB skipped the option "Move to...".
  - Fixed an undefined error when leaving a channel with the Unreads filter enabled.
  - Fixed an issue in X-Forwarded-For header parsing when no whitespaces between values are provided.
+ - Fixed an issue where clicking on a quick emoji reaction opened the right-hand side.
 
 ### Known Issues
  - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
