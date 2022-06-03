@@ -60,8 +60,6 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     +-------------------------+-----------------+------------------------------------------------------------------------------------+
     | CTRL+SHIFT+TAB          | CMD+SHIFT+TAB   | Navigate to the previous product tab based on your current position.               |
     +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | CTRL+SHIFT+I            | CMD+SHIFT+I     | Show or hide the channel information pane.                                         |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
 
   .. tab:: Desktop App v4.7 and earlier
 
@@ -81,18 +79,20 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     | ALT+DOWN                   | OPTION+DOWN               | Next channel or direct message in the channel sidebar.                                                    |
     +----------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------+
 
-Zoom shortcuts for Web and Desktop App
------------------------------------------
+Shortcuts for Web and Desktop App
+----------------------------------
 
 The following display keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 
-+------------------------------+------------------------------+----------------------------------------+
-| On Windows & Linux           | On Mac                       | Description                            |
-+==============================+==============================+========================================+
-| CTRL+PLUS                    | CMD+PLUS                     | Increase font size (zoom in).          |
-+------------------------------+------------------------------+----------------------------------------+
-| CTRL+MINUS                   | CMD+MINUS                    | Decrease font size (zoom out).         |
-+------------------------------+------------------------------+----------------------------------------+
++------------------------------+------------------------------+--------------------------------------------+
+| On Windows & Linux           | On Mac                       | Description                                |
++==============================+==============================+============================================+
+| CTRL+PLUS                    | CMD+PLUS                     | Increase font size (zoom in).              |
++------------------------------+------------------------------+--------------------------------------------+
+| CTRL+MINUS                   | CMD+MINUS                    | Decrease font size (zoom out).             |
++------------------------------+------------------------------+--------------------------------------------+
+| CTRL+ALT+I                   | CMD+ALT+I                    | Show or hide the channel information pane. |
++------------------------------+------------------------------+--------------------------------------------+
 
 .. note::
 
