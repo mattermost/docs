@@ -26,15 +26,32 @@ Users are restricted from creating teams when at or above the teams limit for th
    - Improved performance of API ``GET /api/v4/usage/posts`` by enabling caching of posts count.
    - Users will be prevented from unarchiving teams if they're at or over the teams limit for their plan.
 
+#### Calls (Beta)
+ - A built-in voice calling and screen sharing is now available. This is a Channels-specific integration.
+
+#### Apps Bar (Beta)
+ - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins were moved to the new App Bar. It is recommended to enable the App Bar for servers with Calls enabled as the Apps Bar is the dedicated place for Calls start/join button.
+
+#### Collapsed Reply Threads (General Availability)
+ - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information and guidance for enabling the feature.
+
 ### Improvements
 
 #### User Interface (UI)
  - Added a modal to allow users to switch subscription plans pre-trial.
+ - Applied new designs for the Login screen:
+     - Default login
+     - OAuth options
+     - Custom branding
+     - MFA token
  - Changed some tooltips to appear when focused instead of just on hover.
+ - The legacy ``Enable post formatting`` setting is now hidden when Advanced Text editor is enabled.
+ - Updated Apps Framework to version 1.1.0 to add improved logging.
 
 #### Administration
  - The default for ``ServiceSettings.CollapsedThreads`` has been changed to "always_on". This does not affect existing configurations where this value is already set to some other value.
- - To enable or disable the App Bar, a new config setting ``ExperimentalSettings.EnableAppBar`` was added. All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there.
+ - To enable or disable the App Bar, a new config setting ``ExperimentalSettings.EnableAppBar`` was added. 
+ - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on.
 
 #### Performance
  - Reduced the number of calls made to ``viewChannel`` API during regular usage.
@@ -45,15 +62,16 @@ Users are restricted from creating teams when at or above the teams limit for th
  - Fixed an issue where thread posts were not left-aligned in compact message display mode.
  - Fixed an error about a missing column for the Shared Channels experimental feature.
  - Fixed an issue where the channel menu drop-down TAB skipped the option "Move to...".
+ - Fixed an issue where the bulk import failed due to reply ``CreateAt`` being greater than that of the parent post.
  - Fixed an undefined error when leaving a channel with the Unreads filter enabled.
  - Fixed an issue in X-Forwarded-For header parsing when no whitespaces between values are provided.
  - Fixed an issue where clicking on a quick emoji reaction opened the right-hand side.
+ - Fixed an issue where the keyboard focus did not go back to the post textbox after hitting Ctrl+Shift+P twice.
+ - Fixed an issue where the upload files button was positioned incorrectly.
 
 ### Known Issues
  - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
- - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
- - Known issues related to the new Collapsed Reply Threads (Beta) are [listed here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-05-26
