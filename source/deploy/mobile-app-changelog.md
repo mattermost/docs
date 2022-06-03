@@ -2329,7 +2329,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 ### Bug Fixes 
 - Android notifications now follow the default system setting for vibration 
 - Fixed app crashing when opening notification settings on Android 
-- Fixed an issue where the "Proceed" button on sign in screen stopped working after pressing logout multiple times
+- Fixed an issue where the "Proceed" button on log in screen stopped working after pressing logout multiple times
 - HEIC images posted from iPhones now get converted to JPEG before uploading
 
 ## v1.4.1 Release

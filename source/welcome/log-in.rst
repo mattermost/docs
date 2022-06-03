@@ -60,7 +60,7 @@ GitLab SSO
 
 |all-plans| |cloud| |self-hosted|
 
-When enabled by your System Admin, you can log in with your GitLab account using a one-click sign in option.
+When enabled by your System Admin, you can log in with your GitLab account using a one-click login option.
 
 .. image:: ../images/sign-in-gitlab.png
   :alt: Log in to Mattermost using your GitLab credentials.
@@ -72,7 +72,7 @@ Google SSO
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-When enabled by your System Admin, you can log in with your Google account using a one-click sign in option.
+When enabled by your System Admin, you can log in with your Google account using a one-click login option.
 
 .. image:: ../images/sign-in-google-apps.png
   :alt: Log in to Mattermost using your Google Apps credentials.
@@ -84,7 +84,7 @@ Office 365 SSO
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-When enabled by your System Admin, you can log in with your Office 365 account using a one-click sign in option.
+When enabled by your System Admin, you can log in with your Office 365 account using a one-click login option.
 
 .. image:: ../images/sign-in-office365.png
   :alt: Log in to Mattermost with your Office 365 credentials.

@@ -195,7 +195,7 @@ The Guest Account feature was reviewed by the Mattermost security team. We do no
 How can I validate my guests' identity?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can sign in. Alternatively, you can whitelist domains via **System Console > Guest Access > Whitelisted Guest Domains**.
+Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can log in. Alternatively, you can whitelist domains via **System Console > Guest Access > Whitelisted Guest Domains**.
 
 Can I restrict guests' ability to upload content?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

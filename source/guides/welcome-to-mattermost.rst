@@ -14,7 +14,7 @@ Access your Mattermost workspace
    Keyboard shortcuts </welcome/keyboard-shortcuts>
    Log out of Mattermost </welcome/log-out>
 
-* :doc:`Log in to Mattermost </welcome/log-in>` - Sign into a Mattermost workspace to connect with your teammates. 
+* :doc:`Log in to Mattermost </welcome/log-in>` - Log in to a Mattermost workspace to connect with your teammates. 
 * :doc:`Keyboard shortcuts </welcome/keyboard-shortcuts>` - Learn keyboard shortcuts for Mattermost product navigation and accessibility.
 * :doc:`Log out of Mattermost </welcome/log-out>` - Log out of all of your teams on the server.
 

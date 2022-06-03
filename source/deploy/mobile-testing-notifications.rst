@@ -22,7 +22,7 @@ Make sure to configure push notifications for your `pre-built mobile apps <https
 
 Then use the following instructions to confirm push notifications are working properly.
 
-1. Sign in to your mobile app with an account on your Mattermost Server, which we’ll refer to as “Account A”.
+1. Log in to your mobile app with an account on your Mattermost Server, which we’ll refer to as “Account A”.
 
 2. (iOS) When the app asks whether you wish to receive notifications, **confirm you want to receive notifications**.
 
@@ -45,7 +45,7 @@ Then use the following instructions to confirm push notifications are working pr
 
 4. Have “Account A” put the app to background or close the app.
 
-5. Using a browser, sign in to “Account B” on the same Mattermost Server.
+5. Using a browser, log in to “Account B” on the same Mattermost Server.
 
 6. Open a Direct Message with “Account A”, and send a message.
 

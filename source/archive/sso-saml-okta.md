@@ -16,7 +16,7 @@ You should save the two files that are generated, which will be referred to as t
 
 ## Set up a connection app for Mattermost SSO
 
-3 - Sign into Okta as an administrator.
+3 - Log in to Okta as an administrator.
 
 4 - Go to **Admin Dashboard > Applications > Add Application**.
 
@@ -68,7 +68,7 @@ Furthermore, you **must download the X.509 Public Certificate file** and save it
 
 ## Configure SAML for Mattermost
 
-13 - Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, and enter the following fields:
+13 - Start Mattermost server and log in to Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, and enter the following fields:
  - **SAML SSO URL**: `Identity Provider Single Sign-On URL` from Okta, specified in step 12.
  - **Identity Provider Issuer URL**: `Identity Provider Issuer` from Okta, specified in step 12.
  - **Identity Provider Public Certificate**: X.509 Public Certificate file you downloaded from Okta in step 12.
@@ -95,7 +95,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 18 - Click **Save**.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
+You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and log in with your SAML credentials to complete the switch.
 
 It is also recommended to post an announcement about how the migration will work to users.
 
@@ -111,11 +111,11 @@ If the System Administrator is locked out of the system during SAML configuratio
 
 #### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should log in using that method (such as email and password), then change their login method to SAML via **Account Settings > Security > Sign-in method**.
 
 #### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should log in using that method (such as email and password), then change their login method to SAML via **Account Settings > Security > Sign-in method**.
 
 #### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
 
