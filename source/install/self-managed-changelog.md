@@ -39,8 +39,8 @@ Latest Mattermost Releases:
 
 #### Playbooks Updates
  - Users can now easily keep processes up-to-date with the inline playbook editor.
- - Added a new statistics dashboard that displays the number of Playbooks and run instances within the server alongside other system statistics in the System Console.
- - Run triggers and actions now give more control over where status updates are posted throughout a run.
+ - A new statistics dashboard was added that displays the number of Playbooks and run instances within the server alongside other system statistics in the **System Console**.
+ - The run triggers and actions now give more control over where status updates are posted throughout a run.
 
 #### Message Formatting Toolbar
  - The [new formatting toolbar](https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar) makes markdown accessible to everyone with easy to use controls for commonly used formatting, such as bold, headings, links and more.
@@ -63,7 +63,7 @@ Latest Mattermost Releases:
      - Email verification is enabled
  - Changed **Actions** post menu hover text to **Message Actions**.
  - Enabled the new onboarding task list for end users.
- - The legacy ``Enable post formatting`` setting is now hidden when Advanced Text editor is enabled.
+ - The legacy ``Enable post formatting`` setting is now hidden when the Message Formatting Toolbar is enabled.
  - Updated Apps Framework to version 1.1.0 to add improved logging.
  
 #### Performance
