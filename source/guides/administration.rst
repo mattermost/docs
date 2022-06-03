@@ -4,7 +4,7 @@ Mattermost administration guide
 This guide is for people who administer an existing Mattermost server. It’s divided into three parts:
 
 * `The basics <https://docs.mattermost.com/guides/administration.html#the-basics>`__ - An overview of standard configurations and features.
-* `Cloud admin <https://docs.mattermost.com/guides/administration.html#cloud-admin>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
+* `Workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
 * `Self-hosted admin <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
 
 If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, refer to the :doc:`Mattermost Deployment Guide </guides/deployment>`.
@@ -40,23 +40,26 @@ These resources will help you get started with your Mattermost workspace.
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 
 Workspace management
-^^^^^^^^^^^^^^^^^^^^
+--------------------
+
 .. toctree::
     :maxdepth: 1
     :hidden:
 
     Mattermost Cloud billing </manage/cloud-billing>
+    Workspace limits </onboard/mattermost-limits>
     Workspace migration </manage/cloud-data-export>
     Cloud data residency </manage/cloud-data-residency>
 
 * :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
+* :doc:`Workspace limits </onboard/mattermost-limits>` - Understand the data limits on your plan.
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 
 Self-hosted admin
 -----------------
 
-This section of the guide is for admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the Cloud section of this page.
+This section of the guide is for admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the workspace management section of this page.
 
 Self-hosted setup and configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
