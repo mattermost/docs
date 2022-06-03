@@ -276,6 +276,10 @@ Enable post formatting
 
 This setting controls whether post formatting is rendered. When **On**, posts will be rendered with `Markdown formatting <https://docs.mattermost.com/channels/format-messages.html>`__, emoji, autolinked URLs, and line breaks. When **Off**, the raw text will be shown.
 
+.. note::
+
+  This setting is hidden from Mattermost v7.0 with the introduction of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html>`__ but retains your preference if previously set.
+
 Enable join/leave messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
