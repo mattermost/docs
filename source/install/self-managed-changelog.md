@@ -17,7 +17,6 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
  - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table. For MySQL, it takes around 19s for a table of size 0.7M rows. For PostgreSQL, it takes around 1.3ms for a table of size 0.7M rows.
- - CRT GA upgrade notes?
  - All channel header icons registered by plugins were moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there. A new config setting ``EnableAppBar`` enables this functionality. The setting defaults to ``false`` for self-hosted deployments.
  - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
  - The **System Console** session lengths configurations settings were changed to use a new hours unit, replacing the days. If anything goes awry during a server upgrade, it could result in users not being able to log in. For customer who use environment variables for those config settings, the automatic migration will not work and they'll need to add new environment variables: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=``, ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=``, and ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=``. The values need to be 24x the existing values in days. For example, if ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30``, they should set ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720``.
@@ -27,13 +26,13 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Collapsed Reply Threads (General Availability)
- - 
+ - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information and guidance for enabling the feature.
 
 #### Calls (Beta)
  - A built-in voice calling and screen sharing is now available. This is a Channels-specific integration.
 
-#### App Bar (Beta)
- - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins were moved to the new App Bar. It is recommended to enable the App Bar for servers with Calls enabled.
+#### Apps Bar (Beta)
+ - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins were moved to the new App Bar. It is recommended to enable the App Bar for servers with Calls enabled as the Apps Bar is the dedicated place for Calls start/join button.
 
 #### Updated Server Hardware Requirements
  - 
@@ -44,7 +43,6 @@ Latest Mattermost Releases:
  - Run triggers and actions now give more control over where status updates are posted throughout a run.
 
 #### Message Formatting Toolbar
-
  - The new formatting toolbar makes markdown accessible to everyone with easy to use controls for commonly used formatting, such as bold, headings, links and more.
 
 ### Improvements
@@ -101,7 +99,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it.
    - The default for ``CollapsedThreads`` has been changed to ``always_on``. This does not affect existing configurations where this value is already set to some other value.
  - Under ``ExperimentalSettings`` in ``config.json``:
-   - Added a new config setting ``EnableAppBar`` to enable and disable the new App Bar.
+   - Added a new config setting ``EnableAppBar`` to enable and disable the new App Bar. It is recommended to enable the App Bar for servers with Calls enabled as the Apps Bar is the dedicated place for Calls start/join button.
 
 #### API Changes
  - Added new API endpoints ``GET /api/v4/teams/:team_id/top/channels`` and ``GET /api/v4/users/me/top/channels`` to get top channels for a team and user.
@@ -122,8 +120,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Boards export and reimport duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
 
 ### Contributors
-
-
+ - 
 
 ## Release v6.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
