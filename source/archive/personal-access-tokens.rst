@@ -33,7 +33,7 @@ You may optionally allow the account to post to any channel in your Mattermost s
 
 Then hit **Save**.
 
-5. Log in to the user account to create a personal access token.
+5. Sign in to the user account to create a personal access token.
 
 6. Go to **Account Settings > Security > Personal Access Tokens** and click **Create New Token**.
 
@@ -61,7 +61,7 @@ Tokens can also be temporarily deactivated from the user's account settings. Onc
 Account Settings
 .................
 
-1. Log in to the user account and go to **Account Settings > Security > Personal Access Tokens**.
+1. Sign in to the user account and go to **Account Settings > Security > Personal Access Tokens**.
 
 2. Identify the access token you want to revoke and hit **Delete**. Confirm the deletion.
 

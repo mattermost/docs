@@ -157,7 +157,7 @@ You’re now about to finish configuring SAML for Mattermost!
 
 ## Configure SAML for Mattermost
 
-30 - Start Mattermost server and log in to Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
+30 - Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
   - `SAML SSO URL`: **SAML 2.0/W-Federation URL** ADFS Endpoint you noted in step 1.
   - `Identity Provider Issuer URL`: `Relying party trust identifier` from ADFS you specified in step 11.
   - `Identity Provider Public Certificate`: X.509 Public Certificate you downloaded in step 29.
@@ -184,7 +184,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 35 - Click `Save`.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and log in with your SAML credentials to complete the switch.
+You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
 It is also recommended to post an announcement about how the migration will work to users.
 
@@ -200,7 +200,7 @@ If the System Administrator is locked out of the system during SAML configuratio
 
 #### 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
-This usually means an existing account has another authentication method enabled. If the user wants to use the existing account for SAML authentication, they should log in using that method (such as email and password), then change their login method to SAML via **Account Settings > Security > Sign-in method**.
+This usually means an existing account has another authentication method enabled. If the user wants to use the existing account for SAML authentication, they should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 If the user wants to use another ADFS account for SAML instead, they will first need to log out from the existing session, then re-enter credentials for the other account. To log out from the existing session, either:
 
@@ -209,7 +209,7 @@ If the user wants to use another ADFS account for SAML instead, they will first 
 
 #### 3. Received error message: `An account with that email already exists. Please contact your Administrator.`
 
-This usually means an existing account has another authentication method enabled. If so, the user should log in using that method (such as email and password), then change their login method to SAML via **Account Settings > Security > Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 #### 4. Received error message: `SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.`
 

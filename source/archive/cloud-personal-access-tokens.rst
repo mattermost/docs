@@ -58,7 +58,7 @@ Tokens can also be temporarily deactivated from the user's account settings. Onc
 Account Settings
 .................
 
-1. Log in to the user account and go to **Account Settings > Security > Personal Access Tokens**. 
+1. Sign in to the user account and go to **Account Settings > Security > Personal Access Tokens**. 
 2. Identify the access token you want to revoke, then select **Delete**. 
 3. Confirm the deletion.
 
