@@ -79,7 +79,7 @@ In self-hosted Mattermost v7.0 deployments, the App Bar is hidden and integratio
     
     In Mattermost Cloud workspaces, enabled integrations automatically display in the App Bar on the far right. Cloud System Admins can't disable this feature or move the integration icons back to the channel header.
 
-    Integrations currently registered to the channel bar will move to the App Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the developer documentation for details on registering integrations to the App Bar.
+    Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the developer documentation for details on registering integrations to the Apps Bar.
 
 Message actions have moved
 --------------------------
