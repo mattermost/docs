@@ -5676,7 +5676,7 @@ Shared channels enables the ability to establish secure connections between Matt
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
-Enable App Bar
+Enable Apps Bar
 ^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
