@@ -27,10 +27,10 @@ Users are restricted from creating teams when at or above the teams limit for th
    - Users will be prevented from unarchiving teams if they're at or over the teams limit for their plan.
 
 #### Calls (Beta)
- - A built-in voice calling and screen sharing is now available. This is a Channels-specific integration.
+ - Native voice calling and screen sharing is now available. This is a Channels-specific integration.
 
 #### Apps Bar (Beta)
- - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins were moved to the new App Bar. It is recommended to enable the App Bar for servers with Calls enabled as the Apps Bar is the dedicated place for Calls start/join button.
+ - Channel header is now decluttered when a new configuration setting via **System Console > Experimental > Features > Enable App Bar** is enabled, the channel header will be decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins will be moved to the new Apps Bar when the configuration setting is enabled. We recommend enabling the Apps Bar for servers with Calls enabled since the Apps Bar helps make space for the dedicated **Start Call** button in the channel header.
 
 #### Collapsed Reply Threads (General Availability)
  - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information and guidance for enabling the feature.
@@ -39,11 +39,7 @@ Users are restricted from creating teams when at or above the teams limit for th
 
 #### User Interface (UI)
  - Added a modal to allow users to switch subscription plans pre-trial.
- - Applied new designs for the Login screen:
-     - Default login
-     - OAuth options
-     - Custom branding
-     - MFA token
+ - Applied new designs for the Login screen.
  - Changed some tooltips to appear when focused instead of just on hover.
  - The legacy ``Enable post formatting`` setting is now hidden when the Message Formatting Toolbar is enabled.
  - Updated Apps Framework to version 1.1.0 to add improved logging.
