@@ -71,7 +71,7 @@ App Bar (beta)
 We're moving access to your enabled Mattermost integrations, including the icons for Playbooks and Boards, from the channel header in the center pane. Their new home is a vertical pane located to far right of the Mattermost screen called the App Bar.
 
 .. image:: ../images/app-bar.png
-    :alt: You can access your Mattermost integrations from the App Bar when your System Admin enables this feature in the System Console.
+    :alt: You can access your Mattermost integrations from the Apps Bar when your System Admin enables this feature in the System Console.
 
 In self-hosted Mattermost v7.0 deployments, the App Bar is hidden and integrations continue to display in the channel header by default. Your System Admin can `enable the App Bar in the System Console <https://docs.mattermost.com/configure/configuration-settings.html#enable-app-bar>`__. When enabled, access to all Mattermost integrations, with the exception of beta calls functionality, moves to the far right pane.
 
