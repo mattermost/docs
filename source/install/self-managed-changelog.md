@@ -86,7 +86,6 @@ Latest Mattermost Releases:
  - Fixed an issue where the S3 **Test Connection** button deceptively failed unless the user pressed **Save** first.
  - Fixed an issue where Workspace Optimization did not load in the System Console on subpath servers.
  - Fixed an issue where an error was logged when ``SendEmailNotifications`` was not set to ``true``.
- - Fixed an issue in X-Forwarded-For header parsing when no whitespaces between values are provided.
    
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
