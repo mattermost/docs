@@ -5681,7 +5681,7 @@ Enable Apps Bar
 
 |all-plans| |cloud| |self-hosted|
 
-This setting enables the App Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
+This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
 
 .. note::
   
