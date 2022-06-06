@@ -53,6 +53,9 @@ Users are restricted from creating teams when at or above the teams limit for th
  - To enable or disable the App Bar, a new config setting ``ExperimentalSettings.EnableAppBar`` was added. 
  - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on.
 
+#### API Changes
+ - To allow Admins to retrieve contents of posts whether they are deleted or not, ``include_deleted`` query parameter was introduced to ``GetPost`` endpoint.
+
 #### Performance
  - Reduced the number of calls made to ``viewChannel`` API during regular usage.
  - Added pagination to the ``getPostThread`` API calls.
