@@ -180,6 +180,141 @@ The process described below needs to be completed prior to proceeding with the M
   The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced, review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact Mattermost customer support for assistance.
 
   Once complete, access your Mattermost instance and confirm that the database has been restored.
+Migrate From Helm Chart
+--------------------------------------------
 
+If you have previosuly installed mattermost as helm chart deployment, you can easily move to an operator installed following the provided steps
+
+1. Create a namespace dedicated fo the operator
+
+.. code-block:: sh
+
+  $ kubectl create ns mattermost-operator
+
+2. Save the secrets from the current installation , if you have extra secrets mounted as a volume save them as well
+
+.. code-block:: sh
+
+  $ kubectl get secrets -n mattermost mattermost-db-secret -o yaml > mattermost-db-secret.yaml
+  $ kubectl get secrets -n mattermost mattermost-license-secret -o yaml > mattermost-license-secret.yaml
+  $ kubectl get secrets -n cert -o yaml > cert.yaml
+
+3. Change the db secret to match operator, the helm used mattermost.dbsecret while the operator uses DB_CONNECTION_STRING
+
+.. code-block:: sh
+
+  $ vim mattermost-db-secret.yaml
+
+.. code-block:: yaml
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: mattermost-db-secret
+  data:
+    DB_CONNECTION_STRING: "db_connection_string"
+
+4. Create S3 Secret, mattermost operator uses secret while helm uses environment variables
+
+.. code-block:: yaml
+
+  apiVersion: v1
+  metadata:
+    name: s3-secret
+  kind: Secret
+  stringData:
+    accesskey: accesskey
+    secretkey: secretkey
+
+5. Scale the current installation to 0 and create the operator
+
+.. code-block:: sh
+
+  $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
+  $ kubectl scale deployment -n mattermost mattermost-deployment --replicas=0
+
+6. Apply the new secrets in the new namespace 
+
+.. code-block:: sh
+
+  $ kubectl apply -f mattermost-db-secret.yaml -n mattermost-operator 
+  $ kubectl apply -f mattermost mattermost-license-secret.yaml -n mattermost-operator
+  $ kubectl apply -f cert.yaml -n mattermost-operator
+  $ kubectl apply -f s3-secret -n mattermost-operator
+
+7. Create a mattermost installation according to the secrets imported and exported to the new ns
+
+.. code-block:: yaml
+
+  apiVersion: installation.mattermost.com/v1beta1
+  kind: Mattermost
+  metadata:
+    name: mm-example
+  spec:
+    image: mattermost/mattermost-enterprise-edition
+    imagePullPolicy: IfNotPresent
+    version: 6.0.0
+    size: 5000users
+    ingress:
+      enabled: true
+      host: example.mattermost-example.com
+      tlsSecret: "my-tls"
+    licenseSecret: "license-secret"
+    database:
+      external:
+        secret: db-secret
+    fileStore:
+      external:
+        url: s3.amazonaws.com
+        bucket: my-s3-bucket
+        secret: s3-secret
+    elasticSearch: {}
+    volumeMounts:
+    - name: certificates
+      mountPath: /etc/ssl/certs/mycert.pem
+      subPath: mycert.pem
+    volumes:
+    - name: certificates
+      secret:
+        defaultMode: 420
+        secretName: cert
+
+Save the file as mattermost-installation.yaml. While recommended file names are provided, your naming conventions may differ.
+
+8. Apply the new manifest in the relavent namespace 
+
+.. code-block:: sh
+
+  $ kubectl apply -n mattermost -f mattermost-installation.yaml
+
+The deployment process can be monitored in the Kubernetes user interface or in command line by running:
+
+.. code-block:: sh
+
+  $ kubectl -n mattermost get mm -w
+
+The installation should be deployed successfully, when the Custom Resource reaches the stable state.
+
+9. Configure DNS and use Mattermost.
+
+  When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
+
+  .. code-block:: sh
+
+    $ kubectl -n mattermost-operator get ingress
+
+  Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
+
+  Use your domain registration service to create a canonical name or IP address record for the ``ingress.host`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+
+  Navigate to the ``ingress.host`` URL in your browser and use Mattermost.
+
+  If you just want to try it out on your local machine without configuring the domain, run:
+
+  .. code-block:: sh
+
+    $ kubectl -n mattermost-operator port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
+
+  Then navigate to http://localhost:8065.
 .. include:: faq_kubernetes.rst
   :start-after: :nosearch:
