@@ -22,7 +22,7 @@ Retrospectives help teams identify areas of improvement in workflows. Each time 
 
 .. note::
 
-   Some metrics and goals functionality is only available on a paid plan. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
+   Some metrics and goals functionality (such as timeline and retrospectives) is only available on a paid plan. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
 
 Configure retrospectives before a run
 -------------------------------------
