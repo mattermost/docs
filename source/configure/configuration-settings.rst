@@ -6730,7 +6730,7 @@ File configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation. 
+Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. 
 
 **True**: File output is enabled.
 
