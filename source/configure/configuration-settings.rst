@@ -5687,9 +5687,9 @@ This setting enables the App Bar and moves all Mattermost integration icons from
   
   Integrations currently registered to the channel header will move to the App Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the developer documentation for details on registering integrations to the App Bar.
 
-**True**: All integration icons move from the channel header to the App Bar with the exception of the beta calls feature.
+**True**: All integration icons in the channel header move to the App Bar with the exception of the beta calls feature.
 
-**False**: All integration icons display in the channel header.
+**False**: All integration icons in the channel header display in the channel header.
 
 +----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
