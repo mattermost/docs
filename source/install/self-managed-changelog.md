@@ -16,10 +16,10 @@ Latest Mattermost Releases:
 **Release Day: 2022-06-15**
 
 ### Important Upgrade Notes
- - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table. For MySQL, it takes around 19 seconds for a table of size 0.7M rows. The time required for PostgreSQL is negligible.
+ - **IMPORTANT:** Session length configuration settings have changed from days to hours. If anything goes awry during a server upgrade, it could result in users not being able to log in. For customers who use environment variables for these config settings, the automatic migration won't work, and new configuration  environment variables must be added for: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=``, ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=``, and ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=``. The values need to be 24x the existing values in days. For example, if ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30``, they should set ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720``.
+ - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table. For MySQL, it takes around 19 seconds for a table of size 700,000 rows. The time required for PostgreSQL is negligible.
  - When a new configuration setting via **System Console > Experimental > Features > Enable App Bar** is enabled, all channel header icons registered by plugins will be moved to the new App Bar, even if they do not explicitly use the new registry function to render a component there. The setting for Apps Bar defaults to ``false`` for self-hosted deployments.
  - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
- - **IMPORTANT:** Session length configuration settings have changed from days to hours. If anything goes awry during a server upgrade, it could result in users not being able to log in. For customers who use environment variables for these config settings, the automatic migration won't work, and new configuration  environment variables must be added for: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=``, ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS=``, and ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS=``. The values need to be 24x the existing values in days. For example, if ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINDAYS=30``, they should set ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS=720``.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -32,10 +32,7 @@ Latest Mattermost Releases:
  - Native voice calling and screen sharing is now available. This is a Channels-specific integration.
 
 #### Apps Bar (Beta)
- - When a new configuration setting ``EnableAppBar`` is enabled, the channel header will be decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins will be moved to the new Apps Bar when the configuration setting is enabled. We recommend enabling the Apps Bar for servers with Calls enabled since the Apps Bar is the dedicated place for the Calls start/join button.
-
-#### Updated Server Hardware Requirements
- - 
+ - Channel header is now decluttered when a new configuration setting via **System Console > Experimental > Features > Enable App Bar** is enabled, the channel header will be decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins will be moved to the new Apps Bar when the configuration setting is enabled. We recommend enabling the Apps Bar for servers with Calls enabled since the Apps Bar is the dedicated place for the Calls start/join button.
 
 #### Playbooks Updates
  - Users can now easily keep processes up-to-date with the inline playbook editor.
@@ -43,31 +40,25 @@ Latest Mattermost Releases:
  - Run triggers and actions now provide more control over where status updates are posted throughout a run.
 
 #### Message Formatting Toolbar
- - The [new formatting toolbar](https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar) makes markdown accessible to everyone with easy to use controls for commonly used message formatting, such as bold, headings, links, and more.
+ - The [new formatting toolbar](https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar) makes Markdown accessible to everyone with easy to use controls for commonly used message formatting, such as bold, headings, links, and more.
 
 ### Improvements
 
 #### User Interface (UI)
  - For toggling the channel information in the right-hand pane, a shortcut CTRL/CMD+ALT+I was added.
  - Added an "Unread Channels" section to the channel switcher and included threads in the results.
- - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
  - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
- - Applied new designs for the Login screen:
-     - Default login
-     - OAuth options
-     - Custom branding
-     - MFA token
-     - Default signup
-     - OAuth options are available
-     - Custom branding is configured
-     - Email verification is enabled
- - Changed **Actions** post menu hover text to **Message Actions**.
+ - Applied new designs for the Login screen.
  - Enabled the new onboarding task list for end users.
  - The legacy ``Enable post formatting`` user setting is now hidden when the Message Formatting Toolbar is enabled.
- - Updated Apps Framework to version 1.1.0 to add improved logging.
  
 #### Performance
  - Improved the performance of aggregate queries related to Collapsed Reply Threads.
+
+#### Integrations
+ - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
+ - Changed **Actions** post menu hover text to **Message Actions**.
+ - Updated Apps Framework to version 1.1.0 to add improved logging.
 
 #### Administration
  - Timestamps are now enabled in the default audit configuration.
