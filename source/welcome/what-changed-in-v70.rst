@@ -49,23 +49,19 @@ What changed in Mattermost v7.0?
   :alt: Access additional message actions using the More actions icon.
 
 
-In Mattermost v7.0, we've changed where you can find channel information and where you can access your Mattermost integrations and their related actions. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new features and introduce you to new ways of navigating the product.
+In Mattermost v7.0, we've changed where you can find channel information, where you can access your Mattermost integrations and their related actions, and we've made it easier to format your messages. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new features and introduce you to new ways of navigating the product.
 
 Channel information
 -------------------
 
-When creating channels, you're prompted to provide context that helps other users understand the focus of the channel. From Mattermost v7.0, these channel details appear in both the center pane under the channel name and in a new Channel information screen. 
+When creating channels, you're prompted to provide context that helps other users understand the focus of the channel. From Mattermost v7.0, these channel details appear in both the center pane under the channel name and in a new channel information pane on the right. 
 
-You can show or hide channel information in the right pane by selecting the **View info** |view-info-icon| icon located in the top right corner of the center pane, or by using the keyboard shortcut CMD/CTRL+ALT+I.
+You can show or hide channel information in the right pane by selecting the **View Info** |view-info-icon| icon located in the top right corner of the center pane, or by using the keyboard shortcut CMD/CTRL+ALT+I.
 
 .. image:: ../images/channel-info.png
-    :alt: Access channel information by using the View info icon.
+    :alt: Access channel information by using the View Info icon.
 
-.. tip::
-
-    You can continue managing both the channel's purpose and header for any channel created prior to upgrading to Mattermost v7.0. New channels created using Mattermost v7.0 or later include only a channel header you can manage.
-
-Apps Bar (beta)
+Apps bar (beta)
 --------------
 
 We're moving access to your enabled Mattermost integrations, including the icons for Playbooks and Boards, from the channel header in the center pane. Their new home is a vertical pane located to far right of the Mattermost screen called the Apps Bar.
@@ -90,14 +86,6 @@ We’ve moved message actions for Mattermost integrations to their own dedicated
 
 .. image:: ../images/message-actions.png
     :alt: Take action on messages through your Mattermost integrations using message actions available through the Message actions icon.
-
-What else has changed?
-----------------------
-
-Share image links
-~~~~~~~~~~~~~~~~~
-
-In v7.0, it's easier than ever to share public links to images with other Mattermost users. In addition to the **Copy Link** option availble from the **More actions** |more-actions-icon| icon, when you hover over images in messages, a **Copy link** |copy-link-icon| icon displays in the top right corner. Use this icon to copy the URL of the image you can share with others. See the `share links to messages <https://docs.mattermost.com/channels/share-links.html>`__ documentation for more details.
 
 Message formatting toolbar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

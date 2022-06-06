@@ -27,7 +27,7 @@ Basic structure
 - Channel names are unique.
 - Channel names have a 64-character limit to ensure readability on both desktop and mobile devices.
 - An additional 1024 characters are available for describing the channel's focus in the in the channel header and channel information pane.
-- Channels created prior to Mattermost v7.0 include an additional 128 characters for a **Channel Purpose** that's visible in the channel header and the channel information pane.
+- An additional 128 characters are available for a **Channel Purpose** that's visible in the channel header and the channel information pane.
 
 Scope channel names
 -------------------
