@@ -65,7 +65,7 @@ You can show or hide channel information in the right pane by selecting the **Vi
 
     You can continue managing both the channel's purpose and header for any channel created prior to upgrading to Mattermost v7.0. New channels created using Mattermost v7.0 or later include only a channel header you can manage.
 
-App Bar (beta)
+Apps Bar (beta)
 --------------
 
 We're moving access to your enabled Mattermost integrations, including the icons for Playbooks and Boards, from the channel header in the center pane. Their new home is a vertical pane located to far right of the Mattermost screen called the App Bar.
