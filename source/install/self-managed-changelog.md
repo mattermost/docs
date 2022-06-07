@@ -16,7 +16,7 @@ Latest Mattermost Releases:
 - **v6.7.1, released **
   - Mattermost v6.7.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
-in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary. See more details [here](https://docs.mattermost.com/configure/configuration-settings.html#trusted-proxy-ip-header).
 - **v6.7.0, released 2022-05-16**
   - Original 6.7.0 release
 
@@ -137,7 +137,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v6.6.2, released **
   - Mattermost v6.6.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
-in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary. See more details [here](https://docs.mattermost.com/configure/configuration-settings.html#trusted-proxy-ip-header).
   - Fixed a bug that allowed to send test (empty) notifications even if the ``SendPushNotifications`` config was set to ``false``.
 - **v6.6.1, released 2022-04-28**
   - Mattermost v6.6.1 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -276,7 +276,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v6.5.2, released **
   - Mattermost v6.5.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
-in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary. See more details [here](https://docs.mattermost.com/configure/configuration-settings.html#trusted-proxy-ip-header).
   - Fixed a bug that allowed to send test (empty) notifications even if the ``SendPushNotifications`` config was set to ``false``.
   - The ping endpoint now can receive a device ID, which will report whether the device is able to receive push notifications.
 - **v6.5.1, released 2022-04-28**
@@ -514,7 +514,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v6.3.9, released **
   - Mattermost v6.3.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
-in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
+in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary. See more details [here](https://docs.mattermost.com/configure/configuration-settings.html#trusted-proxy-ip-header).
   - Fixed a bug that allowed to send test (empty) notifications even if the ``SendPushNotifications`` config was set to ``false``.
   - Pre-packaged Playbooks v1.23.2.
 - **v6.3.8, released 2022-04-28**
