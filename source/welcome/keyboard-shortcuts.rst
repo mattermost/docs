@@ -35,31 +35,31 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 
     Mattermost Desktop App v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. 
     
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | On Windows & Linux      | On Mac          | Description                                                                        |
-    +=========================+=================+====================================================================================+
-    | CTRL+F                  | CMD+F           | Move focus to the **Search** field and search the current channel.                 |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+  
-    | CTRL+SHIFT+S            | CMD+CTRL+S      | Open the **Servers** selector, then use UP/DOWN arrows to navigate                 |
-    |                         |                 | between servers. Use ENTER to select a server.                                     |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    || CTRL+SHIFT+1,          || CMD+CTRL+1,    || Navigate to the first server in the **Servers** list. Replace the number          |
-    || CTRL+SHIFT+2           || CMD+CTRL+2     || with the server's position within the server in the list.                         |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | CTRL+TAB                | CMD+TAB         | Navigate to the next product tab based on the current product selected.            |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+  
-    | CTRL+SHIFT+TAB          | CMD+SHIFT+TAB   | Navigate to the previous product tab based on the current product selected.        | 
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | CTRL+1                  | CMD+1           | Navigate to the **Channels** tab.                                                  |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | CTRL+2                  | CMD+2           | Navigate to the **Boards** tab.                                                    |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | CTRL+3                  | CMD+3           | Navigate to the **Playbooks** tab.                                                 |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | CTRL+TAB                | CMD+TAB         | Navigate to the next product tab based on your current position.                   |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
-    | CTRL+SHIFT+TAB          | CMD+SHIFT+TAB   | Navigate to the previous product tab based on your current position.               |
-    +-------------------------+-----------------+------------------------------------------------------------------------------------+
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    | On Windows & Linux              | On Mac               | Description                                                                        |
+    +=================================+======================+====================================================================================+
+    | :kbd:`⌃` :kbd:`F`               | :kbd:`⌘` :kbd:`F`    | Move focus to the **Search** field and search the current channel.                 |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+  
+    | :kbd:`⌃` :kbd:`⇧` :kbd:`S`      | ⌘ ⌃ S                | Open the **Servers** selector, then use UP/DOWN arrows to navigate                 |
+    |                                 |                      | between servers. Use ENTER to select a server.                                     |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    || :kbd:`⌃` :kbd:`⇧` :kbd:`1`,    || ⌘ ⌃ 1,              || Navigate to the first server in the **Servers** list. Replace the number          |
+    || :kbd:`⌃` :kbd:`⇧` :kbd:`2`     || ⌘ ⌃ 2               || with the server's position within the server in the list.                         |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    | ⌃ TAB                           | ⌘+TAB                | Navigate to the next product tab based on the current product selected.            |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+  
+    | ⌃ ⇧ TAB                         | ⌘+⇧+TAB              | Navigate to the previous product tab based on the current product selected.        | 
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    | ⌃ 1                             | ⌘+1                  | Navigate to the **Channels** tab.                                                  |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    | ⌃ 2                             | ⌘+2                  | Navigate to the **Boards** tab.                                                    |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    | ⌃ 3                             | ⌘+3                  | Navigate to the **Playbooks** tab.                                                 |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    | ⌃ TAB                           | ⌘+TAB                | Navigate to the next product tab based on your current position.                   |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    | ⌃ ⇧ TAB                         | ⌘+⇧+TAB              | Navigate to the previous product tab based on your current position.               |
+    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
 
   .. tab:: Desktop App v4.7 and earlier
 

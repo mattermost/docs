@@ -1855,3 +1855,9 @@ pre {
 #search-results .context {
 	word-break: break-word;
 }
+
+kbd {
+    border: 1px solid lime;
+    border-radius: 5px;
+    padding: 5px;
+}
