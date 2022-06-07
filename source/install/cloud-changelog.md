@@ -19,10 +19,10 @@ Latest Mattermost Cloud releases:
  - Mattermost Cloud now supports a free forever plan, Cloud Starter, for unlimited users for unlimited time.
  - Access unlimited channels, playbooks, and boards across the Mattermost platform, with unlimited voice calls and screen sharing in Direct Messages.
  - The free plan includes a few workspace limits:
-    - Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived.
-    - 10GB file storage across the platform, with 100MB upload limit.
-    - Unlimited installed apps or plugins, with maximum of 5 enabled at one time.
-    - Access to 10,000 most recent messages.
+    - Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived. History will be preserved, though that archived history can only be accessed if a free user upgrades to a paid subscription plan.
+    - 10GB file storage across the platform, with 100MB upload limit. History will be preserved.
+    - Unlimited installed apps or plugins, with maximum of 5 enabled at one time. History will be preserved.
+    - Access to 10,000 most recent messages. History will be preserved.
     - Access to 500 most recently updated cards.
     - Maximum 5 saved views per board.
 
@@ -33,7 +33,7 @@ Latest Mattermost Cloud releases:
  - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar.
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information and guidance for enabling the feature.
+ - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information.
 
 ### Improvements
 
@@ -57,11 +57,11 @@ Latest Mattermost Cloud releases:
  - Fixed an issue with uploading SVG files.
  - Fixed an issue where thread posts were not left-aligned in compact message display mode.
  - Fixed an error about a missing column for the Shared Channels experimental feature.
- - Fixed an issue where the channel menu drop-down TAB skipped the option "Move to...".
+ - Fixed an issue where the channel menu drop-down option "Move to..." was skipped when pressing the TAB keyboard key.
  - Fixed an issue where the bulk import failed due to reply ``CreateAt`` being greater than that of the parent post.
  - Fixed an undefined error when leaving a channel with the Unreads filter enabled.
- - Fixed an issue where clicking on a quick emoji reaction opened the right-hand side.
- - Fixed an issue where the keyboard focus did not go back to the post textbox after hitting Ctrl+Shift+P twice.
+ - Fixed an issue where clicking on a quick emoji reaction opened the right-hand pane.
+ - Fixed an issue where the keyboard focus did not go back to the post textbox after hitting CTRL/CMD+SHIFT+P twice.
  - Fixed an issue where the upload files button was positioned incorrectly.
 
 ### Known Issues
