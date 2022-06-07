@@ -10,7 +10,7 @@ Keyboard shortcuts for Mattermost Channels help you make a more efficient use of
 Navigation shortcuts for Mattermost Channels
 --------------------------------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 .. note::
   See our `Keyboard Accessibility in Channels <https://docs.mattermost.com/channels/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen reader users.
@@ -28,7 +28,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
 | CTRL+K                     | CMD+K                     | Open a quick channel selector dialog.                                            |
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
-| CTRL+SHIFT+K               | CMD+SHIFT+K               | Open the **Direct Messages** dialog.                                             |
+| CTRL+SHIFT+K               | CMD+SHIFT+K               | Open the **Drect Messages** dialog.                                             |
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
 | CTRL+SHIFT+A               | CMD+SHIFT+A               | Open the **Settings** dialog.                                                    |
 +----------------------------+---------------------------+----------------------------------------------------------------------------------+
@@ -46,7 +46,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 File upload shortcuts
 ---------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +--------------------+--------+-----------------+
 | On Windows & Linux | On Mac | Description     |
@@ -57,7 +57,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 Message shortcuts
 -----------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +----------------------------------+---------------------------------+-----------------------------------------------------------+
 | On Windows & Linux               | On Mac                          | Description                                               |
@@ -82,7 +82,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 Formatting shortcuts
 --------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +--------------------+--------------+-------------------------+
 | On Windows & Linux | On Mac       | Description             |
@@ -97,7 +97,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 Accessibility nagivation shortcuts
 ----------------------------------
 
-The following keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +------------------------------+------------------------------+--------------------------------------------------+
 | On Windows & Linux           | On Mac                       | Description                                      |
