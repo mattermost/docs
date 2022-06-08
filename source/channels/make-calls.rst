@@ -23,7 +23,7 @@ Mattermost calls introduces voice calling and screen sharing functionality in ch
 - Use calls on desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (ie. Channels, Boards, and Playbooks) while on a call.
 
-To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call you'll need to provide them with a guest account and add them to the channel. Users who are archived or not registered won't be able to join a call.
+To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered won't be able to join a call.
 
 Each call has a unique URL. You can share a call's URL to use in a meeting request or share with other team mates. The link is unique to each channel and does not change between calls. To access the link, hover over the call dialog in the channel and open the **More** menu. Select **Copy link**. The call link is valid for long as the channel is not archived or deleted.
 
