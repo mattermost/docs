@@ -30,7 +30,7 @@ Latest Mattermost Cloud releases:
  - Native voice calling and screen sharing is now available. This is a Channels-specific integration.
 
 #### Apps Bar (Beta)
- - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar.
+ - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
 
 #### Collapsed Reply Threads (General Availability)
  - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information.
@@ -40,7 +40,7 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Applied new designs for the Login screen.
  - Changed some tooltips to appear when focused instead of just on hover.
- - The legacy **Settings > Advanced Settings > Enable Post Formatting** setting is now deprecated in favor of the new message formatting toolbar.
+ - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now deprecated in favor of the new message formatting toolbar.
 
 #### Administration
  - For new Cloud Workspaces, the default value for **Collapsed Reply Threads** in **System Console > Experimental > Features** is now set to **Always On**. Does not impact existing workspaces where this value is already set.
