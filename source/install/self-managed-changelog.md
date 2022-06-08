@@ -66,6 +66,7 @@ Latest Mattermost Releases:
 
 #### Administration
  - Timestamps are now enabled in the default audit configuration.
+ - The Collapsed Reply Threads configuration option was moved in the **System Console** from **Experimental** to **Site Configuration > Posts**.
  
 #### Enterprise Subscription
  - Upgraded the minor version of the ElasticSearch development Docker image.
