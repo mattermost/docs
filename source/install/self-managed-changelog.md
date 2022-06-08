@@ -53,7 +53,7 @@ Latest Mattermost Releases:
  - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
  - Applied new designs for the Login screen.
  - Enabled the new onboarding task list for end users.
- - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now hidden when the Message Formatting Toolbar is enabled.
+ - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now deprecated in favor of the the new formatting toolbar.
  - Romanian language support was downgraded to Beta.
  
 #### Performance
