@@ -357,7 +357,8 @@ redirects = {
 "configure/config-ssl-http2-apache2.html": 
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html": 
-        "https://forum.mattermost.org/c/docs/37",
+        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
+
 
 # Configuration settings redirects
 "configure/configuration-settings.html#channels":
@@ -816,7 +817,7 @@ redirects = {
 "install/config-cloudfront.html":
         "https://docs.mattermost.com/configure/configuring-cloudfront-to-host-mattermost-static-assets.html",
 "install/config-apache2.html": 
-        "https://docs.mattermost.com/configure/configuring-apache2.html",
+        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "install/deploy-bitnami.html": 
         "https://docs.mattermost.com/install/deploying-team-edition-on-bitnami.html",
 "install/desktop.html": 
@@ -875,6 +876,8 @@ redirects = {
         "https://docs.mattermost.com/install/proxy-to-mattermost-transport-encryption.html",
 "install/use-kubernetes-mattermost.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
+"install/deploy-cloudron.html":
+        "https://forum.mattermost.com/t/deploy-mattermost-on-cloudron/13526",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
@@ -898,6 +901,10 @@ redirects = {
         "https://developers.mattermost.com/integrate/admin-guide/admin-zapier-integration/",
 "integrations/zoom.html": 
         "https://mattermost.gitbook.io/plugin-zoom/",
+
+# Manage redirects
+"manage/scripts.html":
+        "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",        
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":

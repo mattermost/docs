@@ -343,7 +343,7 @@ Now that you have an environment in place, we recommend working through the foll
 
  - mmctl Command Line Tool Resource: https://docs.mattermost.com/manage/mmctl-command-line-tool.html
  - Command Line Tools Resource: https://docs.mattermost.com/manage/command-line-tools.html
- - Database Scripts Resource: https://docs.mattermost.com/manage/scripts.html 
+ - Database Scripts Resource: https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527 
 
 Review the roll out 
 ~~~~~~~~~~~~~~~~~~~
@@ -375,7 +375,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Analyze usage by lines of business and peak usage times
 
- - Resources: https://docs.mattermost.com/manage/scripts.html
+ - Resources: https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527
 
 3. Analyze system performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
