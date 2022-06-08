@@ -48,6 +48,7 @@ Latest Mattermost Cloud releases:
  - For new Cloud Workspaces, the default value for **Collapsed Reply Threads** in **System Console > Experimental > Features** is now set to **Always On**. Does not impact existing workspaces where this value is already set.
  - Mattermost Cloud Professional plan now includes a 250GB file storage limit.
  - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
+ - The Collapsed Reply Threads configuration option was moved in the **System Console** from **Experimental** to **Site Configuration > Posts**.
 
 #### API Changes
  - To allow Admins to retrieve contents of posts whether they are deleted or not, ``include_deleted`` query parameter was introduced to ``GetPost`` endpoint.
