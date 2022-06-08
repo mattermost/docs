@@ -20,60 +20,41 @@ Make a call (beta)
   
 You can use Mattermost calls for voice calling and screen sharing functionality in channels, group messages, and direct messages. It’s available and on by default in Mattermost Cloud. For self-hosted deployments it's available as a plugin and needs to be enabled <link to config doc>.
 
-- Use Calls on desktop and mobile apps in addition to web browsers.
+- Use calls on desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (ie. Channels, Boards, and Playbooks) while on a call.
 
-To start a call, select **Start call** in the channel header. Anyone in the channel can join a call. If someone from outside of the organization wants to join a call they are not currently able to, unless they're provided with a guest account and added to the channel. No. When someone clicks on that link, Mattermost first checks if that person has permission to access the channel. So if for any reason they aren't allowed to access the channel (non-registered user, private channel but not a member, archived user etc.) then they will not be able to join the call.
+To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call you'll need to provide them with a guest account and add them to the channel. Users who are archived or not registered won't be able to join a call.
 
-Each call has a unique URL. Open the channel, group message, or direct message where you’d like to have a call and then select **Start call** on the top-right corner.
+Each call has a unique URL. You can share a call's URL to use in a meeting request or share with other team mates. The link is unique to each channel and does not change between calls. To access the link, hover over the call dialog in the channel and open the **More** menu. Select **Copy link**.
 
 Limitations
 -----------
 
 - In Mattermost Cloud, up to eight participants in each channel can join a call.
-- In Mattermost self-hosted, the recommended maximum number of participants per server is 200.
+- In Mattermost self-hosted, the recommended maximum number of participants per server is 200. This can be changed in the ``config.json`` file.
 
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin needs to be enabled in the System Console. Additional configuration is also available.
+For Mattermost self-hosted customers, the calls plugin needs to be enabled in the System Console. Additional configuration is also available via the System Console.
 
 Frequently asked questions
 --------------------------
 
-How do I start a call on the mobile app?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Tap the channel header and select **Start call** from the list menu.
-
-How can I copy the call link to paste in other places such as calendar invite?
-------------------------------------------------------------------------------
-
-Call is disconnected after a few seconds and I can't transmit voice nor hear anything.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an `rtc: connected` line should appear in the client-side logs (JS Console).
-FAQ
 
 How long is a link valid?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The call link is valid for long as the channel is not archived or deleted.
-
-Does the link change per call?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The link is unique to each channel and does not change between calls. 
+The call link is valid for long as the channel is not archived or deleted. 
 
 Can I password-protect a call?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No. Any member with sufficient permission to access the channel will be able to join the call.
-
-What does call data flow look like?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Client sends data to Mattermost server which then broadcasts to all call participants. There's a back and forth of messaging to initialize a call (it's called signaling in WebRTC jargon) which happens on WebSocket (TLS secured). Data is exchanged between the clients and MM and back. Clients don't connect directly to each other but always go through MM which means addresses are not leaked outside the server.
 
 Is there encryption?
 ~~~~~~~~~~~~~~~~~~~~
