@@ -25,7 +25,7 @@ You can use Mattermost calls for voice calling and screen sharing functionality 
 
 To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call you'll need to provide them with a guest account and add them to the channel. Users who are archived or not registered won't be able to join a call.
 
-Each call has a unique URL. You can share a call's URL to use in a meeting request or share with other team mates. The link is unique to each channel and does not change between calls. To access the link, hover over the call dialog in the channel and open the **More** menu. Select **Copy link**.
+Each call has a unique URL. You can share a call's URL to use in a meeting request or share with other team mates. The link is unique to each channel and does not change between calls. To access the link, hover over the call dialog in the channel and open the **More** menu. Select **Copy link**. The call link is valid for long as the channel is not archived or deleted.
 
 Limitations
 -----------
@@ -41,16 +41,6 @@ For Mattermost self-hosted customers, the calls plugin needs to be enabled in th
 Frequently asked questions
 --------------------------
 
-My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an `rtc: connected` line should appear in the client-side logs (JS Console).
-
-How long is a link valid?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The call link is valid for long as the channel is not archived or deleted. 
-
 Can I password-protect a call?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -59,12 +49,12 @@ No. Any member with sufficient permission to access the channel will be able to 
 Is there encryption?
 ~~~~~~~~~~~~~~~~~~~~
 
-Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through MM which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the MM server have access to unencrypted call data.
+Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through Mattermost which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the Mattermost server have access to unencrypted call data.
 
 What are the potential performance impacts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Database load should be minimal as there's nothing special happening there. Overall instance load however will be affected, especially CPU usage, growing as a function of the number of participants product the number of active tracks (unmuted participants and users sharing their screen). Screen sharing has the highest impact on both CPU and bandwidth. The latter can be more easily estimated as the audio/video bitrates are constrained and predictable (around 40-60Kbps for each audio track and up to 1Mbps per screen track).
+Database load should be minimal. Overall instance load however will be affected, especially CPU usage, growing as a function of the number of participants produce the number of active tracks (unmuted participants and users sharing their screen). Screen sharing has the highest impact on both CPU and bandwidth. The latter can be more easily estimated as the audio/video bitrates are constrained and predictable (around 40-60Kbps for each audio track and up to 1Mbps per screen track).
 
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,3 +66,12 @@ STUN servers are configurable on the plugin itself. The default one used is:
 Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). 
 
 No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
+
+Troubleshooting
+---------------
+
+My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an `rtc: connected` line should appear in the client-side logs (JS Console).
+
