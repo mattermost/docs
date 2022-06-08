@@ -19,7 +19,8 @@ Latest Mattermost Cloud releases:
  - Mattermost Cloud now supports a free forever plan, Cloud Starter, for unlimited users for unlimited time.
  - Access unlimited channels, playbooks, and boards across the Mattermost platform, with unlimited voice calls and screen sharing in Direct Messages.
  - The free plan includes a few workspace limits. [Upgrade to Professional for unlimited access](https://mattermost.com/pricing/):
-    - Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived. History will be preserved, though that archived history can only be accessed if a free user upgrades to a paid subscription plan.
+    - Ability to start a free 30-day Enterprise trial, with access to all features during the trial period.
+    - Maximum 1 team. Additional teams can be created during a trial or on a paid plan, which are archived if downgraded back to Starter. History will be preserved, though that archived history can only be accessed if a free user upgrades to a paid subscription plan.
     - 10GB file storage across the platform, with 100MB upload limit. History will be preserved.
     - Unlimited installed apps or plugins, with maximum of 5 enabled at one time. History will be preserved.
     - Access to 10,000 most recent messages. History will be preserved.
