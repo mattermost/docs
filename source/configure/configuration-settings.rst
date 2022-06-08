@@ -4292,17 +4292,17 @@ Enable Plugin
 
 **False**: Disables the calls plugin on your Mattermost workspace.
 
-RTC server port
+**RTC Server Port**: Default setting is 8443.
 
-Enable on specific channels
+**Enable on Specific Channels**: This can be set to **true** or **false**.
 
-Enable on all channels
+**Enable on All Channels**: This can be set to **true** or **false**.
 
-ICE Host Override
+**ICE Host Override**: This is an optional field.
 
-ICE Servers
+**ICE Servers**: This is an optional field.
 
-RTCD Service URL
+**RTCD Service URL**: This is an optional field.
 
 Experimental Features
 ^^^^^^^^^^^^^^^^^^^^^
