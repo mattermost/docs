@@ -26,7 +26,7 @@ Edit a playbook
 You can change a playbook’s configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
 1. Go to **Product menu > Playbooks**.
-2. Find the playbook to be edited.
+2. Find the playbook you want to edit.
 
    - Only public playbooks and private playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.
 
@@ -35,7 +35,8 @@ You can change a playbook’s configuration at any time, but changes will only b
    - To edit the playbook directly select the actions menu next to the playbook name, then select **Edit**.
    - To access the playbook dashboard, select the hyperlinked playbook name.
 
-4. Configure the playbook the same way a playbook is created or edited.
+4. Select the **Outline** tab. 
+5. Configure the playbook the same way a playbook is created or edited.
 
 Make checklists
 ----------------
@@ -92,6 +93,11 @@ If you’re a System Admin or Channel Admin of the run channel you can also edit
 Only Channel Admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
 
 If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
+
+Run metrics
+-----------
+
+The **Usage** tab in the playbooks dashboard provides run metrics for that playbook. These metrics are available to all viewers. It's not possible to edit or add to these metrics.
 
 Webhooks
 --------
