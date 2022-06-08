@@ -59,13 +59,7 @@ Database load should be minimal. Overall instance load however will be affected,
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-STUN servers are configurable on the plugin itself. The default one used is:
-
-- stun:stun.global.calls.mattermost.com:3478
-
-Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). 
-
-No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
+STUN servers are configurable on the plugin itself.
 
 Troubleshooting
 ---------------
