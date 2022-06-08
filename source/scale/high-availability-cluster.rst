@@ -291,8 +291,8 @@ Transparent failover
 
 The database can be configured for High Availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
 
-Recommended configuration settings
-``````````````````````````````````
+Recommended configuration settings for Postgres
+```````````````````````````````````````````````
 
 If you're using Postgres as the choice of database, we recommend the following configuration optimizations on your Mattermost server.
 
@@ -331,6 +331,17 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 12. **autovacuum_vacuum_cost_limit**: 500
 
 Note that if you are using pgbouncer or any similar connection pooling proxy in front of your DB, then the keepalive settings should be applied to the proxy instead and revert the keepalive settings for the DB back to defaults.
+
+Recommended configuration settings for MySQL
+```````````````````````````````````````````````
+
+For MySQL, we recommend the following configuration options for high performance.
+
+1. **innodb_buffer_pool_size**: Set to about 70% of your total RAM.
+2. **innodb_log_file_size**: Set to 256MB. Increasing this helps in write intensive operations. Downside is that recovery times will be longer.
+3. **innodb_flush_log_at_trx_commit**: 2. Note that this can potentially cause up to 1 second of loss of transaction data.
+4. **max_heap_table_size**: 64MB.
+5. **tmp_table_size**: 64MB.
 
 Leader election
 ^^^^^^^^^^^^^^^^
