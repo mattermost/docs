@@ -18,7 +18,7 @@ Make a call (beta)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
   
-You can use Mattermost calls for voice calling and screen sharing functionality in channels, group messages, and direct messages. It’s available and on by default in Mattermost Cloud. For self-hosted deployments it's available as a plugin and needs to be enabled <link to config doc>.
+Mattermost calls introduces voice calling and screen sharing functionality in channels, group messages, and direct messages, and is available as a beta release from Mattermost v7.0. Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that can be enabled in the System Console by a System Admin. <link to config doc>.
 
 - Use calls on desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (ie. Channels, Boards, and Playbooks) while on a call.
