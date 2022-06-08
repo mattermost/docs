@@ -42,6 +42,7 @@ Latest Mattermost Cloud releases:
  - Applied new designs for the Login screen.
  - Changed some tooltips to appear when focused instead of just on hover.
  - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now deprecated in favor of the new message formatting toolbar.
+ - Romanian language support was downgraded to Beta.
 
 #### Administration
  - For new Cloud Workspaces, the default value for **Collapsed Reply Threads** in **System Console > Experimental > Features** is now set to **Always On**. Does not impact existing workspaces where this value is already set.
