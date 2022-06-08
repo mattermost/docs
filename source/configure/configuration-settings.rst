@@ -4278,7 +4278,7 @@ Token
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
-Calls
+Calls (beta)
 ~~~~~
 
 Access the following configuration settings in the System Console by going to **Plugins > Calls**.
