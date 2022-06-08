@@ -2582,7 +2582,6 @@ The default recommendation for secure deployment is to host Mattermost within yo
 
 If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
 
-
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4279,6 +4278,37 @@ Token
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
+Calls
+~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > Calls**.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+|all-plans| |self-hosted| |cloud|
+
+**True**: Enables the calls plugin on your Mattermost workspace.
+
+**False**: Disables the calls plugin on your Mattermost workspace.
+
+RTC server port
+
+Enable on specific channels
+
+Enable on all channels
+
+ICE Host Override
+
+ICE Servers
+
+RTCD Service URL
+
+Experimental Features
+^^^^^^^^^^^^^^^^^^^^^
+
+You can select whether to use the App Bar for this plugin.
+
 Channel Export
 ~~~~~~~~~~~~~~
 
@@ -4313,7 +4343,6 @@ Channel Name
 |all-plans| |self-hosted|
 
 Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
-
 
 Username
 ^^^^^^^^
