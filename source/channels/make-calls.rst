@@ -18,10 +18,14 @@ Make a call (beta)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
   
-Mattermost calls introduces voice calling and screen sharing functionality in channels, group messages, and direct messages, and is available as a beta release from Mattermost v7.0. Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that can be enabled in the System Console by a System Admin. <link to config doc>.
+Mattermost calls introduces voice calling and screen sharing functionality in channels, group messages, and direct messages, and is available as a beta release from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
+
+From 7.0, you can:
 
 - Use calls on desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (ie. Channels, Boards, and Playbooks) while on a call.
+
+Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that can be enabled in the System Console by a System Admin. <link to config doc>.
 
 To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered won't be able to join a call.
 
@@ -30,7 +34,7 @@ Each call has a unique URL. You can share a call's URL to use in a meeting reque
 Limitations
 -----------
 
-- In Mattermost Cloud, up to eight participants in each channel can join a call.
+- In Mattermost Cloud, up to eight participants per channel can join a call.
 - In Mattermost self-hosted deployments, the recommended maximum number of participants, across all calls in all channels on the server, is 200. This can be changed in the ``config.json`` file.
 
 Configuration
