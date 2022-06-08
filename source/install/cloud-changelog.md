@@ -28,7 +28,7 @@ Latest Mattermost Cloud releases:
     - Maximum 5 saved views per board.
 
 #### Calls (Beta)
- - Native voice calling and screen sharing is now available. This is a Channels-specific integration.
+ - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
 
 #### Apps Bar (Beta)
  - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
@@ -69,7 +69,9 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the upload files button was positioned incorrectly.
 
 ### Known Issues
- - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - Back bar is showing over the channel header in the Desktop App [MM-44644](https://mattermost.atlassian.net/browse/MM-44644).
+ - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
