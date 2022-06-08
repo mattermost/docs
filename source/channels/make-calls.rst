@@ -31,7 +31,7 @@ Limitations
 -----------
 
 - In Mattermost Cloud, up to eight participants in each channel can join a call.
-- In Mattermost self-hosted, the recommended maximum number of participants per server is 200. This can be changed in the ``config.json`` file.
+- In Mattermost self-hosted deployments, the recommended maximum number of participants, across all calls in all channels on the server, is 200. This can be changed in the ``config.json`` file.
 
 Configuration
 -------------
