@@ -41,7 +41,7 @@ Latest Mattermost Cloud releases:
 #### User Interface (UI)
  - Applied new designs for the Login screen.
  - Changed some tooltips to appear when focused instead of just on hover.
- - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now deprecated in favor of the new message formatting toolbar.
+ - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now deprecated in favor of the the new formatting toolbar.
  - Romanian language support was downgraded to Beta.
 
 #### Administration
