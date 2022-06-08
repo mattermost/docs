@@ -144,7 +144,7 @@ During each monthly release, Mattermost backports high severity or high impact s
 | 4.0         | Feature               |  2017-07-16              | 2017-09-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 
-Desktop and Mobile App compatibility
+Desktop and mobile app compatibility
 -------------------------------------
 
 Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release <https://docs.mattermost.com/upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
