@@ -291,7 +291,7 @@ Transparent failover
 
 The database can be configured for High Availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
 
-Recommended configuration settings for Postgres
+Recommended configuration settings for PostgreSQL
 ```````````````````````````````````````````````
 
 If you're using Postgres as the choice of database, we recommend the following configuration optimizations on your Mattermost server.
