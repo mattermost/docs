@@ -54,6 +54,7 @@ Latest Mattermost Releases:
  - Applied new designs for the Login screen.
  - Enabled the new onboarding task list for end users.
  - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now hidden when the Message Formatting Toolbar is enabled.
+ - Romanian language support was downgraded to Beta.
  
 #### Performance
  - Improved the performance of aggregate queries related to Collapsed Reply Threads.
