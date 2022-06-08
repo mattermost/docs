@@ -1398,46 +1398,46 @@ Improves user experience by extending sessions and keeping users logged in if th
 | This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-Session length for email and AD/LDAP authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Session length for email and AD/LDAP authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 30`` with numerical input.             |
-+--------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthWebInHours": 720`` with numerical input.             |
++----------------------------------------------------------------------------------------------------------------+
 
-Session length for mobile apps (days)
+Session length for mobile apps
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
+
+After changing this setting, the new session length will take effect after the next time the user enters their credentials.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthMobileInHours": 4320`` with numerical input.        |
++---------------------------------------------------------------------------------------------------------------+
+
+Session length for SSO authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays": 180`` with numerical input.        |
-+-------------------------------------------------------------------------------------------------------------+
-
-Session length for SSO authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
 This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthSSOInDays": 30`` with numerical input. |
-+--------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthSSOInHours": 720`` with numerical input. |
++----------------------------------------------------------------------------------------------------+
 
 Session Cache (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^
