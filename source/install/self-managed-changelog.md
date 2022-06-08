@@ -32,7 +32,7 @@ Latest Mattermost Releases:
  - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information and guidance for enabling the feature.
 
 #### Calls (Beta)
- - Native voice calling and screen sharing is now available. This is a Channels-specific integration.
+ - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
 
 #### Apps Bar (Beta)
  - Channel header is now decluttered when a new configuration setting via **System Console > Experimental > Features > Enable App Bar** is enabled, to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins will be moved to the new Apps Bar when the configuration setting is enabled, while Calls remains in the channel header. We recommend enabling the Apps Bar for servers with Calls enabled since the Apps Bar helps make space for the dedicated **Start Call** button in the channel header.
@@ -107,6 +107,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.0 is built with Go ``v1.18.1``.
 
 ### Known Issues
+ - Back bar is showing over the channel header in the Desktop App [MM-44644](https://mattermost.atlassian.net/browse/MM-44644).
+ - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
