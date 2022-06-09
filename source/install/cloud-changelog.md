@@ -34,7 +34,7 @@ Latest Mattermost Cloud releases:
  - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information.
+ - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479) for more information and guidance for enabling the feature.
 
 ### Improvements
 
@@ -45,7 +45,7 @@ Latest Mattermost Cloud releases:
  - Romanian language support was downgraded to Beta.
 
 #### Administration
- - For new Cloud Workspaces, the default value for **Collapsed Reply Threads** in **System Console > Experimental > Features** is now set to **Always On**. Does not impact existing workspaces where this value is already set.
+ - For new Cloud Workspaces, the default value for **Collapsed Reply Threads** in **System Console > Posts** is now set to **Always On**. Does not impact existing workspaces where this value is already set.
  - Mattermost Cloud Professional plan now includes a 250GB file storage limit.
  - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
  - The Collapsed Reply Threads configuration option was moved in the **System Console** from **Experimental** to **Site Configuration > Posts**.
