@@ -4,7 +4,7 @@ Cloud subscriptions
 Purchase a Cloud subscription
 ------------------------------
 
-Mattermost Cloud subscriptions start with a 14-day trial. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan.
+Mattermost Cloud can be used free forever with Mattermost Starter. You can also start a free, 30-day, trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan. You can upgrade to a monthly per-user subscription, with Mattermost Professional and Mattermost Enterprise.
 
 1. Select **Subscribe now** from the banner.
 2. Provide your credit card details. 
@@ -17,12 +17,12 @@ Your credit card will be verified and you'll be charged at the end of the billin
 View subscription details
 -------------------------
 
-Go to **System Console > Billing & Account > Subscription** to access the following subscription details:
+In **System Console > Billing & Account > Subscription** you have access to the following information:
 
 - Subscription invoices
 - Billing history
 - Organization information
-- Credit Card payment methods
+- Credit card payment methods
 
 Please see the `Cloud Billing <https://docs.mattermost.com/manage/cloud-billing.html>`__ documentation for more detailed information on the Cloud billing process.
 
