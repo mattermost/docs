@@ -36,7 +36,7 @@ You can change a playbook’s configuration at any time, but changes will only b
    - To access the playbook dashboard, select the hyperlinked playbook name.
 
 4. Select the **Outline** tab. 
-5. Configure the playbook the same way a playbook is created or edited.
+5. Edit the text portions of the playbook inline. Use the left-hand menu to navigate to other parts of the playbook that you may want to edit.
 
 Make checklists
 ----------------
