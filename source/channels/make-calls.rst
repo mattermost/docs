@@ -29,7 +29,7 @@ Mattermost Cloud users can start using calls right away. For Mattermost self-hos
 
 To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered won't be able to join a call.
 
-Each call has a unique URL. You can share a call's URL to use in a meeting request or share with other team mates. The link is unique to each channel and does not change between calls. To access the link, hover over the call dialog in the channel and open the **More** menu. Select **Copy link**. The call link is valid for long as the channel is not archived or deleted.
+Each call has a unique URL. You can share a call's URL to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. To access the link, hover over the call dialog in the channel and open the **More** menu. Select **Copy link**. The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
 Limitations
 -----------
