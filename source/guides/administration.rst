@@ -21,6 +21,7 @@ The basics
     User management configuration settings </configure/user-management-configuration-settings>
     Web server configuration settings </configure/web-server-configuration-settings>
     Database configuration settings </configure/database-configuration-settings>
+    Elasticsearch configuraiton settings </configure/elasticsearch-configuration-settings>
     Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
     Advanced permissions </onboard/advanced-permissions>
     Guest accounts </onboard/guest-accounts>
