@@ -2187,7 +2187,7 @@ Automatically Follow Threads
 
 |all-plans| |self-hosted|
 
-This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. See the XXX-KBarticle for details.
+This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. See the `administrator’s guide to enabling Collapsed Reply Threads <https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479>`__ knowledge base article for details.
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread. Mattermost Cloud workspaces have this setting enabled.
 
@@ -2210,7 +2210,7 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 
 .. important::
     
-    Customers upgrading to v7.0 must review XXX-KB article-link to learn about performance expectations and guidance prior to enabling this functionality. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
+    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
 
 System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
 
