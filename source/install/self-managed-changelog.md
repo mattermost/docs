@@ -29,7 +29,7 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](XXXXXX link to CRT GA blog post) is now generally available. Please reference [this article](link to KB article XXXXXX) for more information and guidance for enabling the feature.
+ - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479) for more information and guidance for enabling the feature.
 
 #### Calls (Beta)
  - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
@@ -57,7 +57,7 @@ Latest Mattermost Releases:
  - Romanian language support was downgraded to Beta.
  
 #### Performance
- - Improved the performance of aggregate queries related to Collapsed Reply Threads.
+ - Improved the performance of aggregate queries related to Collapsed Reply Threads. Learn more about these server performance optimizations in [this article](https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479).
 
 #### Integrations
  - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
@@ -92,7 +92,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - Changed ``SessionLengthMobileInDays`` to ``SessionLengthMobileInHours``.
    - Changed ``SessionLengthSSOInDays`` to ``SessionLengthSSOInHours``.
    - The value of ``TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary.
-   - Added ``always-on`` and ``default-on`` settings to **System Console > Experimental Features** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it.
+   - Added ``always-on`` and ``default-on`` settings to **System Console > Posts** for Collapsed Reply Threads. When enabled (default-on), users see Collapsed Reply Threads by default and have the option to disable it in **Settings**. When always on, users are required to use Collapsed Reply Threads and can't disable it.
    - The default for ``CollapsedThreads`` has been changed to ``always_on``. This change impacts new Mattermost deployments, and doesn't affect existing configurations where this value is already set to some other value.
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Added a new config setting ``EnableAppBar`` to enable and disable the new Apps Bar. This setting is disabled by default, but we recommend enabling the Apps Bar for servers with Calls enabled since the Apps Bar helps make space for the dedicated **Start Call** button in the channel header.
