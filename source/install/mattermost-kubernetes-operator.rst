@@ -239,7 +239,7 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
 .. code-block:: sh
 
   $ kubectl apply -f mattermost-db-secret.yaml -n $NEW_NAMESPACE 
-  $ kubectl apply -f mattermost mattermost-license-secret.yaml -n $NEW_NAMESPACE
+  $ kubectl apply -f mattermost-license-secret.yaml -n $NEW_NAMESPACE
   $ kubectl apply -f cert.yaml -n $NEW_NAMESPACE
   $ kubectl apply -f s3-secret -n $NEW_NAMESPACE
 
