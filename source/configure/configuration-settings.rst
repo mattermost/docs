@@ -1011,9 +1011,7 @@ Maximum Burst Size
 
 |all-plans| |self-hosted|
 
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-Maximum number of requests allowed beyond the per second query limit.
+The maximum number of requests allowed beyond the per second query limit.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxBurst": 100`` with numerical input. |
