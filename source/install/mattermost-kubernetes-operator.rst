@@ -180,6 +180,7 @@ The process described below needs to be completed prior to proceeding with the M
   The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced, review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact Mattermost customer support for assistance.
 
   Once complete, access your Mattermost instance and confirm that the database has been restored.
+
 Migrate From Helm Chart
 --------------------------------------------
 
@@ -196,8 +197,8 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
 .. code-block:: sh
   $ export NAMESPACE=mattermost
   $ kubectl get secrets -n $NAMESPACE mattermost-db-secret -o yaml > mattermost-db-secret.yaml
-  $ kubectl get secrets -n mattermost mattermost-license-secret -o yaml > mattermost-license-secret.yaml
-  $ kubectl get secrets -n mattermost cert -o yaml > cert.yaml
+  $ kubectl get secrets -n $NAMESPACE mattermost-license-secret -o yaml > mattermost-license-secret.yaml
+  $ kubectl get secrets -n $NAMESPACE cert -o yaml > cert.yaml
 
 3. Change the db secret to match operator, the helm used mattermost.dbsecret while the operator uses DB_CONNECTION_STRING
 
@@ -231,7 +232,7 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
 .. code-block:: sh
 
   $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
-  $ kubectl scale deployment -n mattermost mattermost-deployment --replicas=0
+  $ kubectl scale deployment -n $NAMESPACE mattermost-deployment --replicas=0
 
 6. Apply the new secrets in the new namespace 
 
@@ -302,7 +303,7 @@ The installation should be deployed successfully, when the Custom Resource reach
 
   .. code-block:: sh
 
-    $ kubectl -n mattermost-operator get ingress
+    $ kubectl -n $NEW_NAMESPACE get ingress
 
   Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
 
