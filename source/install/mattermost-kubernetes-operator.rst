@@ -191,13 +191,13 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
 
   $ kubectl create ns mattermost-operator
 
-2. Save the secrets from the current installation , if you have extra secrets mounted as a volume save them as well
+2. Save the secrets from the current installation, if you have extra secrets mounted as a volume save them as well. To begin, set ```NAMESPACE``` environment variable to the namespace your Mattermost instance is running in:
 
 .. code-block:: sh
-
-  $ kubectl get secrets -n mattermost mattermost-db-secret -o yaml > mattermost-db-secret.yaml
+  $ export NAMESPACE=mattermost
+  $ kubectl get secrets -n $NAMESPACE mattermost-db-secret -o yaml > mattermost-db-secret.yaml
   $ kubectl get secrets -n mattermost mattermost-license-secret -o yaml > mattermost-license-secret.yaml
-  $ kubectl get secrets -n cert -o yaml > cert.yaml
+  $ kubectl get secrets -n mattermost cert -o yaml > cert.yaml
 
 3. Change the db secret to match operator, the helm used mattermost.dbsecret while the operator uses DB_CONNECTION_STRING
 
@@ -212,7 +212,7 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
   metadata:
     name: mattermost-db-secret
   data:
-    DB_CONNECTION_STRING: "db_connection_string"
+    DB_CONNECTION_STRING: [YOUR_CONNECTION_STRING]
 
 4. Create S3 Secret, mattermost operator uses secret while helm uses environment variables
 
@@ -223,10 +223,10 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
     name: s3-secret
   kind: Secret
   stringData:
-    accesskey: accesskey
-    secretkey: secretkey
+    accesskey: [S3_ACCESS_KEY]
+    secretkey: [S3_ACCESS_KEY]
 
-5. Scale the current installation to 0 and create the operator
+5. Scale the current installation to 0 and deploy the operator
 
 .. code-block:: sh
 
@@ -237,12 +237,12 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
 
 .. code-block:: sh
 
-  $ kubectl apply -f mattermost-db-secret.yaml -n mattermost-operator 
-  $ kubectl apply -f mattermost mattermost-license-secret.yaml -n mattermost-operator
-  $ kubectl apply -f cert.yaml -n mattermost-operator
-  $ kubectl apply -f s3-secret -n mattermost-operator
+  $ kubectl apply -f mattermost-db-secret.yaml -n $NEW_NAMESPACE 
+  $ kubectl apply -f mattermost mattermost-license-secret.yaml -n $NEW_NAMESPACE
+  $ kubectl apply -f cert.yaml -n $NEW_NAMESPACE
+  $ kubectl apply -f s3-secret -n $NEW_NAMESPACE
 
-7. Create a mattermost installation according to the secrets imported and exported to the new ns
+7. Create a Mattermost installation in the same namespace as new secrets.
 
 .. code-block:: yaml
 
@@ -258,11 +258,11 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
     ingress:
       enabled: true
       host: example.mattermost-example.com
-      tlsSecret: "my-tls"
-    licenseSecret: "license-secret"
+      tlsSecret: "cert"
+    licenseSecret: "mattermost-db-secret"
     database:
       external:
-        secret: db-secret
+        secret: "mattermost-db-secret"
     fileStore:
       external:
         url: s3.amazonaws.com
@@ -279,19 +279,20 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
         defaultMode: 420
         secretName: cert
 
-Save the file as mattermost-installation.yaml. While recommended file names are provided, your naming conventions may differ.
+Align the manifest to your needs and save the file as mattermost-installation.yaml. For more detailed documentation of different fields, `check out example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__.
+ While recommended file names are provided, your naming conventions may differ.
 
 8. Apply the new manifest in the relavent namespace 
 
 .. code-block:: sh
 
-  $ kubectl apply -n mattermost -f mattermost-installation.yaml
+  $ kubectl apply -n $NEW_NAMESPACE -f mattermost-installation.yaml
 
 The deployment process can be monitored in the Kubernetes user interface or in command line by running:
 
 .. code-block:: sh
 
-  $ kubectl -n mattermost get mm -w
+  $ kubectl -n $NEW_NAMESPACE get mm -w
 
 The installation should be deployed successfully, when the Custom Resource reaches the stable state.
 
@@ -313,7 +314,7 @@ The installation should be deployed successfully, when the Custom Resource reach
 
   .. code-block:: sh
 
-    $ kubectl -n mattermost-operator port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
+    $ kubectl -n $NEW_NAMESPACE port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
   Then navigate to http://localhost:8065.
 .. include:: faq_kubernetes.rst
