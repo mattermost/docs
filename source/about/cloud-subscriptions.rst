@@ -6,15 +6,14 @@ Purchase a Cloud subscription
 
 Mattermost Cloud can be used free forever with Mattermost Starter. 
 
-You can also start a free, 30-day, trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan. You can upgrade to a monthly per-user subscription, with Mattermost Professional and Mattermost Enterprise.
+You can also start a free, 30-day, trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan. If you'd like to continue with Mattermost Enterprise, please contact our `Sales team <mailto:sales@mattermost.com>`_. Alternatively, you can upgrade to a monthly per-user subscription, with Mattermost Professional.
 
 1. Select **Subscribe now** from the banner.
-2. Provide your credit card details. 
+2. Provide your credit card details.
+  - Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote.
 3. Provide your billing address.
 4. (Optional) Select a subscription plan.
 5. Select **Subscribe**.
-
-Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote.
 
 If, after 30 days, you choose not to continue using Mattermost Enterprise, your subscription will revert to Mattermost Starter. Please see the frequently asked questions below for more information.
 
