@@ -2210,7 +2210,7 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 
 .. important::
     
-    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality. 
+    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality. 
 
 System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
 
