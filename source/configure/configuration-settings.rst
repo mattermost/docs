@@ -2220,7 +2220,7 @@ System Admins can set the default availability of Collapsed Reply Threads for th
 
 **Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
 
-**Disabled**: Disables Collapsed Reply Threads front-end functionality. To disable all backend operations and thread tracking for Collapsed Reply Threads, you must also disable the `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`__ configuration setting.
+**Disabled**: Disables Collapsed Reply Threads front-end functionality.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CollapsedThreads": always_on`` with options ``disabled``, ``default_off``, ``default_on``, and ``always_on`` |
