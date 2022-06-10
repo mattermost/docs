@@ -101,7 +101,8 @@ Use the messaging formatting toolbar
 
 From Mattermost v7.0, you can format your messages in Mattermost using the message formatting toolbar without having to specify any Markdown syntax.
 
-.. image:: ../images/message-formatting-toolbar.png
+.. image:: ../images/message-formatting-toolbar.gif
+  :scale: 50
   :alt: The message formatting toolbar, available from Mattermost v7.0, doesn't require Markdown syntax, and makes formatting message text fast and easy.
 
 The message formatting toolbar offers the following formatting options:
