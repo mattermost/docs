@@ -60,6 +60,17 @@ What are the potential performance impacts?
 
 Database load should be minimal. Overall instance load however will be affected, especially CPU usage, growing as a function of the number of participants produce the number of active tracks (unmuted participants and users sharing their screen). Screen sharing has the highest impact on both CPU and bandwidth. The latter can be more easily estimated as the audio/video bitrates are constrained and predictable (around 40-60Kbps for each audio track and up to 1Mbps per screen track).
 
+If you wish to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is the only officially supported target for the plugin right now):
+
+# Setting the maximum buffer size of the receiving UDP buffer to 16MB
+``net.core.rmem_max = 16777216``
+
+# Setting the maximum buffer size of the sending UDP buffer to 16MB
+``net.core.wmem_max = 16777216``
+
+# Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
+``net.core.optmem_max = 16777216``
+
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -71,5 +82,4 @@ Troubleshooting
 My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an `rtc: connected` line should appear in the client-side logs (JS Console).
-
+This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an `rtc: connected` line should appear in the client-side logs (JS Console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
