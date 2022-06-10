@@ -4297,9 +4297,11 @@ Additional configuration
 
 **RTC Server Port**: Default setting is 8443.
 
-**Enable on Specific Channels**: This can be set to **true** or **false**.
+**Enable on specific channels**: This can be set to **true** or **false**.
 
-**Enable on All Channels**: This can be set to **true** or **false**.
+**Enable on all channels**: This can be set to **true** or **false**.
+
+**Max call partipants**: This is an optional field. The recommended setting is 8 to begin with.
 
 **ICE Host Override**: This is an optional field.
 
