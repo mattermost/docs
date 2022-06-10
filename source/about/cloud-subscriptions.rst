@@ -86,6 +86,9 @@ How do I cancel my subscription?
 
 To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
+What happens if my payment fails?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
