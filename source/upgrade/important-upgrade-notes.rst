@@ -41,7 +41,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`_ is now generally available and enabled by default for new          |
 |                                                    | Mattermost servers. For servers upgrading to v7.0 and later, please reference                                                                                    |
-|                                                    | `this article <https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479>`_ for more information and guidance on enabling the        |
+|                                                    | `this article <https://support.mattermost.com/hc/en-us/articles/6880701948564>`_ for more information and guidance on enabling the                               |
 |                                                    | feature.                                                                                                                                                         |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v6.7                                               | New schema changes were introduced in the form of a new index. The following summarizes the test results measuring how long it took for the database queries to  |
