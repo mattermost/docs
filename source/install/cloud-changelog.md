@@ -31,7 +31,7 @@ Latest Mattermost Cloud releases:
  - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479) for more information and guidance for enabling the feature.
+ - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://support.mattermost.com/hc/en-us/articles/6880701948564) for more information and guidance for enabling the feature.
 
 #### Apps Bar (Beta)
  - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
