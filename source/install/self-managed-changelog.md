@@ -31,7 +31,7 @@ Mattermost v7.0.0 contains medium severity level security fixes. [Upgrading](htt
 ### Highlights
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479) for more information and guidance for enabling the feature.
+ - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://support.mattermost.com/hc/en-us/articles/6880701948564) for more information and guidance for enabling the feature.
 
 #### Calls (Beta)
  - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
@@ -59,7 +59,7 @@ Mattermost v7.0.0 contains medium severity level security fixes. [Upgrading](htt
  - Romanian language support was downgraded to Beta.
  
 #### Performance
- - Improved the performance of aggregate queries related to Collapsed Reply Threads. Learn more about these server performance optimizations in [this article](https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479).
+ - Improved the performance of aggregate queries related to Collapsed Reply Threads. Learn more about these server performance optimizations in [this article](https://support.mattermost.com/hc/en-us/articles/6880701948564).
 
 #### Integrations
  - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
