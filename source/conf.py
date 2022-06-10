@@ -459,6 +459,48 @@ redirects = {
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode",
 "configure/configuration-settings.html#write-timeout":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout",
+"configure/configuration-settings.html#elasticsearch":
+        "https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html",
+"configure/configuration-settings.html#elasticsearch-settings":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html",
+"configure/configuration-settings.html#enable-elasticsearch-indexing":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing.html",
+"configure/configuration-settings.html#server-connection-address":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address.html",
+"configure/configuration-settings.html#skip-tls-verification":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-tls-verification.html",
+"configure/configuration-settings.html#server-username":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username.html",
+"configure/configuration-settings.html#server-password":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password.html",
+"configure/configuration-settings.html#enable-cluster-sniffing":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing.html",
+"configure/configuration-settings.html#bulk-indexing":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing.html",
+"configure/configuration-settings.html#purge-indexes":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes.html",
+"configure/configuration-settings.html#enable-elasticsearch-for-search-queries":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries.html",
+"configure/configuration-settings.html#enable-elasticsearch-for-autocomplete-queries":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries.html",
+"configure/configuration-settings.html#post-index-replicas":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas.html",
+"configure/configuration-settings.html#post-index-shards":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards.html",
+"configure/configuration-settings.html#aggregate-search-indexes":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes.html",
+"configure/configuration-settings.html#post-aggregator-start-time":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time.html",
+"configure/configuration-settings.html#index-prefix":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix.html",
+"configure/configuration-settings.html#live-indexing-batch-size":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size.html",
+"configure/configuration-settings.html#request-timeout":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout.html",
+"configure/configuration-settings.html#bulk-indexing-time-window":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window.html",
+"configure/configuration-settings.html#trace":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

@@ -105,7 +105,7 @@ Server password
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| (Optional) The PASSWORD to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
+| (Optional) The password to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
 | Elasticsearch server.                                         | - ``config.json`` setting: ``".Elasticsearchsettings.Password",``        |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_PASSWORD``            |
 | String input.                                                 |                                                                          |
@@ -121,8 +121,8 @@ Enable cluster sniffing
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Automatically find and connect to all data nodes in a cluster. | - System Config path: **Environment > Elasticsearch**                    |
 |                                                                | - ``config.json`` setting: ``".Elasticsearchsettings.Sniff: false",``    |
-| - **true**: **(Default)** Sniffing finds and connects to       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``               |
-|   all data nodes in your cluster automatically.                |                                                                          |
+| - **true**: Sniffing finds and connects to all data nodes      | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``               |
+|   in your cluster automatically.                               |                                                                          |
 | - **false**: **(Default)** Cluster sniffing is disabled .      |                                                                          |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch server.   |
