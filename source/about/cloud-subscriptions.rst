@@ -4,9 +4,13 @@ Cloud subscriptions
 Purchase a Cloud subscription
 ------------------------------
 
-Mattermost Cloud can be used free forever with Mattermost Starter. 
+Mattermost Cloud can be used free forever with Mattermost Starter.
 
-You can also start a free, 30-day, trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan. If you'd like to continue with Mattermost Enterprise, please contact our `Sales team <mailto:sales@mattermost.com>`_. Alternatively, you can upgrade to a monthly per-user subscription, with Mattermost Professional.
+You can also start a free, 30-day, trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan. If you'd like to continue with Mattermost Enterprise, please contact our `Sales team <mailto:sales@mattermost.com>`_. 
+
+If, after 30 days, you choose not to continue using Mattermost Enterprise, your subscription will revert to Mattermost Starter. 
+
+Alternatively, you can upgrade to a monthly per-user subscription, with Mattermost Professional.
 
 1. Select **Subscribe now** from the banner.
 2. Provide your credit card details.
@@ -15,19 +19,89 @@ You can also start a free, 30-day, trial of Mattermost Enterprise to explore add
 4. (Optional) Select a subscription plan.
 5. Select **Subscribe**.
 
-If, after 30 days, you choose not to continue using Mattermost Enterprise, your subscription will revert to Mattermost Starter. Please see the frequently asked questions below for more information.
-
 View subscription details
 -------------------------
 
-In **System Console > Billing & Account > Subscription** you have access to the following information:
+When you've subscribed to a Mattermost plan, navigate to **System Console > Billing & Account > Subscription** where you have access to the following information:
 
 - Subscription invoices
 - Billing history
 - Organization information
 - Credit card payment methods
+- Workspace limits (if applicable)
 
-Please see the `Cloud Billing <https://docs.mattermost.com/manage/cloud-billing.html>`__ documentation for more detailed information on the Cloud billing process.
+Billing period
+--------------
+
+After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
+
+Adding and removing users in the middle of a billing period
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you add new users in the middle of a billing cycle, you'll only be charged for the days that the user is registered.
+
+Here's an example:
+
+Your organization has a Mattermost Cloud workspace, and you're on a monthly subscription at the rate of $10 USD per user per month. You add a new user on the 11th day of a 30-day billing period, and that user remains registered for the remainder of the billing period.
+
+The prorated subscription cost for this user is determined by multiplying the monthly amount ($10 USD) by the number of days they are actively registered in the billing period (20) and dividing by the number of days in the month (30).
+
+The prorated subscription cost for the user added on day 11 is $6.67 USD.
+
+Similarly, if you make a registered user inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
+
+
+Subscription
+~~~~~~~~~~~~
+
+The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
+
+Billing history
+~~~~~~~~~~~~~~~
+
+Invoices appear immediately after the billing period ends.
+
+Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated, and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
+
+If there's a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
+
+Company information
+~~~~~~~~~~~~~~~~~~~
+
+The **Company Information** screen contains an area to add your company address where you are physically located. The company address will appear on your invoice if specified. Otherwise, the billing address associated with the credit card on file will be used.
+
+Payment information
+~~~~~~~~~~~~~~~~~~~
+
+Mattermost uses a third-party payments processor, Stripe, to safely collect and store your credit card information. 
+
+Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted. You can only store information for one credit card in your account.
+
+We offer pricing and billing only in U.S. Dollars (USD) at this time. Payment will be made in USD converted using the exchange rate at the time of the transaction.
+
+Sales tax and VAT
+~~~~~~~~~~~~~~~~~
+
+Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
+
+Failed or late payments
+~~~~~~~~~~~~~~~~~~~~~~~
+
+You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period. If payment information is not updated and the account remains in arrears, here's what to expect:
+
+.. csv-table::
+   :header: "Time in arrears", "Action taken"
+
+   "7 days", "An email is sent to the workspace Admin with directions to update payment information."
+   "14 days", "Another email is sent to the workspace Admin with directions to update payment information."
+   "30 days", "An email is sent to the workspace Admin indicating that the workspace will be suspended in a further 60 days."
+   "90 days", "A final email is sent to the workspace owner. The workspace will be suspended, preventing access by all users and Admins."
+   "97 days", "The workspace and all data is deleted."
+
+Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
+
+Once a workspace has been deleted, contents can not be reinstated. You'll need to create a new workspace at that time from https://mattermost.com/get-started/. 
+
 
 Add more users to your subscription
 -----------------------------------
@@ -78,7 +152,7 @@ Can I purchase an annual Mattermost Cloud subscription?
 
 Yes. Contact sales@mattermost.com to learn more about annual Cloud subscription options.
 
-If you upgrade during a monthly billing cycle, charges will be prorated. For example, if you upgrade from monthly Starter to an annual term of Mattermost Professional on 6/15, we'll charge you on 7/1 for Starter for the period 6/1 - 6/14. A separate invoice will be provided for the annual Mattermost Professional subscription period starting 6/15.
+If you upgrade during a monthly billing cycle, charges will be prorated. For example, if you upgrade from monthly Professional to an annual term of Mattermost Enterprise on 6/15, we'll charge you on 7/1 for Professional for the period 6/1 - 6/14. A separate invoice will be provided for the annual Mattermost Enterprise subscription period starting 6/15.
 
 How do I cancel my subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
