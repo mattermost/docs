@@ -60,7 +60,7 @@ When `desktop app <https://mattermost.com/download/#mattermostApps>`__ notificat
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
-- And when `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/channels/organize-conversations.html#start-or-reply-to-threads>`__.
+- And when `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/channels/organize-conversations.html#start-or-reply-to-threads>`__.
 
 Notification sound
 ^^^^^^^^^^^^^^^^^^
@@ -103,13 +103,13 @@ By default, you receive notifications when someone posts a message that contains
 Reply notifications
 ~~~~~~~~~~~~~~~~~~~
 
-When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in.
+When `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in.
 
 - You're considered to start a thread when you post a message to which other members of your team reply.
 - You're considered to be a participant in a thread when you post a message using the `reply button <https://docs.mattermost.com/channels/reply-to-messages.html>`__ in an pre-existing thread.
 
 .. note::
-  This setting is hidden when Collapsed Reply Threads (Beta) is enabled.
+  This setting is hidden when Collapsed Reply Threads is enabled.
 
 Automatic direct message replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

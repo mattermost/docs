@@ -57,7 +57,8 @@ You'll automatically follow every thread you participate or are mentioned in. If
    :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
    
 .. tip::
-  Follow messages with no replies from the **More Actions** |more-actions-icon| icon to be notified if someone replies to the message later based on your notification preferences.
+  - Follow messages with no replies from the **More Actions** |more-actions-icon| icon to be notified if someone replies to the message later based on your notification preferences.
+  - Use keyboard arrow keys to navigate threads in the **Threads** view.
 
 View all threads
 ----------------
@@ -85,4 +86,4 @@ Enable Collapsed Reply Threads
 
 See our `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads>`__ documentation for details on configuring the default availability of collapsed reply threads.
 
-Depending on how your System Admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ by going to **Settings > Display > Collapsed Reply Threads**. 
+Depending on how your System Admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ by going to **Settings > Display > Collapsed Reply Threads**. 
