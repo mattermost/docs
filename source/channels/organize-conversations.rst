@@ -40,7 +40,7 @@ Replies are collapsed under the first message of a thread. To reply to a thread,
     - Select anywhere on a message in a channel in the center pane to view it, or reply to it on the right-hand side.
     - In channels, a dot next to the thread participants indicates there are unread replies. You'll only see unreads for threads you're following.
 
-.. image:: ../images/crt-new-unread-threads.png
+.. image:: ../images/crt-new-unread-threads.jpg
    :alt: A dot on threads in a channel indicates unread replies.
 
 Follow threads and messages
@@ -53,7 +53,7 @@ You can follow particular messages and threads so that any reply activity trigge
 
 You'll automatically follow every thread you participate or are mentioned in. If you’re no longer interested in a or message thread, you can unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
-.. image:: ../images/crt-more-actions.png
+.. image:: ../images/crt-following-thread.jpg
    :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
    
 .. tip::
@@ -67,7 +67,7 @@ Select **Threads** at the top of the channel sidebar to see all your followed th
 
 Select **Unreads** to filter your followed threads by only those with unread replies.
 
-.. image:: ../images/crt-thread-view.png
+.. image:: ../images/crt-thread-view.jpg
   :alt: Select Threads in the channel sidebar to see all thread updates in your Threads View.
 
 Tutorial video
