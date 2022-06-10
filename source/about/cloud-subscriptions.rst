@@ -4,7 +4,9 @@ Cloud subscriptions
 Purchase a Cloud subscription
 ------------------------------
 
-Mattermost Cloud can be used free forever with Mattermost Starter. You can also start a free, 30-day, trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan. You can upgrade to a monthly per-user subscription, with Mattermost Professional and Mattermost Enterprise.
+Mattermost Cloud can be used free forever with Mattermost Starter. 
+
+You can also start a free, 30-day, trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan. You can upgrade to a monthly per-user subscription, with Mattermost Professional and Mattermost Enterprise.
 
 1. Select **Subscribe now** from the banner.
 2. Provide your credit card details. 
@@ -13,6 +15,8 @@ Mattermost Cloud can be used free forever with Mattermost Starter. You can also 
 5. Select **Subscribe**.
 
 Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote.
+
+If, after 30 days, you choose not to continue using Mattermost Enterprise, your subscription will revert to Mattermost Starter. Please see the frequently asked questions below for more information.
 
 View subscription details
 -------------------------
@@ -43,12 +47,12 @@ Monthly Cloud subscriptions renew automatically.
 Frequently asked questions
 ---------------------------
 
-What happens when my 14-day trial period ends?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What happens when my 30-day Mattermost Enterprise trial period ends?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the end of the 14-day trial, you'll lose access to your workspace until you have added your payment information to continue using your Mattermost Cloud workspace.
+At the end of the 30-day trial, you can opt to purchase a monthly subscription to Mattermost Enterprise via the prompts provided in Mattermost. 
 
-If you don't add your payment information within 30 days, we'll delete your Cloud workspace permanently and you'll lose any associated data.
+If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use and you may need to delete some data to ensure you are within the Mattermost Starter `data limits <https://docs.mattermost.com/mattermost-limits.html>`_.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,8 +65,17 @@ After your first month, the billing period begins at 12 AM UTC on the first day 
 - Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
 - If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Starter to Professional on 6/15, we'll charge you 7/1. This will be a single charge for Starter for the period 6/1 - 6/14, then a separate charge for Professional for the period 6/15 - 6/30.
 
-Can I purchase an annual subscription to Mattermost Cloud deployments?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What happens if I decide to purchase a subscription to Mattermost Enterprise during my trial?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your trial will continue and on day 31 billing will commence. Depending on what day of the month this is, you'll be billed pro-rata. You'll receive your bill at the end of the calendar month for this month and going forward.
+
+How do I change my subscription from Mattermost Enterprise to Mattermost Professional?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Can I purchase an annual Mattermost Cloud subscription?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. Contact sales@mattermost.com to learn more about annual Cloud subscription options.
 
@@ -87,7 +100,7 @@ Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certif
 
 Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated Cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. `Please contact Mattermost Sales for more information on this option <https://mattermost.com/contact-sales/>`_.
 
-What are the alternatives, and why should customers choose Mattermost Cloud?
+What are the alternatives, and why should I choose Mattermost Cloud?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Other SaaS offerings are closed-source and focus on a very broad use case. Mattermost Cloud is built on our open source core offering, allowing customers to view our source code and have a high degree of transparency into Mattermost development processes. Mattermost provides a DevOps-centric offering and has deep integrations and workflows that help builders and operators be more effective.
