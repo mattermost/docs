@@ -35,6 +35,12 @@ Billing period
 
 After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
 
+Invoices appear immediately after the billing period ends.
+
+Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated, and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
+
+If there's a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
+
 Adding and removing users in the middle of a billing period
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -49,40 +55,6 @@ The prorated subscription cost for this user is determined by multiplying the mo
 The prorated subscription cost for the user added on day 11 is $6.67 USD.
 
 Similarly, if you make a registered user inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
-
-
-Subscription
-~~~~~~~~~~~~
-
-The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page.
-
-Billing history
-~~~~~~~~~~~~~~~
-
-Invoices appear immediately after the billing period ends.
-
-Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated, and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
-
-If there's a payment failure, your invoice will show *Payment Failed*. Please review the accuracy of your credit card information in **Payment Information**. Unresolved failed payments may result in a delinquency and an interruption to your subscription.
-
-Company information
-~~~~~~~~~~~~~~~~~~~
-
-The **Company Information** screen contains an area to add your company address where you are physically located. The company address will appear on your invoice if specified. Otherwise, the billing address associated with the credit card on file will be used.
-
-Payment information
-~~~~~~~~~~~~~~~~~~~
-
-Mattermost uses a third-party payments processor, Stripe, to safely collect and store your credit card information. 
-
-Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted. You can only store information for one credit card in your account.
-
-We offer pricing and billing only in U.S. Dollars (USD) at this time. Payment will be made in USD converted using the exchange rate at the time of the transaction.
-
-Sales tax and VAT
-~~~~~~~~~~~~~~~~~
-
-Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
 
 Failed or late payments
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,8 +72,21 @@ You'll be notified immediately of failed payments both in-product, with a banner
 
 Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
 
-Once a workspace has been deleted, contents can not be reinstated. You'll need to create a new workspace at that time from https://mattermost.com/get-started/. 
+Once a workspace has been deleted, contents can not be reinstated. You'll need to create a new workspace at that time from https://mattermost.com/get-started/.
 
+Payment information
+~~~~~~~~~~~~~~~~~~~
+
+Mattermost uses a third-party payments processor, Stripe, to safely collect and store your credit card information. 
+
+Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted. You can only store information for one credit card in your account.
+
+We offer pricing and billing only in U.S. Dollars (USD) at this time. Payment will be made in USD converted using the exchange rate at the time of the transaction.
+
+Sales tax and VAT
+~~~~~~~~~~~~~~~~~
+
+Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
 
 Add more users to your subscription
 -----------------------------------
@@ -136,7 +121,7 @@ After your first month, the billing period begins at 12 AM UTC on the first day 
 
 - If you begin your subscription in the middle of a billing period, charges will be prorated. For example, if you signed up 6/15, we'll charge you on 7/1 for the period 6/15 - 6/30.
 - Similarly, if you end your subscription in the middle of a billing period, charges will be prorated. For example, if you cancel your account on 6/15, we'll charge you on 7/1 for the period 6/1 - 6/15.
-- If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Starter to Professional on 6/15, we'll charge you 7/1. This will be a single charge for Starter for the period 6/1 - 6/14, then a separate charge for Professional for the period 6/15 - 6/30.
+- If you upgrade in the middle of a billing period, charges will also be prorated. For example, if you upgrade from Professional to Enterprise on 6/15, we'll charge you 7/1. This will be a single charge for Professional for the period 6/1 - 6/14, then a separate charge for Enterprise for the period 6/15 - 6/30.
 
 What happens if I decide to purchase a subscription to Mattermost Enterprise during my trial?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -158,9 +143,6 @@ How do I cancel my subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
-
-What happens if my payment fails?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
