@@ -2214,7 +2214,7 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 
 System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
 
-**Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on``.
+**Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on`` by default.
 
 **Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. 
 
