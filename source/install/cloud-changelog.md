@@ -30,11 +30,11 @@ Latest Mattermost Cloud releases:
 #### Calls (Beta)
  - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
 
-#### Apps Bar (Beta)
- - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
-
 #### Collapsed Reply Threads (General Availability)
  - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://mattermost.zendesk.com/knowledge/articles/6880701948564/en-us?brand_id=327479) for more information and guidance for enabling the feature.
+
+#### Apps Bar (Beta)
+ - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
 
 ### Improvements
 
@@ -69,6 +69,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the upload files button was positioned incorrectly.
 
 ### Known Issues
+ - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
  - Back bar is showing over the channel header in the Desktop App [MM-44644](https://mattermost.atlassian.net/browse/MM-44644).
  - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
