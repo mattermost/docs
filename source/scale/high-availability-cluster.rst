@@ -57,16 +57,16 @@ To ensure your instance and configuration are compatible with High Availability,
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
 6. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
-Adding a server to the cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Add a server to the cluster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
 3. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
 4. Open **System Console > Environment > High Availability** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
-Removing a server from the cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Remove a server from the cluster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
@@ -229,15 +229,15 @@ On large deployments, consider using the search replica feature to isolate searc
 
 If there are no search replicas, the server uses the read replicas instead. Similarly, if there are no read replicas, the server falls back to master.
 
-Sizing databases
-````````````````
+Size the databases
+``````````````````
 
 For information about sizing database servers, see :ref:`hardware-sizing-for-enterprise`.
 
 In a master/slave environment, make sure to size the slave machine to take 100% of the load in the event that the master machine goes down and you need to fail over.
 
-Deploying a multi-database configuration
-````````````````````````````````````````
+Deploy a multi-database configuration
+``````````````````````````````````````
 
 To configure a multi-database Mattermost server:
 
@@ -264,8 +264,8 @@ The new settings can be applied by either stopping and starting the server, or b
 
 Once loaded, database write requests are sent to the master database and read requests are distributed among the other databases in the list.
 
-Loading a multi-database configuration onto an active server
-````````````````````````````````````````````````````````````
+Load a multi-database configuration onto an active server
+`````````````````````````````````````````````````````````
 
 After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server:
 
@@ -292,21 +292,19 @@ Transparent failover
 The database can be configured for High Availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
 
 Recommended configuration settings for PostgreSQL
-```````````````````````````````````````````````
+``````````````````````````````````````````````````
 
-If you're using Postgres as the choice of database, we recommend the following configuration optimizations on your Mattermost server.
+If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These  configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL 11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
 
-The following configuration was tested on an AWS Aurora r5.xlarge instance of Postgres 11.7. There are also some general optimizations mentioned which requires servers of higher specifications.
-
-1. **max_connections**: If you are using read-replicas set reader connections to 1024, and writer connections to 256. If you are using a single instance, then only setting it to 1024 should be sufficient. If the instance of lower capacity than r5.xlarge, then set it to a lower number. Also tune the `MaxOpenConns` setting under the `SqlSettings` of Mattermost app accordingly.
+1. **max_connections**: If you are using read-replicas, set reader connections to 1024, and set writer connections to 256. If you are using a single instance, then only setting reader connections to 1024 should be sufficient. If the instance is lower capacity than r5.xlarge, then set it to a lower number. Also tune the ``MaxOpenConns`` setting under the ``SqlSettings`` of the Mattermost app accordingly.
 
 2. **random_page_cost**: Set it to 1.1, unless the DB is using spinning disks.
 
-3. **work_mem**: Set it to 16 MB for readers, and 32 MB for writers. If it's a single instance, 16 MB should be sufficient. If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
+3. **work_mem**: Set it to 16MB for readers, and 32MB for writers. If it's a single instance, 16MB should be sufficient. If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
 
-4. **effective_cache_size**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
+4. **effective_cache_size**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
 
-5. **shared_buffers**: Set it to 65% of total memory. For a 32 GB instance, it should be 21 GB.
+5. **shared_buffers**: Set it to 65% of total memory. For a 32GB instance, it should be 21GB.
 
 6. **tcp_keepalives_count**: 5
 
@@ -314,15 +312,12 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 
 8. **tcp_keepalives_interval**: 1
 
-9. If you have high-spec server with more than 32 CPUs, please set these options to utilize more CPU for your server:
+9. If you have more than 32 CPUs, please set the following options to utilize more CPU for your server:
 
-  **max_worker_processes**: 12
-  
-  **max_parallel_workers_per_gather**: 4
-  
-  **max_parallel_workers**: 12
-  
-  **max_parallel_maintenance_workers**: 4
+  - **max_worker_processes**: 12
+  - **max_parallel_workers_per_gather**: 4
+  - **max_parallel_workers**: 12
+  - **max_parallel_maintenance_workers**: 4
 
 10. **autovacuum_max_workers**: 4
 
@@ -330,12 +325,14 @@ The following configuration was tested on an AWS Aurora r5.xlarge instance of Po
 
 12. **autovacuum_vacuum_cost_limit**: 500
 
-Note that if you are using pgbouncer or any similar connection pooling proxy in front of your DB, then the keepalive settings should be applied to the proxy instead and revert the keepalive settings for the DB back to defaults.
+.. note::
+  
+   If you are using pgbouncer, or any similar connection pooling proxy, in front of your DB, then apply the keepalive settings to the proxy instead, and revert the keepalive settings for the DB back to defaults.
 
 Recommended configuration settings for MySQL
-```````````````````````````````````````````````
+````````````````````````````````````````````
 
-For MySQL, we recommend the following configuration options for high performance.
+For MySQL, we recommend the following configuration options for high performance:
 
 1. **innodb_buffer_pool_size**: Set to about 70% of your total RAM.
 2. **innodb_log_file_size**: Set to 256MB. Increasing this helps in write intensive operations. Downside is that recovery times will be longer.
@@ -389,12 +386,10 @@ Upgrade guide
 
 An update is an incremental change to Mattermost server that fixes bugs or performance issues. An upgrade adds new or improved functionality to the server.
 
-Updating configuration changes while operating continuously
+Update configuration changes while operating continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A service interruption is not required for most configuration updates. See `Server Upgrades Requiring Service Interruption`_ for a list of configuration updates that require a service interruption.
-
-You can apply updates during a period of low load, but if your High Availability cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
+A service interruption is not required for most configuration updates. See the section below for details on upgrades requiring service interruption. You can apply updates during a period of low load, but if your High Availability cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
 .. note::
 
@@ -407,18 +402,16 @@ You can apply updates during a period of low load, but if your High Availability
 5. Reload the configuration file on the server that is still running. Go to **System Console > Environment > Web Server**, then select **Reload Configuration from Disk**.
 6. Start the other servers.
 
-Updating Server version while operating continuously
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Update the Server version while operating continuously
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A service interruption is not required for security patch dot releases of the Mattermost server.
-
-You can apply updates during a period when the anticipated load is small enough that one server can carry the full load of the system during the update.
+A service interruption is not required for security patch dot releases of the Mattermost server. You can apply updates during a period when the anticipated load is small enough that one server can carry the full load of the system during the update.
 
 .. note::
 
-  We only support a one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
+  Mattermost supports one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
 
-Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
+When restarting, you aren't restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
 1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.
@@ -453,10 +446,10 @@ Apply upgrades during a period of low load. The system downtime is brief, and de
 7. When the server is running, start the other servers.
 8. Restart NGINX.
 
-Upgrading to version 4.0 and later
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrade to version 4.0 and later
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Starting with Mattermost Server v4.0, when a server starts up it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from v3.10 or earlier to v4.0 or later, you must manually add the new items to your existing ``config.json``.
+From Mattermost Server v4.0, when a server starts up, it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. When upgrading from v3.10 or earlier to v4.0 or later, you must manually add the new items to your existing ``config.json``.
 
 1. Review the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server`.
 2. Make a backup of your existing ``config.json`` file.
@@ -509,7 +502,7 @@ For example, if you're deploying Mattermost on AWS with Amazon Aurora we recomme
 Troubleshooting
 ---------------
 
-Capturing High Availability troubleshooting data
+Capture High Availability troubleshooting data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When deploying Mattermost in a High Availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks. 
