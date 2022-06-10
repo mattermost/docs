@@ -74,7 +74,7 @@ If you wish to host many calls or calls with a large number of participants, tak
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-STUN servers are configurable on the plugin itself.
+STUN servers are configurable on the plugin itself. These are optional and depend on your configuration.
 
 Troubleshooting
 ---------------
