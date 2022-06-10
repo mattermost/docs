@@ -22,13 +22,7 @@ Alternatively, you can upgrade to a monthly per-user subscription, with Mattermo
 View subscription details
 -------------------------
 
-When you've subscribed to a Mattermost plan, navigate to **System Console > Billing & Account > Subscription** where you have access to the following information:
-
-- Subscription invoices
-- Billing history
-- Organization information
-- Credit card payment methods
-- Workspace limits (if applicable)
+The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits <https://docs.mattermost.com/mattermost-limits.html>`_ set for your subscription.
 
 Billing period
 --------------
