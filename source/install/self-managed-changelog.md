@@ -38,9 +38,9 @@ Latest Mattermost Releases:
  - Channel header is now decluttered when a new configuration setting via **System Console > Experimental > Features > Enable App Bar** is enabled, to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins will be moved to the new Apps Bar when the configuration setting is enabled, while Calls remains in the channel header. We recommend enabling the Apps Bar for servers with Calls enabled since the Apps Bar helps make space for the dedicated **Start Call** button in the channel header.
 
 #### Playbooks Updates
- - Users can now easily keep processes up-to-date with the inline playbook editor.
+ - Users can now easily keep processes up-to-date with [the inline playbook editor](https://docs.mattermost.com/playbooks/customize-a-playbook.html).
  - A new statistics dashboard was added that displays the number of playbooks and run instances within the server alongside other system statistics in the **System Console**.
- - Run triggers and actions now provide more control over where status updates are posted throughout a run.
+ - Run triggers and actions now provide more control over where [status updates are posted](https://docs.mattermost.com/playbooks/customize-a-run.html) throughout a run.
 
 #### Message Formatting Toolbar
  - The [new formatting toolbar](https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar) makes Markdown accessible to everyone with easy to use controls for commonly used message formatting, such as bold, headings, links, and more.
