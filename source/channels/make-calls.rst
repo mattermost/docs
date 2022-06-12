@@ -24,6 +24,7 @@ From 7.0, you can:
 
 - Use calls on desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (ie. Channels, Boards, and Playbooks) while on a call.
+- Start a call using the ``/start call`` slash command.
 
 Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that can be enabled in the System Console by a System Admin. <link to config doc>.
 
@@ -35,7 +36,7 @@ Limitations
 -----------
 
 - In Mattermost Cloud, up to eight participants per channel can join a call.
-- In Mattermost self-hosted deployments, the recommended maximum number of participants, across all calls in all channels on the server, is 200. This can be changed in the ``config.json`` file.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants, across all calls in all channels on the server, is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**.
 
 Configuration
 -------------
