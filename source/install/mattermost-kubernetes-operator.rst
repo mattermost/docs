@@ -281,7 +281,7 @@ If you've installed Mattermost as helm chart deployment, you can easily move to 
         secretName: cert
 
 Align the manifest to your needs, then save the file as ``mattermost-installation.yaml``. See the `documentation <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__ for details about supported fields.
- While recommended file names are provided, your naming conventions may differ.
+ While recommended filenames are provided, your naming conventions may differ.
 
 8. Apply the new manifest in the relevant namespace.
 
