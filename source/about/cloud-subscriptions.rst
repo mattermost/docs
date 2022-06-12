@@ -8,7 +8,7 @@ Mattermost Cloud can be used free forever with Mattermost Starter.
 
 You can also start a free, 30-day trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, Mattermost will prompt you to upgrade to a subscription plan. If you'd like to continue with Mattermost Enterprise, please contact our `Sales team <mailto:sales@mattermost.com>`_. 
 
-If, after 30 days, you choose not to continue using Mattermost Enterprise, your subscription will revert to Mattermost Starter. 
+If, after 30 days, you choose not to continue using Mattermost Enterprise, your subscription will revert back to Mattermost Starter. 
 
 Alternatively, you can upgrade to a monthly per-user subscription, with Mattermost Professional.
 
