@@ -29,7 +29,7 @@ Billing period
 
 After you begin your Mattermost Cloud paid subscription, your first charge is applied at the end of the calendar month. Subsequent billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
 
-Invoices appear immediately after the billing period ends.
+Invoices appear in the Customer Portal immediately after the billing period ends.
 
 Billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month, at which time subscription costs are calculated, and a credit card charge is automatically attempted. It may take up to a day for our billing systems to calculate, charge your credit card, and issue your invoice. Once charges are completed, the invoice will show as *Paid*. The invoice is a downloadable PDF file.
 
