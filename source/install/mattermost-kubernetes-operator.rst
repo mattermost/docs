@@ -182,17 +182,17 @@ The process described below needs to be completed prior to proceeding with the M
   Once complete, access your Mattermost instance and confirm that the database has been restored.
 
 Migrate From Helm Chart
---------------------------------------------
+--------------------------
 
-If you have previosuly installed mattermost as helm chart deployment, you can easily move to an operator installed following the provided steps
+If you've installed Mattermost as helm chart deployment, you can easily move to an operator-installed deployment by following the steps below.
 
-1. Create a namespace dedicated fo the operator
+1. Create a namespace dedicated to the operator.
 
 .. code-block:: sh
 
   $ kubectl create ns mattermost-operator
 
-2. Save the secrets from the current installation, if you have extra secrets mounted as a volume save them as well. To begin, set ```NAMESPACE``` environment variable to the namespace your Mattermost instance is running in:
+2. Save the secrets from the current installation. If you have extra secrets mounted as a volume, save them as well. To begin, set the ``NAMESPACE`` environment variable to the namespace your Mattermost instance is running in:
 
 .. code-block:: sh
   $ export NAMESPACE=mattermost
@@ -200,7 +200,7 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
   $ kubectl get secrets -n $NAMESPACE mattermost-license-secret -o yaml > mattermost-license-secret.yaml
   $ kubectl get secrets -n $NAMESPACE cert -o yaml > cert.yaml
 
-3. Change the db secret to match operator, the helm used mattermost.dbsecret while the operator uses DB_CONNECTION_STRING
+3. Change the database secret to match the operator. The helm installation used ``mattermost.dbsecret`` while the operator uses ``DB_CONNECTION_STRING``.
 
 .. code-block:: sh
 
@@ -215,7 +215,7 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
   data:
     DB_CONNECTION_STRING: [YOUR_CONNECTION_STRING]
 
-4. Create S3 Secret, mattermost operator uses secret while helm uses environment variables
+4. Create an S3 Secret. Mattermost operator uses ``secret`` while helm uses environment variables.
 
 .. code-block:: yaml
 
@@ -227,14 +227,14 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
     accesskey: [S3_ACCESS_KEY]
     secretkey: [S3_ACCESS_KEY]
 
-5. Scale the current installation to 0 and deploy the operator
+5. Scale the current installation to 0 and deploy the operator.
 
 .. code-block:: sh
 
   $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
   $ kubectl scale deployment -n $NAMESPACE mattermost-deployment --replicas=0
 
-6. Apply the new secrets in the new namespace 
+6. Apply the new secrets in the new namespace.
 
 .. code-block:: sh
 
@@ -243,7 +243,7 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
   $ kubectl apply -f cert.yaml -n $NEW_NAMESPACE
   $ kubectl apply -f s3-secret -n $NEW_NAMESPACE
 
-7. Create a Mattermost installation in the same namespace as new secrets.
+7. Create a Mattermost installation in the same namespace as the new secrets.
 
 .. code-block:: yaml
 
@@ -280,22 +280,22 @@ If you have previosuly installed mattermost as helm chart deployment, you can ea
         defaultMode: 420
         secretName: cert
 
-Align the manifest to your needs and save the file as mattermost-installation.yaml. For more detailed documentation of different fields, `check out example <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__.
+Align the manifest to your needs, then save the file as ``mattermost-installation.yaml``. See the `documentation <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__ for details about supported fields.
  While recommended file names are provided, your naming conventions may differ.
 
-8. Apply the new manifest in the relavent namespace 
+8. Apply the new manifest in the relevant namespace.
 
 .. code-block:: sh
 
   $ kubectl apply -n $NEW_NAMESPACE -f mattermost-installation.yaml
 
-The deployment process can be monitored in the Kubernetes user interface or in command line by running:
+The deployment process can be monitored in the Kubernetes user interface or using the command line by running:
 
 .. code-block:: sh
 
   $ kubectl -n $NEW_NAMESPACE get mm -w
 
-The installation should be deployed successfully, when the Custom Resource reaches the stable state.
+The installation should be deployed successfully when the Custom Resource reaches a stable state.
 
 9. Configure DNS and use Mattermost.
 
@@ -317,6 +317,6 @@ The installation should be deployed successfully, when the Custom Resource reach
 
     $ kubectl -n $NEW_NAMESPACE port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
-  Then navigate to http://localhost:8065.
+  Then navigate to ``http://localhost:8065``.
 .. include:: faq_kubernetes.rst
   :start-after: :nosearch:
