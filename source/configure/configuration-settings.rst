@@ -4293,7 +4293,7 @@ Enable Plugin
 **False**: Disables the calls plugin on your Mattermost workspace.
 
 Additional configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 **RTC Server Port**: Default setting is 8443.
 
@@ -4308,11 +4308,6 @@ Additional configuration
 **ICE Servers**: This is an optional field. The default is ``stun:stun.global.calls.mattermost.com:3478``. Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
 
 **RTCD Service URL**: This is an optional field.
-
-Experimental Features
-^^^^^^^^^^^^^^^^^^^^^
-
-You can select whether to use the App Bar for this plugin.
 
 Channel Export
 ~~~~~~~~~~~~~~
@@ -4414,7 +4409,6 @@ Gfycat display style
 |all-plans| |self-hosted|
 
 Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
-
 
 GIPHY display style
 ^^^^^^^^^^^^^^^^^^^
