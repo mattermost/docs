@@ -27,7 +27,7 @@ The subscription screen outlines the details of your Mattermost Cloud account, i
 Billing period
 --------------
 
-After you begin your Mattermost Cloud paid subscription, your first charge will happen at the end of the calendar month. Subsequent billing periods will begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
+After you begin your Mattermost Cloud paid subscription, your first charge is applied at the end of the calendar month. Subsequent billing periods begin at 12 AM UTC on the first day of each calendar month and end at 11:59 PM UTC on the final day of the same calendar month. Per-user pricing for each billing period will be based on the number of registered users.
 
 Invoices appear immediately after the billing period ends.
 
