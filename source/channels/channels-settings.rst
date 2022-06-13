@@ -276,6 +276,10 @@ Enable post formatting
 
 This setting controls whether post formatting is rendered. When **On**, posts will be rendered with `Markdown formatting <https://docs.mattermost.com/channels/format-messages.html>`__, emoji, autolinked URLs, and line breaks. When **Off**, the raw text will be shown.
 
+.. note::
+
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
+
 Enable join/leave messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -284,9 +288,13 @@ This setting controls whether system messages about users joining or leaving a c
 Preview pre-release features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Turn on preview features to view them early, ahead of their official release:
+Turn on preview features to view them early, ahead of their official release.
 
-- **Show markdown preview option in message input box** Turning this on will show a **Preview** option when typing in the text input box. Select **Preview** to see what the Markdown formatting in the message looks like before the message is sent.
+**Show markdown preview option in message input box** Turning this on will show a **Preview** option when typing in the text input box. Select **Preview** to see what the Markdown formatting in the message looks like before the message is sent.
+
+.. note::
+
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
 Performance Debugging
 ~~~~~~~~~~~~~~~~~~~~~

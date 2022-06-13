@@ -119,7 +119,7 @@ redirects = {
 "administration/command-line-tools.html#mattermost-ldap-idmigrate": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate",
 "administration/compliance.html": 
-        "https://docs.mattermost.com/comply/compliance-reporting-oversight.html",
+        "https://docs.mattermost.com/comply/compliance-monitoring.html",
 "administration/compliance-export.html": 
         "https://docs.mattermost.com/comply/compliance-export.html",
 "administration/config-in-database.html":
@@ -357,11 +357,16 @@ redirects = {
 "cloud/cloud-user-management.html":
         "https://docs.mattermost.com/channels/manage-channel-members.html",
 
+# Compliance redirects
+"comply/compliance-reporting-oversight":
+        "https://docs.mattermost.com/comply/compliance-monitoring.html",
+        
 # Configure redirects
 "configure/config-ssl-http2-apache2.html": 
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html": 
-        "https://forum.mattermost.org/c/docs/37",
+        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
+
 
 # Configuration settings redirects
 "configure/configuration-settings.html#channels":
@@ -462,6 +467,48 @@ redirects = {
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode",
 "configure/configuration-settings.html#write-timeout":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout",
+"configure/configuration-settings.html#elasticsearch":
+        "https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html",
+"configure/configuration-settings.html#elasticsearch-settings":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html",
+"configure/configuration-settings.html#enable-elasticsearch-indexing":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing.html",
+"configure/configuration-settings.html#server-connection-address":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address.html",
+"configure/configuration-settings.html#skip-tls-verification":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-tls-verification.html",
+"configure/configuration-settings.html#server-username":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username.html",
+"configure/configuration-settings.html#server-password":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password.html",
+"configure/configuration-settings.html#enable-cluster-sniffing":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing.html",
+"configure/configuration-settings.html#bulk-indexing":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing.html",
+"configure/configuration-settings.html#purge-indexes":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes.html",
+"configure/configuration-settings.html#enable-elasticsearch-for-search-queries":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries.html",
+"configure/configuration-settings.html#enable-elasticsearch-for-autocomplete-queries":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries.html",
+"configure/configuration-settings.html#post-index-replicas":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas.html",
+"configure/configuration-settings.html#post-index-shards":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards.html",
+"configure/configuration-settings.html#aggregate-search-indexes":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes.html",
+"configure/configuration-settings.html#post-aggregator-start-time":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time.html",
+"configure/configuration-settings.html#index-prefix":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix.html",
+"configure/configuration-settings.html#live-indexing-batch-size":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size.html",
+"configure/configuration-settings.html#request-timeout":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout.html",
+"configure/configuration-settings.html#bulk-indexing-time-window":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window.html",
+"configure/configuration-settings.html#trace":
+	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -820,7 +867,7 @@ redirects = {
 "install/config-cloudfront.html":
         "https://docs.mattermost.com/configure/configuring-cloudfront-to-host-mattermost-static-assets.html",
 "install/config-apache2.html": 
-        "https://docs.mattermost.com/configure/configuring-apache2.html",
+        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "install/deploy-bitnami.html": 
         "https://docs.mattermost.com/install/deploying-team-edition-on-bitnami.html",
 "install/desktop.html": 
@@ -879,6 +926,8 @@ redirects = {
         "https://docs.mattermost.com/install/proxy-to-mattermost-transport-encryption.html",
 "install/use-kubernetes-mattermost.html":
         "https://docs.mattermost.com/install/install-kubernetes.html",
+"install/deploy-cloudron.html":
+        "https://forum.mattermost.com/t/deploy-mattermost-on-cloudron/13526",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
@@ -902,6 +951,10 @@ redirects = {
         "https://developers.mattermost.com/integrate/admin-guide/admin-zapier-integration/",
 "integrations/zoom.html": 
         "https://mattermost.gitbook.io/plugin-zoom/",
+
+# Manage redirects
+"manage/scripts.html":
+        "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",        
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
