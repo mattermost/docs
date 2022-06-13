@@ -23,7 +23,7 @@ Share links to messages
   :width: 24px
   :alt: Copy the public URL link for an image in a message using the Copy link icon.
 
-You can share links to messages in Mattermost by selecting the **More Actions** option next to a message, then selecting **Copy Link**, or by hovering over an image and selecting the |copy-link-icon| icon in the top right corner. Paste the link into a message to share the image link with others. Sharing links to messages generates a preview of the message which helps minimize context switching. 
+To share links to messages in Mattermost, select the **More Actions** option next to a message, then select **Copy Link**. You can also hover over an image and select the |copy-link-icon| icon in the top right corner. Paste the link into a message to share the image link with others. Sharing links to messages generates a preview of the message which helps minimize context switching.
 
 Previews respect channel membership permissions, so they’re only visible to users who have access to the original message. If the link is to a message in a public channel, any member of the team can see the message preview. If the link is to a message in a private channel or direct message, only members in that channel can see the message preview.
 
