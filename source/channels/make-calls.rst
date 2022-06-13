@@ -43,7 +43,7 @@ Limitations
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin needs to be enabled in the System Console. Additional configuration is also available via the System Console.
+For Mattermost self-hosted customers, the calls plugin `needs to be enabled <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_ in the System Console. Additional configuration is also available via the System Console.
 
 Frequently asked questions
 --------------------------
