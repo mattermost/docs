@@ -102,9 +102,9 @@ Frequently asked questions
 What happens when my 30-day Mattermost Enterprise trial period ends?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the end of the 30-day trial, you can opt to purchase a monthly subscription to Mattermost Enterprise via the prompts provided in Mattermost. 
+At the end of the 30-day trial, you can opt to purchase a monthly subscription to Mattermost Professional via the prompts provided in Mattermost. 
 
-If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use and you may need to delete some data to ensure you are within the Mattermost Starter `data limits <https://docs.mattermost.com/mattermost-limits.html>`_.
+If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits <https://docs.mattermost.com/mattermost-limits.html>`_ for Mattermost Starter will be auto-archived.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,11 +120,12 @@ After your first month, the billing period begins at 12 AM UTC on the first day 
 What happens if I decide to purchase a subscription to Mattermost Enterprise during my trial?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your trial will continue and on day 31 billing will commence. Depending on what day of the month this is, you'll be billed pro-rata. You'll receive your bill at the end of the calendar month for this month and going forward.
+Your plan immediately changes to the plan you've upgraded to. Your trial will continue and on day 31 billing will commence. You won't incur any charges of your new plan until the trial period is over. Depending on what day of the month this is, you'll be billed pro-rata. You'll receive your bill at the end of the calendar month for this month and going forward.
 
 How do I change my subscription from Mattermost Enterprise to Mattermost Professional?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+You can downgrade on https://mattermost.com/pricing and select Mattermost Professional.
 
 Can I purchase an annual Mattermost Cloud subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
