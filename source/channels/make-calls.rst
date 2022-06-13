@@ -1,4 +1,4 @@
-Make a call (beta)
+Start a call (beta)
 ==================
 
 |all-plans| |cloud| |self-hosted|
@@ -65,14 +65,16 @@ Database load should be minimal. Overall instance load however will be affected,
 
 If you wish to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is the only officially supported target for the plugin right now):
 
-# Setting the maximum buffer size of the receiving UDP buffer to 16MB
-``net.core.rmem_max = 16777216``
+.. code::
 
-# Setting the maximum buffer size of the sending UDP buffer to 16MB
-``net.core.wmem_max = 16777216``
+  # Setting the maximum buffer size of the receiving UDP buffer to 16MB
+  net.core.rmem_max = 16777216
 
-# Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
-``net.core.optmem_max = 16777216``
+  # Setting the maximum buffer size of the sending UDP buffer to 16MB
+  net.core.wmem_max = 16777216
+
+  # Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
+  net.core.optmem_max = 16777216
 
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,4 +87,4 @@ Troubleshooting
 My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an `rtc: connected` line should appear in the client-side logs (JS Console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
+This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an ``rtc: connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
