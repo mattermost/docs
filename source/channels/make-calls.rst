@@ -26,7 +26,7 @@ From 7.0, you can:
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
 - Start a call using the ``/call start`` slash command.
 
-Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that can be enabled in the System Console by a System Admin. <link to config doc>.
+Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that `can be enabled <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_ in the System Console by a System Admin.
 
 To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered won't be able to join a call.
 
