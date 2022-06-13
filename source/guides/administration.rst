@@ -1,11 +1,12 @@
 Mattermost administration guide
 ===============================
 
-This guide is for people who administer an existing Mattermost server. It’s divided into three parts:
+This guide is for people who administer an existing Mattermost server. It’s divided into four parts:
 
 * `The basics <https://docs.mattermost.com/guides/administration.html#the-basics>`__ - An overview of standard configurations and features.
-* `Workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
-* `Self-hosted admin <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
+* `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
+* `Self-hosted administration <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
+* `Other resources <https://docs.mattermost.com/guides/administration.html#other-resources>`__ - Additional migration, conversion, and troubleshooting resources.
 
 If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, refer to the :doc:`Mattermost Deployment Guide </guides/deployment>`.
 
@@ -34,13 +35,13 @@ The basics
 
 These resources will help you get started with your Mattermost workspace.
 
-* Visit the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console to review health and growth scores for your Mattermost workspace and take recommended actions.
+* **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
 * **Configuration** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__.
 * **Authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`GitLab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 
-Workspace management
---------------------
+Cloud workspace management
+--------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -56,16 +57,36 @@ Workspace management
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 
+Cloud workspace compliance
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Electronic discovery </comply/electronic-discovery>
+    Compliance monitoring </comply/compliance-monitoring>
+    Compliance export </comply/compliance-export>
+    Data retention policy </comply/data-retention-policy>
+    Custom terms of service </comply/custom-terms-of-service>
+
+* :doc:`Electronic discovery </comply/electronic-discovery>` - Extract data from Mattermost for eDiscovery use in legal cases.
+* :doc:`Compliance monitoring </comply/compliance-monitoring>` - Create compliance reports for query and download actions from the Mattermost System Console. 
+* :doc:`Compliance export </comply/compliance-export>` - Create compliance reports for channel history from the Mattermost System Console. 
+* :doc:`Data retention policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
+* :doc:`Custom terms of service </comply/custom-terms-of-service>` - Set custom Terms of Service for team members.
+
 Self-hosted admin
 -----------------
 
-This section of the guide is for admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the workspace management section of this page.
+This section of the guide is for system admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the `Workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ section on this page.
 
 Self-hosted setup and configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Initial setup
-"""""""""""""
+^^^^^^^^^^^^^
+
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -81,7 +102,8 @@ Initial setup
 * :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
 
 Advanced configurations
-"""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^
+
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -101,7 +123,8 @@ Advanced configurations
 * :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Set up search capabilities for teams communicating via Chinese, Japanese, or Korean.
 
 User onboarding
-"""""""""""""""
+^^^^^^^^^^^^^^^
+
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -115,7 +138,8 @@ User onboarding
 * :doc:`Migration guide </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.
 
 Advanced user management configurations
-"""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -137,7 +161,8 @@ Advanced user management configurations
 * :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 
 Self-hosted server management
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -159,21 +184,25 @@ Self-hosted server management
 * :doc:`Bulk export tool </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.
 
 Self-hosted compliance
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
+
 .. toctree::
     :maxdepth: 1
     :hidden:
 
     Electronic discovery </comply/electronic-discovery>
+    Compliance monitoring </comply/compliance-monitoring>
     Compliance export </comply/compliance-export>
     Audit log v2 (experimental) </comply/audit-log>
     Data retention policy </comply/data-retention-policy>
     Custom terms of service </comply/custom-terms-of-service>
 
 * :doc:`Electronic discovery </comply/electronic-discovery>` - Extract data from Mattermost for eDiscovery use in legal cases.
-* :doc:`Compliance export </comply/compliance-export>` - Create compliance reports from the Mattermost System Console. 
+* :doc:`Compliance monitoring </comply/compliance-monitoring>` - Create compliance reports for query and download actions from the Mattermost System Console. 
+* :doc:`Compliance export </comply/compliance-export>` - Create compliance reports for channel history from the Mattermost System Console. 
 * :doc:`Audit log v2 (experimental) </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
 * :doc:`Data retention policy </comply/data-retention-policy>` - Set custom data retention policies to manage how long Mattermost retains messages and file uploads.
+* :doc:`Custom terms of service </comply/custom-terms-of-service>` - Set custom Terms of Service for team members.
 
 Other resources
 ---------------

@@ -119,7 +119,7 @@ redirects = {
 "administration/command-line-tools.html#mattermost-ldap-idmigrate": 
         "https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate",
 "administration/compliance.html": 
-        "https://docs.mattermost.com/comply/compliance-reporting-oversight.html",
+        "https://docs.mattermost.com/comply/compliance-monitoring.html",
 "administration/compliance-export.html": 
         "https://docs.mattermost.com/comply/compliance-export.html",
 "administration/config-in-database.html":
@@ -353,6 +353,10 @@ redirects = {
 "cloud/cloud-user-management.html":
         "https://docs.mattermost.com/channels/manage-channel-members.html",
 
+# Compliance redirects
+"comply/compliance-reporting-oversight":
+        "https://docs.mattermost.com/comply/compliance-monitoring.html",
+        
 # Configure redirects
 "configure/config-ssl-http2-apache2.html": 
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
