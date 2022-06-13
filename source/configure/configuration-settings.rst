@@ -2591,7 +2591,6 @@ The default recommendation for secure deployment is to host Mattermost within yo
 
 If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
 
-
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4288,6 +4287,37 @@ Token
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
+Calls (beta)
+~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > Calls**.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+|all-plans| |self-hosted| |cloud|
+
+**True**: Enables the calls plugin on your Mattermost workspace.
+
+**False**: Disables the calls plugin on your Mattermost workspace.
+
+Additional configuration
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**RTC Server Port**: Default setting is 8443.
+
+**Enable on specific channels**: This can be set to **true** or **false**.
+
+**Enable on all channels**: This can be set to **true** or **false**.
+
+**Max call partipants**: This is an optional field. The recommended setting is 8 to begin with.
+
+**ICE Host Override**: This is an optional field.
+
+**ICE Servers**: This is an optional field. The default is ``stun:stun.global.calls.mattermost.com:3478``. Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
+
+**RTCD Service URL**: This is an optional field.
+
 Channel Export
 ~~~~~~~~~~~~~~
 
@@ -4322,7 +4352,6 @@ Channel Name
 |all-plans| |self-hosted|
 
 Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
-
 
 Username
 ^^^^^^^^
@@ -4389,7 +4418,6 @@ Gfycat display style
 |all-plans| |self-hosted|
 
 Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
-
 
 GIPHY display style
 ^^^^^^^^^^^^^^^^^^^
