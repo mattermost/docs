@@ -132,7 +132,7 @@ Upload or remove license files. For more information on Mattermost Licensing, pl
 Reporting
 ---------
 
-See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on:
+See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Site statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics>`__
 - `Team statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics>`__
@@ -141,7 +141,7 @@ See the :doc:`reporting configuration settings </configure/reporting-configurati
 User Management
 ---------------
 
-See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on:
+See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Users <https://docs.mattermost.com/configure/user-management-configuration-settings.html#users>`__
 - `Groups <https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups>`__
@@ -156,7 +156,7 @@ Environment
 Web server
 ~~~~~~~~~~
 
-See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on:
+See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on the following configuration settingsn:
 
 - `Site URL <https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url>`__
 - `Listen address <https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address>`__
@@ -178,7 +178,7 @@ See the :doc:`web server configuration settings </configure/web-server-configura
 Database
 ~~~~~~~~
 
-See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on:
+See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Driver name <https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name>`__
 - `Data source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__
@@ -194,23 +194,34 @@ See the :doc:`database configuration settings </configure/database-configuration
 - `Disable database search <https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search>`__
 - `Applied schema migrations <https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations>`__
 
-At Rest Encrypt Key
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
-
-When using High Availability, the salt must be identical in each instance of Mattermost.
-
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
-+------------------------------------------------------------------------------------------+
-
 Elasticsearch
 ~~~~~~~~~~~~~~
+
+See the :doc:`Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>` documentation for details on the following configuration settings:
+
+- `Enable Elasticsearch indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing>`__
+- `Server connection address <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address>`__
+- `Skip TLS verification <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-TLS-verification>`__
+- `Server username <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username>`__
+- `Server password <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password>`__
+- `Enable cluster sniffing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing>`__
+- `Bulk indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing>`__
+- `Purge indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes>`__
+- `Enable Elasticsearch for search queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries>`__
+- `Enable Elasticsearch for autocomplete queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries>`__
+- `Post index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas>`__
+- `Post index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards>`__
+- `Channel index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-replicas>`__
+- `Channel index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-shards>`__
+- `User index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-index-replicas>`__
+- `User index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-idex-shards>`__
+- `Aggregate search indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes>`__
+- `Post aggregator start time <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time>`__
+- `Index prefix <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix>`__
+- `Live indexing batch size <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size>`__
+- `Bulk indexing time window <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window>`__
+- `Request timeout <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout>`__
+- `Trace <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace>`__
 
 Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Elasticsearch**.
 
@@ -1011,9 +1022,7 @@ Maximum Burst Size
 
 |all-plans| |self-hosted|
 
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-Maximum number of requests allowed beyond the per second query limit.
+The maximum number of requests allowed beyond the per second query limit.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxBurst": 100`` with numerical input. |
@@ -1398,46 +1407,46 @@ Improves user experience by extending sessions and keeping users logged in if th
 | This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-Session length for email and AD/LDAP authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Session length for email and AD/LDAP authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 30`` with numerical input.             |
-+--------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthWebInHours": 720`` with numerical input.             |
++----------------------------------------------------------------------------------------------------------------+
 
-Session length for mobile apps (days)
+Session length for mobile apps
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
+
+After changing this setting, the new session length will take effect after the next time the user enters their credentials.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthMobileInHours": 4320`` with numerical input.        |
++---------------------------------------------------------------------------------------------------------------+
+
+Session length for SSO authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays": 180`` with numerical input.        |
-+-------------------------------------------------------------------------------------------------------------+
-
-Session length for SSO authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
 This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthSSOInDays": 30`` with numerical input. |
-+--------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthSSOInHours": 720`` with numerical input. |
++----------------------------------------------------------------------------------------------------+
 
 Session Cache (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2625,7 +2634,6 @@ Configure security settings for multi-factor authentication.
 The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
 
 If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
-
 
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4323,6 +4331,37 @@ Token
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
+Calls (beta)
+~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > Calls**.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+|all-plans| |self-hosted| |cloud|
+
+**True**: Enables the calls plugin on your Mattermost workspace.
+
+**False**: Disables the calls plugin on your Mattermost workspace.
+
+Additional configuration
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**RTC Server Port**: Default setting is 8443.
+
+**Enable on specific channels**: This can be set to **true** or **false**.
+
+**Enable on all channels**: This can be set to **true** or **false**.
+
+**Max call partipants**: This is an optional field. The recommended setting is 8 to begin with.
+
+**ICE Host Override**: This is an optional field.
+
+**ICE Servers**: This is an optional field. The default is ``stun:stun.global.calls.mattermost.com:3478``. Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
+
+**RTCD Service URL**: This is an optional field.
+
 Channel Export
 ~~~~~~~~~~~~~~
 
@@ -4357,7 +4396,6 @@ Channel Name
 |all-plans| |self-hosted|
 
 Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
-
 
 Username
 ^^^^^^^^
@@ -4424,7 +4462,6 @@ Gfycat display style
 |all-plans| |self-hosted|
 
 Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
-
 
 GIPHY display style
 ^^^^^^^^^^^^^^^^^^^
@@ -5060,9 +5097,9 @@ This button initiates a compliance export job immediately. You can monitor the s
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <https://docs.mattermost.com/configure/configuration-settings.html#compliance-monitoring>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
+Settings used to enable and configure Mattermost compliance reports. 
 
-Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
+Access the following configuration settings in the System Console by going to **Compliance > Compliance Monitoring**.
 
 Enable Compliance Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6246,6 +6283,19 @@ This setting isn't available in the System Console and can only be set in ``conf
 Database Settings
 ~~~~~~~~~~~~~~~~~
 
+At Rest Encrypt Key
+^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``. It's a legacy setting used to encrypt data stored at rest in the database, and no fields are encrypted using ``AtRestEncryptKey``. 
+
+A 32-character key for encrypting and decrypting sensitive fields in the database. When using High Availability, this value must be identical in each instance of Mattermost.
+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
++------------------------------------------------------------------------------------------+
+
 Clean Up Old Database Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6734,7 +6784,7 @@ File configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation. 
+Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. 
 
 **True**: File output is enabled.
 
