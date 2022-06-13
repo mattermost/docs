@@ -5677,7 +5677,7 @@ Shared channels enables the ability to establish secure connections between Matt
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
 Enable Apps Bar
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
