@@ -2191,6 +2191,50 @@ Posts
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
+Automatically Follow Threads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article for details.
+
+**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread. Mattermost Cloud workspaces have this setting enabled.
+
+**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
+
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Collapsed Reply Threads
+~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
+
+.. important::
+    
+    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality. 
+
+System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
+
+**Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on`` by default.
+
+**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. 
+
+**Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
+
+**Disabled**: Disables Collapsed Reply Threads front-end functionality.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CollapsedThreads": always_on`` with options ``disabled``, ``default_off``, ``default_on``, and ``always_on`` |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -2285,7 +2329,7 @@ A list of URL schemes that are used for autolinking in message text. ``http``, `
 Google API Key
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 Mattermost offers the ability to embed YouTube videos from URLs shared by end users. 
 
@@ -5634,47 +5678,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Automatically Follow Threads
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
- 
-.. important::
-
-    This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. If you can't easily scale up and tune your database, or if you're running the Mattermost application server and database server on the same machine, we recommended disabling this configuration setting until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
-
-**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
-
-**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
-
-.. note::
-
-   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
-+--------------------------------------------------------------------------------------------------------------+
-
-Collapsed Reply Threads (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
-
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
-
-System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
-
-**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
-
-.. note::
-
-   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you clearly understand the `known issues <https://docs.mattermost.com/channels/organize-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you can't easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it's `promoted to general availability in Q2 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
-
-**Disabled**: Disables Collapsed Reply Threads front-end functionality. To disable all backend operations and thread tracking for Collapsed Reply Threads, you must also disable the `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`__ configuration setting.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
-+---------------------------------------------------------------------------------------------------------------------------+
 
 Use Channel Name in Email Notifications (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

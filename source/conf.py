@@ -320,6 +320,8 @@ redirects = {
 # Channels redirects
 "channels/sign-in.html":
         "https://docs.mattermost.com/welcome/log-in.html",
+"channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
+        "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
 
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html": 
@@ -467,6 +469,8 @@ redirects = {
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode",
 "configure/configuration-settings.html#write-timeout":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout",
+"configure/configuration-settings.html#collapsed-reply-threads-beta":
+        "https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads",
 "configure/configuration-settings.html#elasticsearch":
         "https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html",
 "configure/configuration-settings.html#elasticsearch-settings":
@@ -1202,7 +1206,7 @@ redirects = {
 "messaging/organizing-conversations.html":
         "https://docs.mattermost.com/channels/organize-conversations.html",
 "messaging/organizing-conversations.html#enable-collapsed-reply-threads-beta":
-        "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads-beta",
+        "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
 "messaging/organizing-conversations.html#known-issues":
         "https://docs.mattermost.com/channels/organize-conversations.html#known-issues",
 "messaging/organizing-conversations.html#start-or-reply-to-threads":
