@@ -1,12 +1,12 @@
 Make a call (beta)
 ==================
 
-|enterprise| |cloud| |self-hosted|
+|all-plans| |cloud| |self-hosted|
 
-.. |enterprise| image:: ../images/enterprise-badge.png
+.. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
+  :alt: Available in Mattermost Free and Starter subscription plans.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
