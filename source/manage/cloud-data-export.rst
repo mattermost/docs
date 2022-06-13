@@ -21,7 +21,9 @@ You'll be using the `mmctl export <https://docs.mattermost.com/manage/mmctl-comm
 
 .. note::
   
-  The export process doesn’t include integrations or any custom data. Other aspects of your instance, such as specific security settings and requirements, are also not included. For assistance with migrating additional data and settings, see our support options: https://mattermost.com/support/.
+  Prior to migrating your data from Cloud, please ensure you have the appropriate permissions within your organization to carry out the data export which may contain sensitive information. Mattermost is not liable for any actions taken after the data export.
+  
+  Moreover, the export process doesn’t include integrations or any custom data. Other aspects of your instance, such as specific security settings and requirements, are also not included. For assistance with migrating additional data and settings, see our support options: https://mattermost.com/support/.
 
 Once mmctl is installed, we can generate the export from the source instance.
 
