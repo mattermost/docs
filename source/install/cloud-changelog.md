@@ -70,6 +70,7 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
+ - Clicking on a username on a post in a channel sometimes leads to a Console error [MM-44661](https://mattermost.atlassian.net/browse/MM-44661).
  - Back bar is showing over the channel header in the Desktop App [MM-44644](https://mattermost.atlassian.net/browse/MM-44644).
  - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
