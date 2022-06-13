@@ -24,7 +24,7 @@ From 7.0, you can:
 
 - Use calls on desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (ie. Channels, Boards, and Playbooks) while on a call.
-- Start a call using the ``/start call`` slash command.
+- Start a call using the ``/call start`` slash command.
 
 Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that can be enabled in the System Console by a System Admin. <link to config doc>.
 
