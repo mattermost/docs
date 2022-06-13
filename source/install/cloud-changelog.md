@@ -31,7 +31,7 @@ Latest Mattermost Cloud releases:
  - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
 
 #### Collapsed Reply Threads (General Availability)
- - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available. Please reference [this article](https://support.mattermost.com/hc/en-us/articles/6880701948564) for more information and guidance for enabling the feature.
+ - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available and enabled by default for all Cloud users. Administrators may disable it in **System Console > Posts**.
 
 #### Apps Bar (Beta)
  - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
@@ -45,7 +45,7 @@ Latest Mattermost Cloud releases:
  - Romanian language support was downgraded to Beta.
 
 #### Administration
- - For new Cloud Workspaces, the default value for **Collapsed Reply Threads** in **System Console > Posts** is now set to **Always On**. Does not impact existing workspaces where this value is already set.
+ - For all Cloud Workspaces, the default value for Collapsed Reply Threads in **System Console > Posts** is now set to **Always On**. You may choose a different [configuration](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads) as desired.
  - Mattermost Cloud Professional plan now includes a 250GB file storage limit.
  - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
  - The Collapsed Reply Threads configuration option was moved in the **System Console** from **Experimental** to **Site Configuration > Posts**.
@@ -70,7 +70,7 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
- - Clicking on a username on a post in a channel sometimes leads to a Console error [MM-44661](https://mattermost.atlassian.net/browse/MM-44661).
+ - After server upgrade, usage limit warning may stay in the Main Menu until page refresh [MM-45056](https://mattermost.atlassian.net/browse/MM-45056).
  - Back bar is showing over the channel header in the Desktop App [MM-44644](https://mattermost.atlassian.net/browse/MM-44644).
  - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
