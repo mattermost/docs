@@ -53,16 +53,7 @@ Similarly, if you make a registered user inactive in the middle of a billing cyc
 Failed or late payments
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period. If payment information is not updated and the account remains in arrears, here's what to expect:
-
-.. csv-table::
-   :header: "Time in arrears", "Action taken"
-
-   "7 days", "An email is sent to the workspace Admin with directions to update payment information."
-   "14 days", "Another email is sent to the workspace Admin with directions to update payment information."
-   "30 days", "An email is sent to the workspace Admin indicating that the workspace will be suspended in a further 60 days."
-   "90 days", "A final email is sent to the workspace owner. The workspace will be suspended, preventing access by all users and Admins."
-   "97 days", "The workspace and all data is deleted."
+You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period.
 
 Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
 
@@ -154,7 +145,7 @@ Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certif
 Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated Cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. `Please contact Mattermost Sales for more information on this option <https://mattermost.com/contact-sales/>`_.
 
 What are the alternatives, and why should I choose Mattermost Cloud?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Other SaaS offerings are closed-source and focus on a very broad use case. Mattermost Cloud is built on our open source core offering, allowing customers to view our source code and have a high degree of transparency into Mattermost development processes. Mattermost provides a DevOps-centric offering and has deep integrations and workflows that help builders and operators be more effective.
 
