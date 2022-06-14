@@ -19,4 +19,4 @@ You will be billed for registered users in your workspace. A registered user is 
 
 Mattermost Cloud workspaces can be used free forever with Cloud Starter. You can upgrade to a monthly per-user subscription, with Mattermost Professional and Mattermost Enterprise. 
 
-Please see the `Cloud subscriptions <https://docs.mattermost.com/manage/cloud-subscriptions.html>`__ documentation for more detailed information on the Cloud billing process.
+Please see the `Cloud subscriptions <https://docs.mattermost.com/about/cloud-subscriptions.html>`__ documentation for more detailed information on the Cloud billing process.
