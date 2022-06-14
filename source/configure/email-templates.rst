@@ -154,7 +154,7 @@ SendSignInChangeEmail
 ~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
-Sent to the user when sign-in method has been changed (i.e. from email to LDAP, etc.)
+Sent to the user when the login method has been changed (i.e. from email to LDAP, etc.)
 
 **Body Props**:
 

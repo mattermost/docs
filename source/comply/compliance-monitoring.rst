@@ -1,7 +1,5 @@
-:nosearch:
-
-Compliance reporting and oversight
-==================================
+Compliance monitoring
+======================
 
 .. This page is intentionally NOT accessible from the LHS.
 
@@ -19,19 +17,15 @@ Compliance reporting and oversight
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-.. important::
-   
-   This feature has been replaced by a new :doc:`Compliance Export feature <compliance-export>`, and has been removed from Mattermost v6.0. We recommend migrating to the new system. For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
-
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries.
 
 Compliance exports can be filtered to date range, user account, and keyword list. Requests from queries can be downloaded from the user interface in ``.csv`` format, with a ``.json`` metafile documenting the query, as well as placed in a directory set by the System Admin.
 
 Daily compliance reports may also be generated, supporting integration with compliance solutions like `Global Relay <#global-relay-support>`__.
 
-By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded.
+By default, all Mattermost deployments retain all messages, including edits and deletes, along with all files uploaded.
 
-Enabling compliance reporting 
+Enable compliance reporting 
 -----------------------------
 
 To enable the option to generate daily compliance reports:
@@ -40,7 +34,7 @@ To enable the option to generate daily compliance reports:
 2. (Optional) In **Compliance Report Directory** specify the directory in which to place completed compliance reports. Defaults to ``./data/`` if left blank.
 3. Select **Save**.
 
-Turn on Daily Compliance Reports 
+Turn on daily compliance reports 
 --------------------------------
 
 After enabling compliance reporting: 

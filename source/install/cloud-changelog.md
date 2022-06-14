@@ -913,7 +913,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the message input box was shadowed when uploading a file in the center channel.
  - Fixed an error caused by a post created with a non-string attachment field.
  - Fixed the opacity of the read state in the channel sidebar, as well as enhanced the opacity of the channel icon when the channel was unread.
- - Fixed an issue where users were unable to sign in with O365 authentication when the AuthData was formatted differently between Office365 OAuth and Office 365 OpenID.
+ - Fixed an issue where users were unable to log in with O365 authentication when the AuthData was formatted differently between Office365 OAuth and Office 365 OpenID.
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
