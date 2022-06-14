@@ -116,7 +116,7 @@ Your plan immediately changes to the plan you've upgraded to. Your trial will co
 How do I change my subscription from Mattermost Enterprise to Mattermost Professional?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can downgrade on https://mattermost.com/pricing and select Mattermost Professional.
+To downgrade, please contact our `Support team <mailto:support@mattermost.com>`_.
 
 Can I purchase an annual Mattermost Cloud subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
