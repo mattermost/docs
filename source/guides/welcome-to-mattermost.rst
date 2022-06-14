@@ -10,11 +10,11 @@ Access your Mattermost workspace
    :maxdepth: 1
    :hidden:
 
-   Sign in to Mattermost </welcome/sign-in>
+   Log in to Mattermost </welcome/log-in>
    Keyboard shortcuts </welcome/keyboard-shortcuts>
    Log out of Mattermost </welcome/log-out>
 
-* :doc:`Sign in to Mattermost </welcome/sign-in>` - Sign into a Mattermost workspace to connect with your teammates. 
+* :doc:`Log in to Mattermost </welcome/log-in>` - Log in to a Mattermost workspace to connect with your teammates. 
 * :doc:`Keyboard shortcuts </welcome/keyboard-shortcuts>` - Learn keyboard shortcuts for Mattermost product navigation and accessibility.
 * :doc:`Log out of Mattermost </welcome/log-out>` - Log out of all of your teams on the server.
 
@@ -62,15 +62,17 @@ Customize your Mattermost experience
 * :doc:`Customize your Desktop App experience </welcome/customize-desktop-app-experience>` - Learn about additional options in the Desktop App you can customize.
 * :doc:`Manage Desktop App server connections </welcome/manage-desktop-app-server-connections>` - Learn how to connect to multiple Mattermost servers using the Mattermost Desktop App. 
 
-Interface changes in v6.0
---------------------------
+Mattermost interface changes
+----------------------------
 
-We've made changes to your user experience in Matttermost v6.0. If you're upgrading from an older version of Mattermost, review what's changed in v6.0 and later.   
+Upgrading from an older version of Mattermost? Learn what's changed or moved in your new release.
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
+   What changed in Mattermost v7.0? </welcome/what-changed-in-v70>
    What changed in Mattermost v6.0? </welcome/what-changed-in-v60>
 
-* :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the many ways we've improved your Mattermost experience from v6.0.
+* :doc:`What changed in Mattermost v7.0? </welcome/what-changed-in-v70>` - Learn more about how we've improved your Mattermost user experience from v7.0.
+* :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the ways we've improved your Mattermost navigation experience from v6.0.

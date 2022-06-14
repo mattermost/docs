@@ -18,6 +18,12 @@ In most cases, you can upgrade Mattermost Server in a few minutes. However, the 
 Prepare to upgrade to the latest version
 ------------------------------------------
 
+Upgrade to Mattermost v7.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Self-hosted Mattermost customers using MySQL databases may notice the migration to release v7.0 taking longer than usual when having a large number of rows in ``FileInfo`` table. See the `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ documentation for details.
+
+
 Upgrade to Mattermost v6.7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -52,7 +58,7 @@ We strongly recommend that you:
 Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 v6.0 database schema migrations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts and more than 72 million posts.
 

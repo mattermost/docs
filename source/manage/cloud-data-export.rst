@@ -8,7 +8,7 @@ Migrating between two installations follows the same process that's documented b
 Migrate from Cloud to self-hosted
 ---------------------------------
 
-If, after completing your 14-day free Cloud trial, you've decided to self-host your own Mattermost deployment, you can migrate your Cloud data to your self-hosted instance.
+You can migrate your Cloud workspace data to a self-hosted deployment at any time.
 
 How does the process work?
 --------------------------

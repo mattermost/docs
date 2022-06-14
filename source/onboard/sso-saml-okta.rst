@@ -13,7 +13,7 @@ The following process provides steps to configure SAML 2.0 with Okta for Matterm
 Set Up a connection app for Mattermost Single Sign-On
 -----------------------------------------------------
 
-1. Sign in to Okta as an administrator.
+1. Log in to Okta as an administrator.
 
 2. Switch to the **Classic UI**, using the drop-down in the upper left.
 
@@ -74,7 +74,7 @@ Set Up a connection app for Mattermost Single Sign-On
 Configure SAML Sign-On for Mattermost
 --------------------------------------
 
-Start the Mattermost server and sign into Mattermost as a System Admin. Go to **System Console > Authentication > SAML 2.0**, then paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** field and select **Get SAML Metadata from IdP**.
+Start the Mattermost server and log in to Mattermost as a System Admin. Go to **System Console > Authentication > SAML 2.0**, then paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** field and select **Get SAML Metadata from IdP**.
 
 This populates the **SAML SSO URL** and the **Identity Provider Issuer URL** fields automatically. The Identity Provider Public Certificate is also downloaded from the server and set locally. 
 
@@ -108,7 +108,7 @@ Alternatively you can enter the following fields manually:
 
 8. (Optional) If you configured ``First Name`` Attribute and ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-Once complete, and to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then sign in with your SAML credentials to complete the switch.
+Once complete, and to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your avatar via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then log in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement for your users to explain how the migration will work.
 

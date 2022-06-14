@@ -1,14 +1,14 @@
 Subscription overview
 =====================
 
-Mattermost offers features through `Mattermost Professional and Mattermost Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or cloud. 
+Mattermost offers features through `Mattermost Professional and Mattermost Enterprise subscription plans <https://www.mattermost.com/pricing>`__. Your plan subscription determines what features you have access to. When choosing a subscription, you can choose the deployment type as self-hosted or Cloud. 
 
-Mattermost self-hosted deployments require a license to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted licenses. When you complete the purchase process, a license is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
+Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
 
-Mattermost Cloud is a software-as-a-service product. You can sign up and start using Mattermost in a trial mode, then upgrade to the edition you want to use within the product. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
+Mattermost Cloud is a software-as-a-service product. You can sign up for free, forever, with Mattermost Starter. Then, start a free 30-day Mattermost Enterprise trial, to explore paid features. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
 
-Mattermost Non-Profit License Program
-------------------------------------------
+Mattermost Nonprofit License program
+--------------------------------------
 
 The Mattermost Nonprofit License enables eligible charities, open source projects, and nonprofit organizations to apply the benefits of the self-hosted Mattermost Professional offering towards advancing their missions with special nonprofit pricing.
 
@@ -17,7 +17,7 @@ What's included?
 
 A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website and in our marketing materials.
 
-Following the three-year free license, the institution can renew the license every three years for an additional $250 USD subscription fee.
+Following the three-year free subscription, the institution can renew the license every three years for an additional $250 USD subscription fee.
 
 Who's eligible?
 ~~~~~~~~~~~~~~~~
@@ -25,18 +25,17 @@ Who's eligible?
 To be eligible, an organization needs to be an official nonprofit or charity; as well as non-government, non-academic, and non-commercial in nature, with no religious affiliation; and that would otherwise be unable to afford the commercial version of Mattermost software. If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
 
 How to apply?
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__.
 
 Mattermost educational license program
-----------------------------------------
+---------------------------------------
 
 For academic licensing, please see: https://mattermost.com/education/
 
-
-General frequently asked questions
------------------------------------
+Frequently asked questions
+--------------------------
 
 Are my credit card details safe?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +86,7 @@ For the purpose of billing, a “user” is any account created in Mattermost th
 Do I need to pay for deactivated users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. If you deactivate a user, that user is not counted as an active user during your annual renewal process. You can deactivate users manually via System Console, and also via Active Directory/LDAP synchronization, the mmctl tool, and the server APIs.
+No. If you deactivate a user, that user is not counted as an active user during your annual renewal process. You can deactivate users manually via the System Console, and also via Active Directory/LDAP synchronization, the mmctl tool, and the server APIs.
 
 If you choose to pull SQL reports from the database to monitor individual activity to make deactivation decisions, and you are running under high user load, we recommend the reports are pulled from a read replica of the database.
 
@@ -118,15 +117,14 @@ The affected features include, but are not limited to, the following:
     "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions>`__ to reset permissions to default."
     "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
     
-
 Is there a maximum number of users per subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, there is no limit to the subscription value or number of users you can purchase per product.
+No, there is no limit to the subscription value or number of users you can purchase per plan.
 
 What happens if my department buys a Mattermost subscription and then central IT buys a high volume subscription that also covers my department?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost subscriptions and support benefits are per production instance.
 
-When the subscription term for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.
+When the subscription for your department's production instance expires, you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (e.g., to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT.

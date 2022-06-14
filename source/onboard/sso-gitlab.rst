@@ -18,7 +18,7 @@ GitLab Single Sign-On
 Configuring GitLab as a Single Sign-On (SSO) service
 ----------------------------------------------------
 
-Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in.
+Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SSO) service for team creation, account creation, and user login.
 
 .. note::  
   - Only the default GitLab SSO is officially supported. 
@@ -29,7 +29,7 @@ Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SS
 Step 1: Add an OpenID Connect application to your GitLab account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Sign in to your GitLab account, then go to ``https://{gitlab-site-name}/profile/applications``. For *{gitlab-site-name}* use the name of your GitLab instance. If you're using GitLab itself as your service provider, use ``gitlab.com``.
+1. Log in to your GitLab account, then go to ``https://{gitlab-site-name}/profile/applications``. For *{gitlab-site-name}* use the name of your GitLab instance. If you're using GitLab itself as your service provider, use ``gitlab.com``.
 
 2. Add a new application:
 
@@ -73,4 +73,4 @@ Step 2: Configure Mattermost for GitLab SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To force all users to sign-up with SSO only, set **System Console > Authentication > Email > Enable sign-in with email** to ``false``
-Users must change their sign-in method before they can sign in to Mattermost with GitLab.
+Users must change their login method before they can log in to Mattermost with GitLab.
