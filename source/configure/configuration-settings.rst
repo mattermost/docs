@@ -4332,7 +4332,7 @@ Token
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
 Calls (beta)
-~~~~~
+~~~~~~~~~~~~
 
 Access the following configuration settings in the System Console by going to **Plugins > Calls**.
 
@@ -6353,7 +6353,7 @@ Read Replicas
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
+Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
@@ -6368,7 +6368,7 @@ Search Replicas
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
+Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |

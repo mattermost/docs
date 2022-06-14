@@ -307,10 +307,10 @@ Post aggregator start time
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: "03:00"`` | | Must be a 24-hour time stamp in the form ``HH:MM`` based  on  | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: "03:00"`` | | Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
 | the local time of the server.                                 |                                                                                             |
 |                                                               |                                                                                             |
-| Default is 03:00 (3 a.m.).                                    |                                                                                             |
+| Default is 03:00 (3 a.m.)                                     |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Index prefix

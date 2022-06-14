@@ -66,7 +66,7 @@ Apply the changes with ``kubectl``:
 
 .. code-block:: sh
 
-  $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
+    $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
 
 The operator initiates a job in the Kubernetes cluster and once migration is complete the pods are restarted. If necessary, a database migration is also performed.
 
@@ -74,7 +74,7 @@ To view information about the running job, use
 
 .. code-block:: sh
 
-  $ kubectl -n mattermost get jobs
+    $ kubectl -n mattermost get jobs
 
 At least one pod is available at all times and once all pods are restarted with the new version the upgrade is complete.
 
@@ -82,9 +82,9 @@ To view the status of the pods and to confirm their state, use
 
 .. code-block:: sh
 
-  $ kubectl -n mattermost get pods
+    $ kubectl -n mattermost get pods
 
-The *STATUS* of the pods should be running/ready, with an *AGE* of 10-15 seconds.
+The ``STATUS`` of the pods should be running/ready, with an ``AGE`` of 10-15 seconds.
 
 Restore an existing Mattermost MySQL database
 ---------------------------------------------
@@ -195,6 +195,7 @@ If you've installed Mattermost as helm chart deployment, you can easily move to 
 2. Save the secrets from the current installation. If you have extra secrets mounted as a volume, save them as well. To begin, set the ``NAMESPACE`` environment variable to the namespace your Mattermost instance is running in:
 
 .. code-block:: sh
+  
   $ export NAMESPACE=mattermost
   $ kubectl get secrets -n $NAMESPACE mattermost-db-secret -o yaml > mattermost-db-secret.yaml
   $ kubectl get secrets -n $NAMESPACE mattermost-license-secret -o yaml > mattermost-license-secret.yaml

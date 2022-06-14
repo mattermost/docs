@@ -23,11 +23,8 @@ This guide provides steps to install the MSI and use Group Policies in Windows P
 .. contents::
     :backlinks: top
 
-Installation guide
--------------------
-
 Download group policy and MSI installer files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------
 
 1. Using a newly created Windows VM or dedicated Windows computer, make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise).
 
@@ -46,8 +43,8 @@ Download group policy and MSI installer files
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
       :alt: In the mattermost/desktop repository on GitHub, go to the release page for the latest desktop release, then download the installer for your version of Windows. Download the source.zip file as well to extract group policy files.
 
-Installing group policy files locally
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instal group policy files locally
+---------------------------------
 
 1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.1.0.zip`` file in place.
 
@@ -74,13 +71,13 @@ Installing group policy files locally
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00008.png
       :alt: Verify the mattermost.adml file is present in the Windows\PolicyDefinitions\en-US directory.
 
-.. notes::
+.. note::
 
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions`` can be used instead of ``C:\Windows\PolicyDefinitions`` if available.
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US`` can be used instead of ``C:\Windows\PolicyDefinitions\en-US`` if available.
 
 Configure Mattermost using group policy settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------
 
 1. Run the ``Edit group policy`` application by selecting ``Start``, typing ``gpedit`` into the search field, then selecting the resulting ``Edit group policy`` search option.
 
@@ -119,8 +116,8 @@ Verify group policy settings have been applied
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00014.png
       :alt: Go to Computer > HKEY_LOCAL_MACHINE > SOFTWARE > Policies > Mattermost > DefaultServerList to veryfiy the servers you added, then close the Registry Editor.
 
-Install the Mattermost Desktop App using the MSI installer:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install the Mattermost Desktop App using the MSI installer
+------------------------------------------------------------
 
 1. Within the folder the MSI installer was downloaded to, double-click on the MSI installer to begin the Mattermost Desktop installation process.
 
