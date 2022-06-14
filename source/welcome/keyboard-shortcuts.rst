@@ -35,14 +35,17 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 
     Mattermost Desktop App v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. 
     
-    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
-    | On Windows & Linux              | On Mac               | Description                                                                        |
-    +=================================+======================+====================================================================================+
-    | :kbd:`⌃` :kbd:`F`               | :kbd:`⌘` :kbd:`F`    | Move focus to the **Search** field and search the current channel.                 |
-    +---------------------------------+----------------------+------------------------------------------------------------------------------------+  
-    | :kbd:`⌃` :kbd:`⇧` :kbd:`S`      | ⌘ ⌃ S                | Open the **Servers** selector, then use UP/DOWN arrows to navigate                 |
-    |                                 |                      | between servers. Use ENTER to select a server.                                     |
-    +---------------------------------+----------------------+------------------------------------------------------------------------------------+
+    +--------------------------------------+-----------------------------+------------------------------------------------------------------------------------+
+    | On Windows & Linux                   | On Mac                      | Description                                                                        |
+    +======================================+=============================+====================================================================================+
+    | :kbd:`CTRL` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`           | Move focus to the **Search** field and search the current channel.                 |
+    +--------------------------------------+-----------------------------+------------------------------------------------------------------------------------+  
+    | :kbd:`CTRL` :kbd:`SHIFT` :kbd:`S`    | :kbd:`⌘`` :kbd:`⌃` :kbd:`S` | Open the **Servers** selector, then use UP/DOWN arrows to navigate                 |
+    |                                      |                             | between servers. Use ENTER to select a server.                                     |
+    +--------------------------------------+-----------------------------+------------------------------------------------------------------------------------+
+    
+    
+
     || :kbd:`⌃` :kbd:`⇧` :kbd:`1`,    || ⌘ ⌃ 1,              || Navigate to the first server in the **Servers** list. Replace the number          |
     || :kbd:`⌃` :kbd:`⇧` :kbd:`2`     || ⌘ ⌃ 2               || with the server's position within the server in the list.                         |
     +---------------------------------+----------------------+------------------------------------------------------------------------------------+
