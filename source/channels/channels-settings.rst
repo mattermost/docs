@@ -60,7 +60,7 @@ When `desktop app <https://mattermost.com/download/#mattermostApps>`__ notificat
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
-- And when `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/channels/organize-conversations.html#start-or-reply-to-threads>`__.
+- And when `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/channels/organize-conversations.html#start-or-reply-to-threads>`__.
 
 Notification sound
 ^^^^^^^^^^^^^^^^^^
@@ -103,13 +103,13 @@ By default, you receive notifications when someone posts a message that contains
 Reply notifications
 ~~~~~~~~~~~~~~~~~~~
 
-When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in.
+When `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in.
 
 - You're considered to start a thread when you post a message to which other members of your team reply.
 - You're considered to be a participant in a thread when you post a message using the `reply button <https://docs.mattermost.com/channels/reply-to-messages.html>`__ in an pre-existing thread.
 
 .. note::
-  This setting is hidden when Collapsed Reply Threads (Beta) is enabled.
+  This setting is hidden when Collapsed Reply Threads is enabled.
 
 Automatic direct message replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,12 +176,12 @@ Message display
 
 Select the formatting for messages in the center channel. **Compact** mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
-Collapsed Reply Threads (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Collapsed Reply Threads
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and are disabled by default. If your System Admin has enabled **Collapsed Reply Threads** for your workspace, you can enable them in your Mattermost instance to start being notified about threads you're following in a new **Threads** option at the top of the channel sidebar.
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments. 
 
-See our `Organizing conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
+Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our `organize conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about working with Collapsed Reply Threads.
 
 Select to open threads
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,6 +276,10 @@ Enable post formatting
 
 This setting controls whether post formatting is rendered. When **On**, posts will be rendered with `Markdown formatting <https://docs.mattermost.com/channels/format-messages.html>`__, emoji, autolinked URLs, and line breaks. When **Off**, the raw text will be shown.
 
+.. note::
+
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
+
 Enable join/leave messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -284,9 +288,13 @@ This setting controls whether system messages about users joining or leaving a c
 Preview pre-release features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Turn on preview features to view them early, ahead of their official release:
+Turn on preview features to view them early, ahead of their official release.
 
-- **Show markdown preview option in message input box** Turning this on will show a **Preview** option when typing in the text input box. Select **Preview** to see what the Markdown formatting in the message looks like before the message is sent.
+**Show markdown preview option in message input box** Turning this on will show a **Preview** option when typing in the text input box. Select **Preview** to see what the Markdown formatting in the message looks like before the message is sent.
+
+.. note::
+
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
 Performance Debugging
 ~~~~~~~~~~~~~~~~~~~~~

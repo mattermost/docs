@@ -1,7 +1,7 @@
 Configuring Apache2 (unofficial)
 ================================
 
-.. This page is intentionally NOT accessible from the LHS. Unofficial content will be moved to the User Forum.
+.. This page is intentionally NOT accessible from the LHS, and is no longer maintained in this repository. Unofficial content has moved to the User Forum.
 
 Unofficial, community-maintained guides for configuring Apache as a proxy instead of NGINX.
 

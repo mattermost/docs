@@ -28,7 +28,7 @@ General settings provide options around how teams are displayed to users.
 Team name
 ~~~~~~~~~
 
-Your **Team Name** is displayed on the sign-in screen, and in the top of the channel sidebar for your team. 
+Your **Team Name** is displayed on the login screen, and in the top of the channel sidebar for your team. 
 
 You can enter a name up to 15 characters in length. Please note that `some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ are not supported. The length of team names is limited to ensure readability.
 
