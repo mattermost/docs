@@ -193,7 +193,7 @@ SQL statement logging
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
 | development.                                                  | - ``config.json`` setting: ``".SqlSettings.Trace: false",``              |
-|                                                               | - Environment variable: ``MM_SQLSETTINGS_TRACE``                        |
+|                                                               | - Environment variable: ``MM_SQLSETTINGS_TRACE``                         |
 | - **true**: Executing SQL statements are written to the log.  |                                                                          |
 | - **false**: **(Default)** SQL statements aren't written      |                                                                          |
 |   to the log.                                                 |                                                                          |
