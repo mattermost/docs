@@ -1,4 +1,6 @@
-.. Redirecting users trying to access this page to /onboard/migrating-to-mattermost.html#migrating-from-slack
+:orphan:
+
+.. Users trying to access this page are now redirected to /onboard/migrating-to-mattermost.html#migrating-from-slack instead
 
 Migrating from HipChat to Mattermost
 =====================================
