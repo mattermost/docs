@@ -10,7 +10,7 @@ By default, Mattermost offers authentication via email and password, which offer
 
 - Account sign up using email and password.
 - Password reset via email.
-- Ability to use the same credentials to sign in to web, desktop, and mobile app experiences.
+- Ability to use the same credentials to log into web, desktop, and mobile app experiences.
 - Ability to use a username and password in place of email and password.
 
 Security features for authentication 
@@ -22,7 +22,7 @@ A core set of features is available with all authentication options to help incr
 - Ability for users to remotely sign out of devices.
 - Ability for IT admin to force sign out of a user from devices.
 - Ability to set rate limits on authentication API calls to deter password-guessing attacks.
-- Ability to require multi-factor authentication on sign in.
+- Ability to require multi-factor authentication on log in.
 - For advanced deployments, password requirements for length and special characters can be added.
 
 Active Directory/LDAP authentication
@@ -38,7 +38,7 @@ Active Directory/LDAP authentication
 - Synchronization with AD/LDAP to disable, enable, and update Mattermost users based on AD/LDAP.
 
 .. note:: 
-   - New user accounts are created when new users sign-in with their AD/LDAP credentials. You can optionally pre-create user accounts using the `bulk loading <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__ tool.
+   - New user accounts are created when new users log in with their AD/LDAP credentials. You can optionally pre-create user accounts using the `bulk loading <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__ tool.
    - If you're using email or username and password authentication `users can switch to AD/LDAP manually <https://docs.mattermost.com/onboard/ad-ldap.html#getting-started>`__, and the `conversion to AD/LDAP can also be done using the command line interface <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-user-migrate-auth>`__ by an IT admin.
 
 For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not overtax the authentication server when synchronizing.

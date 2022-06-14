@@ -318,6 +318,8 @@ redirects = {
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
 
 # Channels redirects
+"channels/sign-in.html":
+        "https://docs.mattermost.com/welcome/log-in.html",
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
         "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
 

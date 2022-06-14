@@ -90,7 +90,7 @@ To invite guests into one or more Mattermost channels:
 Configure AD/LDAP authentication
 ---------------------------------
 
-When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
+When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first login instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 1. Go to **System Console > Authentication > Guest Access** to enable guest access.
 2. Go to **System Console > Authentication > AD/LDAP**.
@@ -104,7 +104,7 @@ When a guest logs in without having any channels assigned to their account, they
 Configure SAML 2.0 authentication
 ----------------------------------
 
-When enabled, the **Guest Attribute** in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
+When enabled, the **Guest Attribute** in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first login instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 If a Mattermost guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
@@ -221,7 +221,7 @@ The guest account feature was reviewed by the Mattermost security team. We do no
 How can I validate my guests' identity?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can sign in. Alternatively, you can whitelist domains via **System Console > Authentication > Guest Access > Whitelisted Guest Domains**.
+Guests can be authenticated via SAML and/or AD/LDAP to ensure that only the named guest can log in. Alternatively, you can whitelist domains via **System Console > Authentication > Guest Access > Whitelisted Guest Domains**.
 
 Can I restrict guests' ability to upload content?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
