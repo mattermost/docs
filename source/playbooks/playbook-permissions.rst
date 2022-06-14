@@ -6,13 +6,13 @@ There are different ways for teams to access and interact with playbooks. This i
 Permissions are provided using:
 
 * **System Scheme:** Applies permissions universally across all teams, channels, and playbooks.
-* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
+* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Professional and Enterprise).
 
 For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
 
 .. note::
 
-   Some permissions functionality is only available to Mattermost Enterprise customers.
+   Some permissions functionality is only available to Mattermost Enterprise customers. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
    
 In the context of Playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with Playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
