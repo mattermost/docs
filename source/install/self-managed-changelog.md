@@ -109,7 +109,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.0 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - The file icon is sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
+ - The file icon is sometimes unresponsive [MM-45091](https://mattermost.atlassian.net/browse/MM-45091).
  - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
