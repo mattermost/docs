@@ -18,13 +18,128 @@ Format messages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-You can format your messages in Mattermost using Markdown to control `text styling <#text-style>`__, `links <#links>`__, `headings <#headings>`__, `lists <#lists>`__, `code blocks <#code-blocks>`__, `in-line code <#in-line-code>`__, `in-line images <#in-line-images>`__, `horizontal lines <#horizontal-lines>`__, `block quotes <#block-quotes>`__, `tables <#tables>`__, and `math formulas <#math-formulas>`__. Markdown makes it easy to format messages: type a message as you normally would, then use formatting syntax to render the message a specific way. For a guide to using Markdown in Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
+.. |bold-icon| image:: ../images/format-bold_F0264.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Bold message text using the Bold icon in the message formatting toolbar.
+
+.. |italics-icon| image:: ../images/format-italic_F0277.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Italicize message text using the Italic icon in the message formatting toolbar.
+
+.. |strikeout-icon| image:: ../images/format-strikethrough-variant_F0281.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Strike out message text using the Strikethrough icon in the message formatting toolbar.
+
+.. |headings-icon| image:: ../images/format-header_E81D.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Format message text as a heading using the Heading icon in the message formatting toolbar. Headings 1 through 6 are supported.
+
+.. |links-icon| image:: ../images/link-variant_F0339.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Add a message link using the Link icon in the message formatting toolbar.
+
+.. |attachments-icon| image:: ../images/paperclip_F03E2.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Add a message attachment using the Upload files icon in the message formatting toolbar.
+
+.. |numbered-icon| image:: ../images/format-list-numbered_F027B.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Format message text as a numbered list using the Numbered list icon in the message formatting toolbar.
+
+.. |bullets-icon| image:: ../images/format-list-bulleted_F0279.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Format message text as a bulleted list using the Bulleted list icon in the message formatting toolbar.
+
+.. |quotes-icon| image:: ../images/format-quote-open_F0757.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Format message text as a quotation using the Quote icon in the message formatting toolbar.
+
+.. |code-icon| image:: ../images/code-tags_F0174.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Format message text as code using the Code icon in the message formatting toolbar.
+
+.. |emoji-icon| image:: ../images/emoticon-outline_F01F2.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Add emojis or GIFs to message text using the Emoji/Gif picker icon in the message formatting toolbar.
+
+.. |hide-formatting-icon| image:: ../images/format-letter-case_F0B34.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Hide formatting options in the message formatting toolbar using the Show/Hide Formatting icon.
+
+.. |preview-icon| image:: ../images/eye-outline_F06D0.svg
+  :height: 24px
+  :width: 24px
+  :target: https://mattermost.com/deploy
+  :alt: Review your message text formatting using the Show/Hide preview icon in the message formatting toolbar.
+
+Use the messaging formatting toolbar
+------------------------------------
+
+From Mattermost v7.0, you can format your messages in Mattermost using the message formatting toolbar without having to specify any Markdown syntax.
+
+.. image:: ../images/message-formatting-toolbar.gif
+  :scale: 50
+  :alt: The message formatting toolbar, available from Mattermost v7.0, doesn't require Markdown syntax, and makes formatting message text fast and easy.
+
+The message formatting toolbar offers the following formatting options:
+
++------------------------------------------------------------+--------------------+
+| **Formatting option**                                      | **Icon**           | 
++============================================================+====================+
+| Bold, italicize, or strike out text                        | |bold-icon|        |
+|                                                            | |italics-icon|     | 
+|                                                            | |strikeout-icon|   | 
++------------------------------------------------------------+--------------------+
+| Add headings, links, or attachments                        | |headings-icon|    |
+|                                                            | |links-icon|       | 
+|                                                            | |attachments-icon| |
++------------------------------------------------------------+--------------------+
+| Format a numbered list, a bulleted list, quoted text, or   | |numbered-icon|    | 
+| text as code                                               | |bullets-icon|     | 
+|                                                            | |quotes-icon|      |
+|                                                            | |code-icon|        | 
++------------------------------------------------------------+--------------------+
+| Add emojis or GIFs                                         | |emoji-icon|       | 
++------------------------------------------------------------+--------------------+
+
+Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
+
+You can hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options.
+
+Use Markdown
+-------------
+
+You can also format your messages in Mattermost using Markdown to control `text styling <#text-style>`__, `links <#links>`__, `headings <#headings>`__, `lists <#lists>`__, `code blocks <#code-blocks>`__, `in-line code <#in-line-code>`__, `in-line images <#in-line-images>`__, `horizontal lines <#horizontal-lines>`__, `block quotes <#block-quotes>`__, `tables <#tables>`__, and `math formulas <#math-formulas>`__. Markdown makes it easy to format messages: type a message as you normally would, then use formatting syntax to render the message a specific way. For a guide to using Markdown in Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
 
 .. image:: ../images/messagesTable1.png
    :alt: Formatting markdown controls the look and feel of text messages.
 
 Text style
-----------
+~~~~~~~~~~
 
 You can use either ``_`` or ``*`` around a word or phrase to make it italic, or ``__`` or ``**`` around a word or phrase to make it bold. 
 
@@ -45,15 +160,15 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
   :alt: Strike Through
 
 Links
------
+~~~~~
 
 Channel links
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Create a link to a public channel in a message by typing ``~`` followed by the channel name (e.g. ``~roadmap``). From Mattermost v6.2, channel members also see private channel names returned.
 
 Labeled links
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Create labeled links by putting the desired text in square brackets ``[ ]`` and the associated link in round brackets ``( )``.
 
@@ -62,7 +177,7 @@ Create labeled links by putting the desired text in square brackets ``[ ]`` and 
 Renders as: `Check out Mattermost! <https://about.mattermost.com/>`__
 
 Headings
---------
+~~~~~~~~
 
 Make a heading by typing ``#`` and a space before your title. For smaller headings, use more ``#``'s.
 
@@ -90,7 +205,7 @@ Renders as:
    :alt: Smaller Heading
 
 Lists
------
+~~~~~
 
 Create a list by using asterisks ``*``, hyphens ``-``, and/or plus signs ``+`` interchangeably as bullets. Indent bullet points by adding two spaces in front each one.
 
@@ -149,7 +264,7 @@ Renders as:
    :alt: List
 
 Code blocks
------------
+~~~~~~~~~~~
 
 Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files.
 
@@ -220,7 +335,7 @@ Renders as:
    :alt: Syntax Highlighting Monokai
 
 In-line code
-------------
+~~~~~~~~~~~~
 
 Create in-line monospaced code text by surrounding it with backticks `````. Don't use single quotes ``'``.
 
@@ -231,7 +346,7 @@ Create in-line monospaced code text by surrounding it with backticks `````. Don'
 Renders as: ``monospace``.
 
 In-line images
---------------
+~~~~~~~~~~~~~~
 
 In-line images are images added within lines of text. From Mattermost Server v5.35 and in Mattermost Cloud, you can control whether all in-line images over 100px in height are automatically collapsed or expanded in messages by setting a `user preference <https://docs.mattermost.com/channels/channels-settings.html#website-link-previews>`__, or by using the ``/collapse`` and ``/expand`` slash commands.
 
@@ -258,7 +373,7 @@ Examples:
   .. |mattermost-icon-50x76| image:: ../images/icon-50x76.png
 
 In-line image with hover text
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: none
 
@@ -270,7 +385,7 @@ Renders as:
     :alt: Mattermost
 
 In-line image with link
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
   An extra set of square brackets ``[ ]`` is required around the alt text, and round brackets ``( )`` are required around the image link.
@@ -285,7 +400,7 @@ Renders as:
     :target: https://github.com/mattermost/mattermost-server
    
 In-line image displayed with fixed width and height
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
@@ -300,7 +415,7 @@ Renders as:
     :name: Mattermost Icon 
 
 In-line image displayed with fixed width
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: An in-line image that's 50 pixels wide where the system adjusts the height to maintain the original aspect ratio.
 
@@ -315,7 +430,7 @@ Renders as:
     :width: 50
  
 Horizontal lines
-----------------
+~~~~~~~~~~~~~~~~
 
 Create a line by using three ``*``, ``_``, or ``-``.
 
@@ -326,7 +441,7 @@ Renders as:
 ---------------------------------------------------------------------------
 
 Block quotes
-------------
+~~~~~~~~~~~~
 
 Create block quotes using ``>``.
 
@@ -353,7 +468,7 @@ Renders as:
    :alt: Markdown Table Sample
 
 Math Formulas
--------------
+~~~~~~~~~~~~~
 
 .. tabs::
 

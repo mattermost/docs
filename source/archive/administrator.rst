@@ -263,14 +263,4 @@ Learn how to support growth within Mattermost.
 Community-Managed Documentation
 -------------------------------
 
-Documentation on early previews and unofficial functionality.
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   /install/prod-docker*
-   /install/deploy-cloudron*
-   /administration/upgrade-script*
-   /administration/light-install-hindi.rst
-   
+Documentation on unofficial functionality is available on the `Mattermost Discussion Forums <https://forum.mattermost.com/c/docs/37>`__.

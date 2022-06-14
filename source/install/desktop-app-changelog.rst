@@ -1166,7 +1166,7 @@ Improvements
 
    - "Team Management" changed to "Server Management" following the release of team sidebar in Mattermost server 3.6
    - Added a "+" icon to the desktop server tab bar to more easily sign into a new Mattermost server
-   - Added an option to sign into another Mattermost server from **File > Sign in to Another Server**
+   - Added an option to sign in to another Mattermost server from **File > Sign in to Another Server**
    - Clicking "Add new server" on the Settings page opens a dialog instead of a new row
    - Clicking "Remove" next to a server now requires a confirmation to prevent a user from removing the server by accident
    - Clicking "Edit" next to a server on the Settings page opens a dialog

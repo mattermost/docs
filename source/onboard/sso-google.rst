@@ -52,4 +52,4 @@ Instead of using the System Console, you can add the Google settings directly to
         "ButtonColor": ""
   }
 
-3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their sign-in method before they can sign in with Google Apps.
+3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their login method before they can log in with Google Apps.

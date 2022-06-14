@@ -1,5 +1,5 @@
 Start a call (beta)
-==================
+===================
 
 |all-plans| |cloud| |self-hosted|
 
@@ -18,32 +18,32 @@ Start a call (beta)
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
   
-Mattermost calls introduces voice calling and screen sharing functionality in channels, group messages, and direct messages, and is available as a beta release from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
+Mattermost introduces beta voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
 
 From 7.0, you can:
 
-- Use calls on desktop and mobile apps in addition to web browsers.
+- Start or join a call from desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
-- Start a call using the ``/call start`` slash command.
+- Start a call using the ``/call start`` slash command or **Start call** in the channel header.
 
-Mattermost Cloud users can start using calls right away. For Mattermost self-hosted deployments, calls is available as a plugin that `can be enabled <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_ in the System Console by a System Admin.
+Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_.
 
 To start a call, select **Start call** in the channel header. Any active team member in the channel can join a call, whether it's a public or private channel. If someone from outside of the organization wants to join a call, you'll need to provide them with a guest account, and add them to the channel. Users who are archived or not registered won't be able to join a call.
 
-You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``call link`` slash command to generate a sharable link.
+You can share a call's link to use in a meeting request or share with other team mates. The link is unique to each channel, and contains the channel's ID, so it doesn't change between calls. Use the ``/call link`` slash command to generate a shareable link.
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
 Limitations
 -----------
 
-- In Mattermost Cloud, up to eight participants per channel can join a call.
+- In Mattermost Cloud, up to eight participants per channel can join a call. This is a temporary and evolving limitation during public beta.
 - In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants, across all calls in all channels on the server, is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**.
 
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin `needs to be enabled <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_ in the System Console. Additional configuration is also available via the System Console.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_.
 
 Frequently asked questions
 --------------------------
