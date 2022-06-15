@@ -4,19 +4,19 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
-- [Release 2022-06-16](#release-2022-06-16)
 - [Release 2022-06-15](#release-2022-06-15)
+- [Release 2022-06-14](#release-2022-06-14)
 - [Release 2022-05-26](#release-2022-05-26)
 - [Release 2022-05-12](#release-2022-05-12)
 - [Release 2022-04-28](#release-2022-04-28)
 - [Release 2022-04-13](#release-2022-04-13)
 
-## Release 2022-06-16
+## Release 2022-06-15
 
 ### Bug Fixes
  - Fixed an issue where multiple backend errors displayed when file storage usage got fetched if no files had been uploaded.
 
-## Release 2022-06-15
+## Release 2022-06-14
 
 ### Highlights
 
