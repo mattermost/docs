@@ -124,8 +124,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v6.7.2, released **
-  - Fixed an issue with Compliance Exports where the zip file creation failed when adding attachments to a post.
+- **v6.7.2, released 2022-06-15**
+  - Fixed an issue with Compliance Exports where the zip file creation failed when adding attachments to a post [MM-40179](https://mattermost.atlassian.net/browse/MM-40179).
 - **v6.7.1, released 2022-06-13**
   - Mattermost v6.7.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
