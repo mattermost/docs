@@ -5731,7 +5731,7 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 
 .. note::
   
-  Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience.
+  Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
 
 **True**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
 
