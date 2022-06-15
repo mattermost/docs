@@ -12,7 +12,7 @@ Manage Channels Settings
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/apps
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -53,7 +53,7 @@ Send Desktop Notifications
 
 Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Chrome, Edge, Firefox, and Safari.
 
-When `Desktop App <https://mattermost.com/apps>`__ notifications are set to "Only for mentions and direct messages":
+When `Desktop App <https://mattermost.com/download>`__ notifications are set to "Only for mentions and direct messages":
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.

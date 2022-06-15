@@ -10,7 +10,7 @@ AD/LDAP groups
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/apps
+  :target: https://mattermost.com/download
   :alt: Available for Mattermost Cloud deployments.
 
 Overview
