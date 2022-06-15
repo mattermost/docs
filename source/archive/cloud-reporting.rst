@@ -17,7 +17,7 @@ Site statistics
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/apps
   :alt: Available for Mattermost Cloud deployments.
 
 System statistics are viewable under **System Console > Reporting > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.

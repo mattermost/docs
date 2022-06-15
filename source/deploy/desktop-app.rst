@@ -10,7 +10,7 @@ Desktop App deployment guide
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/apps
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -20,7 +20,7 @@ Desktop App deployment guide
 
 Mattermost desktop applications are available for Windows, macOS, and Linux operating systems.
 
-You can `download the apps directly from our download page <https://mattermost.com/download/#mattermostApps>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
+You can `download the apps directly from our download page <https://mattermost.com/apps>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop-app-install.html>`__ for help during setup and for troubleshooting tips.
 
 This page provides a guide on how to customize and distribute your own Mattermost Desktop App, and how to distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings.
 
@@ -95,7 +95,7 @@ Windows App: Pre-configuration and silent deployment
 
 You can distribute the official Windows Desktop App silently to end users, pre-configured with the server URL. You can also set all the `app settings <https://docs.mattermost.com/messaging/managing-desktop-app-options.html>`__ except for the **Start app on login** option.
 
-1. Download the latest Windows installer from the `Mattermost download page <https://mattermost.com/download/#mattermostApps>`__.
+1. Download the latest Windows installer from the `Mattermost download page <https://mattermost.com/apps>`__.
 
 2. Move the executable file into a shared place such as a file server.
 

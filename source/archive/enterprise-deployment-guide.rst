@@ -84,7 +84,7 @@ Once you have installed and deployed Mattermost, activate your Enterprise E20 tr
 Client Usage
 ------------
 
-Depending on your environment and your users, you have several options when deploying Mattermost: web browser, `desktop <https://docs.mattermost.com/install/desktop.html>`_, `mobile <https://docs.mattermost.com/mobile/mobile-overview.html>`_, or all three. We `provide binaries <https://mattermost.com/download/#mattermostApps>`_ for MS Windows, macOS, Linux, iOS, and Android. However, depending on your organization policies deployment on these platforms can vary.
+Depending on your environment and your users, you have several options when deploying Mattermost: web browser, `desktop <https://docs.mattermost.com/install/desktop.html>`_, `mobile <https://docs.mattermost.com/mobile/mobile-overview.html>`_, or all three. We `provide binaries <https://mattermost.com/apps>`_ for MS Windows, macOS, Linux, iOS, and Android. However, depending on your organization policies deployment on these platforms can vary.
 
 Deployment First Steps
 ----------------------

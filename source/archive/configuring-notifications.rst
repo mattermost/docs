@@ -12,7 +12,7 @@ Configuring Notifications
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/apps
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -41,7 +41,7 @@ You can configure your Mattermost account for how and when you want to be notifi
 Desktop notifications
 ----------------------
 
-Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Edge, Firefox, and Safari, or the `Mattermost Desktop Apps <https://mattermost.com/download/#mattermostApps>`__. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop App.
+Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Edge, Firefox, and Safari, or the `Mattermost Desktop Apps <https://mattermost.com/apps>`__. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely. You can also choose what sound plays when a desktop notification is triggered on supported browsers and the Mattermost Desktop App.
 
 .. image:: ../images/desktop_notification.png
 

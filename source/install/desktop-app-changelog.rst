@@ -10,7 +10,7 @@ Desktop application changelog
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/apps
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -702,7 +702,7 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
-- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/download/#mattermostApps>`_ is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
+- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/apps>`_ is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
 
 Release v4.2.1
 ----------------------------
@@ -1462,7 +1462,7 @@ Release v1.3.0
 
 Release date: 2016-07-18
 
-`Download the latest version here <https://mattermost.com/download/#mattermostApps>`__.
+`Download the latest version here <https://mattermost.com/apps>`__.
 
 Improvements
 ~~~~~~~~~~~~
