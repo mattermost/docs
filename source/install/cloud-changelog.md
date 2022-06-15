@@ -14,7 +14,7 @@ Latest Mattermost Cloud releases:
 ## Release 2022-06-16
 
 ### Bug Fixes
- - Fixed an issue where multiple backend errors displayed when file storage usage was fetched if no files had been uploaded.
+ - Fixed an issue where multiple backend errors displayed when file storage usage got fetched if no files had been uploaded.
 
 ## Release 2022-06-15
 
