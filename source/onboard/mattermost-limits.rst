@@ -22,7 +22,7 @@ Mattermost Starter limits
 
 **Channels limits**
 
-- 10,000 message history limit. Oldest messages that exceed this limit will be archived.
+- 10,000 message history limit. The oldest messages that exceed this limit will be archived.
 
 **Boards limits**
 
