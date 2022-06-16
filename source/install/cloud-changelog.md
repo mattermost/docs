@@ -4,12 +4,42 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-06-22](#release-2022-06-22)
 - [Release 2022-06-15](#release-2022-06-15)
 - [Release 2022-06-14](#release-2022-06-14)
 - [Release 2022-05-26](#release-2022-05-26)
 - [Release 2022-05-12](#release-2022-05-12)
 - [Release 2022-04-28](#release-2022-04-28)
-- [Release 2022-04-13](#release-2022-04-13)
+
+## Release 2022-06-22
+
+### Improvements
+
+#### User Interface (UI)
+ - Recent emojis are now sorted based on the number of times an emoji has been used.
+ - Improved the link preview user interface.
+ - Added new search shortcuts to the **Keyboard Shortcuts** modal. 
+    - CMD+F (macOS)
+    - CTRL+F (Windows) Web App (Browser)
+    - CMD+SHIFT+F (macOS)
+    - CTRL+SHIFT+F (Windows)
+ - Added a Trial info panel and end date in the Trial section in **System Console > Subscriptions** page.
+
+#### Administration
+ - We create a new config option ``MaxImageDecoderConcurrency`` which indicates how many images can be decoded concurrently at once. The default is -1 which means number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, a good rule of thumb to follow is that ``MaxImageResolution* MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+
+### Bug Fixes
+ - Fixed an issue where links to internal help pages did not always open in a new browser tab.
+ - Fixed an issue that caused the Channel Members right-hand side search input to not search all the members of a channel.
+ - Fixed an issue where the feature discovery page still displayed a **Start Trial** button after a trial was completed.
+ - Fixed an issue where channel recency sorting was not consistent between mobile and webapp.
+
+### Known Issues
+ - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
+ - After server upgrade, usage limit warning may stay in the Main Menu until page refresh [MM-45056](https://mattermost.atlassian.net/browse/MM-45056).
+ - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-06-15
 
