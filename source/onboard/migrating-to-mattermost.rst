@@ -51,18 +51,20 @@ Once your migration is complete and verified, you can optionally `upgrade the Te
 Migrating Mattermost server from MariaDB to PostgreSQL
 ------------------------------------------------------
 
-The following instructions migrate Mattermost from one server using MariaDB to another or the same server using PostgreSQL. It backs up and restores the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated. This requires PostgreSQL and pgloader (https://github.com/dimitri/pgloader) to be installed on the **DESTINATION**.
+The following instructions migrate Mattermost from one server using MariaDB to another using PostgreSQL. It backs up and restores the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated. This assumes that:
+  - PostgreSQL and pgloader (https://github.com/dimitri/pgloader) are installed on the **DESTINATION**.
+  - The database name in the **SOURCE** is ``mattermost``.
 
 1. Back up your SOURCE Mattermost server.
     1. See `Backup and Disaster Recovery documentation <https://docs.mattermost.com/deploy/backup-disaster-recovery.html>`__.
 2. Upgrade your SOURCE Mattermost server to the latest major build version.
     1. See `Upgrading Mattermost Server documentation <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__.
-3. Install the latest major build of Mattermost server as your DESTINATION (with PostgreSQL as database).
+3. Install the latest major build of Mattermost server as your DESTINATION (with a PostgreSQL database called ``Mattermost``).
     1. See `Install Mattermost documentation <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__ for details. Make sure your new instance is properly configured and tested.
     2. Stop the DESTINATION server using ``sudo stop mattermost``, then back up the database and ``config.json`` file.
 4. Backup the database from the SOURCE Mattermost server
     1. See `Backup and Disaster Recovery documentation <https://docs.mattermost.com/deploy/backup-disaster-recovery.html>`__.
-5. Migrate your MariaDB database to PostreSQL
+5. Migrate your MariaDB database to PostreSQL (using the right username for mysql)
 
 .. code:: bash
 
