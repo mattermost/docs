@@ -69,7 +69,7 @@ The following instructions migrate Mattermost from one server using MariaDB to a
 .. code:: bash
 
 $ createdb mattermost-postgres-backup
-$ pgloader mysql://user@localhost/mattermost postgresql:///mattermost
+$ pgloader mysql://mysql_username:password@localhost/mattermost postgresql:///mattermost-postgres-backup
 
 6. Migrate database from SOURCE to DESTINATION.
     1. Restore it in place of the database in the DESTINATION server:
