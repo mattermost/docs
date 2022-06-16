@@ -1,7 +1,13 @@
+:orphan:
+
+:nosearch:
+
 .. _install-debian-server:
 
 Installing Debian Buster
 ------------------------
+
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
 Install the 64-bit version of Debian on each machine that hosts one or more of the components.
 

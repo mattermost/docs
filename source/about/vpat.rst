@@ -1,5 +1,9 @@
+:orphan:
+
 Voluntary Product Accessibility Template (VPAT) 
 ===============================================
+
+.. This page is intentionally not accessible via the LHS navigation pane.
 
 The following Voluntary Product Accessibility Template for 508 Compliance is completed per `online guidelines from the United States Department of State <https://www.section508.gov/sell/vpat/>`__.
 

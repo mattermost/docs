@@ -6,13 +6,13 @@ There are different ways for teams to access and interact with playbooks. This i
 Permissions are provided using:
 
 * **System Scheme:** Applies permissions universally across all teams, channels, and playbooks.
-* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
+* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Professional and Enterprise).
 
 For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
 
 .. note::
 
-   Some permissions functionality is only available to Mattermost Enterprise customers.
+   Some permissions functionality is only available to Mattermost Enterprise customers. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`__.
    
 In the context of Playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with Playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
@@ -31,7 +31,7 @@ In the context of Playbooks, Playbook Admins are also members, and may have elev
 
 .. note::
 
-Before you make system or team changes to permissions, ensure that you don't lose access to your existing playbooks. Navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
+   Before you make system or team changes to permissions, ensure that you don't lose access to your existing playbooks. Navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
 
 Playbooks permissions
 ---------------------
@@ -42,7 +42,6 @@ Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the following example, only Playbook Admins can edit playbooks. Other users can view public playbooks and private playbooks of which they are a member, but can't edit any playbook or change playbook memberships.
-.
 
 1. Go to **System Console > User Management > Permissions**.
 2. In the **All Members** section, uncheck **Manage Public Playbooks** and uncheck **Manage Private Playbooks**.
@@ -51,6 +50,7 @@ In the following example, only Playbook Admins can edit playbooks. Other users c
 
 Restrict who can create playbooks
 ---------------------------------
+
 You can also set permissions for read-only playbooks that do allow members to create new public or private playbooks.
 
 1. Go to **System Console > User Management > Permissions**.
@@ -75,7 +75,7 @@ Alternatively, to restrict this action so only Playbook Admins can convert playb
 4. Select **Save**.
 
 I want to control who starts a run
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, all Members can start a run using a playbook. You can restrict this so that only Playbook Admins can start a run. Note that with this configuration, Members are not able to start runs or edit playbooks.
 

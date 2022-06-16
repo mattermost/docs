@@ -48,4 +48,4 @@ To shrink the right-hand sidebar to its original width, select the same **Collap
 Work with Collapsed Reply Threads
 ---------------------------------
 
-An early access beta of Collapsed Reply Threads is available for Mattermost Cloud and Mattermost self-hosted customers from v5.37. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels#organize-conversations.html>`__ documentation to learn more.
+Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels#organize-conversations.html>`__ documentation to learn more.

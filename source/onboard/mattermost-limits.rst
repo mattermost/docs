@@ -3,7 +3,7 @@ Workspace limits
 
 There may be limits applied to your Mattermost Cloud workspace based on the type of subscription plan you have. These limits are applied across all users in your team. We'll let you know when you're halfway from reaching a limit, as well as when you're closer to it. 
 
-When limits have been reached, data is archived. This data is not deleted, and can be accessed when you upgrade to a plan with higher limits. If you choose to downgrade your plan, for example from Mattermost Professional to Mattermost Starter, the limits will be applied to your existing data. 
+When limits have been reached, data is archived. This data is not deleted, and can be accessed when you upgrade to a plan with higher limits. If you choose to downgrade your plan, for example from Mattermost Professional to Mattermost Starter, the limits will be applied to your existing data.
 
 In addition to these limits, visit our pricing page to see a complete list of features are available for each of our plans: https://mattermost.com/pricing/.
 
@@ -16,17 +16,17 @@ Mattermost Starter limits
 
 **Platform limits**
 
-- 1 team.
-- 10 GB file storage across the platform, with 100MB upload limit.
-- 5 apps/plugins enabled.
+- Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived.
+- 10GB file storage across the platform, with 100MB upload limit. The oldest files that exceed this limit will be archived.
+- Unlimited plugins can be installed but only 5 can be enabled at one time. Core plugins such as Boards, Calls, and Playbooks do not count toward this limit.
 
 **Channels limits**
 
-- 10,000 message history limit.
+- 10,000 message history limit. The oldest messages that exceed this limit will be archived.
 
 **Boards limits**
 
-- 5 views per board.
+- Maximum 5 saved views per board.
 - Only the 500 most recently updated cards on the server are displayed.
 
 Mattermost Professional limits
@@ -53,3 +53,8 @@ If I have more than one team and I downgrade, which teams are archived?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first team you created is retained. The rest, if any, are archived.
+
+What happens to additional Boards views that I create?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Views created during a trial or on a paid plan are retained on downgrading to Starter. However, new views can't be created until any additional views are deleted to bring the number of views back to the limit of five.

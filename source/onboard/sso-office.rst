@@ -51,4 +51,4 @@ Instead of using the System Console, you can add the Office 365 settings directl
         "DirectoryId": "common"
   }
 
-3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their sign-in method before they can sign in with Office 365.
+3. Save your changes, then restart your Mattermost server. After the server restarts, users must change their login method before they can log in with Office 365.

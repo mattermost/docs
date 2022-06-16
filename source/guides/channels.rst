@@ -6,6 +6,7 @@ Mattermost Channels provide 1:1 and group messaging that features integrated voi
 With Mattermost Channels, you can keep all of your team's communications in one place and remove information and organizational silos. This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
 
 .. image:: ../images/Channels_Hero.png
+   :alt: An example of the Mattermost Channels screen that includes teams, the channel sidebar, an active conversation in the center pane, reply threads in the right-hand pane.
 
 Channels, messages, and conversations
 -------------------------------------
@@ -27,6 +28,7 @@ Work with channels
    Rename a channel </channels/rename-channels>
    Convert public channels to private </channels/convert-public-channels>
    Join and leave channels </channels/join-leave-channels>
+   Start a call </channels/make-calls>
    Manage channel members </channels/manage-channel-members>
    Find channels </channels/find-channels> 
    Navigate between channels </channels/navigate-between-channels>
@@ -42,6 +44,7 @@ Work with channels
 * :doc:`Rename a channel </channels/rename-channels>` - Rename channels to make them more discoverable.
 * :doc:`Convert public channels to private </channels/convert-public-channels>` - Learn how to convert channel access and visibility.
 * :doc:`Join and leave channels </channels/join-leave-channels>` - Learn how to start or stop being a channel member.
+* :doc:`Start a call </channels/make-calls>` - Start a call that channel participants can join.
 * :doc:`Manage channel members </channels/manage-channel-members>` - Add and remove users from channels.
 * :doc:`Find channels </channels/find-channels>` - Find all available public channels you can join, and all channels you're a member of.
 * :doc:`Navigate between channels </channels/navigate-between-channels>` - Learn how to navigate between channels.

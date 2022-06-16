@@ -35,6 +35,7 @@ Please see `Release Lifecycle documentation <https://docs.mattermost.com/upgrade
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
 .. image:: ../images/esr-graphic.png
+   :alt: Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.
 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
@@ -61,7 +62,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.8 <https://releases.mattermost.com/6.3.8/mattermost-6.3.8-linux-amd64.tar.gz>`_       |                                                     |
+| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.9 <https://releases.mattermost.com/6.3.9/mattermost-6.3.9-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.9 <https://releases.mattermost.com/5.37.9/mattermost-5.37.9-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -108,7 +109,7 @@ If we upgrade Mobile or Desktop Apps before we upgrade to the latest ESR, will w
 Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost Server.
 
 What Mobile and Desktop App versions are compatible with the latest ESR?
------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the Mobile App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
 
