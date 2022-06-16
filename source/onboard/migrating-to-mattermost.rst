@@ -48,6 +48,35 @@ The following instructions migrate Mattermost from one server to another by back
 
 Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`__.
 
+Migrating Mattermost server from MariaDB to PostgreSQL
+------------------------------------------------------
+
+The following instructions migrate Mattermost from one server using MariaDB to another or the same server using PostgreSQL. It backs up and restores the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated. This requires PostgreSQL to be installed on the **DESTINATION**.
+
+1. Back up your SOURCE Mattermost server.
+    1. See `Backup and Disaster Recovery documentation <https://docs.mattermost.com/deploy/backup-disaster-recovery.html>`__.
+2. Upgrade your SOURCE Mattermost server to the latest major build version.
+    1. See `Upgrading Mattermost Server documentation <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__.
+3. Install the latest major build of Mattermost server as your DESTINATION.
+    1. See `Install Mattermost documentation <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__ for details. Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
+    2. Stop the DESTINATION server using ``sudo stop mattermost``, then back up the database and ``config.json`` file.
+4. Migrate database from SOURCE to DESTINATION.
+    1. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected.
+5. Migrate ``config.json`` from SOURCE to DESTINATION.
+    1. Copy of ``config.json`` file from SOURCE deployment to DESTINATION.
+6. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION.
+    1. Copy the ``./data`` directory from SOURCE deployment to DESTINATION.
+    2. If you use a directory other than ``./data``, copy that directory instead.
+7. Start the DESTINATION deployment.
+    1. Run ``sudo start mattermost``.
+    2. Go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
+8. Test that the system is working by going to the URL of an existing team.
+    1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
+
+Alternatively, you can do a bulk export as described in https://docs.mattermost.com/manage/bulk-export-tool.html.
+
+Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`__.
+
 Migrating to Mattermost from other messaging solutions
 ------------------------------------------------------
 
