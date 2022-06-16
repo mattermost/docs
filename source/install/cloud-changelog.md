@@ -25,9 +25,6 @@ Latest Mattermost Cloud releases:
     - CTRL+SHIFT+F (Windows)
  - Added a Trial info panel and end date in the Trial section in **System Console > Subscriptions** page.
 
-#### Administration
- - We create a new config option ``MaxImageDecoderConcurrency`` which indicates how many images can be decoded concurrently at once. The default is -1 which means number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, a good rule of thumb to follow is that ``MaxImageResolution* MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
-
 ### Bug Fixes
  - Fixed an issue where links to internal help pages did not always open in a new browser tab.
  - Fixed an issue that caused the Channel Members right-hand side search input to not search all the members of a channel.
