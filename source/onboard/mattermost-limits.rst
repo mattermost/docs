@@ -17,12 +17,12 @@ Mattermost Starter limits
 **Platform limits**
 
 - Maximum 1 team. Any additional teams created during a trial or on a paid plan will be archived.
-- 10GB file storage across the platform, with 100MB upload limit.
+- 10GB file storage across the platform, with 100MB upload limit. The oldest files that exceed this limit will be archived.
 - Unlimited plugins can be installed but only 5 can be enabled at one time. Core plugins such as Boards, Calls, and Playbooks do not count toward this limit.
 
 **Channels limits**
 
-- 10,000 message history limit. Messages that exceed this limit will be archived.
+- 10,000 message history limit. The oldest messages that exceed this limit will be archived.
 
 **Boards limits**
 
