@@ -19,10 +19,8 @@ Latest Mattermost Cloud releases:
  - Recent emojis are now sorted based on the number of times an emoji has been used.
  - Improved the link preview user interface.
  - Added new search shortcuts to the **Keyboard Shortcuts** modal. 
-    - CMD+F (macOS)
-    - CTRL+F (Windows) Web App (Browser)
-    - CMD+SHIFT+F (macOS)
-    - CTRL+SHIFT+F (Windows)
+    - CMD+F (macOS) and CTRL+F (Windows) for Desktop App
+    - CMD+SHIFT+F (macOS) and CTRL+SHIFT+F (Windows) for webapp
  - Added a Trial info panel and end date in the Trial section in **System Console > Subscriptions** page.
 
 ### Bug Fixes
