@@ -76,15 +76,15 @@ $ pgloader mysql://user@localhost/mattermost postgresql:///mattermost
 $ psql mattermost < mattermost-postgres-backup
 
     2. More details on the restore on https://www.postgresql.org/docs/current/backup-dump.html#BACKUP-DUMP-RESTORE
-5. Migrate ``config.json`` from SOURCE to DESTINATION.
+7. Migrate ``config.json`` from SOURCE to DESTINATION.
     1. Copy of ``config.json`` file from SOURCE deployment to DESTINATION.
-6. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION.
+8. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION.
     1. Copy the ``./data`` directory from SOURCE deployment to DESTINATION.
     2. If you use a directory other than ``./data``, copy that directory instead.
-7. Start the DESTINATION deployment.
+9. Start the DESTINATION deployment.
     1. Run ``sudo start mattermost``.
     2. Go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
-8. Test that the system is working by going to the URL of an existing team.
+10. Test that the system is working by going to the URL of an existing team.
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 Alternatively, you can do a bulk export as described in https://docs.mattermost.com/manage/bulk-export-tool.html.
