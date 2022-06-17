@@ -10,7 +10,7 @@ Channel naming conventions
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -26,8 +26,8 @@ Basic structure
 - Channel names appear in menus where users select which conversations to join.
 - Channel names are unique.
 - Channel names have a 64-character limit to ensure readability on both desktop and mobile devices.
-- An additional 128 characters are available to add a **Channel Purpose** visible when users are selecting channels.
-- An additional 1024 characters are available for describing the channel in detail in the **Channel Header**.
+- An additional 1024 characters are available for describing the channel's focus in the channel header and channel information pane.
+- An additional 128 characters are available for a **Channel Purpose** that's visible in the channel header and the channel information pane.
 
 Scope channel names
 -------------------

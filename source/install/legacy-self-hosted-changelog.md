@@ -7903,7 +7903,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 #### Team Sidebar
 - Added a new sidebar on left-hand side to improve cross-team notifications and team switching
-- New sidebar improves user experience on the [Mattermost Desktop Apps](https://mattermost.com/download/#mattermostApps) when engaging with multiple teams
+- New sidebar improves user experience on the [Mattermost Desktop Apps](https://mattermost.com/apps) when engaging with multiple teams
 
 #### MFA Enforcement ([Enterprise E10 & E20](https://mattermost.com/pricing-self-managed/))
 - Added support for MFA Enforcement. When set to true, all users with email or LDAP authentication are required to set up MFA for their accounts
@@ -8261,7 +8261,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
 - On mobile devices, the keyboard now stays open after sending a message to make sending multiple messages easier
 
 #### Notifications
-- Notification sound settings are now honored on the [Mattermost Desktop Apps](https://mattermost.com/download/#mattermostApps)
+- Notification sound settings are now honored on the [Mattermost Desktop Apps](https://mattermost.com/apps/)
 - Push notifications can now be received on more than one device
 
 #### Channel Shortlinking

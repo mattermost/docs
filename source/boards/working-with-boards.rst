@@ -10,7 +10,7 @@ Working with boards
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -53,7 +53,7 @@ If cards don't have a custom **Date** property, they'll be sorted and displayed 
   
   If your cards do have a **Date** property and you're not able to move them around, you may be displaying them by **Created Time** or **Last Updated Time**.
 
-* To add a new card, select the **+** sign in the top-left corner of the relevant date.
+* To add a new card, select the **+** option in the top-left corner of the relevant date.
 * To create a date range event, select a start date and then drag to the end date to create a card for that date range event.
 * To add a date range to an existing card, hover over the side of the card to display the arrow and drag to the left or right to create a date range.
 

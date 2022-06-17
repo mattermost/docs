@@ -1,7 +1,10 @@
+:orphan:
 :nosearch:
 
 Mobile apps FAQ
 ================
+
+.. This page is intentionally not accessible via the LHS navigation pane.
 
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------

@@ -15,7 +15,7 @@ Audit log v2 (experimental)
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-System Admins can review a comprehensive listing of events for more in-depth analysis. Additionally, the new audit log provides more control over where the logs are generated and stored. 
+Audit log v2 is an experimental feature that provides System Admins with a comprehensive listing of events for more in-depth analysis. Additionally, the new audit log provides more control over where the logs are generated and stored. 
 
 The advanced logging capabilities of the Audit Log V2 allow any combination of console, local file, syslog, and TCP socket targets, and can send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
 

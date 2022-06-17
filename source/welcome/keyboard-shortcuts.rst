@@ -10,7 +10,7 @@ Mattermost keyboard shortcuts
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -79,18 +79,20 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     | ALT+DOWN                   | OPTION+DOWN               | Next channel or direct message in the channel sidebar.                                                    |
     +----------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------+
 
-Zoom shortcuts for Web and Desktop App
------------------------------------------
+Shortcuts for Web and Desktop App
+----------------------------------
 
 The following display keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 
-+------------------------------+------------------------------+----------------------------------------+
-| On Windows & Linux           | On Mac                       | Description                            |
-+==============================+==============================+========================================+
-| CTRL+PLUS                    | CMD+PLUS                     | Increase font size (zoom in).          |
-+------------------------------+------------------------------+----------------------------------------+
-| CTRL+MINUS                   | CMD+MINUS                    | Decrease font size (zoom out).         |
-+------------------------------+------------------------------+----------------------------------------+
++------------------------------+------------------------------+--------------------------------------------+
+| On Windows & Linux           | On Mac                       | Description                                |
++==============================+==============================+============================================+
+| CTRL+PLUS                    | CMD+PLUS                     | Increase font size (zoom in).              |
++------------------------------+------------------------------+--------------------------------------------+
+| CTRL+MINUS                   | CMD+MINUS                    | Decrease font size (zoom out).             |
++------------------------------+------------------------------+--------------------------------------------+
+| CTRL+ALT+I                   | CMD+ALT+I                    | Show or hide the channel information pane. |
++------------------------------+------------------------------+--------------------------------------------+
 
 .. note::
 
