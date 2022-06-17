@@ -15,8 +15,7 @@ Important Upgrade Notes
 
 .. important::
    - Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle in April 15, 2022. Upgrading to Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
-   - `Collapsed Reply Threads <https://docs.mattermost.com/messaging/organizing-conversations.html>`_, available in beta, are known to have a negative impact on server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`_ and `CollapsedThreads <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta>`_ until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`_.
-   - Upgrading the Microsoft Teams Calling plugin to v1.1.0 requires users to reconnect their accounts.
+   - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
