@@ -30,6 +30,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where channel recency sorting was not consistent between mobile and webapp.
 
 ### Known Issues
+ - Images in OpenGraph previews appear broken [MM-45164](https://mattermost.atlassian.net/browse/MM-45164).
  - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
  - After server upgrade, usage limit warning may stay in the Main Menu until page refresh [MM-45056](https://mattermost.atlassian.net/browse/MM-45056).
  - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
