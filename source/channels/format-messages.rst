@@ -30,7 +30,7 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
 
 .. tip::
     
-    You can also use common keyboard shortcuts, including CTRL/CMD+B to bold, and CTRL/CMD+I to italicize text. 
+    You can also use common keyboard shortcuts, including :kbd:`Ctrl`/:kbd:`⌘` :kbd:`B` to bold text, and :kbd:`Ctrl`/:kbd:`⌘` :kbd:`I` to italicize text. 
 
 * ``*italics*`` (or ``_italics_``) renders as *italics*
 * ``**bold**`` renders as **bold**
