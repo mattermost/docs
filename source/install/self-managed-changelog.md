@@ -15,7 +15,7 @@ Latest Mattermost Releases:
 
 - **v7.0.1, released **
   - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
-  - Fixed an issue where the file icon was sometimes unresponsive [MM-45091](https://mattermost.atlassian.net/browse/MM-45091).
+  - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
   - Fixed an issue with Compliance Exports where the zip file creation failed when adding attachments to a post [MM-40179](https://mattermost.atlassian.net/browse/MM-40179).
 - **v7.0.0, released 2022-06-15**
   - Original 7.0.0 release
