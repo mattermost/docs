@@ -77,7 +77,7 @@ All email invitations contain a single-use link that expires after 48 hours. Sys
 Send messages
 -------------
 
-Enter your message in the text field, then press ENTER to send the message. Your messages can also include images and file attachments.
+Enter your message in the text field, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac to send the message. Your messages can also include images and file attachments.
 
 - Copy and paste images or drag-and-drop image files into the text field to add them to your message.
 - Select the **Attachment** |attachment| icon to the right of the text field to attach documents or other files to your message.

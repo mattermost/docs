@@ -22,7 +22,7 @@ Keyboard shortcuts for Mattermost teams help you make a more efficient use of yo
 
 .. tip::
 
-  Display a list of available keyboard shortcuts by pressing :kbd:`CTRL` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
+  Display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
 
 Navigation shortcuts for Mattermost Channels
 --------------------------------------------

@@ -420,11 +420,11 @@ How to provide these details
 
 **macOS**
 
-Press CMD+SHIFT+5 to open the screen recording tool and select the region of the screen you want to record. To take a screenshot, press CMD+SHIFT+4 and select the region to take a screenshot. The screenshot files are placed on the desktop by default.
+Press :kbd:`⌘` :kbd:`⇧` :kbd:`5` to open the screen recording tool and select the region of the screen you want to record. To take a screenshot, press :kbd:`⌘` :kbd:`⇧` :kbd:`4` and select the region to take a screenshot. The screenshot files are placed on the desktop by default.
 
 **Windows**
 
-Press CTRL+SHIFT+S to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as `OBS <https://obsproject.com/>`__.
+Press :kbd:`Ctrl` :kbd:`Shift` :kbd:`S` to open the snipping tool to take a screenshot. If you want to take a screen recording you'll need to install third-party software such as `OBS <https://obsproject.com/>`__.
 
 **iOS**
 

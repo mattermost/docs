@@ -21,7 +21,7 @@ Navigate channels
 Navigate between channels
 --------------------------
 
-Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/welcome/set-your-status-availability.html>`__ at a glance.
+Use the **Find channel** option in the channel sidebar, or press :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac to visit other channels, or to review `member availability <https://docs.mattermost.com/welcome/set-your-status-availability.html>`__ at a glance.
 
     .. image:: ../images/switch-channels.png
         :alt: Navigate between channels and review member availability.
