@@ -258,7 +258,7 @@ Mattermost has configuration settings for the terms of service, privacy policy, 
 Send all users a welcome email with instructions on how to get started using Mattermost including links to the mobile applications and the User Guide.
 
 **References**: 
-- Links to download Mattermost apps:  https://mattermost.com/download/#mattermostApps 
+- Links to download Mattermost apps:  https://mattermost.com/apps 
 - Channels Guide: https://docs.mattermost.com/guides/channels.html 
 
 3.4 Implementation schedule

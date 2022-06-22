@@ -10,7 +10,7 @@ Mention people in messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -50,7 +50,7 @@ The following example sends a special mention notification to Alice, whose usern
 
   @alice how did your interview go with the new candidate?
 
-If the person you mentioned doesn't belong to the channel, a System Message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
+If the person you mentioned doesn't belong to the channel, a system message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
 
 @channel and @all
 -----------------

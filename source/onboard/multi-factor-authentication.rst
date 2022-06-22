@@ -22,7 +22,7 @@ Multi-factor authentication
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -34,7 +34,7 @@ Multi-factor authentication (MFA) is a secondary layer of user authentication ap
 
 With MFA enabled, users need to provide a secure one-time code in addition to their username and password in order to log in to Mattermost. MFA is useful in organizations that have specific security and compliance policies. It can also be used in organizations where Mattermost is not behind a firewall and doesn't have access to existing MFA infrastructure.
 
-Mattermost offers a smartphone-based MFA check in addition to email-password or Active Directory/LDAP authentication to sign in to the Mattermost server.
+Mattermost offers a smartphone-based MFA check in addition to email-password or Active Directory/LDAP authentication to log in to the Mattermost server.
 
 Supported smartphones include iOS, Android, Blackberry, and Windows Phone devices that are able to install `Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`__. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.
 

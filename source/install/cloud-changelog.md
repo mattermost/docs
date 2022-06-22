@@ -4,12 +4,83 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-06-15](#release-2022-06-15)
+- [Release 2022-06-14](#release-2022-06-14)
 - [Release 2022-05-26](#release-2022-05-26)
 - [Release 2022-05-12](#release-2022-05-12)
 - [Release 2022-04-28](#release-2022-04-28)
 - [Release 2022-04-13](#release-2022-04-13)
-- [Release 2022-03-30](#release-2022-03-30)
-- [Release 2022-03-16](#release-2022-03-16)
+
+## Release 2022-06-15
+
+### Bug Fixes
+ - Fixed an issue where multiple backend errors displayed when file storage usage got fetched if no files had been uploaded.
+
+## Release 2022-06-14
+
+### Highlights
+
+#### Free Forever Mattermost Cloud Plan
+ - Mattermost Cloud now supports a free forever plan, Cloud Starter, for unlimited users for unlimited time.
+ - Access unlimited channels, playbooks, and boards across the Mattermost platform, with unlimited voice calls and screen sharing in Direct Messages.
+ - The free plan includes a few workspace limits. [Upgrade to Professional for unlimited access](https://mattermost.com/pricing/):
+    - Ability to start a free 30-day Enterprise trial, with access to all features during the trial period.
+    - Maximum 1 team. Additional teams can be created during a trial or on a paid plan, which are archived if downgraded back to Starter. History will be preserved, though that archived history can only be accessed if a free user upgrades to a paid subscription plan.
+    - 10GB file storage across the platform, with 100MB upload limit. History will be preserved.
+    - Unlimited installed apps or plugins, with maximum of 5 enabled at one time. History will be preserved.
+    - Access to 10,000 most recent messages. History will be preserved.
+    - Access to 500 most recently updated cards.
+    - Maximum 5 saved views per board.
+
+#### Calls (Beta)
+ - [Native voice calling and screen sharing](https://docs.mattermost.com/channels/make-calls.html) is now available. This is a Channels-specific integration.
+
+#### Collapsed Reply Threads (General Availability)
+ - [Collapsed Reply Threads](https://docs.mattermost.com/channels/organize-conversations.html) is now generally available and enabled by default for all Cloud users. Administrators may disable it in **System Console > Posts**.
+
+#### Apps Bar (Beta)
+ - The channel header is now decluttered to make it more obvious how to access Calls, Playbooks, and Boards when viewing a channel. All channel header icons registered by plugins are moved to the new Apps Bar, while Calls remains in the channel header.
+
+### Improvements
+
+#### User Interface (UI)
+ - Applied new designs for the Login screen.
+ - Changed some tooltips to appear when focused instead of just on hover.
+ - The legacy **Settings > Advanced Settings > Enable Post Formatting** and **Settings > Advanced Settings > Preview Pre-release Features** settings are now deprecated in favor of the the new formatting toolbar.
+ - Romanian language support was downgraded to Beta.
+
+#### Administration
+ - For all Cloud Workspaces, the default value for Collapsed Reply Threads in **System Console > Posts** is now set to **Always On**. You may choose a different [configuration](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads) as desired.
+ - Mattermost Cloud Professional plan now includes a 250GB file storage limit.
+ - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
+ - The Collapsed Reply Threads configuration option was moved in the **System Console** from **Experimental** to **Site Configuration > Posts**.
+
+#### API Changes
+ - To allow Admins to retrieve contents of posts whether they are deleted or not, ``include_deleted`` query parameter was introduced to ``GetPost`` endpoint.
+
+#### Performance
+ - Reduced the number of calls made to ``viewChannel`` API during regular usage.
+ - Added pagination to the ``getPostThread`` API calls.
+
+### Bug Fixes
+ - Fixed an issue with uploading SVG files.
+ - Fixed an issue where thread posts were not left-aligned in compact message display mode.
+ - Fixed an error about a missing column for the Shared Channels experimental feature.
+ - Fixed an issue where the channel menu drop-down option "Move to..." was skipped when pressing the TAB keyboard key.
+ - Fixed an issue where the bulk import failed due to reply ``CreateAt`` being greater than that of the parent post.
+ - Fixed an undefined error when leaving a channel with the Unreads filter enabled.
+ - Fixed an issue where clicking on a quick emoji reaction opened the right-hand pane.
+ - Fixed an issue where the keyboard focus did not go back to the post textbox after hitting CTRL/CMD+SHIFT+P twice.
+ - Fixed an issue where the upload files button was positioned incorrectly.
+
+### Known Issues
+ - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
+ - After server upgrade, usage limit warning may stay in the Main Menu until page refresh [MM-45056](https://mattermost.atlassian.net/browse/MM-45056).
+ - Back bar is showing over the channel header in the Desktop App [MM-44644](https://mattermost.atlassian.net/browse/MM-44644).
+ - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - Channel switcher does not show cross team unreads on refresh [MM-44073](https://mattermost.atlassian.net/browse/MM-44073).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-05-26
 
@@ -22,7 +93,6 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - To keep users in Mattermost when opening documentation links from the **System Console > Plugin** settings page, all the links now open in another tab.
- - Improved right-hand side thread reply input and scrolling behavior by making the reply to thread input sticky.
  - Users are no longer hidden from search results in the "Add members" modal, even if they are already members of the channel.
  - Applied new designs for the Login screen:
      - Default login
@@ -913,7 +983,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the message input box was shadowed when uploading a file in the center channel.
  - Fixed an error caused by a post created with a non-string attachment field.
  - Fixed the opacity of the read state in the channel sidebar, as well as enhanced the opacity of the channel icon when the channel was unread.
- - Fixed an issue where users were unable to sign in with O365 authentication when the AuthData was formatted differently between Office365 OAuth and Office 365 OpenID.
+ - Fixed an issue where users were unable to log in with O365 authentication when the AuthData was formatted differently between Office365 OAuth and Office 365 OpenID.
 
 ### Known Issues
  - Pinned posts are no longer highlighted.
