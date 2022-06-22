@@ -31,7 +31,7 @@ Release v5.1
 --------------
 
 - **v5.1.1, released **
- - Upgraded to Electron v18.2.4.
+ - Upgraded to Electron v18.3.0.
  - Fixed an issue where a channel name matching the server subpath would not be navigable.
  - Fixed an issue where the ``hideOnStart`` setting didn't work.
  - Fixed an issue where the certificate error dialog box would reappear infinitely.
