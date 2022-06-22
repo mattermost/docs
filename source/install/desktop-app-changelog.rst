@@ -30,7 +30,15 @@ Latest Mattermost Desktop App releases:
 Release v5.1
 --------------
 
-**Release day: 2022-05-16**
+- **v5.1.1, released **
+ - Upgraded to Electron v18.2.4.
+ - Fixed an issue where a channel name matching the server subpath would not be navigable.
+ - Fixed an issue where the ``hideOnStart`` setting didn't work.
+ - Fixed an issue where the certificate error dialog box would reappear infinitely.
+ - Fixed an issue where the first client certificate could not be selected.
+ - Restored Windows ZIP builds.
+- **v5.1.0, released 2022-05-16**
+ - Original v5.1.0 release
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
@@ -107,7 +115,6 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
-- A new config setting "Launch app minimized" does not work on Linux `MM-44339 <https://mattermost.atlassian.net/browse/MM-44339>`_.
 - Desktop App may become unresponsive and crash when initiating a screen reader `MM-44058 <https://mattermost.atlassian.net/browse/MM-44058>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
