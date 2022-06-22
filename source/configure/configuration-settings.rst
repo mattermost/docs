@@ -35,7 +35,7 @@ Configuration in database
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -132,7 +132,7 @@ Upload or remove license files. For more information on Mattermost Licensing, pl
 Reporting
 ---------
 
-See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on:
+See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Site statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics>`__
 - `Team statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics>`__
@@ -141,7 +141,7 @@ See the :doc:`reporting configuration settings </configure/reporting-configurati
 User Management
 ---------------
 
-See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on:
+See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Users <https://docs.mattermost.com/configure/user-management-configuration-settings.html#users>`__
 - `Groups <https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups>`__
@@ -156,7 +156,7 @@ Environment
 Web server
 ~~~~~~~~~~
 
-See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on:
+See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on the following configuration settingsn:
 
 - `Site URL <https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url>`__
 - `Listen address <https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address>`__
@@ -178,7 +178,7 @@ See the :doc:`web server configuration settings </configure/web-server-configura
 Database
 ~~~~~~~~
 
-See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on:
+See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Driver name <https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name>`__
 - `Data source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__
@@ -194,23 +194,34 @@ See the :doc:`database configuration settings </configure/database-configuration
 - `Disable database search <https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search>`__
 - `Applied schema migrations <https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations>`__
 
-At Rest Encrypt Key
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
-
-When using High Availability, the salt must be identical in each instance of Mattermost.
-
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
-+------------------------------------------------------------------------------------------+
-
 Elasticsearch
 ~~~~~~~~~~~~~~
+
+See the :doc:`Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>` documentation for details on the following configuration settings:
+
+- `Enable Elasticsearch indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing>`__
+- `Server connection address <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address>`__
+- `Skip TLS verification <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-TLS-verification>`__
+- `Server username <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username>`__
+- `Server password <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password>`__
+- `Enable cluster sniffing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing>`__
+- `Bulk indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing>`__
+- `Purge indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes>`__
+- `Enable Elasticsearch for search queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries>`__
+- `Enable Elasticsearch for autocomplete queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries>`__
+- `Post index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas>`__
+- `Post index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards>`__
+- `Channel index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-replicas>`__
+- `Channel index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-shards>`__
+- `User index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-index-replicas>`__
+- `User index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-idex-shards>`__
+- `Aggregate search indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes>`__
+- `Post aggregator start time <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time>`__
+- `Index prefix <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix>`__
+- `Live indexing batch size <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size>`__
+- `Bulk indexing time window <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window>`__
+- `Request timeout <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout>`__
+- `Trace <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace>`__
 
 Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Elasticsearch**.
 
@@ -1011,9 +1022,7 @@ Maximum Burst Size
 
 |all-plans| |self-hosted|
 
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-Maximum number of requests allowed beyond the per second query limit.
+The maximum number of requests allowed beyond the per second query limit.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxBurst": 100`` with numerical input. |
@@ -1398,46 +1407,46 @@ Improves user experience by extending sessions and keeping users logged in if th
 | This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-Session length for email and AD/LDAP authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Session length for email and AD/LDAP authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 30`` with numerical input.             |
-+--------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthWebInHours": 720`` with numerical input.             |
++----------------------------------------------------------------------------------------------------------------+
 
-Session length for mobile apps (days)
+Session length for mobile apps
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
+
+After changing this setting, the new session length will take effect after the next time the user enters their credentials.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthMobileInHours": 4320`` with numerical input.        |
++---------------------------------------------------------------------------------------------------------------+
+
+Session length for SSO authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays": 180`` with numerical input.        |
-+-------------------------------------------------------------------------------------------------------------+
-
-Session length for SSO authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
 This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthSSOInDays": 30`` with numerical input. |
-+--------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthSSOInHours": 720`` with numerical input. |
++----------------------------------------------------------------------------------------------------+
 
 Session Cache (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1728,7 +1737,7 @@ Mattermost Apps Download Page Link
 Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/download/"`` with string input. |
+| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/apps/"`` with string input.     |
 +------------------------------------------------------------------------------------------------------------------------+
 
 Android App Download Link
@@ -2182,6 +2191,50 @@ Posts
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
+Automatically Follow Threads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article for details.
+
+**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread. Mattermost Cloud workspaces have this setting enabled.
+
+**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
+
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Collapsed Reply Threads
+~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
+
+.. important::
+    
+    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality. 
+
+System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
+
+**Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on`` by default.
+
+**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. 
+
+**Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
+
+**Disabled**: Disables Collapsed Reply Threads front-end functionality.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CollapsedThreads": always_on`` with options ``disabled``, ``default_off``, ``default_on``, and ``always_on`` |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -2276,7 +2329,7 @@ A list of URL schemes that are used for autolinking in message text. ``http``, `
 Google API Key
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 Mattermost offers the ability to embed YouTube videos from URLs shared by end users. 
 
@@ -2403,7 +2456,7 @@ Enable End User Notices
 Authentication
 ---------------
 
-Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
+Authentication settings to enable account creation and log in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
 Signup
 ~~~~~~~
@@ -2503,7 +2556,7 @@ Enable sign-in with email
 
 **True**: Mattermost allows account creation using email and password.
 
-**False**: Sign in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a Single Sign-on service like AD/LDAP, SAML, or GitLab.
+**False**: Log in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a Single Sign-on service like AD/LDAP, SAML, or GitLab.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false``. |
@@ -2514,9 +2567,9 @@ Enable sign-in with username
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Mattermost allows users with email login to sign in using their username and password. This setting does not affect AD/LDAP login.
+**True**: Mattermost allows users with email login to log in using their username and password. This setting does not affect AD/LDAP login.
 
-**False**: Sign in with username is disabled and does not appear on the login screen.
+**False**: Log in with username is disabled and does not appear on the login screen.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EnableSignInWithUsername": true`` with options ``true`` and ``false``. |
@@ -2582,13 +2635,12 @@ The default recommendation for secure deployment is to host Mattermost within yo
 
 If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
 
-
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to sign-in to the Mattermost server. Specifically, they will be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
+**True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to log in to the Mattermost server. Specifically, they'll be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
 
 **False**: Multi-factor authentication is disabled.
 
@@ -2878,7 +2930,7 @@ The attribute in the AD/LDAP server used to populate the username field in Matte
 
 This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
 
-The **Username Attribute** may be set to the same value used to sign-in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
+The **Username Attribute** may be set to the same value used to log in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
@@ -3474,7 +3526,7 @@ Select OAuth 2.0 service provider
 
 Choose whether OAuth can be used for account creation and login. Options include:
 
-- **Do not allow sign-in via an OAuth 2.0 provider**
+- **Do not allow login via an OAuth 2.0 provider**
 - **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
 - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
 - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
@@ -3746,7 +3798,7 @@ Select OpenID Connect service provider
 
 Choose whether OpenID Connect can be used for account creation and login. Options include:
 
-- **Do not allow sign-in via an OpenID provider**
+- **Do not allow login via an OpenID provider**
 - **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
 - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
 - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
@@ -4279,6 +4331,37 @@ Token
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
+Calls (beta)
+~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > Calls**.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+|all-plans| |self-hosted| |cloud|
+
+**True**: Enables the calls plugin on your Mattermost workspace.
+
+**False**: Disables the calls plugin on your Mattermost workspace.
+
+Additional configuration
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+**RTC Server Port**: Default setting is 8443.
+
+**Enable on specific channels**: Allow Channel Admins to enable or disable calls on specific channels. This can be set to **true** or **false**.
+
+**Enable on all channels**: Enable calls by default on all channels. This can be set to **true** or **false**.
+
+**Max call participants**: This is an optional field and default is 0 (unlimited). The recommended setting is 8.
+
+**ICE Host Override**: This is an optional field.
+
+**ICE Servers**: This is an optional field. The default is ``stun:stun.global.calls.mattermost.com:3478``. Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
+
+**RTCD Service URL**: This is an optional field.
+
 Channel Export
 ~~~~~~~~~~~~~~
 
@@ -4313,7 +4396,6 @@ Channel Name
 |all-plans| |self-hosted|
 
 Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
-
 
 Username
 ^^^^^^^^
@@ -4380,7 +4462,6 @@ Gfycat display style
 |all-plans| |self-hosted|
 
 Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
-
 
 GIPHY display style
 ^^^^^^^^^^^^^^^^^^^
@@ -5016,9 +5097,9 @@ This button initiates a compliance export job immediately. You can monitor the s
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <https://docs.mattermost.com/configure/configuration-settings.html#compliance-monitoring>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
+Settings used to enable and configure Mattermost compliance reports. 
 
-Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
+Access the following configuration settings in the System Console by going to **Compliance > Compliance Monitoring**.
 
 Enable Compliance Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5165,9 +5246,9 @@ Allow Authentication Transfer
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Users can change their sign-in method to any that is enabled on the server, either via **Profile > Security** or the APIs.
+**True**: Users can change their login method to any that is enabled on the server, either via **Profile > Security** or the APIs.
 
-**False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
+**False**: Users cannot change their login method, regardless of which authentication options are enabled.
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``. |
@@ -5597,47 +5678,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Automatically Follow Threads
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
- 
-.. important::
-
-    This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. If you can't easily scale up and tune your database, or if you're running the Mattermost application server and database server on the same machine, we recommended disabling this configuration setting until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
-
-**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
-
-**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
-
-.. note::
-
-   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
-+--------------------------------------------------------------------------------------------------------------+
-
-Collapsed Reply Threads (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
-
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
-
-System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
-
-**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
-
-.. note::
-
-   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you clearly understand the `known issues <https://docs.mattermost.com/channels/organize-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you can't easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it's `promoted to general availability in Q2 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
-
-**Disabled**: Disables Collapsed Reply Threads front-end functionality. To disable all backend operations and thread tracking for Collapsed Reply Threads, you must also disable the `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`__ configuration setting.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
-+---------------------------------------------------------------------------------------------------------------------------+
 
 Use Channel Name in Email Notifications (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5680,6 +5721,25 @@ Shared channels enables the ability to establish secure connections between Matt
 
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
+
+Enable Apps Bar
+^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
+
+.. note::
+  
+  Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
+
+**True**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
+
+**False**: All integration icons in the channel header display in the channel header.
+
++----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------+
 
 Settings configurable only in ``config.json``
 ----------------------------------------------
@@ -6242,6 +6302,19 @@ This setting isn't available in the System Console and can only be set in ``conf
 Database Settings
 ~~~~~~~~~~~~~~~~~
 
+At Rest Encrypt Key
+^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+This setting isn't available in the System Console and can only be set in ``config.json``. It's a legacy setting used to encrypt data stored at rest in the database, and no fields are encrypted using ``AtRestEncryptKey``. 
+
+A 32-character key for encrypting and decrypting sensitive fields in the database. When using High Availability, this value must be identical in each instance of Mattermost.
+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
++------------------------------------------------------------------------------------------+
+
 Clean Up Old Database Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6280,7 +6353,7 @@ Read Replicas
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
+Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
@@ -6295,7 +6368,7 @@ Search Replicas
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
+Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
@@ -6730,7 +6803,7 @@ File configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation. 
+Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. 
 
 **True**: File output is enabled.
 

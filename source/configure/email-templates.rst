@@ -10,7 +10,7 @@ Email templates
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -154,7 +154,7 @@ SendSignInChangeEmail
 ~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
-Sent to the user when sign-in method has been changed (i.e. from email to LDAP, etc.)
+Sent to the user when the login method has been changed (i.e. from email to LDAP, etc.)
 
 **Body Props**:
 

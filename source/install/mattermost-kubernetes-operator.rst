@@ -66,7 +66,7 @@ Apply the changes with ``kubectl``:
 
 .. code-block:: sh
 
-  $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
+    $ kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
 
 The operator initiates a job in the Kubernetes cluster and once migration is complete the pods are restarted. If necessary, a database migration is also performed.
 
@@ -74,7 +74,7 @@ To view information about the running job, use
 
 .. code-block:: sh
 
-  $ kubectl -n mattermost get jobs
+    $ kubectl -n mattermost get jobs
 
 At least one pod is available at all times and once all pods are restarted with the new version the upgrade is complete.
 
@@ -82,9 +82,9 @@ To view the status of the pods and to confirm their state, use
 
 .. code-block:: sh
 
-  $ kubectl -n mattermost get pods
+    $ kubectl -n mattermost get pods
 
-The *STATUS* of the pods should be running/ready, with an *AGE* of 10-15 seconds.
+The ``STATUS`` of the pods should be running/ready, with an ``AGE`` of 10-15 seconds.
 
 Restore an existing Mattermost MySQL database
 ---------------------------------------------
@@ -181,5 +181,143 @@ The process described below needs to be completed prior to proceeding with the M
 
   Once complete, access your Mattermost instance and confirm that the database has been restored.
 
+Migrate From Helm Chart
+--------------------------
+
+If you've installed Mattermost as helm chart deployment, you can easily move to an operator-installed deployment by following the steps below.
+
+1. Create a namespace dedicated to the operator.
+
+.. code-block:: sh
+
+  $ kubectl create ns mattermost-operator
+
+2. Save the secrets from the current installation. If you have extra secrets mounted as a volume, save them as well. To begin, set the ``NAMESPACE`` environment variable to the namespace your Mattermost instance is running in:
+
+.. code-block:: sh
+  
+  $ export NAMESPACE=mattermost
+  $ kubectl get secrets -n $NAMESPACE mattermost-db-secret -o yaml > mattermost-db-secret.yaml
+  $ kubectl get secrets -n $NAMESPACE mattermost-license-secret -o yaml > mattermost-license-secret.yaml
+  $ kubectl get secrets -n $NAMESPACE cert -o yaml > cert.yaml
+
+3. Change the database secret to match the operator. The helm installation used ``mattermost.dbsecret`` while the operator uses ``DB_CONNECTION_STRING``.
+
+.. code-block:: sh
+
+  $ vim mattermost-db-secret.yaml
+
+.. code-block:: yaml
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: mattermost-db-secret
+  data:
+    DB_CONNECTION_STRING: [YOUR_CONNECTION_STRING]
+
+4. Create an S3 Secret. Mattermost operator uses ``secret`` while helm uses environment variables.
+
+.. code-block:: yaml
+
+  apiVersion: v1
+  metadata:
+    name: s3-secret
+  kind: Secret
+  stringData:
+    accesskey: [S3_ACCESS_KEY]
+    secretkey: [S3_ACCESS_KEY]
+
+5. Scale the current installation to 0 and deploy the operator.
+
+.. code-block:: sh
+
+  $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
+  $ kubectl scale deployment -n $NAMESPACE mattermost-deployment --replicas=0
+
+6. Apply the new secrets in the new namespace.
+
+.. code-block:: sh
+
+  $ kubectl apply -f mattermost-db-secret.yaml -n $NEW_NAMESPACE 
+  $ kubectl apply -f mattermost-license-secret.yaml -n $NEW_NAMESPACE
+  $ kubectl apply -f cert.yaml -n $NEW_NAMESPACE
+  $ kubectl apply -f s3-secret -n $NEW_NAMESPACE
+
+7. Create a Mattermost installation in the same namespace as the new secrets.
+
+.. code-block:: yaml
+
+  apiVersion: installation.mattermost.com/v1beta1
+  kind: Mattermost
+  metadata:
+    name: mm-example
+  spec:
+    image: mattermost/mattermost-enterprise-edition
+    imagePullPolicy: IfNotPresent
+    version: 6.0.0
+    size: 5000users
+    ingress:
+      enabled: true
+      host: example.mattermost-example.com
+      tlsSecret: "cert"
+    licenseSecret: "mattermost-db-secret"
+    database:
+      external:
+        secret: "mattermost-db-secret"
+    fileStore:
+      external:
+        url: s3.amazonaws.com
+        bucket: my-s3-bucket
+        secret: s3-secret
+    elasticSearch: {}
+    volumeMounts:
+    - name: certificates
+      mountPath: /etc/ssl/certs/mycert.pem
+      subPath: mycert.pem
+    volumes:
+    - name: certificates
+      secret:
+        defaultMode: 420
+        secretName: cert
+
+Align the manifest to your needs, then save the file as ``mattermost-installation.yaml``. See the `documentation <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`__ for details about supported fields.
+ While recommended filenames are provided, your naming conventions may differ.
+
+8. Apply the new manifest in the relevant namespace.
+
+.. code-block:: sh
+
+  $ kubectl apply -n $NEW_NAMESPACE -f mattermost-installation.yaml
+
+The deployment process can be monitored in the Kubernetes user interface or using the command line by running:
+
+.. code-block:: sh
+
+  $ kubectl -n $NEW_NAMESPACE get mm -w
+
+The installation should be deployed successfully when the Custom Resource reaches a stable state.
+
+9. Configure DNS and use Mattermost.
+
+  When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
+
+  .. code-block:: sh
+
+    $ kubectl -n $NEW_NAMESPACE get ingress
+
+  Copy the resulting hostname or IP address from the ``ADDRESS`` column, open your browser, and connect to Mattermost.
+
+  Use your domain registration service to create a canonical name or IP address record for the ``ingress.host`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+
+  Navigate to the ``ingress.host`` URL in your browser and use Mattermost.
+
+  If you just want to try it out on your local machine without configuring the domain, run:
+
+  .. code-block:: sh
+
+    $ kubectl -n $NEW_NAMESPACE port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
+
+  Then navigate to ``http://localhost:8065``.
 .. include:: faq_kubernetes.rst
   :start-after: :nosearch:

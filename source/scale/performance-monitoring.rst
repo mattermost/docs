@@ -10,7 +10,7 @@ Performance monitoring
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -107,7 +107,7 @@ Getting started
 To help you get started, you can download three sample dashboards shared in Grafana:
 
 - `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582>`__, which contains detailed charts for performance monitoring including application, cluster, job server, and system metrics.
-- `Mattermost Collapsed Reply Threads Metrics <https://grafana.com/grafana/dashboards/15581>`__, which contains detailed metrics on the queries involved in our Collapsed Reply Threads Beta feature.
+- `Mattermost Collapsed Reply Threads Metrics <https://grafana.com/grafana/dashboards/15581>`__, which contains detailed metrics on the queries involved in our Collapsed Reply Threads feature.
 - `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashboards/2539>`__, which contains key metrics for monitoring performance and system health.
 - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/grafana/dashboards/2545>`__, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 

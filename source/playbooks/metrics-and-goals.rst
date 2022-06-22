@@ -10,7 +10,7 @@ Metrics and goals
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -19,6 +19,10 @@ Metrics and goals
   :alt: Available for Mattermost Self-Hosted deployments.
 
 Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review. Retrospective components are customized per playbook.
+
+.. note::
+
+   Some metrics and goals functionality (such as timeline and retrospectives) is only available on a paid plan. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
 
 Configure retrospectives before a run
 -------------------------------------
