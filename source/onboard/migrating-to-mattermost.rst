@@ -48,10 +48,10 @@ The following instructions migrate Mattermost from one server to another by back
 
 Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`__.
 
-Migrating Mattermost server from MariaDB to PostgreSQL
+Migrating Mattermost server from MySQL to PostgreSQL
 ------------------------------------------------------
 
-The following instructions migrate Mattermost from one server using MariaDB to another using PostgreSQL. It backs up and restores the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated. This assumes that:
+The following instructions migrate Mattermost from one server using MySQL to another using PostgreSQL. It backs up and restores the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated. This assumes that:
   - PostgreSQL and pgloader (https://github.com/dimitri/pgloader) are installed on the **DESTINATION**.
   - The database name in the **SOURCE** is ``mattermost``.
 
@@ -64,7 +64,7 @@ The following instructions migrate Mattermost from one server using MariaDB to a
     2. Stop the DESTINATION server using ``sudo stop mattermost``, then back up the database and ``config.json`` file.
 4. Backup the database from the SOURCE Mattermost server
     1. See `Backup and Disaster Recovery documentation <https://docs.mattermost.com/deploy/backup-disaster-recovery.html>`__.
-5. Migrate your MariaDB database to PostreSQL (using the right username for mysql)
+5. Migrate your MySQL database to PostreSQL (using the right username for mysql)
 
 .. code:: bash
 
