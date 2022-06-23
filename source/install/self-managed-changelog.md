@@ -17,6 +17,7 @@ Latest Mattermost Releases:
   - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
   - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
   - Fixed an issue with Compliance Exports where the zip file creation failed when adding attachments to a post [MM-40179](https://mattermost.atlassian.net/browse/MM-40179).
+  - Fixed the notification title for ``id_loaded`` push notifications [MM-43655](https://mattermost.atlassian.net/browse/MM-43655).
   - Pre-packaged Playbooks v1.28.2.
 - **v7.0.0, released 2022-06-15**
   - Original 7.0.0 release
