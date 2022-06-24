@@ -16,7 +16,7 @@ Latest Mattermost Cloud releases:
 ### Highlights
 
 #### Insights (Beta)
- - Added workplace insights consisting of usage and behaviour data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
+ - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
 
 ### Improvements
 
@@ -25,17 +25,17 @@ Latest Mattermost Cloud releases:
 - Added support for WebP image types for emojis and image file uploads.
 
 #### Administration
- - The System Console now also searches and returns channels based on the ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
- - Admins now have the ability to downgrade from Professional to Starter subscription.
+ - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
+ - Admins now have the ability to downgrade from Professional to Starter subscription via **System Console > Subscription**.
  - The setting ``ServiceSettings.EnableInsecureOutgoingConnections`` is now applicable to S3 clients as well. If this setting is set, S3 clients will skip the TLS verification.
- - Changed the "Enable Authentication Transfer" to be configurable by the System Admin.
+ - Changed the "Enable Authentication Transfer" to be configurable by the Cloud System Admin.
  - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. System Admins are requested to check this value in case of any discrepancies with what is expected.
 
 ### API Changes
  - Added new API endpoints ``GET /api/v4/teams/:team_id/top/threads`` and ``GET /api/v4/users/me/top/threads`` to get top threads for a team and user.
 
 ### Bug Fixes
- - Fixed an issue where duplicated emojis sometimes displayed in Recently Used emojis.
+ - Fixed an issue where duplicated emojis sometimes displayed as recently used emojis.
  - Fixed an issue where autocomplete "@" search for names did not normalize UTF-8 characters.
  - Fixed an issue where **Group Messages** with long display names didn't have a tooltip in the left-hand sidebar.
  - Fixed an issue where the file icon was sometimes unresponsive.
