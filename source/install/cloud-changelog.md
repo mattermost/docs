@@ -28,7 +28,7 @@ Latest Mattermost Cloud releases:
  - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
  - Admins now have the ability to downgrade from Professional to Starter subscription via **System Console > Subscription**.
  - The setting ``ServiceSettings.EnableInsecureOutgoingConnections`` is now applicable to S3 clients as well. If this setting is set, S3 clients will skip the TLS verification.
- - Changed the "Enable Authentication Transfer" to be configurable by the Cloud System Admin.
+ - Changed the "Enable Authentication Transfer" to be configurable in Cloud by the System Admin.
  - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. System Admins are requested to check this value in case of any discrepancies with what is expected.
 
 ### API Changes
