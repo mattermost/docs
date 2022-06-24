@@ -216,7 +216,7 @@ Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. First, make sure you have installed the latest desktop app version.
-2. Clear your cache and reload the app from **View > Clear Cache and Reload** or use CTRL/CMD+SHIFT+R.
+2. Clear your cache and reload the app from **View > Clear Cache and Reload** or press :kbd:`Ctrl` :kbd:`Shift` :kbd:`R` on Windows or Linux, or :kbd:`⌘` :kbd:`⇧` :kbd:`R` on Mac.
 3. Quit the app and restart it to see if the issue clears.
 4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux or **Mattermost > Settings** on macOS, and unselect **Use GPU hardware acceleration**.
 5. If you are using a special video driver, such as Optimus, try disabling it to see if the problem is resolved.
@@ -259,8 +259,8 @@ This issue can occur after a crash or unexpected shutdown of the desktop app tha
 
 Selecting **Show Details** on the dialog provides logs. Ways to resolve the issue:
 
-1. Clear the cache via **View > Clear Cache and Reload** or CTRL+SHIFT+R.
-2. Go to App Settings via **File > Settings** or CTRL+COMMA  and unselect hardware acceleration.
+1. Clear the cache via **View > Clear Cache and Reload** or press :kbd:`Ctrl` :kbd:`Shift` :kbd:`R` on Windows or Linux, or :kbd:`⌘` :kbd:`⇧` :kbd:`R` on Mac.
+2. Go to App Settings via **File > Settings** (or by pressing :kbd:`Ctrl` :kbd:`,` on Windows or Linux, or :kbd:`⌘` :kbd:`,` on Mac) and unselect hardware acceleration.
   
 Desktop app not responsive within Citrix Virtual Apps or Desktop Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
