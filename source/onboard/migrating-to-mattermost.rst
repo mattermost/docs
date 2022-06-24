@@ -80,6 +80,7 @@ $ psql mattermost < mattermost-postgres-backup
     2. More details on the restore on https://www.postgresql.org/docs/current/backup-dump.html#BACKUP-DUMP-RESTORE
 7. Migrate ``config.json`` from SOURCE to DESTINATION.
     1. Copy of ``config.json`` file from SOURCE deployment to DESTINATION.
+    2. Edit ``config.json`` to include the PostgreSQL configuration: set "DriverName" to "postgres" Set "DataSource" to the following value, replacing <mmuser-password> and <host-name-or-IP> with the appropriate values: "postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10",
 8. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION.
     1. Copy the ``./data`` directory from SOURCE deployment to DESTINATION.
     2. If you use a directory other than ``./data``, copy that directory instead.
