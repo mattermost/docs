@@ -69,7 +69,7 @@ The following instructions migrate Mattermost from one server using MySQL to ano
 .. code:: bash
 
 $ createdb mattermost-postgres-backup
-$ pgloader mysql://mysql_username:password@localhost/mattermost postgresql:///mattermost-postgres-backup
+$ pgloader mysql://mysql_username:password@localhost:3306/mattermost postgresql://postgres_username:postgres_pwd@localhost:5432/mattermost-postgres-backup
 
 6. Migrate database from SOURCE to DESTINATION.
     1. Restore it in place of the database in the DESTINATION server:
