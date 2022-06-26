@@ -84,10 +84,11 @@ $ psql mattermost < mattermost-postgres-backup
 8. If you use local storage (``FileSettings.DriverName`` is set to ``local``), migrate ``./data`` from SOURCE to DESTINATION.
     1. Copy the ``./data`` directory from SOURCE deployment to DESTINATION.
     2. If you use a directory other than ``./data``, copy that directory instead.
-9. Start the DESTINATION deployment.
+9. Check that your systemd unit file (`/lib/systemd/system/mattermost.service`) integrates the right PostreSQL config instead of the PostgreSQL config (notably `After=postgresql.service` and `BindsTo=postgresql.service`)
+10. Start the DESTINATION deployment.
     1. Run ``sudo start mattermost``.
     2. Go to the **System Console**, make a minor change, and save it to upgrade your ``config.json`` schema to the latest version using default values for any new settings added.
-10. Test that the system is working by going to the URL of an existing team.
+11. Test that the system is working by going to the URL of an existing team.
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 Alternatively, you can do a bulk export as described in https://docs.mattermost.com/manage/bulk-export-tool.html.
