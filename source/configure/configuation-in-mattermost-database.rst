@@ -42,7 +42,7 @@ To use the ``mattermost config get`` command:
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config get SqlSettings.DataSource
+   config get SqlSettings.DataSource
 
 Example output:
 
@@ -170,7 +170,7 @@ The CLI command to migrate the config to the database should always be run as th
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
+   config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
    When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
