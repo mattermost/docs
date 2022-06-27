@@ -30,7 +30,7 @@ Latest Mattermost Desktop App releases:
 Release v5.1
 --------------
 
-- **v5.1.1, released **
+- **v5.1.1, released 2022-06-27**
  - Upgraded to Electron v18.3.0.
  - Fixed an issue where a channel name matching the server subpath would not be navigable.
  - Fixed an issue where the ``hideOnStart`` setting didn't work.
