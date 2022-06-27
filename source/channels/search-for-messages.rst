@@ -21,7 +21,7 @@ Search for messages
 .. |product-list| image:: ../images/products_E82F.svg
   :height: 24px
   :width: 24px
-  :alt: Navigate between Channels, Playbooks, and Boards using the Product menu icon.
+  :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
 
 Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
 
