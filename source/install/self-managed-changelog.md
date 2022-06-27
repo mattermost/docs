@@ -13,7 +13,14 @@ Latest Mattermost Releases:
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
-**Release Day: 2022-06-15**
+- **v7.0.1, released 2022-06-24**
+  - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
+  - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
+  - Fixed an issue with Compliance Exports where the zip file creation failed when adding attachments to a post [MM-40179](https://mattermost.atlassian.net/browse/MM-40179).
+  - Fixed the notification title for ``id_loaded`` push notifications [MM-43655](https://mattermost.atlassian.net/browse/MM-43655).
+  - Pre-packaged Playbooks v1.28.2.
+- **v7.0.0, released 2022-06-15**
+  - Original 7.0.0 release
 
 Mattermost v7.0.0 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
@@ -110,7 +117,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.0 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - The file icon is sometimes unresponsive [MM-45091](https://mattermost.atlassian.net/browse/MM-45091).
  - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
