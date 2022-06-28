@@ -29,7 +29,7 @@ Latest Mattermost Releases:
  - 
 
 #### Playbooks Updates
- - To keep procedures on track while reducing noise, task due dates can now be added to playbook runs (Professional and Enterprise subscriptions).
+ - 
 
 ### Improvements
 
@@ -77,7 +77,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
- - The setting ``EnableInsecureOutgoingConnections`` is now applicable to S3 clients as well. If that is set, s3 clients will skip TLS verification.
+    - The setting ``EnableInsecureOutgoingConnections`` is now applicable to S3 clients as well. If that is set, s3 clients will skip TLS verification.
 
 #### API Changes
  - To allow Admins to retrieve contents of posts whether they are deleted or not, ``include_deleted`` query parameter was introduced to ``GetPost`` endpoint.
