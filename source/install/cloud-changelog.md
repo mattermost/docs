@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
 
-#### Insights (Beta)
+#### Insights (Beta) (Enterprise and Professional subscriptions)
  - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
 
 ### Improvements
