@@ -313,6 +313,8 @@ Purge all caches
 
 |all-plans| |self-hosted|
 
+*Available in legacy Enterprise Edition E10/E20*
+
 +----------------------------------------------------------+---------------------------------------------------------------+
 | Purge all in-memory caches for sessions, accounts,       | - System Config path: **Environment > Web Server**            |
 | and channels by pressing **Purge All Caches** in the     | - ``config.json`` setting: N/A                                |

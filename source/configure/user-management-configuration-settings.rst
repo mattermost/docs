@@ -44,7 +44,6 @@ Users
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
-
 Groups
 ------
 
@@ -102,6 +101,8 @@ System roles
 ------------
 
 |all-plans| |cloud| |self-hosted|
+
+*Available in legacy Enterprise Edition E10/E20*
 
 +------------------------------------------------------------------------------+------------------------------------------------------------+
 | Manage team settings, including group synchronization for teams.             | - System Config path: **User Management > System Roles**   |

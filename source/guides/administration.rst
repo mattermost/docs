@@ -23,6 +23,7 @@ The basics
     Web server configuration settings </configure/web-server-configuration-settings>
     Database configuration settings </configure/database-configuration-settings>
     Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>
+    File storage configuration settings </configure/file-storage-configuration-settings>
     Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
     Advanced permissions </onboard/advanced-permissions>
     Guest accounts </onboard/guest-accounts>

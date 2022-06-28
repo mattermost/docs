@@ -513,6 +513,50 @@ redirects = {
 	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window.html",
 "configure/configuration-settings.html#trace":
 	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace.html",
+"configure/configuration-settings.html#file-settings":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html",
+"configure/configuration-settings.html#initial-font":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#initial-font",
+"configure/configuration-settings.html#amazon-s3-bucket-endpoint":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-bucket-endpoint",
+"configure/configuration-settings.html#amazon-s3-location-constraint":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-location-constraint",
+"configure/configuration-settings.html#amazon-s3-lowercase-bucket":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-lowercase-bucket",
+"configure/configuration-settings.html#amazon-s3-signature-v2":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-signature-v2",
+"configure/configuration-settings.html#amazon-s3-path":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-path-prefix",
+"configure/configuration-settings.html#file-storage":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html",
+"configure/configuration-settings.html#file-storage-system":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#file-storage-system",
+"configure/configuration-settings.html#local-storage-directory":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#local-storage-directory",
+"configure/configuration-settings.html#maximum-file-size":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#maximum-file-size",
+"configure/configuration-settings.html#enable-document-search-by-content":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-document-search-by-content",
+"configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-searching-content-of-documents-within-zip-files",
+"configure/configuration-settings.html#amazon-s3-bucket":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-bucket",
+"configure/configuration-settings.html#amazon-s3-region":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-region",
+"configure/configuration-settings.html#amazon-s3-access-key-id":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-access-key-id",
+"configure/configuration-settings.html#amazon-s3-endpoint":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-endpoint",
+"configure/configuration-settings.html#amazon-s3-secret-access-key":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-secret-access-key",
+"configure/configuration-settings.html#enable-secure-amazon-s3-connections":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-secure-amazon-s3-connections",
+"configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-server-side-encryption-for-amazon-s3",
+"configure/configuration-settings.html#enable-amazon-s3-debugging":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-amazon-s3-debugging",
+"configure/configuration-settings.html#test-connection":
+        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-amazon-s3-debugging",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

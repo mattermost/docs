@@ -176,6 +176,8 @@ Minimum hashtag length
 
 |all-plans| |self-hosted|
 
+*Available in legacy Enterprise Edition E10/E20*
+
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
 | This value must be greater than or equal to 2.                       | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
@@ -189,6 +191,8 @@ SQL statement logging
 ---------------------
 
 |all-plans| |self-hosted|
+
+*Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
