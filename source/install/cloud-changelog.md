@@ -22,7 +22,6 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
 - Added support for syntax highlighting for 1C:Enterprise (BSL) language.
-- Added support for WebP image types for emojis and image file uploads.
 
 #### Administration
  - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
