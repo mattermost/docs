@@ -71,7 +71,7 @@ Assume that the IP address of this server is ``10.10.10.2``.
 
       ``sudo -u mattermost ./bin/mattermost``
 
-  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
+  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing pressing :kbd:`Ctrl` :kbd:`C` on Windows or Linux, or :kbd:`⌘` :kbd:`C` on Mac, in the terminal window.
 
 10. Set up Mattermost to use the ``systemd init`` daemon which handles supervision of the Mattermost process.
 
