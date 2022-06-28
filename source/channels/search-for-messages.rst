@@ -10,7 +10,7 @@ Search for messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -174,7 +174,7 @@ Searching Chinese, Korean, and Japanese
 Differences between PostgreSQL and MySQL search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Product menu > About Mattermost** to see which database you’re using.
+By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Product Menu > About Mattermost** to see which database you’re using.
 
 For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list.
 
@@ -183,6 +183,7 @@ Other database-specific differences include:
 PostgreSQL:
 
 - Email addresses don't return results.
+- URLs don't return results.
 - Hashtags or recent mentions of usernames containing a dash don't return results.
 - Terms containing a dash return incorrect results since dashes are ignored in the search engine.
 

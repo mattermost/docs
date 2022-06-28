@@ -10,7 +10,7 @@ Mention people in messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -42,7 +42,7 @@ When you want to get the attention of specific Mattermost users, you can use @me
 
 You can mention a teammate by using the *@* symbol plus their username to send them a mention notification.
 
-Type *@* to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname. Use the UP and DOWN arrow keys to scroll through entries in the list, and then press ENTER to select the person to mention. When selected, the username replaces the full name or nickname.
+Type *@* to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname. Press the :kbd:`↑` and :kbd:`↓` arrow keys to scroll through entries in the list, and then press :kbd:`ENTER` on Windows or Linux, or :kbd:`↵` on Mac, to select the person to mention. When selected, the username replaces the full name or nickname.
 
 The following example sends a special mention notification to Alice, whose username is **alice**. The notification alerts her of the channel and message where she was mentioned. If Alice is away from Mattermost and has email notifications turned on, she'll receive an email alert of her mention along with the message text.
 
@@ -50,7 +50,7 @@ The following example sends a special mention notification to Alice, whose usern
 
   @alice how did your interview go with the new candidate?
 
-If the person you mentioned doesn't belong to the channel, a System Message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
+If the person you mentioned doesn't belong to the channel, a system message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
 
 @channel and @all
 -----------------
@@ -98,7 +98,7 @@ Group mention identifiers (slugs) use the LDAP group name by default. To customi
 3. In **Group Profile > Group Mention** enter the new slug.
 4. Select **Save**.
 
-As with ``@username`` mentions, use *@* to bring up a list of groups that can be mentioned. To filter the list, type the first few letters of any group. Use the UP and DOWN arrow keys to scroll through entries in the list, and then press ENTER to select the group you want to mention.
+As with ``@username`` mentions, use *@* to bring up a list of groups that can be mentioned. To filter the list, type the first few letters of any group. Press the :kbd:`↑` and :kbd:`↓` arrow keys to scroll through entries in the list, and then press :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac to select the group you want to mention.
 
 .. code-block:: none
 

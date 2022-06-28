@@ -10,7 +10,7 @@ Desktop application changelog
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -21,16 +21,24 @@ Desktop application changelog
 Latest Mattermost Desktop App releases:
 
 - `Release v5.1 <#id1>`_
-- `Release v5.0 <#id4>`_
-- `Release v4.7 <#id21>`_
-- `Release v4.6 <#id39>`_
-- `Release v4.5 <#id51>`_
-- `Release v4.4 <#id68>`_
+- `Release v5.0 <#id6>`_
+- `Release v4.7 <#id22>`_
+- `Release v4.6 <#id40>`_
+- `Release v4.5 <#id52>`_
+- `Release v4.4 <#id69>`_
 
 Release v5.1
 --------------
 
-**Release day: 2022-05-16**
+- **v5.1.1, released 2022-06-27**
+ - Upgraded to Electron v18.3.0.
+ - Fixed an issue where a channel name matching the server subpath would not be navigable.
+ - Fixed an issue where the ``hideOnStart`` setting didn't work.
+ - Fixed an issue where the certificate error dialog box would reappear infinitely.
+ - Fixed an issue where the first client certificate could not be selected.
+ - Restored Windows ZIP builds.
+- **v5.1.0, released 2022-05-16**
+ - Original v5.1.0 release
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
@@ -107,7 +115,6 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
-- A new config setting "Launch app minimized" does not work on Linux `MM-44339 <https://mattermost.atlassian.net/browse/MM-44339>`_.
 - Desktop App may become unresponsive and crash when initiating a screen reader `MM-44058 <https://mattermost.atlassian.net/browse/MM-44058>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
@@ -702,7 +709,7 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
-- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/download/#mattermostApps>`_ is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
+- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/apps>`_ is recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_.
 
 Release v4.2.1
 ----------------------------
@@ -1462,7 +1469,7 @@ Release v1.3.0
 
 Release date: 2016-07-18
 
-`Download the latest version here <https://mattermost.com/download/#mattermostApps>`__.
+`Download the latest version here <https://mattermost.com/apps>`__.
 
 Improvements
 ~~~~~~~~~~~~

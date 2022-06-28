@@ -10,7 +10,7 @@ Format messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -145,7 +145,7 @@ You can use either ``_`` or ``*`` around a word or phrase to make it italic, or 
 
 .. tip::
     
-    You can also use common keyboard shortcuts, including CTRL/CMD+B to bold, and CTRL/CMD+I to italicize text. 
+    Common formatting keyboard shortcuts are supported. Bold text by pressing :kbd:`Ctrl` :kbd:`B` on Windows and Linux, or :kbd:`⌘` :kbd:`B` on Mac. Italicize text by pressing :kbd:`Ctrl` :kbd:`I` on Windows or Linux, or :kbd:`⌘` :kbd:`I` on Mac.
 
 * ``*italics*`` (or ``_italics_``) renders as *italics*
 * ``**bold**`` renders as **bold**
@@ -279,7 +279,7 @@ This can be accomplished by placing three backticks ``````` on the line directly
 
 .. tip::
 
-  Type three backticks ```````, press SHIFT+ENTER, ``<type_your_code>``, press SHIFT+ENTER again, then type three more backticks ```````.
+  Type three backticks ```````, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or :kbd:`⇧` :kbd:`↵` on Mac, ``<type_your_code>``, press  :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or :kbd:`⇧` :kbd:`↵` on Mac again, then type three more backticks ```````.
 
 
 Or by indenting each line by four spaces:

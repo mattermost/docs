@@ -35,7 +35,7 @@ Configuration in database
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -1737,7 +1737,7 @@ Mattermost Apps Download Page Link
 Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/download/"`` with string input. |
+| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/apps/"`` with string input.     |
 +------------------------------------------------------------------------------------------------------------------------+
 
 Android App Download Link
@@ -1845,9 +1845,9 @@ Enable users to open Direct Message channels with
 
 **Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
 
-**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and pressing CTRL/CMD+K only lists users on the current team. If a user belongs to multiple teams, Direct Messages will still be received regardless of what team they are currently on.
+**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac only lists users on the current team. If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on.
 
-This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
+This setting only affects the UI, not permissions on the server. For instance, a direct message channel can be created with anyone on the server regardless of this setting.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively. |
@@ -5731,7 +5731,7 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 
 .. note::
   
-  Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience.
+  Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
 
 **True**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
 

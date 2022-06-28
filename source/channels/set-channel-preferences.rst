@@ -10,7 +10,7 @@ Set channel preferences
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -57,7 +57,7 @@ To stop receiving mention notifications, enable the **Ignore mentions for @chann
 Send desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, your `desktop notification preferences <https://docs.mattermost.com/channels/channels-settings.html#notifications>`__ configured in **Settings** apply to all channels. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost desktop apps <https://mattermost.com/download/#mattermostApps>`__.
+By default, your `desktop notification preferences <https://docs.mattermost.com/channels/channels-settings.html#notifications>`__ configured in **Settings** apply to all channels. Desktop notifications are available on Edge, Firefox, Safari, Chrome, and `Mattermost desktop apps <https://mattermost.com/apps>`__.
 
 To customize desktop notifications per channel, edit **Send desktop notifications**, choose one of the following options, then select **Save**:
 
