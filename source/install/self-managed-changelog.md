@@ -13,7 +13,14 @@ Latest Mattermost Releases:
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
-**Release Day: 2022-06-15**
+- **v7.0.1, released 2022-06-24**
+  - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
+  - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
+  - Fixed an issue with Compliance Exports where the zip file creation failed when adding attachments to a post [MM-40179](https://mattermost.atlassian.net/browse/MM-40179).
+  - Fixed the notification title for ``id_loaded`` push notifications [MM-43655](https://mattermost.atlassian.net/browse/MM-43655).
+  - Pre-packaged Playbooks v1.28.2.
+- **v7.0.0, released 2022-06-15**
+  - Original 7.0.0 release
 
 Mattermost v7.0.0 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
@@ -25,6 +32,7 @@ Mattermost v7.0.0 contains medium severity level security fixes. [Upgrading](htt
  - MySQL self-hosted customers may notice the migration taking longer than usual when having a large number of rows in the ``FileInfo`` table. For MySQL, it takes around 19 seconds for a table of size 700,000 rows. The time required for PostgreSQL is negligible. The testing was performed on a machine with specifications of ``CPU - Intel i7 6-cores @ 2.6 GHz`` and ``Memory - 16 GB``.
  - When a new configuration setting via **System Console > Experimental > Features > Enable App Bar** is enabled, all channel header icons registered by plugins will be moved to the new Apps Bar, even if they do not explicitly use the new registry function to render a component there. The setting for Apps Bar defaults to ``false`` for self-hosted deployments.
  - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening in certain conditions. Customers are requested to check for these values in their config and set them to nil if necessary. See more details [here](https://docs.mattermost.com/configure/configuration-settings.html#trusted-proxy-ip-header).
+ - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
 
 **IMPORTANT:** If you upgrade from a release earlier than v6.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -109,7 +117,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.0 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - Back bar is showing over the channel header in the Desktop App [MM-44644](https://mattermost.atlassian.net/browse/MM-44644).
  - Post list doesn't always scroll down to show new messages [MM-44131](https://mattermost.atlassian.net/browse/MM-44131).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -124,6 +131,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **v6.7.2, released 2022-06-15**
+  - Fixed an issue with Compliance Exports where the zip file creation failed when adding attachments to a post [MM-40179](https://mattermost.atlassian.net/browse/MM-40179).
 - **v6.7.1, released 2022-06-13**
   - Mattermost v6.7.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening

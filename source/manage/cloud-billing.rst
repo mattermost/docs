@@ -10,7 +10,7 @@ Mattermost Cloud billing
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 Mattermost Cloud is offered as a pay-as-you-go subscription service.

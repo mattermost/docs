@@ -10,7 +10,7 @@ Send messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -18,7 +18,7 @@ Send messages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Compose a message by typing into the text box at the bottom of Mattermost. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. You can also `edit and delete messages <#edit-or-delete-messages>`__ after you've sent them.
+Compose a message by typing into the text box at the bottom of Mattermost. Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac, to send a message. Pressing pressing :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or pressing :kbd:`⇧` :kbd:`↵` on Mac creates a new line without sending a message. You can also `edit and delete messages <#edit-or-delete-messages>`__ after you've sent them.
 
 .. tip::
   
@@ -34,14 +34,14 @@ Mattermost can automatically detect and display messages written using right-to-
 
   .. tab:: Mattermost v6.0 onwards
 
-      If you prefer to use ENTER to insert new lines and CTRL+ENTER to send messages instead, select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+      If you prefer to press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac to insert new lines, and press :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac to send messages instead, select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
       .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
         :alt: Select the Gear icon to open the Settings dialog.
 
   .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to v5.39, you can configure Mattermost to use ENTER to insert new lines and CTRL+ENTER to send messages instead. Select the three horizontal lines at the top of the channel sidebar (also known as a hamburger menu) to go to **Account Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+      In Mattermost versions up to v5.39, you can configure Mattermost to press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac to insert new lines, and press :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac to send messages instead. Select the three horizontal lines at the top of the channel sidebar (also known as a hamburger menu) to go to **Account Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
   
 Edit or delete messages
 -----------------------

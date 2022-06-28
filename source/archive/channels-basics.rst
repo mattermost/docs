@@ -23,20 +23,20 @@ Channels Basics
 Write messages
 --------------
 
-Write messages using the text input box at the bottom of Mattermost. Press ENTER to send a message. Use SHIFT+ENTER to create a new line without sending a message. 
+Write messages using the text input box at the bottom of Mattermost. Press :kbd:`Enter` to send a message. Press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac, to create a new line without sending a message. 
 
 .. tabs::
 
   .. tab:: Mattermost v6.0 onwards
 
-      You can use ENTER to insert new lines, and CTRL+ENTER to send messages instead. Select the |gear-icon| to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+      You can press :kbd:`Enter` to insert new lines, and press :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac, to send messages instead. Select the |gear-icon| to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
       .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
         :alt: Select the Gear icon to open the Settings dialog.
 
   .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to v5.39, you can use ENTER to insert new lines, and CTRL+ENTER to send messages instead. Select the three horizontal lines at the top of the channel sidebar (also known as a hamburger menu) to go to **Account Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+      In Mattermost versions up to v5.39, you can press :kbd:`Enter` to insert new lines, and :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac, to send messages instead. Select the three horizontal lines at the top of the channel sidebar (also known as a hamburger menu) to go to **Account Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
       
 Reply to messages
 ------------------

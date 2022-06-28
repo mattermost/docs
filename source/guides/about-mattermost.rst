@@ -1,7 +1,10 @@
+:orphan:
 :nosearch:
 
 About Mattermost
 ================
+
+.. This page is intentionally not accessible via the LHS navigation pane.
 
 Mattermost is an open source platform for secure communication, collaboration, and orchestration of work across tools and teams. 
 
