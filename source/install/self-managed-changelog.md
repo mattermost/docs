@@ -22,7 +22,7 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Insights (Beta)
+#### Insights (Beta) (Enterprise and Professional)
  - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
 
 #### Boards Updates
