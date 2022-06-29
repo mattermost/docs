@@ -45,7 +45,6 @@ Latest Mattermost Releases:
  - Added a Trial info panel and end date in the Trial section in **System Console > Subscriptions** page.
  - Changed some tooltips to appear when focused instead of just on hover.
 - Added support for syntax highlighting for 1C:Enterprise (BSL) language.
-- Added support for WebP image types for emojis and image file uploads.
 
 #### Administration
  - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
@@ -74,6 +73,8 @@ Latest Mattermost Releases:
  - Fixed an issue where autocomplete "@" search for names did not normalize UTF-8 characters.
  - Fixed an issue where **Group Messages** with long display names didn't have a tooltip in the left-hand sidebar.
  - Fixed an issue where the file icon was sometimes unresponsive.
+ - Fixed a race condition where switching teams to an unread channel did not appear to mark that channel as read.
+ - Fixed an issue where the error message did not appear if a user drafted a too long post.
    
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
