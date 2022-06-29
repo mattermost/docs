@@ -24,22 +24,29 @@ Get started
     Database configuration settings </configure/database-configuration-settings>
     Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
-    Advanced permissions </onboard/advanced-permissions>
-    Guest accounts </onboard/guest-accounts>
-    System Admin roles </onboard/system-admin-roles>
-    OpenID </onboard/sso-openidconnect>
-    Google SSO </onboard/sso-google>
-    Office 365 SSO </onboard/sso-office>
-    GitLab SSO </onboard/sso-gitlab>
+    Provisioning workflows </onboard/user-provisioning-workflows>
     Multi-factor authentication </onboard/multi-factor-authentication>
     Active Directory/LDAP </onboard/ad-ldap>
+    GitLab SSO </onboard/sso-gitlab>
+    OpenID SSO </onboard/sso-openidconnect>
+    Google SSO </onboard/sso-google>
+    Office 365 SSO </onboard/sso-office>
+    Advanced permissions </onboard/advanced-permissions>
+    System Admin roles </onboard/system-admin-roles>
+    Manage team and channel members </manage/team-channel-members>
+    Custom branding tools </configure/custom-branding-tools>
+    eDiscovery </comply/electronic-discovery>
+    Compliance monitoring </comply/compliance-monitoring>
+    Compliance export </comply/compliance-export>
+    Data retention tools </comply/data-retention-policy>
+    Custom terms of service </comply/custom-terms-of-service>
 
 These resources will help you get started with your Mattermost self-hosted or Cloud workspace.
 
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
 * **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__.
 * **Provisioning workflows** - Learn how to :doc:`provisioning </onboard/user-provisioning-workflows>` and de-provision user accounts.
-* **User authentication** - All versions of Mattermost provide basic authentication, :doc:`multi-factor authentication </onboard/multi-factor-authentication>`, and :doc:`GitLab SSO </onboard/sso-gitlab>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
+* **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
 * **Customize branding** - Change Mattermost branding, site name, and description with :doc:`custom branding tools </configure/custom-branding-tools>`.
@@ -53,20 +60,16 @@ Advanced user management
     :hidden:
 
     AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
-    Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
+    Use AD/LDAP synchronized groups to manage team or private channel membership </onboard managing-team-channel-membership-using-ad-ldap-sync-groups>
     Guest accounts </onboard/guest-accounts>
     SAML Single Sign-On </onboard/sso-saml>
     SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>
-    SSL client certificate setup </onboard/ssl-client-certificate>
-    Certificate-based authentication </onboard/certificate-based-authentication>
 
 * :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
 * :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
 * :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
 * :doc:`SAML Single Sign-On </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
 * :doc:`SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
-* :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
-* :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 
 Advanced workspace management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,6 +132,8 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>
     Customize Mattermost </configure/customizing-mattermost>
     Audit log v2 </comply/audit-log>
+    SSL client certificate setup </onboard/ssl-client-certificate>
+    Certificate-based authentication </onboard/certificate-based-authentication>
 
 * :doc:`Include configuration in the Mattermost database </configure/configuation-in-mattermost-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
@@ -140,6 +145,8 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Set up search capabilities for teams communicating via Chinese, Japanese, or Korean.
 * :doc:`Whitelabel Mattermost </configure/customizing-mattermost>` - Whitelabel the Mattermost server and apps.
 * :doc:`Audit log v2 </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
+* :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
+* :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 
 Other resources
 ---------------
