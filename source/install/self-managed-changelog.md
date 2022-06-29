@@ -16,7 +16,7 @@ Latest Mattermost Releases:
 **Release Day: 2022-07-16**
 
 ### Important Upgrade Notes
- - We create a new config option ``MaxImageDecoderConcurrency`` which indicates how many images can be decoded concurrently at once. The default is -1 which means number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, a good rule of thumb to follow is that ``MaxImageResolution* MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+ - A new configuration option ``MaxImageDecoderConcurrency`` indicates how many images can be decoded concurrently at once. The default is -1, and the value indicates the number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, a good rule of thumb to follow is that ``MaxImageResolution * MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -47,9 +47,9 @@ Latest Mattermost Releases:
 - Added support for syntax highlighting for 1C:Enterprise (BSL) language.
 
 #### Administration
- - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required by default. These requirements can be configured by the System Admin as needed via **System Console > Password**.
+ - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required. These requirements can be configured by the System Admin as needed via **System Console > Password**.
  - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
- - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. System Admins are requested to check this value in case of any discrepancies with what is expected.
+ - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. Mattermost System Admins should check this value in case of any discrepancies with what is expected.
 
 #### Performance
  - Reduced the number of calls made to ``viewChannel`` API during regular usage.
@@ -93,7 +93,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@floating-ui/react-dom`` and removed ``superagent`` and ``jasny-bootstrap`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
- - File upload might fail for SVG files [MM-38982](https://mattermost.atlassian.net/browse/MM-38982).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
