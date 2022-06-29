@@ -28,9 +28,6 @@ Latest Mattermost Releases:
 #### Boards Updates
  - 
 
-#### Playbooks Updates
- - 
-
 #### Calls Updates
  - 
 
