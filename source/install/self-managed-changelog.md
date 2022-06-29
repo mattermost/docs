@@ -31,6 +31,9 @@ Latest Mattermost Releases:
 #### Playbooks Updates
  - 
 
+#### Calls Updates
+ - 
+
 ### Improvements
 
 #### User Interface (UI)
