@@ -20,7 +20,7 @@ What changed in Mattermost v7.0?
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -62,7 +62,7 @@ You can show or hide channel information in the right pane by selecting the **Vi
     :alt: Access channel information by using the View Info icon.
 
 Apps bar (beta)
---------------
+---------------
 
 We're moving access to your enabled Mattermost integrations, including the icons for Playbooks and Boards, from the channel header in the center pane. Their new home is a vertical pane located to far right of the Mattermost screen called the Apps Bar.
 

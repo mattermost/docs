@@ -18,7 +18,7 @@ Elasticsearch configuration settings
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 25
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -307,10 +307,10 @@ Post aggregator start time
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: "03:00"`` | | Must be a 24-hour time stamp in the form ``HH:MM`` based  on  | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: "03:00"`` | | Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
 | the local time of the server.                                 |                                                                                             |
 |                                                               |                                                                                             |
-| Default is 03:00 (3 a.m.).                                    |                                                                                             |
+| Default is 03:00 (3 a.m.)                                     |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Index prefix
