@@ -13,11 +13,6 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-06-29
 
-### Highlights
-
-#### Insights (Beta) (Enterprise and Professional subscriptions)
- - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
-
 ### Improvements
 
 #### User Interface (UI)
