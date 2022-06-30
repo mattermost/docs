@@ -42,7 +42,7 @@ File storage system
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Select which file storage system is used.                     | - System Config path: **Environment > File Storage**                     |
-| Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``".FileSettings.DriverName": “local”,``      |
+| Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``".FileSettings.DriverName:  local”,``       |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_DRIVERNAME``                   |
 | - **local**: **(Default)** Files and images are stored in     |                                                                          |
 |   the specified local file directory.                         |                                                                          |
@@ -103,7 +103,7 @@ Enable document search by content
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Enable users to search the contents of documents attached     | - System Config path: **Environment > File Storage**                                |
-| to messages.                                                  | - ``config.json`` setting: ``".FileSettings.ExtractContent: true ",``               |
+| to messages.                                                  | - ``config.json`` setting: ``".FileSettings.ExtractContent: true",``                |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXTRACTCONTENT``                          |
 | - **true**: **(Default)** Documents are searchable by         |                                                                                     |
 |   their content.                                              |                                                                                     |
@@ -326,7 +326,7 @@ Initial Font
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Font used in auto-generated profile pictures with colored     | - System Config path: N/A                                                      |
-| backgrounds and username initials.                            | - ``config.json`` setting: ``".FileSettings.InitialFont": "nunito-bold.ttf",`` |
+| backgrounds and username initials.                            | - ``config.json`` setting: ``".FileSettings.InitialFont: nunito-bold.ttf",``   |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_INITIALFONT``                        |
 | A string with the font file name. Default is                  |                                                                                |
 | **nunito-bold.ttf**.                                          |                                                                                | 

@@ -24,6 +24,10 @@ The basics
     Database configuration settings </configure/database-configuration-settings>
     Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>
     File storage configuration settings </configure/file-storage-configuration-settings>
+    Image proxy configuration settings </configure/image-proxy-configuration-settings>
+    SMTP configuration settings </configure/smtp-configuration-settings>
+    Push notification server configuration settings </configure/push-notification-server-configuration-settings>
+    High availability configuration settings </configure/high-availability-configuration-settings>
     Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
     Advanced permissions </onboard/advanced-permissions>
     Guest accounts </onboard/guest-accounts>

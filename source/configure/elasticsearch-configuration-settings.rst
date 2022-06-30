@@ -167,16 +167,16 @@ Enable Elasticsearch for search queries
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Use the latest index for all search queries.                  | - System Config path: **Environment > Elasticsearch**                          |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching:false",`` |
-| - **true**: Elasticsearch will be used for all search         | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``           | 
-|   queries using the latest index. Search results may be       |                                                                                |
-|   incomplete until a bulk index of the existing post database |                                                                                |
-|   is finished.                                                |                                                                                |
-| - **false**: **(Default)** Database search is used for        |                                                                                |
-|   search queries.                                             |                                                                                |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Use the latest index for all search queries.                  | - System Config path: **Environment > Elasticsearch**                           |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
+| - **true**: Elasticsearch will be used for all search         | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            | 
+|   queries using the latest index. Search results may be       |                                                                                 |
+|   incomplete until a bulk index of the existing post database |                                                                                 |
+|   is finished.                                                |                                                                                 |
+| - **false**: **(Default)** Database search is used for        |                                                                                 |
+|   search queries.                                             |                                                                                 |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Enable Elasticsearch for autocomplete queries
 ---------------------------------------------
@@ -307,10 +307,11 @@ Post aggregator start time
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: "03:00"`` | | Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: 03:00",`` | 
+| Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
 | the local time of the server.                                 |                                                                                             |
 |                                                               |                                                                                             |
-| Default is 03:00 (3 a.m.)                                     |                                                                                             |
+| Default is 03:00 (3 AM)                                       |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Index prefix
@@ -375,8 +376,8 @@ Request timeout
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Timeout in seconds for Elasticsearch calls.                   | - System Config path: N/A                                                          |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds:30",``  |
+| Timeout, in seconds, for Elasticsearch calls.                 | - System Config path: N/A                                                          |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
 | Numerical input in seconds. Default is 30 seconds.            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
