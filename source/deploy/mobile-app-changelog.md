@@ -21,6 +21,7 @@ Latest Mattermost Mobile Apps releases:
 ### Improvements
  - Calls: Added support for accepting advanced ICE server configurations through the config.
  - Calls: Added support for using Calls when the Mattermost installation is served under a subpath.
+ - Calls: Added support for generating short-lived TURN credentials.
 
 ### Bug Fixes
  - Fixed an issue where Latex in root posts crashed the global Threads screen.
