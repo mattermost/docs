@@ -5,13 +5,13 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0. 
 
 Latest Mattermost Releases:
-- [Release v7.1 - Feature Release](#release-v7-1-feature-release)
+- [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
 - [Release v6.7 - Feature Release](#release-v6-7-feature-release)
 - [Release v6.6 - Feature Release](#release-v6-6-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
 
-## Release v7.1 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 **Release Day: 2022-07-16**
 
