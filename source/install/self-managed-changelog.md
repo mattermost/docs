@@ -72,6 +72,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the file icon was sometimes unresponsive.
  - Fixed a race condition where switching teams to an unread channel did not appear to mark that channel as read.
  - Fixed an issue where the error message did not appear if a user drafted a too long post.
+ - Fixed an issue where channels with more than 100 members only showed 100 channel members in the right-hand side.
    
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
