@@ -4,12 +4,43 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-06-29](#release-2022-06-29)
 - [Release 2022-06-22](#release-2022-06-22)
 - [Release 2022-06-15](#release-2022-06-15)
 - [Release 2022-06-14](#release-2022-06-14)
 - [Release 2022-05-26](#release-2022-05-26)
 - [Release 2022-05-12](#release-2022-05-12)
-- [Release 2022-04-28](#release-2022-04-28)
+
+## Release 2022-06-29
+
+### Improvements
+
+#### User Interface (UI)
+- Added support for syntax highlighting for 1C:Enterprise (BSL) language.
+
+#### Administration
+ - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
+ - Admins now have the ability to downgrade from Professional to Starter subscription via **System Console > Subscription**.
+ - The setting ``ServiceSettings.EnableInsecureOutgoingConnections`` is now applicable to S3 clients as well. If this setting is set, S3 clients will skip the TLS verification.
+ - Changed the "Enable Authentication Transfer" to be configurable in Cloud by the System Admin.
+ - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. System Admins are requested to check this value in case of any discrepancies with what is expected.
+
+### API Changes
+ - Added new API endpoints ``GET /api/v4/teams/:team_id/top/threads`` and ``GET /api/v4/users/me/top/threads`` to get top threads for a team and user.
+
+### Bug Fixes
+ - Fixed an issue where duplicated emojis sometimes displayed as recently used emojis.
+ - Fixed an issue where autocomplete "@" search for names did not normalize UTF-8 characters.
+ - Fixed an issue where **Group Messages** with long display names didn't have a tooltip in the left-hand sidebar.
+ - Fixed an issue where the file icon was sometimes unresponsive.
+
+### Known Issues
+ - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
+ - Images in OpenGraph previews appear broken [MM-45164](https://mattermost.atlassian.net/browse/MM-45164).
+ - Channels sometimes don't get marked as read [MM-44900](https://mattermost.atlassian.net/browse/MM-44900).
+ - After server upgrade, usage limit warning may stay in the Main Menu until page refresh [MM-45056](https://mattermost.atlassian.net/browse/MM-45056).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-06-22
 
