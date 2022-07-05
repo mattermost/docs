@@ -6434,6 +6434,21 @@ Maximum image resolution size for message attachments in pixels.
 File Settings
 ~~~~~~~~~~~~~~
 
+Maximum Image Decoder Concurrency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Indicates how many images can be decoded concurrently at once. The default value of ``-1`` configures Mattermost to automatically use the number of CPUs present.
+
+.. note::
+
+  This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes`` Therefore, a good rule of thumb to follow is that ``MaxImageResolution* MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxImageDecoderConcurrency": "-1"`` with numerical input. |
++--------------------------------------------------------------------------------------------------------+
+
 Initial Font
 ^^^^^^^^^^^^^^
 
