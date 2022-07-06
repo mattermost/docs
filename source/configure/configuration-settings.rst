@@ -2588,7 +2588,7 @@ Minimum Password Length
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
 +----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 10`` with numerical input.                  |
+| This feature's ``config.json`` setting is ``"MinimumLength": 8`` with numerical input.                   |
 +----------------------------------------------------------------------------------------------------------+
 
 Password Requirements
@@ -2610,10 +2610,10 @@ This feature's ``config.json`` settings are, respectively:
 .. list-table::
     :widths: 80
 
-    * - ``"Lowercase": true`` with options ``true`` and ``false``.
-    * - ``"Number": true`` with options ``true`` and ``false``.
-    * - ``"Uppercase": true`` with options ``true`` and ``false``.
-    * - ``"Symbol": true`` with options ``true`` and ``false``.
+    * - ``"Lowercase": false`` with options ``true`` and ``false``.
+    * - ``"Number": false`` with options ``true`` and ``false``.
+    * - ``"Uppercase": false`` with options ``true`` and ``false``.
+    * - ``"Symbol": false`` with options ``true`` and ``false``.
 
 Maximum Login Attempts
 ^^^^^^^^^^^^^^^^^^^^^^
