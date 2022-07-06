@@ -83,6 +83,8 @@ Channels
 | access individual users to view their User ID, add users to other       | - ``config.json setting``: N/A                              |
 | teams, and view the teams they are on and what their role is on a team. | - Environment variable: N/A                                 |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: You can search for channels by channel name or by channel ID.                                                               |
++-------------------------------------------------------------------------+-------------------------------------------------------------+
 
 Permissions
 -----------
