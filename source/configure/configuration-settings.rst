@@ -5135,7 +5135,7 @@ The following values are currently supported:
 - ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 - ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 
-This configuration setting is disabled by default and requires `Developer Mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
+This configuration setting is disabled by default and requires `developer mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |

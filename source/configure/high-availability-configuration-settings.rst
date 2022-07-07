@@ -43,17 +43,17 @@ Enable high availability mode
 
 *Available in legacy Enterprise Edition E20*
 
-+-----------------------------------------------------------------+-----------------------------------------------------------+
-| You can enable high availability mode.                          | - System Config path: **Environment > High Availabilty**  |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.Enable",`` |
-| - **true**: The Mattermost server will attempt inter-node       | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE``     |
-|   communication with the other servers in the cluster that      |                                                           |
-|   have the same cluster name. This sets the System Console to   |                                                           |
-|   read-only mode to keep the servers config.json files in sync. |                                                           |
-|   push notifications to the server specified.                   |                                                           |
-| - **false**: **(Default)** Mattermost high availability mode    |                                                           |
-|   is disabled.                                                  |                                                           |
-+-----------------------------------------------------------------+-----------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------+
+| You can enable high availability mode.                          | - System Config path: **Environment > High Availability**  |
+|                                                                 | - ``config.json`` setting: ``".ClusterSettings.Enable",``  |
+| - **true**: The Mattermost server will attempt inter-node       | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE``      |
+|   communication with the other servers in the cluster that      |                                                            |
+|   have the same cluster name. This sets the System Console to   |                                                            |
+|   read-only mode to keep the servers` ``config.json`` files     |                                                            |
+|   in sync.                                                      |                                                            |
+| - **false**: **(Default)** Mattermost high availability mode    |                                                            |
+|   is disabled.                                                  |                                                            |
++-----------------------------------------------------------------+------------------------------------------------------------+
 
 Cluster name
 ------------

@@ -28,7 +28,7 @@ File storage configuration settings
 
 Configure file storage configuration by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following table. 
 
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers, we recommend completing your own testing.
+Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
@@ -48,7 +48,7 @@ File storage system
 |   the specified local file directory.                         |                                                                          |
 | - **amazons3**: Files and images are stored on Amazon S3      |                                                                          |
 |   based on the access key, bucket, and region fields          |                                                                          |
-|   provided. The driver is compatible with MinIO (Beta)        |                                                                          |
+|   provided. The driver is compatible with MinIO (beta)        |                                                                          |
 |   and Digital Ocean Spaces.                                   |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -271,14 +271,14 @@ Amazon S3 signature v2
 *Not available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| By default, Mattermost uses Signature V4 to sign API calls    | - System Config path: N/A                                                |              
-| to AWS, but under some circumstances, V2 is required.         | - ``config.json`` setting: ``".FileSettings.AmazonS3SignV2: false",``    |
+| By default, Mattermost uses Signature v4 to sign API calls    | - System Config path: N/A                                                |              
+| to AWS, but under some circumstances, v2 is required.         | - ``config.json`` setting: ``".FileSettings.AmazonS3SignV2: false",``    |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SIGNV2``               |
 | - **true**: Use Signature v2 signing process.                 |                                                                          |
 | - **false**: **(Default)** Use Signature v4 signing process.  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | See the `AWS <https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html>`__ documentation for information about when to     |
-| use the signature v2 signing process.                                                                                                    |
+| use the Signature v2 signing process.                                                                                                    |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Enable server-side encryption for Amazon S3
