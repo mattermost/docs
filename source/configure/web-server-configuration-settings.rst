@@ -336,7 +336,7 @@ Websocket URL
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | You can configure the server to instruct clients       | - System Config path: N/A                                           |
-| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  ||                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
+| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
