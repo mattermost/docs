@@ -5081,7 +5081,7 @@ Enable Global Retention Policy for Files
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Files can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+**True**: Files can be deleted as part of a scheduled data retention job. This doesn't apply to custom retention policies.
 
 **False**: Files can't be deleted as part of a scheduled data retention job.
 

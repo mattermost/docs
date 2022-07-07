@@ -320,7 +320,7 @@ Purge all caches
 | and channels.                                            | - ``config.json`` setting: N/A                                |
 |                                                          | - Environment variable: N/A                                   |
 | Select the **Purge All Caches** button in the System     |                                                               |
-| System Console to purge all caches.                      |                                                               |
+|  Console to purge all caches.                            |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Purging the caches may adversely impact performance. Deployments using `high availability clusters             |
 | <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the       |
@@ -336,7 +336,7 @@ Websocket URL
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | You can configure the server to instruct clients       | - System Config path: N/A                                           |
-| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
+| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  |  |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
@@ -506,7 +506,7 @@ Cluster log timeout
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                               |
 | request time logging for performance monitoring.       | - ``config.json`` setting: ``".ServiceSettings.ClusterLogTimeoutMilliseconds: 2000",``  | 
-| for performanc monitoring                              | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
+| for performance monitoring                             | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
 |                                                        |                                                                                         |
 | Numerical input. Default is 2000 milliseconds          |                                                                                         |
 | (2 seconds).                                           |                                                                                         |        

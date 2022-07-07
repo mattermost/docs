@@ -59,7 +59,7 @@ Push notification server
 | like Apple Push Notification Service (APNS) and Google Cloud    | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER``            |
 | Messaging (GCM).                                                |                                                                                |
 |                                                                 |                                                                                |
-| - Customers running an Enterprise or Professional Edition       |                                                                                |
+| - Customers running a Professional or Enterprise Edition        |                                                                                |
 |   workspace should enter ``https://push.mattermost.com`` for    |                                                                                |
 |   the push notification server hosted in the United States.     |                                                                                |
 | - If you prefer to use a push notification server hosted in     |                                                                                |
