@@ -83,3 +83,17 @@ Tutorial video
 .. raw:: html
 
   <script src="https://fast.wistia.com/embed/medias/5gjgi10rr0.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_5gjgi10rr0 videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/5gjgi10rr0/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
+  <br>
+
+
+Known issues
+------------
+
+Collapsed Reply Threads is a complex feature that will increase demand on your server and database resources. If you're running Mattermost v6.7 or earlier, and you can't easily scale up your database size, or you're running the Mattermost application server and database server on the same machine, we highly recommended `upgrading to Mattermost v7.0 <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ to to take advantage of configuration and performance enhancements. 
+
+Customers running Mattermost v6.7 or earlier may experience bugs or server performance implications. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments. 
+
+In particular, please be aware of these important known issues and risks:
+
+    - When enabling Collapsed Reply Threads for the first time, you may see channels or threads you’ve seen before appear as unread. To resolve this, navigate to any unread channel, or select the **Mark all as read** button in the **Threads** view to mark all of your threads as read.
+    - For a comprehensive list of known issues, and to see our work queue in priority order, check out our `Kanban board <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=91&quickFilter=499>`__.
