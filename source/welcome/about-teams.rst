@@ -87,7 +87,7 @@ You can join any team configured to `"allow any user with an account on this ser
 
 If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you `log in <https://docs.mattermost.com/welcome/log-in.html>`__.
 
-If you've already joined at least one team in Mattermost, you can join additional teams by selecting the current team name, selecting **Join Another Team**, and selecting from available teams.
+You can be a member of multiple teams at the same time. To join additional teams, select the current team name, choose **Join Another Team**, and select the name of the team you want to join.
 
 .. image:: ../images/join-team.png
   :alt: Select a team name to join another team.
