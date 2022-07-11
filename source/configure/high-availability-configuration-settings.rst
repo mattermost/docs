@@ -49,7 +49,7 @@ Enable high availability mode
 | - **true**: The Mattermost server will attempt inter-node       | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE``      |
 |   communication with the other servers in the cluster that      |                                                            |
 |   have the same cluster name. This sets the System Console to   |                                                            |
-|   read-only mode to keep the servers` ``config.json`` files     |                                                            |
+|   read-only mode to keep the servers' ``config.json`` files     |                                                            |
 |   in sync.                                                      |                                                            |
 | - **false**: **(Default)** Mattermost high availability mode    |                                                            |
 |   is disabled.                                                  |                                                            |
