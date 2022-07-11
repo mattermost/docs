@@ -5066,7 +5066,7 @@ Enable Global Retention Policy for Messages
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Messages can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+**True**: Messages can be deleted as part of a scheduled data retention job. This doesn't apply to custom retention policies.
 
 **False**: Messages can't be deleted as part of a scheduled data retention job.
 
