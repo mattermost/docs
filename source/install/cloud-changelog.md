@@ -28,7 +28,7 @@ Latest Mattermost Cloud releases:
 #### Administration
  - Added the ability to start a trial from the **Invite People** modal.
  - Added the ability for end users to notify Admins to upgrade their workspace.
- - Updated the Posts search and get APIs to filter out posts, past the set Cloud plan's limit.
+ - Updated the Posts search and get APIs to filter out posts beyond the Cloud plan's limit.
  - The claim of 10 GB storage per user is no longer shown for grandfathered Cloud plan.
 
 #### API Changes
