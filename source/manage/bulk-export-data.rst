@@ -31,7 +31,7 @@ Bulk export data
   
     3.  Retrieve your file from the location you specified.
 
-At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
+At this time, the export supports attributes of the objects listed below. All Mattermost bulk export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
 
 You can export the following data types:
 
