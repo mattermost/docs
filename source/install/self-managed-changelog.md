@@ -16,7 +16,7 @@ Latest Mattermost Releases:
 **Release Day: 2022-07-16**
 
 ### Important Upgrade Notes
- - A new configuration option ``MaxImageDecoderConcurrency`` indicates how many images can be decoded concurrently at once. The default is -1, and the value indicates the number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, a good rule of thumb to follow is that ``MaxImageResolution * MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+ - A new configuration option ``MaxImageDecoderConcurrency`` indicates how many images can be decoded concurrently at once. The default is -1, and the value indicates the number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, we recommend that ``MaxImageResolution * MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
  - New schema changes were introduced in the form of a new column, and its index. The following summarizes the test results measuring how long it took for the database queries to run with these schema changes:
     - MySQL 12M Posts, 2.5M Reactions - ~1min 34s (Instance: PC with 8 cores, 16GB RAM)
     - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (Instance: db.r5.2xlarge)
@@ -108,7 +108,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
- - Boards export and reimport duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
 
 ### Contributors
  - 
