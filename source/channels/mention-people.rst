@@ -34,7 +34,7 @@ When you want to get the attention of specific Mattermost users, you can use @me
 .. note::
 
   - If you forget to mention someone in a message, editing the existing message to add an @mention won't trigger new @mention notifications, desktop notifications, or notification sounds.
-  - Mattermost supports mentions for names that include accents (also known as diacritics). Names like Zoë, Jesús, Sørina, François, Mary-Jo, Jokūbas, Siân, KŠthe, or Fañch are returned in autocomplete results.
+  - Mattermost supports mentions for names that include accents (also known as diacritics). Names like Zoë, Jesús, Sørina, François, André, Jokūbas, Siân, KŠthe, or Fañch are returned in autocomplete results.
 
 @username
 ---------
