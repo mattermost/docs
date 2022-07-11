@@ -254,10 +254,11 @@ Enable insecure outgoing connections
 | **Security note**: Enabling this feature makes these          | - System Config path: **Environment > Web Server**                                          |
 | connections susceptible to man-in-the-middle attacks.         | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
 |                                                               | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
-| - **true**: Outgoing HTTPS requests can accept unverified,    |                                                                                             |
-|   self-signed certificates. For example, outgoing webhooks    |                                                                                             |
-|   to a server with a self-signed TLS certificate, using any   |                                                                                             |
-|   domain, will be allowed.                                    |                                                                                             |
+| - **true**: Outgoing HTTPS requests, including S3 clients,    |                                                                                             |
+|   can accept unverified, self-signed certificates. For        |                                                                                             |
+|   example, outgoing webhooks to a server with a self-signed   |                                                                                             |
+|   TLS certificate, using any domain, will be allowed, and     |                                                                                             |
+|   will skip TLS verification.                                 |                                                                                             |
 | - **false**: **(Default)** Only secure HTTPS requests are     |                                                                                             |
 |   allowed.                                                    |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
