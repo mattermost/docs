@@ -39,7 +39,7 @@ Enables image proxy
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------------+
-| An image proxy anonymizes Mattermost App connections and      | - System Config path: **Environment > Image Proxy**                 |
+| An image proxy anonymizes Mattermost app connections and      | - System Config path: **Environment > Image Proxy**                 |
 | prevents them from accessing insecure content.                | - ``config.json setting``: ``".ImageProxySettings.Enable": true",`` |
 |                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_ENABLE``            |
 | - **true**: **(Default)** Enables an image proxy for loading  |                                                                     |
