@@ -63,7 +63,7 @@ Cluster name
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
-| The cluster to join by name in a high availability environment. | - System Config path: **Environment > High Availabilty**        |
+| The cluster to join by name in a high availability environment. | - System Config path: **Environment > High Availability**        |
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.ClusterName",``  |
 | Only nodes with the same cluster name will join together.       | - Environment variable: ``MM_CLUSTERSETTINGS_CLUSTERNAME``      |
 | This is to support blue-green deployments or staging pointing   |                                                                 |
