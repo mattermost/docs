@@ -89,11 +89,14 @@ Tutorial video
 Known issues
 ------------
 
-Collapsed Reply Threads is a complex feature that will increase demand on your server and database resources. If you're running Mattermost v6.7 or earlier, and you can't easily scale up your database size, or you're running the Mattermost application server and database server on the same machine, we highly recommended `upgrading to Mattermost v7.0 <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ to to take advantage of configuration and performance enhancements. 
+Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for System Admins to enable the feature by default. We highly recommended `upgrading to Mattermost v7.0 <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ to take advantage of these configuration and performance enhancements.
 
-Customers running Mattermost v6.7 or earlier may experience bugs or server performance implications. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments. 
+Customers running Collapsed Reply Threads in beta on Mattermost v6.7 or earlier will likely experience bugs and unoptimized server performance. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments.
 
 In particular, please be aware of these important known issues and risks:
 
-    - When enabling Collapsed Reply Threads for the first time, you may see channels or threads you’ve seen before appear as unread. To resolve this, navigate to any unread channel, or select the **Mark all as read** button in the **Threads** view to mark all of your threads as read.
-    - For a comprehensive list of known issues, and to see our work queue in priority order, check out our `Kanban board <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=91&quickFilter=499>`__.
+  - When enabling Collapsed Reply Threads for the first time, you may see channels or threads you’ve seen before appear as unread. To resolve this, navigate to any unread channel, or select the **Mark all as read** button in the **Threads** view to mark all of your threads as read.
+  - You may experience lag in your desktop or web client if you're following many threads or opening threads with many replies.
+  - Server performance for instances with many users and posts may be impacted. 
+  - You should expect to see more unread channels and notifications on your mobile device than you'll see on your desktop instance of Mattermost. This is expected when running a mobile app release older than v1.46.
+  - For a comprehensive list of known issues, and to see our work queue in priority order, check out our `Kanban board <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=91&quickFilter=499>`__.
