@@ -9,7 +9,7 @@ Bulk export data
 
     1. Create a full export file including attachments by running the mmctl export create -- attachments command. See the `Mattermost workspace migration <https://docs.mattermost.com/manage/cloud-data-export.html#create-the-export>`__ documentation for details.
     
-    2. While the job is running, you can check job status by running the `mmctl export job show <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
+    2. While the job is running, you can check its status by running the `mmctl export job show <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
 
     3. When the export job status is successful
     
