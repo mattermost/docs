@@ -121,7 +121,7 @@ TLS certificate file
 | The path to the certificate file to use for TLS        | - System Config path: **Environment > Web Server**               |
 | connection security.                                   | - ``config.json`` setting: ``".ServiceSettings.TLSCertFile",``   |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSCERTFILE``       |
-| String input                                           |                                                                  |
+| String input.                                          |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 TSL key file
@@ -135,7 +135,7 @@ TSL key file
 | The path to the TLS key file to use for TLS            | - System Config path: **REnvironment > Web Server**           |
 | connection security.                                   | - ``config.json`` setting: ``".ServiceSettings.TLSKeyFile",`` |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSKEYFILE``     |
-| String input                                           |                                                               |
+| String input.                                          |                                                               |
 +--------------------------------------------------------+---------------------------------------------------------------+
 
 Use Let's Encrypt
@@ -170,7 +170,7 @@ Let's Encrypt certificate cache file
 | The path to the file where certificates and other data | - System Config path: **Reporting > Team Statistics**                              |
 | about the Let’s Encrypt service will be stored.        | - ``config.json`` setting: ``".ServiceSettings.LetsEncryptCertificateCacheFile",`` |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_LETSENCRYPTCERTIFICATECACHEFILE``     |
-| File path                                              |                                                                                    |
+| File path input.                                       |                                                                                    |
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 
 Read timeout
@@ -180,12 +180,12 @@ Read timeout
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+--------------------------------------------------------+---------------------------------------------------------------------+
-| Maximum time allowed from when the connection is       | - System Config path: **Environment > Web Server**                  |
-| accepted to when the request body is fully read.       | - ``config.json`` setting: ``".ServiceSettings.ReadTimeout: 300",`` |
-|                                                        | - Environment variable: ``MM_SERVICESETTINGS_READTIMEOUT``          |
-| Numerical input in seconds. Default is 300 seconds.    |                                                                     |
-+--------------------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------------------+---------------------------------------------------------------------+
+| Maximum time allowed from when the connection is        | - System Config path: **Environment > Web Server**                  |
+| accepted to when the request body is fully read.        | - ``config.json`` setting: ``".ServiceSettings.ReadTimeout: 300",`` |
+|                                                         | - Environment variable: ``MM_SERVICESETTINGS_READTIMEOUT``          |
+| Numerical input in seconds. Default is **300** seconds. |                                                                     |
++---------------------------------------------------------+---------------------------------------------------------------------+
 
 Write timeout
 -------------
@@ -194,16 +194,16 @@ Write timeout
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
-| - If using HTTP (insecure), this is the maximum time   | - System Config path: **Environment > Web Server**                          |
-| allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeoutTimeout: 300",`` |
-| until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUTTIMEOUT``          |
-| - If using HTTPS, it's the total time from when the    |                                                                             |
-| connection is accepted until the response is written.  |                                                                             |
-| accepted to when the request body is fully read.       |                                                                             |
-|                                                        |                                                                             |
-| Numerical input in seconds. Default is 300 seconds.    |                                                                             |
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
++----------------------------------------------------------+-----------------------------------------------------------------------------+
+| - If using HTTP (insecure), this is the maximum time     | - System Config path: **Environment > Web Server**                          |
+|   allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeoutTimeout: 300",`` |
+|   until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUTTIMEOUT``          |
+| - If using HTTPS, it's the total time from when the      |                                                                             |
+|   connection is accepted until the response is written.  |                                                                             |
+|   accepted to when the request body is fully read.       |                                                                             |
+|                                                          |                                                                             |
+| Numerical input in seconds. Default is **300** seconds.  |                                                                             |
++----------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Idle timeout
 ------------
@@ -212,13 +212,13 @@ Idle timeout
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+--------------------------------------------------------+---------------------------------------------------------------------+
-| Set an explicit idle timeout in the HTTP server.       | - System Config path: **Environment > Web Server**                  |
-| This is the maximum time allowed before an idle        | - ``config.json`` setting: ``".ServiceSettings.IdleTimeout: 300",`` |
-| connection is disconnected.                            | - Environment variable: ``MM_SERVICESETTINGS_IDLETIMEOUT``          | 
-|                                                        |                                                                     |
-| Numerical input in seconds. Default is 300 seconds.    |                                                                     |
-+--------------------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------------------+---------------------------------------------------------------------+
+| Set an explicit idle timeout in the HTTP server.        | - System Config path: **Environment > Web Server**                  |
+| This is the maximum time allowed before an idle         | - ``config.json`` setting: ``".ServiceSettings.IdleTimeout: 300",`` |
+| connection is disconnected.                             | - Environment variable: ``MM_SERVICESETTINGS_IDLETIMEOUT``          | 
+|                                                         |                                                                     |
+| Numerical input in seconds. Default is **300** seconds. |                                                                     |
++---------------------------------------------------------+---------------------------------------------------------------------+
 
 Webserver mode
 --------------
@@ -251,15 +251,14 @@ Enable insecure outgoing connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| **Security note**: Enabling this feature makes these          | - System Config path: **Environment > Web Server**                                          |
-| connections susceptible to man-in-the-middle attacks.         | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
-|                                                               | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
-| - **true**: Outgoing HTTPS requests can accept unverified,    |                                                                                             |
-|   self-signed certificates. For example, outgoing webhooks    |                                                                                             |
-|   to a server with a self-signed TLS certificate, using any   |                                                                                             |
+| - **true**: Outgoing HTTPS requests can accept unverified,    | - System Config path: **Environment > Web Server**                                          |
+|   self-signed certificates. For example, outgoing webhooks    | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
+|   to a server with a self-signed TLS certificate, using any   | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
 |   domain, will be allowed.                                    |                                                                                             |
 | - **false**: **(Default)** Only secure HTTPS requests are     |                                                                                             |
 |   allowed.                                                    |                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Security note**: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.                                                  |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Managed resource paths
@@ -320,7 +319,7 @@ Purge all caches
 | and channels.                                            | - ``config.json`` setting: N/A                                |
 |                                                          | - Environment variable: N/A                                   |
 | Select the **Purge All Caches** button in the System     |                                                               |
-|  Console to purge all caches.                            |                                                               |
+| Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Purging the caches may adversely impact performance. Deployments using `high availability clusters             |
 | <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the       |
@@ -367,7 +366,7 @@ TLS minimum version
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | The minimum TLS version used by the Mattermost server. | - System Config path: N/A                                           |
 | on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.TLSMinVer: 1.2",``   ||                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSMINVER``            |
-| String input. Default is 1.2.                          |                                                                     |
+| String input. Default is **1.2**.                      |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | **Note**: This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy |
 | layer, such as NGINX.                                                                                                        |
@@ -388,7 +387,7 @@ Trusted proxy IP header
 | String array input consisting of header names,         |                                                                              |
 | such as ``["X-Forwarded-For", "X-Real-Ip"]``.          |                                                                              |
 +--------------------------------------------------------+------------------------------------------------------------------------------+
-| **Note**:                                                                                                                             |
+| **Notes**:                                                                                                                            |
 |                                                                                                                                       |
 | - From Mattermost v5.12, new deployments set this value to ``[]``, meaning that no header will be trusted. Prior to v5.12, the        |
 |   absence of this configuration setting entry will have it set to ``["X-Forwarded-For", "X-Real-Ip"]`` on upgrade to maintain         |
@@ -431,7 +430,7 @@ Secure TLS transport expiry
 | period, a site can't be accessed using HTTP unless     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORTMAXAGE``                |
 | ``TLSStrictTransport`` is set to ``true``.             |                                                                                        |
 |                                                        |                                                                                        |
-| Numerical input. Default is 63072000 (2 years).        |                                                                                        |
+| Numerical input. Default is **63072000** (2 years).    |                                                                                        |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 | See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__                     |
 | documentation for details.                                                                                                                      |
@@ -455,7 +454,7 @@ TLS cipher overwrites
 |                                                        |                                                                             |
 | String array input.                                    |                                                                             |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
-| **Note**:                                                                                                                            |
+| **Notes**:                                                                                                                           |
 |                                                                                                                                      |  
 | - This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer, such     |
 |   as NGINX.                                                                                                                          |
@@ -478,8 +477,8 @@ Goroutine health threshold
 | When goroutines exceed this limit, a warning is        |                                                                                  |
 | returned in the server logs.                           |                                                                                  |
 |                                                        |                                                                                  |
-| Numeric input. Default is -1 which turns off checking  |                                                                                  |
-| for the threshold.                                     |                                                                                  |
+| Numeric input. Default is **-1** which turns off       |                                                                                  |
+| checking for the threshold.                            |                                                                                  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Allow cookies for subdomains
@@ -508,7 +507,7 @@ Cluster log timeout
 | request time logging for performance monitoring.       | - ``config.json`` setting: ``".ServiceSettings.ClusterLogTimeoutMilliseconds: 2000",``  | 
 | for performance monitoring                             | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
 |                                                        |                                                                                         |
-| Numerical input. Default is 2000 milliseconds          |                                                                                         |
+| Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |        
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | See the `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation for details.                    |

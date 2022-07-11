@@ -30,8 +30,7 @@ High availability server configuration settings
 
 You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. tip::
-    In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
+In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
@@ -121,7 +120,7 @@ Use gossip
 | - **false**: The server attempts to communicate over the        |                                                                                |
 |   streaming port.                                               |                                                                                |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                        |
+| **Notes**:                                                                                                                                       |
 |                                                                                                                                                  |
 | - From Mattermost Server v5.36, gossip clustering can no longer be disabled.                                                                     |
 | - The gossip port and gossip protocol are used to determine cluster health even when this setting is set to **false**.                           |
@@ -177,7 +176,7 @@ Gossip port
 | The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availability**           |
 | should be allowed on this port.                                 | - ``config.json`` setting: ``".ClusterSettings.GossipPort: 8074”,`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_GOSSIPPORT``           |
-| Numerical input. Default is 8074.                               |                                                                     |
+| Numerical input. Default is **8074**.                           |                                                                     |
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 
 Streaming port
@@ -190,7 +189,7 @@ Streaming port
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | The port used for streaming data between servers.               | - System Config path: **Environment > High Availability**              |
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.StreamingPort: 8075",`` |
-| Numerical input. Default is 8075.                               | - Environment variable: ``MM_CLUSTERSETTINGS_STREAMINGPORT``           |
+| Numerical input. Default is **8075**.                           | - Environment variable: ``MM_CLUSTERSETTINGS_STREAMINGPORT``           |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Read only config
@@ -252,7 +251,7 @@ Advertise address
 | This settings is used primary when cluster nodes are not in     | - ``config.json`` setting: ``".ClusterSettings.AdvertiseAddress: "",`` |
 | the same network and involve NAT (Network Address Translation). | - Environment variable: ``MM_CLUSTERSETTINGS_ADVERTISEADDRESS``        |
 |                                                                 |                                                                        |
-| String input                                                    |                                                                        |
+| String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Maximum idle connections
@@ -266,7 +265,7 @@ Maximum idle connections
 | The maximum number of idle connections held open from one       | - System Config path: N/A                                              |
 | server to all others in the cluster.                            | - ``config.json`` setting: ``".ClusterSettings.MaxIdleConns: 100,``    |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_MAXIDLECONNS``            |
-| Numerical input. Default is 100.                                |                                                                        |
+| Numerical input. Default is **100**.                            |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Maximum Idle Connections per Host
@@ -280,7 +279,7 @@ Maximum Idle Connections per Host
 | The maximum number of idle connections held open from one       | - System Config path: N/A                                                    |
 | server to another server in the cluster.                        | - ``config.json`` setting: ``".ClusterSettings.MaxIdleConnsPerHost: 128",``  |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_MAXIDLECONNSPERHOST``           |
-| Numerical input. Default is 128.                                |                                                                              |
+| Numerical input. Default is **128**.                            |                                                                              |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Idle Connection Timeout
@@ -294,5 +293,5 @@ Idle Connection Timeout
 | The amount of time, in milliseconds, to leave an idle           | - System Config path: N/A                                                             |
 | connection open between servers in the cluster.                 | - ``config.json`` setting: ``".ClusterSettings.IdleConnTimeoutMilliseconds: 90000",`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_IDLECONNTIMEOUTMILLISECONDS``            |
-| Numerical input. Default is 90000.                              |                                                                                       | 
+| Numerical input. Default is **90000**.                          |                                                                                       | 
 +-----------------------------------------------------------------+---------------------------------------------------------------------------------------+

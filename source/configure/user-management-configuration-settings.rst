@@ -90,12 +90,14 @@ Permissions
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+--------------------------------------------------------------------------------+-------------------------------------------------------------+
-| Manage default teams and channels by linking AD/LDAP groups                    | - System Config path: **User Management > Permissions**     |
-| to Mattermost groups. See the `AD/LDAP groups documentation                    | - ``config.json setting``: N/A                              |
-| <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__   | - Environment variable: N/A                                 |
-| for more details.                                                              |                                                             |
-+--------------------------------------------------------------------------------+-------------------------------------------------------------+
++---------------------------------------------------------------------+-------------------------------------------------------------+
+| Manage default teams and channels by linking AD/LDAP groups         | - System Config path: **User Management > Permissions**     |
+| to Mattermost groups.                                               | - ``config.json setting``: N/A                              |
+|                                                                     | - Environment variable: N/A                                 |
++---------------------------------------------------------------------+-------------------------------------------------------------+
+| See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
+| for more details.                                                                                                                 |
++---------------------------------------------------------------------+-------------------------------------------------------------+
 
 System roles
 ------------
@@ -104,9 +106,11 @@ System roles
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+------------------------------------------------------------------------------+------------------------------------------------------------+
-| Manage team settings, including group synchronization for teams.             | - System Config path: **User Management > System Roles**   |
-| See `AD/LDAP groups documentation                                            | - ``config.json setting``: N/A                             |
-| <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ | - Environment variable: N/A                                |
-| documentation for more details.                                              |                                                            |
-+------------------------------------------------------------------------------+------------------------------------------------------------+
++----------------------------------------------------------------------+------------------------------------------------------------+
+| Manage team settings, including group synchronization for teams.     | - System Config path: **User Management > System Roles**   |
+|                                                                      | - ``config.json setting``: N/A                             |
+|                                                                      | - Environment variable: N/A                                |
++----------------------------------------------------------------------+------------------------------------------------------------+
+| See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
+| for more details.                                                                                                                 |
++----------------------------------------------------------------------+------------------------------------------------------------+

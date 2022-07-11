@@ -67,7 +67,7 @@ Push notification server
 | - Team Edition customers should enter                           |                                                                                |
 |   ``https://push-test.mattermost.com``.                         |                                                                                |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                        |
+| **Notes**:                                                                                                                                       |
 |                                                                                                                                                  |
 | - The TPNS is provided for testing push notifications prior to compiling your own service. Ensure you’re familiar with its `limitations          |
 |   <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__. Review the                                      |
@@ -91,7 +91,7 @@ Maximum notifications per channel
 | and @channel no longer send notifications to maximize           | - ``config.json setting``: ``".TeamSettings.MaxNotificationsPerChannel: 1000",``     |
 | performance.                                                    | - Environment variable: ``MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL``              |
 |                                                                 |                                                                                      |
-| Numerical input. Default is 1000.                               |                                                                                      |
+| Numerical input. Default is **1000**.                           |                                                                                      |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | **Note**: We recommend increasing this value a little at a time, monitoring system health by tracking `performance monitoring metrics                  |
 | <https://docs.mattermost.com/scale/performance-monitoring.html>`__, and only increasing this value if large channels have restricted permissions       |
