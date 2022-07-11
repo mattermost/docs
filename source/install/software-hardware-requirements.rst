@@ -149,7 +149,7 @@ If this change isn't made, tables in the database may end up having different co
 
 In MySQL versions 8.0.0 - 8.0.11 ``ADMIN`` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12.
 
-MySQL 8.0.22 contains an issue preventing Mattermost from working properly.
+MySQL 8.0.22 contains an issue preventing Mattermost from working properly. Users are advised to avoid this database version.
 
 Hardware requirements
 ---------------------
