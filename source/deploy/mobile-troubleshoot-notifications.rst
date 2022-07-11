@@ -9,7 +9,7 @@ If you did not receive a push notification when :doc:`testing push notifications
 
 2. Delete your mobile application, and reinstall it.
 
-3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
+3. Log in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
 
 4. Go to **Profile** > **Security** > **View and Logout of Active Sessions** to confirm that there is a session for the native mobile app matching your login time.
 

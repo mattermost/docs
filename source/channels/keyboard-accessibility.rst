@@ -10,7 +10,7 @@ Keyboard accessibility
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -23,26 +23,28 @@ Navigational keyboard shortcuts help you use Mattermost without requiring a mous
 .. image:: ../images/focus.png
   :alt: Navigate Mattermost using a keyboard.
 
-+----------------------------------------+----------------------------------------------------------------------------------+
-| Shortcut                               | Description                                                                      |
-+========================================+==================================================================================+
-| F6 (CTRL+F6 on Browser)                | Move focus to the next section                                                   |
-+----------------------------------------+----------------------------------------------------------------------------------+
-| SHIFT+F6 (SHIFT+CTRL+F6 on Browser)    | Move focus to the previous section                                               |
-+----------------------------------------+----------------------------------------------------------------------------------+
-| TAB                                    | Move focus to the next element                                                   |
-+----------------------------------------+----------------------------------------------------------------------------------+
-| SHIFT+TAB                              | Move focus to the previous element                                               |
-+----------------------------------------+----------------------------------------------------------------------------------+
-| Up or DOWN                             | Move focus between messages in the post list or sections in the channel sidebar  |
-+----------------------------------------+----------------------------------------------------------------------------------+
-| ENTER                                  | Take action on the focused element                                               |
-+----------------------------------------+----------------------------------------------------------------------------------+
++----------------------------------------------+----------------------------------------------------------------------------------+
+| Keyboard shortcut                            | Description                                                                      |
++==============================================+==================================================================================+
+|| Desktop App: :kbd:`F6`                      || Move focus to the next section                                                  |
+|| Browser: :kbd:`Ctrl` :kbd:`F6`              ||                                                                                 |
++----------------------------------------------+----------------------------------------------------------------------------------+
+|| Desktop App: :kbd:`Shift` :kbd:`F6`         || Move focus to the previous section                                              |
+|| Browser: :kbd:`Ctrl` :kbd:`Shift` :kbd:`F6` |                                                                                  |
++----------------------------------------------+----------------------------------------------------------------------------------+
+| :kbd:`Tab`                                   | Move focus to the next element                                                   |
++----------------------------------------------+----------------------------------------------------------------------------------+
+| :kbd:`Shift` :kbd:`Tab`                      | Move focus to the previous element                                               |
++----------------------------------------------+----------------------------------------------------------------------------------+
+| :kbd:`↑` or :kbd:`↓`                         | Move focus between messages in the post list or sections in the channel sidebar  |
++----------------------------------------------+----------------------------------------------------------------------------------+
+| :kbd:`Enter`                                 | Take action on the focused element                                               |
++----------------------------------------------+----------------------------------------------------------------------------------+
 
 Region navigation
 ------------------
 
-Mattermost has eight regions that can be focused for navigation. Use F6 (in the desktop app) or CTRL+F6 (in a browser) repeatedly to move focus and loop through the regions in this order:
+Mattermost has eight regions that can be focused for navigation. Use :kbd:`F6` in the desktop app, or use :kbd:`Ctrl` :kbd:`F6` in a browser repeatedly to move focus and loop through the regions in this order:
 
 1. Message list region
 2. Message input region
@@ -59,7 +61,7 @@ Mattermost has eight regions that can be focused for navigation. Use F6 (in the 
 Message navigation
 ------------------
 
-When the message list region is focused, use the UP or DOWN arrow keys to navigate through messages and reply threads. Press TAB to navigate through message actions.
+When the message list region is focused, use the  :kbd:`↑` or :kbd:`↓` arrow keys to navigate through messages and reply threads. Press :kbd:`Tab` to navigate through message actions.
 
 .. image:: ../images/message-navigation.gif
   :alt: Navigate through Mattermost messages using a keyboard.
@@ -77,14 +79,14 @@ Mattermost is compatible with most popular screen readers, such as `Apple VoiceO
 
 For example, a message read by a screen reader may sound like the following:
 
-  .. code-block:: none
+.. code-block:: none
   
-    Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is saved and pinned.
+  Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is saved and pinned.
 
 Channel sidebar navigation
 --------------------------
 
-When the channel sidebar region is focused, use the UP or DOWN arrow keys to focus individual sidebar sections, such as Favorites, public channels, private channels, and direct messages. Press TAB to navigate through channels or other buttons within a sidebar section.
+When the channel sidebar region is focused, use the :kbd:`↑` or :kbd:`↓` arrow keys to focus individual sidebar sections, such as Favorites, public channels, private channels, and direct messages. Press :kbd:`Tab` to navigate through channels or other buttons within a sidebar section.
 
 .. image:: ../images/channel-sidebar-navigation.gif
   :alt: Navigate the Mattermost channel sidebar using a keyboard.

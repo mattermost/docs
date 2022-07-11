@@ -15,7 +15,7 @@ SAML Single Sign-On
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -29,7 +29,7 @@ Single sign-on (SSO) is a way for users to log into multiple applications with a
 
 Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Single sign-on integration offers the following benefits:
 
-- **Single sign-on.** Users can sign-in to Mattermost with their SAML credentials.
+- **Single sign-on.** Users can log in to Mattermost with their SAML credentials.
 - **Centralized identity management.** Mattermost accounts automatically pull user attributes from SAML upon login, such as full name, email, and username.
 - **Automatic account provisioning.** Mattermost user accounts are automatically created the first time a user signs in with their SAML credentials on the Mattermost server.
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
@@ -71,7 +71,7 @@ When the user accesses the Mattermost URL, they log in with same username and pa
 Guest attribute
 ~~~~~~~~~~~~~~~
 
-When enabled, the ``guest`` attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
+When enabled, the ``guest`` attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the guest role applied immediately upon first login instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 If a Mattermost guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the ``guest`` attribute added, the synchronization processes will automatically demote the member user to the guest role.
 

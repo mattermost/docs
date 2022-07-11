@@ -1,15 +1,15 @@
 Self-hosted subscriptions
 =========================
 
-Purchase a subscription
------------------------
+Buy a subscription
+------------------
 
-Open the `Customer Portal page <https://customers.mattermost.com>`__. Enter the required information, and check the box to confirm **I have read and agree to the Privacy Policy**. Select **Next** and validate your email address to proceed with the steps below. If you have an existing Customer Portal account, you can log in with your previously created login credentials.  
+You can buy a Mattermost subscription via the `Customer Portal page <https://customers.mattermost.com>`__. If you haven't created an account yet, follow the steps provided. Otherwise, you can log in with your existing credentials. When you buy a Mattermost subscription for a self-hosted deployment, you'll receive an activation license.
 
-Once you're logged in to the Customer Portal:
+Once you're logged in:
 
 1. Choose a subscription, and enter the number of users in the **Order summary** field. This indicates the number of users you can have on this subscription's instance. For more information about how users are defined, see our `FAQ <https://mattermost.com/pricing-self-managed/#faq>`__.
-2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__, the cost of which is automatically added to your order total.
+2. (Optional for Enterprise subscriptions) You can add `Premier Support <https://mattermost.com/support/>`__. This is an additional cost and is automatically added to your order total.
 3. Select **Next Step**.
 4. Enter your billing and payment information.
 5. Accept the **Terms**.
@@ -17,7 +17,7 @@ Once you're logged in to the Customer Portal:
 7. Choose **Download the license key**.
 
 .. note::
-   If you experience any problems with your transaction, please contact our Support Team via the form provided in the Customer Portal. If possible, keep the error message/number that you received on hand as it may assist with their investigation.
+   If you experience any problems with your transaction, please contact our Support Team via the Customer Portal. If possible, keep the error message/number that you received on hand as it may help with their investigation.
 
 Once downloaded, your Mattermost license is ready to use and be applied via the Mattermost System Console.
 
@@ -106,8 +106,8 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
 Frequently asked questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-How do I renew my license subscription if I don't have internet access?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How do I renew my subscription if I don't have internet access?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you don't have access to the internet, please email support@mattermost.com for assistance.
 
@@ -118,34 +118,34 @@ License keys for unlocking the advanced features in Mattermost can only be appli
 
 Customers who are eligible to purchase the `Premier Support add-on <https://mattermost.com/support/>`__ are licensed to run with a single deployment of Mattermost license key in production and up to four non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.)
 
-Is my license available immediately?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Is my license key available immediately?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes, once your payment is successfully processed your license is available to download immediately.
 
-How will I know when to renew my license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How will I know when to renew my subscription?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You'll be notified 60 days prior to your license expiry that your license is due for renewal, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
+You'll be notified 60 days prior to your subscription expiry, via a blue banner displayed at the top of your Mattermost window. This banner is only visible to System Admins.
 
 You can select **Renew license now** to begin the renewal process. You can also select the **x** to dismiss the notification. The notification is reactivated when your browser is refreshed or you reload the Mattermost Desktop App.
 
-How long does it take to renew a license?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How long does it take to renew a subscription?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you’ve started the renewal process, we'll be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we're able to process the renewal and issue your license key within 24 hours.
 
-What happens to my license if I don't renew in time?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What happens to my subscription if I don't renew in time?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew within the 60-day renewal period, a 10-day grace period is provided for you to upload a new license key. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
+If you don't renew within the 60-day renewal period, a 10-day grace period is provided. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
 
 When the grace period expires, your Professional or Enterprise plan is downgraded to the Starter plan and other plan features are disabled.
  
-What happens when my license expires?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What happens when my subscription expires?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew your license within the 10-day grace period, your Mattermost version is automatically downgraded to Starter plan so you can still access and use Mattermost. However, subscription features will no longer be available, and if you are currently using them, the functionality will no longer be accessible.
+If you don't renew within the 10-day grace period, your Mattermost version is automatically downgraded to Starter plan so you can still access and use Mattermost. However, subscription features will no longer be available, and if you are currently using them, the functionality will no longer be accessible.
 
 When you renew, the subscription features will become available with the previous configuration (provided no action such as user migration has been taken).
 
@@ -173,7 +173,7 @@ How do I delete my Customer Portal account?
 
 Please contact Mattermost Support for assistance with deleting your Customer Portal account.
 
-What happens to my license when I delete my account?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What happens to my subscription when I delete my account?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When an account is deleted, the license remains valid. When the license is close to expiring, you'll need to create a new profile in order to purchase a new license.
+When an account is deleted, the license key remains valid. When the subscription is close to expiring, you'll need to create a new profile in order to renew it.

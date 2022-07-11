@@ -10,7 +10,7 @@ Android setup
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -24,8 +24,8 @@ Your Mattermost teams can be accessed on Android mobile devices by downloading t
 2. Search for "Mattermost" and select **INSTALL** to download the app.
 3. Open Mattermost from your homescreen and enter your team and account information to login:
 
-   a. **Enter Server URL:** This is the web address you go to when you want to access Mattermost. See the `sign in <https://docs.mattermost.com/welcome/sign-in.html>`__ documentation for additional details. 
-   b. **Sign in to Mattermost:** This is your account login information as described by one of the following sign in methods:
+   a. **Enter Server URL:** This is the web address you go to when you want to access Mattermost. See the `log in <https://docs.mattermost.com/welcome/log-in.html>`__ documentation for additional details. 
+   b. **Log in to Mattermost:** This is your account login information as described by one of the following login methods:
 
 .. _Okta: https://developer.okta.com/docs/guides/saml_guidance.html
 .. _Microsoft ADFS: https://msdn.microsoft.com/en-us/library/bb897402.aspx

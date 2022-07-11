@@ -10,7 +10,7 @@ Customize your Channels experience
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -56,11 +56,11 @@ Send desktop notifications
 
 Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Chrome, Edge, Firefox, and Safari.
 
-When `desktop app <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages":
+When `desktop app <https://mattermost.com/apps>`__ notifications are set to "Only for mentions and direct messages":
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
-- And when `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/channels/organize-conversations.html#start-or-reply-to-threads>`__.
+- And when `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ is enabled, you can choose to receive desktop notifications about `threads you're following <https://docs.mattermost.com/channels/organize-conversations.html#start-or-reply-to-threads>`__.
 
 Notification sound
 ^^^^^^^^^^^^^^^^^^
@@ -103,13 +103,13 @@ By default, you receive notifications when someone posts a message that contains
 Reply notifications
 ~~~~~~~~~~~~~~~~~~~
 
-When `Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in.
+When `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ is disabled, you can choose to receive mention notifications when someone replies to a thread you have started or have participated in.
 
 - You're considered to start a thread when you post a message to which other members of your team reply.
 - You're considered to be a participant in a thread when you post a message using the `reply button <https://docs.mattermost.com/channels/reply-to-messages.html>`__ in an pre-existing thread.
 
 .. note::
-  This setting is hidden when Collapsed Reply Threads (Beta) is enabled.
+  This setting is hidden when Collapsed Reply Threads is enabled.
 
 Automatic direct message replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,12 +176,12 @@ Message display
 
 Select the formatting for messages in the center channel. **Compact** mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
-Collapsed Reply Threads (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Collapsed Reply Threads
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Collapsed Reply Threads (Beta) offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and are disabled by default. If your System Admin has enabled **Collapsed Reply Threads** for your workspace, you can enable them in your Mattermost instance to start being notified about threads you're following in a new **Threads** option at the top of the channel sidebar.
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments. 
 
-See our `Organizing conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
+Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our `organize conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about working with Collapsed Reply Threads.
 
 Select to open threads
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,12 +254,12 @@ Channels can be sorted within their channel sidebar sections alphabetically (def
 Channel switcher
 ^^^^^^^^^^^^^^^^
 
-Hide the channel switcher used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD+K.
+Hide the channel switcher used to jump between channels quickly. The channel switcher can also be accessed by pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac.
 
 Autoclose direct messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hide direct message conversations that have been inactive for seven days. These conversations can be reopened using the **+** button in the channel sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#autoclose-direct-messages-in-sidebar>`__.
+Hide direct message conversations that have been inactive for seven days. These conversations can be reopened using the **+** button in the channel sidebar, or by pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac, to open the Channel Switcher. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#autoclose-direct-messages-in-sidebar>`__.
 
 Advanced
 --------
@@ -269,12 +269,20 @@ Settings to configure when messages are sent.
 Send messages on CTRL+ENTER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If **On for all messages** is enabled, pressing ENTER inserts a new line and pressing CTRL+ENTER posts a message. If **On only for code blacks starting with ```** is enabled, pressing ENTER inserts a new line inside an open code block and pressing CTRL+ENTER automatically closes the code block and posts the message. If disabled, pressing SHIFT+ENTER inserts a new line and pressing ENTER posts the message.
+If **On for all messages** is enabled, pressing :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac inserts a new line, and pressing :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac, posts a message. 
+
+If **On only for code blacks starting with ```** is enabled, pressing :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac inserts a new line inside an open code block, and pressing :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac automatically closes the code block and posts the message. 
+
+If disabled, pressing :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or pressing :kbd:`⇧` :kbd:`↵` on Mac inserts a new line, and pressing :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac posts the message.
 
 Enable post formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This setting controls whether post formatting is rendered. When **On**, posts will be rendered with `Markdown formatting <https://docs.mattermost.com/channels/format-messages.html>`__, emoji, autolinked URLs, and line breaks. When **Off**, the raw text will be shown.
+
+.. note::
+
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
 Enable join/leave messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -284,9 +292,13 @@ This setting controls whether system messages about users joining or leaving a c
 Preview pre-release features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Turn on preview features to view them early, ahead of their official release:
+Turn on preview features to view them early, ahead of their official release.
 
-- **Show markdown preview option in message input box** Turning this on will show a **Preview** option when typing in the text input box. Select **Preview** to see what the Markdown formatting in the message looks like before the message is sent.
+**Show markdown preview option in message input box** Turning this on will show a **Preview** option when typing in the text input box. Select **Preview** to see what the Markdown formatting in the message looks like before the message is sent.
+
+.. note::
+
+  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
 Performance Debugging
 ~~~~~~~~~~~~~~~~~~~~~

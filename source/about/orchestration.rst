@@ -1,5 +1,9 @@
+:orphan:
+
 Deployment solution programs 
 ============================
+
+.. This page is intentionally not accessible via the LHS navigation pane.
 
 Mattermost's **Deployment Solutions Programs** help IT administrators understand how Mattermost is being offered in third-party deployment solutions, including other open source projects as well as in commercial solutions.
 

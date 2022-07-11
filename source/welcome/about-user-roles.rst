@@ -10,7 +10,7 @@ About user roles
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -100,7 +100,7 @@ A System Admin can deactivate user accounts via **System Console > Users** for a
 
 When **Deactivate** is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in channel member lists, and they are removed from the team members list. A deactivated account can also be reactivated from the System Console, in which case the user rejoins channels and teams that they previously belonged to.
 
-Direct Message channels with deactivated users are hidden in users' sidebars, but can be reopened using the **More...** button or by pressing CMD/CTRL+K.
+Direct Message channels with deactivated users are hidden in users' sidebars, but can be reopened using the **More...** button or by pressing  :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac.
 
 Mattermost is designed as a system-of-record, so there isn't an option to delete users from the Mattermost system, as such an operation could compromise the integrity of message archives.
 
