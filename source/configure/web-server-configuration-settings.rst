@@ -251,10 +251,11 @@ Enable insecure outgoing connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| - **true**: Outgoing HTTPS requests can accept unverified,    | - System Config path: **Environment > Web Server**                                          |
-|   self-signed certificates. For example, outgoing webhooks    | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
-|   to a server with a self-signed TLS certificate, using any   | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
-|   domain, will be allowed.                                    |                                                                                             |
+| - **true**: Outgoing HTTPS requests, including S3 clients,    | - System Config path: **Environment > Web Server**                                          |
+|   can accept unverified, self-signed certificates.            | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
+|   For example, outgoing webhooks to a server with a           | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
+|   self-signed TLS certificate, using any domain, will be      |                                                                                             |
+|   allowed, and will skip TLS verification.                    |                                                                                             |
 | - **false**: **(Default)** Only secure HTTPS requests are     |                                                                                             |
 |   allowed.                                                    |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+

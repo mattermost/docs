@@ -1898,7 +1898,7 @@ Minimum Password Length
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
 +----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 10`` with numerical input.                  |
+| This feature's ``config.json`` setting is ``"MinimumLength": 8`` with numerical input.                   |
 +----------------------------------------------------------------------------------------------------------+
 
 Password Requirements
@@ -1920,10 +1920,10 @@ This feature's ``config.json`` settings are, respectively:
 .. list-table::
     :widths: 80
 
-    * - ``"Lowercase": true`` with options ``true`` and ``false``.
-    * - ``"Number": true`` with options ``true`` and ``false``.
-    * - ``"Uppercase": true`` with options ``true`` and ``false``.
-    * - ``"Symbol": true`` with options ``true`` and ``false``.
+    * - ``"Lowercase": false`` with options ``true`` and ``false``.
+    * - ``"Number": false`` with options ``true`` and ``false``.
+    * - ``"Uppercase": false`` with options ``true`` and ``false``.
+    * - ``"Symbol": false`` with options ``true`` and ``false``.
 
 Maximum Login Attempts
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -5564,6 +5564,21 @@ Maximum image resolution size for message attachments in pixels.
 
 File Settings
 ~~~~~~~~~~~~~~
+
+Maximum Image Decoder Concurrency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Indicates how many images can be decoded concurrently at once. The default value of ``-1`` configures Mattermost to automatically use the number of CPUs present.
+
+.. note::
+
+  This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes`` Therefore, a good rule of thumb to follow is that ``MaxImageResolution* MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxImageDecoderConcurrency": "-1"`` with numerical input. |
++--------------------------------------------------------------------------------------------------------+
 
 Initial Font
 ^^^^^^^^^^^^^^
