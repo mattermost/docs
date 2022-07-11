@@ -25,7 +25,7 @@ You can export the following data types:
 - Users
 - Users' Team memberships
 - Users' Channel memberships
-- Posts (Posts in the Public/Private channels and also replies to those posts)
+- Posts (Posts in the public/private channels and also replies to those posts)
 
 .. include:: bulk-export-data.rst
   :start-after: :nosearch:
