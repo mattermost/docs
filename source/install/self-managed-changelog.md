@@ -86,6 +86,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@floating-ui/react-dom`` and removed ``superagent`` and ``jasny-bootstrap`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
+ - Custom statuses do not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
