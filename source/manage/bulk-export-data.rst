@@ -13,7 +13,7 @@ Bulk export data
 
     3. When the export job status is successful
     
-      a. Idenify the name of the completed export file by running the `mmctl export list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
+      a. Identify the name of the completed export file by running the `mmctl export list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
       b. Download the export file to your local machine by running the `mmctl export download <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
 
   .. tab:: Use CLI
