@@ -162,6 +162,8 @@ Moreover, memory requirements can be driven by peak file sharing activity. Recom
 
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
+Mattermost supports any 64-bit x86 processor architecture.
+
 Hardware requirements for team deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
