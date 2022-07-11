@@ -25,12 +25,6 @@ Latest Mattermost Releases:
 #### Insights (Beta) (Enterprise and Professional)
  - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
 
-#### Boards Updates
- - 
-
-#### Calls Updates
- - 
-
 ### Improvements
 
 #### User Interface (UI)
@@ -47,6 +41,7 @@ Latest Mattermost Releases:
  - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required. These requirements can be configured by the System Admin as needed via **System Console > Password**.
  - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
  - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. Mattermost System Admins should check this value in case of any discrepancies with what is expected.
+ - Moved ``UserHasJoinedTeam`` callback to after a user is added to a team.
 
 #### Performance
  - Reduced the number of calls made to ``viewChannel`` API during regular usage.
