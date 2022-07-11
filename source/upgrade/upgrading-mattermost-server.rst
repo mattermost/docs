@@ -18,6 +18,34 @@ In most cases, you can upgrade Mattermost Server in a few minutes. However, the 
 Prepare to upgrade to the latest version
 ------------------------------------------
 
+Upgrade to Mattermost v7.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost v7.1 introduces schema changes in the form of a new column and its index. The following notes our test results for the schema changes:
+
+- MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
+- PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (instance: db.r5.2xlarge)
+
+Customers wanting an upgrade with substantially reduced downtime (~1/5th of the original time) are encouraged to run the following queries before upgrading. This is fully backwards-compatible, but will obtain a lock on ``Reactions`` table, so users' reactions posted during this time won't be reflected in the database.
+
+.. tabs:: 
+
+  .. tab:: MySQL
+
+    ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
+
+    ``UPDATE Reactions SET ChannelId = (select ChannelId from Posts where Posts.Id = Reactions.PostId) WHERE ChannelId="";``
+
+    ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
+
+  .. tab:: PostgreSQL
+
+    ``ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';``
+
+    ``UPDATE reactions SET channelid = (select channelid from posts where posts.id = reactions.postid) WHERE channelid='';``
+
+    ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);``
+
 Upgrade to Mattermost v7.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
