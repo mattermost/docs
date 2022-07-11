@@ -31,7 +31,7 @@ High availability server configuration settings
 You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. tip::
-    In a Mattermost High Availability Cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a High Availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
+    In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
@@ -63,7 +63,7 @@ Cluster name
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
-| The cluster to join by name in a high availability environment. | - System Config path: **Environment > High Availability**        |
+| The cluster to join by name in a high availability environment. | - System Config path: **Environment > High Availability**       |
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.ClusterName",``  |
 | Only nodes with the same cluster name will join together.       | - Environment variable: ``MM_CLUSTERSETTINGS_CLUSTERNAME``      |
 | This is to support blue-green deployments or staging pointing   |                                                                 |
@@ -78,7 +78,7 @@ Override hostname
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
-| You can override the hostname of this server.                   | - System Config path: **Environment > High Availabilty**             |
+| You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**            |
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.OverrideHostname",``  |
 | - This property can be set to a specific IP address if needed;  | - Environment variable: ``MM_CLUSTERSETTINGS_OVERRIDEHOSTNAME``      |
 |   however, we don’t recommend overriding the hostname unless    |                                                                      |
@@ -97,7 +97,7 @@ Use IP address
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
-| You can configure your high availability environment to         | - System Config path: **Environment > High Availabilty**               |
+| You can configure your high availability environment to         | - System Config path: **Environment > High Availability**              |
 | communicate using the hostname instead of the IP address.       | - ``config.json`` setting: ``".ClusterSettings.UseIPAddress: true",``  |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_USEIPADDRESS``            |
 | - **true**: **(Default)** The cluster attempts to communicate   |                                                                        |
@@ -114,7 +114,7 @@ Use gossip
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| All cluster traffic uses the gossip protocol.                   | - System Config path: **Environment > High Availabilty**                       |
+| All cluster traffic uses the gossip protocol.                   | - System Config path: **Environment > High Availability**                      |
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.UseExperimentalGossip: true",`` |
 | - **true**: **(Default)** The server attempts to communicate    | - Environment variable: ``MM_CLUSTERSETTINGS_USEEXPERIMENTALGOSSIP``           |
 |   via the gossip protocol over the gossip port specified.       |                                                                                |
@@ -135,7 +135,7 @@ Enable experimental gossip encryption
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| Gossip encryption uses AES-256 by default, and this value isn’t | - System Config path: **Environment > High Availabilty**                                     |
+| Gossip encryption uses AES-256 by default, and this value isn’t | - System Config path: **Environment > High Availability**                                    |
 | configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableExperimentalGossipEncryption: false”,`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEEXPERIMENTALGOSSIPENCRYPTION``            |
 | - **true**: All communication through the cluster using the     |                                                                                              |
@@ -155,7 +155,7 @@ Enable gossip compression
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Once all servers in a cluster are upgraded to Mattermost v5.33  | - System Config path: **Environment > High Availabilty**                         |
+| Once all servers in a cluster are upgraded to Mattermost v5.33  | - System Config path: **Environment > High Availability**                        |
 | or later, we recommend that you disable this configuration      | - ``config.json`` setting: ``".ClusterSettings.EnableGossipCompression: true”,`` |
 | setting for better performance.                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE GOSSIPCOMPRESSION``          |
 |                                                                 |                                                                                  |
@@ -174,7 +174,7 @@ Gossip port
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
-| The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availabilty**            |
+| The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availability**           |
 | should be allowed on this port.                                 | - ``config.json`` setting: ``".ClusterSettings.GossipPort: 8074”,`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_GOSSIPPORT``           |
 | Numerical input. Default is 8074.                               |                                                                     |
@@ -188,7 +188,7 @@ Streaming port
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
-| The port used for streaming data between servers.               | - System Config path: **Environment > High Availabilty**               |
+| The port used for streaming data between servers.               | - System Config path: **Environment > High Availability**              |
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.StreamingPort: 8075",`` |
 | Numerical input. Default is 8075.                               | - Environment variable: ``MM_CLUSTERSETTINGS_STREAMINGPORT``           |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
