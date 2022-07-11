@@ -23,6 +23,19 @@ Get started
     Web server configuration settings </configure/web-server-configuration-settings>
     Database configuration settings </configure/database-configuration-settings>
     Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>
+    File storage configuration settings </configure/file-storage-configuration-settings>
+    Image proxy configuration settings </configure/image-proxy-configuration-settings>
+    SMTP configuration settings </configure/smtp-configuration-settings>
+    Push notification server configuration settings </configure/push-notification-server-configuration-settings>
+    High availability configuration settings </configure/high-availability-configuration-settings>
+    Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
+    Advanced permissions </onboard/advanced-permissions>
+    Guest accounts </onboard/guest-accounts>
+    System Admin roles </onboard/system-admin-roles>
+    OpenID </onboard/sso-openidconnect>
+    Google SSO </onboard/sso-google>
+    Office 365 SSO </onboard/sso-office>
+    GitLab SSO </onboard/sso-gitlab>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Provisioning workflows </onboard/user-provisioning-workflows>
     Multi-factor authentication </onboard/multi-factor-authentication>
