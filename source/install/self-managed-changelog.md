@@ -17,18 +17,19 @@ Latest Mattermost Releases:
 
 ### Important Upgrade Notes
  - A new configuration option ``MaxImageDecoderConcurrency`` indicates how many images can be decoded concurrently at once. The default is -1, and the value indicates the number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, we recommend that ``MaxImageResolution * MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
- - New schema changes were introduced in the form of a new column, and its index. The following summarizes the test results measuring how long it took for the database queries to run with these schema changes:
-    - MySQL 12M Posts, 2.5M Reactions - ~1min 34s (Instance: PC with 8 cores, 16GB RAM)
-    - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (Instance: db.r5.2xlarge)
- - For customers wanting an upgrade with substantially reduced downtime (~1/5th), they are encouraged to run the following queries before upgrading. This is fully backwards compatible but will obtain a lock on ``Reactions`` table, and users' reactions in the interval wouldn't be reflected in the database.
+ - Mattermost v7.1 introduces schema changes in the form of a new column and its index. The following notes our test results for the schema changes:
+    - MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
+    - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (instance: db.r5.2xlarge)
+ - Customers wanting to run the SQL queries before-hand can run these queries. This is fully backwards-compatible, but will obtain a lock on ``Reactions`` table, so users' reactions posted during this time won't be reflected in the database.
     - For MySQL:
-ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";
-UPDATE Reactions SET ChannelId = (select ChannelId from Posts where Posts.Id = Reactions.PostId) WHERE ChannelId="";
-CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;
+      - ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
+      - ``UPDATE Reactions SET ChannelId = (select ChannelId from Posts where Posts.Id = Reactions.PostId) WHERE ChannelId="";`` 
+      - ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
+  
     - For PostgreSQL:
-ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';
-UPDATE reactions SET channelid = (select channelid from posts where posts.id = reactions.postid) WHERE channelid='';
-CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);
+      - ``ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';``
+      - ``UPDATE reactions SET channelid = (select channelid from posts where posts.id = reactions.postid) WHERE channelid='';`` 
+      - ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);`` 
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -45,7 +46,6 @@ CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (c
  - Added new search shortcuts to the **Keyboard Shortcuts** modal. 
     - CMD+F (macOS) and CTRL+F (Windows) for Desktop App
     - CMD+SHIFT+F (macOS) and CTRL+SHIFT+F (Windows) for webapp
- - Added a Trial info panel and end date in the Trial section in **System Console > Subscriptions** page.
  - Changed some tooltips to appear when focused instead of just on hover.
 - Added support for syntax highlighting for 1C:Enterprise (BSL) language.
 
@@ -99,6 +99,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@floating-ui/react-dom`` and removed ``superagent`` and ``jasny-bootstrap`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
+ - The Top Boards widget in Insights is slow to load.
  - Custom statuses do not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
