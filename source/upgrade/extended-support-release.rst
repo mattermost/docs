@@ -34,7 +34,7 @@ Please see `Release Lifecycle documentation <https://docs.mattermost.com/upgrade
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
-.. image:: ../images/esr-graphic.png
+.. image:: ../images/esr.graphic.2.png
    :alt: Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.
 
 What is included in an Extended Support Release dot release? 
@@ -62,6 +62,8 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
+| 7.1         | Feature        | July 16, 2022    | April 15, 2023   | `7.1.0 <https://releases.mattermost.com/7.1.0/mattermost-7.1.0-linux-amd64.tar.gz>`_       |                                                     |
++-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.9 <https://releases.mattermost.com/6.3.9/mattermost-6.3.9-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.9 <https://releases.mattermost.com/5.37.9/mattermost-5.37.9-linux-amd64.tar.gz>`_    |                                                     |
