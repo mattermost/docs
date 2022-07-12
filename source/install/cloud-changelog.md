@@ -41,6 +41,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where password requirements were not enforced when Development Mode was enabled.
 
 ### Known Issues
+ - The Top Boards widget in Insights is slow to load.
  - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
