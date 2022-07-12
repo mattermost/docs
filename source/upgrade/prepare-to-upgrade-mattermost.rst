@@ -13,7 +13,7 @@ Prepare to upgrade Mattermost
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
+In most cases, you can `upgrade Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
 .. contents::
   :backlinks: top
@@ -27,7 +27,7 @@ Mattermost v7.1 introduces schema changes in the form of a new column and its in
 - MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
 - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (instance: db.r5.2xlarge)
 
-Customers wanting an upgrade with substantially reduced downtime (~1/5th of the original time) are encouraged to run the following queries before upgrading. This is fully backwards-compatible, but will obtain a lock on ``Reactions`` table, so users' reactions posted during this time won't be reflected in the database.
+Customers wanting to run the SQL queries before-hand can run the following queries before upgrading. This is fully backwards-compatible that obtains a lock on ``Reactions`` table, so users' reactions posted during this time won't be reflected in the database until the migrations are complete.
 
 .. tabs:: 
 
