@@ -27,7 +27,7 @@ Mattermost v7.1 introduces schema changes in the form of a new column and its in
 - MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
 - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (instance: db.r5.2xlarge)
 
-Customers wanting to run the SQL queries before-hand can run the following queries before upgrading. This is fully backwards-compatible and obtains a lock on ``Reactions`` table, so users' reactions posted during this time won't be reflected in the database until the migrations are complete.
+Customers wanting to run the SQL queries beforehand can run the following queries before upgrading. This is fully backwards-compatible and obtains a lock on ``Reactions`` table, so users' reactions posted during this time won't be reflected in the database until the migrations are complete.
 
 .. tabs:: 
 
