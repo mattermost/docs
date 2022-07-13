@@ -90,7 +90,7 @@ v6.0 database schema migrations
 
 Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported database drivers including MySQL and PostgreSQL, using realistic datasets of more than 10 million posts and more than 72 million posts.
 
-A migration to v6.0 of 10+ million posts will take approximately 1 hour and 22 minutes to complete for a MySQL database. See the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for test specifications, data sizes, and test results.
+A migration to v6.0 of 10+ million posts will take approximately 1 hour and 22 minutes to complete for a MySQL database. See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for test specifications, data sizes, and test results.
 
 A large migration from v5.39 to v6.0 of 72+ million posts will take approximately 3 hours and 40 minutes to complete for a MySQL database. See the `Migration results analysis <https://gist.github.com/streamer45/868c451164f6e8069d8b398685a31b6e>`__ documentation for test specifications, data sizes, and test results.
 
