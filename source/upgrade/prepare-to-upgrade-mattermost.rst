@@ -119,7 +119,7 @@ A large migration from v5.39 to v6.0 of 72+ million posts will take approximatel
 
       **Online migration**: An online migration that avoids locking can be attempted on MySQL installations, especially for particularly heavy queries or very big datasets (tens of millions of posts or more). This can be done through an external tool like `pt-online-schema-change <https://www.percona.com/doc/percona-toolkit/LATEST/pt-online-schema-change.html>`__. However, the online migration process can cause a significant spike in CPU usage on the database instance it runs.
 
-      See the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#online-migration-mysql>`__ documentation for a sample execution and additional caveats.
+      See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#online-migration-mysql>`__ documentation for a sample execution and additional caveats.
 
    .. tab:: PostgreSQL
 
