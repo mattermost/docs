@@ -1609,7 +1609,23 @@ redirects = {
 "process/training.html":
         "https://handbook.mattermost.com",
 "process/working-at-mattermost.html":
-	       "https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding"
+	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+
+# Upgrade redirects
+"upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html",
+"upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v7-0":
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v7-0",
+"upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-7":
+        "upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-7",
+"upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-0":
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-0",
+"upgrade/upgrading-mattermost-server.html#v6-0-database-schema-migrations":
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#v6-0-database-schema-migrations",
+"upgrade/upgrading-mattermost-server.html#upgrade-from-releases-older-than-v5-35":
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-from-releases-older-than-v5-35",
+"upgrade/upgrading-mattermost-server.html#upgrade-high-availability-deployments":
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 
