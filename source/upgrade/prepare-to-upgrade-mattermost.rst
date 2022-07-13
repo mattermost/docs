@@ -127,7 +127,7 @@ A large migration from v5.39 to v6.0 of 72+ million posts will take approximatel
 
       ``ALTER TABLE posts ALTER COLUMN props TYPE jsonb USING props::jsonb;`` (~ 11 minutes)
 
-      For a complete breakdown of PostgreSQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`__.
+      For a complete breakdown of PostgreSQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`__.
 
 Upgrade from releases older than v5.35
 ----------------------------------------
