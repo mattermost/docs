@@ -10,7 +10,7 @@ Customize your Channels experience
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -56,7 +56,7 @@ Send desktop notifications
 
 Choose what activity triggers a desktop notification. This setting applies globally, but this preference is customizable for each channel from the channel name drop-down menu. Desktop notifications are available on Chrome, Edge, Firefox, and Safari.
 
-When `desktop app <https://mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages":
+When `desktop app <https://mattermost.com/apps>`__ notifications are set to "Only for mentions and direct messages":
 
 - An empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. 
 - A solid red circle with a post count is displayed when a message with an at-mention is received.
@@ -254,12 +254,12 @@ Channels can be sorted within their channel sidebar sections alphabetically (def
 Channel switcher
 ^^^^^^^^^^^^^^^^
 
-Hide the channel switcher used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD+K.
+Hide the channel switcher used to jump between channels quickly. The channel switcher can also be accessed by pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac.
 
 Autoclose direct messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Hide direct message conversations that have been inactive for seven days. These conversations can be reopened using the **+** button in the channel sidebar, or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#autoclose-direct-messages-in-sidebar>`__.
+Hide direct message conversations that have been inactive for seven days. These conversations can be reopened using the **+** button in the channel sidebar, or by pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac, to open the Channel Switcher. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#autoclose-direct-messages-in-sidebar>`__.
 
 Advanced
 --------
@@ -269,7 +269,11 @@ Settings to configure when messages are sent.
 Send messages on CTRL+ENTER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If **On for all messages** is enabled, pressing ENTER inserts a new line and pressing CTRL+ENTER posts a message. If **On only for code blacks starting with ```** is enabled, pressing ENTER inserts a new line inside an open code block and pressing CTRL+ENTER automatically closes the code block and posts the message. If disabled, pressing SHIFT+ENTER inserts a new line and pressing ENTER posts the message.
+If **On for all messages** is enabled, pressing :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac inserts a new line, and pressing :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or :kbd:`⌘` :kbd:`↵` on Mac, posts a message. 
+
+If **On only for code blacks starting with ```** is enabled, pressing :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac inserts a new line inside an open code block, and pressing :kbd:`Ctrl` :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac automatically closes the code block and posts the message. 
+
+If disabled, pressing :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or pressing :kbd:`⇧` :kbd:`↵` on Mac inserts a new line, and pressing :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac posts the message.
 
 Enable post formatting
 ~~~~~~~~~~~~~~~~~~~~~~

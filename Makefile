@@ -23,7 +23,7 @@ python-deps:
 # Run `make livehtml` to start sphinx-autobuild
 livehtml:
 	@mkdir -p "$(BUILDDIR)"
-	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(O)
 
 # Run `make linkcheck` to check external links
 # Overriding `exclude_patterns` configuration to exclude
