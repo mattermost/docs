@@ -31,7 +31,7 @@ Latest Mattermost Cloud releases:
  - Updated the Posts search and get APIs to filter out posts beyond the Cloud plan's limit.
  - The claim of 10 GB storage per user is no longer shown for grandfathered Cloud plan.
 
-#### API Changes
+### API Changes
  - Added a new response-header ``Has-Inaccessible-Posts`` for ``getPost`` and ``getPostByIDs`` APIs.
 
 ### Bug Fixes
