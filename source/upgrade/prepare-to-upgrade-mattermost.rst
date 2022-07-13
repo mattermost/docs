@@ -106,7 +106,7 @@ A large migration from v5.39 to v6.0 of 72+ million posts will take approximatel
 
       ``ALTER TABLE Posts MODIFY COLUMN FileIds text;`` (~26 minutes)
 
-      For a complete breakdown of MySQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB Schema Migrations Analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#mysql-1>`__ documentation.
+      For a complete breakdown of MySQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#mysql-1>`__ documentation.
 
       **MySQL Mitigation Strategies**
 
