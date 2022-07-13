@@ -175,7 +175,7 @@ Upgrade high availability deployments
 
 In `high availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
 
-Ensure you review the `High Availability Cluster Upgrade Guide <https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide>`__, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
+Ensure you review the `high availability cluster upgrade guide <https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide>`__, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
 
 .. important::
 
