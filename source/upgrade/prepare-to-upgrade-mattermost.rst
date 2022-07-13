@@ -50,7 +50,7 @@ You can run the following SQL queries before the upgrade to obtain a lock on ``R
 Upgrade to Mattermost v7.0
 --------------------------
 
-Self-hosted Mattermost customers using MySQL databases may notice the migration to release v7.0 taking longer than usual when having a large number of rows in ``FileInfo`` table. See the `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ documentation for details.
+Self-hosted Mattermost customers using MySQL databases may notice the migration to release v7.0 taking longer than usual when there are a large number of rows in the ``FileInfo`` table. See the `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ documentation for details.
 
 
 Upgrade to Mattermost v6.7
