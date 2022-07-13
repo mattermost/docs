@@ -14,7 +14,7 @@ Important Upgrade Notes
   :alt: Available for Mattermost Self-Hosted deployments.
 
 .. important::
-   - Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle in April 15, 2022. Upgrading to Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
+   - Support for Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle in October 15, 2022. Upgrading to Mattermost Server v7.1 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is recommended.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
