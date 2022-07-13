@@ -61,7 +61,7 @@ Mattermost v6.7 introduces schema changes in the form of a new index. The follow
 - MySQL 9M Posts - 2min 12s (instance: db.r5.large)
 - Postgres 7M Posts - ~9s  (instance: db.r5.xlarge)
 
-Customers wanting a zero downtime upgrade can apply this index prior to doing the upgrade. This is fully backwards-compatible and will not acquire any table lock or affect any existing operations on the table.
+If you want a zero downtime upgrade, you can apply this index prior to doing the upgrade. This is fully backwards-compatible and will not acquire any table lock or affect any existing operations on the table.
 
 - For MySQL: ``CREATE INDEX idx_posts_create_at_id on Posts(CreateAt, Id) LOCK=NONE;``
 - For Postgres: ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_create_at_id on posts(createat, id);``
