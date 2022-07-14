@@ -23,7 +23,7 @@ This documentation provides foundational information you need when developing a 
 This documentation provides information to help you: 
 
 - Determine the ideal mobile deployment model for your organization.
-- Understand what’s required to build your own Mattermost Mobile Apps.
+- Understand what’s required to build your own Mattermost mobile apps.
 - Deploy Mattermost mobile apps.
 
 .. note::
