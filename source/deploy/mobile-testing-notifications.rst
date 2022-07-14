@@ -47,7 +47,7 @@ Then use the following instructions to confirm push notifications are working pr
 
 5. Using a browser, sign in to “Account B” on the same Mattermost Server.
 
-6. Open a Direct Message with “Account A”, and send a message.
+6. Open a direct message with “Account A”, and send a message.
 
 7. A push notification with the message should appear on the mobile device of “Account A”.
 
