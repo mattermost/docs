@@ -25,12 +25,12 @@ Mattermost v7.1.0 contains low severity level security fixes. [Upgrading](https:
  - You can run the following SQL queries before the upgrade to obtain a lock on ``Reactions`` table, so that users' reactions posted during this time won't be reflected in the database until the migrations are complete. This is fully backwards-compatible.
     - For MySQL:
       - ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
-      - ``UPDATE Reactions SET ChannelId = (select ChannelId from Posts where Posts.Id = Reactions.PostId) WHERE ChannelId="";`` 
+      - ``UPDATE Reactions SET ChannelId = COALESCE((select ChannelId from Posts where Posts.Id = Reactions.PostId), '') WHERE ChannelId="";`` 
       - ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
   
     - For PostgreSQL:
       - ``ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';``
-      - ``UPDATE reactions SET channelid = (select channelid from posts where posts.id = reactions.postid) WHERE channelid='';`` 
+      - ``UPDATE reactions SET channelid = COALESCE((select channelid from posts where posts.id = reactions.postid), '') WHERE channelid='';`` 
       - ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);`` 
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
