@@ -4,12 +4,47 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-07-13](#release-2022-07-13)
 - [Release 2022-06-29](#release-2022-06-29)
 - [Release 2022-06-22](#release-2022-06-22)
 - [Release 2022-06-15](#release-2022-06-15)
 - [Release 2022-06-14](#release-2022-06-14)
 - [Release 2022-05-26](#release-2022-05-26)
-- [Release 2022-05-12](#release-2022-05-12)
+
+## Release 2022-07-13
+
+### Highlights
+
+#### Insights (Beta) (Enterprise and Professional subscriptions)
+ - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the option to colorize usernames in compact display mode when **Account Settings > Display > Message Display > Compact** is selected.
+ - Added a setting to always land users at the newest messages in a channel via **Account settings > Advanced > Scroll position when viewing an unread channel**.
+ - Added email headers to notification emails so they can be threaded by email clients.
+
+#### Administration
+ - Added the ability to start a trial from the **Invite People** modal.
+ - Added the ability for end users to notify Admins to upgrade their workspace.
+ - Updated the Posts search and get APIs to filter out posts beyond the Cloud plan's limit.
+ - The claim of 10 GB storage per user is no longer shown for grandfathered Cloud plan.
+
+### API Changes
+ - Added a new response-header ``Has-Inaccessible-Posts`` for ``getPost`` and ``getPostByIDs`` APIs.
+
+### Bug Fixes
+ - Fixed an issue with pasting a GitHub code snippet in the message box when text is selected.
+ - Fixed an issue where fully typed emojis that contained a capital letter were not correctly displayed.
+ - Fixed an issue where the archived icon did not display correctly in dark themes.
+ - Fixed an issue where password requirements were not enforced when Development Mode was enabled.
+
+### Known Issues
+ - The Top Boards widget in Insights is slow to load.
+ - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-06-29
 
