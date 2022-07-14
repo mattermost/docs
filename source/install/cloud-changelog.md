@@ -4,12 +4,42 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-07-20](#release-2022-07-20)
+- [Release 2022-07-13](#release-2022-07-13)
 - [Release 2022-06-29](#release-2022-06-29)
 - [Release 2022-06-22](#release-2022-06-22)
 - [Release 2022-06-15](#release-2022-06-15)
 - [Release 2022-06-14](#release-2022-06-14)
-- [Release 2022-05-26](#release-2022-05-26)
-- [Release 2022-05-12](#release-2022-05-12)
+
+## Release 2022-07-20
+
+### Improvements
+
+#### User Interface (UI)
+- Added **Save** and **Cancel** buttons for post inline editing.
+- Enterprise trial details are now displayed for end users in the product switcher menu.
+- Updated the Edit Header modal text description to be applicable to channels, direct messages, and group messages.
+
+#### Administration
+ - Admins are now able to search for channel IDs via **System Console > User Management > Channels** page.
+ - Added a new system-level role named Custom Group Admin for managing custom groups across an instance.
+ - In the **System Console** left-hand side, paid features icons are now displayed on the menu entries to indicate enterprise features.
+ - Cloud usage rounding for posts and messages is now precise enough to know when a limit has been reached or exceeded.
+ - Added ``webSocketClient`` to ``Pluggable`` and ``PostWillRenderEmbed`` plugin registered components.
+
+### Performance
+ - Removed ``getLastPostPerChannel`` selector for improved performance in channel sorting.
+
+### Bug Fixes
+ - Fixed an issue where users were able to attempt to edit the channel header of an archived channel on the right-hand side.
+ - Decreased flakiness of requesting a Cloud trial.
+ - Fixed an issue where the “Your Trial Ended” banner hid the product switcher menu.
+ - Fixed an issue where the custom status date format was not set to ``yyyy-MM-dd``.
+
+### Known Issues
+ - Custom status does not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-06-29
 
