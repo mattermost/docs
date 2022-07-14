@@ -12,7 +12,10 @@ jobs:
       if: contains(github.event.pull_request.labels.*.name, 'preview-environment')
       run: echo "label exist, will trigger the preview environment"
     - name: Set PR
-      run: echo ${{ github.event.pull_request.number }} > pr.txt
+      env:
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+      run: |
+        echo "$PR_NUMBER" > pr.txt
     - name: Save PR
       uses: actions/upload-artifact@v2
       with:
