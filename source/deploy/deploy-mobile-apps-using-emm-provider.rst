@@ -48,7 +48,7 @@ See our `Mattermost AppConfig Values <https://docs.mattermost.com/deploy/mobile-
 Enroll devices
 --------------
 
-When building your own custom versions or deploying the pre-built Mattermost Mobile apps, consider your organization’s mobile policy:
+When building your own custom versions or deploying the pre-built Mattermost mobile apps, consider your organization’s mobile policy:
 
 - Can users bring their own device (BYOD) If so, what devices will be used?
 - Are devices company-owned and company-issued?
