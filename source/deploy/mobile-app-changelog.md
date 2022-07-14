@@ -2,12 +2,34 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [1.53.0 Release](#release)
-- [1.52.0 Release](#id1)
-- [1.51.2 Release](#id5)
-- [1.51.1 Release](#id7)
-- [1.51.0 Release](#id11)
-- [1.50.1 Release](#id17)
+- [1.54.0 Release](#release)
+- [1.53.0 Release](#id1)
+- [1.52.0 Release](#id5)
+- [1.51.2 Release](#id9)
+- [1.51.1 Release](#id12)
+- [1.51.0 Release](#id16)
+
+## 1.54.0 Release
+- Release Date: July 16, 2022
+- Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Improvements
+ - Calls: Added support for accepting advanced ICE server configurations through the config.
+ - Calls: Added support for using Calls when the Mattermost installation is served under a subpath.
+ - Calls: Added support for generating short-lived TURN credentials.
+
+### Bug Fixes
+ - Fixed an issue where Latex in root posts crashed the global Threads screen.
+
+### Known Issues
+ - The app crashes when the session length for mobile is changed via webapp.
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
 
 ## 1.53.0 Release
 - Release Date: June 15, 2022
