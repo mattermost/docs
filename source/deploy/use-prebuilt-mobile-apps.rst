@@ -18,7 +18,7 @@ Using Mattermost's pre-built mobile apps
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-We strongly recommend using Mattermost’s pre-built Mobile App. This approach is recommended for all Mattermost customers.
+We strongly recommend using Mattermost’s pre-built mobile app. This approach is recommended for all Mattermost customers.
 
 Deployment options
 ------------------
