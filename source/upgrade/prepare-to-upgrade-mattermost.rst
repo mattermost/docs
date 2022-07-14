@@ -35,7 +35,7 @@ You can run the following SQL queries before the upgrade to obtain a lock on ``R
 
     ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
 
-    ``UPDATE Reactions SET ChannelId = (select ChannelId from Posts where Posts.Id = Reactions.PostId) WHERE ChannelId="";``
+    ``UPDATE Reactions SET ChannelId = COALESCE((select ChannelId from Posts where Posts.Id = Reactions.PostId), '') WHERE ChannelId="";``
 
     ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
 
@@ -43,7 +43,7 @@ You can run the following SQL queries before the upgrade to obtain a lock on ``R
 
     ``ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';``
 
-    ``UPDATE reactions SET channelid = (select channelid from posts where posts.id = reactions.postid) WHERE channelid='';``
+    ``UPDATE reactions SET channelid = COALESCE((select channelid from posts where posts.id = reactions.postid), '') WHERE channelid='';``
 
     ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);``
 
