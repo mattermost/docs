@@ -43,6 +43,7 @@ Mattermost v7.1.0 contains low severity level security fixes. [Upgrading](https:
 ### Improvements
 
 #### User Interface (UI)
+ - Pre-packaged Playbooks v1.29.1, Boards v7.1.0, and Calls v0.7.0.
  - Recent emojis are now sorted based on the number of times an emoji has been used.
  - Improved the link preview user interface.
  - Added new search shortcuts to the **Keyboard Shortcuts** modal. 
