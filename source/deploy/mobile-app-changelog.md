@@ -27,6 +27,7 @@ Latest Mattermost Mobile Apps releases:
  - Fixed an issue where Latex in root posts crashed the global Threads screen.
 
 ### Known Issues
+ - The app crashes when the session length for mobile is changed via webapp.
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
 
