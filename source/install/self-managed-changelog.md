@@ -5,11 +5,121 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0. 
 
 Latest Mattermost Releases:
+- [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
 - [Release v6.7 - Feature Release](#release-v6-7-feature-release)
 - [Release v6.6 - Feature Release](#release-v6-6-feature-release)
-- [Release v6.5 - Feature Release](#release-v6-5-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
+
+## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
+
+- **v7.1.1, release day TBD**
+  - Fixing an issue where clicking "Update" next to an outdated Marketplace plugin doesn't work [MM-45731](https://mattermost.atlassian.net/browse/MM-45731).
+- **v7.1.0, released 2022-07-16**
+  - Original 7.1.0 release
+
+Mattermost v7.1.0 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Important Upgrade Notes
+ - A new configuration option ``MaxImageDecoderConcurrency`` indicates how many images can be decoded concurrently at once. The default is -1, and the value indicates the number of CPUs present. This affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``. Therefore, we recommend that ``MaxImageResolution * MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+ - Mattermost v7.1 introduces schema changes in the form of a new column and its index. The following notes our test results for the schema changes:
+    - MySQL 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM)
+    - PostgreSQL 12M Posts, 2.5M Reactions - ~1min 18s (instance: db.r5.2xlarge)
+ - You can run the following SQL queries before the upgrade to obtain a lock on ``Reactions`` table, so that users' reactions posted during this time won't be reflected in the database until the migrations are complete. This is fully backwards-compatible.
+    - For MySQL:
+      - ``ALTER TABLE Reactions ADD COLUMN ChannelId varchar(26) NOT NULL DEFAULT "";``
+      - ``UPDATE Reactions SET ChannelId = COALESCE((select ChannelId from Posts where Posts.Id = Reactions.PostId), '') WHERE ChannelId="";`` 
+      - ``CREATE INDEX idx_reactions_channel_id ON Reactions(ChannelId) LOCK=NONE;``
+  
+    - For PostgreSQL:
+      - ``ALTER TABLE reactions ADD COLUMN IF NOT EXISTS channelid varchar(26) NOT NULL DEFAULT '';``
+      - ``UPDATE reactions SET channelid = COALESCE((select channelid from posts where posts.id = reactions.postid), '') WHERE channelid='';`` 
+      - ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_reactions_channel_id on reactions (channelid);`` 
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Insights (Beta) (Enterprise and Professional)
+ - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Playbooks v1.29.1, Boards v7.1.0, and Calls v0.7.0.
+ - Recent emojis are now sorted based on the number of times an emoji has been used.
+ - Improved the link preview user interface.
+ - Added new search shortcuts to the **Keyboard Shortcuts** modal. 
+    - CMD+F (macOS) and CTRL+F (Windows) for Desktop App
+    - CMD+SHIFT+F (macOS) and CTRL+SHIFT+F (Windows) for webapp
+ - Changed some tooltips to appear when focused instead of just on hover.
+- Added support for syntax highlighting for 1C:Enterprise (BSL) language.
+
+#### Administration
+ - Default password requirements have been loosened to eight characters and no numeric, casing, or special characters required. These requirements can be configured by the System Admin as needed via **System Console > Password**.
+ - The System Console now also searches and returns channels based on the channel ID. A new parameter ``IncludeSearchById`` was added to the channel search endpoint, allowing requests to include searches that match IDs in response.
+ - Search results in PostgreSQL will now respect the ``default_text_search_config`` value instead of being hardcoded to English. Mattermost System Admins should check this value in case of any discrepancies with what is expected.
+ - Moved ``UserHasJoinedTeam`` callback to after a user is added to a team.
+
+#### Performance
+ - Reduced the number of calls made to ``viewChannel`` API during regular usage.
+ - Added pagination to the ``getPostThread`` API calls.
+
+### Bug Fixes
+ - Fixed an issue where links to internal help pages did not always open in a new browser tab.
+ - Fixed an issue that caused the Channel Members right-hand side search input to not search all the members of a channel.
+ - Fixed an issue where the feature discovery page still displayed a **Start Trial** button after a trial was completed.
+ - Fixed an issue where channel recency sorting was not consistent between mobile and webapp.
+ - Fixed an issue with uploading SVG files.
+ - Fixed an issue where thread posts were not left-aligned in compact message display mode.
+ - Fixed an error about a missing column for the Shared Channels experimental feature.
+ - Fixed an issue where the channel menu drop-down option "Move to..." was skipped when pressing the TAB keyboard key.
+ - Fixed an issue where the bulk import failed due to reply ``CreateAt`` being greater than that of the parent post.
+ - Fixed an undefined error when leaving a channel with the Unreads filter enabled.
+ - Fixed an issue where clicking on a quick emoji reaction opened the right-hand pane.
+ - Fixed an issue where the keyboard focus did not go back to the post textbox after hitting CTRL/CMD+SHIFT+P twice.
+ - Fixed an issue where the upload files button was positioned incorrectly.
+ - Fixed an issue where duplicated emojis sometimes displayed as recently used emojis.
+ - Fixed an issue where autocomplete "@" search for names did not normalize UTF-8 characters.
+ - Fixed an issue where **Group Messages** with long display names didn't have a tooltip in the left-hand sidebar.
+ - Fixed an issue where the file icon was sometimes unresponsive.
+ - Fixed a race condition where switching teams to an unread channel did not appear to mark that channel as read.
+ - Fixed an issue where the error message did not appear if a user drafted a too long post.
+ - Fixed an issue where channels with more than 100 members only showed 100 channel members in the right-hand side.
+ - Fixed an issue where the preview mode in the advanced text editor did not reset after posting a message.
+   
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - The setting ``EnableInsecureOutgoingConnections`` is now applicable to S3 clients as well. If that is set, s3 clients will skip TLS verification.
+
+#### API Changes
+ - To allow Admins to retrieve contents of posts whether they are deleted or not, ``include_deleted`` query parameter was introduced to ``GetPost`` endpoint.
+
+### Go Version
+ - v7.1 is built with Go ``v1.18.1``.
+
+### Open Source Components
+ - Added ``@floating-ui/react-dom`` and removed ``superagent`` and ``jasny-bootstrap`` from https://github.com/mattermost/mattermost-webapp/.
+
+### Known Issues
+ - The Top Boards widget in Insights is slow to load.
+ - Clicking "Update" next to an outdated Marketplace plugin doesn't work [MM-45731](https://mattermost.atlassian.net/browse/MM-45731).
+ - Custom statuses do not appear until refresh [MM-45334](https://mattermost.atlassian.net/browse/MM-45334).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+
+### Contributors
+ - To be added.
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
