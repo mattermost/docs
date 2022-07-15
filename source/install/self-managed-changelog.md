@@ -14,7 +14,7 @@ Latest Mattermost Releases:
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 - **v7.1.1, released 2022-07-15**
-  - Fixed an issue where clicking "Update" next to an outdated Marketplace plugin didn't work [MM-45731](https://mattermost.atlassian.net/browse/MM-45731).
+  - Fixed an issue where selecting "Update" next to an outdated Marketplace plugin didn't work [MM-45731](https://mattermost.atlassian.net/browse/MM-45731).
 - **v7.1.0, released 2022-07-15**
   - Original 7.1.0 release
 
