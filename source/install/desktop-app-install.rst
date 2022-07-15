@@ -103,7 +103,7 @@ Ubuntu and Debian-based systems
 
 Unofficial, community-driven ``.deb`` packages are available.
 
-1. Download the latest version of the Mattermost Desktop App:
+1. Download the latest version of the Mattermost desktop app:
 
   - 64-bit systems `mattermost-desktop-5.0.4-linux-amd64.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-amd64.deb>`__
   - 32-bit systems `mattermost-desktop-5.0.4-linux-i386.deb <https://releases.mattermost.com/desktop/5.0.4/mattermost-desktop-5.0.4-linux-i386.deb>`__
@@ -161,7 +161,7 @@ The app data might be corrupted. Remove all the files in ``%LOCALAPPDATA%\matter
 
 On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is the default method for decompressing files. In this case using a third-party tool such as `Keka <https://www.keka.io>`__ or `Unarchiver <https://macpaw.com/the-unarchiver>`__ may resolve the problem.
 
-Desktop App window is black and doesn't load the page
+Desktop app window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. First, make sure you have installed the latest desktop app version `from our website <https://mattermost.com/download/#mattermostApps>`__. Check your app version from **Help > Version**.
@@ -172,7 +172,7 @@ Desktop App window is black and doesn't load the page
 
 If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__.
 
-Desktop App is not visible, but the Mattermost icon is in the Task Bar
+Desktop app is not visible, but the Mattermost icon is in the Task Bar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This issue can occur on Windows in a multiple-monitor setup. When you disconnect the monitor that Mattermost is displayed on, Mattermost continues to display at screen coordinates that no longer exist.
@@ -185,7 +185,7 @@ To resolve this issue, you can reset the desktop app screen location by deleting
 2. Open Windows File Explorer, and go to the ``%APPDATA%\\Mattermost`` folder.
 3. Delete the file ``bounds-info.json``.
 
-Desktop App constantly refreshes the page
+Desktop app constantly refreshes the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This issue can occur when ``localStorage`` has an unexpected state. To resolve the issue:
@@ -194,7 +194,7 @@ This issue can occur when ``localStorage`` has an unexpected state. To resolve t
 - Mac: Open Finder, go to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
 - Linux: Open the File Manager, go to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder. Linux file managers may hide folders starting with a period by default. You can delete them from the terminal using ``rm -rf ~/.config/Mattermost``.
       
-Desktop App constantly asks to log in to Mattermost server
+Desktop app constantly asks to log in to Mattermost server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This issue can occur after a crash or unexpected shutdown of the desktop app that causes the app data to be corrupted. To resolve the issue:
