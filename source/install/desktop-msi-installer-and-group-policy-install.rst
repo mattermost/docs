@@ -120,7 +120,7 @@ Install Mattermost Desktop using the MSI installer
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00017.png
 
-Verify group policy settings in the installed Desktop App
+Verify group policy settings in the installed desktop app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Launch the newly installed Mattermost app from the ``Start`` menu.
