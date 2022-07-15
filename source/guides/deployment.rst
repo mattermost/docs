@@ -201,6 +201,7 @@ Upgrade Mattermost
     :maxdepth: 1
     :hidden:
 
+    Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>
     Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
     Enterprise install and upgrade </install/enterprise-install-upgrade>
     Install a license key </upgrade/installing-license-key>
@@ -213,6 +214,7 @@ Upgrade Mattermost
 
 Stay up to date with the latest features and improvements.
 
+* :doc:`Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>` - Learn how to prepare for a Mattermost upgrade.
 * :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
 * :doc:`Enterprise install and upgrade </install/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost server to premium versions.
 * :doc:`Install a license key </upgrade/installing-license-key>` - Learn how to add or change a Mattermost license key.
