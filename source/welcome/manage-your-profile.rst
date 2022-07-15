@@ -107,12 +107,12 @@ Once you've set up multi-factor authentication for your Mattermost account, when
 .. tip::
   If scanning the QR code using your device doesn't work, you can manually enter the **Secret** provided on the Mattermost screen into the Google Authenticator app as a **Manual Entry** instead.
 
-Login method
+Sign-in method
 ~~~~~~~~~~~~~~
 
-This option allows you to switch your login method from email/password to a single sign-on option, and back again.
+This option allows you to switch your `login method <https://docs.mattermost.com/welcome/log-in.html>`__ from `email/username and password <https://docs.mattermost.com/welcome/log-in.html#email-address-or-username>`__ to a `single sign-on option <https://docs.mattermost.com/welcome/log-in.html#single-sign-on-sso>`__, and back again. While you can choose to log in with either set of credentials, you can enable one login method at a time.
 
-For example, if AD/LDAP single sign-on is enabled, users can select a **Switch to using AD/LDAP** button and enter their AD/LDAP credentials to switch login over to AD/LDAP. They also need to enter the password for their email account to verify their existing credentials. Following the change, users receive an email to confirm the action.
+For example, if AD/LDAP single sign-on is enabled, you can select **Switch to using AD/LDAP** and enter your AD/LDAP credentials to switch login over to AD/LDAP. You'll need to enter the password for your email account to verify your existing credentials. Following the change, you'll receive an email to confirm the action.
 
 View access history
 ~~~~~~~~~~~~~~~~~~~

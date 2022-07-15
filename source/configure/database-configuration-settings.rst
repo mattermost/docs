@@ -55,7 +55,7 @@ Data source
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The connection string to the master database.                 | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".SqlSettings.DataSource",``                |
-| String input                                                  | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
+| String input.                                                 | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | To enable SSL:                                                                                                                           |
@@ -107,7 +107,7 @@ Maximum idle connections
 | Maximum number of idle connections held open           | - System Config path: **Environment > Database**                 |
 | to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 10,``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is 10.                        |                                                                  |
+| Numerical input. Default is **10**.                    |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum open connections
@@ -121,7 +121,7 @@ Maximum open connections
 | Maximum number of idle connections held open           | - System Config path: **Environment > Database**                 |
 | to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
-| Numerical input. Default is 300.                       |                                                                  |
+| Numerical input. Default is **300**.                   |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Query timeout
@@ -136,7 +136,7 @@ Query timeout
 | database, in seconds, after opening a connection       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
 | and sending the query.                                 | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``          |
 |                                                        |                                                                  |
-| Numerical input in seconds. Default is 30 seconds.     |                                                                  |
+| Numerical input in seconds. Default is **30** seconds. |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum connection lifetime
@@ -153,7 +153,7 @@ Maximum connection lifetime
 | may be reused                                          |                                                                                     |
 |                                                        |                                                                                     |
 | Numerical input in milliseconds. Default is            |                                                                                     |
-| 3,600,000 milliseconds (1 hour).                       |                                                                                     |
+| **3,600,000** milliseconds (1 hour).                   |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Maximum connection idle timeout
@@ -167,7 +167,7 @@ Maximum connection idle timeout
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
 | in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |             
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``              |
-| Numerical input in milliseconds. Default is 300000     |                                                                                     | 
+| Numerical input in milliseconds. Default is **300000** |                                                                                     | 
 | (5 minutes).                                           |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
@@ -176,9 +176,11 @@ Minimum hashtag length
 
 |all-plans| |self-hosted|
 
+*Available in legacy Enterprise Edition E10/E20*
+
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
-| This value must be greater than or equal to 2.                       | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
+| This value must be greater than or equal to **2**.                   | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
 |                                                                      | - Environment variable: ``MM_SQLSETTINGS_MINIMUMHASHTAGLENGTH``         |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | **Note**: MySQL databases must be configured to support searching strings shorter than three characters. See the                               |
@@ -189,6 +191,8 @@ SQL statement logging
 ---------------------
 
 |all-plans| |self-hosted|
+
+*Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
@@ -235,7 +239,7 @@ Disable database search
 |   searches. If another search engine isn't configured,        |                                                                              |
 |   setting this value to ``true`` will result in empty search  |                                                                              |
 |   results.                                                    |                                                                              |
-| - **false**: **(Default)** Database search is not disabled.   |                                                                              |
+| - **false**: **(Default)** Database search isn't disabled.    |                                                                              |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Applied schema migrations
