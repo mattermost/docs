@@ -18,7 +18,7 @@ iOS setup
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Your Mattermost teams can be accessed on iOS mobile devices via the Mattermost Mobile App.
+Your Mattermost teams can be accessed on iOS mobile devices via the Mattermost mobile app.
 
 1. Open the App Store on your Apple device running iOS 12.1 or later.
 2. Search for "Mattermost" and select **GET** to download the app.
