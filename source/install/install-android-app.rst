@@ -18,7 +18,7 @@ Android setup
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Your Mattermost teams can be accessed on Android mobile devices by downloading the Mattermost Mobile App.
+Your Mattermost teams can be accessed on Android mobile devices by downloading the Mattermost mobile app.
 
 1. Open the Play Store on your Android device.
 2. Search for "Mattermost" and select **INSTALL** to download the app.
