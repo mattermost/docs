@@ -174,7 +174,9 @@ When messages in Mattermost include images, an image preview can display directl
 Message display
 ~~~~~~~~~~~~~~~
 
-Select the formatting for messages in the center channel. **Compact** mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
+Specify how messages in a channel are displayed. **Compact** mode fits more messages on the screen by decreasing the spacing around posts, collapsing link previews, and hiding thumbnails so that only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
+
+When you select **Compact**, usernames are colorized by default, and username colors are consistent for all users. Disable the **Colorize usernames** option to display all usernames in a single color instead.
 
 Collapsed Reply Threads
 ~~~~~~~~~~~~~~~~~~~~~~~
