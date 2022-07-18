@@ -57,12 +57,12 @@ If you have no other teams to join, selecting the **Plus** icon takes you direct
   From your current Mattermost team, you can also select your team name, then select **Create a Team**. If this option is not visible in the menu, then the System Admin has disabled team creation.
 
 Team name and URL selection
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are a few details and restrictions to consider when selecting a team name and team URL.
 
 Team name
-~~~~~~~~~
+^^^^^^^^^
 
 This is the display name of your team that appears in menus and headings.
 
@@ -71,7 +71,7 @@ This is the display name of your team that appears in menus and headings.
 - Team names must be 2 - 64 characters in length.
 
 Team URL
-~~~~~~~~
+^^^^^^^^
 
 The team URL is part of the web address that navigates to your team on the system domain, https://domain.com/teamurl/.
 
@@ -79,6 +79,18 @@ The team URL is part of the web address that navigates to your team on the syste
 - Teams must start with a letter and cannot end in a dash.
 - Teams must be 2 - 64 characters in length.
 - Team names cannot start with the following restricted words: admin, api, channel, claim, error, files, help, landing, login, mfa, oauth, plug, plugins, post, signup, playbooks, or boards.
+
+Join a team
+-----------
+
+You can join any team configured to `"allow any user with an account on this server to join this team" <https://docs.mattermost.com/welcome/team-settings.html#allow-anyone-to-join-this-team>`__, or when you receive an invitation to join.
+
+If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you `log in <https://docs.mattermost.com/welcome/log-in.html>`__.
+
+You can be a member of multiple teams at the same time. To join additional teams, select the current team name, choose **Join Another Team**, and select the name of the team you want to join.
+
+.. image:: ../images/join-team.png
+  :alt: Select a team name to join another team.
 
 Invite people to teams
 ----------------------
@@ -121,8 +133,6 @@ Adding someone to your team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation.
-
-**Add someone to your team**
 
 1. Select the Team menu at the top of the Navigation Panel.
 2. Select **Invite People**.

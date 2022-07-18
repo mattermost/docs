@@ -107,8 +107,21 @@ Disable legacy MFA API endpoint
       | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
       +--------------------------------------------------------------------------------------------------------------+
 
-SQL settings
--------------
+Database Settings
+------------------
+
+At Rest Encrypt Key
+~~~~~~~~~~~~~~~~~~~
+
+*Removed in August 23, 2018 release*
+
+This setting isn't available in the System Console and can only be set in ``config.json``. It's a legacy setting used to encrypt data stored at rest in the database, and no fields are encrypted using ``AtRestEncryptKey``. 
+
+A 32-character key for encrypting and decrypting sensitive fields in the database. When using high availability, this value must be identical in each instance of Mattermost.
+
++------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
++------------------------------------------------------------------------------------------+
 
 Amazon S3 bucket endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~

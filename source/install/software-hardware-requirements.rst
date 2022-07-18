@@ -102,7 +102,7 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database software
 ^^^^^^^^^^^^^^^^^
 
-For Mattermost v6.0:
+For Mattermost v6.0 and later:
 
 -  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
@@ -128,10 +128,7 @@ Search limitations on PostgreSQL:
 Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
-
-From Mattermost v6.4:
-
-The new migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
+- From Mattermost v6.4, the new migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
 
 **MySQL 8 Support**:
 
@@ -142,7 +139,6 @@ In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_nativ
    [mysqld]
    default-authentication-plugin=mysql_native_password
 
-
 In MySQL 8, the default collation changed to ``utf8mb4_0900_ai_ci`` (https://dev.mysql.com/doc/mysqld-version-reference/en/optvar-changes-8-0.html). Therefore, if you update your MySQL installation to version 8, you'll need to convert your database tables to use the new default collation:
 
 .. code-block:: sql
@@ -152,6 +148,8 @@ In MySQL 8, the default collation changed to ``utf8mb4_0900_ai_ci`` (https://dev
 If this change isn't made, tables in the database may end up having different collations which will cause errors when executing queries.
 
 In MySQL versions 8.0.0 - 8.0.11 ``ADMIN`` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12.
+
+MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
 
 Hardware requirements
 ---------------------

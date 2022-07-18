@@ -47,7 +47,7 @@ Enable Elasticsearch indexing
 | - **false**: **(Default)** Elasticsearch indexing is disabled |                                                                                |
 |   and new posts are not indexed.                              |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                      |
+| **Notes**:                                                                                                                                     |
 |                                                                                                                                                |
 | - If indexing is disabled and re-enabled after an index is created, we recommend you purge and rebuild the index to ensure complete            |
 |   search results.                                                                                                                              |
@@ -138,9 +138,10 @@ Bulk indexing
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Start a bulk index of all existing posts in the database.     | - System Config path: **Environment > Elasticsearch**                    |
 |                                                               | - ``config.json`` setting: N/A                                           |
-| Select the **Index Now** button in the System Console to      | - Environment variable: N/A                                              |
-| start a bulk index of all posts. If the indexing process is   |                                                                          |
-| canceled, the index and search results will be incomplete.    |                                                                          |
+|                                                               | - Environment variable: N/A                                              |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Select the **Index Now** button in the System Console to start a bulk index of all posts. If the indexing process is canceled, the       |
+| index and search results will be incomplete.                                                                                             |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Purge indexes
@@ -154,10 +155,9 @@ Purge indexes
 | Purge the entire Elasticsearch index.                         | - System Config path: **Environment > Elasticsearch**       |        
 | Typically only used if the index has corrupted and search     | - ``config.json`` setting: N/A                              |
 | isn't behaving as expected.                                   | - Environment variable: N/A                                 |          
-|                                                               |                                                             |
-| Select the **Purge Indexes** button in the System Console to  |                                                             |
-| purge the index. After purging the index, create a new        |                                                             |
-| index with the **Index Now** button.                          |                                                             |
++---------------------------------------------------------------+-------------------------------------------------------------+
+| Select the **Purge Indexes** button in the System Console to purge the index.                                               |
+| After purging the index, create a new index by selecting the **Index Now** button.                                          |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 Enable Elasticsearch for search queries
@@ -167,16 +167,16 @@ Enable Elasticsearch for search queries
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Use the latest index for all search queries.                  | - System Config path: **Environment > Elasticsearch**                          |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching:false",`` |
-| - **true**: Elasticsearch will be used for all search         | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``           | 
-|   queries using the latest index. Search results may be       |                                                                                |
-|   incomplete until a bulk index of the existing post database |                                                                                |
-|   is finished.                                                |                                                                                |
-| - **false**: **(Default)** Database search is used for        |                                                                                |
-|   search queries.                                             |                                                                                |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Use the latest index for all search queries.                  | - System Config path: **Environment > Elasticsearch**                           |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
+| - **true**: Elasticsearch will be used for all search         | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            | 
+|   queries using the latest index. Search results may be       |                                                                                 |
+|   incomplete until a bulk index of the existing post database |                                                                                 |
+|   is finished.                                                |                                                                                 |
+| - **false**: **(Default)** Database search is used for        |                                                                                 |
+|   search queries.                                             |                                                                                 |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Enable Elasticsearch for autocomplete queries
 ---------------------------------------------
@@ -208,7 +208,7 @@ Post index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
 | Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to            | 
+| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       | 
 | existing indexes, purge and rebuild the index after changing this setting.                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -222,9 +222,9 @@ Post index shards
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of shards to use for each post index.              | - System Config path: N/A                                                     |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
-| Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to            | 
+| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       | 
 | existing indexes, purge and rebuild the index after changing this setting.                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -238,7 +238,7 @@ Channel index replicas
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of replicas to use for each channel index.         | - System Config path: N/A                                                        |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexReplicas: 1",`` |
-| Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Channel index shards
@@ -251,7 +251,7 @@ Channel index shards
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each channel index.           | - System Config path: N/A                                                        |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexShards: 1",``   |
-| Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS``          |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS``          |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 User index replicas
@@ -264,7 +264,7 @@ User index replicas
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each user index.            | - System Config path: N/A                                                     |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexReplicas: 1",`` |
-| Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 User index shards
@@ -277,7 +277,7 @@ User index shards
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each user index.              | - System Config path: N/A                                                        |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexShards: 1",``      |
-| Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS``             |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS``             |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Aggregate search indexes
@@ -292,7 +292,7 @@ Aggregate search indexes
 | setting, in days, will be aggregated during the daily         | - ``config.json`` setting: ``".Elasticsearchsettings.AggregatePostsAfterDays: 365",``  |
 | scheduled job.                                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS``           |
 |                                                               |                                                                                        |
-| Numerical input. Default is 365 days.                         |                                                                                        |
+| Numerical input. Default is **365** days.                     |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | **Note**: If you’re using `data retention <https://docs.mattermost.com/comply/data-retention-policy.html>`__ and                                       |
 | `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, configure this with a value greater than your data retention policy.         |
@@ -307,10 +307,11 @@ Post aggregator start time
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: "03:00"`` | | Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: 03:00",`` | 
+| Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
 | the local time of the server.                                 |                                                                                             |
 |                                                               |                                                                                             |
-| Default is 03:00 (3 a.m.)                                     |                                                                                             |
+| Default is **03:00** (3 AM)                                   |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Index prefix
@@ -340,7 +341,7 @@ Live indexing batch size
 | Determines how many new posts are batched together before     | - System Config path: N/a                                                         |
 | they are added to the Elasticsearch index.                    | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
-| Numerical input. Default is 1.                                |                                                                                   |
+| Numerical input. Default is **1**.                            |                                                                                   |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | **Note**: It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling           | 
 | multiple messages per second.                                                                                                                     |    
@@ -359,10 +360,10 @@ Bulk indexing time window
 | performance optimization for installs with over ~10 million   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
 | posts in the database.                                        |                                                                                              |
 |                                                               |                                                                                              |
-| Numerical input in seconds. Default is 3600 seconds (1 hour). |                                                                                              |
-| Approximate this value based on the average number of seconds |                                                                                              |
-| for 2,000 posts to be added to the database on a typical      |                                                                                              |
-| day in production.                                            |                                                                                              |
+| Numerical input in seconds. Default is **3600** seconds       |                                                                                              |
+| (1 hour). Approximate this value based on the average number  |                                                                                              |
+| of seconds for 2,000 posts to be added to the database on a   |                                                                                              |
+| typical day in production.                                    |                                                                                              |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | **Note**: Setting this value too low will cause Bulk Indexing jobs to run slowly.                                                                            |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -375,9 +376,9 @@ Request timeout
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Timeout in seconds for Elasticsearch calls.                   | - System Config path: N/A                                                          |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds:30",``  |
-| Numerical input in seconds. Default is 30 seconds.            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
+| Timeout, in seconds, for Elasticsearch calls.                 | - System Config path: N/A                                                          |
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
+| Numerical input in seconds. Default is **30** seconds.        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 Trace
