@@ -297,96 +297,15 @@ See the :doc:`high availability configuration settings </configure/high-availabi
 Rate Limiting
 ~~~~~~~~~~~~~~
 
-Access the following configuration settings in the System Console by going to **Environment > Rate Limiting**. Changes to properties in this section require a server restart before taking effect.
+See the :doc:`rate limiting configuration settings </configure/rate-limiting-configuration-settings>` documentation for details on the following configuration settings:
 
-Enable Rate Limiting
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Rate limiting prevents your server from being overloaded with too many requests. This decreases the risk and impact of third-party applications or malicious attacks on your server.
-
-**True**: APIs are throttled at the rate specified by **PerSec**.
-
-**False**: APIs are not throttled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Maximum Queries per Second
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Throttle API at this number of requests per second if rate limiting is enabled.
-
-The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-+----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PerSec": 10`` with numerical input. |
-+----------------------------------------------------------------------------------+
-
-Maximum Burst Size
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum number of requests allowed beyond the per second query limit.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxBurst": 100`` with numerical input. |
-+-------------------------------------------------------------------------------------+
-
-Memory Store Size
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum number of user sessions connected to the system as determined by ``VaryByRemoteAddr`` and ``VaryByHeader`` variables.
-
-Typically set to the number of users in the system.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with numerical input. |
-+----------------------------------------------------------------------------------------------+
-
-Vary rate limit by remote address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Rate limit API access by IP address. Recommended to set to ``true`` if you're using a proxy.
-
-**False**: Rate limiting does not vary by IP address.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByRemoteAddr": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by user
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Rate limit API access by user authentication token. Recommended to set to ``true`` if you're using a proxy.
-
-**False**: Rate limiting does not vary by user authentication token.
-
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by HTTP header
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to ``X-Real-IP``, when configuring AmazonELB set to ``X-Forwarded-For``). Recommended to be set if you're using a proxy.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
+- `Enable rate limiting <https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#enable-rate-limiting>`__
+- `Maximum queries per second <https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#maximum-queries-per-second>`__
+- `Maximum burst size <https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#maximum-burst-size>`__
+- `Memory store size <https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#memory-store-size>`__
+- `Vary rate limit by remote address <https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#vary-rate-limit-by-remote-address>`__
+- `Vary rate limit by user <https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#vary-rate-limit-by-user>`__
+- `Vary rate limit by HTTP header <https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#vary-rate-limit-by-http-header>`__
 
 Advanced Logging 
 ~~~~~~~~~~~~~~~~
@@ -5472,79 +5391,6 @@ Defines the threshold in days beyond which outdated configurations are removed f
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
 
-SQL Settings
-~~~~~~~~~~~~
-
-Read Replicas
-^^^^^^^^^^^^^^
-
-|enterprise| |professional| |self-hosted|
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
-
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-Search Replicas
-^^^^^^^^^^^^^^^^
-
-|enterprise| |professional| |self-hosted|
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
-
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Replica Lag Settings
-^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
-+-------------------------------------------------------------------------------------------------------+
-
-String array input consists of:
-
-- ``DataSource``: The DB credentials to connect to the replica instance.
-- ``QueryAbsoluteLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure absolute lag.
-- ``QueryTimeLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure the time lag.
-
-Examples:
-
-For AWS Aurora instances, ``QueryAbsoluteLag`` can be:
-
-.. code-block:: sh
-
-   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>
-
-And for AWS Aurora instances, ``QueryTimeLag`` can be:
-
-.. code-block:: sh
-
-   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>
-
-For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:
-
-.. code-block:: sh
-
-   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>
 
 Image Settings
 ~~~~~~~~~~~~~~

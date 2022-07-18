@@ -28,6 +28,7 @@ Get started
     SMTP configuration settings </configure/smtp-configuration-settings>
     Push notification server configuration settings </configure/push-notification-server-configuration-settings>
     High availability configuration settings </configure/high-availability-configuration-settings>
+    Rate limiting configuration settings </configure/rate-limiting-configuration-settings>
     Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
     Advanced permissions </onboard/advanced-permissions>
     Guest accounts </onboard/guest-accounts>

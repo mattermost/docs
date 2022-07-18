@@ -218,7 +218,7 @@ Recycle database connections
 | To fail over without downing the server, change the    |                                                                  |
 | database line in the ``config.json`` file, select      |                                                                  |
 | **Reload Configuration from Disk** via **Environment   |                                                                  |
-| > Web Server**, then select **Recycle Database         |                                                                  |    
+| > Web Server**, then select **Recycle Database         |                                                                  |
 | Connections**.                                         |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
@@ -250,3 +250,88 @@ Applied schema migrations
 *Available in legacy Enterprise Edition E10/E20*
 
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
+
+Read replicas
+-------------
+
+|enterprise| |professional| |self-hosted|
+
+*Available in legacy Enterprise Edition E10 and E20*
+
++--------------------------------------------------------+-----------------------------------------------------------------------+
+| Specifies the connection strings for the read replica  | - System Config path: N/A                                             |
+| databases.                                             | - ``config.json`` setting: ``".SqlSettings.DataSourceReplicas": []``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_DATASOURCEREPLICAS``         |
++--------------------------------------------------------+-----------------------------------------------------------------------+
+| **Note**: Each database connection string in the array must be in the same form used for the                                   |
+| `Data source <#data-source>`__ setting.                                                                                        |
++--------------------------------------------------------+-----------------------------------------------------------------------+
+
+Search replicas
+---------------
+
+|enterprise| |professional| |self-hosted|
+
+*Available in legacy Enterprise Edition E10 and E20*
+
++--------------------------------------------------------+-----------------------------------------------------------------------------+
+| Specifies the connection strings for the search        | - System Config path: N/A                                                   |
+| replica databases. A search replica is similar to a    | - ``config.json`` setting: ``".SqlSettings.DataSourceSearchReplicas": []``  |
+| read replica, but is used only for handling search     | - Environment variable: ``MM_SQLSETTINGS_DATASOURCESEARCHREPLICAS``         |
+| queries.                                               |                                                                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------+
+| **Note**: Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__          |
+| setting.                                                                                                                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------+
+
+Replica lag settings
+--------------------
+
+|enterprise| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| String array input specifies a connection string and   | - System Config path: N/A                                                        |
+| user-defined SQL queries on the database to measure    | - ``config.json`` setting: ``".SqlSettings.ReplicaLagSettings": []``             |
+| replica lag for a single replica instance.             | - Environment variable: ``MM_SQLSETTINGS_REPLICALAGSETTINGS``                    |
+|                                                        |                                                                                  |   
+| These settings monitor absolute lag based on binlog    |                                                                                  |
+| distance/transaction queue length, and the time taken  |                                                                                  |
+| for the replica to catch up.                           |                                                                                  |
+|                                                        |                                                                                  |
+| String array input consists of:                        |                                                                                  |
+|                                                        |                                                                                  |
+| - ``DataSource``: The database credentials to connect  |                                                                                  |
+|   to the replica instance.                             |                                                                                  |
+| - ``QueryAbsoluteLag``: A plain SQL query that must    |                                                                                  |
+|   return a single row. The first column must be the    |                                                                                  |
+|   node value of the Prometheus metric, and the second  |                                                                                  |
+|   column must be the value of the lag used to          |                                                                                  |
+|   measure absolute lag.                                |                                                                                  |
+| - ``QueryTimeLag``: A plain SQL query that must        |                                                                                  |
+|   return a single row. The first column must be the    |                                                                                  |
+|   node value of the Prometheus metric, and the second  |                                                                                  |
+|   column must be the value of the lag used to measure  |                                                                                  |
+|   the time lag.                                        |                                                                                  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| Examples:                                                                                                                                 |
+|                                                                                                                                           |
+| For AWS Aurora instances, ``QueryAbsoluteLag`` can be:                                                                                    |
+|                                                                                                                                           |
+| .. code-block:: sh                                                                                                                        |
+|                                                                                                                                           |
+|   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>                    |
+|                                                                                                                                           |
+| And for AWS Aurora instances, ``QueryTimeLag`` can be:                                                                                    |
+|                                                                                                                                           |
+| .. code-block:: sh                                                                                                                        |
+|                                                                                                                                           |
+|   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>                                     |
+|                                                                                                                                           |
+| For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:               |
+|                                                                                                                                           |
+| .. code-block:: sh                                                                                                                        |                       
+|                                                                                                                                           |
+|   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+

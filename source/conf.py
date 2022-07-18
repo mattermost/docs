@@ -647,6 +647,12 @@ redirects = {
         "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#maximum-idle-connections-per-host",
 "configure/configuration-settings.html#idle-connection-timeout-in-milliseconds":
         "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#idle-connection-timeout",
+"configure/configuration-settings.html#read-replicas":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#read-replicas",
+"configure/configuration-settings.html#search-replicas":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#search-replicas",
+"configure/configuration-settings.html#replica-lag-settings":
+        "https://docs.mattermost.com/configure/database-configuration-settings.html#replica-lag-settings",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
