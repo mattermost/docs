@@ -22,7 +22,6 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Admins are now able to search for channel IDs via **System Console > User Management > Channels** page.
- - Added a new system-level role named Custom Group Admin for managing custom groups across an instance.
  - In the **System Console** left-hand side, paid features icons are now displayed on the menu entries to indicate enterprise features.
  - Cloud usage rounding for posts and messages is now precise enough to know when a limit has been reached or exceeded.
  - Added ``webSocketClient`` to ``Pluggable`` and ``PostWillRenderEmbed`` plugin registered components.
