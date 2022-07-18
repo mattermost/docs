@@ -653,6 +653,22 @@ redirects = {
         "https://docs.mattermost.com/configure/database-configuration-settings.html#search-replicas",
 "configure/configuration-settings.html#replica-lag-settings":
         "https://docs.mattermost.com/configure/database-configuration-settings.html#replica-lag-settings",
+"configure/configuration-settings.html#rate-limiting":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html",
+"configure/configuration-settings.html#enable-rate-limiting":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#enable-rate-limiting",
+"configure/configuration-settings.html#maximum-queries-per-second":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#maximum-queries-per-second",
+"configure/configuration-settings.html#memory-store-size":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#memory-store-size",
+"configure/configuration-settings.html#vary-rate-limit-by-remote-address":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#vary-rate-limit-by-remote-address",
+"configure/configuration-settings.html#vary-rate-limit-by-user":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#vary-rate-limit-by-user",
+"configure/configuration-settings.html#vary-rate-limit-by-http-header":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#vary-rate-limit-by-http-header",
+"configure/configuration-settings.html#maximum-burst-size":
+        "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#maximum-burst-size",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
