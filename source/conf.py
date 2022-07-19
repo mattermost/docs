@@ -580,7 +580,7 @@ redirects = {
 "configure/configuration-settings.html#image-proxy":
         "https://docs.mattermost.com/configure/image-proxy-confguration-settings.html",
 "configure/configuration-settings.html#enable-image-proxy":
-        "https://docs.mattermost.com/configure/image-proxyconfguration-settings.html#enables-image-proxy",
+        "https://docs.mattermost.com/configure/image-proxyconfguration-settings.html#enable-image-proxy",
 "configure/configuration-settings.html#image-proxy-type":
         "https://docs.mattermost.com/configure/image-proxyconfguration-settings.html#image-proxy-type",
 "configure/configuration-settings.html#remote-image-proxy-url":
@@ -683,7 +683,12 @@ redirects = {
         "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-cache",
 "configure/configuration-settings.html#session-idle-timeout-minutes":
         "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-cache",
-
+"configure/configuration-settings.html#performance-monitoring":
+        "https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html",
+"configure/configuration-settings.html#enable-performance-monitoring":
+        "https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#enable-performance-monitoring",
+"configure/configuration-settings.html#id6":
+        "https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#listen-address",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

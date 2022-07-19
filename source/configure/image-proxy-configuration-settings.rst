@@ -26,13 +26,13 @@ Image proxy configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-An image proxy is used by Mattermost apps to prevent them from connecting directly to remote self-hosted servers. Configure an image proxy by going to **System Console > Environment > Image Proxy**, or by editing the config.json file as described in the following table.
+An image proxy is used by Mattermost apps to prevent them from connecting directly to remote self-hosted servers. Configure an image proxy by going to **System Console > Environment > Image Proxy**, or by editing the ``config.json`` file as described in the following table.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
-Enables image proxy
---------------------
+Enable image proxy
+------------------
 
 |all-plans| |self-hosted|
 

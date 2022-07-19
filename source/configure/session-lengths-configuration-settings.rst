@@ -66,7 +66,7 @@ Session length for AD/LDAP and email
 | app to the expiry of the user’s session on email and AD/LDAP   | - Environment variable: ``MM_SERVICESETTINGS_SESSONLENGTHWEBINHOURS``          |
 | authentication.                                                |                                                                                |
 |                                                                |                                                                                |
-| Numerical input. Default is **720** hours.                     |                                                                                |
+| Numerical input in hours. Default is **720** hours.            |                                                                                |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | **Note**: After changing this setting, the new session length takes effect after the next time the user enters their credentials.               |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -83,7 +83,7 @@ Session length for mobile
 | entered their credential into the mobile app to the expiry     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthMobileInHours: 720,`` |
 | of the user’s session.                                         | - Environment variable: ``MM_SERVICESETTINGS_SESSONLENGTHMOBILEINHOURS``          |
 |                                                                |                                                                                   |
-| Numerical input. Default is **720** hours.                     |                                                                                   |
+| Numerical input in hours. Default is **720** hours.            |                                                                                   |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | **Note**: After changing this setting, the new session length takes effect after the next time the user enters their credentials.                  |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -101,8 +101,9 @@ Session length for SSO
 | This setting defines the session length for SSO                | - Environment variable: ``MM_SERVICESETTINGS_SESSONLENGTHSSOINHOURS``            |
 | authentication, such as SAML, GitLab, and OAuth 2.0.           |                                                                                  |
 |                                                                |                                                                                  |
-| Numerical input. Default is **720** hours. Numbers as decimals |                                                                                  |
-| are also valid values for this configuration setting.          |                                                                                  |
+| Numerical input in hours. Default is **720** hours.            |                                                                                  |
+| Numbers as decimals are also valid values for this             |                                                                                  |
+| configuration setting.                                         |                                                                                  |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                        |
 |                                                                                                                                                   |
@@ -121,7 +122,7 @@ Session cache
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set the number of minutes to cache a session in memory.        | - System Config path: **Environment > Session Lengths**                     |
 |                                                                | - ``config.json`` setting: ``".ServiceSettings.SessionCacheInMinutes: 10,`` |
-| Numerical input. Default is **10** minutes.                    | - Environment variable: ``MM_SERVICESETTINGS_SESSONCACHEINMINUTES``         |
+| Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSONCACHEINMINUTES``         |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Session idle timeout
@@ -136,7 +137,7 @@ Session idle timeout
 | on the system to the expiry of the user’s session.             | - ``config.json`` setting: ``".ServiceSettings.SessionIdleTimeoutInMinutes: 43200,`` |
 | Once expired, the user will need to log in to continue.        | - Environment variable: ``MM_SERVICESETTINGS_SESSONIDLETIMEOUTINMINUTES``            |
 |                                                                |                                                                                      |
-| Numerical input. Default is **43200** (30 days).               |                                                                                      |
+| Numerical input in minutes. Default is **43200** (30 days).    |                                                                                      |
 | Minimum value is **5** minutes, and a value of **0** sets      |                                                                                      |
 | the time as unlimited.                                         |                                                                                      |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+

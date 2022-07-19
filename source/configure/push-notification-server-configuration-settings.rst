@@ -39,7 +39,7 @@ Enable push notifications
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| You can disable Mattermost push notifications.                  | - System Config path: **Environment > Push Notification Server**               |
+| Enable or disable Mattermost push notifications.                | - System Config path: **Environment > Push Notification Server**               |
 |                                                                 | - ``config.json setting``: ``".EmailSettings.SendPushNotifications": true",``  |
 | - **true**: **(Default)** Your Mattermost server sends mobile   | - Environment variable: ``MM_EMAILSETTINGS_SENDPUSHNOTIFICATIONS``             |
 |   push notifications to the server specified.                   |                                                                                |
@@ -54,7 +54,7 @@ Push notification server
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Location of Mattermost Push Notification Service (MPNS),        | - System Config path: **Environment > Push Notification Server**               |
+| The location of Mattermost Push Notification Service (MPNS),    | - System Config path: **Environment > Push Notification Server**               |
 | which re-sends push notifications from Mattermost to services   | - ``config.json setting``: ``".EmailSettings.PushNotificationServer",``        |
 | like Apple Push Notification Service (APNS) and Google Cloud    | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER``            |
 | Messaging (GCM).                                                |                                                                                |
@@ -87,8 +87,8 @@ Maximum notifications per channel
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
-| Maximum total number of users in a channel before @all, @here,  | - System Config path: **Environment > Push Notification Server**                     |
-| and @channel no longer send notifications to maximize           | - ``config.json setting``: ``".TeamSettings.MaxNotificationsPerChannel: 1000",``     |
+| The maximum total number of users in a channel before @all,     | - System Config path: **Environment > Push Notification Server**                     |
+| @here, and @channel no longer send notifications to maximize    | - ``config.json setting``: ``".TeamSettings.MaxNotificationsPerChannel: 1000",``     |
 | performance.                                                    | - Environment variable: ``MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL``              |
 |                                                                 |                                                                                      |
 | Numerical input. Default is **1000**.                           |                                                                                      |

@@ -39,8 +39,8 @@ SMTP server
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
-| Location of the SMTP email server used for email notifications. | - System Config path: **Environment > SMTP**                  |
-| sessions, webhooks, and connections.                            | - ``config.json setting``: ``".EmailSettings.SMTPServer",``   |
+| The location of the SMTP email server used for email            | - System Config path: **Environment > SMTP**                  |
+| notifications.                                                  | - ``config.json setting``: ``".EmailSettings.SMTPServer",``   |
 |                                                                 | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVER``       |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
@@ -52,7 +52,7 @@ SMTP server port
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
-| Port of SMTP email server.                                      | - System Config path: **Environment > SMTP**                  |
+| The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                  |
 |                                                                 | - ``config.json setting``: ``".EmailSettings.SMTPPort",``     |
 | Numerical input.                                                | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``         |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
@@ -65,7 +65,7 @@ Enable SMTP authentication
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------------------+
-| SMTP authentication can be enabled.                             | - System Config path: **Environment > SMTP**                              |
+| Enable or disable SMTP authentication.                          | - System Config path: **Environment > SMTP**                              |
 |                                                                 | - ``config.json setting``: ``".EmailSettings.EnableSMTPAuth": false",``   |
 | - **true**: SMTP username and password are used for             | - Environment variable: ``MM_EMAILSETTINGS_ENABLESMTPAUTH``               |
 |   authenticating to the SMTP server.                            |                                                                           |
@@ -125,9 +125,10 @@ Skip server certificate verification
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| Mattermost can skip the verification of the email server certificate. | - System Config path: **Environment > SMTP**                                                 |
-|                                                                       | - ``config.json setting``: ``".EmailSettings.SkipServerCertificateVerification": false",``   |
-| - **true**: Mattermost won't verify the email server certificate.     | - Environment variable: ``MM_EMAILSETTINGS_SKIPSERVERCERTIFICATEVERIFICATION``               |
+| Configure Mattermost to skip the verification of the email server     | - System Config path: **Environment > SMTP**                                                 |
+| certificate.                                                          | - ``config.json setting``: ``".EmailSettings.SkipServerCertificateVerification": false",``   | 
+|                                                                       | - Environment variable: ``MM_EMAILSETTINGS_SKIPSERVERCERTIFICATEVERIFICATION``               |
+| - **true**: Mattermost won't verify the email server certificate.     |                                                                                              |
 | - **false**: **(Default)** Mattermost verifies the email              |                                                                                              |
 |   server certificate.                                                 |                                                                                              |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -140,7 +141,7 @@ Enable security alerts
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Security alerts can be disabled.                                | - System Config path: **Environment > SMTP**                                     |
+| Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                     |
 |                                                                 | - ``config.json setting``: ``".EmailSettings.EnableSecurityFixAlert": true",``   |
 | - **true**: **(Default)** System Admins are notified by email   | - Environment variable: ``MM_EMAILSETTINGS_ENABLESECURITYFIXALERT``              |
 |   if a relevant security fix alert is announced. Requires email |                                                                                  |
@@ -158,7 +159,7 @@ SMTP server timeout
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
-| The maximum amount of time (in seconds) allowed for             | - System Config path: **Environment > SMTP**                         |
+| The maximum amount of time, in seconds, allowed for             | - System Config path: **Environment > SMTP**                         |
 | establishing a TCP connection between Mattermost and the SMTP   | - ``config.json setting``: ``".EmailSettings.SMTPServerTimeout",``   |
 | server to be idle before being terminated.                      | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVERTIMEOUT``       |
 |                                                                 |                                                                      |

@@ -39,7 +39,7 @@ Driver name
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Identify the type of database. Can be one of:                 | - System Config path: N/A                                                |
+| The type of database. Can be either:                          | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".SqlSettings.DriverName",``                |
 | - **mysql**: **(Default)** Enables driver to MySQL database.  | - Environment variable: ``MM_SQLSETTINGS_DRIVERNAME``                    |
 | - **postgres**: Enables driver to PostgreSQL database.        |                                                                          |
@@ -104,7 +104,7 @@ Maximum idle connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| Maximum number of idle connections held open           | - System Config path: **Environment > Database**                 |
+| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
 | to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 10,``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
 | Numerical input. Default is **10**.                    |                                                                  |
@@ -118,7 +118,7 @@ Maximum open connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| Maximum number of idle connections held open           | - System Config path: **Environment > Database**                 |
+| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
 | to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
 | Numerical input. Default is **300**.                   |                                                                  |
@@ -132,9 +132,9 @@ Query timeout
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| The amount of time to wait for a response from the     | - System Config path: **Environment > Database**                 |
-| database, in seconds, after opening a connection       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
-| and sending the query.                                 | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``          |
+| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                 |
+| from the database after opening a connection and       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
+| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``          |
 |                                                        |                                                                  |
 | Numerical input in seconds. Default is **30** seconds. |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
@@ -212,7 +212,7 @@ Recycle database connections
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | Select the **Recycle Database Connections** button to  | - System Config path: **Environment > Database**                 |
-| reconnects to the configured database.                 | - ``config.json`` setting: N/A                                   |
+| reconnect to the configured database.                  | - ``config.json`` setting: N/A                                   |
 | All old connections are closed after 20 seconds.       | - Environment variable: N/A                                      |
 |                                                        |                                                                  |
 | To fail over without downing the server, change the    |                                                                  |

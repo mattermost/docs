@@ -250,7 +250,7 @@ Image Proxy
 
 See the :doc:`image proxy configuration settings </configure/image-proxy-configuration-settings>` documentation for details on the following configuration settings:
 
-- `Enable image proxy <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#enables-image-proxy>`__
+- `Enable image proxy <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#enable-image-proxy>`__
 - `Image proxy type <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#image-proxy-type>`__
 - `Remote image proxy URL <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-url>`__
 - `Remote image proxy options <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-options>`__
@@ -614,7 +614,7 @@ Enable Diagnostics and Error Reporting
 | This feature's ``config.json`` setting is ``"EnableDiagnostics": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-Session Lengths
+Session lengths
 ---------------
 
 See the :doc:`session lengths configuration settings </configure/session-lengths-configuration-settings>` documentation for details on the following configuration settings:
@@ -626,40 +626,13 @@ See the :doc:`session lengths configuration settings </configure/session-lengths
 - `Session cache <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-cache>`__
 - `Session idle timeout <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-idle-timeout>`__
 
-Performance Monitoring
-~~~~~~~~~~~~~~~~~~~~~~~
+Performance monitoring
+-----------------------
 
-Access the following configuration settings in the System Console by going to **Environment > Performance Monitoring**.
+See the :doc:`performance monitoring configuration settings </configure/performance-monitoring-configuration-settings>` documentation for details on the following configuration settings:
 
-Changes to properties in this section require a server restart before taking effect.
-
-Enable Performance Monitoring
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Mattermost enables performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/scale/performance-monitoring.html>`__ to learn more about configuring performance monitoring for Mattermost.
-
-**False**: Mattermost performance monitoring is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Listen Address
-^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The address the Mattermost server will listen on to expose performance metrics.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"InterNodeListenAddress": ":8067"`` with string input. |
-+----------------------------------------------------------------------------------------------------+
+- `Enable performance monitoring <https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#>`__
+- `Listen address <https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#>`__
 
 Developer
 ~~~~~~~~~~

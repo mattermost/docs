@@ -41,7 +41,7 @@ Enable Elasticsearch indexing
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| New posts can be automatically indexed.                       | - System Config path: **Environment > Elasticsearch**                          |
+| Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableIndexing: false",`` |
 | - **true**: Indexing of new posts occurs automatically.       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
 | - **false**: **(Default)** Elasticsearch indexing is disabled |                                                                                |
@@ -119,9 +119,10 @@ Enable cluster sniffing
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
-| Automatically find and connect to all data nodes in a cluster. | - System Config path: **Environment > Elasticsearch**                    |
-|                                                                | - ``config.json`` setting: ``".Elasticsearchsettings.Sniff: false",``    |
-| - **true**: Sniffing finds and connects to all data nodes      | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``               |
+| Configure Mattermost to automatically find and connect to      | - System Config path: **Environment > Elasticsearch**                    |
+| all data nodes in a cluster.                                   | - ``config.json`` setting: ``".Elasticsearchsettings.Sniff: false",``    |
+|                                                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``               |
+| - **true**: Sniffing finds and connects to all data nodes      |                                                                          |
 |   in your cluster automatically.                               |                                                                          |
 | - **false**: **(Default)** Cluster sniffing is disabled .      |                                                                          |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -136,8 +137,8 @@ Bulk indexing
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Start a bulk index of all existing posts in the database.     | - System Config path: **Environment > Elasticsearch**                    |
-|                                                               | - ``config.json`` setting: N/A                                           |
+| Configure Mattermost to start a bulk index of all existing    | - System Config path: **Environment > Elasticsearch**                    |
+| posts in the database.                                        | - ``config.json`` setting: N/A                                           |
 |                                                               | - Environment variable: N/A                                              |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Select the **Index Now** button in the System Console to start a bulk index of all posts. If the indexing process is canceled, the       |
@@ -152,7 +153,7 @@ Purge indexes
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| Purge the entire Elasticsearch index.                         | - System Config path: **Environment > Elasticsearch**       |        
+| Configure Mattermost to purge the entire Elasticsearch index. | - System Config path: **Environment > Elasticsearch**       |        
 | Typically only used if the index has corrupted and search     | - ``config.json`` setting: N/A                              |
 | isn't behaving as expected.                                   | - Environment variable: N/A                                 |          
 +---------------------------------------------------------------+-------------------------------------------------------------+
@@ -168,9 +169,10 @@ Enable Elasticsearch for search queries
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
-| Use the latest index for all search queries.                  | - System Config path: **Environment > Elasticsearch**                           |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
-| - **true**: Elasticsearch will be used for all search         | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            | 
+| Configure Mattermost to use Elasticsearch for all search      | - System Config path: **Environment > Elasticsearch**                           |
+| queries using the latest index                                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |  
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            | 
+| - **true**: Elasticsearch will be used for all search         |                                                                                 |
 |   queries using the latest index. Search results may be       |                                                                                 |
 |   incomplete until a bulk index of the existing post database |                                                                                 |
 |   is finished.                                                |                                                                                 |
@@ -186,9 +188,10 @@ Enable Elasticsearch for autocomplete queries
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Elasticsearch can use the latest index for all autocompletion | - System Config path: **Environment > Elasticsearch**                              |
-| queries on users and channels.                                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            |
+| Configure Mattermost to use Elasticsearch for all             | - System Config path: **Environment > Elasticsearch**                              |
+| autocompletion queries on users and channels using the        | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
+| latest index.                                                 | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            | 
+|                                                               | 
 | - **true**: Elasticsearch will be used for all autocompletion |                                                                                    |
 |   queries on users and channels using the latest index.       |                                                                                    |
 | - **false**: **(Default)** Database autocomplete is used.     |                                                                                    |
@@ -322,7 +325,7 @@ Index prefix
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Prefix added to the Elasticsearch index name.                 | - System Config path: N/A                                                |
+| The prefix added to the Elasticsearch index name.             | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.IndexPrefix",``     |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_INDEXPREFIX``         |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -338,8 +341,8 @@ Live indexing batch size
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| Determines how many new posts are batched together before     | - System Config path: N/a                                                         |
-| they are added to the Elasticsearch index.                    | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
+| The number of new posts batched together before they're       | - System Config path: N/A                                                         |
+| added to the Elasticsearch index.                             | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
 | Numerical input. Default is **1**.                            |                                                                                   |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -355,17 +358,17 @@ Bulk indexing time window
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| Determines the maximum time window for a batch of posts       | - System Config path: **Environment > Elasticsearch**                                        |
+| The maximum time window, in seconds, for a batch of posts     | - System Config path: **Environment > Elasticsearch**                                        |
 | being indexed by the Bulk Indexer. This setting serves as a   | - ``config.json`` setting: ``".Elasticsearchsettings.BulkIndexingTimeWindowSeconds: 3600",`` |
-| performance optimization for installs with over ~10 million   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
-| posts in the database.                                        |                                                                                              |
+| performance optimization for installs with over               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
+|  ~10 million posts in the database.                           |                                                                                              |
 |                                                               |                                                                                              |
 | Numerical input in seconds. Default is **3600** seconds       |                                                                                              |
 | (1 hour). Approximate this value based on the average number  |                                                                                              |
 | of seconds for 2,000 posts to be added to the database on a   |                                                                                              |
 | typical day in production.                                    |                                                                                              |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| **Note**: Setting this value too low will cause Bulk Indexing jobs to run slowly.                                                                            |
+| **Note**: Setting this value too low will cause bulk indexing jobs to run slowly.                                                                            |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Request timeout
@@ -376,7 +379,7 @@ Request timeout
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Timeout, in seconds, for Elasticsearch calls.                 | - System Config path: N/A                                                          |
+| The timeout, in seconds, for Elasticsearch calls.             | - System Config path: N/A                                                          |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
 | Numerical input in seconds. Default is **30** seconds.        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
