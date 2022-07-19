@@ -669,6 +669,21 @@ redirects = {
         "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#vary-rate-limit-by-http-header",
 "configure/configuration-settings.html#maximum-burst-size":
         "https://docs.mattermost.com/configure/rate-limiting-configuration-settings.html#maximum-burst-size",
+"configure/configuration-settings.html#session-lengths":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html",
+"configure/configuration-settings.html#extend-session-length-with-activity":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#extend-session-length-with-activity",
+"configure/configuration-settings.html#session-length-for-email-and-ad-ldap-authentication-days":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-length-for-ad-ldap-and-email",
+"configure/configuration-settings.html#session-length-for-mobile-apps-days":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-length-for-mobile",
+"configure/configuration-settings.html#session-length-for-sso-authentication-days":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-length-for-sso",
+"configure/configuration-settings.html#session-cache-minutes":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-cache",
+"configure/configuration-settings.html#session-idle-timeout-minutes":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-cache",
+
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

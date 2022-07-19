@@ -615,93 +615,16 @@ Enable Diagnostics and Error Reporting
 +--------------------------------------------------------------------------------------------------------------+
 
 Session Lengths
-~~~~~~~~~~~~~~~~
+---------------
 
-Access the following configuration settings in the System Console by going to **Environment > Session Lengths**.
+See the :doc:`session lengths configuration settings </configure/session-lengths-configuration-settings>` documentation for details on the following configuration settings:
 
-User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table.
-
-Extend session length with activity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Improves user experience by extending sessions and keeping users logged in if they are active in their Mattermost apps. 
-
-**True**: Sessions will be automatically extended when the user is active in their Mattermost client. User sessions will only expire if they are not active in their Mattermost client for the entire duration of the session lengths defined in the fields below.
-
-**False**: Sessions will not extend with activity in Mattermost. User sessions will immediately expire at the end of the session length or idle timeouts defined below.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------+
-
-Session length for email and AD/LDAP authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInHours": 720`` with numerical input.             |
-+----------------------------------------------------------------------------------------------------------------+
-
-Session length for mobile apps
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInHours": 4320`` with numerical input.        |
-+---------------------------------------------------------------------------------------------------------------+
-
-Session length for SSO authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
-
-After changing this setting, the setting will take effect after the next time the user enters their credentials.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthSSOInHours": 720`` with numerical input. |
-+----------------------------------------------------------------------------------------------------+
-
-Session Cache (minutes)
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of minutes to cache a session in memory.
-
-+-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionCacheInMinutes": 10`` with numerical input. |
-+-------------------------------------------------------------------------------------------------+
-
-Session Idle Timeout (minutes)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
-
-Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
-
-This setting does not take effect if ``ExtendSessionLengthWithActivity`` is set to ``true``.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes": 43200`` with numerical input.        |
-+-----------------------------------------------------------------------------------------------------------------+
+- `Extend session length with activity <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#extend-session-length-with-activity>`__
+- `Session length for AD/LDAP and email <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-length-for-ad-ldap-and-email>`__
+- `Session length for mobile <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-length-for-mobile>`__
+- `Session length for SSO <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-length-for-sso>`__
+- `Session cache <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-cache>`__
+- `Session idle timeout <https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-idle-timeout>`__
 
 Performance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -40,7 +40,7 @@ Enable rate limiting
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | You can enable rate limiting to throttle APIs to a specified   | - System Config path: **Environment > Rate Limiting**                    |
-| number of requests per second                                  | - ``config.json`` setting: ``".RateLimitSettings.Eanble: false”,``       |
+| number of requests per second.                                 | - ``config.json`` setting: ``".RateLimitSettings.Eanble: false”,``       |
 |                                                                | - Environment variable: ``MM_RATELIMITSETTINGS_ENABLE``                  |
 | - **true**: APIs are throttled at the rate specified by the    |                                                                          |
 |   `Maximum queries per second <#maximum-queries-per-second>`__ |                                                                          |
