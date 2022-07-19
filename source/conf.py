@@ -689,6 +689,16 @@ redirects = {
         "https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#enable-performance-monitoring",
 "configure/configuration-settings.html#id6":
         "https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#listen-address",
+"configure/configuration-settings.html#developer":
+        "https://docs.mattermost.com/configure/developer-mode-configuration-settings.html",
+"configure/configuration-settings.html#enable-testing-commands":
+        "https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#enable-testing-commands",
+"configure/configuration-settings.html#enable-developer-mode":
+        "https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#enable-developer-mode",
+"configure/configuration-settings.html#allow-untrusted-internal-connections-to":
+        "https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#allow-untrusted-internal-connections",
+"configure/configuration-settings.html#enable-client-performance-debugging":
+        "https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#enable-client-performance-debugging",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

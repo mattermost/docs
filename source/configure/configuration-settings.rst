@@ -631,87 +631,18 @@ Performance monitoring
 
 See the :doc:`performance monitoring configuration settings </configure/performance-monitoring-configuration-settings>` documentation for details on the following configuration settings:
 
-- `Enable performance monitoring <https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#>`__
-- `Listen address <https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#>`__
+- `Enable performance monitoring <https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#enable-performance-monitoring>`__
+- `Listen address <https://docs.mattermost.com/configure/performance-monitoring-configuration-settings.html#listen-address>`__
 
-Developer
-~~~~~~~~~~
+Developer mode
+--------------
 
-Access the following configuration settings in the System Console by going to **Environment > Developer**.
+See the :doc:`developer mode configuration settings </configure/developer-mode-configuration-settings>` documentation for details on the following configuration settings:
 
-Enable Testing Commands
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: ``/test`` slash command is enabled to load test accounts and test data.
-
-**False**: ``/test`` slash command is disabled.
-
-Changes to this setting require a server restart before taking effect.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTesting": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
-Enable Developer Mode
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Javascript errors are shown in a purple bar at the top of the user interface. Not recommended for use in production.
-
-**False**: Users are not alerted to Javascript errors.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Enable Client Performance Debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: User-specific performance debugging features can be enabled from **Settings > Advanced > Performance Debugging**. These settings only affect the user who enables them. See the `Performance Debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__ product documentation to learn more.
-
-**False**: Disables and hides debugging features from **Settings > Advanced > Performance Debugging**.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Allow Untrusted Internal Connections To
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting limits the ability for the Mattermost server to make untrusted requests within its local network. A request is considered "untrusted" when it's made on behalf of a client. The following features make untrusted requests and are affected by this setting:
-
-- Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.
-- Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.
-- The `local image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__. If the local image proxy is enabled, images located on the local network cannot be used by integrations or posted in chat messages.
-
-Requests that can only be configured by admins are considered trusted and will not be affected by this setting. Trusted URLs include ones used for OAuth login or for sending push notifications.
-
-.. warning::
-   This setting is intended to prevent users located outside your local network from using the Mattermost server to request confidential data from inside your network. Care should be used when configuring this setting to prevent unintended access to your local network.
-
-Some examples of when you may want to modify this setting include:
-
-- When installing a plugin that includes its own images, such as `Matterpoll <https://github.com/matterpoll/matterpoll>`__, you will need to add the Mattermost server's domain name to this list.
-- When running a bot or webhook-based integration on your local network, you'll need to add the hostname of the bot/integration to this list.
-- If your network is configured in such a way that publicly-accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
-
-This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It's configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed (such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``). Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
-
-.. note::
-   Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
-
-IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution, and only CIDR rules require DNS resolution. We try to match IP addresses and hostnames without even resolving. If that fails, we resolve using the local resolver (by reading the ``/etc/hosts`` file first), then check for matching CIDR rules. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input. |
-+------------------------------------------------------------------------------------------------------------+
+- `Enable testing commands <https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#enable-testing-commands>`__
+- `Enable developer mode <https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#enable-developer-mode>`__
+- `Enable client performance debugging <https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#enable-client-performance-debugging>`__
+- `Allow untrusted internal connections <https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#allow-untrusted-internal-connections>`__
 
 Site Configuration
 -------------------

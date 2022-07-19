@@ -31,6 +31,7 @@ Get started
     Rate limiting configuration settings </configure/rate-limiting-configuration-settings>
     Session lengths configuration settings </configure/session-lengths-configuration-settings>
     Performance monitoring configuration settings </configure/performance-monitoring-configuration-settings>
+    Developer mode configuration settings </configure/developer-mode-configuration-settings>
     Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
     Advanced permissions </onboard/advanced-permissions>
     Guest accounts </onboard/guest-accounts>
