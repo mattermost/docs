@@ -6,10 +6,7 @@ Mattermost Boards enable your team to manage projects and tasks via a familiar K
 .. image:: ../images/Boards_Hero.png
    :alt: An example of the Mattermost Boards screen that includes a project status board and cards organized by status. 
 
-This Mattermost Boards User Guide is for anyone who needs help using Mattermost project and task management capabilities.
-
-The basics
-----------
+This Mattermost Boards user guide is for anyone who needs help using Mattermost project and task management capabilities.
 
 .. toctree::
    :hidden:
