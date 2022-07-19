@@ -28,18 +28,6 @@ Get started
     SMTP configuration settings </configure/smtp-configuration-settings>
     Push notification server configuration settings </configure/push-notification-server-configuration-settings>
     High availability configuration settings </configure/high-availability-configuration-settings>
-    Rate limiting configuration settings </configure/rate-limiting-configuration-settings>
-    Session lengths configuration settings </configure/session-lengths-configuration-settings>
-    Performance monitoring configuration settings </configure/performance-monitoring-configuration-settings>
-    Developer mode configuration settings </configure/developer-mode-configuration-settings>
-    Mattermost deprecated configuration settings </configure/deprecated-configuration-settings>
-    Advanced permissions </onboard/advanced-permissions>
-    Guest accounts </onboard/guest-accounts>
-    System Admin roles </onboard/system-admin-roles>
-    OpenID </onboard/sso-openidconnect>
-    Google SSO </onboard/sso-google>
-    Office 365 SSO </onboard/sso-office>
-    GitLab SSO </onboard/sso-gitlab>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Provisioning workflows </onboard/user-provisioning-workflows>
     Multi-factor authentication </onboard/multi-factor-authentication>
@@ -77,7 +65,7 @@ Advanced user management
     :hidden:
 
     AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
-    Use AD/LDAP synchronized groups to manage team or private channel membership </onboard managing-team-channel-membership-using-ad-ldap-sync-groups>
+    Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
     Guest accounts </onboard/guest-accounts>
     SAML Single Sign-On </onboard/sso-saml>
     SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>
