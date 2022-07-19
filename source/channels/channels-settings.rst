@@ -156,7 +156,7 @@ Select the timezone used for timestamps in the user interface and for email noti
 
 .. note::
   
-  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#timezone>`__ by replacing ``false`` with ``true`` in ``config.json``. Timezone is enabled by default from Mattermost v6.0.
+  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#timezone>`__. Timezone is enabled by default from Mattermost v6.0.
 
 Website link previews
 ~~~~~~~~~~~~~~~~~~~~~
@@ -302,19 +302,22 @@ Turn on preview features to view them early, ahead of their official release.
 
   From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
-Performance Debugging
+Scroll position when viewing unread channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure where to start when viewing channels with unread messages. You can start where you left off at the oldest unread message, or start at the newest message. Your preference applies to all channels.
+
+Performance debugging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `Enable Client Performance Debugging <https://docs.mattermost.com/configure/configuration-settings.html>`__ is enabled.
+Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client performance debugging <https://docs.mattermost.com/configure/configuration-settings.html>`__ is enabled.
 
 Deactivate account
 ~~~~~~~~~~~~~~~~~~
 
-Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
+Use this setting to deactivate your account. Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. After deactivating, an email notification is sent confirming the deactivation was successful.
 
-Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. To reactivate your account, contact your System Admin.
-
-This is only available for accounts with email login, and if your System Admin has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
+To reactivate your account, contact your System Admin. This is only available for accounts with email login, and when `user deactivation <https://docs.mattermost.com/configure/configuration-settings.html#enable-account-deactivation>`__ is enabled.
 
 For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Admin to deactivate your account.
 
