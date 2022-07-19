@@ -18,7 +18,7 @@ Overview
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams, and is part of all Mattermost editions.
+Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams, and is part of all Mattermost editions. Boards is also available as a separate single-user Personal Edition called Focalboard.
 
 With Boards you can:
 
@@ -27,4 +27,8 @@ With Boards you can:
 * **Stay on schedule:** Clearly-defined tasks, owners, checklists, and deadlines
 * **Increase transparency and keep everybody in the loop:** Everything your team needs in one place, including documents, images, and links that are visible to every stakeholder
 
-Boards is also available as a separate single-user Personal Edition called Focalboard.
+What's a board?
+---------------
+
+What's a card?
+--------------
