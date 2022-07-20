@@ -699,6 +699,36 @@ redirects = {
         "https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#allow-untrusted-internal-connections",
 "configure/configuration-settings.html#enable-client-performance-debugging":
         "https://docs.mattermost.com/configure/developer-mode-configuration-settings.html#enable-client-performance-debugging",
+"configure/configuration-settings.html#standard-logging":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html",
+"configure/configuration-settings.html#output-logs-to-console":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#output-logs-to-console",
+"configure/configuration-settings.html#console-log-level":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#console-log-level",
+"configure/configuration-settings.html#output-console-logs-as-json":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#output-console-logs-as-json",
+"configure/configuration-settings.html#output-logs-to-file":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#output-logs-to-file",
+"configure/configuration-settings.html#file-log-level":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#file-log-level",
+"configure/configuration-settings.html#output-file-logs-as-json":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#output-file-logs-as-json",
+"configure/configuration-settings.html#file-log-directory":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#file-log-directory",
+"configure/configuration-settings.html#enable-webhook-debugging":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#enable-webhook-debugging",
+"configure/configuration-settings.html#enable-diagnostics-and-error-reporting":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#enable-diagnostics-and-error-reporting",
+"configure/configuration-settings.html#advanced-logging":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#output-logs-to-multiple-targets",
+"configure/configuration-settings.html#output-logs-to-multiple-targets":
+        "https://docs.mattermost.com/configure/logging-configuration-settings.html#output-logs-to-multiple-targets",
+"configure/configuration-settings.html#environment-variables":
+        "https://docs.mattermost.com/configure/environment-variables.html",
+"configure/configuration-settings.html#override-mattermost-license-file":
+        "https://docs.mattermost.com/configure/environment-variables.html#override-mattermost-license-file",
+"configure/configuration-settings.html#load-custom-configuration-defaults":
+        "https://docs.mattermost.com/configure/environment-variables.html#load-custom-configuration-defaults",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
