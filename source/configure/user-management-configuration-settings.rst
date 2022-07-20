@@ -44,7 +44,6 @@ Users
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
-
 Groups
 ------
 
@@ -83,6 +82,8 @@ Channels
 | access individual users to view their User ID, add users to other       | - ``config.json setting``: N/A                              |
 | teams, and view the teams they are on and what their role is on a team. | - Environment variable: N/A                                 |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: You can search for channels by channel name or by channel ID.                                                               |
++-------------------------------------------------------------------------+-------------------------------------------------------------+
 
 Permissions
 -----------
@@ -91,21 +92,27 @@ Permissions
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+--------------------------------------------------------------------------------+-------------------------------------------------------------+
-| Manage default teams and channels by linking AD/LDAP groups                    | - System Config path: **User Management > Permissions**     |
-| to Mattermost groups. See the `AD/LDAP groups documentation                    | - ``config.json setting``: N/A                              |
-| <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__   | - Environment variable: N/A                                 |
-| for more details.                                                              |                                                             |
-+--------------------------------------------------------------------------------+-------------------------------------------------------------+
++---------------------------------------------------------------------+-------------------------------------------------------------+
+| Manage default teams and channels by linking AD/LDAP groups         | - System Config path: **User Management > Permissions**     |
+| to Mattermost groups.                                               | - ``config.json setting``: N/A                              |
+|                                                                     | - Environment variable: N/A                                 |
++---------------------------------------------------------------------+-------------------------------------------------------------+
+| See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
+| for more details.                                                                                                                 |
++---------------------------------------------------------------------+-------------------------------------------------------------+
 
 System roles
 ------------
 
 |all-plans| |cloud| |self-hosted|
 
-+------------------------------------------------------------------------------+------------------------------------------------------------+
-| Manage team settings, including group synchronization for teams.             | - System Config path: **User Management > System Roles**   |
-| See `AD/LDAP groups documentation                                            | - ``config.json setting``: N/A                             |
-| <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ | - Environment variable: N/A                                |
-| documentation for more details.                                              |                                                            |
-+------------------------------------------------------------------------------+------------------------------------------------------------+
+*Available in legacy Enterprise Edition E10/E20*
+
++----------------------------------------------------------------------+------------------------------------------------------------+
+| Manage team settings, including group synchronization for teams.     | - System Config path: **User Management > System Roles**   |
+|                                                                      | - ``config.json setting``: N/A                             |
+|                                                                      | - Environment variable: N/A                                |
++----------------------------------------------------------------------+------------------------------------------------------------+
+| See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
+| for more details.                                                                                                                 |
++----------------------------------------------------------------------+------------------------------------------------------------+
