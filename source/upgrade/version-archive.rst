@@ -27,7 +27,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v7.1.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.1.2/mattermost-7.1.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.1.2/mattermost-7.1.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``36a099c9475bc373ab411b8f1fa352598847286dd1e101e51fd21521b20f11e5``
+  - SHA-256 Checksum: ``4058f1e09bb9c4c0bd37d1b06002354e59097bd8eb8339cccb606f632d871ca6``
   - GPG Signature: https://releases.mattermost.com/7.1.2/mattermost-7.1.2-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.0.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.1/mattermost-7.0.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.0.1/mattermost-7.0.1-linux-amd64.tar.gz``
@@ -308,7 +308,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v7.1.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-1-extended-support-release>`__ - `Download <https://releases.mattermost.com/7.1.2/mattermost-team-7.1.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.1.2/mattermost-team-7.1.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``2c540e54ea90a630bc0e07dcc95413c335b31423e69533757c0108268d26a80a``
+  - SHA-256 Checksum: ``3cbbd885a5299594a216ca3c1bc6baf1d176e69fb8d4838c90b74891accfdde7``
   - GPG Signature: https://releases.mattermost.com/7.1.2/mattermost-team-7.1.2-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.0.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-0-major-release>`__ - `Download <https://releases.mattermost.com/7.0.1/mattermost-team-7.0.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.0.1/mattermost-team-7.0.1-linux-amd64.tar.gz``
