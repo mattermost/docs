@@ -1,5 +1,4 @@
-Elasticsearch configuration settings
-====================================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,6 +25,8 @@ Elasticsearch configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ in our product documentation. 
 
 Configure the Elasticsearch environment in which Mattermost is deployed by going to **System Console > Environment > Elasticsearch**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
@@ -34,7 +35,7 @@ Configure the Elasticsearch environment in which Mattermost is deployed by going
     :start-after: :nosearch:
 
 Enable Elasticsearch indexing
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -55,7 +56,7 @@ Enable Elasticsearch indexing
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Server connection address
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -68,7 +69,7 @@ Server connection address
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Skip TLS verification
-----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -84,7 +85,7 @@ Skip TLS verification
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Server username
----------------
+~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -98,7 +99,7 @@ Server username
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Server password
----------------
+~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -112,7 +113,7 @@ Server password
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Enable cluster sniffing
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -130,7 +131,7 @@ Enable cluster sniffing
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Bulk indexing
--------------
+~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -146,7 +147,7 @@ Bulk indexing
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Purge indexes
--------------
+~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -162,7 +163,7 @@ Purge indexes
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 Enable Elasticsearch for search queries
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -181,7 +182,7 @@ Enable Elasticsearch for search queries
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Enable Elasticsearch for autocomplete queries
----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -190,8 +191,8 @@ Enable Elasticsearch for autocomplete queries
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch for all             | - System Config path: **Environment > Elasticsearch**                              |
 | autocompletion queries on users and channels using the        | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
-| latest index.                                                 | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            | 
-|                                                               | 
+| latest index.                                                 | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            |
+|                                                               |                                                                                    |
 | - **true**: Elasticsearch will be used for all autocompletion |                                                                                    |
 |   queries on users and channels using the latest index.       |                                                                                    |
 | - **false**: **(Default)** Database autocomplete is used.     |                                                                                    |
@@ -200,7 +201,7 @@ Enable Elasticsearch for autocomplete queries
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 Post index replicas
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -216,7 +217,7 @@ Post index replicas
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Post index shards
------------------
+~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -232,7 +233,7 @@ Post index shards
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Channel index replicas
------------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -245,7 +246,7 @@ Channel index replicas
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Channel index shards
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -258,7 +259,7 @@ Channel index shards
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 User index replicas
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -271,7 +272,7 @@ User index replicas
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 User index shards
------------------
+~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -284,7 +285,7 @@ User index shards
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Aggregate search indexes
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -302,7 +303,7 @@ Aggregate search indexes
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Post aggregator start time
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -318,7 +319,7 @@ Post aggregator start time
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Index prefix
-------------
+~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -334,7 +335,7 @@ Index prefix
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Live indexing batch size
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -351,7 +352,7 @@ Live indexing batch size
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 Bulk indexing time window
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -372,7 +373,7 @@ Bulk indexing time window
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Request timeout
----------------
+~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -385,7 +386,7 @@ Request timeout
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 Trace
------
+~~~~~
 
 |enterprise| |self-hosted|
 

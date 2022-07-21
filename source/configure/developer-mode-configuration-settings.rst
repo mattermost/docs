@@ -1,5 +1,4 @@
-Developer mode configuration settings
-=====================================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ Developer mode configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 Configure developer mode by going to **System Console > Environment > Developer**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 Enable testing commands
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -49,7 +50,7 @@ Enable testing commands
 +-----------------------------------------------+--------------------------------------------------------------------------+
 
 Enable developer mode
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -67,7 +68,7 @@ Enable developer mode
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 Enable client performance debugging
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -87,7 +88,7 @@ Enable client performance debugging
 +-----------------------------------------------+-----------------------------------------------------------------------------+
 
 Allow untrusted internal connections
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 

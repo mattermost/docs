@@ -18,6 +18,11 @@ Get started
 
     Optimize your workspace </configure/optimize-your-workspace>
     Mattermost configuration settings </configure/configuration-settings>
+    About </configure/self-hosted-account-settings>
+    Billing & account </configure/cloud-billing-account-settings>
+    Reporting configuration settings </configure/reporting-configuration-settings>
+    User Management configuration settings </configure/user-management-configuration-settings>
+    Environment configuration settings </configure/environment-configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Environment variables </configure/environment-variables>
     Provisioning workflows </onboard/user-provisioning-workflows>

@@ -1,5 +1,4 @@
-SMTP configuration settings
-===========================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ SMTP configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 View statistics for your overall deployment and specific teams as well as access server logs by going to **System Console > Reporting**. 
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 SMTP server
-------------
+~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -45,7 +46,7 @@ SMTP server
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
 SMTP server port
-----------------
+~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -58,7 +59,7 @@ SMTP server port
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
 Enable SMTP authentication
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -74,7 +75,7 @@ Enable SMTP authentication
 +-----------------------------------------------------------------+---------------------------------------------------------------------------+
 
 SMTP server username
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -87,7 +88,7 @@ SMTP server username
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
 SMTP server password
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -99,8 +100,8 @@ SMTP server password
 | String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPPASSWORD``     |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
-Connection security
--------------------
+SMTP connection security
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -118,7 +119,7 @@ Connection security
 +-----------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Skip server certificate verification
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -134,7 +135,7 @@ Skip server certificate verification
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Enable security alerts
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -152,7 +153,7 @@ Enable security alerts
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 SMTP server timeout
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 

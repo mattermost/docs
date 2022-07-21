@@ -1,5 +1,4 @@
-Logging configuration settings
-==============================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ Logging configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 Configure logging by going to **System Console > Environment > Logging**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 Output logs to console
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -52,7 +53,7 @@ Output logs to console
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 Console log level
------------------
+~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -72,7 +73,7 @@ Console log level
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 Output console logs as JSON
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -90,7 +91,7 @@ Output console logs as JSON
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 Output logs to file
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -113,7 +114,7 @@ Output logs to file
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 File log level
---------------
+~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -132,7 +133,7 @@ File log level
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 Output file logs as JSON
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -150,7 +151,7 @@ Output file logs as JSON
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 File log directory
-------------------
+~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -166,7 +167,7 @@ File log directory
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 Enable webhook debugging
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -185,7 +186,7 @@ Enable webhook debugging
 +-----------------------------------------------+------------------------------------------------------------------------------+
 
 Enable diagnostics and error reporting
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -200,7 +201,7 @@ Enable diagnostics and error reporting
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 Output logs to multiple targets
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 

@@ -1,5 +1,4 @@
-Rate limiting configuration settings
-=====================================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ Rate limiting configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 Rate limiting prevents your Mattermost server from being overloaded with too many requests, and decreases the risk and impact of third-party applications or malicious attacks on your server. Configure rate limiting settings by going to **System Console > Environment > Rate Limiting**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 Enable rate limiting
----------------------
+~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -49,7 +50,7 @@ Enable rate limiting
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Maximum queries per second
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -63,7 +64,7 @@ Maximum queries per second
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Maximum burst size
-------------------
+~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -78,7 +79,7 @@ Maximum burst size
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Memory store size
------------------
+~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -94,7 +95,7 @@ Memory store size
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Vary rate limit by remote address
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -110,7 +111,7 @@ Vary rate limit by remote address
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Vary rate limit by user
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -128,7 +129,7 @@ Vary rate limit by user
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Vary rate limit by HTTP header
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 

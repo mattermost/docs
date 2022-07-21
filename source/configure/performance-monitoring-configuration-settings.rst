@@ -1,5 +1,4 @@
-Performance monitoring configuration settings
-=============================================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ Performance monitoring configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 Configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 Enable performance monitoring
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -50,15 +51,15 @@ Enable performance monitoring
 | to learn more.                                                                                                      |
 +---------------------------------------------------------------+-----------------------------------------------------+
 
-Listen address
---------------
+Listen address for performance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
-| The address the Mattermost server will listen on to expose    | - System Config path: **Environment > Performance Monitoring**          |
+| The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**          |
 | performance metrics, when enabled.                            | - ``config.json setting``: ``".MetricsSettings.ListenAddress": 8067",`` |
 |                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
 | Numerical input. Default is **8067**.                         |                                                                         |

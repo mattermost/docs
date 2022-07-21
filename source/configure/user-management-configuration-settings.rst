@@ -31,6 +31,15 @@ Manage your Mattermost users including their access permissions, groups, teams, 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
+The following user management configuration settings are available:
+
+- `Users <#users>`__
+- `Groups <#groups>`__
+- `Teams <#teams>`__
+- `Channels <#channels>`__
+- `Permissions <#permissions>`__
+- `System roles <#system-roles>`__
+
 Users
 -----
 

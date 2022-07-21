@@ -1,5 +1,4 @@
-Database configuration settings
-===============================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ Database configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 Driver name
------------
+~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -46,7 +47,7 @@ Driver name
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Data source
------------
+~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -96,8 +97,8 @@ Data source
 | ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Maximum idle connections
-------------------------
+Maximum idle database connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -111,7 +112,7 @@ Maximum idle connections
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum open connections
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -125,7 +126,7 @@ Maximum open connections
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Query timeout
--------------
+~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -140,7 +141,7 @@ Query timeout
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum connection lifetime
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -157,7 +158,7 @@ Maximum connection lifetime
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Maximum connection idle timeout
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -172,7 +173,7 @@ Maximum connection idle timeout
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Minimum hashtag length
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -188,7 +189,7 @@ Minimum hashtag length
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 SQL statement logging
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -204,7 +205,7 @@ SQL statement logging
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Recycle database connections
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -223,7 +224,7 @@ Recycle database connections
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Disable database search
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -243,7 +244,7 @@ Disable database search
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Applied schema migrations
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -252,7 +253,7 @@ Applied schema migrations
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
 
 Read replicas
--------------
+~~~~~~~~~~~~~
 
 |enterprise| |professional| |self-hosted|
 
@@ -268,7 +269,7 @@ Read replicas
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 
 Search replicas
----------------
+~~~~~~~~~~~~~~~
 
 |enterprise| |professional| |self-hosted|
 
@@ -285,7 +286,7 @@ Search replicas
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Replica lag settings
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 

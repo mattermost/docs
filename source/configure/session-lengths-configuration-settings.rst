@@ -1,5 +1,4 @@
-Session lengths configuration settings
-=======================================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ Session lengths configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 User sessions are cleared when a user tries to log in, and sessions are cleared every 24 hours from the sessions database table. Configure session lengths by going to **System Console > Environment > Session Lengths**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 Extend session length with activity
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -54,7 +55,7 @@ Extend session length with activity
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 Session length for AD/LDAP and email
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -72,7 +73,7 @@ Session length for AD/LDAP and email
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Session length for mobile
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -89,7 +90,7 @@ Session length for mobile
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 Session length for SSO
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -113,7 +114,7 @@ Session length for SSO
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Session cache
--------------
+~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -126,7 +127,7 @@ Session cache
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Session idle timeout
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 

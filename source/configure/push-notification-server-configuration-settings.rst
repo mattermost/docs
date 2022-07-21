@@ -1,5 +1,4 @@
-Push notification server configuration settings
-===============================================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,13 +25,15 @@ Push notification server configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 Configure Mattermost to enable push notifications to Mattermost clients by going to **System Console > Environment > Push Notification Server**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
 Enable push notifications
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -46,8 +47,8 @@ Enable push notifications
 | - **false**: Mobile push notifications are disabled.            |                                                                                |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
-Push notification server
--------------------------
+Push notification server location
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
@@ -80,7 +81,7 @@ Push notification server
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Maximum notifications per channel
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |all-plans| |self-hosted|
 
