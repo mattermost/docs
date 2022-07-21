@@ -28,9 +28,6 @@ User management configuration settings
 
 Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature by going to **System Console > User Management**.
 
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
-
 The following user management configuration settings are available:
 
 - `Users <#users>`__
