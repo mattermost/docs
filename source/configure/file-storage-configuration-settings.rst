@@ -224,7 +224,7 @@ Amazon S3 endpoint
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Hostname of your S3-compatible instance.                      | - System Config path: **Environment > File Storage**                               |
+| The hostname of your S3-compatible instance.                  | - System Config path: **Environment > File Storage**                               |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3Endpoint: s3.amazonaws.com",`` |
 | A string with the hostname of the S3-compatible storage       | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ENDPOINT``                       |
 | instance. Defaults to **s3.amazonaws.com**.                   |                                                                                    |
@@ -256,7 +256,7 @@ Enable secure Amazon S3 connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Secure Amazon S3 connections can be enabled.                  | - System Config path: **Environment > File Storage**                     |
+| Secure Amazon S3 connections can be disabled.                 | - System Config path: **Environment > File Storage**                     |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSL: true",``        |
 | - **true**: **(Default)** Enables only secure Amazon          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSL``                  |
 |   S3 connections.                                             |                                                                          |
@@ -289,7 +289,7 @@ Enable server-side encryption for Amazon S3
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Server-side encryption for Amazon S3.                         | - System Config path: **Environment > File Storage**                     |
+| Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSE: false",``       |
 | - **true**: Encrypts files in Amazon S3 using server-side     | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSE``                  |
 |   encryption with Amazon S3-managed keys.                     |                                                                          |
@@ -317,7 +317,21 @@ Enable Amazon S3 debugging
 | Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Initial Font
+Amazon S3 request timeout
+-------------------------
+
+|all-plans| |self-hosted|
+
+*Not available in legacy Enterprise Edition E10/E20*
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Configure a timeout, in milliseconds, for requests to Amazon  | - System Config path: N/A                                                                 |
+| S3.                                                           | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000",`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``            |
+| Numerical input. Default is 30000 milliseconds (30 seconds).  |                                                                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+
+Initial font
 -------------
 
 |all-plans| |self-hosted|
