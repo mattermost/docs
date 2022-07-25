@@ -2465,7 +2465,7 @@ mmctl export job list
 
 **Description**
 
-List export jobs. Export files contain the Job ID as the file name.
+List export jobs. Export files include the Job ID in the file name.
 
 **Format**
 
@@ -2546,7 +2546,7 @@ mmctl export list
 
 **Description**
 
-List export files. Export files contain the Job ID as the file name.
+List export files. Export files include the Job ID in the file name.
 
 **Format**
 
