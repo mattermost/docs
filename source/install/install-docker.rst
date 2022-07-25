@@ -15,6 +15,11 @@ Install Mattermost via Docker
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+.. raw:: html
+  :file: ../_static/badges/default.html
+
+.. include:: ../_static/badges/default.rst
+
 Prerequisites
 -------------
 

@@ -1840,3 +1840,8 @@ linkcheck_ignore = [
 linkcheck_timeout = 5
 linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
+
+# Variables 
+rst_epilog = """
+.. |mm_badge_version| replace:: 6.5
+"""
