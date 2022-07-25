@@ -40,14 +40,14 @@ Requirements
 Server
 ^^^^^^
 
-- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (i.e. microphone, screen). See the `Config TLS </install/config-tls-mattermost.html>`_ section for more info.
-- Open the UDP port configured as ``RTC Server Port`` (default is 8443, incoming direction). This is necessary to allow calls related traffic (i.e. audio, video).
+- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the `config TLS </install/config-tls-mattermost.html>`_ section for more info.
+- Open the UDP port configured as ``RTC Server Port`` (default is 8443, incoming direction). This is necessary to allow calls related traffic (e.g., audio, video).
 - Open the UDP port used by the configured STUN server (default is 3478, outgoing direction). By default the plugin will attempt to identify the instance's public IP address. To do this the STUN protocol is used. This requirement does not apply when manually setting an IP/hostname through the ``ICE Host Override`` config option.
 
 Client
 ^^^^^^
 - Clients need to be able to connect (send and receive data) to the instance hosting the calls through the UDP port configured as ``RTC Server Port``. If this is not possible a TURN server should be used to achieve connectivity.
-- Depending on the platform or operating system, clients may need to grant additional permissions to the application (i.e. browser, desktop app) to  allow them to capture audio inputs or share the screen.
+- Depending on the platform or operating system, clients may need to grant additional permissions to the application (e.g., browser, desktop app) to  allow them to capture audio inputs or share the screen.
 
 Limitations
 -----------
