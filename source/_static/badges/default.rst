@@ -1,8 +1,8 @@
 .. raw:: html
 
-    <div class="mm-badge">
+  <div class="mm-badge">
 
-Version |mm_badge_version|
+Version |mm_badge_version|_
 
 |plans-img| Available on `all plans <https://mattermost.com/>`__
 
@@ -14,4 +14,4 @@ Version |mm_badge_version|
 
 .. raw:: html
 
-   </div>
+  </div>

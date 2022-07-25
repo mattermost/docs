@@ -1844,4 +1844,5 @@ linkcheck_anchors = False
 # Variables 
 rst_epilog = """
 .. |mm_badge_version| replace:: 6.5
+.. _mm_badge_version: https://mattermost.com/
 """
