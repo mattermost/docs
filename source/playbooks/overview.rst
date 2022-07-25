@@ -54,7 +54,7 @@ Access runs
 
 To access runs, select the product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
 
-To find all playbook runs, open **Product menu > Playbooks**, and then select any playbook name. Next, select **Runs** from the navigation bar, then choose a run to view its overview. Select **Go to channel** to open the run’s channel.
+To find all runs for a specific playbook, open **Product menu > Playbooks**, and then select any playbook name from the list on the left-hand side. The runs associated with the selected playbook are listed on the overview page. Select a run to access the run's details page.
 
 View run details
 ~~~~~~~~~~~~~~~~
