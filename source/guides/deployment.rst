@@ -29,12 +29,12 @@ When you're ready to install Mattermost server for production use, you have four
 
 .. tabs::
 
-    .. tab:: Ubuntu
+    .. tab:: Ubuntu/Debian
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
         :start-after: :nosearch:
         
-    .. tab:: Tar
+    .. tab:: Generic Linux (Tarball)
 
       .. include:: ../install/common-prod-deploy-tar.rst
         :start-after: :nosearch: 
