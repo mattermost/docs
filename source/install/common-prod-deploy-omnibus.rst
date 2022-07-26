@@ -3,8 +3,7 @@
 
 Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
 
-Minimum system requirements
----------------------------
+**Minimum system requirements**
 
 - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
 - Database: MySQL v8+ or PostgreSQL v12+
@@ -14,8 +13,7 @@ Minimum system requirements
   - Administrator Console port 8065, TLS, TCP Inbound
   - SMTP port 10025, TCP/UDP Outbound
 
-Deploy Omnibus
---------------
+**Deploy Omnibus**
 
 1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
