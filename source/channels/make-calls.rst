@@ -52,8 +52,8 @@ Client
 Limitations
 -----------
 
-- In Mattermost Cloud, up to eight participants per channel can join a call. This is a temporary and evolving limitation during public beta.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants, across all calls in all channels on the server, is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**.
+- In Mattermost Cloud, up to forty participants per channel can join a call. This is a temporary and evolving limitation during public beta.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There is no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the performance section below.
 
 Configuration
 -------------
