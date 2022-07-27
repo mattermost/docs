@@ -1,5 +1,5 @@
-Manage custom groups
-====================
+Manage custom groups (beta)
+===========================
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -23,17 +23,19 @@ Manage custom groups
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Custom Groups (Beta) enables Mattermost users to create and manage custom user groups in Mattermost Channels. A custom group is a group of up to 30 members in a team or a workspace who often need to be notified together as a group. 
+*Not available in legacy Enterprise Edition E10/E20*
 
-When you mention a custom group, you’ll notify everyone in the group without having to mention members individually. You can mention a group's unique name the same way you @mention another Mattermost member. See the `Mention People in Messages <https://docs.mattermost.com/channels/mention-people.html>`__ documentation for details.
+Custom Groups (Beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 30 users at a time rather than notifing users individually. 
 
-Custom groups reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
+For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
-.. note:: 
+Once a custom user group has been created, you can mention that group the same way you @mention another Mattermost member. See the `Mention People in Messages <https://docs.mattermost.com/channels/mention-people.html>`__ documentation for details.
+
+.. note::
   
-  - Custom Groups functionality is available with Mattermost Professional or Mattermost Enterprise. Legacy Mattermost E10/E20 licenses aren't supported.
-  - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups work the same as `LDAP-synced groups <https://docs.mattermost.com/channels/mention-people.html#groupname>`__ on mobile.
   - System Admins need to enable this feature. See our `Mattermost Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#custom-user-groups>`__ documentation for details. 
+  - From Mattermost v7.2, users require a system role to create and manage custom user groups in Mattermost Channels. 
+  - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as `LDAP-synced groups <https://docs.mattermost.com/channels/mention-people.html#groupname>`__.
 
 Create a custom group
 ---------------------

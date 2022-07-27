@@ -18,11 +18,20 @@ Join and leave channels
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-
 Join a channel
 --------------
 
-To join a public channel, select the **+** symbol at the top of the channel sidebar, then select **Browse Channels**. Search through the list of public channels you can join, then select **Join**.
+To join a public channel:
+
+1. Select the **+** symbol at the top of the channel sidebar, then select **Browse Channels**. 
+
+  .. image:: ../images/browse-channels.png
+    :alt: You can browse available channels to join from the + option at the top of the channel sidebar.
+
+2. Search through the list of public channels you can join, then select **Join**.
+
+  .. image:: ../images/join-channels.png
+    :alt: When browsing available channels, select the join option next to any channel to become a member.
 
 To join a private channel, you need to be added to the channel by a member of that channel.
 
@@ -36,4 +45,6 @@ Leave a channel
 
 Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. 
 
-Any team member who leaves a private channel must be re-added by another channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
+
+
+Any team member who leaves a private channel must be re-added by another channel member if they wish to rejoin. Team members won't receive mention notifications from channels of which they are not members.
