@@ -3660,8 +3660,7 @@ RTC Server Port
 
 |all-plans| |self-hosted|
 
-The UDP port the RTC server will listen on. All calls traffic will be served
-through this port. Default setting is 8443.
+The UDP port the RTC server will listen on. All calls traffic will be served through this port. The Default setting is 8443.
 
 Changing this setting requires a plugin restart to take effect.
 
@@ -3708,7 +3707,7 @@ A list of ICE servers (STUN/TURN) to be used by the service. Value should be val
 
 Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``
 
-**Example**:
+**Example**
 
 .. code-block:: json
 
@@ -3750,8 +3749,7 @@ Server Side TURN
 
 |all-plans| |self-hosted|
 
-**True**: The RTC server will use the configured TURN candidates for server
-initiated connections.
+**True**: The RTC server will use the configured TURN candidates for server-initiated connections.
 
 **False**: TURN will be used only on the client-side.
 
