@@ -4285,22 +4285,18 @@ mmctl plugin marketplace install
 
 **Description**
 
-Install a plugin available on the Plugin Marketplace server.
+Install a plugin available on the Plugin Marketplace server. The latest version of the plugin will be installed.
 
 **Format**
 
 .. code-block:: sh
 
-   mmctl plugin marketplace install <id> [version] [flags]
+   mmctl plugin marketplace install <id> [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-   # you can specify both the plugin id and its version
-   $ mmctl plugin marketplace install jitsi 2.0.0
-
-   # if you don't specify a version, the latest version will be installed
    $ mmctl plugin marketplace install jitsi
 
 **Options**
