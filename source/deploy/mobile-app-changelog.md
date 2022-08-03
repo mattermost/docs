@@ -19,11 +19,11 @@ Latest Mattermost Mobile Apps releases:
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Improvements
- - Calls: implemented WebSocket reconnection support.
+ - Calls: Implemented WebSocket reconnection support.
 
 ### Bug Fixes
  - Calls: Fixed a crash on "cannot replaceTrack after peer is destroyed" error.
- - Fixed sharing of text alongside an image on Android.
+ - Fixed an issue with sharing of text alongside an image on Android.
 
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
