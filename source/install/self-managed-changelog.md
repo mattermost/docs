@@ -13,7 +13,7 @@ Latest Mattermost Releases:
 
 ## Release v7.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v7.2.0 release day: 2022-08-16**
+**v7.2.0 release day: 2022-08-16**
 
 ### Important Upgrade Notes
  - Several schema changes are made which imposes additional database constraints to make the data more strict. Here are the times taken:
@@ -50,13 +50,13 @@ Latest Mattermost Releases:
 
    - All the commands were tested on a 8 core, 16GB RAM machine.
    
- - V7.2 Boards breaking changes https://community.mattermost.com/private-core/pl/bfuu14jt83n9uescx4969isrhr 
+ - V7.2 Boards breaking changes https://community.mattermost.com/private-core/pl/bfuu14jt83n9uescx4969isrhr ?
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
 ### Highlights
 
-#### Added a pricing modal + Upgrade button for self-managed.
+#### Pricing modal + Upgrade button for self-managed
  - 
 
 #### Audit Log V2
