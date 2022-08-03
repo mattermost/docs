@@ -10,7 +10,7 @@ Create a playbook
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -77,7 +77,7 @@ Keywords
 When you use the **Keywords** action any team member who has access to the playbook and who uses one of the listed keywords will see a message like this:
 
 .. image:: ../images/Playbook-keyword-monitoring.png
-   :alt: Keyword notification.
+   :alt: Set up keyword triggers to run playbooks when specified keywords are detected in Channel posts.
 
 If you find your keywords result in too many false positives, consider refining your list and also consider that URLs used by run members may also contain monitored keywords.
 

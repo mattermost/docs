@@ -10,7 +10,7 @@ User satisfaction surveys
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -60,6 +60,7 @@ How will I be notified when a survey is scheduled?
 System Admins will receive an email notification and in-product Direct Message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
 .. image:: ../images/nps-admin.png
+   :alt: When user satisfaction surveys are enabled in the System Console, Mattermost sends out user satisfaction surveys following every server upgrade. System Admins are notified about upcoming surveys by email notification and through an in-product message from a system bot.
 
 Survey Data
 -----------
@@ -72,6 +73,7 @@ Once the survey is triggered on the server, all users will receive an in-product
 Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their experience. Selecting a score and providing feedback are optional, and the survey can be ignored without interrupting usage of Mattermost.
 
 .. image:: ../images/nps-survey.png
+   :alt: Once Mattermost sends out a user satisfaction survey, all users receive an in-product message from a system bot the next time they log in or refresh Mattermost. The in-product message asks users to rate how likely they'd recommend Mattermost.
 
 What data is collected?
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -10,7 +10,7 @@ Search for messages
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -18,7 +18,12 @@ Search for messages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
+.. |product-list| image:: ../images/products_E82F.svg
+  :height: 24px
+  :width: 24px
+  :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
+
+Use the Mattermost search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
 
 .. image:: ../images/ui_search.png
    :alt: Use Search to find messages, replies, and the contents of files shared across channels.
@@ -174,7 +179,7 @@ Searching Chinese, Korean, and Japanese
 Differences between PostgreSQL and MySQL search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Product menu > About Mattermost** to see which database you’re using.
+By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
 
 For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list.
 
@@ -183,8 +188,10 @@ Other database-specific differences include:
 PostgreSQL:
 
 - Email addresses don't return results.
+- URLs don’t return results.
 - Hashtags or recent mentions of usernames containing a dash don't return results.
 - Terms containing a dash return incorrect results since dashes are ignored in the search engine.
+- From Mattermost v7.1, search results respect the ``default_text_search_config`` value instead of being hardcoded to English. We recommend that Mattermost system admins review this value to ensure it's set correctly.
 
 MySQL:
 

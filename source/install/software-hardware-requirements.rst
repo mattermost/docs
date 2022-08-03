@@ -26,7 +26,7 @@ Deployment overview
 Please see the `Mattermost Deployment Overview <https://docs.mattermost.com/deploy/deployment-overview.html>`__ documentation for a summary of software systems whose requirements are described in this document.
 
 .. image:: ../images/network_diagram.png
-   :alt: Mattermost Network Diagram
+   :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
 
 Software requirements
 ---------------------
@@ -59,7 +59,7 @@ PC web
     "Safari", "v14.1+", "v14.1+"
     "Edge", "v44+", "v44+"
 
-`*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
+`*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
 Mobile apps
 ^^^^^^^^^^^
@@ -102,7 +102,7 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database software
 ^^^^^^^^^^^^^^^^^
 
-For Mattermost v6.0:
+For Mattermost v6.0 and later:
 
 -  MySQL 5.7.12, 8.0.12+ (see note below on MySQL 8 support)
 -  PostgreSQL 10.0+
@@ -128,10 +128,7 @@ Search limitations on PostgreSQL:
 Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
-
-From Mattermost v6.4:
-
-The new migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
+- From Mattermost v6.4, the new migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
 
 **MySQL 8 Support**:
 
@@ -141,7 +138,6 @@ In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_nativ
 
    [mysqld]
    default-authentication-plugin=mysql_native_password
-
 
 In MySQL 8, the default collation changed to ``utf8mb4_0900_ai_ci`` (https://dev.mysql.com/doc/mysqld-version-reference/en/optvar-changes-8-0.html). Therefore, if you update your MySQL installation to version 8, you'll need to convert your database tables to use the new default collation:
 
@@ -153,6 +149,8 @@ If this change isn't made, tables in the database may end up having different co
 
 In MySQL versions 8.0.0 - 8.0.11 ``ADMIN`` is a `reserved keyword <https://dev.mysql.com/doc/refman/8.0/en/keywords.html>`_, which is why our requirement for MySQL is version 8.0.12.
 
+MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
+
 Hardware requirements
 ---------------------
 
@@ -161,6 +159,8 @@ Usage of CPU, RAM, and storage space can vary significantly based on user behavi
 Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size>`__. Changing this number may change memory requirements.
 
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
+
+Mattermost supports any 64-bit x86 processor architecture.
 
 Hardware requirements for team deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

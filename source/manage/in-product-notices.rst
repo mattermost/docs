@@ -10,7 +10,7 @@ In-product notices
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -29,7 +29,8 @@ Administrator notices
 Administrator notices inform System Admins when a new server version is available, when external dependencies are being deprecated, or when server upgrades are recommended due to ending support life cycles. System Admins may also receive notices about recommended server configuration options to optimize the user experience of their deployment.
 
 .. image:: ../images/notices_admin.png
-
+   :alt: An example of an in-product administrator notice announcing that a new server version of Mattermost is available. Admin notices also announce when external dependencies are being deprecated, or when server upgrades or optimizations are recommended.
+   
 Administrator notices can be disabled in the **System Console > Notices** page.
 
 End user notices
@@ -38,6 +39,7 @@ End user notices
 End user notices are used to inform users and Admins of new feature enhancements and when new desktop versions are available. They can be disabled in **System Console > Notices**.
 
 .. image:: ../images/notices.png
+   :alt: An example of an end user in-product notice announcing that a new Mattermost Desktop App version is available. End user notices announce when new features and versions are available, and can be disabled.
 
 Frequently asked questions (FAQs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,8 +70,10 @@ Admin Advisor notices are designed to provide guidance and assist in choosing fe
 When these notices are triggered, System Admins receive a bot message notification and, for larger instances, a dismissable daily banner with quick access to contact support. The notices are triggered based on usage such as the number of registered users, posts, or channels in your deployment reaching a predefined threshold.
 
 .. image:: ../images/mattermost_admin_advisor_banner.png
+   :alt: An example of an Admin Advisor notice. Admin Advisor notices provide guidance as your deployment scales in size. Admin Advisor notices are disabled from Mattermost v5.35.
 
 .. image:: ../images/mattermost_admin_advisor_bot.png
+   :alt: An example of an Admin Advisor notice that includes an option for System Admins to contact Mattermost Support. Admin Advisor notices are disabled from Mattermost v5.35.
 
 System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
 

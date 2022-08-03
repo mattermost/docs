@@ -15,7 +15,7 @@ mmctl command line tool
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -76,6 +76,7 @@ mmctl usage notes
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
   - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
 - Parameters in CLI commands are order-specific.
+- You can use the ``--local`` flag with mmctl commands to run them without authentication by allowing communicating with the server through a Unix socket. See the `local mode <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#local-mode>`__ documentation for activation and usage details.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
@@ -4284,22 +4285,18 @@ mmctl plugin marketplace install
 
 **Description**
 
-Install a plugin available on the Plugin Marketplace server.
+Install a plugin available on the Plugin Marketplace server. The latest version of the plugin will be installed.
 
 **Format**
 
 .. code-block:: sh
 
-   mmctl plugin marketplace install <id> [version] [flags]
+   mmctl plugin marketplace install <id> [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-   # you can specify both the plugin id and its version
-   $ mmctl plugin marketplace install jitsi 2.0.0
-
-   # if you don't specify a version, the latest version will be installed
    $ mmctl plugin marketplace install jitsi
 
 **Options**

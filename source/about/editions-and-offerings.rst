@@ -51,7 +51,7 @@ Mattermost Starter
 Mattermost Starter is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
 * *Self-hosted deployments* - **Mattermost Starter** is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
-* *Cloud deployments* - **Mattermost Starter** is also available in Cloud as **Cloud Starter**. It provides the functionality of Mattermost Starter to unlimited users with a flat-rate $149/year to cover hosting cost. Start an `online trial <https://mattermost.com/pricing/starter-plan/>`_ of cloud features before purchasing.
+* *Cloud deployments* - **Mattermost Starter** is also available in Cloud. It provides the functionality of Mattermost Starter to unlimited users for free, with a `few workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html>`_. Get started today via https://mattermost.com/sign-up/.
 
 Features include:
 
@@ -78,7 +78,7 @@ Mattermost Professional
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated developer workflows across multiple cross-functional teams to deliver mission-critical software.
 
 * *Self-hosted deployments* - **Mattermost Professional** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see `deployment guides <https://docs.mattermost.com/guides/deployment.html#install-guides>`__), who purchase the appropriate subscription license key either through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__, through a `channel reseller <https://mattermost.com/partners/#resellers>`__ or by contacting `the Mattermost sales organization <https://mattermost.com/contact-sales/>`__, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/.
-* *Cloud deployments* - For our cloud community, the Mattermost Professional feature set is available through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__.
+* *Cloud deployments* - For our cloud community, the Mattermost Professional feature set is available through `online purchase <https://docs.mattermost.com/about/self-hosted-subscriptions.html>`__. Some `workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html>`_ may apply.
 
 This offering includes all the features of Mattermost Starter, plus: 
 
@@ -91,7 +91,6 @@ This offering includes all the features of Mattermost Starter, plus:
 - `Read-only announcement channels <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20>`__.
 - `System-wide announcement banners <https://docs.mattermost.com/manage/announcement-banner.html>`__.
 - O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
-- 99.9% uptime SLA guarantee (Cloud only).
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing>`__.
@@ -121,6 +120,7 @@ This offering includes all the features of Mattermost Professional, plus:
 - `Horizontal scaling through cluster-based deployment <https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment>`__.
 - `Advanced performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
+- 99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
 Limits
 ------
@@ -135,14 +135,14 @@ Mattermost introduced a new pricing and packaging structure on October 13, 2021.
 Mattermost Enterprise Edition E10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. Features include: Active Directory/LDAP Single Sign-on; OAuth 2.0 authentication for team creation, account creation, and user sign-in; encrypted push notifications with service level agreements (SLAs) via HPNS; advanced access control policy; next business day support via online ticketing system; scale to handle hundreds of users per team.
+Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. Features include: Active Directory/LDAP Single Sign-on; OAuth 2.0 authentication for team creation, account creation, and user login; encrypted push notifications with service level agreements (SLAs) via HPNS; advanced access control policy; next business day support via online ticketing system; scale to handle hundreds of users per team.
 
 Mattermost Enterprise Edition E20
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional and High Availability and compliance features are offered in Mattermost Enterprise.
 
-Features include: Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user sign-in; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
+Features include: Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user login; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
 
 Product decisions
 -----------------

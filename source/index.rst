@@ -25,3 +25,4 @@ Mattermost product documentation
    Mattermost for developers <https://developers.mattermost.com/>
    Get help with Mattermost <guides/get-help>
    Community chat <guides/community-chat>
+   Mattermost Handbook <https://handbook.mattermost.com/>

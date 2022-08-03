@@ -10,7 +10,7 @@ Custom branding tools
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -21,6 +21,7 @@ Custom branding tools
 Use custom branding tools to present a Mattermost experience that's tailored to the branding of your organization.
 
 .. figure:: ../images/custom-branding-tools.png
+   :alt: Text and imagery on the Mattermost log in page can be customized to present a branded Mattermost experience for your organization.
 
 Enable custom branding
 ----------------------
@@ -29,7 +30,7 @@ Enable custom branding
 2. Choose a **Site Name**, upload a **Custom Brand Image**, then enter **Custom Brand Text**.
 3. Choose **Save**.
 
-Users should see your new custom branding on the login page of your Mattermost server the next time they sign in.
+Users should see your new custom branding on the login page of your Mattermost server the next time they log in.
 
 From version 5.16, you can remove the custom brand image by selecting the **X** in the top right corner of the image. To apply the change, choose **Save**. Note that the value must be set to **true** in order to perform this step.
 

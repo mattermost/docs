@@ -1,9 +1,453 @@
 # Mattermost legacy self-hosted changelog
 
-[Mattermost](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. This changelog summarizes updates for all self-hosted versions of Mattermost prior to v5.37.
+[Mattermost](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. This changelog summarizes updates for all self-hosted versions of Mattermost prior to v6.0.
 
 ## Latest Mattermost releases
 See [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release, and see the [Mattermost Self-Hosted Changelog](self-hosted-changelog) for details on the latest self-hosted versions of Mattermost including the most recent [Extended Support Release (ESR)](https://docs.mattermost.com/upgrade/extended-support-release.html).
+
+## Release v5.39 - [Quality Release](https://docs.mattermost.com/upgrade/release-definitions.html#quality-release)
+
+- **v5.39.3, released 2021-12-17**
+  - Mattermost v5.39.3 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a general performance fix for loading the web application and typing.
+  - Improved performance while typing by moving some autocomplete layout calculations.
+  - Improved performance by reducing DOM usage during render.
+  - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+  - Fixed an issue where v5.39 reported an incorrect mmctl version.
+- **v5.39.2, released 2021-11-15**
+  - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **v5.39.1, released 2021-10-27**
+  - Mattermost v5.39.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with fetching threads upon websocket reconnection.
+  - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
+- **5.39.0, released 2021-09-16**
+  - Original 5.39 release
+
+Mattermost v5.39.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated in-product help documentation to fix broken links and to correct outdated information.
+ - Italian, Polish, Korean, and Ukrainian languages have been downgraded to alpha. Korean and Ukrainian are [no longer actively maintained](https://handbook.mattermost.com/contributors/join-us/localization#translation-quality).
+
+### Bug Fixes
+ - Fixed a possible panic during license validation.
+ - Fixed an issue with loading of emojis in message attachment titles.
+ - Fixed an issue where the timestamp in deleted messages was not correctly positioned.
+ - Changed the whitespace in the refresh bar so that it always displays to the user.
+ - Fixed an issue where email invites were not sent when clicking the **Next** button during onboarding.
+ - Fixed an issue where clicking "View Message" in an email did not navigate to the post or remember the user's preference to "View in App".
+ - Fixed an issue with the detection of certain collapsible images.
+ - Prevented users from having the unreads filter enabled when the button to toggle it was not shown.
+ - Fixed an issue where Mattermost's shortcut key CTRL+SHIFT+A to open the **Account Settings** clashed with Chrome's CTRL+SHIFT+A that opens a "Search Tabs" pop-up.
+ - Fixed a crash when markdown images were present on the message attachments and embedded bindings.
+ - Fixed an issue that kept message attachment fields unaligned.
+ - Fixed an issue with right-hand side ``SuggestionList`` positioning.
+ - Fixed an issue where Mattermost panicked on ``docx`` files uploaded with ``.doc`` extension.
+ - Fixed a bug with the auto-responder where it would incorrectly calculate the time interval and never send the message.
+ - Fixed a decoding problem for OpenID integration. The requests are now decoded against ``RawURLEncoding``.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+   - Fixed an issue where a gap appeared between the first and second consecutive message from the same user.
+   - Fixed an issue where the thread unread state would not update on websocket reconnect.
+   - Fixed an issue where the main channel view root post timestamp added a horizontal scrollbar on hover.
+   -  The ``ThreadAutoFollow`` setting must now be enabled in order to enable ``CollapsedThreads``.
+   - Fixed issue with users re-following a previously unfollowed thread when other users replied to the thread.
+   - Clicking code blocks and in-line code no longer open the associated thread.
+   - Fixed an issue where two scrollbars appeared in the Threads view on high resolution monitors using zoom.
+   - Fixed an issue where the quick channel switcher mention counts did not follow collapsed threads logic.
+   - Fixed an issue where threads started by webhooks/integrations were being auto-followed by the webhook/integration creator when collapsed threads was enabled.
+   - Fixed an issue where re-connecting to the websocket caused thread mentions to be cleared in the user interface with collapsed reply threads enabled.
+   - Fixed an issue where the **New messages** line and date separators overlapped text in a thread.
+
+### Go Version
+ - v5.39 is built with Go ``1.16.7``.
+
+### Upcoming Deprecations in Mattermost v6.0
+
+The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/13. This list is subject to change prior to the release.
+
+1. [Legacy Command Line Tools](https://docs.mattermost.com/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+
+2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+
+3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+
+4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
+
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for Mattermost Desktop App issues on Windows 7.
+
+6. [DisableLegacyMFAEndpoint](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+
+7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting. The config setting will be removed and the feature will be promoted to general availability.
+
+8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+
+   - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features)
+
+9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings).
+
+10. Changes to ``mattermost-server/model`` for naming consistency.
+
+### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - Experimental timezones and custom statuses can cause an increase in CPU usage and database connections for servers with an E20 license. A current workaround is to disable custom statuses or to disable experimental timezones.
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Pinned posts are no longer highlighted [MM-34870](https://mattermost.atlassian.net/browse/MM-34870).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [aaronrothschild](https://github.com/aaronrothschild), [adammorawski1](https://github.com/adammorawski1), [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [amirmoyousefi](https://github.com/amirmoyousefi), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [anurag6713](https://github.com/anurag6713), [arjitc](https://github.com/arjitc), [ArmanChand](https://github.com/ArmanChand), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [asimsedhain](https://github.com/asimsedhain), [aspleenic](https://github.com/aspleenic), [BenCookie95](https://github.com/BenCookie95), [BenLloydPearson](https://github.com/BenLloydPearson), [calebroseland](https://github.com/calebroseland), [chenilim](https://github.com/chenilim), [chikei](https://github.com/chikei), [chitramdasgupta](https://github.com/chitramdasgupta), [cobenash](https://github.com/cobenash), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cvockrodt](https://github.com/cvockrodt), [cwarnermm](https://github.com/cwarnermm), [dbpolito](https://github.com/dbpolito), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [DeviousLab](https://github.com/DeviousLab), [DjMagicFingers](https://github.com/DjMagicFingers), [Duaard](https://github.com/Duaard), [elyscape](https://github.com/elyscape), [emilyacook](https://github.com/emilyacook), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [engineereng](https://github.com/engineereng), [ewwollesen](https://github.com/ewwollesen), [fksu](https://github.com/fksu), [flynbit](https://github.com/flynbit), [Francois-D](https://github.com/Francois-D), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gozeloglu](https://github.com/gozeloglu), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haalcala](https://github.com/haalcala), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [ivanaairenee](https://github.com/ivanaairenee), [jadrales](https://github.com/jadrales), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [JtheBAB](https://github.com/JtheBAB), [jufab](https://github.com/jufab), [jupenur](https://github.com/jupenur), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [KobeBergmans](https://github.com/KobeBergmans), [koox00](https://github.com/koox00), [krutarththakkar](https://github.com/krutarththakkar), [kscheel](https://github.com/kscheel), [larkox](https://github.com/larkox), [LauSam09](https://github.com/LauSam09), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majidsajadi](https://github.com/majidsajadi), [maliur](https://github.com/maliur), [manojmalik20](https://github.com/manojmalik20), [marianunez](https://github.com/marianunez), [mattermod](https://github.com/mattermod), [matthewbirtch](https://github.com/matthewbirtch), [matthew.williams](https://translate.mattermost.com/user/matthew-w/), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mmskv](https://github.com/mmskv), [mrckndt](https://github.com/mrckndt), [Mshahidtaj](https://github.com/Mshahidtaj), [nat-gunner](https://github.com/nat-gunner), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [nikolaizah](https://github.com/nikolaizah), [Nog-Frog](https://github.com/Nog-Frog), [pablovelezvidal](https://github.com/pablovelezvidal), [Prassud](https://github.com/Prassud), [rbradleyhaas](https://github.com/rbradleyhaas), [redrru](https://github.com/redrru), [rodcorsi](https://github.com/rodcorsi), [roopakv](https://github.com/roopakv), [rrey](https://github.com/rrey), [Rutam21](https://github.com/Rutam21), [sakaitsu](https://translate.mattermost.com/user/sakaitsu/), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [sbishel](https://github.com/sbishel), [Shahzayb](https://github.com/Shahzayb), [Shaz-25](https://github.com/Shaz-25), [sibasankarnayak](https://github.com/sibasankarnayak), [sonereker](https://github.com/sonereker), [spirosoik](https://github.com/spirosoik), [srkgupta](https://github.com/srkgupta), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [talesmc](https://github.com/talesmc), [thePanz](https://github.com/thePanz), [tsabi](https://translate.mattermost.com/user/tsabi/), [VA2XJM](https://github.com/VA2XJM), [vadimasadchi](https://github.com/vadimasadchi), [vinod-demansol](https://github.com/vinod-demansol), [wget](https://github.com/wget), [WietseWind](https://github.com/WietseWind), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yedamao](https://github.com/yedamao), [YJSoft](https://github.com/YJSoft), [zefhemel](https://github.com/zefhemel), [Ziggiz](https://github.com/Ziggiz)
+
+## Release v5.38 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
+
+- **v5.38.4, released 2021-11-15**
+  - Mattermost v5.38.4 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **v5.38.3, released 2021-10-27**
+  - Mattermost v5.38.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
+- **v5.38.2, released 2021-08-26**
+  - Upgraded Go version to 1.16.7 to fix an application crash issue.
+  - Fixed an issue where mmctl ``config reload`` command was missing local-mode server-side implementation. [MM-38082](https://mattermost.atlassian.net/browse/MM-38082)
+- **v5.38.1, released 2021-08-18**
+  - Fixed an issue where Playbooks v1.16.0 could not be installed as a pre-packaged plugin [MM-37928](https://mattermost.atlassian.net/browse/MM-37928).
+- **v5.38.0, released 2021-08-16**
+  - Original 5.38.0 release
+
+Mattermost v5.38.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Deprecations
+ - The “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been removed in favor of the ``mmctl config reload`` command, which must be run to apply configuration changes after they are made on disk. This change improves configuration performance and robustness.
+
+### Important Upgrade Notes
+ - v5.38 adds fixes for some of the incorrect mention counts and unreads around threads and channels since the introduction of Collapsed Reply Threads (Beta). This fix is done through a SQL migration, and it may take several minutes to complete for large databases. The ``fixCRTChannelMembershipCounts`` fix takes 1 minute and 20 seconds for a database containing approximately 4 million channel memberships and about 130,000 channels. The ``fixCRTThreadCountsAndUnreads`` fix takes about 3 minutes and 30 seconds for a database containing 56367 threads, 124587 thread memberships, and 220801 channel memberships. These are on MySQL v5.6.51.
+ - Focalboard v0.8.2 (released with Mattermost v5.38.0) requires Mattermost v5.37+ due to the new database connection system.
+
+**IMPORTANT:** If you upgrade from a release earlier than v5.37, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Granular Data Retention Policies (Enterprise E20)
+ - A ``data_retention`` type job can now be run even if the global policy is disabled. The granular (i.e. team and channel-specific) policies will be executed when the data retention job is run. Please note there is a known issue where deleted posts get displayed in channels without new activity after the retention job is run.  This issue is tracked with [this ticket](https://mattermost.atlassian.net/browse/MM-36574).
+
+#### Enhanced User Onboarding Experience
+ - To help new users get started with Mattermost, new Getting Started steps have been added to the onboarding experience. These steps help users to complete their profile, name their teams, configure desktop notifications, and invite others to join their team. Additionally, once the onboarding is complete, users are provided with helpful tips to get started with channels, plugins, and more.
+
+#### Playbooks Updates
+ - ``Incident Collaboration`` was rebranded to ``Playbooks``. Also the channel right-hand sidebar is redesigned, our own playbooks are shared as templates, and more triggers and actions were added.
+
+#### Focalboard Updates
+ - Added created-by property and improved performance with shared database connections. Focalboard 0.8.2 requires Mattermost v5.37+ due to a new database connection system.
+
+### Improvements
+
+#### User Interface (UI)
+ - Upgraded German language back to an official language.
+ - Markdown formatting is now stripped from push notifications.
+ - Enabled the **Set Status** button if the custom status hasn't changed from currently set status.
+ - Improved default rendering of images inserted via the GIF picker.
+ - Small text changes were added to Direct and Group Message menus: **Mute channel** and **Edit Channel Header** now reads as **Mute Conversation** and **Edit Conversation Header**.
+
+#### Performance
+ - Improved performance of components that show reactions on posts.
+ - Improved performance of certain components when viewing non-Direct Message channels.
+ - Added minor improvements to performance of messages posted in the right-hand side.
+ - Improved typing performance in affected environments by reducing the frequency in which drafts are saved.
+
+#### Integrations
+ - Added icons to apps in the Marketplace.
+ - Apps can now add arbitrary markdown in between fields on forms.
+ - Added support for markdown in apps forms, interactive dialogs field descriptions, errors, and slash commands.
+ - Improved user and channel selector for app commands.
+ - Added support for ``react-intl`` and ``<Timestamp/>`` usage in plugins.
+ - Added plugin API methods for user access tokens and OAuth apps.
+
+#### Administration
+ - Added a new feature to archive and unarchive teams through **System Console** > **Teams**.
+
+### Bug Fixes
+ - Fixed an issue where the "Find channel" channel switcher text overflowed beyond the button for some languages.
+ - Fixed an issue where inter-plugin requests without a body didn't work.
+ - Fixed an issue with opening a dialog from an interactive message when returning an empty response.
+ - Fixed an issue where the **Add Members** modal was incorrectly themed on the Mattermost Dark Theme.
+ - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition.
+ - Fixed an issue where admin advisor notifications were accidentally re-enabled in a previous release.
+ - Fixed various bugs for the Collapsed Reply Threads (Beta) feature, including:
+   - Fixed an issue where an error occurred while following a thread with no replies.
+   - Fixed an issue where ``reply_count`` of 0 was always returned for GET single Post on ``/posts/<postid>`` API.
+   - Fixed an issue where following a single message returned a status 500.
+   - Fixed an issue where when replying in a thread after unfollowing it, the thread was not auto-followed again.
+   - Fixed an issue where when enabling Collapsed Reply Threads, channels that had no new activity were showing as unread.
+   - Fixed an issue with thread unreads when the feature was enabled by a user.
+   - Fixed an issue where self replies were marking threads as unread.
+   - Unread threads are now correctly displayed on app load for teams in the sidebar when Collapsed Reply Threads feature is enabled.
+   - Fixed an issue where "Thread" in the thread viewer was displayed vertically in some languages.
+   - Fixed an issue where opening global threads containing a root post markdown image crashed the app.
+   - Fixed an issue where the app crashed when switching to the Threads view after leaving a channel.
+   - Fixed an issue where replying to a thread from the global threads screen marked the channel as read.
+   - The **Mark all as unread** button is now no longer disabled for Collapsed Reply Threads.
+   - Fixed root posts not being shown as followed for the post creator after receiving the first reply that affected servers with Collapsed Reply Threads enabled and database read replicas configured.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``PluginSettings`` in ``config.json``:
+    - Added ``ChimeraOAuthProxyURL`` to allow specifying Chimera URL that can be used by plugins to connect with pre-created OAuth applications.
+ - The config setting ``EnableReliableWebSockets`` now defaults to ``true``.
+
+### API Changes
+ - Added ``CreateChannelSidebarCategory``, ``GetChannelSidebarCategories`` and ``UpdateChannelSidebarCategories`` to the Plugin API.
+ - Add a new Plugin API method that allows files to register dropdown menu actions.
+
+### Go Version
+ - v5.38 is built with Go ``1.16.0``.
+
+### Open Source Components
+ - Added ``classnames`` and ``react-window`` to https://github.com/mattermost/mattermost-webapp/.
+ - Added ``@react-native-community/datetimepicker``, ``array.prototype.flat``, and ``base-64`` to https://github.com/mattermost/mattermost-mobile/.
+
+### Upcoming Deprecations in Mattermost v6.0
+
+The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/15. This list is subject to change prior to the release.
+
+1. [Legacy Command Line Tools](https://docs.mattermost.com/manage/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+
+2. [Slack Import via the web app](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+
+3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+
+4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
+
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for Mattermost Desktop App issues on Windows 7.
+
+6. [DisableLegacyMFA](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+
+7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting.
+
+8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+
+   - [EnableLegacySidebar](https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/configure/configuration-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/configure/configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](https://docs.mattermost.com/configure/configuration-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](https://docs.mattermost.com/configure/configuration-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/configure/configuration-settings.html#experimental-sidebar-features)
+
+9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/configure/configuration-settings.html#deprecated-configuration-settings).
+
+10. Changes to ``mattermost-server/model`` for naming consistency.
+
+### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - The server version for v5.38.2 for Team Edition is reported as ``5.39.2``.
+ - Deleted posts get displayed in channels without new activity after the data retention job is run [MM-36574](https://mattermost.atlassian.net/browse/MM-36574).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
+ - Pinned posts are no longer highlighted.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [Adovenmuehle](https://github.com/Adovenmuehle), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [aileenpalafox](https://github.com/aileenpalafox), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [arjitc](https://github.com/arjitc), [arvinDarmawan](https://github.com/arvinDarmawan), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [aspleenic](https://github.com/aspleenic), [avinashlng1080](https://github.com/avinashlng1080), [bakurits](https://github.com/bakurits), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [chenilim](https://github.com/chenilim), [chikei](https://github.com/chikei), [cognvn](https://github.com/cognvn), [colorfusion](https://github.com/colorfusion), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [darkLord19](https://github.com/darkLord19), [deanwhillier](https://github.com/deanwhillier), [devinbinnie](https://github.com/devinbinnie), [ditsemto](https://github.com/ditsemto), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [engineereng](https://github.com/engineereng), [esethna](https://github.com/esethna), [evelikov](https://github.com/evelikov), [ewwollesen](https://github.com/ewwollesen), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gbonnefille](https://github.com/gbonnefille), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [hackercat3211](https://github.com/hackercat3211), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jprusch](https://github.com/jprusch), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [Konghuy](https://github.com/Konghuy), [koox00](https://github.com/koox00), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lordinkavu](https://github.com/lordinkavu), [lynn915](https://github.com/lynn915), [madhavhugar](https://github.com/madhavhugar), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majidsajadi](https://github.com/majidsajadi), [manojmalik20](https://github.com/manojmalik20), [marianunez](https://github.com/marianunez), [matthewbirtch](https://github.com/matthewbirtch), [matthew.williams](https://translate.mattermost.com/user/matthew-w/), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelgamble](https://github.com/michaelgamble), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mrckndt](https://github.com/mrckndt), [Mshahidtaj](https://github.com/Mshahidtaj), [N3rdP1um23](https://github.com/N3rdP1um23), [nat-gunner](https://github.com/nat-gunner), [natalie-hub](https://github.com/natalie-hub), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [nickboldt](https://github.com/nickboldt), [nickmisasi](https://github.com/nickmisasi), [nika-begiashvili](https://github.com/nika-begiashvili), [nikolaizah](https://github.com/nikolaizah), [ogi-m](https://github.com/ogi-m), [oh6hay](https://github.com/oh6hay), [pablovelezvidal](https://github.com/pablovelezvidal), [papanireal](https://github.com/papanireal), [petrmifek](https://github.com/petrmifek), [Pezhvak](https://github.com/Pezhvak), [robinmetral](https://github.com/robinmetral), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [sakaitsu](https://translate.mattermost.com/user/sakaitsu/), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [source-punk](https://github.com/source-punk), [stafot](https://github.com/stafot), [stevemudie](https://github.com/stevemudie), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [thePanz](https://github.com/thePanz), [thierrymarianne](https://github.com/thierrymarianne), [tronginc](https://github.com/tronginc), [tsabi](https://translate.mattermost.com/user/tsabi/), [VA2XJM](https://github.com/VA2XJM), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [xlanor](https://github.com/xlanor), [xuanvi26](https://github.com/xuanvi26), [yedamao](https://github.com/yedamao), [zefhemel](https://github.com/zefhemel)
+
+## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
+
+- **v5.37.9, released 2022-03-10**
+  - Mattermost v5.37.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **v5.37.8, released 2022-02-03**
+  - Mattermost v5.37.8 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - The default for ``ThreadAutoFollow`` has been changed to ``false``. This does not affect existing configurations where this value is already set to ``true`` [MM-41351](https://mattermost.atlassian.net/browse/MM-41351). 
+  - Prevented some instances where operations relating to Collapsed Reply Threads added load to the database server even when the ``ThreadAutoFollow`` and ``CollapsedThreads`` config settings were disabled [MM-41350](https://mattermost.atlassian.net/browse/MM-41350).
+  - ``.pages`` content search is no longer available due to technical difficulties.
+  - Fixed an issue where Actiance compliance jobs caused the Mattermost server process to crash with a panic [MM-41245](https://mattermost.atlassian.net/browse/MM-41245).
+- **v5.37.7, released 2022-01-21**
+  - Mattermost v5.37.7 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added support for channel moderation for Professional-licensed servers [MM-40824](https://mattermost.atlassian.net/browse/MM-40824). 
+- **v5.37.6, released 2021-12-17**
+  - Mattermost v5.37.6 contains medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a general performance fix for loading the web application and typing.
+  - Improved performance while typing by moving some autocomplete layout calculations.
+  - Improved performance by reducing DOM usage during render.
+  - Removed real-time updates of a couple of features to prevent overloading servers on user updates. The "This channel contains guests" indicator and the number of timezones displayed when notifying members of a group will only be updated on channel change now.
+- **v5.37.5, released 2021-11-30**
+  - Fixed an issue where OpenID redirect did not work when hosting Mattermost on a subdirectory [MM-40151](https://mattermost.atlassian.net/browse/MM-40151).
+  - Fixed an issue where v5.37 reported an incorrect mmctl version.
+- **v5.37.4, released 2021-11-15**
+  - Mattermost v5.37.4 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed a potential panic during the message export job [MM-39521](https://mattermost.atlassian.net/browse/MM-39521).
+  - Fixed some sentry crashes [MM-38565](https://mattermost.atlassian.net/browse/MM-38565), [MM-39208](https://mattermost.atlassian.net/browse/MM-39208).
+  - Updated in-product help documentation to fix broken links and to correct outdated information.
+- **v5.37.3, released 2021-10-27**
+  - Mattermost v5.37.3 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed a race condition in telemetry IDs on High Availability servers [MM-39343](https://mattermost.atlassian.net/browse/MM-39343).
+  - Fixed import process for imports with attachments [MM-38375](https://mattermost.atlassian.net/browse/MM-38375).
+  - Fixed an issue that kept message attachment fields unaligned [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
+- **v5.37.2, released 2021-08-26**
+  - Upgraded Go version to 1.16.7 to fix an application crash issue. 
+  - Fixed a server panic issue. [MM-37574](https://mattermost.atlassian.net/browse/MM-37574)
+  - Fixed an issue where saving or updating user statuses caused the logs to be filled with multiple key insertion errors. [MM-37202](https://mattermost.atlassian.net/browse/MM-37202).
+  - Fixed a panic in the ``getPrevTrialLicense`` API request when loading the System Console on Team Edition. [MM-37108](https://mattermost.atlassian.net/browse/MM-37108)
+  - Fixed an issue where screen readers read “user object” instead of reading the username or channel in the **Switch Channels** modal.
+- **v5.37.1, released 2021-08-04**
+  - Mattermost v5.37.1 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved typing performance in affected environments by reducing the frequency at which drafts are saved.
+  - Fixed an issue in clustering where a mutex would fail to be unlocked when a timeout happened. [MM-37246](https://mattermost.atlassian.net/browse/MM-37246)
+- **v5.37.0, released 2021-07-16**
+  - Original 5.37.0 release
+
+### Deprecations
+ - The ``platform`` binary and “--platform” flag have been removed. If you are using the “--platform” flag or are using the ``platform`` binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the mattermost binary.
+
+### Important Upgrade Notes
+ - [Collapsed Reply Threads](https://mattermost.com/blog/collapsed-reply-threads-beta/) are available as beta in Mattermost Server v5.37 and later. It’s expected that you may experience bugs as we stabilize the feature. In particular, please be aware of [the known issues documented here](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues).
+ - v5.37 adds support for emoji standard v13.0. If you have added a custom emoji in the past that uses one of the new system names, then that custom emoji is going to get overwritten by the system emoji. The workaround is to change the custom emoji name.
+ - Parts of Incident Collaboration are now available to all Mattermost editions. As part of this update, Incident Collaboration will require a minimum server version of v5.37. To learn more about what is available in each edition, visit [our pricing page](https://mattermost.com/pricing-self-managed/).
+ - Support for Mattermost Server v5.31 [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) will come to the end of its life cycle on October 15, 2021. Upgrading to Mattermost Server v5.37 or later is required.
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html), available in beta, are known to have a negative impact on server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling [``ThreadAutoFollow``](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) and [``CollapsedThreads``](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta) until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+
+**IMPORTANT:** If you upgrade from a release earlier than v5.36, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Highlights
+
+#### Collapsed Reply Threads (Beta)
+ - We're excited to give you early access to Collapsed Reply Threads (Beta). It can be enabled in the **System Console > Experimental > Collapsed Reply Threads (Beta)**. Learn more about the features and known issues in [our documentation](https://docs.mattermost.com/help/messaging/organizing-conversations.html).
+
+#### Emoji Enhancements with Skin Tone Selection
+ - Added support for emoji standard v13.0. Users now have the ability to choose various skin tones using the Mattermost emoji picker. Mobile support is included in v1.45 Mobile App release (July 16th).
+
+#### Improved Enterprise Trial Experience (Enterprise Editions E0, E10, E20)
+ - After a Self-Managed trial ends, admins can optionally contact sales or make a purchase in a single click.
+
+#### Focalboard: Grouped Table view, New properties, and More (Beta)
+ - Focalboard tables can now be grouped by a property, for example allowing you to quickly see tasks per epic or owner.
+
+#### Incident Collaboration Updates
+ - The update includes availability on all editions, playbook keyword monitoring, retrospective report, and playbook dashboard.
+
+#### English-Australian Language Support
+ - Mattermost is now available in English-Australian.
+
+### Improvements
+
+#### User Interface (UI)
+ - In the at-mention autocomplete, the user’s nickname is no longer shown when (you) is present.
+ - Updated the help text on the **Add Users** channel modal.
+ - Added the ability to upload ``.jpeg`` files on Linux. Uploading ``.jpg`` files was already supported.
+ - The **Channel Switcher** now displays recently viewed channels when launched.
+ - Polish, German, and Italian languages were downgraded to beta as they are [no longer actively maintained](https://handbook.mattermost.com/contributors/contributors/localization#translation-quality).
+ - Custom statuses can now be set to expire after common time intervals or custom selected dates and times. Mobile App support will be added in a future release.
+
+#### Performance
+ - Added some improvements to typing performance.
+
+#### Administration
+ - Improved memory performance for large image uploads, particularly PNGs with transparency.
+ - Optimized the bulk import process by no longer requiring the server to write the incoming archive to the filesystem when unzipping it.
+ - Added channel restore and channel privacy change endpoints to the local mode using the System bot.
+
+### Bug Fixes
+ - Fixed an issue where users were unable to set a custom status emoji via slash command. Added the logic for detecting unicode emoji and setting it as a custom status emoji via slash commands.
+ - Fixed an issue where messages with fallback text were repeated.
+ - Fixed an issue where a persistent unread badge showed on the **Main Menu** when **Enable Marketplace** or **Enable Plugins** was disabled.
+ - Fixed an issue where sidebar icons were not aligned with the navigator area icons.
+ - Fixed an issue where using CTRL+F in a **Direct Message** channel added the user ID rather than the user's name into the search field.
+ - Fixed an issue where user icons were displayed at full opacity in muted channels.
+ - Fixed an issue where a redundant ``user_update`` websocket event was generated for bot users.
+ - Fixed an issue where a Self-Managed Enterprise Edition E20 trial could be activated more than once without contacting the Mattermost support team.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``CollapsedThreads`` to add support for Collapsed Reply Threads (Beta).
+
+#### Database Changes
+ - Removed several redundant Database indexes.
+
+### API Changes
+ - Added a new field, team_id, to the response of ``POST api/v4/groups/{group_id}/channels/{channel_id}/link`` to add a team ID to the response when linking a channel to a group.
+ - Added an optional ``collapsed_threads_supported`` parameter to /channels/members/{userId}/view to indicate that the client supports collapsed threads.
+ - Added an optional ``collapsed_threads_supported`` parameter to /users/{userId}/posts/{postId}/set_unread to indicate that the client supports collapsed threads.
+ - Updated the webapp to pass ``collapsed_threads_supported`` parameters to the server to indicate that the webapp supports collapsed reply threads.
+ - Updated the webapp to correctly mark channels and threads as unread/read when marking root and reply posts as unread/read.
+ - Added a new endpoint ``GET /trial-license/prev`` for fetching last used trial license.
+ - Added two new fields in ``CustomStatus`` struct and modified the APIs to validate and handle them.
+
+### Go Version
+ - v5.37 is built with Go ``1.15.5``.
+
+### Open Source Components
+ - Removed ``reselect`` from https://github.com/mattermost/mattermost-webapp/.
+
+### Upcoming Deprecations in Mattermost v6.0
+
+The following deprecations are planned for the Mattermost v6.0 release, which is scheduled for 2021/10/15. This list is subject to change prior to the release.
+
+1. [Legacy Command Line Tools](https://docs.mattermost.com/administration/command-line-tools.html). All commands have been fully replaced by [mmctl](https://docs.mattermost.com/administration/mmctl-cli-tool.html) and new commands have been added over the last few months, making this tool a full and robust replacement. 
+
+2. [Slack Import via the web app](https://docs.mattermost.com/administration/migrating.html?highlight=mmetl#migrating-from-slack-using-the-mattermost-web-app). The Slack import tool accessible via the Team Setting menu is being replaced by the [mmetl](https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import) tool that is much more comprehensive for the types of data it can assist in uploading. 
+
+3. MySQL versions below 5.7.7. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached [EOL in February 2021](https://www.mysql.com/support/eol-notice.html).
+
+4. Elasticsearch 5 and 6 - [versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020](https://www.elastic.co/support/eol). Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
+
+5. Windows 7 reached [EOL in January 2020](https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962). We will no longer provide support for the Desktop App issues on Windows 7.
+
+6. [DisableLegacyMFA](https://docs.mattermost.com/configure/configuration-settings.html#disable-legacy-mfa-api-endpoint) configuration setting.
+
+7. [ExperimentalTimezone](https://docs.mattermost.com/configure/configuration-settings.html#timezone) configuration setting.
+
+8. All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access [custom, collapsible channel categories](https://mattermost.com/blog/custom-collapsible-channel-categories/) among many other channel organization features. The settings being deprecated include:
+
+   - [EnableLegacySidebar](https://docs.mattermost.com/administration/config-settings.html#enable-legacy-sidebar)
+   - [ExperimentalTownSquareIsReadOnly](https://docs.mattermost.com/administration/config-settings.html#town-square-is-read-only-experimental)
+   - [ExperimentalHideTownSquareinLHS](https://docs.mattermost.com/administration/config-settings.html#town-square-is-hidden-in-left-hand-sidebar-experimental)
+   - [EnableXToLeaveChannelsFromLHS](https://docs.mattermost.com/administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental)
+   - [CloseUnusedDirectMessages](https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental)
+   - [ExperimentalChannelOrganization](https://docs.mattermost.com/administration/config-settings.html#sidebar-organization)
+   - [ExperimentalChannelSidebarOrganization](https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-features)
+
+9. [All configuration settings previously marked as “Deprecated”](https://docs.mattermost.com/administration/config-settings.html#deprecated-configuration-settings).
+
+10. Changes to ``mattermost-server/model`` for naming consistency.
+
+### Known Issues
+ - [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html) is currently in beta. Before enabling the feature, please ensure you are well versed in the [known issues](https://docs.mattermost.com/messaging/organizing-conversations.html#known-issues),  particularly relating to database resource requirements and server performance implications. If you cannot easily scale up your database size, or are running the Mattermost application server and database server on the same machine, we recommended waiting to enable Collapsed Reply Threads until it is [promoted to general availability in Q2 2022](https://mattermost.com/blog/collapsed-reply-threads-ga/). Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276).
+ - When upgrading to 5.37.0, the Incident Collaboration plugin may not be automatically installed in some cases.
+ - Add Members modal is incorrectly themed on the Mattermost Dark theme [MM-37220](https://mattermost.atlassian.net/browse/MM-37220).
+ - ``config.json`` can reset when running the command ``systemctl restart mattermost``, and when running any commands that write to the config (e.g. ``config`` or ``plugin``) [MM-33752](https://mattermost.atlassian.net/browse/MM-33752), [MM-32390](https://mattermost.atlassian.net/browse/MM-32390).
+ - Adding an at-mention at the start of a post draft and pressing the leftwards or rightwards arrow can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Emoji counter in the center channel doesn't always update immediately when a reaction is added in the right-hand side [MM-31994](https://mattermost.atlassian.net/browse/MM-31994).
+ - Fields on the right column in a message attachment render unevenly [MM-36943](https://mattermost.atlassian.net/browse/MM-36943).
+ - Pinned posts are no longer highlighted.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+ - [aaronrothschild](https://github.com/aaronrothschild), [Aashimalik](https://github.com/Aashimalik), [Adovenmuehle](https://github.com/Adovenmuehle), [aedott](https://github.com/aedott), [aeomin](https://github.com/aeomin), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ahmaddanialmohd](https://github.com/ahmaddanialmohd), [ahmadkarlam](https://github.com/ahmadkarlam), [amyblais](https://github.com/amyblais), [amynicol1985](https://github.com/amynicol1985), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anurag6713](https://github.com/anurag6713), [arvinDarmawan](https://github.com/arvinDarmawan), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [aspleenic](https://github.com/aspleenic), [balan2010](https://github.com/balan2010), [BenCookie95](https://github.com/BenCookie95), [berkeka](https://github.com/berkeka), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [cedricziel](https://github.com/cedricziel), [chenilim](https://github.com/chenilim), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [cognvn](https://github.com/cognvn), [coltoneshaw](https://github.com/coltoneshaw), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danielsischy](https://github.com/danielsischy), [darkLord19](https://github.com/darkLord19), [dbpolito](https://github.com/dbpolito), [devinbinnie](https://github.com/devinbinnie), [elsiehupp](https://github.com/elsiehupp), [elyscape](https://github.com/elyscape), [emilyacook](https://github.com/emilyacook), [enahum](https://github.com/enahum), [enelson720](https://github.com/enelson720), [esethna](https://github.com/esethna), [EugenMayer](https://github.com/EugenMayer), [ewwollesen](https://github.com/ewwollesen), [flynbit](https://github.com/flynbit), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [haardikdharma10](https://github.com/haardikdharma10), [hahmadia](https://github.com/hahmadia), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hason](https://github.com/hason), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [ialorro](https://github.com/ialorro), [icelander](https://github.com/icelander), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [itao](https://github.com/itao), [jamiehurewitz](https://github.com/jamiehurewitz), [jasonblais](https://github.com/jasonblais), [jayaddison-collabora](https://github.com/jayaddison-collabora), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [JoelRummel](https://github.com/JoelRummel), [Johennes](https://github.com/Johennes), [johnsonbrothers](https://github.com/johnsonbrothers), [josephbaylon](https://github.com/josephbaylon), [jplda23](https://github.com/jplda23), [jprusch](https://github.com/jprusch), [jufab](https://github.com/jufab), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [koox00](https://github.com/koox00), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [madhavhugar](https://github.com/madhavhugar), [maisnamrajusingh](https://github.com/maisnamrajusingh), [majidsajadi](https://github.com/majidsajadi), [manojmalik20](https://github.com/manojmalik20), [matheusmosca](https://github.com/matheusmosca), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [maxerenberg](https://github.com/maxerenberg), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [moussetc](https://github.com/moussetc), [MrLemur](https://github.com/MrLemur), [msal4](https://github.com/msal4), [MusiCode1](https://github.com/MusiCode1), [naderm11](https://github.com/naderm11), [neallred](https://github.com/neallred), [nevyangelova](https://github.com/nevyangelova), [ogi-m](https://github.com/ogi-m), [pablovelezvidal](https://github.com/pablovelezvidal), [parsaakbari1209](https://github.com/parsaakbari1209), [prakharporwal](https://github.com/prakharporwal), [prathers](https://github.com/prathers), [rbradleyhaas](https://github.com/rbradleyhaas), [rodcorsi](https://github.com/rodcorsi), [rohit1101](https://github.com/rohit1101), [sadohert](https://github.com/sadohert), [sakaitsu](https://github.com/sakaitsu), [saturninoabril](https://github.com/saturninoabril), [Sayanta66](https://github.com/Sayanta66), [sbishel](https://github.com/sbishel), [senylove1403](https://github.com/senylove1403), [srkgupta](https://github.com/srkgupta), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Szymongib](https://github.com/Szymongib), [teresa-novoa](https://github.com/teresa-novoa), [thePanz](https://github.com/thePanz), [tsabi](https://translate.mattermost.com/user/tsabi), [txeli](https://github.com/txeli), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yulyanaR](https://github.com/yulyanaR)
 
 ## Release v5.36 - [Feature Release](https://docs.mattermost.com/administration/release-definitions.html#feature-release)
 
@@ -7459,7 +7903,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 #### Team Sidebar
 - Added a new sidebar on left-hand side to improve cross-team notifications and team switching
-- New sidebar improves user experience on the [Mattermost Desktop Apps](https://mattermost.com/download/#mattermostApps) when engaging with multiple teams
+- New sidebar improves user experience on the [Mattermost Desktop Apps](https://mattermost.com/apps) when engaging with multiple teams
 
 #### MFA Enforcement ([Enterprise E10 & E20](https://mattermost.com/pricing-self-managed/))
 - Added support for MFA Enforcement. When set to true, all users with email or LDAP authentication are required to set up MFA for their accounts
@@ -7817,7 +8261,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
 - On mobile devices, the keyboard now stays open after sending a message to make sending multiple messages easier
 
 #### Notifications
-- Notification sound settings are now honored on the [Mattermost Desktop Apps](https://mattermost.com/download/#mattermostApps)
+- Notification sound settings are now honored on the [Mattermost Desktop Apps](https://mattermost.com/apps/)
 - Push notifications can now be received on more than one device
 
 #### Channel Shortlinking

@@ -20,11 +20,17 @@ During each monthly release, Mattermost backports high severity or high impact s
 
 .. important::
 
-  Support for Mattermost Server v5.37 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle on April 15, 2022. Upgrading to Mattermost Server v6.3 or later is required.
+  Support for Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 or later is recommended.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
 +=============+=======================+==========================+==========================+==========================+
+| 7.2         | Feature               |  2022-08-16              | 2022-11-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 7.1         | Feature               |  2022-07-15              | 2023-04-15               | Yes                      |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
+| 7.0         | Major                 |  2022-06-15              | 2022-09-15               |                          |
++-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 6.7         | Feature               |  2022-05-16              | 2022-08-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 6.6         | Feature               |  2022-04-16              | 2022-07-15               |                          |
@@ -144,16 +150,12 @@ During each monthly release, Mattermost backports high severity or high impact s
 | 4.0         | Feature               |  2017-07-16              | 2017-09-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 
-Desktop and Mobile App Server Compatibility
--------------------------------------------
+Desktop and mobile app compatibility
+-------------------------------------
 
-Mattermost Desktop and Mobile Apps must be used with the latest Extended Support Release or a newer version of Mattermost Server.
+Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release <https://docs.mattermost.com/upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
+
+Please review the `Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__ and the `Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
 
 .. include:: upgrading-to-v60.rst
   :start-after: :nosearch:
-
-In cases where Mattermost features or functionality involve the operating system, a specific Desktop App or Mobile App version may be required. For example, the Mattermost Desktop App v4.6 includes a setting for choosing desktop notification sounds which requires Mattermost Server v5.28 or later.
-
-.. note::
-
-  Bug fixes aren't typically backported to previous Desktop App or Mobile App versions. Upgrading to the latest Desktop and Mobile App versions helps you stay updated with the latest bug and security fixes.

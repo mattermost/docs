@@ -10,7 +10,7 @@ Testing push notifications
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -22,11 +22,12 @@ Make sure to configure push notifications for your `pre-built mobile apps <https
 
 Then use the following instructions to confirm push notifications are working properly.
 
-1. Sign in to your mobile app with an account on your Mattermost Server, which we’ll refer to as “Account A”.
+1. Log in to your mobile app with an account on your Mattermost Server, which we’ll refer to as “Account A”.
 
 2. (iOS) When the app asks whether you wish to receive notifications, **confirm you want to receive notifications**.
 
   .. image:: ../images/mobile_push_prompt.png
+    :alt: Mattermost prompts you to confirm whether you want to allow mobile push notifications. To test mobile push notifications, you must select Allow.
     :width: 300 px
 
 3. Confirm push notifications are enabled for “Account A”.
@@ -34,21 +35,22 @@ Then use the following instructions to confirm push notifications are working pr
   A. Go to the notification settings menu in the mobile app.
 
   .. image:: ../images/mobile_notification_settings.png
+    :alt: Ensure push notifications are enabled by selecting the Settings icon located in the top-right corner of the screen.
 
   B. Check that the mobile push notifications are set to send.
 
   .. image:: ../images/mobile_push_send_for.png
+    :alt: Select the type of activity you want push notifications for by going to Settings > Notifications > Mobile Push Notifications.
     :width: 300 px
 
   .. image:: ../images/mobile_push_send_when.png
+    :alt: Select when you want push notifications by going to Settings > Notifications > Mobile Push Notifications for all Mattermost activity or mentions and direct messages only.
     :width: 300 px
 
 4. Have “Account A” put the app to background or close the app.
 
-5. Using a browser, sign in to “Account B” on the same Mattermost Server.
+5. Using a browser, log in to “Account B” on the same Mattermost Server.
 
 6. Open a Direct Message with “Account A”, and send a message.
 
-7. A push notification with the message should appear on the mobile device of “Account A”.
-
-If the push notification does not appear, follow :doc:`troubleshooting steps <mobile-troubleshoot-notifications>` to look for issues.
+7. A push notification with the message should appear on the mobile device of “Account A”. If the push notification does not appear, follow :doc:`troubleshooting steps <mobile-troubleshoot-notifications>` to look for issues.

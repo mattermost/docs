@@ -35,7 +35,7 @@ Configuration in database
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -61,7 +61,7 @@ The name of the environment variable for any setting can be derived from the nam
 .. note::
 
   - If Mattermost is run from an initialization file, environment variables can be set via ``Environment=<>``, or ``EnvironmentFile=<path/to/file>``. In the second case, the file specified contains the list of environment variables to set.
-  - When settings are configured through an environment variable, System Admins can't modify them in the System Console. If a setting is configured through an environment variable, and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+  - When settings are configured through an environment variable, System Admins can't modify them in the System Console.
   - For any setting that's not set in ``config.json`` or in environment variables, the Mattermost server uses the setting's default value as documented in the sections below on this page.
 
 .. warning::
@@ -132,7 +132,7 @@ Upload or remove license files. For more information on Mattermost Licensing, pl
 Reporting
 ---------
 
-See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on:
+See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Site statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics>`__
 - `Team statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics>`__
@@ -141,7 +141,7 @@ See the :doc:`reporting configuration settings </configure/reporting-configurati
 User Management
 ---------------
 
-See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on:
+See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Users <https://docs.mattermost.com/configure/user-management-configuration-settings.html#users>`__
 - `Groups <https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups>`__
@@ -156,7 +156,7 @@ Environment
 Web server
 ~~~~~~~~~~
 
-See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on:
+See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on the following configuration settingsn:
 
 - `Site URL <https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url>`__
 - `Listen address <https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address>`__
@@ -178,7 +178,7 @@ See the :doc:`web server configuration settings </configure/web-server-configura
 Database
 ~~~~~~~~
 
-See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on:
+See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on the following configuration settings:
 
 - `Driver name <https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name>`__
 - `Data source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__
@@ -194,789 +194,110 @@ See the :doc:`database configuration settings </configure/database-configuration
 - `Disable database search <https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search>`__
 - `Applied schema migrations <https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations>`__
 
-At Rest Encrypt Key
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and select **Regenerate**, which displays the value until you select **Save**.
-
-When using High Availability, the salt must be identical in each instance of Mattermost.
-
-No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to encrypt data stored at rest in the database.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
-+------------------------------------------------------------------------------------------+
-
 Elasticsearch
 ~~~~~~~~~~~~~~
 
-Changes to properties in this section require a server restart before taking effect. Access the following configuration settings in the System Console by going to **Environment > Elasticsearch**.
+See the :doc:`Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>` documentation for details on the following configuration settings:
 
+- `Enable Elasticsearch indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing>`__
+- `Server connection address <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address>`__
+- `Skip TLS verification <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-TLS-verification>`__
+- `Server username <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username>`__
+- `Server password <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password>`__
+- `Enable cluster sniffing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing>`__
+- `Bulk indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing>`__
+- `Purge indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes>`__
+- `Enable Elasticsearch for search queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries>`__
+- `Enable Elasticsearch for autocomplete queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries>`__
+- `Post index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas>`__
+- `Post index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards>`__
+- `Channel index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-replicas>`__
+- `Channel index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-shards>`__
+- `User index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-index-replicas>`__
+- `User index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-idex-shards>`__
+- `Aggregate search indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes>`__
+- `Post aggregator start time <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time>`__
+- `Index prefix <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix>`__
+- `Live indexing batch size <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size>`__
+- `Bulk indexing time window <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window>`__
+- `Request timeout <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout>`__
+- `Trace <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace>`__
 
-Enable Elasticsearch Indexing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Indexing of new posts occurs automatically. Search queries will use database search until **Enable Elasticsearch for search queries** is enabled. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html>`__.
-
-**False**: Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, we recommend you purge and rebuild the index to ensure complete search results.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
-Server Connection Address
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://docs.mattermost.com/scale/elasticsearch.html>`__.
-
-+------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
-+------------------------------------------------------------------------------------------------------------------------+
-
-Skip TLS Verification
-^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
-
-**False**: Mattermost does not skip certificate verification.
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipTLSVerification": false`` with boolean input.        |
-+-------------------------------------------------------------------------------------------------------+
-
-Server Username
-^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-(Optional) The username to authenticate to the Elasticsearch server.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Username": ""`` with string input.                                   |
-+-------------------------------------------------------------------------------------------------------------------+
-
-Server Password
-^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-(Optional) The password to authenticate to the Elasticsearch server.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Password": ""`` with string input.                                   |
-+-------------------------------------------------------------------------------------------------------------------+
-
-Enable Cluster Sniffing
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Sniffing finds and connects to all data nodes in your cluster automatically.
-
-**False**: Sniffing is disabled.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Sniff": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
-
-Bulk Indexing
-^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete.
-
-Purge Indexes
-^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This button purges the entire Elasticsearch index. Typically only used if the index has corrupted and search is not behaving as expected. After purging the index a new index can be created with the **Bulk Index** button.
-
-Enable Elasticsearch for Search Queries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
-
-**False**: Database search is used for search queries.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Enable Elasticsearch for Autocomplete Queries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Elasticsearch will be used for all autocompletion queries on users and channels using the latest index. Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.
-
-**False**: Database autocomplete is used.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------+
-
-File Storage
+File storage
 ~~~~~~~~~~~~
 
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers. Access the following configuration settings in the System Console by going to **Environment > File Storage**.
-
-.. note::
-  We have tested Mattermost with `MinIO <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
-
-File Storage System
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-+-------------------------+-----------------------+
-| ``config.json`` setting | ``DriverName``        |
-+-------------------------+-----------------------+
-| Allowed Values          | ``"local"`` (default) |
-|                         | ``"amazons3"``        |
-+-------------------------+-----------------------+
-
-This selects which file storage system is used: Local File System or Amazon S3.
-
-**Local File System**: Files and images are stored in the specified local file directory.
-
-**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket, and region fields. The ``"amazons3"`` driver is compatible with MinIO (Beta) and Digital Ocean Spaces based on the provided access key, bucket, and region fields.
-
-Local Storage Directory
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The local directory to which files are written when the File Storage System is set to ``"local"``. This is relative to the directory Mattermost is installed to and defaults to ``"./data"`` When File Storage System is set to S3 this setting has no effect.
-
-+-------------------------+------------------------------------------------------------------------------------------+
-| ``config.json`` setting | ``Directory``                                                                            |
-+-------------------------+------------------------------------------------------------------------------------------+
-| Allowed Values          | Any directory writeable by the user Mattermost is running as. Defaults to ``"./data/"``. |
-+-------------------------+------------------------------------------------------------------------------------------+
-
-Maximum File Size
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum file size for message attachments and plugins entered in megabytes in the System Console. Converted to bytes in ``config.json`` at 1048576 bytes per megabyte.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxFileSize": 104857600`` with numerical input.                  |
-+---------------------------------------------------------------------------------------------------------------+
-
-.. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
-
-.. note::
-  If you use a proxy or load balancer in front of Mattermost its settings need to be adjusted accordingly. For NGINX use ``client_max_body_size``. For Apache use ``LimitRequestBody``.
-  
-Enable Document Search by Content
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Enable users to search the contents of documents attached to messages. Mattermost self-hosted deployments include support for PDF, PPTX, DOCX, ODT, HTML, and plain text documents. Improved server performance during PDF extraction and additional file support for RTF, DOC, and PAGES documents is available through the installation of third-party dependencies. 
-
-**True**: Documents are searchable by their content.  
-
-.. note::
-   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an `mmctl content extraction job <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-extract>`__ is run, or an `extraction command is executed using the CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__. If this command is not run, users can search older files based on file name only.
-
-**False**: Documents aren't searchable by their content. When document content search is disabled, users can search for files by filename only.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExtractContent": true`` with options ``true`` and ``false``.          |
-+--------------------------------------------------------------------------------------------------------------------+
-
-To extend content search support to include file formats including RTF, DOC, and PAGES, and to take advantage of improved server performance during PDF extraction, you must install `these dependencies <https://github.com/sajari/docconv#dependencies>`__. If you choose not to install these dependencies, you'll see log entries for documents that couldn't be extracted. Any documents that can't be extracted are skipped and logged so that content extraction can proceed. 
-
-The search support each dependency offers is described below: 
-
-- ``tidy``: Used to search the contents of HTML and PAGES documents.
-- ``wv``: Used to search the contents of DOC documents.
-- ``popplerutils``: Used to significantly improve server performance when extracting the contents of PDF documents.
-- ``unrtf``: Used to search the contents of RTF documents.
-- ``Justtext``: Used to search HTML documents.
-
-.. note::
-  - Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
-  - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
-  
-Enable Searching Content of Documents within ZIP Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This configuration setting enables users to search the contents of compressed ZIP files attached to messages.
-
-**True**: Contents of documents within ZIP files are returned in search results. This may have an impact on server performance for large files.
-
-**False**: The contents of documents within ZIP files aren't returned in search results.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ArchiveRecursion": false`` with options ``true`` and ``false``.       |
-+--------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-  - Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon. 
-  - Searching document contents adds load to your server. 
-  - For large deployments, or teams that share many large, text-heavy documents, we recommended you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, and test enabling this feature in a staging environment before enabling it in a production environment.
-
-Amazon S3 Bucket
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The name of the bucket for your S3-compatible object storage instance.
-
-+-------------------------+----------------------------------------------+
-| ``config.json`` setting | ``AmazonS3Bucket``                           |
-+-------------------------+----------------------------------------------+
-| Allowed Values          | A string with the S3-compatible bucket name. |
-+-------------------------+----------------------------------------------+
-
-Amazon S3 Region
-^^^^^^^^^^^^^^^^^
-
-The AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS and sets it to ``"us-east-1"`` if none is found. For MinIO or Digital Ocean Spaces, leave this setting empty.
-
-+-------------------------+-----------------------------------------------------+
-| ``config.json`` setting | ``AmazonS3Region``                                  |
-+-------------------------+-----------------------------------------------------+
-| Allowed Values          | A string with the AWS region containing the bucket. |
-+-------------------------+-----------------------------------------------------+
-
-Amazon S3 Access Key ID
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This is required for access unless you are using an `Amazon S3 IAM Role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`__ with Amazon S3. Your EC2 administrator can supply you with the Access Key ID.
-
-+-------------------------+----------------------------------------------------------------------+
-| ``config.json`` setting | ``AmazonS3AccessKeyId``                                              |
-+-------------------------+----------------------------------------------------------------------+
-| Allowed Values          | A string with the access key for the S3-compatible storage instance. |
-+-------------------------+----------------------------------------------------------------------+
-
-Amazon S3 Endpoint
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
-
-.. note::
-  For Digital Ocean Spaces, the hostname should be set to ``"<region>.digitaloceanspaces.com"``, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1``.
-
-+-------------------------+-------------------------------------------------------------------+
-| ``config.json`` setting | ``AmazonS3Endpoint``                                              |
-+-------------------------+-------------------------------------------------------------------+
-| Allowed Values          | A string with the hostname of the S3-compatible storage instance. |
-+-------------------------+-------------------------------------------------------------------+
-
-Amazon S3 Secret Access Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The secret access key associated with your Amazon S3 Access Key ID.
-
-+-------------------------+-----------------------------------------------------------------------------+
-| ``config.json`` setting | ``AmazonS3SecretAccessKey``                                                 |
-+-------------------------+-----------------------------------------------------------------------------+
-| Allowed Values          | A string with the secret access key for the S3-compatible storage instance. |
-+-------------------------+-----------------------------------------------------------------------------+
-
-Enable Secure Amazon S3 Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Enables only secure Amazon S3 connections.
-
-**False**: Allows insecure connections to Amazon S3.
-
-+-------------------------+----------------------------------------------+
-| ``config.json`` setting | ``AmazonS3SSL``                              |
-+-------------------------+----------------------------------------------+
-| Allowed Values          | ``true`` or ``false``. Defaults to ``true``. |
-+-------------------------+----------------------------------------------+
-
-Enable Server-Side Encryption for Amazon S3
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Encrypts files in Amazon S3 using server-side encryption with `Amazon S3-managed keys <https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html>`__.
-
-**False**: Doesn't encrypt files in Amazon S3.
-
-.. note::
-  Server-side encryption only works with Amazon S3.
-
-+-------------------------+-----------------------------------------------+
-| ``config.json`` setting | ``AmazonS3SSE``                               |
-+-------------------------+-----------------------------------------------+
-| Allowed Values          | ``true`` or ``false``. Defaults to ``false``. |
-+-------------------------+-----------------------------------------------+
-
-Enable Amazon S3 Debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Log additional debugging information to the system logs. Typically set to ``false`` in production.
-
-**False**: No Amazon S3 debugging information is included in the system logs.
-
-+-------------------------+-----------------------------------------------+
-| ``config.json`` setting | ``AmazonS3Trace``                             |
-+-------------------------+-----------------------------------------------+
-| Allowed Values          | ``true`` or ``false``. Defaults to ``false``. |
-+-------------------------+-----------------------------------------------+
-
-Test Connection
-^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Ensures that the user can access the server and that the settings are valid.
+See the :doc:`file storage configuration settings </configure/file-storage-configuration-settings>` documentation for details on the following configuration settings:
+
+- `File storage system <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#file-storage-system>`__
+- `Local storage directory <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#local-storage-directory>`__
+- `Maximum file size <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#maximum-file-size>`__
+- `Enable document search by content <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-document-search-by-content>`__
+- `Enable searching content of documents within ZIP files <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__
+- `Amazon S3 bucket <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-bucket>`__
+- `Amazon S3 prefix path <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-path-prefix>`__
+- `Amazon S3 region <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-region>`__
+- `Amazon S3 access key ID <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-access-key-id>`__
+- `Amazon S3 endpoint <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-endpoint>`__
+- `Amazon S3 secret access key <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-secret-access-key>`__
+- `Enable secure Amazon S3 connections <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-secure-amazon-s3-connections>`__
+- `Amazon S3 signature v2 <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-signature-v2>`__
+- `Enable server-side encryption for Amazon S3 <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__
+- `Enable Amazon S3 debugging <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-amazon-s3-debugging>`__
+- `Initial font <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#initial-font>`__
 
 Image Proxy
 ~~~~~~~~~~~~
 
-Access the following configuration settings in the System Console by going to **Environment > Image Proxy**.
+See the :doc:`image proxy configuration settings </configure/image-proxy-configuration-settings>` documentation for details on the following configuration settings:
 
-Enable Image Proxy
-^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-When ``true``, enables an image proxy for loading external images. The image proxy is used by the Mattermost apps to prevent them from connecting directly to remote servers. This anonymizes their connections and prevents them from accessing insecure content.
-
-See the `image proxy <https://docs.mattermost.com/deploy/image-proxy.html#image-proxy>`__ documentation to learn more.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
-+---------------------------------------------------------------------------------------------------------------------+
-
-Image Proxy Type
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The type of image proxy used by Mattermost. There are two options:
-
-**local**: The Mattermost server itself acts as the image proxy. This is the default option.
-
-**atmos/camo**: An external `atmos/camo <https://github.com/atmos/camo>`__ image proxy is used.
-
-See the `documentation <https://docs.mattermost.com/deploy/image-proxy.html#atmos-camo-image-proxy>`__ to learn more.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ImageProxyType": "local"``, with options ``"local"`` and ``"atmos/camo"`` for the above settings, respectively. |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Remote Image Proxy URL
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The URL of the ``atmos/camo`` proxy. This setting is not needed when using the local image proxy.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteImageProxyURL": ""`` with string input.                          |
-+---------------------------------------------------------------------------------------------------------------------+
-
-Remote Image Proxy Options
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The URL signing key passed to an ``atmos/camo`` image proxy. This setting is not needed when using the local image proxy.
-
-See the `documentation <https://docs.mattermost.com/deploy/image-proxy.html#atmos-camo-image-proxy>`__ to learn more.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteImageProxyOptions": ""`` with string input.                      |
-+---------------------------------------------------------------------------------------------------------------------+
+- `Enable image proxy <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#enables-image-proxy>`__
+- `Image proxy type <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#image-proxy-type>`__
+- `Remote image proxy URL <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-url>`__
+- `Remote image proxy options <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-options>`__
 
 SMTP
 ~~~~
 
-Access the following configuration settings in the System Console by going to **Environment > SMTP**.
+See the :doc:`SMTP configuration settings </configure/smtp-configuration-settings>` documentation for details on the following configuration settings:
 
-SMTP Email Server
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Location of SMTP email server used for email notifications.
-
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPServer": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
-
-SMTP Server Port
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Port of SMTP email server.
-
-+---------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPPort": ""`` with string input. |
-+---------------------------------------------------------------------------------+
-
-SMTP Server Timeout
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum amount of time (in seconds) allowed for establishing a TCP connection between Mattermost and the SMTP server, to be idle before being terminated.
-
-+---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPServerTimeout": 10`` with numerical input. |
-+---------------------------------------------------------------------------------------------+
-
-Enable SMTP Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: SMTP username and password are used for authenticating to the SMTP server.
-
-**False**: Mattermost doesn't attempt to authenticate to the SMTP server.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSMTPAuth": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
-SMTP Server Username
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The username for authenticating to the SMTP server.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPUsername": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-SMTP Server Password
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The password associated with the SMTP username.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SMTPPassword": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-.. _email-tls:
-
-Connection Security
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**None**: Send email over an unsecure connection.
-
-**TLS**: Communication between Mattermost and your email server is encrypted.
-
-**STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection using TLS.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``"TLS"``, and ``"STARTTLS"``. |
-+----------------------------------------------------------------------------------------------------------------------------+
-
-Skip Server Certificate Verification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Mattermost will not verify the email server certificate.
-
-**False**: Mattermost will verify the email server certificate.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Security Alerts
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Enable System Admins to be notified by email if a relevant security fix alert is announced. Requires email to be enabled. To learn more about this feature, see :doc:`../manage/telemetry`.
-
-**False**: Security alerts are disabled.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSecurityFixAlert": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
+- `SMTP server <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server>`__
+- `SMTP server port <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-port>`__
+- `Enable SMTP authentication <https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-smtp-authentication>`__
+- `SMTP server username <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-username>`__
+- `SMTP server password <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-password>`__
+- `Connection security <https://docs.mattermost.com/configure/smtp-configuration-settings.html#connection-security>`__
+- `Skip server certificate verification <https://docs.mattermost.com/configure/smtp-configuration-settings.html#skip-server-certificate-verification>`__
+- `Enable security alerts <https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-security-alerts>`__
+- `SMTP server timeout <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-timeout>`__
 
 Push Notification Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Access the following configuration settings in the System Console by going to **Environment > Push Notification Server**.
+See the :doc:`push notification server configuration settings </configure/push-notification-server-configuration-settings>` documentation for details on the following configuration settings:
 
-Enable Push Notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Your Mattermost server sends mobile push notifications to the server specified in **PushNotificationServer**.
-
-**False**: Mobile push notifications are disabled.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SendPushNotifications": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
-
-Push Notification Server
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Location of Mattermost Push Notification Service (MPNS), which re-sends push notifications from Mattermost to services like Apple Push Notification Service (APNS) and Google Cloud Messaging (GCM).
-
-To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://apps.apple.com/us/app/mattermost/id1257222717>`__ or the `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__:
-
-- For Enterprise or Professional Edition, enter ``https://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/``.
-- For Team Edition, enter ``https://push-test.mattermost.com``.
-
-Please review full documentation on `push notifications and mobile applications <https://docs.mattermost.com/deploy/mobile-hpns.html#mobile-push-notifications>`__ including guidance on compiling your own mobile apps and MPNS before deploying to production.
-
-.. note::
-  The ``https://push-test.mattermost.com`` server is provided for testing push notifications prior to compiling your own service. Please make sure `to read about its limitations <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationServer": "https://push-test.mattermost.com"`` with string input. |
-+-------------------------------------------------------------------------------------------------------------------------------+
-
-Max Notifications Per Channel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum total number of users in a channel before @all, @here, and @channel no longer send notifications to maximize performance.
-
-If you want to increase this value, we recommend increasing it a little at a time and monitor system health with `performance monitoring metrics <https://docs.mattermost.com/scale/performance-monitoring.html>`__. We also recommend only increasing this value if large channels have restricted permissions for who can post to the channel (for instance, a read-only Town Square channel).
-
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxNotificationsPerChannel": 1000`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------+
-
-**Troubleshooting Push Notifications**
-
-To confirm push notifications are working:
-
-1. Go to **System Console > Notifications > Environment > Push Notification Server > Enable Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
-2. Set **Push Notification Server** to ``https://push.mattermost.com`` if using Enterprise Edition. If using Team Edition, set the value to ``https://push-test.mattermost.com``.
-3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://apps.apple.com/us/app/mattermost/id1257222717>`__ or the `Mattermost Android App on Google Play <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and log in to your team site.
-4. Close the app on your device, and close any other connections to your team site.
-5. Wait 5 minutes and have another team member send you a direct message, which should trigger a push notification to the Mattermost app on your mobile device.
-6. You should receive a push notification on your device alerting you of the direct message.
-
-If you did not receive an alert:
-
-1. Set **System Console > Environment > Logging > File Log Level** to *DEBUG* (make sure to set this back to *INFO* after troubleshooting to save disk space).
-2. Repeat the above steps.
-3. Go to **System Console > Reporting > Server Logs** and copy the log output into a file.
-4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `troubleshooting forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
-
-.. _high-availability:
+- `Enable push notifications <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-push-notifications>`__
+- `Push notification server <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#push-notification-server>`__
+- `Maximum notifications per channel <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#maximum-notifications-per-channel>`__
 
 High Availability
 ~~~~~~~~~~~~~~~~~~
 
-Access the following configuration settings in the System Console by going to **Environment > High Availability**.
+See the :doc:`high availability configuration settings </configure/high-availability-configuration-settings>` documentation for details on the following configuration settings:
 
-Changes to properties in this section require a server restart before taking effect.
-
-When High Availability mode is enabled, the System Console is set to read-only and settings can only be changed by editing the configuration file directly. However, for testing and validating a High Availability setup, you can set ``ReadOnlyConfig`` to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
-
-To learn more about configuring High Availability, see `High Availability Cluster <https://docs.mattermost.com/scale/high-availability-cluster.html>`__.
-
-Enable High Availability Mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: The Mattermost server will attempt inter-node communication with the other servers in the cluster that have the same cluster name. This sets the System Console to read-only mode to keep the servers ``config.json`` files in sync.
-
-**False**: Mattermost High Availability is disabled.
-
-+-----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.  |
-+-----------------------------------------------------------------------------------------------------+
-
-Cluster Name
-^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The cluster to join by name. Only nodes with the same cluster name will join together. This is to support Blue-Green deployments or staging pointing to the same database.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ClusterName": ""`` with string input. |
-+------------------------------------------------------------------------------------+
-
-Override Hostname
-^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-If blank, Mattermost attempts to get the hostname from the OS or use the IP address. You can override the hostname of this server with this property. It is not recommended to override the hostname unless needed. This property can also be set to a specific IP address if needed. Also see `cluster discovery <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ for more details.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"OverrideHostname": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
-
-Use IP Address
-^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: The cluster attempts to communicate using the IP address.
-
-**False**: The cluster attempts to communicate using the hostname.
-
-+---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseIpAddress": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------+
-
-Use Gossip
-^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-.. note::
-   All cluster traffic uses the gossip protocol. From Mattermost Server v5.36 gossip clustering can no longer be disabled.
-
-**True**: The server attempts to communicate via the gossip protocol over the gossip port.
-
-**False**: The server attempts to communicate over the streaming port.
-
-.. note::
-   The gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseExperimentalGossip": true`` with options ``true`` and ``false``.         |
-+--------------------------------------------------------------------------------------------------------------------------+
-
-Enable Experimental Gossip Encryption
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: All communication through the cluster using the gossip protocol will be encrypted.
-
-**False**: All communication using gossip protocol remains unencrypted.
-
-The encryption uses AES-256 by default, and it is not kept configurable by design. However, you can manually set the ``ClusterEncryptionKey`` row value in the Systems table. A key is a byte array converted to base64. It should be either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256.
-
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableExperimentalGossipEncryption": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------------------+    
-    
-Enable Gossip Compression
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: All communication through the cluster uses gossip compression. This is set to ``true`` by default to maintain compatibility with older servers.
-
-**False**: All communication using the gossip protocol remains uncompressed. Once all servers in a cluster are upgraded to Mattermost v5.33 or later, we recommend that you disable this configuration setting for better performance.
-
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableGossipCompression": true`` with options ``true`` and ``false``.             |
-+--------------------------------------------------------------------------------------------------------------------------------+    
-
-Gossip Port
-^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The port used for the gossip protocol. Both UDP and TCP should be allowed on this port.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GossipPort": 8074`` with numerical input.    |
-+-------------------------------------------------------------------------------------------+
-
-Streaming Port
-^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The port used for streaming data between servers.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"StreamingPort": 8075`` with numerical input.    |
-+----------------------------------------------------------------------------------------------+
+- `Enable high availability mode <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-high-availability-mode>`__
+- `Cluster name <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#cluster-name>`__
+- `Override hostname <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#override-hostname>`__
+- `Use IP address <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#use-ip-address>`__
+- `Use gossip <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#use-gossip>`__
+- `Enable experimental gossip encryption <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-experimental-gossip-encryption>`__
+- `Enable gossip compression <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-gossip-compression>`__
+- `Gossip port <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#gossip-port>`__
+- `Streaming port <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#streaming-port>`__
 
 Rate Limiting
 ~~~~~~~~~~~~~~
 
-Access the following configuration settings in the System Console by going to **Environment > Rate Limiting**.
-
-Changes to properties in this section require a server restart before taking effect.
+Access the following configuration settings in the System Console by going to **Environment > Rate Limiting**. Changes to properties in this section require a server restart before taking effect.
 
 Enable Rate Limiting
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1011,9 +332,7 @@ Maximum Burst Size
 
 |all-plans| |self-hosted|
 
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-Maximum number of requests allowed beyond the per second query limit.
+The maximum number of requests allowed beyond the per second query limit.
 
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxBurst": 100`` with numerical input. |
@@ -1398,46 +717,46 @@ Improves user experience by extending sessions and keeping users logged in if th
 | This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-Session length for email and AD/LDAP authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Session length for email and AD/LDAP authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays": 30`` with numerical input.             |
-+--------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthWebInHours": 720`` with numerical input.             |
++----------------------------------------------------------------------------------------------------------------+
 
-Session length for mobile apps (days)
+Session length for mobile apps
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
+
+After changing this setting, the new session length will take effect after the next time the user enters their credentials.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthMobileInHours": 4320`` with numerical input.        |
++---------------------------------------------------------------------------------------------------------------+
+
+Session length for SSO authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays": 180`` with numerical input.        |
-+-------------------------------------------------------------------------------------------------------------+
-
-Session length for SSO authentication (days)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |self-hosted|
 
 This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
 
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
+Set the number of hours from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthSSOInDays": 30`` with numerical input. |
-+--------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthSSOInHours": 720`` with numerical input. |
++----------------------------------------------------------------------------------------------------+
 
 Session Cache (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1728,7 +1047,7 @@ Mattermost Apps Download Page Link
 Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
 +------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/download/"`` with string input. |
+| This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/apps/"`` with string input.     |
 +------------------------------------------------------------------------------------------------------------------------+
 
 Android App Download Link
@@ -1836,9 +1155,9 @@ Enable users to open Direct Message channels with
 
 **Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
 
-**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and pressing CTRL/CMD+K only lists users on the current team. If a user belongs to multiple teams, Direct Messages will still be received regardless of what team they are currently on.
+**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac only lists users on the current team. If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on.
 
-This setting only affects the UI, not permissions on the server. For instance, a Direct Message channel can be created with anyone on the server regardless of this setting.
+This setting only affects the UI, not permissions on the server. For instance, a direct message channel can be created with anyone on the server regardless of this setting.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively. |
@@ -2182,6 +1501,50 @@ Posts
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
+Automatically Follow Threads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article for details.
+
+**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread. Mattermost Cloud workspaces have this setting enabled.
+
+**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
+
+.. note::
+
+   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Collapsed Reply Threads
+~~~~~~~~~~~~~~~~~~~~~~~
+
+|all-plans| |self-hosted|
+
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
+
+.. important::
+    
+    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality. 
+
+System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
+
+**Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on`` by default.
+
+**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. 
+
+**Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
+
+**Disabled**: Disables Collapsed Reply Threads front-end functionality.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CollapsedThreads": always_on`` with options ``disabled``, ``default_off``, ``default_on``, and ``always_on`` |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -2276,7 +1639,7 @@ A list of URL schemes that are used for autolinking in message text. ``http``, `
 Google API Key
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+|all-plans| |self-hosted|
 
 Mattermost offers the ability to embed YouTube videos from URLs shared by end users. 
 
@@ -2403,7 +1766,7 @@ Enable End User Notices
 Authentication
 ---------------
 
-Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
+Authentication settings to enable account creation and log in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
 Signup
 ~~~~~~~
@@ -2503,7 +1866,7 @@ Enable sign-in with email
 
 **True**: Mattermost allows account creation using email and password.
 
-**False**: Sign in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a Single Sign-on service like AD/LDAP, SAML, or GitLab.
+**False**: Log in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a Single Sign-on service like AD/LDAP, SAML, or GitLab.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false``. |
@@ -2514,9 +1877,9 @@ Enable sign-in with username
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Mattermost allows users with email login to sign in using their username and password. This setting does not affect AD/LDAP login.
+**True**: Mattermost allows users with email login to log in using their username and password. This setting does not affect AD/LDAP login.
 
-**False**: Sign in with username is disabled and does not appear on the login screen.
+**False**: Log in with username is disabled and does not appear on the login screen.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EnableSignInWithUsername": true`` with options ``true`` and ``false``. |
@@ -2535,7 +1898,7 @@ Minimum Password Length
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
 +----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 10`` with numerical input.                  |
+| This feature's ``config.json`` setting is ``"MinimumLength": 8`` with numerical input.                   |
 +----------------------------------------------------------------------------------------------------------+
 
 Password Requirements
@@ -2557,10 +1920,10 @@ This feature's ``config.json`` settings are, respectively:
 .. list-table::
     :widths: 80
 
-    * - ``"Lowercase": true`` with options ``true`` and ``false``.
-    * - ``"Number": true`` with options ``true`` and ``false``.
-    * - ``"Uppercase": true`` with options ``true`` and ``false``.
-    * - ``"Symbol": true`` with options ``true`` and ``false``.
+    * - ``"Lowercase": false`` with options ``true`` and ``false``.
+    * - ``"Number": false`` with options ``true`` and ``false``.
+    * - ``"Uppercase": false`` with options ``true`` and ``false``.
+    * - ``"Symbol": false`` with options ``true`` and ``false``.
 
 Maximum Login Attempts
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -2582,13 +1945,12 @@ The default recommendation for secure deployment is to host Mattermost within yo
 
 If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
 
-
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |all-plans| |cloud| |self-hosted|
 
-**True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to sign-in to the Mattermost server. Specifically, they will be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
+**True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to log in to the Mattermost server. Specifically, they'll be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
 
 **False**: Multi-factor authentication is disabled.
 
@@ -2878,7 +2240,7 @@ The attribute in the AD/LDAP server used to populate the username field in Matte
 
 This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
 
-The **Username Attribute** may be set to the same value used to sign-in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
+The **Username Attribute** may be set to the same value used to log in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
@@ -3474,7 +2836,7 @@ Select OAuth 2.0 service provider
 
 Choose whether OAuth can be used for account creation and login. Options include:
 
-- **Do not allow sign-in via an OAuth 2.0 provider**
+- **Do not allow login via an OAuth 2.0 provider**
 - **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
 - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
 - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
@@ -3746,7 +3108,7 @@ Select OpenID Connect service provider
 
 Choose whether OpenID Connect can be used for account creation and login. Options include:
 
-- **Do not allow sign-in via an OpenID provider**
+- **Do not allow login via an OpenID provider**
 - **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
 - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
 - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
@@ -4097,6 +3459,11 @@ Enable Remote Marketplace
 | This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
+This setting only takes effect when ``"EnableMarketplace": true``.
+
+.. note::
+   For the Remote Marketplace to operate, each host running the Mattermost service requires network access to the marketplace service endpoint (hosted at ``https://api.integrations.mattermost.com``, see `Marketplace URL <#marketplace-url>`__ ).
+
 Marketplace URL
 ^^^^^^^^^^^^^^^^
 
@@ -4274,6 +3641,129 @@ Token
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
+Calls (beta)
+~~~~~~~~~~~~
+
+Access the following configuration settings in the System Console by going to **Plugins > Calls**.
+
+Enable Plugin
+^^^^^^^^^^^^^
+
+|all-plans| |self-hosted| |cloud|
+
+**True**: Enables the calls plugin on your Mattermost workspace.
+
+**False**: Disables the calls plugin on your Mattermost workspace.
+
+RTC Server Port
+^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The UDP port the RTC server will listen on. All calls traffic will be served through this port. The Default setting is 8443.
+
+Changing this setting requires a plugin restart to take effect.
+
+Enable on specific channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Allow Channel Admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
+
+**False**: Only System Admins will be able to enable or disable calls on specific channels.
+
+Enable on all channels
+^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Enable calls by default on all channels.
+
+**False**: Calls have to be explicitly enabled on channels.
+
+Max call participants
+^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The maximum number of participants that can join a single call. This is an optional field and default is 0 (unlimited). The maximum recommended setting is 200.
+
+ICE Host Override
+^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+An optional override to the host that gets advertised to clients when connecting to calls. Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP in order to let clients connect successfully. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
+
+This is an optional field. Changing this setting requires a plugin restart to take effect.
+
+ICE Servers Configurations
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON.
+
+Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``
+
+**Example**
+
+.. code-block:: json
+
+  [
+   {
+      "urls":[
+         "stun:stun.global.calls.mattermost.com:3478"
+      ]
+   },
+   {
+      "urls":[
+         "turn:turn.example.com:3478"
+      ],
+      "username":"webrtc",
+      "credentials":"turnpassword"
+   }
+  ]
+
+This is an optional field. Changing this setting may require a plugin restart to take effect.
+
+TURN Static Auth Secret
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A static secret used to generate short-lived credentials for TURN servers.
+
+This is an optional field.
+
+TURN Credentials Expiration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The expiration, in minutes, of the short-lived credentials generated for TURN servers.
+
+Server Side TURN
+^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: The RTC server will use the configured TURN candidates for server-initiated connections.
+
+**False**: TURN will be used only on the client-side.
+
+Changing this setting requires a plugin restart to take effect.
+
+RTCD Service URL
+^^^^^^^^^^^^^^^^
+
+|enterprise| |self-hosted|
+
+The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
+
+This is an optional field. Changing this setting requires a plugin restart to take effect.
+
 Channel Export
 ~~~~~~~~~~~~~~
 
@@ -4308,7 +3798,6 @@ Channel Name
 |all-plans| |self-hosted|
 
 Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
-
 
 Username
 ^^^^^^^^
@@ -4375,7 +3864,6 @@ Gfycat display style
 |all-plans| |self-hosted|
 
 Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
-
 
 GIPHY display style
 ^^^^^^^^^^^^^^^^^^^
@@ -5011,9 +4499,9 @@ This button initiates a compliance export job immediately. You can monitor the s
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Settings used to enable and configure Mattermost compliance reports. This feature is replaced by the `Compliance Export <https://docs.mattermost.com/configure/configuration-settings.html#compliance-monitoring>`__ feature, and will be removed in a future release. We recommend migrating to the new system.
+Settings used to enable and configure Mattermost compliance reports. 
 
-Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
+Access the following configuration settings in the System Console by going to **Compliance > Compliance Monitoring**.
 
 Enable Compliance Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5160,9 +4648,9 @@ Allow Authentication Transfer
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Users can change their sign-in method to any that is enabled on the server, either via **Profile > Security** or the APIs.
+**True**: Users can change their login method to any that is enabled on the server, either via **Profile > Security** or the APIs.
 
-**False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
+**False**: Users cannot change their login method, regardless of which authentication options are enabled.
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``. |
@@ -5592,47 +5080,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Automatically Follow Threads
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
- 
-.. important::
-
-    This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__, and this setting may impact your database server performance. If you can't easily scale up and tune your database, or if you're running the Mattermost application server and database server on the same machine, we recommended disabling this configuration setting until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these `performance considerations here <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__.
-
-**True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread.
-
-**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
-
-.. note::
-
-   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
-+--------------------------------------------------------------------------------------------------------------+
-
-Collapsed Reply Threads (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
-
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are available in Mattermost Cloud and from self-hosted Mattermost v5.37 as an early access beta, and is disabled by default. See our `Organizing Conversations using Collapsed Reply Threads (Beta) <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
-
-System Admins can set the default appearance of Collapsed Reply Threads for their end users by going to **System Console > Experimental > Features**, then setting **Collapsed Reply Threads** to one of the following options:
-
-**Enabled (Default Off)**: Enables Collapsed Reply Threads functionality on the server. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads-beta>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads (Beta)**.
-
-.. note::
-
-   Collapsed Reply Threads are in beta. Before enabling this feature, ensure you clearly understand the `known issues <https://docs.mattermost.com/channels/organize-conversations.html#known-issues>`_, particularly relating to database resource requirements and server performance implications. If you can't easily increase your database size we recommended waiting to enable Collapsed Reply Threads until it's `promoted to general availability in Q2 2022 <https://mattermost.com/blog/collapsed-reply-threads-ga/>`_.
-
-**Disabled**: Disables Collapsed Reply Threads front-end functionality. To disable all backend operations and thread tracking for Collapsed Reply Threads, you must also disable the `ThreadAutoFollow <https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads>`__ configuration setting.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CollapsedThreads": disabled`` with options ``disabled`` and ``default_off``. |
-+---------------------------------------------------------------------------------------------------------------------------+
 
 Use Channel Name in Email Notifications (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5676,6 +5124,25 @@ Shared channels enables the ability to establish secure connections between Matt
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
+Enable Apps Bar
+^^^^^^^^^^^^^^^
+
+|all-plans| |cloud| |self-hosted|
+
+This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
+
+.. note::
+  
+  Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
+
+**True**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
+
+**False**: All integration icons in the channel header display in the channel header.
+
++----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------+
+
 Settings configurable only in ``config.json``
 ----------------------------------------------
 
@@ -5691,7 +5158,7 @@ Enable Global Retention Policy for Messages
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Messages can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+**True**: Messages can be deleted as part of a scheduled data retention job. This doesn't apply to custom retention policies.
 
 **False**: Messages can't be deleted as part of a scheduled data retention job.
 
@@ -5706,7 +5173,7 @@ Enable Global Retention Policy for Files
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Files can be deleted as part of a scheduled data retention job. Doesn't apply to custom retention policies.
+**True**: Files can be deleted as part of a scheduled data retention job. This doesn't apply to custom retention policies.
 
 **False**: Files can't be deleted as part of a scheduled data retention job.
 
@@ -5760,174 +5227,11 @@ The following values are currently supported:
 - ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 - ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 
-This configuration setting is disabled by default and requires `Developer Mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
+This configuration setting is disabled by default and requires `developer mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
 +----------------------------------------------------------------------------------------+
-
-WebSocket URL
-^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This setting allows the server to instruct clients where they should try to connect WebSockets to.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"WebsocketURL": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-License File Location
-^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |professional| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Path and filename of the license file on disk. On startup, if Mattermost cannot find a valid license in the database from a previous upload, it looks here. It can be an absolute path or a path relative to the ``mattermost`` directory.
-
-+---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
-+---------------------------------------------------------------------------------------------+
-
-TLS Minimum Version
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum TLS version used by the Mattermost server. TLS v1.2 is default given insecurities for TLS 1.0 and 1.1.
-
-.. note::
-  This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TLSMinVer": "1.2"`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-Trusted Proxy IP Header
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Specified headers that will be checked one by one for IP addresses (order is important). All other headers are ignored.
-
-Starting with v5.12, new configs will have this set by default to ``[]``, meaning that no header will be trusted. Configs created prior to v5.12 without this config entry will have it set to ``["X-Forwarded-For", "X-Real-Ip"]`` on upgrade in order to maintain backwards compatibility.
-
-We recommend keeping the default setting when Mattermost is running without a proxy, to avoid the client sending the headers and bypassing rate limiting and/or the audit log. For environments that use a reverse proxy this problem does not exist, provided that the headers are set by the reverse proxy. In those environments, only explicitly whitelist the header that is set by the reverse proxy and no additional values.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TrustedProxyIPHeader": []`` with string array input consisting of header names, such as ``["X-Forwarded-For", "X-Real-Ip"]``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Strict Transport Security (HSTS)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: Adds the Strict Transport Security (HSTS) header to all responses, forcing the browser to request all resources via HTTPS. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__.
-
-**False**: No restrictions on TLS transport. Strict Transport Security (HSTS) header is not added to responses.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TLSStrictTransport": false`` with options ``true`` and ``false``.                                         |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Secure TLS Transport Expiry
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The time in seconds that the browser remembers a site is only to be accessed using HTTPS. After this period, a site can be accessed using HTTP unless ``TLSStrictTransport`` is set to ``true``. Defaults to two years. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with numerical input.    |
-+-------------------------------------------------------------------------------------------------------------+
-
-TLS Cipher Overwrites
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Set TLS ciphers overwrites to meet requirements from legacy clients which don't support modern ciphers, or to limit the types of accepted ciphers.
-
-If none specified, the Mattermost server assumes a set of currently considered secure ciphers, and allows overwrites in the edge case. See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go <https://github.com/mattermost/mattermost-server/blob/master/model/config.go>`__ for the list of ciphers considered secure.
-
-.. note::
-  This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with numerical input.    |
-+-------------------------------------------------------------------------------------------------------------+
-
-Go Routine Health Threshold
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Set a threshold on the number of goroutines when the Mattermost system is considered to be in a healthy state. When goroutines exceed this limit, a warning is returned in the server logs.
-
-To turn off checking for the threshold, set this value to ``-1``.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GoroutineHealthThreshold": -1`` with numerical input.       |
-+----------------------------------------------------------------------------------------------------------+
-
-Allow Cookies for Subdomains
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: Allows cookies for subdomains by setting the domain parameter on Mattermost cookies.
-
-**False**: Cookies not allowed for subdomains.
-
-+----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowCookiesForSubdomains": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------+
-
-Cluster Log Timeout
-^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-This setting defines the frequency of cluster request time logging for :doc:`../scale/performance-monitoring`, measured in milliseconds.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with numerical input. |
-+-----------------------------------------------------------------------------------------------------------+
-
-Read Only Config
-^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: Changes made to settings in the System Console are ignored.
-
-**False**: Changes made to settings in the System Console are written to ``config.json``.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
 
 Enable Post Search
 ^^^^^^^^^^^^^^^^^^^
@@ -6234,9 +5538,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-Database Settings
-~~~~~~~~~~~~~~~~~
-
 Clean Up Old Database Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -6275,7 +5576,7 @@ Read Replicas
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
+Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
@@ -6290,7 +5591,7 @@ Search Replicas
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
+Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
@@ -6355,6 +5656,21 @@ Maximum image resolution size for message attachments in pixels.
 
 File Settings
 ~~~~~~~~~~~~~~
+
+Maximum Image Decoder Concurrency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Indicates how many images can be decoded concurrently at once. The default value of ``-1`` configures Mattermost to automatically use the number of CPUs present.
+
+.. note::
+
+  This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes`` Therefore, a good rule of thumb to follow is that ``MaxImageResolution* MaxImageDecoderConcurrency * 24`` should be less than the allocated memory for image decoding.
+
++--------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxImageDecoderConcurrency": "-1"`` with numerical input. |
++--------------------------------------------------------------------------------------------------------+
 
 Initial Font
 ^^^^^^^^^^^^^^
@@ -6453,86 +5769,9 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-Cluster Settings
-~~~~~~~~~~~~~~~~
 
-Maximum Idle Connections
-^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The maximum number of idle connections held open from one server to all others in the cluster.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxIdleConns": 100`` with numerical input. |
-+-----------------------------------------------------------------------------------------+
-
-Maximum Idle Connections per Host
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The maximum number of idle connections held open from one server to another server in the cluster.
-
-+------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxIdleConnsPerHost": 128`` with numerical input. |
-+------------------------------------------------------------------------------------------------+
-
-Idle Connection Timeout (in Milliseconds)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The number of milliseconds to leave an idle connection open between servers in the cluster.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdleConnTimeoutMilliseconds": 90000`` with numerical input. |
-+----------------------------------------------------------------------------------------------------------+
-
-Network Interface
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-An IP address used to identify the device that does automatic IP detection in High Availability clusters.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NetworkInterface": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
-
-Bind Address
-^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involve NAT (Network Address Translation).
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BindAddress": ""`` with string input. |
-+------------------------------------------------------------------------------------+
-
-Advertise Address
-^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve NAT (Network Address Translation).
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AdvertiseAddress": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
 
 Metrics Settings
 ~~~~~~~~~~~~~~~~~
@@ -6725,7 +5964,7 @@ File configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit files locally, specifying size, backup interval, compression, and maximum age to manage file rotation. 
+Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. 
 
 **True**: File output is enabled.
 
@@ -7058,164 +6297,6 @@ This setting is used to maximize performance for large Enterprise deployments.
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
 +---------------------------------------------------------------------------------------------------+
-
-Elasticsearch Settings
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Post Index Replicas
-^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The number of replicas to use for each post index. If this setting is changed, it only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting. 
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PostIndexReplicas": 2`` with numerical input.        |
-+---------------------------------------------------------------------------------------------------+
-
-Post Index Shards
-^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The number of shards to use for each post index. If this setting is changed, it only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting. 
-
-+-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PostIndexShards": 1`` with numerical input.        |
-+-------------------------------------------------------------------------------------------------+
-
-Aggregate Search Indexes
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job. 
-
-.. note::
-  If you're using `data retention <https://docs.mattermost.com/comply/data-retention-policy.html>`__ and `ElasticSearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes>`__ setting is set to a value that is greater than your data retention policy in days.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AggregatePostsAfterDays": 365`` with numerical input.        |
-+-----------------------------------------------------------------------------------------------------------+
-
-Post Aggregator Start Time
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The start time of the daily scheduled aggregator job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PostsAggregatorJobStartTime": "03:00"`` with 24-hour timestamp input in the form ``"HH:MM"``. |
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-
-Index Prefix
-^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Prefix on the Elasticsearch index name. Enables the use of Mattermost Elasticsearch on a shared Elasticsearch cluster. 
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IndexPrefix": ""`` with string input.     |
-+----------------------------------------------------------------------------------------+
-
-.. note::
-  When this setting is used, all Elasticsearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.
-  
-Live Indexing Batch Size
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Determines how many new posts are batched together before they are added to the Elasticsearch index. It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling multiple messages per second. 
-
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LiveIndexingBatchSize": 1`` with numerical input.         |
-+--------------------------------------------------------------------------------------------------------+
-
-Request Timeout
-^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Timeout in seconds for Elasticsearch calls.
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with numerical input.       |
-+-------------------------------------------------------------------------------------------------------+
-
-Batch Size
-^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Sets the number of objects that can be indexed in a single batch.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.       |
-+----------------------------------------------------------------------------------------------+
-
-Trace
-^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or empty.  ``error`` will create the error trace when initialising the Elasticsearch client and will print any template creation or search query that returns an error as part of the error message. ``all`` will create the three traces (error, trace and info) for the driver and will not print the queries because they will be part of the trace log level of the driver. 
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
-+-------------------------------------------------------------------------------------------------------+
-
-Bleve Settings
-~~~~~~~~~~~~~~
-
-BatchSize
-^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Sets the number of objects that can be indexed in a single batch.
-
-+---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.      |
-+---------------------------------------------------------------------------------------------+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~

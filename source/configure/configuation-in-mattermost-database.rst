@@ -42,16 +42,13 @@ To use the ``mattermost config get`` command:
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config get SqlSettings.DataSource
+   mmctl config get SqlSettings.DataSource
 
 Example output:
 
 .. code-block:: text
 
-   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
-
-.. note::
-   Be sure to run this CLI command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
+   "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
 
 Another way to get your database connection string is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
 
@@ -170,7 +167,7 @@ The CLI command to migrate the config to the database should always be run as th
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
+   mmctl config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
    When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_

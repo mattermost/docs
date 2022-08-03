@@ -10,11 +10,11 @@ Access your Mattermost workspace
    :maxdepth: 1
    :hidden:
 
-   Sign in to Mattermost </welcome/sign-in>
+   Log in to Mattermost </welcome/log-in>
    Keyboard shortcuts </welcome/keyboard-shortcuts>
    Log out of Mattermost </welcome/log-out>
 
-* :doc:`Sign in to Mattermost </welcome/sign-in>` - Sign into a Mattermost workspace to connect with your teammates. 
+* :doc:`Log in to Mattermost </welcome/log-in>` - Log in to a Mattermost workspace to connect with your teammates. 
 * :doc:`Keyboard shortcuts </welcome/keyboard-shortcuts>` - Learn keyboard shortcuts for Mattermost product navigation and accessibility.
 * :doc:`Log out of Mattermost </welcome/log-out>` - Log out of all of your teams on the server.
 
@@ -33,6 +33,7 @@ Mattermost basics
    Team settings </welcome/team-settings>
    Team keyboard shortcuts </welcome/team-keyboard-shortcuts>
    About user roles </welcome/about-user-roles>
+   About insights </welcome/insights>
 
 * :doc:`Get started with Mattermost Channels </welcome/get-started-mattermost-channels>` - Learn how to communicate and collaborate with your team using Mattermost Channels.
 * :doc:`Get started with Mattermost Playbooks </playbooks/get-started-with-playbooks>` - Learn how to create and refine repeatable, measurable workflows for a range of scenarios using Mattermost Playbooks.
@@ -40,8 +41,9 @@ Mattermost basics
 * :doc:`Manage custom groups </welcome/manage-custom-groups>` - Learn how to define custom groups of users, such as a team or department, you can @mention in Mattermost.  
 * :doc:`About teams </welcome/about-teams>` - Learn about the digital workspaces where you and your teammates collaborate together in Mattermost.
 * :doc:`Team settings </welcome/team-settings>` - Configure team names, descriptions, icons, and invitation settings.
-* :doc:`Team keyboard shortcuts </welcome/team-keyboard-shortcuts>` Make a more efficient use of your keyboard with keyboard shortcuts.
+* :doc:`Team keyboard shortcuts </welcome/team-keyboard-shortcuts>` Make more efficient use of your keyboard with keyboard shortcuts.
 * :doc:`About user roles </welcome/about-user-roles>` - Learn more about the six types of user roles and their permissions in Mattermost.
+* :doc:`Insights </welcome/insights>` - Get insights into the most important events happening on each team within your Mattermost workspace.
 
 Customize your Mattermost experience
 ------------------------------------
@@ -62,15 +64,17 @@ Customize your Mattermost experience
 * :doc:`Customize your Desktop App experience </welcome/customize-desktop-app-experience>` - Learn about additional options in the Desktop App you can customize.
 * :doc:`Manage Desktop App server connections </welcome/manage-desktop-app-server-connections>` - Learn how to connect to multiple Mattermost servers using the Mattermost Desktop App. 
 
-Interface changes in v6.0
---------------------------
+Mattermost interface changes
+----------------------------
 
-We've made changes to your user experience in Matttermost v6.0. If you're upgrading from an older version of Mattermost, review what's changed in v6.0 and later.   
+Upgrading from an older version of Mattermost? Learn what's changed or moved in your new release.
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
+   What changed in Mattermost v7.0? </welcome/what-changed-in-v70>
    What changed in Mattermost v6.0? </welcome/what-changed-in-v60>
 
-* :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the many ways we've improved your Mattermost experience from v6.0.
+* :doc:`What changed in Mattermost v7.0? </welcome/what-changed-in-v70>` - Learn more about how we've improved your Mattermost user experience from v7.0.
+* :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the ways we've improved your Mattermost navigation experience from v6.0.

@@ -10,7 +10,7 @@ Customize your channel sidebar
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30
-  :target: https://mattermost.com/download
+  :target: https://mattermost.com/sign-up
   :alt: Available for Mattermost Cloud deployments.
 
 .. |self-hosted| image:: ../images/self-hosted-badge.png
@@ -46,7 +46,7 @@ Create custom categories to group channels together for quicker and easier navig
 
 To create categories, select the **+** symbol at the top of the sidebar. Or, select the **More options...** icon in the sidebar on any category header, then select **Create New Category**.
 
-Next, type a category name, select **Create**, then drag any channels or direct messages into this new category. You can also multi-select channels and direct messages to drag them together as a group using CTRL/CMD+Select or SHIFT+Select. See **Dragging and dropping selections** below for details.
+Next, type a category name, select **Create**, then drag any channels or direct messages into this new category. You can also multi-select channels and direct messages to drag them together as a group by pressing :kbd:`Ctrl` or :kbd:`Shift` and selecting on Windows or Linux, or :kbd:`⌘` or :kbd:`⇧` and selecting on Mac. See **Dragging and dropping selections** below for details.
 
 Make categories work for you
 ----------------------------
@@ -88,9 +88,9 @@ Drag and drop selections
 
 To select multiple channels:
 
-- Select sequential channels and/or direct messages by pressing and holding SHIFT+Select. 
-- Select non-sequential channels and/or direct messages by pressing and holding CMD+Select (for Mac) or CTRL+Select (for Windows/Linux). 
-- Press ESC to clear channel or direct message selections.
+- Select sequential channels and/or direct messages by pressing :kbd:`Shift` while selecting on Windows or Linux, or :kbd:`⇧` while selecting  on Mac. 
+- Select non-sequential channels and/or direct messages by pressing :kbd:`Ctrl` while selecting on Windows or Linux, or :kbd:`⌘` while selecting on Mac
+- Press :kbd:`ESC` to clear channel or direct message selections.
 
 Using the Mattermost web or desktop app, drag selected channels and/or direct messages between or within categories. 
 

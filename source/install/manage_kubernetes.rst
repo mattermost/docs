@@ -1,9 +1,13 @@
+:orphan:
+
 :nosearch:
 
 .. _manage_kubernetes:
 
 Managing the Mattermost Kubernetes operator
 ============================================
+
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
 CLI commands
 ------------
