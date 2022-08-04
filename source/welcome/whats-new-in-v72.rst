@@ -169,7 +169,11 @@ Select the **…** menu next to the board’s name in the sidebar, and select **
 How do I remove a board from the sidebar?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select the **…** menu next to the board’s name, and select **Hide board**.
+Select the **…** menu next to the board’s name, and select **Hide board**. If you're an admin of the board, you can delete the board by selecting **Delete board** from the same menu. Deleting the board permanently removes the board from the sidebar of all board members.
+
+.. note:: 
+  
+  Hiding the board only removes the board from *your* sidebar. You can add the board back to your sidebar using the search box (CMD+K/CTRL+K).
 
 What happens if I delete a category with boards underneath it?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
