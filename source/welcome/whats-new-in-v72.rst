@@ -146,7 +146,7 @@ The migration will happen automatically, but your administrator should perform a
 Why are there so many boards on my sidebar?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. To help you organize your boards better, you can collapse categories, hide boards, and/or move them to other categories.
+We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. To help you organize your boards better, you can collapse categories, hide boards, delete old boards, and/or move them to other categories.
 
 How do I find my boards now?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
