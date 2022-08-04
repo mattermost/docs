@@ -133,7 +133,7 @@ If you belonged to a workspace at the time of migration you’ll see that they�
 
 Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t see the custom categories created from migration, and boards they join will appear under the default **Boards** category.
 
-Boards that you create after the migration won’t be linked to a workspace. and will always appear under the default **Boards** category unless you move or hide the boards.
+Boards that you create after the migration won’t be linked to a workspace, and will always appear under the default **Boards** category unless you move or hide the boards.
 
 Frequently asked questions
 --------------------------
