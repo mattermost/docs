@@ -64,11 +64,6 @@ Sharing
 
 Select **Share** to view and edit permissions to a board.
 
-.. image:: ../images/boards-whats-new-06.png
-  :alt: Select the share button to open up the permissions options.
-  
-  
-
 .. image:: ../images/boards-whats-new-07.png
   :alt: Adjust the roles and sharing options as needed.
     
