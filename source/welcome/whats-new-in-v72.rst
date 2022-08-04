@@ -154,7 +154,7 @@ We removed workspaces, so if you were a member of many boards prior to migration
 How do I find my boards now?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the search box (CMD+K/CTRL+K)
+Use the search box (CMD+K/CTRL+K).
 
 How do I create a new sidebar category?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
