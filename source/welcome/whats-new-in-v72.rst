@@ -156,7 +156,7 @@ Use the search box (CMD+K/CTRL+K)
 How do I create a new sidebar category?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select the **…** menu next to the “Boards” (default) category, and select **Create New Category**.
+Select the **…** menu next to the “Boards” (default) category or any other existing category, and select **Create New Category**.
 
 How do I move a board to another category?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
