@@ -117,29 +117,46 @@ Boards that you create after the migration won’t be linked to a workspace. and
 Frequently asked questions
 --------------------------
 
-Q: Will I need to backup and restore any data?
-A: The migration will happen automatically, but your administrator should perform a backup prior to the upgrade.
+Will I need to backup and restore any data?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Q: Why are there so many boards on my sidebar?
-A: We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. To help you organize your boards better, you can collapse categories, hide boards, and/or move them to other categories.
+The migration will happen automatically, but your administrator should perform a backup prior to the upgrade.
 
-Q: How do I find my boards now?
-A: Use the search box (CMD+K/CTRL+K)
+Why are there so many boards on my sidebar?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Q: How do I create a new sidebar category?
-A: Select the **…** menu next to the “Boards” (default) category, and select **Create New Category**.
+We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. To help you organize your boards better, you can collapse categories, hide boards, and/or move them to other categories.
 
-Q: How do I move a board to another category?
-A: Select the **…** menu next to the board’s name in the sidebar, and select **Move To…**.
+How do I find my boards now?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Q: How do I remove a board from the sidebar?
-A: Select the **…** menu next to the board’s name, and select **Hide board**.
+Use the search box (CMD+K/CTRL+K)
 
-Q: What happens if I delete a category with boards underneath it?
-A: The boards will be moved to the default “Boards” category. Other users with the same category name will not be impacted.
+How do I create a new sidebar category?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Q: How do I create a public custom template?
-A: On the template editor, select **Share** and set the team role to **Editor**.
+Select the **…** menu next to the “Boards” (default) category, and select **Create New Category**.
 
-Q: Help, I’ve got a problem not covered here, what do I do?
-A: Please report any issues to the `public Focalboard channel <https://community.mattermost.com/core/channels/focalboard>`_. We’re here to help!
+How do I move a board to another category?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select the **…** menu next to the board’s name in the sidebar, and select **Move To…**.
+
+How do I remove a board from the sidebar?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select the **…** menu next to the board’s name, and select **Hide board**.
+
+What happens if I delete a category with boards underneath it?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The boards will be moved to the default “Boards” category. Other users with the same category name will not be impacted.
+
+How do I create a public custom template?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On the template editor, select **Share** and set the team role to **Editor**.
+
+Help, I’ve got a problem not covered here, what do I do?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Please report any issues to the `public Focalboard channel <https://community.mattermost.com/core/channels/focalboard>`_. We’re here to help!
