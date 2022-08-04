@@ -180,4 +180,4 @@ On the template editor, select **Share** and set the team role to **Editor**.
 
 Help, I’ve got a problem not covered here, what do I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Please report any issues to the `public Focalboard channel <https://community.mattermost.com/core/channels/focalboard>`_. We’re here to help!
+Please report any issues to the public `Focalboard channel <https://community.mattermost.com/core/channels/focalboard>`_ or `file a bug <https://github.com/mattermost/focalboard/issues/new?assignees=&labels=Bug%2C+Triage&template=bug_report.md&title=Bug%3A+>`_ on GitHub. We’re here to help!
