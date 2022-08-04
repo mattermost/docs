@@ -24,6 +24,7 @@ Sidebar categories
 Navigation is simplified, and now works similarly to channels. No more switching between workspaces - and the dashboard page has been removed. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces. Use the search box (Ctrl+K / Cmd+K) to find additional boards.
 
 .. image:: ../images/boards-whats-new-01.png
+  :width: 303
   :alt: Boards sidebar categories can be customized for easier navigation.
 
 Boards can be organized under custom categories on a per-user level. So, users can organize their boards under categories that make sense to them without impacting the boards or categories for other users. Select the “...” options menu next to a custom category to manage your categories.
@@ -65,6 +66,8 @@ Select **Share** to view and edit permissions to a board.
 
 .. image:: ../images/boards-whats-new-06.png
   :alt: Select the share button to open up the permissions options.
+  
+  
 
 .. image:: ../images/boards-whats-new-07.png
   :alt: Adjust the roles and sharing options as needed.
