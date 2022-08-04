@@ -23,19 +23,31 @@ Sidebar categories
 
 Navigation is simplified, and now works similarly to channels. No more switching between workspaces - and the dashboard page has been removed. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces. Use the search box (Ctrl+K / Cmd+K) to find additional boards.
 
+.. image:: ../images/boards-whats-new-01.png
+  :alt: Boards sidebar categories can be customized for easier navigation.
+
 Boards can be organized under custom categories on a per-user level. So, users can organize their boards under categories that make sense to them without impacting the boards or categories for other users. Select the “...” options menu next to a custom category to manage your categories.
+
+.. image:: ../images/boards-whats-new-02.png
+  :alt: Select the context menu to create a new category, delete a category, or rename a category.
 
 Team sidebar
 ~~~~~~~~~~~~
 
 Boards now supports a team sidebar so you can easily navigate between boards on different teams. If you’re a member of multiple teams, the team sidebar will appear on the left hand side. To switch teams, select any of the team icons from the team sidebar.
 
+.. image:: ../images/boards-whats-new-03.png
+  :alt: The team sidebar allows you to switch between teams from within boards.
+
 Linking boards to channels
 --------------------------
 
 The channel header’s board icon is now located on the channel `Apps Bar <https://docs.mattermost.com/configure/configuration-settings.html#enable-apps-bar>`_. When you select the **Boards** icon, you’ll open a new right-hand sidebar (RHS) where channel admins can search and link boards to the channel. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration. Select a linked board to navigate directly to the board.
 
-Channel members can search and link boards within the team where they are also board admins. Linking a board to a channel automatically grants all channel members Editor access to the board (see Sharing section below for more details).
+.. image:: ../images/boards-whats-new-04.png
+  :alt: You can find the boards icon in the Apps Bar on the right-hand side of the screen.
+
+Channel members can search and link boards within the team where they are also board admins. Linking a board to a channel automatically grants all channel members Editor access to the board.
 
 .. note:: 
   
@@ -43,15 +55,24 @@ Channel members can search and link boards within the team where they are also b
 
 Channel members can also create a new board from the RHS. Doing so will automatically link the new board to the channel and grant channel members permissions to the board.
 
+.. image:: ../images/boards-whats-new-05.png
+  :alt: You can create a board from the RHS which is automatically added to the channel you're in.
+
 Sharing
 -------
 
 Select **Share** to view and edit permissions to a board.
 
+.. image:: ../images/boards-whats-new-06.png
+  :alt: Select the share button to open up the permissions options.
+
+.. image:: ../images/boards-whats-new-07.png
+  :alt: Adjust the roles and sharing options as needed.
+    
 Team access
 ~~~~~~~~~~~
 
-Boards belong to teams, and only members of that team can eithercan be either be granted editor access or no access to the board by default.members of the board (similar to channels).
+Boards belong to teams, and only members of that team can either be granted editor access or no access to the board by default.
 
 Roles
 ~~~~~
@@ -69,17 +90,17 @@ In the future, there will be additional roles:
 Channel role groups
 ~~~~~~~~~~~~~~~~~~~
 
-Board Admins can add a channel to a board to grant its members Editor access. To do this, open the Share option, search for the channel, and add it to the board as a user. The default role is Editor. Doing so also links the board back to the channel, where the board will appear on the channel RHS.
+Board Admins can add a channel to a board to grant its members editor access. To do this, open the **Share** option, search for the channel, and add it to the board as a user. The default role is **Editor**. Doing so also links the board back to the channel, where the board will appear on the channel RHS.
 
 Custom templates
 ----------------
 
-Custom templates also support permissions control, and are restricted to only the template creator by default. The template creator is an admin of the template and can make it public so it will be accessible to everyone on the team via the Share button on the template editor, and then setting the team role as Editor.
+Custom templates also support permissions control, and are restricted to only the template creator by default. The template creator is an admin of the template and can make it public so it will be accessible to everyone on the team via the **Share** button on the template editor, and then setting the team role as **Editor**.
 
 Automatic migration
 -------------------
 
-Instead of being tied to a particular channel, each board has been automatically migrated to use its own access control list. The creator of the original board is set as an admin on the board, with the ability to change the board’s permissions. Other members are granted the new Editor role.
+Instead of being tied to a particular channel, each board has been automatically migrated to use its own access control list. The creator of the original board is set as an admin on the board, with the ability to change the board’s permissions. Other members are granted the **Editor** role.
 
 Public channels
 ~~~~~~~~~~~~~~~
@@ -89,12 +110,12 @@ If a board or custom template was previously attached to a public channel: It’
 Private channels
 ~~~~~~~~~~~~~~~~
 
-If a board or custom template was previously attached to a private channel: It will be searchable by, and accessible to, any member of that channel at the time of migration. Future members will need to be added by the admin.
+If a board or custom template was previously attached to a private channel: It's now searchable by, and accessible to, any member of that channel at the time of migration. Future members will need to be added by the admin.
 
 Direct messages (DMs) and group messages (GMs)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If a board or custom template was previously attached to a direct message or group message: It will be searchable by, and accessible to, any member of that channel. Future members will need to be added by the admin.
+If a board or custom template was previously attached to a direct message or group message: It's now searchable by, and accessible to, any member of that channel. Future members will need to be added by the admin.
 
 For boards previously attached to DMs and GMs whose members are associated with **more than one team**:
 
@@ -108,11 +129,11 @@ For boards previously attached to DMs and GMs whose members are associated with 
 Workspaces to categories
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you belonged to a workspace at the time of migration you’ll see that they’ve been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default “Boards” category.
+If you belonged to a workspace at the time of migration you’ll see that they’ve been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
 
-Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t have default categories, and boards they join will appear under the default “Boards” category.
+Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t have default categories, and boards they join will appear under the default **Boards** category.
 
-Boards that you create after the migration won’t be linked to a workspace. and will always appear under the default "Boards" category unless you move or hide the boards.
+Boards that you create after the migration won’t be linked to a workspace. and will always appear under the default **Boards** category unless you move or hide the boards.
 
 Frequently asked questions
 --------------------------
