@@ -121,7 +121,7 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     A beta AppImage distribution of a compressed tarball is available. Automatic app updates aren’t supported. You must update your app manually. 
 
-    1. Download the latest version of the Mattermost Desktop App:
+    1. Download the latest version of the Mattermost desktop app:
 
       - 64-bit systems: `mattermost-desktop-5.1.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.1.1/mattermost-desktop-5.1.1-linux-x64.tar.gz>`__
       - 32-bit systems: `mattermost-desktop-5.1.1-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.1.1/mattermost-desktop-5.1.1-linux-ia32.tar.gz>`__
@@ -136,11 +136,11 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     **Install from the App Store**
 
-    We recommend that you install the Desktop App from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`__. When you install through the App Store, your Desktop App updates automatically when a new release is available.
+    We recommend that you install the desktop app from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`__. When you install through the App Store, your Desktop App updates automatically when a new release is available.
 
     **Download the Desktop App from GitHub**
 
-    You can `download the Desktop App directly from our GitHub release page <https://github.com/mattermost/desktop/releases>`__. However, when you install the Desktop App this way, you can't manually check for updates, and updates won't be installed automatically.
+    You can `download the desktop app directly from our GitHub release page <https://github.com/mattermost/desktop/releases>`__. However, when you install the desktop app this way, you can't manually check for updates, and updates won't be installed automatically.
     
     1. Download the latest version of the Mattermost desktop app:
       
@@ -165,7 +165,7 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     **MSI Installer and group policies (beta)**
 
-    You can download the latest version of the Mattermost Desktop App MSI installer (Beta):
+    You can download the latest version of the Mattermost desktop app MSI installer (Beta):
 
     - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.1.1/mattermost-desktop-5.1.1-x64.msi>`__
     - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.1.1/mattermost-desktop-5.1.1-x86.msi>`__
@@ -186,12 +186,12 @@ You can `download the Desktop App directly from our Downloads page <https://matt
 
     **Disable automatic updates**      
     
-    Automatic Desktop App updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
+    Automatic desktop app updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation <https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
     
 Additional documentation resources
 ----------------------------------
 
-The following additional documentation resources are also available for the Mattermost Desktop App:
+The following additional documentation resources are also available for the Mattermost desktop app:
 
 - `Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__
 - `Minimum software requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#desktop-apps>`__
