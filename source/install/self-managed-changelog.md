@@ -57,7 +57,9 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Pricing modal + Upgrade button for self-managed
- - 
+ - Added an "Upgrade" button for admins on the navigation bar.
+ - Added the ability for admins to quickly view different paid license options inside the product.
+
 
 #### Audit Log V2
  - 
