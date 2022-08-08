@@ -56,15 +56,14 @@ Latest Mattermost Releases:
 
 ### Highlights
 
+#### Post Forwarding
+ - You can now easily share messages as permalinks and respective permalink previews via the new Post Forwarding feature. Simply select the new **Forward message** option from the **More** section of the message hover actions menu on a given message, choose a desired destination, and optionally add a comment for context.
+ 
 #### Pricing modal + Upgrade button for self-managed
  - Added an "Upgrade" button for admins on the navigation bar.
  - Added the ability for admins to quickly view different paid license options inside the product.
 
-
 #### Audit Log V2
- - 
-
-#### Post Forwarding
  - 
 
 #### Calls Updates
