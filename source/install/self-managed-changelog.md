@@ -50,7 +50,7 @@ Latest Mattermost Releases:
 
    - All the commands were tested on a 8 core, 16GB RAM machine.
    
- - V7.2 Boards breaking changes https://community.mattermost.com/private-core/pl/bfuu14jt83n9uescx4969isrhr ?
+ - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -59,9 +59,9 @@ Latest Mattermost Releases:
 #### Post Forwarding
  - You can now easily share messages as permalinks and respective permalink previews via the new Post Forwarding feature. Simply select the new **Forward message** option from the **More** section of the message hover actions menu on a given message, choose a desired destination, and optionally add a comment for context.
  
-#### Pricing modal + Upgrade button for self-managed
- - Added an "Upgrade" button for admins on the navigation bar.
- - Added the ability for admins to quickly view different paid license options inside the product.
+#### Pricing Modal and Upgrade Button
+ - Added an "Upgrade" button for Admins on the navigation bar.
+ - Added the ability for Admins to quickly view different paid license options inside the product.
 
 #### Audit Log V2
  - 
@@ -70,7 +70,10 @@ Latest Mattermost Releases:
  - 
 
 #### Boards Updates
- - 
+ - Added the ability to organize boards in the new navigation sidebar with custom categories.
+ - Pressing ``Ctrl+K`` / ``Cmd+K`` loads the board switcher to find additional boards.
+ - Added the ability to set board and template permissions in the new Share dialog.
+ - Added the ability to link boards to channels to automatically grant channel members board permissions.
 
 ### Improvements
 
