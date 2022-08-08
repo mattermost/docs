@@ -3,7 +3,7 @@ Compliance monitoring
 
 .. This page is intentionally NOT accessible from the LHS.
 
-|enterprise| |self-hosted|
+|enterprise| |cloud| |self-hosted|
 
 .. |enterprise| image:: ../images/enterprise-badge.png
   :scale: 30
