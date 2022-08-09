@@ -49,8 +49,6 @@ Latest Mattermost Releases:
    Records: 0  Duplicates: 0  Warnings: 0
 
    - All the commands were tested on a 8 core, 16GB RAM machine.
-   
- - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -68,12 +66,6 @@ Latest Mattermost Releases:
 
 #### Calls Updates
  - 
-
-#### Boards Updates
- - Added the ability to organize boards in the new navigation sidebar with custom categories.
- - Pressing ``Ctrl+K`` / ``Cmd+K`` loads the board switcher to find additional boards.
- - Added the ability to set board and template permissions in the new Share dialog.
- - Added the ability to link boards to channels to automatically grant channel members board permissions.
 
 ### Improvements
 
@@ -126,6 +118,7 @@ Latest Mattermost Releases:
  - Removed a bug where the group permissions had an extra level of nesting in the UI. Also the permissions checkboxes were split out into their individual custom group permissions for a greater granularity of control.
  - Fixed an issue where the OpenID Connect authentication button was missing from the signup page.
  - Fixed an issue with autocomplete sorting regression in channels and threads.
+ - Fixed an issue where the custom branding logo was distorted on the login screen.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
