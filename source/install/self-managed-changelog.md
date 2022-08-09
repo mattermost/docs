@@ -77,11 +77,8 @@ Latest Mattermost Releases:
  - Added the ability for Admins to quickly view different paid license options inside the product.
  - Added the ability to start a trial from the **Invite People** modal.
  - Added the ability for end users to notify Admins to upgrade their workspace.
- - Updated the Posts search and get APIs to filter out posts beyond the Cloud plan's limit.
- - The claim of 10 GB storage per user is no longer shown for grandfathered Cloud plan.
  - Admins are now able to search for channel IDs via **System Console > User Management > Channels** page.
  - In the **System Console** left-hand side, paid features icons are now displayed on the menu entries to indicate enterprise features.
- - Cloud usage rounding for posts and messages is now precise enough to know when a limit has been reached or exceeded.
  - Added ``webSocketClient`` to ``Pluggable`` and ``PostWillRenderEmbed`` plugin registered components.
  - A new schema and API for audit logs was defined. Contrary to the previous audit log implementation, all audit log records now have the same schema.
  - Added a new static system-level role called Custom Group Manager. This role has permissions to create, edit, and delete custom user groups via User Groups in the Products menu. It can be used to assign individual users this ability when Custom Groups permissions are removed for All Members via the **System Console** (**System Console > Permissions > Edit Scheme > Custom Groups**).
@@ -96,7 +93,6 @@ Latest Mattermost Releases:
  - Fixed an issue where the archived icon did not display correctly in dark themes.
  - Fixed an issue where password requirements were not enforced when Development Mode was enabled.
  - Fixed an issue where users were able to attempt to edit the channel header of an archived channel on the right-hand side.
- - Decreased flakiness of requesting a Cloud trial.
  - Fixed an issue where the “Your Trial Ended” banner hid the product switcher menu.
  - Fixed an issue where the custom status date format was not set to ``yyyy-MM-dd``.
  - Fixed an issue where a users were unable to remove themselves from a custom role.
