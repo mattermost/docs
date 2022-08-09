@@ -124,6 +124,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the mobile app crashed when unfollowing a thread of a channel that a user was no longer a member of.
  - Fixed an issue where the Custom Brand text was not centered and Site Description configuration did not show a placeholder.
  - Removed a bug where the group permissions had an extra level of nesting in the UI. Also the permissions checkboxes were split out into their individual custom group permissions for a greater granularity of control.
+ - Fixed an issue where the OpenID Connect authentication button was missing from the signup page.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
