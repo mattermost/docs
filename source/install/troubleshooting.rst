@@ -114,7 +114,7 @@ The desktop app log file can be found in the user directory:
 
 - **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
 - **Linux:** ``~/.local/share/Mattermost/logs`` OR ``~/.config/Mattermost/logs``
-- **MacOS:** ``~/Library/Logs/Mattermost``
+- **MacOS:** ``~/Library/Logs/Mattermost`` (DMG installation) OR ``~Library/Containers/Mattermost.Desktop/Data/Library/Logs/Mattermost`` (Appstore installation)
 
 Mattermost Browser App logs
 ---------------------------
