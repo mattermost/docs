@@ -286,7 +286,7 @@ Now that you have an environment in place, we recommend working through the foll
 4. Deploy client apps
 ^^^^^^^^^^^^^^^^^^^^^
 
-- Roll out Desktop App 
+- Roll out desktop app 
 
  - Resource: https://docs.mattermost.com/install/desktop-app-install.html
  - Resource: https://docs.mattermost.com/deploy/desktop-app.html
@@ -294,7 +294,7 @@ Now that you have an environment in place, we recommend working through the foll
 
   - Resource: https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html
 
-- Roll out Mobile App
+- Roll out mobile app
 
  - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
  - (Optional) Use an EMM provider

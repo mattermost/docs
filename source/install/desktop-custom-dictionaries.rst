@@ -40,7 +40,7 @@ To access a copy of these dictionary definitions:
 4. Serve the extracted and converted files from a web server, and note the URL to the root folder of the dictionaries. Specify this URL as the **alternate dictionary URL** in the Desktop App.
 
 Configure the Desktop App
----------------------------
+-------------------------
 
 1. In the Mattermost Desktop App, go to Settings by selecting |vertical-3-dots| **> File > Settings**. 
 
@@ -49,6 +49,6 @@ Configure the Desktop App
 3. Select **Use an alternative dictionary URL** to specify the URL to the root folder of your custom dictionaries, then select **Save**.
 
 Remove custom dictionaries
----------------------------
+--------------------------
 
 Select **Revert to default** to stop using the specified dictionary definitions, and revert to default dictionary definitions.
