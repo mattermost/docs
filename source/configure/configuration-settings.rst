@@ -30,8 +30,7 @@ Mattermost configuration settings are maintained in the ``config.json`` configur
 
 .. note::
 
-   - Mattermost must have write permissions to ``config.json``, otherwise configuration changes made within the System Console will have no effect.
-   - From Mattermost v5.14, new installations generate a fresh ``config.json`` file to ensure initial configuration has all the correct defaults provided in the server code. Existing ``config.json`` files aren't impacted.
+   Mattermost must have write permissions to ``config.json``, otherwise configuration changes made within the System Console will have no effect.
 
 Configuration in database
 --------------------------
@@ -2816,22 +2815,114 @@ Enable Plugin
 
 **False**: Disables the calls plugin on your Mattermost workspace.
 
-Additional configuration
-^^^^^^^^^^^^^^^^^^^^^^^^
+RTC Server Port
+^^^^^^^^^^^^^^^
 
-**RTC Server Port**: Default setting is 8443.
+|all-plans| |self-hosted|
 
-**Enable on specific channels**: Allow Channel Admins to enable or disable calls on specific channels. This can be set to **true** or **false**.
+The UDP port the RTC server will listen on. All calls traffic will be served through this port. The Default setting is 8443.
 
-**Enable on all channels**: Enable calls by default on all channels. This can be set to **true** or **false**.
+Changing this setting requires a plugin restart to take effect.
 
-**Max call participants**: This is an optional field and default is 0 (unlimited). The recommended setting is 8.
+Enable on specific channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**ICE Host Override**: This is an optional field.
+|all-plans| |self-hosted|
 
-**ICE Servers**: This is an optional field. The default is ``stun:stun.global.calls.mattermost.com:3478``. Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
+**True**: Allow Channel Admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
 
-**RTCD Service URL**: This is an optional field.
+**False**: Only System Admins will be able to enable or disable calls on specific channels.
+
+Enable on all channels
+^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Enable calls by default on all channels.
+
+**False**: Calls have to be explicitly enabled on channels.
+
+Max call participants
+^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The maximum number of participants that can join a single call. This is an optional field and default is 0 (unlimited). The maximum recommended setting is 200.
+
+ICE Host Override
+^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+An optional override to the host that gets advertised to clients when connecting to calls. Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP in order to let clients connect successfully. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
+
+This is an optional field. Changing this setting requires a plugin restart to take effect.
+
+ICE Servers Configurations
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON.
+
+Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``
+
+**Example**
+
+.. code-block:: json
+
+  [
+   {
+      "urls":[
+         "stun:stun.global.calls.mattermost.com:3478"
+      ]
+   },
+   {
+      "urls":[
+         "turn:turn.example.com:3478"
+      ],
+      "username":"webrtc",
+      "credentials":"turnpassword"
+   }
+  ]
+
+This is an optional field. Changing this setting may require a plugin restart to take effect.
+
+TURN Static Auth Secret
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A static secret used to generate short-lived credentials for TURN servers.
+
+This is an optional field.
+
+TURN Credentials Expiration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The expiration, in minutes, of the short-lived credentials generated for TURN servers.
+
+Server Side TURN
+^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: The RTC server will use the configured TURN candidates for server-initiated connections.
+
+**False**: TURN will be used only on the client-side.
+
+Changing this setting requires a plugin restart to take effect.
+
+RTCD Service URL
+^^^^^^^^^^^^^^^^
+
+|enterprise| |self-hosted|
+
+The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
+
+This is an optional field. Changing this setting requires a plugin restart to take effect.
 
 Channel Export
 ~~~~~~~~~~~~~~

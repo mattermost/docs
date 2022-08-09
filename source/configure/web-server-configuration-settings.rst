@@ -194,8 +194,8 @@ Write timeout
 
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 | - If using HTTP (insecure), this is the maximum time     | - System Config path: **Environment > Web Server**                          |
-|   allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeoutTimeout: 300",`` |
-|   until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUTTIMEOUT``          |
+|   allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeout: 300",``        |
+|   until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUT``                 |
 | - If using HTTPS, it's the total time from when the      |                                                                             |
 |   connection is accepted until the response is written.  |                                                                             |
 |   accepted to when the request body is fully read.       |                                                                             |

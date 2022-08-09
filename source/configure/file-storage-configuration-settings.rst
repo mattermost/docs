@@ -290,7 +290,7 @@ Enable server-side encryption for Amazon S3
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Server-side encryption for Amazon S3.                         | - System Config path: **Environment > File Storage**                     |
+| Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSE: false",``       |
 | - **true**: Encrypts files in Amazon S3 using server-side     | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSE``                  |
 |   encryption with Amazon S3-managed keys.                     |                                                                          |

@@ -27,6 +27,9 @@ Insights offer you visibility into top activities by surfacing the most importan
 
 From Mattermost v7.1, insights are available in the web and the desktop app for all users, except guests. Mobile support for insights is coming in a future release.
 
+.. image:: ../images/myinsights_teaminsights.gif
+  :alt: An example of the Mattermost Insights page that includes top user and team-based activities and events.
+
 Access insights
 ---------------
 

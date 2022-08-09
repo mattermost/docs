@@ -1,0 +1,11 @@
+---
+
+title: "Mattermost Documentation Sphinx Extensions"
+copyright: "©2022 Mattermost, Inc.  All Rights Reserved.  See LICENSE.txt for license information."
+description: "This document includes a list of open source components used in Mattermost Documentation Sphinx Extensions, including those that have been modified."
+search:
+  - "Pipfile"
+dependencies: []
+devDependencies: []
+
+...
