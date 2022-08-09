@@ -64,12 +64,10 @@ Latest Mattermost Releases:
 #### Audit Log V2
  - 
 
-#### Calls Updates
- - 
-
 ### Improvements
 
 #### User Interface (UI)
+ - Pre-packaged Calls v0.7.1.
  - Added the option to colorize usernames in compact display mode when **Account Settings > Display > Message Display > Compact** is selected.
  - Added a setting to always land users at the newest messages in a channel via **Account settings > Advanced > Scroll position when viewing an unread channel**.
  - Added email headers to notification emails so they can be threaded by email clients.
