@@ -125,6 +125,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the Custom Brand text was not centered and Site Description configuration did not show a placeholder.
  - Removed a bug where the group permissions had an extra level of nesting in the UI. Also the permissions checkboxes were split out into their individual custom group permissions for a greater granularity of control.
  - Fixed an issue where the OpenID Connect authentication button was missing from the signup page.
+ - Fixed an issue with autocomplete sorting regression in channels and threads.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -144,7 +145,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@types/color-hash``, ``color-contrast-checker``, ``color-hash``, and ``webpack`` to https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
- - Forward messages: hitting the "enter" key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
+ - Forwarding messages: hitting the "enter" key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
+ - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
