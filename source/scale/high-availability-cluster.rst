@@ -52,7 +52,7 @@ To ensure your instance and configuration are compatible with High Availability,
 
 1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../upgrade/upgrading-mattermost-server`.
 2. Set up a new Mattermost server with version 4.0 or later by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-3. Modify the ``config.json`` files on both servers to add ``ClusterSettings`` as described in :ref:`high-availability`.
+3. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the `High Availablity configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability>`__ documentation for details.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
 6. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -98,7 +98,7 @@ Configuration settings
             "StreamingPort": 8075
     }
 
-  For more details on these settings, see :ref:`high-availability`.
+  For more details on these settings, see the `High Availablity configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability>`__ documentation.
 
 2. Change the process limit to 8192 and the maximum number of open files to 65536.
 
@@ -468,7 +468,7 @@ From Mattermost Server v4.0, when a server starts up, it can automatically disco
         "StreamingPort": 8075
     },
 
-  For more information about these settings, see :ref:`high-availability`.
+  For more information about these settings, see the `High Availablity configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability>`__ documentation.
 
 4. Stop NGINX.
 5. Upgrade each Mattermost instance.
