@@ -56,13 +56,6 @@ Latest Mattermost Releases:
 
 #### Post Forwarding
  - You can now easily share messages as permalinks and respective permalink previews via the new Post Forwarding feature. Simply select the new **Forward message** option from the **More** section of the message hover actions menu on a given message, choose a desired destination, and optionally add a comment for context.
- 
-#### Pricing Modal and Upgrade Button
- - Added an "Upgrade" button for Admins on the navigation bar.
- - Added the ability for Admins to quickly view different paid license options inside the product.
-
-#### Audit Log V2
- - 
 
 ### Improvements
 
@@ -80,6 +73,8 @@ Latest Mattermost Releases:
  - Added accessibility to the emoji picker skin tone selector and reversed the order of the skin tone selections in the emoji selector.
 
 #### Administration
+ - Added an "Upgrade" button for Admins on the navigation bar.
+ - Added the ability for Admins to quickly view different paid license options inside the product.
  - Added the ability to start a trial from the **Invite People** modal.
  - Added the ability for end users to notify Admins to upgrade their workspace.
  - Updated the Posts search and get APIs to filter out posts beyond the Cloud plan's limit.
