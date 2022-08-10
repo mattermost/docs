@@ -421,6 +421,13 @@ The following built-in roles and associated permissions are available:
 - sysconsole_read_compliance
 - create_emojis
 
+*system_read_only_admin*
+
+- create
+- edit
+- delete
+- manage members
+
 *system_guest*
 
 - create_group_channel
