@@ -16,7 +16,7 @@ Latest Mattermost Releases:
 **v7.2.0 release day: 2022-08-16**
 
 ### Important Upgrade Notes
- - Several schema changes are made which imposes additional database constraints to make the data more strict. Here are the times taken:
+ - Several schema changes impose additional database constraints to make the data more strict. Here are the times taken:
     - PostgreSQL (131869 channels, 2 teams):
    [bigdb] # CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');
    CREATE TYPE
@@ -69,14 +69,14 @@ Latest Mattermost Releases:
  - Added email headers to notification emails so they can be threaded by email clients.
  - Added **Save** and **Cancel** buttons for post inline editing.
  - Enterprise trial details are now displayed for end users in the product switcher menu.
- - Updated the Edit Header modal text description to be applicable to channels, direct messages, and group messages.
+ - Updated the **Edit Header** modal text description to be applicable to channels, direct messages, and group messages.
  - Added the ability to quickly and easily forward posts as permalinks with their respective permalink previews.
  - Added a red destructive action color to ``Archive Channel`` and ``Leave Channel`` menu actions.
  - Plugin activation errors now show in the plugin management page and marketplace.
  - Added accessibility to the emoji picker skin tone selector and reversed the order of the skin tone selections in the emoji selector.
 
 #### Administration
- - Added an "Upgrade" button for Admins on the navigation bar.
+ - Added an **Upgrade** button for Admins on the navigation bar.
  - Added the ability for Admins to quickly view different paid license options inside the product.
  - Added the ability to start a trial from the **Invite People** modal.
  - Added the ability for end users to notify Admins to upgrade their workspace.
@@ -97,7 +97,7 @@ Latest Mattermost Releases:
  - Fixed an issue where users were able to attempt to edit the channel header of an archived channel on the right-hand side.
  - Fixed an issue where the “Your Trial Ended” banner hid the product switcher menu.
  - Fixed an issue where the custom status date format was not set to ``yyyy-MM-dd``.
- - Fixed an issue where a users were unable to remove themselves from a custom role.
+ - Fixed an issue where users were unable to remove themselves from a custom role.
  - Fixed an issue where some images in link previews overflowed.
  - Fixed an issue where accessing the **System Console** and then exiting changed the user's status to "Offline".
  - Fixed an issue where the **New Messages** line sometimes appeared when viewing a channel that was previously read.
@@ -129,7 +129,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@types/color-hash``, ``color-contrast-checker``, ``color-hash``, and ``webpack`` to https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
- - Forwarding messages: hitting the "enter" key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
+ - Forwarding messages: pressing Enter key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
  - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
