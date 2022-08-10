@@ -21,7 +21,7 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v7.2                                               | Several schema changes are made which imposes additional database constraints to make the data more strict. Here are the times taken:                            |
+| v7.2                                               | Several schema changes impose additional database constraints to make the data more strict. Here are the times taken:                                            |
 |                                                    |                                                                                                                                                                  | 
 |                                                    | - PostgreSQL (131869 channels, 2 teams):                                                                                                                         |
 |                                                    |   [bigdb] # CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');                                                                                               |
