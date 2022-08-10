@@ -13,7 +13,24 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-08-18
 
+### Improvements
 
+#### User Interface (UI)
+ - Only the most recent message is now marked as unread when marking a thread as unread from the Threads list.
+ - Insights filters now persist instead of reset to default when switching to channels and returning back to Insights view.
+ - Code blocks now have a better support for language filetype extensions and a smaller bundle size.
+
+### Bug Fixes
+ - Fixed an issue where updating profile image and creating new emojis used multipart uploads when using S3 storage.
+ - Fixed an issue where the input legend on the custom group modal was cut off in Chrome.
+ - Fixed an issue where the "Disable post formatting" setting was hidden when advanced text editor was enabled.
+ - Fixed an issue where we didn’t fall back to the user's default picture if a profile picture failed to load.
+ - Fixed an issue where disabling a WebApp plugin from its configuration page resulted in the radio button reverting to ``true``.
+
+### Known Issues
+ - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post if compliance export is enabled [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-08-10
 
