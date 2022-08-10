@@ -70,7 +70,6 @@ Latest Mattermost Releases:
  - Added **Save** and **Cancel** buttons for post inline editing.
  - Enterprise trial details are now displayed for end users in the product switcher menu.
  - Updated the **Edit Header** modal text description to be applicable to channels, direct messages, and group messages.
- - Added the ability to quickly and easily forward posts as permalinks with their respective permalink previews.
  - Added a red destructive action color to ``Archive Channel`` and ``Leave Channel`` menu actions.
  - Plugin activation errors now show in the plugin management page and marketplace.
  - Added accessibility to the emoji picker skin tone selector and reversed the order of the skin tone selections in the emoji selector.
@@ -92,11 +91,11 @@ Latest Mattermost Releases:
 ### Bug Fixes
  - Fixed an issue with pasting a GitHub code snippet in the message box when text is selected.
  - Fixed an issue where fully typed emojis that contained a capital letter were not correctly displayed.
- - Fixed an issue where the archived icon did not display correctly in dark themes.
+ - Fixed an issue where the archived icon for channels did not display correctly in dark themes.
  - Fixed an issue where password requirements were not enforced when Development Mode was enabled.
  - Fixed an issue where users were able to attempt to edit the channel header of an archived channel on the right-hand side.
  - Fixed an issue where the “Your Trial Ended” banner hid the product switcher menu.
- - Fixed an issue where the custom status date format was not set to ``yyyy-MM-dd``.
+ - Fixed an issue where the custom status date format was not set to ``YYYY-MM-DD``.
  - Fixed an issue where users were unable to remove themselves from a custom role.
  - Fixed an issue where some images in link previews overflowed.
  - Fixed an issue where accessing the **System Console** and then exiting changed the user's status to "Offline".
