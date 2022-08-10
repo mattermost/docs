@@ -75,6 +75,8 @@ Upgrading from an older version of Mattermost? Learn what's changed or moved in 
 
    What changed in Mattermost v7.0? </welcome/what-changed-in-v70>
    What changed in Mattermost v6.0? </welcome/what-changed-in-v60>
+   What's new in Mattermost Boards v7.2? </welcome/whats-new-in-v72> 
 
 * :doc:`What changed in Mattermost v7.0? </welcome/what-changed-in-v70>` - Learn more about how we've improved your Mattermost user experience from v7.0.
 * :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the ways we've improved your Mattermost navigation experience from v6.0.
+* :doc:`What's new in Mattermost Boards v7.2?` </welcome/whats-new-in-v72>` - Learn more about the ways we've improved your Mattermost Boards experience from v7.2.
