@@ -17,13 +17,13 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Only the most recent message is now marked as unread when marking a thread as unread from the Threads list.
- - Insights filters now persist instead of reset to default when switching to channels and returning back to Insights view.
- - Code blocks now have a better support for language filetype extensions and a smaller bundle size.
+ - Insights filters now persist instead of being reset to default when switching to channels and returning back to the Insights view.
+ - Code blocks now have better support for language filetype extensions and are a smaller bundle size.
 
 ### Bug Fixes
- - Fixed an issue where updating profile image and creating new emojis used multipart uploads when using S3 storage.
+ - Fixed an issue where updating a profile image and creating new emojis used multipart uploads when using S3 storage.
  - Fixed an issue where the input legend on the custom group modal was cut off in Chrome.
- - Fixed an issue where the "Disable post formatting" setting was hidden when advanced text editor was enabled.
+ - Fixed an issue where the **Disable post formatting** setting was hidden when the advanced text editor was enabled.
  - Fixed an issue where we didn’t fall back to the user's default picture if a profile picture failed to load.
  - Fixed an issue where disabling a WebApp plugin from its configuration page resulted in the radio button reverting to ``true``.
 
