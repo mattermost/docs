@@ -29,6 +29,10 @@ Mattermost Starter limits
 - Maximum 5 saved views per board.
 - Only the 500 most recently updated cards on the server are displayed.
 
+.. note::
+   
+   Mattermost reserves the right to archive or delete messages and establish or change (1) limits as to how many messages can be stored, (2) how long such messages will be stored, and (3) charges for storing such messages. Mattermost further reserves the right to establish or change limits on periods of inactivity that may result in the termination of your messages cloud storage and deletion or archiving of any stored messages.
+
 Mattermost Professional limits
 ------------------------------
 
