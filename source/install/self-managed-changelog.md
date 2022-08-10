@@ -91,7 +91,7 @@ Latest Mattermost Releases:
 ### Bug Fixes
  - Fixed an issue with pasting a GitHub code snippet in the message box when text is selected.
  - Fixed an issue where fully typed emojis that contained a capital letter were not correctly displayed.
- - Fixed an issue where the archived icon for channels did not display correctly in dark themes.
+ - Fixed an issue where the archive icon for channels did not display correctly in dark themes.
  - Fixed an issue where password requirements were not enforced when Development Mode was enabled.
  - Fixed an issue where users were able to attempt to edit the channel header of an archived channel on the right-hand side.
  - Fixed an issue where the “Your Trial Ended” banner hid the product switcher menu.
