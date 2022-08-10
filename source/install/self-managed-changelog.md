@@ -119,7 +119,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### API Changes
  - Added a new response-header ``Has-Inaccessible-Posts`` for ``getPost`` and ``getPostByIDs`` APIs.
- - Updated permissions of the ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread`` endpoint. If [compliance monitoring](https://docs.mattermost.com/comply/compliance-monitoring.html) is enabled, a user can on longer view threads in a public channel they are not a member of.
+ - Updated permissions of the ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread`` endpoint. If [compliance export](https://docs.mattermost.com/comply/compliance-export.html) is enabled, a user can on longer view threads in a public channel they are not a member of.
 
 ### Go Version
  - v7.2 is built with Go ``v1.18.1``.
@@ -129,7 +129,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Known Issues
  - Forwarding messages: pressing Enter key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
- - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
+ - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post if compliance export is enabled [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
