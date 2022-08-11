@@ -54,8 +54,8 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Post Forwarding
- - You can now easily share messages as permalinks and respective permalink previews via the new [Post Forwarding feature](https://docs.mattermost.com/channels/forward-messages.html). Simply select the new **Forward message** option from the **More** section of the message hover actions menu on a given message, choose a desired destination, and optionally add a comment for context.
+#### Message Forwarding
+ - You can now easily share messages as permalinks and respective permalink previews via the new [Post Forwarding feature](https://docs.mattermost.com/channels/forward-messages.html). Simply select the new **Forward** option from the **More** section of the message hover actions menu on a given message, choose a desired destination, and optionally add a comment for context.
  
 #### Audit Log v2 (Beta)
  - Added support for new [schema and output log types](https://docs.mattermost.com/comply/audit-log.html). Contrary to the previous audit log implementation, all audit log records now have the same schema.
