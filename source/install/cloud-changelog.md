@@ -31,6 +31,10 @@ Latest Mattermost Cloud releases:
  - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post if compliance export is enabled [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+ 
+### Playbooks
+
+### Boards
 
 ## Release 2022-08-10
 
