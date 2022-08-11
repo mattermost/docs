@@ -119,7 +119,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### API Changes
  - Added a new response-header ``Has-Inaccessible-Posts`` for ``getPost`` and ``getPostByIDs`` APIs.
- - Updated permissions of the ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread`` endpoint. If [compliance export](https://docs.mattermost.com/comply/compliance-export.html) is enabled, a user can on longer view threads in a public channel they are not a member of.
 
 ### Go Version
  - v7.2 is built with Go ``v1.18.1``.
