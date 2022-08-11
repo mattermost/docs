@@ -13,6 +13,20 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-08-18
 
+### Highlights
+
+### Playbooks
+ - 
+
+### Boards
+ - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
+ - Organize boards on the sidebar with custom categories.
+ - Press Ctrl+K / Cmd+K to find additional boards.
+ - Navigate between teams in Boards with the new team switcher.
+ - Set board and template permissions in the new Share dialog.
+ - Link boards to channels to automatically grant board permissions to channel members.
+ - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
+
 ### Improvements
 
 #### User Interface (UI)
@@ -31,10 +45,7 @@ Latest Mattermost Cloud releases:
  - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post if compliance export is enabled [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
- 
-### Playbooks
-
-### Boards
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not admins of the board are incorrectly able to see the "unlink" board button. However, clicking on the button will not actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
 ## Release 2022-08-10
 
