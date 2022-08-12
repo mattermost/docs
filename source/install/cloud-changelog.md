@@ -18,17 +18,17 @@ Latest Mattermost Cloud releases:
 ### Playbooks
  - Navigate between teams in Playbooks with the new team switcher.
  - Manage playbooks and runs in the new left-hand sidebar.
- - View the runs you're participating in or following in the "Runs" sidebar category, and view the playbooks you're a member of in the "Playbooks" sidebar category.
- - Favorite runs or playbooks to prioritize them in the "Favorites" category.
- - Participants now have access to every run feature on the new Run Details Page.
- - In Cloud Professional/Enterprise plans, stakeholders can request status updates from runs.
+ - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
+ - Favorite runs or playbooks to prioritize them in the **Favorites** category.
+ - Participants now have access to every run feature on the new run details page.
+ - In Cloud Professional and Enterprise plans, stakeholders can request status updates from runs.
 
 ### Boards
  - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
  - Organize boards on the sidebar with custom categories.
- - Press Ctrl+K / Cmd+K to find additional boards.
+ - Press CTRL+K/CMD+K to find additional boards.
  - Navigate between teams in Boards with the new team switcher.
- - Set board and template permissions in the new Share dialog.
+ - Set board and template permissions in the new **Share** setting.
  - Link boards to channels to automatically grant board permissions to channel members.
  - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
