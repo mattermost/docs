@@ -98,7 +98,7 @@ You have two ways to assign roles:
 |                                                   | 2. Under **Assigned People**, search for the user, then select **Remove**.                                    |                                                                                     |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-Edit privileges of system admin roles (advanced)
+Edit privileges of System Admin roles (advanced)
 ------------------------------------------------
 
 System Admins can grant read and write access to other areas of the System Console, as well as remove read and write access (including default access), for all system roles except the Custom Group Manager role. 
