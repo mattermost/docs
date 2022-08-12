@@ -37,7 +37,7 @@ To access a copy of these dictionary definitions:
 
 3. Convert the filenames to lowercase. (Chromium expects ``en-us`` rather than ``en-US``). Once renamed, these definition files match the usage of using Chromium's CDN ones, and you can modify the definitions as needed.
 
-4. Serve the extracted and converted files from a web server, and note the URL to the root folder of the dictionaries. Specify this URL as the **alternate dictionary URL** in the Desktop App.
+4. Serve the extracted and converted files from a web server, and note the URL to the root folder of the dictionaries. Specify this URL as the **alternate dictionary URL** in the desktop app.
 
 Configure the Desktop App
 -------------------------
