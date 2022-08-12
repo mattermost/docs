@@ -42,7 +42,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`             | Move focus to the **Search** field and search the current channel.                            |
     +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
     | :kbd:`Ctrl` :kbd:`Shift` :kbd:`S`    | :kbd:`⌘` :kbd:`⌃` :kbd:`S`    | Open the **Servers** selector, press :kbd:`↑` or :kbd:`↓` to navigate between                 |
-    |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac, to select a server. |
+    |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on macOS, to select a server. |
     +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
     || :kbd:`Ctrl` :kbd:`Shift` :kbd:`1`   || :kbd:`⌘` :kbd:`⌃` :kbd:`1`   || Navigate to the first server in the **Servers** list.                                        |
     || :kbd:`Ctrl` :kbd:`Shift` :kbd:`2`   || :kbd:`⌘` :kbd:`⌃` :kbd:`2`   || Replace the number with the server's position within the server in the list.                 |
