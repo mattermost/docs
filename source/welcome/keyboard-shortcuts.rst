@@ -22,7 +22,8 @@ Mattermost keyboard shortcuts help you make a more efficient use of your keyboar
 
 .. tip::
 
-  Display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
+  - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.
+  - Additional keyboard shortcuts are available for Mattermost Channels. See the `keyboard shortcuts for Mattermost Channels <https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html>`__ and the `team keyboard shortcuts <https://docs.mattermost.com/welcome/team-keyboard-shortcuts.html>`__ documentation for details.
 
 Navigation shortcuts in the Desktop App
 ---------------------------------------
@@ -41,7 +42,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`             | Move focus to the **Search** field and search the current channel.                            |
     +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
     | :kbd:`Ctrl` :kbd:`Shift` :kbd:`S`    | :kbd:`⌘` :kbd:`⌃` :kbd:`S`    | Open the **Servers** selector, press :kbd:`↑` or :kbd:`↓` to navigate between                 |
-    |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac, to select a server. |                                     |
+    |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on macOS, to select a server. |
     +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
     || :kbd:`Ctrl` :kbd:`Shift` :kbd:`1`   || :kbd:`⌘` :kbd:`⌃` :kbd:`1`   || Navigate to the first server in the **Servers** list.                                        |
     || :kbd:`Ctrl` :kbd:`Shift` :kbd:`2`   || :kbd:`⌘` :kbd:`⌃` :kbd:`2`   || Replace the number with the server's position within the server in the list.                 |
