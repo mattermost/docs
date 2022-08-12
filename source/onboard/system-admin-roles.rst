@@ -101,7 +101,7 @@ There are two ways to assign roles:
 Edit privileges of System Admin roles (advanced)
 ------------------------------------------------
 
-System Admins can grant read and write access to other areas of the System Console, as well as remove read and write access (including default access), for all system roles except the Custom Group Manager role. 
+System Admins can grant read/write access to other areas of the System Console, as well as remove read/write access (including default access), for all system roles except the Custom Group Manager role. 
 
 There are two ways to assign roles:
 
