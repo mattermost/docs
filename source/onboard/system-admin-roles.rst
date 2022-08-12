@@ -103,7 +103,7 @@ Edit privileges of System Admin roles (advanced)
 
 System Admins can grant read and write access to other areas of the System Console, as well as remove read and write access (including default access), for all system roles except the Custom Group Manager role. 
 
-You have two ways to assign roles:
+There are two ways to assign roles:
 
 1. In the System Console under **User Management > System Roles**.
 2. Using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
