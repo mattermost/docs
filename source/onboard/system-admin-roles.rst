@@ -62,7 +62,7 @@ When a user is assigned a system role, they have role-based access to the System
 Assign system admin roles
 -------------------------
 
-You have two ways to assign roles:
+There are two ways to assign roles:
 
 1. In the System Console under **User Management > System Roles**.
 2. Using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
