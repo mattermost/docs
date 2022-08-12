@@ -16,7 +16,12 @@ Latest Mattermost Cloud releases:
 ### Highlights
 
 ### Playbooks
- - 
+ - Navigate between teams in Playbooks with the new team switcher.
+ - Manage playbooks and runs in the new left-hand sidebar.
+ - View the runs you're participating in or following in the "Runs" sidebar category, and view the playbooks you're a member of in the "Playbooks" sidebar category.
+ - Favorite runs or playbooks to prioritize them in the "Favorites" category.
+ - Participants now have access to every run feature on the new Run Details Page.
+ - In Cloud Professional/Enterprise plans, stakeholders can request status updates from runs.
 
 ### Boards
  - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
@@ -45,6 +50,8 @@ Latest Mattermost Cloud releases:
  - When sharing a post from a public channel (that the recipient is not a member of), clicking it says the recipient does not have access to the post if compliance export is enabled [MM-46217](https://mattermost.atlassian.net/browse/MM-46217).
  - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
  - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar does not have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
  - On the new Boards RHS from the channel Apps Bar, channel members who are not admins of the board are incorrectly able to see the "unlink" board button. However, clicking on the button will not actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
 ## Release 2022-08-10
