@@ -22,7 +22,7 @@ On Windows or Linux, Mattermost desktop app v4.7.1 and later supports custom dic
 
 .. note::
   
-  On macOS, the Mattermost Desktop App uses dictionary definitions provided by Apple that can't be customized.
+  On macOS, the Mattermost desktop app uses dictionary definitions provided by Apple that can't be customized.
 
 Prepare custom dictionaries
 ---------------------------
