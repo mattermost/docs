@@ -56,7 +56,7 @@ From Mattermost v5.38, the “config watcher”, the mechanism that automaticall
 Deprecated configuration settings
 ---------------------------------
 
-See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings that are no longer supported.
+See the `deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings that are no longer supported.
 
 Site Configuration
 -------------------
