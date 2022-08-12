@@ -1,4 +1,4 @@
-License questions
+Open-source licensing questions
 =================
 
 What is the Mattermost Source Available License?
