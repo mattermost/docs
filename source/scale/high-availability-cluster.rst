@@ -468,7 +468,7 @@ From Mattermost Server v4.0, when a server starts up, it can automatically disco
         "StreamingPort": 8075
     },
 
-  For more information about these settings, see the `High Availablity configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability>`__ documentation.
+  For more information about these settings, see the `high availability configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability>`__ documentation.
 
 4. Stop NGINX.
 5. Upgrade each Mattermost instance.
