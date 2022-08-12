@@ -27,7 +27,7 @@ On Windows or Linux, Mattermost desktop app v4.7.1 and later supports custom dic
 Prepare custom dictionaries
 ---------------------------
 
-On Windows and Linux, the Mattermost Desktop App uses `Hunspell Dictionary definitions <https://hunspell.github.io/>`_ by default. You can download a copy of these dictionary definitions and modify them to fit specific needs. 
+On Windows and Linux, the Mattermost desktop app uses `Hunspell Dictionary definitions <https://hunspell.github.io/>`_ by default. You can download a copy of these dictionary definitions and modify them to fit specific needs. 
 
 To access a copy of these dictionary definitions:
 
