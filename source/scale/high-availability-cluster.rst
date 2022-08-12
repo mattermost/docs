@@ -98,7 +98,7 @@ Configuration settings
             "StreamingPort": 8075
     }
 
-  For more details on these settings, see the `High Availablity configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability>`__ documentation.
+  For more details on these settings, see the `high availability configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability>`__ documentation.
 
 2. Change the process limit to 8192 and the maximum number of open files to 65536.
 
