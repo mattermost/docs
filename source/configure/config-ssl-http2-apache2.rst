@@ -5,7 +5,7 @@
 Configuring Apache2 with SSL and HTTP/2 (unofficial)
 ----------------------------------------------------
 
-.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst>`__.
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/configure/config-ssl-http2-apache2.rst>`__.
 
 In order to use Apache as a reverse proxy for the Mattermost Server, you need to install and enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http``, ``mod_headers``, and ``mod_proxy_wstunnel``. Follow the installation instructions for your Linux distribution.
 
@@ -30,8 +30,8 @@ When opened, edit it to look something like the following:
 		
 		RewriteEngine On
 		RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC]
-		RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC]
-		RewriteCond %{HTTP:CONNECTION} \bUpgrade\b [NC]
+		RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
+		RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
 		RewriteRule .* ws://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
 
 		<Location />
