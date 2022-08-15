@@ -302,7 +302,7 @@ Why does Certbot fail the http-01 challenge?
   Cleaning up challenges
   Some challenges have failed.
    
-If you see the above errors this is typically because certbot was not able to access port 80. This can be due to a firewall or other DNS configuration. Ensure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config does not have a redirect.
+If you see the above errors this is typically because Certbot wasn't able to access port 80. This can be due to a firewall or other DNS configuration. Make sure that your A/AAAA records are pointing to this server and your ``server_name`` within the NGINX config doesn't have a redirect.
 
 .. note::
    If you're using Cloudflare you'll need to disable ``force traffic to https``.
