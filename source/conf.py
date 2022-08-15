@@ -1066,6 +1066,12 @@ redirects = {
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/deploy-cloudron.html":
         "https://forum.mattermost.com/t/deploy-mattermost-on-cloudron/13526",
+"install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
+        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#prepare-custom-dictionaries",
+"install/desktop-custom-dictionaries.html#configuring-the-desktop-app":
+        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#configure-the-desktop-app",
+"install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
+        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
