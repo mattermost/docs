@@ -41,7 +41,7 @@ Output logs to console
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output logs to the    | - System Config path: **Environment > Logging**                     |
-| console                                       | - ``config.json setting``: ``".LogSettings.EnableConsole": true",`` |
+| console.                                      | - ``config.json setting``: ``".LogSettings.EnableConsole": true",`` |
 |                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECONSOLE``            |
 | - **true**: **(Default)** Output log messages |                                                                     |
 |   are written to the console based on the     |                                                                     |
@@ -100,8 +100,7 @@ Output logs to file
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output console logs   | - System Config path: **Environment > Logging**                     |
 | to a file.                                    | - ``config.json setting``: ``".LogSettings.EnableFile": true",``    |
-| console                                       | - Environment variable: ``MM_LOGSETTINGS_ENABLEFILE``               |
-|                                               |                                                                     |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLEFILE``               |
 | - **true**: **(Default)** Logged events are   |                                                                     |
 |   written based on the                        |                                                                     |
 |   `file log level <#file-log-level>`__        |                                                                     |

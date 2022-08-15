@@ -39,15 +39,15 @@ Enable testing commands
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+-----------------------------------------------+--------------------------------------------------------------------------+
-| Enable or disable the /test slash command.    | - System Config path: **Environment > DeveloperFlags**                   |
-|                                               | - ``config.json setting``: ``".ServiceSettings.EnableTesting": true",``  |
-| - **true**: **(Default)** The /test slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLETESTING``             |
-|   command is enabled to load test accounts    |                                                                          |
-|   and test data.                              |                                                                          |
-| - **false**:  The /test slash command is      |                                                                          |
-|   disabled.                                   |                                                                          |
-+-----------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------+
+| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > DeveloperFlags**                   |
+|                                                   | - ``config.json setting``: ``".ServiceSettings.EnableTesting": true",``  |
+| - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLETESTING``             |
+|   command is enabled to load test accounts        |                                                                          |
+|   and test data.                                  |                                                                          |
+| - **false**:  The ``/test`` slash command is      |                                                                          |
+|   disabled.                                       |                                                                          |
++---------------------------------------------------+--------------------------------------------------------------------------+
 
 Enable developer mode
 ~~~~~~~~~~~~~~~~~~~~~
@@ -74,18 +74,18 @@ Enable client performance debugging
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+-----------------------------------------------+-----------------------------------------------------------------------------+
-| Enable or disable the /test slash command.    | - System Config path: **Environment > DeveloperFlags**                      |
-|                                               | - ``config.json setting``: ``".ServiceSettings.EnableDeveloper": false",``  |
-| - **true**: **(Default)** The /test slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDEVELOPER``              |
-|   command is enabled to load test accounts    |                                                                             |
-|   and test data.                              |                                                                             |
-| - **false**:  The /test slash command is      |                                                                             |
-|   disabled.                                   |                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------+
-| See the `performance debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__       |
-| documentation to learn more.                                                                                                |
-+-----------------------------------------------+-----------------------------------------------------------------------------+
++---------------------------------------------------+------------------------------------------------------------------------------+
+| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > DeveloperFlags**                       |
+|                                                   | - ``config.json setting``: ``".ServiceSettings.EnableDeveloper": false",``   |
+| - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDEVELOPER``               |
+|   command is enabled to load test accounts        |                                                                              |
+|   and test data.                                  |                                                                              |
+| - **false**:  The ``/test`` slash command is      |                                                                              |
+|   disabled.                                       |                                                                              |
++---------------------------------------------------+------------------------------------------------------------------------------+
+| See the `performance debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__            |
+| documentation to learn more.                                                                                                     |
++---------------------------------------------------+------------------------------------------------------------------------------+
 
 Allow untrusted internal connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
