@@ -134,6 +134,6 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
 
 8. Restrict access to port 8065.
 
-  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer Mattermost server. If you're installing on Amazon Web Services, you can use Security Groups to restrict access.
+  By default, the Mattermost server accepts connections on port 8065 from every machine on the network. Use your firewall to deny connections on port 8065 to all machines except the machine that hosts NGINX and the machine that you use to administer the Mattermost server. If you're installing on Amazon Web Services, you can use Security Groups to restrict access.
 
 Now that NGINX is installed and running, you can configure it to use SSL, which allows you to use HTTPS connections and the HTTP/2 protocol.
