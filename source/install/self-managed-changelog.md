@@ -15,6 +15,8 @@ Latest Mattermost Releases:
 
 **v7.2.0 release day: 2022-08-16**
 
+Mattermost v7.2.0 contains low to medium level severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Important Upgrade Notes
  - Several schema changes impose additional database constraints to make the data more strict. Here are the times taken:
     - PostgreSQL (131869 channels, 2 teams):
@@ -105,7 +107,7 @@ Latest Mattermost Releases:
  - Fixed an issue that caused a crash when fetching unread posts.
  - Fixed an issue where the mobile app crashed when unfollowing a thread of a channel that a user was no longer a member of.
  - Fixed an issue where the Custom Brand text was not centered and Site Description configuration did not show a placeholder.
- - Removed a bug where the group permissions had an extra level of nesting in the UI. Also the permissions checkboxes were split out into their individual custom group permissions for a greater granularity of control.
+ - Fixed an issue where the group permissions had an extra level of nesting in the user interface. Also the permissions checkboxes were split out into their individual custom group permissions for a greater granularity of control.
  - Fixed an issue where the OpenID Connect authentication button was missing from the signup page.
  - Fixed an issue with autocomplete sorting regression in channels and threads.
  - Fixed an issue where the custom branding logo was distorted on the login screen.
@@ -139,8 +141,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
  
 ### Contributors
- - 
-
+ - To be added.
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
