@@ -25,7 +25,7 @@ $(document).ready(function () {
 						</div> \
 					</div> \
 					<p>Have a feature request? <a href='https://mattermost.uservoice.com/forums/306457-general' target='blank'> Share it here.</a></p> \
-					<p>Having issues? <a href='https://community.mattermost.com` target=`'blank`> Join our Community server. </a></p> \
+					<p>Having issues? <a href='https://community.mattermost.com` target='blank`> Join our Community server. </a></p> \
 					<div class='c-thermometer-modal__footer'> \
 						<button class='btn btn-link'>Cancel</button> \
 						<button class='btn btn-primary'>Submit</button> \
