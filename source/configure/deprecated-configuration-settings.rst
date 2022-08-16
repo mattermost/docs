@@ -99,7 +99,7 @@ Disable legacy MFA API endpoint
       
       This setting isn't available in the System Console and can only be set in ``config.json``.
 
-      **True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
+      **True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost mobile apps v1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
 
       **False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabled creates an information disclosure about whether a user has set up MFA.
 
@@ -328,7 +328,7 @@ Enable X to leave channels from left hand sidebar
 
       We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
-      **True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
+      **True**: Users can leave public and private channels by clicking the "x" beside the channel name.
 
       **False**: Users must use the **Leave Channel** option from the channel menu to leave channels.
 
@@ -550,13 +550,13 @@ Enable sending team invites from
 
    From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
 
-Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the Product menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
+Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the product menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
 **All team members**: Allows any team member to invite others using an email invitation, team invite link, or by adding members to the team directly.
 
-**Team and System Admins**: Hides the email invitation, team invite link, and the add members to team buttons in the Product menu from users who are not Team Admins or System Admins.
+**Team and System Admins**: Hides the email invitation, team invite link, and the add members to team buttons in the product menu from users who are not Team Admins or System Admins.
 
-**System Admins**: Hides the email invitation, team invite link, and add members to team buttons in the Product menu from users who are not System Admins.
+**System Admins**: Hides the email invitation, team invite link, and add members to team buttons in the product menu from users who are not System Admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``"all"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -596,11 +596,11 @@ Restrict the permission level required to rename and set the header or purpose f
 
 **All channel members**: Allow all channel members to rename Public channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming Public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
 
-**Team Admins and System Admins**: Restrict renaming Public channels to Team Admins and System Admins who are members of the channel.
+**Team Admins and System Admins**: Restrict renaming public channels to Team Admins and System Admins who are members of the channel.
 
-**System Admins**: Restrict renaming Public channels to System Admins who are members of the channel.
+**System Admins**: Restrict renaming public channels to System Admins who are members of the channel.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -617,13 +617,13 @@ Enable public channel deletion for
 
 Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/manage/command-line-tools.html>`__.
 
-**All channel members**: Allow all channel members to delete Public channels.
+**All channel members**: Allow all channel members to delete public channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting Public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
 
-**Team Admins and System Admins**: Restrict deleting Public channels to Team Admins and System Admins who are members of the channel.
+**Team Admins and System Admins**: Restrict deleting public channels to Team Admins and System Admins who are members of the channel.
 
-**System Admins**: Restrict deleting Public channels to System Admins who are members of the channel.
+**System Admins**: Restrict deleting public channels to System Admins who are members of the channel.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -638,13 +638,13 @@ Enable private channel creation for
 
    From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
 
-Restrict the permission level required to create Private channels.
+Restrict the permission level required to create private channels.
 
-**All team members**: Allow all team members to create Private channels.
+**All team members**: Allow all team members to create private channels.
 
-**Team Admins and System Admins**: Restrict creating Private channels to Team Admins and System Admins.
+**Team Admins and System Admins**: Restrict creating private channels to Team Admins and System Admins.
 
-**System Admins**: Restrict creating Private channels to System Admins.
+**System Admins**: Restrict creating private channels to System Admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelCreation": "all"`` with options ``"all"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -661,13 +661,13 @@ Enable private channel renaming for
 
 Restrict the permission level required to rename and set the header or purpose for Private channels.
 
-**All channel members**: Allow all channel members to rename Private channels.
+**All channel members**: Allow all channel members to rename private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming Private channels to Channel Admins, Team Admins, and System Admins who are members of the Private channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming private channels to Channel Admins, Team Admins, and System Admins who are members of the private channel.
 
-**Team Admins and System Admins**: Restrict renaming Private channels to Team Admins and System Admins who are members of the private channel.
+**Team Admins and System Admins**: Restrict renaming private channels to Team Admins and System Admins who are members of the private channel.
 
-**System Admins**: Restrict renaming Private channels to System Admins who are members of the Private channel.
+**System Admins**: Restrict renaming private channels to System Admins who are members of the private channel.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -707,13 +707,13 @@ Enable private channel deletion for
 
 Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/manage/command-line-tools.html>`__.
 
-**All channel members**: Allow all channel members to delete Private channels.
+**All channel members**: Allow all channel members to delete private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting Private channels to Channel Admins, Team Admins, and System Admins who are members of the Private channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins who are members of the Private channel.
 
 **Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins who are members of the Private channel.
 
-**System Admins**: Restrict deleting Private channels to System Admins who are members of the Private channel.
+**System Admins**: Restrict deleting private channels to System Admins who are members of the private channel.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |

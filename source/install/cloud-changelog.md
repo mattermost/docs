@@ -4,12 +4,55 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-08-10](#release-2022-08-10)
+- [Release 2022-08-03](#release-2022-08-03)
 - [Release 2022-07-28](#release-2022-07-28)
 - [Release 2022-07-20](#release-2022-07-20)
 - [Release 2022-07-13](#release-2022-07-13)
 - [Release 2022-06-29](#release-2022-06-29)
-- [Release 2022-06-22](#release-2022-06-22)
-- [Release 2022-06-15](#release-2022-06-15)
+
+## Release 2022-08-10
+
+### Improvements
+
+#### User Interface (UI)
+ - A Desktop App prompt is now always shown on first visit to a Mattermost server from an email notification.
+
+### Bug Fixes
+ - Fixed an issue where the cursor sometimes jumped to the center channel textbox when the right-hand side was open.
+ - Fixed an issue where closing the right-hand side also closed the edited post in the center channel.
+ - Fixed an issue where clicking "Try free now" opened the top 3 enterprise features instead of the "Your trial has started" modal.
+ - Fixed an issue where the Threads view displayed as unread even if there were no unread threads.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-08-03
+
+### Improvements
+
+#### User Interface (UI)
+ - Search dropdown options now allow focusing with tab.
+
+#### Administration
+ - Plugins can now hide plugin settings based on the server's hosting environment.
+ - For Cloud instances, when messages limit is reached, a notification is shown in a channel if the limit is being hit in that channel.
+ - Customers who are on a 30-day free trial are now notified 3 days before the trial ends.
+
+### API Changes
+ - Added ``first_inaccessible_post_time`` to post API responses.
+ - Updated permissions of the ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread`` endpoint. If compliance is enabled, a user can on longer view threads in a public channel they are not a member of.
+ - Adds query parameter 'include_deleted' to endpoint: {{[http://your-mattermost-url.com/api/v4/posts/{post_id}/files/info}}](http://your-mattermost-url.com/api/v4/posts/%7Bpost_id%7D/files/info%7D%7D).
+
+### Bug Fixes
+ - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
+ - Custom Brand Text is now centered and the Site Description configuration now doesn't show a placeholder.
+ - Removed a bug where the group permissions had an extra level of nesting in the UI. The permissions checkboxes were also split out into their individual custom group permissions for a greater granularity of control.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-07-28
 

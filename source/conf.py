@@ -376,65 +376,65 @@ redirects = {
 "configure/configuration-settings.html#allow-use-of-api-v3-endpoints":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#allow-use-of-api-v3-endpoints",
 "configure/configuration-settings.html#applied-schema-migrations":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#applied-schema-migrations",
 "configure/configuration-settings.html#compliance-export-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#compliance-export",
 "configure/configuration-settings.html#connection-security":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#connection-security",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#connection-security",
 "configure/configuration-settings.html#custom-terms-of-service-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#custom-terms-of-service",
 "configure/configuration-settings.html#database":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#database",
 "configure/configuration-settings.html#data-source":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#data-source",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#data-source",
 "configure/configuration-settings.html#disable-database-search":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#disable-database-search",
 "configure/configuration-settings.html#driver-name":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#driver-name",
 "configure/configuration-settings.html#enable-insecure-outgoing-connections":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#enable-insecure-outgoing-connections",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-insecure-outgoing-connections",
 "configure/configuration-settings.html#enable-latex-rendering": 
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering",
 "configure/configuration-settings.html#environment":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
 "configure/configuration-settings.html#forward-port-80-to-443":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#forward-port-80-to-443",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#forward-port-80-to-443",
 "configure/configuration-settings.html#groups":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups",
 "configure/configuration-settings.html#guest-access-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#guest-access",
 "configure/configuration-settings.html#idle-timeout":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#idle-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#idle-timeout",
 "configure/configuration-settings.html#let-s-encrypt-certificate-cache-file":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#let-s-encrypt-certificate-cache-file",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#let-s-encrypt-certificate-cache-file",
 "configure/configuration-settings.html#listen-address":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address",
 "configure/configuration-settings.html#managed-resource-paths":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#managed-resource-paths",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#managed-resource-paths",
 "configure/configuration-settings.html#maximum-connection-idle-timeout":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-connection-idle-timeout",
 "configure/configuration-settings.html#maximum-connection-lifetime":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-lifetime",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-connection-lifetime",
 "configure/configuration-settings.html#maximum-idle-connections":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-idle-connections",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-idle-database-connections",
 "configure/configuration-settings.html#maximum-open-connections":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-open-connections",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-open-connections",
 "configure/configuration-settings.html#minimum-hashtag-length":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#minimum-hashtag-length",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#minimum-hashtag-length",
 "configure/configuration-settings.html#purge-all-caches":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#purge-all-caches",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#purge-all-caches",
 "configure/configuration-settings.html#permissions":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#permissions",
 "configure/configuration-settings.html#plugins-beta": 
         "https://docs.mattermost.com/configure/configuration-settings.html#plugins",
 "configure/configuration-settings.html#query-timeout":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#query-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#query-timeout",
 "configure/configuration-settings.html#read-timeout":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#read-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#read-timeout",
 "configure/configuration-settings.html#recycle-database-connections":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#recycle-database-connections",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#recycle-database-connections",
 "configure/configuration-settings.html#reload-configuration-from-disk":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#reload-configuration-from-disk",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#reload-configuration-from-disk",
 "configuration-settings.html#reporting":
         "https://docs.mattermost.com/configure/reporting-configuration-settings.html",
 "configure/configuration-settings.html#site-statistics":
@@ -442,9 +442,9 @@ redirects = {
 "configure/configuration-settings.html#server-logs":
         "https://docs.mattermost.com/configure/reporting-configuration-settings.html#server-logs",
 "configure/configuration-settings.html#site-url":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#site-url",
 "configure/configuration-settings.html#sql-statement-logging-trace":
-        "https://docs.mattermost.com/configure/database-configuration-settings.html#sql-statement-logging",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#sql-statement-logging",
 "configure/configuration-settings.html#teams":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#teams",
 "configure/configuration-settings.html#team-statistics":
@@ -454,89 +454,95 @@ redirects = {
 "configure/configuration-settings.html#test-live":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
 "configure/configuration-settings.html#tls-certificate-file":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-certificate-file",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-certificate-file",
 "configure/configuration-settings.html#tls-key-file":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#tsl-key-file",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-key-file",
 "configure/configuration-settings.html#use-let-s-encrypt":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#use-let-s-encrypt",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#use-let-s-encrypt",
 "configure/configuration-settings.html#websocket-url":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#websocket-url",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#websocket-url",
 "configure/configuration-settings.html#license-file-location":
         "https://docs.mattermost.com/configure/web-server-configuration-settings.html#license-file-location",
 "configure/configuration-settings.html#tls-minimum-version":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-minimum-version",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-minimum-version",
 "configure/configuration-settings.html#enable-strict-transport-security-hsts":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#enable-strict-transport-security-hsts",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-strict-transport-security-hsts",
 "configure/configuration-settings.html#secure-tls-transport-expiry":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#secure-tls-transport-expiry",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#secure-tls-transport-expiry",
 "configure/configuration-settings.html#tls-cipher-overwrites":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-cipher-overwrites",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#tls-cipher-overwrites",
 "configure/configuration-settings.html#trusted-proxy-ip-header":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#trusted-proxy-ip-header",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#trusted-proxy-ip-header",
 "configure/configuration-settings.html#go-routine-health-threshold":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#goroutine-health-threshold",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#goroutine-health-threshold",
 "configure/configuration-settings.html#allow-cookies-for-subdomains":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#allow-cookies-for-subdomains",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#allow-cookies-for-subdomains",
 "configure/configuration-settings.html#cluster-log-timeout":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#cluster-log-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#cluster-log-timeout",
 "configure/configuration-settings.html#user-management":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html",
 "configure/configuration-settings.html#users":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
 "configure/configuration-settings.html#web-server":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server",
 "configure/configuration-settings.html#webserver-mode":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#webserver-mode",
 "configure/configuration-settings.html#write-timeout":
-        "https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#write-timeout",
 "configure/configuration-settings.html#collapsed-reply-threads-beta":
         "https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads",
 "configure/configuration-settings.html#elasticsearch":
-        "https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
 "configure/configuration-settings.html#elasticsearch-settings":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
 "configure/configuration-settings.html#enable-elasticsearch-indexing":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-indexing.html",
 "configure/configuration-settings.html#server-connection-address":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#server-connection-address.html",
 "configure/configuration-settings.html#skip-tls-verification":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-tls-verification.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#skip-tls-verification.html",
 "configure/configuration-settings.html#server-username":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#server-username.html",
 "configure/configuration-settings.html#server-password":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#server-password.html",
 "configure/configuration-settings.html#enable-cluster-sniffing":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-cluster-sniffing.html",
 "configure/configuration-settings.html#bulk-indexing":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#bulk-indexing.html",
 "configure/configuration-settings.html#purge-indexes":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#purge-indexes.html",
 "configure/configuration-settings.html#enable-elasticsearch-for-search-queries":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-for-search-queries.html",
 "configure/configuration-settings.html#enable-elasticsearch-for-autocomplete-queries":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries.html",
 "configure/configuration-settings.html#post-index-replicas":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#post-index-replicas.html",
 "configure/configuration-settings.html#post-index-shards":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#post-index-shards.html",
+"configure/elasticsearch-configuration-settings.html#elasticsearch-configuration-settings":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#channel-index-replicas",
+"configure/elasticsearch-configuration-settings.html#channel-index-shards":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#channel-index-shards",
+"configure/elasticsearch-configuration-settings.html#user-index-replicas":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#user-index-replicas",
+"configure/elasticsearch-configuration-settings.html#user-index-shards":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#user-index-shards",
 "configure/configuration-settings.html#aggregate-search-indexes":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#aggregate-search-indexes.html",
 "configure/configuration-settings.html#post-aggregator-start-time":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#post-aggregator-start-time.html",
 "configure/configuration-settings.html#index-prefix":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#index-prefix.html",
 "configure/configuration-settings.html#live-indexing-batch-size":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#live-indexing-batch-size.html",
 "configure/configuration-settings.html#request-timeout":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#request-timeout.html",
 "configure/configuration-settings.html#bulk-indexing-time-window":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#bulk-indexing-time-window.html",
 "configure/configuration-settings.html#trace":
-	"https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace.html",
-"configure/configuration-settings.html#file-settings":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html",
+	"https://docs.mattermost.com/configure/environment-configuration-settings.html#trace.html",
 "configure/configuration-settings.html#initial-font":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#initial-font",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#initial-font",
 "configure/configuration-settings.html#amazon-s3-bucket-endpoint":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-bucket-endpoint",
 "configure/configuration-settings.html#amazon-s3-location-constraint":
@@ -544,109 +550,191 @@ redirects = {
 "configure/configuration-settings.html#amazon-s3-lowercase-bucket":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#amazon-s3-lowercase-bucket",
 "configure/configuration-settings.html#amazon-s3-signature-v2":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-signature-v2",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-signature-v2",
 "configure/configuration-settings.html#amazon-s3-path":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-path-prefix",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-path-prefix",
 "configure/configuration-settings.html#file-storage":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-storage",
 "configure/configuration-settings.html#file-storage-system":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#file-storage-system",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-storage-system",
 "configure/configuration-settings.html#local-storage-directory":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#local-storage-directory",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#local-storage-directory",
 "configure/configuration-settings.html#maximum-file-size":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#maximum-file-size",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-file-size",
 "configure/configuration-settings.html#enable-document-search-by-content":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-document-search-by-content",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-document-search-by-content",
 "configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-searching-content-of-documents-within-zip-files",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-searching-content-of-documents-within-zip-files",
 "configure/configuration-settings.html#amazon-s3-bucket":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-bucket",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-bucket",
 "configure/configuration-settings.html#amazon-s3-region":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-region",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-region",
 "configure/configuration-settings.html#amazon-s3-access-key-id":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-access-key-id",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-access-key-id",
 "configure/configuration-settings.html#amazon-s3-endpoint":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-endpoint",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-endpoint",
 "configure/configuration-settings.html#amazon-s3-secret-access-key":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-secret-access-key",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#amazon-s3-secret-access-key",
 "configure/configuration-settings.html#enable-secure-amazon-s3-connections":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-secure-amazon-s3-connections",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-secure-amazon-s3-connections",
 "configure/configuration-settings.html#enable-server-side-encryption-for-amazon-s3":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-server-side-encryption-for-amazon-s3",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-server-side-encryption-for-amazon-s3",
 "configure/configuration-settings.html#enable-amazon-s3-debugging":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-amazon-s3-debugging",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-amazon-s3-debugging",
 "configure/configuration-settings.html#test-connection":
-        "https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-amazon-s3-debugging",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-amazon-s3-debugging",
 "configure/configuration-settings.html#image-proxy":
-        "https://docs.mattermost.com/configure/image-proxy-confguration-settings.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#image-proxy",
 "configure/configuration-settings.html#enable-image-proxy":
-        "https://docs.mattermost.com/configure/image-proxyconfguration-settings.html#enables-image-proxy",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-image-proxy",
 "configure/configuration-settings.html#image-proxy-type":
-        "https://docs.mattermost.com/configure/image-proxyconfguration-settings.html#image-proxy-type",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#image-proxy-type",
 "configure/configuration-settings.html#remote-image-proxy-url":
-        "https://docs.mattermost.com/configure/image-proxyconfguration-settings.html#remote-image-proxy-url",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#remote-image-proxy-url",
 "configure/configuration-settings.html#remote-image-proxy-options":
-        "https://docs.mattermost.com/configure/image-proxyconfguration-settings.html#remote-image-proxy-options",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#remote-image-proxy-options",
 "configure/configuration-settings.html#smtp":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp",
 "configure/configuration-settings.html#smtp-email-server":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server",
 "configure/configuration-settings.html#smtp-server-port":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-port",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-port",
 "configure/configuration-settings.html#smtp-server-timeout":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-timeout",
 "configure/configuration-settings.html#enable-smtp-authentication":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-smtp-authentication",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-smtp-authentication",
 "configure/configuration-settings.html#smtp-server-username":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-username",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-username",
 "configure/configuration-settings.html#smtp-server-password":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-password",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server-password",
 "configure/configuration-settings.html#connection-security":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#connection-security",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#connection-security",
 "configure/configuration-settings.html#skip-server-certificate-verification":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#skip-server-certificate-verification",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#skip-server-certificate-verification",
 "configure/configuration-settings.html#enable-security-alerts":
-        "https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-security-alerts",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-security-alerts",
 "configure/configuration-settings.html#push-notification-server":
-        "https://docs.mattermost.com/configure/push-notification-server.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#push-notification-server",
 "configure/configuration-settings.html#enable-push-notifications":
-        "https://docs.mattermost.com/configure/push-notification-server.html#enable-push-notifications",
+        "https://docs.mattermost.com/configure/environment-server.html#enable-push-notifications",
 "configure/configuration-settings.html#max-notifications-per-channel":
-        "https://docs.mattermost.com/configure/push-notification-server.html#maximum-notifications-per-channel",
+        "https://docs.mattermost.com/configure/environment-server.html#maximum-notifications-per-channel",
 "configure/configuration-settings.html#high-availability":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability",
 "configure/configuration-settings.html#enable-high-availability-mode":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#enable-high-availability-mode",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-high-availability-mode",
 "configure/configuration-settings.html#cluster-name":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#cluster-name",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#cluster-name",
 "configure/configuration-settings.html#override-hostname":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#override-hostname",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#override-hostname",
 "configure/configuration-settings.html#use-ip-address":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#use-ip-address",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#use-ip-address",
 "configure/configuration-settings.html#use-gossip":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#use-gossip",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#use-gossip",
 "configure/configuration-settings.html#enable-experimental-gossip-encryption":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#enable-experimental-gossip-encryption",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-experimental-gossip-encryption",
 "configure/configuration-settings.html#enable-gossip-compression":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#enable-gossip-compression",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-gossip-compression",
 "configure/configuration-settings.html#gossip-port":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#gossip-port",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#gossip-port",
 "configure/configuration-settings.html#streaming-port":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#streaming-port",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#streaming-port",
 "configure/configuration-settings.html#read-only-config":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#read-only-config",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#read-only-config",
 "configure/configuration-settings.html#network-interface":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#network-interface",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#network-interface",
 "configure/configuration-settings.html#bind-address":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#bind-address",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#bind-address",
 "configure/configuration-settings.html#advertise-address":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#advertise-address",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#advertise-address",
 "configure/configuration-settings.html#maximum-idle-connections":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#maximum-idle-connections",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-idle-connections",
 "configure/configuration-settings.html#maximum-idle-connections-per-host":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#maximum-idle-connections-per-host",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-idle-connections-per-host",
 "configure/configuration-settings.html#idle-connection-timeout-in-milliseconds":
-        "https://docs.mattermost.com/configure/high-availability-configuration-settings.html#idle-connection-timeout",
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#idle-connection-timeout",
+"configure/configuration-settings.html#read-replicas":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#read-replicas",
+"configure/configuration-settings.html#search-replicas":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#search-replicas",
+"configure/configuration-settings.html#replica-lag-settings":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#replica-lag-settings",
+"configure/configuration-settings.html#rate-limiting":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html",
+"configure/configuration-settings.html#enable-rate-limiting":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-rate-limiting",
+"configure/configuration-settings.html#maximum-queries-per-second":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-queries-per-second",
+"configure/configuration-settings.html#memory-store-size":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#memory-store-size",
+"configure/configuration-settings.html#vary-rate-limit-by-remote-address":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#vary-rate-limit-by-remote-address",
+"configure/configuration-settings.html#vary-rate-limit-by-user":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#vary-rate-limit-by-user",
+"configure/configuration-settings.html#vary-rate-limit-by-http-header":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#vary-rate-limit-by-http-header",
+"configure/configuration-settings.html#maximum-burst-size":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#maximum-burst-size",
+"configure/configuration-settings.html#session-lengths":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-lengths",
+"configure/configuration-settings.html#extend-session-length-with-activity":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#extend-session-length-with-activity",
+"configure/configuration-settings.html#session-length-for-email-and-ad-ldap-authentication-days":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-length-for-ad-ldap-and-email",
+"configure/configuration-settings.html#session-length-for-mobile-apps-days":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-length-for-mobile",
+"configure/configuration-settings.html#session-length-for-sso-authentication-days":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-length-for-sso",
+"configure/configuration-settings.html#session-cache-minutes":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-cache",
+"configure/configuration-settings.html#session-idle-timeout-minutes":
+        "https://docs.mattermost.com/configure/session-lengths-configuration-settings.html#session-idle-timeout",
+"configure/configuration-settings.html#performance-monitoring":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#performance-monitoring",
+"configure/configuration-settings.html#enable-performance-monitoring":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-performance-monitoring",
+"configure/configuration-settings.html#id6":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#listen-address",
+"configure/configuration-settings.html#developer":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#developer",
+"configure/configuration-settings.html#enable-testing-commands":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-testing-commands",
+"configure/configuration-settings.html#enable-developer-mode":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-developer-mode",
+"configure/configuration-settings.html#allow-untrusted-internal-connections-to":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#allow-untrusted-internal-connections",
+"configure/configuration-settings.html#enable-client-performance-debugging":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-performance-debugging",
+"configure/configuration-settings.html#standard-logging":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#logging",
+"configure/configuration-settings.html#output-logs-to-console":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-console",
+"configure/configuration-settings.html#console-log-level":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#console-log-level",
+"configure/configuration-settings.html#output-console-logs-as-json":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-console-logs-as-json",
+"configure/configuration-settings.html#output-logs-to-file":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-file",
+"configure/configuration-settings.html#file-log-level":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-level",
+"configure/configuration-settings.html#output-file-logs-as-json":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-file-logs-as-json",
+"configure/configuration-settings.html#file-log-directory":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-log-directory",
+"configure/configuration-settings.html#enable-webhook-debugging":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-webhook-debugging",
+"configure/configuration-settings.html#enable-diagnostics-and-error-reporting":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-diagnostics-and-error-reporting",
+"configure/configuration-settings.html#advanced-logging":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-multiple-targets",
+"configure/configuration-settings.html#output-logs-to-multiple-targets":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-multiple-targets",
+"configure/configuration-settings.html#environment-variables":
+        "https://docs.mattermost.com/configure/environment-variables.html",
+"configure/configuration-settings.html#override-mattermost-license-file":
+        "https://docs.mattermost.com/configure/environment-variables.html#override-mattermost-license-file",
+"configure/configuration-settings.html#load-custom-configuration-defaults":
+        "https://docs.mattermost.com/configure/environment-variables.html#load-custom-configuration-defaults",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -1066,6 +1154,12 @@ redirects = {
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/deploy-cloudron.html":
         "https://forum.mattermost.com/t/deploy-mattermost-on-cloudron/13526",
+"install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
+        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#prepare-custom-dictionaries",
+"install/desktop-custom-dictionaries.html#configuring-the-desktop-app":
+        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#configure-the-desktop-app",
+"install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
+        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
@@ -1644,9 +1738,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '7.1'
+# version = '7.2'
 # The full version, including alpha/beta/rc tags.
-# release = '7.1'
+# release = '7.2'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
