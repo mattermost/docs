@@ -5,11 +5,143 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0. 
 
 Latest Mattermost Releases:
+- [Release v7.2 - Feature Release](#release-v7-2-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
 - [Release v6.7 - Feature Release](#release-v6-7-feature-release)
-- [Release v6.6 - Feature Release](#release-v6-6-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
+
+## Release v7.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**v7.2.0 release day: 2022-08-16**
+
+Mattermost v7.2.0 contains low to medium level severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Important Upgrade Notes
+ - Several schema changes impose additional database constraints to make the data more strict. Here are the times taken:
+    - PostgreSQL (131869 channels, 2 teams):
+   [bigdb] # CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');
+   CREATE TYPE
+   Time: 14.114 ms
+   [bigdb] # ALTER TABLE channels alter column type type channel_type using type::channel_type;
+   ALTER TABLE
+   Time: 3856.790 ms (00:03.857)
+   [bigdb] # CREATE TYPE team_type AS ENUM ('I', 'O');
+   CREATE TYPE
+   Time: 4.191 ms
+   [bigdb] # ALTER TABLE teams alter column type type team_type using type::team_type;
+   ALTER TABLE
+   Time: 116.205 ms
+   [bigdb] # CREATE TYPE upload_session_type AS ENUM ('attachment', 'import');
+   CREATE TYPE
+   Time: 4.266 ms
+   [bigdb] # ALTER TABLE uploadsessions alter column type type upload_session_type using type::upload_session_type;
+   ALTER TABLE
+   Time: 37.099 ms
+
+   - MySQL (270959 channels, 2 teams):
+   mysql> ALTER TABLE Channels MODIFY COLUMN Type ENUM("D", "O", "G", "P");
+   Query OK, 270959 rows affected (13.24 sec)
+   Records: 270959  Duplicates: 0  Warnings: 0
+   mysql> ALTER TABLE Teams MODIFY COLUMN Type ENUM("I", "O");
+   Query OK, 2 rows affected (0.04 sec)
+   Records: 2  Duplicates: 0  Warnings: 0
+   mysql> ALTER TABLE UploadSessions MODIFY COLUMN Type ENUM("attachment", "import");
+   Query OK, 0 rows affected (0.03 sec)
+   Records: 0  Duplicates: 0  Warnings: 0
+
+   - All the commands were tested on a 8 core, 16GB RAM machine.
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Message Forwarding
+ - You can now easily share messages as permalinks and respective permalink previews via the new [Post Forwarding feature](https://docs.mattermost.com/channels/forward-messages.html). Simply select the new **Forward** option from the **More** section of the message hover actions menu on a given message, choose a desired destination, and optionally add a comment for context.
+ 
+#### Audit Log v2 (Beta)
+ - Added support for new [schema and output log types](https://docs.mattermost.com/comply/audit-log.html). Contrary to the previous audit log implementation, all audit log records now have the same schema.
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls v0.7.1.
+ - Added the option to colorize usernames in compact display mode when **Account Settings > Display > Message Display > Compact** is selected.
+ - Added a setting to always land users at the newest messages in a channel via **Account settings > Advanced > Scroll position when viewing an unread channel**.
+ - Added email headers to notification emails so they can be threaded by email clients.
+ - Added **Save** and **Cancel** buttons for post inline editing.
+ - Enterprise trial details are now displayed for end users in the product switcher menu.
+ - Updated the **Edit Header** modal text description to be applicable to channels, direct messages, and group messages.
+ - Added a red destructive action color to ``Archive Channel`` and ``Leave Channel`` menu actions.
+ - Plugin activation errors now show in the plugin management page and marketplace.
+ - Added accessibility to the emoji picker skin tone selector and reversed the order of the skin tone selections in the emoji selector.
+
+#### Administration
+ - Added an **Upgrade** button for Admins on the navigation bar.
+ - Added the ability for Admins to quickly view different paid license options inside the product.
+ - Added the ability to start a trial from the **Invite People** modal.
+ - Added the ability for end users to notify Admins to upgrade their workspace.
+ - Admins are now able to search for channel IDs via **System Console > User Management > Channels** page.
+ - In the **System Console** left-hand side, paid features icons are now displayed on the menu entries to indicate enterprise features.
+ - Added ``webSocketClient`` to ``Pluggable`` and ``PostWillRenderEmbed`` plugin registered components.
+ - Added a new static system-level role called [Custom Group Manager](https://docs.mattermost.com/onboard/system-admin-roles.html). This role has permissions to create, edit, and delete custom user groups via User Groups in the Products menu. It can be used to assign individual users this ability when Custom Groups permissions are removed for All Members via the **System Console** (**System Console > Permissions > Edit Scheme > Custom Groups**).
+ - Export file names now contain the ID of the job they were generated by.
+
+### Performance
+ - Removed ``getLastPostPerChannel`` selector for improved performance in channel sorting.
+
+### Bug Fixes
+ - Fixed an issue with pasting a GitHub code snippet in the message box when text is selected.
+ - Fixed an issue where fully typed emojis that contained a capital letter were not correctly displayed.
+ - Fixed an issue where the archive icon for channels did not display correctly in dark themes.
+ - Fixed an issue where password requirements were not enforced when Development Mode was enabled.
+ - Fixed an issue where users were able to attempt to edit the channel header of an archived channel on the right-hand side.
+ - Fixed an issue where the “Your Trial Ended” banner hid the product switcher menu.
+ - Fixed an issue where the custom status date format was not set to ``YYYY-MM-DD``.
+ - Fixed an issue where users were unable to remove themselves from a custom role.
+ - Fixed an issue where some images in link previews overflowed.
+ - Fixed an issue where accessing the **System Console** and then exiting changed the user's status to "Offline".
+ - Fixed an issue where the **New Messages** line sometimes appeared when viewing a channel that was previously read.
+ - Fixed an issue with incorrectly formatted text in the **System Console**.
+ - Fixed an issue where the thread's view would appear as if it has unread threads even if no unread threads existed.
+ - Fixed an issue that caused a crash when fetching unread posts.
+ - Fixed an issue where the mobile app crashed when unfollowing a thread of a channel that a user was no longer a member of.
+ - Fixed an issue where the Custom Brand text was not centered and Site Description configuration did not show a placeholder.
+ - Fixed an issue where the group permissions had an extra level of nesting in the user interface. Also the permissions checkboxes were split out into their individual custom group permissions for a greater granularity of control.
+ - Fixed an issue where the OpenID Connect authentication button was missing from the signup page.
+ - Fixed an issue with autocomplete sorting regression in channels and threads.
+ - Fixed an issue where the custom branding logo was distorted on the login screen.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``FileSettings`` in ``config.json``:
+    - A new config setting ``AmazonS3RequestTimeoutMilliseconds`` was added which sets a timeout for requests to AWS S3. By default, the timeout is at 30 seconds.
+
+#### API Changes
+ - Added a new response-header ``Has-Inaccessible-Posts`` for ``getPost`` and ``getPostByIDs`` APIs.
+
+### Go Version
+ - v7.2 is built with Go ``v1.18.1``.
+
+### Open Source Components
+ - Added ``@types/color-hash``, ``color-contrast-checker``, ``color-hash``, and ``webpack`` to https://github.com/mattermost/mattermost-webapp.
+
+### Known Issues
+ - Forwarding messages: pressing Enter key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ 
+### Contributors
+ - To be added.
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 

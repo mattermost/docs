@@ -1,7 +1,7 @@
 What’s new in Mattermost Boards v7.2
 =====================================
 
-Mattermost Boards v7.2 will be released in the week of August 15th, and all Cloud plans will be automatically upgraded to the latest version during this time.
+Mattermost Boards v7.2 will be released to the Cloud during mid-August, and all Cloud plans will be automatically upgraded to the latest version during this time. For self-hosted plans, the latest version of Boards will be available with Mattermost Server v7.3 in mid-September.
 
 Boards is moving from a channel-based to a role-based permissions system. This means that access to individual boards can be controlled on a channel level or a board level, depending on whether a board is linked to a channel or not.
 
@@ -43,7 +43,7 @@ Boards now supports a team sidebar so you can easily navigate between boards on 
 Linking boards to channels
 --------------------------
 
-The channel header’s board icon is now located on the channel `Apps Bar <https://docs.mattermost.com/configure/configuration-settings.html#enable-apps-bar>`_. When you select the **Boards** icon, you’ll open a new right-hand sidebar (RHS) where channel admins can search and link boards to the channel. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration. Select a linked board to navigate directly to the board.
+The channel header’s board icon is now located on the channel `Apps Bar <https://docs.mattermost.com/configure/configuration-settings.html#enable-apps-bar>`_. When you select the **Boards** icon, you’ll open a new right-hand sidebar (RHS) where channel members can search and link boards to the channel. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration. Select a linked board to navigate directly to the board.
 
 .. image:: ../images/boards-whats-new-04.png
   :alt: You can find the boards icon in the Apps Bar on the right-hand side of the screen.
