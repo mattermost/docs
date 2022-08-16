@@ -25,7 +25,7 @@ Latest Mattermost Mobile Apps releases:
  - Calls: Fixed a crash on "cannot replaceTrack after peer is destroyed" error.
  - Fixed an issue with sharing of text alongside an image on Android.
  - Fixed an issue on Android where clicking on a hashtag from the Saved Posts modal returned the user to the channel instead of taking the user to the search results.
- - Fixed am issue where the select modal value was not getting populated.
+ - Fixed an issue where the select modal value was not getting populated.
 
 ### Known Issues
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
