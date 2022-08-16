@@ -53,6 +53,7 @@ Latest Mattermost Cloud releases:
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - The runs and playbooks in the Playbooks left-hand sidebar does not have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
  - On the new Boards RHS from the channel Apps Bar, channel members who are not admins of the board are incorrectly able to see the "unlink" board button. However, clicking on the button will not actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - On Boards, clicking on `+ New` button below a column on the Kanban view does not always create a new card. As a workaround, set a new default card template by going to the dropdown menu from the blue `New` button on the header of the board, then open the Options Menu on any card template and select "Set as default" [issue-focalboard-3676](https://github.com/mattermost/focalboard/issues/3676).
 
 ## Release 2022-08-10
 
