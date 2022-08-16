@@ -10,7 +10,7 @@ TL;DR
 
 1. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
 2. Organize boards on the sidebar with custom categories. 
-3. Press Ctrl+K / Cmd+K to find additional boards.
+3. Press CTRL+K/CMD+K to find additional boards.
 4. Navigate between teams in Boards with the new team switcher.
 5. Set board and template permissions in the new **Share** dialog.
 6. Link boards to channels to automatically grant board permissions to channel members.
@@ -100,6 +100,10 @@ Automatic migration
 
 Instead of being tied to a particular channel, each board has been automatically migrated to use its own access control list. The creator of the original board is set as an admin on the board, with the ability to change the board’s permissions. Other members are granted the **Editor** role.
 
+.. note::
+  
+  There are schema changes in v7.2. If you have a large database you may need to allocate additional time and resources to this migration. Please review `this document <https://docs.google.com/document/d/1hKQV6QfXSJ6LznvKxoENvU1Z21ulaZ09b-h8N1caS64/edit#heading=h.1ozc9hcotgot>`_ for details around permission migrations.
+
 Public channels
 ~~~~~~~~~~~~~~~
 
@@ -135,6 +139,11 @@ Boards that you create after the migration won’t be linked to a workspace, and
 
 Frequently asked questions
 --------------------------
+
+Do I need to plan for downtime during the migration?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are schema changes in v7.2. If you have a large database you may need to allocate additional time and resources to this migration. Please review `this document <https://docs.google.com/document/d/1hKQV6QfXSJ6LznvKxoENvU1Z21ulaZ09b-h8N1caS64/edit#heading=h.1ozc9hcotgot>`_ for details around permission migrations.
 
 Will I need to backup and restore any data?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
