@@ -68,6 +68,7 @@ Work with messages
    Mark messages as unread </channels/mark-messages-unread>
    Format messages </channels/format-messages>
    Share files in messages </channels/share-files-in-messages>
+   Forward messages </channels/forward-messages>
    Share links to messages </channels/share-links>
    Save and pin messages </channels/save-pin-messages>
    Search for messages </channels/search-for-messages>
@@ -80,6 +81,7 @@ Work with messages
 * :doc:`Mark Messages as unread </channels/mark-messages-unread>` - Change messages to an unread state for easy follow-up.
 * :doc:`Format messages </channels/format-messages>` - Use markdown to format message content.
 * :doc:`Share files in messages </channels/share-files-in-messages>` - Share videos, voice recordings, and images in your Mattermost messages.
+* :doc:`Forward messages </channels/forward-messages>` - Quickly and easily forward messages with previews.
 * :doc:`Share links to messages </channels/share-links>` - Share links to messages across channels.
 * :doc:`Save and pin messages </channels/save-pin-messages>` - Mark useful messages for easy retrieval in the future.
 * :doc:`Search for messages </channels/search-for-messages>` - Use search to find messages, replies, and contents of files across Mattermost Channels.

@@ -1,6 +1,19 @@
 :nosearch:
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
 These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball, and assume the IP address of the Mattermost server is 10.10.10.2.
+
+**Minimum system requirements**
+
+- Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
+- Database: MySQL v8+ or PostgreSQL v12+
+- Network ports required:
+
+   - Application ports 80/443, TLS, TCP Inbound
+   - Administrator Console port 8065, TLS, TCP Inbound
+   - SMTP port 10025, TCP/UDP Outbound
+
+**Deploy Generic Linux**
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
