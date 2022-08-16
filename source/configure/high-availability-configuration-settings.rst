@@ -1,7 +1,5 @@
 .. _high-availability:
-
-High availability server configuration settings
-===============================================
+:orphan:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -28,6 +26,8 @@ High availability server configuration settings
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+:nosearch:
+
 You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
 In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
@@ -36,7 +36,7 @@ In a Mattermost high availability cluster deployment, the System Console is set 
     :start-after: :nosearch:
 
 Enable high availability mode 
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -55,7 +55,7 @@ Enable high availability mode
 +-----------------------------------------------------------------+------------------------------------------------------------+
 
 Cluster name
-------------
+~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -70,7 +70,7 @@ Cluster name
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 Override hostname
------------------
+~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -89,7 +89,7 @@ Override hostname
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 
 Use IP address
---------------
+~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -106,7 +106,7 @@ Use IP address
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Use gossip
-----------
+~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -127,7 +127,7 @@ Use gossip
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Enable experimental gossip encryption
--------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -147,7 +147,7 @@ Enable experimental gossip encryption
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Enable gossip compression
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -166,7 +166,7 @@ Enable gossip compression
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Gossip port
------------
+~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -180,7 +180,7 @@ Gossip port
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 
 Streaming port
---------------
+~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -193,7 +193,7 @@ Streaming port
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Read only config
-----------------
+~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -207,7 +207,7 @@ Read only config
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Network interface
------------------
+~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -221,7 +221,7 @@ Network interface
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Bind address
-------------
+~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -240,7 +240,7 @@ Bind address
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 
 Advertise address
------------------
+~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -254,8 +254,8 @@ Advertise address
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
-Maximum idle connections
-------------------------
+Maximum idle connections for high availability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -268,8 +268,8 @@ Maximum idle connections
 | Numerical input. Default is **100**.                            |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
-Maximum Idle Connections per Host
----------------------------------
+Maximum idle connections per host
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
@@ -282,8 +282,8 @@ Maximum Idle Connections per Host
 | Numerical input. Default is **128**.                            |                                                                              |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------+
 
-Idle Connection Timeout
------------------------
+Idle connection timeout
+~~~~~~~~~~~~~~~~~~~~~~~
 
 |enterprise| |self-hosted|
 
