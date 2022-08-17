@@ -6,18 +6,18 @@ This document provides information on how to successfully make the Calls plugin 
 Components
 ----------
 
-- Calls plugin: This is the main entry point and a requirement to enable channel calls. 
-- RTCD: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. This is the preferred solution for a performant and scalable deployment. With RTCD, the Mattermost server will be minimally impacted when hosting a high number of calls.
+- **Calls plugin**: This is the main entry point and a requirement to enable channel calls. 
+- **RTCD**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. This is the preferred solution for a performant and scalable deployment. With RTCD, the Mattermost server will be minimally impacted when hosting a high number of calls.
 
 Terminology
 -----------
 
-- WebRTC: The set of underlying protocols/specifications on top of which calls are implemented. 
-- RTC (Real Time Connection): The real-time connection. This is the channel used to send media tracks (audio/video/screen).
-- WS (WebSocket): The WebSocket connection. This is the channel used to set up a connection (signaling process).
-- NAT (Network Address Translation): A networking technique to map IP addresses. 
-- STUN (Session Traversal Utilities for NAT): A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance. 
-- TURN (Traversal Using Relays around NAT): A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay. 
+- **WebRTC**: The set of underlying protocols/specifications on top of which calls are implemented. 
+- **RTC (Real Time Connection)**: The real-time connection. This is the channel used to send media tracks (audio/video/screen).
+- **WS (WebSocket)**: The WebSocket connection. This is the channel used to set up a connection (signaling process).
+- **NAT (Network Address Translation)**: A networking technique to map IP addresses. 
+- **STUN (Session Traversal Utilities for NAT)**: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance. 
+- **TURN (Traversal Using Relays around NAT)**: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay. 
 
 Network requirements
 --------------------
