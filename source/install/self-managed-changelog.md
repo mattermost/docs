@@ -80,7 +80,6 @@ Mattermost v7.2.0 contains low to medium level severity level security fixes. [U
  - Added an **Upgrade** button for Admins on the navigation bar.
  - Added the ability for Admins to quickly view different paid license options inside the product.
  - Added the ability to start a trial from the **Invite People** modal.
- - Added the ability for end users to notify Admins to upgrade their workspace.
  - Admins are now able to search for channel IDs via **System Console > User Management > Channels** page.
  - In the **System Console** left-hand side, paid features icons are now displayed on the menu entries to indicate enterprise features.
  - Added ``webSocketClient`` to ``Pluggable`` and ``PostWillRenderEmbed`` plugin registered components.
