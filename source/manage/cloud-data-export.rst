@@ -146,7 +146,7 @@ When you migrate from self-hosted to Cloud, you'll need to open a ticket with th
 
 .. note:: This migration process is only available to customers using paid Mattermost editions.
 
-Before you begin your migration, ensure you’re on Mattermost version 6.5 (or later) as this contains the latest version of the server and the mmctl tool which is used to perform the export. You also need to take note of the following information before you begin:
+Before you begin your migration, ensure you’re on Mattermost version 6.7 (or later) as this contains the latest version of the server and the mmctl tool which is used to perform the export. You also need to take note of the following information before you begin:
 
 **User Authentication**
 
