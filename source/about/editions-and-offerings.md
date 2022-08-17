@@ -1,4 +1,12 @@
-<!--IMPORTANT: ANY CHANGES REQUIRE APPROVAL FROM EITHER VP PRODUCT, CHIEF PRODUCT OFFICER OR CEO. THERE HAS BEEN MATERIAL CONFUSION IN HOW WE DESCRIBE OUR FEATURES (e.g. https://www.reddit.com/r/Mattermost/comments/wlbdbc/team_edition_limitation_confirmation/) AND UNTIL WE CAN SYSTEMATICALLY SOLVE THIS, PRODUCT LEADERSHIP IS ACCOUNTABLE FOR HOW WE COMMUNICATE OUR OFFERINGS TO THE TECHNICAL COMMUNITY. ALSO, THIS DOC WILL BE IN MD, INSTEAD OF RST TO MAKE IT EASIER TO MAINTAIN-->
+<!--IMPORTANT: ANY CHANGES REQUIRE APPROVAL FROM EITHER VP PRODUCT, CHIEF PRODUCT OFFICER OR CEO. 
+
+THERE HAS BEEN MATERIAL CONFUSION IN HOW WE DESCRIBE OUR FEATURES (e.g. https://www.reddit.com/r/Mattermost/comments/wlbdbc/team_edition_limitation_confirmation/) AND UNTIL WE CAN SYSTEMATICALLY SOLVE THIS, PRODUCT LEADERSHIP IS ACCOUNTABLE FOR HOW WE COMMUNICATE OUR OFFERINGS TO THE TECHNICAL COMMUNITY. ALSO, THIS DOC WILL BE IN MD, INSTEAD OF RST TO MAKE IT EASIER TO MAINTAIN
+
+-->
+
+<!--
+
+DOC TEAM - OKAY FOR GRAMATICAL EDITS, BUT PLEASE DO NOT CHANGE CONTENT--PLEASE PUBLISH AND OPEN A TICKET ON ANY ISSUES WITH MENTION TO THE CONTRIBUTING AUTHOR. 
 
 <!--
 
@@ -68,17 +76,22 @@ Workplace Collaboration features include:
 - **Workspaces** for organizing Channels, Playbooks and Boards by organization and user groups. 
 - [**Mobile Applications**](https://developers.mattermost.com/contribute/mobile/) for iOS and Android in Apple Store and Google Play respectively, as well as [full source code](https://github.com/mattermost/mattermost-mobile) for [building and distributing custom mobile apps](https://docs.mattermost.com/deploy/build-custom-mobile-apps.html) to an internal Enterprise App Store, or securing with Enterprise Mobility Management. 
 - **Desktop Application** for Windows, MacOS, and Linux (Ubuntu/Debian, CentOS/RHEL, Generic Linux) including support for [Desktop MSI and Group Policies (Beta)](https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html), [silent installation](https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html#silent-installation-guide), and [managed resources](https://docs.mattermost.com/install/desktop-app-managed-resources.html). 
-- **Integrations** including connected workflows with common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, and Jitsi, as well as an extensible support for [bots and plug-ins](https://mattermost.com/marketplace/#publicApps).  
+- [**Integrations**](https://docs.mattermost.com/about/integrations.html) including connected workflows with common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, and Jitsi, as well as an extensible support for [bots and plug-ins](https://mattermost.com/marketplace/#publicApps) as well as [webhooks, APIs, and drivers](https://developers.mattermost.com/integrate/other-integrations). 
 - **Multi-language support** including English (U.S. and Australian), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian.
 
 System management and customization features include:  
 - [Tools for Custom Branding](https://docs.mattermost.com/configure/custom-branding-tools.html) including customization of login page. 
 - [Custom Themes and Colors](https://docs.mattermost.com/messaging/customizing-theme-colors.html) including ability to import templates. 
 - [Multi-factor authentication](https://docs.mattermost.com/onboard/multi-factor-authentication.html) via Google Authenticator in addition to username/password and [password policy enforcement](https://docs.mattermost.com/configure/configuration-settings.html#password). 
-- Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
-- [Peer-to-Peer Community Support](https://mattermost.com/support/) via on-line forums. 
 - (Self-hosted Only) [Command Line Tool](https://docs.mattermost.com/manage/mmctl-command-line-tool.html) for configuration and [server upgrade](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html). 
+
+Support entitlements from Mattermost, Inc: 
+- [Knowledge base and troubleshooting documentation](https://support.mattermost.com/hc/en-us) is available for common techincal issues. 
+- [Peer-to-Peer community support](https://mattermost.com/support/) via on-line forums. 
+
+Service entitlements from Mattermost, Inc: 
 - (Cloud Only) [SOC 2 Type 1 certification](https://mattermost.com/security/) with plans to add SOC 2 Type 2 in 2023. 
+
 
 ### Mattermost Professional 
 
@@ -89,8 +102,7 @@ Mattermost Professional is a paid subscription offering advanced configuration f
 
 This offering includes all the features of Mattermost Starter, plus: 
 
-- `Guest access <https://docs.mattermost.com/onboard/guest-accounts.html>`__.
-- Unlimited playbooks, retrospective reports, and timelines.
+- [**Guest accounts**](https://docs.mattermost.com/onboard/guest-accounts.html) offering permission-limited accounts for guests (such as customers, vendors and partners) to join a workpace. Note: For billing purposes Guests are treated as a Registered User. 
 - `Active Directory/LDAP Single Sign-on and user synchronization <https://docs.mattermost.com/onboard/ad-ldap.html>`__.
 - Single Sign-on with SAML, `Google <https://docs.mattermost.com/onboard/sso-google.html>`__, `Office365 <https://docs.mattermost.com/onboard/sso-office.html>`__ or `OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__.
 - `MFA enforcement <https://docs.mattermost.com/onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
@@ -98,10 +110,11 @@ This offering includes all the features of Mattermost Starter, plus:
 - `Read-only announcement channels <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20>`__.
 - `System-wide announcement banners <https://docs.mattermost.com/manage/announcement-banner.html>`__.
 - O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
-- `Next business day support via online ticketing system <https://mattermost.com/support/>`__.
-- [Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
+- [Granular system permissions](https://docs.mattermost.com/onboard/advanced-permissions.html) providing role-based access controls and delegated permissions. 
+- (Cloud Only) [Higher Mattermost Usage Limits](https://docs.mattermost.com/onboard/mattermost-limits.html) with increased or unlimited usage on limits set in Mattermost Free plan. 
 
-See a complete list of features `here <https://mattermost.com/pricing>`__.
+Support entitlements from Mattermost, Inc: 
+- [Next business day support](https://mattermost.com/support/) via online ticketing system. 
 
 ### Mattermost Enterprise 
 
