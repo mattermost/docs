@@ -76,7 +76,7 @@ If Mattermost is not deployed in a Kubernetes cluster, there is a guide that des
 
 RTCD is deployed with a Helm chart. To install this Helm chart run:
 
-.. code-block:: sh
+.. code-block:: none
 
   helm repo add mattermost https://helm.mattermost.com
 
@@ -84,81 +84,81 @@ More info about the version and the chart itself, please check here. Regarding c
 
 An example with sample values:
 
-image:
-  repository: mattermost/rtcd
-  pullPolicy: IfNotPresent
-  tag: "v0.6.9"
+.. code-block:: none
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+  image:
+   repository: mattermost/rtcd
+   pullPolicy: IfNotPresent
+   tag: "v0.6.9"
 
-serviceAccount:
-  create: true
-  annotations: {}
-  name: ""
+  imagePullSecrets: []
+  nameOverride: ""
+  fullnameOverride: ""
 
-podAnnotations: {}
+  serviceAccount:
+     create: true
+     annotations: {}
+     name: ""
 
-podSecurityContext: {}
+  podAnnotations: {}
 
-securityContext: {}
+  podSecurityContext: {}
 
-daemonset:
-  environmentVariables:
-    RTCD_API_SECURITY_ALLOWSELFREGISTRATION: "\"true\""
-    RTCD_RTC_ICESERVERS: "\'[{\"urls\":[\"stun:stun.global.calls.mattermost.com:3478\"]}]\'"
-    RTCD_LOGGER_CONSOLELEVEL: "\"DEBUG\""
-    RTCD_LOGGER_ENABLEFILE: "\"false\""
-  maxUnavailable: 1 # Only used when updateStrategy is set to "RollingUpdate"
-  updateStrategy: RollingUpdate
-  terminationGracePeriod: 18000 # 5 hours, used to gracefully draining the instance.
+  securityContext: {}
 
-service:
-  # APIport is the port used by rtcd HTTP/WebSocket API.
-  APIport: 8045
-  # RTCport is the UDP port used to route all the calls related traffic.
-  RTCport: 8443
+  daemonset:
+    environmentVariables:
+      RTCD_API_SECURITY_ALLOWSELFREGISTRATION: "\"true\""
+      RTCD_RTC_ICESERVERS: "\'[{\"urls\":[\"stun:stun.global.calls.mattermost.com:3478\"]}]\'"
+      RTCD_LOGGER_CONSOLELEVEL: "\"DEBUG\""
+      RTCD_LOGGER_ENABLEFILE: "\"false\""
+    maxUnavailable: 1 # Only used when updateStrategy is set to "RollingUpdate"
+    updateStrategy: RollingUpdate
+    terminationGracePeriod: 18000 # 5 hours, used to gracefully draining the instance.
 
-ingress:
-  enabled: false
-  classname: nginx-calls
-  annotations:
-  hosts:
-    - host: mattermost-rtcd.local
-      paths:
-        - "/"
+  service:
+    # APIport is the port used by rtcd HTTP/WebSocket API.
+    APIport: 8045
+    # RTCport is the UDP port used to route all the calls related traffic.
+    RTCport: 8443
 
-resources:
-  limits:
-    cpu: 7800m # Values for c5.2xlarge in AWS
-    memory: 15Gi # Values for c5.2xlarge in AWS
-  requests:
-    cpu: 100m
-    memory: 32Mi
+  ingress:
+    enabled: false
+    classname: nginx-calls
+    annotations:
+    hosts:
+      - host: mattermost-rtcd.local
+        paths:
+          - "/"
+  resources:
+    limits:
+      cpu: 7800m # Values for c5.2xlarge in AWS
+      memory: 15Gi # Values for c5.2xlarge in AWS
+    requests:
+      cpu: 100m
+      memory: 32Mi
 
-nodeSelector:
-  kops.k8s.io/instancegroup: rtcd
+  nodeSelector:
+    kops.k8s.io/instancegroup: rtcd
 
-tolerations:
-  - key: "rtcd"
-    operator: "Equal"
-    value: "true"
-    effect: "NoSchedule"
+  tolerations:
+    - key: "rtcd"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
 
-dnsConfig:
-  options:
-  - name: ndots
-    value: "1"
+  dnsConfig:
+    options:
+    - name: ndots
+      value: "1"
 
-affinity: {}
-
+  affinity: {}
 
 RTCD will be deployed as DaemonSet, for that reason the sections of nodeSelector and tolerations are used so that RTCD to be deployed in specific nodes.
 
 After having the values above, to deploy the RTCD helm chart run:
 
+.. code-block:: none
 
-helm upgrade mattermost-rtcd mattermost/mattermost-rtcd -f /Users/myuser/rtcd_values.yaml --namespace mattermost-rtcd --create-namespace --install --debug
-
-
+  helm upgrade mattermost-rtcd mattermost/mattermost-rtcd -f /Users/myuser/rtcd_values.yaml --namespace mattermost-rtcd --create-namespace --install --debug
+  
