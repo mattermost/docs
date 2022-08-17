@@ -184,7 +184,7 @@ Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the na
 
     ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
-Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` (which needs to be moved to a subdirectory ``data`` first) that contains the attachments. On Linux and Mac you can use this command:
+Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` (which needs to be moved to a subdirectory ``data`` first) that contains the attachments. On Linux and macOS you can use this command:
 
 .. code:: bash
 
