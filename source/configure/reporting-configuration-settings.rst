@@ -28,8 +28,11 @@ Reporting configuration settings
 
 View statistics for your overall deployment and specific teams as well as access server logs by going to **System Console > Reporting**. 
 
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+The following reporting configuration settings are available:
+
+- `Site statistics <#site-statistics>`__
+- `Team statistics <#team-statistics>`__
+- `Server logs <#server-logs>`__
 
 Site statistics
 ---------------

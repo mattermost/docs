@@ -43,7 +43,7 @@ Boards now supports a team sidebar so you can easily navigate between boards on 
 Linking boards to channels
 --------------------------
 
-The channel header’s board icon is now located on the channel `Apps Bar <https://docs.mattermost.com/configure/configuration-settings.html#enable-apps-bar>`_. When you select the **Boards** icon, you’ll open a new right-hand sidebar (RHS) where channel admins can search and link boards to the channel. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration. Select a linked board to navigate directly to the board.
+The channel header’s board icon is now located on the channel `Apps Bar <https://docs.mattermost.com/configure/configuration-settings.html#enable-apps-bar>`_. When you select the **Boards** icon, you’ll open a new right-hand sidebar (RHS) where channel members can search and link boards to the channel. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration. Select a linked board to navigate directly to the board.
 
 .. image:: ../images/boards-whats-new-04.png
   :alt: You can find the boards icon in the Apps Bar on the right-hand side of the screen.

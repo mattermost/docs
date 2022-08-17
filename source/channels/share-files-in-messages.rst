@@ -18,6 +18,12 @@ Share files in messages
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
+.. |attachment-icon| image:: ../images/attachment-icon.png
+  :alt: Use the Attachment icon to share files with messages.
+
+.. |download-icon| image:: ../images/download-outline_F0B8F.svg
+  :alt: Use the Download icon to download an attached file to your local system.
+
 With file attachments, you can share additional information that helps your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos can make your messages more effective and clear.
 
 You can share files with other Mattermost users or entire channels by:
@@ -25,9 +31,6 @@ You can share files with other Mattermost users or entire channels by:
 - dragging and dropping files into Channels.
 - selecting the **Attachment** |attachment-icon| icon in the message input box.
 - pasting from the clipboard.
-
-.. |attachment-icon| image:: ../images/attachment-icon.png
-  :alt: Attachment icon.
 
 Attachment limits and sizes
 ---------------------------
@@ -71,4 +74,4 @@ Public links allow you to share message attachments with anyone outside your Mat
 Download files
 --------------
 
-You can download an attached file by selecting the **Download** icon next to the file thumbnail.
+You can download an attached file by selecting the **Download** |download-icon| icon next to the file thumbnail.
