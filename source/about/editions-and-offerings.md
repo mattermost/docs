@@ -103,8 +103,13 @@ Mattermost Professional is a paid subscription offering advanced configuration f
 This offering includes all the features of Mattermost Starter, plus: 
 
 - [**Guest accounts**](https://docs.mattermost.com/onboard/guest-accounts.html) offering permission-limited accounts for guests (such as customers, vendors and partners) to join a workpace. Note: For billing purposes Guests are treated as a Registered User. 
+- [Single Sign-on with SAML](https://docs.mattermost.com/onboard/sso-google.html)
+
+
+`Office365 <https://docs.mattermost.com/onboard/sso-office.html>`__ or `OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__.
+
 - `Active Directory/LDAP Single Sign-on and user synchronization <https://docs.mattermost.com/onboard/ad-ldap.html>`__.
-- Single Sign-on with SAML, `Google <https://docs.mattermost.com/onboard/sso-google.html>`__, `Office365 <https://docs.mattermost.com/onboard/sso-office.html>`__ or `OpenID Connect <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__.
+
 - `MFA enforcement <https://docs.mattermost.com/onboard/multi-factor-authentication.html#enforcing-mfa-e10>`__.
 - `Advanced team permissions <https://docs.mattermost.com/onboard/advanced-permissions.html#team-override-schemes-e20>`__.
 - `Read-only announcement channels <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation-e20>`__.
