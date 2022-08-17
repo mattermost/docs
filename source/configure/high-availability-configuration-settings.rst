@@ -1,5 +1,6 @@
-.. _high-availability:
+:nosearch:
 :orphan:
+.. _high-availability:
 
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 25
@@ -26,7 +27,7 @@
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-:nosearch:
+
 
 You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
 
