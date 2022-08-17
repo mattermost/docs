@@ -1,21 +1,23 @@
-Mattermost editions and plans 
-=============================
+# Mattermost editions and plans 
 
-Mattermost is an open core platform. 
+Mattermost offers open core, workplace collaboration for developers. 
 
-This means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud deployment modes.
+"Open core" means we develop both an open source, self-hosted edition of our software provided free to our community, as well as a commercial edition that extends and enhances our open source software with paid, subscription-based offerings available both in self-hosted and cloud-hosted deployment modes.
 
-You can choose between one of two compiled code bases, either open source (Team Edition) or commercial (Enterprise Edition).
+"Workplace collaboration for developers" means we offer a suite of tools for technical teams to increased their productivity, including real time messaging, audio calling and screensharing, incident management, project management, and an extensive platform for integrating their development toolchains. 
+
+You can choose between one of two compiled code bases, either open source ([Team Edition](#mattermost-team-edition)) or commercial (Enterprise Edition).
 
 We offer a range of plans, which are sets of features and entitlements available either free or as a paid subscription service. Mattermost sells subscriptions for both self-hosted and cloud deployments.
 
-Self-hosted editions
---------------------
+## Self-hosted editions
 
-Self-hosted editions support deploying Mattermost within IT-controlled private environments in public clouds, including AWS, Azure, GCP and Oracle Cloud, as well as on-premises in private clouds and virtual or physical servers. When you're using a self-hosted deployment, a license file is provided and needs to be uploaded to activate your subscription.
 
-Mattermost Team Edition
-~~~~~~~~~~~~~~~~~~~~~~~
+Self-hosted editions support deploying Mattermost within IT-controlled private environments in public clouds, including AWS, Azure, GCP and Oracle Cloud, as well as on-premises in private clouds and virtual or physical servers. 
+
+When you're using a self-hosted deployment, a license key is provided and needs to be uploaded to activate your subscription.
+
+### Mattermost Team Edition
 
 Team Edition is a free-to-use, open source, self-hosted collaboration platform offering all the core productivity benefits of competing SaaS solutions. It deploys as a single Linux binary with MySQL or PostgreSQL under an MIT license.
 
