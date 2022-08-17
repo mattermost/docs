@@ -39,6 +39,9 @@ Modes of operation
 
 Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate.
 
+.. image:: ../images/calls-deployment-image1.png
+  :alt: A diagram of the calls deployment modes and their dependencies.
+
 Single instance
 ~~~~~~~~~~~~~~~
 
@@ -47,11 +50,16 @@ Integrated
 
 This is the default mode when first installing the plugin on a single Mattermost instance setup. The WebRTC service is integrated in the plugin itself and runs alongside the Mattermost server.
 
+.. image:: ../images/calls-deployment-image3.png
+  :alt: A diagram of the integrated configuration model of a single instance.
 
 rtcd
 ^^^^
 
 An external, dedicated and scalable WebRTC service (RTCD) is used to handle all calls media routing.
+
+.. image:: ../images/calls-deployment-image7.png
+  :alt: A diagram of a Web RTC deployment configuration.
 
 High availability cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,18 +69,30 @@ Clustered
 
 This is the default mode when running the plugin in a HA cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
 
+.. image:: ../images/calls-deployment-image5.png
+  :alt: A diagram of a clustered calls deployment.
+
 Single handler
 ^^^^^^^^^^^^^^
 
 This is a fallback mode to only let one node in the cluster to host calls. While the plugin would still run on all nodes, all calls will be routed through the handler node. This mode must be enabled by running the instance with a special environment variable set (MM_CALLS_IS_HANDLER=true).
 
+.. image:: ../images/calls-deployment-image4.png
+  :alt: A diagram of a single handler deployment.
+
 rtcd
 ^^^^
+
+.. image:: ../images/calls-deployment-image2.png
+  :alt: A diagram of an rtcd deployment.
 
 Kubernetes deployments
 ----------------------
 
-If Mattermost is not deployed in a Kubernetes cluster, there is a guide that describes how to deploy a Mattermost operator. https://docs.mattermost.com/install/mattermost-kubernetes-operator.html
+.. image:: ../images/calls-deployment-kubernetes.png
+  :alt: A diagram of calls deployed in a Kubernetes cluster.
+  
+If Mattermost is not deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide <https://docs.mattermost.com/install/mattermost-kubernetes-operator.html>`_.
 
 RTCD is deployed with a Helm chart. To install this Helm chart run:
 
