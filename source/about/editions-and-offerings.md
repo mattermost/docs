@@ -1,4 +1,4 @@
-<!--DO NOT EDIT THIS PAGE. CHANGES REQUIRE APPROVAL FROM VP PRODUCT-->
+<!--IMPORTANT: ANY CHANGES REQUIRE APPROVAL FROM EITHER VP PRODUCT, CHIEF PRODUCT OFFICER OR CEO. THERE HAS BEEN MATERIAL CONFUSION IN HOW WE DESCRIBE OUR FEATURES (e.g. https://www.reddit.com/r/Mattermost/comments/wlbdbc/team_edition_limitation_confirmation/) AND UNTIL WE CAN SYSTEMATICALLY SOLVE THIS, PRODUCT LEADERSHIP IS ACCOUNTABLE FOR HOW WE COMMUNICATE OUR OFFERINGS TO THE TECHNICAL COMMUNITY.-->
 
 # Mattermost editions and plans 
 
@@ -8,7 +8,7 @@ Mattermost offers open core, workplace collaboration for developers.
 
 "Workplace collaboration for developers" means we offer a suite of tools for technical teams to increased their productivity, including real time messaging, audio calling and screensharing, incident management, project management, and an extensive platform for integrating their development toolchains. 
 
-You can choose between one of two compiled code bases, either open source ([Team Edition](#mattermost-team-edition)) or commercial ((Enterprise Edition)[#enterprise-edition]).
+You can choose between one of two compiled code bases, either open source ([Team Edition](#mattermost-team-edition)) or commercial ([Enterprise Edition](#enterprise-edition)).
 
 We offer a range of plans, which are sets of features and entitlements available either free or as a paid subscription service. Mattermost sells subscriptions for both self-hosted and cloud deployments.
 
@@ -53,25 +53,28 @@ Mattermost Free is a set of collaboration features for accelerating your technic
 * *Self-hosted deployments* - **Mattermost Free** is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
 * *Cloud deployments* - **Mattermost Free** is also available in Cloud. It provides the functionality of Mattermost Free to unlimited users for free, with a `few workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html>`_. Get started today via https://mattermost.com/sign-up/.
 
-Features include:
+Core Features include:
 
-- Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and Custom Emoji.
-- Customizable playbooks, ad hoc add/remove tasks, automated triggers, and stakeholders dashboard.
-- Customizable project management Boards, with table, gallery, list views, a single workspace per channel, shareable read-only boards, and data import.
-- Native apps for iOS, Android, Windows, Mac, and Linux.
-- Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
-- Tools for [custom branding](https://docs.mattermost.com/configure/custom-branding-tools.html) and [themes](https://docs.mattermost.com/messaging/customizing-theme-colors.html).
-- `Multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__.
-- `Single Sign-on with GitLab <https://docs.mattermost.com/onboard/sso-gitlab.html>`__ (Self-hosted only).
-- `Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
+- [**Channels**](https://docs.mattermost.com/guides/channels.html) for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emojis, and Custom Emojis.
+- [**Playbooks**](https://docs.mattermost.com/guides/playbooks.html) for structured ChatOps and incident management with task automation and process dashboarding and reporting.
+- [**Boards**](https://docs.mattermost.com/guides/boards.html) for project management with table, gallery, list views, a single workspace per channel, shareable read-only boards, and data import.
+- **Workspaces** for organizing Channels, Playbooks and Boards by organization and user groups. 
+- **Mobile Applications** for iOS and Android. 
+- **Desktop Application** for Windows, MacOS, and Linux (Ubuntu/Debian, CentOS/RHEL, Generic Linux) including support for [Desktop MSI and Group Policies (Beta)](https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html), [silent installation](https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html#silent-installation-guide), and [managed resources](https://docs.mattermost.com/install/desktop-app-managed-resources.html). 
+- **Integrations** including pre-packaged integrations with common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, and Jitsi, as well as an extensible integrations platform.
+
+Additional Features include: 
+- [Tools for Custom Branding](https://docs.mattermost.com/configure/custom-branding-tools.html) including customization of login page. 
+- [Custom Themes and Colors](https://docs.mattermost.com/messaging/customizing-theme-colors.html) including ability to import templates. 
+- [Multi-factor authentication](https://docs.mattermost.com/onboard/multi-factor-authentication.html) via Google Authenticator in addition to username/password and [password policy enforcement](https://docs.mattermost.com/configure/configuration-settings.html#password). 
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`__, and `command line tools <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`__, and `third-party extensions <https://mattermost.com/marketplace/>`__.
-- Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian.
-- `SOC2 Type1 certification <https://mattermost.com/security/>`__ (Cloud only).
-- `Community support <https://mattermost.com/support/>`__.
+- **Multi-language support** - including English (U.S. and Australian), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, and Ukrainian.
+- [Peer-to-Peer Community Support](https://mattermost.com/support/) via on-line forums. 
+- (Cloud Only) [SOC 2 Type 1 certification](https://mattermost.com/security/) with plans to add SOC 2 Type 2 in 2023. 
 
-Mattermost Professional 
------------------------
+# Mattermost Professional 
+
 
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated developer workflows across multiple cross-functional teams to deliver mission-critical software.
 
@@ -90,6 +93,7 @@ This offering includes all the features of Mattermost Starter, plus:
 - `System-wide announcement banners <https://docs.mattermost.com/manage/announcement-banner.html>`__.
 - O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`__.
+- [Granular system permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
 
 See a complete list of features `here <https://mattermost.com/pricing>`__.
 
@@ -142,11 +146,12 @@ Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging
 
 Features include: Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user login; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
 
-Product decisions
------------------
+# Product decisions
 
 As the platform matures and new features are added, they're evaluated to be included in the plan that best aligns with the organizational use cases outlined by the editions above. Multiple factors are considered in determining the appropriate plan to include a feature including mission-critical impact, relative value to a single team, cross-functional teams, and the enterprise, as well as security, compliance, and scalability.
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer.
 
 You can provide us with feedback via `our forum <https://mattermost.uservoice.com/>`__, where ideas and input influences the future of the platform.
+
+
