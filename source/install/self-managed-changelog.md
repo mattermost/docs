@@ -19,7 +19,7 @@ Mattermost v7.2.0 contains low to medium level severity level security fixes. [U
 
 ### Important Upgrade Notes
  - Several schema changes impose additional database constraints to make the data more strict. Here are the times taken:
-    - PostgreSQL (131869 channels, 2 teams):
+PostgreSQL (131869 channels, 2 teams):
    [bigdb] # CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');
    CREATE TYPE
    Time: 14.114 ms
