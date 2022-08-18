@@ -1,30 +1,89 @@
 Embedded JSON audit log schema
 ==============================
 
-The JSON schema functions as a blueprint or schematic that defines how a single event should appear when being written to the audit log, including: field names, data types, objects, and structure.
+The JSON schema functions as a standardized blueprint or schematic that consistently defines how a single event should appear when being written to the audit log, including: field names, data types, objects, and structure.
 
 The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the target type, format, and levels.
 
-[Process outline]
+An outline of the JSON audit logging schema is provided below. See the `JSON data model <#json-data-model>` for additional details.
 
-1. Specify the destination targets for the audit log output.
-2. Specify the event names to include or exclude from being written out.
-3. Specify the verbosity of audit log output.
+.. code-block:: json
 
-[schema outline here]
+    {
+        "timestamp": "",       // Event time; RFC3339
+        "level": "",           // Audit log level
+        "status": "",          // Success or failure of the audited event or activity
+        "error": "",           // Error if status = fail
+        "actor": {,            // The user performing the action
+            "user_id":              // Unique identifier of the event user
+            "session_id":           // Unique session identifier of the event user
+            "client":               // User agent of the client/platform in use by the event user
+            "ip_address":           // IPv4/IPv6 IP address of the event user
+        }
+        "event_name": "",      // Logged event name
+        "event": {             // Metadata of event
+            "parameters": {}        // Map containing parameters of the audited event or activity
+            "prior_state": {}       // Pre-event state of the object
+            "resulting_state": {}   // Post-event state of the object
+            "object_type":          // Object targeted by the event or activity
+        }
+        "meta": {             // 
+            "api_path": "",         // API endpoint interacted with for event or activity
+            "cluster_id": "",       // Unique identifier of the cluster in use by the event user
+        }
+    }
 
-Example schema output
----------------------
+Example output
+---------------
 
 [TBD]
 
-login
+Create a team
+~~~~~~~~~~~~~
 
-updatePreferences
 
-createPost
 
-deletePost
+Create a channel
+~~~~~~~~~~~~~~~~
+
+
+
+Delete a channel
+~~~~~~~~~~~~~~~~
+
+
+Extend session expiry
+~~~~~~~~~~~~~~~~~~~~~
+
+
+
+Update preferences
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "timestamp": "2022-08-17 20:37:52.846 +01:00",
+        "event_name": "updatePreferences",
+        "status": "success",
+        "actor": {
+            "user_id": "aw8ehkwaziytzry1qqxi9tsqwh",
+            "session_id": "kth3jyadc3b1p84kbz6y3o75na",
+            "client": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Safari/605.1.15",
+            "ip_address": "192.168.0.169"
+    },
+        "event": {
+            "parameters": {},
+            "prior_state": {},
+            "resulting_state": {},
+            "object_type": ""
+    },
+        "meta": {
+            "api_path": "/api/v4/users/aw8ehkwaziytzry1qqxi9tsqwh/preferences",
+            "cluster_id": "8dxdbfx6fpdwtki1z6n8whtkho"
+    },
+        "error": {}
+    }
 
 JSON data model
 ---------------
@@ -62,17 +121,14 @@ JSON data model
 +------------+----------+--------------------------------------------------------------------------------------------------------------------+
 | error      | string   | The resulting error if the status is in a failed state.                                                            |
 +------------+----------+--------------------------------------------------------------------------------------------------------------------+
-| user_id    | string   | Unique identifier of the user performing the event or activity.                                                    |
+| actor      |          | User involved with the event.                                                                                      |
 +------------+----------+--------------------------------------------------------------------------------------------------------------------+
-| client     | string   | User agent of the client/platform in use by the event user (e.g. webapp, mmctl, user-agent).                       |
+| event-name | string   | Unique name and identifier of the event type taking place (e.g. ``getLogs`` ``requestRenewalLink``,                |
+|            |          | ``createTeam``, ``createChannel``, ``deleteChannel``, or ``extendSessionExpiry``)                                  |
 +------------+----------+--------------------------------------------------------------------------------------------------------------------+
-| ip_address | string   | IPv4/IPv6 IP address of the event user.                                                                            |
-|            |          | Appears as null if means of interaction doesn’t involve IP addresses.                                              |
+| event      |          |                                       
 +------------+----------+--------------------------------------------------------------------------------------------------------------------+
-| event_name | string   | Unique name/identifier of the event type taking place.                                                             |
-+------------+----------+--------------------------------------------------------------------------------------------------------------------+
-| event_data | TBD      | Metadata of the event itself. [TBD]                                                                                |
-+------------+----------+--------------------------------------------------------------------------------------------------------------------+
+| meta       |          | 
 
 File target configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

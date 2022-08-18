@@ -45,7 +45,11 @@ Configure audit logging
 
 Configuring Mattermost to enable audit logging requires editing the ``config.json`` file directly. Audit logging can’t be managed using the System Console.
 
-In the ``config.json`` file, navigate to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file, a database DSN, or a `JSON object <https://docs.mattermost.com/comply/embedded-json-audit-log-schema.html>`__.
+In the ``config.json`` file, navigate to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file, a database DSN, or a JSON object.
+
+1. Specify the destination targets for the audit log output as console, file, syslog, and/or TCP socket.
+2. Specify the event names to include and identify the event names exclude from being written out.
+3. Specify the verbosity of audit log output.
 
 Configure audit logging in Mattermost Boards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
