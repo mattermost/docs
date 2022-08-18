@@ -5,7 +5,7 @@
 Configuring Apache2 as a proxy for Mattermost Server (Unofficial)
 -----------------------------------------------------------------
 
-.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-proxy-apache2.rst>`__.
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/configure/config-proxy-apache2.rst>`__.
 
 On a Debian-based operating system such as Ubuntu, Apache2 proxy configuration is done in the ``/etc/apache2/sites-available`` directory. Red Hat-based systems organize Apache configuration files `differently <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-web_servers>`__. If you're setting up Mattermost on a subdomain, you'll want to create a new configuration file along the lines of ``mysubdomain.mydomain.com.conf``.
 
@@ -34,8 +34,8 @@ On a Debian-based operating system such as Ubuntu, Apache2 proxy configuration i
 		  # Set web sockets
 		  RewriteEngine On
 		  RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC]
-		  RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC]
-		  RewriteCond %{HTTP:CONNECTION} \bUpgrade\b [NC]
+		  RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
+		  RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
 		  RewriteRule .* ws://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
 
 		  <Location />

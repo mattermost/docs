@@ -18,17 +18,13 @@ Get started
 
     Optimize your workspace </configure/optimize-your-workspace>
     Mattermost configuration settings </configure/configuration-settings>
+    About </configure/self-hosted-account-settings>
+    Billing & account </configure/cloud-billing-account-settings>
     Reporting configuration settings </configure/reporting-configuration-settings>
     User management configuration settings </configure/user-management-configuration-settings>
-    Web server configuration settings </configure/web-server-configuration-settings>
-    Database configuration settings </configure/database-configuration-settings>
-    Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>
-    File storage configuration settings </configure/file-storage-configuration-settings>
-    Image proxy configuration settings </configure/image-proxy-configuration-settings>
-    SMTP configuration settings </configure/smtp-configuration-settings>
-    Push notification server configuration settings </configure/push-notification-server-configuration-settings>
-    High availability configuration settings </configure/high-availability-configuration-settings>
+    Environment configuration settings </configure/environment-configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
+    Environment variables </configure/environment-variables>
     Provisioning workflows </onboard/user-provisioning-workflows>
     Multi-factor authentication </onboard/multi-factor-authentication>
     Active Directory/LDAP </onboard/ad-ldap>
@@ -49,8 +45,9 @@ Get started
 These resources will help you get started with your Mattermost self-hosted or Cloud workspace.
 
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
-* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__.
-* **Provisioning workflows** - Learn how to :doc:`provisioning </onboard/user-provisioning-workflows>` and de-provision user accounts.
+* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
+* **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
+* **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
 * **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
