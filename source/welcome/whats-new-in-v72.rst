@@ -10,7 +10,7 @@ TL;DR
 
 1. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
 2. Organize boards on the sidebar with custom categories. 
-3. Press CTRL+K/CMD+K to find additional boards.
+3. Press :kbd:`Ctrl` :kbd:`K` on Windows or Linux, pressing :kbd:`⌘` :kbd:`K` on macOS to find additional boards.
 4. Navigate between teams in Boards with the new team switcher.
 5. Set board and template permissions in the new **Share** dialog.
 6. Link boards to channels to automatically grant board permissions to channel members.
