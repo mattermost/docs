@@ -928,9 +928,9 @@ redirects = {
         "https://developers.mattermost.com/contribute/webapp/end-to-end-tests/",
 "developer/webapp-to-redux.html":
         "https://developers.mattermost.com/contribute/webapp/webapp-to-redux/",
-"developer/webhook-outgoing.html": 
+"developer/webhooks-outgoing.html": 
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
-"developer/webhook-incoming.html":
+"developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 
 # Focalboard redirects
