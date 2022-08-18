@@ -13,8 +13,6 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-08-25
 
-### Highlights
-
 ### Improvements
 
 #### User Interface (UI)
