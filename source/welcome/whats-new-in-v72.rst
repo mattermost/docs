@@ -102,7 +102,7 @@ Instead of being tied to a particular channel, each board has been automatically
 
 .. note::
   
-  There are schema changes in v7.2. If you have a large database you may need to allocate additional time and resources to this migration. Please review `this document <https://docs.google.com/document/d/1hKQV6QfXSJ6LznvKxoENvU1Z21ulaZ09b-h8N1caS64/edit#heading=h.1ozc9hcotgot>`_ for details around permission migrations.
+  There are schema changes introduced in Boards v7.2. If you have a large database, you may need to allocate additional time and resources to this migration. Please review `this document <https://docs.google.com/document/d/1hKQV6QfXSJ6LznvKxoENvU1Z21ulaZ09b-h8N1caS64/edit#heading=h.1ozc9hcotgot>`_ for details around permission migrations.
 
 Public channels
 ~~~~~~~~~~~~~~~
