@@ -184,17 +184,19 @@ Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the na
 
     ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
-Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` that contains the attachments. On Linux and Mac you can use this command:
+Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` (which needs to be moved to a subdirectory ``data`` first) that contains the attachments. On Linux and macOS you can use this command:
 
 .. code:: bash
 
-    zip -r mattermost-bulk-import.zip bulk-export-attachments mattermost_import.jsonl
+    mkdir data
+    mv bulk-export-attachments data
+    zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 
 **5. Import into Mattermost**
 
-Now you can start the import process. Once you have ``mmctl`` installed and authenticated use this command to upload ``mattermost-bulk-export.zip``:
+Now you can start the import process. Once you have ``mmctl`` installed and authenticated use this command to upload ``mattermost-bulk-import.zip``:
 
 .. code:: bash
 
