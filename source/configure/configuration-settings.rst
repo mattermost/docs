@@ -1,23 +1,6 @@
 Configuration settings
 ======================
 
-Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
-
-.. important::
-
-   Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
-
-   On new installations from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
-
-   From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the `mmctl config reload command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they're made. This change will improve configuration performance and robustness.
-
-   See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.
-
-Configuration in database
---------------------------
-
-|all-plans| |self-hosted|
-
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
@@ -43,860 +26,37 @@ Configuration in database
   :target: https://mattermost.com/deploy
   :alt: Available for Mattermost Self-Hosted deployments.
 
-Storing configuration in the database is supported from v5.10 and later. Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
+Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. System Admins can manage Mattermost configuration using the System Console, or by modifying the ``config.json`` file directly using a text editor. 
+
+.. note::
+
+   Mattermost must have write permissions to ``config.json``, otherwise configuration changes made within the System Console will have no effect.
+
+Configuration in database
+--------------------------
+
+|all-plans| |self-hosted|
+
+From Mattermost v5.10, self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__ documentation for migration details.
 
 Environment variables
 ---------------------
 
 |all-plans| |self-hosted|
 
-Starting from Mattermost v3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
+From Mattermost v3.8, you can use `environment variables <https://docs.mattermost.com/configure/environment-variables.html>`__ to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
 
-The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``. For example, to derive the name of the Site URL setting:
-
-1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
-2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
-3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
-
-.. note::
-
-  - If Mattermost is run from an initialization file, environment variables can be set via ``Environment=<>``, or ``EnvironmentFile=<path/to/file>``. In the second case, the file specified contains the list of environment variables to set.
-  - When settings are configured through an environment variable, System Admins can't modify them in the System Console.
-  - For any setting that's not set in ``config.json`` or in environment variables, the Mattermost server uses the setting's default value as documented in the sections below on this page.
-
-.. warning::
-   
-   - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
-   - Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
-   
-Override Mattermost license file
---------------------------------
+Configuration reload
+--------------------
 
 |all-plans| |self-hosted|
 
-Starting from Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
+From Mattermost v5.38, the “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ command that must be run to apply configuration changes after they’re made. This change will improve configuration performance and robustness.
 
-When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
+Deprecated configuration settings
+---------------------------------
 
-.. note::
-   If ``MM_LICENSE`` is set to a non-empty string, but the license specified is not valid, the Mattermost server will be started without a license.
-   
-   In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
-
-Load custom configuration defaults
-----------------------------------
-
-|all-plans| |self-hosted|
-
-Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
-
-1. Create a JSON file that contains the custom configuration defaults. For example, ``custom.json``.
-2. When starting the server, point the custom defaults environment variable to the defaults file: ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
-
-.. contents::
-  :depth: 2
-  :local:
-  :backlinks: entry
-
-About
------
-
-Settings for managing the edition and license for Mattermost Enterprise Edition.
-
-Edition and License
-~~~~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **About > Edition and License**.
-
-Edition
-^^^^^^^^
-
-|all-plans| |self-hosted|
-
-View the edition of the Mattermost deployment.
-
-License
-^^^^^^^
-
-|all-plans| |self-hosted|
-
-View subscription details including the number of users and expiry date of your Mattermost license.
-
-License Key
-^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html>`__.
-
-Reporting
----------
-
-See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Site statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics>`__
-- `Team statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics>`__
-- `Server logs <https://docs.mattermost.com/configure/reporting-configuration-settings.html#server-logs>`__
-
-User Management
----------------
-
-See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Users <https://docs.mattermost.com/configure/user-management-configuration-settings.html#users>`__
-- `Groups <https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups>`__
-- `Teams <https://docs.mattermost.com/configure/user-management-configuration-settings.html#teams>`__
-- `Channels <https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels>`__
-- `Permissions <https://docs.mattermost.com/configure/user-management-configuration-settings.html#permissions>`__
-- `System roles <https://docs.mattermost.com/configure/user-management-configuration-settings.html#system-roles>`__
-
-Environment
------------
-
-Web server
-~~~~~~~~~~
-
-See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on the following configuration settingsn:
-
-- `Site URL <https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url>`__
-- `Listen address <https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address>`__
-- `Forward port 80 to 443 <https://docs.mattermost.com//configure/web-server-configuration-settings.html#forward-port-80-to-443>`__
-- `Connection security <https://docs.mattermost.com/configure/web-server-configuration-settings.html#connection-security>`__
-- `TLS certificate file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-certificate-file>`__
-- `TLS key file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tsl-key-file>`__
-- `Use Let's Encrypt <https://docs.mattermost.com/configure/web-server-configuration-settings.html#use-let-s-encrypt>`__
-- `Let's Encrypt certificate cache file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#let-s-encrypt-certificate-cache-file>`__
-- `Read timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#read-timeout>`__
-- `Write timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout>`__
-- `Idle timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#idle-timeout>`__
-- `Webserver mode <https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode>`__
-- `Enable insecure outgoing connections <https://docs.mattermost.com/configure/web-server-configuration-settings.html#enable-insecure-outgoing-connections>`__
-- `Managed resource paths <https://docs.mattermost.com/configure/web-server-configuration-settings.html#managed-resource-paths>`__
-- `Reload configuration from disk <https://docs.mattermost.com/configure/web-server-configuration-settings.html#reload-configuration-from-disk>`__
-- `Purge all caches <https://docs.mattermost.com/configure/web-server-configuration-settings.html#purge-all-caches>`__
-
-Database
-~~~~~~~~
-
-See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Driver name <https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name>`__
-- `Data source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__
-- `Maximum idle connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-idle-connections>`__
-- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
-- `Maximum open connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-open-connections>`__
-- `Query timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#query-timeout>`__
-- `Maximum connection lifetime <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-lifetime>`__
-- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
-- `Minimum hashtag length <https://docs.mattermost.com/configure/database-configuration-settings.html#minimum-hashtag-length>`__
-- `SQL statement logging <https://docs.mattermost.com/configure/database-configuration-settings.html#sql-statement-logging>`__
-- `Recycle database connections <https://docs.mattermost.com/configure/database-configuration-settings.html#recycle-database-connections>`__
-- `Disable database search <https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search>`__
-- `Applied schema migrations <https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations>`__
-
-Elasticsearch
-~~~~~~~~~~~~~~
-
-See the :doc:`Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable Elasticsearch indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing>`__
-- `Server connection address <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address>`__
-- `Skip TLS verification <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-TLS-verification>`__
-- `Server username <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username>`__
-- `Server password <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password>`__
-- `Enable cluster sniffing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing>`__
-- `Bulk indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing>`__
-- `Purge indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes>`__
-- `Enable Elasticsearch for search queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries>`__
-- `Enable Elasticsearch for autocomplete queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries>`__
-- `Post index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas>`__
-- `Post index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards>`__
-- `Channel index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-replicas>`__
-- `Channel index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-shards>`__
-- `User index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-index-replicas>`__
-- `User index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-idex-shards>`__
-- `Aggregate search indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes>`__
-- `Post aggregator start time <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time>`__
-- `Index prefix <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix>`__
-- `Live indexing batch size <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size>`__
-- `Bulk indexing time window <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window>`__
-- `Request timeout <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout>`__
-- `Trace <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace>`__
-
-File storage
-~~~~~~~~~~~~
-
-See the :doc:`file storage configuration settings </configure/file-storage-configuration-settings>` documentation for details on the following configuration settings:
-
-- `File storage system <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#file-storage-system>`__
-- `Local storage directory <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#local-storage-directory>`__
-- `Maximum file size <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#maximum-file-size>`__
-- `Enable document search by content <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-document-search-by-content>`__
-- `Enable searching content of documents within ZIP files <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__
-- `Amazon S3 bucket <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-bucket>`__
-- `Amazon S3 prefix path <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-path-prefix>`__
-- `Amazon S3 region <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-region>`__
-- `Amazon S3 access key ID <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-access-key-id>`__
-- `Amazon S3 endpoint <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-endpoint>`__
-- `Amazon S3 secret access key <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-secret-access-key>`__
-- `Enable secure Amazon S3 connections <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-secure-amazon-s3-connections>`__
-- `Amazon S3 signature v2 <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-signature-v2>`__
-- `Enable server-side encryption for Amazon S3 <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__
-- `Enable Amazon S3 debugging <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-amazon-s3-debugging>`__
-- `Initial font <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#initial-font>`__
-
-Image Proxy
-~~~~~~~~~~~~
-
-See the :doc:`image proxy configuration settings </configure/image-proxy-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable image proxy <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#enables-image-proxy>`__
-- `Image proxy type <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#image-proxy-type>`__
-- `Remote image proxy URL <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-url>`__
-- `Remote image proxy options <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-options>`__
-
-SMTP
-~~~~
-
-See the :doc:`SMTP configuration settings </configure/smtp-configuration-settings>` documentation for details on the following configuration settings:
-
-- `SMTP server <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server>`__
-- `SMTP server port <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-port>`__
-- `Enable SMTP authentication <https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-smtp-authentication>`__
-- `SMTP server username <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-username>`__
-- `SMTP server password <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-password>`__
-- `Connection security <https://docs.mattermost.com/configure/smtp-configuration-settings.html#connection-security>`__
-- `Skip server certificate verification <https://docs.mattermost.com/configure/smtp-configuration-settings.html#skip-server-certificate-verification>`__
-- `Enable security alerts <https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-security-alerts>`__
-- `SMTP server timeout <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-timeout>`__
-
-Push Notification Server
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See the :doc:`push notification server configuration settings </configure/push-notification-server-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable push notifications <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-push-notifications>`__
-- `Push notification server <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#push-notification-server>`__
-- `Maximum notifications per channel <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#maximum-notifications-per-channel>`__
-
-High Availability
-~~~~~~~~~~~~~~~~~~
-
-See the :doc:`high availability configuration settings </configure/high-availability-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable high availability mode <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-high-availability-mode>`__
-- `Cluster name <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#cluster-name>`__
-- `Override hostname <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#override-hostname>`__
-- `Use IP address <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#use-ip-address>`__
-- `Use gossip <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#use-gossip>`__
-- `Enable experimental gossip encryption <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-experimental-gossip-encryption>`__
-- `Enable gossip compression <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-gossip-compression>`__
-- `Gossip port <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#gossip-port>`__
-- `Streaming port <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#streaming-port>`__
-
-Rate Limiting
-~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Rate Limiting**. Changes to properties in this section require a server restart before taking effect.
-
-Enable Rate Limiting
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Rate limiting prevents your server from being overloaded with too many requests. This decreases the risk and impact of third-party applications or malicious attacks on your server.
-
-**True**: APIs are throttled at the rate specified by **PerSec**.
-
-**False**: APIs are not throttled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Maximum Queries per Second
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Throttle API at this number of requests per second if rate limiting is enabled.
-
-The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-+----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PerSec": 10`` with numerical input. |
-+----------------------------------------------------------------------------------+
-
-Maximum Burst Size
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum number of requests allowed beyond the per second query limit.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxBurst": 100`` with numerical input. |
-+-------------------------------------------------------------------------------------+
-
-Memory Store Size
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum number of user sessions connected to the system as determined by ``VaryByRemoteAddr`` and ``VaryByHeader`` variables.
-
-Typically set to the number of users in the system.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with numerical input. |
-+----------------------------------------------------------------------------------------------+
-
-Vary rate limit by remote address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Rate limit API access by IP address. Recommended to set to ``true`` if you're using a proxy.
-
-**False**: Rate limiting does not vary by IP address.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByRemoteAddr": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by user
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Rate limit API access by user authentication token. Recommended to set to ``true`` if you're using a proxy.
-
-**False**: Rate limiting does not vary by user authentication token.
-
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by HTTP header
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to ``X-Real-IP``, when configuring AmazonELB set to ``X-Forwarded-For``). Recommended to be set if you're using a proxy.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-Advanced Logging 
-~~~~~~~~~~~~~~~~
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-Output logs to multiple targets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed. Please see `Audit Log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ for more comprehensive documentation.
-
-System Admins can define multiple log targets to:
-
-- Mirror log output to files and log aggregators for redundancy.
-- Log certain entries to specific destinations. For example, all errors could be routed to a specific destination for review.
-
-Additional configuration options include:
-
-- Multiple local file targets: Supports rotation and compression triggered by size and/or duration.
-- Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
-- Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
-
-All access to the REST API or CLI is audited. When using Advanced Logging for auditing, System Admins can capture the following auditing in the target configuration in addition to discrete log levels:
-
-.. code-block:: none
-
-   "Levels": [
-      {"ID": 100, "Name": "audit-api"},
-      {"ID": 101, "Name": "audit-content"},
-      {"ID": 102, "Name": "audit-permissions"},
-      {"ID": 103, "Name": "audit-cli"},
-   ],
-
-Where:
-
-- ``audit-api``: Enables output of REST API calls.
-- ``audit-content``: Enables output of API calls that generate content (e.g. ``create post``, ``create reaction``).
-- ``audit-permissions``: Enables output of all permissions failures.
-- ``audit-cli``: Enables output of legacy CLI calls.
-
-.. note::
-
-  - Logs are recorded asynchronously to reduce latency to the caller. 
-  - Advanced logging supports hot-reloading of logger configuration.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Options outlined in `this text file <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`__ are described in the following table.
-
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Key**       | **Definition**                                                                                                                                         | **Type**    |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Levels**    |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| ID            | Unique log level identifier. Must be registered in ``mattermost/mattermost-server/shared/mlog/levels.go``.                                             | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Name          | Human-readable name for the log level identifier.                                                                                                      | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Stacktrace    | Set to ``true`` to generate a stacktrace. Set to ``false`` to prevent a stacktrace from being generated.                                               | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Targets**   |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Type          | Can be one of: ``console``, ``file``, ``syslog``, or ``tcp``.                                                                                          | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Format        | Can be either ``json`` or ``plain``.                                                                                                                   | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Levels        | Array of log levels.                                                                                                                                   | []          |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Options       | Map of options specific to the target type.                                                                                                            | {}          |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxQueueSize  | The number of audit records that can be queued/buffered at any point in time when writing to syslog. Default is 1000.                                  | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Console**   |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Out           | Can be either ``stdout`` or ``stderr``.                                                                                                                | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **File**      |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Filename      | Path and filename for logs.                                                                                                                            | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxAgeDays    | Number of days until a rotation is triggered. Set to ``0`` to not rotate based on age.                                                                 | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxBackups    | Maximum number of rotated files to keep where the oldest are deleted. Set to ``0`` to discard rotated files.                                           | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxSizeMB     | Maximum file size before a rotation is triggered. Set to ``0`` to prevent rotation based on file size.                                                 | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Compress      | Set to ``true`` to compress files after rotation. Set to ``false`` to not compress files after rotation.                                               | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **SysLog**    |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| IP            | IP address or domain of the syslog server.                                                                                                             | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Port          | Listening port of syslog server.                                                                                                                       | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Tag           | Typically the program name, machine name, or node name.                                                                                                | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| TLS           | Set to ``true`` to connect via TLS. Set to ``false`` to prevent connecting via TLS.                                                                    | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Cert          | For TLS connections where TLS is set to ``true``, the filename of client certificate or base64-encoded certificate.                                    | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Insecure      | Used for testing purposes only. Set to ``true`` to prevent a certificate check from being performed. Set to ``false`` to perform a certificate check.  | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **TCP**       |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| IP            | IP address or domain of the socket server.                                                                                                             | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Port          | Listening port of the socket server.                                                                                                                   | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| TLS           | Set to ``true`` to connect via TLS. Set to ``false`` to prevent connecting via TLS.                                                                    | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Cert          | For TLS connections where TLS is set to ``true``, the filename of client certificate or base64-encoded certificate.                                    | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Insecure      | Used for testing purposes only. Set to ``true`` to prevent a certificate check from being performed. Set to ``false`` to perform a certificate check.  | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-
-.. note::
-
-    Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
-
-See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
-
-Standard Logging 
-~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Logging**.
-
-.. note::
-
-  Standard logging in Mattermost supports the ability to output logs to the console and file targets. Mattermost Enterprise customers can specify additional log target types, such as TCP configuration options using audit log v2. See the `audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation and the `advanced audit logging configuration <https://docs.mattermost.com/configure/configuration-settings.html#advanced-audit-logging-configuration>`__ documentation for additional details.
-
-Output logs to console
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Output log messages to the console based on ``ConsoleLevel`` option. The server writes messages to the standard output stream (stdout).
-
-**False**: Output log messages are not written to the console.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableConsole": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------+
-
-Console Log Level
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Level of detail at which log events are written to the console when ``EnableConsole`` = ``true``.
-
-**DEBUG**: Prints high detail for developers debugging issues.
-
-**ERROR**: Outputs only error messages.
-
-**INFO**: Outputs error messages and information around startup and initialization.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConsoleLevel": "DEBUG"`` with options ``"DEBUG"``, ``"ERROR"``, and ``"INFO"``. |
-+------------------------------------------------------------------------------------------------------------------------------+
-
-Output console logs as JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-**True**: Logged events are written in a machine-readable JSON format.
-
-**False**: Logged events are written in plain text.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false``.                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
-Output logs to file
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Typically set to ``true`` in production. When ``true``, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
-
-.. note::
-   Logs are rotated once the log file reaches a size of 100 MB or more.
-
-**True**: Log files are written to files specified in ``FileLocation``.
-
-**False**: Log files are not written.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false``.                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
-File Log Level
-^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Level of detail at which log events are written to log files when ``EnableFile`` = ``true``.
-
-**ERROR**: Outputs only error messages.
-
-**INFO**: Outputs error messages and information around startup and initialization.
-
-**DEBUG**: Prints high detail for developers debugging issues.
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileLevel": "INFO"`` with options ``"DEBUG"``, ``"ERROR"``, and ``"INFO"``. |
-+--------------------------------------------------------------------------------------------------------------------------+
-
-Output file logs as JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-**True**: Logged events are written in a machine-readable JSON format.
-
-**False**: Logged events are written in plain text.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileJson": true`` with options ``true`` and ``false``.                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
-File Log Directory
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-Changes to this setting require a server restart before taking effect.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileLocation": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-Enable Webhook Debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Contents of incoming webhooks are printed to log files for debugging.
-
-**False**: Contents of incoming webhooks are not printed to log files.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableWebhookDebugging": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-Enable Diagnostics and Error Reporting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. All diagnostics and error reporting is encrypted in transit and does not include personally identifiable information or message contents. To learn more about this feature, see :doc:`../manage/telemetry`.
-
-**False**: Diagnostics and error reporting are disabled.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDiagnostics": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
-
-Session Lengths
-~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Session Lengths**.
-
-User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table.
-
-Extend session length with activity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Improves user experience by extending sessions and keeping users logged in if they are active in their Mattermost apps. 
-
-**True**: Sessions will be automatically extended when the user is active in their Mattermost client. User sessions will only expire if they are not active in their Mattermost client for the entire duration of the session lengths defined in the fields below.
-
-**False**: Sessions will not extend with activity in Mattermost. User sessions will immediately expire at the end of the session length or idle timeouts defined below.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------+
-
-Session length for email and AD/LDAP authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInHours": 720`` with numerical input.             |
-+----------------------------------------------------------------------------------------------------------------+
-
-Session length for mobile apps
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInHours": 4320`` with numerical input.        |
-+---------------------------------------------------------------------------------------------------------------+
-
-Session length for SSO authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
-
-After changing this setting, the setting will take effect after the next time the user enters their credentials.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthSSOInHours": 720`` with numerical input. |
-+----------------------------------------------------------------------------------------------------+
-
-Session Cache (minutes)
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of minutes to cache a session in memory.
-
-+-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionCacheInMinutes": 10`` with numerical input. |
-+-------------------------------------------------------------------------------------------------+
-
-Session Idle Timeout (minutes)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
-
-Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
-
-This setting does not take effect if ``ExtendSessionLengthWithActivity`` is set to ``true``.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes": 43200`` with numerical input.        |
-+-----------------------------------------------------------------------------------------------------------------+
-
-Performance Monitoring
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Performance Monitoring**.
-
-Changes to properties in this section require a server restart before taking effect.
-
-Enable Performance Monitoring
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Mattermost enables performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/scale/performance-monitoring.html>`__ to learn more about configuring performance monitoring for Mattermost.
-
-**False**: Mattermost performance monitoring is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Listen Address
-^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The address the Mattermost server will listen on to expose performance metrics.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"InterNodeListenAddress": ":8067"`` with string input. |
-+----------------------------------------------------------------------------------------------------+
-
-Developer
-~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Developer**.
-
-Enable Testing Commands
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: ``/test`` slash command is enabled to load test accounts and test data.
-
-**False**: ``/test`` slash command is disabled.
-
-Changes to this setting require a server restart before taking effect.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTesting": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
-Enable Developer Mode
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Javascript errors are shown in a purple bar at the top of the user interface. Not recommended for use in production.
-
-**False**: Users are not alerted to Javascript errors.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Enable Client Performance Debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: User-specific performance debugging features can be enabled from **Settings > Advanced > Performance Debugging**. These settings only affect the user who enables them. See the `Performance Debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__ product documentation to learn more.
-
-**False**: Disables and hides debugging features from **Settings > Advanced > Performance Debugging**.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Allow Untrusted Internal Connections To
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting limits the ability for the Mattermost server to make untrusted requests within its local network. A request is considered "untrusted" when it's made on behalf of a client. The following features make untrusted requests and are affected by this setting:
-
-- Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.
-- Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.
-- The `local image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__. If the local image proxy is enabled, images located on the local network cannot be used by integrations or posted in chat messages.
-
-Requests that can only be configured by admins are considered trusted and will not be affected by this setting. Trusted URLs include ones used for OAuth login or for sending push notifications.
-
-.. warning::
-   This setting is intended to prevent users located outside your local network from using the Mattermost server to request confidential data from inside your network. Care should be used when configuring this setting to prevent unintended access to your local network.
-
-Some examples of when you may want to modify this setting include:
-
-- When installing a plugin that includes its own images, such as `Matterpoll <https://github.com/matterpoll/matterpoll>`__, you will need to add the Mattermost server's domain name to this list.
-- When running a bot or webhook-based integration on your local network, you'll need to add the hostname of the bot/integration to this list.
-- If your network is configured in such a way that publicly-accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
-
-This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It's configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed (such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``). Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
-
-.. note::
-   Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
-
-IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution, and only CIDR rules require DNS resolution. We try to match IP addresses and hostnames without even resolving. If that fails, we resolve using the local resolver (by reading the ``/etc/hosts`` file first), then check for matching CIDR rules. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input. |
-+------------------------------------------------------------------------------------------------------------+
+See the `deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings that are no longer supported.
 
 Site Configuration
 -------------------
@@ -3655,22 +2815,114 @@ Enable Plugin
 
 **False**: Disables the calls plugin on your Mattermost workspace.
 
-Additional configuration
-^^^^^^^^^^^^^^^^^^^^^^^^
+RTC Server Port
+^^^^^^^^^^^^^^^
 
-**RTC Server Port**: Default setting is 8443.
+|all-plans| |self-hosted|
 
-**Enable on specific channels**: Allow Channel Admins to enable or disable calls on specific channels. This can be set to **true** or **false**.
+The UDP port the RTC server will listen on. All calls traffic will be served through this port. The Default setting is 8443.
 
-**Enable on all channels**: Enable calls by default on all channels. This can be set to **true** or **false**.
+Changing this setting requires a plugin restart to take effect.
 
-**Max call participants**: This is an optional field and default is 0 (unlimited). The recommended setting is 8.
+Enable on specific channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**ICE Host Override**: This is an optional field.
+|all-plans| |self-hosted|
 
-**ICE Servers**: This is an optional field. The default is ``stun:stun.global.calls.mattermost.com:3478``. Depending on the setup they may not be necessary (e.g. if running a single instance and providing a ICE Host Override). No media goes through STUN servers, the only sensitive information that passes through is the client's (and server's) public IP address.
+**True**: Allow Channel Admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
 
-**RTCD Service URL**: This is an optional field.
+**False**: Only System Admins will be able to enable or disable calls on specific channels.
+
+Enable on all channels
+^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: Enable calls by default on all channels.
+
+**False**: Calls have to be explicitly enabled on channels.
+
+Max call participants
+^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The maximum number of participants that can join a single call. This is an optional field and default is 0 (unlimited). The maximum recommended setting is 200.
+
+ICE Host Override
+^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+An optional override to the host that gets advertised to clients when connecting to calls. Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP in order to let clients connect successfully. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
+
+This is an optional field. Changing this setting requires a plugin restart to take effect.
+
+ICE Servers Configurations
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON.
+
+Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``
+
+**Example**
+
+.. code-block:: json
+
+  [
+   {
+      "urls":[
+         "stun:stun.global.calls.mattermost.com:3478"
+      ]
+   },
+   {
+      "urls":[
+         "turn:turn.example.com:3478"
+      ],
+      "username":"webrtc",
+      "credentials":"turnpassword"
+   }
+  ]
+
+This is an optional field. Changing this setting may require a plugin restart to take effect.
+
+TURN Static Auth Secret
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+A static secret used to generate short-lived credentials for TURN servers.
+
+This is an optional field.
+
+TURN Credentials Expiration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+The expiration, in minutes, of the short-lived credentials generated for TURN servers.
+
+Server Side TURN
+^^^^^^^^^^^^^^^^
+
+|all-plans| |self-hosted|
+
+**True**: The RTC server will use the configured TURN candidates for server-initiated connections.
+
+**False**: TURN will be used only on the client-side.
+
+Changing this setting requires a plugin restart to take effect.
+
+RTCD Service URL
+^^^^^^^^^^^^^^^^
+
+|enterprise| |self-hosted|
+
+The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
+
+This is an optional field. Changing this setting requires a plugin restart to take effect.
 
 Channel Export
 ~~~~~~~~~~~~~~
@@ -5472,79 +4724,6 @@ Defines the threshold in days beyond which outdated configurations are removed f
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
 
-SQL Settings
-~~~~~~~~~~~~
-
-Read Replicas
-^^^^^^^^^^^^^^
-
-|enterprise| |professional| |self-hosted|
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
-
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-Search Replicas
-^^^^^^^^^^^^^^^^
-
-|enterprise| |professional| |self-hosted|
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
-
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Replica Lag Settings
-^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
-+-------------------------------------------------------------------------------------------------------+
-
-String array input consists of:
-
-- ``DataSource``: The DB credentials to connect to the replica instance.
-- ``QueryAbsoluteLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure absolute lag.
-- ``QueryTimeLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure the time lag.
-
-Examples:
-
-For AWS Aurora instances, ``QueryAbsoluteLag`` can be:
-
-.. code-block:: sh
-
-   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>
-
-And for AWS Aurora instances, ``QueryTimeLag`` can be:
-
-.. code-block:: sh
-
-   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>
-
-For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:
-
-.. code-block:: sh
-
-   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>
 
 Image Settings
 ~~~~~~~~~~~~~~

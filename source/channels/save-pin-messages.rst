@@ -38,17 +38,23 @@ Pin messages
 All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members. There is no limit to the number of pinned posts in a channel.
 
 1. Mouse over the message that you want to pin. The [...] link appears.
-2. Select **[...] > Pin to channel**
+2. Select the **More** option, then select **Pin to channel**.
+
+.. image:: ../images/message-more.png
+  :alt: When you hover over messages, you can access more message options from the More icon.
+
+.. image:: ../images/pin-message-to-channel.png
+  :alt: You can pin messages to make them easy to return to later.
 
 Pinned messages are marked with the pinned icon. For example:
 
 .. image:: ../images/pinned-example-channel.png
-  :alt: Enter slash commands in the message field.
+  :alt: An example of a pinned message in a channel marked with a pin icon.
 
 See all pinned messages
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To see all pinned messages in a channel, select the **Pin** icon located in the channel header. 
+To see all pinned messages in a channel, select the **Pined posts** icon in the channel header. 
 
 .. image:: ../images/pinned-posts.png
   :alt: Open pinned messages in the right-hand sidebar.
@@ -62,4 +68,10 @@ Unpin messages
 ~~~~~~~~~~~~~~
 
 1. Mouse over the message that you want to unpin. The [...] link appears.
-2. Select **[...] > Unpin from channel**
+2. Select the **More** icon, then select **Unpin from channel**
+
+.. image:: ../images/message-more.png
+  :alt: When you hover over messages, you can access more message options from the More icon.
+
+.. image:: ../images/unpin-message-from-channel.png
+  :alt: You can unpin messages from a channel when they're no longer needed or become outdated.

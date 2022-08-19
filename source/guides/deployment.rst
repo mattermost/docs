@@ -11,6 +11,8 @@ Deploy Mattermost for production use
 
 When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
 
+Learn how to install, deploy, and scale Mattermost for teams and organizations of any size using one of four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
+
 .. tip::
 
   * See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
@@ -19,12 +21,12 @@ When you're ready to install Mattermost server for production use, you have four
 
 .. tabs::
 
-    .. tab:: Ubuntu
+    .. tab:: Ubuntu/Debian
 
       .. include:: ../install/common-prod-deploy-omnibus.rst
         :start-after: :nosearch:
         
-    .. tab:: Tar
+    .. tab:: Generic Linux (Tarball)
 
       .. include:: ../install/common-prod-deploy-tar.rst
         :start-after: :nosearch: 
@@ -55,7 +57,7 @@ Prepare for your Mattermost deployment
 
 These guides will help you prepare for your Mattermost deployment.
 
-* :doc:`Preview Mattermost via Docker </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
+* `Preview Mattermost via Docker <https://docs.mattermost.com/install/install-docker.html#preview-mattermost-using-docker>`__ - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.

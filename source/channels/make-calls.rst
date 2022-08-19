@@ -21,30 +21,31 @@ You can share a call's link to use in a meeting request or share with other team
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
 Requirements
------------
+------------
 
 Server
-^^^^^^
+~~~~~~
 
 - Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the `config TLS </install/config-tls-mattermost.html>`_ section for more info.
 - Open the UDP port configured as ``RTC Server Port`` (default is 8443, incoming direction). This is necessary to allow calls related traffic (e.g., audio, video).
 - Open the UDP port used by the configured STUN server (default is 3478, outgoing direction). By default the plugin will attempt to identify the instance's public IP address. To do this the STUN protocol is used. This requirement does not apply when manually setting an IP/hostname through the ``ICE Host Override`` config option.
 
 Client
-^^^^^^
+~~~~~~
+
 - Clients need to be able to connect (send and receive data) to the instance hosting the calls through the UDP port configured as ``RTC Server Port``. If this is not possible a TURN server should be used to achieve connectivity.
 - Depending on the platform or operating system, clients may need to grant additional permissions to the application (e.g., browser, desktop app) to  allow them to capture audio inputs or share the screen.
 
 Limitations
 -----------
 
-- In Mattermost Cloud, up to eight participants per channel can join a call. This is a temporary and evolving limitation during public beta.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants, across all calls in all channels on the server, is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**.
+- In Mattermost Cloud, up to 40 participants per channel can join a call. This is a temporary and evolving limitation during public beta.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the performance section below.
 
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration settings can be found in the `System Console <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_.
 
 Frequently asked questions
 --------------------------
@@ -64,7 +65,7 @@ What are the potential performance impacts?
 
 Database load should be minimal. Overall instance load however will be affected, especially CPU usage, growing as a function of the number of participants produce the number of active tracks (unmuted participants and users sharing their screen). Screen sharing has the highest impact on both CPU and bandwidth. The latter can be more easily estimated as the audio/video bitrates are constrained and predictable (around 40-60Kbps for each audio track and up to 1Mbps per screen track).
 
-If you wish to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is the only officially supported target for the plugin right now):
+If you want to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is currently the only officially supported target for the plugin):
 
 .. code::
 
@@ -88,4 +89,4 @@ Troubleshooting
 My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is usually a sign that the underlying UDP channel has not been established and the connection timeouts after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
+This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.

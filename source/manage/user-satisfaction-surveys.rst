@@ -43,7 +43,7 @@ The above conditions mean that at maximum frequency a user will receive a survey
 How will I be notified when a survey is scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins will receive an email notification and in-product Direct Message from "Surveybot" mentioning the scheduled date the survey will be triggered.
+System Admins will receive an email notification and in-product direct message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
 .. image:: ../images/nps-admin.png
    :alt: When user satisfaction surveys are enabled in the System Console, Mattermost sends out user satisfaction surveys following every server upgrade. System Admins are notified about upcoming surveys by email notification and through an in-product message from a system bot.
@@ -54,7 +54,7 @@ Survey Data
 How is the survey received?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the survey is triggered on the server, all users will receive an in-product Direct Messages from "Surveybot" on their next login or page refresh in Mattermost.
+Once the survey is triggered on the server, all users will receive an in-product direct messages from "Surveybot" on their next login or page refresh in Mattermost.
 
 Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their experience. Selecting a score and providing feedback are optional, and the survey can be ignored without interrupting usage of Mattermost.
 

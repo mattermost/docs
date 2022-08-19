@@ -4,7 +4,7 @@ Using Mattermost's pre-built mobile apps
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-We strongly recommend using Mattermost’s pre-built Mobile App. This approach is recommended for all Mattermost customers.
+We strongly recommend using Mattermost’s pre-built mobile app. This approach is recommended for all Mattermost customers.
 
 Deployment options
 ------------------

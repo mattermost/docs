@@ -4,12 +4,124 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-08-18](#release-2022-08-18)
+- [Release 2022-08-10](#release-2022-08-10)
+- [Release 2022-08-03](#release-2022-08-03)
+- [Release 2022-07-28](#release-2022-07-28)
 - [Release 2022-07-20](#release-2022-07-20)
 - [Release 2022-07-13](#release-2022-07-13)
-- [Release 2022-06-29](#release-2022-06-29)
-- [Release 2022-06-22](#release-2022-06-22)
-- [Release 2022-06-15](#release-2022-06-15)
-- [Release 2022-06-14](#release-2022-06-14)
+
+## Release 2022-08-18
+
+### Highlights
+
+### Playbooks
+ - Navigate between teams in Playbooks with the new team switcher.
+ - Manage playbooks and runs in the new left-hand sidebar.
+ - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
+ - Favorite runs or playbooks to prioritize them in the **Favorites** category.
+ - Participants now have access to every run feature on the new run details page.
+ - In Cloud Professional and Enterprise plans, stakeholders can request status updates from runs.
+
+### Boards
+ - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
+ - Organize boards on the sidebar with custom categories.
+ - Press CTRL+K/CMD+K to find additional boards.
+ - Navigate between teams in Boards with the new team switcher.
+ - Set board and template permissions in the new **Share** setting.
+ - Link boards to channels to automatically grant board permissions to channel members.
+ - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
+
+### Improvements
+
+#### User Interface (UI)
+ - Only the most recent message is now marked as unread when marking a thread as unread from the Threads list.
+ - Insights filters now persist instead of being reset to default when switching to channels and returning back to the Insights view.
+ - Code blocks now have better support for language filetype extensions and are a smaller bundle size.
+
+### Bug Fixes
+ - Fixed an issue where updating a profile image and creating new emojis used multipart uploads when using S3 storage.
+ - Fixed an issue where the input legend on the custom group modal was cut off in Chrome.
+ - Fixed an issue where the **Disable post formatting** setting was hidden when the advanced text editor was enabled.
+ - Fixed an issue where we didn’t fall back to the user's default picture if a profile picture failed to load.
+ - Fixed an issue where disabling a WebApp plugin from its configuration page resulted in the radio button reverting to ``true``.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar does not have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not admins of the board are incorrectly able to see the "unlink" board button. However, clicking on the button will not actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - On Boards, clicking on `+ New` button below a column on the Kanban view does not always create a new card. As a workaround, set a new default card template by going to the dropdown menu from the blue `New` button on the header of the board, then open the Options Menu on any card template and select "Set as default" [issue-focalboard-3676](https://github.com/mattermost/focalboard/issues/3676).
+
+## Release 2022-08-10
+
+### Improvements
+
+#### User Interface (UI)
+ - A Desktop App prompt is now always shown on first visit to a Mattermost server from an email notification.
+
+### Bug Fixes
+ - Fixed an issue where the cursor sometimes jumped to the center channel textbox when the right-hand side was open.
+ - Fixed an issue where closing the right-hand side also closed the edited post in the center channel.
+ - Fixed an issue where clicking "Try free now" opened the top 3 enterprise features instead of the "Your trial has started" modal.
+ - Fixed an issue where the Threads view displayed as unread even if there were no unread threads.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-08-03
+
+### Improvements
+
+#### User Interface (UI)
+ - Search dropdown options now allow focusing with tab.
+
+#### Administration
+ - Plugins can now hide plugin settings based on the server's hosting environment.
+ - For Cloud instances, when messages limit is reached, a notification is shown in a channel if the limit is being hit in that channel.
+ - Customers who are on a 30-day free trial are now notified 3 days before the trial ends.
+
+### API Changes
+ - Added ``first_inaccessible_post_time`` to post API responses.
+ - Updated permissions of the ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread`` endpoint. If compliance is enabled, a user can on longer view threads in a public channel they are not a member of.
+ - Adds query parameter 'include_deleted' to endpoint: {{[http://your-mattermost-url.com/api/v4/posts/{post_id}/files/info}}](http://your-mattermost-url.com/api/v4/posts/%7Bpost_id%7D/files/info%7D%7D).
+
+### Bug Fixes
+ - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
+ - Custom Brand Text is now centered and the Site Description configuration now doesn't show a placeholder.
+ - Removed a bug where the group permissions had an extra level of nesting in the UI. The permissions checkboxes were also split out into their individual custom group permissions for a greater granularity of control.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+
+## Release 2022-07-28
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the ability to quickly and easily forward posts as permalinks with their respective permalink previews.
+ - Added a red destructive action color to ``Archive Channel`` and ``Leave Channel`` menu actions.
+ - Plugin activation errors now show in the plugin management page and marketplace.
+ - Added accessibility to the emoji picker skin tone selector and reversed the order of the skin tone selections in the emoji selector.
+
+#### Administration
+ - A new schema and API for audit logs was defined. Contrary to the previous audit log implementation, all audit log records now have the same schema.
+ - Added a new static system-level role called Custom Group Manager. This role has permissions to create, edit, and delete custom user groups via User Groups in the Products menu. It can be used to assign individual users this ability when Custom Groups permissions are removed for All Members via the **System Console** (**System Console > Permissions > Edit Scheme > Custom Groups**).
+ - Export file names now contain the ID of the job they were generated by.
+
+### Bug Fixes
+ - Fixed an issue where a users were unable to remove themselves from a custom role.
+ - Fixed an issue where some images in link previews overflowed.
+ - Fixed an issue where accessing the **System Console** and then exiting changed the user's status to "Offline".
+ - Fixed an issue where the **New Messages** line sometimes appeared when viewing a channel that was previously read.
+ - Fixed an issue with incorrectly formatted text in the **System Console**.
+
+### Known Issues
+ - Mentions incorrectly shows users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
 
 ## Release 2022-07-20
 
