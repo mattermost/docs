@@ -131,7 +131,7 @@ How do I cancel my subscription?
 To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
 I'm no longer being billed for my Cloud Starter ($149 / year) plan. Why is that?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Cloud Starter ($149 / year) plans created before June 15, 2022 are now free with no data limits. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`_, or continue using your Cloud Starter plan for free.
 
