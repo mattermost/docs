@@ -21,8 +21,6 @@ Supported smartphones include iOS, Android, Blackberry, and Windows Phone device
 Enabling MFA
 ------------
 
-|all-plans| |cloud| |self-hosted|
-
 System Admins can enable this option by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
 
 Once enabled, users can opt to `set up multi-factor authentication <https://docs.mattermost.com/messaging/manage-profile-settings.html#multi-factor-authentication>`__ on their account by selecting **Profile > Security > Multi-factor Authentication** from their avatar.
@@ -33,9 +31,10 @@ Once enabled, users can opt to `set up multi-factor authentication <https://docs
 Enforcing MFA
 --------------
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
-*Available in legacy Mattermost Enterprise Edition E10*
+*Available in legacy Mattermost Enterprise Edition E10/E20*
 
 This option can be enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enforce Multi-factor Authentication** to **true**.
 

@@ -1,41 +1,13 @@
 :orphan:
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 :nosearch:
 
-Rate limiting prevents your Mattermost server from being overloaded with too many requests, and decreases the risk and impact of third-party applications or malicious attacks on your server. Configure rate limiting settings by going to **System Console > Environment > Rate Limiting**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
-
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+Rate limiting prevents your Mattermost server from being overloaded with too many requests, and decreases the risk and impact of third-party applications or malicious attacks on your server. Configure rate limiting settings by going to **System Console > Environment > Rate Limiting**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 Enable rate limiting
 ~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -52,7 +24,8 @@ Enable rate limiting
 Maximum queries per second
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -66,7 +39,8 @@ Maximum queries per second
 Maximum burst size
 ~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -81,7 +55,8 @@ Maximum burst size
 Memory store size
 ~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -97,7 +72,8 @@ Memory store size
 Vary rate limit by remote address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -113,7 +89,8 @@ Vary rate limit by remote address
 Vary rate limit by user
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -131,7 +108,8 @@ Vary rate limit by user
 Vary rate limit by HTTP header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

@@ -29,12 +29,10 @@ When enabled by your System Admin, you can log in with the username or email add
 Single Sign-On (SSO)
 --------------------
   
-When enabled by your System Admin, you can log in using your GitLab, Google, Office 365, AD/LDAP, or SAML credentials.
+When enabled by your System Admin, you may log in using your GitLab, Google, Office 365, AD/LDAP, or SAML credentials.
 
 GitLab SSO
 ~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
 
 When enabled by your System Admin, you can log in with your GitLab account using a one-click login option.
 
@@ -44,7 +42,8 @@ When enabled by your System Admin, you can log in with your GitLab account using
 Google SSO
 ~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -56,7 +55,8 @@ When enabled by your System Admin, you can log in with your Google account using
 Office 365 SSO
 ~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -68,7 +68,8 @@ When enabled by your System Admin, you can log in with your Office 365 account u
 AD/LDAP SSO
 ~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -80,7 +81,8 @@ When enabled by your System Admin, you can log in with your AD/LDAP credentials.
 SAML SSO
 ~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 

@@ -12,7 +12,8 @@ Google Single Sign-On
 Configure Mattermost ``config.json`` for Google Apps SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Instead of using the System Console, you can add the Google settings directly to the ``config.json`` file directly on your Mattermost server.
 

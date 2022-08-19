@@ -1,5 +1,8 @@
-Managing team and channel members
-==================================
+Manage team and channel members
+================================
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -14,17 +17,12 @@ System Admins can manage channel configuration in the System Console, including:
 Teams
 ------
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 To view and manage team information, navigate to **System Console > Teams**. Teams can be managed by **Group Sync** or **Invite Only**. The type of management in use may affect the management options available for that team.
 
 Select a team to view its configuration options.
 
 Team profile
 ~~~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
 
 The name and description of the team. 
 
@@ -33,16 +31,12 @@ System Admins can archive or unarchive the team from within **User Management > 
 Archiving a team
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
-
 Select **Archive Team**, then select **Save**. Select **Archive** when prompted to confirm the team archive.
 
 Alternatively, System Admins can use the mmctl ``mmctl team archive`` to archive teams. See the `mmctl product documentation <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-archive>`__ for details.
 
 Unarchiving a team
 ^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
 
 Select **Unarchive Team**, then select **Save**.
 
@@ -51,7 +45,8 @@ Alternatively, System Admins can use the mmctl ``mmctl team restore`` to archive
 Team management
 ~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, invitation limitations can be selected.
@@ -59,14 +54,13 @@ Team management
 Groups
 ~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 You can add and remove groups, as well as promote or demote group members to Team Admin/Member roles.
 
 Members
 ~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
 
 A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role. Use the role **Filter** to refine your search results. You can use one filter, or combine filters to search by multiple roles:
 
@@ -77,8 +71,6 @@ A list of all members in a channel is visible to System Admins. Members can be a
 
 Channels
 ---------
-
-|all-plans| |cloud| |self-hosted|
 
 To view and manage channel information, navigate to **System Console > Channels**. Channels can be managed by **Group Sync** or **Manual Invites**. The type of management in use may affect the management options available for that channel. Use the **Filter** to refine your search results. You can use one filter, or combine filters to search by channel and management type:
 
@@ -93,14 +85,13 @@ Select a channel to view its configuration options.
 Profile
 ~~~~~~~
 
-|all-plans| |cloud| |self-hosted|
-
 The name and description of the channel. To archive the channel, select **Archive Channel > Save**. The channel is still searchable in the **Channels** list. To unarchive the channel, select **Unarchive Channel** and **Save**.
 
 Channel management
 ~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
 - When **Sync Group Members** is not enabled, you can select whether the channel is **Private** or **Public**.
@@ -108,7 +99,8 @@ Channel management
 Channel moderation
 ~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -150,14 +142,13 @@ The channel is available for all members and guests to access but only Admins ca
 Groups
 ~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 You can add and remove groups, as well as promote or demote group members to Team Admin/Member roles.
 
 Members
 ~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
 
 A list of all members in a channel is visible to System Admins. Members can be added and removed from the team members and be promoted or demoted to a Team Admin/Member role. Use the role **Filter** to refine your search results. You can use one filter, or combine filters to search by multiple roles:
 

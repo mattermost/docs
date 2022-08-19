@@ -47,7 +47,8 @@ Active Users with Posts (graph)
 Advanced system statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
 
 Mattermost Enterprise includes additional system statistics.
 
@@ -87,8 +88,6 @@ Posts, Files and Hashtags
 Team statistics
 ---------------
 
-|all-plans| |cloud| |self-hosted|
-
 Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in Direct Message channels, which are not tied to a team.
 
 Total Users
@@ -126,7 +125,8 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can Team Admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
 
 Yes. In Mattermost Enterprise, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the `Additional System Admin Roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ documentation.
 

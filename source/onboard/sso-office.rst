@@ -12,7 +12,8 @@ Office 365 Single Sign-On
 Configure Mattermost ``config.json`` for Office 365 SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Instead of using the System Console, you can add the Office 365 settings directly to the ``config.json`` file on your Mattermost server.
 
