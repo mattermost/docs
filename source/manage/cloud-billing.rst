@@ -1,17 +1,8 @@
 Mattermost Cloud billing
 ========================
 
-|all-plans| |cloud|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
 
 Mattermost Cloud is offered as a pay-as-you-go subscription service.
 

@@ -1,6 +1,9 @@
 Workspace limits
 ================
 
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
+
 There may be limits applied to your Mattermost Cloud workspace based on the type of subscription plan you have. These limits are applied across all users in your team. We'll let you know when you're halfway from reaching a limit, as well as when you're closer to it. 
 
 When limits have been reached, data is archived. This data is not deleted, and can be accessed when you upgrade to a plan with higher limits. If you choose to downgrade your plan, for example from Mattermost Professional to Mattermost Starter, the limits will be applied to your existing data.

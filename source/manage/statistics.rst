@@ -1,6 +1,9 @@
 Statistics
 ==========
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Statistics on users, posts, and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
 .. note::
@@ -11,28 +14,6 @@ For advanced metrics for Enterprise deployments, `see performance monitoring doc
 
 Site statistics
 ---------------
-
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
 
 System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
 

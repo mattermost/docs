@@ -1,17 +1,8 @@
 Important Upgrade Notes
 =======================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. important::
    - Support for Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle in October 15, 2022. Upgrading to Mattermost Server v7.1 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is recommended.

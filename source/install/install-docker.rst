@@ -3,7 +3,8 @@
 Install Mattermost via Docker
 ==============================
 
-.. include:: ../_static/badges/default.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Prerequisites
 -------------

@@ -1,6 +1,9 @@
 Mattermost administration guide
 ===============================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 This guide is for people who administer an existing Mattermost server. It’s divided into four parts:
 
 * `Get started <https://docs.mattermost.com/guides/administration.html#get-started>`__ - An overview of standard configurations and features for both self-hosted and Cloud workspaces.

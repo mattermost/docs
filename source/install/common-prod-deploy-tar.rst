@@ -1,4 +1,8 @@
+:orphan:
 :nosearch:
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball, and assume the IP address of the Mattermost server is 10.10.10.2.
 

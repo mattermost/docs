@@ -1,6 +1,9 @@
 Mattermost Channels
 ===================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Mattermost Channels provide 1:1 and group messaging that features integrated voice/video conferencing, file, image, and link sharing, rich markdown formatting, and a fully searchable message history. 
 
 With Mattermost Channels, you can keep all of your team's communications in one place and remove information and organizational silos. This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
@@ -35,7 +38,7 @@ Work with channels
    Mark channels as favorites </channels/favorite-channels>
    Customize your channel sidebar </channels/customize-your-channel-sidebar>
    Archive and unarchive channels </channels/archive-unarchive-channels>
-   Set Channel preferences </channels/set-channel-preferences>
+   Set channel preferences </channels/set-channel-preferences>
    Channels settings </channels/channels-settings>
 
 * :doc:`Channel types </channels/channel-types>` - Learn more about the types of channels available in Mattermost.

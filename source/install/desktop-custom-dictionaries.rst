@@ -1,17 +1,8 @@
 Desktop App custom dictionaries
 ===============================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost Desktop App users running Windows or Linux can download dictionary definitions from a custom URL. If custom dictionaries aren't specified, default dictionary definitions are obtained automatically from Chromium's CDNs.
 

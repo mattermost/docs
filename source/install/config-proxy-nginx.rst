@@ -1,3 +1,4 @@
+:orphan:
 :nosearch:
 .. _config-proxy-nginx:
 

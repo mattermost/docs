@@ -3,8 +3,6 @@
 Preview Mattermost using Docker
 -------------------------------
 
-.. include:: ../_static/badges/note-example.rst
-
 You can install Mattermost server in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__ image to explore Mattermost product functionality on a single local machine.
 
 .. important::

@@ -3,6 +3,9 @@
 Provisioning workflows
 ======================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 This document provides an overview of user provisioning and deprovisioning workflows in Mattermost.
 
 User Provisioning

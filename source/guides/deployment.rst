@@ -1,23 +1,13 @@
 Deploy Mattermost
 =================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 Learn how to install, deploy, and scale Mattermost for teams and organizations of any size.
 
 Deploy Mattermost for production use
 ------------------------------------
-
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 
 When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy from a compressed tarball, deploy using a Ubuntu option called Omnibus, or deploy using Docker.
 
@@ -56,7 +46,6 @@ Prepare for your Mattermost deployment
     :maxdepth: 1
     :hidden:
 
-    Quick install guide </getting-started/light-install>
     Preview Mattermost via Docker </install/install-docker>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture </getting-started/architecture-overview>
@@ -66,7 +55,6 @@ Prepare for your Mattermost deployment
 
 These guides will help you prepare for your Mattermost deployment.
 
-* :doc:`Quick install guide </getting-started/light-install>` - Deploy in minutes via Mattermost Omnibus on Ubuntu.
 * :doc:`Preview Mattermost via Docker </install/install-docker>` - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
