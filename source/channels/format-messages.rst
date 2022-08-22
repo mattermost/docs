@@ -21,37 +21,31 @@ Format messages
 .. |bold-icon| image:: ../images/format-bold_F0264.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Bold message text using the Bold icon in the message formatting toolbar.
 
 .. |italics-icon| image:: ../images/format-italic_F0277.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Italicize message text using the Italic icon in the message formatting toolbar.
 
 .. |strikeout-icon| image:: ../images/format-strikethrough-variant_F0281.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Strike out message text using the Strikethrough icon in the message formatting toolbar.
 
 .. |headings-icon| image:: ../images/format-header_E81D.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a heading using the Heading icon in the message formatting toolbar. Headings 1 through 6 are supported.
 
 .. |links-icon| image:: ../images/link-variant_F0339.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Add a message link using the Link icon in the message formatting toolbar.
 
 .. |attachments-icon| image:: ../images/paperclip_F03E2.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Add a message attachment using the Upload files icon in the message formatting toolbar.
 
 .. |numbered-icon| image:: ../images/format-list-numbered_F027B.svg
@@ -69,32 +63,32 @@ Format messages
 .. |quotes-icon| image:: ../images/format-quote-open_F0757.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a quotation using the Quote icon in the message formatting toolbar.
 
 .. |code-icon| image:: ../images/code-tags_F0174.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as code using the Code icon in the message formatting toolbar.
 
 .. |emoji-icon| image:: ../images/emoticon-outline_F01F2.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Add emojis or GIFs to message text using the Emoji/Gif picker icon in the message formatting toolbar.
 
 .. |hide-formatting-icon| image:: ../images/format-letter-case_F0B34.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Hide formatting options in the message formatting toolbar using the Show/Hide Formatting icon.
 
 .. |preview-icon| image:: ../images/eye-outline_F06D0.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Review your message text formatting using the Show/Hide preview icon in the message formatting toolbar.
+
+.. |settings-icon| image:: ../images/settings-outline_F08BB.svg
+  :height: 24px
+  :width: 24px
+  :alt: Access and manage your Channels settings using the Gear icon next to your user profile image.
 
 Use the messaging formatting toolbar
 ------------------------------------
@@ -128,7 +122,11 @@ The message formatting toolbar offers the following formatting options:
 
 Review how your message formatting will look when the message is sent by selecting the **Show/Hide Preview** |preview-icon| icon. Return to your draft message by selecting the icon again.
 
-You can hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options.
+.. tip::
+
+  - Hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options. 
+  - Disable the formatting options by selecting the **Gear** |settings-icon| icon, going to **Settings > Advanced > Enable Post Formatting**, and setting this option to **Off**. 
+  - System Admins can disable the formatting options for all users in the System Console by going to **Environment > Developer > Enable Client Performance Debugging**. See the `configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-performance-debugging>`__ documentation for details.
 
 Use Markdown
 -------------
