@@ -42,17 +42,19 @@ To access insights, go to Channels, then select **Insights** located at the top 
 My insights
 -----------
 
-+----------------------+--------------------------------------------+
-| **Insight category** | **Description**                            |
-+----------------------+--------------------------------------------+
-| My top channels      | Most active channels you're a member of.   |
-+----------------------+--------------------------------------------+
-| My top threads       | Most active threads you follow.            |
-+----------------------+--------------------------------------------+
-| My top boards        | Most active boards you've participated in. |
-+----------------------+--------------------------------------------+
-| My top reactions     | Emoji reactions you've used the most.      |
-+----------------------+--------------------------------------------+
++-------------------------+-----------------------------------------------------+
+| **Insight category**    | **Description**                                     |
++-------------------------+-----------------------------------------------------+
+| My top channels         | Most active channels you're a member of.            |
++-------------------------+-----------------------------------------------------+
+| My top threads          | Most active threads you follow.                     |
++-------------------------+-----------------------------------------------------+
+| My top boards           | Most active boards you've participated in.          |
++-------------------------+-----------------------------------------------------+
+| My top reactions        | Emoji reactions you've used the most.               |
++-------------------------+-----------------------------------------------------+
+| My top direct messages  | Most active direct messages you've participated in. |
++-------------------------+-----------------------------------------------------+
 
 Team insights
 -------------
