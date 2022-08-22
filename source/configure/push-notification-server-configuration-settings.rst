@@ -89,8 +89,8 @@ Maximum notifications per channel
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | The maximum total number of users in a channel before @all,     | - System Config path: **Environment > Push Notification Server**                     |
-| @here, and @channel no longer send notifications to maximize    | - ``config.json setting``: ``".TeamSettings.MaxNotificationsPerChannel: 1000",``     |
-| performance.                                                    | - Environment variable: ``MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL``              |
+| @here, and @channel no longer send desktop, email, or mobile    | - ``config.json setting``: ``".TeamSettings.MaxNotificationsPerChannel: 1000",``     |
+| push notifications to maximize performance.                     | - Environment variable: ``MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL``              |
 |                                                                 |                                                                                      |
 | Numerical input. Default is **1000**.                           |                                                                                      |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
