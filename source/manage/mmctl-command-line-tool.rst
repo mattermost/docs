@@ -185,6 +185,10 @@ Activating local mode
 
 To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
+.. tip::
+
+  If you're seeing the error ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this error can be resolved by setting ``EnableLocalMode`` to ``true``.
+
 Using local mode
 ~~~~~~~~~~~~~~~~
 
