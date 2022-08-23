@@ -6,7 +6,7 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
-- [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
+- [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
 - [Release v6.7 - Feature Release](#release-v6-7-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
