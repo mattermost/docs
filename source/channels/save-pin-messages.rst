@@ -32,7 +32,7 @@ Save messages for later follow up by selecting the **Save** |save-icon| icon nex
   :alt: Save icon.
 
 .. image:: ../images/save-message.png
-   :alt: Save messages for later follow up.
+   :alt: Save messages for later follow up using the Save option.
 
 See your saved messages
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,6 +45,7 @@ Unsave messages
 To remove an item from your **Saved Posts** list, select the **Save** icon next to message to clear it.
 
 .. image:: ../images/remove-from-saved-posts.png
+  :alt: Remove saved messages by toggling the Save option.
 
 Pin messages
 ------------
