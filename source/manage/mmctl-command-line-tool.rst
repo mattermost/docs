@@ -114,8 +114,6 @@ mmctl commands
 Install mmctl
 -------------
 
-|all-plans| |cloud| |self-hosted|
-
 The mmctl tool comes bundled with the Mattermost package from v6.0. For customers that want to setup it independently from the package, or for versions prior to v6.0, there are different methods available to install mmctl.
 
 **Using brew (Linux, macOS)**
@@ -143,8 +141,6 @@ Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ 
 Build mmctl
 ------------
 
-|all-plans| |cloud| |self-hosted|
-
 The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
 ``go`` 1.11 or greater and compile the binary using:
 
@@ -155,7 +151,8 @@ The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to ha
 Local mode
 ----------
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Local mode allows platform administrators with access to the Mattermost server to run mmctl commands against the API without needing to have a user registered. To ensure secure usage of this API, the server exposes a local socket that only a user with access to the server's file system can access. The requests coming from the socket are treated as authorized, so they can reach the handlers without requiring a user session.
 
@@ -176,7 +173,8 @@ In Mattermost versions prior to 5.26, only the commands ``config``, ``plugin``, 
 Running mmctl tests
 -------------------
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 mmctl has two types of tests: unit tests and end to end tests. 
 
@@ -201,8 +199,6 @@ Change your directory to ``mmctl`` and run the end to end test suite with:
 
 mmctl auth
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -592,8 +588,6 @@ For zsh, add the following line to your ``~/.zshrc`` file:
 mmctl bot
 ---------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage bots.
 
    Child Commands
@@ -854,8 +848,6 @@ Update bot information.
 
 mmctl channel
 --------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage channels.
 
@@ -1439,8 +1431,6 @@ Remove users from a channel.
 mmctl command
 -------------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage slash commands.
 
    Child Commands
@@ -1753,8 +1743,6 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 mmctl completion
 ----------------
 
-|all-plans| |cloud| |self-hosted|
-
 Generate autocompletion scripts for ``bash`` and ``zsh``.
 
    Child Commands
@@ -1851,8 +1839,6 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 
 mmctl config
 ------------
-
-|all-plans| |cloud| |self-hosted|
 
 Configuration settings.
 
@@ -2242,8 +2228,6 @@ Update the hard-coded production client asset paths to take into account Matterm
 mmctl docs
 ----------
 
-|all-plans| |cloud| |self-hosted|
-
 **Description**
 
 Generate mmctl documentation.
@@ -2277,8 +2261,6 @@ Generate mmctl documentation.
 
 mmctl export
 ------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage exports.
 
@@ -2704,8 +2686,6 @@ Start a content extraction job.
 mmctl group
 -----------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage channel and team groups.
 
    Child Commands
@@ -2715,8 +2695,6 @@ Manage channel and team groups.
 
 mmctl group channel
 --------------------
-
-|all-plans| |cloud| |self-hosted|
 
 Management of channel groups
 
@@ -2930,8 +2908,6 @@ List LDAP groups.
 mmctl group team
 ----------------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage team groups.
 
    Child Commands
@@ -3104,8 +3080,6 @@ Show the group constrain status for the specified team.
    
 mmctl import
 ------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -3429,8 +3403,6 @@ Upload import files.
 mmctl integrity
 ---------------
 
-|all-plans| |cloud| |self-hosted|
-
 **Description**
 
 Perform a relational integrity check which returns information about any orphaned record found. This command can only be run using local mode.
@@ -3465,8 +3437,6 @@ Perform a relational integrity check which returns information about any orphane
 
 mmctl ldap
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 LDAP-related utilities.
 
@@ -3567,8 +3537,6 @@ Synchronize all LDAP users and groups now.
 mmctl license
 -------------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage the Mattermost license.
 
    Child Commands
@@ -3662,8 +3630,6 @@ Upload a license and replace the current license.
 mmctl logs
 ----------
 
-|all-plans| |cloud| |self-hosted|
-
 **Description**
 
 Display logs in a human-readable format. As the log format depends on the server, the ``--format`` flag cannot be used with this command.
@@ -3699,8 +3665,6 @@ Display logs in a human-readable format. As the log format depends on the server
 mmctl permissions
 -----------------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage permissions and roles.
 
    Child Commands
@@ -3720,7 +3684,8 @@ Manage permissions and roles.
 mmctl permissions add
 ~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3764,7 +3729,8 @@ Add one or more permissions to an existing role.
 mmctl permissions remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3808,7 +3774,8 @@ Remove one or more permissions from an existing role.
 mmctl permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3852,7 +3819,8 @@ Reset the given role's permissions to the default settings and overwrite custom 
 mmctl permissions role assign
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3984,8 +3952,6 @@ Unassign users from a role by username. Available in Mattermost Professional and
 
 mmctl plugin
 -------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage plugins.
 
@@ -4247,8 +4213,6 @@ List all enabled and disabled plugins installed on your Mattermost server.
 mmctl plugin marketplace
 -------------------------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage Marketplace plugins.
 
    Child Commands
@@ -4357,8 +4321,6 @@ Get all plugins available from the Plugin Marketplace server, merging data from 
 mmctl post
 ----------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage posts.
 
    Child Commands
@@ -4459,8 +4421,6 @@ List posts for a channel.
 mmctl roles
 -----------
 
-|all-plans| |cloud| |self-hosted|
-
 **Description**
 
 Promote users to the System Admin role, or remove System Admin privileges from users.
@@ -4527,8 +4487,6 @@ Remove System Admin privileges from multiple users:
 
 mmctl saml
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 SAML-related utilities.
 
@@ -4878,8 +4836,6 @@ Print the server version build number of the currently connected Mattermost inst
 mmctl team
 ----------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage teams.
 
    Child Commands
@@ -5227,8 +5183,6 @@ Search for teams based on name.
 mmctl team users
 ----------------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage team users.
 
    Child Commands
@@ -5321,8 +5275,6 @@ Remove specified users from a team.
 
 mmctl token
 -----------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage users' access tokens.
 
@@ -5461,8 +5413,6 @@ Revoke tokens for a user.
 
 mmctl user
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage users.
 
@@ -6266,8 +6216,6 @@ Mark user's email as verified without requiring user to complete email verificat
 mmctl version
 -------------
 
-|all-plans| |cloud| |self-hosted|
-
 **Description**
 
 Print the version of mmctl.
@@ -6300,8 +6248,6 @@ Print the version of mmctl.
 
 mmctl webhook
 -------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -6627,8 +6573,6 @@ Show the webhook specified by ``[webhookId]``.
 
 mmctl websocket
 ---------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
