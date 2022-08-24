@@ -928,9 +928,9 @@ redirects = {
         "https://developers.mattermost.com/contribute/webapp/end-to-end-tests/",
 "developer/webapp-to-redux.html":
         "https://developers.mattermost.com/contribute/webapp/webapp-to-redux/",
-"developer/webhook-outgoing.html": 
+"developer/webhooks-outgoing.html": 
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
-"developer/webhook-incoming.html":
+"developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 
 # Focalboard redirects
@@ -1636,6 +1636,8 @@ redirects = {
         "https://handbook.mattermost.com/contributors/contributors",
 "process/deprecated-features.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features",
+"process/developer.html":
+	"https://handbook.mattermost.com",
 "process/design-process.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/product-design-team-handbook#overview",
 "process/documentation-guidelines.html":
