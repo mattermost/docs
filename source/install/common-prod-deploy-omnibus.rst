@@ -1,3 +1,4 @@
+:orphan:
 :nosearch:
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
@@ -47,7 +48,6 @@ Mattermost bundles the components of a Mattermost deployment into a single insta
 
     We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
 
-Update Mattermost Omnibus
--------------------------
+**Update Mattermost Omnibus**
 
 Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
