@@ -225,3 +225,23 @@ Output logs to multiple targets
 +-----------------------------------------------+---------------------------------------------------------------------------+   
 | See the `audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation for additional information.    |
 +-----------------------------------------------+---------------------------------------------------------------------------+
+
+Teammate Name Display
+^^^^^^^^^^^^^^^^^^^^^^^
+
+|enterprise| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Control Teammate Name Display at the system level. 
+
+**True**: Allows System Admins to control Teammate Name Display at the system level.
+
+**False**: System Admins cannot control Teammate Name Display at the system level.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LockTeammateNameDisplay": []`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
