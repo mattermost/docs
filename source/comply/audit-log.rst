@@ -104,7 +104,7 @@ File target configuration options
 | max_backups | number   | Maximum number of old log files to retain. Default is ``0`` which retains all old log files.                        |
 |             |          | **Note**: Configuring ``max_age`` can result in old log files being deleted regardless of this configuration value. |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
-| compress    | bool     | Compress rotated log files using gzip. Default is ``false``.                                                        |
+| compress    | bool     | Compress rotated log files using `gzip <https://www.gnu.org/software/gzip/>`__. Default is ``false``.               |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 
 Syslog target configuration options
@@ -248,7 +248,8 @@ Record
 | actor             | EventActor    | User involved with the audited event.                             |
 +-------------------+---------------+-------------------------------------------------------------------+
 | meta              | map           | A key/value store that contains related event information that    |
-|                   |               | isn't directly related to the modified entity.                    |
+|                   |               | isn't directly related to the modified entity, such as            |
+|                   |               | ``api_path`` and ``cluster_id``                                   |
 +-------------------+---------------+-------------------------------------------------------------------+
 | error             | EventError    | (Optional) Error information in case of event failure.            |
 +-------------------+---------------+-------------------------------------------------------------------+
