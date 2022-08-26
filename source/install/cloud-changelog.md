@@ -25,7 +25,7 @@ Latest Mattermost Cloud releases:
  - Added a new API endpoint ``GET /api/v4/users/me/top/dms`` to get users' Direct Message channel insights.
 
 ### Bug Fixes
- - Fixed an issue for the customer portal where the completed Company Information screen read "Provide your company name and address".
+ - Fixed an issue in **System Console > Subscription** where the completed Company Information screen read "Provide your company name and address".
  - Fixed an issue where reading a thread on the mobile app caused a negative mention count to display on the web app.
  - Fixed an issue where the user profile image persisted after user account deletion.
 
