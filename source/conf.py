@@ -1636,6 +1636,8 @@ redirects = {
         "https://handbook.mattermost.com/contributors/contributors",
 "process/deprecated-features.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features",
+"process/developer.html":
+	"https://handbook.mattermost.com",
 "process/design-process.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/product-design-team-handbook#overview",
 "process/documentation-guidelines.html":

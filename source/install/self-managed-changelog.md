@@ -6,7 +6,7 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
-- [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
+- [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
 - [Release v6.7 - Feature Release](#release-v6-7-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
@@ -127,6 +127,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.3, released 2022-08-23**
+  - Mattermost v7.1.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where Admins were unable to save configuration changes in the **System Console** in some cases [MM-45875](https://mattermost.atlassian.net/browse/MM-45875).
 - **v7.1.2, released 2022-07-21**
   - Fixed an issue where mmctl checked the server version incorrectly.
 - **v7.1.1, released 2022-07-15**
@@ -237,6 +240,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **v7.0.2, released 2022-08-23**
+  - Mattermost v7.0.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.0.1, released 2022-06-24**
   - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
   - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
@@ -855,6 +860,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.10, released 2022-08-23**
+  - Mattermost v6.3.10 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v6.3.9, released 2022-06-13**
   - Mattermost v6.3.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
