@@ -15,6 +15,11 @@ Latest Mattermost Cloud releases:
 
 ### Improvements
 
+#### Boards
+ - Added indexes to improve performance.
+ - Fixed a bug where the "new" button in Kanban columns didn't always work.
+ - Fixed issues with 'single-user' mode.
+
 #### User Interface (UI)
  - Added most active Direct Message channels, new top Playbooks, least active channels, and new team members widgets to Insights.
  - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
