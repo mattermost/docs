@@ -1,6 +1,9 @@
 What’s new in Mattermost Boards v7.2
 =====================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Mattermost Boards v7.2 will be released to the Cloud during mid-August, and all Cloud plans will be automatically upgraded to the latest version during this time. For self-hosted plans, the latest version of Boards will be available with Mattermost Server v7.3 in mid-September.
 
 Boards is moving from a channel-based to a role-based permissions system. This means that access to individual boards can be controlled on a channel level or a board level, depending on whether a board is linked to a channel or not.

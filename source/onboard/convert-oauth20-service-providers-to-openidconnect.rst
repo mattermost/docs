@@ -12,7 +12,8 @@ Converting OAuth 2.0 Service Providers to OpenID Connect
 Configuring OpenID Connect Single Sign-On
 -----------------------------------------
 
-|self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 For details on configuring Mattermost to use a service provider as a Single Sign-on (SSO) service for team creation, account creation, and user sign-in using OpenID Connect, refer to the following documentation:
 

@@ -27,7 +27,8 @@ Deployments between 2,000 and 10,000 registered users with moderate usage can ru
 Cluster-based deployment
 ------------------------
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 

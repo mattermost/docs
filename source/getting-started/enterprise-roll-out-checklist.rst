@@ -1,7 +1,7 @@
 Enterprise roll out checklist
 ==============================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users. 

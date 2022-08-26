@@ -1,6 +1,9 @@
 Mattermost Kubernetes Operator
 ===============================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 What is an operator?
 --------------------
 

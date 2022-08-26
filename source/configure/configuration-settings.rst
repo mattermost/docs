@@ -339,7 +339,8 @@ Specifies how names are displayed in the user interface by default. Please note 
 Lock Teammate Name Display for all users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Disables users' ability to change settings under **Settings > Display > Teammate Name Display**.
 
@@ -362,7 +363,8 @@ Allow Users to View Archived Channels
 Show Email Address
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Show email address of all users.
 
@@ -389,7 +391,8 @@ Show Full Name
 Enable Custom User Statuses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
 
@@ -1398,7 +1401,8 @@ Enable Admin Filter
 Admin Filter
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2318,7 +2322,8 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 Application Secret Password
 ...........................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2591,6 +2596,9 @@ Specify the text that displays on the OpenID login button.
 
 Button Color
 .............
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
 
