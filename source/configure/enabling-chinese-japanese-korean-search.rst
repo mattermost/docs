@@ -3,6 +3,9 @@
 Chinese, Japanese, and Korean search
 ======================================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
 - See `database requirements documentation <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ for how to set up search for these languages.
