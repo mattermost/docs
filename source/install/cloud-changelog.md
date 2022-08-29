@@ -21,13 +21,18 @@ Latest Mattermost Cloud releases:
  - Fixed issues with 'single-user' mode.
 
 #### User Interface (UI)
- - Added most active Direct Message channels, new top Playbooks, least active channels, and new team members widgets to Insights.
+ - Added new Insights widgets: Most Active Direct Messages, Top Playbooks, Least Active Channels, and New Team Members.
  - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
  - Team unreads are now calculated based on the channel membership and threads only. Team membership is no longer taken into account.
  - For introducing Boards and Playbooks to new users, an “explore other tools in platform” item was added to the end user onboarding checklist.
  
 #### API Changes
- - Added a new API endpoint ``GET /api/v4/users/me/top/dms`` to get users' Direct Message channel insights.
+ - Added new API endpoints:
+ 
+	  - ``GET /api/v4/users/me/top/dms``
+	  - ``GET /api/v4/users/me/top/threads``
+	  - ``GET /api/v4/teams/:team_id/top/team_members``
+	  - ``GET /api/v4/teams/:team_id:/top/threads``
 
 ### Bug Fixes
  - Fixed an issue in **System Console > Subscription** where the completed Company Information screen read "Provide your company name and address".
