@@ -17,7 +17,7 @@ Latest Mattermost Cloud releases:
 
 #### Boards
  - Added indexes to improve performance.
- - Fixed a bug where the "new" button in Kanban columns didn't always work [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - Fixed a bug where the **New** button in Kanban columns didn't always work [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
  - Fixed issues with 'single-user' mode.
 
 #### User Interface (UI)
