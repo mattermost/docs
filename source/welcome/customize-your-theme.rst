@@ -269,7 +269,7 @@ Night Owl Dark Theme
 Dark Theme (Desktop app only)
 -----------------------------
 
-Mattermost applies the Light Mode or Dark Mode system preference configured on your computer to the Mattermost Desktop App.
+The system display preference that you set on your computer (e.g., Light Mode or Dark Mode) is also applied to the Mattermost desktop app.
 
 .. image:: ../images/dark-theme-via-os.gif
   :alt: The system preference you set for Light Mode or Dark Mode on your computer is automatically applied to the Mattermost Desktop App.
