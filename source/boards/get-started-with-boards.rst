@@ -1,6 +1,9 @@
 Get Started with Mattermost Boards
 ==================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access Mattermost Boards by selecting **Boards** from the **Product menu** |product-list| icon.
 
 .. |product-list| image:: ../images/products_E82F.svg

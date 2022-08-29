@@ -1,6 +1,9 @@
 Welcome to Mattermost
 =====================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Whether it's your first day as a Mattermost user, or you're upgrading from an older Mattermost version, we recommend starting here to learn how to access and customize your workspace, familiarize yourself with the concept of teams and user roles, and learn how to get started with Channels, Boards, and Playbooks.
 
 Access your Mattermost workspace

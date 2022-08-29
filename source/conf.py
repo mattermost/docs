@@ -928,9 +928,9 @@ redirects = {
         "https://developers.mattermost.com/contribute/webapp/end-to-end-tests/",
 "developer/webapp-to-redux.html":
         "https://developers.mattermost.com/contribute/webapp/webapp-to-redux/",
-"developer/webhook-outgoing.html": 
+"developer/webhooks-outgoing.html": 
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
-"developer/webhook-incoming.html":
+"developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 
 # Focalboard redirects
@@ -1636,6 +1636,8 @@ redirects = {
         "https://handbook.mattermost.com/contributors/contributors",
 "process/deprecated-features.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features",
+"process/developer.html":
+	"https://handbook.mattermost.com",
 "process/design-process.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/product-design-team-handbook#overview",
 "process/documentation-guidelines.html":
@@ -1934,3 +1936,9 @@ linkcheck_ignore = [
 linkcheck_timeout = 5
 linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
+
+# Variables 
+rst_epilog = """
+.. |mm_badge_version| replace:: 7.2
+.. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/
+"""
