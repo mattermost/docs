@@ -21,11 +21,17 @@ Get started
 
     Optimize your workspace </configure/optimize-your-workspace>
     Mattermost configuration settings </configure/configuration-settings>
-    About </configure/self-hosted-account-settings>
-    Billing & account </configure/cloud-billing-account-settings>
+    Self-hosted edition & license </configure/self-hosted-account-settings>
+    Cloud subscription, billing, & account </configure/cloud-billing-account-settings>
     Reporting configuration settings </configure/reporting-configuration-settings>
     User management configuration settings </configure/user-management-configuration-settings>
     Environment configuration settings </configure/environment-configuration-settings>
+    Site configuration settings </configure/site-configuration-settings>
+    Authentication configuration settings </configure/authentication-configuration-settings>
+    Plugins configuration settings </configure/plugins-configuration-settings>
+    Integrations configuration settings </configure/integrations-configuration-settings>
+    Compliance configuration settings </configure/compliance-configuration-settings>
+    Experimental configuration settings </configure/experimental-configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Environment variables </configure/environment-variables>
     Provisioning workflows </onboard/user-provisioning-workflows>

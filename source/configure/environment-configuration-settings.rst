@@ -7,7 +7,7 @@ Environment configuration settings
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
-The following environment configuration settings are available:
+Access the following configuration settings in the System Console by going to **Environment**. The following environment configuration settings are available:
 
 - `Web server <#web-server>`__
 - `Database <#database>`__

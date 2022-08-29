@@ -1,33 +1,25 @@
-:orphan:
+Plugins configuration settings
+==============================
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+Access the following configuration settings in the System Console by going to **Plugins**:
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-:nosearch:
-
-Access the following configuration settings in the System Console by going to **Plugins**.
+- `Plugin Management <#plugin-management>`__
+- `Agenda <#agenda>`__
+- `Antivirus <#antivirus>`__
+- `Apps <#apps>`__
+- `Autolink <#autolink>`__
+- `AWS SNS <#aws-sns>`__
+- `Calls (beta) <#calls-beta>`__
+- `Channel Export <#channel-export>`__
+- `Demo Plugin <#demo-plugin>`__
+- `GIF commands <#gif-commands>`__
+- `Mattermost Boards <#mattermost-boards>`__
+- `MS Teams Meetings <#ms-teams-meetings>`__
+- `Playbooks <#playbooks>`__
+- `Skype for Business <#skype-for-business>`__
+- `User Satisfaction surveys <#user-satisfaction-surveys>`__
+- `Webex <#webex>`__
+- `Zoom <#zoom>`__
 
 Plugin Management
 ~~~~~~~~~~~~~~~~~

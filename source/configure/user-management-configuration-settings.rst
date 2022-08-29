@@ -1,9 +1,7 @@
 User management configuration settings
 ======================================
 
-Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature by going to **System Console > User Management**.
-
-The following user management configuration settings are available:
+Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature in the System Console by going to **User Management**:
 
 - `Users <#users>`__
 - `Groups <#groups>`__
@@ -100,6 +98,7 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
+| See `additional system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ documentation and             |
+| `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation          |
 | for more details.                                                                                                                 |
 +----------------------------------------------------------------------+------------------------------------------------------------+

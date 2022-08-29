@@ -1,33 +1,12 @@
-:orphan:
+Compliance configuration settings
+=================================
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+Access the following configuration settings in the System Console by going to **Compliance**:
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-:nosearch:
-
-Access the following configuration settings in the System Console by going to **Compliance**.
+- `Data Retention Policies <#data-retention-policies>`__
+- `Compliance Export <#compliance-export>`__
+- `Compliance Monitoring <#compliance-monitoring>`__
+- `Custom Terms of Service <#custom-terms-of-service>`__
 
 Data Retention Policies
 ~~~~~~~~~~~~~~~~~~~~~~~
