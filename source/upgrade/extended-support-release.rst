@@ -1,17 +1,8 @@
 Extended Support Release
 ========================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 What is an Extended Support Release?
 ------------------------------------
@@ -62,9 +53,9 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 7.1         | Feature        | July 15, 2022    | April 15, 2023   | `7.1.2 <https://releases.mattermost.com/7.1.2/mattermost-7.1.2-linux-amd64.tar.gz>`_       |                                                     |
+| 7.1         | Feature        | July 15, 2022    | April 15, 2023   | `7.1.3 <https://releases.mattermost.com/7.1.3/mattermost-7.1.3-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.9 <https://releases.mattermost.com/6.3.9/mattermost-6.3.9-linux-amd64.tar.gz>`_       |                                                     |
+| 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.10 <https://releases.mattermost.com/6.3.10/mattermost-6.3.10-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 5.37        | Feature        | July 16, 2021    | April 15, 2022   | `5.37.9 <https://releases.mattermost.com/5.37.9/mattermost-5.37.9-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+

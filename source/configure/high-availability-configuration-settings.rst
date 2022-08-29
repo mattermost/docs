@@ -1,44 +1,16 @@
 .. _high-availability:
 :orphan:
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 :nosearch:
 
-You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
+You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
-
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
 
 Enable high availability mode 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -57,7 +29,8 @@ Enable high availability mode
 Cluster name
 ~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -72,7 +45,8 @@ Cluster name
 Override hostname
 ~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -91,7 +65,8 @@ Override hostname
 Use IP address
 ~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -108,7 +83,8 @@ Use IP address
 Use gossip
 ~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -129,7 +105,8 @@ Use gossip
 Enable experimental gossip encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -149,7 +126,8 @@ Enable experimental gossip encryption
 Enable gossip compression
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -168,7 +146,8 @@ Enable gossip compression
 Gossip port
 ~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -182,7 +161,8 @@ Gossip port
 Streaming port
 ~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -195,7 +175,8 @@ Streaming port
 Read only config
 ~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -209,7 +190,8 @@ Read only config
 Network interface
 ~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -223,7 +205,8 @@ Network interface
 Bind address
 ~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -242,7 +225,8 @@ Bind address
 Advertise address
 ~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -257,7 +241,8 @@ Advertise address
 Maximum idle connections for high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -271,7 +256,8 @@ Maximum idle connections for high availability
 Maximum idle connections per host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -285,7 +271,8 @@ Maximum idle connections per host
 Idle connection timeout
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 

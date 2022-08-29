@@ -17,7 +17,7 @@ Create a OneLogin connection app for Mattermost SSO
 
   a. Log in to OneLogin as an administrator.
   b. Go to **Apps > Add Apps**.
-  c. Search for "SAML Test Connector", then select **SAML Test Connector (Advanced)**.
+  c. Search for "SAML Test Connector", then select **SAML Test Connector (Advanced)**.
 
   .. image:: ../../source/images/onelogin_1_new_app.png
 

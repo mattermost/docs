@@ -6,7 +6,7 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
-- [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
+- [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
 - [Release v6.7 - Feature Release](#release-v6-7-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
@@ -18,39 +18,22 @@ Latest Mattermost Releases:
 Mattermost v7.2.0 contains low to medium level severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Important Upgrade Notes
- - Several schema changes impose additional database constraints to make the data more strict. Here are the times taken:
-    - PostgreSQL (131869 channels, 2 teams):
-   [bigdb] # CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');
-   CREATE TYPE
-   Time: 14.114 ms
-   [bigdb] # ALTER TABLE channels alter column type type channel_type using type::channel_type;
-   ALTER TABLE
-   Time: 3856.790 ms (00:03.857)
-   [bigdb] # CREATE TYPE team_type AS ENUM ('I', 'O');
-   CREATE TYPE
-   Time: 4.191 ms
-   [bigdb] # ALTER TABLE teams alter column type type team_type using type::team_type;
-   ALTER TABLE
-   Time: 116.205 ms
-   [bigdb] # CREATE TYPE upload_session_type AS ENUM ('attachment', 'import');
-   CREATE TYPE
-   Time: 4.266 ms
-   [bigdb] # ALTER TABLE uploadsessions alter column type type upload_session_type using type::upload_session_type;
-   ALTER TABLE
-   Time: 37.099 ms
+Several schema changes impose additional database constraints to make the data more strict. All the commands listed below were tested on a 8 core, 16GB RAM machine. Here are the times recorded:
 
-   - MySQL (270959 channels, 2 teams):
-   mysql> ALTER TABLE Channels MODIFY COLUMN Type ENUM("D", "O", "G", "P");
-   Query OK, 270959 rows affected (13.24 sec)
-   Records: 270959  Duplicates: 0  Warnings: 0
-   mysql> ALTER TABLE Teams MODIFY COLUMN Type ENUM("I", "O");
-   Query OK, 2 rows affected (0.04 sec)
-   Records: 2  Duplicates: 0  Warnings: 0
-   mysql> ALTER TABLE UploadSessions MODIFY COLUMN Type ENUM("attachment", "import");
-   Query OK, 0 rows affected (0.03 sec)
-   Records: 0  Duplicates: 0  Warnings: 0
+**PostgreSQL (131869 channels, 2 teams)**:
 
-   - All the commands were tested on a 8 core, 16GB RAM machine.
+- ``CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');`` took 14.114 milliseconds
+- ``ALTER TABLE channels alter column type type channel_type using type::channel_type;`` took 3856.790 milliseconds (3.857 seconds)
+- ``CREATE TYPE team_type AS ENUM ('I', 'O');`` took 4.191 milliseconds
+- ``ALTER TABLE teams alter column type type team_type using type::team_type;`` took 116.205 milliseconds
+- ``CREATE TYPE upload_session_type AS ENUM ('attachment', 'import');`` took 4.266 milliseconds
+- ``ALTER TABLE uploadsessions alter column type type upload_session_type using type::upload_session_type;`` took 37.099 milliseconds
+
+**MySQL (270959 channels, 2 teams)**:
+
+- ``ALTER TABLE Channels MODIFY COLUMN Type ENUM("D", "O", "G", "P");`` took 13.24 seconds
+- ``ALTER TABLE Teams MODIFY COLUMN Type ENUM("I", "O");`` took 0.04 seconds
+- ``ALTER TABLE UploadSessions MODIFY COLUMN Type ENUM("attachment", "import");`` took 0.03 seconds
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -80,7 +63,6 @@ Mattermost v7.2.0 contains low to medium level severity level security fixes. [U
  - Added an **Upgrade** button for Admins on the navigation bar.
  - Added the ability for Admins to quickly view different paid license options inside the product.
  - Added the ability to start a trial from the **Invite People** modal.
- - Added the ability for end users to notify Admins to upgrade their workspace.
  - Admins are now able to search for channel IDs via **System Console > User Management > Channels** page.
  - In the **System Console** left-hand side, paid features icons are now displayed on the menu entries to indicate enterprise features.
  - Added ``webSocketClient`` to ``Pluggable`` and ``PostWillRenderEmbed`` plugin registered components.
@@ -141,10 +123,13 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
  
 ### Contributors
- - To be added.
+ - [64bitpandas](https://github.com/64bitpandas), [Afsoon](https://github.com/Afsoon), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [Apahadi73](https://github.com/Apahadi73), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [avinashlng1080](https://github.com/avinashlng1080), [azigler](https://github.com/azigler), [ballista01](https://github.com/ballista01), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [d-wierdsma](https://github.com/d-wierdsma), [debasish4patra](https://github.com/debasish4patra), [devinbinnie](https://github.com/devinbinnie), [eggmoid](https://github.com/eggmoid), [filipeandrade6](https://github.com/filipeandrade6), [gabrieljackson](https://github.com/gabrieljackson), [gbochora](https://github.com/gbochora), [Haliax](https://github.com/Haliax), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hegocre](https://github.com/hegocre), [hmhealey](https://github.com/hmhealey), [ifnotak](https://github.com/ifnotak), [imasdekar](https://github.com/imasdekar), [imskr](https://github.com/imskr), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [iyampaul](https://github.com/iyampaul), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [johnsonbrothers](https://github.com/johnsonbrothers), [jonathanwiemers](https://github.com/jonathanwiemers), [josephbaylon](https://github.com/josephbaylon), [jprusch](https://github.com/jprusch), [JtheBAB](https://github.com/JtheBAB), [JulienTant](https://github.com/JulienTant), [julmondragon](https://github.com/julmondragon), [justinegeffen](https://github.com/justinegeffen), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [KantinHoll](https://translate.mattermost.com/user/KantinHoll), [karistuck](https://github.com/karistuck), [kayazeren](https://github.com/kayazeren), [komarnitskyi](https://github.com/komarnitskyi), [koox00](https://github.com/koox00), [krisfremen](https://github.com/krisfremen), [krmh04](https://github.com/krmh04), [kyeongsoosoo](https://github.com/kyeongsoosoo), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo/), [maksimatveev](https://github.com/maksimatveev), [manojmalik20](https://github.com/manojmalik20), [MarkAndersonTrocme](https://github.com/MarkAndersonTrocme), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [milotype](https://github.com/milotype), [mkraft](https://github.com/mkraft), [Mshahidtaj](https://github.com/Mshahidtaj), [munish7771](https://github.com/munish7771), [muratbayan](https://github.com/muratbayan), [neallred](https://github.com/neallred), [neflyte](https://github.com/neflyte), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [noxer](https://github.com/noxer), [ogi-m](https://github.com/ogi-m), [oh6hay](https://github.com/oh6hay), [pfltdv](https://github.com/pfltdv), [phoinixgrr](https://github.com/phoinixgrr), [Phrynobatrachus](https://github.com/Phrynobatrachus), [Pinjasaur](https://github.com/Pinjasaur), [pjenicot](https://github.com/pjenicot), [plant99](https://github.com/plant99), [potatogim](https://github.com/potatogim), [pvev](https://github.com/pvev), [Rajat-Dabade](https://github.com/Rajat-Dabade), [RKRohk](https://github.com/RKRohk), [RoyI99](https://github.com/RoyI99), [sadohert](https://github.com/sadohert), [samia64saleem](https://github.com/samia64saleem), [santoniriccardo](https://github.com/santoniriccardo), [saosangmo](https://github.com/saosangmo), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [seoyeongeun](https://github.com/seoyeongeun), [serhack](https://github.com/serhack), [shamboozles](https://github.com/shamboozles), [Sharuru](https://github.com/Sharuru), [sibasankarnayak](https://github.com/sibasankarnayak), [SilverKnightKMA](https://github.com/SilverKnightKMA), [sinansonmez](https://github.com/sinansonmez), [spirosoik](https://github.com/spirosoik), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [t0mm0](https://github.com/t0mm0), [tboulis](https://github.com/tboulis), [thePanz](https://github.com/thePanz), [thinkGeist](https://github.com/thinkGeist), [tiagodll](https://github.com/tiagodll), [trilopin](https://github.com/trilopin), [tsabi](https://github.com/tsabi), [varghesejose2020](https://github.com/varghesejose2020), [vdvukhzhilov](https://github.com/vdvukhzhilov), [vish9812](https://github.com/vish9812), [weblate](https://github.com/weblate), [whiver](https://github.com/whiver), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yoikeda](https://github.com/yoikeda), [zefhemel](https://github.com/zefhemel)
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.3, released 2022-08-23**
+  - Mattermost v7.1.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where Admins were unable to save configuration changes in the **System Console** in some cases [MM-45875](https://mattermost.atlassian.net/browse/MM-45875).
 - **v7.1.2, released 2022-07-21**
   - Fixed an issue where mmctl checked the server version incorrectly.
 - **v7.1.1, released 2022-07-15**
@@ -255,6 +240,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **v7.0.2, released 2022-08-23**
+  - Mattermost v7.0.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.0.1, released 2022-06-24**
   - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
   - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
@@ -873,6 +860,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.10, released 2022-08-23**
+  - Mattermost v6.3.10 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v6.3.9, released 2022-06-13**
   - Mattermost v6.3.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
