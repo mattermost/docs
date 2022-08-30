@@ -16,8 +16,8 @@ Mattermost product documentation
    :glob:
 
    About Mattermost <overview/index>
-   Deploy Mattermost <guides/deployment>
-   Mattermost administration <guides/administration>
+   Mattermost for System Administrators <guides/mattermost-for-system-admins>
+   Mattermost Server administration <guides/administration>
    Welcome to Mattermost <guides/welcome-to-mattermost>
    Mattermost Channels <guides/channels>
    Mattermost Playbooks <guides/playbooks>
