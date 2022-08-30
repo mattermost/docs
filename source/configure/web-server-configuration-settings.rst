@@ -238,7 +238,7 @@ Enable insecure outgoing connections
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                          |
 |                                                               | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
-|- **true**: Outgoing HTTPS requests, including S3 clients,     | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
+| - **true**: Outgoing HTTPS requests, including S3 clients,    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
 |   can accept unverified, self-signed certificates.            |                                                                                             |     
 |   For example, outgoing webhooks to a server with a           |                                                                                             |
 |   self-signed TLS certificate, using any domain, will be      |                                                                                             |
