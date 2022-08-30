@@ -1938,7 +1938,7 @@ linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
 
 # Variables 
-rst_epilog = """
-.. |mm_badge_version| replace:: 7.2
-.. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/
-"""
+# rst_epilog = """
+# .. |mm_badge_version| replace:: 7.2
+# .. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/
+# """
