@@ -125,9 +125,8 @@ Review how your message formatting will look when the message is sent by selecti
 .. tip::
 
   - Hide the formatting options by selecting the **Show/Hide Formatting** |hide-formatting-icon| icon. Select the icon again to show the formatting options. 
-  - Disable the formatting options by selecting the **Gear** |settings-icon| icon, going to **Settings > Advanced > Enable Post Formatting**, and setting this option to **Off**. 
-  - System Admins can disable the formatting options for all users in the System Console by going to **Environment > Developer > Enable Client Performance Debugging**. See the `configuration settings <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-performance-debugging>`__ documentation for details.
-
+  - You can control whether post formatting is rendered within the message formatting editor. When disabled, raw text is shown. See the `Channels customization <https://docs.mattermost.com/channels/channels-settings.html#enable-post-formatting>`__ documentation for details. 
+ 
 Use Markdown
 -------------
 
