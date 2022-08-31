@@ -237,6 +237,25 @@
             title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
             href="{{ pathto('_static/opensearch.xml', 1) }}"/>
       {%- endif %}
+
+      {# Fragment redirects #}
+      {%- if has_fragment_redirects %}
+      <script>
+        {{ fragment_redirects }}
+        const url = new URL(window.location.href);
+        if (url.hash !== "" && url.hash !== "#") {
+          const fragment = url.hash.substring(1);
+          if (fragment in redirects) {
+              let redirecturl = redirects[fragment];
+              if (redirecturl.startsWith("/")) {
+                  redirecturl = window.location.origin + redirecturl;
+              }
+              console.log("redirecturl=" + redirecturl);
+              window.location = redirecturl;
+          }
+        }
+      </script>
+      {%- endif %}
     {%- endif %}
   {%- endblock %}
 

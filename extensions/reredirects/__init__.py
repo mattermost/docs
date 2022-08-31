@@ -17,7 +17,13 @@ OPTION_REDIRECTS = "redirects"
 OPTION_REDIRECTS_DEFAULT: Dict[str, str] = dict()
 OPTION_TEMPLATE_FILE = "redirect_html_template_file"
 OPTION_TEMPLATE_FILE_DEFAULT = None
-REDIRECT_FILE_DEFAULT_TEMPLATE = '<html><head><meta http-equiv="refresh" content="0; url=${to_uri}"></head></html>'  # noqa: E501
+REDIRECT_FILE_DEFAULT_TEMPLATE = '<!DOCTYPE html><html lang="en"><head><title>Redirect</title><meta http-equiv="refresh" content="0; url=${to_uri}"></head></html>'  # noqa: E501
+DEFAULT_PAGE = "-"
+ENV_REDIRECTS_ENABLED = "redirects-enabled"
+ENV_COMPUTED_REDIRECTS = "computed-redirects"
+ENV_INTRA_PAGE_FRAGMENT_PAGES = "intra-page-fragment-pages"
+CTX_HAS_FRAGMENT_REDIRECTS = "has_fragment_redirects"
+CTX_FRAGMENT_REDIRECTS = "fragment_redirects"
 
 # Sphinx logger
 logger = logging.getLogger(__name__)
@@ -28,46 +34,40 @@ wildcard_pattern = re.compile(r"[*?\[\]]")
 def setup(app: Sphinx) -> Dict[str, Any]:
     """
     Sphinx extension setup function.
-    It adds config values and connects Sphinx events to the sitemap builder.
 
     :param app: The Sphinx Application instance
     :return: A dict of Sphinx extension options
     """
     app.add_config_value(OPTION_REDIRECTS, OPTION_REDIRECTS_DEFAULT, "env")
     app.add_config_value(OPTION_TEMPLATE_FILE, OPTION_TEMPLATE_FILE_DEFAULT, "env")
-    """
-    Write the redirect pages when the `html-collect-pages` event fires.
-    https://www.sphinx-doc.org/en/master/extdev/appapi.html#event-html-collect-pages
-    """
-    app.connect("html-collect-pages", write_redirect_pages)
-    # Extra events to conform to Sphinx parallel read requirements. Both event functions do nothing.
+    app.connect("builder-inited", builder_inited)
     app.connect("env-purge-doc", env_purge_doc)
     app.connect("env-merge-info", env_merge_info)
+    app.connect("env-updated", env_updated)
+    app.connect("html-page-context", html_page_context)
+    app.connect("html-collect-pages", html_collect_pages)
     return {
-        # Enable parallel reading and writing
-        'parallel_read_safe': True,
-        'parallel_write_safe': True,
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
     }
 
 
-def write_redirect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
-    """
-    Write the redirect page files.
-
-    :param app: The Sphinx Application instance
-    :return: An empty list
-    """
+def builder_inited(app: Sphinx):
+    setattr(app.env, ENV_REDIRECTS_ENABLED, True)
     if not app.config[OPTION_REDIRECTS]:
-        logger.debug('No redirects configured')
-        return list()
-
-    rr = Reredirects(app)
-    to_be_redirected = rr.grab_redirects()
-    rr.create_redirects(to_be_redirected)
-
-    # html-collect-pages requires to return iterable of pages to write,
-    # we have no additional pages to write
-    return list()
+        logger.debug(
+            "No redirects configured; disabling redirects extension for this build"
+        )
+        setattr(app.env, ENV_REDIRECTS_ENABLED, False)
+        return
+    if len(app.config[OPTION_REDIRECTS]) == 0:
+        logger.debug(
+            "Empty redirect definition; disabling redirects extension for this build"
+        )
+        setattr(app.env, ENV_REDIRECTS_ENABLED, False)
+        return
+    redirects_option: Dict[str, str] = getattr(app.config, OPTION_REDIRECTS)
+    setattr(app.env, ENV_COMPUTED_REDIRECTS, compute_redirects(app, redirects_option))
 
 
 def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str):
@@ -77,14 +77,163 @@ def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str):
     return
 
 
-def env_merge_info(app: Sphinx, env: BuildEnvironment, docnames: List[str], other: BuildEnvironment):
+def env_merge_info(
+    app: Sphinx, env: BuildEnvironment, docnames: List[str], other: BuildEnvironment
+):
     """
     Stub function for the `env-merge-info` event; does nothing
     """
     return
 
 
-def old_status_iterator(mapping: Mapping[str, str], summary: str, color: str = "darkgreen") -> Tuple[str, str]:
+def env_updated(app: Sphinx, env: BuildEnvironment) -> List[str]:
+    is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
+    if not is_enabled:
+        return list()
+    computed_redirects: Dict[str, Dict[str, str]] = getattr(env, ENV_COMPUTED_REDIRECTS)
+    intra_page_fragments: List[str] = list()
+    for page in computed_redirects.keys():
+        if page in env.all_docs:
+            intra_page_fragments.append(page)
+    logger.info(
+        "env_updated(): found %d intra-page fragment pages" % len(intra_page_fragments)
+    )
+    setattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES, intra_page_fragments)
+    return list()
+
+
+def html_page_context(
+    app: Sphinx, pagename: str, templatename: str, context: Dict, doctree: Dict
+) -> str:
+    is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
+    if not is_enabled:
+        return templatename
+    context[CTX_HAS_FRAGMENT_REDIRECTS] = False
+    intra_page_fragments: List[str] = getattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES)
+    if pagename in intra_page_fragments:
+        logger.info(
+            "html_page_context(): adding redirects to HTML context of page " + pagename
+        )
+        computed_redirects: Dict[str, Dict[str, str]] = getattr(
+            app.env, ENV_COMPUTED_REDIRECTS
+        )
+        context[CTX_FRAGMENT_REDIRECTS] = build_js_object(computed_redirects[pagename])
+        context[CTX_HAS_FRAGMENT_REDIRECTS] = True
+    return templatename
+
+
+def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
+    """
+    Collect the redirect page information and generate a list of redirect pages to write.
+
+    :param app: The Sphinx Application instance
+    :return: The list of redirect pages to create
+    """
+    is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
+    if not is_enabled:
+        return list()
+    redirect_pages: List[Tuple[str, Dict[str, Any], str]] = list()
+    redirectmap: Dict[str, Dict[str, str]] = getattr(app.env, ENV_COMPUTED_REDIRECTS)
+    for page in redirectmap.keys():
+        # if page is a real page in the doctree, we've already handled it elsewhere
+        if page in app.env.all_docs:
+            logger.info("html_collect_pages(): skip page %s" % page)
+            continue
+        # Handle the case where there is a single redirect defined for a source page
+        if len(redirectmap[page]) == 1:
+            # if this page only has a redirect to the DEFAULT_PAGE, then use a simple redirect template
+            if DEFAULT_PAGE in redirectmap[page]:
+                logger.info(
+                    "html_collect_pages(): simple redirect from %s to %s"
+                    % (page, redirectmap[page][DEFAULT_PAGE])
+                )
+                redirect_pages.append(
+                    (
+                        page,
+                        {"to_uri": redirectmap[page][DEFAULT_PAGE]},
+                        "simpleredirect.html",  # TODO: move this into a config variable
+                    )
+                )
+                continue
+            # there's only one fragment redirect, and it's not DEFAULT_PAGE. if someone browses to the page, they
+            # will see a blank screen. we add a DEFAULT_PAGE redirect in that case.
+            default_page_url = ""
+            for frag in redirectmap[page].keys():
+                default_page_url = redirectmap[page][frag]
+                break
+            if default_page_url != "":
+                redirectmap[page][DEFAULT_PAGE] = default_page_url
+                logger.info(
+                    "+++ html_collect_pages(): added DEFAULT_PAGE redirect for " + page
+                )
+        # build a JS object that will hold the fragment redirect map
+        jsobject = build_js_object(redirectmap[page])
+        logger.info(
+            "html_collect_pages(): redirect from %s; %s"
+            % (page, jsobject)
+        )
+        redirect_pages.append(
+            (
+                page,
+                {"redirects_object": jsobject},
+                "redirect.html",  # TODO: move this into a config variable
+            )
+        )
+    logger.info("html_collect_pages(): done.")
+    # return the iterable of pages to write
+    return redirect_pages
+
+
+def compute_redirects(app: Sphinx, redirects_option: Dict[str, str]) -> Dict[str, Dict[str, str]]:
+    redirect_map: Dict[str, Dict[str, str]] = dict()
+    html_baseurl: str = getattr(app.config, "html_baseurl")
+    if html_baseurl.endswith("/"):
+        html_baseurl = html_baseurl.removesuffix("/")
+    for source in redirects_option.keys():
+        toks = source.split("#", 1)
+        if len(toks) == 2:
+            pagename = toks[0]
+            fragment = toks[1]
+        elif len(toks) == 1:
+            pagename = toks[0]
+            fragment = ""
+        else:
+            logger.warning("compute_redirects(): invalid redirect: %s" % source)
+            continue
+        # ensure pagename does not end with ".html"
+        if pagename.endswith(".html"):
+            pagename = pagename.removesuffix(".html")
+        # add a new dict to redirect_map if the page has not been seen before
+        if pagename not in redirect_map:
+            redirect_map[pagename] = dict()
+        # if the target page has the same prefix as html_baseurl, remove the prefix so intra-site redirects work
+        target = redirects_option[source]
+        if html_baseurl != "" and target.startswith(html_baseurl):
+            target = target.removeprefix(html_baseurl)
+        # if there's no fragment then we're redirecting to the "default page"
+        if fragment == "":
+            redirect_map[pagename][DEFAULT_PAGE] = target
+            continue
+        # if the fragment ends in ".html", remove it
+        if fragment.endswith(".html"):
+            fragment = fragment.removesuffix(".html")
+        # redirect the fragment to the desired page
+        redirect_map[pagename][fragment] = target
+    return redirect_map
+
+
+def build_js_object(pagemap: Dict[str, str]) -> str:
+    jsobject = "const redirects = Object.freeze({"
+    for frag in pagemap.keys():
+        jsobject += '"' + frag + '":"' + pagemap[frag] + '",'
+    jsobject = jsobject.rstrip(",")
+    jsobject += "});"
+    return jsobject
+
+
+def old_status_iterator(
+    mapping: Mapping[str, str], summary: str, color: str = "darkgreen"
+) -> Tuple[str, str]:
     """
     Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
 
@@ -102,11 +251,16 @@ def old_status_iterator(mapping: Mapping[str, str], summary: str, color: str = "
         logger.info(" ", nonl=True)
         yield item
     if line_count == 1:
-        logger.info('')
+        logger.info("")
 
 
-def status_iterator(mapping: Mapping[str, str], summary: str, color: str = "darkgreen",
-                    length: int = 0, verbosity: int = 0) -> Tuple[str, str]:
+def status_iterator(
+    mapping: Mapping[str, str],
+    summary: str,
+    color: str = "darkgreen",
+    length: int = 0,
+    verbosity: int = 0,
+) -> Tuple[str, str]:
     """
     Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
     Status includes percent of records in the iterable that have been iterated through.
@@ -125,15 +279,19 @@ def status_iterator(mapping: Mapping[str, str], summary: str, color: str = "dark
     summary = bold(summary)
     for item in mapping.items():
         line_count += 1
-        s = '%s[%3d%%] %s' % (summary, 100 * line_count / length, colorize(color, item[0]))
+        s = "%s[%3d%%] %s" % (
+            summary,
+            100 * line_count / length,
+            colorize(color, item[0]),
+        )
         if verbosity:
-            s += '\n'
+            s += "\n"
         else:
             s = term_width_line(s)
         logger.info(s, nonl=True)
         yield item
     if line_count > 0:
-        logger.info('')
+        logger.info("")
 
 
 class Reredirects:
@@ -145,11 +303,8 @@ class Reredirects:
         :param app: The Sphinx Application instance
         """
         self.app = app
-        self.redirects_option: Dict[str,
-                                    str] = getattr(app.config,
-                                                   OPTION_REDIRECTS)
-        self.template_file_option: str = getattr(app.config,
-                                                 OPTION_TEMPLATE_FILE)
+        self.redirects_option: Dict[str, str] = getattr(app.config, OPTION_REDIRECTS)
+        self.template_file_option: str = getattr(app.config, OPTION_TEMPLATE_FILE)
 
     def grab_redirects(self) -> Mapping[str, str]:
         """
@@ -169,8 +324,9 @@ class Reredirects:
                 continue
 
             # wildcarded source, expand to docnames
-            expanded_docs = [doc for doc in self.app.env.found_docs
-                             if fnmatch(doc, source)]
+            expanded_docs = [
+                doc for doc in self.app.env.found_docs if fnmatch(doc, source)
+            ]
 
             if not expanded_docs:
                 logger.warning(f"No documents match to '{source}' redirect.")
@@ -188,8 +344,12 @@ class Reredirects:
 
         :param to_be_redirected: A mapping of docnames to targets to create redirect files for
         """
-        for doc, target in status_iterator(to_be_redirected, 'writing redirects...', 'darkgreen',
-                                           len(to_be_redirected.items())):
+        for doc, target in status_iterator(
+            to_be_redirected,
+            "writing redirects...",
+            "darkgreen",
+            len(to_be_redirected.items()),
+        ):
             if not str(doc).endswith(".html"):
                 doc += ".html"
             redirect_file_abs = Path(self.app.outdir).joinpath(doc)
@@ -238,8 +398,7 @@ class Reredirects:
         # HTML used as redirect file content
         redirect_template = REDIRECT_FILE_DEFAULT_TEMPLATE
         if self.template_file_option:
-            redirect_file_abs = Path(self.app.srcdir,
-                                     self.template_file_option)
+            redirect_file_abs = Path(self.app.srcdir, self.template_file_option)
             redirect_template = redirect_file_abs.read_text()
 
         content = Template(redirect_template).substitute({"to_uri": to_uri})

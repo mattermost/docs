@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+</head>
+<body>
+<script>
+    const DEFAULT_PAGE = "-";
+    // The line below is injected; all other lines are constant
+    {{ redirects_object }}
+    // The line above is injected; all other lines are constant
+    const url = new URL(window.location.href);
+    let redirectKey = DEFAULT_PAGE;
+    if (url.hash !== "" && url.hash !== "#") {
+        redirectKey = url.hash.substring(1);
+    }
+    if (redirectKey in redirects) {
+        let redirecturl = redirects[redirectKey];
+        if (redirecturl.startsWith("/")) {
+            redirecturl = window.location.origin + redirecturl
+        }
+        console.log("redirecturl=" + redirecturl);
+        window.location = redirecturl;
+    }
+</script>
+</body>
+</html>
