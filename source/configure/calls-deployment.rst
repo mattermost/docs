@@ -1,6 +1,9 @@
 Calls self-hosted deployment
 ============================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams.
 
 Terminology
@@ -17,6 +20,10 @@ Components
 ----------
 
 - **Calls plugin**: This is the main entry point and a requirement to enable channel calls.
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
 - **RTCD**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. This is the preferred solution for a performant and scalable deployment. With RTCD, the Mattermost server will be minimally impacted when hosting a high number of calls.
 
 Requirements
