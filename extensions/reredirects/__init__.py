@@ -1,7 +1,8 @@
 #
-# reredirects - The sphinx_reredirects extension with parallel read and write support enabled
+# reredirects - The sphinx_reredirects extension with parallel read and write support enabled, and support for
+#               intra-page redirects.
 #
-# Parallel read/write support by Alan Lew <alan@ethereal.cc> (https://github.com/neflyte/)
+# Parallel read/write, and intra-page redirect support by Alan Lew <alan@ethereal.cc> (https://github.com/neflyte/)
 #
 import re
 from fnmatch import fnmatch
@@ -55,13 +56,13 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 def builder_inited(app: Sphinx):
     setattr(app.env, ENV_REDIRECTS_ENABLED, True)
     if not app.config[OPTION_REDIRECTS]:
-        logger.debug(
+        logger.warning(
             "No redirects configured; disabling redirects extension for this build"
         )
         setattr(app.env, ENV_REDIRECTS_ENABLED, False)
         return
     if len(app.config[OPTION_REDIRECTS]) == 0:
-        logger.debug(
+        logger.warning(
             "Empty redirect definition; disabling redirects extension for this build"
         )
         setattr(app.env, ENV_REDIRECTS_ENABLED, False)
@@ -95,7 +96,7 @@ def env_updated(app: Sphinx, env: BuildEnvironment) -> List[str]:
     for page in computed_redirects.keys():
         if page in env.all_docs:
             intra_page_fragments.append(page)
-    logger.info(
+    logger.debug(
         "env_updated(): found %d intra-page fragment pages" % len(intra_page_fragments)
     )
     setattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES, intra_page_fragments)
@@ -112,7 +113,7 @@ def html_page_context(
     intra_page_fragments: List[str] = getattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES)
     if pagename in intra_page_fragments:
         logger.info(
-            "html_page_context(): adding redirects to HTML context of page " + pagename
+            "html_page_context(): page %s has intra-page redirects; adding redirects to HTML context" % pagename
         )
         computed_redirects: Dict[str, Dict[str, str]] = getattr(
             app.env, ENV_COMPUTED_REDIRECTS
@@ -137,7 +138,7 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
     for page in redirectmap.keys():
         # if page is a real page in the doctree, we've already handled it elsewhere
         if page in app.env.all_docs:
-            logger.info("html_collect_pages(): skip page %s" % page)
+            logger.info("html_collect_pages(): page %s has intra-page redirects; skipping it" % page)
             continue
         # Handle the case where there is a single redirect defined for a source page
         if len(redirectmap[page]) == 1:
@@ -163,8 +164,8 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
                 break
             if default_page_url != "":
                 redirectmap[page][DEFAULT_PAGE] = default_page_url
-                logger.info(
-                    "+++ html_collect_pages(): added DEFAULT_PAGE redirect for " + page
+                logger.debug(
+                    "html_collect_pages(): added DEFAULT_PAGE redirect for " + page
                 )
         # build a JS object that will hold the fragment redirect map
         jsobject = build_js_object(redirectmap[page])
@@ -179,7 +180,6 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
                 "redirect.html",  # TODO: move this into a config variable
             )
         )
-    logger.info("html_collect_pages(): done.")
     # return the iterable of pages to write
     return redirect_pages
 
@@ -187,8 +187,7 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
 def compute_redirects(app: Sphinx, redirects_option: Dict[str, str]) -> Dict[str, Dict[str, str]]:
     redirect_map: Dict[str, Dict[str, str]] = dict()
     html_baseurl: str = getattr(app.config, "html_baseurl")
-    if html_baseurl.endswith("/"):
-        html_baseurl = html_baseurl.removesuffix("/")
+    html_baseurl = html_baseurl.removesuffix("/")
     for source in redirects_option.keys():
         toks = source.split("#", 1)
         if len(toks) == 2:
@@ -201,22 +200,20 @@ def compute_redirects(app: Sphinx, redirects_option: Dict[str, str]) -> Dict[str
             logger.warning("compute_redirects(): invalid redirect: %s" % source)
             continue
         # ensure pagename does not end with ".html"
-        if pagename.endswith(".html"):
-            pagename = pagename.removesuffix(".html")
+        pagename = pagename.removesuffix(".html")
         # add a new dict to redirect_map if the page has not been seen before
         if pagename not in redirect_map:
             redirect_map[pagename] = dict()
         # if the target page has the same prefix as html_baseurl, remove the prefix so intra-site redirects work
         target = redirects_option[source]
-        if html_baseurl != "" and target.startswith(html_baseurl):
+        if html_baseurl != "":
             target = target.removeprefix(html_baseurl)
         # if there's no fragment then we're redirecting to the "default page"
         if fragment == "":
             redirect_map[pagename][DEFAULT_PAGE] = target
             continue
         # if the fragment ends in ".html", remove it
-        if fragment.endswith(".html"):
-            fragment = fragment.removesuffix(".html")
+        fragment = fragment.removesuffix(".html")
         # redirect the fragment to the desired page
         redirect_map[pagename][fragment] = target
     return redirect_map

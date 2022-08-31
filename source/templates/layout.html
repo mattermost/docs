@@ -250,8 +250,10 @@
               if (redirecturl.startsWith("/")) {
                   redirecturl = window.location.origin + redirecturl;
               }
-              console.log("redirecturl=" + redirecturl);
+              console.log("redirecting to " + redirecturl);
               window.location = redirecturl;
+          } else {
+              console.error("unknown fragment: " + fragment);
           }
         }
       </script>

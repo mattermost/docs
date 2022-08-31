@@ -18,10 +18,12 @@
     if (redirectKey in redirects) {
         let redirecturl = redirects[redirectKey];
         if (redirecturl.startsWith("/")) {
-            redirecturl = window.location.origin + redirecturl
+            redirecturl = window.location.origin + redirecturl;
         }
-        console.log("redirecturl=" + redirecturl);
         window.location = redirecturl;
+    } else {
+        console.error("unknown redirect: " + redirectKey);
+        // TODO: redirect the user to a 404 page or some other page
     }
 </script>
 </body>
