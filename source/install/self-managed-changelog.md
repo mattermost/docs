@@ -6,7 +6,7 @@ See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release
 
 Latest Mattermost Releases:
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
-- [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
+- [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
 - [Release v6.7 - Feature Release](#release-v6-7-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
@@ -18,39 +18,22 @@ Latest Mattermost Releases:
 Mattermost v7.2.0 contains low to medium level severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Important Upgrade Notes
- - Several schema changes impose additional database constraints to make the data more strict. Here are the times taken:
-    - PostgreSQL (131869 channels, 2 teams):
-   [bigdb] # CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');
-   CREATE TYPE
-   Time: 14.114 ms
-   [bigdb] # ALTER TABLE channels alter column type type channel_type using type::channel_type;
-   ALTER TABLE
-   Time: 3856.790 ms (00:03.857)
-   [bigdb] # CREATE TYPE team_type AS ENUM ('I', 'O');
-   CREATE TYPE
-   Time: 4.191 ms
-   [bigdb] # ALTER TABLE teams alter column type type team_type using type::team_type;
-   ALTER TABLE
-   Time: 116.205 ms
-   [bigdb] # CREATE TYPE upload_session_type AS ENUM ('attachment', 'import');
-   CREATE TYPE
-   Time: 4.266 ms
-   [bigdb] # ALTER TABLE uploadsessions alter column type type upload_session_type using type::upload_session_type;
-   ALTER TABLE
-   Time: 37.099 ms
+Several schema changes impose additional database constraints to make the data more strict. All the commands listed below were tested on a 8 core, 16GB RAM machine. Here are the times recorded:
 
-   - MySQL (270959 channels, 2 teams):
-   mysql> ALTER TABLE Channels MODIFY COLUMN Type ENUM("D", "O", "G", "P");
-   Query OK, 270959 rows affected (13.24 sec)
-   Records: 270959  Duplicates: 0  Warnings: 0
-   mysql> ALTER TABLE Teams MODIFY COLUMN Type ENUM("I", "O");
-   Query OK, 2 rows affected (0.04 sec)
-   Records: 2  Duplicates: 0  Warnings: 0
-   mysql> ALTER TABLE UploadSessions MODIFY COLUMN Type ENUM("attachment", "import");
-   Query OK, 0 rows affected (0.03 sec)
-   Records: 0  Duplicates: 0  Warnings: 0
+**PostgreSQL (131869 channels, 2 teams)**:
 
-   - All the commands were tested on a 8 core, 16GB RAM machine.
+- ``CREATE TYPE channel_type AS ENUM ('P', 'G', 'O', 'D');`` took 14.114 milliseconds
+- ``ALTER TABLE channels alter column type type channel_type using type::channel_type;`` took 3856.790 milliseconds (3.857 seconds)
+- ``CREATE TYPE team_type AS ENUM ('I', 'O');`` took 4.191 milliseconds
+- ``ALTER TABLE teams alter column type type team_type using type::team_type;`` took 116.205 milliseconds
+- ``CREATE TYPE upload_session_type AS ENUM ('attachment', 'import');`` took 4.266 milliseconds
+- ``ALTER TABLE uploadsessions alter column type type upload_session_type using type::upload_session_type;`` took 37.099 milliseconds
+
+**MySQL (270959 channels, 2 teams)**:
+
+- ``ALTER TABLE Channels MODIFY COLUMN Type ENUM("D", "O", "G", "P");`` took 13.24 seconds
+- ``ALTER TABLE Teams MODIFY COLUMN Type ENUM("I", "O");`` took 0.04 seconds
+- ``ALTER TABLE UploadSessions MODIFY COLUMN Type ENUM("attachment", "import");`` took 0.03 seconds
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
@@ -144,6 +127,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.3, released 2022-08-23**
+  - Mattermost v7.1.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where Admins were unable to save configuration changes in the **System Console** in some cases [MM-45875](https://mattermost.atlassian.net/browse/MM-45875).
 - **v7.1.2, released 2022-07-21**
   - Fixed an issue where mmctl checked the server version incorrectly.
 - **v7.1.1, released 2022-07-15**
@@ -254,6 +240,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **v7.0.2, released 2022-08-23**
+  - Mattermost v7.0.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.0.1, released 2022-06-24**
   - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
   - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
@@ -872,6 +860,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.10, released 2022-08-23**
+  - Mattermost v6.3.10 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v6.3.9, released 2022-06-13**
   - Mattermost v6.3.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening

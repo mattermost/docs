@@ -1,6 +1,9 @@
 Deployment overview
 ===================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 The following Mattermost network diagram illustrates a private cloud deployment of Mattermost with optional configurations for scaling to performance from teams to large organizations.
 
 .. image:: ../images/network_diagram.png
@@ -83,27 +86,8 @@ Data center infrastructure
 Push notification service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The `Mattermost Push Notification Service (MPNS) <https://docs.mattermost.com/deploy/mobile-hpns.html#enable-mpns>`__ routes push notifications to:
 
@@ -117,8 +101,6 @@ HPNS does not connect to your mobile apps directly. It sends messages over an en
 Proxy
 ^^^^^^
 
-|all-plans| |self-hosted|
-
 The proxy manages Secure Socket Layer (SSL) encryption and sets the policy on how network traffic will be routed to the Mattermost server.
 
 Mattermost install guides include setup instructions for the NGNIX software proxy by default. For large scale deployments, a hardware proxy with dedicated devices for processing SSL encryption and decryption could potentially increase efficiencies.
@@ -128,14 +110,13 @@ In a High Availability configuration (Enterprise subscription plans only) the pr
 Microsoft Active Directory Single Sign-On 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 Mattermost Enterprise and Professional supports Microsoft Active Directory and LDAP Single Sign-on with secure transport over TLS or stunnel.
 
 Private Cloud integrations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
 
 Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and slash command options for integrating with your self-managed systems.
 
@@ -143,8 +124,6 @@ Mattermost offers complete access to its Web Service APIs, along with incoming a
 
 Email service
 ^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
 
 For notifications and account verification, Mattermost connects to your existing email service over SMTP, including Microsoft Exchange, Amazon SES, SendGrid, and self-hosted email solutions.
 
@@ -156,42 +135,33 @@ Mattermost Server installs as a single compiled binary file. All server settings
 RESTful JSON web service
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
-
 The entirety of the Mattermost server is accessible through a RESTful web service API. The API can be completely accessed by developers creating custom applications for Mattermost either directly or via Javascript and Golang drivers.
 
 Authentication client
 ^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
 
 Authenticates users by email or username plus password.
 
 Authentication provider
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
-
 Enables authentication of Mattermost server to other services with authentication client interface using OAuth2.
 
 Notification service
 ^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
 
 Sends notifications via SMTP email and mobile push notifications via Mattermost Push Notification Service.
 
 Data management service
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
-
 Connects to and manages supported databases.
 
 High Availability
 ^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -203,8 +173,6 @@ Data stores
 Databases
 ^^^^^^^^^^
 
-|all-plans| |self-hosted|
-
 Mattermost uses a MySQL or Postgres database to store and retrieve system data and to execute full text search. Solid State Drives (SSDs) can be used for faster read times to increase performance.
 
 See `Database requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#database-software>`__ for full details.
@@ -212,7 +180,8 @@ See `Database requirements <https://docs.mattermost.com/install/software-hardwar
 Multiple read replicas 
 ~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -223,7 +192,8 @@ The safest configuration is to size the disk space on the read replica used for 
 Search replicas
 ~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -232,7 +202,8 @@ You can configure one or more search replicas to isolate search queries. A searc
 Global deployments 
 ~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -244,8 +215,6 @@ Enterprise customers with deployments spanning many time zones can `contact us <
 
 File store
 ^^^^^^^^^^^
-
-|all-plans| |self-hosted|
 
 Images and files shared by users are stored and retrieved in one of three options.
 
@@ -277,4 +246,4 @@ For support for certificate-based authentication for mobile devices, `contact us
 Mobile devices with an EMM provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mattermost mobile applications can also be deployed via `EMM providers who support AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__ such as Blackberry UEM, Mobileiron, and Airwatch. EMM solutions typically offer "App Tunnel" or per-app VPN capabilities that can be used to connect to mobile apps behind a VPN.
+Mattermost mobile applications can also be deployed via `EMM providers who support AppConfig <https://docs.mattermost.com/deploy/mobile-appconfig.html>`__. EMM solutions typically offer per-app VPN capabilities that can be used to connect to mobile apps behind a VPN.
