@@ -21,7 +21,7 @@ Latest Mattermost Cloud releases:
  - Fixed issues with 'single-user' mode.
 
 #### User Interface (UI)
- - Added new Insights widgets: Most Active Direct Messages, Top Playbooks, Least Active Channels, and New Team Members.
+ - Added new Insights widgets: Most Active Direct Messages, Least Active Channels, and New Team Members.
  - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
  - Team unreads are now calculated based on the channel membership and threads only. Team membership is no longer taken into account.
  - For introducing Boards and Playbooks to new users, an “explore other tools in platform” item was added to the end user onboarding checklist.
@@ -40,6 +40,9 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the user profile image persisted after user account deletion.
 
 ### Known Issues
+ - Known issues related to the new Insights widgets, such as that pagination displays for 10 items or less [MM-46595](https://mattermost.atlassian.net/browse/MM-46595).
+ - ``/marketplace`` slash command opens the Marketplace with an error displayed [MM-46663](https://mattermost.atlassian.net/browse/MM-46663).
+ - Alt+click does not mark a root post as unread on global threads inbox [MM-46683](https://mattermost.atlassian.net/browse/MM-46683).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
