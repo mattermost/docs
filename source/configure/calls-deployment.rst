@@ -9,12 +9,12 @@ This document provides information on how to successfully make the Calls plugin 
 Terminology
 -----------
 
-- **WebRTC**: The set of underlying protocols/specifications on top of which calls are implemented. 
+- `WebRTC <https://bloggeek.me/webrtcglossary/webrtc-2/>`__: The set of underlying protocols/specifications on top of which calls are implemented. 
 - **RTC (Real Time Connection)**: The real-time connection. This is the channel used to send media tracks (audio/video/screen).
 - **WS (WebSocket)**: The WebSocket connection. This is the channel used to set up a connection (signaling process).
-- **NAT (Network Address Translation)**: A networking technique to map IP addresses. 
-- **STUN (Session Traversal Utilities for NAT)**: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance. 
-- **TURN (Traversal Using Relays around NAT)**: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay. 
+- `NAT (Network Address Translation) <https://bloggeek.me/webrtcglossary/nat/>`__: A networking technique to map IP addresses. 
+- `STUN (Session Traversal Utilities for NAT) <https://bloggeek.me/webrtcglossary/stun/>`_: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance. 
+- `TURN (Traversal Using Relays around NAT) <https://bloggeek.me/webrtcglossary/turn/>`_: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay. 
 
 Components
 ----------
