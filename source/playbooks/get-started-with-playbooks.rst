@@ -1,6 +1,9 @@
 Get started with Mattermost Playbooks
 =====================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access Mattermost Playbooks by selecting **Playbooks** from the **product menu** |product-list|.
 
 .. |product-list| image:: ../images/products_E82F.svg

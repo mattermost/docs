@@ -1039,13 +1039,13 @@ redirects = {
 "help/getting-started/organizing-your-sidebar.html": 
 	"https://docs.mattermost.com/channels/customize-your-channel-sidebar.html",
 "help/messaging/pinning-messages.html": 
-        "https://docs.mattermost.com/ channels/save-pin-messages.html",
+        "https://docs.mattermost.com/channels/save-pin-messages.html",
 "help/getting-started/signing-in.html": 
 	"https://docs.mattermost.com/welcome/sign-in.html",
 "help/getting-started/searching.html": 
-	"https://docs.mattermost.com/ channels/search-for-messages.html",
+	"https://docs.mattermost.com/channels/search-for-messages.html",
 "help/messaging/sending-messages.html": 
-	"https://docs.mattermost.com/ channels/send-messages.html",
+	"https://docs.mattermost.com/channels/send-messages.html",
 "help/getting-started/setting-your-status-availability.html":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html",
 "help/getting-started/switch-between-teams.html": 
@@ -1713,7 +1713,7 @@ redirects = {
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v7-0":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v7-0",
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-7":
-        "upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-7",
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-7",
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-0":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-0",
 "upgrade/upgrading-mattermost-server.html#v6-0-database-schema-migrations":
@@ -1936,3 +1936,9 @@ linkcheck_ignore = [
 linkcheck_timeout = 5
 linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
+
+# Variables 
+# rst_epilog = """
+# .. |mm_badge_version| replace:: 7.2
+# .. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/
+# """
