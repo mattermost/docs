@@ -5,8 +5,6 @@
 
   <div class="mm-badge">
 
-Version |mm_badge_version|_
-
 |plans-img| Available on `all plans <https://mattermost.com/pricing/>`__
 
 |deployment-img| `Cloud <https://customers.mattermost.com/cloud/signup/>`__ and `self-hosted <https://mattermost.com/deploy/>`__ deployments

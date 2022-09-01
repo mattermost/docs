@@ -4,7 +4,15 @@ Forward messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-To forward messages in Mattermost, select the **More** |more-icon| icon next to a message, then select **Forward**. Specify where you want to forward the message, and include an optional comment. Forwarding messages generates a preview of the message.
+To forward messages in Mattermost, select the **More** |more-icon| icon next to a message, then select **Forward**. 
+
+.. image:: ../images/message-more.png
+  :alt: When you hover over messages, you can access more message options from the More icon.
+
+.. image:: ../images/forward-message.png
+  :alt: You can forward messages to others using the More option.
+
+Specify where you want to forward the message, and include an optional comment. Forwarding messages generates a preview of the message.
 
 .. image:: ../images/permalink-previews.png
    :alt: Mattermost generates previews of links shared in Channels.
