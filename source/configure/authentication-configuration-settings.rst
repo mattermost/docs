@@ -1,6 +1,9 @@
 Authentication configuration settings
 =====================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication**:
 
 - `Signup <#signup>`__
@@ -14,14 +17,12 @@ Access the following configuration settings in the System Console by going to **
 - `Guest Access <#guest-access>`__
 
 Signup
-~~~~~~~
+------
 
 Access the following configuration settings in the System Console by going to **Authentication > Signup**.
 
-Enable Account Creation
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable account creation
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
 
@@ -32,9 +33,7 @@ Enable Account Creation
 +---------------------------------------------------------------------------------------------------------------+
 
 Restrict account creation to specified email domains
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
 
@@ -44,10 +43,8 @@ This setting only affects email login. For domain restrictions to be effective, 
 | This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
 +--------------------------------------------------------------------------------------------------+
 
-Enable Open Server
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable open server
+~~~~~~~~~~~~~~~~~~
 
 **True**: Users can sign up to the server from the root page without an invite.
 
@@ -57,10 +54,8 @@ Enable Open Server
 | This feature's ``config.json`` setting is ``"EnableOpenServer": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-Enable Email Invitations
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable email invitations
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users can invite others to the Mattermost system by email.
 
@@ -71,21 +66,17 @@ Enable Email Invitations
 +--------------------------------------------------------------------------------------------------------------------+
 
 Invalidate pending email invites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This button invalidates active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.
 
 Email
-~~~~~
+------
 
 Access the following configuration settings in the System Console by going to **Authentication > Email**.
 
 Enable account creation with email
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Allow team creation and account signup using email and password.
 
@@ -96,9 +87,7 @@ Enable account creation with email
 +------------------------------------------------------------------------------------------------------------------+
 
 Require Email Verification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Require email verification after account creation prior to allowing login.
 
@@ -109,9 +98,7 @@ Require Email Verification
 +----------------------------------------------------------------------------------------------------------------------+
 
 Enable sign-in with email
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Mattermost allows account creation using email and password.
 
@@ -122,9 +109,7 @@ Enable sign-in with email
 +------------------------------------------------------------------------------------------------------------------+
 
 Enable sign-in with username
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Mattermost allows users with email login to log in using their username and password. This setting does not affect AD/LDAP login.
 
@@ -135,14 +120,12 @@ Enable sign-in with username
 +--------------------------------------------------------------------------------------------------------------------+
 
 Password
-~~~~~~~~~
+--------
 
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
 
-Minimum Password Length
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Minimum password length
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -152,10 +135,8 @@ Minimum number of characters required for a valid password. Must be a whole numb
 | This feature's ``config.json`` setting is ``"MinimumLength": 8`` with numerical input.                   |
 +----------------------------------------------------------------------------------------------------------+
 
-Password Requirements
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Password requirements
+~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -176,10 +157,8 @@ This feature's ``config.json`` settings are, respectively:
     * - ``"Uppercase": false`` with options ``true`` and ``false``.
     * - ``"Symbol": false`` with options ``true`` and ``false``.
 
-Maximum Login Attempts
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Maximum login attempts
+~~~~~~~~~~~~~~~~~~~~~~
 
 Failed login attempts allowed before a user is locked out and required to reset their password via email.
 
@@ -188,18 +167,16 @@ Failed login attempts allowed before a user is locked out and required to reset 
 +------------------------------------------------------------------------------------------------+
 
 MFA
-~~~~
+----
 
-Configure security settings for multi-factor authentication in the System Console by going to **Authentication > MFA**.
+Configure security settings for multi-factor authentication (MFA) in the System Console by going to **Authentication > MFA**.
 
 The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
 
 If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
 
-Enable Multi-factor Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable multi-factor authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to log in to the Mattermost server. Specifically, they'll be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
 
@@ -209,10 +186,11 @@ Enable Multi-factor Authentication
 | This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------------------+
 
-Enforce Multi-factor Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enforce multi-factor authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -225,14 +203,15 @@ Enforce Multi-factor Authentication
 +------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP
-~~~~~~~~
+-------
 
 Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**.
 
 Enable sign-in with AD/LDAP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -244,10 +223,11 @@ Enable sign-in with AD/LDAP
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
-Enable Synchronization with AD/LDAP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable synchronization with AD/LDAP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 **True**: Mattermost periodically synchronizes users from AD/LDAP.
 
@@ -257,10 +237,11 @@ Enable Synchronization with AD/LDAP
 | This feature's ``config.json`` setting is ``"EnableSync": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------+
 
-Login Field Name
-^^^^^^^^^^^^^^^^
+Login field name
+~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to AD/LDAP credentials in your company, so it is recognizable to your users. Defaults to **AD/LDAP Username**.
 
@@ -268,10 +249,11 @@ The placeholder text that appears in the login field on the login page. Typicall
 | This feature's ``config.json`` setting is ``"LoginFieldName": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-AD/LDAP Server
-^^^^^^^^^^^^^^^
+AD/LDAP server
+~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The domain or IP address of the AD/LDAP server.
 
@@ -279,10 +261,11 @@ The domain or IP address of the AD/LDAP server.
 | This feature's ``config.json`` setting is ``"LdapServer": ""`` with string input. |
 +-----------------------------------------------------------------------------------+
 
-AD/LDAP Port
-^^^^^^^^^^^^^
+AD/LDAP port
+~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The port Mattermost will use to connect to the AD/LDAP server. Defaults to ``389``.
 
@@ -290,10 +273,11 @@ The port Mattermost will use to connect to the AD/LDAP server. Defaults to ``389
 | This feature's ``config.json`` setting is ``"LdapPort": 389`` with numerical input. |
 +-------------------------------------------------------------------------------------+
 
-Connection Security
-^^^^^^^^^^^^^^^^^^^^^
+Connection security
+~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The type of connection security Mattermost uses to connect to AD/LDAP.
 
@@ -309,10 +293,11 @@ If the "No encryption" option is selected it is highly recommended that the AD/L
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``"TLS"``, and ``"STARTTLS"``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-Skip Certificate Verification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Skip certificate verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 **True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
@@ -322,10 +307,11 @@ Skip Certificate Verification
 | This feature's ``config.json`` setting is ``"SkipCertificateVerification": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-Private Key
-^^^^^^^^^^^^
+Private key
+~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 (Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
@@ -333,10 +319,11 @@ Private Key
 | This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-Public Certificate
-^^^^^^^^^^^^^^^^^^
+Public certificate
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 (Optional) The public TLS certificate file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
@@ -344,10 +331,11 @@ Public Certificate
 | This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with with string input. |
 +---------------------------------------------------------------------------------------------------+
 
-Bind Username
-^^^^^^^^^^^^^
+Bind username
+~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost. Its permissions should be limited to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format. This field is required, and anonymous bind is not currently supported.
 
@@ -355,10 +343,11 @@ The username used to perform the AD/LDAP search. This should be an account creat
 | This feature's ``config.json`` setting is ``"BindUsername": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-Bind Password
-^^^^^^^^^^^^^^
+Bind password
+~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 Password of the user given in **Bind Username**. Anonymous bind is not currently supported.
 
@@ -367,9 +356,10 @@ Password of the user given in **Bind Username**. Anonymous bind is not currently
 +-------------------------------------------------------------------------------------+
 
 Base DN
-^^^^^^^^
+~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The **Base Distinguished Name** of the location where Mattermost should start its search for users in the AD/LDAP tree.
 
@@ -377,10 +367,11 @@ The **Base Distinguished Name** of the location where Mattermost should start it
 | This feature's ``config.json`` setting is ``"BaseDN": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
-User Filter
-^^^^^^^^^^^
+User filter
+~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 (Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the users selected by the query will be able to access Mattermost.
 
@@ -397,10 +388,11 @@ This filter uses the permissions of the **Bind Username** account to execute the
 | This feature's ``config.json`` setting is ``"UserFilter": ""`` with string input. |
 +-----------------------------------------------------------------------------------+
 
-Group Filter
-^^^^^^^^^^^^^
+Group filter
+~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -415,17 +407,18 @@ This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(ob
 | This feature's ``config.json`` setting is ``"GroupFilter": ""`` with string input. |
 +------------------------------------------------------------------------------------+
 
-Enable Admin Filter
-^^^^^^^^^^^^^^^^^^^
+Enable admin filter
+~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 **True**: Enables System Admins to configure an AD/LDAP filter.
 
 **False**: Disables the ability for System Admins to configure an AD/LDAP filter.
 
-Admin Filter
-^^^^^^^^^^^^^
+Admin filter
+~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -439,10 +432,11 @@ This filter default is ``false`` and must be set to ``true`` in order for the Ad
 | This feature's ``config.json`` setting is ``"EnableAdminFilter": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Guest Filter
-^^^^^^^^^^^^
+Guest filter
+~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -454,10 +448,11 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest
 | This feature's ``config.json`` setting is ``"GuestFilter": ""`` with string input. |
 +------------------------------------------------------------------------------------+
 
-ID Attribute
-^^^^^^^^^^^^^
+ID attribute
+~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
@@ -471,8 +466,8 @@ If you need to change this field after users have already logged in, use the `ma
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------+
 
-Login ID Attribute
-^^^^^^^^^^^^^^^^^^^^
+Login ID attribute
+~~~~~~~~~~~~~~~~~~
 
 |enterprise| |professional| |cloud| |self-hosted|
 
@@ -484,10 +479,11 @@ If your team typically uses domain\username to log in to other services with AD/
 | This feature's ``config.json`` setting is ``"LoginIdAttribute": ""`` with string input. |
 +-----------------------------------------------------------------------------------------+
 
-Username Attribute
-^^^^^^^^^^^^^^^^^^^
+Username attribute
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the Login ID Attribute.
 
@@ -499,10 +495,11 @@ The **Username Attribute** may be set to the same value used to log in to the sy
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
-Email Attribute
-^^^^^^^^^^^^^^^^^
+Email attribute
+~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to populate the email address field in Mattermost.
 
@@ -512,10 +509,11 @@ Email notifications will be sent to this email address, and this email address m
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input.    |
 +------------------------------------------------------------------------------------------+
 
-First Name Attribute
-^^^^^^^^^^^^^^^^^^^^^
+First name attribute
+~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -523,10 +521,11 @@ First Name Attribute
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.    |
 +----------------------------------------------------------------------------------------------+
 
-Last Name Attribute
-^^^^^^^^^^^^^^^^^^^^
+Last name attribute
+~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -534,10 +533,11 @@ Last Name Attribute
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.      |
 +-----------------------------------------------------------------------------------------------+
 
-Nickname Attribute
-^^^^^^^^^^^^^^^^^^^
+Nickname attribute
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -545,10 +545,11 @@ Nickname Attribute
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.   |
 +--------------------------------------------------------------------------------------------+
 
-Position Attribute
-^^^^^^^^^^^^^^^^^^
+Position attribute
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -556,10 +557,11 @@ Position Attribute
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
-Profile Picture Attribute
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Profile picture attribute
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
 
@@ -569,10 +571,11 @@ The Mattermost server will replace the user’s profile image upon login (not at
 | This feature's ``config.json`` setting is ``"PictureAttribute": ""`` with string input. |
 +-----------------------------------------------------------------------------------------+
 
-Group Display Name Attribute
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Group display name attribute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -585,10 +588,11 @@ Group Display Name Attribute
 | This feature's ``config.json`` setting is ``"GroupDisplayNameAttribute": ""`` with string input. |
 +--------------------------------------------------------------------------------------------------+
 
-Group Id Attribute
-^^^^^^^^^^^^^^^^^^^^
+Group ID attribute
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -601,10 +605,11 @@ Group Id Attribute
 | This feature's ``config.json`` setting is ``"GroupIdAttribute": ""`` with string input. |
 +-----------------------------------------------------------------------------------------+
 
-Synchronization Interval (minutes)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Synchronization interval (minutes)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. 
 
@@ -619,10 +624,11 @@ When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and
 .. note::
   LDAP syncs cause a large number of database read queries. Ensure that you monitor database load during a sync to determine how often these syncs should happen in your environment in order to minimize performance degradation.
 
-Maximum Page Size
-^^^^^^^^^^^^^^^^^^
+Maximum page size
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once.
 
@@ -633,10 +639,11 @@ The maximum number of users the Mattermost server will request from the AD/LDAP 
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------+
 
-Query Timeout (seconds)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Query timeout (seconds)
+~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The timeout value for queries to the AD/LDAP server. Increase this value if you are getting timeout errors caused by a slow AD/LDAP server.
 
@@ -644,17 +651,19 @@ The timeout value for queries to the AD/LDAP server. Increase this value if you 
 | This feature's ``config.json`` setting is ``"QueryTimeout": 60`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
-AD/LDAP Test
-^^^^^^^^^^^^^
+AD/LDAP test
+~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 This button can be used to test the connection to the AD/LDAP server. If the test is successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
 
-AD/LDAP Synchronize Now
-^^^^^^^^^^^^^^^^^^^^^^^^^
+AD/LDAP synchronize now
+~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.
 
@@ -668,17 +677,18 @@ You can monitor the status of the synchronization job in the table below this bu
 .. _saml-enterprise:
 
 SAML
-~~~~~
+----
 
 Access the following configuration settings in the System Console by going to **Authentication > SAML 2.0**.
 
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
 
-Enable Login With SAML
-^^^^^^^^^^^^^^^^^^^^^^
+Enable login with SAML
+~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -690,10 +700,11 @@ Enable Login With SAML
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
-Enable Synchronizing SAML Accounts With AD/LDAP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable synchronizing SAML accounts with AD/LDAP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -705,10 +716,11 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 | This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------+
 
-Ignore Guest Users When Synchronizing with AD/LDAP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ignore guest users when synchronizing with AD/LDAP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -722,10 +734,11 @@ Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``t
 | This feature's ``config.json`` setting is ``"IgnoreGuestsLdapSync": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
-Override SAML Bind Data with AD/LDAP Information
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Override SAML bind data with AD/LDAP information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -740,10 +753,11 @@ Override SAML Bind Data with AD/LDAP Information
 | This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-Identity Provider Metadata URL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Identity provider metadata URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -754,9 +768,10 @@ The URL where Mattermost sends a request to obtain setup metadata from the provi
 +---------------------------------------------------------------------------------------+
 
 SAML SSO URL
-^^^^^^^^^^^^^
+~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -766,10 +781,11 @@ The URL where Mattermost sends a SAML request to start login sequence.
 | This feature's ``config.json`` setting is ``"IdpURL": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
-Identity Provider Issuer URL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Identity provider issuer URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -779,10 +795,11 @@ The issuer URL for the Identity Provider you use for SAML requests.
 | This feature's ``config.json`` setting is ``"IdpDescriptorUrl": ""`` with string input. |
 +-----------------------------------------------------------------------------------------+
 
-Identity Provider Public Certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Identity provider public certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -792,10 +809,11 @@ The public authentication certificate issued by your Identity Provider.
 | This feature's ``config.json`` setting is ``"IdpCertificateFile": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Verify Signature
-^^^^^^^^^^^^^^^^^
+Verify signature
+~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -807,10 +825,11 @@ Verify Signature
 | This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------+
 
-Service Provider Login URL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Service provider login URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -820,10 +839,11 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 | This feature's ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input. |
 +----------------------------------------------------------------------------------------------------+
 
-Service Provider Identifier
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Service provider identifier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -833,10 +853,11 @@ The unique identifier for the Service Provider, usually the same as Service Prov
 | This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input. |
 +--------------------------------------------------------------------------------------------------+
 
-Enable Encryption
-^^^^^^^^^^^^^^^^^^
+Enable encryption
+~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -848,10 +869,11 @@ Enable Encryption
 | This feature's ``config.json`` setting is ``"Encrypt": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
-Service Provider Private Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Service provider private key
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -861,10 +883,11 @@ The private key used to decrypt SAML Assertions from the Identity Provider.
 | This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-Service Provider Public Certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Service provider public certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -874,10 +897,11 @@ The certificate file used to generate the signature on a SAML request to the Ide
 | This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input. |
 +----------------------------------------------------------------------------------------------+
 
-Sign Request
-^^^^^^^^^^^^^
+Sign request
+~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -887,10 +911,11 @@ When ``true``, Mattermost signs the SAML request using your Service Provider Pri
 | This feature's ``config.json`` setting is ``"SignRequest": ""`` with string input. |
 +------------------------------------------------------------------------------------+
 
-Signature Algorithm
-^^^^^^^^^^^^^^^^^^^^
+Signature algorithm
+~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -900,10 +925,11 @@ The signature algorithm used to sign the request. Supported options are `RSAwith
 | This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Canonical Algorithm
-^^^^^^^^^^^^^^^^^^^^
+Canonical algorithm
+~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -913,10 +939,11 @@ The canonicalization algorithm. Supported options are ``Canonical1.0`` for `Excl
 | This feature's ``config.json`` setting is ``"CanonicalAlgorithm": "Canonical1.0"`` with string input. |
 +-------------------------------------------------------------------------------------------------------+
 
-Email Attribute
-^^^^^^^^^^^^^^^^^
+Email attribute
+~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -928,10 +955,11 @@ Email notifications will be sent to this email address, and this email address m
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-Username Attribute
-^^^^^^^^^^^^^^^^^^^
+Username attribute
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -941,10 +969,11 @@ The attribute in the SAML Assertion that will be used to populate the username f
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
-Id Attribute
-^^^^^^^^^^^^^^^
+Id attribute
+~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -954,10 +983,11 @@ Id Attribute
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------+
 
-Guest Attribute
-^^^^^^^^^^^^^^^^^
+Guest attribute
+~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -969,10 +999,11 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest
 | This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-Enable Admin Attribute
-^^^^^^^^^^^^^^^^^^^^^^
+Enable admin attribute
+~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -980,10 +1011,11 @@ Enable Admin Attribute
 
 **False**: Disables the ability for System Admins to configure the SAML Assertion.
 
-Admin Attribute
-^^^^^^^^^^^^^^^^^
+Admin attribute
+~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -995,10 +1027,11 @@ This attribute's default is ``false`` and must be set to ``true`` in order for t
 | This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
-First Name Attribute
-^^^^^^^^^^^^^^^^^^^^^^
+First name attribute
+~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1008,10 +1041,11 @@ First Name Attribute
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Last Name Attribute
-^^^^^^^^^^^^^^^^^^^^
+Last name attribute
+~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1021,10 +1055,11 @@ Last Name Attribute
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
-Nickname Attribute
-^^^^^^^^^^^^^^^^^^^
+Nickname attribute
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1034,10 +1069,11 @@ Nickname Attribute
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
-Position Attribute
-^^^^^^^^^^^^^^^^^^^
+Position attribute
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1047,10 +1083,11 @@ Position Attribute
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
-Preferred Language Attribute
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Preferred language attribute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1060,10 +1097,11 @@ Preferred Language Attribute
 | This feature's ``config.json`` setting is ``"LocaleAttribute": ""`` with string input. |
 +----------------------------------------------------------------------------------------+
 
-Login Button Text
-^^^^^^^^^^^^^^^^^^^
+Login button text
+~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1074,7 +1112,7 @@ Login Button Text
 +----------------------------------------------------------------------------------------+
 
 OAuth 2.0
-~~~~~~~~~
+---------
 
 Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**.
 
@@ -1085,9 +1123,10 @@ Access the following configuration settings in the System Console by going to **
 Settings to configure OAuth login for account creation and login.
 
 Select OAuth 2.0 service provider
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1101,12 +1140,10 @@ Choose whether OAuth can be used for account creation and login. Options include
 This feature's setting does not appear in ``config.json``.
 
 GitLab
-''''''
+^^^^^^
 
 Enable authentication with GitLab
-.................................
-
-|all-plans| |cloud| |self-hosted|
+''''''''''''''''''''''''''''''''''
 
 **True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
 
@@ -1120,9 +1157,7 @@ Enable authentication with GitLab
 +----------------------------------------------------------------------------------------------------+
 
 Application ID
-..............
-
-|all-plans| |cloud| |self-hosted|
+''''''''''''''
 
 Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
@@ -1130,10 +1165,8 @@ Obtain this value by logging into your GitLab account. Go to **Profile Settings 
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
 +---------------------------------------------------------------------------+
 
-Application Secret Key
-......................
-
-|all-plans| |cloud| |self-hosted|
+Application secret key
+''''''''''''''''''''''
 
 Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
@@ -1141,17 +1174,13 @@ Obtain this value by logging into your GitLab account. Go to **Profile Settings 
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
-GitLab Site URL
-................
-
-|all-plans| |cloud| |self-hosted|
+GitLab site URL
+''''''''''''''''
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
-User API Endpoint
-.................
-
-|all-plans| |cloud| |self-hosted|
+User API endpoint
+''''''''''''''''''
 
 Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
 
@@ -1159,10 +1188,8 @@ Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input. |
 +----------------------------------------------------------------------------------------+
 
-Auth Endpoint
-..............
-
-|all-plans| |cloud| |self-hosted|
+Auth endpoint
+'''''''''''''
 
 Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``). Use HTTP or HTTPS depending on how your server is configured.
 
@@ -1170,10 +1197,8 @@ Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.
 | This feature's ``config.json`` setting is ``"AuthEndpoint": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-Token Endpoint
-..............
-
-|all-plans| |cloud| |self-hosted|
+Token endpoint
+''''''''''''''
 
 Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
 
@@ -1182,7 +1207,7 @@ Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:
 +--------------------------------------------------------------------------------------+
 
 Google
-''''''
+^^^^^^
 
 Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
 
@@ -1195,9 +1220,10 @@ Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 
 +----------------------------------------------------------------------------------------------------+
 
 Client ID
-.........
+'''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1207,10 +1233,11 @@ Obtain this value by registering Mattermost as an application in your Google acc
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
 +---------------------------------------------------------------------------+
 
-Client Secret
-.............
+Client secret
+'''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1220,10 +1247,11 @@ Obtain this value by registering Mattermost as an application in your Google acc
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
-User API Endpoint
-..................
+User API endpoint
+''''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1233,10 +1261,11 @@ We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=n
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Auth Endpoint
-..............
+Auth endpoint
+'''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1246,10 +1275,11 @@ We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Aut
 | This feature's ``config.json`` setting is ``"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
-Token Endpoint
-..............
+Token endpoint
+'''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1260,7 +1290,7 @@ We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the 
 +--------------------------------------------------------------------------------------------------------------------------------+
 
 Office 365
-'''''''''''
+^^^^^^^^^^
 
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
@@ -1276,9 +1306,10 @@ Enable authentication with Office 365 by selecting **Office 365** from **System 
 +----------------------------------------------------------------------------------------------------+
 
 Application ID
-..............
+''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1288,10 +1319,11 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
 +---------------------------------------------------------------------------+
 
-Application Secret Password
-...........................
+Application secret password
+'''''''''''''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1302,9 +1334,10 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 +-------------------------------------------------------------------------------+
 
 Directory (tenant) ID
-.....................
+''''''''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1314,10 +1347,11 @@ This value is the ID of the application's AAD directory.
 | This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input. |
 +------------------------------------------------------------------------------------+
 
-User API Endpoint
-.................
+User API endpoint
+'''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1327,10 +1361,11 @@ We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpo
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-Auth Endpoint
-.............
+Auth endpoint
+'''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1340,10 +1375,11 @@ We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth 
 | This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input.                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Token Endpoint
-..............
+Token endpoint
+'''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1354,14 +1390,15 @@ We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
 OpenID Connect
-~~~~~~~~~~~~~~
+---------------
 
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
 
 Select OpenID Connect service provider
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1375,22 +1412,18 @@ Choose whether OpenID Connect can be used for account creation and login. Option
 
 This feature's setting does not appear in ``config.json``.
 
-GitLab Settings
+GitLab settings
+^^^^^^^^^^^^^^^
+
+GitLab site URL
 '''''''''''''''
-
-GitLab Site URL
-................
-
-|all-plans| |cloud| |self-hosted|
 
 *Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Starter.*
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
-Discovery Endpoint
-..................
-
-|all-plans| |cloud| |self-hosted|
+Discovery endpoint
+''''''''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
 *Not available in Cloud Starter*
@@ -1398,19 +1431,15 @@ Discovery Endpoint
 Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
 
 Client ID
-.........
-
-|all-plans| |cloud| |self-hosted|
+'''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
 *Not available in Cloud Starter*
 
 Obtain this value by registering Mattermost as an application in your service provider account.
 
-Client Secret
-..............
-
-|all-plans| |cloud| |self-hosted|
+Client secret
+'''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
 *Not available in Cloud Starter*
@@ -1418,7 +1447,7 @@ Client Secret
 Obtain this value by registering Mattermost as an application in your Google account.
 
 Google Settings
-'''''''''''''''
+^^^^^^^^^^^^^^^
 
 Enable authentication with Google by selecting ``Google Apps`` from **System Console > Authentication > OpenID Connect > Select service provider**.
 
@@ -1430,10 +1459,11 @@ Enable authentication with Google by selecting ``Google Apps`` from **System Con
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
-Discovery Endpoint
-...................
+Discovery endpoint
+'''''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1444,9 +1474,10 @@ This value is prepopulated with ``https://accounts.google.com/.well-known/openid
 +------------------------------------------------------------------------------------------+
 
 Client ID
-..........
+'''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1456,10 +1487,11 @@ Obtain this value by registering Mattermost as an application in your Google acc
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
 +---------------------------------------------------------------------------+
 
-Client Secret
-.............
+Client secret
+'''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1470,7 +1502,7 @@ Obtain this value by registering Mattermost as an application in your Google acc
 +-------------------------------------------------------------------------------+
 
 Office 365 Settings
-'''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^
 
 .. note::
    In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
@@ -1486,43 +1518,47 @@ Enable authentication with Office 365 by selecting **Office 365** from **System 
 +----------------------------------------------------------------------------------------------------+
 
 Directory (tenant) ID
-.....................
+'''''''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
 This value is the ID of the application's AAD directory.
 
-Discovery Endpoint
-..................
+Discovery endpoint
+''''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
 This value is prepopulated with https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration.
 
 Client ID
-..........
+''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-Obtain this value by registering Mattermost as an application in your Google account.
-
-Client Secret
-..............
-
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
-OpenID Connect (Other) 
-'''''''''''''''''''''''
+Client secret
+'''''''''''''
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
+
+*Available in legacy Enterprise Edition E20*
+
+Obtain this value by registering Mattermost as an application in your Google account.
+
+OpenID Connect (other) 
+^^^^^^^^^^^^^^^^^^^^^^
 
 Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
 
@@ -1534,10 +1570,11 @@ Enable authentication with a service provider by selecting ``OpenID Connect (Oth
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
-Button Name
-............
+Button name
+'''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1547,8 +1584,8 @@ Specify the text that displays on the OpenID login button.
 | This feature's ``config.json`` setting is ``"ButtonText": ""`` with string input. |
 +-----------------------------------------------------------------------------------+
 
-Button Color
-.............
+Button color
+''''''''''''
 
 Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
 
@@ -1556,10 +1593,11 @@ Specify the color of the OpenID login button for white labeling purposes. Use a 
 | This feature's ``config.json`` setting is ``"ButtonColor": ""`` with string input. |
 +------------------------------------------------------------------------------------+
 
-Discovery Endpoint
-..................
+Discovery endpoint
+''''''''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1570,9 +1608,10 @@ Obtain this value by registering Mattermost as an application in your service pr
 +------------------------------------------------------------------------------------------+
 
 Client ID
-..........
+'''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1582,10 +1621,11 @@ Obtain this value by registering Mattermost as an application in your service pr
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
 +---------------------------------------------------------------------------+
 
-Client Secret
-..............
+Client secret
+'''''''''''''
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1595,15 +1635,16 @@ Obtain this value by registering Mattermost as an application in your service pr
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
-Guest Access
-~~~~~~~~~~~~
+Guest access
+------------
 
 Access the following configuration settings in the System Console by going to **Authentication > Guest Access**.
 
-Enable Guest Access
-^^^^^^^^^^^^^^^^^^^
+Enable guest access
+~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -1615,10 +1656,11 @@ Enable Guest Access
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
-Whitelisted Guest Domains
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Whitelisted guest domains
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -1628,10 +1670,11 @@ When populated, guest accounts can only be created by a verified email from this
 | This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
 +--------------------------------------------------------------------------------------------------+
 
-Enforce Multi-factor Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enforce multi-factor authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 

@@ -1,6 +1,9 @@
 Site configuration settings
 ===========================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration**:
 
 - `Customization <#customization>`__
@@ -15,14 +18,12 @@ Access the following configuration settings in the System Console by going to **
 - `Notices <#notices>`__
 
 Customization
-~~~~~~~~~~~~~
+-------------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Customization**.
 
-Site Name
-^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Site name
+^^^^^^^^^^
 
 Name of service shown in login screens and UI. Maximum 30 characters.
 
@@ -30,10 +31,8 @@ Name of service shown in login screens and UI. Maximum 30 characters.
 | This feature's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Site Description
-^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Site description
+~~~~~~~~~~~~~~~~
 
 Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
 
@@ -41,10 +40,8 @@ Description of service shown in login screens and UI. When not specified, "All t
 | This feature's ``config.json`` setting is ``"CustomDescriptionText": ""`` with string input. |
 +----------------------------------------------------------------------------------------------+
 
-Enable Custom Branding
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable custom branding
+~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -56,10 +53,8 @@ Enable Custom Branding
 | This feature's ``config.json`` setting is ``"EnableCustomBrand": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Custom Brand Image
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Custom brand image
+~~~~~~~~~~~~~~~~~~~
 
 Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
 
@@ -67,10 +62,8 @@ Custom JPG image is displayed on left side of server login page. Recommended max
 | This features has no ``config.json`` setting and must be set in the System Console user interface. |
 +----------------------------------------------------------------------------------------------------+
 
-Custom Brand Text
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Custom brand text
+~~~~~~~~~~~~~~~~~
 
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as using in Mattermost messages.
 
@@ -78,10 +71,8 @@ Custom text will be shown below custom brand image on left side of server login 
 | This feature's ``config.json`` setting is ``"CustomBrandText": ""`` with string input. |
 +----------------------------------------------------------------------------------------+
 
-Enable Ask Community Link
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable Ask Community link
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: **Ask the community** link is visible in the Mattermost channel header, under the **Help** menu. When selected, users are redirected to https://mattermost.com/pl/default-ask-mattermost-community/, where they can join the Mattermost Community to ask questions and help others troubleshoot issues. This option is not available on the mobile apps.
 
@@ -92,9 +83,7 @@ Enable Ask Community Link
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 Help link
-^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~
 
 Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation are hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
 
@@ -103,9 +92,10 @@ Configurable link to a Help page your organization may provide to end users. By 
 +---------------------------------------------------------------------------------------------------------------------------+
 
 Terms of Use link
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Configurable link to Terms of Use your organization may provide to end users on the footer of Mattermost sign-up and login pages. By default, links to a `Terms of Use <https://mattermost.com/terms-of-use/>`__ page hosted on ``mattermost.com``. If changing the link to a different Terms of Use, make sure to include the "Mattermost Acceptable Use Policy" notice to end users that must also be shown to users from the "Terms of Use" link.
 
@@ -116,9 +106,10 @@ From Mattermost v5.17, this setting doesn't change the terms of use link display
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on mattermost.com.
 
@@ -128,10 +119,11 @@ In version 5.17 and later, this setting does not change the privacy policy link 
 | This feature's ``config.json`` setting is ``"PrivacyPolicyLink": "https://mattermost.com/privacy-policy/"`` with string input.               |
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 
-About Link
-^^^^^^^^^^^^
+About link
+~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on mattermost.com.
 
@@ -140,9 +132,10 @@ Configurable link to an About page describing your organization may provide to e
 +-----------------------------------------------------------------------------------------------------------------------------+
 
 Report a Problem link
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Set the link for the support website.
 
@@ -150,10 +143,11 @@ Set the link for the support website.
 | This feature's ``config.json`` setting is ``"ReportAProblemLink": "https://handbook.mattermost.com/contributors/contributors/ways-to-contribute#report-a-bug"`` with string input.    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Mattermost Apps Download Page Link
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mattermost apps download page link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
@@ -161,10 +155,11 @@ Configurable link to a download page for Mattermost Apps. When a link is present
 | This feature's ``config.json`` setting is ``"AppDownloadLink": "https://mattermost.com/apps/"`` with string input.     |
 +------------------------------------------------------------------------------------------------------------------------+
 
-Android App Download Link
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Android app download link
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
@@ -172,10 +167,11 @@ Configurable link to download the Android app. When a link is present, users who
 | This feature's ``config.json`` setting is ``"AndroidAppDownloadLink": "https://play.google.com/store/apps/details?id=com.mattermost.rn"`` with string input. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-iOS App Download Link
-^^^^^^^^^^^^^^^^^^^^^
+iOS app download link
+~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Configurable link to download the iOS app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
@@ -184,14 +180,12 @@ Configurable link to download the iOS app. When a link is present, users who acc
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Localization
-~~~~~~~~~~~~~
+-------------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Localization**.
 
-Default Server Language
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Default server language
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Default language for system messages and logs.
 
@@ -201,10 +195,8 @@ Changes to this setting require a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Default Client Language
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Default client language
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Default language for newly-created users and pages where the user hasn't logged in.
 
@@ -212,10 +204,8 @@ Default language for newly-created users and pages where the user hasn't logged 
 | This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Available Languages
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Available languages
+~~~~~~~~~~~~~~~~~~~
 
 Sets which languages are available for users in **Settings > Display > Language**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
 
@@ -226,15 +216,13 @@ Sets which languages are available for users in **Settings > Display > Language*
 | This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``.  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Users and Teams
-~~~~~~~~~~~~~~~
+Users and teams
+---------------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Users and Teams**.
 
-Max Users Per Team
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Max users per team
+~~~~~~~~~~~~~~~~~~
 
 Maximum number of users per team, excluding inactive users.
 
@@ -248,10 +236,8 @@ In terms of technical performance, `with appropriate hardware, Mattermost can ea
 | This feature's ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with numerical input. |
 +-------------------------------------------------------------------------------------------+
 
-Max Channels Per Team
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Max channels per team
+~~~~~~~~~~~~~~~~~~~~~
 
 Maximum number of channels per team, including both active and deleted channels.
 
@@ -259,10 +245,8 @@ Maximum number of channels per team, including both active and deleted channels.
 | This feature's ``config.json`` setting is ``"MaxChannelsPerTeam": 2000`` with numerical input.    |
 +---------------------------------------------------------------------------------------------------+
 
-Enable users to open Direct Message channels with
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable users to open direct message channels with
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
 
@@ -274,10 +258,8 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Teammate Name Display
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Teammate name display
+~~~~~~~~~~~~~~~~~~~~~
 
 Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Settings > Display > Teammate Name Display**.
 
@@ -291,19 +273,15 @@ Specifies how names are displayed in the user interface by default. Please note 
 | This feature's ``config.json`` setting is ``"TeammateNameDisplay": "username"`` with options ``"username"``, ``"nickname_full_name"``, and ``"full_name"`` for the above settings, respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Lock Teammate Name Display for all users
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |cloud| |self-hosted|
+Lock teammate name display for all users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Disables users' ability to change settings under **Settings > Display > Teammate Name Display**.
 
 **False**: Users can change how their teammate name displays.
 
-Allow Users to View Archived Channels
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Allow users to view archived channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Allows users to view, share, and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
 
@@ -313,10 +291,8 @@ Allow Users to View Archived Channels
 | This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": true`` with options ``true`` and ``false``.         |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
-Show Email Address
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Show email address
+~~~~~~~~~~~~~~~~~~
 
 **True**: Show email address of all users.
 
@@ -326,10 +302,8 @@ Show Email Address
 | This feature's ``config.json`` setting is ``"ShowEmailAddress": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
-Show Full Name
-^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Show full name
+~~~~~~~~~~~~~~~
 
 **True**: Show full name of all users.
 
@@ -339,10 +313,8 @@ Show Full Name
 | This feature's ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-Enable Custom User Statuses
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable custom user statuses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
 
@@ -353,14 +325,12 @@ Enable Custom User Statuses
 +---------------------------------------------------------------------------------------------------------------------+
 
 Notifications
-~~~~~~~~~~~~~~
+-------------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
 Show @channel, @all, or @here confirmation dialog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
 
 **True**: Users will be prompted to confirm when posting @channel, @all, or @here in channels with over five members.
 
@@ -370,10 +340,8 @@ Show @channel, @all, or @here confirmation dialog
 | This feature's ``config.json`` setting is ``"EnableConfirmNotificationsToChannel": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Email Notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable email notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Enables sending of email notifications.
 
@@ -389,10 +357,8 @@ Email invitations and account deactivation emails are not affected by this setti
 
 .. _email-preview-mode-banner-config:
 
-Enable Preview Mode Banner
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable preview mode banner
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Preview Mode banner is displayed to all users when ``"SendEmailNotifications": false`` so users are aware that email notifications are disabled.
 
@@ -402,10 +368,8 @@ Enable Preview Mode Banner
 | This feature's ``config.json`` setting is ``"EnablePreviewModeBanner": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-Enable Email Batching
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable email batching
+~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Settings > Notifications**.
 
@@ -419,10 +383,8 @@ Enable Email Batching
 | This feature's ``config.json`` setting is ``"EnableEmailBatching": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------+
 
-Email Notification Contents
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |cloud| |self-hosted|
+Email notification contents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -434,10 +396,8 @@ Email Notification Contents
 | This feature's ``config.json`` setting is ``"EmailNotificationContentsType": "full"`` with options ``"full"`` and ``"generic"`` for the above settings, respectively.             |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Support Email Address
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Support email address
+~~~~~~~~~~~~~~~~~~~~~
 
 Set an email address for feedback or support requests. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
@@ -447,10 +407,8 @@ To ensure that users can contact you for assistance, set this value to an email 
 | This feature's ``config.json`` setting is ``"SupportEmail": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-Notification Display Name
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Notification display name
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Name displayed on email account used when sending notification emails from Mattermost system. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
@@ -458,10 +416,8 @@ Name displayed on email account used when sending notification emails from Matte
 | This feature's ``config.json`` setting is ``"FeedbackName": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-Notification From Address
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Notification from address
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Address displayed on email account used when sending notification emails from within Mattermost. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
@@ -471,10 +427,8 @@ So you don't miss messages, please make sure to change this value to an email yo
 | This feature's ``config.json`` setting is ``"FeedbackEmail": ""`` with string input. |
 +--------------------------------------------------------------------------------------+
 
-Notification Reply-To Address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Notification reply-to address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Email address used in the Reply-To header when sending notification emails from Mattermost.
 
@@ -482,10 +436,8 @@ Email address used in the Reply-To header when sending notification emails from 
 | This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-Notification Footer Mailing Address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Notification footer mailing address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
 
@@ -493,10 +445,8 @@ Organization name and mailing address displayed in the footer of email notificat
 | This feature's ``config.json`` setting is ``"FeedbackOrganization": ""`` with string input. |
 +---------------------------------------------------------------------------------------------+
 
-Push Notification Contents
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Push notification contents
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
 
@@ -512,15 +462,16 @@ For customers who choose to wrap the Mattermost mobile application in a secure c
 | This feature's ``config.json`` setting is ``"PushNotificationContents": "full"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively.    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Announcement Banner
-~~~~~~~~~~~~~~~~~~~~
+Announcement banner
+-------------------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Announcement Banner**.
 
-Enable Announcement Banner
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable announcement banner
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-enable the banner after it has been disabled. You can prevent users from dismissing the banner, and you can control the text color and the background color.
 
@@ -532,10 +483,11 @@ Enable an announcement banner across all teams. The banner is displayed at the t
 | This feature's ``config.json`` setting is ``"EnableBanner": false`` with options ``true`` and ``false``.  |
 +-----------------------------------------------------------------------------------------------------------+
 
-Banner Text
-^^^^^^^^^^^
+Banner text
+~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The text of the announcement banner.
 
@@ -543,8 +495,8 @@ The text of the announcement banner.
 | This feature's ``config.json`` setting is ``"BannerText": ""`` with string input.  |
 +------------------------------------------------------------------------------------+
 
-Banner Color
-^^^^^^^^^^^^
+Banner color
+~~~~~~~~~~~~~
 
 The background color of the announcement banner.
 
@@ -552,10 +504,11 @@ The background color of the announcement banner.
 | This feature's ``config.json`` setting is ``"BannerColor": "#f2a93b"`` with string input.   |
 +---------------------------------------------------------------------------------------------+
 
-Banner Text Color
-^^^^^^^^^^^^^^^^^
+Banner text color
+~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 The color of the text in the announcement banner.
 
@@ -563,10 +516,11 @@ The color of the text in the announcement banner.
 | This feature's ``config.json`` setting is ``"BannerTextColor": "#333333"`` with string input.   |
 +-------------------------------------------------------------------------------------------------+
 
-Allow Banner Dismissal
-^^^^^^^^^^^^^^^^^^^^^^
+Allow banner dismissal
+~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 **True**: Users can dismiss the banner until the next time they log in or the banner is updated.
 
@@ -577,14 +531,12 @@ Allow Banner Dismissal
 +-------------------------------------------------------------------------------------------------------------------+
 
 Emoji
-~~~~~~
+------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Emoji**.
 
-Enable Emoji Picker
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable emoji picker
+~~~~~~~~~~~~~~~~~~~
 
 **True**: Enables an emoji picker that allows users to select emojis to add as reactions or use in messages. Enabling the emoji picker with a large number of custom emojis may slow down performance.
 
@@ -594,10 +546,8 @@ Enable Emoji Picker
 | This feature's ``config.json`` setting is ``"EnableEmojiPicker": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-Enable Custom Emoji
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable custom emoji
+~~~~~~~~~~~~~~~~~~~
 
 **True**: Enables a **Custom Emoji** option in the emoji picker, where users can go to add custom emojis.
 
@@ -608,14 +558,15 @@ Enable Custom Emoji
 +--------------------------------------------------------------------------------------------------------------+
 
 Posts
-~~~~~~
+-----
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
-Automatically Follow Threads
+Automatically follow threads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article for details.
 
@@ -631,10 +582,11 @@ This setting must be enabled to support `Collapsed Reply Threads <https://docs.m
 | This feature's ``config.json`` setting is ``"ThreadAutoFollow": true`` with options ``true`` and ``false``.  |
 +--------------------------------------------------------------------------------------------------------------+
 
-Collapsed Reply Threads
+Collapsed reply threads
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
 
@@ -656,10 +608,8 @@ System Admins can set the default availability of Collapsed Reply Threads for th
 | This feature's ``config.json`` setting is ``"CollapsedThreads": always_on`` with options ``disabled``, ``default_off``, ``default_on``, and ``always_on`` |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Link Previews
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable link previews
+~~~~~~~~~~~~~~~~~~~~~
 
 Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.
 
@@ -673,10 +623,8 @@ Link previews are requested by the server, meaning the Mattermost server must be
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Disable Link Previews for Specific Domains
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Disable link previews for specific domains
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”). 
 
@@ -685,9 +633,7 @@ Link previews are disabled for this list of comma-separated domains (e.g. “git
 +---------------------------------------------------------------------------------------------+
 
 Enable message link previews
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Links to messages generate a preview for any users with access to the original message. 
 
@@ -698,9 +644,7 @@ Enable message link previews
 +--------------------------------------------------------------------------------------------------------------------+
 
 Enable SVGs
-^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~
 
 **True**: Enables users to see previews of SVG file attachments and SVG image links.
 
@@ -710,10 +654,8 @@ Enable SVGs
 | This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------+
 
-Enable LaTeX Code Block Rendering
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable LaTeX code block rendering
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Enables rendering of LaTeX code in a ``latex`` code block.
 
@@ -723,10 +665,8 @@ Enable LaTeX Code Block Rendering
 | This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-Enable Inline LaTeX Rendering
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable inline LaTeX rendering
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Enables inline rendering of LaTeX code.
 
@@ -736,10 +676,8 @@ Enable Inline LaTeX Rendering
 | This feature's ``config.json`` setting is ``"EnableInlineLatex": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Custom URL Schemes
-^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Custom URL schemes
+~~~~~~~~~~~~~~~~~~~
 
 A list of URL schemes that are used for autolinking in message text. ``http``, ``https``, ``ftp``, ``tel`` and ``mailto`` always create links.
 
@@ -747,10 +685,11 @@ A list of URL schemes that are used for autolinking in message text. ``http``, `
 | This feature's ``config.json`` setting is ``"CustomUrlSchemes": []`` with string array input consisting of URL schemes, such as ``["git", "smtp"]``. |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Google API Key
-^^^^^^^^^^^^^^^^
+Google API key
+~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Mattermost offers the ability to embed YouTube videos from URLs shared by end users. 
 
@@ -764,15 +703,13 @@ Using a Google API Key allows Mattermost to detect when a video is no longer ava
 | This feature's ``config.json`` setting is ``"GoogleDeveloperKey": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-File Sharing and Downloads
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+File sharing and downloads
+---------------------------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > File Sharing and Downloads**.
 
-Allow File Sharing
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Allow file sharing
+~~~~~~~~~~~~~~~~~~
 
 When ``false``, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 
@@ -780,10 +717,11 @@ When ``false``, disables file sharing on the server. All file and image uploads 
 | This feature's ``config.json`` setting is ``"EnableFileAttachments": true`` with options ``true`` and ``false``.    |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Allow File Uploads on Mobile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Allow file uploads on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -795,10 +733,11 @@ Allow File Uploads on Mobile
 | This feature's ``config.json`` setting is ``"EnableMobileUpload": true`` with options ``true`` and ``false``.       |
 +---------------------------------------------------------------------------------------------------------------------+
 
-Allow File Downloads on Mobile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Allow file downloads on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -811,14 +750,15 @@ Allow File Downloads on Mobile
 +---------------------------------------------------------------------------------------------------------------------+
 
 Public Links
-~~~~~~~~~~~~
+------------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Public Links**.
 
-Enable Public File Links
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable public file links
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 **True**: Allow users to generate public links to files and images for sharing outside the Mattermost system with a public URL.
 
@@ -832,10 +772,11 @@ Enable Public File Links
 | This feature's ``config.json`` setting is ``"EnablePublicLink": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
-Public Link Salt
-^^^^^^^^^^^^^^^^^^
+Public link salt
+~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 32-character salt added to the URL of public links when public links are enabled. Select **Regenerate** in the System Console to create a new salt, which will invalidate all existing public links.
 
@@ -844,14 +785,12 @@ Public Link Salt
 +---------------------------------------------------------------------------------------+
 
 Notices
-~~~~~~~~
+--------
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notices**.
 
-Enable Admin Notices
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable admin notices
+~~~~~~~~~~~~~~~~~~~~~
 
 **True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
 
@@ -861,10 +800,8 @@ Enable Admin Notices
 | This feature's ``config.json`` setting is ``"AdminNoticesEnabled": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------+
 
-Enable End User Notices
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable end user notices
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
 
