@@ -28,7 +28,6 @@ Latest Mattermost Releases:
  - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
  - Favorite runs or playbooks to prioritize them in the **Favorites** category.
  - Participants now have access to every run feature on the new run details page.
- - In Cloud Professional and Enterprise plans, stakeholders can request status updates from runs.
 
 ### Boards
  - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
@@ -37,9 +36,6 @@ Latest Mattermost Releases:
  - Navigate between teams in Boards with the new team switcher.
  - Set board and template permissions in the new **Share** setting.
  - Link boards to channels to automatically grant board permissions to channel members.
- - Added indexes to improve performance.
- - Fixed a bug where the **New** button in Kanban columns didn't always work [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
- - Fixed issues with 'single-user' mode.
  - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 ### Calls
@@ -48,14 +44,12 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Updated "Contact Sales" link to mattermost.com/pl/contact-sales and Update pricing modal to reflect updated design.
  - Added new Insights widgets: Most Active Direct Messages, Least Active Channels, and New Team Members.
+ - Updated the "Contact Sales" link to ``mattermost.com/pl/contact-sales`` and update the pricing modal user interface.
  - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
  - Team unreads are now calculated based on the channel membership and threads only. Team membership is no longer taken into account.
  - For introducing Boards and Playbooks to new users, an “explore other tools in platform” item was added to the end user onboarding checklist.
  - Added the **Save** option to the post menu.
- - Added a banner to communicate delinquency to Cloud Customers.
- - Cloud instances with a file limit (Starter and Professional subscriptions) now display icons notifying that the limit has been hit and that archived files are unavailable until upgrade.
  - Only the most recent message is now marked as unread when marking a thread as unread from the Threads list.
  - Insights filters now persist instead of being reset to default when switching to channels and returning back to the Insights view.
  - Code blocks now have better support for language filetype extensions and are a smaller bundle size.
@@ -63,16 +57,15 @@ Latest Mattermost Releases:
  - Search dropdown options now allow focusing with tab.
 
 #### Administration
- - Added a "View Plan" button in plan card at **System Console > License**.
+ - Added a **View Plan** button in plan card at **System Console > License**.
  - Started tracking the join time of team members and added a new API endpoint to retrieve information about team members who have joined during a given time.
  - Introduced an optional ``shouldRender`` function parameter to ``registerchannelHeaderMenuAction`` plugin function. This allows menu items to conditionally render depending on the current state prior to rendering.
  - Plugins can now hide plugin settings based on the server's hosting environment.
- - For Cloud instances, when messages limit is reached, a notification is shown in a channel if the limit is being hit in that channel.
  - Customers who are on a 30-day free trial are now notified 3 days before the trial ends.
 
 ### Bug Fixes
  - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
- - Fixed an issue where the start trial failed if SiteURL was not set.
+ - Fixed an issue where starting a trial failed if ``SiteURL`` was not set.
  - Fixed an issue in **System Console > Subscription** where the completed Company Information screen read "Provide your company name and address".
  - Fixed an issue where reading a thread on the mobile app caused a negative mention count to display on the web app.
  - Fixed an issue where the user profile image persisted after user account deletion.
@@ -88,8 +81,6 @@ Latest Mattermost Releases:
  - Fixed an issue where clicking "Try free now" opened the top 3 enterprise features instead of the "Your trial has started" modal.
  - Fixed an issue where the Threads view displayed as unread even if there were no unread threads.
  - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
- - Custom Brand Text is now centered and the Site Description configuration now doesn't show a placeholder.
- - Removed a bug where the group permissions had an extra level of nesting in the UI. The permissions checkboxes were also split out into their individual custom group permissions for a greater granularity of control.
 
 #### API Changes
  - Added new API endpoints:
