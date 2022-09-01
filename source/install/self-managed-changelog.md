@@ -111,7 +111,6 @@ Latest Mattermost Releases:
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
- - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
  
 ### Contributors
  - 
