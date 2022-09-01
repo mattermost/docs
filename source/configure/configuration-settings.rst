@@ -1,6 +1,9 @@
 Configuration settings
 ======================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 System Admins for both self-hosted and Cloud Mattermost workspaces can manage Mattermost configuration using the System Console. Mattermost requires write permissions to ``config.json``, otherwise configuration changes made within the System Console will have no effect.
 
 Mattermost configuration settings are organized into the following categories within the System Console:
@@ -22,7 +25,7 @@ In self-hosted Mattermost deployments, configuration settings are maintained in 
 Configuration in database
 --------------------------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 From Mattermost v5.10, self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__ documentation for migration details.
@@ -30,7 +33,7 @@ From Mattermost v5.10, self-hosted system configuration can be stored in the dat
 Environment variables
 ---------------------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 You can use `environment variables <https://docs.mattermost.com/configure/environment-variables.html>`__ to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
@@ -38,7 +41,7 @@ You can use `environment variables <https://docs.mattermost.com/configure/enviro
 Configuration reload
 --------------------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 The “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ command that you must run to apply configuration changes you've made. This improves configuration performance and robustness.
