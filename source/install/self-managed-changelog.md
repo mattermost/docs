@@ -16,7 +16,7 @@ Latest Mattermost Releases:
 **v7.3.0 release day: 2022-09-16**
 
 ### Important Upgrade Notes
- - Boards 7.2 migration note. + Boards no longer works on MariaDB.
+ - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 
