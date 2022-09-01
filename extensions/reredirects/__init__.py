@@ -25,6 +25,8 @@ ENV_COMPUTED_REDIRECTS = "computed-redirects"
 ENV_INTRA_PAGE_FRAGMENT_PAGES = "intra-page-fragment-pages"
 CTX_HAS_FRAGMENT_REDIRECTS = "has_fragment_redirects"
 CTX_FRAGMENT_REDIRECTS = "fragment_redirects"
+CONFIG_HTML_BASEURL = "html_baseurl"
+CONFIG_MM_URL_PATH_PREFIX = "mm_url_path_prefix"
 
 # Sphinx logger
 logger = logging.getLogger(__name__)
@@ -41,6 +43,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     """
     app.add_config_value(OPTION_REDIRECTS, OPTION_REDIRECTS_DEFAULT, "env")
     app.add_config_value(OPTION_TEMPLATE_FILE, OPTION_TEMPLATE_FILE_DEFAULT, "env")
+    app.add_config_value(CONFIG_MM_URL_PATH_PREFIX, "", "env")
     app.connect("builder-inited", builder_inited)
     app.connect("env-purge-doc", env_purge_doc)
     app.connect("env-merge-info", env_merge_info)
@@ -186,34 +189,37 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
 
 def compute_redirects(app: Sphinx, redirects_option: Dict[str, str]) -> Dict[str, Dict[str, str]]:
     redirect_map: Dict[str, Dict[str, str]] = dict()
-    html_baseurl: str = getattr(app.config, "html_baseurl")
+    # read parameters from config
+    html_baseurl: str = getattr(app.config, CONFIG_HTML_BASEURL)
     html_baseurl = html_baseurl.removesuffix("/")
+    mm_url_path_prefix: str = getattr(app.config, CONFIG_MM_URL_PATH_PREFIX)
+    mm_url_path_prefix = mm_url_path_prefix.removesuffix("/")
+    # process each record in the redirects dict
     for source in redirects_option.keys():
+        # split the URL on # so we get the path and page name + the fragment, if any
         toks = source.split("#", 1)
         if len(toks) == 2:
-            pagename = toks[0]
-            fragment = toks[1]
+            pagename = toks[0].removesuffix(".html")  # ensure pagename does not end with ".html"
+            fragment = toks[1].removesuffix(".html")  # if the fragment ends in ".html", remove it
         elif len(toks) == 1:
-            pagename = toks[0]
+            pagename = toks[0].removesuffix(".html")  # ensure pagename does not end with ".html"
             fragment = ""
         else:
             logger.warning("compute_redirects(): invalid redirect: %s" % source)
             continue
-        # ensure pagename does not end with ".html"
-        pagename = pagename.removesuffix(".html")
         # add a new dict to redirect_map if the page has not been seen before
         if pagename not in redirect_map:
             redirect_map[pagename] = dict()
         # if the target page has the same prefix as html_baseurl, remove the prefix so intra-site redirects work
-        target = redirects_option[source]
-        if html_baseurl != "":
-            target = target.removeprefix(html_baseurl)
-        # if there's no fragment then we're redirecting to the "default page"
+        target = redirects_option[source].removeprefix(html_baseurl)
+        # if mm_url_path_prefix is defined and the target path starts with '/', prepend it to the target path.
+        if mm_url_path_prefix != "" and target.startswith("/"):
+            target = mm_url_path_prefix + target
+        # if there's no fragment then we're redirecting to the "default page", which is
+        # the `pagename` without any fragment.
         if fragment == "":
             redirect_map[pagename][DEFAULT_PAGE] = target
             continue
-        # if the fragment ends in ".html", remove it
-        fragment = fragment.removesuffix(".html")
         # redirect the fragment to the desired page
         redirect_map[pagename][fragment] = target
     return redirect_map
