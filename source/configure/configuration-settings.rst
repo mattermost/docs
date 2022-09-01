@@ -313,9 +313,9 @@ Enable users to open Direct Message channels with
 
 |all-plans| |cloud| |self-hosted|
 
-**Any user on the Mattermost server**: Users can open a direct message with any user on the server, and all users are returned when finding channels.
+**Any user on the Mattermost server**: Users can message any user on the server.
 
-**Any member of the team**: Users can open a direct message with users they share at least one team with, and only users on the current team are returned when finding channels. Users who belong to multiple teams receive direct messages regardless of the current team selected.
+**Any member of the team**: Users can message any other users they share at least one team with. Users who belong to multiple teams receive direct messages regardless of the current team selected.
 
 This setting affects permissions on the server.
 
