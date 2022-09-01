@@ -10,20 +10,19 @@ Latest Mattermost Cloud releases:
 - [Release 2022-08-18](#release-2022-08-18)
 - [Release 2022-08-10](#release-2022-08-10)
 - [Release 2022-08-03](#release-2022-08-03)
-- [Release 2022-07-28](#release-2022-07-28)
 
 ## Release 2022-09-08
 
 ### Improvements
 
 #### User Interface (UI)
- - Added a new Insights widget Top Playbooks.
- - For Cloud instances that hit the message history limit, show the limits reached modal to admins that are doing a fresh login.
- - Muted channels with mention are no longer shown under Unreads section of the channel switcher
-*Add destructive leave channel UI changes
+ - Added a new Top Playbooks Insights widget.
+ - Added a red destructive action color to the **Leave Channel** button in the channel header.
+ - The "limits reached" modal is now shown to Admins who are doing a fresh login on Cloud instances that hit the message history limit.
 
 ### Bug Fixes
- - Bug fix: Remove CRT config setting from experimental features (system console)
+ - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
+ - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
 
 ### Known Issues
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
