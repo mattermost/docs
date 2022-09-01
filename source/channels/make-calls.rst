@@ -20,6 +20,29 @@ You can share a call's link to use in a meeting request or share with other team
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
+Frequently asked questions
+--------------------------
+
+Is video supported?
+~~~~~~~~~~~~~~~~~~~
+
+The integration currently supports only voice calling and screen sharing. We are considering video support as well for the upcoming future.
+
+Can I password-protect a call?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. Any member with sufficient permission to access the channel will be able to join the call.
+
+Is there encryption?
+~~~~~~~~~~~~~~~~~~~~
+
+Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through Mattermost which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the Mattermost server have access to unencrypted call data.
+
+Are there any third-party services involved?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in case the ``ICE Host Override`` setting is provided.
+
 Troubleshooting
 ---------------
 
