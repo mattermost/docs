@@ -66,7 +66,6 @@ Latest Mattermost Releases:
 ### Bug Fixes
  - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
  - Fixed an issue where starting a trial failed if ``SiteURL`` was not set.
- - Fixed an issue in **System Console > Subscription** where the completed Company Information screen read "Provide your company name and address".
  - Fixed an issue where reading a thread on the mobile app caused a negative mention count to display on the web app.
  - Fixed an issue where the user profile image persisted after user account deletion.
  - Fixed an issue where exports generated via mmctl without attachments still included the file properties in the post, so they couldn't be imported.
