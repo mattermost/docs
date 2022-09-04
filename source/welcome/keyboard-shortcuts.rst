@@ -11,16 +11,16 @@ Mattermost keyboard shortcuts help you make a more efficient use of your keyboar
   - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.
   - Additional keyboard shortcuts are available for Mattermost Channels. See the `keyboard shortcuts for Mattermost Channels <https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html>`__ and the `team keyboard shortcuts <https://docs.mattermost.com/welcome/team-keyboard-shortcuts.html>`__ documentation for details.
 
-Navigation shortcuts in the Desktop App
+Navigation shortcuts in the desktop app
 ---------------------------------------
 
-The following navigation keyboard shortcuts are supported only in the Mattermost Desktop App.
+The following navigation keyboard shortcuts are supported only in the Mattermost desktop app.
 
 .. tabs::
 
-  .. tab:: Desktop App v5.0 onwards
+  .. tab:: Desktop app v5.0 onwards
 
-    Mattermost Desktop App v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. 
+    Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. 
     
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
     | On Windows & Linux                   | On Mac                        | Description                                                                                     |
@@ -69,7 +69,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 Zoom shortcuts for Web and Desktop App
 ---------------------------------------
 
-The following display keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following display keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +------------------------------+------------------------------+----------------------------------------+
 | On Windows & Linux           | On Mac                       | Description                            |
