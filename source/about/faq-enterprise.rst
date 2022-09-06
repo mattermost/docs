@@ -64,3 +64,18 @@ What happens when the Enterprise Edition subscription expires?
 --------------------------------------------------------------
 
 Sixty days prior to expiry, System Administrators receive notifications that the Enterprise Edition license key will expire on the anniversary of its purchase. After expiry, there is a 10-day grace period to upload a new license key. After the grace period, Enterprise features will be disabled. At any time, Enterprise Edition can be downgraded to the free Team Edition without data loss by switching off any Enterprise features enabled and then removing the license key.
+
+How does the licensing key work?
+--------------------------------
+
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`__.
+
+Do you have a program for official non-profits and charities?
+-------------------------------------------------------------
+
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`__.
+
+Do you have discounted licenses for academic institutions?
+----------------------------------------------------------
+
+See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`__.
