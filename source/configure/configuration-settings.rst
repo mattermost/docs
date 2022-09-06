@@ -308,15 +308,15 @@ Enable users to open Direct Message channels with
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-**Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
+**Any user on the Mattermost server**: Users can message any user on the server.
 
-**Any member of the team**: The Direct Messages **More** menu only has the option to open a Direct Message channel with users on the current team, and pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac only lists users on the current team. If a user belongs to multiple teams, direct messages will still be received regardless of what team they are currently on.
+**Any member of the team**: Users can message any other users they share at least one team with. Users who belong to multiple teams receive direct messages regardless of the current team selected.
 
-This setting only affects the UI, not permissions on the server. For instance, a direct message channel can be created with anyone on the server regardless of this setting.
+This setting affects permissions on the server.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"`` for the above settings, respectively. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``"any"`` and ``"team"``. |
++---------------------------------------------------------------------------------------------------------------------+
 
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
