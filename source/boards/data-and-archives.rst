@@ -1,6 +1,9 @@
 Import your data
 ================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 You can import data from other tools to use with Boards. `Contribute code <https://mattermost.github.io/focalboard/>`_ to expand this.
 
 Import from Asana

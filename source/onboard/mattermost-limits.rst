@@ -1,6 +1,9 @@
 Workspace limits
 ================
 
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
+
 There may be limits applied to your Mattermost Cloud workspace based on the type of subscription plan you have. These limits are applied across all users in your team. We'll let you know when you're halfway from reaching a limit, as well as when you're closer to it. 
 
 When limits have been reached, data is archived. This data is not deleted, and can be accessed when you upgrade to a plan with higher limits. If you choose to downgrade your plan, for example from Mattermost Professional to Mattermost Starter, the limits will be applied to your existing data.
@@ -28,6 +31,10 @@ Mattermost Starter limits
 
 - Maximum 5 saved views per board.
 - Only the 500 most recently updated cards on the server are displayed.
+
+.. note::
+   
+   Mattermost reserves the right to archive or delete messages and establish or change (1) limits as to how many messages can be stored, (2) how long such messages will be stored, and (3) charges for storing such messages. Mattermost further reserves the right to establish or change limits on periods of inactivity that may result in the termination of your messages cloud storage and deletion or archiving of any stored messages.
 
 Mattermost Professional limits
 ------------------------------

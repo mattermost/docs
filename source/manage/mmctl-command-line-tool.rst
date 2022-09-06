@@ -1,27 +1,8 @@
 mmctl command line tool
 =======================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included from Mattermost v6.0, and it replaces the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
@@ -133,8 +114,6 @@ mmctl commands
 Install mmctl
 -------------
 
-|all-plans| |cloud| |self-hosted|
-
 The mmctl tool comes bundled with the Mattermost package from v6.0. For customers that want to setup it independently from the package, or for versions prior to v6.0, there are different methods available to install mmctl.
 
 **Using brew (Linux, macOS)**
@@ -162,8 +141,6 @@ Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ 
 Build mmctl
 ------------
 
-|all-plans| |cloud| |self-hosted|
-
 The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
 ``go`` 1.11 or greater and compile the binary using:
 
@@ -174,7 +151,8 @@ The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to ha
 Local mode
 ----------
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Local mode allows platform administrators with access to the Mattermost server to run mmctl commands against the API without needing to have a user registered. To ensure secure usage of this API, the server exposes a local socket that only a user with access to the server's file system can access. The requests coming from the socket are treated as authorized, so they can reach the handlers without requiring a user session.
 
@@ -195,7 +173,8 @@ In Mattermost versions prior to 5.26, only the commands ``config``, ``plugin``, 
 Running mmctl tests
 -------------------
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 mmctl has two types of tests: unit tests and end to end tests. 
 
@@ -220,8 +199,6 @@ Change your directory to ``mmctl`` and run the end to end test suite with:
 
 mmctl auth
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -260,7 +237,7 @@ Clean the credentials associated with a Mattermost instance.
 
 .. code-block:: sh
 
-   auth clean
+   mmctl auth clean
 
 **Options**
 
@@ -299,7 +276,7 @@ Show the currently stored user credentials.
 
 .. code-block:: sh
 
-   auth current
+   mmctl auth current
 
 **Options**
 
@@ -338,7 +315,7 @@ Delete a named credential.
 
 .. code-block:: sh
 
-   auth delete local-server
+   mmctl auth delete local-server
 
 **Options**
 
@@ -377,7 +354,7 @@ Print a list of registered credentials.
 
 .. code-block:: sh
 
-   auth list
+   mmctl auth list
 
 **Options**
 
@@ -416,10 +393,10 @@ Log in to an instance and store credentials.
 
 .. code-block:: sh
 
-   auth login https://mattermost.example.com
-   auth login https://mattermost.example.com --name local-server --username sysadmin --password-file mysupersecret.txt
-   auth login https://mattermost.example.com --name local-server --username sysadmin --password-file mysupersecret.txt --mfa-token 123456
-   auth login https://mattermost.example.com --name local-server --access-token myaccesstoken
+   mmctl auth login https://mattermost.example.com
+   mmctl auth login https://mattermost.example.com --name local-server --username sysadmin --password-file mysupersecret.txt
+   mmctl auth login https://mattermost.example.com --name local-server --username sysadmin --password-file mysupersecret.txt --mfa-token 123456
+   mmctl auth login https://mattermost.example.com --name local-server --access-token myaccesstoken
 
 **Options**
 
@@ -464,7 +441,7 @@ Renew the credentials for a given server.
 
 .. code-block:: sh
 
-   auth renew local-server
+   mmctl auth renew local-server
 
 **Options**
 
@@ -506,7 +483,7 @@ Set credentials to use in the following commands.
 
 .. code-block:: sh
 
-   auth set local-server
+   mmctl auth set local-server
 
 **Options**
 
@@ -611,8 +588,6 @@ For zsh, add the following line to your ``~/.zshrc`` file:
 mmctl bot
 ---------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage bots.
 
    Child Commands
@@ -646,7 +621,7 @@ Assign the ownership of a bot to another user.
 
 .. code-block:: sh
 
-   bot assign testbot user2
+   mmctl bot assign testbot user2
 
 **Options**
 
@@ -685,7 +660,7 @@ Create a bot.
 
 .. code-block:: sh
 
-   bot create testbot
+   mmctl bot create testbot
 
 **Options**
 
@@ -727,7 +702,7 @@ Disable an enabled bot.
 
 .. code-block:: sh
 
-   bot disable testbot
+   mmctl bot disable testbot
 
 **Options**
 
@@ -766,7 +741,7 @@ Enable a disabled bot.
 
 .. code-block:: sh
 
-   bot enable testbot
+   mmctl bot enable testbot
 
 **Options**
 
@@ -805,7 +780,7 @@ List the bot's users.
 
 .. code-block:: sh
 
-   bot list
+   mmctl bot list
 
 **Options**
 
@@ -846,7 +821,7 @@ Update bot information.
 
 .. code-block:: sh
 
-   bot update testbot --username newbotusername
+   mmctl bot update testbot --username newbotusername
 
 **Options**
 
@@ -873,8 +848,6 @@ Update bot information.
 
 mmctl channel
 --------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage channels.
 
@@ -917,7 +890,7 @@ Archive channels along with all related information including posts from the dat
 
 .. code-block:: sh
 
-   channel archive myteam:mychannel
+   mmctl channel archive myteam:mychannel
 
 **Options**
 
@@ -956,8 +929,8 @@ Create a channel.
 
 .. code-block:: sh
 
-   channel create --team myteam --name mynewchannel --display-name "My New Channel"
-   channel create --team myteam --name mynewprivatechannel --display-name "My New Private Channel" --private
+   mmctl channel create --team myteam --name mynewchannel --display-name "My New Channel"
+   mmctl channel create --team myteam --name mynewprivatechannel --display-name "My New Private Channel" --private
 
 **Options**
 
@@ -1005,7 +978,7 @@ Permanently delete channels along with all related information including posts f
 
 .. code-block:: sh
 
-   channel delete myteam:mychannel
+   mmctl channel delete myteam:mychannel
 
 **Options**
 
@@ -1045,7 +1018,7 @@ List all Public, Private, and archived channels on specified teams. Archived cha
 
 .. code-block:: sh
 
-   channel list myteam
+   mmctl channel list myteam
 
 **Options**
 
@@ -1084,7 +1057,7 @@ Set the type of a channel from Public to Private. Channel can be specified by ``
 
 .. code-block:: sh
 
-   channel make-private myteam:mychannel
+   mmctl channel make-private myteam:mychannel
 
 **Options**
 
@@ -1123,8 +1096,8 @@ Change the Public/Private type of a channel. Channel can be specified by ``[team
 
 .. code-block:: sh
 
-   channel modify myteam:mychannel --private
-   channel modify channelId --public
+   mmctl channel modify myteam:mychannel --private
+   mmctl channel modify channelId --public
 
 **Options**
 
@@ -1165,7 +1138,7 @@ Move the provided channels to the specified team. Validate that all users in the
 
 .. code-block:: sh
 
-   channel move newteam oldteam:mychannel
+   mmctl channel move newteam oldteam:mychannel
 
 **Options**
 
@@ -1205,9 +1178,9 @@ Rename an existing channel.
 
 .. code-block:: sh
 
-   channel rename myteam:oldchannel --name 'new-channel' --display_name 'New Display Name'
-   channel rename myteam:oldchannel --name 'new-channel'
-   channel rename myteam:oldchannel --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --name 'new-channel' --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --name 'new-channel'
+   mmctl channel rename myteam:oldchannel --display_name 'New Display Name'
 
 **Options**
 
@@ -1250,7 +1223,7 @@ Restore a previously deleted channel. Channels can be specified by ``[team]:[cha
 
 .. code-block:: sh
 
-   channel restore myteam:mychannel
+   mmctl channel restore myteam:mychannel
 
 **Options**
 
@@ -1285,8 +1258,8 @@ Search a channel by channel name. Channels can be specified by team (e.g., ``--t
 
 .. code-block:: sh
 
-   channel search mychannel
-   channel search --team myteam mychannel
+   mmctl channel search mychannel
+   mmctl channel search --team myteam mychannel
 
 **Options**
 
@@ -1326,7 +1299,7 @@ Unarchive a previously archived channel. Channels can be specified by ``[team]:[
 
 .. code-block:: sh
 
-   channel unarchive myteam:mychannel
+   mmctl channel unarchive myteam:mychannel
 
 **Options**
 
@@ -1392,7 +1365,7 @@ Add users to a channel.
 
 .. code-block:: sh
 
-   channel users add myteam:mychannel user@example.com username
+   mmctl channel users add myteam:mychannel user@example.com username
 
 **Options**
 
@@ -1431,8 +1404,8 @@ Remove users from a channel.
 
 .. code-block:: sh
 
-   channel users remove myteam:mychannel user@example.com username
-   channel users remove myteam:mychannel --all-users
+   mmctl channel users remove myteam:mychannel user@example.com username
+   mmctl channel users remove myteam:mychannel --all-users
 
 **Options**
 
@@ -1457,8 +1430,6 @@ Remove users from a channel.
 
 mmctl command
 -------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage slash commands.
 
@@ -1494,7 +1465,7 @@ Archive a slash command. Commands can be specified by command ID.
 
 .. code-block:: sh
 
-   command archive commandID
+   mmctl command archive commandID
 
 **Options**
 
@@ -1533,7 +1504,7 @@ Create a custom slash command for the specified team.
 
 .. code-block:: sh
 
-   command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+   mmctl command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
 **Options**
 
@@ -1585,7 +1556,7 @@ Delete a slash command. Commands can be specified by command ID.
 
 .. code-block:: sh
 
-   command delete commandID
+   mmctl command delete commandID
 
 **Options**
 
@@ -1619,7 +1590,7 @@ List all commands on specified teams.
 
 .. code-block:: sh
 
-  command list myteam
+  mmctl command list myteam
 
 **Options**
 
@@ -1658,7 +1629,7 @@ Modify a slash command. Commands can be specified by command ID.
 
 .. code-block:: sh
 
-   command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+   mmctl command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
 **Options**
 
@@ -1708,7 +1679,7 @@ Move a slash command to a different team. Commands can be specified by command I
 
 .. code-block:: sh
 
-   command move newteam commandID
+   mmctl command move newteam commandID
 
 **Options**
 
@@ -1747,7 +1718,7 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 
 .. code-block:: sh
    
-   command show commandID
+   mmctl command show commandID
 
 **Options**
 
@@ -1771,8 +1742,6 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 
 mmctl completion
 ----------------
-
-|all-plans| |cloud| |self-hosted|
 
 Generate autocompletion scripts for ``bash`` and ``zsh``.
 
@@ -1871,8 +1840,6 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 mmctl config
 ------------
 
-|all-plans| |cloud| |self-hosted|
-
 Configuration settings.
 
    Child Commands
@@ -1909,7 +1876,7 @@ Open the editor defined in the EDITOR environment variable to modify the server'
 
 .. code-block:: sh
 
-   config edit
+   mmctl config edit
 
 **Options**
 
@@ -1948,7 +1915,7 @@ Get the value of a configuration setting by its name in dot notation.
 
 .. code-block:: sh
 
-   config get SqlSettings.DriverName
+   mmctl config get SqlSettings.DriverName
 
 **Options**
 
@@ -1991,7 +1958,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. code-block:: sh
 
-   config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+   mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
 
 **Options**
 
@@ -2030,7 +1997,7 @@ Patch the server configuration with the specified configuration file.
 
 .. code-block:: sh
 
-   config patch /path/to/config.json
+   mmctl config patch /path/to/config.json
 
 **Options**
 
@@ -2069,7 +2036,7 @@ Reload the server configuration and apply new settings.
 
 .. code-block:: sh
 
-   config reload
+   mmctl config reload
 
 **Options**
 
@@ -2108,7 +2075,7 @@ Reset the value of a configuration setting by its name in dot notation or a sett
 
 .. code-block:: sh
 
-   config reset SqlSettings.DriverName LogSettings
+   mmctl config reset SqlSettings.DriverName LogSettings
 
 **Options**
 
@@ -2148,8 +2115,8 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 
 .. code-block:: sh
 
-   config set SqlSettings.DriverName mysql
-   config set SqlSettings.DataSourceReplicas "replica1" "replica2"
+   mmctl config set SqlSettings.DriverName mysql
+   mmctl config set SqlSettings.DataSourceReplicas "replica1" "replica2"
 
 **Options**
 
@@ -2188,7 +2155,7 @@ Print the server configuration and write to STDOUT in JSON format.
 
 .. code-block:: sh
 
-   config show
+   mmctl config show
 
 **Options**
 
@@ -2261,8 +2228,6 @@ Update the hard-coded production client asset paths to take into account Matterm
 mmctl docs
 ----------
 
-|all-plans| |cloud| |self-hosted|
-
 **Description**
 
 Generate mmctl documentation.
@@ -2296,8 +2261,6 @@ Generate mmctl documentation.
 
 mmctl export
 ------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage exports.
 
@@ -2367,7 +2330,7 @@ Delete an export file.
 
 .. code-block:: sh
 
-  export delete export_file.zip
+  mmctl export delete export_file.zip
 
 **Options**
 
@@ -2465,7 +2428,7 @@ mmctl export job list
 
 **Description**
 
-List export jobs.
+List export jobs. Export files include the Job ID in the file name.
 
 **Format**
 
@@ -2477,7 +2440,7 @@ List export jobs.
 
 .. code-block:: sh
 
-  export job list
+  mmctl export job list
 
 **Options**
 
@@ -2519,7 +2482,7 @@ Show export job.
 
 .. code-block:: sh
 
-  export job show
+  mmctl export job show
   
 **Options**
 
@@ -2546,7 +2509,7 @@ mmctl export list
 
 **Description**
 
-List export files.
+List export files. Export files include the job ID in the file name.
 
 **Format**
 
@@ -2615,7 +2578,7 @@ List content extraction jobs.
 
 .. code-block:: sh
 
-   extract job list
+   mmctl extract job list
 
 **Options**
 
@@ -2657,7 +2620,7 @@ Show extract job.
 
 .. code-block:: sh
 
-   extract job show f3d68qkkm7n8xgsfxwuo498rah
+   mmctl extract job show f3d68qkkm7n8xgsfxwuo498rah
 
 **Options**
 
@@ -2696,7 +2659,7 @@ Start a content extraction job.
 
 .. code-block:: sh
 
-   extract run
+   mmctl extract run
 
 **Options**
 
@@ -2723,8 +2686,6 @@ Start a content extraction job.
 mmctl group
 -----------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage channel and team groups.
 
    Child Commands
@@ -2734,8 +2695,6 @@ Manage channel and team groups.
 
 mmctl group channel
 --------------------
-
-|all-plans| |cloud| |self-hosted|
 
 Management of channel groups
 
@@ -2768,7 +2727,7 @@ Disable group constrains in the specified channel.
 
 .. code-block:: sh
 
-   group channel disable myteam:mychannel
+   mmctl group channel disable myteam:mychannel
 
 **Options**
 
@@ -2807,7 +2766,7 @@ Enable group constrains in the specified channel.
 
 .. code-block:: sh
 
-   group channel enable myteam:mychannel
+   mmctl group channel enable myteam:mychannel
 
 **Options**
 
@@ -2846,7 +2805,7 @@ List the groups associated with a channel.
 
 .. code-block:: sh
 
-   group channel list myteam:mychannel
+   mmctl group channel list myteam:mychannel
 
 **Options**
 
@@ -2885,7 +2844,7 @@ Show the group constrain status for the specified channel.
 
 .. code-block:: sh
 
-   group channel status myteam:mychannel
+   mmctl group channel status myteam:mychannel
 
 **Options**
 
@@ -2924,7 +2883,7 @@ List LDAP groups.
 
 .. code-block:: sh
 
-   group list-ldap
+   mmctl group list-ldap
 
 **Options**
 
@@ -2948,8 +2907,6 @@ List LDAP groups.
 
 mmctl group team
 ----------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage team groups.
 
@@ -2982,7 +2939,7 @@ Disable group constrains in the specified team.
 
 .. code-block:: sh
    
-   group team disable myteam
+   mmctl group team disable myteam
 
 **Options**
 
@@ -3021,7 +2978,7 @@ Enable group constrains in the specified team.
 
 .. code-block:: sh
 
-   group team enable myteam
+   mmctl group team enable myteam
 
 **Options**
 
@@ -3060,7 +3017,7 @@ List the groups associated with a team.
 
 .. code-block:: sh
 
-   group team list myteam
+   mmctl group team list myteam
 
 **Options**
 
@@ -3099,7 +3056,7 @@ Show the group constrain status for the specified team.
 
 .. code-block:: sh
 
-   group channel status myteam
+   mmctl group channel status myteam
 
 **Options**
 
@@ -3123,8 +3080,6 @@ Show the group constrain status for the specified team.
    
 mmctl import
 ------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -3190,7 +3145,7 @@ List import jobs
 
 .. code-block:: sh
 
-     import job list
+     mmctl import job list
 
 **Options**
 
@@ -3232,7 +3187,7 @@ Show import job.
 
 .. code-block:: sh
 
-     import job show f3d68qkkm7n8xgsfxwuo498rah
+     mmctl import job show f3d68qkkm7n8xgsfxwuo498rah
 
 **Options**
 
@@ -3265,7 +3220,7 @@ List all import files.
 
 .. code-block:: sh
 
-     import list
+     mmctl import list
 
 **Options**
 
@@ -3304,7 +3259,7 @@ List available import files.
 
 .. code-block:: sh
 
-     import list available
+     mmctl import list available
 
 **Options**
 
@@ -3343,7 +3298,7 @@ List incomplete import files uploads.
 
 .. code-block:: sh
 
-     import list incomplete
+     mmctl import list incomplete
 
 **Options**
 
@@ -3382,7 +3337,7 @@ Start an import job.
 
 .. code-block:: sh
 
-     import process 35uy6cwrqfnhdx3genrhqqznxc_import.zip
+     mmctl import process 35uy6cwrqfnhdx3genrhqqznxc_import.zip
 
 **Options**
 
@@ -3421,7 +3376,7 @@ Upload import files.
 
 .. code-block:: sh
 
-     import upload import_file.zip
+     mmctl import upload import_file.zip
 
 **Options**
 
@@ -3447,8 +3402,6 @@ Upload import files.
 
 mmctl integrity
 ---------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -3485,8 +3438,6 @@ Perform a relational integrity check which returns information about any orphane
 mmctl ldap
 ----------
 
-|all-plans| |cloud| |self-hosted|
-
 LDAP-related utilities.
 
    Child Commands
@@ -3521,7 +3472,7 @@ Migrate LDAP ``IdAttribute`` to a new value. Run this utility to change the valu
 
 .. code-block:: sh
 
-   ldap idmigrate objectGUID
+   mmctl ldap idmigrate objectGUID
 
 **Options**
 
@@ -3560,7 +3511,7 @@ Synchronize all LDAP users and groups now.
 
 .. code-block:: sh
 
-   ldap sync
+   mmctl ldap sync
 
 **Options**
 
@@ -3585,8 +3536,6 @@ Synchronize all LDAP users and groups now.
 
 mmctl license
 -------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage the Mattermost license.
 
@@ -3617,7 +3566,7 @@ Remove the current license and use Mattermost Team Edition.
 
 .. code-block:: sh
    
-   license remove
+   mmctl license remove
 
 **Options**
 
@@ -3656,7 +3605,7 @@ Upload a license and replace the current license.
 
 .. code-block:: sh
 
-   license upload /path/to/license/mylicensefile.mattermost-license
+   mmctl license upload /path/to/license/mylicensefile.mattermost-license
 
 **Options**
 
@@ -3680,8 +3629,6 @@ Upload a license and replace the current license.
 
 mmctl logs
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -3718,8 +3665,6 @@ Display logs in a human-readable format. As the log format depends on the server
 mmctl permissions
 -----------------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage permissions and roles.
 
    Child Commands
@@ -3739,7 +3684,8 @@ Manage permissions and roles.
 mmctl permissions add
 ~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3757,8 +3703,8 @@ Add one or more permissions to an existing role.
 
 .. code-block:: sh
 
-   permissions add system_user list_open_teams
-   permissions add system_manager sysconsole_read_user_management_channels
+   mmctl permissions add system_user list_open_teams
+   mmctl permissions add system_manager sysconsole_read_user_management_channels
    
 **Options**
 
@@ -3783,7 +3729,8 @@ Add one or more permissions to an existing role.
 mmctl permissions remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3801,8 +3748,8 @@ Remove one or more permissions from an existing role.
 
 .. code-block:: sh
 
-   permissions remove system_user list_open_teams
-   permissions remove system_manager sysconsole_read_user_management_channels
+   mmctl permissions remove system_user list_open_teams
+   mmctl permissions remove system_manager sysconsole_read_user_management_channels
 
 **Options**
 
@@ -3827,7 +3774,8 @@ Remove one or more permissions from an existing role.
 mmctl permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3871,7 +3819,8 @@ Reset the given role's permissions to the default settings and overwrite custom 
 mmctl permissions role assign
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
@@ -3890,12 +3839,12 @@ Assign users to a role by username.
 .. code-block:: sh
 
    # Assign users with usernames 'john.doe' and 'jane.doe' to the role named 'system_admin'.
-   permissions assign system_admin john.doe jane.doe
+   mmctl permissions assign system_admin john.doe jane.doe
     
    # Examples using other system roles
-   permissions assign system_manager john.doe jane.doe
-   permissions assign system_user_manager john.doe jane.doe
-   permissions assign system_read_only_admin john.doe jane.doe
+   mmctl permissions assign system_manager john.doe jane.doe
+   mmctl permissions assign system_user_manager john.doe jane.doe
+   mmctl permissions assign system_read_only_admin john.doe jane.doe
 
 **Options**
 
@@ -3934,7 +3883,7 @@ Show all the information about a role.
 
 .. code-block:: sh
 
-   permissions show system_user
+   mmctl permissions show system_user
 
 **Options**
 
@@ -3974,12 +3923,12 @@ Unassign users from a role by username. Available in Mattermost Professional and
 .. code-block:: sh
 
    # Unassign users with usernames 'john.doe' and 'jane.doe' from the role named 'system_admin'.
-   permissions unassign system_admin john.doe jane.doe
+   mmctl permissions unassign system_admin john.doe jane.doe
 
    # Examples using other system roles
-   permissions unassign system_manager john.doe jane.doe
-   permissions unassign system_user_manager john.doe jane.doe
-   permissions unassign system_read_only_admin john.doe jane.doe
+   mmctl permissions unassign system_manager john.doe jane.doe
+   mmctl permissions unassign system_user_manager john.doe jane.doe
+   mmctl permissions unassign system_read_only_admin john.doe jane.doe
 
 **Options**
 
@@ -4003,8 +3952,6 @@ Unassign users from a role by username. Available in Mattermost Professional and
 
 mmctl plugin
 -------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage plugins.
 
@@ -4040,7 +3987,7 @@ Add plugins to your Mattermost server.
 
 .. code-block:: sh
 
-   plugin add hovercardexample.tar.gz pluginexample.tar.gz
+   mmctl plugin add hovercardexample.tar.gz pluginexample.tar.gz
 
 **Options**
 
@@ -4080,7 +4027,7 @@ Delete previously uploaded plugins from your Mattermost server.
 
 .. code-block:: sh
 
-   plugin delete hovercardexample pluginexample
+   mmctl plugin delete hovercardexample pluginexample
 
 **Options**
 
@@ -4119,7 +4066,7 @@ Disable plugins. Disabled plugins are immediately removed from the user interfac
 
 .. code-block:: sh
 
-   plugin disable hovercardexample pluginexample
+   mmctl plugin disable hovercardexample pluginexample
 
 **Options**
 
@@ -4158,7 +4105,7 @@ Enable plugins for use on your Mattermost server.
 
 .. code-block:: sh
 
-   plugin enable hovercardexample pluginexample
+   mmctl plugin enable hovercardexample pluginexample
 
 **Options**
 
@@ -4241,7 +4188,7 @@ List all enabled and disabled plugins installed on your Mattermost server.
 
 .. code-block:: sh
 
-   plugin list
+   mmctl plugin list
 
 **Options**
 
@@ -4265,8 +4212,6 @@ List all enabled and disabled plugins installed on your Mattermost server.
 
 mmctl plugin marketplace
 -------------------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage Marketplace plugins.
 
@@ -4376,8 +4321,6 @@ Get all plugins available from the Plugin Marketplace server, merging data from 
 mmctl post
 ----------
 
-|all-plans| |cloud| |self-hosted|
-
 Manage posts.
 
    Child Commands
@@ -4407,7 +4350,7 @@ Create a post.
 
 .. code-block:: sh
 
-   post create myteam:mychannel --message "some text for the post"
+   mmctl post create myteam:mychannel --message "some text for the post"
 
 **Options**
 
@@ -4448,8 +4391,8 @@ List posts for a channel.
 
 .. code-block:: sh
 
-   post list myteam:mychannel
-   post list myteam:mychannel --number 20
+   mmctl post list myteam:mychannel
+   mmctl post list myteam:mychannel --number 20
 
 **Options**
 
@@ -4477,8 +4420,6 @@ List posts for a channel.
 
 mmctl roles
 -----------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -4546,8 +4487,6 @@ Remove System Admin privileges from multiple users:
 
 mmctl saml
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 SAML-related utilities.
 
@@ -4715,7 +4654,7 @@ Clear the busy state which re-enables non-critical services.
 
 .. code-block:: sh
 
-   system clearbusy
+   mmctl system clearbusy
 
 **Options**
 
@@ -4754,7 +4693,7 @@ Get the server busy state (high load) and timestamp corresponding to when the se
 
 .. code-block:: sh
 
-   system getbusy
+   mmctl system getbusy
 
 **Options**
 
@@ -4793,7 +4732,7 @@ Set the busy state to ``true`` for the specified number of seconds which disable
 
 .. code-block:: sh
 
-   system setbusy -s 3600
+   mmctl system setbusy -s 3600
 
 **Options**
 
@@ -4833,7 +4772,7 @@ Print the server status which is calculated using several basic server healthche
 
 .. code-block:: sh
 
-   system status
+   mmctl system status
 
 **Options**
 
@@ -4872,7 +4811,7 @@ Print the server version build number of the currently connected Mattermost inst
 
 .. code-block:: sh
 
-   system version
+   mmctl system version
 
 **Options**
 
@@ -4896,8 +4835,6 @@ Print the server version build number of the currently connected Mattermost inst
 
 mmctl team
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage teams.
 
@@ -4935,7 +4872,7 @@ Archive a team along with all related information including posts from the datab
 
 .. code-block:: sh
 
-   team archive myteam
+   mmctl team archive myteam
 
 **Options**
 
@@ -4975,8 +4912,8 @@ Create a team.
 
 .. code-block:: sh
 
-   team create --name mynewteam --display_name "My New Team"
-   team create --name private --display_name "My New Private Team" --private
+   mmctl team create --name mynewteam --display_name "My New Team"
+   mmctl team create --name private --display_name "My New Private Team" --private
 
 **Options**
 
@@ -5022,7 +4959,7 @@ Permanently delete a team along with all related information including posts fro
 
 .. code-block:: sh
 
-   team delete myteam
+   mmctl team delete myteam
 
 **Options**
 
@@ -5062,7 +4999,7 @@ List all teams on the server.
 
 .. code-block:: sh
 
-   team list
+   mmctl team list
 
 **Options**
 
@@ -5101,7 +5038,7 @@ Modify a team's privacy setting to public or private.
 
 .. code-block:: sh
 
-   team modify myteam --private
+   mmctl team modify myteam --private
 
 **Options**
 
@@ -5142,7 +5079,7 @@ Rename an existing team.
 
 .. code-block:: sh
 
-   team rename old-team --display_name 'New Display Name'
+   mmctl team rename old-team --display_name 'New Display Name'
 
 **Options**
 
@@ -5182,7 +5119,7 @@ Restore archived teams.
 
 .. code-block:: sh
 
-   team restore myteam
+   mmctl team restore myteam
 
 **Options**
 
@@ -5221,7 +5158,7 @@ Search for teams based on name.
 
 .. code-block:: sh
 
-   team search team1
+   mmctl team search team1
 
 **Options**
 
@@ -5245,8 +5182,6 @@ Search for teams based on name.
 
 mmctl team users
 ----------------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage team users.
 
@@ -5277,7 +5212,7 @@ Add specified users to a team.
 
 .. code-block:: sh
 
-   team users add myteam user@example.com username
+   mmctl team users add myteam user@example.com username
 
 **Options**
 
@@ -5316,7 +5251,7 @@ Remove specified users from a team.
 
 .. code-block:: sh
 
-   team users remove myteam user@example.com username
+   mmctl team users remove myteam user@example.com username
 
 **Options**
 
@@ -5340,8 +5275,6 @@ Remove specified users from a team.
 
 mmctl token
 -----------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage users' access tokens.
 
@@ -5373,7 +5306,7 @@ Generate token for a user.
 
 .. code-block:: sh
 
-   generate testuser test-token
+   mmctl generate testuser test-token
 
 **Options**
 
@@ -5412,7 +5345,7 @@ List the tokens belonging to a user.
 
 .. code-block:: sh
 
-   user tokens testuser
+   mmctl user tokens testuser
 
 **Options**
 
@@ -5456,7 +5389,7 @@ Revoke tokens for a user.
 
 .. code-block:: sh
 
-   revoke testuser test-token-id
+   mmctl revoke testuser test-token-id
 
 **Options**
 
@@ -5480,8 +5413,6 @@ Revoke tokens for a user.
 
 mmctl user
 ----------
-
-|all-plans| |cloud| |self-hosted|
 
 Manage users.
 
@@ -5527,8 +5458,8 @@ Activate users that have been deactivated.
 
 .. code-block:: sh
 
-   user activate user@example.com
-   user activate username
+   mmctl user activate user@example.com
+   mmctl user activate username
 
 **Options**
 
@@ -5739,8 +5670,8 @@ Deactivate users. Deactivated users are immediately logged out of all sessions a
 
 .. code-block:: sh
 
-   user deactivate user@example.com
-   user deactivate username
+   mmctl user deactivate user@example.com
+   mmctl user deactivate username
 
 **Options**
 
@@ -5782,7 +5713,7 @@ Permanently delete users along with all related information including posts from
 
 .. code-block:: sh
 
-   user delete user@example.com
+   mmctl user delete user@example.com
 
 **Options**
 
@@ -5822,7 +5753,7 @@ Permanently delete all users and all related information including posts. This c
 
 .. code-block:: sh
 
-   user deleteall
+   mmctl user deleteall
 
 **Options**
 
@@ -5862,7 +5793,7 @@ Demote a user to a guest.
 
 .. code-block:: sh
 
-  user demote user1 user2  
+  mmctl user demote user1 user2  
 
 **Options**
 
@@ -5901,7 +5832,7 @@ Change the email address associated with a user.
 
 .. code-block:: sh
 
-  user email testuser user@example.com
+  mmctl user email testuser user@example.com
   
 **Options**
 
@@ -5940,8 +5871,8 @@ Send an email invite to a user to join a team. You can invite a user to multiple
 
 .. code-block:: sh
 
-   user invite user@example.com myteam
-   user invite user@example.com myteam1 myteam2
+   mmctl user invite user@example.com myteam
+   mmctl user invite user@example.com myteam1 myteam2
 
 **Options**
 
@@ -5980,7 +5911,7 @@ List all users.
 
 .. code-block:: sh
 
-   user list
+   mmctl user list
 
 **Options**
 
@@ -6023,7 +5954,7 @@ Migrate accounts from one authentication provider to another. For example, you c
 
 .. code-block:: sh
 
-   user migrate_auth email saml users.json
+   mmctl user migrate_auth email saml users.json
 
 **Options**
 
@@ -6065,7 +5996,7 @@ Promote a guest to a user.
 
 .. code-block:: sh
 
-   user promote guest1 guest2
+   mmctl user promote guest1 guest2
 
 **Options**
 
@@ -6104,7 +6035,7 @@ Send users an email to reset their password.
 
 .. code-block:: sh
 
-   user reset_password user@example.com
+   mmctl user reset_password user@example.com
 
 **Options**
 
@@ -6143,7 +6074,7 @@ Turn off multi-factor authentication for a user. If MFA enforcement is enabled, 
 
 .. code-block:: sh
 
-   user resetmfa user@example.com
+   mmctl user resetmfa user@example.com
 
 **Options**
 
@@ -6182,7 +6113,7 @@ Search for users based on username, email, or user ID.
 
 .. code-block:: sh
 
-   user search user1@mail.com user2@mail.com
+   mmctl user search user1@mail.com user2@mail.com
 
 **Options**
 
@@ -6221,7 +6152,7 @@ Change the username of the user.
 
 .. code-block:: sh
 
-   user username testuser newusername
+   mmctl user username testuser newusername
 
 **Options**
 
@@ -6260,7 +6191,7 @@ Mark user's email as verified without requiring user to complete email verificat
 
 .. code-block:: sh
 
-   user verify user1
+   mmctl user verify user1
 
 **Options**
 
@@ -6284,8 +6215,6 @@ Mark user's email as verified without requiring user to complete email verificat
 
 mmctl version
 -------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -6319,8 +6248,6 @@ Print the version of mmctl.
 
 mmctl webhook
 -------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 
@@ -6358,7 +6285,7 @@ Create an incoming webhook to allow external posting of messages to a specific c
 
 .. code-block:: sh
 
-   webhook create-incoming --channel [channelID] --user [userID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+   mmctl webhook create-incoming --channel [channelID] --user [userID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
 **Options**
 
@@ -6403,8 +6330,8 @@ Create an outgoing webhook to allow external posting of messages from a specific
 
 .. code-block:: sh
 
-   webhook create-outgoing --team myteam --user myusername --display-name mywebhook --trigger-word "build" --trigger-word "test" --url http://localhost:8000/my-webhook-handler
-    webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word build --trigger-word test --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
+   mmctl webhook create-outgoing --team myteam --user myusername --display-name mywebhook --trigger-word "build" --trigger-word "test" --url http://localhost:8000/my-webhook-handler
+    mmctl webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word build --trigger-word test --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
 
 **Options**
 
@@ -6453,7 +6380,7 @@ Delete a webhook with a given ID.
 
 .. code-block:: sh
 
-   webhook delete [webhookID]
+   mmctl webhook delete [webhookID]
 
 **Options**
 
@@ -6492,7 +6419,7 @@ Print a list of all webhooks.
 
 .. code-block:: sh
 
-   webhook list myteam
+   mmctl webhook list myteam
 
 **Options**
 
@@ -6531,7 +6458,7 @@ Modify an existing incoming webhook by changing its title, description, channel,
 
 .. code-block:: sh
 
-   webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+   mmctl webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
 **Options**
 
@@ -6575,7 +6502,7 @@ Modify an existing outgoing webhook by changing its title, description, channel,
 
 .. code-block:: sh
 
-   webhook modify-outgoing [webhookId] --channel [channelId] --display-name [displayName] --description "New webhook description" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json" --trigger-word test --trigger-when start
+   mmctl webhook modify-outgoing [webhookId] --channel [channelId] --display-name [displayName] --description "New webhook description" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json" --trigger-word test --trigger-when start
 
 **Options**
 
@@ -6622,7 +6549,7 @@ Show the webhook specified by ``[webhookId]``.
 
 .. code-block:: sh
 
-   webhook show w16zb5tu3n1zkqo18goqry1je
+   mmctl webhook show w16zb5tu3n1zkqo18goqry1je
 
 **Options**
 
@@ -6646,8 +6573,6 @@ Show the webhook specified by ``[webhookId]``.
 
 mmctl websocket
 ---------------
-
-|all-plans| |cloud| |self-hosted|
 
 **Description**
 

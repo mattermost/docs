@@ -1,7 +1,10 @@
 What’s new in Mattermost Boards v7.2
 =====================================
 
-Mattermost Boards v7.2 will be released in the week of August 15th, and all Cloud plans will be automatically upgraded to the latest version during this time.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Mattermost Boards v7.2 will be released to the Cloud during mid-August, and all Cloud plans will be automatically upgraded to the latest version during this time. For self-hosted plans, the latest version of Boards will be available with Mattermost Server v7.3 in mid-September.
 
 Boards is moving from a channel-based to a role-based permissions system. This means that access to individual boards can be controlled on a channel level or a board level, depending on whether a board is linked to a channel or not.
 
@@ -10,7 +13,7 @@ TL;DR
 
 1. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
 2. Organize boards on the sidebar with custom categories. 
-3. Press Ctrl+K / Cmd+K to find additional boards.
+3. Press :kbd:`Ctrl` :kbd:`K` on Windows or Linux, pressing :kbd:`⌘` :kbd:`K` on macOS to find additional boards.
 4. Navigate between teams in Boards with the new team switcher.
 5. Set board and template permissions in the new **Share** dialog.
 6. Link boards to channels to automatically grant board permissions to channel members.
@@ -43,7 +46,7 @@ Boards now supports a team sidebar so you can easily navigate between boards on 
 Linking boards to channels
 --------------------------
 
-The channel header’s board icon is now located on the channel `Apps Bar <https://docs.mattermost.com/configure/configuration-settings.html#enable-apps-bar>`_. When you select the **Boards** icon, you’ll open a new right-hand sidebar (RHS) where channel admins can search and link boards to the channel. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration. Select a linked board to navigate directly to the board.
+The channel header’s board icon is now located on the channel `Apps Bar <https://docs.mattermost.com/configure/configuration-settings.html#enable-apps-bar>`_. When you select the **Boards** icon, you’ll open a new right-hand sidebar (RHS) where channel members can search and link boards to the channel. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration. Select a linked board to navigate directly to the board.
 
 .. image:: ../images/boards-whats-new-04.png
   :alt: You can find the boards icon in the Apps Bar on the right-hand side of the screen.
@@ -100,6 +103,10 @@ Automatic migration
 
 Instead of being tied to a particular channel, each board has been automatically migrated to use its own access control list. The creator of the original board is set as an admin on the board, with the ability to change the board’s permissions. Other members are granted the **Editor** role.
 
+.. note::
+  
+  There are schema changes introduced in Boards v7.2. If you have a large database, you may need to allocate additional time and resources to this migration. Please review `this document <https://docs.google.com/document/d/1hKQV6QfXSJ6LznvKxoENvU1Z21ulaZ09b-h8N1caS64/edit#heading=h.1ozc9hcotgot>`_ for details around permission migrations.
+
 Public channels
 ~~~~~~~~~~~~~~~
 
@@ -135,6 +142,11 @@ Boards that you create after the migration won’t be linked to a workspace, and
 
 Frequently asked questions
 --------------------------
+
+Do I need to plan for downtime during the migration?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are schema changes in v7.2. If you have a large database you may need to allocate additional time and resources to this migration. Please review `this document <https://docs.google.com/document/d/1hKQV6QfXSJ6LznvKxoENvU1Z21ulaZ09b-h8N1caS64/edit#heading=h.1ozc9hcotgot>`_ for details around permission migrations.
 
 Will I need to backup and restore any data?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

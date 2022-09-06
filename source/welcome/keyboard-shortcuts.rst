@@ -1,63 +1,50 @@
 Mattermost keyboard shortcuts
 =============================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost keyboard shortcuts help you make a more efficient use of your keyboard.
 
 .. tip::
 
-  Display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on Mac, or using the ``/shortcuts`` slash command.
+  - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.
+  - Additional keyboard shortcuts are available for Mattermost Channels. See the `keyboard shortcuts for Mattermost Channels <https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html>`__ and the `team keyboard shortcuts <https://docs.mattermost.com/welcome/team-keyboard-shortcuts.html>`__ documentation for details.
 
-Navigation shortcuts in the Desktop App
+Navigation shortcuts in the desktop app
 ---------------------------------------
 
-The following navigation keyboard shortcuts are supported only in the Mattermost Desktop App.
+The following navigation keyboard shortcuts are supported only in the Mattermost desktop app.
 
 .. tabs::
 
-  .. tab:: Desktop App v5.0 onwards
+  .. tab:: Desktop app v5.0 onwards
 
-    Mattermost Desktop App v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. 
+    Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. 
     
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    | On Windows & Linux                   | On Mac                        | Description                                                                                   |
-    +======================================+===============================+===============================================================================================+
-    | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`             | Move focus to the **Search** field and search the current channel.                            |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Shift` :kbd:`S`    | :kbd:`⌘` :kbd:`⌃` :kbd:`S`    | Open the **Servers** selector, press :kbd:`↑` or :kbd:`↓` to navigate between                 |
-    |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac, to select a server. |                                     |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    || :kbd:`Ctrl` :kbd:`Shift` :kbd:`1`   || :kbd:`⌘` :kbd:`⌃` :kbd:`1`   || Navigate to the first server in the **Servers** list.                                        |
-    || :kbd:`Ctrl` :kbd:`Shift` :kbd:`2`   || :kbd:`⌘` :kbd:`⌃` :kbd:`2`   || Replace the number with the server's position within the server in the list.                 |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on the current product selected.                       |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+  
-    | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab`  | Navigate to the previous product tab based on the current product selected.                   | 
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`1`                 | :kbd:`⌘` :kbd:`1`             | Navigate to the **Channels** tab.                                                             |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`2`                 | :kbd:`⌘` :kbd:`2`             | Navigate to the **Boards** tab.                                                               |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`3`                 | :kbd:`⌘` :kbd:`3`             | Navigate to the **Playbooks** tab.                                                            |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
-    | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on your current position.                              |
-    +--------------------------------------+-------------------------------+-----------------------------------------------------------------------------------------------+
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    | On Windows & Linux                   | On Mac                        | Description                                                                                     |
+    +======================================+===============================+=================================================================================================+
+    | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`             | Move focus to the **Search** field and search the current channel.                              |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    | :kbd:`Ctrl` :kbd:`Shift` :kbd:`S`    | :kbd:`⌘` :kbd:`⌃` :kbd:`S`    | Open the **Servers** selector, press :kbd:`↑` or :kbd:`↓` to navigate between                   |
+    |                                      |                               | servers, then press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on macOS, to select a server. |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    || :kbd:`Ctrl` :kbd:`Shift` :kbd:`1`   || :kbd:`⌘` :kbd:`⌃` :kbd:`1`   || Navigate to the first server in the **Servers** list.                                          |
+    || :kbd:`Ctrl` :kbd:`Shift` :kbd:`2`   || :kbd:`⌘` :kbd:`⌃` :kbd:`2`   || Replace the number with the server's position within the server in the list.                   |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on the current product selected.                         |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+  
+    | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab`  | Navigate to the previous product tab based on the current product selected.                     |  
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    | :kbd:`Ctrl` :kbd:`1`                 | :kbd:`⌘` :kbd:`1`             | Navigate to the **Channels** tab.                                                               |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    | :kbd:`Ctrl` :kbd:`2`                 | :kbd:`⌘` :kbd:`2`             | Navigate to the **Boards** tab.                                                                 |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    | :kbd:`Ctrl` :kbd:`3`                 | :kbd:`⌘` :kbd:`3`             | Navigate to the **Playbooks** tab.                                                              |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+    | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on your current position.                                |
+    +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
     
   .. tab:: Desktop App v4.7 and earlier
 
@@ -82,7 +69,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 Zoom shortcuts for Web and Desktop App
 ---------------------------------------
 
-The following display keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following display keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +------------------------------+------------------------------+----------------------------------------+
 | On Windows & Linux           | On Mac                       | Description                            |

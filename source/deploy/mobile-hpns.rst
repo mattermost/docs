@@ -8,32 +8,8 @@ Mattermost offers a `Mattermost Push Notification Service (MPNS) <https://docs.m
 Test Push Notifications Service (TPNS)
 --------------------------------------
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Managed deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Self-hosted customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
 
@@ -55,7 +31,8 @@ See our `Testing Push Notifications <https://docs.mattermost.com/deploy/mobile-t
 Hosted Push Notifications Service (HPNS)
 ----------------------------------------
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
 
@@ -106,7 +83,8 @@ After setup, test push notifications to confirm they are working.
 ID-only push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost Enterprise and Cloud customers can limit the data sent to Apple and Google through a configuration setting. 
 

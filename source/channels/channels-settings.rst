@@ -1,22 +1,8 @@
 Customize your Channels experience
 ==================================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 You can customize your Channels experience in the following ways in **Settings**:
 
@@ -156,7 +142,7 @@ Select the timezone used for timestamps in the user interface and for email noti
 
 .. note::
   
-  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#timezone>`__ by replacing ``false`` with ``true`` in ``config.json``. Timezone is enabled by default from Mattermost v6.0.
+  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin <https://docs.mattermost.com/configure/deprecated-configuration-settings.html#timezone>`__. Timezone is enabled by default from Mattermost v6.0.
 
 Website link previews
 ~~~~~~~~~~~~~~~~~~~~~
@@ -174,7 +160,9 @@ When messages in Mattermost include images, an image preview can display directl
 Message display
 ~~~~~~~~~~~~~~~
 
-Select the formatting for messages in the center channel. **Compact** mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
+Specify how messages in a channel are displayed. **Compact** mode fits more messages on the screen by decreasing the spacing around posts, collapsing link previews, and hiding thumbnails so that only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
+
+When you select **Compact**, usernames are colorized by default, and username colors are consistent for all users. Disable the **Colorize usernames** option to display all usernames in a single color instead.
 
 Collapsed Reply Threads
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -300,19 +288,22 @@ Turn on preview features to view them early, ahead of their official release.
 
   From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
 
-Performance Debugging
+Scroll position when viewing unread channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure where to start when viewing channels with unread messages. You can start where you left off at the oldest unread message, or start at the newest message. Your preference applies to all channels.
+
+Performance debugging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `Enable Client Performance Debugging <https://docs.mattermost.com/configure/configuration-settings.html>`__ is enabled.
+Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client performance debugging <https://docs.mattermost.com/configure/configuration-settings.html>`__ is enabled.
 
 Deactivate account
 ~~~~~~~~~~~~~~~~~~
 
-Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
+Use this setting to deactivate your account. Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. After deactivating, an email notification is sent confirming the deactivation was successful.
 
-Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. To reactivate your account, contact your System Admin.
-
-This is only available for accounts with email login, and if your System Admin has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
+To reactivate your account, contact your System Admin. This is only available for accounts with email login, and when `user deactivation <https://docs.mattermost.com/configure/configuration-settings.html#enable-account-deactivation>`__ is enabled.
 
 For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Admin to deactivate your account.
 

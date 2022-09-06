@@ -1,4 +1,7 @@
+:orphan:
 :nosearch:
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
 Configure Mattermost server
 ----------------------------
 
@@ -48,6 +51,4 @@ Create the System Admin user and set up Mattermost for general use.
 
 8. Review and configure any other settings that may be applicable.
 
-9. Restart Mattermost.
-
-  ``sudo systemctl restart mattermost``
+9. Restart Mattermost by running ``sudo systemctl restart mattermost``.
