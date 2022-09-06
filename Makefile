@@ -14,11 +14,14 @@ SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile livehtml python-deps
+.PHONY: help Makefile livehtml python-deps test
 
 python-deps:
 	pip install pipenv
 	pipenv install --dev
+
+test:
+	pipenv run pytest
 
 # Run `make livehtml` to start sphinx-autobuild
 livehtml:

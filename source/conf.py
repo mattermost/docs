@@ -1760,7 +1760,7 @@ mm_url_path_prefix = ""
 # for each redirect page that was written. This enables redirects for pages where the .html extension was not
 # specified in the URL and the underlying web server doesn't attempt to add .html when resolving the location
 # of the resource to send.
-redirect_write_extensionless_pages = True
+redirect_write_extensionless_pages = False
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
