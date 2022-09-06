@@ -22,7 +22,7 @@ If you choose not to upgrade at the end of your 30-day trial, your subscription 
 View subscription details
 -------------------------
 
-The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html#workspace-limits>`_ set for your subscription.
+The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html>`__ set for your subscription.
 
 Billing period
 --------------
