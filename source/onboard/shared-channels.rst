@@ -23,7 +23,7 @@ The process of sharing channels involves the following three steps:
 
 3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accept-a-secure-connection-invitation>`_.
 
-Once a trusted relationship is established between Mattermost servers, System Admins can `share specific Public or Private channels <#share-channels-with-secure-connections>`_ with secure connections.
+Once a trusted relationship is established between Mattermost servers, System Admins can `share specific public or private channels <#share-channels-with-secure-connections>`_ with secure connections.
 
 .. note:: 
 

@@ -7,7 +7,7 @@ Customize your Desktop App experience
 .. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
   :alt: Use the More icon in the top left corner to access Mattermost Desktop Apps customization settings.
 
-In addition to your `personal profile settings <https://docs.mattermost.com/welcome/manage-your-profile.html>`__ and :doc:`Mattermost Channels settings </channels/channels-settings>`, the Mattermost Desktop App offers the following options to further customize your Mattermost experience.
+In addition to your `personal profile settings <https://docs.mattermost.com/welcome/manage-your-profile.html>`__ and :doc:`Mattermost Channels settings </channels/channels-settings>`, the Mattermost desktop app offers the following options to further customize your Mattermost experience.
 
 .. tabs::
 
