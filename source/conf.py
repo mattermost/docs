@@ -1756,6 +1756,12 @@ language = None
 # Target URLs that don't begin with '/' after removing the html_baseurl prefix are unaffected.
 mm_url_path_prefix = ""
 
+# A redirect option which, when True, will write one extensionless page (i.e. without the .html extension)
+# for each redirect page that was written. This enables redirects for pages where the .html extension was not
+# specified in the URL and the underlying web server doesn't attempt to add .html when resolving the location
+# of the resource to send.
+redirect_write_extensionless_pages = True
+
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
 # today = ''
