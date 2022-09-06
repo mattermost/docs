@@ -80,6 +80,7 @@ Latest Mattermost Releases:
  - Fixed an issue where clicking "Try free now" opened the top 3 enterprise features instead of the "Your trial has started" modal.
  - Fixed an issue where the Threads view displayed as unread even if there were no unread threads.
  - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
+ - Fixed typos in some translations that caused some in-product links to be broken.
 
 #### API Changes
  - Added new API endpoints:
