@@ -16,7 +16,6 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added a new Top Playbooks Insights widget.
  - Added a red destructive action color to the **Leave Channel** button in the channel header.
  - The "limits reached" modal is now shown to Admins who are doing a fresh login on Cloud instances that hit the message history limit.
 
