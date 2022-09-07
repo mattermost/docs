@@ -4,7 +4,7 @@ Authentication configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Authentication**:
+Access the following configuration settings in the System Console by going to **Authentication**, or by editing the ``config.json`` file as described in the following tables:
 
 - `Signup <#signup>`__
 - `Email <#email>`__

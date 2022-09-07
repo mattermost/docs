@@ -207,10 +207,11 @@ Output logs to multiple targets
 | See the `audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation for additional information.    |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
-Teammate Name Display
-^^^^^^^^^^^^^^^^^^^^^^^
+Teammate name display
+~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -226,3 +227,18 @@ Control Teammate Name Display at the system level.
 | This feature's ``config.json`` setting is ``"LockTeammateNameDisplay": []`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
+Colorize plain text console logs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: When logged events are output to the console as plain text, colorize log levels details.
+
+**False**: Plain text log details aren't colorized in the console.
+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------+

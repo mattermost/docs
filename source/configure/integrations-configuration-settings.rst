@@ -1,7 +1,10 @@
 Integrations configuration settings
 ===================================
 
-Access the following configuration settings in the System Console by going to **Integrations**:
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Access the following configuration settings in the System Console by going to **Integrations**, or by editing the ``config.json`` file as described in the following tables:
 
 - `Integrations management <#integrations-management>`__
 - `Bot Accounts <#bot-acocunts>`__
@@ -9,14 +12,12 @@ Access the following configuration settings in the System Console by going to **
 - `CORS <#cors>`__
 
 Integration management
-~~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Access the following configuration settings in the System Console by going to **Integrations > Integration Management**.
 
-Enable Incoming Webhooks
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable incoming webhooks
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
@@ -31,10 +32,8 @@ Developers building integrations can create webhook URLs for Public channels and
 | This feature's ``config.json`` setting is ``"EnableIncomingWebhooks": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-Enable Outgoing Webhooks
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable outgoing webhooks
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and viewing samples.
 
@@ -49,10 +48,8 @@ Developers building integrations can create webhook tokens for Public channels. 
 | This feature's ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-Enable Custom Slash Commands
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable custom slash commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Slash commands send events to external integrations that send a response back to Mattermost.
 
@@ -64,10 +61,8 @@ Slash commands send events to external integrations that send a response back to
 | This feature's ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
-Enable OAuth 2.0 Service Provider
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable OAuth 2.0 service provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
 
@@ -78,9 +73,7 @@ Enable OAuth 2.0 Service Provider
 +------------------------------------------------------------------------------------------------------------------------+
 
 Enable integrations to override usernames
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
@@ -91,9 +84,7 @@ Enable integrations to override usernames
 +------------------------------------------------------------------------------------------------------------------------+
 
 Enable integrations to override profile picture icons
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
 
@@ -103,10 +94,8 @@ Enable integrations to override profile picture icons
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-Enable Personal Access Tokens
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable personal access tokens
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Profile > Security**. They can be used to authenticate against the API and give full access to the account.
 
@@ -118,15 +107,13 @@ To manage who can create personal access tokens or to search users by token ID, 
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-Bot Accounts
-~~~~~~~~~~~~
+Bot accounts
+------------
 
 Access the following configuration settings in the System Console by going to **Integrations > Bot Accounts**.
 
-Enable Bot Account Creation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable bot account creation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__ to learn more.
 
@@ -137,9 +124,7 @@ Enable Bot Account Creation
 +----------------------------------------------------------------------------------------------------------------------+
 
 Disable bot accounts when owner is deactivated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: When a user is deactivated, disables all bot accounts managed by the user. To re-enable bot accounts, go to **Integrations > Bot Accounts**.
 
@@ -150,14 +135,12 @@ Disable bot accounts when owner is deactivated
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 GIF (Beta)
-~~~~~~~~~~
+----------
 
 Access the following configuration settings in the System Console by going to **Integrations > GIF (Beta)**.
 
-Enable GIF Picker
-^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Enable GIF picker
+~~~~~~~~~~~~~~~~~
 
 **True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.
 
@@ -170,10 +153,8 @@ Enable GIF Picker
 .. note::
    `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
 
-Gfycat API Key
-^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Gfycat API key
+~~~~~~~~~~~~~~
 
 When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field.
 
@@ -181,10 +162,8 @@ When blank, uses the default API key provided by Gfycat. Alternatively, a unique
 | This feature's ``config.json`` setting is ``"GfycatApiKey": "2_KtH_W5"`` with string input.   |
 +-----------------------------------------------------------------------------------------------+
 
-Gfycat API Secret
-^^^^^^^^^^^^^^^^^^
-
-|all-plans| |cloud| |self-hosted|
+Gfycat API secret
+~~~~~~~~~~~~~~~~~
 
 The API secret generated by Gfycat for your API key. When blank, uses the default API secret provided by Gfycat.
 
@@ -193,14 +172,15 @@ The API secret generated by Gfycat for your API key. When blank, uses the defaul
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 CORS
-~~~~~
+-----
 
 Access the following configuration settings in the System Console by going to **Integrations > CORS**.
 
 Enable cross-origin requests from
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
@@ -211,10 +191,11 @@ Enable HTTP cross-origin requests from specific domains separated by spaces. Typ
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |
 +--------------------------------------------------------------------------------------+
 
-CORS Exposed Headers
-^^^^^^^^^^^^^^^^^^^^^
+CORS exposed headers
+~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 Whitelist of headers that will be accessible to the requester.
 
@@ -222,10 +203,11 @@ Whitelist of headers that will be accessible to the requester.
 | This feature's ``config.json`` setting is ``"CorsExposedHeaders": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-CORS Allow Credentials
-^^^^^^^^^^^^^^^^^^^^^^^
+CORS allow credentials
+~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 **True**: Requests that pass validation will include the ``Access-Control-Allow-Credentials`` header.
 
@@ -235,10 +217,11 @@ CORS Allow Credentials
 | This feature's ``config.json`` setting is ``"CorsAllowCredentials": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
-CORS Debug
-^^^^^^^^^^^^
+CORS debug
+~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 **True**: Prints messages to the logs to help when developing an integration that uses CORS. These messages will include the structured key value pair ``"source": "cors"``.
 

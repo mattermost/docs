@@ -4,7 +4,7 @@ Site configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Site Configuration**:
+Access the following configuration settings in the System Console by going to **Site Configuration**, or by editing the ``config.json`` file as described in the following tables:
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__

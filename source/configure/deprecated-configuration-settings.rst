@@ -854,3 +854,40 @@ The file must be in the same directory as your ``config.json`` file if you set a
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
 +-----------------------------------------------------------------------------------------------------------------+
+
+Other deprecated settings
+--------------------------
+
+Disable Post Metadata
+~~~~~~~~~~~~~~~~~~~~~
+
+|enterprise| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
+
+**False**: Load channels with more accurate scroll positioning by loading post metadata.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisablePostMetadata": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------+
+
+Enable AD/LDAP group sync
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|enterprise| |cloud| |self-hosted|
+
+*Available in legacy Enterprise Edition E20*
+
+**True**: Enables AD/LDAP Group Sync configurable under **User Management > Groups**.
+
+**False**: Disables AD/LDAP Group Sync and removes **User Management > Groups** from the System Console.
+
+For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+
++-----------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------------+
