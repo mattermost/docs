@@ -56,6 +56,7 @@ Latest Mattermost Releases:
  - Code blocks now have better support for language filetype extensions and are a smaller bundle size.
  - A Desktop App prompt is now always shown on first visit to a Mattermost server from an email notification.
  - Search dropdown options now allow focusing with tab.
+ - Downgraded Bulgarian language support to Beta.
 
 #### Administration
  - Added a **View Plan** button in plan card at **System Console > License**.
