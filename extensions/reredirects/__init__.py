@@ -135,8 +135,8 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
     write_extensionless_pages: bool = getattr(
         app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES
     )
-    redirectmap: Dict[str, Dict[str, str]] = getattr(app.env, ENV_COMPUTED_REDIRECTS)
-    for page in redirectmap.keys():
+    computed_redirects: Dict[str, Dict[str, str]] = getattr(app.env, ENV_COMPUTED_REDIRECTS)
+    for page in computed_redirects.keys():
         # if page is a real page in the doctree, we've already handled it elsewhere
         if page in app.env.all_docs:
             logger.verbose(
@@ -145,17 +145,17 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
             )
             continue
         # Handle the case where there is a single redirect defined for a source page
-        if len(redirectmap[page]) == 1:
+        if len(computed_redirects[page]) == 1:
             # if this page only has a redirect to the DEFAULT_PAGE, then use a simple redirect template
-            if DEFAULT_PAGE in redirectmap[page]:
+            if DEFAULT_PAGE in computed_redirects[page]:
                 logger.verbose(
                     "html_collect_pages(): simple redirect from %s to %s"
-                    % (page, redirectmap[page][DEFAULT_PAGE])
+                    % (page, computed_redirects[page][DEFAULT_PAGE])
                 )
                 redirect_pages.append(
                     (
                         page,
-                        {"to_uri": redirectmap[page][DEFAULT_PAGE]},
+                        {"to_uri": computed_redirects[page][DEFAULT_PAGE]},
                         "simpleredirect.html",  # TODO: move this into a config variable
                     )
                 )
@@ -165,16 +165,16 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
             # there's only one fragment redirect, and it's not DEFAULT_PAGE. if someone browses to the page, they
             # will see a blank screen. we add a DEFAULT_PAGE redirect in that case.
             default_page_url = ""
-            for frag in redirectmap[page].keys():
-                default_page_url = redirectmap[page][frag]
+            for frag in computed_redirects[page].keys():
+                default_page_url = computed_redirects[page][frag]
                 break
             if default_page_url != "":
-                redirectmap[page][DEFAULT_PAGE] = default_page_url
+                computed_redirects[page][DEFAULT_PAGE] = default_page_url
                 logger.debug(
                     "html_collect_pages(): added DEFAULT_PAGE redirect for " + page
                 )
         # build a JS object that will hold the fragment redirect map
-        jsobject = build_js_object(redirectmap[page])
+        jsobject = build_js_object(computed_redirects[page])
         logger.verbose("html_collect_pages(): redirect from %s; %s" % (page, jsobject))
         redirect_pages.append(
             (
@@ -223,7 +223,7 @@ def build_finished(app: Sphinx, exception: Exception):
 def compute_redirects(
     app: Sphinx, redirects_option: Dict[str, str]
 ) -> Dict[str, Dict[str, str]]:
-    redirect_map: Dict[str, Dict[str, str]] = dict()
+    computed_redirects: Dict[str, Dict[str, str]] = dict()
     # read parameters from config
     html_baseurl: str = getattr(app.config, CONFIG_HTML_BASEURL)
     html_baseurl = html_baseurl.removesuffix("/")
@@ -232,38 +232,53 @@ def compute_redirects(
     # process each record in the redirects dict
     for source in redirects_option.keys():
         # split the URL on # so we get the path and page name + the fragment, if any
-        toks = source.split("#", 1)
-        if len(toks) == 2:
-            pagename = toks[0].removesuffix(
+        tokens = source.split("#")
+        if len(tokens) == 2:
+            pagename = tokens[0].removesuffix(
                 ".html"
             )  # ensure pagename does not end with ".html"
-            fragment = toks[1].removesuffix(
+            fragment = tokens[1].removesuffix(
                 ".html"
             )  # if the fragment ends in ".html", remove it
-        elif len(toks) == 1:
-            pagename = toks[0].removesuffix(
+        elif len(tokens) == 1:
+            pagename = tokens[0].removesuffix(
                 ".html"
             )  # ensure pagename does not end with ".html"
             fragment = ""
         else:
             logger.warning("compute_redirects(): invalid redirect: %s" % source)
             continue
+        # if the source page is the empty string then the redirect is invalid. warn the user and continue on.
+        if pagename == "":
+            logger.warning("compute_redirects(): empty page name: %s" % source)
+            continue
         # add a new dict to redirect_map if the page has not been seen before
-        if pagename not in redirect_map:
-            redirect_map[pagename] = dict()
+        if pagename not in computed_redirects:
+            computed_redirects[pagename] = dict()
         # if the target page has the same prefix as html_baseurl, remove the prefix so intra-site redirects work
         target = redirects_option[source].removeprefix(html_baseurl)
+        # if the target is the empty string then the redirect is invalid. warn the user and continue on
+        if target == "":
+            logger.warning("compute_redirects(): empty target for source %s" % source)
+            continue
         # if mm_url_path_prefix is defined and the target path starts with '/', prepend it to the target path.
         if mm_url_path_prefix != "" and target.startswith("/"):
             target = mm_url_path_prefix + target
         # if there's no fragment then we're redirecting to the "default page", which is
         # the `pagename` without any fragment.
         if fragment == "":
-            redirect_map[pagename][DEFAULT_PAGE] = target
+            computed_redirects[pagename][DEFAULT_PAGE] = target
             continue
         # redirect the fragment to the desired page
-        redirect_map[pagename][fragment] = target
-    return redirect_map
+        computed_redirects[pagename][fragment] = target
+    # remove empty keys from the map
+    empty_keys: List[str] = list()
+    for key in computed_redirects.keys():
+        if len(computed_redirects[key]) == 0:
+            empty_keys.append(key)
+    for key in empty_keys:
+        computed_redirects.pop(key)
+    return computed_redirects
 
 
 def build_js_object(pagemap: Dict[str, str]) -> str:
@@ -341,12 +356,12 @@ def old_list_status_iterator(
     mapping: List[str], summary: str, color: str = "darkgreen"
 ) -> str:
     """
-    Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
+    Displays the status of iterating through a List of strings. Adapted from the Sphinx sources.
 
-    :param mapping: The iterable to iterate through
+    :param mapping: The List to iterate through
     :param summary: A description of the action or operation
     :param color: The color of the status text; defaults to `darkgreen`
-    :return: A tuple containing the next key-value pair from the iterable
+    :return: A tuple containing the next value from the List
     """
     line_count = 0
     for item in mapping:
@@ -368,15 +383,15 @@ def list_status_iterator(
     verbosity: int = 0,
 ) -> str:
     """
-    Displays the status of iterating through a Dict/Mapping of strings. Taken from the Sphinx sources.
-    Status includes percent of records in the iterable that have been iterated through.
+    Displays the status of iterating through a List of strings. Adapted from the Sphinx sources.
+    Status includes percent of records in the List that have been iterated through.
 
-    :param mapping: The iterable to iterate through
+    :param mapping: The List to iterate through
     :param summary: A description of the action or operation
     :param color:  The color of the status text; defaults to `darkgreen`
-    :param length: The number of records in the iterable
+    :param length: The number of records in the List
     :param verbosity: Flag which writes a newline after each status message
-    :return: A tuple containing the next key-value pair from the iterable
+    :return: A tuple containing the next value from the List
     """
     if length == 0:
         yield from old_list_status_iterator(mapping, summary, color)
