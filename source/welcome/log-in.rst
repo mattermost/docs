@@ -4,7 +4,7 @@ Log in to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You'll receive link to access Mattermost from your Mattermost System Admin or through an email invitation. Once you have your organization's Mattermost link, navigate to that URL in a web browser, the `Desktop App <https://docs.mattermost.com/install/desktop-app-install.html>`__, or the `Mobile App <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__, then enter your user credentials to log into Mattermost.
+You'll receive link to access Mattermost from your Mattermost System Admin or through an email invitation. Once you have your organization's Mattermost link, navigate to that URL in a web browser, the `desktop app <https://docs.mattermost.com/install/desktop-app-install.html>`__, or the `mobile app <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__, then enter your user credentials to log into Mattermost.
 
 .. tip::
   - We recommend bookmarking the Mattermost URL in your browser of choice so logging into Mattermost is easy in the future.
