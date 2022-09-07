@@ -44,7 +44,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added new Insights widgets: Most Active Direct Messages, Least Active Channels, and New Team Members.
+ - Added new Insights widgets: Most Active Direct Messages, Least Active Channels, Top Playbooks, and New Team Members.
  - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
  - Updated the "Contact Sales" link to ``mattermost.com/pl/contact-sales`` and update the pricing modal user interface.
  - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
