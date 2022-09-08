@@ -1,45 +1,17 @@
 Advanced permissions
 ====================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost System Admins using Mattermost Cloud or Mattermost Server from v5.0 can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
 
 Two permission schemes are provided in Mattermost:
 
-* System Scheme: Applies permissions universally across all teams and channels.
-* Team Override Schemes: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
+* **System Scheme**: Applies permissions universally across all teams and channels.
+* **Team Override Schemes**: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
 
 This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
-
-.. contents::
-  :backlinks: top
-  :local:
   
 Permissions structure
 ----------------------
@@ -48,8 +20,6 @@ The Mattermost System Console provides a number of elements for Admins to contro
 
 System scheme
 ~~~~~~~~~~~~~~
-
-|all-plans| |cloud| |self-hosted|
 
 You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
 
@@ -67,7 +37,8 @@ You can access the System Scheme interface by going to **System Console > User M
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -119,10 +90,10 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 5. Select the back arrow to return to the **Permission Schemes** menu.
 6. Select **New Team Override Scheme**.
 
-  i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
-  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
-  iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
-  iv. In the **Team Administrators** panel, check the box for **Add Team Members**.
+  a. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
+  b. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
+  c. In the **All Members** panel, uncheck the box for **Add Team Members**.
+  d. In the **Team Administrators** panel, check the box for **Add Team Members**.
 
 7. Select **Save**.
 8. Select the back arrow to return to the **Permission Schemes** menu.
@@ -155,10 +126,10 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
 5. Select the arrow to return to the **Permission Schemes** interface.
 6. Select **New Team Override Scheme**.
 
-  i. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
-  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
-  iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
-  iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
+  a. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
+  b. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
+  c. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
+  d. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
   
 Convert public channels to private channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +147,8 @@ This permission is applied to all other roles (excluding the Guest role). When t
 Read only channels
 ~~~~~~~~~~~~~~~~~~
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 **Configure a channel so that members can post/reply/react but guests can only read and react.**
 

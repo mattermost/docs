@@ -1,24 +1,12 @@
 About teams
 ===========
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams. 
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams. New teams can be created if the System Admin sets **Enable Team Creation** to **true** in the System Console.
+Only users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and `manage team settings <https://docs.mattermost.com/welcome/team-settings.html>`__ for existing teams.
 
 Single team versus multiple teams
 ----------------------------------
@@ -73,9 +61,9 @@ This is the display name of your team that appears in menus and headings.
 Team URL
 ^^^^^^^^
 
-The team URL is part of the web address that navigates to your team on the system domain, https://domain.com/teamurl/.
+The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
 
-- Teams may contain only lowercase letters, numbers and dashes.
+- Teams may contain only lowercase letters, numbers, and dashes.
 - Teams must start with a letter and cannot end in a dash.
 - Teams must be 2 - 64 characters in length.
 - Team names cannot start with the following restricted words: admin, api, channel, claim, error, files, help, landing, login, mfa, oauth, plug, plugins, post, signup, playbooks, or boards.

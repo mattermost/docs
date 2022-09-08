@@ -1,17 +1,8 @@
 Building and distributing your own custom Mattermost mobile apps
 ================================================================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Managed deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 You can build and distribute custom versions of the Mattermost mobile app. Choosing this approach means `you've decided not to use the mobile app Mattermost has made available <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__ through public app stores. This also means that you've decided to `host your own push proxy service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__.
 

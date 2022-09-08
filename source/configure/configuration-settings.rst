@@ -1,902 +1,40 @@
 Configuration settings
 ======================
 
-Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
+Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. System Admins can manage Mattermost configuration using the System Console, or by modifying the ``config.json`` file directly using a text editor. 
 
-.. important::
+.. note::
 
-   Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
-
-   On new installations from v5.14, the ``default.json`` file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``. This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
-
-   From Mattermost v5.38 (released August 16, 2021), the “config watcher” (the mechanism that automatically reloads the ``config.json`` file) has been deprecated in favor of the `mmctl config reload command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ that must be run to apply configuration changes after they're made. This change will improve configuration performance and robustness.
-
-   See the `Deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings.
+   Mattermost must have write permissions to ``config.json``, otherwise configuration changes made within the System Console will have no effect.
 
 Configuration in database
 --------------------------
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Storing configuration in the database is supported from v5.10 and later. Please see more information on how to set this up `here <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
+From Mattermost v5.10, self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__ documentation for migration details.
 
 Environment variables
 ---------------------
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-Starting from Mattermost v3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
+From Mattermost v3.8, you can use `environment variables <https://docs.mattermost.com/configure/environment-variables.html>`__ to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
 
-The name of the environment variable for any setting can be derived from the name of that setting in ``config.json``. For example, to derive the name of the Site URL setting:
+Configuration reload
+--------------------
 
-1. Find the setting in ``config.json``. In this case, *ServiceSettings.SiteURL*.
-2. Add ``MM_`` to the beginning and convert all characters to uppercase and replace the ``.`` with ``_``. For example, *MM_SERVICESETTINGS_SITEURL*.
-3. The setting becomes ``export MM_SERVICESETTINGS_SITEURL="http://example.com"``.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. note::
+From Mattermost v5.38, the “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ command that must be run to apply configuration changes after they’re made. This change will improve configuration performance and robustness.
 
-  - If Mattermost is run from an initialization file, environment variables can be set via ``Environment=<>``, or ``EnvironmentFile=<path/to/file>``. In the second case, the file specified contains the list of environment variables to set.
-  - When settings are configured through an environment variable, System Admins can't modify them in the System Console.
-  - For any setting that's not set in ``config.json`` or in environment variables, the Mattermost server uses the setting's default value as documented in the sections below on this page.
+Deprecated configuration settings
+---------------------------------
 
-.. warning::
-   
-   - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__.
-   - Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
-   
-Override Mattermost license file
---------------------------------
-
-|all-plans| |self-hosted|
-
-Starting from Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
-
-When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
-
-.. note::
-   If ``MM_LICENSE`` is set to a non-empty string, but the license specified is not valid, the Mattermost server will be started without a license.
-   
-   In a High Availability deployment, using an environment variable to override a server license only affects the individual app server and doesn't propagate to other servers in the cluster.
-
-Load custom configuration defaults
-----------------------------------
-
-|all-plans| |self-hosted|
-
-Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
-
-1. Create a JSON file that contains the custom configuration defaults. For example, ``custom.json``.
-2. When starting the server, point the custom defaults environment variable to the defaults file: ``MM_CUSTOM_DEFAULTS_PATH=custom.json``.
-
-.. contents::
-  :depth: 2
-  :local:
-  :backlinks: entry
-
-About
------
-
-Settings for managing the edition and license for Mattermost Enterprise Edition.
-
-Edition and License
-~~~~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **About > Edition and License**.
-
-Edition
-^^^^^^^^
-
-|all-plans| |self-hosted|
-
-View the edition of the Mattermost deployment.
-
-License
-^^^^^^^
-
-|all-plans| |self-hosted|
-
-View subscription details including the number of users and expiry date of your Mattermost license.
-
-License Key
-^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Upload or remove license files. For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html>`__.
-
-Reporting
----------
-
-See the :doc:`reporting configuration settings </configure/reporting-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Site statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics>`__
-- `Team statistics <https://docs.mattermost.com/configure/reporting-configuration-settings.html#team-statistics>`__
-- `Server logs <https://docs.mattermost.com/configure/reporting-configuration-settings.html#server-logs>`__
-
-User Management
----------------
-
-See the :doc:`user management configuration settings </configure/user-management-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Users <https://docs.mattermost.com/configure/user-management-configuration-settings.html#users>`__
-- `Groups <https://docs.mattermost.com/configure/user-management-configuration-settings.html#groups>`__
-- `Teams <https://docs.mattermost.com/configure/user-management-configuration-settings.html#teams>`__
-- `Channels <https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels>`__
-- `Permissions <https://docs.mattermost.com/configure/user-management-configuration-settings.html#permissions>`__
-- `System roles <https://docs.mattermost.com/configure/user-management-configuration-settings.html#system-roles>`__
-
-Environment
------------
-
-Web server
-~~~~~~~~~~
-
-See the :doc:`web server configuration settings </configure/web-server-configuration-settings>` documentation for details on the following configuration settingsn:
-
-- `Site URL <https://docs.mattermost.com/configure/web-server-configuration-settings.html#site-url>`__
-- `Listen address <https://docs.mattermost.com/configure/web-server-configuration-settings.html#listen-address>`__
-- `Forward port 80 to 443 <https://docs.mattermost.com//configure/web-server-configuration-settings.html#forward-port-80-to-443>`__
-- `Connection security <https://docs.mattermost.com/configure/web-server-configuration-settings.html#connection-security>`__
-- `TLS certificate file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tls-certificate-file>`__
-- `TLS key file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#tsl-key-file>`__
-- `Use Let's Encrypt <https://docs.mattermost.com/configure/web-server-configuration-settings.html#use-let-s-encrypt>`__
-- `Let's Encrypt certificate cache file <https://docs.mattermost.com/configure/web-server-configuration-settings.html#let-s-encrypt-certificate-cache-file>`__
-- `Read timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#read-timeout>`__
-- `Write timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#write-timeout>`__
-- `Idle timeout <https://docs.mattermost.com/configure/web-server-configuration-settings.html#idle-timeout>`__
-- `Webserver mode <https://docs.mattermost.com/configure/web-server-configuration-settings.html#webserver-mode>`__
-- `Enable insecure outgoing connections <https://docs.mattermost.com/configure/web-server-configuration-settings.html#enable-insecure-outgoing-connections>`__
-- `Managed resource paths <https://docs.mattermost.com/configure/web-server-configuration-settings.html#managed-resource-paths>`__
-- `Reload configuration from disk <https://docs.mattermost.com/configure/web-server-configuration-settings.html#reload-configuration-from-disk>`__
-- `Purge all caches <https://docs.mattermost.com/configure/web-server-configuration-settings.html#purge-all-caches>`__
-
-Database
-~~~~~~~~
-
-See the :doc:`database configuration settings </configure/database-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Driver name <https://docs.mattermost.com/configure/database-configuration-settings.html#driver-name>`__
-- `Data source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__
-- `Maximum idle connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-idle-connections>`__
-- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
-- `Maximum open connections <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-open-connections>`__
-- `Query timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#query-timeout>`__
-- `Maximum connection lifetime <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-lifetime>`__
-- `Maximum connection idle timeout <https://docs.mattermost.com/configure/database-configuration-settings.html#maximum-connection-idle-timeout>`__
-- `Minimum hashtag length <https://docs.mattermost.com/configure/database-configuration-settings.html#minimum-hashtag-length>`__
-- `SQL statement logging <https://docs.mattermost.com/configure/database-configuration-settings.html#sql-statement-logging>`__
-- `Recycle database connections <https://docs.mattermost.com/configure/database-configuration-settings.html#recycle-database-connections>`__
-- `Disable database search <https://docs.mattermost.com/configure/database-configuration-settings.html#disable-database-search>`__
-- `Applied schema migrations <https://docs.mattermost.com/configure/database-configuration-settings.html#applied-schema-migrations>`__
-
-Elasticsearch
-~~~~~~~~~~~~~~
-
-See the :doc:`Elasticsearch configuration settings </configure/elasticsearch-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable Elasticsearch indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-indexing>`__
-- `Server connection address <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-connection-address>`__
-- `Skip TLS verification <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#skip-TLS-verification>`__
-- `Server username <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-username>`__
-- `Server password <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#server-password>`__
-- `Enable cluster sniffing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-cluster-sniffing>`__
-- `Bulk indexing <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing>`__
-- `Purge indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#purge-indexes>`__
-- `Enable Elasticsearch for search queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-search-queries>`__
-- `Enable Elasticsearch for autocomplete queries <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#enable-elasticsearch-for-autocomplete-queries>`__
-- `Post index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-replicas>`__
-- `Post index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-index-shards>`__
-- `Channel index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-replicas>`__
-- `Channel index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#channel-index-shards>`__
-- `User index replicas <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-index-replicas>`__
-- `User index shards <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#user-idex-shards>`__
-- `Aggregate search indexes <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#aggregate-search-indexes>`__
-- `Post aggregator start time <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#post-aggregator-start-time>`__
-- `Index prefix <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#index-prefix>`__
-- `Live indexing batch size <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#live-indexing-batch-size>`__
-- `Bulk indexing time window <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#bulk-indexing-time-window>`__
-- `Request timeout <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#request-timeout>`__
-- `Trace <https://docs.mattermost.com/configure/elasticsearch-configuration-settings.html#trace>`__
-
-File storage
-~~~~~~~~~~~~
-
-See the :doc:`file storage configuration settings </configure/file-storage-configuration-settings>` documentation for details on the following configuration settings:
-
-- `File storage system <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#file-storage-system>`__
-- `Local storage directory <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#local-storage-directory>`__
-- `Maximum file size <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#maximum-file-size>`__
-- `Enable document search by content <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-document-search-by-content>`__
-- `Enable searching content of documents within ZIP files <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__
-- `Amazon S3 bucket <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-bucket>`__
-- `Amazon S3 prefix path <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-path-prefix>`__
-- `Amazon S3 region <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-region>`__
-- `Amazon S3 access key ID <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-access-key-id>`__
-- `Amazon S3 endpoint <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-endpoint>`__
-- `Amazon S3 secret access key <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-secret-access-key>`__
-- `Enable secure Amazon S3 connections <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-secure-amazon-s3-connections>`__
-- `Amazon S3 signature v2 <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#amazon-s3-signature-v2>`__
-- `Enable server-side encryption for Amazon S3 <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-server-side-encryption-for-amazon-s3>`__
-- `Enable Amazon S3 debugging <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#enable-amazon-s3-debugging>`__
-- `Initial font <https://docs.mattermost.com/configure/file-storage-configuration-settings.html#initial-font>`__
-
-Image Proxy
-~~~~~~~~~~~~
-
-See the :doc:`image proxy configuration settings </configure/image-proxy-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable image proxy <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#enables-image-proxy>`__
-- `Image proxy type <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#image-proxy-type>`__
-- `Remote image proxy URL <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-url>`__
-- `Remote image proxy options <https://docs.mattermost.com/configure/image-proxy-configuration-settings.html#remote-image-proxy-options>`__
-
-SMTP
-~~~~
-
-See the :doc:`SMTP configuration settings </configure/smtp-configuration-settings>` documentation for details on the following configuration settings:
-
-- `SMTP server <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server>`__
-- `SMTP server port <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-port>`__
-- `Enable SMTP authentication <https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-smtp-authentication>`__
-- `SMTP server username <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-username>`__
-- `SMTP server password <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-password>`__
-- `Connection security <https://docs.mattermost.com/configure/smtp-configuration-settings.html#connection-security>`__
-- `Skip server certificate verification <https://docs.mattermost.com/configure/smtp-configuration-settings.html#skip-server-certificate-verification>`__
-- `Enable security alerts <https://docs.mattermost.com/configure/smtp-configuration-settings.html#enable-security-alerts>`__
-- `SMTP server timeout <https://docs.mattermost.com/configure/smtp-configuration-settings.html#smtp-server-timeout>`__
-
-Push Notification Server
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See the :doc:`push notification server configuration settings </configure/push-notification-server-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable push notifications <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-push-notifications>`__
-- `Push notification server <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#push-notification-server>`__
-- `Maximum notifications per channel <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#maximum-notifications-per-channel>`__
-
-High Availability
-~~~~~~~~~~~~~~~~~~
-
-See the :doc:`high availability configuration settings </configure/high-availability-configuration-settings>` documentation for details on the following configuration settings:
-
-- `Enable high availability mode <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-high-availability-mode>`__
-- `Cluster name <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#cluster-name>`__
-- `Override hostname <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#override-hostname>`__
-- `Use IP address <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#use-ip-address>`__
-- `Use gossip <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#use-gossip>`__
-- `Enable experimental gossip encryption <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-experimental-gossip-encryption>`__
-- `Enable gossip compression <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#enable-gossip-compression>`__
-- `Gossip port <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#gossip-port>`__
-- `Streaming port <https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#streaming-port>`__
-
-Rate Limiting
-~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Rate Limiting**. Changes to properties in this section require a server restart before taking effect.
-
-Enable Rate Limiting
-^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Rate limiting prevents your server from being overloaded with too many requests. This decreases the risk and impact of third-party applications or malicious attacks on your server.
-
-**True**: APIs are throttled at the rate specified by **PerSec**.
-
-**False**: APIs are not throttled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Maximum Queries per Second
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Throttle API at this number of requests per second if rate limiting is enabled.
-
-The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-+----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PerSec": 10`` with numerical input. |
-+----------------------------------------------------------------------------------+
-
-Maximum Burst Size
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The maximum number of requests allowed beyond the per second query limit.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxBurst": 100`` with numerical input. |
-+-------------------------------------------------------------------------------------+
-
-Memory Store Size
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Maximum number of user sessions connected to the system as determined by ``VaryByRemoteAddr`` and ``VaryByHeader`` variables.
-
-Typically set to the number of users in the system.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MemoryStoreSize": 10000`` with numerical input. |
-+----------------------------------------------------------------------------------------------+
-
-Vary rate limit by remote address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Rate limit API access by IP address. Recommended to set to ``true`` if you're using a proxy.
-
-**False**: Rate limiting does not vary by IP address.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByRemoteAddr": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by user
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Rate limit API access by user authentication token. Recommended to set to ``true`` if you're using a proxy.
-
-**False**: Rate limiting does not vary by user authentication token.
-
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByUser": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------+
-
-Vary rate limit by HTTP header
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix set to ``X-Real-IP``, when configuring AmazonELB set to ``X-Forwarded-For``). Recommended to be set if you're using a proxy.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-Advanced Logging 
-~~~~~~~~~~~~~~~~
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-Output logs to multiple targets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Allow any combination of console, local file, syslog, and TCP socket targets, and send log records to multiple targets. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed. Please see `Audit Log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ for more comprehensive documentation.
-
-System Admins can define multiple log targets to:
-
-- Mirror log output to files and log aggregators for redundancy.
-- Log certain entries to specific destinations. For example, all errors could be routed to a specific destination for review.
-
-Additional configuration options include:
-
-- Multiple local file targets: Supports rotation and compression triggered by size and/or duration.
-- Multiple syslogs: Supports local and remote syslog servers, with or without TLS transport.
-- Multiple TCP sockets: TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
-
-All access to the REST API or CLI is audited. When using Advanced Logging for auditing, System Admins can capture the following auditing in the target configuration in addition to discrete log levels:
-
-.. code-block:: none
-
-   "Levels": [
-      {"ID": 100, "Name": "audit-api"},
-      {"ID": 101, "Name": "audit-content"},
-      {"ID": 102, "Name": "audit-permissions"},
-      {"ID": 103, "Name": "audit-cli"},
-   ],
-
-Where:
-
-- ``audit-api``: Enables output of REST API calls.
-- ``audit-content``: Enables output of API calls that generate content (e.g. ``create post``, ``create reaction``).
-- ``audit-permissions``: Enables output of all permissions failures.
-- ``audit-cli``: Enables output of legacy CLI calls.
-
-.. note::
-
-  - Logs are recorded asynchronously to reduce latency to the caller. 
-  - Advanced logging supports hot-reloading of logger configuration.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``AdvancedLoggingConfig`` which can contain a filespec to another config file, a database DSN, or JSON.  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Options outlined in `this text file <https://github.com/mattermost/docs/files/5066579/Log.Settings.Options.txt>`__ are described in the following table.
-
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Key**       | **Definition**                                                                                                                                         | **Type**    |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Levels**    |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| ID            | Unique log level identifier. Must be registered in ``mattermost/mattermost-server/shared/mlog/levels.go``.                                             | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Name          | Human-readable name for the log level identifier.                                                                                                      | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Stacktrace    | Set to ``true`` to generate a stacktrace. Set to ``false`` to prevent a stacktrace from being generated.                                               | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Targets**   |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Type          | Can be one of: ``console``, ``file``, ``syslog``, or ``tcp``.                                                                                          | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Format        | Can be either ``json`` or ``plain``.                                                                                                                   | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Levels        | Array of log levels.                                                                                                                                   | []          |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Options       | Map of options specific to the target type.                                                                                                            | {}          |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxQueueSize  | The number of audit records that can be queued/buffered at any point in time when writing to syslog. Default is 1000.                                  | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **Console**   |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Out           | Can be either ``stdout`` or ``stderr``.                                                                                                                | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **File**      |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Filename      | Path and filename for logs.                                                                                                                            | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxAgeDays    | Number of days until a rotation is triggered. Set to ``0`` to not rotate based on age.                                                                 | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxBackups    | Maximum number of rotated files to keep where the oldest are deleted. Set to ``0`` to discard rotated files.                                           | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| MaxSizeMB     | Maximum file size before a rotation is triggered. Set to ``0`` to prevent rotation based on file size.                                                 | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Compress      | Set to ``true`` to compress files after rotation. Set to ``false`` to not compress files after rotation.                                               | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **SysLog**    |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| IP            | IP address or domain of the syslog server.                                                                                                             | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Port          | Listening port of syslog server.                                                                                                                       | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Tag           | Typically the program name, machine name, or node name.                                                                                                | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| TLS           | Set to ``true`` to connect via TLS. Set to ``false`` to prevent connecting via TLS.                                                                    | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Cert          | For TLS connections where TLS is set to ``true``, the filename of client certificate or base64-encoded certificate.                                    | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Insecure      | Used for testing purposes only. Set to ``true`` to prevent a certificate check from being performed. Set to ``false`` to perform a certificate check.  | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| **TCP**       |                                                                                                                                                        |             |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| IP            | IP address or domain of the socket server.                                                                                                             | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Port          | Listening port of the socket server.                                                                                                                   | int         |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| TLS           | Set to ``true`` to connect via TLS. Set to ``false`` to prevent connecting via TLS.                                                                    | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Cert          | For TLS connections where TLS is set to ``true``, the filename of client certificate or base64-encoded certificate.                                    | string      |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-|               |                                                                                                                                                        |             |
-| Insecure      | Used for testing purposes only. Set to ``true`` to prevent a certificate check from being performed. Set to ``false`` to perform a certificate check.  | bool        |
-+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+
-
-.. note::
-
-    Filenames for ``AdvancedLoggingConfig`` can contain an absolute filename, a relative filename, or embedded JSON.
-
-See the :download:`Advanced Logging Options Sample JSON ZIP file <../samples/advanced-logging-options-sample-json.zip>` for a sample configuration file. 
-
-Standard Logging 
-~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Logging**.
-
-.. note::
-
-  Standard logging in Mattermost supports the ability to output logs to the console and file targets. Mattermost Enterprise customers can specify additional log target types, such as TCP configuration options using audit log v2. See the `audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation and the `advanced audit logging configuration <https://docs.mattermost.com/configure/configuration-settings.html#advanced-audit-logging-configuration>`__ documentation for additional details.
-
-Output logs to console
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Output log messages to the console based on ``ConsoleLevel`` option. The server writes messages to the standard output stream (stdout).
-
-**False**: Output log messages are not written to the console.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableConsole": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------+
-
-Console Log Level
-^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Level of detail at which log events are written to the console when ``EnableConsole`` = ``true``.
-
-**DEBUG**: Prints high detail for developers debugging issues.
-
-**ERROR**: Outputs only error messages.
-
-**INFO**: Outputs error messages and information around startup and initialization.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConsoleLevel": "DEBUG"`` with options ``"DEBUG"``, ``"ERROR"``, and ``"INFO"``. |
-+------------------------------------------------------------------------------------------------------------------------------+
-
-Output console logs as JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-**True**: Logged events are written in a machine-readable JSON format.
-
-**False**: Logged events are written in plain text.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false``.                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
-Output logs to file
-^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Typically set to ``true`` in production. When ``true``, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
-
-.. note::
-   Logs are rotated once the log file reaches a size of 100 MB or more.
-
-**True**: Log files are written to files specified in ``FileLocation``.
-
-**False**: Log files are not written.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false``.                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
-File Log Level
-^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Level of detail at which log events are written to log files when ``EnableFile`` = ``true``.
-
-**ERROR**: Outputs only error messages.
-
-**INFO**: Outputs error messages and information around startup and initialization.
-
-**DEBUG**: Prints high detail for developers debugging issues.
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileLevel": "INFO"`` with options ``"DEBUG"``, ``"ERROR"``, and ``"INFO"``. |
-+--------------------------------------------------------------------------------------------------------------------------+
-
-Output file logs as JSON
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Typically set to ``true`` in production. When ``true``, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
-
-**True**: Logged events are written in a machine-readable JSON format.
-
-**False**: Logged events are written in plain text.
-
-Changes to this setting require a server restart before taking effect.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileJson": true`` with options ``true`` and ``false``.                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------+
-
-File Log Directory
-^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-Changes to this setting require a server restart before taking effect.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileLocation": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
-
-Enable Webhook Debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Contents of incoming webhooks are printed to log files for debugging.
-
-**False**: Contents of incoming webhooks are not printed to log files.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableWebhookDebugging": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-Enable Diagnostics and Error Reporting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. All diagnostics and error reporting is encrypted in transit and does not include personally identifiable information or message contents. To learn more about this feature, see :doc:`../manage/telemetry`.
-
-**False**: Diagnostics and error reporting are disabled.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDiagnostics": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
-
-Session Lengths
-~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Session Lengths**.
-
-User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table.
-
-Extend session length with activity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Improves user experience by extending sessions and keeping users logged in if they are active in their Mattermost apps. 
-
-**True**: Sessions will be automatically extended when the user is active in their Mattermost client. User sessions will only expire if they are not active in their Mattermost client for the entire duration of the session lengths defined in the fields below.
-
-**False**: Sessions will not extend with activity in Mattermost. User sessions will immediately expire at the end of the session length or idle timeouts defined below.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExtendSessionLengthWithActivity": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------+
-
-Session length for email and AD/LDAP authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInHours": 720`` with numerical input.             |
-+----------------------------------------------------------------------------------------------------------------+
-
-Session length for mobile apps
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
-
-After changing this setting, the new session length will take effect after the next time the user enters their credentials.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInHours": 4320`` with numerical input.        |
-+---------------------------------------------------------------------------------------------------------------+
-
-Session length for SSO authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting defines the session length for SSO authentication, such as SAML, GitLab, and OAuth 2.0.
-
-Set the number of hours from the last time a user entered their credentials to the expiry of the user's session. Numbers as decimals are also accepted by this configuration setting. If the authentication method is SAML, GitLab, or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
-
-After changing this setting, the setting will take effect after the next time the user enters their credentials.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthSSOInHours": 720`` with numerical input. |
-+----------------------------------------------------------------------------------------------------+
-
-Session Cache (minutes)
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-Set the number of minutes to cache a session in memory.
-
-+-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionCacheInMinutes": 10`` with numerical input. |
-+-------------------------------------------------------------------------------------------------+
-
-Session Idle Timeout (minutes)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
-
-Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
-
-This setting does not take effect if ``ExtendSessionLengthWithActivity`` is set to ``true``.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes": 43200`` with numerical input.        |
-+-----------------------------------------------------------------------------------------------------------------+
-
-Performance Monitoring
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Performance Monitoring**.
-
-Changes to properties in this section require a server restart before taking effect.
-
-Enable Performance Monitoring
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-**True**: Mattermost enables performance monitoring collection and profiling. Please see `documentation <https://docs.mattermost.com/scale/performance-monitoring.html>`__ to learn more about configuring performance monitoring for Mattermost.
-
-**False**: Mattermost performance monitoring is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
-
-Listen Address
-^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-The address the Mattermost server will listen on to expose performance metrics.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"InterNodeListenAddress": ":8067"`` with string input. |
-+----------------------------------------------------------------------------------------------------+
-
-Developer
-~~~~~~~~~~
-
-Access the following configuration settings in the System Console by going to **Environment > Developer**.
-
-Enable Testing Commands
-^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: ``/test`` slash command is enabled to load test accounts and test data.
-
-**False**: ``/test`` slash command is disabled.
-
-Changes to this setting require a server restart before taking effect.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableTesting": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
-Enable Developer Mode
-^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: Javascript errors are shown in a purple bar at the top of the user interface. Not recommended for use in production.
-
-**False**: Users are not alerted to Javascript errors.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Enable Client Performance Debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-**True**: User-specific performance debugging features can be enabled from **Settings > Advanced > Performance Debugging**. These settings only affect the user who enables them. See the `Performance Debugging <https://docs.mattermost.com/channels/channels-settings.html#performance-debugging>`__ product documentation to learn more.
-
-**False**: Disables and hides debugging features from **Settings > Advanced > Performance Debugging**.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDeveloper": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
-
-Allow Untrusted Internal Connections To
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|all-plans| |self-hosted|
-
-This setting limits the ability for the Mattermost server to make untrusted requests within its local network. A request is considered "untrusted" when it's made on behalf of a client. The following features make untrusted requests and are affected by this setting:
-
-- Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.
-- Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.
-- The `local image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__. If the local image proxy is enabled, images located on the local network cannot be used by integrations or posted in chat messages.
-
-Requests that can only be configured by admins are considered trusted and will not be affected by this setting. Trusted URLs include ones used for OAuth login or for sending push notifications.
-
-.. warning::
-   This setting is intended to prevent users located outside your local network from using the Mattermost server to request confidential data from inside your network. Care should be used when configuring this setting to prevent unintended access to your local network.
-
-Some examples of when you may want to modify this setting include:
-
-- When installing a plugin that includes its own images, such as `Matterpoll <https://github.com/matterpoll/matterpoll>`__, you will need to add the Mattermost server's domain name to this list.
-- When running a bot or webhook-based integration on your local network, you'll need to add the hostname of the bot/integration to this list.
-- If your network is configured in such a way that publicly-accessible web pages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
-
-This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It's configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed (such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``). Since v5.9, the public IP of the Mattermost application server itself is also considered a reserved IP.
-
-.. note::
-   Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
-
-IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution, and only CIDR rules require DNS resolution. We try to match IP addresses and hostnames without even resolving. If that fails, we resolve using the local resolver (by reading the ``/etc/hosts`` file first), then check for matching CIDR rules. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input. |
-+------------------------------------------------------------------------------------------------------------+
+See the `deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings that are no longer supported.
 
 Site Configuration
 -------------------
@@ -911,7 +49,8 @@ Access the following configuration settings in the System Console by going to **
 Site Name
 ^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Name of service shown in login screens and UI. Maximum 30 characters.
 
@@ -922,7 +61,8 @@ Name of service shown in login screens and UI. Maximum 30 characters.
 Site Description
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
 
@@ -933,7 +73,8 @@ Description of service shown in login screens and UI. When not specified, "All t
 Enable Custom Branding
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -948,7 +89,8 @@ Enable Custom Branding
 Custom Brand Image
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
 
@@ -959,7 +101,8 @@ Custom JPG image is displayed on left side of server login page. Recommended max
 Custom Brand Text
 ^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as using in Mattermost messages.
 
@@ -970,7 +113,8 @@ Custom text will be shown below custom brand image on left side of server login 
 Enable Ask Community Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: **Ask the community** link is visible in the Mattermost channel header, under the **Help** menu. When selected, users are redirected to https://mattermost.com/pl/default-ask-mattermost-community/, where they can join the Mattermost Community to ask questions and help others troubleshoot issues. This option is not available on the mobile apps.
 
@@ -983,7 +127,8 @@ Enable Ask Community Link
 Help link
 ^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation are hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
 
@@ -994,7 +139,8 @@ Configurable link to a Help page your organization may provide to end users. By 
 Terms of Use link
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Configurable link to Terms of Use your organization may provide to end users on the footer of Mattermost sign-up and login pages. By default, links to a `Terms of Use <https://mattermost.com/terms-of-use/>`__ page hosted on ``mattermost.com``. If changing the link to a different Terms of Use, make sure to include the "Mattermost Acceptable Use Policy" notice to end users that must also be shown to users from the "Terms of Use" link.
 
@@ -1007,7 +153,8 @@ From Mattermost v5.17, this setting doesn't change the terms of use link display
 Privacy Policy link
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Configurable link to Privacy Policy your organization may provide to end users on the footer of the sign-up and login pages. By default, links to a Privacy Policy page hosted on mattermost.com.
 
@@ -1020,7 +167,8 @@ In version 5.17 and later, this setting does not change the privacy policy link 
 About Link
 ^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Configurable link to an About page describing your organization may provide to end users. By default, links to an About page hosted on mattermost.com.
 
@@ -1031,7 +179,8 @@ Configurable link to an About page describing your organization may provide to e
 Report a Problem link
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Set the link for the support website.
 
@@ -1042,7 +191,8 @@ Set the link for the support website.
 Mattermost Apps Download Page Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Configurable link to a download page for Mattermost Apps. When a link is present, an option to **Download Apps** will be added in the Main Menu so users can find the download page. Leave this field blank to hide the option from the Main Menu. Defaults to a page on mattermost.com where users can download the iOS, Android, and Desktop clients. If you're using an Enterprise App Store for your mobile apps, change this link to point to a customized download page where users can find the correct apps.
 
@@ -1053,7 +203,8 @@ Configurable link to a download page for Mattermost Apps. When a link is present
 Android App Download Link
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Configurable link to download the Android app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
@@ -1064,7 +215,8 @@ Configurable link to download the Android app. When a link is present, users who
 iOS App Download Link
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Configurable link to download the iOS app. When a link is present, users who access the site on a mobile web browser will be prompted with a page giving them the option to download the app. Leave this field blank to prevent the page from appearing. If you are using an Enterprise App Store for your mobile apps, change this link to point to the correct app.
 
@@ -1080,7 +232,8 @@ Access the following configuration settings in the System Console by going to **
 Default Server Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Default language for system messages and logs.
 
@@ -1093,7 +246,8 @@ Changes to this setting require a server restart before taking effect.
 Default Client Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Default language for newly-created users and pages where the user hasn't logged in.
 
@@ -1104,12 +258,10 @@ Default language for newly-created users and pages where the user hasn't logged 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Sets which languages are available for users in **Settings > Display > Language**. Leave the field blank to add new languages automatically by default, or add new languages using the dropdown menu manually as they become available. If you're manually adding new languages, the **Default Client Language** must be added before saving the setting.
-
-.. note::
-  Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``.  |
@@ -1123,7 +275,8 @@ Access the following configuration settings in the System Console by going to **
 Max Users Per Team
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Maximum number of users per team, excluding inactive users.
 
@@ -1140,7 +293,8 @@ In terms of technical performance, `with appropriate hardware, Mattermost can ea
 Max Channels Per Team
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Maximum number of channels per team, including both active and deleted channels.
 
@@ -1151,7 +305,8 @@ Maximum number of channels per team, including both active and deleted channels.
 Enable users to open Direct Message channels with
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **Any user on the Mattermost server**: The Direct Messages **More** menu has the option to open a Direct Message channel with any user on the server.
 
@@ -1166,7 +321,8 @@ This setting only affects the UI, not permissions on the server. For instance, a
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Settings > Display > Teammate Name Display**.
 
@@ -1183,7 +339,8 @@ Specifies how names are displayed in the user interface by default. Please note 
 Lock Teammate Name Display for all users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Disables users' ability to change settings under **Settings > Display > Teammate Name Display**.
 
@@ -1192,7 +349,8 @@ Lock Teammate Name Display for all users
 Allow Users to View Archived Channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Allows users to view, share, and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
 
@@ -1205,7 +363,8 @@ Allow Users to View Archived Channels
 Show Email Address
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Show email address of all users.
 
@@ -1218,7 +377,8 @@ Show Email Address
 Show Full Name
 ^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Show full name of all users.
 
@@ -1231,7 +391,8 @@ Show Full Name
 Enable Custom User Statuses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can set descriptive status messages and optional status emojis that are visible to all users.
 
@@ -1249,7 +410,8 @@ Access the following configuration settings in the System Console by going to **
 Show @channel, @all, or @here confirmation dialog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users will be prompted to confirm when posting @channel, @all, or @here in channels with over five members.
 
@@ -1262,7 +424,8 @@ Show @channel, @all, or @here confirmation dialog
 Enable Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables sending of email notifications.
 
@@ -1281,7 +444,8 @@ Email invitations and account deactivation emails are not affected by this setti
 Enable Preview Mode Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Preview Mode banner is displayed to all users when ``"SendEmailNotifications": false`` so users are aware that email notifications are disabled.
 
@@ -1294,7 +458,8 @@ Enable Preview Mode Banner
 Enable Email Batching
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Settings > Notifications**.
 
@@ -1311,7 +476,8 @@ Enable Email Batching
 Email Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1326,7 +492,8 @@ Email Notification Contents
 Support Email Address
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Set an email address for feedback or support requests. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
@@ -1339,7 +506,8 @@ To ensure that users can contact you for assistance, set this value to an email 
 Notification Display Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Name displayed on email account used when sending notification emails from Mattermost system. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
@@ -1350,7 +518,8 @@ Name displayed on email account used when sending notification emails from Matte
 Notification From Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Address displayed on email account used when sending notification emails from within Mattermost. This field is required, and if a value isn't set, email notifications don't include a way for users to request assistance.
 
@@ -1363,7 +532,8 @@ So you don't miss messages, please make sure to change this value to an email yo
 Notification Reply-To Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Email address used in the Reply-To header when sending notification emails from Mattermost.
 
@@ -1374,7 +544,8 @@ Email address used in the Reply-To header when sending notification emails from 
 Notification Footer Mailing Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
 
@@ -1385,7 +556,8 @@ Organization name and mailing address displayed in the footer of email notificat
 Push Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **Generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
 
@@ -1409,7 +581,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Announcement Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-enable the banner after it has been disabled. You can prevent users from dismissing the banner, and you can control the text color and the background color.
 
@@ -1424,7 +597,8 @@ Enable an announcement banner across all teams. The banner is displayed at the t
 Banner Text
 ^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The text of the announcement banner.
 
@@ -1435,6 +609,9 @@ The text of the announcement banner.
 Banner Color
 ^^^^^^^^^^^^
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 The background color of the announcement banner.
 
 +---------------------------------------------------------------------------------------------+
@@ -1444,7 +621,8 @@ The background color of the announcement banner.
 Banner Text Color
 ^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The color of the text in the announcement banner.
 
@@ -1455,7 +633,8 @@ The color of the text in the announcement banner.
 Allow Banner Dismissal
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can dismiss the banner until the next time they log in or the banner is updated.
 
@@ -1473,7 +652,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Emoji Picker
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables an emoji picker that allows users to select emojis to add as reactions or use in messages. Enabling the emoji picker with a large number of custom emojis may slow down performance.
 
@@ -1486,7 +666,8 @@ Enable Emoji Picker
 Enable Custom Emoji
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables a **Custom Emoji** option in the emoji picker, where users can go to add custom emojis.
 
@@ -1504,7 +685,8 @@ Access the following configuration settings in the System Console by going to **
 Automatically Follow Threads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article for details.
 
@@ -1523,7 +705,8 @@ This setting must be enabled to support `Collapsed Reply Threads <https://docs.m
 Collapsed Reply Threads
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
 
@@ -1548,7 +731,8 @@ System Admins can set the default availability of Collapsed Reply Threads for th
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.
 
@@ -1565,7 +749,8 @@ Link previews are requested by the server, meaning the Mattermost server must be
 Disable Link Previews for Specific Domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”). 
 
@@ -1576,7 +761,8 @@ Link previews are disabled for this list of comma-separated domains (e.g. “git
 Enable message link previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Links to messages generate a preview for any users with access to the original message. 
 
@@ -1589,7 +775,8 @@ Enable message link previews
 Enable SVGs
 ^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables users to see previews of SVG file attachments and SVG image links.
 
@@ -1602,7 +789,8 @@ Enable SVGs
 Enable LaTeX Code Block Rendering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables rendering of LaTeX code in a ``latex`` code block.
 
@@ -1615,7 +803,8 @@ Enable LaTeX Code Block Rendering
 Enable Inline LaTeX Rendering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables inline rendering of LaTeX code.
 
@@ -1628,7 +817,8 @@ Enable Inline LaTeX Rendering
 Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 A list of URL schemes that are used for autolinking in message text. ``http``, ``https``, ``ftp``, ``tel`` and ``mailto`` always create links.
 
@@ -1639,7 +829,8 @@ A list of URL schemes that are used for autolinking in message text. ``http``, `
 Google API Key
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Mattermost offers the ability to embed YouTube videos from URLs shared by end users. 
 
@@ -1661,7 +852,8 @@ Access the following configuration settings in the System Console by going to **
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 When ``false``, disables file sharing on the server. All file and image uploads on messages are forbidden across clients and devices, including mobile.
 
@@ -1672,7 +864,8 @@ When ``false``, disables file sharing on the server. All file and image uploads 
 Allow File Uploads on Mobile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1687,7 +880,8 @@ Allow File Uploads on Mobile
 Allow File Downloads on Mobile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1707,7 +901,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Public File Links
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Allow users to generate public links to files and images for sharing outside the Mattermost system with a public URL.
 
@@ -1724,7 +919,8 @@ Enable Public File Links
 Public Link Salt
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 32-character salt added to the URL of public links when public links are enabled. Select **Regenerate** in the System Console to create a new salt, which will invalidate all existing public links.
 
@@ -1740,7 +936,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Admin Notices
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
 
@@ -1753,7 +950,8 @@ Enable Admin Notices
 Enable End User Notices
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
 
@@ -1774,7 +972,8 @@ Signup
 Enable Account Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
 
@@ -1787,7 +986,8 @@ Enable Account Creation
 Restrict account creation to specified email domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
 
@@ -1800,7 +1000,8 @@ This setting only affects email login. For domain restrictions to be effective, 
 Enable Open Server
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can sign up to the server from the root page without an invite.
 
@@ -1813,7 +1014,8 @@ Enable Open Server
 Enable Email Invitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can invite others to the Mattermost system by email.
 
@@ -1826,7 +1028,8 @@ Enable Email Invitations
 Invalidate pending email invites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This button invalidates active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.
 
@@ -1836,7 +1039,8 @@ Email
 Enable account creation with email
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Allow team creation and account signup using email and password.
 
@@ -1849,7 +1053,8 @@ Enable account creation with email
 Require Email Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Require email verification after account creation prior to allowing login.
 
@@ -1862,7 +1067,8 @@ Require Email Verification
 Enable sign-in with email
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Mattermost allows account creation using email and password.
 
@@ -1875,7 +1081,8 @@ Enable sign-in with email
 Enable sign-in with username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Mattermost allows users with email login to log in using their username and password. This setting does not affect AD/LDAP login.
 
@@ -1891,7 +1098,8 @@ Password
 Minimum Password Length
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -1904,7 +1112,8 @@ Minimum number of characters required for a valid password. Must be a whole numb
 Password Requirements
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -1928,7 +1137,8 @@ This feature's ``config.json`` settings are, respectively:
 Maximum Login Attempts
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Failed login attempts allowed before a user is locked out and required to reset their password via email.
 
@@ -1948,7 +1158,8 @@ If you choose to run Mattermost outside your private network, bypassing your exi
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to log in to the Mattermost server. Specifically, they'll be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
 
@@ -1961,7 +1172,8 @@ Enable Multi-factor Authentication
 Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -1979,7 +1191,8 @@ AD/LDAP
 Enable sign-in with AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -1994,7 +1207,8 @@ Enable sign-in with AD/LDAP
 Enable Synchronization with AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Mattermost periodically synchronizes users from AD/LDAP.
 
@@ -2007,7 +1221,8 @@ Enable Synchronization with AD/LDAP
 Login Field Name
 ^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to AD/LDAP credentials in your company, so it is recognizable to your users. Defaults to **AD/LDAP Username**.
 
@@ -2018,7 +1233,8 @@ The placeholder text that appears in the login field on the login page. Typicall
 AD/LDAP Server
 ^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The domain or IP address of the AD/LDAP server.
 
@@ -2029,7 +1245,8 @@ The domain or IP address of the AD/LDAP server.
 AD/LDAP Port
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The port Mattermost will use to connect to the AD/LDAP server. Defaults to ``389``.
 
@@ -2040,7 +1257,8 @@ The port Mattermost will use to connect to the AD/LDAP server. Defaults to ``389
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The type of connection security Mattermost uses to connect to AD/LDAP.
 
@@ -2059,7 +1277,8 @@ If the "No encryption" option is selected it is highly recommended that the AD/L
 Skip Certificate Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
@@ -2072,7 +1291,8 @@ Skip Certificate Verification
 Private Key
 ^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 (Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
@@ -2083,7 +1303,8 @@ Private Key
 Public Certificate
 ^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 (Optional) The public TLS certificate file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
@@ -2094,7 +1315,8 @@ Public Certificate
 Bind Username
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost. Its permissions should be limited to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format. This field is required, and anonymous bind is not currently supported.
 
@@ -2105,7 +1327,8 @@ The username used to perform the AD/LDAP search. This should be an account creat
 Bind Password
 ^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Password of the user given in **Bind Username**. Anonymous bind is not currently supported.
 
@@ -2116,7 +1339,8 @@ Password of the user given in **Bind Username**. Anonymous bind is not currently
 Base DN
 ^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The **Base Distinguished Name** of the location where Mattermost should start its search for users in the AD/LDAP tree.
 
@@ -2127,7 +1351,8 @@ The **Base Distinguished Name** of the location where Mattermost should start it
 User Filter
 ^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 (Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the users selected by the query will be able to access Mattermost.
 
@@ -2147,7 +1372,8 @@ This filter uses the permissions of the **Bind Username** account to execute the
 Group Filter
 ^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2165,7 +1391,8 @@ This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(ob
 Enable Admin Filter
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables System Admins to configure an AD/LDAP filter.
 
@@ -2174,7 +1401,8 @@ Enable Admin Filter
 Admin Filter
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2189,7 +1417,8 @@ This filter default is ``false`` and must be set to ``true`` in order for the Ad
 Guest Filter
 ^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2204,7 +1433,8 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest
 ID Attribute
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
@@ -2221,7 +1451,8 @@ If you need to change this field after users have already logged in, use the `ma
 Login ID Attribute
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the **Username Attribute** field above.
 
@@ -2234,7 +1465,8 @@ If your team typically uses domain\username to log in to other services with AD/
 Username Attribute
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the Login ID Attribute.
 
@@ -2249,7 +1481,8 @@ The **Username Attribute** may be set to the same value used to log in to the sy
 Email Attribute
 ^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to populate the email address field in Mattermost.
 
@@ -2262,7 +1495,8 @@ Email notifications will be sent to this email address, and this email address m
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -2273,7 +1507,8 @@ First Name Attribute
 Last Name Attribute
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -2284,7 +1519,8 @@ Last Name Attribute
 Nickname Attribute
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -2295,7 +1531,8 @@ Nickname Attribute
 Position Attribute
 ^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -2306,7 +1543,8 @@ Position Attribute
 Profile Picture Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
 
@@ -2319,7 +1557,8 @@ The Mattermost server will replace the user’s profile image upon login (not at
 Group Display Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2335,7 +1574,8 @@ Group Display Name Attribute
 Group Id Attribute
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2351,7 +1591,8 @@ Group Id Attribute
 Synchronization Interval (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. 
 
@@ -2369,7 +1610,8 @@ When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once.
 
@@ -2383,7 +1625,8 @@ The maximum number of users the Mattermost server will request from the AD/LDAP 
 Query Timeout (seconds)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The timeout value for queries to the AD/LDAP server. Increase this value if you are getting timeout errors caused by a slow AD/LDAP server.
 
@@ -2394,14 +1637,16 @@ The timeout value for queries to the AD/LDAP server. Increase this value if you 
 AD/LDAP Test
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This button can be used to test the connection to the AD/LDAP server. If the test is successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
 
 AD/LDAP Synchronize Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.
 
@@ -2423,7 +1668,8 @@ SAML
 Enable Login With SAML
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2438,7 +1684,8 @@ Enable Login With SAML
 Enable Synchronizing SAML Accounts With AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2453,7 +1700,8 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 Ignore Guest Users When Synchronizing with AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2470,7 +1718,8 @@ Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``t
 Override SAML Bind Data with AD/LDAP Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2488,7 +1737,8 @@ Override SAML Bind Data with AD/LDAP Information
 Identity Provider Metadata URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2501,7 +1751,8 @@ The URL where Mattermost sends a request to obtain setup metadata from the provi
 SAML SSO URL
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2514,7 +1765,8 @@ The URL where Mattermost sends a SAML request to start login sequence.
 Identity Provider Issuer URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2527,7 +1779,8 @@ The issuer URL for the Identity Provider you use for SAML requests.
 Identity Provider Public Certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2540,7 +1793,8 @@ The public authentication certificate issued by your Identity Provider.
 Verify Signature
 ^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2555,7 +1809,8 @@ Verify Signature
 Service Provider Login URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2568,7 +1823,8 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 Service Provider Identifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2581,7 +1837,8 @@ The unique identifier for the Service Provider, usually the same as Service Prov
 Enable Encryption
 ^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2596,7 +1853,8 @@ Enable Encryption
 Service Provider Private Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2609,7 +1867,8 @@ The private key used to decrypt SAML Assertions from the Identity Provider.
 Service Provider Public Certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2622,7 +1881,8 @@ The certificate file used to generate the signature on a SAML request to the Ide
 Sign Request
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2635,7 +1895,8 @@ When ``true``, Mattermost signs the SAML request using your Service Provider Pri
 Signature Algorithm
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2648,7 +1909,8 @@ The signature algorithm used to sign the request. Supported options are `RSAwith
 Canonical Algorithm
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2661,7 +1923,8 @@ The canonicalization algorithm. Supported options are ``Canonical1.0`` for `Excl
 Email Attribute
 ^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2676,7 +1939,8 @@ Email notifications will be sent to this email address, and this email address m
 Username Attribute
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2689,7 +1953,8 @@ The attribute in the SAML Assertion that will be used to populate the username f
 Id Attribute
 ^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2702,7 +1967,8 @@ Id Attribute
 Guest Attribute
 ^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2717,7 +1983,8 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest
 Enable Admin Attribute
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2728,7 +1995,8 @@ Enable Admin Attribute
 Admin Attribute
 ^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2743,7 +2011,8 @@ This attribute's default is ``false`` and must be set to ``true`` in order for t
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2756,7 +2025,8 @@ First Name Attribute
 Last Name Attribute
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2769,7 +2039,8 @@ Last Name Attribute
 Nickname Attribute
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2782,7 +2053,8 @@ Nickname Attribute
 Position Attribute
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2795,7 +2067,8 @@ Position Attribute
 Preferred Language Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2808,7 +2081,8 @@ Preferred Language Attribute
 Login Button Text
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2830,7 +2104,8 @@ Settings to configure OAuth login for account creation and login.
 Select OAuth 2.0 service provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2849,7 +2124,8 @@ GitLab
 Enable authentication with GitLab
 .................................
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
 
@@ -2865,7 +2141,8 @@ Enable authentication with GitLab
 Application ID
 ..............
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
@@ -2876,7 +2153,8 @@ Obtain this value by logging into your GitLab account. Go to **Profile Settings 
 Application Secret Key
 ......................
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
 
@@ -2887,14 +2165,16 @@ Obtain this value by logging into your GitLab account. Go to **Profile Settings 
 GitLab Site URL
 ................
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
 User API Endpoint
 .................
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
 
@@ -2905,7 +2185,8 @@ Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:
 Auth Endpoint
 ..............
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``). Use HTTP or HTTPS depending on how your server is configured.
 
@@ -2916,7 +2197,8 @@ Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.
 Token Endpoint
 ..............
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
 
@@ -2940,7 +2222,8 @@ Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 
 Client ID
 .........
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2953,7 +2236,8 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Client Secret
 .............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2966,7 +2250,8 @@ Obtain this value by registering Mattermost as an application in your Google acc
 User API Endpoint
 ..................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2979,7 +2264,8 @@ We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=n
 Auth Endpoint
 ..............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2992,7 +2278,8 @@ We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Aut
 Token Endpoint
 ..............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3021,7 +2308,8 @@ Enable authentication with Office 365 by selecting **Office 365** from **System 
 Application ID
 ..............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3034,7 +2322,8 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 Application Secret Password
 ...........................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3047,7 +2336,8 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 Directory (tenant) ID
 .....................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3060,7 +2350,8 @@ This value is the ID of the application's AAD directory.
 User API Endpoint
 .................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3073,7 +2364,8 @@ We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpo
 Auth Endpoint
 .............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3086,7 +2378,8 @@ We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth 
 Token Endpoint
 ..............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3102,7 +2395,8 @@ OpenID Connect
 Select OpenID Connect service provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3122,7 +2416,8 @@ GitLab Settings
 GitLab Site URL
 ................
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Starter.*
 
@@ -3131,7 +2426,8 @@ Specify the URL of your GitLab instance (example ``https://example.com:3000``). 
 Discovery Endpoint
 ..................
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 *Not available in Cloud Starter*
@@ -3141,7 +2437,8 @@ Obtain this value by registering Mattermost as an application in your service pr
 Client ID
 .........
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 *Not available in Cloud Starter*
@@ -3151,7 +2448,8 @@ Obtain this value by registering Mattermost as an application in your service pr
 Client Secret
 ..............
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 *Not available in Cloud Starter*
@@ -3174,7 +2472,8 @@ Enable authentication with Google by selecting ``Google Apps`` from **System Con
 Discovery Endpoint
 ...................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3187,7 +2486,8 @@ This value is prepopulated with ``https://accounts.google.com/.well-known/openid
 Client ID
 ..........
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3200,7 +2500,8 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Client Secret
 .............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3229,7 +2530,8 @@ Enable authentication with Office 365 by selecting **Office 365** from **System 
 Directory (tenant) ID
 .....................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3238,7 +2540,8 @@ This value is the ID of the application's AAD directory.
 Discovery Endpoint
 ..................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3247,7 +2550,8 @@ This value is prepopulated with https://login.microsoftonline.com/common/v2.0/.w
 Client ID
 ..........
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3256,7 +2560,8 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Client Secret
 ..............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3278,7 +2583,8 @@ Enable authentication with a service provider by selecting ``OpenID Connect (Oth
 Button Name
 ............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3291,6 +2597,9 @@ Specify the text that displays on the OpenID login button.
 Button Color
 .............
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
 
 +------------------------------------------------------------------------------------+
@@ -3300,7 +2609,8 @@ Specify the color of the OpenID login button for white labeling purposes. Use a 
 Discovery Endpoint
 ..................
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3313,7 +2623,8 @@ Obtain this value by registering Mattermost as an application in your service pr
 Client ID
 ..........
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3326,7 +2637,8 @@ Obtain this value by registering Mattermost as an application in your service pr
 Client Secret
 ..............
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -3342,7 +2654,8 @@ Guest Access
 Enable Guest Access
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -3357,7 +2670,8 @@ Enable Guest Access
 Whitelisted Guest Domains
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -3370,7 +2684,8 @@ When populated, guest accounts can only be created by a verified email from this
 Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -3397,7 +2712,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugins
 ^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables plugins on your Mattermost server. Use plugins to integrate with third-party systems, extend functionality, or customize the user interface of your Mattermost server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
 
@@ -3410,7 +2726,8 @@ Enable Plugins
 Require Plugin Signature
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
@@ -3423,7 +2740,8 @@ Require Plugin Signature
 Automatic Prepackaged Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
 
@@ -3436,7 +2754,8 @@ Automatic Prepackaged Plugins
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables Plugin Marketplace on your Mattermost server for all System Admins.
 
@@ -3449,7 +2768,8 @@ Enable Marketplace
 Enable Remote Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
 
@@ -3467,7 +2787,8 @@ This setting only takes effect when ``"EnableMarketplace": true``.
 Marketplace URL
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 If the Marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins.
 
@@ -3478,7 +2799,8 @@ If the Marketplace is enabled, this setting specifies which URL should be used t
 Installed Plugin State
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Lists installed plugins on your Mattermost server and whether they are enabled. Pre-packaged plugins are installed by default and can be deactivated, but not removed.
 
@@ -3489,7 +2811,8 @@ Lists installed plugins on your Mattermost server and whether they are enabled. 
 Plugin Settings
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Settings specific to each Mattermost plugin.
 
@@ -3505,7 +2828,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Agenda plugin on your Mattermost server.
 
@@ -3523,7 +2847,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Antivirus plugin on your Mattermost server.
 
@@ -3532,14 +2857,16 @@ Enable Plugin
 ClamAV - Host and Port
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the hostname and port to connect to the ClamAV server.
 
 Scan Timeout (seconds)
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify how long the virus scan can take before timing out.
 
@@ -3549,7 +2876,8 @@ Apps
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |cloud|
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Apps plugin on your Mattermost server.
 
@@ -3567,7 +2895,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Autolink plugin on your Mattermost server.
 
@@ -3576,7 +2905,8 @@ Enable Plugin
 Enable administration with /autolink command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the ability to configure the Apps plugin using the ``/autolink`` slash command.
 
@@ -3585,7 +2915,8 @@ Enable administration with /autolink command
 Apply plugin to updated posts as well as new posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Applies the plugin to updated posts as well as new posts. 
 
@@ -3594,7 +2925,8 @@ Apply plugin to updated posts as well as new posts
 Admin User IDs
 ^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify users authorized to administer the plugin in addition to System Admins. Separate multiple user IDs with commas.
 
@@ -3611,7 +2943,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the AWS SNS plugin on your Mattermost server.
 
@@ -3620,14 +2953,16 @@ Enable Plugin
 Channel to send notifications to
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the channel to send notifications to in the format ``teamname,channelname``. For example, for a channel with a URL of ``https://example.com/myteam/channels/mychannel``, set the value to ``myteam,mychannel``. If the specified channel does not exist, the plugin creates the channel for you.
 
 Authorized User IDs
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel. Separate multiple user IDs with commas.
 
@@ -3637,7 +2972,8 @@ Specify users authorized to accept AWS SNS subscriptions to a Mattermost channel
 Token
 ^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
 
@@ -3649,7 +2985,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted| |cloud|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the calls plugin on your Mattermost workspace.
 
@@ -3658,7 +2995,8 @@ Enable Plugin
 RTC Server Port
 ^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 The UDP port the RTC server will listen on. All calls traffic will be served through this port. The Default setting is 8443.
 
@@ -3667,7 +3005,8 @@ Changing this setting requires a plugin restart to take effect.
 Enable on specific channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Allow Channel Admins to enable or disable calls on specific channels. It also allows participants in DMs/GMs to enable or disable calls.
 
@@ -3676,7 +3015,8 @@ Enable on specific channels
 Enable on all channels
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enable calls by default on all channels.
 
@@ -3685,14 +3025,16 @@ Enable on all channels
 Max call participants
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 The maximum number of participants that can join a single call. This is an optional field and default is 0 (unlimited). The maximum recommended setting is 200.
 
 ICE Host Override
 ^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 An optional override to the host that gets advertised to clients when connecting to calls. Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP in order to let clients connect successfully. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
 
@@ -3701,7 +3043,8 @@ This is an optional field. Changing this setting requires a plugin restart to ta
 ICE Servers Configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON.
 
@@ -3731,7 +3074,8 @@ This is an optional field. Changing this setting may require a plugin restart to
 TURN Static Auth Secret
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 A static secret used to generate short-lived credentials for TURN servers.
 
@@ -3740,14 +3084,16 @@ This is an optional field.
 TURN Credentials Expiration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 The expiration, in minutes, of the short-lived credentials generated for TURN servers.
 
 Server Side TURN
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: The RTC server will use the configured TURN candidates for server-initiated connections.
 
@@ -3758,7 +3104,8 @@ Changing this setting requires a plugin restart to take effect.
 RTCD Service URL
 ^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
@@ -3772,7 +3119,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Channel Export plugin on your Mattermost workspace.
 
@@ -3786,7 +3134,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Demo plugin on your Mattermost workspace.
 
@@ -3795,14 +3144,16 @@ Enable Plugin
 Channel Name
 ^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the channel to use as part of the demo plugin. If the specified channel does not exist, the plugin creates the channel for you.
 
 Username
 ^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the user to use as part of the demo plugin. If the specified user does not exist, the plugin creates the user for you.
 
@@ -3816,7 +3167,8 @@ This plugin is used to post GIFs from Gfycat, Giphy, or Tenor using slash comman
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the GIF commands plugin on your Mattermost server.
 
@@ -3825,7 +3177,8 @@ Enable Plugin
 Display the GIF as
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. 
 
@@ -3835,7 +3188,8 @@ Display the GIF as an embedded image where the GIF can't be collapsed, or as a c
 GIF Provider
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the GIF provider as GIPHY, Tenor, or Gfycat.
 
@@ -3845,7 +3199,8 @@ Specify the GIF provider as GIPHY, Tenor, or Gfycat.
 Giphy/Tenor API Key
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Configure your own API Key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat. 
 
@@ -3854,42 +3209,48 @@ To get your own API key, see the `GIPHY Developers Quick Start <https://develope
 Content Rating (GIPHY & Tenor only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Select an `MPAA-style content rating <https://en.wikipedia.org/wiki/Motion_Picture_Association_film_rating_system>`__ for GIFs from GIPHY or Tenor. Leave this field empty to disable content filtering.
 
 Gfycat display style
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the display style for GIFs from Gfycat. See the `Gfycat Developer API <https://developers.gfycat.com/api/>`__ documentation for details.
 
 GIPHY display style
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the display style for GIFs from GIPHY. See the `GIPHY Developers Rendition Guide <https://developers.giphy.com/docs/optional-settings/>`__ for details.
 
 Tenor display style
 ^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the display style for GIFs from Tenor. See the `Tenor API <https://tenor.com/gifapi/documentation#responseobjects-gifformat>`__ documentation for details.
 
 Language
 ^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the language used to search GIFs from GIPHY. See the `GIPHY Developers Language Support <https://developers.giphy.com/docs/optional-settings/#language-support>`__ documentation for details.
 
 Force GIF preview before posting (force /gifs)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enabled by default to prevent accidental posting of inappropriate GIFs from a provider that does not support content rating filtering.
 
@@ -3905,7 +3266,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Mattermost Boards plugin on your Mattermost workspace.
 
@@ -3921,7 +3283,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
 
@@ -3930,14 +3293,16 @@ Enable Plugin
 Enabled Teams
 ^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Enable Playbooks for all Mattermost teams, or for only selected teams.
 
 Enable Experimental Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables experimental Playbooks features on your Mattermost workspace.
 
@@ -3953,7 +3318,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Mattermost Playbooks plugin on your Mattermost workspace.
 
@@ -3962,7 +3328,8 @@ Enable Plugin
 Enable User Satisfaction Survey
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: A user satisfaction survey will be sent out to all users on a quarterly basis. The survey results will be used by Mattermost, Inc. to improve the quality and user experience of the product. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
 
@@ -3981,7 +3348,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Plugin
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables the Zoom plugin on your Mattermost server.
 
@@ -3990,21 +3358,24 @@ Enable Plugin
 Zoom URL
 ^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the URL for a self-hosted private cloud or on-premise Zoom server. For example, ``https://yourzoom.com``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Zoom API URL
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the API URL for a self-hosted private cloud or on-premise Zoom server. For example, ``https://api.yourzoom.com/v2``. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 
 Enable OAuth
 ^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: OAuth will be used as the authentication means with Zoom.
 
@@ -4017,7 +3388,8 @@ Enable OAuth
 OAuth by Account Level App (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Only an account administrator has to log in. The rest of the users will use their e-mail to log in.
 
@@ -4026,42 +3398,48 @@ OAuth by Account Level App (Beta)
 Zoom OAuth Client ID
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the Client ID for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 Zoom OAuth Client Secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the Client Secret for the OAuth app registered with Zoom. Leave blank if not using OAuth.
 
 At Rest Token Encryption Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Generate an AES encryption key for Zoom OAuth Token used to encrypt stored access tokens by selecting ``Regenerate``. Regenerating the key invalidates your existing Zoom OAuth.
 
 API Key
 ^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the API Key generated by Zoom used to create meetings and pull user data.
 
 API Secret
 ^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the API Secret generated by Zoom for your API key.
 
 Webhook Secret
 ^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Generate a secret for the webhook URL endpoint used to authenticate the webhook to Mattermost. Regenerating the secret invalidates your existing Zoom plugin.
 
@@ -4078,7 +3456,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Incoming Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
@@ -4096,7 +3475,8 @@ Developers building integrations can create webhook URLs for Public channels and
 Enable Outgoing Webhooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and viewing samples.
 
@@ -4114,7 +3494,8 @@ Developers building integrations can create webhook tokens for Public channels. 
 Enable Custom Slash Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Slash commands send events to external integrations that send a response back to Mattermost.
 
@@ -4129,7 +3510,8 @@ Slash commands send events to external integrations that send a response back to
 Enable OAuth 2.0 Service Provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Mattermost acts as an OAuth 2.0 service provider allowing Mattermost to authorize API requests from external applications.
 
@@ -4142,7 +3524,8 @@ Enable OAuth 2.0 Service Provider
 Enable integrations to override usernames
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
@@ -4155,7 +3538,8 @@ Enable integrations to override usernames
 Enable integrations to override profile picture icons
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
 
@@ -4168,7 +3552,8 @@ Enable integrations to override profile picture icons
 Enable Personal Access Tokens
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can create `personal access tokens <https://developers.mattermost.com/integrate/admin-guide/admin-personal-access-token/>`__ for integrations in **Profile > Security**. They can be used to authenticate against the API and give full access to the account.
 
@@ -4188,7 +3573,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Bot Account Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__ to learn more.
 
@@ -4201,7 +3587,8 @@ Enable Bot Account Creation
 Disable bot accounts when owner is deactivated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: When a user is deactivated, disables all bot accounts managed by the user. To re-enable bot accounts, go to **Integrations > Bot Accounts**.
 
@@ -4219,7 +3606,8 @@ Access the following configuration settings in the System Console by going to **
 Enable GIF Picker
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.
 
@@ -4235,7 +3623,8 @@ Enable GIF Picker
 Gfycat API Key
 ^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field.
 
@@ -4246,7 +3635,8 @@ When blank, uses the default API key provided by Gfycat. Alternatively, a unique
 Gfycat API Secret
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The API secret generated by Gfycat for your API key. When blank, uses the default API secret provided by Gfycat.
 
@@ -4262,7 +3652,8 @@ Access the following configuration settings in the System Console by going to **
 Enable cross-origin requests from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
@@ -4276,7 +3667,8 @@ Enable HTTP cross-origin requests from specific domains separated by spaces. Typ
 CORS Exposed Headers
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Whitelist of headers that will be accessible to the requester.
 
@@ -4287,7 +3679,8 @@ Whitelist of headers that will be accessible to the requester.
 CORS Allow Credentials
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Requests that pass validation will include the ``Access-Control-Allow-Credentials`` header.
 
@@ -4300,7 +3693,8 @@ CORS Allow Credentials
 CORS Debug
 ^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Prints messages to the logs to help when developing an integration that uses CORS. These messages will include the structured key value pair ``"source": "cors"``.
 
@@ -4327,7 +3721,8 @@ Access the following configuration settings in the System Console by going to **
 Global Retention Policy for Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4342,7 +3737,8 @@ By default, messages are kept forever. If **Days** or **Years** is chosen, set h
 Global Retention Policy for Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4357,7 +3753,8 @@ By default, messages are kept forever. If **Days** or **Years** is chosen, set h
 Custom retention policy
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4366,7 +3763,8 @@ Set how long Mattermost keeps messages and files across specific teams and chann
 Data Deletion Time
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4381,7 +3779,8 @@ This setting is based on the local time of the server.
 Run Deletion Job Now
 ^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4395,7 +3794,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Compliance Export
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4410,7 +3810,8 @@ Enable Compliance Export
 Compliance Export Time
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4425,7 +3826,8 @@ This setting is based on the local time of the server.
 Export File Format
 ^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4438,7 +3840,8 @@ If Global Relay is chosen, the following options will be presented:
 Global Relay Customer Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4451,7 +3854,8 @@ Type of Global Relay customer account your organization has, either ``A9/Type 9`
 Global Relay SMTP Username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4464,7 +3868,8 @@ The username for authenticating to the Global Relay SMTP server.
 Global Relay SMTP Password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4477,7 +3882,8 @@ The password associated with the Global Relay SMTP username.
 Global Relay Email Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4490,7 +3896,8 @@ The email address your Global Relay server monitors for incoming compliance expo
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4506,7 +3913,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Compliance Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4521,7 +3929,8 @@ Enable Compliance Reporting
 Compliance Report Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4534,7 +3943,8 @@ Sets the directory where compliance reports are written.
 Enable Daily Report
 ^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4549,7 +3959,8 @@ Enable Daily Report
 Batch Size
 ^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4567,7 +3978,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Custom Terms of Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4581,7 +3993,8 @@ Enable Custom Terms of Service
 Custom Terms of Service Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4590,7 +4003,8 @@ Text that will appear in your custom Terms of Service. Supports Markdown-formatt
 Re-Acceptance Period
 ^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -4611,7 +4025,8 @@ Access the following configuration settings in the System Console by going to **
 AD/LDAP Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -4622,7 +4037,8 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 AD/LDAP Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -4633,7 +4049,8 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 AD/LDAP Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -4644,7 +4061,8 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 Allow Authentication Transfer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -4659,7 +4077,8 @@ Allow Authentication Transfer
 Link Metadata Timeout
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
 
@@ -4675,7 +4094,8 @@ Access the following configuration settings in the System Console by going to **
 Enable Bleve Indexing
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until `Enable Bleve for search queries <https://docs.mattermost.com/configure/configuration-settings.html#enable-bleve-for-search-queries>`__ is enabled.
 
@@ -4688,7 +4108,8 @@ Enable Bleve Indexing
 Index Directory
 ^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Directory path to use for storing bleve indexes. 
 
@@ -4703,7 +4124,8 @@ Directory path to use for storing bleve indexes.
 Bulk Index Now
 ^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
 
@@ -4712,14 +4134,16 @@ You can configure the maximum time window used for a batch of posts being indexe
 Purge Indexes
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
 
 Enable Bleve for search queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Search queries will use bleve search.
 
@@ -4732,7 +4156,8 @@ Enable Bleve for search queries
 Enable Bleve for autocomplete queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Autocomplete queries will use bleve search.
 
@@ -4748,7 +4173,8 @@ Email Settings
 Email Batching Buffer Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the maximum number of notifications batched into a single email.
 
@@ -4759,7 +4185,8 @@ Specify the maximum number of notifications batched into a single email.
 Email Batching Interval
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
 
@@ -4770,7 +4197,8 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 Email Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -4781,7 +4209,8 @@ Specify the color of the email login button for white labeling purposes. Use a h
 Email Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -4792,7 +4221,8 @@ Specify the color of the email login button border for white labeling purposes. 
 Email Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -4803,7 +4233,8 @@ Specify the color of the email login button text for white labeling purposes. Us
 Enable Account Deactivation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Ability for users to deactivate their own account from **Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
 
@@ -4816,7 +4247,8 @@ Enable Account Deactivation
 Enable Automatic Replies
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users can enable Automatic Replies in **Settings > Notifications**. Users set a custom message that will be automatically sent in response to Direct Messages.
 
@@ -4829,7 +4261,8 @@ Enable Automatic Replies
 Enable Channel Viewed WebSocket Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices. Disabling the setting in larger deployments may improve server performance.
 
@@ -4840,7 +4273,8 @@ This setting determines whether ``channel_viewed WebSocket`` events are sent, wh
 Enable Client-Side Certification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4855,7 +4289,8 @@ Enable Client-Side Certification
 Client-Side Certification Login Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4872,7 +4307,8 @@ Used in combination with the ``ClientSideCertEnable`` configuration setting.
 Enable Default Channel Leave/Join System Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
 
@@ -4887,7 +4323,8 @@ This setting determines whether team leave/join system messages are posted in th
 Enable Hardened Mode (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
 
@@ -4907,7 +4344,8 @@ Changes made when hardened mode is enabled:
 Enable AD/LDAP Group Sync
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -4924,7 +4362,8 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 Enable Preview Features
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Preview features can be enabled from **Settings > Advanced > Preview Pre-release features**.
 
@@ -4937,7 +4376,8 @@ Enable Preview Features
 Enable Theme Selection
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -4952,7 +4392,8 @@ Enable Theme Selection
 Allow Custom Themes
 ^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -4967,7 +4408,8 @@ Allow Custom Themes
 Default Theme
 ^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -4980,7 +4422,8 @@ Set a default theme that applies to all new users on the system.
 Enable Tutorial (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Users are prompted with a tutorial when they open Mattermost for the first time after account creation.
 
@@ -4993,7 +4436,8 @@ Enable Tutorial (Experimental)
 Enable Onboarding 
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
 
@@ -5006,7 +4450,8 @@ Enable Onboarding
 Enable User Typing Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
 
@@ -5017,7 +4462,8 @@ This setting determines whether "user is typing..." messages are displayed below
 Time Between User Typing Updates (User Typing Timeout)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.
 
@@ -5028,7 +4474,8 @@ This setting defines how frequently "user is typing..." messages are updated, me
 Primary Team (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
@@ -5044,7 +4491,8 @@ SAML Settings
 SAML Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5057,7 +4505,8 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 SAML Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5070,7 +4519,8 @@ Specify the color of the SAML login button border for white labeling purposes. U
 SAML Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5080,12 +4530,11 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Use Channel Name in Email Notifications (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 **True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
 
@@ -5098,7 +4547,8 @@ Use Channel Name in Email Notifications (Experimental)
 User Status Away Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost.
 
@@ -5109,7 +4559,8 @@ This setting defines the number of seconds after which the user's status indicat
 Enable Shared Channels
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5127,7 +4578,8 @@ Shared channels enables the ability to establish secure connections between Matt
 Enable Apps Bar
 ^^^^^^^^^^^^^^^
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
 
@@ -5154,7 +4606,8 @@ Data Retention Policies
 Enable Global Retention Policy for Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5169,7 +4622,8 @@ Enable Global Retention Policy for Messages
 Enable Global Retention Policy for Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5187,7 +4641,8 @@ Email Settings
 Disable Inactive Server Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5203,7 +4658,8 @@ Service Settings
 Custom User Groups
 ^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |cloud| |self-hosted|
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5216,7 +4672,8 @@ This configuration setting controls the ability for users to create custom user 
 Developer Flags
 ^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5236,7 +4693,8 @@ This configuration setting is disabled by default and requires `developer mode <
 Enable Post Search
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5249,7 +4707,8 @@ If this setting is enabled, users can search messages. Disabling search can resu
 Enable File Search
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5266,7 +4725,8 @@ This configuration setting enables users to search documents attached to message
 Enable User Status Updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5279,7 +4739,8 @@ Turn status updates off to improve performance. When status updates are off, use
 WebSocket Secure Port
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
@@ -5293,7 +4754,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 WebSocket Port
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
@@ -5306,7 +4768,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable API Team Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5321,7 +4784,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable API User Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5336,7 +4800,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable API Channel Deletion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5351,7 +4816,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable OpenTracing
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5368,7 +4834,8 @@ By default, in order to avoid leaking sensitive information, no method parameter
 Import Settings Default Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5381,7 +4848,8 @@ The directory where the imported files are stored. The path is relative to the `
 Import Settings Default Retention Days
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5394,7 +4862,8 @@ The number of days to retain the imported files before deleting them.
 Export Settings Default Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5407,7 +4876,8 @@ The directory where the exported files are stored. The path is relative to the `
 Export Settings Default Retention Days
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5420,7 +4890,8 @@ The number of days to retain the exported files before deleting them.
 Enable Local Mode
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5435,7 +4906,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable Local Mode Socket Location
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5450,7 +4922,8 @@ If nothing is specified, the default path that both the server and mmctl assumes
 Scoping IDP Provider Id
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5465,7 +4938,8 @@ Allows an authenticated user to skip the initial login page of their federated A
 Scoping IDP Name
 ^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5480,7 +4954,8 @@ Adds the name associated with a user's Scoping Identity Provider ID.
 Global Relay SMTP Server Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
@@ -5495,7 +4970,8 @@ The number of seconds that can elapse before the connection attempt to the SMTP 
 Batch Size
 ^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5510,7 +4986,8 @@ Determines how many new posts are batched together to a compliance export file.
 App Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5522,11 +4999,11 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 | This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Colorize plain text console logs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5541,7 +5018,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Clean Up Old Database Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5554,7 +5032,8 @@ Defines the threshold in hours beyond which older completed database jobs are re
 Clean Up Outdated Database Entries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
 
@@ -5564,87 +5043,14 @@ Defines the threshold in days beyond which outdated configurations are removed f
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
 
-SQL Settings
-~~~~~~~~~~~~
-
-Read Replicas
-^^^^^^^^^^^^^^
-
-|enterprise| |professional| |self-hosted|
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
-
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-Search Replicas
-^^^^^^^^^^^^^^^^
-
-|enterprise| |professional| |self-hosted|
-
-*Available in legacy Enterprise Edition E10 and E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
-
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source <https://docs.mattermost.com/configure/database-configuration-settings.html#data-source>`__ setting.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with string array input consisting of database connection strings.   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Replica Lag Settings
-^^^^^^^^^^^^^^^^^^^^
-
-|enterprise| |self-hosted|
-
-*Available in legacy Enterprise Edition E20*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Specifies a connection string and user-defined SQL queries on the database to measure replica lag for a single replica instance. These settings monitor absolute lag based on binlog distance/transaction queue length, and the time taken for the replica to catch up.
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ReplicaLagSettings": []`` with string array input.       |
-+-------------------------------------------------------------------------------------------------------+
-
-String array input consists of:
-
-- ``DataSource``: The DB credentials to connect to the replica instance.
-- ``QueryAbsoluteLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure absolute lag.
-- ``QueryTimeLag``: A plain SQL query that must return a single row. The first column must be the node value of the Prometheus metric, and the second column must be the value of the lag used to measure the time lag.
-
-Examples:
-
-For AWS Aurora instances, ``QueryAbsoluteLag`` can be:
-
-.. code-block:: sh
-
-   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>
-
-And for AWS Aurora instances, ``QueryTimeLag`` can be:
-
-.. code-block:: sh
-
-   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>
-
-For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:
-
-.. code-block:: sh
-
-   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>
-
 Image Settings
 ~~~~~~~~~~~~~~
 
 Maximum Image Resolution
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5659,6 +5065,9 @@ File Settings
 
 Maximum Image Decoder Concurrency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5675,7 +5084,8 @@ Indicates how many images can be decoded concurrently at once. The default value
 Initial Font
 ^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5688,7 +5098,8 @@ Font used in auto-generated profile pics with colored backgrounds.
 Amazon S3 Signature V2
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5705,7 +5116,8 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 Amazon S3 Path
 ^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5721,7 +5133,8 @@ GitLab Settings
 Scope
 ^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Not available in Cloud Starter*
 
@@ -5739,7 +5152,8 @@ Google Settings
 Scope
 ^^^^^^
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5757,7 +5171,8 @@ Office 365 Settings
 Scope
 ^^^^^^
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5769,17 +5184,14 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-
-
-
-
 Metrics Settings
 ~~~~~~~~~~~~~~~~~
 
 Block Profile Rate
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
@@ -5799,7 +5211,8 @@ Plugin Settings
 Signature Public Key Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5812,7 +5225,8 @@ In addition to the Mattermost plugin signing key built into the server, each pub
 Chimera OAuth Proxy URL
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5825,7 +5239,8 @@ Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Ma
 Welcome Bot
 ^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 The settings for the WelcomeBot plugin aren't available in the System Console, and can only be set in ``config.json``.
 
@@ -5842,7 +5257,8 @@ The audit settings output audit records to syslog (local or remote server via TL
 Remote Clusters
 ^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -5861,7 +5277,8 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 Syslog configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5878,7 +5295,8 @@ Enable this setting to write audit records to a local or remote syslog, specifyi
 Syslog IP
 ^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5891,7 +5309,8 @@ The IP address or domain of the syslog server. Use ``localhost`` for local syslo
 Syslog port
 ^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5904,7 +5323,8 @@ The port that the syslog server is listening on. The default port is 6514.
 Syslog tag
 ^^^^^^^^^^
 
-all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5917,7 +5337,8 @@ The syslog metadata tag field.
 Syslog cert
 ^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5930,7 +5351,8 @@ This is the path to the syslog server certificate for TLS connections (``.crt`` 
 Syslog insecure
 ^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5946,7 +5368,8 @@ This setting controls whether a client verifies the server's certificate chain a
 Syslog max queue size
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5960,7 +5383,8 @@ This setting can be left as default unless you are seeing audit write failures i
 File configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5977,7 +5401,8 @@ Enable this setting to write audit files locally, specifying size, backup interv
 File name
 ^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -5990,7 +5415,8 @@ This is the path to the output file location.
 File max size MB
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6003,7 +5429,8 @@ This is the maximum size (measured in megabytes) that the file can grow before t
 File max age days
 ^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6016,7 +5443,8 @@ This is the maximum age in days a file can reach before triggering rotation. The
 File max backups
 ^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6029,7 +5457,8 @@ This is the maximum number of rotated files kept; the oldest is deleted first. T
 File compress
 ^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6042,7 +5471,8 @@ When ``true``, rotated files are compressed using ``gzip``.
 File max queue size
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6059,7 +5489,8 @@ Advanced Audit Logging Configuration
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6087,7 +5518,8 @@ Service Settings
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6104,7 +5536,8 @@ This setting applies to the new sidebar only. You must disable the `Enable Legac
 Strict CSRF Token Enforcement (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6119,7 +5552,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Restrict System Admin
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6137,7 +5571,8 @@ Team Settings
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6156,7 +5591,8 @@ Control Teammate Name Display at the system level.
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6178,7 +5614,8 @@ Client Requirement Settings (Experimental)
 Latest Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6191,7 +5628,8 @@ The latest version of the Android React Native app that is recommended for use.
 Minimum Android Version
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6204,7 +5642,8 @@ The minimum version of the Android React Native app that is required to be used.
 Latest iOS Version
 ^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6217,7 +5656,8 @@ The latest version of the iOS app that is recommended for use.
 Minimum iOS Version
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6230,7 +5670,8 @@ The minimum version of the iOS React Native app that is required to be used.
 Push Notification Buffer
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6246,7 +5687,8 @@ Theme Settings (Experimental)
 Allowed Themes
 ^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -6264,7 +5706,8 @@ Experimental Settings
 Disable Post Metadata
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6284,7 +5727,8 @@ Analytics Settings
 Maximum Users for Statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -6304,7 +5748,8 @@ Message Export Settings
 Export From Timestamp
 ^^^^^^^^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6319,7 +5764,8 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 File Location
 ^^^^^^^^^^^^^^^
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -6337,7 +5783,8 @@ Plugin Settings
 Enable Plugin Uploads
 ^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6352,7 +5799,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Allow Insecure Download URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6367,7 +5815,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable Plugin Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6382,7 +5831,8 @@ This setting isn't available in the System Console and can only be set in ``conf
 Directory
 ^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6395,7 +5845,8 @@ The location of the plugin files. If blank, they are stored in the ``./plugins``
 Client Directory
 ^^^^^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6417,7 +5868,8 @@ When running Mattermost in High Availability mode, ``RunJobs`` should be enabled
 Run Jobs
 ^^^^^^^^
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -6432,8 +5884,8 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
 Run Scheduler
 ^^^^^^^^^^^^^^
 
-|all-plans| |self-hosted|
-
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker. When running Mattermost on a single machine, this setting should always be enabled.
@@ -6447,5 +5899,3 @@ When running Mattermost in `High Availablity mode <https://docs.mattermost.com/s
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
-
-
