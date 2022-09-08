@@ -1,5 +1,5 @@
-Import your data
-================
+Migrate to boards
+=================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
