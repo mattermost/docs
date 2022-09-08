@@ -22,7 +22,7 @@ If you choose not to upgrade at the end of your 30-day trial, your subscription 
 View subscription details
 -------------------------
 
-The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits <https://docs.mattermost.com/mattermost-limits.html>`_ set for your subscription.
+The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html>`__ set for your subscription.
 
 Billing period
 --------------
@@ -129,6 +129,13 @@ How do I cancel my subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
+
+I'm no longer being billed for my Cloud Starter ($149 / year) plan. Why is that?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cloud Starter ($149 / year) plans created before June 15, 2022 are now free with no data limits. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using your Cloud Starter plan for free.
+
+Free Cloud Starter workspaces created on or after June 15, 2022 are free forever with certain `workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

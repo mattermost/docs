@@ -1,6 +1,9 @@
 Get started with Mattermost Channels
 ====================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access Mattermost Channels by selecting **Channels** from the **product menu** |product-list|.
 
 .. |product-list| image:: ../images/products_E82F.svg

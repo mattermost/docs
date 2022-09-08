@@ -1,41 +1,13 @@
 :orphan:
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 :nosearch:
 
-View statistics for your overall deployment and specific teams as well as access server logs by going to **System Console > Reporting**. 
-
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+Configure SMTP email server settings by going to **System Console > Environment > SMTP**, or by editing the ``config.json`` file as described in the following tables. 
 
 SMTP server
 ~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -48,7 +20,8 @@ SMTP server
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -61,7 +34,8 @@ SMTP server port
 Enable SMTP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -77,7 +51,8 @@ Enable SMTP authentication
 SMTP server username
 ~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -90,7 +65,8 @@ SMTP server username
 SMTP server password
 ~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -103,7 +79,8 @@ SMTP server password
 SMTP connection security
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -121,7 +98,8 @@ SMTP connection security
 Skip server certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -137,7 +115,8 @@ Skip server certificate verification
 Enable security alerts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -155,7 +134,8 @@ Enable security alerts
 SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

@@ -3,12 +3,8 @@
 How to install Mattermost Team Edition Helm Chart in a GitLab Helm Chart deployment
 =====================================================================================
 
-|self-hosted|
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 This document describes how to use Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment. Once the Mattermost Team Edition Helm Chart is installed, GitLab SSO integration is configured which utilizes shared configurations to streamline authentication, storage, encryption, and traffic routing.
 

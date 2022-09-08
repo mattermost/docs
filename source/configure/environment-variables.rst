@@ -1,32 +1,8 @@
 Environment variables
 =====================
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 You can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
@@ -50,8 +26,6 @@ The name of the environment variable for any setting can be derived from the nam
 Override Mattermost license file
 --------------------------------
 
-|all-plans| |self-hosted|
-
 Starting from Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
 
 When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
@@ -63,8 +37,6 @@ When starting the server, specify the license key as ``MM_LICENSE`` with the con
 
 Load custom configuration defaults
 ----------------------------------
-
-|all-plans| |self-hosted|
 
 Starting from Mattermost v5.30, you can load a set of custom configuration defaults using an environment variable. This custom configuration applies only if the values are not already present in the current server configuration.
 

@@ -1,41 +1,13 @@
 :orphan:
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
 :nosearch:
 
-Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
-
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 Driver name
 ~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -49,7 +21,8 @@ Driver name
 Data source
 ~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -100,7 +73,8 @@ Data source
 Maximum idle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -114,7 +88,8 @@ Maximum idle database connections
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -128,7 +103,8 @@ Maximum open connections
 Query timeout
 ~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -143,7 +119,8 @@ Query timeout
 Maximum connection lifetime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -160,7 +137,8 @@ Maximum connection lifetime
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -175,7 +153,8 @@ Maximum connection idle timeout
 Minimum hashtag length
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -191,7 +170,8 @@ Minimum hashtag length
 SQL statement logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -207,7 +187,8 @@ SQL statement logging
 Recycle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -226,7 +207,8 @@ Recycle database connections
 Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -246,7 +228,8 @@ Disable database search
 Applied schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -255,7 +238,8 @@ A list of all migrations that have been applied to the data store based on the v
 Read replicas
 ~~~~~~~~~~~~~
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -271,7 +255,8 @@ Read replicas
 Search replicas
 ~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -288,7 +273,8 @@ Search replicas
 Replica lag settings
 ~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 

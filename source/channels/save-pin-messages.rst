@@ -1,22 +1,8 @@
 Save and pin messages
 =====================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 You have two ways to flag a post to make it easy to find later: `saving messages <#save-messages>`__ and `pinning messages <#pin-messages>`__. 
 
@@ -32,7 +18,7 @@ Save messages for later follow up by selecting the **Save** |save-icon| icon nex
   :alt: Save icon.
 
 .. image:: ../images/save-message.png
-   :alt: Save messages for later follow up.
+   :alt: Save messages for later follow up using the Save option.
 
 See your saved messages
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,6 +31,7 @@ Unsave messages
 To remove an item from your **Saved Posts** list, select the **Save** icon next to message to clear it.
 
 .. image:: ../images/remove-from-saved-posts.png
+  :alt: Remove saved messages by toggling the Save option.
 
 Pin messages
 ------------
