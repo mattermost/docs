@@ -4,12 +4,27 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-09-15](#release-2022-09-15)
 - [Release 2022-09-08](#release-2022-09-08)
 - [Release 2022-09-01](#release-2022-09-01)
 - [Release 2022-08-25](#release-2022-08-25)
 - [Release 2022-08-18](#release-2022-08-18)
 - [Release 2022-08-10](#release-2022-08-10)
-- [Release 2022-08-03](#release-2022-08-03)
+
+## Release 2022-09-15
+
+### Improvements
+
+#### User Interface (UI)
+ - 
+
+### Bug Fixes
+ - 
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
 ## Release 2022-09-08
 
