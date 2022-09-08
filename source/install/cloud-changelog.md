@@ -13,17 +13,31 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-09-15
 
+### Highlights
+
+#### Notify Admin v2
+ - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
+
 ### Improvements
 
 #### User Interface (UI)
- - 
+ - Added a new Top Playbooks Insights widget.
+ - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
+ - Pre-packaged Playbooks v1.32.1.
+ - Downgraded Bulgarian language support to Beta.
+
+#### Administration
+ - If ``EnableConfirmNotificationsToChannel`` is disabled, channel member counts by group API are no longer called.
+ - Added ``OmitConnection`` to the websocket broadcast parameters.
+ - Added ``sortOrder`` support for channel categories graphQL queries.
 
 ### Bug Fixes
- - 
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
+ - Fixed typos in some translations strings that caused some in-product links to be broken.
 
 ### Known Issues
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
- - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
 ## Release 2022-09-08
