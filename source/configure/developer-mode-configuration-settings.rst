@@ -12,7 +12,7 @@ Enable testing commands
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------+--------------------------------------------------------------------------+
-| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > DeveloperFlags**                   |
+| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                        |
 |                                                   | - ``config.json setting``: ``".ServiceSettings.EnableTesting": true",``  |
 | - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLETESTING``             |
 |   command is enabled to load test accounts        |                                                                          |
@@ -30,7 +30,7 @@ Enable developer mode
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| Enable or disable developer mode.             | - System Config path: **Environment > DeveloperFlags**                    |
+| Enable or disable developer mode.             | - System Config path: **Environment > Developer**                         |
 |                                               | - ``config.json setting``: ``".ServiceSettings.EnableDeveloper": true",`` |
 | - **true**: **(Default)** Javascript errors   | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDEVELOPER``            |
 |   are shown in a banner at the top of         |                                                                           |
@@ -49,7 +49,7 @@ Enable client performance debugging
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------+------------------------------------------------------------------------------+
-| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > DeveloperFlags**                       |
+| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                            |
 |                                                   | - ``config.json setting``: ``".ServiceSettings.EnableDeveloper": false",``   |
 | - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDEVELOPER``               |
 |   command is enabled to load test accounts        |                                                                              |
@@ -70,7 +70,7 @@ Allow untrusted internal connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
-| Limit the ability for the Mattermost server   | - System Config path: **Environment > DeveloperFlags**                                        |
+| Limit the ability for the Mattermost server   | - System Config path: **Environment > Developer**                                             |
 | to make untrusted requests within its local   | - ``config.json setting``: ``".ServiceSettings.AllowedUntrustedInternalConnections": "",``    |
 | network. A request is considered “untrusted”  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWUNTRUSTEDINTERNALCONNECTIONS``              |
 | when it’s made on behalf of a client.         |                                                                                               |
