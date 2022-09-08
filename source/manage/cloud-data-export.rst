@@ -140,6 +140,8 @@ Then extract the export file to use it by running the following mmctl command:
 
 Once your migration is complete and you’ve imported your data into your self-hosted instance we recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
 
+.. note:: If you are using email/password authentication, your users require to reset their passwords.
+
 If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
 
 Migrate from self-hosted to Cloud
@@ -153,7 +155,7 @@ Before you begin your migration, ensure you’re on Mattermost version 6.5 (or l
 
 **User Authentication**
 
-If you’re using a login method other than email, you’ll need to make the required changes to your infrastructure so that you can continue your existing authentication method in the cloud. Examples of these methods are LDAP and GitLab SSO.
+If you’re using an email login method, your users need to reset their passwords after the migration has been completed. For any other authentocation method, you’ll need to make the required changes to your infrastructure so that you can continue your existing authentication method in the cloud. Examples of these methods are LDAP and GitLab SSO.
 
 **Plugins**
 
