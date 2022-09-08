@@ -1,0 +1,149 @@
+Sharing boards
+==============
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Board permissions
+From Mattermost Boards v7.2, boards belong to teams, and any member of that team can be granted access to a board.
+
+Prior to Mattermost Boards v7.2, boards are tied to channel workspaces, and board membership is determined by channel membership.
+Roles
+The level of access to a board is determined by a user’s assigned board role.
+
+Board permissions
+Admin
+Editor
+Commenter
+Viewer
+Modify permissions
+X
+
+
+
+
+
+
+Share a public board
+X
+
+
+
+
+
+
+Delete board
+X
+
+
+
+
+
+
+Rename board
+X
+X
+
+
+
+
+Add, edit, and delete views
+X
+X
+
+
+
+
+Add, edit, and delete cards
+X
+X
+
+
+
+
+Comment, delete my comments
+X
+X
+X
+
+
+Delete any comment
+X
+
+
+
+
+
+
+View
+X
+X
+X
+X
+
+
+From Mattermost Boards v7.2, there are only two roles: 
+Admin: Can modify the board, its contents, and its permissions. By default, board creators are also admins of the board.
+Editor: Can modify the board and its contents.
+From Mattermost Boards v7.3, there are two additional roles:
+Commenter: Can add comments.
+Viewer: Can view the board and its contents.
+Manage team access
+Board admins can manage team access to their board by selecting Share in the top-right corner of the board. On the dropdown next to “Everyone at… Team” option, select a minimum board role for everyone on the team. Depending on the role selected, everyone on the team will have access to the board with a minimum of the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is None, which means nobody on the team has access to the board. 
+Manage individual board membership
+Only board admins manage user permissions on a board, including adding, changing, and removing members.
+
+To add individual users from the team as explicit members of the board, open the Share dialog on the board, search for individual team members, then assign a role to set their permissions for the board. The role for individual board members overrides any role specified for team access.
+
+To change a board member’s role, open the  Share dialog, select the role dropdown next to the user’s name, then select another role from the list.
+
+To remove a member from a board, open the  Share dialog, select the role dropdown next to the user’s name, then select Remove member.
+Channel role groups
+Board admins can add a channel to a board to grant all its members Editor access. To do this, select Share in the top-right corner of the board, search for the channel name, and add it to the board as a user. The default role is Editor. Doing so also links the board back to the channel, where the board will appear on the channel RHS.
+
+To unlink the channel from the board, open the  Share dialog, select the role dropdown next to the channel’s name, then select Unlink.
+
+Note:
+A board can only be linked to one channel at a time. Linking another channel to the same board will automatically remove the link from the previous channel.
+Guest accounts
+From Mattermost Boards v7.3, guest accounts will be supported in Boards. Guests can:
+Access boards where they are added as an explicit member of the board. Team access will not apply to guest accounts.
+Access existing boards, but not create new boards. They will not be able to access the template picker nor duplicate an existing board.
+Search for boards where they are currently an explicit member.
+Be assigned the Viewer, Commenter, or Editor roles, but not the board Admin.
+Share a board
+Boards can be shared internally with your team or published externally with limited accessibility.
+Share a board internally
+To share a board with team members internally, select Share in the top-right corner of the board, then select Copy link from the Share tab below. Paste the copied link in a channel or direct message to share the board with other team members. Only team members who have permissions to the board will be able to open the board from the shared link.
+Share a board publicly
+Sharing boards publicly is disabled by default. This means that the Publish tab is not available from the Share dialog. To enable public board sharing:
+Go to Product menu > System Console > Plugins > Plugin Management > Mattermost Boards > Settings.
+Set Enable Publicly-Shared Boards to true.
+Select the Save button towards the bottom.
+Once enabled, board admins can share a read-only link online with anyone: 
+Select Share in the top-right corner of the board.
+Toggle to the Publish tab below.
+Switch on the “Publish to the web” option.
+Select Copy link.
+Paste the link anywhere you want to share the board.
+Anyone with the link will be able to view the board, but they won’t be able to edit the board.
+Select the Regenerate Token icon in the URL box if you want to invalidate all the previously shared links. Confirm the action to regenerate the token.
+Share cards on Channels
+Cards can be linked and shared with team members directly on Mattermost Channels. When you share a link to a card within Channels, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
+To share a card, you'll need to copy the card link first:
+Open a card and select the options menu (...) at the top right of the card, then select Copy link.
+Alternatively, you can open the board view and hover your mouse over any card to access the options menu (...) for the card and select Copy link from there.
+After you've copied the link, paste it into any channel or Direct Message to share the card. A preview of the card will display within the channel with a link back to the card on Boards.
+
+Import and export a board
+-------------------------
+
+If you'd like to re-use a board, you can export it as an archive file, and then import the archive file in the channel of your choosing. Exported and imported board archives include card image attachments.
+
+To do this, select the **...** in the toolbar at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the channel where you'd like to add the exported board. Select the Gear icon next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
+
+From v6.4, the archive format is changing with a new ``.boardarchive`` extension and all new exports will only be in this format. 
+
+.. note::
+
+  The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.
