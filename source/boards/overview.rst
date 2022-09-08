@@ -32,28 +32,25 @@ When working with cards, you can manage properties, add descriptions, attach ima
 Access your boards
 ------------------
 
-Mattermost Boards is accessible from the Product menu in the top left corner of Mattermost. If you’re using Mattermost 6.0 or later, select the Product menu in the top left corner of Mattermost to open Boards. If you’re on the Mattermost Desktop app, you can also quickly access Boards from a tab at the top of Mattermost called Boards.
+Open the Boards tab via the product menu in the top left corner of Mattermost, to view all the boards for your team. You can select the Boards icon in the Apps Bar to open the right-hand panel, and display boards linked to the channel or message that you're in.
+
+If you don't see the Apps Bar and your boards layout looks different to what's described, you may be using an older version of Mattermost. The navigation content in this documentation will not be aligned with your navigation, but the functionality described will be applicable across versions unless otherwise noted.
 
 Link a board to a channel
 -------------------------
 
-From Mattermost Boards v7.2, boards can be linked to channels and accessed from the channel Apps Bar. Clicking on the Boards icon from the Apps Bar in a channel will open a right-hand sidebar (RHS) where channel members can search for and link boards to the channel.
+From Mattermost Boards v7.2, boards can be linked to channels and accessed from the channel Apps Bar. Select the Boards icon from the Apps Bar in a channel to open a right-hand sidebar (RHS) where channel members can search for and link boards to the channel. To link a board to the channel, select **Add** button to open the link boards dialog and search for a board to link. Channel members can only search and link boards within the team where they are also board admins.
 
-To link a board to the channel, click on the `Add` button to open the link boards dialog and search for a board to link. Channel members can only search and link boards within the team where they are also board admins.
-
-Note:
+.. note:: 
+ 
 A channel can be linked to multiple boards, but each individual board can only be linked to one channel at a time. Linking the same board to another channel will automatically remove the link from the previous channel.
 
-New boards can also be created from the Boards Apps Bar by clicking on the `Create a Board` button, which will automatically link the new board to the current channel.
+Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the RHS of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board. Select a linked board to navigate directly to the board.
 
-After a board is linked to a channel, it will appear on the RHS of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board. Select a linked board to navigate directly to the board.
-
-Note: For users upgrading to Mattermost Boards v7.2 or later
-To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration.
+.. note:: 
+  For users upgrading to Mattermost Boards v7.2 or later. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration.
 
 Unlink a board from a channel
 -----------------------------
 
-Board admins can unlink their board from a channel by clicking on the Boards Apps Bar within a channel and clicking on the options menu (...) to select the unlink option.
-
-Alternatively, the board admin can open the Share dialog on their board, and select the unlink option from the role drop down menu next to the channel’s name.
+If you're an admin and want to unlink a board from a channel you're in, open the Boards Apps Bar, select the options menu **(...)** and select **Unlink**. Alternatively, you can open the Share dialog on the board, open the **Role** drop-down menu next to the channel's name and select **Unlink**.
