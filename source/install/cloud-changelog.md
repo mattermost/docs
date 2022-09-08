@@ -4,12 +4,29 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-09-08](#release-2022-09-08)
 - [Release 2022-09-01](#release-2022-09-01)
 - [Release 2022-08-25](#release-2022-08-25)
 - [Release 2022-08-18](#release-2022-08-18)
 - [Release 2022-08-10](#release-2022-08-10)
 - [Release 2022-08-03](#release-2022-08-03)
-- [Release 2022-07-28](#release-2022-07-28)
+
+## Release 2022-09-08
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a red destructive action color to the **Leave Channel** button in the channel header.
+ - The "limits reached" modal is now shown to Admins who are doing a fresh login on Cloud instances that hit the message history limit.
+
+### Bug Fixes
+ - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
+ - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
 ## Release 2022-09-01
 
