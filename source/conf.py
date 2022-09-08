@@ -79,11 +79,11 @@ redirects = {
 "about/deployments-and-editions.html":
         "https://docs.mattermost.com/about/editions-and-offerings.html",
 "https://docs.mattermost.com/about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
-	"http://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
+	"https://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
 "https://docs.mattermost.com/about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
-	"http://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
+	"https://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
 "https://docs.mattermost.com/about/faq-mattermost-source-available-license.html":
-	"http://docs.mattermost.com/about/faq-license.html#source-available-licensing",
+	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
 
 # Administration redirects
 "administration/announcement-banner.html":
