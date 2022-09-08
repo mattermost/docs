@@ -155,7 +155,7 @@ Before you begin your migration, ensure you’re on Mattermost version 6.5 (or l
 
 **User Authentication**
 
-If you’re using an email login method, your users need to reset their passwords after the migration has been completed. For any other authentocation method, you’ll need to make the required changes to your infrastructure so that you can continue your existing authentication method in the cloud. Examples of these methods are LDAP and GitLab SSO.
+If you are using the email login method, users will need to reset their passwords after the migration has been completed. Other authentication methods, such as LDAP and GitLab SSO, required changes to your infrastructure allowing the specific authentication method to function in Mattermost cloud.
 
 **Plugins**
 
