@@ -20,6 +20,7 @@ This Mattermost Boards User Guide is for anyone who needs help using Mattermost 
    Work with views </boards/work-with-views>
    Work with groups, filter, and sort </boards/groups-filter-sort>
    Work with calculations </boards/calculations>
+   Share and collaborate <boards/share-and-collaborate>
    Navigate boards </boards/navigate-boards>
    Migrate to boards </boards/data-and-archives>
 
@@ -28,6 +29,7 @@ This Mattermost Boards User Guide is for anyone who needs help using Mattermost 
 * :doc:`Work with cards </boards/work-with-cards>` - Work with cards.
 * :doc:`Work with views </boards/work-with-views>` - Work with views.
 * :doc:`Work with groups, filter, and sort </boards/groups-filter-sort>` - Work with groups, filter, and sort.
-* :doc:`Work with calculations </boards/calculations>` - Work with calculations. 
+* :doc:`Work with calculations </boards/calculations>` - Work with calculations.
+* :doc:`Share and collaborate <boards/share-and-collaborate>` - Share and collaborate
 * :doc:`Navigate boards </boards/navigate-boards>` - Navigate boards.
 * :doc:`Migrate to boards </boards/data-and-archives>` - Migrate your data from other tools into Mattermost Boards.
