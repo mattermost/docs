@@ -140,7 +140,7 @@ Then extract the export file to use it by running the following mmctl command:
 
 Once your migration is complete and you’ve imported your data into your self-hosted instance we recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
 
-.. note:: If you are using email/password authentication, your users require to reset their passwords.
+.. note:: If you are using email/password authentication, your users must reset their passwords.
 
 If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
 
