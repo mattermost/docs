@@ -22,7 +22,7 @@ This Mattermost Boards User Guide is for anyone who needs help using Mattermost 
    Work with calculations </boards/calculations>
    Share and collaborate <boards/share-and-collaborate>
    Navigate boards </boards/navigate-boards>
-   Migrate to boards </boards/data-and-archives>
+   Migrate to boards </boards/migrate-to-boards>
 
 * :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
 * :doc:`Work with boards </boards/work-with-boards>` - Work with boards.
