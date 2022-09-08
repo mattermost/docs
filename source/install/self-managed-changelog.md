@@ -160,7 +160,7 @@ Mattermost v7.1.0 contains low severity level security fixes. [Upgrading](https:
 ### Highlights
 
 #### Insights (Beta) (Enterprise and Professional)
- - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
+ - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
 
 ### Improvements
 
