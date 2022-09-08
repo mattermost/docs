@@ -44,7 +44,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
- - Added new Insights widgets: Most Active Direct Messages, Least Active Channels, Top Playbooks, and New Team Members.
+ - Added new [Insights widgets](https://docs.mattermost.com/welcome/insights.html): Most Active Direct Messages, Least Active Channels, Top Playbooks, and New Team Members.
  - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
  - Updated the "Contact Sales" link to ``mattermost.com/pl/contact-sales`` and update the pricing modal user interface.
  - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
@@ -102,6 +102,7 @@ Latest Mattermost Releases:
  - Added ``@floating-ui/react-dom-interactions`` to https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -217,6 +218,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@types/color-hash``, ``color-contrast-checker``, ``color-hash``, and ``webpack`` to https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize.
  - Forwarding messages: pressing Enter key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
@@ -330,6 +332,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@floating-ui/react-dom`` and removed ``superagent`` and ``jasny-bootstrap`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize.
  - The Top Boards widget in Insights is slow to load.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
