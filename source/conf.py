@@ -82,6 +82,8 @@ redirects = {
 	"http://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
 "https://docs.mattermost.com/about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
 	"http://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
+"https://docs.mattermost.com/about/faq-mattermost-source-available-license.html":
+	"http://docs.mattermost.com/about/faq-license.html#source-available-licensing",
 
 # Administration redirects
 "administration/announcement-banner.html":
