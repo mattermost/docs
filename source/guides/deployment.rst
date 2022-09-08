@@ -5,7 +5,7 @@ Deploy Mattermost
    :maxdepth: 2
    :hidden:
 
-When you're ready to install Mattermost server for production use, you have four options: deploy using Kubernetes, deploy using an RPM package, using a DEB package, from a compressed tarball, using Kubernetes, or using Docker.
+When you're ready to install Mattermost server for production use, you have options: deploy using an RPM package, deploy using a DEB package, deploy from a compressed tarball, deploy using Kubernetes, or deploy using Docker.
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
@@ -38,11 +38,12 @@ When you're ready to install Mattermost server for production use, you have four
 
     .. tab:: GitLab Helm Chart
 
-      Coming soon!
+      .. include:: ../install/installing-team-edition-helm-chart.rst
+        :start-after: :nosearch:
 
 .. tip::
 
-  * See the MM Server configuration docs for details on reqired configuration & setup.
+  * See the MM Server configuration documentation for details on reqired configuration & setup.
   
   * See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
   

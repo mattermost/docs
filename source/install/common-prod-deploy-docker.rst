@@ -1,10 +1,12 @@
 :orphan:
 :nosearch:
-.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on another docs page.
 
 You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`__ (release 1.28 or later) Follow the steps in the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__ or follow the steps below.
 
-Encountering issues with your Docker deployment? See the `Docker deployment troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#docker-deployments>`__ documentation for details.
+.. note::
+
+   You can install Mattermost server in Preview Mode using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__ to explore Mattermost product functionality on a single local machine. See the `preview using Docker </install/common-local-deploy-docker>`__ documentation for details.
       
 1. In a terminal window, clone the repository and enter the directory.
 
@@ -105,3 +107,5 @@ Encountering issues with your Docker deployment? See the `Docker deployment trou
       sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
 7. Create your first Mattermost System Admin user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+
+Encountering issues with your Docker deployment? See the `Docker deployment troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#docker-deployments>`__ documentation for details.

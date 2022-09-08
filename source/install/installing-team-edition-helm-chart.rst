@@ -1,33 +1,27 @@
 ..  _install-mmte-helm-gitlab-helm:
-
-How to install Mattermost Team Edition Helm Chart in a GitLab Helm Chart deployment
-=====================================================================================
+:nosearch:
 
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-This document describes how to use Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment. Once the Mattermost Team Edition Helm Chart is installed, GitLab SSO integration is configured which utilizes shared configurations to streamline authentication, storage, encryption, and traffic routing.
+You can use Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment. Once the Mattermost Team Edition Helm Chart is installed, GitLab SSO integration is configured which utilizes shared configurations to streamline authentication, storage, encryption, and traffic routing.
 
-As the Mattermost Helm Chart is installed in a separate namespace, it is recommended that ``cert-manager`` and ``nginx-ingress`` be configured to manage cluster-wide ingress and certificate resources.
-
-Prerequisites
---------------
+You'll need:
 
 - A running Kubernetes cluster.
 - `Helm v2 <https://helm.sh/docs/intro/install/)>`_.
 - `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component) installed on the cluster.
 
 .. note::
-
-  For the Team Edition you can have just one replica running.
-
-Install Mattermost Team Edition Helm Chart
-------------------------------------------
+  
+  - As the Mattermost Helm Chart is installed in a separate namespace, we recommend that ``cert-manager`` and ``nginx-ingress`` be configured to manage cluster-wide ingress and certificate resources.
+  - Team Edition supports one replica running.
+  
+**Install Mattermost Team Edition Helm Chart**
 
 This chart creates a Mattermost Team Edition deployment on a Kubernetes cluster using the Helm package manager. For detailed instructions, refer to the `Mattermost Team Edition documentation <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-team-edition>`_.
 
-Deploy the Mattermost Team Edition Helm Chart
-----------------------------------------------
+**Deploy the Mattermost Team Edition Helm Chart**
 
 Once you have installed the Mattermost Team Edition Helm Chart, you can deploy it using the following command:
 
@@ -39,8 +33,7 @@ Once you have installed the Mattermost Team Edition Helm Chart, you can deploy i
 
 Wait for the pods to run. Then, using the ingress host you specified in the configuration, access your Mattermost server.
 
-Create an OAuth application with GitLab
-----------------------------------------
+**Create an OAuth application with GitLab**
 
 The next part of the process is setting up the GitLab SSO integration.
 
@@ -52,8 +45,7 @@ Please take note of the ``Application ID``, ``Application Secret Key``, ``User A
 
   Only the default GitLab SSO is officially supported. “Double SSO”, where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required they’re not officially supported and are known not to work on some experiences.
 
-Deploy GitLab Helm Chart
--------------------------
+**Deploy GitLab Helm Chart**
 
 To deploy the GitLab Helm Chart, follow the instructions described in the `GitLab cloud native Helm Chart <https://docs.gitlab.com/charts/>`__ documentation.
 
@@ -77,8 +69,7 @@ Once you've deployed the GitLab instance, follow the instructions for the `initi
 
 If you're following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <https://docs.mattermost.com/install/troubleshooting.html>`__ and we'll be happy to help.
 
-Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart
-----------------------------------------------------------------
+**Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart**
 
 When you've successfully authenticated and connected to your GitLab instance, the next step is to integrate the two charts. The steps in this document presume in-chart Minio instance usage. For information about out-of-chart object storage configuration, review `this document <https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/charts/registry#storage>`__ for GCS and S3 examples. Alternatively, visit your provider's Help documentation for configuration settings.
 

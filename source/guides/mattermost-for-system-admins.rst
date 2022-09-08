@@ -6,6 +6,7 @@ Mattermost for System Administrators
    :hidden:
 
    /guides/deployment.rst
+   /deploy/install-database.rst
    /deploy/deployment-overview.rst
    /getting-started/architecture-overview.rst
    /install/software-hardware-requirements.rst
@@ -14,7 +15,7 @@ Mattermost for System Administrators
    /getting-started/admin-onboarding-tasks.rst
    /getting-started/implementation-plan.rst
    /getting-started/enterprise-roll-out-checklist.rst
-
+   /guides/configure-mattermost-server.rst
 
 
 
