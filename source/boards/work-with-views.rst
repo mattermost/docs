@@ -1,5 +1,5 @@
-View, sort, and filter
-======================
+Work with views
+===============
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
