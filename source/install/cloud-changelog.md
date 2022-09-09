@@ -29,7 +29,6 @@ Latest Mattermost Cloud releases:
 #### Administration
  - If ``EnableConfirmNotificationsToChannel`` is disabled, channel member counts by group API are no longer called.
  - Added ``OmitConnection`` to the websocket broadcast parameters.
- - Added ``sortOrder`` support for channel categories graphQL queries.
 
 ### Bug Fixes
  - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
