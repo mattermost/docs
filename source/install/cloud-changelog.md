@@ -4,12 +4,18 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- 
 - [Release 2022-09-08](#release-2022-09-08)
 - [Release 2022-09-01](#release-2022-09-01)
 - [Release 2022-08-25](#release-2022-08-25)
 - [Release 2022-08-18](#release-2022-08-18)
 - [Release 2022-08-10](#release-2022-08-10)
 - [Release 2022-08-03](#release-2022-08-03)
+
+## Release 
+
+### Bug Fixes
+ - Fixed an issue with a nil point exception error during imports.
 
 ## Release 2022-09-08
 
