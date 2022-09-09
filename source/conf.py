@@ -78,6 +78,12 @@ redirects = {
         "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
 "about/deployments-and-editions.html":
         "https://docs.mattermost.com/about/editions-and-offerings.html",
+"about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
+	"https://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
+"about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
+	"https://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
+"about/faq-mattermost-source-available-license.html":
+	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
 
 # Administration redirects
 "administration/announcement-banner.html":
