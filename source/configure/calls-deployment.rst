@@ -316,6 +316,28 @@ Desktop app
 
 In the top menu bar of the app, select **View > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
 
+Call stats dump
+---------------
+
+In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message.
+
+As this command only works while a call is active, this information needs to be collected before leaving a call.
+
+WebRTC internals (Chrome + Firefox only)
+----------------------------------------
+
+This is an additional method for Chrome and Firefox users in cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio.
+
+Chrome browser (recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Open ``chrome://webrtc-internals/`` in the browser that you're using for the active call.
+
+Firefox browser
+~~~~~~~~~~~~~~~
+
+Open ``about://webrtc`` in the browser that you're using for the active call.
+
 Share information
 ~~~~~~~~~~~~~~~~~
 
