@@ -20,10 +20,13 @@ Access the following configuration settings in the System Console by going to **
 Customization
 -------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > Customization**.
 
 Site name
-^^^^^^^^^^
+~~~~~~~~~
 
 Name of service shown in login screens and UI. Maximum 30 characters.
 
@@ -182,6 +185,9 @@ Configurable link to download the iOS app. When a link is present, users who acc
 Localization
 -------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > Localization**.
 
 Default server language
@@ -219,10 +225,13 @@ Sets which languages are available for users in **Settings > Display > Language*
 Users and teams
 ---------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > Users and Teams**.
 
 Max users per team
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Maximum number of users per team, excluding inactive users.
 
@@ -237,7 +246,7 @@ In terms of technical performance, `with appropriate hardware, Mattermost can ea
 +-------------------------------------------------------------------------------------------+
 
 Max channels per team
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 Maximum number of channels per team, including both active and deleted channels.
 
@@ -275,6 +284,9 @@ Specifies how names are displayed in the user interface by default. Please note 
 
 Lock teammate name display for all users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 **True**: Disables users' ability to change settings under **Settings > Display > Teammate Name Display**.
 
@@ -327,10 +339,13 @@ Enable custom user statuses
 Notifications
 -------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
 Show @channel, @all, or @here confirmation dialog
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users will be prompted to confirm when posting @channel, @all, or @here in channels with over five members.
 
@@ -465,13 +480,13 @@ For customers who choose to wrap the Mattermost mobile application in a secure c
 Announcement banner
 -------------------
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > Announcement Banner**.
 
 Enable announcement banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-enable the banner after it has been disabled. You can prevent users from dismissing the banner, and you can control the text color and the background color.
 
@@ -485,9 +500,6 @@ Enable an announcement banner across all teams. The banner is displayed at the t
 
 Banner text
 ~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 The text of the announcement banner.
 
@@ -507,9 +519,6 @@ The background color of the announcement banner.
 Banner text color
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The color of the text in the announcement banner.
 
 +-------------------------------------------------------------------------------------------------+
@@ -518,9 +527,6 @@ The color of the text in the announcement banner.
 
 Allow banner dismissal
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 **True**: Users can dismiss the banner until the next time they log in or the banner is updated.
 
@@ -532,6 +538,9 @@ Allow banner dismissal
 
 Emoji
 ------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Emoji**.
 
@@ -559,6 +568,9 @@ Enable custom emoji
 
 Posts
 -----
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
@@ -706,6 +718,9 @@ Using a Google API Key allows Mattermost to detect when a video is no longer ava
 File sharing and downloads
 ---------------------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > File Sharing and Downloads**.
 
 Allow file sharing
@@ -752,13 +767,13 @@ Allow file downloads on mobile
 Public Links
 ------------
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > Public Links**.
 
 Enable public file links
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
 
 **True**: Allow users to generate public links to files and images for sharing outside the Mattermost system with a public URL.
 
@@ -775,9 +790,6 @@ Enable public file links
 Public link salt
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 32-character salt added to the URL of public links when public links are enabled. Select **Regenerate** in the System Console to create a new salt, which will invalidate all existing public links.
 
 +---------------------------------------------------------------------------------------+
@@ -786,6 +798,9 @@ Public link salt
 
 Notices
 --------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notices**.
 

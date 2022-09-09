@@ -26,11 +26,17 @@ Access the following configuration settings in the System Console by going to **
 Web server
 ----------
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 .. include:: web-server-configuration-settings.rst
     :start-after: :nosearch:
 
 Database
 --------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: database-configuration-settings.rst
     :start-after: :nosearch:
@@ -38,11 +44,17 @@ Database
 Elasticsearch
 -------------
 
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
 .. include:: elasticsearch-configuration-settings.rst
     :start-after: :nosearch:
 
 File storage
 ------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: file-storage-configuration-settings.rst
     :start-after: :nosearch:
@@ -50,11 +62,17 @@ File storage
 Image proxy
 -----------
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 .. include:: image-proxy-configuration-settings.rst
     :start-after: :nosearch:
 
 SMTP
 ----
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: smtp-configuration-settings.rst
     :start-after: :nosearch:
@@ -62,11 +80,17 @@ SMTP
 Push notification server
 ------------------------
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 .. include:: push-notification-server-configuration-settings.rst
     :start-after: :nosearch:
 
 High availability
 -----------------
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: high-availability-configuration-settings.rst
     :start-after: :nosearch:
@@ -74,11 +98,17 @@ High availability
 Rate limiting
 -------------
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 .. include:: rate-limiting-configuration-settings.rst
     :start-after: :nosearch:
 
 Logging
 --------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: logging-configuration-settings.rst
     :start-after: :nosearch:
@@ -86,17 +116,26 @@ Logging
 Session lengths
 ---------------
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 .. include:: session-lengths-configuration-settings.rst
     :start-after: :nosearch:
 
 Performance monitoring
 ----------------------
 
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
 .. include:: performance-monitoring-configuration-settings.rst
     :start-after: :nosearch:
 
 Developer
 ---------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: developer-mode-configuration-settings.rst
     :start-after: :nosearch:

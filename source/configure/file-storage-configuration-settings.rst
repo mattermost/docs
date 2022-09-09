@@ -10,9 +10,6 @@ Configure file storage settings by going to **System Console > Environment > Fil
 File storage system
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -30,9 +27,6 @@ File storage system
 Local storage directory
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -49,9 +43,6 @@ Local storage directory
 
 Maximum file size
 ~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -73,9 +64,6 @@ Maximum file size
 
 Enable document search by content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -110,9 +98,6 @@ Enable document search by content
 Enable searching content of documents within ZIP files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -135,9 +120,6 @@ Enable searching content of documents within ZIP files
 Amazon S3 bucket
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -150,9 +132,6 @@ Amazon S3 bucket
 Amazon S3 path prefix
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -163,9 +142,6 @@ Amazon S3 path prefix
 
 Amazon S3 region
 ~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -184,9 +160,6 @@ Amazon S3 region
 Amazon S3 access key ID
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -201,9 +174,6 @@ Amazon S3 access key ID
 
 Amazon S3 endpoint
 ~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -220,9 +190,6 @@ Amazon S3 endpoint
 Amazon S3 secret access key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -236,9 +203,6 @@ Amazon S3 secret access key
 Enable secure Amazon S3 connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -251,9 +215,6 @@ Enable secure Amazon S3 connections
 
 Amazon S3 signature v2
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Not available in legacy Enterprise Edition E10/E20*
 
@@ -271,9 +232,6 @@ Amazon S3 signature v2
 Enable server-side encryption for Amazon S3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -287,9 +245,6 @@ Enable server-side encryption for Amazon S3
 
 Enable Amazon S3 debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -308,9 +263,6 @@ Enable Amazon S3 debugging
 
 Initial Font
 ~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

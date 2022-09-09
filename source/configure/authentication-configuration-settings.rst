@@ -19,6 +19,9 @@ Access the following configuration settings in the System Console by going to **
 Signup
 ------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > Signup**.
 
 Enable account creation
@@ -73,6 +76,9 @@ This button invalidates active email invitations that have not been accepted by 
 Email
 ------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > Email**.
 
 Enable account creation with email
@@ -122,6 +128,9 @@ Enable sign-in with username
 Password
 --------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
 
 Minimum password length
@@ -169,6 +178,9 @@ Failed login attempts allowed before a user is locked out and required to reset 
 MFA
 ----
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Configure security settings for multi-factor authentication (MFA) in the System Console by going to **Authentication > MFA**.
 
 The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
@@ -189,7 +201,7 @@ Enable multi-factor authentication
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
@@ -205,13 +217,13 @@ Enforce multi-factor authentication
 AD/LDAP
 -------
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**.
 
 Enable sign-in with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -226,9 +238,6 @@ Enable sign-in with AD/LDAP
 Enable synchronization with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 **True**: Mattermost periodically synchronizes users from AD/LDAP.
 
 **False**: AD/LDAP synchronization is disabled.
@@ -240,9 +249,6 @@ Enable synchronization with AD/LDAP
 Login field name
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to AD/LDAP credentials in your company, so it is recognizable to your users. Defaults to **AD/LDAP Username**.
 
 +---------------------------------------------------------------------------------------+
@@ -251,9 +257,6 @@ The placeholder text that appears in the login field on the login page. Typicall
 
 AD/LDAP server
 ~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 The domain or IP address of the AD/LDAP server.
 
@@ -264,9 +267,6 @@ The domain or IP address of the AD/LDAP server.
 AD/LDAP port
 ~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The port Mattermost will use to connect to the AD/LDAP server. Defaults to ``389``.
 
 +-------------------------------------------------------------------------------------+
@@ -275,9 +275,6 @@ The port Mattermost will use to connect to the AD/LDAP server. Defaults to ``389
 
 Connection security
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 The type of connection security Mattermost uses to connect to AD/LDAP.
 
@@ -296,9 +293,6 @@ If the "No encryption" option is selected it is highly recommended that the AD/L
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 **True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
 
 **False**: Mattermost does not skip certificate verification.
@@ -310,9 +304,6 @@ Skip certificate verification
 Private key
 ~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 (Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
 +---------------------------------------------------------------------------------------+
@@ -321,9 +312,6 @@ Private key
 
 Public certificate
 ~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 (Optional) The public TLS certificate file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
 
@@ -334,9 +322,6 @@ Public certificate
 Bind username
 ~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost. Its permissions should be limited to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format. This field is required, and anonymous bind is not currently supported.
 
 +-------------------------------------------------------------------------------------+
@@ -345,9 +330,6 @@ The username used to perform the AD/LDAP search. This should be an account creat
 
 Bind password
 ~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 Password of the user given in **Bind Username**. Anonymous bind is not currently supported.
 
@@ -358,9 +340,6 @@ Password of the user given in **Bind Username**. Anonymous bind is not currently
 Base DN
 ~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The **Base Distinguished Name** of the location where Mattermost should start its search for users in the AD/LDAP tree.
 
 +-------------------------------------------------------------------------------+
@@ -369,9 +348,6 @@ The **Base Distinguished Name** of the location where Mattermost should start it
 
 User filter
 ~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 (Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the users selected by the query will be able to access Mattermost.
 
@@ -410,17 +386,12 @@ This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(ob
 Enable admin filter
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 **True**: Enables System Admins to configure an AD/LDAP filter.
 
 **False**: Disables the ability for System Admins to configure an AD/LDAP filter.
 
 Admin filter
 ~~~~~~~~~~~~
-
-|enterprise| |professional| |cloud| |self-hosted|
 
 *Available in legacy Enterprise Edition E20*
 
@@ -435,9 +406,6 @@ This filter default is ``false`` and must be set to ``true`` in order for the Ad
 Guest filter
 ~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 (Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost. Only the users selected by the query will be able to log in to and use Mattermost as Guests. This filter default is blank.
@@ -450,9 +418,6 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest
 
 ID attribute
 ~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
@@ -469,8 +434,6 @@ If you need to change this field after users have already logged in, use the `ma
 Login ID attribute
 ~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |cloud| |self-hosted|
-
 The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the **Username Attribute** field above.
 
 If your team typically uses domain\username to log in to other services with AD/LDAP, you may enter domain\username in this field to maintain consistency between sites.
@@ -481,9 +444,6 @@ If your team typically uses domain\username to log in to other services with AD/
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the Login ID Attribute.
 
@@ -498,9 +458,6 @@ The **Username Attribute** may be set to the same value used to log in to the sy
 Email attribute
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The attribute in the AD/LDAP server used to populate the email address field in Mattermost.
 
 Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
@@ -512,9 +469,6 @@ Email notifications will be sent to this email address, and this email address m
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 (Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
 +----------------------------------------------------------------------------------------------+
@@ -523,9 +477,6 @@ First name attribute
 
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 (Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
@@ -536,9 +487,6 @@ Last name attribute
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 (Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
 +--------------------------------------------------------------------------------------------+
@@ -548,9 +496,6 @@ Nickname attribute
 Position attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 (Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position as part of their :doc:`profile settings </welcome/manage-your-profile>`.
 
 +------------------------------------------------------------------------------------------+
@@ -559,9 +504,6 @@ Position attribute
 
 Profile picture attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 The attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
 
@@ -608,9 +550,6 @@ Group ID attribute
 Synchronization interval (minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. 
 
 When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). 
@@ -627,9 +566,6 @@ When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and
 Maximum page size
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once.
 
 - A value of 0 is unlimited and does not paginate the results.
@@ -642,9 +578,6 @@ The maximum number of users the Mattermost server will request from the AD/LDAP 
 Query timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 The timeout value for queries to the AD/LDAP server. Increase this value if you are getting timeout errors caused by a slow AD/LDAP server.
 
 +----------------------------------------------------------------------------------------+
@@ -654,16 +587,10 @@ The timeout value for queries to the AD/LDAP server. Increase this value if you 
 AD/LDAP test
 ~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 This button can be used to test the connection to the AD/LDAP server. If the test is successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
 
 AD/LDAP synchronize now
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.
 
@@ -678,6 +605,9 @@ You can monitor the status of the synchronization job in the table below this bu
 
 SAML
 ----
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > SAML 2.0**.
 
@@ -1114,6 +1044,9 @@ Login button text
 OAuth 2.0
 ---------
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**.
 
 .. note::
@@ -1124,9 +1057,6 @@ Settings to configure OAuth login for account creation and login.
 
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1141,6 +1071,9 @@ This feature's setting does not appear in ``config.json``.
 
 GitLab
 ^^^^^^
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Enable authentication with GitLab
 ''''''''''''''''''''''''''''''''''
@@ -1209,6 +1142,9 @@ Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:
 Google
 ^^^^^^
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
 
 **True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
@@ -1222,9 +1158,6 @@ Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 
 Client ID
 '''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your Google account.
@@ -1235,9 +1168,6 @@ Obtain this value by registering Mattermost as an application in your Google acc
 
 Client secret
 '''''''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1250,9 +1180,6 @@ Obtain this value by registering Mattermost as an application in your Google acc
 User API endpoint
 ''''''''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
@@ -1263,9 +1190,6 @@ We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=n
 
 Auth endpoint
 '''''''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1278,9 +1202,6 @@ We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Aut
 Token endpoint
 '''''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
@@ -1291,6 +1212,9 @@ We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the 
 
 Office 365
 ^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
@@ -1308,9 +1232,6 @@ Enable authentication with Office 365 by selecting **Office 365** from **System 
 Application ID
 ''''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
@@ -1321,9 +1242,6 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 
 Application secret password
 '''''''''''''''''''''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1336,9 +1254,6 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 Directory (tenant) ID
 ''''''''''''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 This value is the ID of the application's AAD directory.
@@ -1349,9 +1264,6 @@ This value is the ID of the application's AAD directory.
 
 User API endpoint
 '''''''''''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1364,9 +1276,6 @@ We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpo
 Auth endpoint
 '''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
@@ -1377,9 +1286,6 @@ We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth 
 
 Token endpoint
 '''''''''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1392,13 +1298,13 @@ We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0
 OpenID Connect
 ---------------
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
 
 Select OpenID Connect service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1414,6 +1320,9 @@ This feature's setting does not appear in ``config.json``.
 
 GitLab settings
 ^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 GitLab site URL
 '''''''''''''''
@@ -1449,6 +1358,9 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Google Settings
 ^^^^^^^^^^^^^^^
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Enable authentication with Google by selecting ``Google Apps`` from **System Console > Authentication > OpenID Connect > Select service provider**.
 
 **True**: Allow team creation and account signup using Google OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
@@ -1462,9 +1374,6 @@ Enable authentication with Google by selecting ``Google Apps`` from **System Con
 Discovery endpoint
 '''''''''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
@@ -1475,9 +1384,6 @@ This value is prepopulated with ``https://accounts.google.com/.well-known/openid
 
 Client ID
 '''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1490,9 +1396,6 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Client secret
 '''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your Google account.
@@ -1503,6 +1406,9 @@ Obtain this value by registering Mattermost as an application in your Google acc
 
 Office 365 Settings
 ^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. note::
    In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
@@ -1520,18 +1426,12 @@ Enable authentication with Office 365 by selecting **Office 365** from **System 
 Directory (tenant) ID
 '''''''''''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 This value is the ID of the application's AAD directory.
 
 Discovery endpoint
 ''''''''''''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1540,9 +1440,6 @@ This value is prepopulated with https://login.microsoftonline.com/common/v2.0/.w
 Client ID
 ''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your Google account.
@@ -1550,15 +1447,15 @@ Obtain this value by registering Mattermost as an application in your Google acc
 Client secret
 '''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
 OpenID Connect (other) 
 ^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
 
@@ -1572,9 +1469,6 @@ Enable authentication with a service provider by selecting ``OpenID Connect (Oth
 
 Button name
 '''''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1596,9 +1490,6 @@ Specify the color of the OpenID login button for white labeling purposes. Use a 
 Discovery endpoint
 ''''''''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
@@ -1609,9 +1500,6 @@ Obtain this value by registering Mattermost as an application in your service pr
 
 Client ID
 '''''''''
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1624,9 +1512,6 @@ Obtain this value by registering Mattermost as an application in your service pr
 Client secret
 '''''''''''''
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 Obtain this value by registering Mattermost as an application in your service provider account.
@@ -1638,13 +1523,13 @@ Obtain this value by registering Mattermost as an application in your service pr
 Guest access
 ------------
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > Guest Access**.
 
 Enable guest access
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -1659,9 +1544,6 @@ Enable guest access
 Whitelisted guest domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10 and E20*
 
 When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
@@ -1672,9 +1554,6 @@ When populated, guest accounts can only be created by a verified email from this
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
 

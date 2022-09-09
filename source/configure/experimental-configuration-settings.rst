@@ -3,21 +3,21 @@ Experimental configuration settings
 
 Access the following experimental configuration settings:
 
-- `System Console configuration settings <#system-console-configuration-settings>`__
-- `Bleve experimental configuration settings <#bleve-experimental-configuration>`__
-- `Configuration settings for self-hosted deployments only <#configuration-settings-for-self-hosted-deployments-only>`__
-- `Job configuration settings <#job-configuration-settings>`__
+- `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
+- `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
+- `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
+- `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 
-System Console configuration settings
---------------------------------------
+Experimental System Console configuration settings
+---------------------------------------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Access the following experimental configuration settings in the System Console by going to **Experimental > Features**. 
 
 AD/LDAP login button color
----------------------------
-
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -26,9 +26,9 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP login button border color
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
@@ -38,9 +38,9 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 AD/LDAP login button text color
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
@@ -50,9 +50,9 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Change authentication method
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 **True**: Users can change their sign-in method to any that is enabled on the server, either via their Profile or the APIs.
@@ -64,10 +64,7 @@ Change authentication method
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
 Link metadata timeout
----------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~
 
 Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
 
@@ -76,10 +73,7 @@ Adds a configurable timeout for requests made to return link metadata. If the me
 +---------------------------------------------------------------------------------------------------------------------------------+
 
 Email batching buffer size
----------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specify the maximum number of notifications batched into a single email.
 
@@ -88,10 +82,7 @@ Specify the maximum number of notifications batched into a single email.
 +--------------------------------------------------------------------------------------------------------------------------+
 
 Email batching interval
-------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
 
@@ -100,10 +91,7 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 +-----------------------------------------------------------------------------------------------------------------------+
 
 Email login button color
--------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -112,10 +100,7 @@ Specify the color of the email login button for white labeling purposes. Use a h
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Email login button border color
--------------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -124,10 +109,7 @@ Specify the color of the email login button border for white labeling purposes. 
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Email login button text color
-------------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
@@ -136,10 +118,7 @@ Specify the color of the email login button text for white labeling purposes. Us
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Enable account deactivation
----------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Ability for users to deactivate their own account from **Settings > Advanced**. If a user deactivates their own account, they will get an email notification confirming they were deactivated.
 
@@ -150,10 +129,7 @@ Enable account deactivation
 +--------------------------------------------------------------------------------------------------------------------+
 
 Enable automatic replies
-------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users can enable Automatic Replies in **Settings > Notifications**. Users set a custom message that will be automatically sent in response to Direct Messages.
 
@@ -164,10 +140,7 @@ Enable automatic replies
 +--------------------------------------------------------------------------------------------------------------------------------+
 
 Enable channel viewed websocket messages
------------------------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices. Disabling the setting in larger deployments may improve server performance.
 
@@ -176,10 +149,7 @@ This setting determines whether ``channel_viewed WebSocket`` events are sent, wh
 +------------------------------------------------------------------------------------------------------------------------+
 
 Enable default channel leave/join system messages
---------------------------------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
 
@@ -192,10 +162,7 @@ This setting determines whether team leave/join system messages are posted in th
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable hardened mode
----------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
 
@@ -213,10 +180,7 @@ Changes made when hardened mode is enabled:
 +----------------------------------------------------------------------------------------------------------------------------+
 
 Enable preview features
-------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Preview features can be enabled from **Settings > Advanced > Preview Pre-release features**.
 
@@ -227,9 +191,9 @@ Enable preview features
 +------------------------------------------------------------------------------------------------------------------+
 
 Enable theme selection
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
@@ -243,9 +207,9 @@ Enable theme selection
 +-----------------------------------------------------------------------------------------------------------------+
 
 Allow custom themes
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
@@ -259,9 +223,9 @@ Allow custom themes
 +--------------------------------------------------------------------------------------------------------------+
 
 Default theme
--------------
+~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
@@ -273,10 +237,7 @@ Set a default theme that applies to all new users on the system.
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable tutorial
-----------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~
 
 **True**: Users are prompted with a tutorial when they open Mattermost for the first time after account creation.
 
@@ -287,10 +248,7 @@ Enable tutorial
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable onboarding 
-------------------
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~
 
 **True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
 
@@ -301,10 +259,7 @@ Enable onboarding
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable user typing messages
----------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
 
@@ -313,22 +268,16 @@ This setting determines whether "user is typing..." messages are displayed below
 +---------------------------------------------------------------------------------------------------------------------+
 
 User typing timeout
--------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~
 
 This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.
 
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input. |
-+----------------------------------------------------------------------------------------------------------------------
++----------------------------------------------------------------------------------------------------------------------+
 
 Primary team
-------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~
 
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
@@ -339,9 +288,9 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 +-----------------------------------------------------------------------------------------------------------------+
 
 SAML login button color
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
@@ -353,9 +302,9 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 SAML login button border color
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
@@ -367,9 +316,9 @@ Specify the color of the SAML login button border for white labeling purposes. U
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 SAML login button text color
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
@@ -381,10 +330,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Use channel name in email notifications
----------------------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
 
@@ -395,10 +341,7 @@ Use channel name in email notifications
 +----------------------------------------------------------------------------------------------------------------------------+
 
 User status away timeout
--------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost.
 
@@ -407,9 +350,9 @@ This setting defines the number of seconds after which the user's status indicat
 +--------------------------------------------------------------------------------------------------+
 
 Enable shared channels
------------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
@@ -426,10 +369,7 @@ Shared channels enables the ability to establish secure connections between Matt
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
 Enable app bar
-----------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
+~~~~~~~~~~~~~~~
 
 This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
 
@@ -445,7 +385,7 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 | This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------+
 
-Bleve experimental configuration settings
+Experimental Bleve configuration settings
 -----------------------------------------
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
@@ -511,16 +451,13 @@ Enable Bleve for autocomplete queries
 | This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
 +-----------------------------------------------------------------------------------------------------------------+
 
-Configuration settings for self-hosted deployments only
---------------------------------------------------------
+Experimental configuration settings for self-hosted deployments only
+--------------------------------------------------------------------
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
@@ -538,7 +475,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``. |
+| This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum users for statistics
@@ -1227,12 +1164,12 @@ This setting isn't available in the System Console and can only be set in ``conf
 Custom user groups
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This configuration setting controls the ability for users to create custom user groups. This configuration setting is disabled by default for self-hosted deployments, and enabled by default for Cloud deployments.
+This configuration setting controls the ability for users to create custom user groups. This configuration setting is enabled by default for both self-hosted and Cloud deployments, but can only be disabled in self-hosted deployments.
 
 +----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCustomGroups": true`` with options ``true`` and ``false``.  |
@@ -1416,8 +1353,8 @@ When not set, every user is added to the ``off-topic`` and ``town-square`` chann
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Job configuration settings
----------------------------
+Experimental job configuration settings
+---------------------------------------
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:

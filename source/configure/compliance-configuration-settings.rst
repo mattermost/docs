@@ -14,6 +14,9 @@ Access the following configuration settings in the System Console by going to **
 Data retention policies
 -----------------------
 
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Changes to properties in this section require a server restart before taking effect.
 
 .. warning:: 
@@ -169,6 +172,9 @@ This button initiates a compliance export job immediately. You can monitor the s
 
 Compliance monitoring
 ----------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Settings used to enable and configure Mattermost compliance reports. 
 

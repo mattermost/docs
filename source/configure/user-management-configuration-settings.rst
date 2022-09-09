@@ -1,6 +1,9 @@
 User management configuration settings
 ======================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature in the System Console by going to **User Management**:
 
 - `Users <#users>`__
@@ -15,9 +18,6 @@ Users
 
 *Available in legacy Enterprise Edition E10/E20*
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | View statistics on active users, teams, channels,             | - System Config path: **User Management > Users**           |
 | sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
@@ -26,9 +26,6 @@ Users
 
 Groups
 ------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -41,9 +38,6 @@ Groups
 Teams
 -----
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
@@ -54,9 +48,6 @@ Teams
 
 Channels
 --------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -71,7 +62,7 @@ Channels
 Permissions
 -----------
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
@@ -87,9 +78,6 @@ Permissions
 
 System roles
 ------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
