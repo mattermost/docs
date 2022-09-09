@@ -22,7 +22,7 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-### Playbooks
+#### Playbooks
  - Navigate between teams in Playbooks with the new team switcher.
  - Manage playbooks and runs in the new left-hand sidebar.
  - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
@@ -30,7 +30,7 @@ Latest Mattermost Releases:
  - Participants now have access to every run feature on the new run details page.
  - Users can now request status updates (Professional).
 
-### Boards
+#### Boards
  - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
  - Organize boards on the sidebar with custom categories.
  - Press CTRL+K/CMD+K to find additional boards.
@@ -39,13 +39,15 @@ Latest Mattermost Releases:
  - Link boards to channels to automatically grant board permissions to channel members.
  - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
-### Calls
+#### Calls
  - Added support for standalone Calls server and Kubernetes (Enterprise).
+ 
+#### New Insights Widgets
+ - Added four new [Insights widgets](https://docs.mattermost.com/welcome/insights.html): Most Active Direct Messages, Least Active Channels, Top Playbooks, and New Team Members.
 
 ### Improvements
 
 #### User Interface (UI)
- - Added new [Insights widgets](https://docs.mattermost.com/welcome/insights.html): Most Active Direct Messages, Least Active Channels, Top Playbooks, and New Team Members.
  - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
  - Updated the "Contact Sales" link to ``mattermost.com/pl/contact-sales`` and update the pricing modal user interface.
  - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
