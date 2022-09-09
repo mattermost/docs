@@ -81,7 +81,7 @@ Call stats dump
 
 In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message.
 
-As this command only works while a call is active, this information needs to be collected before leaving a call.
+You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
 
 WebRTC internals (Chrome + Firefox only)
 ----------------------------------------
