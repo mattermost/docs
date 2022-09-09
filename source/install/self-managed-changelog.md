@@ -40,7 +40,7 @@ Latest Mattermost Releases:
  - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 ### Calls
- - Added support for standalone call server and Kubernetes (Enterprise).
+ - Added support for standalone Calls server and Kubernetes (Enterprise).
 
 ### Improvements
 
