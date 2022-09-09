@@ -30,7 +30,7 @@ Settings to configure name, username, nickname, email, and profile picture.
 Full name
 ~~~~~~~~~
 
-Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional. 
+Full names appear in the direct messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional. 
 
 Username
 ~~~~~~~~
@@ -40,7 +40,7 @@ Usernames are unique identifiers appearing next to all posts. Pick something eas
 Nickname
 ~~~~~~~~
 
-Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Notifications**.
+Nicknames appear in the direct messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Notifications**.
 
 Position
 ~~~~~~~~~
