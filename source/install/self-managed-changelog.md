@@ -28,6 +28,7 @@ Latest Mattermost Releases:
  - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
  - Favorite runs or playbooks to prioritize them in the **Favorites** category.
  - Participants now have access to every run feature on the new run details page.
+ - Users can now request status updates (Professional).
 
 ### Boards
  - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
@@ -39,7 +40,7 @@ Latest Mattermost Releases:
  - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
 
 ### Calls
- - 
+ - Added support for standalone call server and Kubernetes (Enterprise).
 
 ### Improvements
 
