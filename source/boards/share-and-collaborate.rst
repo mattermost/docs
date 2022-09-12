@@ -29,9 +29,8 @@ Only board admins manage user permissions on a board, including adding, changing
 
 To add individual users from the team as explicit members of the board, open the Share dialog on the board, search for individual team members, then assign a role to set their permissions for the board. The role for individual board members overrides any role specified for team access.
 
-To change a board member’s role, open the  Share dialog, select the role dropdown next to the user’s name, then select another role from the list.
-
-To remove a member from a board, open the  Share dialog, select the role dropdown next to the user’s name, then select Remove member.
+- To change a board member’s role, open the  Share dialog, select the role dropdown next to the user’s name, then select another role from the list.
+- To remove a member from a board, open the  Share dialog, select the role dropdown next to the user’s name, then select Remove member.
 
 Channel role groups
 ~~~~~~~~~~~~~~~~~~~
@@ -40,37 +39,51 @@ Board admins can add a channel to a board to grant all its members Editor access
 
 To unlink the channel from the board, open the  Share dialog, select the role dropdown next to the channel’s name, then select Unlink.
 
-Note:
-A board can only be linked to one channel at a time. Linking another channel to the same board will automatically remove the link from the previous channel.
-Guest accounts
-From Mattermost Boards v7.3, guest accounts will be supported in Boards. Guests can:
-Access boards where they are added as an explicit member of the board. Team access will not apply to guest accounts.
-Access existing boards, but not create new boards. They will not be able to access the template picker nor duplicate an existing board.
-Search for boards where they are currently an explicit member.
-Be assigned the Viewer, Commenter, or Editor roles, but not the board Admin.
+.. note:: 
+  
+  A board can only be linked to one channel at a time. Linking another channel to the same board will automatically remove the link from the previous channel.
+
 Share a board
+--------------
+
 Boards can be shared internally with your team or published externally with limited accessibility.
+
 Share a board internally
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 To share a board with team members internally, select Share in the top-right corner of the board, then select Copy link from the Share tab below. Paste the copied link in a channel or direct message to share the board with other team members. Only team members who have permissions to the board will be able to open the board from the shared link.
+
 Share a board publicly
+~~~~~~~~~~~~~~~~~~~~~~
+
 Sharing boards publicly is disabled by default. This means that the Publish tab is not available from the Share dialog. To enable public board sharing:
-Go to Product menu > System Console > Plugins > Plugin Management > Mattermost Boards > Settings.
-Set Enable Publicly-Shared Boards to true.
-Select the Save button towards the bottom.
+
+1. Go to **Product menu > System Console > Plugins > Plugin Management > Mattermost Boards > Settings**.
+2. Set **Enable Publicly-Shared Boards** to **true**.
+3. Select **Save**.
+
 Once enabled, board admins can share a read-only link online with anyone: 
-Select Share in the top-right corner of the board.
-Toggle to the Publish tab below.
-Switch on the “Publish to the web” option.
-Select Copy link.
-Paste the link anywhere you want to share the board.
-Anyone with the link will be able to view the board, but they won’t be able to edit the board.
-Select the Regenerate Token icon in the URL box if you want to invalidate all the previously shared links. Confirm the action to regenerate the token.
+
+1. Select **Share** in the top-right corner of the board.
+2. Toggle to the **Publish** tab.
+3. Switch to the **Publish to the web** option.
+4. Select **Copy link**.
+
+Paste the link anywhere you want to share the board. Anyone with the link will be able to view the board, but they won’t be able to edit the board.
+
+Select the **Regenerate Token** icon in the URL box if you want to invalidate all the previously shared links. Confirm the action to regenerate the token.
+
 Share cards on Channels
+-----------------------
+
 Cards can be linked and shared with team members directly on Mattermost Channels. When you share a link to a card within Channels, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
+
 To share a card, you'll need to copy the card link first:
-Open a card and select the options menu (...) at the top right of the card, then select Copy link.
-Alternatively, you can open the board view and hover your mouse over any card to access the options menu (...) for the card and select Copy link from there.
-After you've copied the link, paste it into any channel or Direct Message to share the card. A preview of the card will display within the channel with a link back to the card on Boards.
+
+- Open a card and select the options menu **(...)** at the top right of the card, then select **Copy link**.
+- Alternatively, you can open the board view and hover your mouse over any card to access the options menu **(...)** for the card and select **Copy link** from there.
+
+After you've copied the link, paste it into any channel or direct message to share the card. A preview of the card will display within the channel with a link back to the card on Boards.
 
 Import and export a board
 -------------------------
