@@ -32,4 +32,4 @@ This Mattermost Boards User Guide is for anyone who needs help using Mattermost 
 * :doc:`Work with calculations </boards/calculations>` - Work with calculations.
 * :doc:`Share and collaborate <boards/share-and-collaborate>` - Share and collaborate
 * :doc:`Navigate boards </boards/navigate-boards>` - Navigate boards.
-* :doc:`Migrate to boards </boards/data-and-archives>` - Migrate your data from other tools into Mattermost Boards.
+* :doc:`Migrate to boards </boards/migrate-to-boards>` - Migrate your data from other tools into Mattermost Boards.
