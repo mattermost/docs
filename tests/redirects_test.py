@@ -106,7 +106,7 @@ class TestEnvUpdated:
 class TestHtmlPageContext:
     def test_nominal(self, app):
         expected_templatename = "template.html"
-        expected_fragment_redirects = 'const redirects = Object.freeze({"-":"bar"});'
+        expected_fragment_redirects = 'const ' + CTX_FRAGMENT_REDIRECTS + ' = Object.freeze({"-":"bar"});'
         ext_setup(app)
         app.env.all_docs["foo"] = 0
         app.config[CONFIG_OPTION_REDIRECTS] = dict({"foo": "bar"})
@@ -159,8 +159,8 @@ class TestHtmlCollectPages:
         assert(collected_pages[0] == expected_collected_page)
 
     def test_nominal_redirect(self, app):
-        expected_jsobject = 'const redirects = Object.freeze({"-":"bar","frag1":"bar#frag2"});'
-        expected_collected_page = ("foo", {"redirects_object": expected_jsobject}, "redirect.html")
+        expected_jsobject = 'const ' + CTX_FRAGMENT_REDIRECTS + ' = Object.freeze({"-":"bar","frag1":"bar#frag2"});'
+        expected_collected_page = ("foo", {CTX_FRAGMENT_REDIRECTS: expected_jsobject}, "redirect.html")
         ext_setup(app)
         app.env.all_docs["bar"] = 0
         app.config[CONFIG_OPTION_REDIRECTS] = dict({
@@ -225,6 +225,6 @@ class TestBuildJSObject:
             "frag3": "#frag4"
         }
         expected_js_object = \
-            'const redirects = Object.freeze({"-":"foo.html","frag1":"foo2.html#frag2","frag3":"#frag4"});'
+            'const ' + CTX_FRAGMENT_REDIRECTS + ' = Object.freeze({"-":"foo.html","frag1":"foo2.html#frag2","frag3":"#frag4"});'
         actual_js_object = ext_build_js_object(pagemap)
         assert(actual_js_object == expected_js_object)

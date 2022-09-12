@@ -21,8 +21,8 @@ CONFIG_WRITE_EXTENSIONLESS_PAGES = "redirect_write_extensionless_pages"
 # Option defaults
 OPTION_REDIRECTS_DEFAULT: Dict[str, str] = dict()
 OPTION_TEMPLATE_FILE_DEFAULT = None
-WRITE_EXTENSIONLESS_PAGES_DEFAULT: bool = False
-MM_URL_PATH_PREFIX_DEFAULT: str = ""
+WRITE_EXTENSIONLESS_PAGES_DEFAULT = False
+MM_URL_PATH_PREFIX_DEFAULT = ""
 # Environment keys
 ENV_REDIRECTS_ENABLED = "redirects-enabled"
 ENV_COMPUTED_REDIRECTS = "computed-redirects"
@@ -179,7 +179,7 @@ def html_collect_pages(app: Sphinx) -> List[Tuple[str, Dict[str, Any], str]]:
         redirect_pages.append(
             (
                 page,
-                {"redirects_object": jsobject},
+                {CTX_FRAGMENT_REDIRECTS: jsobject},
                 "redirect.html",  # TODO: move this into a config variable
             )
         )
@@ -282,7 +282,7 @@ def compute_redirects(
 
 
 def build_js_object(pagemap: Dict[str, str]) -> str:
-    jsobject = "const redirects = Object.freeze({"
+    jsobject = "const " + CTX_FRAGMENT_REDIRECTS + " = Object.freeze({"
     for frag in pagemap.keys():
         jsobject += '"' + frag + '":"' + pagemap[frag] + '",'
     jsobject = jsobject.rstrip(",") + "});"
