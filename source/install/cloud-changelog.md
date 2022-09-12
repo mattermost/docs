@@ -24,6 +24,7 @@ Latest Mattermost Cloud releases:
  - Added a new Top Playbooks Insights widget.
  - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
  - Pre-packaged Playbooks v1.32.2.
+ - Pre-packaged Calls v0.8.1.
  - Downgraded Bulgarian language support to Beta.
 
 #### Administration
