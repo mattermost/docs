@@ -5,92 +5,26 @@ Sharing boards
   :start-after: :nosearch:
 
 Board permissions
-From Mattermost Boards v7.2, boards belong to teams, and any member of that team can be granted access to a board.
+-----------------
 
-Prior to Mattermost Boards v7.2, boards are tied to channel workspaces, and board membership is determined by channel membership.
+From Mattermost Boards v7.2, boards belong to teams, and any member of that team can be granted access to a board. Prior to Mattermost Boards v7.2, boards are tied to channel workspaces, and board membership is determined by channel membership.
+
 Roles
+-----
+
 The level of access to a board is determined by a user’s assigned board role.
 
-Board permissions
-Admin
-Editor
-Commenter
-Viewer
-Modify permissions
-X
+**Admin:** Can modify the board, its contents, and its permissions. By default, board creators are also admins of the board.
+**Editor:** Can modify the board and its contents.
 
-
-
-
-
-
-Share a public board
-X
-
-
-
-
-
-
-Delete board
-X
-
-
-
-
-
-
-Rename board
-X
-X
-
-
-
-
-Add, edit, and delete views
-X
-X
-
-
-
-
-Add, edit, and delete cards
-X
-X
-
-
-
-
-Comment, delete my comments
-X
-X
-X
-
-
-Delete any comment
-X
-
-
-
-
-
-
-View
-X
-X
-X
-X
-
-
-From Mattermost Boards v7.2, there are only two roles: 
-Admin: Can modify the board, its contents, and its permissions. By default, board creators are also admins of the board.
-Editor: Can modify the board and its contents.
-From Mattermost Boards v7.3, there are two additional roles:
-Commenter: Can add comments.
-Viewer: Can view the board and its contents.
 Manage team access
+~~~~~~~~~~~~~~~~~~~
+
 Board admins can manage team access to their board by selecting Share in the top-right corner of the board. On the dropdown next to “Everyone at… Team” option, select a minimum board role for everyone on the team. Depending on the role selected, everyone on the team will have access to the board with a minimum of the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is None, which means nobody on the team has access to the board. 
+
 Manage individual board membership
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Only board admins manage user permissions on a board, including adding, changing, and removing members.
 
 To add individual users from the team as explicit members of the board, open the Share dialog on the board, search for individual team members, then assign a role to set their permissions for the board. The role for individual board members overrides any role specified for team access.
@@ -98,8 +32,11 @@ To add individual users from the team as explicit members of the board, open the
 To change a board member’s role, open the  Share dialog, select the role dropdown next to the user’s name, then select another role from the list.
 
 To remove a member from a board, open the  Share dialog, select the role dropdown next to the user’s name, then select Remove member.
+
 Channel role groups
-Board admins can add a channel to a board to grant all its members Editor access. To do this, select Share in the top-right corner of the board, search for the channel name, and add it to the board as a user. The default role is Editor. Doing so also links the board back to the channel, where the board will appear on the channel RHS.
+~~~~~~~~~~~~~~~~~~~
+
+Board admins can add a channel to a board to grant all its members Editor access. To do this, select **Share** in the top-right corner of the board, search for the channel name, and add it to the board as a user. The default role is Editor. Doing so also links the board back to the channel, where the board will appear on the channel RHS.
 
 To unlink the channel from the board, open the  Share dialog, select the role dropdown next to the channel’s name, then select Unlink.
 
