@@ -1,5 +1,5 @@
-Sharing boards
-==============
+Share and collaborate
+=====================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
