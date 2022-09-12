@@ -1,6 +1,9 @@
 Keyboard shortcuts for Channels
 ===============================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Keyboard shortcuts for Mattermost Channels help you make a more efficient use of your keyboard.
 
 .. tip::

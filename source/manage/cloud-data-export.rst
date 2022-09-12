@@ -1,6 +1,9 @@
 Mattermost workspace migration
 ==============================
 
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
+
 This document outlines the process for migrating from Mattermost Cloud to a Mattermost self-hosted instance. In the future, a process for migrating from Mattermost self-hosted to Mattermost Cloud will also be documented and provided here.
 
 Migrating between two installations follows the same process that's documented below, regardless as to whether the source or destination of the migration is in the Cloud or self-hosted. **These steps will work for any Mattermost instance**, as long as the instances are running Mattermost v5.33 or later.
@@ -137,6 +140,8 @@ Then extract the export file to use it by running the following mmctl command:
 
 Once your migration is complete and you’ve imported your data into your self-hosted instance we recommend that you take a few days to validate your data and ensure everything is working as expected before taking down your Cloud instance.
 
+.. note:: If you are using email/password authentication, your users must reset their passwords.
+
 If you encounter any issues or problems, please contact our Support team via https://customers.mattermost.com/cloud/contact-us, or through the `Mattermost Help Center <https://support.mattermost.com/>`_.
 
 Migrate from self-hosted to Cloud
@@ -150,7 +155,7 @@ Before you begin your migration, ensure you’re on Mattermost version 6.5 (or l
 
 **User Authentication**
 
-If you’re using a login method other than email, you’ll need to make the required changes to your infrastructure so that you can continue your existing authentication method in the cloud. Examples of these methods are LDAP and GitLab SSO.
+If you are using the email login method, users will need to reset their passwords after the migration has been completed. Other authentication methods, such as LDAP and GitLab SSO, required changes to your infrastructure allowing the specific authentication method to function in Mattermost cloud.
 
 **Plugins**
 

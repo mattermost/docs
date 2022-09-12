@@ -78,6 +78,12 @@ redirects = {
         "https://docs.mattermost.com/about/subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities",
 "about/deployments-and-editions.html":
         "https://docs.mattermost.com/about/editions-and-offerings.html",
+"about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
+	"https://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
+"about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
+	"https://docs.mattermost.com/about/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
+"about/faq-mattermost-source-available-license.html":
+	"https://docs.mattermost.com/about/faq-license.html#source-available-licensing",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -928,9 +934,9 @@ redirects = {
         "https://developers.mattermost.com/contribute/webapp/end-to-end-tests/",
 "developer/webapp-to-redux.html":
         "https://developers.mattermost.com/contribute/webapp/webapp-to-redux/",
-"developer/webhook-outgoing.html": 
+"developer/webhooks-outgoing.html": 
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/",
-"developer/webhook-incoming.html":
+"developer/webhooks-incoming.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 
 # Focalboard redirects
@@ -1039,13 +1045,13 @@ redirects = {
 "help/getting-started/organizing-your-sidebar.html": 
 	"https://docs.mattermost.com/channels/customize-your-channel-sidebar.html",
 "help/messaging/pinning-messages.html": 
-        "https://docs.mattermost.com/ channels/save-pin-messages.html",
+        "https://docs.mattermost.com/channels/save-pin-messages.html",
 "help/getting-started/signing-in.html": 
 	"https://docs.mattermost.com/welcome/sign-in.html",
 "help/getting-started/searching.html": 
-	"https://docs.mattermost.com/ channels/search-for-messages.html",
+	"https://docs.mattermost.com/channels/search-for-messages.html",
 "help/messaging/sending-messages.html": 
-	"https://docs.mattermost.com/ channels/send-messages.html",
+	"https://docs.mattermost.com/channels/send-messages.html",
 "help/getting-started/setting-your-status-availability.html":
         "https://docs.mattermost.com/welcome/set-your-status-availability.html",
 "help/getting-started/switch-between-teams.html": 
@@ -1636,6 +1642,8 @@ redirects = {
         "https://handbook.mattermost.com/contributors/contributors",
 "process/deprecated-features.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/development-process/deprecated-features",
+"process/developer.html":
+	"https://handbook.mattermost.com",
 "process/design-process.html":
         "https://handbook.mattermost.com/operations/research-and-development/product/product-design-team-handbook#overview",
 "process/documentation-guidelines.html":
@@ -1711,7 +1719,7 @@ redirects = {
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v7-0":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v7-0",
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-7":
-        "upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-7",
+        "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-7",
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-0":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v6-0",
 "upgrade/upgrading-mattermost-server.html#v6-0-database-schema-migrations":
@@ -1934,3 +1942,9 @@ linkcheck_ignore = [
 linkcheck_timeout = 5
 linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
+
+# Variables 
+# rst_epilog = """
+# .. |mm_badge_version| replace:: 7.2
+# .. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/
+# """

@@ -1,22 +1,8 @@
 Manage your Mattermost profile
 ==============================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 You can configure your profile and security preferences by selecting **Profile** from your avatar in the global header.
 
@@ -44,7 +30,7 @@ Settings to configure name, username, nickname, email, and profile picture.
 Full name
 ~~~~~~~~~
 
-Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional. 
+Full names appear in the direct messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional. 
 
 Username
 ~~~~~~~~
@@ -54,7 +40,7 @@ Usernames are unique identifiers appearing next to all posts. Pick something eas
 Nickname
 ~~~~~~~~
 
-Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Notifications**.
+Nicknames appear in the direct messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* notifications list in **Notifications**.
 
 Position
 ~~~~~~~~~
