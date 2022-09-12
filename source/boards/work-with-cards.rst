@@ -142,24 +142,32 @@ Card templates
 --------------
 
 Card templates can help reduce repetitive manual input for similar types of work items. Each board can have any number of card templates. To create a new card template:
-Open the board where you want to add the card template.
-Select the drop-down arrow next to New, then select New template.
-Add a title to the card template.
-Then assign values to any properties and add a description you wish to have pre-populated when a card is created from the template.
-Close the card using the X in the top left corner.
-Select the drop-down arrow next to New, then select the template you just created.
+
+1. Open the board where you want to add the card template.
+2. Select the drop-down arrow next to **New**, then select **New template**.
+3. Add a title to the card template.
+4. Then assign values to any properties and add a description you wish to have pre-populated when a card is created from the template.
+5. Close the card using the **X** in the top left corner.
+6. Select the drop-down arrow next to **New**, then select the template you just created. 
+
 Alternatively, you can turn any existing card into a template:
-Open the card you want to use as a template.
-Select the options menu (…) in the top-right corner of the card.
-Select New template from card.
-Edit the card as needed, including a helpful name.
-Close the card using the X in the top left corner.
-Select the drop-down arrow next to New, then select the template you just created.
+
+1. Open the card you want to use as a template.
+2. Select the options menu **(...)** in the top-right corner of the card.
+3. Select **New template from card**.
+4. Edit the card as needed, including a helpful name.
+5. Close the card using the **X** in the top left corner.
+6. Select the drop-down arrow next to **New**, then select the template you just created.
+
 To set a default card template for all new cards created on the board:
-Select the drop-down arrow next to New.
-Open the options menu (…) next to the card template of your choosing.
-Select Set as default.
-Note: The card template is applicable only to the board in which it’s created and isn’t available in other boards in your team workspace. Comments on a template do not get populated on to new cards. Additionally, properties cannot be hidden from a card template at this time. All cards on a board share the same properties, so adding or deleting a property on a template will also apply to all cards on a board.
+
+1. Select the drop-down arrow next to **New**.
+2. Open the options menu **(...)** next to the card template of your choosing.
+3. Select **Set as default**.
+
+.. note:: 
+  
+  The card template is applicable only to the board in which it’s created and isn’t available in other boards in your team workspace. Comments on a template do not get populated on to new cards. Additionally, properties cannot be hidden from a card template at this time. All cards on a board share the same properties, so adding or deleting a property on a template will also apply to all cards on a board.
 
 Share card previews
 -------------------
