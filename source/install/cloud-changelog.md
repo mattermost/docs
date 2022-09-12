@@ -31,6 +31,7 @@ Latest Mattermost Cloud releases:
  - Added ``OmitConnection`` to the websocket broadcast parameters.
 
 ### Bug Fixes
+ - Fixed an issue with a nil point exception error during imports.
  - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
  - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
  - Fixed typos in some translations strings that caused some in-product links to be broken.
