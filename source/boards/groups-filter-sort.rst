@@ -2,12 +2,20 @@ Work with groups, filter, and sort
 ==================================
 
 Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with Saved Views, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
+
 Group cards
+-----------
+
 You can group cards on your board if they utilize the “Select” property.
 
-Note: Card grouping is only available in boards and table views and you must have at least one “Select” property on your board for grouping to work.
+.. note:: 
+
+  Card grouping is only available in boards and table views and you must have at least one “Select” property on your board for grouping to work.
+
 Apply a group
-To apply a group, select the Group by option at the top of the board, then select any available “Select” property to group your cards by.
+~~~~~~~~~~~~~
+
+To apply a group, select the **Group by** option at the top of the board, then select any available “Select” property to group your cards by.
 
 In the boards view, cards are automatically grouped into columns by the values from the specified “Select” property.
 
