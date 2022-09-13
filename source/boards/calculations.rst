@@ -1,7 +1,7 @@
 Work with calculations
 ======================
 
-When you view a board in table, Kanban, or Board view, you can use calculations to answer basic metric questions without needing to create complex reports. Hover over the bottom of a column to display the **Calculate** feature, then select the arrow to open the menu options.
+When you view a board in table, Kanban, or board view, you can use calculations to answer basic metric questions without needing to create complex reports. Hover over the bottom of a column to display the **Calculate** feature, then select the arrow to open the menu options.
 
 You can use calculations to quickly see:
 
@@ -12,9 +12,9 @@ You can use calculations to quickly see:
 - The sum of estimated developer days for features (to make sure your team isn’t overloaded).
 - The range of estimated dates (to make sure your milestones all line up).
 
-The calculation options are detailed below:
+The calculation options are:
 
-* **Count**: Counts the total number of rows in Table view or total number of cards in a column in Board view. Applies to any property type.
+* **Count**: Counts the total number of rows in table view or total number of cards in a column in Board view. Applies to any property type.
 * **Count Empty**: Applies to any property type.
   
   - Table View: Counts the total number of empty rows per column selected.
@@ -53,5 +53,4 @@ The calculation options are detailed below:
 * **Range**: Displays the lowest and highest number. Requires a number property.
 * **Earliest Date**: Displays the oldest date. Requires any custom date property or the included "Created time" or "Last updated time".
 * **Latest Date**: Displays the most recent date. Requires any custom date property or the included "Created time" or "Last updated time".
-* **Date Range**: The difference between the most recent date and oldest date within the same column. In Table View, it is labeled simply as "Range" for any date property/column. Requires any custom date property or the included "Created time" or "Last updated time".
-
+* **Date Range**: The difference between the most recent date and oldest date within the same column. In Table View, it's labeled simply as "Range" for any date property/column. Requires any custom date property or the included "Created time" or "Last updated time".
