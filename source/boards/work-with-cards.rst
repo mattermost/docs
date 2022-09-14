@@ -122,7 +122,7 @@ Comment on a card
 
 Comments allow you to provide feedback and ask questions relevant to the specific work item on the card.
 
-To add a comment, select a card to open the card view, then click on Add a comment… to type in your comment, and press Send to save the comment to the card. All team members who are following the card will receive a notification with a preview of your comment in Mattermost Channels.
+To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card <https://docs.mattermost.com/boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
 
 
 Mention people
