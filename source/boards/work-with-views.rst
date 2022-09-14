@@ -24,7 +24,7 @@ Displays cards in a gallery format, so you can manage and organize cards with im
 Calendar view
 -------------
 
-To use this view, cards need to have the Date property added.
+To use this view, cards need to have the **Date** property added.
 
 If cards don’t have a custom **Date** property, they’ll be sorted and displayed by the card creation date (default). These cards can’t be moved around the board until a custom **Date** property is added.
 
