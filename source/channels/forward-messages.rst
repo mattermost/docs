@@ -6,7 +6,7 @@ Forward messages
 
 To forward messages in Mattermost, select the **More** |more-icon| icon next to a message, then select **Forward**. 
 
-.. image:: ../images/message-more.png
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
   :alt: When you hover over messages, you can access more message options from the More icon.
 
 .. image:: ../images/forward-message.png
