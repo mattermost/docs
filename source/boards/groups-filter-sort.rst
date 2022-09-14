@@ -48,7 +48,7 @@ To add a filter, select the **Filter** option at the top of the board, then sele
 **Specify the filtering criteria:**
 
 - **Includes**: Display cards with any of the specified values from the **Select** property.
-- **Doesn’t include**: Display all cards without any of the specified values from the “**Select** property.
+- **Doesn’t include**: Display all cards without any of the specified values from the **Select** property.
 - **Is empty**: Display cards with no values assigned to the **Select** property.
 - **Is not empty**: Display cards with any value assigned to the **Select** property.
 
