@@ -87,7 +87,7 @@ Latest Mattermost Releases:
  - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
  - Fixed typos in some translations that caused some in-product links to be broken.
 
-#### API Changes
+### API Changes
  - Added new API endpoints:
  
 	  - ``GET /api/v4/users/me/top/dms``
@@ -95,8 +95,7 @@ Latest Mattermost Releases:
 	  - ``GET /api/v4/teams/:team_id/top/team_members``
 	  - ``GET /api/v4/teams/:team_id:/top/threads``
  - Added ``first_inaccessible_post_time`` to post API responses.
- - Updated permissions of the ``api/v4/posts/{post_id:[A-Za-z0-9]+}/thread`` endpoint. If compliance is enabled, a user can on longer view threads in a public channel they are not a member of.
- - Adds query parameter 'include_deleted' to endpoint: {{[http://your-mattermost-url.com/api/v4/posts/{post_id}/files/info}}](http://your-mattermost-url.com/api/v4/posts/%7Bpost_id%7D/files/info%7D%7D).
+ - Adds query parameter ``include_deleted`` to endpoint: ``{{[http://your-mattermost-url.com/api/v4/posts/{post_id}/files/info}}](http://your-mattermost-url.com/api/v4/posts/%7Bpost_id%7D/files/info%7D%7D)``.
 
 ### Go Version
  - v7.3 is built with Go ``v1.18.1``.
