@@ -6,39 +6,39 @@ Work with cards
 
 A card consists of:
 
-- A set of properties: Properties are common to all cards in a board. Board views can group cards by “Select” type properties into different columns.
-- A list of comments: Comments are useful for noting important changes or milestones.
-- A set of content: The content of a card can consist of Markdown text, checkboxes, and images. Use this to record detailed specs or design decisions for an item for example.
+- **A set of properties**: Properties are common to all cards in a board. Board views can group cards by “Select” type properties into different columns.
+- **A list of comments**: Comments are useful for noting important changes or milestones.
+- **A set of content**: The content of a card can consist of Markdown text, checkboxes, and images. Use this to record detailed specs or design decisions for an item for example.
 
-Drag cards from one column to another to change their group-by property. For example, if cards are grouped by “Status” on board view, drag a card to the Completed column to mark it as completed. When a board is unsorted, you can drag a card up and down within a column to custom sort your cards.
+Drag cards from one column to another to change their group-by property. For example, if cards are grouped by “Status” on board view, drag a card to the **Completed** column to mark it as completed. When a board is unsorted, you can drag a card up and down within a column to custom sort your cards.
 
 For sorted boards, dragging a card to a column will auto-sort it using the specified sort settings.
 
-Our standard board templates provide some default card properties that can be customized or removed. In the Roadmap template, we include Type property, whereas in the Project Tasks template, we include an Estimated Hours property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
+Our standard board templates provide some default card properties that can be customized or removed. In the Roadmap template, we include **Type** property, whereas in the Project Tasks template, we include an **Estimated Hours** property. These properties are not exclusive to any template and can be easily re-created in any of the templates provided.
 
 Card descriptions
 -----------------
 
-Card descriptions can include text with Markdown formatting, checkboxes, and visual elements such as images or GIFs, and can be separated into blocks of content. To add a description, open a card then click on Add a description… below the Comments section and start typing in your content.
+Card descriptions can include text with Markdown formatting, checkboxes, and visual elements such as images or GIFs, and can be separated into blocks of content. To add a description, open a card then click on **Add a description…** below the Comments section and start typing in your content.
 
-To add a new content block in the description section, hover over the section and click on the Add content button and select from any of the following options:
+To add a new content block in the description section, hover over the section and click on the **Add content** button and select from any of the following options:
 
-- Text: Adds a new text block that can be formatted with Markdown.
-- Image: Select and embed an image file into the content block. The following image formats are currently supported: GIF, JPEG, and PNG.
-- Divider: Adds a divider content block below the previous block.
-- Checkbox: Adds a checkbox content block. Press Enter/Return after typing in content for your checkbox to add another checkbox within the same block. Please note, Markdown formatting is not supported within the *Checkbox* content block.
+- **Text**: Adds a new text block that can be formatted with Markdown.
+- **Image**: Select and embed an image file into the content block. The following image formats are currently supported: GIF, JPEG, and PNG.
+- **Divider**: Adds a divider content block below the previous block.
+- **Checkbox**: Adds a checkbox content block. Press Enter/Return after typing in content for your checkbox to add another checkbox within the same block. Please note, Markdown formatting is not supported within the *Checkbox* content block.
 
-To manage the description content blocks on a card, hover over any existing block and select options menu (...) to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then click and hold the grid button to drag and drop it to a new position within the description section.
+To manage the description content blocks on a card, hover over any existing block and select options menu **(...)** to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then click and hold the grid button to drag and drop it to a new position within the description section.
 
 Card properties
 ---------------
 
-Cards can contain different data fields depending on the purpose of the board. Using card properties, you can customize these data fields to fit your needs and track the information most important to you. For example, in a Roadmap board, cards include a Type field where you can add categories such as Bug, Triage, etc. In a Project Task board, cards include the Estimated Hours field instead.
+Cards can contain different data fields depending on the purpose of the board. Using card properties, you can customize these data fields to fit your needs and track the information most important to you. For example, in a **Roadmap** board, cards include a **Type** field where you can add categories such as **Bug**, **Epic**, etc. In a **Project Task** board, cards include the **Estimated Hours** field instead.
 
 Add properties
 --------------
 
-To create a new property field open a card and select Add a property. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
+To create a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
 
 Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later.
 
@@ -49,30 +49,30 @@ Work with property types
 Boards supports a wide range of fully customizable property types:
 
 - Text can be used to add short notes to a card. An advantage of the text property over card descriptions is that it can be shown on the board without needing to open the card.
-- Numbers are useful to capture metrics such as task sizing or effort estimates. Use in conjunction with Calculations to get the most out of the number property type.  
-- Email and Phone can be used to record contact information.
-- URL can be used to provide a link to a pull request or relevant website. Clicking on the box of a URL property will automatically open the link in a new tab on your browser. Hover over the box to surface options to copy or edit the URL.
-- Select and Multi-select allows you to create a predefined list of options that can be color-coded and displayed as badges on the card to indicate things like status and priority.
+- **Numbers** are useful to capture metrics such as task sizing or effort estimates. Use in conjunction with Calculations to get the most out of the number property type.  
+- **Email** and **Phone** can be used to record contact information.
+- **URL** can be used to provide a link to a pull request or relevant website. Clicking on the box of a URL property will automatically open the link in a new tab on your browser. Hover over the box to surface options to copy or edit the URL.
+- **Select** and **Multi-select** allows you to create a predefined list of options that can be color-coded and displayed as badges on the card to indicate things like status and priority.
 - Dates are useful to set and track due dates or milestones. Use the date property to make a card appear on the Calendar view. Set a single date or toggle on the End date to set a date range.
-- Person provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
-- Checkbox is a toggle property that can be used for assigning simple binary options on a card such as True/False or Yes/No.
-- Created time/Created by/Last updated time/Last updated by are predefined system properties to help you audit changes on a card. The names of these properties are customizable, but the values are not.
+- **Person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
+- **Checkbox** is a toggle property that can be used for assigning simple binary options on a card such as True/False or Yes/No.
+- **Created time/Created by/Last updated time/Last updated by** are predefined system properties to help you audit changes on a card. The names of these properties are customizable, but the values are not.
 
 Rename a property
 -----------------
 
-The default name for a new property is the name of the property type (e.g. Date, URL).
+The default name for a new property is the name of the property type (e.g. **Date**, **URL**).
 To rename a property field, open up a card and select the property name to open an editable field. Enter the new name in the field provided. The change is saved immediately and applied across all cards on the current board.
 
 Change a property type
 ----------------------
 
-To change a property type, select the property, then open the Type menu and choose a new property type. You’ll be asked to confirm the change from every card on the current board. Changing the type for an existing property will affect values across all cards on the board and may result in data loss.
+To change a property type, select the property, then open the **Type** menu and choose a new property type. You’ll be asked to confirm the change from every card on the current board. Changing the type for an existing property will affect values across all cards on the board and may result in data loss.
 
 Delete a property
 -----------------
 
-To delete properties you no longer need, select the property, then choose Delete. You’ll be asked to confirm that you want to remove that property from every card on the current board.
+To delete properties you no longer need, select the property, then choose **Delete**. You’ll be asked to confirm that you want to remove that property from every card on the current board.
 Note:
 Properties are displayed in the order they were created and cannot be re-ordered at this time.
 
@@ -80,24 +80,25 @@ Define a “Select” or “Multi-select” property
 --------------------------------------------
 
  The options on a “Select” and “Multi-select” property type appear as color-coded tags on a card. To add and configure the options on these types:
-Click on a card to open the card view
+- Click on a card to open the card view.
+
 Add a new property, give it a name, and set its type to "Select" (or Multi-Select)
 Click on the field box for the property, and start typing the name of a new option. Press Enter to accept. Repeat this step to add additional options.
-To assign a color to or delete an option, click on the value and select the options menu (...) next to each option name.
+- To assign a color to or delete an option, click on the value and select the options menu **(...)** next to each option name.
 To select an option on the property, click on the box and select one of the values from the menu.
 To remove an option on the property, click on the box and select the `X` next to the option name you want to remove.
 Alternatively, you can also add new options directly from a board:
-Open a board view
-Group by a Select property
+- Open a board view.
+- Group by a Select property.
 Scroll to the right of the board and click on "+ Add a group"
 This will add a new column, which corresponds to a new value option for the Select property.
 Note:
-Options in a “Select” or “Multi-Select” property list cannot be renamed and are sorted in the order they were created and cannot be re-ordered at this time. 
+Options in a “Select” or “Multi-Select” property list are sorted in the order they were created and cannot be re-ordered or renamed at this time.
 
 Toggle properties shown on a board
 ----------------------------------
 
-Once you have card properties defined, you have full control over which properties are shown on the board as a preview without having to open the card. Select Properties at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don’t want to see.
+Once you have card properties defined, you have full control over which properties are shown on the board as a preview without having to open the card. Select **Properties** at the top of the board, then enable all properties you want to see at a glance, and hide all properties you don’t want to see.
 
 Card badges
 -----------
@@ -115,7 +116,6 @@ Comments allow you to provide feedback and ask questions relevant to the specifi
 
 To add a comment, select a card to open the card view, then click on Add a comment… to type in your comment, and press Send to save the comment to the card. All team members who are following the card will receive a notification with a preview of your comment in Mattermost Channels.
 
-From Mattermost Boards v7.3, only board members with the Commenter role or higher can comment on a card. Board members assigned the Viewer role can only view, but not comment on a card.
 
 Mention people
 --------------
@@ -169,7 +169,4 @@ To set a default card template for all new cards created on the board:
   
   The card template is applicable only to the board in which it’s created and isn’t available in other boards in your team workspace. Comments on a template do not get populated on to new cards. Additionally, properties cannot be hidden from a card template at this time. All cards on a board share the same properties, so adding or deleting a property on a template will also apply to all cards on a board.
 
-Share card previews
--------------------
 
-When you share a link to a card within Mattermost, the card details are automatically displayed in a preview. This preview highlights what the card is about at a glance without having to navigate to it.
