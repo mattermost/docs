@@ -69,9 +69,7 @@ Failed or late payments
 
 You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period.
 
-If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Starter and subject to the data limits of that plan. Your workspace will also be suspended.
-
-Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_. In some cases, suspended workspaces may be deleted. Once a workspace has been deleted, contents can not be reinstated. You'll need to create a new workspace at that time from https://mattermost.com/get-started/.
+If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Starter and subject to the data limits of that plan. If there is no activity on your workspace 60 days after the downgrade, your workspace will be deleted.
 
 Add more users to your subscription
 -----------------------------------
