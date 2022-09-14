@@ -22,7 +22,7 @@ Manage team access
 
 Board admins can manage team access to their board by selecting **Share** in the top-right corner of the board. On the dropdown next to **Everyone at… Team** option, select a default board role for everyone on the team. 
 
-Depending on the role selected, everyone on the team will have access to the board with a minimum of the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is **None**, which means nobody on the team has access to the board.
+Depending on the role selected, everyone on the team will have access to the board with the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is **None**, which means nobody on the team has access to the board.
 
 Manage individual board membership
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
