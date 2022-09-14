@@ -37,13 +37,11 @@ Format messages
 .. |numbered-icon| image:: ../images/format-list-numbered_F027B.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a numbered list using the Numbered list icon in the message formatting toolbar.
 
 .. |bullets-icon| image:: ../images/format-list-bulleted_F0279.svg
   :height: 24px
   :width: 24px
-  :target: https://mattermost.com/deploy
   :alt: Format message text as a bulleted list using the Bulleted list icon in the message formatting toolbar.
 
 .. |quotes-icon| image:: ../images/format-quote-open_F0757.svg
