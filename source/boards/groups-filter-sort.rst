@@ -18,7 +18,7 @@ Apply a group
 To apply a group, select the **Group by** option at the top of the board, then select any available **Select** property to group your cards by.
 
 - In the [boards view](ADD URL to "Board view"), cards are automatically grouped into columns by the values from the specified **Select** **property.**
-- In the table view, grouped cards will appear in individual sections based on the values from the specified Select property. Select the arrow to the left of the group name to expand or collapse cards in the group.
+- In the [table view](ADD URL to "Table view"), grouped cards will appear in individual sections based on the values from the specified **Select** property. Select the arrow to the left of the group name to expand or collapse cards in the group.
 
 Hide and unhide groups
 ~~~~~~~~~~~~~~~~~~~~~~
