@@ -29,7 +29,7 @@ Hide and unhide groups
 Ungroup cards
 ~~~~~~~~~~~~~~
 
-To ungroup cards on table view, select the **Group by** option at the top of the board, then select **Ungroup** from the top of the menu. This will return your table to its default state. Cards can be ungrouped in table view only. Ungrouping is not possible on board view since it requires groups to know what to display.
+To ungroup cards on table view, select the **Group by** option at the top of the board, then select **Ungroup** from the top of the menu. This will return your table to its default state. Cards can be ungrouped in table view only. Ungrouping is not possible on board view since groups are used to determine what to display.
 
 Filters
 -------
