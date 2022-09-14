@@ -53,4 +53,4 @@ Open the boards App Bar icon, and select **Create a Board** to create a new boar
 Unlink a board from a channel
 -----------------------------
 
-If you're an admin and want to unlink a board from a channel you're in, open the Boards Apps Bar, select the options menu **(...)** and select **Unlink**. Alternatively, you can open the Share dialog on the board, open the **Role** drop-down menu next to the channel's name and select **Unlink**.
+If you're a board admin and want to unlink a board from a channel you're in, open the Boards Apps Bar, select the options menu **(...)** and select **Unlink**. Alternatively, you can open the **Share** dialog on the board, open the **Role** drop-down menu next to the channel's name and select **Unlink**.
