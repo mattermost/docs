@@ -52,7 +52,7 @@ Mattermost v7.3.0 contains a medium severity level security fix. [Upgrading](htt
 #### User Interface (UI)
  - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
  - Updated the "Contact Sales" link to ``mattermost.com/pl/contact-sales`` and update the pricing modal user interface.
- - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
+ - Introduced a new ``/marketplace`` slash command that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
  - Team unreads are now calculated based on the channel membership and threads only. Team membership is no longer taken into account.
  - For introducing Boards and Playbooks to new users, an “explore other tools in platform” item was added to the end user onboarding checklist.
  - Added the **Save** option to the post menu.
@@ -60,21 +60,21 @@ Mattermost v7.3.0 contains a medium severity level security fix. [Upgrading](htt
  - Insights filters now persist instead of being reset to default when switching to channels and returning back to the Insights view.
  - Code blocks now have better support for language filetype extensions and are a smaller bundle size.
  - A Desktop App prompt is now always shown on first visit to a Mattermost server from an email notification.
- - Search dropdown options now allow focusing with tab.
+ - Search dropdown options now allow focusing by pressing the tab key.
  - Downgraded Bulgarian language support to Beta.
 
 #### Administration
- - Added a **View Plan** button in plan card at **System Console > License**.
+ - Added a **View Plan** button within the plan card via **System Console > License**.
  - Started tracking the join time of team members and added a new API endpoint to retrieve information about team members who have joined during a given time.
  - Introduced an optional ``shouldRender`` function parameter to ``registerchannelHeaderMenuAction`` plugin function. This allows menu items to conditionally render depending on the current state prior to rendering.
  - Plugins can now hide plugin settings based on the server's hosting environment.
- - Customers who are on a 30-day free trial are now notified 3 days before the trial ends.
+ - Customers who are on a 30-day free trial are now notified three days before the trial ends.
 
 ### Bug Fixes
  - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
  - Fixed an issue where starting a trial failed if ``SiteURL`` was not set.
  - Fixed an issue where reading a thread on the mobile app caused a negative mention count to display on the web app.
- - Fixed an issue where the user profile image persisted after user account deletion.
+ - Fixed an issue where the user's profile image persisted after user account deletion.
  - Fixed an issue where exports generated via mmctl without attachments still included the file properties in the post, so they couldn't be imported.
  - Fixed an issue that caused a crash when unread posts were fetched.
  - Fixed an issue where updating a profile image and creating new emojis used multipart uploads when using S3 storage.
@@ -84,7 +84,7 @@ Mattermost v7.3.0 contains a medium severity level security fix. [Upgrading](htt
  - Fixed an issue where disabling a WebApp plugin from its configuration page resulted in the radio button reverting to ``true``.
  - Fixed an issue where the cursor sometimes jumped to the center channel textbox when the right-hand side was open.
  - Fixed an issue where closing the right-hand side also closed the edited post in the center channel.
- - Fixed an issue where clicking "Try free now" opened the top 3 enterprise features instead of the "Your trial has started" modal.
+ - Fixed an issue where selecting "Try free now" opened the top three enterprise features instead of the "Your trial has started" modal.
  - Fixed an issue where the Threads view displayed as unread even if there were no unread threads.
  - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
  - Fixed typos in some translations that caused some in-product links to be broken.
