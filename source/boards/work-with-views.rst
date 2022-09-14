@@ -1,20 +1,37 @@
-Work with views
-===============
+Work with saved views
+=====================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-There are a number of ways you can visualize your boards and cards. The type of template you choose provides a set of view options.
+You can change boards views to adjust how your cards are represented. To add a new view to a board, from the board header, select the menu next to the current view name. Scroll down and select **+ Add view**, then select the new visualization you’d like to use.
 
-You can organize cards and narrow your focus on key work items with our filter, sort, and grouping options. From the board header, you can quickly toggle on different properties to display, change the card grouping, apply filters, and adjust how the cards are sorted.
+Board view
+----------
 
-You can filter by multiple properties as well as multiple values within the same property. When filtering by multiple properties, **all conditions** that you've selected need to be true in order for the filtered results to display. For example, if you want to filter your view to only display cards associated with a **Status** of **Not Started** and a **Priority** of **High**, you would add both of them to that filter.
+This is a kanban view where cards are grouped into columns. Column groups only work with the **Select** property and display all cards that share the same value from the specified **Select** property. The column names are editable, and any changes to the column names are also applied to the value from the **Select** property. Cards can be dragged between columns, which will automatically update the property’s assigned value on the card.
+
+Table view
+----------
+
+Displays cards in a table format with rows and columns. Use this view to get an overview of all your project tasks. Easily view and compare the state of all properties across all cards without needing to open individual cards. Each column corresponds to a card property. You can edit cells directly or you can select **Open** to open the card view for that row.
+
+Gallery view
+-------------
+
+Displays cards in a gallery format, so you can manage and organize cards with image attachments. Gallery view displays a preview of the first image attached on the card. For cards with no image attachments, a preview of the first description block will be displayed instead.
+
+Calendar view
+-------------
+
+To use this view, cards need to have the Date property added.
+
+If cards don’t have a custom **Date** property, they’ll be sorted and displayed by the card creation date (default). These cards can’t be moved around the board until a custom **Date** property is added.
 
 .. note:: 
-   Groups and filters currently only support the `SELECT` property type.
+  
+  If your cards do have a **Date** property and you’re not able to move them around, you may be displaying them by **Created Time** or **Last Updated Time**.
 
-When filtering by multiple values within the same property, **any condition** that you've selected can be true for the filtered results to display. For example, if you filter your view by **Priority** values of **High** and **Medium**, your board will display any cards with either of those property values.
-
-Additionally, you can adjust whether you want to include or exclude specific values within a property, or only display properties with empty or populated results.
-
-Lastly, you can combine views with filters to create unique display options without having to constantly reapply filters. Each view retains all the applied filters, groups, and sort options, allowing you to create multiple views with unique filters. For example, you can create a **By milestone** view under a board, and use a filter to only display items for specific milestones.
+- To add a new card, select the **+** option in the top-left corner of the relevant date.
+- To create a date range event, select a start date and then drag to the end date to create a card for that date range event.
+- To add a date range to an existing card, hover over the side of the card to display the arrow and drag to the left or right to create a date range.
