@@ -4,7 +4,7 @@ Overview
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams, and is part of all Mattermost editions.
+Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams, and is part of all Mattermost editions. Boards is also available as a separate single-user Personal Edition called Focalboard.
 
 With Boards you can:
 
@@ -12,8 +12,6 @@ With Boards you can:
 * **Manage and collaborate on various projects:** Software releases, product launches, meetings, personal to-do’s, events, etc.
 * **Stay on schedule:** Clearly-defined tasks, owners, checklists, and deadlines
 * **Increase transparency and keep everybody in the loop:** Everything your team needs in one place, including documents, images, and links that are visible to every stakeholder
-
-Boards is also available as a separate single-user Personal Edition called Focalboard.
 
 What's a board?
 ---------------
@@ -55,6 +53,7 @@ From Mattermost Boards v7.2, boards can be linked to channels and accessed from 
 Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the RHS of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board. Select a linked board to navigate directly to the board.
 
 .. note:: 
+  
   For users upgrading to Mattermost Boards v7.2 or later. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration.
 
 Unlink a board from a channel
