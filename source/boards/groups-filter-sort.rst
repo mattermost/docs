@@ -36,7 +36,9 @@ Filters
 
 You can filter cards on your board if they utilize the **Select** property.
 
-Note: You must have at least one **Select** property on your board for filtering to work. Filtering by other property types such as **Person** or **Date** is not yet supported.
+.. note:: 
+  
+   You must have at least one **Select** property on your board for filtering to work. Filtering by other property types such as **Person** or **Date** is not yet supported.
 
 Add filters
 ~~~~~~~~~~~
