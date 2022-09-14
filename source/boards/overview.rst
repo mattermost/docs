@@ -34,9 +34,10 @@ Open the Boards tab via the product menu in the top left corner of Mattermost, t
 
 If you don't see the Apps Bar and your boards layout looks different to what's described, you may be using an older version of Mattermost. The navigation content in this documentation will not be aligned with your navigation, but the functionality described will be applicable across versions unless otherwise noted.
 
-Focalboard personal server and desktop
---------------------------------------
+Focalboard personal server 
+--------------------------
 
 The Focalboard personal server and desktop apps have some limitations in terms of functionality. Here are some differences you will notice between them and the Boards plugin:
 
-- You can't create private boards in the app versions. 
+- You can create private boards in the personal server version.
+- You can't @mention people in the personal server version.
