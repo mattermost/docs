@@ -1,7 +1,7 @@
 Work with groups, filter, and sort
 ==================================
 
-Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with saved views, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
+Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with [saved views](ADD URL to "Work with saved views"), you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
 
 Group cards
 -----------
