@@ -73,27 +73,35 @@ Delete a property
 -----------------
 
 To delete properties you no longer need, select the property, then choose **Delete**. You’ll be asked to confirm that you want to remove that property from every card on the current board.
-Note:
-Properties are displayed in the order they were created and cannot be re-ordered at this time.
 
-Define a “Select” or “Multi-select” property
---------------------------------------------
+.. note:: 
+  
+  Properties are displayed in the order they were created and cannot be re-ordered at this time.
 
- The options on a “Select” and “Multi-select” property type appear as color-coded tags on a card. To add and configure the options on these types:
-- Click on a card to open the card view.
+Define a **Select** or **Multi-select** property
+------------------------------------------------
 
-Add a new property, give it a name, and set its type to "Select" (or Multi-Select)
-Click on the field box for the property, and start typing the name of a new option. Press Enter to accept. Repeat this step to add additional options.
-- To assign a color to or delete an option, click on the value and select the options menu **(...)** next to each option name.
-To select an option on the property, click on the box and select one of the values from the menu.
-To remove an option on the property, click on the box and select the `X` next to the option name you want to remove.
+The options on a **Select** and **Multi-select** property type appear as color-coded tags on a card. To add and configure the options on these types:
+
+1. Select a card to open the card view.
+2. Add a new property, give it a name, and set its type to **Select** (or **Multi-Select**).
+3. Select the field box for the property, and start typing the name of a new option. Press Enter to accept. Repeat this step to add additional options.
+
+- To assign a color to or delete an option, select the value and select the options menu **(...)** next to each option name.
+- To select an option on the property, select the box and choose one of the values from the menu.
+- To remove an option on the property, select the box and chooose the `X` next to the option name you want to remove.
+
 Alternatively, you can also add new options directly from a board:
-- Open a board view.
-- Group by a Select property.
-Scroll to the right of the board and click on "+ Add a group"
+
+1. Open a board view.
+2. Group by a **Select** property.
+3. Scroll to the right of the board and select **+ Add a group**.
+
 This will add a new column, which corresponds to a new value option for the Select property.
-Note:
-Options in a “Select” or “Multi-Select” property list are sorted in the order they were created and cannot be re-ordered or renamed at this time.
+
+.. note:: 
+  
+  Options in a **Select** or **Multi-Select** property list are sorted in the order they were created and cannot be re-ordered or renamed at this time.
 
 Toggle properties shown on a board
 ----------------------------------
