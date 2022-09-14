@@ -36,6 +36,13 @@ Open the Boards tab via the product menu in the top left corner of Mattermost, t
 
 If you don't see the Apps Bar and your boards layout looks different to what's described, you may be using an older version of Mattermost. The navigation content in this documentation will not be aligned with your navigation, but the functionality described will be applicable across versions unless otherwise noted.
 
+Focalboard personal server and desktop
+--------------------------------------
+
+The Focalboard personal server and desktop apps have some limitations in terms of functionality. Here are some differences you will notice between them and the Boards plugin:
+
+- You can't create private boards in the app versions. 
+
 Link a board to a channel
 -------------------------
 
@@ -43,7 +50,7 @@ From Mattermost Boards v7.2, boards can be linked to channels and accessed from 
 
 .. note:: 
  
-A channel can be linked to multiple boards, but each individual board can only be linked to one channel at a time. Linking the same board to another channel will automatically remove the link from the previous channel.
+  A channel can be linked to multiple boards, but each individual board can only be linked to one channel at a time. Linking the same board to another channel will automatically remove the link from the previous channel.
 
 Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the RHS of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board. Select a linked board to navigate directly to the board.
 
