@@ -1,5 +1,5 @@
-What’s new in Mattermost Boards v7.2
-=====================================
+What’s new in Mattermost Boards 
+===============================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

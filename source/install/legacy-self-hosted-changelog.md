@@ -270,6 +270,9 @@ The following deprecations are planned for the Mattermost v6.0 release, which is
 
 ## Release v5.37 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
+- **5.37.10, released 2022-08-31**
+  - Improved groups query performance by not counting deleted members.
+  - Prevented the request for counting channel members in a group when the feature is disabled to prevent performance problems at scale.
 - **v5.37.9, released 2022-03-10**
   - Mattermost v5.37.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v5.37.8, released 2022-02-03**

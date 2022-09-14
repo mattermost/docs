@@ -6,7 +6,7 @@ If you have any questions, create an account on the [Mattermost Community server
 
 # Table of Contents
 
- * [Contributing](#contributing)
+ * [Contributing](#contribute-to-mattermost-product-documentation)
      * [Get started](#get-started)
      * [Edit content directly on GitHub](#edit-content-directly-on-github)
      * [Create documentation PRs](#create-documentation-pull-requests)
@@ -74,18 +74,18 @@ If you've downloaded the `mattermost/docs` repository and are editing Mattermost
 3. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands based on your operating system:
 
     For Mac users where Homebrew is installed:
-    ```sh
+    ```shell
     brew install pipenv  
     ```
 
     For other operating systems:
-    ```python
-    pip install pipenv 
+    ```shell
+    pip install --user pipenv 
     ```
 
 4. Install required Python packages:
-    ```python
-    pipenv install
+    ```shell
+    pipenv install --dev
     ```
 
 5. Build the documentation set. You have three build commands available at the terminal:
@@ -94,10 +94,10 @@ If you've downloaded the `mattermost/docs` repository and are editing Mattermost
     - Use `make clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the LHS navigation pane and want to ensure you're not reviewing cached results.
     - Use `make livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE.
 
-8. When working with static build results, navigate to the `/build` directory:
+6. When working with static build results, navigate to the `/build` directory:
     ```sh
     cd /build
     ```
-9. Then, preview your changes by opening the `/source/html/index.html` file.
+7. Then, preview your changes by opening the `/source/html/index.html` file.
 
 Build errors are written to the `/build/warning.log`. 

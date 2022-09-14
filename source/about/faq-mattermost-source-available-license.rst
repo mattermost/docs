@@ -1,3 +1,5 @@
+:orphan:
+
 Mattermost Source Available License questions
 =============================================
 

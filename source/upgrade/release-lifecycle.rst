@@ -148,7 +148,7 @@ Desktop and mobile app compatibility
 
 Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release <https://docs.mattermost.com/upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
 
-Please review the `Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__ and the `Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
+Please review the `desktop app changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__ and the `mobile app changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
 
 .. include:: upgrading-to-v60.rst
   :start-after: :nosearch:
