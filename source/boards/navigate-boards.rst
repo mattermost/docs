@@ -21,10 +21,8 @@ Categories are organized per-user, so you can arrange your boards under categori
 
 .. note::
 
-For users upgrading to Mattermost Boards v7.2 onwards:
-
-If you belonged to a workspace prior to v7.2, then you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
-Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t have default categories, and boards they join will appear under the default **Boards** category.
+  For users upgrading to Mattermost Boards v7.2 onwards:If you belonged to a workspace prior to v7.2, then you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
+  Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t have default categories, and boards they join will appear under the default **Boards** category.
 
 Boards that you create after the migration won’t be linked to a workspace and will always appear under the default **Boards** category unless you move or hide the boards.
 
