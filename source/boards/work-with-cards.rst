@@ -48,7 +48,7 @@ Work with property types
 
 Boards supports a wide range of fully customizable property types:
 
-- Text can be used to add short notes to a card. An advantage of the text property over card descriptions is that it can be shown on the board without needing to open the card.
+- **Text** can be used to add short notes to a card. An advantage of the text property over card descriptions is that it can be `shown on the board <https://docs.mattermost.com/boards/work-with-cards.html#toggle-properties-shown-on-a-board>`_ without needing to open the card.
 - **Numbers** are useful to capture metrics such as task sizing or effort estimates. Use in conjunction with Calculations to get the most out of the number property type.  
 - **Email** and **Phone** can be used to record contact information.
 - **URL** can be used to provide a link to a pull request or relevant website. Clicking on the box of a URL property will automatically open the link in a new tab on your browser. Hover over the box to surface options to copy or edit the URL.
