@@ -32,23 +32,25 @@ Board templates
 
 Standard board templates include:
 
-- Content Calendar: Plan and organize your content creation and publication schedule.
-- Meeting Agenda: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later.
-- Personal Goals: Categorize and plan your personal goals.
-- Personal Tasks: Organize your life and track your personal tasks.
-- Project Tasks: Stay on top of your project tasks, track progress, and set priorities.
-- Roadmap: Plan your roadmap and manage your releases more efficiently.
-- Welcome to Boards!: Onboarding template with guided tour points to help you quickly ramp up on Boards.
+- **Content Calendar**: Plan and organize your content creation and publication schedule.
+- **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later.
+- **Personal Goals**: Categorize and plan your personal goals.
+- **Personal Tasks**: Organize your life and track your personal tasks.
+- **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
+- **Roadmap**: Plan your roadmap and manage your releases more efficiently.
+- **Welcome to Boards!**: Onboarding template with guided tour points to help you quickly ramp up on Boards.
 
 Create a blank board
 ~~~~~~~~~~~~~~~~~~~~
 
-If none of the available templates suit your requirements, you can create a blank board using the Create empty board option from the template picker.
+If none of the available templates suit your requirements, you can create a blank board using the **Create empty board** option from the template picker.
 
 Create a new template
 ~~~~~~~~~~~~~~~~~~~~~
 
-To create a new board template select the + icon at the top of the sidebar, then select Create New Board to open the template picker, then select + New template. To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu (…), then select New template from board.
+To create a new board template select the **+** icon at the top of the sidebar, then select **Create New Board** to open the template picker, then select **+ New template**.
+
+To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
 
 Share a custom board template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

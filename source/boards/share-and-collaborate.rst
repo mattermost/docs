@@ -27,19 +27,19 @@ Depending on the role selected, everyone on the team will have access to the boa
 Manage individual board membership
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only board admins manage user permissions on a board, including adding, changing, and removing members.
+Only board admins can manage user permissions on a board, including adding, changing, and removing members.
 
-To add individual users from the team as explicit members of the board, open the Share dialog on the board, search for individual team members, then assign a role to set their permissions for the board. The role for individual board members overrides any role specified for team access.
+To add individual users from the team as explicit members of the board, open the **Share** dialog on the board, search for individual team members, then assign a role to set their permissions for the board. The role for individual board members overrides any role specified for team access.
 
 - To change a board member’s role, open the **Share** dialog, select the role dropdown next to the user’s name, then select another role from the list.
-- To remove a member from a board, open the **Share** dialog, select the role dropdown next to the user’s name, then select Remove member.
+- To remove a member from a board, open the **Share** dialog, select the role dropdown next to the user’s name, then select **Remove member**.
 
 Channel role groups
 ~~~~~~~~~~~~~~~~~~~
 
 Board admins can add a channel to a board to grant all its members Editor access. To do this, select **Share** in the top-right corner of the board, search for the channel name, and add it to the board as a user. The default role is Editor. Doing so also links the board back to the channel, where the board will appear on the channel RHS.
 
-To unlink the channel from the board, open the **Share** dialog, select the role dropdown next to the channel’s name, then select Unlink.
+To unlink the channel from the board, open the **Share** dialog, select the role dropdown next to the channel’s name, then select **Unlink**.
 
 .. note:: 
   
@@ -58,7 +58,7 @@ To share a board with team members internally, select **Share** in the top-right
 Share a board publicly
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Sharing boards publicly is disabled by default. This means that the Publish tab is not available from the Share dialog. To enable public board sharing:
+Sharing boards publicly is disabled by default. This means that the **Publish** tab is not available from the **Share** dialog. To enable public board sharing:
 
 1. Go to **Product menu > System Console > Plugins > Plugin Management > Mattermost Boards > Settings**.
 2. Set **Enable Publicly-Shared Boards** to **true**.
