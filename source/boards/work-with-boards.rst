@@ -48,7 +48,7 @@ If none of the available templates suit your requirements, you can create a blan
 Create a new template
 ~~~~~~~~~~~~~~~~~~~~~
 
-To create a new board template select the **+** icon at the top of the sidebar, then select **Create New Board** to open the template picker, then select **+ New template**.
+To create a new board template select the **+** icon at the top of the sidebar to open the template picker, then select **+ New template**.
 
 To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
 
