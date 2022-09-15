@@ -7,7 +7,7 @@ Work with boards
 Adding new boards
 -----------------
 
-Start by selecting the type of board you want to use. A board contains cards, which typically track tasks or topics, and views, which define how to display the cards, or a subset of them. Views can display cards in a board, table, or gallery layout, optionally filtered and grouped by a property (e.g., priority, status, etc).
+Start by selecting the type of board you want to use. A board contains cards, which typically track tasks or topics, and views, which define how to display the cards, or a subset of them. Views can display cards in a board, table, calendar, or gallery layout, optionally filtered and grouped by a property (e.g., priority, status, etc).
 
 To add a new board, select the **+** icon at the top of the sidebar, then select **Create New Board** to open the template picker to select a template or blank board.
 
