@@ -58,7 +58,7 @@ Share a custom board template
 From Mattermost Boards v7.2 or later
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Custom templates support permissions control, and are restricted to only the template creator by default. The template creator is an admin of the template and can make the template accessible to everyone on the team via the **Share** button on the template editor, and then setting the team role as **Viewer** via the template picker. All members of the team will not be able to see and select the template from the template picker.
+Custom templates support permissions control, and are restricted to only the template creator by default. The template creator is an admin of the template and can make the template accessible to everyone on the team via the **Share** button on the template editor, and then setting the team role as **Viewer**. All members of the team will now be able to see and select the template from the template picker.
 
 The admin of the template can also grant specific team members elevated permissions to the template and/or limit access to only select team members by setting the team role as **None** and adding individual members to the template. Individual team members can be assigned the following roles on a template:
 
