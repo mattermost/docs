@@ -4,7 +4,7 @@ Navigate boards
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
   
-If you're using Mattermost 7.0, open boards using the App Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
+If you've already created a board, you can open Boards using the App Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
 
 Link a board to a channel
 -------------------------
