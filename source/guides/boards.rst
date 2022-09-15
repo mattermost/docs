@@ -6,11 +6,6 @@ Mattermost Boards
 
 Mattermost Boards enable your team to manage projects and tasks via a familiar Kanban board structure. Keep everyone in your team and organization in the loop to stay on schedule with clearly defined tasks, owners, checklists, and deadlines. Keep everything your team needs in one place, including documents, images, and important hyperlinks.
 
-.. image:: ../images/Boards_Hero.png
-   :alt: An example of the Mattermost Boards screen that includes a project status board and cards organized by status. 
-
-This Mattermost Boards User Guide is for anyone who needs help using Mattermost project and task management capabilities.
-
 .. toctree::
    :hidden:
 
@@ -33,3 +28,8 @@ This Mattermost Boards User Guide is for anyone who needs help using Mattermost 
 * :doc:`Share and collaborate </boards/share-and-collaborate>` - Share and collaborate
 * :doc:`Navigate boards </boards/navigate-boards>` - Navigate boards.
 * :doc:`Migrate to boards </boards/migrate-to-boards>` - Migrate your data from other tools into Mattermost Boards.
+
+.. image:: ../images/Boards_Hero.png
+   :alt: An example of the Mattermost Boards screen that includes a project status board and cards organized by status. 
+
+This Mattermost Boards User Guide is for anyone who needs help using Mattermost project and task management capabilities.
