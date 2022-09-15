@@ -18,7 +18,7 @@ What's a board?
 
 A board is a collection of cards to help you manage your projects, organize tasks, and collaborate with your team all in one place.
 
-Boards can be displayed and filtered in different views such as kanban, table, calendar, and gallery views to help you visualize work items in the format that makes most sense to you.```
+Boards can be displayed and filtered in different views such as kanban, table, calendar, and gallery views to help you visualize work items in the format that makes most sense to you.
 
 What's a card?
 --------------
