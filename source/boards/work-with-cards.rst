@@ -78,7 +78,7 @@ To delete properties you no longer need, select the property, then choose **Dele
   
   Properties are displayed in the order they were created and cannot be re-ordered at this time.
 
-Define a **Select** or **Multi-select** property
+Define a "Select" or "Multi-select" property
 ------------------------------------------------
 
 The options on a **Select** and **Multi-select** property type appear as color-coded tags on a card. To add and configure the options on these types:
