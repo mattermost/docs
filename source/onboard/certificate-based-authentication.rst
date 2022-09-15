@@ -1,7 +1,7 @@
 Certificate-based authentication (experimental)
 ===============================================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 *Available as an experimental feature in legacy Mattermost Enterprise Edition E20.*
