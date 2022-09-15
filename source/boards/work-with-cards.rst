@@ -128,7 +128,7 @@ To add a comment, select a card to open the card view, then click on **Add a com
 Mention people
 --------------
 
-You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/channels/mention-people.html>`__ the same way you would in Channels. Mentions are supported in the `Comments<https://docs.mattermost.com/boards/work-with-cards.html#comment-on-a-card>`_ and `Description <https://docs.mattermost.com/boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
+You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/channels/mention-people.html>`__ the same way you would in Channels. Mentions are supported in the `Comments <https://docs.mattermost.com/boards/work-with-cards.html#comment-on-a-card>`_ and `Description <https://docs.mattermost.com/boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
 
 Receive updates
 ---------------
