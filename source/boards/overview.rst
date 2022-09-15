@@ -10,7 +10,7 @@ With Boards you can:
 
 * **Manage projects and organize tasks:** A familiar kanban board structure integrated with channel-based communication.
 * **Manage and collaborate on various projects:** Software releases, product launches, meetings, personal to-do’s, events, etc.
-* **Stay on schedule:** Clearly-defined tasks, owners, checklists, and deadlines
+* **Stay on schedule:** Clearly-defined tasks, owners, checklists, deadlines, and calendars.
 * **Increase transparency and keep everybody in the loop:** Everything your team needs in one place, including documents, images, and links that are visible to every stakeholder
 
 What's a board?
