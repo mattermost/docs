@@ -37,7 +37,7 @@ If you don't see the Apps Bar and your boards layout looks different to what's d
 Focalboard personal server 
 --------------------------
 
-The Focalboard personal server and desktop apps have some limitations in terms of functionality. Here are some differences you will notice between them and the Boards plugin:
+Boards is also available as a separate single-user Personal Edition called Focalboard. The Focalboard personal server and desktop apps have some limitations in terms of functionality. Here are some differences you will notice between them and the Boards plugin:
 
 - You can create private boards in the personal server version.
 - You can't @mention people in the personal server version.
