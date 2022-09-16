@@ -1,5 +1,5 @@
-Architecture overview
-=====================
+Mattermost architecture 
+=======================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:

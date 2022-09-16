@@ -16,9 +16,19 @@ Mattermost product documentation
    :glob:
 
    About Mattermost <overview/index>
-   Mattermost for System Administrators <guides/mattermost-for-system-admins>
-   Mattermost Server administration <guides/administration>
-   Welcome to Mattermost <guides/welcome-to-mattermost>
+   Launch Mattermost for your organization <guides/launch-mattermost>
+   Manage your Mattermost workspace <guides/administration>
+   Keep your Mattermost workspace current <guides/upgrade-mattermost>
+   Scale Mattermost as your organization grows <guides/scale-mattermost>
+   Troubleshooting your Mattermost deployment <guides/troubleshoot-deployment>
+
+----
+   
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   Start using Mattermost <guides/welcome-to-mattermost>
    Mattermost Channels <guides/channels>
    Mattermost Playbooks <guides/playbooks>
    Mattermost Boards <guides/boards>

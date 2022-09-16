@@ -1,5 +1,5 @@
-Deployment overview
-===================
+Components of a Mattermost deployment
+=====================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:

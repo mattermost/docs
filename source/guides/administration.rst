@@ -1,103 +1,40 @@
-Mattermost administration guide
-===============================
+Manage your Mattermost workspace
+================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This guide is for people who administer an existing Mattermost server. It’s divided into four parts:
+See the following resources to manage your Mattermost self-hosted or Cloud workspace: 
 
-* `Get started <https://docs.mattermost.com/guides/administration.html#get-started>`__ - An overview of standard configurations and features for both self-hosted and Cloud workspaces.
-* `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
-* `Self-hosted administration <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
-* `Other resources <https://docs.mattermost.com/guides/administration.html#other-resources>`__ - Additional migration, conversion, and troubleshooting resources.
-
-If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, see the :doc:`Mattermost Deployment Guide </guides/deployment>`.
-
-Get started
-------------
 .. toctree::
     :maxdepth: 1
     :hidden:
 
     Optimize your workspace </configure/optimize-your-workspace>
-    Mattermost configuration settings </configure/configuration-settings>
-    About </configure/self-hosted-account-settings>
-    Billing & account </configure/cloud-billing-account-settings>
-    Reporting configuration settings </configure/reporting-configuration-settings>
-    User management configuration settings </configure/user-management-configuration-settings>
-    Environment configuration settings </configure/environment-configuration-settings>
+    Configure your Mattermost workspace </configure/configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Environment variables </configure/environment-variables>
-    Provisioning workflows </onboard/user-provisioning-workflows>
-    Multi-factor authentication </onboard/multi-factor-authentication>
-    Active Directory/LDAP </onboard/ad-ldap>
-    GitLab SSO </onboard/sso-gitlab>
-    OpenID SSO </onboard/sso-openidconnect>
-    Google SSO </onboard/sso-google>
-    Office 365 SSO </onboard/sso-office>
-    Advanced permissions </onboard/advanced-permissions>
-    System Admin roles </onboard/system-admin-roles>
-    Manage team and channel members </manage/team-channel-members>
-    Custom branding tools </configure/custom-branding-tools>
-    eDiscovery </comply/electronic-discovery>
-    Compliance monitoring </comply/compliance-monitoring>
-    Compliance export </comply/compliance-export>
-    Data retention tools </comply/data-retention-policy>
-    Custom terms of service </comply/custom-terms-of-service>
-
-These resources will help you get started with your Mattermost self-hosted or Cloud workspace.
+    Set up shared channels </onboard/shared-channels>
+	Review performance statistics </manage/statistics>
+	Display in-product notices </manage/in-product-notices>
+	Gather feedback with user satisfaction surveys </manage/user-satisfaction-surveys>
+	Configure an announcement banner </manage/announcement-banner>
+    Generate a support packet </manage/generating-support-packet>
 
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
 * **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 * **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
-* **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
-* **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
-* **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
-* **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
-* **Customize branding** - Change Mattermost branding, site name, and description with :doc:`custom branding tools </configure/custom-branding-tools>`.
-* **Compliance tools** - Extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, create :doc:`Compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, or :doc:`Compliance export </comply/compliance-export>` reports for channel history actions, set custom :doc:`data retention policies </comply/data-retention-policy>`, and set :doc:`custom terms of service </comply/custom-terms-of-service>` for team members.
-
-Advanced user management
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
-    Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
-    Guest accounts </onboard/guest-accounts>
-    SAML Single Sign-On </onboard/sso-saml>
-    SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>
-
-* :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
-* :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
-* :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
-* :doc:`SAML Single Sign-On </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
-* :doc:`SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
-
-Advanced workspace management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Shared channels </onboard/shared-channels>
-    Statistics </manage/statistics>
-    In-product notices </manage/in-product-notices>
-    User satisfaction surveys </manage/user-satisfaction-surveys>
-    Health check </manage/health-checks>
-    Announcement banner </manage/announcement-banner>
-    Bulk export tool </manage/bulk-export-tool>
-
 * :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
 * :doc:`Statistics </manage/statistics>` - Get statistics about your Mattermost server usage.
 * :doc:`In-product notices </manage/in-product-notices>` - Get notified about Mattermost updates via in-app notices.
 * :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
-* :doc:`Health check </manage/health-checks>` - Configure health probes for your Mattermost server.
 * :doc:`Announcement banner </manage/announcement-banner>` - Display notices to your users via an announcement banner.
-* :doc:`Bulk export tool </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.
+* :doc:`Generate a support packet </manage/generating-support-packet>` - Generate configuration information, logs, plugin details, and data dependencies to provide when contacting Mattermost support.
+
+.. note::
+    
+    - Looking for instructions on how to deploy Mattermost? See the :doc:`deployment </guides/deployment>` documentation for details. 
+    - Some administrative functionality applies only to Cloud workspaces or self-hosted workspaces. See the sections below for details.
 
 Cloud workspace management
 --------------------------
@@ -109,70 +46,138 @@ Cloud workspace management
     Mattermost Cloud billing </manage/cloud-billing>
     Workspace limits </onboard/mattermost-limits>
     Workspace usage </manage/workspace-usage>
-    Workspace migration </manage/cloud-data-export>
     Cloud data residency </manage/cloud-data-residency>
 
 * :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
 * :doc:`Workspace limits </onboard/mattermost-limits>` - Understand the data limits on your plan.
 * :doc:`Workspace usage </manage/workspace-usage>` - Keep your workspace active.
-* :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 
-Self-hosted administration
---------------------------
+Self-hosted workspace management
+--------------------------------
 
-This section of the guide is for system admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#cloud-workspace-management>`__ section on this page.
+If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#cloud-workspace-management>`__ section on this page.
 
 .. toctree::
     :maxdepth: 1
     :hidden:
 
-    Store configuration in the database </configure/configuation-in-mattermost-database>
-    Bulk loading data </onboard/bulk-loading-data>
-    SMTP email setup </configure/smtp-email>
-    Email templates </configure/email-templates>
-    Calls deployment </configure/calls-deployment>
-    Configure CloudFront to host static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>
-    Use an outbound proxy </configure/using-outbound-proxy>
-    Migration guide </onboard/migrating-to-mattermost>
-    Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>
-    Customize Mattermost </configure/customizing-mattermost>
-    Audit log v2 </comply/audit-log>
-    SSL client certificate setup </onboard/ssl-client-certificate>
-    Certificate-based authentication </onboard/certificate-based-authentication>
+    Mattermost configuration in the database </configure/configuation-in-mattermost-database>
+    Deploy Mattermost calls </configure/calls-deployment>
+    Configure health checks probes </manage/health-checks>
 
-* :doc:`Include configuration in the Mattermost database </configure/configuation-in-mattermost-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
-* :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
-* :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
-* :doc:`Email templates </configure/email-templates>` - Alter the transactional emails Mattermost sends to your users.
-* :doc:`Calls deployment </configure/calls-deployment>` - Learn about the different calls deployment types.
-* :doc:`Configure CloudFront to host Mattermost static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>` - Improve caching performance to reduce content load times.
-* :doc:`Use an outbound proxy </configure/using-outbound-proxy>` - Monitor outbound traffic and control the websites that can appear in embedded content.
-* :doc:`Migration guide </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.
-* :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Set up search capabilities for teams communicating via Chinese, Japanese, or Korean.
-* :doc:`Whitelabel Mattermost </configure/customizing-mattermost>` - Whitelabel the Mattermost server and apps.
-* :doc:`Audit log v2 </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
-* :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
-* :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
+* :doc:`Move Mattermost configuration to the database </configure/configuation-in-mattermost-database>` - Store Mattermost configuration information in your database rather than as a JSON file. Recommended this for High Availability environments.
+* :doc:`Deploy Mattermost calls </configure/calls-deployment>` - Learn about the different ways you can deploy Mattermost Calls.
+* :doc:`Health check </manage/health-checks>` - Configure health probes for your Mattermost server.
+
+Migrate your Mattermost workspace
+---------------------------------
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+	Cloud to Self-Hosted </manage/cloud-data-export>
+    Migrate from other chat products </onboard/migrating-to-mattermost>
+    Migration announcement email </onboard/migration-announcement-email>
+    Bulk load data </onboard/bulk-loading-data>
+    Bulk export data </manage/bulk-export-tool>
+
+* :doc:`Migrate from  Cloud to self-hosted </manage/cloud-data-export>` - Migrate from Mattermost Cloud to a self-hosted deployment.
+* :doc:`Migrate from other chat products </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.
+* :doc:`Migration announcement email </onboard/migration-announcement-email>` - An email template is available to help you notify your users about migrating to Mattermost.
+* :doc:`Bulk load data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
+* :doc:`Bulk export data </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.
+
+User authentication
+--------------------
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Enable multi-factor authentication </onboard/multi-factor-authentication>
+    Set up AD/LDAP </onboard/ad-ldap>
+    Set up GitLab SSO </onboard/sso-gitlab>
+	Set up OpenID Connect SSO </onboard/sso-openidconnect>
+	Set up Google SSO </onboard/sso-google>
+	Set up Office SSO </onboard/sso-office>
+    Convert OAuth 2.0 providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>
+
+* **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
+* :doc:`Convert OAuth 2.0 service providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>` - Migrate from OAuth 2.0 to OpenID Connect.
+
+User permissions
+-----------------
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+	Advanced permissions </onboard/advanced-permissions>
+    Permissions backend infrastructure </onboard/advanced-permissions-backend-infrastructure>
+	System Admin roles </onboard/system-admin-roles>
+
+* **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
+* :doc:`Advanced permissions: backend infrastructure </onboard/advanced-permissions-backend-infrastructure>` - Read our technical guide on modifying self-hosted Mattermost installations to create custom permissions schemes.
+
+User management
+---------------
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Provisioning workflows </onboard/user-provisioning-workflows>
+    Manage team and channel members </manage/team-channel-members>
+    Sync AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
+    Use AD/LDAP groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
+    Guest accounts </onboard/guest-accounts>
+    SAML SSO </onboard/sso-saml>
+    SAML SSO technical documentation </onboard/sso-saml-technical>
+
+* **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
+* **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
+* :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
+* :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
+* :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
+* :doc:`SAML SSO </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
+* :doc:`SAML SSO technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
+
+Compliance tools
+----------------
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    eDiscovery </comply/electronic-discovery>
+    Compliance monitoring </comply/compliance-monitoring>
+    Compliance export </comply/compliance-export>
+    Data retention tools </comply/data-retention-policy>
+
+* **Compliance tools** - Extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, create :doc:`Compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, create :doc:`Compliance export </comply/compliance-export>` reports for channel history actions, and set custom :doc:`data retention policies </comply/data-retention-policy>`.
+
+Troubleshoot your Mattermost deployment
+---------------------------------------
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Troubleshoot Mattermost issues </install/troubleshooting>
+
+* **Having trouble with your Mattermost deployment?** - See the :doc:`troubleshooting </install/troubleshooting>` documentation for details.
 
 Other resources
 ---------------
+
 .. toctree::
     :maxdepth: 1
     :hidden:
 
-    Convert OAuth 2.0 providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>
-    Generate a support packet </manage/generating-support-packet>
     mmctl command line tool </manage/mmctl-command-line-tool>
-    Migration announcement email template </onboard/migration-announcement-email>
-    Advanced permissions infrastructure </onboard/advanced-permissions-backend-infrastructure>
     Command line tools </manage/command-line-tools>
 
-If the information above doesn’t solve your problem, look at these other resources to find something that meets your needs. Alternatively, you can also :doc:`get help </guides/get-help>` from our community or via premium support services.
-
-* :doc:`Convert OAuth 2.0 service providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>` - Migrate from OAuth 2.0 to OpenID Connect.
-* :doc:`Generate a support packet </manage/generating-support-packet>` - Generate configuration information, logs, plugin details, and data dependencies to provide when contacting Mattermost support.
-* :doc:`mmctl command line tool </manage/mmctl-command-line-tool>` - Use mmctl to manage self-hosted Mattermost servers from the command line.
-* :doc:`Migration announcement email template </onboard/migration-announcement-email>` - Use this email template to notify your users about migrating to Mattermost.
-* :doc:`Advanced permissions: backend infrastructure </onboard/advanced-permissions-backend-infrastructure>` - Read our technical guide on modifying self-hosted Mattermost installations to create custom permissions schemes.
-* :doc:`Command line tools </manage/command-line-tools>` - Learn how to use the command line to manage self-hosted Mattermost servers.
+* :doc:`mmctl command line tool </manage/mmctl-command-line-tool>` - Use mmctl to manage Mattermost workspaces from the command line.
+* :doc:`Command line tools </manage/command-line-tools>` - Learn how to use the command line to manage self-hosted Mattermost workspaces running releases prior to v6.0. 

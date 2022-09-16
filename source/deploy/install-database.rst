@@ -1,7 +1,7 @@
 Install a database
 ==================
 
-You only need one database: either MySQL or PostgreSQL. See the `database software requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#database-software>`__ documentation for details on version support.
+To run a Mattermost server, you need a database: either MySQL or PostgreSQL. See the `database software requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#database-software>`__ documentation for details on version support.
 
 .. tip::
 
