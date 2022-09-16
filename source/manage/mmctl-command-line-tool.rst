@@ -5432,8 +5432,8 @@ Manage users.
       -  `mmctl user email`_ - Set user email
       -  `mmctl user invite`_ - Invite user
       -  `mmctl user list`_ - List users
-      -  `mmctl user migrate_auth`_ - Bulk migrate user accounts authentication type
-      -  `mmctl user reset_password`_ - Reset user password
+      -  `mmctl user migrate-auth`_ - Bulk migrate user accounts authentication type
+      -  `mmctl user reset-password`_ - Reset user password
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
       -  `mmctl user username`_ - Change username of the user
@@ -5941,7 +5941,7 @@ List all users.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl user migrate_auth
+mmctl user migrate-auth
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
@@ -5952,13 +5952,13 @@ Migrate accounts from one authentication provider to another. For example, you c
 
 .. code-block:: sh
 
-   mmctl user migrate_auth [from_auth] [to_auth] [migration-options] [flags]
+   mmctl user migrate-auth [from_auth] [to_auth] [migration-options] [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-   mmctl user migrate_auth email saml users.json
+   mmctl user migrate-auth email saml users.json
 
 **Options**
 
@@ -5967,7 +5967,7 @@ Migrate accounts from one authentication provider to another. For example, you c
    --auto         Automatically migrate all users. Assumes the usernames and emails are identical between Mattermost and SAML services. (saml only)
    --confirm      Confirm you really want to proceed with auto migration. (saml only)
    --force        Force the migration to occur even if there are duplicates on the LDAP server. Duplicates will not be migrated. (ldap only)
-   -h, --help     help for migrate_auth
+   -h, --help     help for migrate-auth
 
 **Options inherited from parent commands**
 
@@ -6022,7 +6022,7 @@ Promote a guest to a user.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl user reset_password
+mmctl user reset-password
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
@@ -6033,19 +6033,19 @@ Send users an email to reset their password.
 
 .. code-block:: sh
 
-   mmctl user reset_password [users] [flags]
+   mmctl user reset-password [users] [flags]
 
 **Examples**
 
 .. code-block:: sh
 
-   mmctl user reset_password user@example.com
+   mmctl user reset-password user@example.com
 
 **Options**
 
 .. code-block:: sh
 
-   -h, --help       help for reset_password
+   -h, --help       help for reset-password
 
 **Options inherited from parent commands**
 
