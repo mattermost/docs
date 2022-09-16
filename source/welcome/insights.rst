@@ -23,29 +23,41 @@ To access insights, go to Channels, then select **Insights** located at the top 
 My insights
 -----------
 
-+----------------------+--------------------------------------------+
-| **Insight category** | **Description**                            |
-+----------------------+--------------------------------------------+
-| My top channels      | Most active channels you're a member of.   |
-+----------------------+--------------------------------------------+
-| My top threads       | Most active threads you follow.            |
-+----------------------+--------------------------------------------+
-| My top boards        | Most active boards you've participated in. |
-+----------------------+--------------------------------------------+
-| My top reactions     | Emoji reactions you've used the most.      |
-+----------------------+--------------------------------------------+
++---------------------------------+-----------------------------------------------------+
+| **Insight category**            | **Description**                                     |
++---------------------------------+-----------------------------------------------------+
+| My top channels                 | Most active channels you're a member of.            |
++---------------------------------+-----------------------------------------------------+
+| My top threads                  | Most active threads you follow.                     |
++---------------------------------+-----------------------------------------------------+
+| My top boards                   | Most active boards you've participated in.          |
++---------------------------------+-----------------------------------------------------+
+| My top reactions                | Emoji reactions you've used the most.               |
++---------------------------------+-----------------------------------------------------+
+| My most active direct messages  | Most active direct messages you've participated in. |
++---------------------------------+-----------------------------------------------------+
+| My least active channels        | Channels you're a member of with the fewest posts.  |
++---------------------------------+-----------------------------------------------------+
+| My top playbooks                | Playbooks you've used with the most runs.           |
++---------------------------------+-----------------------------------------------------+
 
 Team insights
 -------------
 
-+-----------------------+---------------------------------------+
-| **Insight category**  | **Description**                       |
-+-----------------------+---------------------------------------+
-| Top channels          | Most active channels for the team.    |
-+-----------------------+---------------------------------------+
-| Top threads           | Most active threads for the team.     |
-+-----------------------+---------------------------------------+
-| Top boards            | Most active boards for the team.      |
-+-----------------------+---------------------------------------+
-| Top reactions         | The team's most used emoji reactions. |
-+-----------------------+---------------------------------------+
++-----------------------+-----------------------------------------------+
+| **Insight category**  | **Description**                               |
++-----------------------+-----------------------------------------------+
+| Top channels          | Most active channels across the team.         |
++-----------------------+-----------------------------------------------+
+| Top threads           | Most active threads across the team.          |
++-----------------------+-----------------------------------------------+
+| Top boards            | Most active boards across the team.           |
++-----------------------+-----------------------------------------------+
+| Top reactions         | The team's most used emoji reactions.         |
++-----------------------+-----------------------------------------------+
+| New team members      | Latest members to join the team.              |                                     
++-----------------------+-----------------------------------------------+
+| Least active channels | Least active channels across the team.        |
++-----------------------+-----------------------------------------------+
+| Top playbooks         | Playbooks with the most runs across the team. |
++-----------------------+-----------------------------------------------+
