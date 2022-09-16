@@ -50,15 +50,6 @@ The prorated subscription cost for the user added on day 11 is $6.67 USD.
 
 Similarly, if you make a registered user inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
 
-Failed or late payments
-~~~~~~~~~~~~~~~~~~~~~~~
-
-You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period.
-
-Suspended workspaces can be reactivated by contacting Mattermost Customer Support at `https://customers.mattermost.com/cloud/contactus <https://customers.mattermost.com/cloud/contactus>`_.
-
-Once a workspace has been deleted, contents can not be reinstated. You'll need to create a new workspace at that time from https://mattermost.com/get-started/.
-
 Payment information
 ~~~~~~~~~~~~~~~~~~~
 
@@ -72,6 +63,13 @@ Sales tax and VAT
 ~~~~~~~~~~~~~~~~~
 
 Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
+
+Failed or late payments
+-----------------------
+
+You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period.
+
+If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Starter and subject to the data limits of that plan. If there is no activity on your workspace 60 days after the downgrade, your workspace will be deleted.
 
 Add more users to your subscription
 -----------------------------------
