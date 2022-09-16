@@ -272,18 +272,4 @@ You can open an additional set of developer tools for each server you have added
 
 ``document.getElementsByTagName("webview")[0].openDevTools();`` 
 
-Windows
-~~~~~~~
-
-.. raw:: html
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/jnutU-g2QA8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-macOS
-~~~~~
-
-.. raw:: html
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/avKDRodDS3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 To submit an improvement or correction to this documentation, select **Edit** at the top of this page.
