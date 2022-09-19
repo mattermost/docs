@@ -19,7 +19,7 @@ Mattermost product documentation
    Launch Mattermost for your organization <guides/launch-mattermost>
    Manage your Mattermost workspace <guides/administration>
    Keep your Mattermost workspace current <guides/upgrade-mattermost>
-   Scale Mattermost as your organization grows <guides/scale-mattermost>
+   Scale Mattermost <guides/scale-mattermost>
    Troubleshooting your Mattermost deployment <guides/troubleshoot-deployment>
 
 ----
@@ -29,9 +29,7 @@ Mattermost product documentation
    :glob:
 
    Start using Mattermost <guides/welcome-to-mattermost>
-   Mattermost Channels <guides/channels>
-   Mattermost Playbooks <guides/playbooks>
-   Mattermost Boards <guides/boards>
+   Mattermost end user documentation <guides/use-mattermost>
    Mattermost for developers <https://developers.mattermost.com/>
    Get help with Mattermost <guides/get-help>
    Community chat <guides/community-chat>
