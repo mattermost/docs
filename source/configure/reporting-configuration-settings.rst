@@ -30,7 +30,7 @@ Team statistics
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View statistics per team on number of active users,           | - System Config path: **Reporting > Team Statistics**         |
-| as well as Public and Private channels.                       | - ``config.json`` setting: N/A                                |
+| as well as public and private channels.                       | - ``config.json`` setting: N/A                                |
 |                                                               | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
