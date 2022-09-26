@@ -5,7 +5,7 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0. 
 
 Latest Mattermost Releases:
-- [Release v7.3 - Feature Release](#release-v7-2-feature-release)
+- [Release v7.3 - Feature Release](#release-v7-3-feature-release)
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
