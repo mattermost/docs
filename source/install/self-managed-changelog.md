@@ -5,11 +5,93 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0.
 
 Latest Mattermost Releases:
-- [Release v7.4 - Feature Release](#release-v7-3-feature-release)
+- [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.3 - Feature Release](#release-v7-3-feature-release)
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
+
+## Release v7.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**v7.4.0 release day: 2022-10-16**
+
+### Important Upgrade Notes
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Playbooks
+ - 
+
+#### Boards
+ - 
+
+#### Calls
+ - 
+ 
+#### Message Priority 
+ - Added an option to select a message priority label for root posts. Labels are ``standard``, ``important``, and ``urgent``.
+
+#### Notify Admin v2
+ - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a red destructive action color to the **Leave Channel** button in the channel header.
+
+#### Administration
+ - A ``batchSize`` option has been added to the mattermost export CLI command to limit the number of items exported. By default, if it is not included, it exports all the posts.
+
+### Bug Fixes
+ - Fixed an issue with a nil point exception error during imports.
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
+ - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
+ - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
+ - Fixed an issue with the badge count on the mobile app when a channel/thread was viewed.
+ - Fixed an issue where typing ``@`` in the right-hand side rendered a cut-off user suggestion list.
+ - Fixed an issue where an error screen was briefly flashed when the first Admin signed up into a new server.
+ - Fixed an issue where users were unable to add Japanese comments correctly in the message **Forward** modal.
+ - Fixed an issue where unsaved edits to a post were lost when switching channels or threads.
+ - Fixed an issue on larger screen sizes where the Insights widgets were pushed to the side when the right-hand side was open.
+ - Fixed an issue where the ability to forward messages from public channels to someone whom you've never Direct Messaged before wasn’t possible.
+ - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
+ - Fixed an issue where channels with no posts in a particular time window didn't show in **Insights > Least Active Channel**.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableAPITriggerAdminNotifications`` to add an option to receive more context from the “Notify admin” feature to help Admins.
+    - Added ``PostPriority``, to add an option to select a message priority label for root posts.
+
+### API Changes
+ - If ``EnableConfirmNotificationsToChannel`` is disabled, channel member counts by group API are no longer called.
+
+### Websocket Event Changes
+ - Added ``OmitConnection`` to the websocket broadcast parameters.
+
+### Go Version
+ - v7.4 is built with Go ``v1.18.1``.
+
+### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - 
 
 ## Release v7.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
