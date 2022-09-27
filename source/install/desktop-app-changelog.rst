@@ -13,6 +13,80 @@ Latest Mattermost Desktop App releases:
 - `Release v4.6 <#id40>`_
 - `Release v4.5 <#id52>`_
 
+Release v5.2
+--------------
+
+**v5.2.0 release day: 2022-10-14**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Onboarding screen improvements: Added **Configure Server** and intro screens when starting the app without servers created.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^
+
+- Dropped support for Linux IA32 (Linux 32-bit builds).
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added localization support to the Desktop app.
+- Zoom in/out now works when ``ctrl+shift+=`` is pressed.
+- Changed the order of fields in the Add Server modal so that the server URL is filled in first and the display name after.
+- The app window now reloads only when the URL changes, not when a server's name changes.
+- Updated the default window size to 1280x800, so that users can now see other login options as well on first load.
+- Swapped the dark and light theme tray icons on Linux and Windows to the expected behavior.
+- Disabled the auto-update functionality explicitly for all MSI installers except the Windows EXE installer and the Linux AppImage.
+- Dropped support for asterisk-based unreads in Mattermost Self-Hosted versions older than v5.28.
+- Improved the performance of window resizing.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v19.0.6. Electron is the underlying technology used to build the Desktop app.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+- Fixed an issue where an Operating System could register Mattermost as the default web browser / mail app.
+- Fixed an issue where the download notification showed the wrong file name.
+- Fixed an issue where it was possible to drag the Minimize/Close buttons.
+- Fixed an issue where servers were not forced to update their configuration using the configured SiteURL if available.
+- Fixed an issue where a misleading error message from a remote certificate would imply that the Mattermost server had an issue.
+- Fixed an issue where users still received notifications when their status was set to **Do Not Disturb**.
+- Fixed an issue where users could not replace files in the **Downloads** folder.
+- Fixed improper reporting of app version when the ``--version`` or ``-v`` command-line flags were passed.
+
+Open Source Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added ``macos-notification-state``, ``windows-focus-assist``, and ``react-intl`` to hhttps://github.com/mattermost/desktop.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `devinbinnie <https://github.com/devinbinnie>`_, `julmondragon <https://github.com/julmondragon>`_, `m1lt0n <https://github.com/m1lt0n>`_, `saturninoabril <https://github.com/saturninoabril>`_, `tboulis <https://github.com/tboulis>`_, `vaaas <https://github.com/vaaas>`_.
+
 Release v5.1
 --------------
 
