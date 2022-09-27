@@ -15,6 +15,10 @@ Latest Mattermost Releases:
 
 **v7.4.0 release day: 2022-10-16**
 
+### Compatibility
+ - Updated Chrome recommended minimum version to v102+.
+ - Updated Edge recommended minimum version to v95+.
+
 ### Important Upgrade Notes
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
