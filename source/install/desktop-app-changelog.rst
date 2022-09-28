@@ -7,11 +7,11 @@ Desktop application changelog
 Latest Mattermost Desktop App releases:
 
 - `Release v5.2 <#id1>`_
-- `Release v5.1 <#id1>`_
-- `Release v5.0 <#id6>`_
-- `Release v4.7 <#id22>`_
-- `Release v4.6 <#id40>`_
-- `Release v4.5 <#id52>`_
+- `Release v5.1 <#id3>`_
+- `Release v5.0 <#id18>`_
+- `Release v4.7 <#id34>`_
+- `Release v4.6 <#id52>`_
+- `Release v4.5 <#id64>`_
 
 Release v5.2
 --------------
@@ -28,7 +28,7 @@ Compatibility
 Highlights
 ~~~~~~~~~~~~~~~
 
-- Onboarding screen improvements: Added **Configure Server** and intro screens when starting the app without servers created.
+- Onboarding screen improvements: Added new **Configure Server** and intro screens when starting the app without servers created.
 
 Improvements
 ~~~~~~~~~~~~~~~
