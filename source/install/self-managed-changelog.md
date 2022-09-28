@@ -63,6 +63,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the ability to forward messages from public channels to someone whom you've never Direct Messaged before wasn’t possible.
  - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
  - Fixed an issue where channels with no posts in a particular time window didn't show in **Insights > Least Active Channel**.
+ - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
