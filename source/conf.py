@@ -40,7 +40,8 @@ extensions = [
     # https://pypi.org/project/sphinx-sitemap/
     "sitemap",
     "sphinx_tabs.tabs",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
+    "config-setting",
 ]
 
 sphinx_tabs_disable_tab_closing = True

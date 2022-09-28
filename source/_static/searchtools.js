@@ -369,7 +369,7 @@ var Search = {
                     /* highlightstring + */ item[2]).html(item[1]));
 
                 if (item[3]) {
-                    listItem.append($('<span> (' + item[3] + ')</span>'));
+                    listItem.append($('<span> (' + item[4] + ') (' + item[3] + ')</span>'));
                     Search.output.append(listItem);
                     setTimeout(function() {
                         displayNextItem();
@@ -382,7 +382,7 @@ var Search = {
                             if (data !== '' && data !== undefined) {
                                 var summary = Search.makeSearchSummary(data, searchterms, hlterms);
                                 if (summary) {
-                                    listItem.append(summary);
+                                    listItem.append(summary).append($('<span/>').html(item[4]));
                                 }
                             }
                             Search.output.append(listItem);
@@ -449,6 +449,10 @@ var Search = {
                     }
                     var objname = objnames[match[1]][2];
                     var title = titles[match[0]];
+                    if (title === "") {
+                        // If there is no title, it is probably an included doc and we don't want to show those results
+                        continue;
+                    }
                     // If more than one term searched for, we require other words to be
                     // found in the name/title/description
                     if (otherterms.length > 0) {

@@ -757,7 +757,7 @@ header .header__searchbar {
 	display: none;
 	float: left;
 	padding: 0 5px 0 0;
-} 
+}
 
 @media (max-width: 768px){
 	.wy-nav-side {
@@ -1839,7 +1839,7 @@ pre {
 @media (max-width: 767px) {
     .mm-button-outline--thin.mm-button-outline--thin-blue:hover,
     .mm-button-outline--thin.mm-button-outline--thin-blue:focus {
-        color: #043cb5 !important; 
+        color: #043cb5 !important;
     }
 }
 @media (min-width: 768px) {
@@ -1911,4 +1911,9 @@ kbd {
 img.mm-badge-flag {
     width: 13px;
     margin-right: 3px;
-} 
+}
+
+/* Hide the definition list for config settings as they're described elsewhere in the doc */
+dl.config.setting {
+	display: none;
+}
