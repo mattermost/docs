@@ -322,6 +322,8 @@ redirects = {
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
         "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
+"boards/data-and-archives.html":
+	"https://docs.mattermost.com/boards/migrate-to-boards.html".
 
 # Channels redirects
 "channels/sign-in.html":
