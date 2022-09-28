@@ -16,6 +16,9 @@ logger = logging.getLogger(__name__)
 
 
 class AnchorNode(Element):
+    """
+    A docutils node that writes an ``<a>`` tag that includes a specific id
+    """
     anchor: str
 
     def __init__(self, href: str):
@@ -25,14 +28,29 @@ class AnchorNode(Element):
 
 
 def visit_anchor_node(visitor: SphinxTranslator, node: AnchorNode) -> None:
+    """
+    Write the opening HTML tag for the anchor node
+      :param visitor: The translator that handles writing HTML bodies
+      :param node: The docutils node we're visiting
+      :return: None
+    """
     visitor.body.append('<%s id="%s">' % (node.tagname, node.anchor))
 
 
 def depart_anchor_node(visitor: SphinxTranslator, node: AnchorNode) -> None:
+    """
+    Write the closing HTML tag for the anchor node
+      :param visitor: The translator that handles writing HTML bodies
+      :param node: The docutils node we're departing
+      :return: None
+    """
     visitor.body.append(f"</{node.tagname}>")
 
 
 class ConfigSettingDirective(ObjectDescription):
+    """
+    A directive that allow specifying one or more terms that will be added to the search as an Object Type
+    """
     has_content = False
     required_arguments = 1
 
@@ -60,6 +78,10 @@ class ConfigSettingDirective(ObjectDescription):
 
 
 class ConfigSettingDomain(Domain):
+    """
+    A domain to hold references to individual config settings. These settings will be picked up by the Sphinx
+    search and users will be given direct links to the specific setting's doc.
+    """
     name = "config"
     label = "Mattermost configuration setting"
     roles = {
@@ -116,12 +138,22 @@ class ConfigSettingDomain(Domain):
         self,
         config_json_setting: str,
     ) -> None:
+        """
+        Add a config setting to the list of config settings that the search will pick up
+          :param config_json_setting: The config setting's JSON path
+          :return: None
+        """
         name = "config.setting_%s" % config_json_setting
         anchor = "config.setting.anchor_%s" % config_json_setting
         self.data["configs"].append((name, config_json_setting, "setting", self.env.docname, anchor, 0))
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
+    """
+    Sphinx extension entry point
+      :param app: The Sphinx application instance
+      :return: A dict of extension options
+    """
     app.add_node(AnchorNode, html=(visit_anchor_node, depart_anchor_node))
     app.add_domain(ConfigSettingDomain)
     return {
