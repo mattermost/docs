@@ -17,7 +17,6 @@ Latest Mattermost Releases:
 
 ### Compatibility
  - Updated Chrome recommended minimum version to v102+.
- - Updated Edge recommended minimum version to v95+.
 
 ### Important Upgrade Notes
 
