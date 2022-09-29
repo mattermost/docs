@@ -62,8 +62,6 @@ Custom templates support permissions control, and are restricted to only the tem
 
 The admin of the template can also grant specific team members elevated permissions to the template and/or limit access to only select team members by setting the team role as **None** and adding individual members to the template. Individual team members can be assigned the following roles on a template:
 
-<add table>
-
 Prior to Mattermost Boards v7.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
