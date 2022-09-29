@@ -34,7 +34,7 @@ Latest Mattermost Releases:
  - 
  
 #### Message Priority 
- - Added an option to select a message priority label for root posts. Labels are ``standard``, ``important``, and ``urgent``.
+ - Added an option in the message formatting toolbar to select a message priority label for root posts. Priorities include ``Standard``, ``Important``, and ``Urgent``.
 
 #### Notify Admin v2
  - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
@@ -45,7 +45,7 @@ Latest Mattermost Releases:
  - Added a red destructive action color to the **Leave Channel** button in the channel header.
 
 #### Administration
- - A ``batchSize`` option has been added to the mattermost export CLI command to limit the number of items exported. By default, if it is not included, it exports all the posts.
+ - A ``batchSize`` option has been added to the ``mattermost export`` CLI command to limit the number of items exported. By default, if it is not included, it exports all posts.
 
 ### Bug Fixes
  - Fixed an issue with a nil point exception error during imports.
@@ -59,9 +59,9 @@ Latest Mattermost Releases:
  - Fixed an issue where users were unable to add Japanese comments correctly in the message **Forward** modal.
  - Fixed an issue where unsaved edits to a post were lost when switching channels or threads.
  - Fixed an issue on larger screen sizes where the Insights widgets were pushed to the side when the right-hand side was open.
- - Fixed an issue where the ability to forward messages from public channels to someone whom you've never Direct Messaged before wasn’t possible.
+ - Fixed an issue where the ability to forward messages from public channels wasn't possible when messaging someone directly for the first time.
  - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
- - Fixed an issue where channels with no posts in a particular time window didn't show in **Insights > Least Active Channel**.
+ - ixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
  - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
 
 ### config.json
