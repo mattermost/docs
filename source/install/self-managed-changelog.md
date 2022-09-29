@@ -32,9 +32,6 @@ Latest Mattermost Releases:
 
 #### Calls
  - 
- 
-#### Message Priority 
- - Added an option in the message formatting toolbar to select a message priority label for root posts. Priorities include ``Standard``, ``Important``, and ``Urgent``.
 
 #### Notify Admin v2
  - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
