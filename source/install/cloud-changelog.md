@@ -13,11 +13,6 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-10-06
 
-### Highlights
-
-#### Message Priority
- - Added an option in the message formatting toolbar to select a message priority label for root posts. Priorities include ``Standard``, ``Important``, and ``Urgent``.
-
 ### Improvements
 
 #### User Interface (UI)
