@@ -96,15 +96,24 @@ class SearchClass {
      * of the summary text.
      * @type {boolean}
      */
-    _useDefaultSearchSummary = false
+    _useDefaultSearchSummary = false;
     /** @type {(SearchIndex|null)} */
-    _index = null
+    _index = null;
     /** @type {(string|null)} */
-    _queued_query = null
+    _queued_query = null;
     /** @type {number} */
-    _pulse_status = -1
+    _pulse_status = -1;
 
     constructor() {
+    }
+
+    init() {
+        const params = $.getQueryParameters();
+        if (params.q) {
+            const query = params.q[0];
+            $('input[name="q"]')[0].value = query;
+            this.performSearch(query);
+        }
     }
 
     /**
@@ -297,25 +306,70 @@ class SearchClass {
                 results[i][4] = Scorer.score(results[i]);
         }
 
+        // Remove results that have a duplicate anchor. This is fixed differently from Sphinx 5.0.0 onward.
+        /** @type {Record<string, boolean>} */
+        const anchorMap = {};
+        /** @type {Array<Array<(string|number)>>} */
+        const filteredResults = [];
+        for (const result of results) {
+            // If the anchor is empty, include the result as-is.
+            if (result[2] === "") {
+                filteredResults.push(result);
+                continue;
+            }
+            // If we have seen this anchor before, skip this result.
+            if (result[2] in anchorMap) {
+                continue;
+            }
+            anchorMap[result[2]] = true
+            filteredResults.push(result)
+        }
+        results = filteredResults;
+
         // now sort the results by score (in opposite order of appearance, since the
         // display function below uses pop() to retrieve items) and then
         // alphabetically
-        results.sort((a, b) => {
-            /** @type {string|number} */
-            let left = a[4];
-            /** @type {string|number} */
-            let right = b[4];
-            if (left > right) {
-                return 1;
-            } else if (left < right) {
-                return -1;
+        // results.sort((a, b) => {
+        //     /** @type {number} */
+        //     let left = a[4];
+        //     /** @type {number} */
+        //     let right = b[4];
+        //     if (left > right) {
+        //         return 1;
+        //     } else if (left < right) {
+        //         return -1;
+        //     } else {
+        //         // same score: sort alphabetically
+        //         const leftTitle = a[1].toLowerCase();
+        //         const rightTitle = b[1].toLowerCase();
+        //         const titleResult = (leftTitle > rightTitle) ? -1 : ((leftTitle < rightTitle) ? 1 : 0);
+        //         console.log("sort(): a[4]=" + a[4] + ", a[1]=" + a[1].toLowerCase() + ", b[4]=" + b[4] + ", b[1]=" + b[1].toLowerCase() + ", result=" + titleResult);
+        //         return titleResult;
+        //     }
+        // });
+
+        /** @type {Record<number, Array<Array<(string|number)>>>} */
+        const resultsByScore = {}
+        for (const result of results) {
+            if (result[4] in resultsByScore) {
+                resultsByScore[result[4]].push(result);
             } else {
-                // same score: sort alphabetically
-                left = a[1].toLowerCase();
-                right = b[1].toLowerCase();
-                return (left > right) ? -1 : ((left < right) ? 1 : 0);
+                resultsByScore[result[4]] = [result];
             }
+        }
+        const rbsKeys = Object.keys(resultsByScore).sort((a, b) => {
+            const left = Number(a);
+            const right = Number(b);
+            console.log("sort(): left=" + left + ", right=" + right);
+            return (left > right) ? 1 : ((left < right) ? -1 : 0);
         });
+        /** @type {Array<Array<(string|number)>>} */
+        const sortedResults = [];
+        for (const rbsKey of rbsKeys) {
+            console.log("key=" + rbsKey);
+            sortedResults.push(...resultsByScore[rbsKey])
+        }
+        results = sortedResults;
 
         // for debugging
         //Search.lastresults = results.slice();  // a copy
@@ -323,18 +377,22 @@ class SearchClass {
 
         // print the results
         const resultCount = results.length;
-        const displayNextItem = () => {
-            // results left, load the summary and display it
-            if (results.length) {
-                const item = results.pop();
-                const listItem = $('<li></li>');
+        // const displayNextItem = () => {
+            // If there are still results to display, display them
+            while (results.length) {
+                const item = results.pop(); // This takes one result out of the results array
+                // Destructure each result into its fields; array of [0 - filename, 1 - title, 2 - anchor, 3 - descr, 4 - score]
+                const [iFilename, iTitle, iAnchor, iDescr, iScore] = item;
+                const listItem = $('<li></li>'); // The result info is displayed as a list item
+                // Append the result's score
+                listItem.append($("<span/>").html("[" + iScore + "]&nbsp;"));
                 /** @type {String} */
                 let requestUrl;
                 /** @type {String} */
                 let linkUrl;
                 if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
                     // dirhtml builder
-                    let dirname = item[0] + '/';
+                    let dirname = iFilename + '/';
                     if (dirname.match(/\/index\/$/)) {
                         dirname = dirname.substring(0, dirname.length - 6);
                     } else if (dirname === 'index/') {
@@ -344,22 +402,26 @@ class SearchClass {
                     linkUrl = requestUrl;
                 } else {
                     // normal html builders
-                    requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item[0] + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
-                    linkUrl = item[0] + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
+                    requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + iFilename + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
+                    linkUrl = iFilename + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
                 }
-
-                // Uncomment the 'highlightstring' text below to enable highlighting on the linked page
-                listItem.append($('<a/>').attr('href',
-                    linkUrl +
-                    /* highlightstring + */ item[2]).html(item[1]));
-
-                if (item[3]) {
-                    listItem.append($('<span> (' + item[4] + ') (' + item[3] + ')</span>'));
+                // Write the result's link
+                // Note: Uncomment the 'highlightstring +' text below to enable highlighting on the linked page
+                listItem.append(
+                    $('<a/>')
+                        .attr('href', linkUrl + /* highlightstring + */ iAnchor)
+                        .html(iTitle)
+                );
+                // Write the result's description
+                if (iDescr) {
+                    // If the result already includes a description, use it
+                    listItem.append($('<span> (' + iDescr + ')</span>'));
                     Search.output.append(listItem);
-                    setTimeout(function () {
-                        displayNextItem();
-                    }, 5);
+                    // setTimeout(() => {
+                    //     displayNextItem();
+                    // }, 5);
                 } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
+                    // If we're configured to read the source HTML page for a description, do that
                     $.ajax({
                         url: requestUrl,
                         dataType: "text",
@@ -368,25 +430,25 @@ class SearchClass {
                             if (data !== '' && data !== undefined) {
                                 const summary = Search.makeSearchSummary(data, searchterms, hlterms);
                                 if (summary) {
-                                    listItem.append(summary).append($('<span/>').html(item[4]));
+                                    listItem.append(summary);
                                 }
                             }
                             Search.output.append(listItem);
-                            setTimeout(function () {
-                                displayNextItem();
-                            }, 5);
+                            // setTimeout(() => {
+                            //     displayNextItem();
+                            // }, 5);
                         }
                     });
                 } else {
-                    // no source available, just display title
+                    // Otherwise, no source doc is available; just display the result's title
                     Search.output.append(listItem);
-                    setTimeout(function () {
-                        displayNextItem();
-                    }, 5);
+                    // setTimeout(() => {
+                    //     displayNextItem();
+                    // }, 5);
                 }
             }
             // search finished, update title and status message
-            else {
+            // else {
                 Search.stopPulse();
                 Search.title.text(_('Search Results'));
                 if (!resultCount)
@@ -394,9 +456,9 @@ class SearchClass {
                 else
                     Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
                 Search.status.fadeIn(500);
-            }
-        };
-        displayNextItem();
+            // }
+        // };
+        // displayNextItem();
     }
 
 
@@ -480,7 +542,6 @@ class SearchClass {
                 }
             }
         }
-
         return results;
     }
 
@@ -660,15 +721,6 @@ class SearchClass {
             rv = rv.highlightText(this, 'highlighted');
         });
         return rv;
-    }
-
-    init() {
-        const params = $.getQueryParameters();
-        if (params.q) {
-            const query = params.q[0];
-            $('input[name="q"]')[0].value = query;
-            this.performSearch(query);
-        }
     }
 
 }
