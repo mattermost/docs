@@ -28,7 +28,7 @@ Compatibility
 Highlights
 ~~~~~~~~~~~~~~~
 
-- Onboarding screen improvements: Added new **Configure Server** and intro screens when starting the app without servers created.
+- Onboarding screen improvements: Added new **Configure Server** and first user onboarding screens when starting the app without servers configured.
 
 Improvements
 ~~~~~~~~~~~~~~~
@@ -41,8 +41,8 @@ Linux
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added localization support to the Desktop app.
-- Zoom in/out now works when ``ctrl+shift+=`` is pressed.
+- Added localization support to the Desktop App.
+- Zoom in/out now works when ``CTRL/CMD+SHIFT+=`` is pressed.
 - Changed the order of fields in the Add Server modal so that the server URL is filled in first and the display name after.
 - The app window now reloads only when the URL changes, not when a server's name changes.
 - Updated the default window size to 1280x800, so that users can now see other login options as well on first load.
@@ -54,7 +54,7 @@ All Platforms
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Major version upgrade of Electron to v19.0.6. Electron is the underlying technology used to build the Desktop app.
+- Major version upgrade of Electron to v19.0.6. Electron is the underlying technology used to build the Desktop App.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,7 +62,7 @@ Bug Fixes
 Linux
 ^^^^^^
 
-- To fix notification issues for Linux users, the default for config setting ``notifications.flashWindow`` was changed to 0 under Linux.
+- To fix notification issues for Linux users, the configuration setting ``notifications.flashWindow`` default value was changed to ``0`` for Linux.
 
 All Platforms
 ^^^^^^^^^^^^^
@@ -70,7 +70,7 @@ All Platforms
 - Fixed an issue where an Operating System could register Mattermost as the default web browser / mail app.
 - Fixed an issue where the download notification showed the wrong file name.
 - Fixed an issue where it was possible to drag the Minimize/Close buttons.
-- Fixed an issue where servers were not forced to update their configuration using the configured SiteURL if available.
+- Fixed an issue where servers were not forced to update their configuration using the configured ``SiteURL`` value if available.
 - Fixed an issue where a misleading error message from a remote certificate would imply that the Mattermost server had an issue.
 - Fixed an issue where users still received notifications when their status was set to **Do Not Disturb**.
 - Fixed an issue where users could not replace files in the **Downloads** folder.
@@ -79,14 +79,14 @@ All Platforms
 Open Source Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Added ``macos-notification-state``, ``windows-focus-assist``, and ``react-intl`` to hhttps://github.com/mattermost/desktop.
+- Added ``macos-notification-state``, ``windows-focus-assist``, and ``react-intl`` to https://github.com/mattermost/desktop.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
-- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
 
 Contributors
 ~~~~~~~~~~~~~~
