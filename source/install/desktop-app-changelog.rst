@@ -59,8 +59,14 @@ Architectural Changes
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Linux
+^^^^^^
+
+- To fix notification issues for Linux users, the default for config setting ``notifications.flashWindow`` was changed to 0 under Linux.
+
 All Platforms
 ^^^^^^^^^^^^^
+
 - Fixed an issue where an Operating System could register Mattermost as the default web browser / mail app.
 - Fixed an issue where the download notification showed the wrong file name.
 - Fixed an issue where it was possible to drag the Minimize/Close buttons.
