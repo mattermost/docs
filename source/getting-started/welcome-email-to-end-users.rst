@@ -4,7 +4,7 @@ Welcome email to end users
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-To make it easy for your end users to start using Mattermost right away, we created a sample email template that you can use.
+To make it easy for your end users to start using Mattermost right away, we have created a sample  of email template that you can easily use.
 
 Remember to replace all the items below in bold with your information.
 
