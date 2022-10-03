@@ -326,141 +326,123 @@ class SearchClass {
         }
         results = filteredResults;
 
-        // now sort the results by score (in opposite order of appearance, since the
-        // display function below uses pop() to retrieve items) and then
-        // alphabetically
-        // results.sort((a, b) => {
-        //     /** @type {number} */
-        //     let left = a[4];
-        //     /** @type {number} */
-        //     let right = b[4];
-        //     if (left > right) {
-        //         return 1;
-        //     } else if (left < right) {
-        //         return -1;
-        //     } else {
-        //         // same score: sort alphabetically
-        //         const leftTitle = a[1].toLowerCase();
-        //         const rightTitle = b[1].toLowerCase();
-        //         const titleResult = (leftTitle > rightTitle) ? -1 : ((leftTitle < rightTitle) ? 1 : 0);
-        //         console.log("sort(): a[4]=" + a[4] + ", a[1]=" + a[1].toLowerCase() + ", b[4]=" + b[4] + ", b[1]=" + b[1].toLowerCase() + ", result=" + titleResult);
-        //         return titleResult;
-        //     }
-        // });
-
+        // sort results into buckets by score
         /** @type {Record<number, Array<Array<(string|number)>>>} */
         const resultsByScore = {}
         for (const result of results) {
             if (result[4] in resultsByScore) {
-                resultsByScore[result[4]].push(result);
+                resultsByScore[Number(result[4])].push(result);
             } else {
-                resultsByScore[result[4]] = [result];
+                resultsByScore[Number(result[4])] = [result];
             }
         }
+        // sort the bucket keys numerically, highest to lowest
         const rbsKeys = Object.keys(resultsByScore).sort((a, b) => {
             const left = Number(a);
             const right = Number(b);
-            console.log("sort(): left=" + left + ", right=" + right);
             return (left > right) ? 1 : ((left < right) ? -1 : 0);
         });
+        // add each bucket of results to the final array of results
         /** @type {Array<Array<(string|number)>>} */
         const sortedResults = [];
         for (const rbsKey of rbsKeys) {
-            console.log("key=" + rbsKey);
-            sortedResults.push(...resultsByScore[rbsKey])
+            // sort the results in each bucket alphabetically by title
+            const sorted = resultsByScore[rbsKey].sort((a, b) => {
+                const left = String(a[1]).toLowerCase();
+                const right = String(b[1]).toLowerCase();
+                return (left > right) ? -1 : ((left < right) ? 1 : 0);
+            });
+            sortedResults.push(...sorted);
         }
         results = sortedResults;
-
-        // for debugging
-        //Search.lastresults = results.slice();  // a copy
-        //console.info('search results:', Search.lastresults);
+        // debug
+        // for (let x = 0; x < results.length; x++) {
+        //     const result = results[x];
+        //     // array of [filename, title, anchor, descr, score]
+        //     console.log(
+        //         `results[${x}]: doc=${result[0]}, title=${result[1]}, anchor=${result[2]}, score=${result[4]}, desc=${result[3]}`
+        //     );
+        // }
 
         // print the results
         const resultCount = results.length;
-        // const displayNextItem = () => {
-            // If there are still results to display, display them
-            while (results.length) {
-                const item = results.pop(); // This takes one result out of the results array
-                // Destructure each result into its fields; array of [0 - filename, 1 - title, 2 - anchor, 3 - descr, 4 - score]
-                const [iFilename, iTitle, iAnchor, iDescr, iScore] = item;
-                const listItem = $('<li></li>'); // The result info is displayed as a list item
-                // Append the result's score
-                listItem.append($("<span/>").html("[" + iScore + "]&nbsp;"));
-                /** @type {String} */
-                let requestUrl;
-                /** @type {String} */
-                let linkUrl;
-                if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
-                    // dirhtml builder
-                    let dirname = iFilename + '/';
-                    if (dirname.match(/\/index\/$/)) {
-                        dirname = dirname.substring(0, dirname.length - 6);
-                    } else if (dirname === 'index/') {
-                        dirname = '';
-                    }
-                    requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
-                    linkUrl = requestUrl;
-                } else {
-                    // normal html builders
-                    requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + iFilename + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
-                    linkUrl = iFilename + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
-                }
-                // Write the result's link
-                // Note: Uncomment the 'highlightstring +' text below to enable highlighting on the linked page
-                listItem.append(
-                    $('<a/>')
-                        .attr('href', linkUrl + /* highlightstring + */ iAnchor)
-                        .html(iTitle)
-                );
-                // Write the result's description
-                if (iDescr) {
-                    // If the result already includes a description, use it
-                    listItem.append($('<span> (' + iDescr + ')</span>'));
-                    Search.output.append(listItem);
-                    // setTimeout(() => {
-                    //     displayNextItem();
-                    // }, 5);
-                } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
-                    // If we're configured to read the source HTML page for a description, do that
-                    $.ajax({
-                        url: requestUrl,
-                        dataType: "text",
-                        complete: function (jqxhr, textstatus) {
-                            const data = jqxhr.responseText;
-                            if (data !== '' && data !== undefined) {
-                                const summary = Search.makeSearchSummary(data, searchterms, hlterms);
-                                if (summary) {
-                                    listItem.append(summary);
-                                }
-                            }
-                            Search.output.append(listItem);
-                            // setTimeout(() => {
-                            //     displayNextItem();
-                            // }, 5);
-                        }
-                    });
-                } else {
-                    // Otherwise, no source doc is available; just display the result's title
-                    Search.output.append(listItem);
-                    // setTimeout(() => {
-                    //     displayNextItem();
-                    // }, 5);
-                }
-            }
-            // search finished, update title and status message
-            // else {
-                Search.stopPulse();
-                Search.title.text(_('Search Results'));
-                if (!resultCount)
-                    Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
-                else
-                    Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
-                Search.status.fadeIn(500);
-            // }
-        // };
-        // displayNextItem();
+        for (let x = results.length; x > 0; x--) {
+            const item = results[x-1];
+            this.displayResultItem(item, searchterms, hlterms);
+        }
+        // we're finished searching; stop the visual indicator and display the results summary
+        Search.stopPulse();
+        Search.title.text(_('Search Results'));
+        if (!resultCount)
+            Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
+        else
+            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
+        Search.status.fadeIn(500);
+
     }
 
+    /**
+     * Display a single search result
+     * @param item {Array<(string|number)>}
+     * @param searchterms {Array<string>}
+     * @param hlterms {Array<string>}
+     */
+    displayResultItem(item, searchterms, hlterms) {
+        // Destructure each result into its fields; array of [0 - filename, 1 - title, 2 - anchor, 3 - descr, 4 - score]
+        const [iFilename, iTitle, iAnchor, iDescr, iScore] = item;
+        const listItem = $('<li></li>'); // The result info is displayed as a list item
+        // Append the result's score
+        listItem.append($("<span/>").html("[" + iScore + "]&nbsp;"));
+        /** @type {String} */
+        let requestUrl;
+        /** @type {String} */
+        let linkUrl;
+        if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
+            // dirhtml builder
+            let dirname = iFilename + '/';
+            if (dirname.match(/\/index\/$/)) {
+                dirname = dirname.substring(0, dirname.length - 6);
+            } else if (dirname === 'index/') {
+                dirname = '';
+            }
+            requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
+            linkUrl = requestUrl;
+        } else {
+            // normal html builders
+            requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + iFilename + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
+            linkUrl = iFilename + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
+        }
+        // Write the result's link
+        // Note: Uncomment the 'highlightstring +' text below to enable highlighting on the linked page
+        listItem.append(
+            $('<a/>')
+                .attr('href', linkUrl + /* highlightstring + */ iAnchor)
+                .html(iTitle)
+        );
+        // Write the result's description
+        if (iDescr) {
+            // If the result already includes a description, use it
+            listItem.append($('<span> (' + iDescr + ')</span>'));
+        } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
+            // If we're configured to read the source HTML page for a description, do that
+            $.ajax({
+                url: requestUrl,
+                dataType: "text",
+                complete: function (jqxhr, textstatus) {
+                    const data = jqxhr.responseText;
+                    if (data !== '' && data !== undefined) {
+                        const summary = Search.makeSearchSummary(data, searchterms, hlterms);
+                        if (summary) {
+                            listItem.append(summary);
+                        }
+                    }
+                }
+            });
+        }
+        setTimeout(() => {
+            Search.output.append(listItem);
+        }, 5);
+    }
 
     /**
      * search for object names
