@@ -23,7 +23,7 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - A ``batchSize`` option has been added to the ``mattermost export`` CLI command to limit the number of items exported. By default, if it is not included, it exports all posts.
- - Added a credit card update page that communicates arrears for Admins.
+ - Added a credit card update modal that communicates arrears for Admins.
 
 #### API Changes
  - Updated the Files search and GET APIs to filter out files beyond the Cloud plan's configured limit.
