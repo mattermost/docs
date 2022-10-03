@@ -179,6 +179,7 @@ class SearchClass {
     }
 
     stopPulse() {
+        console.log("*** stopping pulse")
         this._pulse_status = 0;
     }
 
@@ -186,15 +187,17 @@ class SearchClass {
         if (this._pulse_status >= 0)
             return;
         const pulse = () => {
-            let i;
+            if (this._pulse_status < 0)
+                return;
             this._pulse_status = (this._pulse_status + 1) % 4;
             let dotString = '';
-            for (i = 0; i < this._pulse_status; i++)
+            for (let i = 0; i < this._pulse_status; i++)
                 dotString += '.';
             Search.dots.text(dotString);
             if (this._pulse_status > -1)
-                window.setTimeout(pulse, 500);
+                setTimeout(pulse, 500);
         };
+        console.log("*** starting pulse");
         pulse();
     }
 
@@ -205,12 +208,13 @@ class SearchClass {
     performSearch(query) {
         // create the required interface elements
         this.out = $('#search-results');
-        this.title = $('<h2>' + _('Searching') + '</h2>').appendTo(this.out);
-        this.dots = $('<span></span>').appendTo(this.title);
-        this.status = $('<p class="search-summary">&nbsp;</p>').appendTo(this.out);
-        this.output = $('<ul class="search"/>').appendTo(this.out);
+        this.title = $('#search-title');
+        this.dots = $('#search-dots');
+        this.status = $('#search-summary');
+        this.output = $('#search-results-list');
 
-        $('#search-progress').text(_('Preparing search...'));
+        // $('#search-progress').text(_('Preparing search...'));
+        this.status.text(_('Preparing search...'));
         this.startPulse();
 
         // index already loaded, the browser was quick!
@@ -287,15 +291,22 @@ class SearchClass {
         // array of [filename, title, anchor, descr, score]
         /** @type {Array<Array<string|number>>} */
         let results = [];
-        $('#search-progress').empty();
+        $('#search-summary').empty();
 
         // lookup as object
+        let foundObjectResults = false;
         for (i = 0; i < objectterms.length; i++) {
             /** @type {Array<string>} */
             const others = [].concat(objectterms.slice(0, i),
                 objectterms.slice(i + 1, objectterms.length));
-            results = results.concat(this.performObjectSearch(objectterms[i], others));
+            const objectResults = this.performObjectSearch(objectterms[i], others);
+            // console.log(`+++ objectResults=${JSON.stringify(objectResults)}`);
+            if (objectResults.length > 0) {
+                foundObjectResults = true;
+            }
+            results = results.concat(objectResults);
         }
+        // console.log(`+++ foundObjectResults=${foundObjectResults}`);
 
         // lookup as search terms in fulltext
         results = results.concat(this.performTermsSearch(searchterms, excluded, terms, titleterms));
@@ -364,8 +375,18 @@ class SearchClass {
         //     );
         // }
 
+        // If we found object results, show the config settings div; otherwise hide it
+        const displaySetting = foundObjectResults ? "contents" : "none";
+        const configSettingsDiv = document.getElementById("config-setting-results-section");
+        if (configSettingsDiv != null) {
+            configSettingsDiv.setAttribute("style", "display: " + displaySetting + ";");
+        }
+        const additionalInfoDiv = document.getElementById("search-additional-information-header");
+        if (additionalInfoDiv != null) {
+            additionalInfoDiv.setAttribute("style", "display: " + displaySetting + ";");
+        }
+
         // print the results
-        const resultCount = results.length;
         for (let x = results.length; x > 0; x--) {
             const item = results[x-1];
             this.displayResultItem(item, searchterms, hlterms);
@@ -373,12 +394,10 @@ class SearchClass {
         // we're finished searching; stop the visual indicator and display the results summary
         Search.stopPulse();
         Search.title.text(_('Search Results'));
-        if (!resultCount)
+        if (results.length === 0)
             Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
         else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
-        Search.status.fadeIn(500);
-
+            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', results.length));
     }
 
     /**
@@ -390,7 +409,8 @@ class SearchClass {
     displayResultItem(item, searchterms, hlterms) {
         // Destructure each result into its fields; array of [0 - filename, 1 - title, 2 - anchor, 3 - descr, 4 - score]
         const [iFilename, iTitle, iAnchor, iDescr, iScore] = item;
-        const listItem = $('<li></li>'); // The result info is displayed as a list item
+        const isObject = (iScore === 26 || iScore === 21);
+        const listItem = $('<li/>'); // The result info is displayed as a list item
         // Append the result's score
         listItem.append($("<span/>").html("[" + iScore + "]&nbsp;"));
         /** @type {String} */
@@ -439,8 +459,9 @@ class SearchClass {
                 }
             });
         }
+        const appendList = isObject ? $('#config-setting-results-list') : $('#search-results-list');
         setTimeout(() => {
-            Search.output.append(listItem);
+           appendList.append(listItem);
         }, 5);
     }
 

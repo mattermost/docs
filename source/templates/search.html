@@ -1,0 +1,50 @@
+{#
+    basic/search.html
+    ~~~~~~~~~~~~~~~~~
+
+    Template for the search page.
+
+    :copyright: Copyright 2007-2013 by the Sphinx team, see AUTHORS.
+    :license: BSD, see https://github.com/sphinx-doc/sphinx/blob/master/LICENSE for details.
+#}
+{%- extends "layout.html" %}
+{% set title = _('Search') %}
+{% set display_vcs_links = False %}
+{%- block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
+{%- endblock %}
+{% block footer %}
+  <script type="text/javascript">
+    jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
+  </script>
+  {# this is used when loading the search index using $.ajax fails,
+     such as on Chrome for documents on localhost #}
+  <script type="text/javascript" id="searchindexloader"></script>
+  {{ super() }}
+{% endblock %}
+{% block body %}
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      {% trans trimmed %}Please activate JavaScript to enable the search
+      functionality.{% endtrans %}
+    </p>
+  </div>
+  </noscript>
+  <div style="display:inline-block">
+    <h2 id="search-title" style="float: left;"></h2><h2 id="search-dots" style="float: right;"></h2>
+  </div>
+  <p id="search-summary" class="search-summary"></p>
+  <!-- configuration setting-specific results will display here -->
+  <div id="config-setting-results-section" style="display: none;">
+    <h3>Configuration settings</h3>
+    <ul class="search" id="config-setting-results-list"></ul>
+  </div>
+  <!-- all other results will display here -->
+  <div id="search-additional-information-header" style="display: none;"><h3>Additional information</h3></div>
+  <div id="search-results">
+    <ul class="search" id="search-results-list"></ul>
+  </div>
+{% endblock %}

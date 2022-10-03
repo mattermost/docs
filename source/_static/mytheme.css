@@ -1856,6 +1856,10 @@ pre {
 	word-break: break-word;
 }
 
+#config-setting-results .context {
+	word-break: break-word;
+}
+
 kbd {
     display: inline-block;
     border: 1px solid #ccc;
@@ -1916,4 +1920,26 @@ img.mm-badge-flag {
 /* Hide the definition list for config settings as they're described elsewhere in the doc */
 dl.config.setting {
 	display: none;
+}
+
+#config-setting-results .search li {
+	margin-bottom:24px;
+	border-bottom:1px solid #e1e4e5;
+	padding-bottom:24px
+}
+
+#config-setting-results .search li:first-child {
+	border-top:1px solid #e1e4e5;
+	padding-top:24px
+}
+
+#config-setting-results .search li a {
+	font-size:120%;
+	margin-bottom:12px;
+	display:inline-block
+}
+
+#config-setting-results .context {
+	color:grey;
+	font-size:90%
 }
