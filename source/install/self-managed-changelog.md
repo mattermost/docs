@@ -40,6 +40,7 @@ Latest Mattermost Releases:
 
 #### User Interface (UI)
  - Added a red destructive action color to the **Leave Channel** button in the channel header.
+ - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
 
 #### Administration
  - A ``batchSize`` option has been added to the ``mattermost export`` CLI command to limit the number of items exported. By default, if it is not included, it exports all posts.
