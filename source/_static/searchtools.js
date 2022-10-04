@@ -80,6 +80,19 @@ const Scorer = {
  * @property {Record<string,Array<number>>} titleterms
  */
 
+/* JSDoc type definition for a search result */
+/**
+ * @typedef SearchResult
+ * @type {object}
+ * @property {string} docname
+ * @property {string} title
+ * @property {string} anchor
+ * @property {string} description
+ * @property {number} score The score of the result
+ * @property {string} filename
+ * @property {boolean} isObject Indicates the result was found by an object search
+ */
+
 /**
  * The main search module
  */
@@ -179,7 +192,6 @@ class SearchClass {
     }
 
     stopPulse() {
-        console.log("*** stopping pulse")
         this._pulse_status = 0;
     }
 
@@ -197,7 +209,6 @@ class SearchClass {
             if (this._pulse_status > -1)
                 setTimeout(pulse, 500);
         };
-        console.log("*** starting pulse");
         pulse();
     }
 
@@ -213,7 +224,6 @@ class SearchClass {
         this.status = $('#search-summary');
         this.output = $('#search-results-list');
 
-        // $('#search-progress').text(_('Preparing search...'));
         this.status.text(_('Preparing search...'));
         this.startPulse();
 
@@ -288,8 +298,7 @@ class SearchClass {
         const terms = this._index.terms;
         const titleterms = this._index.titleterms;
 
-        // array of [filename, title, anchor, descr, score]
-        /** @type {Array<Array<string|number>>} */
+        /** @type {Array<SearchResult>} */
         let results = [];
         $('#search-summary').empty();
 
@@ -300,13 +309,11 @@ class SearchClass {
             const others = [].concat(objectterms.slice(0, i),
                 objectterms.slice(i + 1, objectterms.length));
             const objectResults = this.performObjectSearch(objectterms[i], others);
-            // console.log(`+++ objectResults=${JSON.stringify(objectResults)}`);
             if (objectResults.length > 0) {
                 foundObjectResults = true;
             }
             results = results.concat(objectResults);
         }
-        // console.log(`+++ foundObjectResults=${foundObjectResults}`);
 
         // lookup as search terms in fulltext
         results = results.concat(this.performTermsSearch(searchterms, excluded, terms, titleterms));
@@ -314,37 +321,37 @@ class SearchClass {
         // let the scorer override scores with a custom scoring function
         if (Scorer.score) {
             for (i = 0; i < results.length; i++)
-                results[i][4] = Scorer.score(results[i]);
+                results[i].score = Scorer.score(['','','','',results[i].score]);
         }
 
         // Remove results that have a duplicate anchor. This is fixed differently from Sphinx 5.0.0 onward.
         /** @type {Record<string, boolean>} */
         const anchorMap = {};
-        /** @type {Array<Array<(string|number)>>} */
+        /** @type {Array<SearchResult>} */
         const filteredResults = [];
         for (const result of results) {
             // If the anchor is empty, include the result as-is.
-            if (result[2] === "") {
+            if (result.anchor === "") {
                 filteredResults.push(result);
                 continue;
             }
             // If we have seen this anchor before, skip this result.
-            if (result[2] in anchorMap) {
+            if (result.anchor in anchorMap) {
                 continue;
             }
-            anchorMap[result[2]] = true
+            anchorMap[result.anchor] = true
             filteredResults.push(result)
         }
         results = filteredResults;
 
         // sort results into buckets by score
-        /** @type {Record<number, Array<Array<(string|number)>>>} */
+        /** @type {Record<number, Array<SearchResult>>} */
         const resultsByScore = {}
         for (const result of results) {
-            if (result[4] in resultsByScore) {
-                resultsByScore[Number(result[4])].push(result);
+            if (result.score in resultsByScore) {
+                resultsByScore[Number(result.score)].push(result);
             } else {
-                resultsByScore[Number(result[4])] = [result];
+                resultsByScore[Number(result.score)] = [result];
             }
         }
         // sort the bucket keys numerically, highest to lowest
@@ -354,35 +361,27 @@ class SearchClass {
             return (left > right) ? 1 : ((left < right) ? -1 : 0);
         });
         // add each bucket of results to the final array of results
-        /** @type {Array<Array<(string|number)>>} */
+        /** @type {Array<SearchResult>} */
         const sortedResults = [];
         for (const rbsKey of rbsKeys) {
             // sort the results in each bucket alphabetically by title
             const sorted = resultsByScore[rbsKey].sort((a, b) => {
-                const left = String(a[1]).toLowerCase();
-                const right = String(b[1]).toLowerCase();
+                const left = String(a.title).toLowerCase();
+                const right = String(b.title).toLowerCase();
                 return (left > right) ? -1 : ((left < right) ? 1 : 0);
             });
             sortedResults.push(...sorted);
         }
         results = sortedResults;
-        // debug
-        // for (let x = 0; x < results.length; x++) {
-        //     const result = results[x];
-        //     // array of [filename, title, anchor, descr, score]
-        //     console.log(
-        //         `results[${x}]: doc=${result[0]}, title=${result[1]}, anchor=${result[2]}, score=${result[4]}, desc=${result[3]}`
-        //     );
-        // }
 
         // If we found object results, show the config settings div; otherwise hide it
         const displaySetting = foundObjectResults ? "contents" : "none";
         const configSettingsDiv = document.getElementById("config-setting-results-section");
-        if (configSettingsDiv != null) {
+        if (configSettingsDiv !== null) {
             configSettingsDiv.setAttribute("style", "display: " + displaySetting + ";");
         }
         const additionalInfoDiv = document.getElementById("search-additional-information-header");
-        if (additionalInfoDiv != null) {
+        if (additionalInfoDiv !== null) {
             additionalInfoDiv.setAttribute("style", "display: " + displaySetting + ";");
         }
 
@@ -397,29 +396,27 @@ class SearchClass {
         if (results.length === 0)
             Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
         else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', results.length));
+            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', String(results.length)));
     }
 
     /**
      * Display a single search result
-     * @param item {Array<(string|number)>}
+     * @param item {SearchResult}
      * @param searchterms {Array<string>}
      * @param hlterms {Array<string>}
      */
     displayResultItem(item, searchterms, hlterms) {
-        // Destructure each result into its fields; array of [0 - filename, 1 - title, 2 - anchor, 3 - descr, 4 - score]
-        const [iFilename, iTitle, iAnchor, iDescr, iScore] = item;
-        const isObject = (iScore === 26 || iScore === 21);
-        const listItem = $('<li/>'); // The result info is displayed as a list item
-        // Append the result's score
-        listItem.append($("<span/>").html("[" + iScore + "]&nbsp;"));
         /** @type {String} */
         let requestUrl;
         /** @type {String} */
         let linkUrl;
+        // The result info is displayed as a list item
+        const listItem = $('<li/>');
+        // Append the result's score
+        listItem.append($("<span/>").html("[" + item.score + "]&nbsp;"));
         if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
             // dirhtml builder
-            let dirname = iFilename + '/';
+            let dirname = item.docname + '/';
             if (dirname.match(/\/index\/$/)) {
                 dirname = dirname.substring(0, dirname.length - 6);
             } else if (dirname === 'index/') {
@@ -429,20 +426,20 @@ class SearchClass {
             linkUrl = requestUrl;
         } else {
             // normal html builders
-            requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + iFilename + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
-            linkUrl = iFilename + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
+            requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item.docname + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
+            linkUrl = item.docname + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
         }
         // Write the result's link
         // Note: Uncomment the 'highlightstring +' text below to enable highlighting on the linked page
         listItem.append(
             $('<a/>')
-                .attr('href', linkUrl + /* highlightstring + */ iAnchor)
-                .html(iTitle)
+                .attr('href', linkUrl + /* highlightstring + */ item.anchor)
+                .html(item.title)
         );
         // Write the result's description
-        if (iDescr) {
+        if (item.description !== "") {
             // If the result already includes a description, use it
-            listItem.append($('<span> (' + iDescr + ')</span>'));
+            listItem.append($('<span> (' + item.description + ')</span>'));
         } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
             // If we're configured to read the source HTML page for a description, do that
             $.ajax({
@@ -459,7 +456,7 @@ class SearchClass {
                 }
             });
         }
-        const appendList = isObject ? $('#config-setting-results-list') : $('#search-results-list');
+        const appendList = item.isObject ? $('#config-setting-results-list') : $('#search-results-list');
         setTimeout(() => {
            appendList.append(listItem);
         }, 5);
@@ -469,7 +466,7 @@ class SearchClass {
      * search for object names
      * @param object {string}
      * @param otherterms {Array<string>}
-     * @returns {Array<Array<string|number>>}
+     * @returns {Array<SearchResult>}
      */
     performObjectSearch(object, otherterms) {
         const filenames = this._index.filenames;
@@ -478,9 +475,7 @@ class SearchClass {
         const objnames = this._index.objnames;
         const titles = this._index.titles;
 
-        /** @type {number} */
-        let i;
-        /** @type {Array<Array<string|number>>} */
+        /** @type {Array<SearchResult>} */
         const results = [];
 
         for (const prefix in objects) {
@@ -511,7 +506,7 @@ class SearchClass {
                     if (otherterms.length > 0) {
                         const haystack = (prefix + ' ' + name + ' ' + objname + ' ' + title).toLowerCase();
                         let allfound = true;
-                        for (i = 0; i < otherterms.length; i++) {
+                        for (let i = 0; i < otherterms.length; i++) {
                             if (haystack.indexOf(otherterms[i]) === -1) {
                                 allfound = false;
                                 break;
@@ -534,14 +529,15 @@ class SearchClass {
                     } else {
                         score += Scorer.objPrioDefault;
                     }
-                    results.push([
-                        docnames[match[0]],
-                        fullname,
-                        '#' + anchor,
-                        descr,
+                    results.push({
+                        docname: docnames[match[0]],
+                        title: fullname,
+                        anchor: '#' + anchor,
+                        description: descr,
                         score,
-                        filenames[match[0]]
-                    ]);
+                        filename: filenames[match[0]],
+                        isObject: true,
+                    });
                 }
             }
         }
@@ -562,7 +558,7 @@ class SearchClass {
      * @param {Array<string>} excluded
      * @param {Record<string,Array<number>>} terms
      * @param {Record<string,Array<number>>} titleterms
-     * @returns {Array<Array<(string|number|null)>>}
+     * @returns {Array<SearchResult>}
      */
     performTermsSearch(searchterms, excluded, terms, titleterms) {
         const docnames = this._index.docnames;
@@ -577,7 +573,7 @@ class SearchClass {
         const fileMap = {};
         /** @type {Record<string,Record<string,number>>} */
         const scoreMap = {};
-        /** @type {Array<Array<(string|number|null)>>} */
+        /** @type {Array<SearchResult>} */
         const results = [];
 
         // perform the search on the required terms
@@ -674,7 +670,15 @@ class SearchClass {
                 const score = $u.max($u.map(fileMap[file], (w) => {
                     return scoreMap[file][w];
                 }));
-                results.push([docnames[file], titles[file], '', null, score, filenames[file]]);
+                results.push({
+                    docname: docnames[file],
+                    title: titles[file],
+                    anchor: '',
+                    description: '',
+                    score,
+                    filename: filenames[file],
+                    isObject: false,
+                });
             }
         }
         return results;
