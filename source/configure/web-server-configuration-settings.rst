@@ -3,6 +3,9 @@
 
 Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+.. config:setting:: ServiceSettings.SiteURL
+  MM_SERVICESETTINGS_SITEURL
+
 Site URL
 ~~~~~~~~
 
@@ -19,7 +22,7 @@ Site URL
 | Select the **Test Live URL** button in the System Console     |                                                               |
 | to validate the Site URL.                                     |                                                               |
 +---------------------------------------------------------------+---------------------------------------------------------------+
-| **Notes**:                                                                                                                    |   
+| **Notes**:                                                                                                                    |
 |                                                                                                                               |
 | - The URL may contain a subpath, such as "https://example.com/company/mattermost".                                            |
 | - If you change the Site URL value, log out of the Desktop App, and sign back in using the new domain.                        |
@@ -153,6 +156,9 @@ Let's Encrypt certificate cache file
 | File path input.                                       |                                                                                    |
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 
+.. config:setting:: ServiceSettings.ReadTimeout
+  MM_SERVICESETTINGS_READTIMEOUT
+
 Read timeout
 ~~~~~~~~~~~~
 
@@ -167,6 +173,9 @@ Read timeout
 |                                                         | - Environment variable: ``MM_SERVICESETTINGS_READTIMEOUT``          |
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
+
+.. config:setting:: ServiceSettings.WriteTimeout
+  MM_SERVICESETTINGS_WRITETIMEOUT
 
 Write timeout
 ~~~~~~~~~~~~~
@@ -187,6 +196,9 @@ Write timeout
 | Numerical input in seconds. Default is **300** seconds.  |                                                                             |
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 
+.. config:setting:: ServiceSettings.IdleTimeout
+  MM_SERVICESETTINGS_IDLETIMEOUT
+
 Idle timeout
 ~~~~~~~~~~~~
 
@@ -198,7 +210,7 @@ Idle timeout
 +---------------------------------------------------------+---------------------------------------------------------------------+
 | Set an explicit idle timeout in the HTTP server.        | - System Config path: **Environment > Web Server**                  |
 | This is the maximum time allowed before an idle         | - ``config.json`` setting: ``".ServiceSettings.IdleTimeout: 300",`` |
-| connection is disconnected.                             | - Environment variable: ``MM_SERVICESETTINGS_IDLETIMEOUT``          | 
+| connection is disconnected.                             | - Environment variable: ``MM_SERVICESETTINGS_IDLETIMEOUT``          |
 |                                                         |                                                                     |
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
@@ -239,7 +251,7 @@ Enable insecure outgoing connections
 | Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                          |
 |                                                               | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
 | - **true**: Outgoing HTTPS requests, including S3 clients,    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
-|   can accept unverified, self-signed certificates.            |                                                                                             |     
+|   can accept unverified, self-signed certificates.            |                                                                                             |
 |   For example, outgoing webhooks to a server with a           |                                                                                             |
 |   self-signed TLS certificate, using any domain, will be      |                                                                                             |
 |   allowed, and will skip TLS verification.                    |                                                                                             |
@@ -291,7 +303,7 @@ Reload configuration from disk
 | without taking the server down.                          | - Environment variable: N/A                                   |
 |                                                          |                                                               |
 | Select the **Reload configuration from disk** button     |                                                               |
-| in the System Console after changing your database       |                                                               | 
+| in the System Console after changing your database       |                                                               |
 | configuration. Then, go to **Environment > Database**    |                                                               |
 | and select **Recycle Database Connections** to           |                                                               |
 | complete the reload.                                     |                                                               |
@@ -342,12 +354,12 @@ License file location
 
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 | The path and filename of the license file on disk.     | - System Config path: N/A                                                  |
-| On startup, if Mattermost can't find a valid license   | - ``config.json`` setting: ``".ServiceSettings.LicenseFileLocation: "",``  | 
+| On startup, if Mattermost can't find a valid license   | - ``config.json`` setting: ``".ServiceSettings.LicenseFileLocation: "",``  |
 | in the database from a previous upload, it looks in    | - Environment variable: ``MM_SERVICESETTINGS_LICENSEFILELOCATION``         |
 | this path for the license file.                        |                                                                            |
 |                                                        |                                                                            |
 | String input. Can be an absolute path or a path        |                                                                            |
-| relative to the ``mattermost`` directory.              |                                                                            |      
+| relative to the ``mattermost`` directory.              |                                                                            |
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 
 TLS minimum version
@@ -378,9 +390,9 @@ Trusted proxy IP header
 
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 | Specified headers that will be checked, one by one,    | - System Config path: N/A                                                    |
-| for IP addresses (order is important).                 | - ``config.json`` setting: ``".ServiceSettings.TrustedProxyIPHeader: []",``  | 
-| All other headers are ignored.                         | - Environment variable: ``MM_SERVICESETTINGS_TRUSTEDPROXYIPHEADER``          | 
-|                                                        |                                                                              | 
+| for IP addresses (order is important).                 | - ``config.json`` setting: ``".ServiceSettings.TrustedProxyIPHeader: []",``  |
+| All other headers are ignored.                         | - Environment variable: ``MM_SERVICESETTINGS_TRUSTEDPROXYIPHEADER``          |
+|                                                        |                                                                              |
 | String array input consisting of header names,         |                                                                              |
 | such as ``["X-Forwarded-For", "X-Real-Ip"]``.          |                                                                              |
 +--------------------------------------------------------+------------------------------------------------------------------------------+
@@ -405,7 +417,7 @@ Enable Strict Transport Security (HSTS)
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 | - **true**: Adds the Strict Transport Security (HSTS)  | - System Config path: N/A                                                     |
-|   header to all responses, forcing the browser to      | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransport: false",``  | 
+|   header to all responses, forcing the browser to      | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransport: false",``  |
 |   request all resources via HTTPS.                     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORT``             |
 | - **false**: **(Default)** No restrictions on TLS      |                                                                               |
 |   transport. Strict Transport Security (HSTS) header   |                                                                               |
@@ -425,7 +437,7 @@ Secure TLS transport expiry
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 | The time, in seconds, that the browser remembers a     | - System Config path: N/A                                                              |
-| site is only to be accessed using HTTPS. After this    | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransportMaxAge: 63072000",``  | 
+| site is only to be accessed using HTTPS. After this    | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransportMaxAge: 63072000",``  |
 | period, a site can't be accessed using HTTP unless     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORTMAXAGE``                |
 | ``TLSStrictTransport`` is set to ``true``.             |                                                                                        |
 |                                                        |                                                                                        |
@@ -445,7 +457,7 @@ TLS cipher overwrites
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set TLS ciphers overwrites to meet requirements from   | - System Config path: N/A                                                   |
-| legacy clients which don't support modern ciphers,     | - ``config.json`` setting: ``".ServiceSettings.TLSOverwriteCiphers: []",``  | 
+| legacy clients which don't support modern ciphers,     | - ``config.json`` setting: ``".ServiceSettings.TLSOverwriteCiphers: []",``  |
 | or to limit the types of accepted ciphers.             | - Environment variable: ``MM_SERVICESETTINGS_TLSOVERWRITECIPHERS``          |
 |                                                        |                                                                             |
 | If none specified, the Mattermost server assumes a     |                                                                             |
@@ -455,7 +467,7 @@ TLS cipher overwrites
 | String array input.                                    |                                                                             |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | **Notes**:                                                                                                                           |
-|                                                                                                                                      |  
+|                                                                                                                                      |
 | - This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer, such     |
 |   as NGINX.                                                                                                                          |
 | - See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go                                                                |
@@ -472,7 +484,7 @@ Goroutine health threshold
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set a threshold on the number of goroutines when the   | - System Config path: N/A                                                        |
-| Mattermost system is considered to be in a healthy     | - ``config.json`` setting: ``".ServiceSettings.GoroutineHealthThreshold: -1",``  | 
+| Mattermost system is considered to be in a healthy     | - ``config.json`` setting: ``".ServiceSettings.GoroutineHealthThreshold: -1",``  |
 | state.                                                 | - Environment variable: ``MM_SERVICESETTINGS_GOROUTINEHEALTHTHREADHSOLD``        |
 |                                                        |                                                                                  |
 | When goroutines exceed this limit, a warning is        |                                                                                  |
@@ -492,9 +504,9 @@ Allow cookies for subdomains
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows cookies for           | - System Config path: N/A                                                           |
-|   subdomains by setting the domain parameter on        | - ``config.json`` setting: ``".ServiceSettings.AllowCookiesForSubdomains: true",``  | 
-|   Mattermost cookies.                                  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWCOOKIESFORSUBDOMAINS``            | 
-| - **false**: Cookies not allowed for subdomains.       |                                                                                     | 
+|   subdomains by setting the domain parameter on        | - ``config.json`` setting: ``".ServiceSettings.AllowCookiesForSubdomains: true",``  |
+|   Mattermost cookies.                                  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWCOOKIESFORSUBDOMAINS``            |
+| - **false**: Cookies not allowed for subdomains.       |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Cluster log timeout
@@ -507,11 +519,11 @@ Cluster log timeout
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                               |
-| request time logging for performance monitoring.       | - ``config.json`` setting: ``".ServiceSettings.ClusterLogTimeoutMilliseconds: 2000",``  | 
+| request time logging for performance monitoring.       | - ``config.json`` setting: ``".ServiceSettings.ClusterLogTimeoutMilliseconds: 2000",``  |
 | for performance monitoring                             | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
 |                                                        |                                                                                         |
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
-| (2 seconds).                                           |                                                                                         |        
+| (2 seconds).                                           |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | See the `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation for details.                    |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+

@@ -69,27 +69,27 @@ const Scorer = {
 /**
  * @typedef SearchIndex
  * @type {(object|null)}
- * @property {Array<string>} docnames
- * @property {Record<string,number>} envversion
- * @property {Array<string>} filenames
- * @property {Record<string, Array<Array<string>>>} objects
+ * @property {Array<string>} docnames An ordered array of document names
+ * @property {Record<string,number>} envversion A map of version information (e.g., domains)
+ * @property {Array<string>} filenames An ordered array of document filenames
+ * @property {Record<string,Array<Array<(string|number)>>>} objects A map of object type to an array of ...?
  * @property {Record<string,Array<string>>} objnames
- * @property {Record<string,Array<string>>} objtypes
- * @property {Record<string,Array<number>>} terms
- * @property {Array<string>} titles
- * @property {Record<string,Array<number>>} titleterms
+ * @property {Record<string,string>} objtypes
+ * @property {Record<string,Array<number>>} terms A map of search terms to an array of matching document IDs
+ * @property {Array<string>} titles A list of document titles
+ * @property {Record<string,Array<number>>} titleterms A map of title search terms to an array of matching document IDs
  */
 
 /* JSDoc type definition for a search result */
 /**
  * @typedef SearchResult
  * @type {object}
- * @property {string} docname
- * @property {string} title
- * @property {string} anchor
- * @property {string} description
+ * @property {string} docname The docname of the result
+ * @property {string} title The title of the document
+ * @property {string} anchor The anchor to the content, if any
+ * @property {string} description The description of the document
  * @property {number} score The score of the result
- * @property {string} filename
+ * @property {string} filename The filename of the result document
  * @property {boolean} isObject Indicates the result was found by an object search
  */
 
@@ -110,7 +110,10 @@ class SearchClass {
      * @type {boolean}
      */
     _useDefaultSearchSummary = false;
-    /** @type {(SearchIndex|null)} */
+    /**
+     * The search index
+     * @type {(SearchIndex|null)}
+     */
     _index = null;
     /** @type {(string|null)} */
     _queued_query = null;
@@ -462,6 +465,17 @@ class SearchClass {
         }, 5);
     }
 
+    /* JSDoc type definition for an object in the objects list */
+    /**
+     * @typedef ObjectDef
+     * @type {object}
+     * @property {number} docnameIndex The index into docnames for the document this object lives in
+     * @property {number} objectTypeIndex The index into objtypes for the type of this object
+     * @property {number} priority The priority of this result
+     * @property {string} anchor The section anchor, if any
+     * @property {string} name The object name
+     */
+
     /**
      * search for object names
      * @param object {string}
@@ -516,7 +530,11 @@ class SearchClass {
                             continue;
                         }
                     }
-                    const descr = objname + _(', in ') + title;
+                    // If the object name is 'setting', remove the "setting, " part of the description
+                    let descr = objname + _(', in ') + title;
+                    if (objname === "setting") {
+                        descr = _('in ') + title;
+                    }
 
                     let anchor = match[3];
                     if (anchor === '')
@@ -724,9 +742,9 @@ class SearchClass {
         }
         // build the search summary node
         let rv = $('<p class="context"></p>').text(excerpt);
-        $.each(hlwords, () => {
-            rv = rv.highlightText(this, 'highlighted');
-        });
+        for (const hlword of hlwords) {
+            rv = rv.highlightText(hlword, 'highlighted');
+        }
         return rv;
     }
 

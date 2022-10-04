@@ -1,7 +1,7 @@
 Configuration settings
 ======================
 
-Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. System Admins can manage Mattermost configuration using the System Console, or by modifying the ``config.json`` file directly using a text editor. 
+Mattermost configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory. System Admins can manage Mattermost configuration using the System Console, or by modifying the ``config.json`` file directly using a text editor.
 
 .. note::
 
@@ -21,7 +21,7 @@ Environment variables
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v3.8, you can use `environment variables <https://docs.mattermost.com/configure/environment-variables.html>`__ to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
+From Mattermost v3.8, you can use `environment variables <https://docs.mattermost.com/configure/environment-variables.html>`__ to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart.
 
 Configuration reload
 --------------------
@@ -431,7 +431,7 @@ Enable Email Notifications
 
 **False**: Disables email notifications for posts. This is useful for developers who may want to skip email setup for faster development. In order to remove the **Preview Mode: Email notifications have not been configured** banner, you should also set **Enable Preview Mode Banner** to ``false``.
 
-If this setting is set to ``false`` and the SMTP server is set up, account related emails (such as password, email, username, user token, MFA, and other authentication related changes) will be sent regardless of this setting. 
+If this setting is set to ``false`` and the SMTP server is set up, account related emails (such as password, email, username, user token, MFA, and other authentication related changes) will be sent regardless of this setting.
 
 Email invitations and account deactivation emails are not affected by this setting.
 
@@ -464,7 +464,7 @@ Enable Email Batching
 **True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Settings > Notifications**.
 
 .. note::
-  - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ is configured. 
+  - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ is configured.
   - Email batching in `High Availability mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
 
 **False**: If email notifications are enabled in **Settings**, emails will be sent individually for every mention or direct message received.
@@ -565,9 +565,9 @@ Push Notification Contents
 
 **Full message content sent in the notification payload**: Selecting **Send full message snippet** sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
-**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extension <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`__ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`__ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name. 
+**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device via a `notification service app extension <https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`__ on iOS or `an expandable notification pattern <https://developer.android.com/training/notify-user/expanded>`__ on Android. If the server cannot be reached, a generic push notification message is displayed without message content or sender name.
 
-For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dynamics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service. 
+For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dynamics, MobileIron, AirWatch or other solutions, the container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push Notification service <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__ or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PushNotificationContents": "full"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively.    |
@@ -692,7 +692,7 @@ This setting must be enabled to support `Collapsed Reply Threads <https://docs.m
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread. Mattermost Cloud workspaces have this setting enabled.
 
-**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.    
+**False**: All backend operations for Collapsed Reply Threads are disabled and server performance will not be impacted by the feature. Collapsed Reply Threads (``CollapsedThreads``) cannot be enabled if ``ThreadAutoFollow`` is disabled.
 
 .. note::
 
@@ -711,14 +711,14 @@ Collapsed Reply Threads
 Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
 
 .. important::
-    
-    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality. 
+
+    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality.
 
 System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
 
 **Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on`` by default.
 
-**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. 
+**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
 
 **Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
 
@@ -752,7 +752,7 @@ Disable Link Previews for Specific Domains
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”). 
+Link previews are disabled for this list of comma-separated domains (e.g. “github.com, mattermost.com”).
 
 +---------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictLinkPreviews": ""`` with string input. |
@@ -764,7 +764,7 @@ Enable message link previews
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-**True**: Links to messages generate a preview for any users with access to the original message. 
+**True**: Links to messages generate a preview for any users with access to the original message.
 
 **False**: Links to messages don't include a preview.
 
@@ -808,7 +808,7 @@ Enable Inline LaTeX Rendering
 
 **True**: Enables inline rendering of LaTeX code.
 
-**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
+**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__.
 
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableInlineLatex": false`` with options ``true`` and ``false``. |
@@ -832,9 +832,9 @@ Google API Key
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost offers the ability to embed YouTube videos from URLs shared by end users. 
+Mattermost offers the ability to embed YouTube videos from URLs shared by end users.
 
-Set this key and add YouTube Data API v3 as a service to your key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access. 
+Set this key and add YouTube Data API v3 as a service to your key to enable the display of titles for embedded YouTube video previews. Without the key, YouTube previews will still be created based on hyperlinks appearing in messages or comments but they will not show the video title. If Google detects the number of views is exceedingly high, they may throttle embed access.
 
 Should this occur, you can remove the throttle by registering for a Google Developer Key and entering it in this field following these instructions: https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google Developer Key is used in client-side Javascript.
 
@@ -908,7 +908,7 @@ Enable Public File Links
 
 **False**: The **Get Public Link** option is hidden from the image preview user interface.
 
-.. note:: 
+.. note::
 
    When set to ``False``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When set back to ``True``, old public links will work again unless the **Public Link Salt** has been regenerated.
 
@@ -941,7 +941,7 @@ Enable Admin Notices
 
 **True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
 
-**False**: System Admins will not receive notices except those that apply to all end users (See ``UserNoticesEnabled``). 
+**False**: System Admins will not receive notices except those that apply to all end users (See ``UserNoticesEnabled``).
 
 +----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AdminNoticesEnabled": true`` with options ``true`` and ``false``. |
@@ -955,7 +955,7 @@ Enable End User Notices
 
 **True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
 
-**False**: Users will not receive notices about available client upgrades and relevant end user features. 
+**False**: Users will not receive notices about available client upgrades and relevant end user features.
 
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserNoticesEnabled": true`` with options ``true`` and ``false``. |
@@ -1594,9 +1594,9 @@ Synchronization Interval (minutes)
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. 
+Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes.
 
-When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). 
+When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname).
 
 When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button.
 
@@ -1621,6 +1621,8 @@ The maximum number of users the Mattermost server will request from the AD/LDAP 
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------+
+
+.. config:setting:: .QueryTimeout
 
 Query Timeout (seconds)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1705,7 +1707,7 @@ Ignore Guest Users When Synchronizing with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``. 
+Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``.
 
 **True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
 
@@ -2096,7 +2098,7 @@ OAuth 2.0
 ~~~~~~~~~
 
 .. note::
-  
+
   OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect>`__ in a future release.
 
 Settings to configure OAuth login for account creation and login.
@@ -2131,7 +2133,7 @@ Enable authentication with GitLab
 
 **False**: GitLab OAuth cannot be used for team creation or account signup.
 
-.. note:: 
+.. note::
    For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
 
 +----------------------------------------------------------------------------------------------------+
@@ -2567,7 +2569,7 @@ Client Secret
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
-OpenID Connect (Other) 
+OpenID Connect (Other)
 '''''''''''''''''''''''
 
 Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
@@ -2838,7 +2840,7 @@ Enable Plugin
 Antivirus
 ~~~~~~~~~~
 
-This plugin allows the forwarding of uploaded files to an antivirus scanning application, `ClamAV anti-virus software <https://www.clamav.net/>`__, and prevents the upload from completing if there is a virus detected in the file. 
+This plugin allows the forwarding of uploaded files to an antivirus scanning application, `ClamAV anti-virus software <https://www.clamav.net/>`__, and prevents the upload from completing if there is a virus detected in the file.
 
 Use this plugin to prevent users from inadvertently spreading malware or viruses via your Mattermost server. See the `Mattermost Antivirus Plugin <https://github.com/mattermost/mattermost-plugin-antivirus>`__ documentation for details.
 
@@ -2918,7 +2920,7 @@ Apply plugin to updated posts as well as new posts
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-**True**: Applies the plugin to updated posts as well as new posts. 
+**True**: Applies the plugin to updated posts as well as new posts.
 
 **False**: Applies the plugin to new posts only.
 
@@ -2936,7 +2938,7 @@ Specify users authorized to administer the plugin in addition to System Admins. 
 AWS SNS
 ~~~~~~~~
 
-This plugin is used to receive alert notifications from `Amazon AWS CloudWatch <https://aws.amazon.com/cloudwatch/>`__ to Mattermost channels via `AWS Simple Notification Server (SNS) <https://docs.aws.amazon.com/sns/latest/dg/welcome.html>`__. 
+This plugin is used to receive alert notifications from `Amazon AWS CloudWatch <https://aws.amazon.com/cloudwatch/>`__ to Mattermost channels via `AWS Simple Notification Server (SNS) <https://docs.aws.amazon.com/sns/latest/dg/welcome.html>`__.
 
 Access the following configuration settings in the System Console by going to **Plugins > AWS SNS**.
 
@@ -3180,7 +3182,7 @@ Display the GIF as
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. 
+Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays.
 
 .. note::
    `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
@@ -3202,7 +3204,7 @@ Giphy/Tenor API Key
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Configure your own API Key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat. 
+Configure your own API Key when specifying the GIF Provider as GIPHY or Tenor. An API key is not required for Gfycat.
 
 To get your own API key, see the `GIPHY Developers Quick Start <https://developers.giphy.com/docs/api/#quick-start-guide>`__ documentation, or the `Tenor Developer <https://tenor.com/developer/keyregistration>`__ documentation for details.
 
@@ -3333,7 +3335,7 @@ Enable User Satisfaction Survey
 
 **True**: A user satisfaction survey will be sent out to all users on a quarterly basis. The survey results will be used by Mattermost, Inc. to improve the quality and user experience of the product. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
 
-**False**: User satisfaction surveys are disabled. 
+**False**: User satisfaction surveys are disabled.
 
 Zoom
 ~~~~
@@ -3341,7 +3343,7 @@ Zoom
 This plugin allows team members to initiate a Zoom meeting with a single click. All participants in a channel can easily join the Zoom meeting and the shared link is updated when the meeting is over. See the `Zoom Conferencing Plugin <https://mattermost.gitbook.io/plugin-zoom/>`__ product documentation for details.
 
 .. note::
-  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details. 
+  To set up this plugin, you need to create a Zoom App using a Zoom Administrator account. See the `Zoom Configuration <https://mattermost.gitbook.io/plugin-zoom/installation/zoom-configuration>`__ documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Zoom**.
 
@@ -3484,7 +3486,7 @@ Developers building integrations can create webhook tokens for Public channels. 
 
 **False**: The **Integrations > Outgoing Webhooks** of the Mattermost Product menu is hidden and all outgoing webhooks are disabled.
 
-.. important:: 
+.. important::
    Security note: By enabling this feature, users may be able to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ by attempting to impersonate other users. To combat these attacks, a BOT tag appears next to all posts from a webhook. Enable at your own risk.
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -3712,7 +3714,7 @@ Data Retention Policies
 
 Changes to properties in this section require a server restart before taking effect.
 
-.. warning:: 
+.. warning::
    Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
 
 Access the following configuration settings in the System Console by going to **Compliance > Data Retention Policies**.
@@ -3906,7 +3908,7 @@ This button initiates a compliance export job immediately. You can monitor the s
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Settings used to enable and configure Mattermost compliance reports. 
+Settings used to enable and configure Mattermost compliance reports.
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Monitoring**.
 
@@ -4074,6 +4076,8 @@ Allow Authentication Transfer
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: .LinkMetadataTimeoutMilliseconds
+
 Link Metadata Timeout
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4111,11 +4115,11 @@ Index Directory
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Directory path to use for storing bleve indexes. 
+Directory path to use for storing bleve indexes.
 
 .. tip::
-   
-   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
+
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
@@ -4433,7 +4437,7 @@ Enable Tutorial (Experimental)
 | This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Onboarding 
+Enable Onboarding
 ^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
@@ -4564,7 +4568,7 @@ Enable Shared Channels
 
 *Available in legacy Enterprise Edition E20*
 
-Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart. 
+Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
@@ -4581,10 +4585,10 @@ Enable Apps Bar
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
+This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen.
 
 .. note::
-  
+
   Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
 
 **True**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
@@ -4684,7 +4688,7 @@ The following values are currently supported:
 - ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 - ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 
-This configuration setting is disabled by default and requires `developer mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
+This configuration setting is disabled by default and requires `developer mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
@@ -4712,9 +4716,9 @@ Enable File Search
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our `Enable Document Search by Content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__ documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
+This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our `Enable Document Search by Content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__ documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
 
-**True**: Supported document types are searchable by their filename. 
+**True**: Supported document types are searchable by their filename.
 
 **False**: File-based searches are disabled.
 
@@ -4995,7 +4999,7 @@ App Custom URL Schemes
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client. 
+Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client.
 
 When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
 
@@ -5058,7 +5062,7 @@ Maximum Image Resolution
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Maximum image resolution size for message attachments in pixels. 
+Maximum image resolution size for message attachments in pixels.
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
@@ -5268,7 +5272,7 @@ Remote Clusters
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to add, remove, and view remote clusters for shared channels. 
+Enable this setting to add, remove, and view remote clusters for shared channels.
 
 **True**: System Admins can manage remote clusters using the System Console.
 
@@ -5286,7 +5290,7 @@ Syslog configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings. 
+Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
 
 **True**: Syslog output is enabled.
 
@@ -5304,7 +5308,7 @@ Syslog IP
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogIP": "localhost"`` with string input consisting of an IP address or domain name. |
@@ -5318,7 +5322,7 @@ Syslog port
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The port that the syslog server is listening on. The default port is 6514. 
+The port that the syslog server is listening on. The default port is 6514.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogPort": 6514`` with numeric input consisting of a port number. |
@@ -5346,7 +5350,7 @@ Syslog cert
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``). 
+This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
 
 +-----------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate. |
@@ -5360,9 +5364,9 @@ Syslog insecure
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks. 
+This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks.
 
-.. note:: 
+.. note::
    This should be used only for testing and not in a production environment.
 
 +------------------------------------------------------------------------------------------------------------+
@@ -5377,7 +5381,7 @@ Syslog max queue size
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records. 
+This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records.
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +------------------------------------------------------------------------------------------------+
@@ -5392,7 +5396,7 @@ File configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. 
+Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps.
 
 **True**: File output is enabled.
 
@@ -5410,7 +5414,7 @@ File name
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the path to the output file location. 
+This is the path to the output file location.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).                                    |
@@ -5424,7 +5428,7 @@ File max size MB
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100. 
+This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxSizeMB": 100`` with numerical input. |
@@ -5438,7 +5442,7 @@ File max age days
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age. 
+This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxAgeDays": 0`` with numerical input. |
@@ -5452,7 +5456,7 @@ File max backups
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups. 
+This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input. |
@@ -5466,7 +5470,7 @@ File compress
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-When ``true``, rotated files are compressed using ``gzip``. 
+When ``true``, rotated files are compressed using ``gzip``.
 
 +----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``. |
@@ -5480,7 +5484,7 @@ File max queue size
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records. 
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records.
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +----------------------------------------------------------------------------------------------+
@@ -5506,7 +5510,7 @@ Send log records to multiple targets:
 - Multiple syslogs
 - Multiple TCP sockets
 
-Allow any combination of local file, syslog, and TCP socket targets. 
+Allow any combination of local file, syslog, and TCP socket targets.
 
 File target supports rotation and compression triggered by size and/or duration. Syslog target supports local and remote syslog servers, with or without TLS transport. TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate.
 
@@ -5527,11 +5531,11 @@ Group Unread Channels (Experimental)
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console. 
+This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
 **Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
 
-**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**. 
+**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |
@@ -5582,7 +5586,7 @@ Teammate Name Display
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Control Teammate Name Display at the system level. 
+Control Teammate Name Display at the system level.
 
 **True**: Allows System Admins to control Teammate Name Display at the system level.
 
@@ -5600,7 +5604,7 @@ Default Channels (Experimental)
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server. 
+Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server.
 
 When not set, every user is added to the ``off-topic`` and ``town-square`` channels by default.
 
@@ -5623,7 +5627,7 @@ Latest Android Version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The latest version of the Android React Native app that is recommended for use. 
+The latest version of the Android React Native app that is recommended for use.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -5637,7 +5641,7 @@ Minimum Android Version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The minimum version of the Android React Native app that is required to be used. 
+The minimum version of the Android React Native app that is required to be used.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -5651,7 +5655,7 @@ Latest iOS Version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The latest version of the iOS app that is recommended for use. 
+The latest version of the iOS app that is recommended for use.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -5665,7 +5669,7 @@ Minimum iOS Version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The minimum version of the iOS React Native app that is required to be used. 
+The minimum version of the iOS React Native app that is required to be used.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -5679,7 +5683,7 @@ Push Notification Buffer
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room. 
+Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
@@ -5698,7 +5702,7 @@ Allowed Themes
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``. 
+Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``. |
@@ -5738,7 +5742,7 @@ Maximum Users for Statistics
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. 
+Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
 
 This setting is used to maximize performance for large Enterprise deployments.
 
@@ -5759,7 +5763,7 @@ Export From Timestamp
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Set the Unix timestamp (seconds since epoch, UTC) to export data from. 
+Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExportFromTimestamp": 0`` with numerical input. |
@@ -5840,7 +5844,7 @@ Directory
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. 
+The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
@@ -5854,7 +5858,7 @@ Client Directory
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. 
+The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Directory": "./client/plugins"`` with string input.                |

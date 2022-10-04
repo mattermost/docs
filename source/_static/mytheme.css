@@ -1922,24 +1922,24 @@ dl.config.setting {
 	display: none;
 }
 
-#config-setting-results .search li {
+#config-setting-results-section .search li {
 	margin-bottom:24px;
 	border-bottom:1px solid #e1e4e5;
 	padding-bottom:24px
 }
 
-#config-setting-results .search li:first-child {
+#config-setting-results-section .search li:first-child {
 	border-top:1px solid #e1e4e5;
 	padding-top:24px
 }
 
-#config-setting-results .search li a {
+#config-setting-results-section .search li a {
 	font-size:120%;
 	margin-bottom:12px;
 	display:inline-block
 }
 
-#config-setting-results .context {
+#config-setting-results-section .context {
 	color:grey;
 	font-size:90%
 }

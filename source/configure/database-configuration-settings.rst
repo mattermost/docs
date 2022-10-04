@@ -34,7 +34,7 @@ Data source
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | To enable SSL:                                                                                                                           |
 |                                                                                                                                          |
-| - Add ``&tls=true`` to your database connection string if your SQL driver supports it.                                                   |   
+| - Add ``&tls=true`` to your database connection string if your SQL driver supports it.                                                   |
 | - Add ``&tls=skip-verify`` if you use self-signed certificates.                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **MySQL databases**                                                                                                                      |
@@ -100,6 +100,9 @@ Maximum open connections
 | Numerical input. Default is **300**.                   |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
+.. config:setting:: SqlSettings.QueryTimeout
+  MM_SQLSETTINGS_QUERYTIMEOUT
+
 Query timeout
 ~~~~~~~~~~~~~
 
@@ -134,6 +137,9 @@ Maximum connection lifetime
 | **3,600,000** milliseconds (1 hour).                   |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
+.. config:setting:: SqlSettings.ConnMaxIdleTimeMilliseconds
+  MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS
+
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -144,9 +150,9 @@ Maximum connection idle timeout
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
-| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |             
+| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``              |
-| Numerical input in milliseconds. Default is **300000** |                                                                                     | 
+| Numerical input in milliseconds. Default is **300000** |                                                                                     |
 | (5 minutes).                                           |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
@@ -282,7 +288,7 @@ Replica lag settings
 | String array input specifies a connection string and   | - System Config path: N/A                                                        |
 | user-defined SQL queries on the database to measure    | - ``config.json`` setting: ``".SqlSettings.ReplicaLagSettings": []``             |
 | replica lag for a single replica instance.             | - Environment variable: ``MM_SQLSETTINGS_REPLICALAGSETTINGS``                    |
-|                                                        |                                                                                  |   
+|                                                        |                                                                                  |
 | These settings monitor absolute lag based on binlog    |                                                                                  |
 | distance/transaction queue length, and the time taken  |                                                                                  |
 | for the replica to catch up.                           |                                                                                  |
@@ -318,7 +324,7 @@ Replica lag settings
 |                                                                                                                                           |
 | For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:               |
 |                                                                                                                                           |
-| .. code-block:: sh                                                                                                                        |                       
+| .. code-block:: sh                                                                                                                        |
 |                                                                                                                                           |
 |   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
