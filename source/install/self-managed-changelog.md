@@ -68,7 +68,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
     - Added ``EnableAPITriggerAdminNotifications`` to add an option to receive more context from the “Notify admin” feature to help Admins.
-    - Added ``PostPriority``, to add an option to select a message priority label for root posts.
 
 ### API Changes
  - If ``EnableConfirmNotificationsToChannel`` is disabled, channel member counts by group API are no longer called.
