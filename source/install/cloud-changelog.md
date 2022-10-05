@@ -47,6 +47,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
 
 ### Known Issues
+ - Clicking "Back to team" link from the **System Console** causes a white screen if the righ-hand side was open [MM-47226](https://mattermost.atlassian.net/browse/MM-47226).
  - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
