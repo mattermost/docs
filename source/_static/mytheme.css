@@ -1856,10 +1856,6 @@ pre {
 	word-break: break-word;
 }
 
-#config-setting-results .context {
-	word-break: break-word;
-}
-
 kbd {
     display: inline-block;
     border: 1px solid #ccc;
