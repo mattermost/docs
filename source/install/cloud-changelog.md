@@ -46,6 +46,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the emoji reaction overlay blocked part of the message it belonged to in compact view.
 
 ### Known Issues
+ - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
@@ -76,7 +77,7 @@ Latest Mattermost Cloud releases:
  - Fixed typos in some translations strings that caused some in-product links to be broken.
 
 ### Known Issues
- - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-MM-46886).
+ - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-46886).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
