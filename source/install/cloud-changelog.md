@@ -44,6 +44,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where formatting keyboard shortcuts were conflicting with existing shortcuts.
  - Fixed an issue where the markdown style for horizontal rules was too thick.
  - Fixed an issue where the emoji reaction overlay blocked part of the message it belonged to in compact view.
+ - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
 
 ### Known Issues
  - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
