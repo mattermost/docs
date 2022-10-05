@@ -23,6 +23,8 @@ Access the following configuration settings in the System Console by going to **
 - `Performance Monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
 
+----
+
 Web server
 ----------
 
@@ -31,6 +33,8 @@ Web server
 
 .. include:: web-server-configuration-settings.rst
     :start-after: :nosearch:
+
+----
 
 Database
 --------
@@ -41,6 +45,8 @@ Database
 .. include:: database-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Elasticsearch
 -------------
 
@@ -49,6 +55,8 @@ Elasticsearch
 
 .. include:: elasticsearch-configuration-settings.rst
     :start-after: :nosearch:
+
+----
 
 File storage
 ------------
@@ -59,6 +67,8 @@ File storage
 .. include:: file-storage-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Image proxy
 -----------
 
@@ -67,6 +77,8 @@ Image proxy
 
 .. include:: image-proxy-configuration-settings.rst
     :start-after: :nosearch:
+
+----
 
 SMTP
 ----
@@ -77,6 +89,8 @@ SMTP
 .. include:: smtp-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Push notification server
 ------------------------
 
@@ -85,6 +99,8 @@ Push notification server
 
 .. include:: push-notification-server-configuration-settings.rst
     :start-after: :nosearch:
+
+----
 
 High availability
 -----------------
@@ -95,6 +111,8 @@ High availability
 .. include:: high-availability-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Rate limiting
 -------------
 
@@ -103,6 +121,8 @@ Rate limiting
 
 .. include:: rate-limiting-configuration-settings.rst
     :start-after: :nosearch:
+
+----
 
 Logging
 --------
@@ -113,6 +133,8 @@ Logging
 .. include:: logging-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Session lengths
 ---------------
 
@@ -122,6 +144,8 @@ Session lengths
 .. include:: session-lengths-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Performance monitoring
 ----------------------
 
@@ -130,6 +154,8 @@ Performance monitoring
 
 .. include:: performance-monitoring-configuration-settings.rst
     :start-after: :nosearch:
+
+----
 
 Developer
 ---------

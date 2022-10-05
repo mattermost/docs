@@ -13,6 +13,8 @@ Manage your Mattermost users including their access permissions, groups, teams, 
 - `Permissions <#permissions>`__
 - `System roles <#system-roles>`__
 
+----
+
 Users
 -----
 
@@ -23,6 +25,8 @@ Users
 | sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+
+----
 
 Groups
 ------
@@ -35,6 +39,8 @@ Groups
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Teams
 -----
 
@@ -45,6 +51,8 @@ Teams
 | sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+
+----
 
 Channels
 --------
@@ -58,6 +66,8 @@ Channels
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: You can search for channels by channel name or by channel ID.                                                               |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
+
+----
 
 Permissions
 -----------
@@ -75,6 +85,8 @@ Permissions
 | See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
 | for more details.                                                                                                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
+
+----
 
 System roles
 ------------

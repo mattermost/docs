@@ -10,6 +10,8 @@ View statistics for your overall deployment and specific teams as well as access
 - `Team statistics <#team-statistics>`__
 - `Server logs <#server-logs>`__
 
+----
+
 Site statistics
 ---------------
 
@@ -21,6 +23,8 @@ Site statistics
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Team statistics
 ---------------
 
@@ -31,6 +35,8 @@ Team statistics
 | as well as Public and Private channels.                       | - ``config.json`` setting: N/A                                |
 |                                                               | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
+
+----
 
 Server logs
 -----------

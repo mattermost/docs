@@ -11,6 +11,8 @@ Access the following configuration settings in the System Console by going to **
 - `Compliance Monitoring <#compliance-monitoring>`__
 - `Custom Terms of Service <#custom-terms-of-service>`__
 
+----
+
 Data retention policies
 -----------------------
 
@@ -76,6 +78,8 @@ Run deletion job now
 *Available in legacy Enterprise Edition E20*
 
 Start a Data Retention deletion job immediately. You can monitor the status of the job in the data deletion job table within the Policy Log section.
+
+----
 
 Compliance export
 -----------------
@@ -170,6 +174,8 @@ Run compliance export job now
 
 This button initiates a compliance export job immediately. You can monitor the status of the job in the compliance export job table.
 
+----
+
 Compliance monitoring
 ----------------------
 
@@ -227,6 +233,8 @@ Set the size of the batches in which posts will be read from the database to gen
 +------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BatchSize": 30000`` with default value ``30000``. |
 +------------------------------------------------------------------------------------------------+
+
+----
 
 Custom terms of service
 -----------------------

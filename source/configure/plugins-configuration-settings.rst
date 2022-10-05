@@ -17,11 +17,11 @@ Access the following configuration settings in the System Console by going to **
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
 - `Mattermost Boards <#mattermost-boards>`__
-- `MS Teams Meetings <#ms-teams-meetings>`__
-- `Playbooks <#playbooks>`__
-- `Skype for Business <#skype-for-business>`__
+- `Mattermost Playbooks <#mattermost-playbooks>`__
 - `User Satisfaction surveys <#user-satisfaction-surveys>`__
 - `Zoom <#zoom>`__
+
+----
 
 Plugin management
 -----------------
@@ -115,6 +115,8 @@ Settings specific to each Mattermost plugin.
 | This feature's ``config.json`` setting is ``"Plugins": {}`` with object input mapping plugin IDs as keys to objects containing plugin-specific data. |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+----
+
 Agenda
 -------
 
@@ -129,6 +131,8 @@ Enable plugin
 **True**: Enables the Agenda plugin on your Mattermost server.
 
 **False**: Disables the Agenda plugin on your Mattermost server.
+
+----
 
 Antivirus
 ----------
@@ -159,6 +163,8 @@ Scan timeout (seconds)
 
 Specify how long the virus scan can take before timing out.
 
+----
+
 Apps
 ----
 
@@ -173,6 +179,8 @@ Enable plugin
 **False**: Disables the Apps plugin on your Mattermost server.
 
 To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
+
+----
 
 Autolink
 --------
@@ -213,6 +221,8 @@ Specify users authorized to administer the plugin in addition to System Admins. 
 .. tip::
   Find user IDs by going to **System Console > User Management > Users**.
 
+----
+
 AWS SNS
 --------
 
@@ -247,6 +257,8 @@ Token
 ~~~~~~
 
 Generate a token to validate incoming requests from AWS SNS by selecting ``Regenerate``.
+
+----
 
 Calls (Beta)
 ------------
@@ -382,6 +394,8 @@ The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service insta
 
 This is an optional field. Changing this setting requires a plugin restart to take effect.
 
+----
+
 Channel export
 ---------------
 
@@ -390,12 +404,14 @@ Channel export
 
 Access the following configuration settings in the System Console by going to **Plugins > Channel Export**.
 
-Enable Ppugin
+Enable Plugin
 ~~~~~~~~~~~~~~
 
 **True**: Enables the Channel Export plugin on your Mattermost workspace.
 
 **False**: Disables the Channel Export plugin on your Mattermost workspace.
+
+----
 
 Demo plugin
 ------------
@@ -421,6 +437,8 @@ Username
 ~~~~~~~~~
 
 Specify the user to use as part of the demo plugin. If the specified user does not exist, the plugin creates the user for you.
+
+----
 
 GIF commands
 -------------
@@ -494,6 +512,8 @@ Force GIF preview before posting (force /gifs)
 
 **False**: Both ``/gif`` and ``/gifs`` slash commands are available for the GIF commands plugin on your Mattermost server.
 
+----
+
 Mattermost Boards
 -----------------
 
@@ -510,6 +530,8 @@ Enable plugin
 **True**: Enables the Mattermost Boards plugin on your Mattermost workspace.
 
 **False**: Disables the Mattermost Boards plugin on your Mattermost workspace.
+
+----
 
 Mattermost Playbooks
 ---------------------
@@ -540,6 +562,8 @@ Enable experimental features
 
 **False**: Disables experimental Playbooks features on your Mattermost workspace.
 
+----
+
 User satisfaction surveys
 -------------------------
 
@@ -563,6 +587,8 @@ Enable user satisfaction survey
 **True**: A user satisfaction survey will be sent out to all users on a quarterly basis. The survey results will be used by Mattermost, Inc. to improve the quality and user experience of the product. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
 
 **False**: User satisfaction surveys are disabled. 
+
+----
 
 Zoom
 -----

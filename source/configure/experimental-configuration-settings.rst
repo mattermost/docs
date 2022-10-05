@@ -8,6 +8,8 @@ Access the following experimental configuration settings:
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 
+----
+
 Experimental System Console configuration settings
 ---------------------------------------------------
 
@@ -385,6 +387,8 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 | This feature's ``config.json`` setting is ``"EnableAppBar": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------+
 
+----
+
 Experimental Bleve configuration settings
 -----------------------------------------
 
@@ -450,6 +454,8 @@ Enable Bleve for autocomplete queries
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
 +-----------------------------------------------------------------------------------------------------------------+
+
+----
 
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
@@ -1352,6 +1358,8 @@ When not set, every user is added to the ``off-topic`` and ``town-square`` chann
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+----
 
 Experimental job configuration settings
 ---------------------------------------

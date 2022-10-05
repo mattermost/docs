@@ -17,6 +17,8 @@ Access the following configuration settings in the System Console by going to **
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
 
+----
+
 Customization
 -------------
 
@@ -182,6 +184,8 @@ Configurable link to download the iOS app. When a link is present, users who acc
 | This feature's ``config.json`` setting is ``"IosAppDownloadLink": "https://apps.apple.com/us/app/mattermost/id1257222717"`` with string input. |
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
+----
+
 Localization
 -------------
 
@@ -221,6 +225,8 @@ Sets which languages are available for users in **Settings > Display > Language*
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``.  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+----
 
 Users and teams
 ---------------
@@ -335,6 +341,8 @@ Enable custom user statuses
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCustomUserStatuses": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
+
+----
 
 Notifications
 -------------
@@ -477,6 +485,8 @@ For customers who choose to wrap the Mattermost mobile application in a secure c
 | This feature's ``config.json`` setting is ``"PushNotificationContents": "full"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively.    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+----
+
 Announcement banner
 -------------------
 
@@ -536,6 +546,8 @@ Allow banner dismissal
 | This feature's ``config.json`` setting is ``"AllowBannerDismissal": true`` with options ``true`` and ``false``.   |
 +-------------------------------------------------------------------------------------------------------------------+
 
+----
+
 Emoji
 ------
 
@@ -565,6 +577,8 @@ Enable custom emoji
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableCustomEmoji": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
+
+----
 
 Posts
 -----
@@ -715,6 +729,8 @@ Using a Google API Key allows Mattermost to detect when a video is no longer ava
 | This feature's ``config.json`` setting is ``"GoogleDeveloperKey": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
+----
+
 File sharing and downloads
 ---------------------------
 
@@ -764,6 +780,8 @@ Allow file downloads on mobile
 | This feature's ``config.json`` setting is ``"EnableMobileDownload": true`` with options ``true`` and ``false``.     |
 +---------------------------------------------------------------------------------------------------------------------+
 
+----
+
 Public Links
 ------------
 
@@ -795,6 +813,8 @@ Public link salt
 +---------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PublicLinkSalt": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
+
+----
 
 Notices
 --------

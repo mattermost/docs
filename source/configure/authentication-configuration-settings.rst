@@ -16,6 +16,8 @@ Access the following configuration settings in the System Console by going to **
 - `OpenID Connect <#openid-connect>`__
 - `Guest Access <#guest-access>`__
 
+----
+
 Signup
 ------
 
@@ -73,6 +75,8 @@ Invalidate pending email invites
 
 This button invalidates active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.
 
+----
+
 Email
 ------
 
@@ -125,6 +129,8 @@ Enable sign-in with username
 | This feature's ``config.json`` setting is ``EnableSignInWithUsername": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
+----
+
 Password
 --------
 
@@ -175,6 +181,8 @@ Failed login attempts allowed before a user is locked out and required to reset 
 | This feature's ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with numerical input. |
 +------------------------------------------------------------------------------------------------+
 
+----
+
 MFA
 ----
 
@@ -213,6 +221,8 @@ Enforce multi-factor authentication
 +------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------------+
+
+----
 
 AD/LDAP
 -------
@@ -603,8 +613,10 @@ You can monitor the status of the synchronization job in the table below this bu
 
 .. _saml-enterprise:
 
-SAML
 ----
+
+SAML 2.0
+--------
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1041,6 +1053,8 @@ Login button text
 | This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input. |
 +----------------------------------------------------------------------------------------+
 
+----
+
 OAuth 2.0
 ---------
 
@@ -1295,6 +1309,8 @@ We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input. |
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
+----
+
 OpenID Connect
 ---------------
 
@@ -1519,6 +1535,8 @@ Obtain this value by registering Mattermost as an application in your service pr
 +-------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
+
+----
 
 Guest access
 ------------
