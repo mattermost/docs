@@ -24,11 +24,13 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Playbooks
- - 
-
 #### Boards
- - 
+ - Added new board roles, **Commenter** and **Viewer**.
+ - Added minimum default board roles to reduce permissioning ambiguity and to prevent security loopholes.
+ - Added support for guest accounts.
+ - Added the ability to add a team member to a board by selecting their name from an autocomplete list.
+ - Added channel notifications for linked boards.
+ - Added a new multi-person property to easily set multiple assignees or owners on a card.
 
 #### Calls
  - 
