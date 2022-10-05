@@ -61,6 +61,7 @@ Latest Mattermost Releases:
  - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
  - ixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
  - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
+ - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
