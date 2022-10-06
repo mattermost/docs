@@ -19,7 +19,7 @@ Latest Mattermost Cloud releases:
  - Insights now filters out posts made by plugins and OAuth apps.
  - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or DND.
  - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
- - The default number of **Direct Message** channels shown in the sidebar is now 20 to 40.
+ - The default number of **Direct Message** channels shown in the sidebar is now 40.
  - Updated the company name in the **About Modal** to use the company name of the cloud customer instead of the company name in the cloud license.
  - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
 
@@ -27,11 +27,11 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
  - Fixed an issue where custom groups could be created with at-mention names that are reserved words (@channel, @here, @all).
  - Fixed an issue where 404 errors were shown when APIv4 had an incorrect content-type header.
- - Fixed an issue where messages from bot and webhook could not be forwarded.
- - Fixed an issue where the plugin limit read "closer" even when the full limit of 5 plugins was enabled.
+ - Fixed an issue where messages from bots and webhooks could not be forwarded.
+ - Fixed an issue where the **Integrations limit** warning modal stated "You're getting closer to the 5 enabled integrations limit" even when 5 plugins were already enabled.
  - Fixed an issue where inline images did not appear in the channel header.
  - Fixed an issue with the emoji skin tone selector animation.
- - Fixed an issue where an archived root post with a file errored out when trying to view its channel.
+ - Fixed an issue where attempting to access a post from the channel **Files** view caused a crash if the Cloud account had reached the message limit.
  - Fixed an issue where the screen reader did not announce a successful login when logging in.
  - Fixed a few broken links at **System Console > User Management > Permission Schemes**.
  - Fixed an issue where users were able to forward messages to users who are deactivated.
