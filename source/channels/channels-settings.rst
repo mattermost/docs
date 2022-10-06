@@ -27,7 +27,7 @@ You can customize your Channels experience in the following ways in **Settings**
 
 .. tabs::
 
-  .. tab:: Mattermost v6.0 onwards
+  .. tab:: Mattermost v6.0 onwards 
 
       In Mattermost v6.0, **Account Settings** have moved.
 
