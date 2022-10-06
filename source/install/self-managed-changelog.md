@@ -31,17 +31,16 @@ Latest Mattermost Releases:
 #### Calls
  - Added new keyboard shortcuts for Calls.
 
-#### Notify Admin v2
- - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
-
 ### Improvements
 
 #### User Interface (UI)
  - Added a red destructive action color to the **Leave Channel** button in the channel header.
  - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
+ - Pre-packaged Playbooks v1.32.4.
 
 #### Administration
  - A ``batchSize`` option has been added to the ``mattermost export`` CLI command to limit the number of items exported. By default, if it is not included, it exports all posts.
+ - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
 
 ### Bug Fixes
  - Fixed an issue with a nil point exception error during imports.
@@ -88,6 +87,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Board Admins cannot add other non-board members as "Admins" via autocomplete list. See the [GitHub issue #3957](https://github.com/mattermost/focalboard/issues/3957) for more information.
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
