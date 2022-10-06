@@ -17,7 +17,7 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Insights now filters out posts made by plugins and OAuth apps.
- - Added a “Last active” status to the profile popover and to the **Direct Message** channel header to be able to see when a user was last online. This status only displays for users who are Away, Offline or DND.
+ - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or DND.
  - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
  - The default number of **Direct Message** channels shown in the sidebar is now 20 to 40.
  - Updated the company name in the **About Modal** to use the company name of the cloud customer instead of the company name in the cloud license.
