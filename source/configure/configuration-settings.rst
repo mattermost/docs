@@ -13,7 +13,7 @@ Configuration in database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v5.10, self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__ documentation for migration details.
+From Mattermost v5.10, self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration </configure/configuation-in-mattermost-database.html>`__ documentation for migration details.
 
 Environment variables
 ---------------------
@@ -21,7 +21,7 @@ Environment variables
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v3.8, you can use `environment variables <https://docs.mattermost.com/configure/environment-variables.html>`__ to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
+From Mattermost v3.8, you can use `environment variables </configure/environment-variables.html>`__ to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
 
 Configuration reload
 --------------------
@@ -29,12 +29,12 @@ Configuration reload
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v5.38, the “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the `mmctl config reload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ command that must be run to apply configuration changes after they’re made. This change will improve configuration performance and robustness.
+From Mattermost v5.38, the “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the `mmctl config reload </manage/mmctl-command-line-tool.html#mmctl-config-reload>`__ command that must be run to apply configuration changes after they’re made. This change will improve configuration performance and robustness.
 
 Deprecated configuration settings
 ---------------------------------
 
-See the `deprecated configuration settings documentation <https://docs.mattermost.com/configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings that are no longer supported.
+See the `deprecated configuration settings documentation </configure/deprecated-configuration-settings.html>`__ for details on all deprecated Mattermost configuration settings that are no longer supported.
 
 Site Configuration
 -------------------
@@ -104,7 +104,7 @@ Custom Brand Text
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as using in Mattermost messages.
+Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes </help/messaging/formatting-text.html>`__ as using in Mattermost messages.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CustomBrandText": ""`` with string input. |
@@ -130,7 +130,7 @@ Help link
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation are hosted on `docs.mattermost.com <https://docs.mattermost.com/>`__.
+Configurable link to a Help page your organization may provide to end users. By default, links to Mattermost help documentation are hosted on `docs.mattermost.com </>`__.
 
 +---------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"HelpLink": "https://docs.mattermost.com/"`` with string input.               |
@@ -282,9 +282,9 @@ Maximum number of users per team, excluding inactive users.
 
 The **Max Users Per Team** refers to the size of the "team site" which is workspace a "team of people" inhabits. A team of people is considered a small organization where people work closely together towards a specific shared goal and share the same etiquette. In the physical world, a team of people could typically be seated around a single table to have a meal and discuss their project.
 
-The default maximum of 50 people, is at the extreme high end of a single team of people. At this point organizations are more often "multiple teams of people" and investments in explicitly defining etiquette, such as `channel organization <https://docs.mattermost.com/messaging/organizing-mattermost.html>`__ in Enterprise Edition, are often used to scale the high levels of productivity found in a team of people using Mattermost to multiple teams of people.
+The default maximum of 50 people, is at the extreme high end of a single team of people. At this point organizations are more often "multiple teams of people" and investments in explicitly defining etiquette, such as `channel organization </messaging/organizing-mattermost.html>`__ in Enterprise Edition, are often used to scale the high levels of productivity found in a team of people using Mattermost to multiple teams of people.
 
-In terms of technical performance, `with appropriate hardware, Mattermost can easily scale to hundreds and even thousands of users <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, and provided the administrator believes the appropriate etiquette is in place, they should feel free to increase the default value.
+In terms of technical performance, `with appropriate hardware, Mattermost can easily scale to hundreds and even thousands of users </install/software-hardware-requirements.html>`__, and provided the administrator believes the appropriate etiquette is in place, they should feel free to increase the default value.
 
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxUsersPerTeam": 50`` with numerical input. |
@@ -464,8 +464,8 @@ Enable Email Batching
 **True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Settings > Notifications**.
 
 .. note::
-  - Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and the `SMTP Email Server <https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ is configured. 
-  - Email batching in `High Availability mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
+  - Email batching cannot be enabled unless the `SiteURL </configure/configuration-settings.html#site-url>`__ is configured and the `SMTP Email Server </configure/configuration-settings.html#smtp-email-server>`__ is configured. 
+  - Email batching in `High Availability mode </configure/configuration-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
 
 **False**: If email notifications are enabled in **Settings**, emails will be sent individually for every mention or direct message received.
 
@@ -688,7 +688,7 @@ Automatically Follow Threads
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This setting must be enabled to support `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article for details.
+This setting must be enabled to support `Collapsed Reply Threads </channels/organize-conversations.html>`__. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article for details.
 
 **True**: Threads a user starts, participates in, or is mentioned in are automatically followed. A new ``Threads`` table is added in the database that tracks threads and thread participants, and a ``ThreadMembership`` table tracks followed threads for each user and the read or unread state of each followed thread. Mattermost Cloud workspaces have this setting enabled.
 
@@ -708,7 +708,7 @@ Collapsed Reply Threads
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ documentation to learn more about this feature.
+Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. See our `Organizing Conversations using Collapsed Reply Threads </channels/organize-conversations.html>`__ documentation to learn more about this feature.
 
 .. important::
     
@@ -718,9 +718,9 @@ System Admins can set the default availability of Collapsed Reply Threads for th
 
 **Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on`` by default.
 
-**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. 
+**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. 
 
-**Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
+**Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
 
 **Disabled**: Disables Collapsed Reply Threads front-end functionality.
 
@@ -736,7 +736,7 @@ Enable Link Previews
 
 Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.
 
-Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be established through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where direct internet connectivity is not given or security policies make this necessary.
+Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be established through a `firewall or outbound proxy </install/outbound-proxy.html>`__ in environments where direct internet connectivity is not given or security policies make this necessary.
 
 **True**: Website link previews, image link previews, and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Settings > Display > Website Link Previews**.
 
@@ -808,7 +808,7 @@ Enable Inline LaTeX Rendering
 
 **True**: Enables inline rendering of LaTeX code.
 
-**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting <https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
+**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex code can only be `rendered in a code block using syntax highlighting </configure/configuration-settings.html#enable-latex-code-block-rendering>`__. 
 
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableInlineLatex": false`` with options ``true`` and ``false``. |
@@ -939,7 +939,7 @@ Enable Admin Notices
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-**True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
+**True**: System Admins will receive notices about available server upgrades and relevant system administration features. `Learn more </manage/in-product-notices.html>`__.
 
 **False**: System Admins will not receive notices except those that apply to all end users (See ``UserNoticesEnabled``). 
 
@@ -953,7 +953,7 @@ Enable End User Notices
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-**True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more <https://docs.mattermost.com/manage/in-product-notices.html>`__.
+**True**: All users will receive notices about available client upgrades and relevant end user features to improve user experience. `Learn more </manage/in-product-notices.html>`__.
 
 **False**: Users will not receive notices about available client upgrades and relevant end user features. 
 
@@ -991,7 +991,7 @@ Restrict account creation to specified email domains
 
 Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
 
-This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``.
+This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification </configure/configuration-settings.html#require-email-verification>`__ to ``true``.
 
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
@@ -1177,7 +1177,7 @@ Enforce Multi-factor Authentication
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: `Multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
+**True**: `Multi-factor authentication (MFA) </onboard/multi-factor-authentication.html>`__ is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
 
 **False**: Multi-factor authentication is optional.
 
@@ -1382,7 +1382,7 @@ Group Filter
 This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` when blank.
 
 .. note::
-  This filter is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
+  This filter is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
 
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GroupFilter": ""`` with string input. |
@@ -1424,7 +1424,7 @@ Guest Filter
 
 (Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost. Only the users selected by the query will be able to log in to and use Mattermost as Guests. This filter default is blank.
 
-See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
+See the `Guest Accounts documentation </onboard/guest-accounts.html>`__ for more information.
 
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GuestFilter": ""`` with string input. |
@@ -1442,7 +1442,7 @@ If a user's ID Attribute changes, a new Mattermost account (unassociated with th
 
 Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
 
-If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool.
+If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate </manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool.
 
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
@@ -1565,7 +1565,7 @@ Group Display Name Attribute
 (Required) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names.
 
 .. note::
-  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
+  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
 
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GroupDisplayNameAttribute": ""`` with string input. |
@@ -1582,7 +1582,7 @@ Group Id Attribute
 (Required) Enter an AD/LDAP Group ID attribute to use as a unique identifier for Groups. This should be an AD/LDAP value that does not change. This is usually ``entryUUID`` for LDAP and ``objectGUID`` for AD.
 
 .. note::
-  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
+  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GroupIdAttribute": ""`` with string input. |
@@ -1673,7 +1673,7 @@ Enable Login With SAML
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost allows login using SAML. Please see `documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
+**True**: Mattermost allows login using SAML. Please see `documentation </onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
 
 **False**: Login with SAML is disabled.
 
@@ -1689,7 +1689,7 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
+**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation </onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Synchronization of SAML accounts with AD/LDAP is disabled.
 
@@ -1707,7 +1707,7 @@ Ignore Guest Users When Synchronizing with AD/LDAP
 
 Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``. 
 
-**True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
+**True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation </onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
 
@@ -1723,7 +1723,7 @@ Override SAML Bind Data with AD/LDAP Information
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
+**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation </onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Mattermost uses the email attribute to bind users to SAML.
 
@@ -1974,7 +1974,7 @@ Guest Attribute
 
 (Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
 
-See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
+See the `Guest Accounts documentation </onboard/guest-accounts.html>`__ for more information.
 
 +---------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input. |
@@ -2097,7 +2097,7 @@ OAuth 2.0
 
 .. note::
   
-  OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect>`__ in a future release.
+  OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect </configure/configuration-settings.html#openid-connect>`__ in a future release.
 
 Settings to configure OAuth login for account creation and login.
 
@@ -2112,9 +2112,9 @@ Select OAuth 2.0 service provider
 Choose whether OAuth can be used for account creation and login. Options include:
 
 - **Do not allow login via an OAuth 2.0 provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
+- **GitLab** (available in all plans; see `GitLab Settings </configure/configuration-settings.html#gitlab-settings>`__ for details)
+- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings </configure/configuration-settings.html#google-settings>`__ for details)
+- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings </configure/configuration-settings.html#office-365-settings>`__ for details)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -2211,7 +2211,7 @@ Google
 
 Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
 
-**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
+**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `the documentation </onboard/sso-google.html>`__ for more detail.
 
 **False**: Google OAuth cannot be used for team creation or account signup.
 
@@ -2297,7 +2297,7 @@ Office 365
 
 Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OAuth 2.0 > Select OAuth 2.0 service provider**.
 
-**True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
+**True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation </onboard/sso-office.html>`__ for more detail.
 
 **False**: Office 365 OAuth cannot be used for team creation or account signup.
 
@@ -2403,10 +2403,10 @@ Select OpenID Connect service provider
 Choose whether OpenID Connect can be used for account creation and login. Options include:
 
 - **Do not allow login via an OpenID provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect-other-settings>`__ for more detail)
+- **GitLab** (available in all plans; see `GitLab Settings </configure/configuration-settings.html#gitlab-settings>`__ for details)
+- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings </configure/configuration-settings.html#google-settings>`__ for details)
+- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings </configure/configuration-settings.html#office-365-settings>`__ for details)
+- **OpenID Connect (Other)** (Available in Mattermost Enterprise and Professional; see `OpenID Connect Settings </configure/configuration-settings.html#openid-connect-other-settings>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -2461,7 +2461,7 @@ Google Settings
 
 Enable authentication with Google by selecting ``Google Apps`` from **System Console > Authentication > OpenID Connect > Select service provider**.
 
-**True**: Allow team creation and account signup using Google OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-google.html>`__ for more detail.
+**True**: Allow team creation and account signup using Google OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation </onboard/sso-google.html>`__ for more detail.
 
 **False**: Google OpenID Connect cannot be used for team creation or account signup.
 
@@ -2519,7 +2519,7 @@ Office 365 Settings
 
 Enable authentication with Office 365 by selecting **Office 365** from **System Console > Authentication > OpenID Connect > Select service provider**.
 
-**True**: Allow team creation and account signup using Office 365 OpenID Connect. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-office.html>`__ for more detail.
+**True**: Allow team creation and account signup using Office 365 OpenID Connect. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation </onboard/sso-office.html>`__ for more detail.
 
 **False**: Office 365 OpenID Connect cannot be used for team creation or account signup.
 
@@ -2572,7 +2572,7 @@ OpenID Connect (Other)
 
 Enable authentication with a service provider by selecting ``OpenID Connect (Other)`` from **System Console > Authentication > OpenID Connect > Select service provider**.
 
-**True**: Allow team creation and account signup using OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation <https://docs.mattermost.com/onboard/sso-openidconnect.html>`__ for more detail.
+**True**: Allow team creation and account signup using OpenID Connect. To configure, input the **Client ID**, **Client Secret**, and **DiscoveryEndpoint** credentials. See `the documentation </onboard/sso-openidconnect.html>`__ for more detail.
 
 **False**: OpenID Connect cannot be used for team creation or account signup.
 
@@ -2659,7 +2659,7 @@ Enable Guest Access
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
+**True**: Allow guest invitations to channels within teams. Please see `Guest Accounts documentation </onboard/guest-accounts.html>`__ for more information.
 
 **False**: Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
 
@@ -3183,7 +3183,7 @@ Display the GIF as
 Display the GIF as an embedded image where the GIF can't be collapsed, or as a collapsible image preview where the full URL displays. 
 
 .. note::
-   `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
+   `Link previews </configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both ``https://api.gfycat.com/v1`` and ``https://gfycat.com/<id>`` (for all request types) for this feature to work.
 
 GIF Provider
 ^^^^^^^^^^^^^
@@ -3259,7 +3259,7 @@ Force GIF preview before posting (force /gifs)
 Mattermost Boards
 ~~~~~~~~~~~~~~~~~
 
-Mattermost Boards is an open source alternative to Trello, Notion, and Asana that's integrated from Mattermost v5.36. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards <https://docs.mattermost.com/guides/boards.html>`__ product documentation for details.
+Mattermost Boards is an open source alternative to Trello, Notion, and Asana that's integrated from Mattermost v5.36. Boards is a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view. See the `Mattermost Boards </guides/boards.html>`__ product documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Mattermost Boards**.
 
@@ -3276,7 +3276,7 @@ Enable Plugin
 Mattermost Playbooks
 ~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks <https://docs.mattermost.com/guides/playbooks.html>`__ documentation for details.
+Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the `Mattermost Playbooks </guides/playbooks.html>`__ documentation for details.
 
 Access the following configuration settings in the System Console by going to **Plugins > Playbooks**.
 
@@ -3459,7 +3459,7 @@ Enable Incoming Webhooks
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
+Developers building integrations can create webhook URLs for Public channels and Private channels. Please see our `documentation page </developer/webhooks-incoming.html>`__ to learn about creating webhooks, viewing samples, and letting community know about integrations you've built.
 
 **True**: Incoming webhooks are allowed. To manage incoming webhooks, select **Integrations** from the Mattermost Product menu. The webhook URLs created can be used by external applications to create posts in any Public or Private channels that you have access to.
 
@@ -3478,7 +3478,7 @@ Enable Outgoing Webhooks
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page <https://docs.mattermost.com/developer/webhooks-outgoing.html>`__ to learn about creating webhooks and viewing samples.
+Developers building integrations can create webhook tokens for Public channels. Trigger words are used to fire new message events to external integrations. For security reasons, outgoing webhooks are only available in Public channels. Please see our `documentation page </developer/webhooks-outgoing.html>`__ to learn about creating webhooks and viewing samples.
 
 **True**: Outgoing webhooks will be allowed. To manage outgoing webhooks, select **Integrations** from the Mattermost Product menu.
 
@@ -3527,7 +3527,7 @@ Enable integrations to override usernames
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-**True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
+**True**: Webhooks, slash commands, OAuth 2.0 apps, and other integrations such as `Zapier </integrations/zapier.html>`__, will be allowed to change the username they are posting as. If no username is present, the username for the post is the same as it would be for a setting of ``False``.
 
 **False**: Custom slash commands can only post as the username of the user who used the slash command. OAuth 2.0 apps can only post as the username of the user who set up the integration. For incoming webhooks and outgoing webhooks, the username is "webhook". See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
@@ -3541,7 +3541,7 @@ Enable integrations to override profile picture icons
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-**True**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
+**True**: Webhooks, slash commands, and other integrations, such as `Zapier </integrations/zapier.html>`__, will be allowed to change the profile picture they post with.
 
 **False**: Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with. See https://developers.mattermost.com/integrate/other-integrations/ for more details.
 
@@ -3618,7 +3618,7 @@ Enable GIF Picker
 +------------------------------------------------------------------------------------------------------------+
 
 .. note::
-   `Link previews <https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
+   `Link previews </configure/configuration-settings.html#enable-link-previews>`__ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
 
 Gfycat API Key
 ^^^^^^^^^^^^^^^
@@ -3658,7 +3658,7 @@ Enable cross-origin requests from
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
 .. note::
- Please make sure you have entered your Site URL before enabling this setting to prevent losing access to the System Console after saving. If you experience lost access to the System Console after changing this setting, you can set your `Site URL <https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ through the ``config.json`` file.
+ Please make sure you have entered your Site URL before enabling this setting to prevent losing access to the System Console after saving. If you experience lost access to the System Console after changing this setting, you can set your `Site URL </configure/configuration-settings.html#site-url>`__ through the ``config.json`` file.
 
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |
@@ -3726,7 +3726,7 @@ Global Retention Policy for Messages
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for messages <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration setting to be set to ``true``.
+Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for messages </configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration setting to be set to ``true``.
 
 By default, messages are kept forever. If **Days** or **Years** is chosen, set how many days or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum time is one day.
 
@@ -3742,7 +3742,7 @@ Global Retention Policy for Files
 
 *Available in legacy Enterprise Edition E20*
 
-Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for files <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ configuration setting to be set to ``true``.
+Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the `global retention policy for files </configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ configuration setting to be set to ``true``.
 
 By default, messages are kept forever. If **Days** or **Years** is chosen, set how many days or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum time is one day.
 
@@ -3799,7 +3799,7 @@ Enable Compliance Export
 
 *Available as an add-on to legacy Enterprise Edition E20*
 
-**True**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more <https://docs.mattermost.com/comply/compliance-export.html>`__.
+**True**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the `documentation to learn more </comply/compliance-export.html>`__.
 
 **False**: Mattermost doesn't generate a compliance export file.
 
@@ -4097,7 +4097,7 @@ Enable Bleve Indexing
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until `Enable Bleve for search queries <https://docs.mattermost.com/configure/configuration-settings.html#enable-bleve-for-search-queries>`__ is enabled.
+**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until `Enable Bleve for search queries </configure/configuration-settings.html#enable-bleve-for-search-queries>`__ is enabled.
 
 **False**: The indexing of new posts does not occur automatically.
 
@@ -4115,7 +4115,7 @@ Directory path to use for storing bleve indexes.
 
 .. tip::
    
-   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server </upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
@@ -4129,7 +4129,7 @@ Bulk Index Now
 
 Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
 
-You can configure the maximum time window used for a batch of posts being indexed. See the `Bulk Indexing Time Window Seconds <https://docs.mattermost.com/configure/configuration-settings.html#bulk-indexing-time-window-seconds>`__ documentation for details.
+You can configure the maximum time window used for a batch of posts being indexed. See the `Bulk Indexing Time Window Seconds </configure/configuration-settings.html#bulk-indexing-time-window-seconds>`__ documentation for details.
 
 Purge Indexes
 ^^^^^^^^^^^^^
@@ -4278,7 +4278,7 @@ Enable Client-Side Certification
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Enables client-side certification for your Mattermost server. See `the documentation <https://docs.mattermost.com/onboard/certificate-based-authentication.html>`__ to learn more.
+**True**: Enables client-side certification for your Mattermost server. See `the documentation </onboard/certificate-based-authentication.html>`__ to learn more.
 
 **False**: Client-side certification is disabled.
 
@@ -4333,7 +4333,7 @@ Enable Hardened Mode (Experimental)
 Changes made when hardened mode is enabled:
 
 - Failed login returns a generic error message instead of a specific message for username and password.
-- If `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is enabled, the route to check if a user has MFA enabled always returns true. This causes the MFA input screen to appear even if the user does not have MFA enabled. The user may enter any value to pass the screen. Note that hardened mode does not affect user experience when MFA is enforced.
+- If `multi-factor authentication (MFA) </onboard/multi-factor-authentication.html>`__ is enabled, the route to check if a user has MFA enabled always returns true. This causes the MFA input screen to appear even if the user does not have MFA enabled. The user may enter any value to pass the screen. Note that hardened mode does not affect user experience when MFA is enforced.
 - Password reset does not inform the user that they can not reset their SSO account through Mattermost and instead claims to have sent the password reset email.
 - Mattermost sanitizes all 500 errors before returned to the client. Use the supplied ``request_id`` to match user facing errors with the server logs.
 
@@ -4353,7 +4353,7 @@ Enable AD/LDAP Group Sync
 
 **False**: Disables AD/LDAP Group Sync and removes **User Management > Groups** from the System Console.
 
-For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization.html>`__.
 
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |
@@ -4684,7 +4684,7 @@ The following values are currently supported:
 - ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 - ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 
-This configuration setting is disabled by default and requires `developer mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
+This configuration setting is disabled by default and requires `developer mode </configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
@@ -4712,7 +4712,7 @@ Enable File Search
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our `Enable Document Search by Content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__ documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
+This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our `Enable Document Search by Content </configure/configuration-settings.html#enable-document-search-by-content>`__ documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
 
 **True**: Supported document types are searchable by their filename. 
 
@@ -5527,7 +5527,7 @@ Group Unread Channels (Experimental)
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console. 
+This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console. 
 
 **Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
 
@@ -5775,7 +5775,7 @@ File Location
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Set the file location of the compliance exports. By default, they are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/configure/configuration-settings.html#local-storage-directory>`__.
+Set the file location of the compliance exports. By default, they are written to the ``exports`` subdirectory of the configured `Local Storage directory </configure/configuration-settings.html#local-storage-directory>`__.
 
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
@@ -5879,7 +5879,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Set whether or not this Mattermost server will handle tasks created by the Scheduler. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in `High Availablity mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, one or more servers should have this setting enabled. We recommend that your High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+When running Mattermost in `High Availablity mode </scale/high-availability-cluster.html>`__, one or more servers should have this setting enabled. We recommend that your High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
@@ -5894,7 +5894,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in `High Availablity mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ for more details.
+When running Mattermost in `High Availablity mode </scale/high-availability-cluster.html>`__, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation </scale/high-availability-cluster.html>`__ for more details.
 
 .. warning::
 

@@ -15,9 +15,9 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 
 .. tip::
 
-  * See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
+  * See the `configuration settings </configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
   
-  * Encountering issues with your deployment? See the `Deployment Troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
+  * Encountering issues with your deployment? See the `Deployment Troubleshooting </install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
 
 .. tabs::
 
@@ -57,7 +57,7 @@ Prepare for your Mattermost deployment
 
 These guides will help you prepare for your Mattermost deployment.
 
-* `Preview Mattermost via Docker <https://docs.mattermost.com/install/install-docker.html#preview-mattermost-using-docker>`__ - Preview Mattermost instantly or deploy via Docker for production use.
+* `Preview Mattermost via Docker </install/install-docker.html#preview-mattermost-using-docker>`__ - Preview Mattermost instantly or deploy via Docker for production use.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Implement Mattermost </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
@@ -96,7 +96,7 @@ Server installation
 * :doc:`Debian Buster </install/install-debian>`
 * :doc:`RHEL 8 </install/install-rhel-8>`
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
-* `More server install guides <https://docs.mattermost.com/guides/deployment.html#other-resources>`__
+* `More server install guides </guides/deployment.html#other-resources>`__
 
 Desktop and Mobile App installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -2,7 +2,7 @@
 :orphan:
 :nosearch:
 
-You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+You can configure Mattermost as a `high availability environment </scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
@@ -59,7 +59,7 @@ Override hostname
 | - If left blank, Mattermost attempts to get the hostname from   |                                                                      |
 |   the operating system or uses the IP address.                  |                                                                      |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
-| See the `high availability cluster <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ documentation for details.    |
+| See the `high availability cluster </scale/high-availability-cluster.html>`__ documentation for details.    |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 
 Use IP address

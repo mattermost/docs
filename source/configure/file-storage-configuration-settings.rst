@@ -88,8 +88,8 @@ Enable document search by content
 |   for files by file name only.                                |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **Note**: Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an                   |
-| extraction command is executed using the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__  | 
-| or the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,       |
+| extraction command is executed using the `CLI </manage/command-line-tools.html#mattermost-extract-documents-content>`__  | 
+| or the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,       |
 | users can search older files based on file name only.                                                                                               |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |
@@ -126,7 +126,7 @@ Enable searching content of documents within ZIP files
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | **Note**: Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon.                      |
 | Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,                     |
-| we recommend you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, |
+| we recommend you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__, |
 | and test enabling this feature in a staging environment before enabling it in a production environment.                                                |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 

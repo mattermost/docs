@@ -128,7 +128,7 @@ Enable security alerts
 |   to be enabled.                                                |                                                                                  |
 | - **false**: Security alerts are disabled.                      |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| See the `Telemetry <https://docs.mattermost.com/manage/telemetry.html#security-update-check-feature>`__ documentation to learn more.               |
+| See the `Telemetry </manage/telemetry.html#security-update-check-feature>`__ documentation to learn more.               |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 SMTP server timeout

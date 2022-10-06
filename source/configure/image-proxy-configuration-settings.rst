@@ -19,7 +19,7 @@ Enable image proxy
 |   external images.                                            |                                                                     |
 | - **false**: Disables the image proxy.                        |                                                                     |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
-| See the `image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__ documentation to learn more.                          |
+| See the `image proxy </deploy/image-proxy.html>`__ documentation to learn more.                          |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 
 Image proxy type
@@ -37,7 +37,7 @@ Image proxy type
 |   as the image proxy.                                         |                                                                               |
 | - **atmos/camo**: An external atmos/camo image proxy is used. |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the `image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__ documentation to learn more.                                    |
+| See the `image proxy </deploy/image-proxy.html>`__ documentation to learn more.                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Remote image proxy URL
@@ -67,5 +67,5 @@ Remote image proxy options
 | This setting isn't needed when using the **local** image      | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyOptions",`` |
 | proxy type.                                                   | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYOPTIONS``     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the `image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__ documentation to learn more.                                    |
+| See the `image proxy </deploy/image-proxy.html>`__ documentation to learn more.                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+

@@ -10,11 +10,11 @@ Before running the bulk loading command, you must first create a `JSONL <https:/
 
   .. tab:: Use mmctl
 
-    1. After you create the file, upload the file to the database by running the `mmctl import upload <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-import-upload>`__ command. For example: ``mmctl import upload data.jsonl``.
+    1. After you create the file, upload the file to the database by running the `mmctl import upload </manage/mmctl-command-line-tool.html#mmctl-import-upload>`__ command. For example: ``mmctl import upload data.jsonl``.
 
-    2. Confirm that the file is uploaded and ready for use by running the `mmctl import list available <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-import-list-available>`__ command. 
+    2. Confirm that the file is uploaded and ready for use by running the `mmctl import list available </manage/mmctl-command-line-tool.html#mmctl-import-list-available>`__ command. 
 
-    3. Import your uploaded file by running the `mmctl import process <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-import-process>`__ command. For example: ``mmctl import process data.jsonl``.
+    3. Import your uploaded file by running the `mmctl import process </manage/mmctl-command-line-tool.html#mmctl-import-process>`__ command. For example: ``mmctl import process data.jsonl``.
 
   .. tab:: Use CLI
 

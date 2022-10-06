@@ -10,7 +10,7 @@ Using the Mattermost desktop app, you can connect to multiple Mattermost servers
 
   .. tab:: Mattermost desktop app v5.0 onwards
   
-    The **Server** list is located in the top left corner of the window and displays all servers available in your desktop app environment. Drag to reorder the servers in the list. You can also navigate the server options using `keyboard shortcuts <https://docs.mattermost.com/welcome/keyboard-shortcuts.html>`__. From the **Server** list, you can add, edit, and remove servers.
+    The **Server** list is located in the top left corner of the window and displays all servers available in your desktop app environment. Drag to reorder the servers in the list. You can also navigate the server options using `keyboard shortcuts </welcome/keyboard-shortcuts.html>`__. From the **Server** list, you can add, edit, and remove servers.
     
     **Add a server**
     

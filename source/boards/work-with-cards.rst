@@ -48,12 +48,12 @@ Work with property types
 
 Boards supports a wide range of fully customizable property types:
 
-- **Text** can be used to add short notes to a card. An advantage of the text property over card descriptions is that it can be `shown on the board <https://docs.mattermost.com/boards/work-with-cards.html#toggle-properties-shown-on-a-board>`_ without needing to open the card.
+- **Text** can be used to add short notes to a card. An advantage of the text property over card descriptions is that it can be `shown on the board </boards/work-with-cards.html#toggle-properties-shown-on-a-board>`_ without needing to open the card.
 - **Numbers** are useful to capture metrics such as task sizing or effort estimates. Use in conjunction with Calculations to get the most out of the number property type.  
 - **Email** and **Phone** can be used to record contact information.
 - **URL** can be used to provide a link to a pull request or relevant website. Clicking on the box of a URL property will automatically open the link in a new tab on your browser. Hover over the box to surface options to copy or edit the URL.
 - **Select** and **Multi-select** allows you to create a predefined list of options that can be color-coded and displayed as badges on the card to indicate things like status and priority.
-- **Dates** are useful to set and track due dates or milestones. Use the date property to make a card appear on the `Calendar view <https://docs.mattermost.com/boards/work-with-views.html#calendar-view>`_. Set a single date or toggle on the **End date** to set a date range.
+- **Dates** are useful to set and track due dates or milestones. Use the date property to make a card appear on the `Calendar view </boards/work-with-views.html#calendar-view>`_. Set a single date or toggle on the **End date** to set a date range.
 - **Person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
 - **Checkbox** is a toggle property that can be used for assigning simple binary options on a card such as True/False or Yes/No.
 - **Created time/Created by/Last updated time/Last updated by** are predefined system properties to help you audit changes on a card. The names of these properties are customizable, but the values are not.
@@ -122,13 +122,13 @@ Comment on a card
 
 Comments allow you to provide feedback and ask questions relevant to the specific work item on the card.
 
-To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card <https://docs.mattermost.com/boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
+To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card </boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
 
 
 Mention people
 --------------
 
-You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/channels/mention-people.html>`__ the same way you would in Channels. Mentions are supported in the `Comments <https://docs.mattermost.com/boards/work-with-cards.html#comment-on-a-card>`_ and `Description <https://docs.mattermost.com/boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
+You can include a team member on a card by `mentioning them on a card </channels/mention-people.html>`__ the same way you would in Channels. Mentions are supported in the `Comments </boards/work-with-cards.html#comment-on-a-card>`_ and `Description </boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
 
 Receive updates
 ---------------
