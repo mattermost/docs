@@ -4,12 +4,45 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-10-13](#release-2022-10-13)
 - [Release 2022-10-06](#release-2022-10-06)
 - [Release 2022-09-15](#release-2022-09-15)
 - [Release 2022-09-08](#release-2022-09-08)
 - [Release 2022-09-01](#release-2022-09-01)
 - [Release 2022-08-25](#release-2022-08-25)
-- [Release 2022-08-18](#release-2022-08-18)
+
+## Release 2022-10-13
+
+### Improvements
+
+#### User Interface (UI)
+ - Insights now filters out posts made by plugins and OAuth apps.
+ - Added a “Last active” status to the profile popover and to the **Direct Message** channel header to be able to see when a user was last online. This status only displays for users who are Away, Offline or DND.
+ - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
+ - The default number of **Direct Message** channels shown in the sidebar is now 20 to 40.
+ - Updated the company name in the **About Modal** to use the company name of the cloud customer instead of the company name in the cloud license.
+ - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
+
+### Bug Fixes
+ - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
+ - Fixed an issue where custom groups could be created with at-mention names that are reserved words (@channel, @here, @all).
+ - Fixed an issue where 404 errors were shown when APIv4 had an incorrect content-type header.
+ - Fixed an issue where messages from bot and webhook could not be forwarded.
+ - Fixed an issue where the plugin limit read "closer" even when the full limit of 5 plugins was enabled.
+ - Fixed an issue where inline images did not appear in the channel header.
+ - Fixed an issue with the emoji skin tone selector animation.
+ - Fixed an issue where an archived root post with a file errored out when trying to view its channel.
+ - Fixed an issue where the screen reader did not announce a successful login when logging in.
+ - Fixed a few broken links at **System Console > User Management > Permission Schemes**.
+ - Fixed an issue where users were able to forward messages to users who are deactivated.
+ - Fixed an issue where "Threads" were not shown in the unread filter view even if there weren't unread threads.
+ - Fixed an issue where the user’s full name was not shown when adding people to a channel via the ``Add people`` modal.
+ - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
+
+### Known Issues
+ - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
 ## Release 2022-10-06
 
