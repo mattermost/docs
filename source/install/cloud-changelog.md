@@ -13,6 +13,19 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-10-13
 
+### Highlights
+
+#### Boards
+ - Added new board roles, **Commenter** and **Viewer**.
+ - Added minimum default board roles to reduce permissioning ambiguity and to prevent security loopholes.
+ - Added support for guest accounts.
+ - Added the ability to add a team member to a board by selecting their name from an autocomplete list.
+ - Added channel notifications for linked boards.
+ - Added a new multi-person property to easily set multiple assignees or owners on a card.
+
+#### Calls
+ - Added new keyboard shortcuts for Calls.
+
 ### Improvements
 
 #### User Interface (UI)
@@ -22,6 +35,7 @@ Latest Mattermost Cloud releases:
  - The default number of **Direct Message** channels shown in the sidebar is now 40.
  - Updated the company name in the **About Modal** to use the company name of the cloud customer instead of the company name in the cloud license.
  - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
+ - Pre-packaged Playbooks v1.32.4.
 
 ### Bug Fixes
  - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
@@ -41,6 +55,7 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - Board Admins cannot add other non-board members as "Admins" via autocomplete list. See the [GitHub issue #3957](https://github.com/mattermost/focalboard/issues/3957) for more information.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
