@@ -18,10 +18,6 @@ Latest Mattermost Releases:
 ### Compatibility
  - Updated Chrome recommended minimum version to v102+.
 
-### Important Upgrade Notes
-
-**IMPORTANT:** If you upgrade from a release earlier than v7.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
-
 ### Highlights
 
 #### Boards
