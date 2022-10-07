@@ -20,6 +20,8 @@ Mattermost v7.1 introduces schema changes in the form of a new column and its in
 
 You can run the following SQL queries before the upgrade that obtains a lock on ``Reactions`` table. Users' reactions posted during this time won't be reflected in the database until the migrations are complete. This is fully backwards-compatible.
 
+If your connection collation and table collations are different, this can result in the error `Illegal mix of collations`. To resolve this error, set the same collation for both the connection and the table. There are different collations at different levels - connection, database, table, column, and database administrators may choose to set different collation levels for different objects.
+
 .. tabs:: 
 
   .. tab:: MySQL
