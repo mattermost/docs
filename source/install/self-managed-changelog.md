@@ -87,7 +87,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
- - Board Admins cannot add other non-board members as "Admins" via autocomplete list. As a workaround, admins can add board members via the Share dialog and set the user's role to "Admin". See the [GitHub issue #3957](https://github.com/mattermost/focalboard/issues/3957) for more information.
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
