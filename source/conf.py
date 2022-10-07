@@ -60,6 +60,9 @@ source_suffix = [".rst", ".md"]
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
 
+# CopyButton configuration
+copybutton_selector = "div.highlight pre, code span.pre"
+
 # Redirects using: https://pypi.org/project/sphinx-reredirects/
 redirects = {
 
