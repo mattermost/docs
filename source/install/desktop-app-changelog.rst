@@ -29,6 +29,7 @@ Highlights
 ~~~~~~~~~~~~~~~
 
 - Onboarding screen improvements: Added new **Configure Server** and first user onboarding screens when starting the app without servers configured.
+- Added a downloads dropdown menu that displays the file upload progress and recently downloaded files.
 
 Improvements
 ~~~~~~~~~~~~~~~
