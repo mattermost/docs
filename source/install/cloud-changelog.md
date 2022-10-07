@@ -36,6 +36,9 @@ Latest Mattermost Cloud releases:
  - Updated the company name in the **About Modal** to use the company name of the cloud customer instead of the company name in the cloud license.
  - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
  - Pre-packaged Playbooks v1.32.4.
+ 
+#### Administration
+ - After 90 days since the day of missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
 
 ### Bug Fixes
  - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
