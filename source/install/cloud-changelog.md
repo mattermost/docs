@@ -4,12 +4,53 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-10-06](#release-2022-10-06)
 - [Release 2022-09-15](#release-2022-09-15)
 - [Release 2022-09-08](#release-2022-09-08)
 - [Release 2022-09-01](#release-2022-09-01)
 - [Release 2022-08-25](#release-2022-08-25)
 - [Release 2022-08-18](#release-2022-08-18)
-- [Release 2022-08-10](#release-2022-08-10)
+
+## Release 2022-10-06
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Insights to the channel switcher.
+ - Added a button to easily copy the content of text or code files in file previews.
+ - The team unread icon for muted channels is now hidden in the sidebar.
+ - Updated the designs for the “payment failed” email notifications.
+
+#### Administration
+ - A ``batchSize`` option has been added to the ``mattermost export`` CLI command to limit the number of items exported. By default, if it is not included, it exports all posts.
+ - Added a credit card update modal that communicates arrears for Admins.
+
+#### API Changes
+ - Updated the Files search and GET APIs to filter out files beyond the Cloud plan's configured limit.
+ - Added a new response-header ``First-Inaccessible-File-Time`` to the APIs fetching single file info.
+ - Added a new query parameter to include deleted posts as long as it's requested by a System Admin in ``/api/v4/channels/{channel_id}/posts``.
+
+### Bug Fixes
+ - Fixed an issue with the badge count on the mobile app when a channel/thread was viewed.
+ - Fixed an issue where typing ``@`` in the right-hand side rendered a cut-off user suggestion list.
+ - Fixed an issue where an error screen was briefly flashed when the first Admin signed up into a new server.
+ - Fixed an issue where users were unable to add Japanese comments correctly in the message **Forward** modal.
+ - Fixed an issue where unsaved edits to a post were lost when switching channels or threads.
+ - Fixed an issue on larger screen sizes where the Insights widgets were pushed to the side when the right-hand side was open.
+ - Fixed an issue where the ability to forward messages from public channels wasn't possible when messaging someone directly for the first time.
+ - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
+ - Fixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
+ - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
+ - Fixed an issue where formatting keyboard shortcuts were conflicting with existing shortcuts.
+ - Fixed an issue where the markdown style for horizontal rules was too thick.
+ - Fixed an issue where the emoji reaction overlay blocked part of the message it belonged to in compact view.
+ - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
+
+### Known Issues
+ - Clicking "Back to team" link from the **System Console** causes a white screen if the righ-hand side was open [MM-47226](https://mattermost.atlassian.net/browse/MM-47226).
+ - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
 ## Release 2022-09-15
 
@@ -38,7 +79,7 @@ Latest Mattermost Cloud releases:
  - Fixed typos in some translations strings that caused some in-product links to be broken.
 
 ### Known Issues
- - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-MM-46886).
+ - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-46886).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
 
