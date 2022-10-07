@@ -59,7 +59,6 @@ Latest Mattermost Cloud releases:
 
 ### Known Issues
  - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
- - Board Admins cannot add other non-board members as "Admins" via autocomplete list. As a workaround, admins can add board members via the Share dialog and set the user's role to "Admin". See the [GitHub issue #3957](https://github.com/mattermost/focalboard/issues/3957) for more information.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-10-06
