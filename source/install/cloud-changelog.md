@@ -39,6 +39,7 @@ Latest Mattermost Cloud releases:
  
 #### Administration
  - After 90 days since the day of missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
+ - A banner is now shown to legacy Enterprise Mattermost Cloud Admins informing them that they need to change their workspace soon.
 
 ### Bug Fixes
  - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
