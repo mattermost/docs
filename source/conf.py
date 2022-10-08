@@ -1957,7 +1957,7 @@ linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
 
 # CopyButton configuration
-copybutton_selector = "div.highlight pre, code span.pre"
+copybutton_selector = "div.highlight pre, code"
 
 # Variables
 # rst_epilog = """
