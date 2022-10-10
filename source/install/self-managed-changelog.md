@@ -21,15 +21,15 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Boards
- - Added new board roles, **Commenter** and **Viewer**.
- - Added minimum default board roles to reduce permissioning ambiguity and to prevent security loopholes.
- - Added support for guest accounts.
- - Added the ability to add a team member to a board by selecting their name from an autocomplete list.
+ - Added new [board roles](https://docs.mattermost.com/boards/share-and-collaborate.html#roles), **Commenter** and **Viewer**.
+ - Added [minimum default board roles](https://docs.mattermost.com/boards/share-and-collaborate.html#manage-team-access) to reduce permissioning ambiguity and to prevent security loopholes.
+ - Added support for [guest accounts](https://docs.mattermost.com//boards/share-and-collaborate.html#guest-accounts).
+ - Added the ability to add a team member to a board by selecting their name from [an autocomplete list](https://docs.mattermost.com/boards/work-with-cards.html#mention-people).
  - Added channel notifications for linked boards.
- - Added a new multi-person property to easily set multiple assignees or owners on a card.
+ - Added a new [multi-person property](https://docs.mattermost.com/boards/work-with-cards.html#work-with-property-types) to easily set multiple assignees or owners on a card.
 
 #### Calls
- - Added new keyboard shortcuts for Calls.
+ - Added new [keyboard shortcuts for Calls](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts).
 
 ### Improvements
 
