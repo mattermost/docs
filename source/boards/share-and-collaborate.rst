@@ -7,22 +7,48 @@ Share and collaborate
 Board permissions
 -----------------
 
-From Mattermost Boards v7.2, boards belong to teams, and any member of that team can be granted access to a board. Prior to Mattermost Boards v7.2, boards are tied to channel workspaces, and board membership is determined by channel membership.
+From Mattermost Boards v7.2 boards belong to teams, and any member of that team can be granted access to a board. 
+
+If your boards workspace looks different, you may be on an earlier version of Boards, where boards are tied to channel workspaces and board membership is determined by channel membership. In this case, roles and permissions won't be applicable to you.
 
 Roles
 -----
 
++-----------------------------+-----------+------------+---------------+------------+
+|**Board permissions**        | **Admin** | **Editor** | **Commenter** | **Viewer** |
++=============================+===========+============+===============+============+
+| Modify permissions          |   X       |            |               |            |
++-----------------------------+-----------+------------+---------------+------------+
+| Share a public board        |   X       |            |               |            |
++-----------------------------+-----------+------------+---------------+------------+
+| Delete board                |   X       |            |               |            |
++-----------------------------+-----------+------------+---------------+------------+
+| Rename board                |   X       |    X       |               |            |
++-----------------------------+-----------+------------+---------------+------------+
+| Add, edit, and delete views |   X       |    X       |               |            |
++-----------------------------+-----------+------------+---------------+------------+
+| Add, edit, and delete cards |   X       |    X       |               |            |
++-----------------------------+-----------+------------+---------------+------------+
+| Comment, delete my comments |   X       |    X       |     X         |            |
++-----------------------------+-----------+------------+---------------+------------+
+| Delete any comment          |   X       |            |               |            |
++-----------------------------+-----------+------------+---------------+------------+
+| View                        |   X       |    X       |     X         |    X       |
++-----------------------------+-----------+------------+---------------+------------+
+
 The level of access to a board is determined by a user’s assigned board role.
 
-- **Admin:** Can modify the board, its contents, and its permissions. By default, board creators are also admins of the board.
-- **Editor:** Can modify the board and its contents.
+- **Admin**: Can modify the board, its contents, and its permissions. By default, board creators are also admins of the board.
+- **Editor**: Can modify the board and its contents.
+- **Commenter**: Can add comments to cards.
+- **Viewer**: Can view the board and its contents but can't comment or edit the board.
 
 Manage team access
 ~~~~~~~~~~~~~~~~~~~
 
-Board admins can manage team access to their board by selecting **Share** in the top-right corner of the board. On the dropdown next to **Everyone at… Team** option, select a default board role for everyone on the team. 
+Board admins can manage team access to their board by selecting **Share** in the top-right corner of the board. On the dropdown next to **Everyone at… Team** option, select a minimum board role for everyone on the team. 
 
-Depending on the role selected, everyone on the team will have access to the board with the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is **None**, which means nobody on the team has access to the board.
+Depending on the role selected, everyone on the team will have access to the board with a minumum of the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is **None**, which means nobody on the team has access to the board.
 
 Manage individual board membership
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,6 +70,20 @@ To unlink the channel from the board, open the **Share** dialog, select the role
 .. note:: 
   
   A board can only be linked to one channel at a time. Linking another channel to the same board will automatically remove the link from the previous channel.
+  
+Guest accounts
+--------------
+
+From Mattermost Boards v7.3, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ will be supported in Boards. Guests can:
+
+- Access boards where they're added as an explicit member of the board. Team access doesn't apply to guest accounts.
+- Access existing boards, but not create new boards. Guests don't have access the template picker and can't duplicate an existing board.
+- Search for boards where they're currently an explicit member.
+- Be assigned the Viewer, Commenter, or Editor roles, but not the board Admin.
+
+.. note::
+
+    If you're not able to access this functionality, you may be on an earlier version of Boards.
 
 Share a board
 --------------
