@@ -19,7 +19,7 @@ Open the boards App Bar icon, and select **Create a Board** to create a new boar
 
 .. note:: 
   
-  For users upgrading to Mattermost Boards v7.2 or later. To maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration.
+  If you're upgrading to Mattermost Boards v7.2 or later, to maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration.
 
 Unlink a board from a channel
 -----------------------------
@@ -41,7 +41,7 @@ Categories are organized per-user, so you can arrange your boards under categori
 
 .. note::
 
-  For users upgrading to Mattermost Boards v7.2 onwards:If you belonged to a workspace prior to v7.2, then you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
+  If you're upgrading to Mattermost Boards v7.2 onwards: If you belonged to a workspace prior to v7.2, then you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
   Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t have default categories, and boards they join will appear under the default **Boards** category.
 
 Boards that you create after the migration won’t be linked to a workspace and will always appear under the default **Boards** category unless you move or hide the boards.
@@ -51,8 +51,8 @@ Manage boards on the sidebar
 
 In addition to moving boards to other categories, from the  options menu **(...)** next to each board name you can perform the following actions:
 
-- **Delete board**: If you are an admin of the board, you will see an option to delete the board. Deleting the board permanently removes the board from the sidebar of all board members.
-- **Duplicate board**: Creates a copy of the board and all the cards on the board. The duplicated board will appear under the same category as the original board. Board members from the original board are not migrated to the new board.
+- **Delete board**: If you're are an admin of the board, you will see an option to delete the board. Deleting the board permanently removes the board from the sidebar of all board members.
+- **Duplicate board**: Creates a copy of the board and all the cards on the board. The duplicated board will appear under the same category as the original board. Board members from the original board aren't migrated to the new board.
 - **New template from board**: Creates a custom board template of the board and all the cards on the board.
 - **Hide board**: Hides the board from your sidebar only. The board will still remain visible on the sidebar for other board members. You can add the board back to your sidebar using the search box (CMD+K/CTRL+K).
 
@@ -65,18 +65,3 @@ Team sidebar
 ------------
 
 If you’re a member of multiple teams, the team sidebar will appear on the left hand side of Boards. To switch teams, select any of the team icons from the team sidebar.
-
-Set language
-------------
-
-To set your language on boards, select the gear icon next to your profile avatar, then go to **Set language** to apply your language settings. Please note: language settings in Boards are independent from language settings in Channels.
-
-Emoji icons
------------
-
-To enable or disable random emoji icons for your board and cards, select the gear icon next to your profile avatar, then toggle **Random icons on or off**.
-
-Product tour
-------------
-
-If you skipped the product tour or want a refresher on Boards, you can restart the product tour by going to the gear icon next to your profile avatar and selecting **Product tour**. This will add a new **Welcome to Boards** template to your sidebar and kick-off the guided onboarding tour.
