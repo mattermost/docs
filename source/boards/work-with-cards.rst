@@ -26,9 +26,9 @@ To add a new content block in the description section, hover over the section an
 - **Text**: Adds a new text block that can be formatted with Markdown.
 - **Image**: Select and embed an image file into the content block. The following image formats are currently supported: GIF, JPEG, and PNG.
 - **Divider**: Adds a divider content block below the previous block.
-- **Checkbox**: Adds a checkbox content block. Press Enter/Return after typing in content for your checkbox to add another checkbox within the same block. Please note, Markdown formatting is not supported within the *Checkbox* content block.
+- **Checkbox**: Adds a checkbox content block. Press Enter/Return after typing in content for your checkbox to add another checkbox within the same block. Please note, Markdown formatting isn't supported within the **Checkbox** content block.
 
-To manage the description content blocks on a card, hover over any existing block and select options menu **(...)** to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then click and hold the grid button to drag and drop it to a new position within the description section.
+To manage the description content blocks on a card, hover over any existing block and select options menu **(...)** to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then select and hold the grid button to drag and drop it to a new position within the description section.
 
 Card properties
 ---------------
@@ -124,6 +124,7 @@ Comments allow you to provide feedback and ask questions relevant to the specifi
 
 To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card <https://docs.mattermost.com/boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
 
+From Mattermost Boards v7.3, only board members with the *Commenter* role or higher can comment on a card. Board members assigned the *Viewer* role can view, but not comment on, a card.
 
 Mention people
 --------------
@@ -175,6 +176,4 @@ To set a default card template for all new cards created on the board:
 
 .. note:: 
   
-  The card template is applicable only to the board in which it’s created and isn’t available in other boards in your team workspace. Comments on a template do not get populated on to new cards. Additionally, properties cannot be hidden from a card template at this time. All cards on a board share the same properties, so adding or deleting a property on a template will also apply to all cards on a board.
-
-
+  The card template is applicable only to the board in which it’s created and isn’t available in other boards in your team workspace. Comments on a template don't get populated on to new cards. Additionally, properties can't be hidden from a card template at this time. All cards on a board share the same properties, so adding or deleting a property on a template will also apply to all cards on a board.
