@@ -6,8 +6,8 @@ Work with boards
 
 Start by selecting the type of board you want to use. A board contains cards, which typically track tasks or topics, and views, which define how to display the cards, or a subset of them. Views can display cards in a board, table, calendar, or gallery layout, optionally filtered and grouped by a property (e.g., priority, status, etc).
 
-Adding new boards
------------------
+Add new boards
+--------------
 
 To add a new board, select the **+** icon at the top of the sidebar to open the template picker, then select a template or blank board.
 
@@ -58,16 +58,20 @@ Share a custom board template
 From Mattermost Boards v7.2 or later
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Custom templates support permissions control, and are restricted to only the template creator by default. The template creator is an admin of the template and can make the template accessible to everyone on the team via the **Share** button on the template editor, and then setting the team role as **Viewer**. All members of the team will now be able to see and select the template from the template picker.
+Custom templates support permissions control, and are restricted to only the template creator by default. The template creator is an admin of the template. To make the template accessible to everyone on the team, select **Share** on the template editor, and then set the team role as **Viewer**. All members of the team will now be able to see and select the template from the template picker.
 
-The admin of the template can also grant specific team members elevated permissions to the template and/or limit access to only select team members by setting the team role as **None** and adding individual members to the template. Individual team members can be assigned the following roles on a template:
+The admin of the template can also grant specific team members elevated permissions to the template and/or limit access to selected team members by setting the team role as **None** and adding individual members to the template. Individual team members can be assigned the following roles on a template:
+
+- Admin: Can modify the template and its permissions, and delete the template.
+- Editor: Can modify but not delete the template, nor change permissions.
+- Viewer: Can view and select the template.
 
 Prior to Mattermost Boards v7.2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Boards and templates are channel-specific so whichever channel you create your board or template in, is where you’ll find it. If you’d like to re-use a board as a template on another channel workspace, you can export it and then import the archive file in the channel of your choosing.
 
-To do this, select the **…** in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon next to your profile avatar, then choose Import archive. The board you created will be added to this channel.
+To do this, select the **…** in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
 
 Edit board templates
 --------------------
@@ -77,7 +81,7 @@ Custom templates are fully editable, but standard templates cannot be edited or 
 From Mattermost Boards v7.2 or later
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only admins and editors of a custom template can edit the template. If you do not see the Pencil icon when hovering over the template, then you do not have the appropriate permissions to edit the template.
+Only admins and editors of a custom template can edit the template. If you don't see the pencil icon when hovering over the template, then you don't have the appropriate permissions to edit the template.
 
 Prior to Mattermost Boards v7.2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
