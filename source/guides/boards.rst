@@ -18,6 +18,7 @@ Mattermost Boards enable your team to manage projects and tasks via a familiar K
    Share and collaborate </boards/share-and-collaborate>
    Navigate boards </boards/navigate-boards>
    Migrate to boards </boards/migrate-to-boards>
+   Boards settings </boards/boards-settings>
 
 * :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
 * :doc:`Work with boards </boards/work-with-boards>` - Work with boards.
@@ -28,8 +29,9 @@ Mattermost Boards enable your team to manage projects and tasks via a familiar K
 * :doc:`Share and collaborate </boards/share-and-collaborate>` - Share and collaborate
 * :doc:`Navigate boards </boards/navigate-boards>` - Navigate boards.
 * :doc:`Migrate to boards </boards/migrate-to-boards>` - Migrate your data from other tools into Mattermost Boards.
+* :doc:`Boards settings </boards/boards-settings>` - Adjust language and emoji settings, and restart the product tour.
 
 .. image:: ../images/Boards_Hero.png
    :alt: An example of the Mattermost Boards screen that includes a project status board and cards organized by status. 
 
-This Mattermost Boards User Guide is for anyone who needs help using Mattermost project and task management capabilities.
+This Mattermost Boards user guide is for anyone who needs help using Mattermost project and task management capabilities.
