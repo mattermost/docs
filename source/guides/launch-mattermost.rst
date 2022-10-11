@@ -1,6 +1,9 @@
 Launch Mattermost at your organization
 ======================================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 Launching Mattermost at your organization involves the following steps:
 
 - :doc:`deploying Mattermost </guides/deployment>` and :doc:`installing a database </deploy/install-database>`
@@ -26,8 +29,8 @@ Launching Mattermost at your organization involves the following steps:
 
 See the following resources to plan your Mattermost launch:
 
-* :doc:`Components of a Mattermost deployment </deploy/deployment-overview>` - Learn the basics of the Mattermost user experience, communication protocols, network access, data storage, and deployment options.
-* :doc:`Overview of Mattermost architecture </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
-* :doc:`Administrator onboarding tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
-* :doc:`Implementation plan </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.
-* :doc:`Rollout checklist for enterprise deployments </getting-started/enterprise-roll-out-checklist>` - Learn how to roll Mattermost out to thousands of users.
+* **Components of a Mattermost deployment** - Learn about the :doc:`components of a Mattermost deployment </deploy/deployment-overview>`, including communication protocols, network access, data storage, and deployment options.
+* **Mattermost architecture** - Get an :doc:`overview of Mattermost architecture </getting-started/architecture-overview>` including the basics of user authentication, notifications, data management services, network connectivity, and high availability.
+* **Administrator onboarding tasks** - Learn about the standard configurations and settings you’ll encounter :doc:`onboarding new users </getting-started/admin-onboarding-tasks>`.
+* **Implementation plan** - See a detailed technical :doc:`implementation plan </getting-started/implementation-plan>` breakdown to deploy Mattermost for your team or organization.
+* **Rollout checklist for enterprise deployments** - Learn how to :doc:`roll out Mattermost </getting-started/enterprise-roll-out-checklist>` to thousands of users.

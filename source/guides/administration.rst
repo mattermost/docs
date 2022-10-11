@@ -19,17 +19,15 @@ See the following resources to manage your Mattermost self-hosted or Cloud works
 	Display in-product notices </manage/in-product-notices>
 	Gather feedback with user satisfaction surveys </manage/user-satisfaction-surveys>
 	Configure an announcement banner </manage/announcement-banner>
-    Generate a support packet </manage/generating-support-packet>
 
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
-* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
-* **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
+* **Configure your workspace** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings>`, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
+* **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for self-hosted deployments.
 * :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
-* :doc:`Statistics </manage/statistics>` - Get statistics about your Mattermost server usage.
-* :doc:`In-product notices </manage/in-product-notices>` - Get notified about Mattermost updates via in-app notices.
-* :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
-* :doc:`Announcement banner </manage/announcement-banner>` - Display notices to your users via an announcement banner.
-* :doc:`Generate a support packet </manage/generating-support-packet>` - Generate configuration information, logs, plugin details, and data dependencies to provide when contacting Mattermost support.
+* **Statistics** - Review :doc:`statistics </manage/statistics>` about your Mattermost server usage.
+* **In-product notices** - Notify users about Mattermost updates using :doc:`in-product notices </manage/in-product-notices>`.
+* **User satisfaction surveys**  - Learn how to gather user feedback using :doc:`Mattermost user satisfaction surveys </manage/user-satisfaction-surveys>`.
+* **Announcement banner**  - Display notices to your users via a dismissable :doc:`announcement banner </manage/announcement-banner>`.
 
 .. note::
     
@@ -48,10 +46,10 @@ Cloud workspace management
     Workspace usage </manage/workspace-usage>
     Cloud data residency </manage/cloud-data-residency>
 
-* :doc:`Mattermost Cloud billing </manage/cloud-billing>` - Set up and manage billing for your Mattermost Cloud workspace.
-* :doc:`Workspace limits </onboard/mattermost-limits>` - Understand the data limits on your plan.
-* :doc:`Workspace usage </manage/workspace-usage>` - Keep your workspace active.
-* :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
+* **Mattermost Cloud billing** - Set up and :doc:`manage billing </manage/cloud-billing>` for your Mattermost Cloud workspace.
+* **Workspace limits** - Understand the :doc:`data and workspace limits </onboard/mattermost-limits>` of your plan.
+* **Workspace usage** - Learn about :doc:`workspace usage </manage/workspace-usage>` and how to keep your workspace active.
+* **Cloud data residency** - Learn about :doc:`how your data is stored in the Cloud </manage/cloud-data-residency>`.
 
 Self-hosted workspace management
 --------------------------------
@@ -66,9 +64,9 @@ If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud
     Deploy Mattermost calls </configure/calls-deployment>
     Configure health checks probes </manage/health-checks>
 
-* :doc:`Move Mattermost configuration to the database </configure/configuation-in-mattermost-database>` - Store Mattermost configuration information in your database rather than as a JSON file. Recommended this for High Availability environments.
-* :doc:`Deploy Mattermost calls </configure/calls-deployment>` - Learn about the different ways you can deploy Mattermost Calls.
-* :doc:`Health check </manage/health-checks>` - Configure health probes for your Mattermost server.
+* **Move Mattermost configuration to the database** - Learn how to :doc:`store Mattermost configuration information in your database </configure/configuation-in-mattermost-database>` rather than as a JSON file. Recommended this for High Availability environments.
+* **Deploy Mattermost Calls** - Learn about the different ways you can :doc:`deploy Mattermost Calls </configure/calls-deployment>`.
+* **Health check** - Configure :doc:`health check probes </manage/health-checks>` for your Mattermost server.
 
 Migrate your Mattermost workspace
 ---------------------------------
@@ -83,11 +81,11 @@ Migrate your Mattermost workspace
     Bulk load data </onboard/bulk-loading-data>
     Bulk export data </manage/bulk-export-tool>
 
-* :doc:`Migrate from  Cloud to self-hosted </manage/cloud-data-export>` - Migrate from Mattermost Cloud to a self-hosted deployment.
-* :doc:`Migrate from other chat products </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.
-* :doc:`Migration announcement email </onboard/migration-announcement-email>` - An email template is available to help you notify your users about migrating to Mattermost.
-* :doc:`Bulk load data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
-* :doc:`Bulk export data </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.
+* **Migrate from Cloud to self-hosted** - Learn how to :doc:`migrate from Mattermost Cloud to a self-hosted deployment </manage/cloud-data-export>`.
+* **Migrate from other chat products** - Learn how to :doc:`migrate from other chat services </onboard/migrating-to-mattermost>` to Mattermost.
+* **Migration announcement email** - An :doc:`email template </onboard/migration-announcement-email>` is available to help you notify your users about migrating to Mattermost.
+* **Bulk load data** - Learn how to :doc:`import bulk data </onboard/bulk-loading-data>` into Mattermost for teams, channels, users, post content, and more.
+* **Bulk export data** - Learn how to :doc:`export user, team, channel, and post data </manage/bulk-export-tool>` from Mattermost.
 
 User authentication
 --------------------
@@ -105,7 +103,7 @@ User authentication
     Convert OAuth 2.0 providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>
 
 * **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
-* :doc:`Convert OAuth 2.0 service providers to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>` - Migrate from OAuth 2.0 to OpenID Connect.
+* **Convert OAuth 2.0 service providers to OpenID Connect** - Learn how to :doc:`migrate from OAuth 2.0 to OpenID Connect </onboard/convert-oauth20-service-providers-to-openidconnect>`.
 
 User permissions
 -----------------
@@ -119,7 +117,7 @@ User permissions
 	System Admin roles </onboard/system-admin-roles>
 
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
-* :doc:`Advanced permissions: backend infrastructure </onboard/advanced-permissions-backend-infrastructure>` - Read our technical guide on modifying self-hosted Mattermost installations to create custom permissions schemes.
+* **Advanced permissions: backend infrastructure** - Read our technical guide on :doc:`modifying self-hosted Mattermost permissions </onboard/advanced-permissions-backend-infrastructure>` to create custom permissions schemes.
 
 User management
 ---------------
@@ -138,11 +136,11 @@ User management
 
 * **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
-* :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
-* :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
-* :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
-* :doc:`SAML SSO </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
-* :doc:`SAML SSO technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
+* **AD/LDAP groups** - Sync :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` with Mattermost roles and teams.
+* **Manage team or private channel membership with AD/LDAP synchronized groups** - :doc:`Synchronize your AD/LDAP groups </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` with Mattermost private channels and teams.
+* **Guest accounts** - Create :doc:`guest accounts </onboard/guest-accounts>` to collaborate with individuals outside your organization.
+* **SAML SSO** - Configure Mattermost to be a :doc:`SAML 2.0 service provider </onboard/sso-saml>`.
+* **SAML SSO technical documentation** - See the :doc:`SAML 2.0 reference documentation </onboard/sso-saml-technical>` for Mattermost.
 
 Compliance tools
 ----------------
@@ -158,17 +156,6 @@ Compliance tools
 
 * **Compliance tools** - Extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, create :doc:`Compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, create :doc:`Compliance export </comply/compliance-export>` reports for channel history actions, and set custom :doc:`data retention policies </comply/data-retention-policy>`.
 
-Troubleshoot your Mattermost deployment
----------------------------------------
-
-.. toctree::
-    :maxdepth: 1
-    :hidden:
-
-    Troubleshoot Mattermost issues </install/troubleshooting>
-
-* **Having trouble with your Mattermost deployment?** - See the :doc:`troubleshooting </install/troubleshooting>` documentation for details.
-
 Other resources
 ---------------
 
@@ -179,5 +166,5 @@ Other resources
     mmctl command line tool </manage/mmctl-command-line-tool>
     Command line tools </manage/command-line-tools>
 
-* :doc:`mmctl command line tool </manage/mmctl-command-line-tool>` - Use mmctl to manage Mattermost workspaces from the command line.
-* :doc:`Command line tools </manage/command-line-tools>` - Learn how to use the command line to manage self-hosted Mattermost workspaces running releases prior to v6.0. 
+* **mmctl command line tool** - Use :doc:`mmctl </manage/mmctl-command-line-tool>` to manage Mattermost workspaces from the command line.
+* **Command line tools** - Learn how to use :doc:`command line tools </manage/command-line-tools>` to manage self-hosted Mattermost workspaces running releases prior to v6.0. 

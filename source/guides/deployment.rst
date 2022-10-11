@@ -47,4 +47,4 @@ When you're ready to install Mattermost server for production use, you have opti
   
   * See the `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to learn more about customizing your production deployment.
   
-  * Encountering issues with your deployment? See the `Deployment Troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.
+  * Encountering issues with your deployment? See the `deployment troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting>`__ documentation for details.

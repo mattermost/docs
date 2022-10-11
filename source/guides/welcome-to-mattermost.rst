@@ -1,4 +1,4 @@
-Start using Mattermost
+Welcome to Mattermost
 =======================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
