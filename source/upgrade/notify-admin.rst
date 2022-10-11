@@ -10,7 +10,7 @@ This feature is designed for informational purposes only, and no action is requi
 Notifications
 -------------
 
-Notifications are triggered by users. The very first user trigger results in a bot message to the System Admin, indicating the feature or functionality the user has requested. This bot message is listed in the direct message section of the channel sidebar.
+Notifications are triggered by users. The very first user trigger results in a bot message to all System Admins, indicating the feature or functionality the user has requested. This bot message is listed in the direct message section of the channel sidebar.
 
 Any requests that happen after this first request are sent 14 days later, in a summary format.
 
