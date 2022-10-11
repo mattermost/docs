@@ -15,11 +15,11 @@ From Mattermost Boards v7.2, boards can be linked to channels and accessed from 
  
   A channel can be linked to multiple boards, but each individual board can only be linked to one channel at a time. Linking the same board to another channel will automatically remove the link from the previous channel.
 
-Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the RHS of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board. Select a linked board to navigate directly to the board.
+Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the right-hand side of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board. Select a linked board to navigate directly to the board.
 
 .. note:: 
   
-  If you're upgrading to Mattermost Boards v7.2 or later, to maintain the same organization, all the boards previously associated with the workspace will automatically appear on the RHS post-migration.
+  If you're upgrading to Mattermost v7.2 or later, all the boards previously associated with the workspace will automatically appear on the right-hand side panel post-migration.
 
 Unlink a board from a channel
 -----------------------------
@@ -29,7 +29,7 @@ If you're a board admin and want to unlink a board from a channel you're in, ope
 Sidebar categories
 ------------------
 
-From Mattermost Boards v7.2, you can organize your boards on the left hand sidebar using custom categories. By default, all boards will appear under the **Boards** category.
+From Mattermost v7.2, you can organize your boards on the left-hand sidebar using custom categories. By default, all boards will appear under the **Boards** category.
 
 To manage your categories, open the options menu **(...)** next to the category to create, delete, or rename a category. With the exception to the default **Boards** category, all other categories can be renamed or deleted.
 
