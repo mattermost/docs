@@ -46,7 +46,11 @@ The level of access to a board is determined by a user’s assigned board role.
 Manage team access
 ~~~~~~~~~~~~~~~~~~~
 
-Board admins can manage team access to their board by selecting **Share** in the top-right corner of the board. On the dropdown next to **Everyone at… Team** option, select a minimum board role for everyone on the team. 
+Board admins can manage team access to their board by selecting **Share** in the top-right corner of the board. On the dropdown next to **Everyone at… Team** option, select a minimum board role for everyone on the team. You can also easily assign the new roles to the entire team and/or to individual team members.
+
+Minimum default board roles reduce permission ambiguity and prevent security loopholes. Without a minimum role, there are scenarios where individual board members can elevate their own permissions without knowledge of the admin. For example, if an individual board member is assigned the **Viewer** role, but the default team role is set to **Editor**, then the individual can elevate their own permissions by leaving the board and rejoining the board. They would then be assigned the **Editor** role. 
+
+The minimum default role means that board admins can't assign individual board members a role lower than the team role. If the team role is set to **Editor** then the board admin will only be able to assign the **Editor** or **Admin** role to individual team members. Lower roles will not be available for selection unless the admin changes the minimum board role.
 
 Depending on the role selected, everyone on the team will have access to the board with a minumum of the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is **None**, which means nobody on the team has access to the board.
 
