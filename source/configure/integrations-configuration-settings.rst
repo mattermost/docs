@@ -13,8 +13,8 @@ Access the following configuration settings in the System Console by going to **
 
 ----
 
-Integration management
-----------------------
+Integrations management
+------------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

@@ -9,7 +9,7 @@ System Admins for both self-hosted and Cloud Mattermost workspaces can manage Ma
 Mattermost configuration settings are organized into the following categories within the System Console:
 
 - :doc:`Self-hosted workspace edition and license settings </configure/self-hosted-account-settings>`
-- :doc:`Cloud workspace subscription, billing, & account settings</configure/cloud-billing-account-settings>`
+- :doc:`Cloud workspace subscription, billing, and account settings</configure/cloud-billing-account-settings>`
 - :doc:`Reporting configuration settings </configure/reporting-configuration-settings>`
 - :doc:`User management configuration settings </configure/user-management-configuration-settings>`
 - :doc:`Environment configuration settings </configure/environment-configuration-settings>`
