@@ -15,9 +15,6 @@ Latest Mattermost Releases:
 
 **v7.4.0 release day: 2022-10-16**
 
-### Compatibility
- - Updated Chrome recommended minimum version to v102+.
-
 ### Highlights
 
 #### Boards
