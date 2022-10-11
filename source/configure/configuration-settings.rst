@@ -4690,6 +4690,20 @@ This configuration setting is disabled by default and requires `developer mode <
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
 +----------------------------------------------------------------------------------------+
 
+Enable API Trigger Admin Notifications
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+If this setting is enabled, notifications are sent to System Admins when users request access to a feature that's not available on the current plan. When this is disabled, users do not see the option to **Notify Admin** when they want to start a trial or upgrade.
+
++----------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPITriggerAdminNotifications ": false`` with options ``true`` and ``false``.  |
++----------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Post Search
 ^^^^^^^^^^^^^^^^^^^
 
