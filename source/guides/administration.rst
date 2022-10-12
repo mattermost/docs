@@ -57,7 +57,7 @@ These resources will help you get started with your Mattermost self-hosted or Cl
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
 * **Customize branding** - Change Mattermost branding, site name, and description with :doc:`custom branding tools </configure/custom-branding-tools>`.
 * **Compliance tools** - Extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, create :doc:`Compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, or :doc:`Compliance export </comply/compliance-export>` reports for channel history actions, set custom :doc:`data retention policies </comply/data-retention-policy>`, and set :doc:`custom terms of service </comply/custom-terms-of-service>` for team members.
-* **Notify Admin** - Keep track of your users' :doc:`feature requirement needs </upgrade/notify-admin>`.
+* **Notify admin** - Keep track of your users' :doc:`feature requirement needs </upgrade/notify-admin>`.
 
 Advanced user management
 ~~~~~~~~~~~~~~~~~~~~~~~~
