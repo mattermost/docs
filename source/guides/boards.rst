@@ -16,8 +16,8 @@ Mattermost Boards enable your team to manage projects and tasks via a familiar K
    Work with groups, filter, and sort </boards/groups-filter-sort>
    Work with calculations </boards/calculations>
    Share and collaborate </boards/share-and-collaborate>
+   Import, export, and migrate </boards/migrate-to-boards>
    Navigate boards </boards/navigate-boards>
-   Migrate to boards </boards/migrate-to-boards>
    Boards settings </boards/boards-settings>
 
 * :doc:`Overview </boards/overview>` - Learn about Mattermost Boards features.
@@ -27,8 +27,8 @@ Mattermost Boards enable your team to manage projects and tasks via a familiar K
 * :doc:`Work with groups, filter, and sort </boards/groups-filter-sort>` - Work with groups, filter, and sort.
 * :doc:`Work with calculations </boards/calculations>` - Work with calculations.
 * :doc:`Share and collaborate </boards/share-and-collaborate>` - Share and collaborate
+* :doc:`Import, export, and migrate </boards/migrate-to-boards>` - Migrate your data from other tools into Mattermost Boards.
 * :doc:`Navigate boards </boards/navigate-boards>` - Navigate boards.
-* :doc:`Migrate to boards </boards/migrate-to-boards>` - Migrate your data from other tools into Mattermost Boards.
 * :doc:`Boards settings </boards/boards-settings>` - Adjust language and emoji settings, and restart the product tour.
 
 .. image:: ../images/Boards_Hero.png
