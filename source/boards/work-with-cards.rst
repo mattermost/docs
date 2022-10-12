@@ -124,7 +124,7 @@ Comments allow you to provide feedback and ask questions relevant to the specifi
 
 To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card <https://docs.mattermost.com/boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
 
-From Mattermost Boards v7.3, only board members with the *Commenter* role or higher can comment on a card. Board members assigned the *Viewer* role can view, but not comment on, a card.
+From Mattermost Boards v7.4, only board members with the *Commenter* role or higher can comment on a card. Board members assigned the *Viewer* role can view, but not comment on, a card.
 
 Mention people
 --------------
