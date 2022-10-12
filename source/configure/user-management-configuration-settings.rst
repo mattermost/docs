@@ -21,9 +21,10 @@ Users
   :start-after: :nosearch:
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| View statistics on active users, teams, channels,             | - System Config path: **User Management > Users**           |
-| sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
-|                                                               | - Environment variable: N/A                                 |
+| Manage active and inactive users, revoke all user sessions,   | - System Config path: **User Management > Users**           |
+| access individual users to view their User ID, add users      | - ``config.json setting``: N/A                              |
+| to other teams, and view the teams they are on and what       | - Environment variable: N/A                                 |
+| their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 Groups
@@ -35,9 +36,12 @@ Groups
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| View statistics on active users, teams, channels,             | - System Config path: **User Management > Groups**          |
-| sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
+| Manage default teams and channels by linking AD/LDAP groups   | - System Config path: **User Management > Groups**          |
+| to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
++---------------------------------------------------------------+-------------------------------------------------------------+
+| See the `AD/LDAP groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation for      |
+| details.                                                                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 Teams
@@ -49,9 +53,12 @@ Teams
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| View statistics on active users, teams, channels,             | - System Config path: **User Management > Teams**           |
-| sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
+| Manage team settings, including group synchronization for     | - System Config path: **User Management > Teams**           |
+| teams.                                                        | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
++---------------------------------------------------------------+-------------------------------------------------------------+
+| See the `using AD/LDAP synchronized groups to manage team or private channel membership                                     |
+| <https://docs.mattermost.com/onboard/cloud-groups.html#using-ad-ldap-group-synchronization>`__ documentation for details.   |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 Channels
@@ -63,9 +70,9 @@ Channels
 *Available in legacy Enterprise Edition E20*
 
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
-| Manage active and inactive users, revoke all user sessions,             | - System Config path: **User Management > Channels**        |
-| access individual users to view their User ID, add users to other       | - ``config.json setting``: N/A                              |
-| teams, and view the teams they are on and what their role is on a team. | - Environment variable: N/A                                 |
+| Manage channel settings, including group synchronization on channels.   | - System Config path: **User Management > Channels**        |
+|                                                                         | - ``config.json setting``: N/A                              |
+|                                                                         | - Environment variable: N/A                                 |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: You can search for channels by channel name or by channel ID.                                                               |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
@@ -79,12 +86,11 @@ Permissions
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-| Manage default teams and channels by linking AD/LDAP groups         | - System Config path: **User Management > Permissions**     |
-| to Mattermost groups.                                               | - ``config.json setting``: N/A                              |
+| Restrict actions in Mattermost to authorized users only.            | - System Config path: **User Management > Permissions**     |
+|                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-| See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
-| for more details.                                                                                                                 |
+| See `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation for details            |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 
 System roles
@@ -96,10 +102,9 @@ System roles
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| Manage team settings, including group synchronization for teams.     | - System Config path: **User Management > System Roles**   |
+| Restrict System Console access to authorized users only.             | - System Config path: **User Management > System Roles**   |
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| See `AD/LDAP groups documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation      |
-| for more details.                                                                                                                 |
+| See `additional system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ documentation for details     |
 +----------------------------------------------------------------------+------------------------------------------------------------+
