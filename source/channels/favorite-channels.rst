@@ -25,7 +25,7 @@ To mark a channel as a **Favorites** one, you need to open the channel:
 
    .. tab:: Mobile App v2
 
-      .. image:: ../images/fav_channel_mobile_app.gif
+      .. image:: ../images/fav.gif
          :alt: Favorite channels in the channel sidebar using mobile app.
          :width: 300px
          :height: 400px
