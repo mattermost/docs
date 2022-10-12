@@ -24,6 +24,6 @@ This adds the channel to a **Favorites** list at the top of the channel sidebar,
 .. image:: ../images/fav_channel_mobile_app.gif
     :alt: Favorite channels in the channel sidebar using mobile app.
     :width: 300px
-    :height: 400spx
+    :height: 400px
 
 
