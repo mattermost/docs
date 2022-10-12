@@ -4,8 +4,7 @@ Mark channels as favorites
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-By deciding which public channels, private channels, and direct messages are most significant to you, you can organize your channel sidebar by marking the channels that are most important to you as **Favorites**.
-
+You can mark public channels, private channels, and direct messages as Favorite so they appear in the Favorite category in the channel sidebar.
 To mark a channel as a **Favorites** one, you need to open the channel:
 
 **On desktop:** At the top of the page, select on the star icon next to the channel name.
@@ -20,7 +19,11 @@ This adds the channel to a **Favorites** list at the top of the channel sidebar,
        
 **On mobile:** Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorites**. To remove a channel from the **Favorites** list, select **Favorites** again.
 
-.. image:: ../images/fav.gif
+.. tab:: Mobile App v2
+
+.. image:: ../images/fav_channel_mobile_app.gif
     :alt: Favorite channels in the channel sidebar using mobile app.
+    :width: 300px
+    :height: 400spx
 
 
