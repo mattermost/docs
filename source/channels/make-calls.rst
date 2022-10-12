@@ -20,35 +20,13 @@ You can share a call's link to use in a meeting request or share with other team
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
-Requirements
-------------
-
-Server
-~~~~~~
-
-- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the `config TLS </install/config-tls-mattermost.html>`_ section for more info.
-- Open the UDP port configured as ``RTC Server Port`` (default is 8443, incoming direction). This is necessary to allow calls related traffic (e.g., audio, video).
-- Open the UDP port used by the configured STUN server (default is 3478, outgoing direction). By default the plugin will attempt to identify the instance's public IP address. To do this the STUN protocol is used. This requirement does not apply when manually setting an IP/hostname through the ``ICE Host Override`` config option.
-
-Client
-~~~~~~
-
-- Clients need to be able to connect (send and receive data) to the instance hosting the calls through the UDP port configured as ``RTC Server Port``. If this is not possible a TURN server should be used to achieve connectivity.
-- Depending on the platform or operating system, clients may need to grant additional permissions to the application (e.g., browser, desktop app) to  allow them to capture audio inputs or share the screen.
-
-Limitations
------------
-
-- In Mattermost Cloud, up to 40 participants per channel can join a call. This is a temporary and evolving limitation during public beta.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the performance section below.
-
-Configuration
--------------
-
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration settings can be found in the `System Console <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_.
-
 Frequently asked questions
 --------------------------
+
+Is video supported?
+~~~~~~~~~~~~~~~~~~~
+
+The integration currently supports only voice calling and screen sharing. We are considering video support as well for the upcoming future.
 
 Can I password-protect a call?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,28 +38,10 @@ Is there encryption?
 
 Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through Mattermost which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the Mattermost server have access to unencrypted call data.
 
-What are the potential performance impacts?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Database load should be minimal. Overall instance load however will be affected, especially CPU usage, growing as a function of the number of participants produce the number of active tracks (unmuted participants and users sharing their screen). Screen sharing has the highest impact on both CPU and bandwidth. The latter can be more easily estimated as the audio/video bitrates are constrained and predictable (around 40-60Kbps for each audio track and up to 1Mbps per screen track).
-
-If you want to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is currently the only officially supported target for the plugin):
-
-.. code::
-
-  # Setting the maximum buffer size of the receiving UDP buffer to 16MB
-  net.core.rmem_max = 16777216
-
-  # Setting the maximum buffer size of the sending UDP buffer to 16MB
-  net.core.wmem_max = 16777216
-
-  # Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
-  net.core.optmem_max = 16777216
-
 Are there any third-party services involved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-STUN servers are configurable on the plugin itself. These are optional and depend on your configuration.
+The only external service used is Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in case the ``ICE Host Override`` setting is provided.
 
 Troubleshooting
 ---------------
@@ -90,3 +50,58 @@ My call is disconnected after a few seconds and I can't transmit voice nor hear 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
+
+Debugging
+---------
+
+If you experience issues with calls, collecting information is helpful as you can share it with us for debugging purposes. 
+
+As with any other issue, but more importantly with calls, it’s very useful to provide date and time of when some problem occurred, with as much detail as possible so that information can be cross-checked with server logs as well. Also please include any reproduction steps if applicable. Other important information include:
+
+- Browser/app version
+- Operating system type and version
+
+JS console logs
+~~~~~~~~~~~~~~~
+
+Web app
+^^^^^^^
+
+- **Chrome**: CMD+OPTION+J (macOS)/CTRL+SHIFT+J (Windows, Linux, ChromeOS)
+- **Firefox**: CMD+SHIFT+J (macOS)/CTRL+SHIFT+J (Windows, Linux, ChromeOS).
+- **Safari**: Enable Developer Menu in **Safari > Preferences > Advanced > Show Develop Menu in Menu Bar**. Then **Develop > Show Javascript Console**. Right-click on the console and select **Save to file** to download the logs.
+
+Desktop app
+^^^^^^^^^^^
+
+In the top menu bar of the app, select **View > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
+
+Call stats dump
+---------------
+
+In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message.
+
+You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
+
+WebRTC internals (Chrome + Firefox only)
+----------------------------------------
+
+This is an additional method for Chrome and Firefox users in cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio.
+
+Chrome browser (recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Open ``chrome://webrtc-internals/`` in the browser that you're using for the active call.
+
+Firefox browser
+~~~~~~~~~~~~~~~
+
+Open ``about://webrtc`` in the browser that you're using for the active call.
+
+Share information
+~~~~~~~~~~~~~~~~~
+
+Debug information is helpful to our community as there may be other community members having the same issue as you. We recommend that debug information be shared in either of the two options below:
+
+- Post in `Developers: Calls <https://community.mattermost.com/core/channels/developers-channel-call>`_ channel:  prefer this method when possible but keep in mind the channel is public.
+- Post in `Team: Calls <https://community.mattermost.com/private-core/channels/calls-team>`_ channel: use this channel if posting sensitive information.
