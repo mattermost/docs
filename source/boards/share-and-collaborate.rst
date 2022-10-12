@@ -36,7 +36,7 @@ Roles
 | View                        |   X       |    X       |     X         |    X       |
 +-----------------------------+-----------+------------+---------------+------------+
 
-The level of access to a board is determined by a user’s assigned board role.
+The level of access to a board is determined by a user’s assigned board role. Individual board membership always gets precedence, followed by highest (most permissive) group role.
 
 - **Admin**: Can modify the board, its contents, and its permissions. By default, board creators are also admins of the board.
 - **Editor**: Can modify the board and its contents.
