@@ -1,15 +1,13 @@
 ..  _install-mmte-helm-gitlab-helm:
+:orphan:
 :nosearch:
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 You can use Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment. Once the Mattermost Team Edition Helm Chart is installed, GitLab SSO integration is configured which utilizes shared configurations to streamline authentication, storage, encryption, and traffic routing.
 
 You'll need:
 
 - A running Kubernetes cluster.
-- `Helm v2 <https://helm.sh/docs/intro/install/)>`_.
+- `Helm v2 <https://helm.sh/docs/intro/install/>`_.
 - `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component) installed on the cluster.
 
 .. note::
@@ -19,7 +17,7 @@ You'll need:
   
 **Install Mattermost Team Edition Helm Chart**
 
-This chart creates a Mattermost Team Edition deployment on a Kubernetes cluster using the Helm package manager. For detailed instructions, refer to the `Mattermost Team Edition documentation <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-team-edition>`_.
+This chart creates a Mattermost Team Edition deployment on a Kubernetes cluster using the Helm package manager. For detailed instructions, refer to the `Mattermost Team Edition documentation <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-team-edition>`__.
 
 **Deploy the Mattermost Team Edition Helm Chart**
 

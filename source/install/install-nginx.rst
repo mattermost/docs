@@ -1,10 +1,8 @@
-:nosearch:
-.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
-
 .. _install-nginx:
 
 Install NGINX server
---------------------
+=====================
+
 NGINX is a popular web server and is responsible for hosting some of the largest and highest-traffic sites on the internet. It's more resource-friendly than Apache in most cases, and can be used as a web server or reverse proxy.
 
 In a production setting, use a proxy server for greater security and performance of Mattermost.
@@ -15,7 +13,7 @@ In a production setting, use a proxy server for greater security and performance
 -  Standard request logs
 
 Install NGINX on Ubuntu Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 1. Log in to the server that will host the proxy and open a terminal window.
 
@@ -54,7 +52,7 @@ Install NGINX on Ubuntu Server
     </html>
 
 Manage the NGINX process
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Now that you have your web server up and running, let's review some basic management commands. These are all run in the command line interface.
 
@@ -71,7 +69,7 @@ By default, NGINX is configured to start automatically when the server boots. If
 To re-enable the service to start up at boot, use: ``sudo systemctl enable nginx``
 
 What to do next
-~~~~~~~~~~~~~~~
+----------------
 
 1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` to point to the NGINX server.
 2. Configure NGINX to proxy connections from the internet to the Mattermost server.

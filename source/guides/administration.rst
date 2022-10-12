@@ -63,10 +63,14 @@ If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud
     Mattermost configuration in the database </configure/configuation-in-mattermost-database>
     Deploy Mattermost calls </configure/calls-deployment>
     Configure health checks probes </manage/health-checks>
+    Configure Mattermost Omnibus </install/configure-mattermost-omnibus>
+    Kubernetes FAQ </install/faq-kubernetes>
 
 * **Move Mattermost configuration to the database** - Learn how to :doc:`store Mattermost configuration information in your database </configure/configuation-in-mattermost-database>` rather than as a JSON file. Recommended this for High Availability environments.
 * **Deploy Mattermost Calls** - Learn about the different ways you can :doc:`deploy Mattermost Calls </configure/calls-deployment>`.
 * **Health check** - Configure :doc:`health check probes </manage/health-checks>` for your Mattermost server.
+* **Configure Mattermost Omnibus** - Learn how to :doc:`configure </install/configure-mattermost-omnibus>`, backup, restore, and remove Mattermost Omnibus, as well as use a custom NIGINX template.
+* **Kubernetes FAQ** - See :doc:`answers to common questions </install/faq-kubernetes>` about working with Kubernetes clusters.
 
 Migrate your Mattermost workspace
 ---------------------------------

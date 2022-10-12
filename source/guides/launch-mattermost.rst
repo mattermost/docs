@@ -6,7 +6,9 @@ Launch Mattermost at your organization
 
 Launching Mattermost at your organization involves the following steps:
 
-- :doc:`deploying Mattermost </guides/deployment>` and :doc:`installing a database </deploy/install-database>`
+- :doc:`deploying Mattermost </guides/deployment>`
+- :doc:`installing a database </deploy/install-database>`
+- :doc:`installing a proxy server </install/install-nginx>`
 - :doc:`setting up the Mattermost server and customizing the workspace </guides/configure-mattermost-server>`
 
 .. note::
@@ -19,6 +21,7 @@ Launching Mattermost at your organization involves the following steps:
 
    /guides/deployment.rst
    /deploy/install-database.rst
+   /install/install-nginx.rst
    /install/software-hardware-requirements.rst
    /guides/configure-mattermost-server.rst
    /deploy/deployment-overview.rst

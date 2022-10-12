@@ -1,5 +1,6 @@
 :orphan:
 :nosearch:
+
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
@@ -9,7 +10,7 @@ You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running
 .. tip::
     
     - If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
-    - See the `Mattermost Kubernetes Operator <https://docs.mattermost.com/install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
+    - See the `Mattermost Kubernetes Operator <https://docs.mattermost.com/install/mattermost-kubernetes-operator.html>`__ documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales, and the `Kubernetes frequently asked questions </install/faq-kubernetes>`__ documentation for answers to common questions.
 
 **Install the operators**
 
@@ -247,6 +248,24 @@ Operators are installed using ``kubectl``, and each operator is created in its o
     $ kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
   Then navigate to http://localhost:8065.
+
+**Manage the Mattermost Kubernetes operator**
+
+You can manage and monitor your Mattermost installation's installation and deployment process in the CLI, using the commands listed below.
+
+.. code-block:: sh
+
+    $ kubectl -n mattermost get jobs
+
+.. code-block:: sh
+
+    $ kubectl -n mattermost get all
+
+You can access logs using the command listed below:
+
+.. code-block:: sh
+
+    $ mattermost logs -f [pod name]
 
 
 

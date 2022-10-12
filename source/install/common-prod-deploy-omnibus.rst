@@ -1,5 +1,6 @@
 :orphan:
 :nosearch:
+
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
 
 Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``bionic`` and ``focal`` distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
@@ -47,6 +48,8 @@ Mattermost bundles the components of a Mattermost deployment into a single insta
    .. note:: 
 
     We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
+
+See `Configure Mattermost Omnibus </install/configure-mattermost-omnibus>`__ documentation for configuration details, details on using a custom NGINX template, how to remove Mattermost Omnibus, how to back up and restore using the Mattermost Omnibus CLI, and frequently asked questions.
 
 Update Mattermost Omnibus
 -------------------------

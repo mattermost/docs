@@ -5,7 +5,11 @@ Deploy Mattermost
    :maxdepth: 2
    :hidden:
 
-When you're ready to install Mattermost server for production use, you have options: deploy using an RPM package, deploy using a DEB package, deploy from a compressed tarball, deploy using Kubernetes, or deploy using Docker.
+A complete Mattermost installation consists of three major components: a proxy server, a database server, and the Mattermost server. You can install all components on one machine, or you can install each component on its own machine. If you have only two machines, then install the proxy and the Mattermost server on one machine, and install the database on the other machine.
+
+For the database, you can install either MySQL or PostgreSQL. The proxy is NGINX.
+
+To install Mattermost server for production use, you can deploy using an RPM package, deploy using a DEB package, deploy from a compressed tarball, deploy using Kubernetes, or deploy using Docker.
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
