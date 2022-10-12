@@ -83,7 +83,7 @@ Guest accounts
 From Mattermost Boards v7.4, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ will be supported in Boards. Guests can:
 
 - Access boards where they're added as an explicit member of the board. `Team access <https://docs.mattermost.com/boards/share-and-collaborate.html#manage-team-access>`_ and `channel role groups <https://docs.mattermost.com/boards/share-and-collaborate.html#channel-role-groups>`_ don't apply to guest accounts.
-- Access existing boards, but not create new boards. Guests don't have access the template picker and can't duplicate an existing board.
+- Access existing boards, but not create new boards. Guests don't have access to the template picker and can't duplicate an existing board.
 - Search for boards where they're currently an explicit member.
 - Be assigned the Viewer, Commenter, or Editor roles, but not the board Admin.
 - Only @mention current members on the board.
