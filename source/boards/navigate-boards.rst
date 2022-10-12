@@ -29,7 +29,7 @@ If you're a board admin and want to unlink a board from a channel you're in, ope
 Sidebar categories
 ------------------
 
-From Mattermost v7.2, you can organize your boards on the left-hand sidebar using custom categories. By default, all boards will appear under the **Boards** category.
+From Mattermost Boards v7.2, you can organize your boards on the left-hand sidebar using custom categories. By default, all boards will appear under the **Boards** category.
 
 To manage your categories, open the options menu **(...)** next to the category to create, delete, or rename a category. With the exception to the default **Boards** category, all other categories can be renamed or deleted.
 
