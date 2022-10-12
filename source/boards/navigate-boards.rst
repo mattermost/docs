@@ -19,7 +19,7 @@ Open the boards App Bar icon, and select **Create a Board** to create a new boar
 
 .. note:: 
   
-  If you're upgrading to Mattermost v7.2 or later, all the boards previously associated with the workspace will automatically appear on the right-hand side panel post-migration.
+  If you're upgrading to Mattermost Boards v7.2 or later, all the boards previously associated with the workspace will automatically appear on the right-hand side panel post-migration.
 
 Unlink a board from a channel
 -----------------------------
