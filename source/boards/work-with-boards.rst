@@ -9,7 +9,7 @@ Start by selecting the type of board you want to use. A board contains cards, wh
 Add new boards
 --------------
 
-To add a new board, select the **+** icon at the top of the sidebar to open the template picker, then select a template or blank board.
+To add a new board, select the **+** icon at the top of the sidebar, then select **Create New Board** to open the template picker to select a template or blank board.
 
 Board details
 ~~~~~~~~~~~~~
