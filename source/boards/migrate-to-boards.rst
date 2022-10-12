@@ -16,7 +16,7 @@ To do this, select the options menu **(…)** to the left of the **New** button 
 
 .. note:: 
   
-  The previous .focalboard format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for `.boardarchive`. Use Select all files to select `.focalboard` files to import.
+  The previous `.focalboard` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for `.boardarchive`. Use **Select all files** to select `.focalboard` files to import.
 
 Export to CSV
 -------------
