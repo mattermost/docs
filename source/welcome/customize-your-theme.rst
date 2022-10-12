@@ -3,22 +3,8 @@
 Customize your Mattermost theme
 ===============================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 The colors of the Mattermost user interface are customizable. 
 
@@ -77,11 +63,11 @@ Sidebar Text Active Border
 Sidebar Text Active Color
 	Text color of the active channel or tab in the Channels pane or Settings sidebar.
 Online Indicator
-	Color of the online indicator appearing next to team members names in the Direct Messages list.
+	Color of the online indicator appearing next to team members names in the direct messages list.
 Away Indicator
-	Color of the away indicator appearing next to team members names in the Direct Messages list when they have had no browser activity for 5 minutes.
+	Color of the away indicator appearing next to team members names in the direct messages list when they have had no browser activity for 5 minutes.
 Do Not Disturb Indicator
-	Color of the do not disturb indicator appearing next to team members names in the Direct Messages list.
+	Color of the do not disturb indicator appearing next to team members names in the direct messages list.
 Mention Jewel BG
 	Background color of the jewel indicating unread mentions that appears to the right of the channel name. This is also the background color of the “Unread Posts Below/Above” indicator appearing at the top or bottom of the Channels pane on shorter browser windows.
 Mention Jewel Text
@@ -266,7 +252,12 @@ Night Owl Dark Theme
 
   {"sidebarBg":"#011627","sidebarText":"#d6deeb","sidebarUnreadText":"#d6deeb","sidebarTextHoverBg":"#1d3b53","sidebarTextActiveBorder":"#ff2c83","sidebarTextActiveColor":"#82aaff","sidebarHeaderBg":"#1d3b53","sidebarHeaderTextColor":"#d6deeb","onlineIndicator":"#addb67","awayIndicator":"#ffbc42","dndIndicator":"#f74343","mentionBg":"#d6deeb","mentionBg":"#d6deeb","mentionColor":"#145dbf","centerChannelBg":"#011627","centerChannelColor":"#d6deeb","newMessageSeparator":"#ff8800","linkColor":"#2389d7","buttonBg":"#166de0","buttonColor":"#011627","errorTextColor":"#fd5960","mentionHighlightBg":"#0b2942","mentionHighlightLink":"#82aaff","codeTheme":"solarized-dark"}
 
-Dark Theme (Desktop app only)
+Dark Theme (desktop app only)
 -----------------------------
 
-The Mattermost Desktop App applies Light or Dark Mode based on the System Preferences appearance setting of your computer's operating system to your Mattermost instance.
+On Windows and macOS, the system display preference that you set on your computer (e.g., Light Mode or Dark Mode) is also applied to the Mattermost desktop app.
+
+.. image:: ../images/dark-theme-via-os.gif
+  :alt: The system preference you set for Light Mode or Dark Mode on your computer is automatically applied to the Mattermost Desktop App.
+
+On Linux, you can manage this manually via the **View** menu.

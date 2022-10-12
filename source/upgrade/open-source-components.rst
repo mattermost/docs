@@ -1,17 +1,8 @@
 Open Source Components
 =======================
 
-|enterprise| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 The following open source components are used to provide the full benefits of Mattermost Enterprise.
 
@@ -93,6 +84,7 @@ Mobile
 Server
 ------------------------------
 
+ - Mattermost Enterprise Edition v7.3.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.3/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.2.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.2/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.1.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.1/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.0.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-7.0/NOTICE.txt>`_.
@@ -169,6 +161,7 @@ Server
 Webapp
 ------------------------------
 
+ - Mattermost Enterprise Edition v7.3.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.3/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.2.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.2/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.1.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.1/NOTICE.txt>`_.
  - Mattermost Enterprise Edition v7.0.0 - `View Open Source Components <https://github.com/mattermost/mattermost-webapp/blob/release-7.0/NOTICE.txt>`_.

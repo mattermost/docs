@@ -1,22 +1,8 @@
 Customize your Channels experience
 ==================================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 You can customize your Channels experience in the following ways in **Settings**:
 
@@ -280,11 +266,7 @@ If disabled, pressing :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or pressing
 Enable post formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This setting controls whether post formatting is rendered. When **On**, posts will be rendered with `Markdown formatting <https://docs.mattermost.com/channels/format-messages.html>`__, emoji, autolinked URLs, and line breaks. When **Off**, the raw text will be shown.
-
-.. note::
-
-  From Mattermost v7.0, this setting has been deprecated in favor of the `message formatting toolbar <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__.
+This setting controls whether post formatting is rendered. When **On**, posts will be rendered with Markdown formatting, emoji, autolinked URLs, and line breaks. When **Off**, the raw text will be shown. See the `formatting messages <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__ documentation for details.
 
 Enable join/leave messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -310,7 +292,7 @@ Configure where to start when viewing channels with unread messages. You can sta
 Performance debugging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client performance debugging <https://docs.mattermost.com/configure/configuration-settings.html>`__ is enabled.
+Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client performance debugging <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-performance-debugging>`__ is enabled.
 
 Deactivate account
 ~~~~~~~~~~~~~~~~~~

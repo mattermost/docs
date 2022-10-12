@@ -4,12 +4,162 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-10-06](#release-2022-10-06)
+- [Release 2022-09-15](#release-2022-09-15)
+- [Release 2022-09-08](#release-2022-09-08)
+- [Release 2022-09-01](#release-2022-09-01)
+- [Release 2022-08-25](#release-2022-08-25)
 - [Release 2022-08-18](#release-2022-08-18)
-- [Release 2022-08-10](#release-2022-08-10)
-- [Release 2022-08-03](#release-2022-08-03)
-- [Release 2022-07-28](#release-2022-07-28)
-- [Release 2022-07-20](#release-2022-07-20)
-- [Release 2022-07-13](#release-2022-07-13)
+
+## Release 2022-10-06
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Insights to the channel switcher.
+ - Added a button to easily copy the content of text or code files in file previews.
+ - The team unread icon for muted channels is now hidden in the sidebar.
+ - Updated the designs for the “payment failed” email notifications.
+
+#### Administration
+ - A ``batchSize`` option has been added to the ``mattermost export`` CLI command to limit the number of items exported. By default, if it is not included, it exports all posts.
+ - Added a credit card update modal that communicates arrears for Admins.
+
+#### API Changes
+ - Updated the Files search and GET APIs to filter out files beyond the Cloud plan's configured limit.
+ - Added a new response-header ``First-Inaccessible-File-Time`` to the APIs fetching single file info.
+ - Added a new query parameter to include deleted posts as long as it's requested by a System Admin in ``/api/v4/channels/{channel_id}/posts``.
+
+### Bug Fixes
+ - Fixed an issue with the badge count on the mobile app when a channel/thread was viewed.
+ - Fixed an issue where typing ``@`` in the right-hand side rendered a cut-off user suggestion list.
+ - Fixed an issue where an error screen was briefly flashed when the first Admin signed up into a new server.
+ - Fixed an issue where users were unable to add Japanese comments correctly in the message **Forward** modal.
+ - Fixed an issue where unsaved edits to a post were lost when switching channels or threads.
+ - Fixed an issue on larger screen sizes where the Insights widgets were pushed to the side when the right-hand side was open.
+ - Fixed an issue where the ability to forward messages from public channels wasn't possible when messaging someone directly for the first time.
+ - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
+ - Fixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
+ - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
+ - Fixed an issue where formatting keyboard shortcuts were conflicting with existing shortcuts.
+ - Fixed an issue where the markdown style for horizontal rules was too thick.
+ - Fixed an issue where the emoji reaction overlay blocked part of the message it belonged to in compact view.
+ - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
+
+### Known Issues
+ - Clicking "Back to team" link from the **System Console** causes a white screen if the righ-hand side was open [MM-47226](https://mattermost.atlassian.net/browse/MM-47226).
+ - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board Admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board Admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-09-15
+
+### Highlights
+
+#### Notify Admin v2
+ - Added more context to the “Notify admin” feature to help Admins, such as who asked to upgrade, why they requested the upgrade, and how many people requested it.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a new Top Playbooks Insights widget.
+ - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
+ - Pre-packaged Playbooks v1.32.3.
+ - Pre-packaged Calls v0.8.1.
+ - Downgraded Bulgarian language support to Beta.
+
+#### Administration
+ - If ``EnableConfirmNotificationsToChannel`` is disabled, channel member counts by group API are no longer called.
+ - Added ``OmitConnection`` to the websocket broadcast parameters.
+
+### Bug Fixes
+ - Fixed an issue with a nil point exception error during imports.
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
+ - Fixed typos in some translations strings that caused some in-product links to be broken.
+
+### Known Issues
+ - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-46886).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-09-08
+
+### Improvements
+
+#### User Interface (UI)
+ - Added a red destructive action color to the **Leave Channel** button in the channel header.
+ - The "limits reached" modal is now shown to Admins who are doing a fresh login on Cloud instances that hit the message history limit.
+
+### Bug Fixes
+ - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
+ - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-09-01
+
+### Improvements
+
+#### Boards
+ - Added indexes to improve performance.
+ - Fixed a bug where the **New** button in Kanban columns didn't always work [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - Fixed issues with 'single-user' mode.
+
+#### User Interface (UI)
+ - Added new Insights widgets: Most Active Direct Messages, Least Active Channels, and New Team Members.
+ - Introduced a new ``/marketplace command`` that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
+ - Team unreads are now calculated based on the channel membership and threads only. Team membership is no longer taken into account.
+ - For introducing Boards and Playbooks to new users, an “explore other tools in platform” item was added to the end user onboarding checklist.
+ 
+#### API Changes
+ - Added new API endpoints:
+ 
+	  - ``GET /api/v4/users/me/top/dms``
+	  - ``GET /api/v4/users/me/top/threads``
+	  - ``GET /api/v4/teams/:team_id/top/team_members``
+	  - ``GET /api/v4/teams/:team_id:/top/threads``
+
+### Bug Fixes
+ - Fixed an issue in **System Console > Subscription** where the completed Company Information screen read "Provide your company name and address".
+ - Fixed an issue where reading a thread on the mobile app caused a negative mention count to display on the web app.
+ - Fixed an issue where the user profile image persisted after user account deletion.
+
+### Known Issues
+ - Known issues related to the new Insights widgets, such as that pagination displays for 10 items or less [MM-46595](https://mattermost.atlassian.net/browse/MM-46595).
+ - ``/marketplace`` slash command opens the Marketplace with an error displayed [MM-46663](https://mattermost.atlassian.net/browse/MM-46663).
+ - Alt+click does not mark a root post as unread on global threads inbox [MM-46683](https://mattermost.atlassian.net/browse/MM-46683).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar don't have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+
+## Release 2022-08-25
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the **Save** option to the post menu.
+ - Added a banner to communicate delinquency to Cloud Customers.
+ - Cloud instances with a file limit (Starter and Professional subscriptions) now display icons notifying that the limit has been hit and that archived files are unavailable until upgrade.
+
+#### Administration
+ - Started tracking the join time of team members and added a new API endpoint to retrieve information about team members who have joined during a given time.
+ - Introduced an optional ``shouldRender`` function parameter to ``registerchannelHeaderMenuAction`` plugin function. This allows menu items to conditionally render depending on the current state prior to rendering.
+
+### Bug Fixes
+ - Fixed an issue where exports generated via mmctl without attachments still included the file properties in the post, so they couldn't be imported.
+ - Fixed an issue that caused a crash when unread posts were fetched.
+
+### Known Issues
+ - Mentions incorrectly show users as not in a channel [MM-44157](https://mattermost.atlassian.net/browse/MM-44157).
+ - System Roles shows **License** and **Environment** as possible permissions, but they are always hidden in Cloud.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ - The runs and playbooks in the Playbooks left-hand sidebar does not have dot-menus that allow interaction with each item [MM-44752](https://mattermost.atlassian.net/browse/MM-44752).
+ - On the new Boards RHS from the channel Apps Bar, channel members who are not board admins are incorrectly able to see the **Unlink** board button. However, selecting the button doesn't actually unlink the board unless the user is a board admin [issue-focalboard-3600](https://github.com/mattermost/focalboard/issues/3600).
+ - On Boards, selecting the **+ New** button below a column on the Kanban view doesn't always create a new card. As a workaround, set a new default card template by going to the dropdown menu from the blue **New** button on the header of the board, opening the **Options** menu on any card template, and selecting **Set as default** [issue-focalboard-3676](https://github.com/mattermost/focalboard/issues/3676).
 
 ## Release 2022-08-18
 

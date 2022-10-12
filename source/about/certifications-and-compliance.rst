@@ -134,7 +134,7 @@ and its affiliates, including its customers, employees and business partners to 
 of assets, the denial of export privileges, and suspension or debarment from Government Contracts.
 
 For these reasons, please take the time to familiarize yourself with applicable export (and import) controls in the
-jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, this web page provides the information needed in order export Mattermost products.
+jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, this web page provides the information needed in order to export Mattermost products.
 
 This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`__ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`__.
 
@@ -193,7 +193,7 @@ To be compliant with GDPR, do I need to remove message contents of email notific
 Based on our interpretation of GDPR, it is not required to hide message contents in email notifications to remain compliant for the following reasons:
 
 1. Every user has the ability to disable email notifications in **Settings**. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
-2. Mattermost offers `TLS encryption <configure/environment-configuration-settings.html#web-server-connection-security>`__ to protect communication between the Mattermost server and the SMTP email server.
+2. Mattermost offers `TLS encryption <https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-connection-security>`__ to protect communication between the Mattermost server and the SMTP email server.
 3. If you're uncertain whether the first two points cover GDPR compliance, you can `disable notifications completely <https://docs.mattermost.com/configure/configuration-settings.html#enable-email-notifications>`__ on your Mattermost server. To use Mattermost in production with no email notifications, you also need to `disable a "preview mode" notice banner <https://docs.mattermost.com/configure/configuration-settings.html#enable-preview-mode-banner>`__.
 
 What information is shared when I select **Contact us** on a Mattermost Admin Advisor notification?

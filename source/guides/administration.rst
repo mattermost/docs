@@ -1,6 +1,9 @@
 Mattermost administration guide
 ===============================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 This guide is for people who administer an existing Mattermost server. It’s divided into four parts:
 
 * `Get started <https://docs.mattermost.com/guides/administration.html#get-started>`__ - An overview of standard configurations and features for both self-hosted and Cloud workspaces.
@@ -128,6 +131,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Bulk loading data </onboard/bulk-loading-data>
     SMTP email setup </configure/smtp-email>
     Email templates </configure/email-templates>
+    Calls deployment </configure/calls-deployment>
     Configure CloudFront to host static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>
     Use an outbound proxy </configure/using-outbound-proxy>
     Migration guide </onboard/migrating-to-mattermost>
@@ -142,6 +146,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
 * :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
 * :doc:`Email templates </configure/email-templates>` - Alter the transactional emails Mattermost sends to your users.
+* :doc:`Calls deployment </configure/calls-deployment>` - Learn about the different calls deployment types.
 * :doc:`Configure CloudFront to host Mattermost static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>` - Improve caching performance to reduce content load times.
 * :doc:`Use an outbound proxy </configure/using-outbound-proxy>` - Monitor outbound traffic and control the websites that can appear in embedded content.
 * :doc:`Migration guide </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.

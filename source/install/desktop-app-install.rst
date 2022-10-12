@@ -1,22 +1,8 @@
 Desktop App install guides
 ===========================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
   :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
@@ -285,19 +271,5 @@ To access the Developer Tools Console:
 You can open an additional set of developer tools for each server you have added to the desktop app. The tools can be opened by pasting this command in the Developer Tools Console you opened with the steps described above:
 
 ``document.getElementsByTagName("webview")[0].openDevTools();`` 
-
-Windows
-~~~~~~~
-
-.. raw:: html
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/jnutU-g2QA8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-macOS
-~~~~~
-
-.. raw:: html
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/avKDRodDS3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 To submit an improvement or correction to this documentation, select **Edit** at the top of this page.

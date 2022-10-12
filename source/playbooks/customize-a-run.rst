@@ -1,6 +1,9 @@
 Customize a run
 ===============
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Some run actions can be edited while the run is in progress. This increases visibility into the run's progress and can improve accountability.
 
 Change broadcast channels

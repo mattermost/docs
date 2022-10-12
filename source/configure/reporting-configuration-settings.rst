@@ -1,30 +1,8 @@
 Reporting configuration settings
 ================================
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 View statistics for your overall deployment and specific teams as well as access server logs by going to **System Console > Reporting**. 
 
@@ -37,8 +15,6 @@ The following reporting configuration settings are available:
 Site statistics
 ---------------
 
-|all-plans| |cloud| |self-hosted|
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
@@ -50,20 +26,19 @@ Site statistics
 Team statistics
 ---------------
 
-|all-plans| |cloud| |self-hosted|
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View statistics per team on number of active users,           | - System Config path: **Reporting > Team Statistics**         |
-| as well as Public and Private channels.                       | - ``config.json`` setting: N/A                                |
+| as well as public and private channels.                       | - ``config.json`` setting: N/A                                |
 |                                                               | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 Server logs
 -----------
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

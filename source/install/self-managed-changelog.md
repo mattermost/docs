@@ -5,17 +5,128 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0. 
 
 Latest Mattermost Releases:
+- [Release v7.3 - Feature Release](#release-v7-3-feature-release)
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
-- [Release v7.1 - Extended Support Release](#release-v7-1--extended-support-release)
+- [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 - [Release v7.0 - Major Release](#release-v7-0-major-release)
-- [Release v6.7 - Feature Release](#release-v6-7-feature-release)
 - [Release v6.3 - Extended Support Release](#release-v6-3-extended-support-release)
+
+## Release v7.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**v7.3.0 release day: 2022-09-16**
+
+Mattermost v7.3.0 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
+### Important Upgrade Notes
+ - Boards is moving from a channel-based to a role-based permissions system. The migration will happen automatically, but your administrator should perform a backup prior to the upgrade. We removed workspaces, so if you were a member of many boards prior to migration, they will now all appear under the same sidebar. Please see [this document](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+
+### Highlights
+
+#### Playbooks
+ - Navigate between teams in Playbooks with the new team switcher.
+ - Manage playbooks and runs in the new left-hand sidebar.
+ - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
+ - Favorite runs or playbooks to prioritize them in the **Favorites** category.
+ - Participants now have access to every run feature on the new run details page.
+ - Users can now request status updates (Professional).
+
+#### Boards
+ - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
+ - Organize boards on the sidebar with custom categories.
+ - Press CTRL+K/CMD+K to find additional boards.
+ - Navigate between teams in Boards with the new team switcher.
+ - Set board and template permissions in the new **Share** setting.
+ - Link boards to channels to automatically grant board permissions to channel members.
+ - See [the documentation](https://docs.mattermost.com/welcome/whats-new-in-v72.html) for more details.
+
+#### Calls
+ - Added support for standalone Calls server and Kubernetes (Enterprise).
+ 
+#### New Insights Widgets
+ - Added four new [Insights widgets](https://docs.mattermost.com/welcome/insights.html): Most Active Direct Messages, Least Active Channels, Top Playbooks, and New Team Members.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Calls keyboard shortcuts to the **Keyboard shortcuts** help modal.
+ - Updated the "Contact Sales" link to ``mattermost.com/pl/contact-sales`` and update the pricing modal user interface.
+ - Introduced a new ``/marketplace`` slash command that brings up the marketplace modal for the Admin, and changed the ``/help`` command so that it now keeps the user internal to Mattermost.
+ - Team unreads are now calculated based on the channel membership and threads only. Team membership is no longer taken into account.
+ - For introducing Boards and Playbooks to new users, an “explore other tools in platform” item was added to the end user onboarding checklist.
+ - Added the **Save** option to the post menu.
+ - Only the most recent message is now marked as unread when marking a thread as unread from the Threads list.
+ - Insights filters now persist instead of being reset to default when switching to channels and returning back to the Insights view.
+ - Code blocks now have better support for language filetype extensions and are a smaller bundle size.
+ - A Desktop App prompt is now always shown on first visit to a Mattermost server from an email notification.
+ - Search dropdown options now allow focusing by pressing the tab key.
+ - Downgraded Bulgarian language support to Beta.
+
+#### Administration
+ - Added a **View Plan** button within the plan card via **System Console > License**.
+ - Started tracking the join time of team members and added a new API endpoint to retrieve information about team members who have joined during a given time.
+ - Introduced an optional ``shouldRender`` function parameter to ``registerchannelHeaderMenuAction`` plugin function. This allows menu items to conditionally render depending on the current state prior to rendering.
+ - Plugins can now hide plugin settings based on the server's hosting environment.
+ - Customers who are on a 30-day free trial are now notified three days before the trial ends.
+
+### Bug Fixes
+ - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
+ - Fixed an issue where starting a trial failed if ``SiteURL`` was not set.
+ - Fixed an issue where reading a thread on the mobile app caused a negative mention count to display on the web app.
+ - Fixed an issue where the user's profile image persisted after user account deletion.
+ - Fixed an issue where exports generated via mmctl without attachments still included the file properties in the post, so they couldn't be imported.
+ - Fixed an issue that caused a crash when unread posts were fetched.
+ - Fixed an issue where updating a profile image and creating new emojis used multipart uploads when using S3 storage.
+ - Fixed an issue where the input legend on the custom group modal was cut off in Chrome.
+ - Fixed an issue where the **Disable post formatting** setting was hidden when the advanced text editor was enabled.
+ - Fixed an issue where we didn’t fall back to the user's default picture if a profile picture failed to load.
+ - Fixed an issue where disabling a WebApp plugin from its configuration page resulted in the radio button reverting to ``true``.
+ - Fixed an issue where the cursor sometimes jumped to the center channel textbox when the right-hand side was open.
+ - Fixed an issue where closing the right-hand side also closed the edited post in the center channel.
+ - Fixed an issue where selecting "Try free now" opened the top three enterprise features instead of the "Your trial has started" modal.
+ - Fixed an issue where the Threads view displayed as unread even if there were no unread threads.
+ - Fixed an issue where configuration changes could not be saved in the **System Console** in some cases.
+ - Fixed typos in some translations that caused some in-product links to be broken.
+
+### API Changes
+ - Added new API endpoints:
+ 
+	  - ``GET /api/v4/users/me/top/dms``
+	  - ``GET /api/v4/users/me/top/threads``
+	  - ``GET /api/v4/teams/:team_id/top/team_members``
+	  - ``GET /api/v4/teams/:team_id:/top/threads``
+ - Added ``first_inaccessible_post_time`` to post API responses.
+ - Adds query parameter ``include_deleted`` to endpoint: ``{{[http://your-mattermost-url.com/api/v4/posts/{post_id}/files/info}}](http://your-mattermost-url.com/api/v4/posts/%7Bpost_id%7D/files/info%7D%7D)``.
+
+### Go Version
+ - v7.3 is built with Go ``v1.18.1``.
+
+### Open Source Components
+ - Added ``@floating-ui/react-dom-interactions`` to https://github.com/mattermost/mattermost-webapp.
+
+### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-MM-46886).
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - [97amarnathk](https://github.com/97amarnathk), [AbhinavVihan](https://github.com/AbhinavVihan), [Afsoon](https://github.com/Afsoon), [agarciamontoro](https://github.com/agarciamontoro), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [AlexanderMC8533](https://github.com/AlexanderMC8533), [amyblais](https://github.com/amyblais), [antonbuks](https://github.com/antonbuks), [anx-ag](https://github.com/anx-ag), [aperez900907](https://github.com/aperez900907), [asaadmahmood](https://github.com/asaadmahmood), [asatkinson](https://github.com/asatkinson), [ashishbhate](https://github.com/ashishbhate), [AshishDhama](https://github.com/AshishDhama), [azigler](https://github.com/azigler), [BenCookie95](https://github.com/BenCookie95), [BenLloydPearson](https://github.com/BenLloydPearson), [calebroseland](https://github.com/calebroseland), [ComicShrimp](https://github.com/ComicShrimp), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [d-wierdsma](https://github.com/d-wierdsma), [danielsischy](https://github.com/danielsischy), [devinbinnie](https://github.com/devinbinnie), [dimeko](https://github.com/dimeko), [dipak-demansol](https://github.com/dipak-demansol), [dsharma522](https://github.com/dsharma522), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [francescbassas](https://github.com/francescbassas), [frstier](https://github.com/frstier), [furqanmlk](https://github.com/furqanmlk), [gabrieljackson](https://github.com/gabrieljackson), [gbochora](https://github.com/gbochora), [gmerz](https://github.com/gmerz), [HandsomeChoco](https://github.com/HandsomeChoco), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [hyugabokko](https://github.com/hyugabokko), [ijansky](https://github.com/ijansky), [iogungbade](https://github.com/iogungbade), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [it33](https://github.com/it33), [jacodaybson](https://github.com/jacodaybson), [jaskiratsingh2000](https://github.com/jaskiratsingh2000), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jgilliam17](https://github.com/jgilliam17), [johndavidlugtu](https://github.com/johndavidlugtu), [johnsonbrothers](https://github.com/johnsonbrothers), [jpmastermind](https://github.com/jpmastermind), [jprusch](https://github.com/jprusch), [JtheBAB](https://github.com/JtheBAB), [JulienTant](https://github.com/JulienTant), [julmondragon](https://github.com/julmondragon), [justinegeffen](https://github.com/justinegeffen), [kaakaa](https://github.com/kaakaa), [kamre](https://github.com/kamre), [kayazeren](https://github.com/kayazeren), [koox00](https://github.com/koox00), [krisfremen](https://github.com/krisfremen), [kyeongsoosoo](https://github.com/kyeongsoosoo), [larkox](https://github.com/larkox), [levb](https://github.com/levb), [Liberontissauri](https://github.com/Liberontissauri), [lieut-data](https://github.com/lieut-data), [lindy65](https://github.com/lindy65), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [m1lt0n](https://github.com/m1lt0n), [majo](https://translate.mattermost.com/user/majo), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [mbc](https://translate.mattermost.com/user/mbc), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michelengelen](https://github.com/michelengelen), [mickmister](https://github.com/mickmister), [milotype](https://github.com/milotype), [mjnagel](https://github.com/mjnagel), [mkraft](https://github.com/mkraft), [Mshahidtaj](https://github.com/Mshahidtaj), [munish7771](https://github.com/munish7771), [nadeem-hassan](https://github.com/nadeem-hassan), [natalie-hub](https://github.com/natalie-hub), [neallred](https://github.com/neallred), [neflyte](https://github.com/neflyte), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [noxer](https://github.com/noxer), [orlandorode97](https://github.com/orlandorode97), [petrmifek](https://github.com/petrmifek), [pfltdv](https://github.com/pfltdv), [pheel](https://github.com/pheel), [phoinixgrr](https://github.com/phoinixgrr), [phpfs](https://github.com/phpfs), [Phrynobatrachus](https://github.com/Phrynobatrachus), [Pinjasaur](https://github.com/Pinjasaur), [plant99](https://github.com/plant99), [potatogim](https://github.com/potatogim), [pvev](https://github.com/pvev), [Rajat-Dabade](https://github.com/Rajat-Dabade), [RoyI99](https://github.com/RoyI99), [rtfm98](https://github.com/rtfm98), [sadohert](https://github.com/sadohert), [safakkizkin](https://github.com/safakkizkin), [salmanmanekia](https://github.com/salmanmanekia), [santoniriccardo](https://github.com/santoniriccardo), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [seoyeongeun](https://github.com/seoyeongeun), [shamboozles](https://github.com/shamboozles), [sibasankarnayak](https://github.com/sibasankarnayak), [sinansonmez](https://github.com/sinansonmez), [spirosoik](https://github.com/spirosoik), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [suzutatsu](https://github.com/suzutatsu), [svelle](https://github.com/svelle), [Szymongib](https://github.com/Szymongib), [TalelingFantasy](https://translate.mattermost.com/user/TalelingFantasy), [tboulis](https://github.com/tboulis), [thepra](https://translate.mattermost.com/user/thepra), [thinkGeist](https://github.com/thinkGeist), [trilopin](https://github.com/trilopin), [tsabi](https://github.com/tsabi), [varghesejose2020](https://github.com/varghesejose2020), [varundey](https://github.com/varundey), [vetash](https://github.com/vetash), [vish9812](https://github.com/vish9812), [wgshtg](https://translate.mattermost.com/user/wgshtg), [whiver](https://github.com/whiver), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [wsh](https://translate.mattermost.com/user/wsh), [wuwinson](https://github.com/wuwinson), [yangyangdaji](https://github.com/yangyangdaji), [zefhemel](https://github.com/zefhemel)
 
 ## Release v7.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 **v7.2.0 release day: 2022-08-16**
 
-Mattermost v7.2.0 contains low to medium level severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost v7.2.0 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Important Upgrade Notes
 Several schema changes impose additional database constraints to make the data more strict. All the commands listed below were tested on a 8 core, 16GB RAM machine. Here are the times recorded:
@@ -111,6 +222,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@types/color-hash``, ``color-contrast-checker``, ``color-hash``, and ``webpack`` to https://github.com/mattermost/mattermost-webapp.
 
 ### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Forwarding messages: pressing Enter key on an auto-complete item in the comment box sends the forward message [MM-46142](https://mattermost.atlassian.net/browse/MM-46142).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
@@ -127,6 +239,9 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v7.1.3, released 2022-08-23**
+  - Mattermost v7.1.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where Admins were unable to save configuration changes in the **System Console** in some cases [MM-45875](https://mattermost.atlassian.net/browse/MM-45875).
 - **v7.1.2, released 2022-07-21**
   - Fixed an issue where mmctl checked the server version incorrectly.
 - **v7.1.1, released 2022-07-15**
@@ -157,7 +272,7 @@ Mattermost v7.1.0 contains low severity level security fixes. [Upgrading](https:
 ### Highlights
 
 #### Insights (Beta) (Enterprise and Professional)
- - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality.
+ - Added workplace insights consisting of usage and behavior data, which helps Enterprises further increase productivity of their employees through Mattermost functionality. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
 
 ### Improvements
 
@@ -221,6 +336,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Added ``@floating-ui/react-dom`` and removed ``superagent`` and ``jasny-bootstrap`` from https://github.com/mattermost/mattermost-webapp/.
 
 ### Known Issues
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - The Top Boards widget in Insights is slow to load.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
@@ -237,6 +353,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
+- **v7.0.2, released 2022-08-23**
+  - Mattermost v7.0.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.0.1, released 2022-06-24**
   - Fixed an issue where mmctl checked the server version incorrectly [MM-45161](https://mattermost.atlassian.net/browse/MM-45161).
   - Fixed an issue where the file icon was sometimes unresponsive [MM-45097](https://mattermost.atlassian.net/browse/MM-45097).
@@ -855,6 +973,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v6.3 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **v6.3.10, released 2022-08-23**
+  - Mattermost v6.3.10 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v6.3.9, released 2022-06-13**
   - Mattermost v6.3.9 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - The value of ``ServiceSettings.TrustedProxyIPHeader`` defaults to empty from now on. A previous bug prevented this from happening
