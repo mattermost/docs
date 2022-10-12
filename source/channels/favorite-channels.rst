@@ -19,6 +19,8 @@ This adds the channel to a **Favorites** list at the top of the channel sidebar,
     :alt: Favorite channels in the channel sidebar.
        
 **On mobile:** Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorites**. To remove a channel from the **Favorites** list, select **Favorites** again.
+
 .. image:: ../images/fav.gif
     :alt: Favorite channels in the channel sidebar using mobile app.
+
 
