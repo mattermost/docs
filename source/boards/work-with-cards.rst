@@ -28,7 +28,7 @@ To add a new content block in the description section, hover over the section an
 - **Divider**: Adds a divider content block below the previous block.
 - **Checkbox**: Adds a checkbox content block. Press Enter/Return after typing in content for your checkbox to add another checkbox within the same block. Please note, Markdown formatting isn't supported within the **Checkbox** content block.
 
-To manage the description content blocks on a card, hover over any existing block and select options menu **(...)** to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then select and hold the grid button to drag and drop it to a new position within the description section.
+To manage the description content blocks on a card, hover over any existing block and select the options menu **(...)** to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then select and hold the grid button to drag and drop it to a new position within the description section.
 
 Card properties
 ---------------
