@@ -86,6 +86,7 @@ From Mattermost Boards v7.4, `guest accounts <https://docs.mattermost.com/onboar
 - Access existing boards, but not create new boards. Guests don't have access the template picker and can't duplicate an existing board.
 - Search for boards where they're currently an explicit member.
 - Be assigned the Viewer, Commenter, or Editor roles, but not the board Admin.
+- Only @mention current members on the board.
 
 .. note::
 
