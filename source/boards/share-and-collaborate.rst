@@ -62,6 +62,10 @@ To add individual users from the team as explicit members of the board, open the
 - To change a board member’s role, open the **Share** dialog, select the role dropdown next to the user’s name, then select another role from the list.
 - To remove a member from a board, open the **Share** dialog, select the role dropdown next to the user’s name, then select **Remove member**.
 
+Board admins can also add individual members using the autocomplete list from @mentions and the person properties. To add an individual from the autocomplete list, type their username in an @mention or in the **Person** or **Multi-person** properties, then assign a role to the user from the confirmation dialog, and select **Add to board**.
+
+On boards with team access, board members with **Editor** or **Commenter** roles can also add individuals to the board from the autocomplete list. Board members added in this manner will be assigned the default minimum board role.
+
 Channel role groups
 ~~~~~~~~~~~~~~~~~~~
 
