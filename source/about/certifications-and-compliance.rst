@@ -134,7 +134,7 @@ and its affiliates, including its customers, employees and business partners to 
 of assets, the denial of export privileges, and suspension or debarment from Government Contracts.
 
 For these reasons, please take the time to familiarize yourself with applicable export (and import) controls in the
-jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, this web page provides the information needed in order export Mattermost products.
+jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, this web page provides the information needed in order to export Mattermost products.
 
 This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`__ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`__.
 
