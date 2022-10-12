@@ -15,7 +15,7 @@ From Mattermost Boards v7.2, boards can be linked to channels and accessed from 
  
   A channel can be linked to multiple boards, but each individual board can only be linked to one channel at a time. Linking the same board to another channel will automatically remove the link from the previous channel.
 
-Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the right-hand side of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members access to the board. Select a linked board to navigate directly to the board.
+Open the boards App Bar icon, and select **Create a Board** to create a new board linked to the current channel. Once a board is linked to a channel, it's listed in the right-hand side of the Boards Apps Bar. Linking a board to a channel automatically grants all channel members (except for guest accounts) access to the board. Select a linked board to navigate directly to the board.
 
 .. note:: 
   
