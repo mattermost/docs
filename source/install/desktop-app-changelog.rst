@@ -42,7 +42,7 @@ Linux
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added localization support to the Desktop App.
+- Added localization support to the Desktop App (Beta).
 - Zoom in/out now works when ``CTRL/CMD+SHIFT+=`` is pressed.
 - Changed the order of fields in the Add Server modal so that the server URL is filled in first and the display name after.
 - The app window now reloads only when the URL changes, not when a server's name changes.
@@ -86,7 +86,6 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
-- Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
 
