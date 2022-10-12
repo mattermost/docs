@@ -80,7 +80,7 @@ To unlink the channel from the board, open the **Share** dialog, select the role
 Guest accounts
 --------------
 
-From Mattermost Boards v7.3, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ will be supported in Boards. Guests can:
+From Mattermost Boards v7.4, `guest accounts <https://docs.mattermost.com/onboard/guest-accounts.html#guest-accounts>`_ will be supported in Boards. Guests can:
 
 - Access boards where they're added as an explicit member of the board. `Team access <https://docs.mattermost.com/boards/share-and-collaborate.html#manage-team-access>`_ and `channel role groups <https://docs.mattermost.com/boards/share-and-collaborate.html#channel-role-groups>`_ don't apply to guest accounts.
 - Access existing boards, but not create new boards. Guests don't have access the template picker and can't duplicate an existing board.
