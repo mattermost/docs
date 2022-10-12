@@ -54,7 +54,7 @@ Boards supports a wide range of fully customizable property types:
 - **URL** can be used to provide a link to a pull request or relevant website. Clicking on the box of a URL property will automatically open the link in a new tab on your browser. Hover over the box to surface options to copy or edit the URL.
 - **Select** and **Multi-select** allows you to create a predefined list of options that can be color-coded and displayed as badges on the card to indicate things like status and priority.
 - **Dates** are useful to set and track due dates or milestones. Use the date property to make a card appear on the `Calendar view <https://docs.mattermost.com/boards/work-with-views.html#calendar-view>`_. Set a single date or toggle on the **End date** to set a date range.
-- **Person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
+- **Person** and **Multi-person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
 - **Checkbox** is a toggle property that can be used for assigning simple binary options on a card such as True/False or Yes/No.
 - **Created time/Created by/Last updated time/Last updated by** are predefined system properties to help you audit changes on a card. The names of these properties are customizable, but the values are not.
 
