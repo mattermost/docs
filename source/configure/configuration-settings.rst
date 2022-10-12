@@ -4690,7 +4690,7 @@ This configuration setting is disabled by default and requires `developer mode <
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
 +----------------------------------------------------------------------------------------+
 
-Enable API Trigger Admin Notifications
+Enable API trigger admin notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
