@@ -50,7 +50,7 @@ Categories are organized per-user, so you can arrange your boards under categori
 Manage boards on the sidebar
 ----------------------------
 
-In addition to moving boards to other categories, from the  options menu **(...)** next to each board name you can perform the following actions:
+In addition to moving boards to other categories, from the options menu **(...)** next to each board name you can perform the following actions:
 
 - **Delete board**: If you're an admin of the board, you will see an option to delete the board. Deleting the board permanently removes the board from the sidebar of all board members.
 - **Duplicate board**: Creates a copy of the board and all the cards on the board. The duplicated board will appear under the same category as the original board. Board members from the original board aren't migrated to the new board.
