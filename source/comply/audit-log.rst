@@ -18,7 +18,7 @@ Audit logging provides System Admins, including Security, IT/SRE, Compliance, an
 
   - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
   - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum size cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
-  - When using syslog remotely, we recommend writing to a local file so no records are lost. Records won’t be taken from the local file and sent back to syslog when syslog becomes available again.
+  - When using syslog remotely, we recommend writing to a local file so no records are lost. Records will be taken from the local file and sent to the remote syslog when syslog becomes available again.
 
 Configure audit logging
 -----------------------
