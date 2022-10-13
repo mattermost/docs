@@ -18,7 +18,7 @@ Work with boards
 .. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
   :height: 24px
   :width: 24px
-  :alt: Access additional message actions using the More actions icon.
+  :alt: Access additional actions using the options icon.
  
 Start by selecting the type of board you want to use. A board contains cards, which typically track tasks or topics, and views, which define how to display the cards, or a subset of them. Views can display cards in a board, table, calendar, or gallery layout, optionally filtered and grouped by a property (e.g., priority, status, etc).
 
