@@ -56,7 +56,7 @@ Latest Mattermost Releases:
  - ixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
  - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
  - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
- - Reverted the new search of names in Postgres using full text search introduced in v7.3.0 due to a performance regression.
+ - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -75,7 +75,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.4 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - The "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The **More** menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
