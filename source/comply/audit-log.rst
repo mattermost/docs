@@ -131,7 +131,7 @@ Multiple file and target support
 System Admins can define multiple log targets to:
 
 - Mirror log output to files and log aggregators for redundancy.
-- Log certain entries to specific destinations. For example, all errors could be routed to a specific destination for review.
+- Log certain entries to specific destinations. For example, all ``audit-content`` records can be routed to a different destination than the other levels.
 
 Admins can also temporarily disable log targets by setting its type to ``none``.
 
