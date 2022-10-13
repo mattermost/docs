@@ -10,7 +10,7 @@ This feature is designed for informational purposes only, and no action is requi
 Notifications
 -------------
 
-Notifications are triggered by users. The very first user trigger results in a bot message to all System Admins, indicating the feature or functionality the user has requested. This bot message is listed in the direct message section of the channel sidebar.
+Notifications are triggered by users. The very first time a user sends a request to upgrade or start a trial, a bot message is sent to all System Admins indicating the feature or functionality the user has requested that requires an upgrade or trial. This bot message is listed in the **Direct Messages** section of the channel sidebar.
 
 Any requests that happen after this first request are sent 14 days later, in a summary format.
 
