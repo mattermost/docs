@@ -15,7 +15,7 @@ Latest Mattermost Releases:
 
 - **v7.3.1, released 2022-10-13**
   - Mattermost v7.3.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
- - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
+  - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
 - **v7.3.0, released 2022-09-16**
   - Original 7.3.0 release
 
