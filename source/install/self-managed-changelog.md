@@ -15,6 +15,8 @@ Latest Mattermost Releases:
 
 **v7.4.0 release day: 2022-10-16**
 
+Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Highlights
 
 #### Boards
