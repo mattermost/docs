@@ -4,12 +4,11 @@ What’s new in Mattermost Boards
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Boards v7.2 will be released to the Cloud during mid-August, and all Cloud plans will be automatically upgraded to the latest version during this time. For self-hosted plans, the latest version of Boards will be available with Mattermost Server v7.3 in mid-September.
+For the latest Boards updates, check out our `Mattermost self-hosted changelog <https://docs.mattermost.com/install/self-managed-changelog.html#mattermost-self-hosted-changelog>`_ and our `Mattermost Cloud changelog <https://docs.mattermost.com/install/cloud-changelog.html>`_.
 
-Boards is moving from a channel-based to a role-based permissions system. This means that access to individual boards can be controlled on a channel level or a board level, depending on whether a board is linked to a channel or not.
 
-TL;DR
-------
+Overview of v7.2 and beyond
+---------------------------
 
 1. All the boards you're currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
 2. Organize boards on the sidebar with custom categories. 
