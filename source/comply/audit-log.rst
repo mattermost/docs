@@ -135,7 +135,7 @@ System Admins can define multiple log targets to:
 
 Admins can also temporarily disable log targets by setting its type to ``none``.
 
-Any combination of console, local file, syslog, and TCP socket targets can send log records to multiple targets. Log targets have been chosen based on support for the vast majority of log aggregators and other log analysis tools, without needing additional software installed.
+Log records can be sent to any combination of console, local file, syslog, and TCP socket targets. Log targets have been chosen based on support for the vast majority of log aggregators and other log analysis tools, without needing additional software installed.
 
 - Console targets can be either ``stdout`` or ``stderr``.
 - File targets support rotation and compression triggered by size and/or duration. See the `file target configuration <#file-target-configuration-options>`__ documentation for supported options.
