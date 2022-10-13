@@ -4,12 +4,38 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-10-20](#release-2022-10-20)
 - [Release 2022-10-13](#release-2022-10-13)
 - [Release 2022-10-06](#release-2022-10-06)
 - [Release 2022-09-15](#release-2022-09-15)
 - [Release 2022-09-08](#release-2022-09-08)
 - [Release 2022-09-01](#release-2022-09-01)
-- [Release 2022-08-25](#release-2022-08-25)
+
+## Release 2022-10-20
+
+### Compatibility
+ - Updated the minimum version of Chrome to v106+ and the minimum version of Edge to 95+.
+
+### Improvements
+
+#### User Interface (UI)
+ - A confirmation modal is now displayed before a user marks all threads as read.
+ - Added the ability to hide the “required” asterisk in the App Field.
+ - Added a fading effect to the Apps Modal body while an Apps Modal is refreshing.
+
+### Bug Fixes
+ - Fixed an issue where "Multi-server licensing support (Self-hosted)" feature appeared in the Cloud pricing modal.
+ - Fixed an issue where Enterprise features labeled as "Professional Feature" appeared in the **System Console** sidebar.
+ - Fixed an issue where the transparency for PNG images in image previews and thumbnails was not preserved.
+ - Fixed an issue where no success screen was displayed after upgrading to Cloud Professional.
+ - Fixed an issue where screen readers failed to announce “No results found” in the Direct Message modal.
+ - Fixed an issue where minipreview data was not generated nor stored for images imported from Slack.
+ - Fixed the error message that appears on the **Reset Password** page when inputting a password with fewer than 5 characters.
+ - Fixed an issue where ``Get categories`` with the "exclude" option did not return categories for deleted teams a user was no longer a member of.
+
+### Known Issues
+ - "More" menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-10-13
 
