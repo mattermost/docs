@@ -62,7 +62,7 @@ Custom templates support permissions control, and are restricted to only the tem
 
 The admin of the template can also grant specific team members elevated permissions to the template and/or limit access to selected team members by setting the team role as **None** and adding individual members to the template. Individual team members can be assigned the following roles on a template:
 
-- Admin: Can modify the template and its permissions, and delete the template.
+- **Admin**: Can modify the template and its permissions, and delete the template.
 - Editor: Can modify but not delete the template, nor change permissions.
 - Viewer: Can view and select the template.
 
