@@ -20,34 +20,6 @@ from os import path
 
 BASE_DIR = "build/doctrees"
 
-IGNORE_NODES = (
-    # comment
-    nodes.comment,
-    # substitution definition (|..|)
-    nodes.substitution_definition,
-    # object description directives (like `py:function`)
-    addnodes.desc_signature,
-    # `productionlist` directive
-    addnodes.productionlist,
-    # literal block
-    nodes.literal_block,
-    nodes.doctest_block,
-    nodes.raw,
-)
-
-PENDING_NODES = (
-    # docutils
-    nodes.term,
-    nodes.field_name,
-    nodes.field_body,
-    nodes.reference,
-    nodes.line_block,
-    nodes.compound,  # impl-detail
-    # Sphinx
-    addnodes.centered,
-    addnodes.versionmodified,
-)
-
 
 def validate_refuri(node: nodes.reference, invalid_refs: List[str]):
     if "refuri" in node.attributes:

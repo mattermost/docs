@@ -50,34 +50,6 @@ NEW_FILES: List[str] = [
     "web-server-configuration-settings",
 ]
 
-IGNORE_NODES = (
-    # comment
-    nodes.comment,
-    # substitution definition (|..|)
-    nodes.substitution_definition,
-    # object description directives (like `py:function`)
-    addnodes.desc_signature,
-    # `productionlist` directive
-    addnodes.productionlist,
-    # literal block
-    nodes.literal_block,
-    nodes.doctest_block,
-    nodes.raw,
-)
-
-PENDING_NODES = (
-    # docutils
-    nodes.term,
-    nodes.field_name,
-    nodes.field_body,
-    nodes.reference,
-    nodes.line_block,
-    nodes.compound,  # impl-detail
-    # Sphinx
-    addnodes.centered,
-    addnodes.versionmodified,
-)
-
 
 def has_title_and_table(node: nodes.section) -> bool:
     if len(node.children) == 0:
