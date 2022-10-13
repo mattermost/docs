@@ -75,11 +75,7 @@ Examples of values for the ``AdvancedLoggingConfig`` setting are:
 
   ``"AdvancedLoggingConfig": "/path/to/audit_log_config.json"``
 
-2. Database DSN
-
-  ``"AdvancedLoggingConfig": "postgres://user@host:5432/database"``
-
-3. JSON string
+2. JSON string
 
   ``"AdvancedLoggingConfig": "{\"sample-console\":{\"type\":\"console\",\"format\":\"plain\",\"format_options\":{\"delim\":\" | \"},\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"out\":\"stdout\"},\"maxqueuesize\":1000},\"sample-file\":{\"type\":\"file\",\"format\":\"json\",\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"compress\":true,\"filename\":\"audit.log\",\"max_age\":1,\"max_backups\":10,\"max_size\":500},\"maxqueuesize\":1000}}"``
 
