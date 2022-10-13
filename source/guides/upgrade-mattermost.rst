@@ -12,17 +12,17 @@ The following resources will help you keep your Mattermost workspace current by 
 
     Prepare to upgrade </upgrade/prepare-to-upgrade-mattermost>
     Important upgrade notes </upgrade/important-upgrade-notes>
-    Upgrade the Mattermost server </upgrade/upgrading-mattermost-server>
-    Enterprise MM upgrade </install/enterprise-install-upgrade>
-    Install a license key </upgrade/install-license-key>
-    Downgrade MM Server </upgrade/downgrading-mattermost-server>
+    Upgrade Mattermost server </upgrade/upgrading-mattermost-server>
+    Enterprise upgrade </install/enterprise-install-upgrade>
+    Install a license key </upgrade/installing-license-key>
+    Downgrade Mattermost server </upgrade/downgrading-mattermost-server>
 
 * **Prepare to upgrade** - Learn how to :doc:`prepare for a Mattermost upgrade </upgrade/prepare-to-upgrade-mattermost>`.
 * **Important upgrade notes** - Review :doc:`version-specific upgrade considerations </upgrade/important-upgrade-notes>` before starting your upgrade.
-* **Upgrade the server** - :doc:`Upgrade your Mattermost server </upgrade/upgrading-mattermost-server>` to the latest version.
+* **Upgrade Mattermost server** - :doc:`Upgrade your Mattermost server </upgrade/upgrading-mattermost-server>` to the latest version.
 * **Enterprise install and upgrade** - :doc:`Upgrade your Mattermost server </install/enterprise-install-upgrade>` to premium versions.
 * **Install a license key** - Add or change a :doc:`Mattermost license key </upgrade/installing-license-key>`.
-* **Downgrade the Mattermost server** - :doc:`Roll back to older versions </upgrade/downgrading-mattermost-server>` of Mattermost.
+* **Downgrade Mattermost server** - :doc:`Roll back to older versions </upgrade/downgrading-mattermost-server>` of Mattermost.
 
 ----
 

@@ -9,7 +9,7 @@ The following resources will help you get your Mattermost self-hosted server or 
 
     Configure TLS on Mattermost server </deploy/configure-tls>
     Install NGINX server </deploy/install-nginx-server>
-    SSL client certificate setup <onboard/ssl-client-certificate>
+    SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
     Set up SMTP email </configure/smtp-email>
     Configure CloudFront </configure/configuring-cloudfront-to-host-mattermost-static-assets>

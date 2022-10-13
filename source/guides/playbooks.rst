@@ -16,7 +16,7 @@ This Mattermost Playbooks User Guide is for anyone who needs help using Mattermo
 
    Overview </playbooks/overview>
    Customize a playbook </playbooks/customize-a-playbook>
-   Customize a run <playbooks/customize-a-run>
+   Customize a run </playbooks/customize-a-run>
    Notifications and updates </playbooks/notifications-and-updates>
    Metrics and goals </playbooks/metrics-and-goals>
    Permissions </playbooks/playbook-permissions>

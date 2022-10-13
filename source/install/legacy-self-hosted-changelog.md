@@ -3,7 +3,7 @@
 [Mattermost](https://mattermost.com) is an open source platform for secure collaboration across the entire software development lifecycle. This changelog summarizes updates for all self-hosted versions of Mattermost prior to v6.0.
 
 ## Latest Mattermost releases
-See [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release, and see the [Mattermost Self-Hosted Changelog](self-hosted-changelog) for details on the latest self-hosted versions of Mattermost including the most recent [Extended Support Release (ESR)](https://docs.mattermost.com/upgrade/extended-support-release.html).
+See [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release, and see the [Mattermost Self-Hosted Changelog](https://docs.mattermost.com/install/self-hosted-changelog.html) for details on the latest self-hosted versions of Mattermost including the most recent [Extended Support Release (ESR)](https://docs.mattermost.com/upgrade/extended-support-release.html).
 
 ## Release v5.39 - [Quality Release](https://docs.mattermost.com/upgrade/release-definitions.html#quality-release)
 

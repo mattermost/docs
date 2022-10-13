@@ -1,3 +1,8 @@
+:orphan:
+:nosearch:
+
+.. This page is archived and no longer published to production.
+
 .. _install-nginx:
 
 Install NGINX server

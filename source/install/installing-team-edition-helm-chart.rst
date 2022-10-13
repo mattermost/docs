@@ -88,8 +88,8 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
 - ``<ingress-class>``: The ingress class. In a basic GitLab deployment, this is ``gitlab-nginx``.
 - ``<ingress-provider>``: The ingress provider. In a basic GitLab deployment, this is ``nginx``.
 - ``<certmanager-issuer>``: The cert manager issuer. In a basic GitLab deployment, this is ``gitlab-issuer``.
-- ``<gitlab-ap-secret>``: The Application secret, which you created in step `Create an OAuth application with GitLab`_.
-- ``<gitlab-app-id>``: The Application ID, which you created in step `Create an OAuth application with GitLab`_.
+- ``<gitlab-ap-secret>``: The Application secret, which you created during the **Create an OAuth application with GitLab** step.
+- ``<gitlab-app-id>``: The Application ID, which you created during the **Create an OAuth application with GitLab** step.
 - ``<your-gitlab-domain>``: The GitLab domain name, e.g., ``gitlab.example.com``.
 - ``<gitlab-postgres.username>``: The GitLab PostgreSQL username. Default is ``gitlab``.
 - ``<gitlab-postgres.passwd-secret>``: Secret that holds your PostgreSQL password. Default is ``gitlab-postgresql-password``.

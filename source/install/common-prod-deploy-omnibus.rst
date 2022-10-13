@@ -51,7 +51,6 @@ Mattermost bundles the components of a Mattermost deployment into a single insta
 
 See `Configure Mattermost Omnibus </install/configure-mattermost-omnibus>`__ documentation for configuration details, details on using a custom NGINX template, how to remove Mattermost Omnibus, how to back up and restore using the Mattermost Omnibus CLI, and frequently asked questions.
 
-Update Mattermost Omnibus
--------------------------
+**Update Mattermost Omnibus**
 
 Mattermost Omnibus is integrated with the apt package manager. When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.

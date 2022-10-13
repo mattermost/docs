@@ -11,17 +11,17 @@ See the following resources to manage your Mattermost self-hosted or Cloud works
     :hidden:
 
     Optimize your workspace </configure/optimize-your-workspace>
-    Configure your Mattermost workspace </configure/configuration-settings>
+    Configure the Mattermost server </configure/configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Environment variables </configure/environment-variables>
     Set up shared channels </onboard/shared-channels>
 	Review performance statistics </manage/statistics>
 	Display in-product notices </manage/in-product-notices>
-	Gather feedback with user satisfaction surveys </manage/user-satisfaction-surveys>
+	Gather user feedback </manage/user-satisfaction-surveys>
 	Configure an announcement banner </manage/announcement-banner>
 
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
-* **Configure your workspace** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings>`, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
+* **Configure the Mattermost server** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings>`, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 * **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for self-hosted deployments.
 * :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
 * **Statistics** - Review :doc:`statistics </manage/statistics>` about your Mattermost server usage.
@@ -32,7 +32,7 @@ See the following resources to manage your Mattermost self-hosted or Cloud works
 .. note::
     
     - Looking for instructions on how to deploy Mattermost? See the :doc:`deployment </guides/deployment>` documentation for details. 
-    - Some administrative functionality applies only to Cloud workspaces or self-hosted workspaces. See the sections below for details.
+    - Some administrative options apply only to Cloud workspaces or self-hosted workspaces. See the sections below for details.
 
 Cloud workspace management
 --------------------------
@@ -60,17 +60,21 @@ If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud
     :maxdepth: 1
     :hidden:
 
-    Mattermost configuration in the database </configure/configuation-in-mattermost-database>
+    Mattermost database configuration </configure/configuation-in-mattermost-database>
+    SSL client certificate setup </onboard/ssl-client-certificate>
     Deploy Mattermost calls </configure/calls-deployment>
     Configure health checks probes </manage/health-checks>
     Configure Mattermost Omnibus </install/configure-mattermost-omnibus>
-    Kubernetes FAQ </install/faq-kubernetes>
+    Mattermost Kubernetes operator </install/mattermost-kubernetes-operator>
+    Kubernetes FAQ </install/faq_kubernetes>
 
-* **Move Mattermost configuration to the database** - Learn how to :doc:`store Mattermost configuration information in your database </configure/configuation-in-mattermost-database>` rather than as a JSON file. Recommended this for High Availability environments.
+* **Mattermost database configuration** - Learn how to :doc:`store Mattermost configuration information in your database </configure/configuation-in-mattermost-database>` rather than as a JSON file. Recommended this for High Availability environments.
+* **SSL client certificate setup** - Learn how to :doc:`configure SSL client certificates </onboard/ssl-client-certificate>` for the browser and the Mattermost desktop app on Windows, macOS, and Linux. Note that SSL client certificates are not yet supported for Mattermost mobile apps.
 * **Deploy Mattermost Calls** - Learn about the different ways you can :doc:`deploy Mattermost Calls </configure/calls-deployment>`.
-* **Health check** - Configure :doc:`health check probes </manage/health-checks>` for your Mattermost server.
+* **Health check probes** - Configure :doc:`health check probes </manage/health-checks>` for your Mattermost server.
 * **Configure Mattermost Omnibus** - Learn how to :doc:`configure </install/configure-mattermost-omnibus>`, backup, restore, and remove Mattermost Omnibus, as well as use a custom NIGINX template.
-* **Kubernetes FAQ** - See :doc:`answers to common questions </install/faq-kubernetes>` about working with Kubernetes clusters.
+* **Mattermost Kubernetes operator** - Learn more about the :doc:`Mattermost Kubernetes operator </install/mattermost-kubernetes-operator>`.
+* **Kubernetes FAQ** - See :doc:`answers to common questions </install/faq_kubernetes>` about working with Kubernetes clusters.
 
 Migrate your Mattermost workspace
 ---------------------------------
@@ -79,7 +83,7 @@ Migrate your Mattermost workspace
     :maxdepth: 1
     :hidden:
 
-	Cloud to Self-Hosted </manage/cloud-data-export>
+	Migrate from Cloud to self-hosted </manage/cloud-data-export>
     Migrate from other chat products </onboard/migrating-to-mattermost>
     Migration announcement email </onboard/migration-announcement-email>
     Bulk load data </onboard/bulk-loading-data>
@@ -121,7 +125,7 @@ User permissions
 	System Admin roles </onboard/system-admin-roles>
 
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Professional and Enterprise versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`System Admin roles </onboard/system-admin-roles>` to grant admins from your organization access to specific areas of the Mattermost System Console.
-* **Advanced permissions: backend infrastructure** - Read our technical guide on :doc:`modifying self-hosted Mattermost permissions </onboard/advanced-permissions-backend-infrastructure>` to create custom permissions schemes.
+* **Advanced permissions** - Read our technical guide on :doc:`modifying self-hosted Mattermost permissions </onboard/advanced-permissions-backend-infrastructure>` to create custom permissions schemes.
 
 User management
 ---------------
@@ -137,6 +141,7 @@ User management
     Guest accounts </onboard/guest-accounts>
     SAML SSO </onboard/sso-saml>
     SAML SSO technical documentation </onboard/sso-saml-technical>
+    Welcome email for end users </getting-started/welcome-email-to-end-users>
 
 * **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
@@ -145,6 +150,7 @@ User management
 * **Guest accounts** - Create :doc:`guest accounts </onboard/guest-accounts>` to collaborate with individuals outside your organization.
 * **SAML SSO** - Configure Mattermost to be a :doc:`SAML 2.0 service provider </onboard/sso-saml>`.
 * **SAML SSO technical documentation** - See the :doc:`SAML 2.0 reference documentation </onboard/sso-saml-technical>` for Mattermost.
+* **Welcome email for end users** - Make it easy for your end users to start using Mattermost right away by :doc:`customizing a welcome email template </getting-started/welcome-email-to-end-users>`.
 
 Compliance tools
 ----------------

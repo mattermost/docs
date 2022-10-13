@@ -5,7 +5,7 @@ Terms of use and privacy policy
 -------------------------------
 
 What are Mattermost's policies around licensing, terms of use, and privacy?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following outlines the licensing, terms of use and privacy policies across Mattermost software and services.
 
@@ -161,7 +161,7 @@ Can I continue to use the existing open source repositories without restriction?
 Yes, the Mattermost Source Available License will only apply from the date it is added and to the versions in which it is included.
 
 Do I need to use the Mattermost Source Available License for plugins I create?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You are free to license your own code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`__ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`__ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
 
@@ -191,7 +191,7 @@ Is this a legal document?
 No. This FAQ is informational only. The Mattermost Source Available License stands on its own, and this FAQ does not affect its meaning.
 
 What is the full text of the Mattermost Source Available License?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "The Mattermost Source Available License (the “Source Available License”)
 (c) Mattermost, Inc. 2015-present.

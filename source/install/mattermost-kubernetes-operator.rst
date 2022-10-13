@@ -323,4 +323,3 @@ The installation should be deployed successfully when the Custom Resource reache
 
   Then navigate to ``http://localhost:8065``.
 .. include:: faq_kubernetes.rst
-  :start-after: :nosearch:

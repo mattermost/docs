@@ -11,21 +11,12 @@ Access your workspace
 
 You can use Matermost on a Windows, macOS, or Linux computer, or on an iOS or Android mobile device.
 
-- Use Mattermost :doc:`in a web browser </welcome/log-in>` or using the :doc:`Mattermost desktop app </install/desktop-app-install>` on your computer
+- Use Mattermost :doc:`in a web browser </welcome/log-in>` or using the :doc:`Mattermost desktop app </install/desktop-app-install>` on your computer.
 - Use Mattermost on your :doc:`iOS </install/install-ios-app>` or :doc:`Android </install/install-android-app>` mobile device.
 
 .. tip::
 
    You can download Mattermost mobile apps directly from the `Mattermost website <https://mattermost.com/apps/>`__.
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   /welcome/log-in.rst
-   /install/desktop-app-install
-   /install/install-ios-app
-   /install/install-android-app
    
 Get started with Mattermost
 ---------------------------
@@ -69,15 +60,15 @@ Customize your Mattermost experience
    :maxdepth: 1
    :hidden:
 
-   Manage your Mattermost profile </welcome/manage-your-profile>
+   Manage your profile </welcome/manage-your-profile>
    Set your status and availability </welcome/set-your-status-availability>
-   Customize your Mattermost theme </welcome/customize-your-theme>
+   Customize your theme </welcome/customize-your-theme>
    Customize your Desktop App experience </welcome/customize-desktop-app-experience>
    Manage Desktop App server connections </welcome/manage-desktop-app-server-connections>
 
-* :doc:`Manage your Mattermost profile </welcome/manage-your-profile>` - Configure your Mattermost profile and security preferences.
+* :doc:`Manage your profile </welcome/manage-your-profile>` - Configure your Mattermost profile and security preferences.
 * :doc:`Set your status and availability </welcome/set-your-status-availability>` - Let your team know whether you're available.
-* :doc:`Customize your Mattermost theme </welcome/customize-your-theme>` - Customize your Mattermost user interface to suit your preferences. 
+* :doc:`Customize your theme </welcome/customize-your-theme>` - Customize your Mattermost user interface to suit your preferences. 
 * :doc:`Customize your Desktop App experience </welcome/customize-desktop-app-experience>` - Learn about additional options in the Desktop App you can customize.
 * :doc:`Manage Desktop App server connections </welcome/manage-desktop-app-server-connections>` - Learn how to connect to multiple Mattermost servers using the Mattermost desktop app. 
 

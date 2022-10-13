@@ -7,8 +7,10 @@ See the following resources to troubleshoot your Mattermost self-hosted deployme
     :maxdepth: 1
     :hidden:
 
-    Troubleshoot Mattermost deployment issues <install/troubleshooting>
-    Generate a support packet <manage/generating-support-packet>
+    Troubleshoot deployment issues </install/troubleshooting>
+    MySQL troubleshooting </install/trouble_mysql>
+    Generate a support packet </manage/generating-support-packet>
 
-* **Troubleshoot Mattermost deployment issues** - Get :doc:`answers </install/troubleshooting>` to your deployment questions and challenges.
-* **Generate a support packet** - Learn how to bundle :doc:`generated system details</manage/generating-support-packet>` including configuration information, logs, plugin details, and data dependencies for our Mattermost Support team.
+* **Troubleshoot deployment issues** - Get :doc:`answers </install/troubleshooting>` to your deployment questions and challenges.
+* **MySQL installation** - Get :doc:`answers </install/trouble_mysql>` to your MySQL installation questions and challenges.
+* **Generate a support packet** - Learn how to bundle :doc:`generated system details </manage/generating-support-packet>` including configuration information, logs, plugin details, and data dependencies for our Mattermost Support team.
