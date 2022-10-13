@@ -268,22 +268,3 @@ GELF log format configuration options
 | hostname | string   | Outputs a custom hostname in log records.                |
 |          |          | If omitted, hostname is taken from the operating system. |
 +----------+----------+----------------------------------------------------------+
-
-Configure audit logging in Mattermost Boards
---------------------------------------------
-
-The `Boards configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging. There are two settings which control logging:
-
-1. ``logging_cfg_file`` is used to specify an absolute or relative filespec to a file containing the logging configuration in JSON format.
-
-  ``"logging_cfg_file": "/path/to/logging_config.json"``
-
-2. ``logging_cfg_json`` is used to provide logging configuration directly as a JSON string. Typically this is overridden using the corresponding environment variable ``FOCALBOARD_LOGGING_CFG_JSON``.
-
-  ``"logging_cfg_json": "{}"``
-
-Both settings can be used, but care must be taken to avoid multiple log targets writing to the same file.
-
-The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the type, format, and levels.
-
-Boards uses discrete log levels, meaning each level to be output must be listed. This allows for log targets to output specific log levels, and custom log levels to be created. See ``server/mlog/levels.go`` for a list of available log levels.
