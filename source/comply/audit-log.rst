@@ -17,7 +17,7 @@ Audit logging provides System Admins, including Security, IT/SRE, Compliance, an
 .. note::
 
   - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
-  - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum size cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
+  - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
 
 Configure audit logging
 -----------------------
