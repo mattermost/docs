@@ -12,7 +12,7 @@ Notifications
 
 Notifications are triggered by users. The very first time a user sends a request to upgrade or start a trial, a bot message is sent to all System Admins indicating the feature or functionality the user has requested that requires an upgrade or trial. This bot message is listed in the **Direct Messages** section of the channel sidebar.
 
-Any requests that happen after this first request are sent 14 days later, in a summary format.
+Subsequent request notifications are received by System Admins at most every 14 days. When a notification is received by a System Admin, a 14-day cool-off period begins. Any requests generated in the middle of the cool-off period will be held off until 14 days later, and then provided in a summarized format.
 
 Take action
 -----------
