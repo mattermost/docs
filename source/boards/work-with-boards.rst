@@ -3,20 +3,36 @@ Work with boards
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
-
+  
+ 
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
+  :height: 24px
+  :width: 24px
+  :alt: Access settings using the gear icon.
+  
+.. |plus-icon| image:: ../images/plus_F0415.svg
+  :height: 24px
+  :width: 24px
+  :alt: Open menus using the plus icon.
+  
+.. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :height: 24px
+  :width: 24px
+  :alt: Access additional message actions using the More actions icon.
+ 
 Start by selecting the type of board you want to use. A board contains cards, which typically track tasks or topics, and views, which define how to display the cards, or a subset of them. Views can display cards in a board, table, calendar, or gallery layout, optionally filtered and grouped by a property (e.g., priority, status, etc).
 
 Add new boards
 --------------
 
-To add a new board, select the **+** icon at the top of the sidebar, then select **Create New Board** to open the template picker and select a template or blank board.
+To add a new board, select the plus icon |plus-icon| at the top of the sidebar, then select **Create New Board** to open the template picker and select a template or blank board.
 
 Board details
 ~~~~~~~~~~~~~
 
 To name or rename a board, select the title area to edit it.
 
-To display board description, hover above the board’s title and select show description to activate the show/hide toggle. Once the description field is displayed, select **Add a description** right below the board title to add or edit the description.
+To display board description, hover above the board’s title and select **Show description** to activate the show/hide toggle. Once the description field is displayed, select **Add a description** right below the board title to add or edit the description.
 
 Boards and cards are created with random icons by default. To change or remove icons, select the icon then choose the appropriate action.
 
@@ -48,9 +64,9 @@ If none of the available templates suit your requirements, you can create a blan
 Create a new template
 ~~~~~~~~~~~~~~~~~~~~~
 
-To create a new board template select the **+** icon at the top of the sidebar to open the template picker, select **Create New Board** and then select **+ New template**.
+To create a new board template select the plus icon |plus-icon| at the top of the sidebar to open the template picker, select **Create New Board** and then select **+ New template**.
 
-To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu **(…)**, then select **New template from board**.
+To turn an existing board into a template, hover over the board title in the sidebar. Select the options menu |options-icon|, then select **New template from board**.
 
 Share a custom board template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,12 +87,12 @@ Prior to Mattermost Boards v7.2
 
 Boards and templates are channel-specific so whichever channel you create your board or template in, is where you’ll find it. If you’d like to re-use a board as a template on another channel workspace, you can export it and then import the archive file in the channel of your choosing.
 
-To do this, select the **…** in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
+To do this, select the options menu |options-icon| in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon |gear-icon| next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
 
 Edit board templates
 --------------------
 
-Custom templates are fully editable, but standard templates cannot be edited or deleted. To open the template editor for a specific template, go to the template picker then hover over the custom template and click on the pencil icon. Any changes made on the template editor will be automatically saved and visible to team members who have access to the template.
+Custom templates are fully editable, but standard templates cannot be edited or deleted. To open the template editor for a specific template, go to the template picker then hover over the custom template and select the pencil icon. Any changes made on the template editor will be automatically saved and visible to team members who have access to the template.
 
 From Mattermost Boards v7.2 or later
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
