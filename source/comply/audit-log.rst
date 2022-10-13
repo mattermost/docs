@@ -6,9 +6,15 @@ Audit logging (beta)
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-Audit logging provides System Admins, including Security, IT/SRE, Compliance, and HR/PeopleOps teams, with a method of recording activities and events performed within a Mattermost workspace, such as access to the REST API or mmctl. Mattermost audit logging offers you control over where the audit logs are generated and stored, and applies a standard `JSON schema <#json-data-model>`__ to log output. 
+.. warning::
 
-.. note:: 
+  - The audit logging beta is a **breaking change** from previous releases.
+  - The format and content of an audit log record has changed to become standardized for all events.
+  - Existing tools which ingest or parse audit log records may need to be modified.
+
+Audit logging provides System Admins, including Security, IT/SRE, Compliance, and HR/PeopleOps teams, with a method of recording activities and events performed within a Mattermost workspace, such as access to the REST API or mmctl. Mattermost audit logging offers you control over where the audit logs are generated and stored, and applies a standard :doc:`JSON schema </comply/embedded-json-audit-log-schema>` to log output.
+
+.. note::
 
   - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
   - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum size cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
@@ -19,48 +25,108 @@ Configure audit logging
 
 Configuring Mattermost to enable audit logging requires editing the ``config.json`` file directly. Audit logging can’t be managed using the System Console.
 
-In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file, a database DSN, or a JSON object. The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.
+In the ``config.json`` file, go to the ``ExperimentalAuditSettings`` section. Within the ``AdvancedLoggingConfig`` setting, you can specify an absolute or relative filespec to another configuration file, a database DSN, or a JSON string. The process of configuring audit logging includes specifying destination targets, event names to include, and the verbosity of the audit log output.
 
-The example below specifies two log targets: one outputs to the console using a plain text format with pipes delimiting fields, and the other outputs to a file using XXX. The standard `log levels <#log-level-configuration-options>`__ are listed, with only error and lower outputting a stack trace. The error level will be output and displayed in the color red for log targets and formatters that support `color output <#log-level-configuration-options>`__.
+The example JSON configuration specifies two log targets: one outputs to the console using a plain text format with pipes delimiting fields, and the other outputs to a file using a JSON format with log file rotation. All audit log levels are enabled.
 
 .. code-block:: json
 
-  {
-    "sample-console": {
-      "type": "console",
-      "options": {
-        "out": "stdout"
+    {
+      "sample-console": {
+        "type": "console",
+        "format": "plain",
+        "format_options": {
+            "delim": " | "
+        },
+        "levels": [
+          { "id": 100, "name": "audit-api" },
+          { "id": 101, "name": "audit-content" },
+          { "id": 102, "name": "audit-permissions" },
+          { "id": 103, "name": "audit-cli" }
+        ],
+        "options": {
+          "out": "stdout"
+        },
+        "maxqueuesize": 1000
       },
-      "format": "plain",
-      "format_options": {
-        "delim": " | "
-      },
-      "levels": [
-        {"id": 5, "name": "debug"},
-        {"id": 4, "name": "info"},
-        {"id": 3, "name": "warn"},
-        {"id": 2, "name": "error", "stacktrace": true, "color": 31},
-        {"id": 1, "name": "fatal", "stacktrace": true},
-        {"id": 0, "name": "panic", "stacktrace": true}
-      ],
-      "maxqueuesize": 1000
+      "sample-file": {
+        "type": "file",
+        "format": "json",
+        "levels": [
+          { "id": 100, "name": "audit-api" },
+          { "id": 101, "name": "audit-content" },
+          { "id": 102, "name": "audit-permissions" },
+          { "id": 103, "name": "audit-cli" }
+        ],
+        "options": {
+          "compress": true,
+          "filename": "audit.log",
+          "max_age": 1,
+          "max_backups": 10,
+          "max_size": 500
+        },
+        "maxqueuesize": 1000
+      }
     }
-  }
 
-Configure audit logging in Mattermost Boards
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Examples of values for the ``AdvancedLoggingConfig`` setting are:
 
-The `Boards configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging.
+1. Filespec to another configuration file; this file will contain a JSON object
 
-``logging_cfg_file`` is used to specify the path to a file containing the logging configuration in JSON format.
+  ``"AdvancedLoggingConfig": "/path/to/audit_log_config.json"``
 
-``logging_cfg_json`` is used to provide logging configuration directly as embedded JSON. Typically this is overridden using the corresponding environment variable ``FOCALBOARD_LOGGING_CFG_JSON``.
+2. Database DSN
 
-Both configuration methods can be used, but care must be taken to avoid multiple log targets writing to the same file.
+  ``"AdvancedLoggingConfig": "postgres://user@host:5432/database"``
 
-The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the type, format, and levels.
+3. JSON string
 
-Boards uses discrete log levels, meaning each level to be output must be listed. This allows for log targets to output specific log levels, and custom log levels to be created. See ``server/mlog/levels.go`` for a list of available log levels. 
+  ``"AdvancedLoggingConfig": "{\"sample-console\":{\"type\":\"console\",\"format\":\"plain\",\"format_options\":{\"delim\":\" | \"},\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"out\":\"stdout\"},\"maxqueuesize\":1000},\"sample-file\":{\"type\":\"file\",\"format\":\"json\",\"levels\":[{\"id\":100,\"name\":\"audit-api\"},{\"id\":101,\"name\":\"audit-content\"},{\"id\":102,\"name\":\"audit-permissions\"},{\"id\":103,\"name\":\"audit-cli\"}],\"options\":{\"compress\":true,\"filename\":\"audit.log\",\"max_age\":1,\"max_backups\":10,\"max_size\":500},\"maxqueuesize\":1000}}"``
+
+.. note::
+  When using a JSON string as the value of ``AdvancedLoggingConfig``, ensure you escape double quotes (``"``) in the string using a backslash (``\``).
+
+Log level configuration options
+-------------------------------
+
++------------+----------+--------------------------------------------------------------+
+| **Key**    | **Type** | **Description**                                              |
++------------+----------+--------------------------------------------------------------+
+| id         | number   | Unique identifier of the log level.                          |
++------------+----------+--------------------------------------------------------------+
+| name       | string   | Name of the log level.                                       |
++------------+----------+--------------------------------------------------------------+
+| stacktrace | bool     | Outputs a stack trace. Default is ``false``.                 |
++------------+----------+--------------------------------------------------------------+
+| color      | number   | The ANSI color code used to output parts of the log record.  |
+|            |          | Supported values include:                                    |
+|            |          |                                                              |
+|            |          | - Black: ``30``                                              |
+|            |          | - Red: ``31``                                                |
+|            |          | - Green: ``32``                                              |
+|            |          | - Yellow: ``33``                                             |
+|            |          | - Blue: ``34``                                               |
+|            |          | - Magenta: ``35``                                            |
+|            |          | - Cyan: ``36``                                               |
+|            |          | - White: ``37``                                              |
++------------+----------+--------------------------------------------------------------+
+
+Audit log levels
+~~~~~~~~~~~~~~~~
+
+The following audit log levels are available:
+
++--------+-----------------------+--------------------+
+| **ID** | **Name**              | **Description**    |
++--------+-----------------------+--------------------+
+| 100    | ``audit-api``         | API events         |
++--------+-----------------------+--------------------+
+| 101    | ``audit-content``     | Content changes    |
++--------+-----------------------+--------------------+
+| 102    | ``audit-permissions`` | Permission changes |
++--------+-----------------------+--------------------+
+| 103    | ``audit-cli``         | CLI operations     |
++--------+-----------------------+--------------------+
 
 Multiple file and target support
 --------------------------------
@@ -78,6 +144,16 @@ Any combination of console, local file, syslog, and TCP socket targets can send 
 - File targets support rotation and compression triggered by size and/or duration. See the `file target configuration <#file-target-configuration-options>`__ documentation for supported options.
 - Syslog targets support local and remote syslog servers, with or without TLS transport. See the `syslog target configuration <#syslog-target-configuration-options>`__ documentation for supported options.
 - The TCP socket target can be configured with an IP address or domain name, port, and optional TLS certificate. See the `TCP target configuration <#tcp-target-configuration-options>`__ documentation for supported options.
+
+
+Console target configuration options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------+----------+---------------------------------------------------------------------------+
+| **Key** | **Type** | **Description**                                                           |
++---------+----------+---------------------------------------------------------------------------+
+| out     | string   | Console output pipe name: ``stdout`` for STDOUT or ``stderr`` for STDERR. |
++---------+----------+---------------------------------------------------------------------------+
 
 File target configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -136,6 +212,9 @@ TCP target configuration options
 | tag      | string   | Syslog tag field.                                                                                                               |
 +----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
 
+Format configuration options
+----------------------------
+
 Plain log format configuration options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -184,8 +263,8 @@ JSON log format configuration options
 | timestamp_format    | string   | Format for timestamps. Default is `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__. |
 +---------------------+----------+-----------------------------------------------------------------------------------------+
 
-GELF log format format configuration options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GELF log format configuration options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+----------+----------------------------------------------------------+
 | **Key**  | **Type** | **Description**                                          |
@@ -194,146 +273,21 @@ GELF log format format configuration options
 |          |          | If omitted, hostname is taken from the operating system. |
 +----------+----------+----------------------------------------------------------+
 
-Log level configuration options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure audit logging in Mattermost Boards
+--------------------------------------------
 
-+------------+----------+--------------------------------------------------------------+
-| **Key**    | **Type** | **Description**                                              |
-+------------+----------+--------------------------------------------------------------+
-| id         | number   | Unique identifier for the log level.                         |
-+------------+----------+--------------------------------------------------------------+
-| name       | string   | Display name for the log level.                              |
-+------------+----------+--------------------------------------------------------------+
-| stacktrace | bool     | Outputs a stack trace. Default is ``false``.                 |
-+------------+----------+--------------------------------------------------------------+
-| color      | number   | The ANSI color code used to output parts of the log record.  |
-|            |          | Supported values include:                                    |
-|            |          |                                                              |
-|            |          | - Black: ``30``                                              |
-|            |          | - Red: ``31``                                                |
-|            |          | - Green: ``32``                                              |
-|            |          | - Yellow: ``33``                                             |
-|            |          | - Blue: ``34``                                               |
-|            |          | - Magenta: ``35``                                            |
-|            |          | - Cyan: ``36``                                               |
-|            |          | - White: ``37``                                              |
-+------------+----------+--------------------------------------------------------------+
+The `Boards configuration file <https://github.com/mattermost/focalboard/blob/main/config.json>`_ ``config.json`` is used to configure logging. There are two settings which control logging:
 
-JSON data model
----------------
+1. ``logging_cfg_file`` is used to specify an absolute or relative filespec to a file containing the logging configuration in JSON format.
 
-Record
-~~~~~~
+  ``"logging_cfg_file": "/path/to/logging_config.json"``
 
-+-------------------+---------------+-------------------------------------------------------------------+
-| **Field name**    | **Data type** | **Description**                                                   |
-+-------------------+---------------+-------------------------------------------------------------------+
-| event_name        | string        | Unique event type identifier (e.g. ``getLogs``                    |
-|                   |               | ``requestRenewalLink``, ``createTeam``, ``createChannel``,        |
-|                   |               | ``deleteChannel``, or ``extendSessionExpiry``)                    |
-+-------------------+---------------+-------------------------------------------------------------------+
-| status            | string        | Success or failure of the audited event.                          |
-+-------------------+---------------+-------------------------------------------------------------------+
-| event             | EventData     | Contains all event-specific data about the modified entity.       |
-+-------------------+---------------+-------------------------------------------------------------------+
-| actor             | EventActor    | User involved with the audited event.                             |
-+-------------------+---------------+-------------------------------------------------------------------+
-| meta              | map           | A key/value store that contains related event information that    |
-|                   |               | isn't directly related to the modified entity, such as            |
-|                   |               | ``api_path`` and ``cluster_id``                                   |
-+-------------------+---------------+-------------------------------------------------------------------+
-| error             | EventError    | (Optional) Error information in case of event failure.            |
-+-------------------+---------------+-------------------------------------------------------------------+
+2. ``logging_cfg_json`` is used to provide logging configuration directly as a JSON string. Typically this is overridden using the corresponding environment variable ``FOCALBOARD_LOGGING_CFG_JSON``.
 
-EventData
-^^^^^^^^^
+  ``"logging_cfg_json": "{}"``
 
-+-------------------+---------------+-------------------------------------------------------------------+
-| **Field name**    | **Data type** | **Description**                                                   |
-+-------------------+---------------+-------------------------------------------------------------------+
-| parameters        | map           | Payload and parameters being processed as part of the request.    |
-+-------------------+---------------+-------------------------------------------------------------------+
-| prior_state       | map           | Prior state of the entity being modified. ``null`` if there was   |
-|                   |               | no prior state.                                                   |
-+-------------------+---------------+-------------------------------------------------------------------+
-| resulting_state   | map           | Resulting entity after creating or modifying it.                  |
-+-------------------+---------------+-------------------------------------------------------------------+
-| object_type       | string        | String representation of the entity type (e.g post)               |
-+-------------------+---------------+-------------------------------------------------------------------+
+Both settings can be used, but care must be taken to avoid multiple log targets writing to the same file.
 
-EventActor
-^^^^^^^^^^
+The logging configuration JSON is an object (unordered collection) containing names and log target values. Each log target contains a type, options specific to the type, format, and levels.
 
-+-------------------+---------------+-------------------------------------------------------------------+
-| **Field name**    | **Data type** | **Description**                                                   |
-+-------------------+---------------+-------------------------------------------------------------------+
-| user_id           | string        | Unique identifier of the event actor.                             |
-+-------------------+---------------+-------------------------------------------------------------------+
-| session_id        | string        | Unique session identifier of the event actor.                     |
-+-------------------+---------------+-------------------------------------------------------------------+
-| client            | string        | User agent of the client/platform in use by the event actor.      |
-+-------------------+---------------+-------------------------------------------------------------------+
-| ip_address        | string        | IPv4/IPv6 IP address of the event actor.                          |
-+-------------------+---------------+-------------------------------------------------------------------+
-
-EventError
-^^^^^^^^^^
-
-+-------------------+---------------+-------------------------------------------------------------------+
-| **Field name**    | **Data type** | **Description**                                                   |
-+-------------------+---------------+-------------------------------------------------------------------+
-| description       | string        | (Optional) Error description.                                     |
-+-------------------+---------------+-------------------------------------------------------------------+
-| status_code       | integer       | (Optional) TBD                                                    |
-+-------------------+---------------+-------------------------------------------------------------------+
-
-Audit log record examples
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Create a team
-^^^^^^^^^^^^^^
-
-[code here]
-
-Create a channel
-^^^^^^^^^^^^^^^^
-
-[code here]
-
-Delete a channel
-^^^^^^^^^^^^^^^^
-
-[code here]
-
-Extend session expiry
-^^^^^^^^^^^^^^^^^^^^^
-
-[code here]
-
-Update user preferences
-^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: json
-
-    {
-        "timestamp": "2022-08-17 20:37:52.846 +01:00",
-        "event_name": "updatePreferences",
-        "status": "success",
-        "actor": {
-            "user_id": "aw8ehkwaziytzry1qqxi9tsqwh",
-            "session_id": "kth3jyadc3b1p84kbz6y3o75na",
-            "client": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Safari/605.1.15",
-            "ip_address": "192.168.0.169"
-    },
-        "event": {
-            "parameters": {},
-            "prior_state": {},
-            "resulting_state": {},
-            "object_type": ""
-    },
-        "meta": {
-            "api_path": "/api/v4/users/aw8ehkwaziytzry1qqxi9tsqwh/preferences",
-            "cluster_id": "8dxdbfx6fpdwtki1z6n8whtkho"
-    },
-        "error": {}
-    }
+Boards uses discrete log levels, meaning each level to be output must be listed. This allows for log targets to output specific log levels, and custom log levels to be created. See ``server/mlog/levels.go`` for a list of available log levels.
