@@ -6,9 +6,6 @@ User sessions are cleared when a user tries to log in, and sessions are cleared 
 Extend session length with activity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -29,9 +26,6 @@ Extend session length with activity
 Session length for AD/LDAP and email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -48,9 +42,6 @@ Session length for AD/LDAP and email
 Session length for mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -65,9 +56,6 @@ Session length for mobile
 
 Session length for SSO
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -91,9 +79,6 @@ Session length for SSO
 Session cache
 ~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -104,9 +89,6 @@ Session cache
 
 Session idle timeout
 ~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
