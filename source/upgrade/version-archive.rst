@@ -18,7 +18,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v7.3.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-3-feature-release>`__ - `Download <https://releases.mattermost.com/7.3.1/mattermost-7.3.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.3.1/mattermost-7.3.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``7c88dab1a68010c3cb6b1a3ce8c7c04aa4e9ff45b3cd30ca24008a5ae59bcbf0``
+  - SHA-256 Checksum: ``3981e3dc8237802888817eca8b3c2d39bfd3e8b6b6e9f9c29050c2aa8460953f``
   - GPG Signature: https://releases.mattermost.com/7.3.1/mattermost-7.3.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.2.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-2-feature-release>`__ - `Download <https://releases.mattermost.com/7.2.1/mattermost-7.2.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.2.1/mattermost-7.2.1-linux-amd64.tar.gz``
@@ -307,7 +307,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v7.3.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-3-feature-release>`__ - `Download <https://releases.mattermost.com/7.3.1/mattermost-team-7.3.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.3.1/mattermost-team-7.3.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``47602e67b457a4871fd459f32a67f44e3353e4152989157eced2ad3bff5f634b``
+  - SHA-256 Checksum: ``26af2a6235261d5cb8b3d29b55a5c50b38c92f0b5e70e3ffac74729112d82c87``
   - GPG Signature: https://releases.mattermost.com/7.3.1/mattermost-team-7.3.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.2.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-2-feature-release>`__ - `Download <https://releases.mattermost.com/7.2.1/mattermost-team-7.2.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.2.1/mattermost-team-7.2.1-linux-amd64.tar.gz``
