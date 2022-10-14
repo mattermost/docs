@@ -13,7 +13,7 @@ Latest Mattermost Releases:
 
 ## Release v7.3 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v7.3.1, released 2022-10-13**
+- **v7.3.1, released 2022-10-14**
   - Mattermost v7.3.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
 - **v7.3.0, released 2022-09-16**
@@ -128,7 +128,7 @@ Mattermost v7.3.0 contains a medium severity level security fix. [Upgrading](htt
 
 ## Release v7.2 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v7.2.1, released 2022-10-13**
+- **v7.2.1, released 2022-10-14**
   - Mattermost v7.2.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.2.0, released 2022-08-16**
   - Original 7.2.0 release
@@ -246,7 +246,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
-- **v7.1.4, released 2022-10-13**
+- **v7.1.4, released 2022-10-14**
   - Mattermost v7.1.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.1.3, released 2022-08-23**
   - Mattermost v7.1.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
