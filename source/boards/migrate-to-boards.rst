@@ -1,8 +1,35 @@
-Migrate to boards
-=================
+Import, export, and migrate
+===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
+
+.. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :height: 24px
+  :width: 24px
+  :alt: Access additional message actions using the More actions icon.
+
+Import and export a board archive
+---------------------------------
+
+If you’d like to back up your board or re-use it on another team or channel workspace, you can export it as an archive file, and then import the archive file in the team or channel workspace of your choosing. Exported and imported board archives include all card content such as properties, comments, descriptions, and image attachments.
+
+To do this, select the options menu |options-icon| to the left of the **New** button at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the team or channel workspace where you’d like to add the exported board. Select the Gear icon next to your profile avatar, then choose **Import archive**. The board you exported will be added to this team or channel workspace.
+
+- From Mattermost v6.4, the archive format changed, with a new `.boardarchive` extension and all new exports are in this format.
+- From Mattermost v7.2, channel workspaces are no longer supported, and the **Import archive** option will import the board to your current team. Use `board permissions <https://www.docs.mattermost.com/boards/share-and-collaborate.html#board-permissions>`__ to control access to your imported board.
+
+.. note:: 
+  
+  The previous `.focalboard` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for `.boardarchive`. Use **Select all files** to select `.focalboard` files to import.
+
+Export to CSV
+-------------
+
+To export a board into a CSV file, select the options menu |options-icon| to the left of the **New** button at the top of the board. Then select **Export to CSV**.
+
+Import and export from other applications
+-----------------------------------------
 
 You can import data from other tools to use with Boards. `Contribute code <https://mattermost.github.io/focalboard/>`_ to expand this.
 
@@ -173,16 +200,3 @@ This node app converts a Todoist ``.json`` archive into a ``.boardarchive`` file
 13. Select **Settings > Import archive** and select ``archive.boardarchive``.
 14. Select **Upload**.
 15. Return to your board and confirm that your Todoist data is now displaying.
-
-Import and export a board
--------------------------
-
-If you'd like to re-use a board, you can export it as an archive file, and then import the archive file in the channel of your choosing. Exported and imported board archives include card image attachments.
-
-To do this, select the **...** in the toolbar at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the channel where you'd like to add the exported board. Select the Gear icon next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
-
-From v6.4, the archive format is changing with a new ``.boardarchive`` extension and all new exports will only be in this format. 
-
-.. note::
-
-  The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.

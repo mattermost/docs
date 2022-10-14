@@ -21,11 +21,17 @@ Get started
 
     Optimize your workspace </configure/optimize-your-workspace>
     Mattermost configuration settings </configure/configuration-settings>
-    About </configure/self-hosted-account-settings>
-    Billing & account </configure/cloud-billing-account-settings>
+    Self-hosted edition and license </configure/self-hosted-account-settings>
+    Cloud subscription, billing, and account </configure/cloud-billing-account-settings>
     Reporting configuration settings </configure/reporting-configuration-settings>
     User management configuration settings </configure/user-management-configuration-settings>
     Environment configuration settings </configure/environment-configuration-settings>
+    Site configuration settings </configure/site-configuration-settings>
+    Authentication configuration settings </configure/authentication-configuration-settings>
+    Plugins configuration settings </configure/plugins-configuration-settings>
+    Integrations configuration settings </configure/integrations-configuration-settings>
+    Compliance configuration settings </configure/compliance-configuration-settings>
+    Experimental configuration settings </configure/experimental-configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Environment variables </configure/environment-variables>
     Provisioning workflows </onboard/user-provisioning-workflows>
@@ -137,7 +143,8 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Migration guide </onboard/migrating-to-mattermost>
     Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>
     Customize Mattermost </configure/customizing-mattermost>
-    Audit log v2 </comply/audit-log>
+    Audit logging </comply/audit-log>
+    JSON audit log schema </comply/embedded-json-audit-log-schema>
     SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
 
@@ -151,7 +158,8 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`Migration guide </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.
 * :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Set up search capabilities for teams communicating via Chinese, Japanese, or Korean.
 * :doc:`Whitelabel Mattermost </configure/customizing-mattermost>` - Whitelabel the Mattermost server and apps.
-* :doc:`Audit log v2 </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
+* :doc:`Audit logging </comply/audit-log>` - Learn how Mattermost records activities and events performed within a Mattermost workspace.
+* :doc:`JSON audit log schema </comply/embedded-json-audit-log-schema>` - Learn how to configure Mattermost audit logging using a JSON object.
 * :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
 * :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 

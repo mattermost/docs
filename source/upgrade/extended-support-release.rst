@@ -10,7 +10,7 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v6.3 Extended Support Release is coming to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 Extended Support Release or later is recommended.
+  Support for Mattermost Server v6.3 Extended Support Release has come to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 Extended Support Release or later is required.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -53,7 +53,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 7.1         | Feature        | July 15, 2022    | April 15, 2023   | `7.1.3 <https://releases.mattermost.com/7.1.3/mattermost-7.1.3-linux-amd64.tar.gz>`_       |                                                     |
+| 7.1         | Feature        | July 15, 2022    | April 15, 2023   | `7.1.4 <https://releases.mattermost.com/7.1.4/mattermost-7.1.4-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.10 <https://releases.mattermost.com/6.3.10/mattermost-6.3.10-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
