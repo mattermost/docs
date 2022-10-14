@@ -8,7 +8,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. important::
    
-   Support for Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ is coming to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is recommended.
+   Support for Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ or later is required.
 
 .. contents::
     :backlinks: top
@@ -16,6 +16,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v7.4.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-4-feature-release>`__ - `Download <https://releases.mattermost.com/7.4.0/mattermost-7.4.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.4.0/mattermost-7.4.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``378c2f82b4e6835274e883e6a4b94f1ce1cd341f9b1f604142012cbfd19608dd``
+  - GPG Signature: https://releases.mattermost.com/7.4.0/mattermost-7.4.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.3.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-3-feature-release>`__ - `Download <https://releases.mattermost.com/7.3.1/mattermost-7.3.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.3.1/mattermost-7.3.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``3981e3dc8237802888817eca8b3c2d39bfd3e8b6b6e9f9c29050c2aa8460953f``
@@ -305,6 +309,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v7.4.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-4-feature-release>`__ - `Download <https://releases.mattermost.com/7.4.0/mattermost-team-7.4.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/7.4.0/mattermost-team-7.4.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``530118ced6f0f2bf9f3ae98cfec43bf1f2a0a35a52913ba60c0203fadacd9b10``
+  - GPG Signature: https://releases.mattermost.com/7.4.0/mattermost-team-7.4.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.3.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-3-feature-release>`__ - `Download <https://releases.mattermost.com/7.3.1/mattermost-team-7.3.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.3.1/mattermost-team-7.3.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``26af2a6235261d5cb8b3d29b55a5c50b38c92f0b5e70e3ffac74729112d82c87``
