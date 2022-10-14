@@ -4,13 +4,13 @@ Reporting configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-View statistics for your overall deployment and specific teams as well as access server logs by going to **System Console > Reporting**. 
-
-The following reporting configuration settings are available:
+View statistics for your overall deployment and specific teams as well as access server logs by going to **System Console > Reporting**. The following reporting configuration settings are available:
 
 - `Site statistics <#site-statistics>`__
 - `Team statistics <#team-statistics>`__
 - `Server logs <#server-logs>`__
+
+----
 
 Site statistics
 ---------------
@@ -23,6 +23,8 @@ Site statistics
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Team statistics
 ---------------
 
@@ -33,6 +35,8 @@ Team statistics
 | as well as public and private channels.                       | - ``config.json`` setting: N/A                                |
 |                                                               | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
+
+----
 
 Server logs
 -----------
