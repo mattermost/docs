@@ -6,9 +6,6 @@ Configure performance monitoring by going to **System Console > Environment > Pe
 Enable performance monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------+
@@ -25,9 +22,6 @@ Enable performance monitoring
 
 Listen address for performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 

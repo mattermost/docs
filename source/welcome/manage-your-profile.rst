@@ -20,7 +20,7 @@ You can configure your profile and security preferences by selecting **Profile**
 
   .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to v5.39, access all of your profile and security settings in **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hambuger menu) at the top of the channel sidebar.
+      In Mattermost versions up to v5.39, access all of your profile and security settings in **Account Settings** from the **Main Menu** by selecting the three horizontal lines (also known as a hamburger menu) at the top of the channel sidebar.
 
 Profile
 -------

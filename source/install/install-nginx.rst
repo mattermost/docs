@@ -73,5 +73,5 @@ To re-enable the service to start up at boot, use: ``sudo systemctl enable nginx
 What to do next
 ~~~~~~~~~~~~~~~
 
-1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` to point to the NGINX server.
+1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` on your DNS server/service, to point to the NGINX server.
 2. Configure NGINX to proxy connections from the internet to the Mattermost server.

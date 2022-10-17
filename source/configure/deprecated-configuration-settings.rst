@@ -1,6 +1,28 @@
 Deprecated configuration settings
 =================================
 
+The following Mattermost configuration settings are deprecated and are no longer supported in current Mattermost releases:
+
+- `Bleve settings <#bleve-settings>`__
+- `Elasticsearch settings <#elasticsearch-settings>`__
+- `Service settings <#service-settings>`__
+- `Database settings <#database-settings>`__
+- `Users and teams settings <#users-and-teams-settings>`__
+- `SAML 2.0 settings <#saml-2-0-settings>`__
+- `Legacy sidebar settings <#legacy-sidebar-settings>`__
+- `Town Square channel settings <#town-square-channel-settings>`__
+- `Custom emoji settings <#custom-emoji-settings>`__
+- `Timezone settings <#timezone-settings>`__
+- `High availablity settings <#high-availability-settings>`__
+- `Rest API V3 settings <#rest-api-v3-settings>`__
+- `Integrations settings <#integrations-settings>`__
+- `Permission policy settings <#permission-policy-settings>`__
+- `Image settings <#image-settings>`__
+- `Experimental display settings <#experimental-display-settings>`__
+- `Other deprecated settings <#other-deprecated-settings>`__
+
+----
+
 Bleve settings
 --------------
 
@@ -17,6 +39,8 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
 +-------------------------------------------------------------------------------------------------------------+
 
+----
+
 Elasticsearch settings
 ----------------------
 
@@ -32,6 +56,8 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
 +-----------------------------------------------------------------------------------------------------------------+
+
+----
 
 Service settings
 ----------------
@@ -107,10 +133,12 @@ Disable legacy MFA API endpoint
       | This feature's ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false``. |
       +--------------------------------------------------------------------------------------------------------------+
 
-Database Settings
+----
+
+Database settings
 ------------------
 
-At Rest Encrypt Key
+At rest encrypt key
 ~~~~~~~~~~~~~~~~~~~
 
 *Removed in August 23, 2018 release*
@@ -158,10 +186,12 @@ Amazon S3 lowercase bucket
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------+
++------------------
 
-Users and teams
----------------
+----
+
+Users and teams settings
+------------------------
 
 Enable team directory
 ~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +206,7 @@ Enable team directory
 | This feature's ``config.json`` setting is ``"EnableTeamListing": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Allow Team Admins to edit others' posts
+Allow team admins to edit others' posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
@@ -218,8 +248,10 @@ Enable team creation
       | This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false``. |
       +---------------------------------------------------------------------------------------------------------------+
 
-SAML 2.0
---------
+----
+
+SAML 2.0 settings
+-----------------
 
 Use new SAML library
 ~~~~~~~~~~~~~~~~~~~~
@@ -234,8 +266,10 @@ Use new SAML library
 | This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-Legacy sidebar
---------------
+----
+
+Legacy sidebar settings
+-----------------------
 
 Enable legacy sidebar
 ~~~~~~~~~~~~~~~~~~~~~
@@ -365,8 +399,10 @@ Autoclose direct messages in sidebar
       | This feature's ``config.json`` setting is ``"CloseUnusedDirectMessages": false`` with options ``true`` and ``false``. |
       +-----------------------------------------------------------------------------------------------------------------------+
 
-Town Square
------------
+----
+
+Town Square channel settings
+-----------------------------
 
 Town Square is hidden in left hand sidebar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -418,8 +454,10 @@ Town Square is read-only
       | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false``. |
       +------------------------------------------------------------------------------------------------------------------------------+
 
-Custom emoji
-------------
+----
+
+Custom emoji settings
+---------------------
 
 Restrict custom emoji creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -446,8 +484,10 @@ Restrict custom emoji creation
       | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``"all"``, ``"admin"``, and ``"system_admin"`` for the above settings, respectively. |
       +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Timezone
---------
+----
+
+Timezone settings
+-----------------
 
 Timezone
 ~~~~~~~~
@@ -464,8 +504,10 @@ Select the timezone used for timestamps in the user interface and email notifica
 | This feature's ``config.json`` setting is ``"ExperimentalTimezone": true`` with options ``true`` and ``false``.  |
 +------------------------------------------------------------------------------------------------------------------+
 
-High Availability
------------------
+----
+
+High availability settings
+--------------------------
 
 Inter-node listen address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -489,8 +531,10 @@ A list of all the machines in the cluster, such as ``["http://10.10.10.2", "http
 | This feature's ``config.json`` setting is ``"InterNodeUrls": []`` with string array input consisting of the machines in the cluster. |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
-REST API V3
------------
+----
+
+REST API V3 settings
+--------------------
 
 Allow use of API v3 endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -503,8 +547,10 @@ Set to ``false`` to disable all version 3 endpoints of the REST API. Integration
 | This feature's ``config.json`` setting is ``"EnableAPIv3": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-Integrations
-------------
+----
+
+Integrations settings
+---------------------
 
 Restrict managing integrations to Admins
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -532,8 +578,10 @@ Restrict managing integrations to Admins
 | This feature's ``config.json`` setting is ``"EnableOnlyAdminIntegrations": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
-Policy
-------
+----
+
+Permission policy settings
+--------------------------
 
 *Removed in June 16, 2018 release*
 
@@ -770,8 +818,10 @@ When post editing is permitted, setting this to ``-1`` allows editing any time, 
 | This feature's ``config.json`` setting is ``"PostEditTimeLimit": -1`` with numerical input.      |
 +--------------------------------------------------------------------------------------------------+
 
-Images
-------
+----
+
+Image settings
+--------------
 
 Attachment thumbnail width
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -839,6 +889,8 @@ The height to which profile pictures are resized after being uploaded via **Acco
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input. |
 +------------------------------------------------------------------------------------------+
 
+----
+
 Experimental display settings
 -----------------------------
 
@@ -854,3 +906,38 @@ The file must be in the same directory as your ``config.json`` file if you set a
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
 +-----------------------------------------------------------------------------------------------------------------+
+
+----
+
+Other deprecated settings
+--------------------------
+
+Disable Post Metadata
+~~~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E20*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
+
+**False**: Load channels with more accurate scroll positioning by loading post metadata.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisablePostMetadata": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------+
+
+Enable AD/LDAP group sync
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E20*
+
+**True**: Enables AD/LDAP Group Sync configurable under **User Management > Groups**.
+
+**False**: Disables AD/LDAP Group Sync and removes **User Management > Groups** from the System Console.
+
+For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__.
+
++-----------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------------+

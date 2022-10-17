@@ -6,9 +6,6 @@ Configure SMTP email server settings by going to **System Console > Environment 
 SMTP server
 ~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
@@ -20,9 +17,6 @@ SMTP server
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
@@ -33,9 +27,6 @@ SMTP server port
 
 Enable SMTP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -51,9 +42,6 @@ Enable SMTP authentication
 SMTP server username
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
@@ -65,9 +53,6 @@ SMTP server username
 SMTP server password
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
@@ -78,9 +63,6 @@ SMTP server password
 
 SMTP connection security
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -98,9 +80,6 @@ SMTP connection security
 Skip server certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -114,9 +93,6 @@ Skip server certificate verification
 
 Enable security alerts
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -133,9 +109,6 @@ Enable security alerts
 
 SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

@@ -1,9 +1,10 @@
 User management configuration settings
 ======================================
 
-Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature by going to **System Console > User Management**.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-The following user management configuration settings are available:
+Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature in the System Console by going to **User Management**:
 
 - `Users <#users>`__
 - `Groups <#groups>`__
@@ -12,13 +13,12 @@ The following user management configuration settings are available:
 - `Permissions <#permissions>`__
 - `System roles <#system-roles>`__
 
+----
+
 Users
 -----
 
 *Available in legacy Enterprise Edition E10/E20*
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage active and inactive users, revoke all user sessions,   | - System Config path: **User Management > Users**           |
@@ -27,11 +27,10 @@ Users
 | their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Groups
 ------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -44,11 +43,10 @@ Groups
 | details.                                                                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Teams
 -----
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -61,11 +59,10 @@ Teams
 | </onboard/cloud-groups.html#using-ad-ldap-group-synchronization>`__ documentation for details.   |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Channels
 --------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -77,10 +74,12 @@ Channels
 | **Note**: You can search for channels by channel name or by channel ID.                                                               |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Permissions
 -----------
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
@@ -93,11 +92,10 @@ Permissions
 | See `advanced permissions </onboard/advanced-permissions.html>`__ documentation for details            |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 System roles
 ------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

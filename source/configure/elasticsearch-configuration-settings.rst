@@ -8,9 +8,6 @@ Configure the Elasticsearch environment in which Mattermost is deployed by going
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -30,9 +27,6 @@ Enable Elasticsearch indexing
 Server connection address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -43,9 +37,6 @@ Server connection address
 
 Skip TLS verification
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -61,9 +52,6 @@ Skip TLS verification
 Server username
 ~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -76,9 +64,6 @@ Server username
 Server password
 ~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -90,9 +75,6 @@ Server password
 
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -110,9 +92,6 @@ Enable cluster sniffing
 Bulk indexing
 ~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -127,9 +106,6 @@ Bulk indexing
 Purge indexes
 ~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
@@ -143,9 +119,6 @@ Purge indexes
 
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -164,9 +137,6 @@ Enable Elasticsearch for search queries
 Enable Elasticsearch for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -184,9 +154,6 @@ Enable Elasticsearch for autocomplete queries
 Post index replicas
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -200,9 +167,6 @@ Post index replicas
 
 Post index shards
 ~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -218,9 +182,6 @@ Post index shards
 Channel index replicas
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -231,9 +192,6 @@ Channel index replicas
 
 Channel index shards
 ~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -246,9 +204,6 @@ Channel index shards
 User index replicas
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -260,9 +215,6 @@ User index replicas
 User index shards
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -273,9 +225,6 @@ User index shards
 
 Aggregate search indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -293,9 +242,6 @@ Aggregate search indexes
 Post aggregator start time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
@@ -309,9 +255,6 @@ Post aggregator start time
 
 Index prefix
 ~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -327,9 +270,6 @@ Index prefix
 Live indexing batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -344,9 +284,6 @@ Live indexing batch size
 
 Bulk indexing time window
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -367,9 +304,6 @@ Bulk indexing time window
 Request timeout
 ~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -380,9 +314,6 @@ Request timeout
 
 Trace
 ~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

@@ -1,5 +1,5 @@
-Cloud billing and account settings
-==================================
+Cloud workspace subscription, billing, and account settings
+==========================================================
 
 .. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:

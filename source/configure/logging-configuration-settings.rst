@@ -6,9 +6,6 @@ Configure logging by going to **System Console > Environment > Logging**, or by 
 Output logs to console
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------+
@@ -26,9 +23,6 @@ Output logs to console
 
 Console log level
 ~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -48,9 +42,6 @@ Console log level
 Output console logs as JSON
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------+
@@ -66,9 +57,6 @@ Output console logs as JSON
 
 Output logs to file
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -90,9 +78,6 @@ Output logs to file
 File log level
 ~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------+
@@ -110,9 +95,6 @@ File log level
 Output file logs as JSON
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------+
@@ -129,9 +111,6 @@ Output file logs as JSON
 File log directory
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------+
@@ -145,9 +124,6 @@ File log directory
 
 Enable webhook debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -166,9 +142,6 @@ Enable webhook debugging
 Enable diagnostics and error reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
@@ -181,9 +154,6 @@ Enable diagnostics and error reporting
 
 Output logs to multiple targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -204,5 +174,38 @@ Output logs to multiple targets
 | - Logs are recorded asynchronously to reduce latency to the caller.                                                       |
 | - Advanced logging supports hot-reloading of logger configuration.                                                        |
 +-----------------------------------------------+---------------------------------------------------------------------------+   
-| See the `audit log v2 </comply/audit-log.html>`__ documentation for additional information.    |
+| See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                                 |
 +-----------------------------------------------+---------------------------------------------------------------------------+
+
+Teammate name display
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+*Available in legacy Enterprise Edition E20*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Control Teammate Name Display at the system level. 
+
+**True**: Allows System Admins to control Teammate Name Display at the system level.
+
+**False**: System Admins cannot control Teammate Name Display at the system level.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LockTeammateNameDisplay": []`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
+Colorize plain text console logs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: When logged events are output to the console as plain text, colorize log levels details.
+
+**False**: Plain text log details aren't colorized in the console.
+
++---------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableColor": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------+

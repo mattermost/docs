@@ -10,7 +10,7 @@ To mark a channel as a **Favorite**, open the channel:
 
 .. tabs::
 
-  .. tab:: Web/Desktop App
+  .. tab:: Web browser/Desktop app
 
     At the top of the page, select on the star icon next to the channel name.
 
@@ -22,6 +22,6 @@ To mark a channel as a **Favorite**, open the channel:
     .. image:: ../images/favorites-list-sidebar.png
       :alt: Favorite channels in the channel sidebar.
 
-  .. tab:: Mobile App v2
+  .. tab:: Mobile app
 
     Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorites**. To remove a channel from the **Favorites** list, select **Favorites** again.
