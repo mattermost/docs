@@ -17,22 +17,26 @@ Anyone can create public channels, private channels, direct messages, and group 
   - Displaying a temporary welcome message for new channel members.
   - Automatically adding the channel to a `category in the user's channel sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__.
   - Prompting to run a playbook based on the contents of a message.
+  
+.. tabs::
  
-Create a public or private channel in Web App
------------------------------------
+  .. tab:: Web browser/Desktop app
+ 
+      Create a public or private channel in Web App
+      -----------------------------------
 
-To create a public or private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
+      To create a public or private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
 .. image:: ../images/create-new-channel.png
-    :alt: Create a channel.
+        :alt: Create a channel.
 
-Create a direct or group message in Web App
---------------------------------
+      Create a direct or group message in Web App
+      --------------------------------
 
-To start a direct or group message, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
+      To start a direct or group message, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
 .. image:: ../images/write-dm.png
-    :alt: Access recent direct messages and group messages.
+      :alt: Access recent direct messages and group messages.
 
 .. tip::
     Alternatively, you can select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. 
@@ -41,11 +45,13 @@ In the **Direct Messages** popup, identify your most recent conversations by rel
 
 .. image:: ../images/recent-direct-group-messages.png
     :alt: Write a direct message or group message.
+    
+    .. tab:: mobile app
    
-Create a public or private channel Using Mobile App V2
----------------------------------------------------------
+      Create a public or private channel Using Mobile App V2
+      ---------------------------------------------------------
 
-To create a public or private channel, select **+** symbol at the top right corner, then one menu will be appeared at the bottom of the screen, then select **Create New Channel**. If you want to make the channel private then enable the **Make Private** option. Otherwise it will be automatically Public Channel .
+     To create a public or private channel, select **+** symbol at the top right corner, then one menu will be appeared at the bottom of the screen, then select      **Create New Channel**. If you want to make the channel private then enable the **Make Private** option. Otherwise it will be automatically Public Channel .
 
 .. image:: ../images/create-channel-mobile-appV2.png
     :alt: create channel in mobile app v2
