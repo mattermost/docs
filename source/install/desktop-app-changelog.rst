@@ -23,13 +23,13 @@ Release v5.2
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop Apps must be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
 
 Highlights
 ~~~~~~~~~~~~~~~
 
 - Onboarding screen improvements: Added new **Configure Server** and first user onboarding screens when starting the app without servers configured.
-- Added a downloads dropdown menu that displays the file upload progress and recently downloaded files.
+- Added a Downloads dropdown menu that displays file upload progress and recently downloaded files.
 
 Improvements
 ~~~~~~~~~~~~~~~
