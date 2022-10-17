@@ -55,7 +55,7 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
  - Fixed an issue on larger screen sizes where the Insights widgets were pushed to the side when the right-hand side was open.
  - Fixed an issue where the ability to forward messages from public channels wasn't possible when messaging someone directly for the first time.
  - Fixed an issue where custom emojis were sometimes not visible in **Insights > Top Reactions**.
- - ixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
+ - Fixed an issue where channels with no posts within a particular timeframe didn't show in **Insights > Least Active Channel**.
  - Fixed an issue where the Channel Info right-hand side shortcut was not disabled in the Insights view.
  - Fixed an issue where an in-product link was missing from **Integrations > Bot Accounts > Add Bot Account**.
  - Reverted the new search of names in PostgreSQL using full text search introduced in v7.3.0 due to a performance regression.
