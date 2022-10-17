@@ -263,11 +263,6 @@ If **On only for code blacks starting with ```** is enabled, pressing :kbd:`Ente
 
 If disabled, pressing :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or pressing :kbd:`⇧` :kbd:`↵` on Mac inserts a new line, and pressing :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac posts the message.
 
-Enable post formatting
-~~~~~~~~~~~~~~~~~~~~~~
-
-This setting controls whether post formatting is rendered. When **On**, posts will be rendered with Markdown formatting, emoji, autolinked URLs, and line breaks. When **Off**, the raw text will be shown. See the `formatting messages <https://docs.mattermost.com/channels/format-messages.html#use-the-messaging-formatting-toolbar>`__ documentation for details.
-
 Enable join/leave messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -289,10 +284,10 @@ Scroll position when viewing unread channels
 
 Configure where to start when viewing channels with unread messages. You can start where you left off at the oldest unread message, or start at the newest message. Your preference applies to all channels.
 
-Performance debugging
+Client debugging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client performance debugging <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-performance-debugging>`__ is enabled.
+Turn on settings intended to help isolate issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client debugging <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-debugging>`__ is enabled.
 
 Deactivate account
 ~~~~~~~~~~~~~~~~~~
