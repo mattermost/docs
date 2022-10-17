@@ -50,7 +50,7 @@ Board admins can manage team access to their board by selecting **Share** in the
 
 Minimum default board roles reduce permission ambiguity and prevent security loopholes. The minimum default role means that board admins can't assign individual board members a role lower than the team role. If the team role is set to **Editor** then the board admin will only be able to assign the **Editor** or **Admin** role to individual team members. Lower roles will not be available for selection unless the admin changes the minimum board role.
 
-Depending on the role selected, everyone on the team will have access to the board with a minumum of the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is **None**, which means nobody on the team has access to the board.
+Depending on the role selected, everyone on the team will have access to the board with a minimum of the permissions from the role selected. Users can get elevated permissions based on their individual board membership. The default team access for a newly created board is **None**, which means nobody on the team has access to the board.
 
 Manage individual board membership
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
