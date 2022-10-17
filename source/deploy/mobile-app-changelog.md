@@ -1856,7 +1856,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where opening a single or group notification did not take the user into the channel where the notification came from.
  - Fixed an issue where timezone did not automatically update on Android when travelling to another timezone.
  - Fixed an issue where the user mention autocomplete drop-down was case sensitive.
- - Fixed an issue where system admininistrators were able to see the full long press menu when long pressing a system message.
+ - Fixed an issue where system administrators were able to see the full long press menu when long pressing a system message.
  - Fixed an issue where users were not able to unflag posts from "Flagged Posts" when opened from a read-only channel.
  - Fixed an issue where users were unable to create channel names of two byte characters.
  

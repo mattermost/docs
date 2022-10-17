@@ -831,6 +831,7 @@ mattermost export actiance
     .. code-block:: none
 
           --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
+          --batchSize int         The number of posts to export. The default of -1 means no limit.
 
 mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -875,6 +876,7 @@ mattermost export csv
     .. code-block:: none
 
         --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+        --batchSize int         The number of posts to export. The default of -1 means no limit.
 
 mattermost export global-relay-zip
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -896,6 +898,7 @@ mattermost export global-relay-zip
     .. code-block:: none
 
         --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+        --batchSize int         The number of posts to export. The default of -1 means no limit.
 
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
