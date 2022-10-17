@@ -180,7 +180,7 @@ Example: As the default for the entire system, restrict deleting posts to only T
 
 1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
-3. In the **All Members** and **Channel Admininistrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
+3. In the **All Members** and **Channel Administrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 4. In the **Channel Administrators** and **Team Administrators** panels, in the **Delete Posts** section, check the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 
 **Restrict who can edit posts.**
