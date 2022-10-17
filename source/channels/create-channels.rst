@@ -17,12 +17,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   - Displaying a temporary welcome message for new channel members.
   - Automatically adding the channel to a `category in the user's channel sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__.
   - Prompting to run a playbook based on the contents of a message.
-  
-.. tabs::
-
-.. tab:: Web browser/Desktop app
-
-
+ 
 Create a public or private channel in Web App
 -----------------------------------
 
@@ -46,9 +41,7 @@ In the **Direct Messages** popup, identify your most recent conversations by rel
 
 .. image:: ../images/recent-direct-group-messages.png
     :alt: Write a direct message or group message.
-    
-.. tab:: Mobile app. 
-    
+   
 Create a public or private channel Using Mobile App V2
 ---------------------------------------------------------
 
