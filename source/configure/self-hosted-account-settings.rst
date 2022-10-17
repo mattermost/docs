@@ -1,5 +1,5 @@
-Self-hosted account settings
-============================
+Self-hosted workspace edition and license settings
+==================================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
