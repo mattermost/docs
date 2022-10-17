@@ -47,7 +47,7 @@ In the **Direct Messages** popup, identify your most recent conversations by rel
 .. image:: ../images/recent-direct-group-messages.png
     :alt: Write a direct message or group message.
     
-.. tab:: Mobile app
+.. tab:: Mobile app. 
     
 Create a public or private channel Using Mobile App V2
 ---------------------------------------------------------
