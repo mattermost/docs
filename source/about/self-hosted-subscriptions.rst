@@ -30,11 +30,11 @@ System Admin access is required in order to apply the license. If you're not a M
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
-You can also use the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license>`__ to apply the license.
+You can also use the `mmctl </manage/mmctl-command-line-tool.html#mmctl-license>`__ to apply the license.
 
 **If you don't have Mattermost installed**
 
-If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html>`__ documentation.
+If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide </deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks </getting-started/admin-onboarding-tasks.html>`__ documentation.
 
 View subscription information
 -----------------------------

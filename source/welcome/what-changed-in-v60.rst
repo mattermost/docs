@@ -39,7 +39,7 @@ Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **
 Status and availability
 -----------------------
 
-Let your team know your online status using `custom status and availability settings <https://docs.mattermost.com/welcome/set-your-status-availability.html>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
+Let your team know your online status using `custom status and availability settings </welcome/set-your-status-availability.html>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
 
 Product menu
 ------------

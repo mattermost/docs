@@ -13,7 +13,7 @@ Keyboard shortcuts for Mattermost teams help you make a more efficient use of yo
 Navigation shortcuts for Mattermost Channels
 --------------------------------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost Desktop App.
 
 +-------------------------------------------+--------------------------------------+----------------------------------------------+
 | On Windows & Linux                        | On Mac                               | Description                                  |

@@ -22,7 +22,7 @@ Install a database
 
 .. note:: 
   
-  You only need one database: either MySQL or PostgreSQL. See the `database software <https://docs.mattermost.com/install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
+  You only need one database: either MySQL or PostgreSQL. See the `database software </install/software-hardware-requirements.html#database-software>`__ documentation for details on database version support.
 
 .. tabs::
 

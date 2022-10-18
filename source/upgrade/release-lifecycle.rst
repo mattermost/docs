@@ -7,11 +7,11 @@ Release Lifecycle
 What is a Release Lifecycle?
 -----------------------------
 
-During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
+During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. `Extended Support Releases </upgrade/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports. We follow the same release cycle pattern for all upcoming releases.
 
 .. important::
 
-  Support for Mattermost Server v6.3 `Extended Support Release <https://docs.mattermost.com/upgrade/extended-support-release.html>`_ has come to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 or later is required.
+  Support for Mattermost Server v6.3 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 or later is recommended.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
@@ -152,9 +152,9 @@ During each monthly release, Mattermost backports high severity or high impact s
 Desktop and mobile app compatibility
 -------------------------------------
 
-Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release <https://docs.mattermost.com/upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
+Mattermost desktop and mobile apps are backwards compatible; however, we strongly recommend updating to the latest version for an optimal user experience. The latest versions include the latest security fixes, and are compatible with the oldest supported `extended support release </upgrade/extended-support-release.html>`__ of Mattermost Server to ensure backwards compatibility.
 
-Please review the `desktop app changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`__ and the `mobile app changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
+Please review the `desktop app changelog </install/desktop-app-changelog.html>`__ and the `mobile app changelog </deploy/mobile-app-changelog.html>`__ notes for any self-hosted or Cloud-specific version requirements for features and functionalities, as well as notes on security fixes.
 
 .. include:: upgrading-to-v60.rst
   :start-after: :nosearch:
