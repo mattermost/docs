@@ -185,7 +185,7 @@ Disable database search
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
 | `Elasticsearch                                                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-| </scale/elasticsearch.html>`__,    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
+| </scale/elasticsearch.html>`__,                               | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | the database can be disabled to perform searches.             |                                                                              |
 |                                                               |                                                                              |
 | - **true**: Disables the use of the database to perform       |                                                                              |
