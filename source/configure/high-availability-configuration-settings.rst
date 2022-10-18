@@ -50,7 +50,7 @@ Override hostname
 | - If left blank, Mattermost attempts to get the hostname from   |                                                                      |
 |   the operating system or uses the IP address.                  |                                                                      |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
-| See the `high availability cluster </scale/high-availability-cluster.html>`__ documentation for details.    |
+| See the `high availability cluster </scale/high-availability-cluster.html>`__ documentation for details.                               |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 
 Use IP address
