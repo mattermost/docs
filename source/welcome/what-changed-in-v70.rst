@@ -45,7 +45,7 @@ We're moving access to your enabled Mattermost integrations, including the icons
 .. image:: ../images/app-bar.png
     :alt: You can access your Mattermost integrations from the Apps Bar when your System Admin enables this feature in the System Console.
 
-In self-hosted Mattermost v7.0 deployments, the Apps Bar is hidden and integrations continue to display in the channel header by default. Your System Admin can `enable the Apps Bar in the System Console <https://docs.mattermost.com/configure/configuration-settings.html#enable-app-bar>`__. When enabled, access to all Mattermost integrations, with the exception of calls beta functionality, moves to the far right pane.
+In self-hosted Mattermost v7.0 deployments, the Apps Bar is hidden and integrations continue to display in the channel header by default. Your System Admin can `enable the Apps Bar in the System Console </configure/configuration-settings.html#enable-app-bar>`__. When enabled, access to all Mattermost integrations, with the exception of calls beta functionality, moves to the far right pane.
 
 .. note:: 
     
@@ -66,7 +66,7 @@ We’ve moved message actions for Mattermost integrations to their own dedicated
 Message formatting toolbar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Formatting your messages is easier with the introduction of an message formatting toolbar that includes shortcuts to preview messages, react with emojis, strike out text, add headings, format numbered steps, add bullets, format content as code, and hide the formatting options. See the `format messages <https://docs.mattermost.com/channels/format-messages.html>`__ documentation to learn more about the many ways you can format your messages in Mattermost using both Markdown and using the new message formatting toolbar.
+Formatting your messages is easier with the introduction of an message formatting toolbar that includes shortcuts to preview messages, react with emojis, strike out text, add headings, format numbered steps, add bullets, format content as code, and hide the formatting options. See the `format messages </channels/format-messages.html>`__ documentation to learn more about the many ways you can format your messages in Mattermost using both Markdown and using the new message formatting toolbar.
 
 .. image:: ../images/message-formatting-toolbar.png
     :alt: Use the message formatting editor to format your messages without having to use Markdown syntax.

@@ -4,6 +4,11 @@ Work with cards
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
+  :height: 24px
+  :width: 24px
+  :alt: Access additional message actions using the More actions icon.
+
 A card consists of:
 
 - **A set of properties**: Properties are common to all cards in a board. Board views can group cards by “Select” type properties into different columns.
@@ -19,16 +24,16 @@ Our standard board templates provide some default card properties that can be cu
 Card descriptions
 -----------------
 
-Card descriptions can include text with Markdown formatting, checkboxes, and visual elements such as images or GIFs, and can be separated into blocks of content. To add a description, open a card then click on **Add a description…** below the Comments section and start typing in your content.
+Card descriptions can include text with Markdown formatting, checkboxes, and visual elements such as images or GIFs, and can be separated into blocks of content. To add a description, open a card, select **Add a description** below the **Comments** section, and start typing in your content.
 
-To add a new content block in the description section, hover over the section and click on the **Add content** button and select from any of the following options:
+To add a new content block in the description section, hover over the section and select **Add content**. Then choose from any of the following options:
 
 - **Text**: Adds a new text block that can be formatted with Markdown.
 - **Image**: Select and embed an image file into the content block. The following image formats are currently supported: GIF, JPEG, and PNG.
 - **Divider**: Adds a divider content block below the previous block.
-- **Checkbox**: Adds a checkbox content block. Press Enter/Return after typing in content for your checkbox to add another checkbox within the same block. Please note, Markdown formatting is not supported within the *Checkbox* content block.
+- **Checkbox**: Adds a checkbox content block. Press Enter/Return after typing in content for your checkbox to add another checkbox within the same block. Please note, Markdown formatting isn't supported within the **Checkbox** content block.
 
-To manage the description content blocks on a card, hover over any existing block and select options menu **(...)** to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then click and hold the grid button to drag and drop it to a new position within the description section.
+To manage the description content blocks on a card, hover over any existing block and select the options menu |options-icon| to move the block up or down, insert a new block above, or delete the current block. Alternatively, you can hover over any existing block, then select and hold the grid button to drag and drop it to a new position within the description section.
 
 Card properties
 ---------------
@@ -38,10 +43,9 @@ Cards can contain different data fields depending on the purpose of the board. U
 Add properties
 --------------
 
-To create a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they are added to all new and all existing cards on the current board.
+To create a new property field open a card and select **Add a property**. Then select the type of property from the drop-down menu. The property type specifies the type of data you plan to capture within that field. When you create new card properties, they're added to all new and all existing cards on the current board.
 
 Properties are automatically added to the board filter list at the top of the page, so ensure you customize all property names to make it easy to filter your board by specific properties later.
-
 
 Work with property types
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,12 +53,12 @@ Work with property types
 Boards supports a wide range of fully customizable property types:
 
 - **Text** can be used to add short notes to a card. An advantage of the text property over card descriptions is that it can be `shown on the board <https://docs.mattermost.com/boards/work-with-cards.html#toggle-properties-shown-on-a-board>`_ without needing to open the card.
-- **Numbers** are useful to capture metrics such as task sizing or effort estimates. Use in conjunction with Calculations to get the most out of the number property type.  
+- **Numbers** are useful to capture metrics such as task sizing or effort estimates. Use in conjunction with calculations to get the most out of the number property type.  
 - **Email** and **Phone** can be used to record contact information.
 - **URL** can be used to provide a link to a pull request or relevant website. Clicking on the box of a URL property will automatically open the link in a new tab on your browser. Hover over the box to surface options to copy or edit the URL.
 - **Select** and **Multi-select** allows you to create a predefined list of options that can be color-coded and displayed as badges on the card to indicate things like status and priority.
 - **Dates** are useful to set and track due dates or milestones. Use the date property to make a card appear on the `Calendar view <https://docs.mattermost.com/boards/work-with-views.html#calendar-view>`_. Set a single date or toggle on the **End date** to set a date range.
-- **Person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
+- **Person** and **Multi-person** provides a quick way to capture user assignments. Note that this is not available in Personal Desktop.
 - **Checkbox** is a toggle property that can be used for assigning simple binary options on a card such as True/False or Yes/No.
 - **Created time/Created by/Last updated time/Last updated by** are predefined system properties to help you audit changes on a card. The names of these properties are customizable, but the values are not.
 
@@ -67,7 +71,7 @@ To rename a property field, open up a card and select the property name to open 
 Change a property type
 ----------------------
 
-To change a property type, select the property, then open the **Type** menu and choose a new property type. You’ll be asked to confirm the change from every card on the current board. Changing the type for an existing property will affect values across all cards on the board and may result in data loss.
+To change a property type, select the property then open the **Type** menu and choose a new property type. You’ll be asked to confirm the change from every card on the current board. Changing the type for an existing property will affect values across all cards on the board and may result in data loss.
 
 Delete a property
 -----------------
@@ -122,20 +126,21 @@ Comment on a card
 
 Comments allow you to provide feedback and ask questions relevant to the specific work item on the card.
 
-To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card <https://docs.mattermost.com/boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
+To add a comment, select a card to open the card view, then click on **Add a comment…** to type in your comment, and press **Send** to save the comment to the card. All team members who are `following the card </boards/work-with-cards.html#receive-updates>`_ will receive a notification with a preview of your comment in Mattermost Channels.
 
+From Mattermost Boards v7.4, only board members with the *Commenter* role or higher can comment on a card. Board members assigned the *Viewer* role can view, but not comment on, a card.
 
 Mention people
 --------------
 
-You can include a team member on a card by `mentioning them on a card <https://docs.mattermost.com/channels/mention-people.html>`__ the same way you would in Channels. Mentions are supported in the `Comments <https://docs.mattermost.com/boards/work-with-cards.html#comment-on-a-card>`_ and `Description <https://docs.mattermost.com/boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
+You can include a team member on a card by `mentioning them on a card </channels/mention-people.html>`__ the same way you would in Channels. Mentions are supported in the `Comments </boards/work-with-cards.html#comment-on-a-card>`_ and `Description </boards/work-with-cards.html#card-descriptions>`_ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
 
 Receive updates
 ---------------
 
 When you create a card, you automatically follow it. You can @mention someone on a card to add them as a follower. This can be a card you've created or someone else's card. Lastly, you can also follow cards manually using the **Follow** option on the top-right corner of a card. To unfollow a card, select **Following**.
 
-When updates are made to a card you're following, you'll receive a Direct Message from the boards bot with a summary of the change (e.g. Bob changed status from **In progress** to **Done**) and a link to the card for more detailed information.
+When updates are made to a card you're following, you'll receive a direct message from the boards bot with a summary of the change (e.g. Bob changed status from **In progress** to **Done**) and a link to the card for more detailed information.
 
 .. note::
 
@@ -161,7 +166,7 @@ Card templates can help reduce repetitive manual input for similar types of work
 Alternatively, you can turn any existing card into a template:
 
 1. Open the card you want to use as a template.
-2. Select the options menu **(...)** in the top-right corner of the card.
+2. Select the options menu |options-icon| in the top-right corner of the card.
 3. Select **New template from card**.
 4. Edit the card as needed, including a helpful name.
 5. Close the card using the **X** in the top left corner.
@@ -170,11 +175,9 @@ Alternatively, you can turn any existing card into a template:
 To set a default card template for all new cards created on the board:
 
 1. Select the drop-down arrow next to **New**.
-2. Open the options menu **(...)** next to the card template of your choosing.
+2. Open the options menu |options-icon|next to the card template of your choosing.
 3. Select **Set as default**.
 
 .. note:: 
   
-  The card template is applicable only to the board in which it’s created and isn’t available in other boards in your team workspace. Comments on a template do not get populated on to new cards. Additionally, properties cannot be hidden from a card template at this time. All cards on a board share the same properties, so adding or deleting a property on a template will also apply to all cards on a board.
-
-
+  The card template is applicable only to the board in which it’s created and isn’t available in other boards in your team workspace. Comments on a template don't get populated on to new cards. Additionally, properties can't be hidden from a card template at this time. All cards on a board share the same properties, so adding or deleting a property on a template will also apply to all cards on a board.

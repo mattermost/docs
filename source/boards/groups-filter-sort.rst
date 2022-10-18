@@ -1,7 +1,7 @@
 Work with groups, filter, and sort
 ==================================
 
-Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with `saved views <https://docs.mattermost.com/boards/work-with-views.html#work-with-saved-views>`_, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
+Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with `saved views </boards/work-with-views.html#work-with-saved-views>`_, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
 
 Group cards
 -----------
@@ -17,8 +17,8 @@ Apply a group
 
 To apply a group, select the **Group by** option at the top of the board, then select any available **Select** property to group your cards by.
 
-- In the `boards view <https://docs.mattermost.com/boards/work-with-views.html#board-view>`_, cards are automatically grouped into columns by the values from the specified **Select** **property.**
-- In the `table view <https://docs.mattermost.com/boards/work-with-views.html#board-view>`_, grouped cards will appear in individual sections based on the values from the specified **Select** property. Select the arrow to the left of the group name to expand or collapse cards in the group.
+- In the `boards view </boards/work-with-views.html#board-view>`_, cards are automatically grouped into columns by the values from the specified **Select** **property.**
+- In the `table view </boards/work-with-views.html#board-view>`_, grouped cards will appear in individual sections based on the values from the specified **Select** property. Select the arrow to the left of the group name to expand or collapse cards in the group.
 
 Hide and unhide groups
 ~~~~~~~~~~~~~~~~~~~~~~

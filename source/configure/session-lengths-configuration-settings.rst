@@ -6,9 +6,6 @@ User sessions are cleared when a user tries to log in, and sessions are cleared 
 Extend session length with activity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -29,9 +26,6 @@ Extend session length with activity
 Session length for AD/LDAP and email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -48,9 +42,6 @@ Session length for AD/LDAP and email
 Session length for mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -65,9 +56,6 @@ Session length for mobile
 
 Session length for SSO
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -91,9 +79,6 @@ Session length for SSO
 Session cache
 ~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -104,9 +89,6 @@ Session cache
 
 Session idle timeout
 ~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -123,7 +105,7 @@ Session idle timeout
 |                                                                                                                                                       |
 | - This setting has no effect when `extend session length with activity <#extend-session-length-with-activity>`__ is set to **true**.                  |
 | - This setting applies to the webapp and the desktop app. For mobile apps, use an                                                                     |
-|   `EMM provider <https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html>`__ to lock the app when not in use.                   |
-| - In `high availability mode <https://docs.mattermost.com/scale/high-availability-cluster.html>`__, enable IP hash load balancing for reliable        |
+|   `EMM provider </deploy/deploy-mobile-apps-using-emm-provider.html>`__ to lock the app when not in use.                   |
+| - In `high availability mode </scale/high-availability-cluster.html>`__, enable IP hash load balancing for reliable        |
 |   timeout measurement.                                                                                                                                |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+

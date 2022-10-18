@@ -9,7 +9,7 @@ Mattermost product documentation
 
 .. _`mattermost.org/download`: https://mattermost.com/download/
 .. _contacting Mattermost, Inc.: https://mattermost.com/contact-us/
-.. _download and try it today.: https://docs.mattermost.com/install/enterprise-install-upgrade.html
+.. _download and try it today.: /install/enterprise-install-upgrade.html
 
 .. toctree::
    :maxdepth: 1

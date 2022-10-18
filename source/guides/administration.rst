@@ -6,10 +6,10 @@ Mattermost administration guide
 
 This guide is for people who administer an existing Mattermost server. It’s divided into four parts:
 
-* `Get started <https://docs.mattermost.com/guides/administration.html#get-started>`__ - An overview of standard configurations and features for both self-hosted and Cloud workspaces.
-* `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
-* `Self-hosted administration <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
-* `Other resources <https://docs.mattermost.com/guides/administration.html#other-resources>`__ - Additional migration, conversion, and troubleshooting resources.
+* `Get started </guides/administration.html#get-started>`__ - An overview of standard configurations and features for both self-hosted and Cloud workspaces.
+* `Cloud workspace management </guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
+* `Self-hosted administration </guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
+* `Other resources </guides/administration.html#other-resources>`__ - Additional migration, conversion, and troubleshooting resources.
 
 If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, see the :doc:`Mattermost Deployment Guide </guides/deployment>`.
 
@@ -21,11 +21,17 @@ Get started
 
     Optimize your workspace </configure/optimize-your-workspace>
     Mattermost configuration settings </configure/configuration-settings>
-    About </configure/self-hosted-account-settings>
-    Billing & account </configure/cloud-billing-account-settings>
+    Self-hosted edition and license </configure/self-hosted-account-settings>
+    Cloud subscription, billing, and account </configure/cloud-billing-account-settings>
     Reporting configuration settings </configure/reporting-configuration-settings>
     User management configuration settings </configure/user-management-configuration-settings>
     Environment configuration settings </configure/environment-configuration-settings>
+    Site configuration settings </configure/site-configuration-settings>
+    Authentication configuration settings </configure/authentication-configuration-settings>
+    Plugins configuration settings </configure/plugins-configuration-settings>
+    Integrations configuration settings </configure/integrations-configuration-settings>
+    Compliance configuration settings </configure/compliance-configuration-settings>
+    Experimental configuration settings </configure/experimental-configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Environment variables </configure/environment-variables>
     Provisioning workflows </onboard/user-provisioning-workflows>
@@ -48,7 +54,7 @@ Get started
 These resources will help you get started with your Mattermost self-hosted or Cloud workspace.
 
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
-* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
+* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 * **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
 * **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
 * **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
@@ -121,7 +127,7 @@ Cloud workspace management
 Self-hosted administration
 --------------------------
 
-This section of the guide is for system admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#cloud-workspace-management>`__ section on this page.
+This section of the guide is for system admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud workspace management </guides/administration.html#cloud-workspace-management>`__ section on this page.
 
 .. toctree::
     :maxdepth: 1
@@ -137,7 +143,8 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Migration guide </onboard/migrating-to-mattermost>
     Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>
     Customize Mattermost </configure/customizing-mattermost>
-    Audit log v2 </comply/audit-log>
+    Audit logging </comply/audit-log>
+    JSON audit log schema </comply/embedded-json-audit-log-schema>
     SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
 
@@ -151,7 +158,8 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`Migration guide </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.
 * :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Set up search capabilities for teams communicating via Chinese, Japanese, or Korean.
 * :doc:`Whitelabel Mattermost </configure/customizing-mattermost>` - Whitelabel the Mattermost server and apps.
-* :doc:`Audit log v2 </comply/audit-log>` - Review a comprehensive list of events that occur on your Mattermost server.
+* :doc:`Audit logging </comply/audit-log>` - Learn how Mattermost records activities and events performed within a Mattermost workspace.
+* :doc:`JSON audit log schema </comply/embedded-json-audit-log-schema>` - Learn how to configure Mattermost audit logging using a JSON object.
 * :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
 * :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 

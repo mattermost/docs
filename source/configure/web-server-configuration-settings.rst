@@ -9,9 +9,6 @@ Configure the network environment in which Mattermost is deployed by going to **
 Site URL
 ~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
@@ -36,9 +33,6 @@ Site URL
 Web server listen address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------+
@@ -55,9 +49,6 @@ Web server listen address
 Forward port 80 to 443
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -73,9 +64,6 @@ Forward port 80 to 443
 Web server connection security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
@@ -85,15 +73,12 @@ Web server connection security
 |   connection.                                                         |                                                                       |
 | - **TLS**: Encrypts the communication between Mattermost              |                                                                       |
 |   clients and your server. See the `configuring TLS on Mattermost     |                                                                       |
-|   <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ |                                                                       |
+|   </install/config-tls-mattermost.html>`__ |                                                                       |
 |   for more details                                                    |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 TLS certificate file
 ~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -107,9 +92,6 @@ TLS certificate file
 TLS key file
 ~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+---------------------------------------------------------------+
@@ -122,15 +104,12 @@ TLS key file
 Use Let's Encrypt
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.  | - System Config path: **Environment > Web Server**                       |
 | See the `configuring TLS on Mattermost documentation                | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
-| <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
+| </install/config-tls-mattermost.html>`__ | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
 | for more details on setting up Let’s Encrypt.                       |                                                                          |
 |                                                                     |                                                                          |
 | - **true**: The certificate will be retrieved when a client         |                                                                          |
@@ -143,9 +122,6 @@ Use Let's Encrypt
 
 Let's Encrypt certificate cache file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -162,9 +138,6 @@ Let's Encrypt certificate cache file
 Read timeout
 ~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
@@ -179,9 +152,6 @@ Read timeout
 
 Write timeout
 ~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -202,9 +172,6 @@ Write timeout
 Idle timeout
 ~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
@@ -217,9 +184,6 @@ Idle timeout
 
 Webserver mode
 ~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -242,9 +206,6 @@ Webserver mode
 Enable insecure outgoing connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
@@ -264,9 +225,6 @@ Enable insecure outgoing connections
 Managed resource paths
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+-------------------------------------------------------------------------+
@@ -285,14 +243,14 @@ Managed resource paths
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | **Note:**                                                                                                                        |
 | When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of   |
-| in a browser. See the `desktop managed resources <https://docs.mattermost.com/install/desktop-app-managed-resources.html>`__     |
+| in a browser. See the `desktop managed resources </install/desktop-app-managed-resources.html>`__     |
 | documentation for details.                                                                                                       |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
 Reload configuration from disk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
@@ -312,9 +270,6 @@ Reload configuration from disk
 Purge all caches
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------+---------------------------------------------------------------+
@@ -325,15 +280,12 @@ Purge all caches
 | Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Purging the caches may adversely impact performance. Deployments using `high availability clusters             |
-| <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the       |
+| </scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the       |
 | cluster.                                                                                                                 |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
 Websocket URL
 ~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -347,7 +299,7 @@ Websocket URL
 License file location
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
@@ -365,9 +317,6 @@ License file location
 TLS minimum version
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
@@ -382,9 +331,6 @@ TLS minimum version
 
 Trusted proxy IP header
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -410,9 +356,6 @@ Trusted proxy IP header
 Enable Strict Transport Security (HSTS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -430,9 +373,6 @@ Enable Strict Transport Security (HSTS)
 Secure TLS transport expiry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -449,9 +389,6 @@ Secure TLS transport expiry
 
 TLS cipher overwrites
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -477,9 +414,6 @@ TLS cipher overwrites
 Goroutine health threshold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -497,9 +431,6 @@ Goroutine health threshold
 Allow cookies for subdomains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -512,7 +443,7 @@ Allow cookies for subdomains
 Cluster log timeout
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
@@ -525,5 +456,5 @@ Cluster log timeout
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| See the `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation for details.                    |
+| See the :doc:`performance monitoring </scale/performance-monitoring>` documentation for details.                                                 |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+

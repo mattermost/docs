@@ -10,7 +10,7 @@ What is an Extended Support Release?
 During each monthly release, Mattermost backports high severity or high impact security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.
 
 .. important::
-  Support for Mattermost Server v6.3 Extended Support Release is coming to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 Extended Support Release or later is recommended.
+  Support for Mattermost Server v6.3 Extended Support Release has come to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 Extended Support Release or later is required.
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
@@ -21,7 +21,7 @@ When an ESR is at the end of its life cycle, there will be announcements ahead o
 
 After a release reaches its end-of-life, no further updates will be provided for that version.
 
-Please see `Release Lifecycle documentation <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_ for full list of lifecycles for each Mattermost release.
+Please see `Release Lifecycle documentation </upgrade/release-lifecycle.html>`_ for full list of lifecycles for each Mattermost release.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`__.
 
@@ -43,7 +43,7 @@ If your organization prefers to have the newest features and improvements, Exten
 How do I install the Extended Support Release?
 ----------------------------------------------
 
-Follow our normal `install <https://docs.mattermost.com/guides/deployment.html#install-guides>`__ or `upgrade <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ guides. Please follow the `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed. Please also see `the changelog <https://docs.mattermost.com/install/self-managed-changelog.html>`_ for list of database, API and config.json updates for each release.
+Follow our normal `install </guides/deployment.html#install-guides>`__ or `upgrade </upgrade/upgrading-mattermost-server.html>`__ guides. Please follow the `important upgrade notes </upgrade/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed. Please also see `the changelog </install/self-managed-changelog.html>`_ for list of database, API and config.json updates for each release.
 
 When downloading the Mattermost version, choose an Extended Support Release from the list below.
 
@@ -53,7 +53,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                       |
 +=============+================+==================+==================+============================================================================================+=====================================================+
-| 7.1         | Feature        | July 15, 2022    | April 15, 2023   | `7.1.3 <https://releases.mattermost.com/7.1.3/mattermost-7.1.3-linux-amd64.tar.gz>`_       |                                                     |
+| 7.1         | Feature        | July 15, 2022    | April 15, 2023   | `7.1.4 <https://releases.mattermost.com/7.1.4/mattermost-7.1.4-linux-amd64.tar.gz>`_       |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | 6.3         | Feature        | January 16, 2022 | October 15, 2022 | `6.3.10 <https://releases.mattermost.com/6.3.10/mattermost-6.3.10-linux-amd64.tar.gz>`_    |                                                     |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
@@ -92,7 +92,7 @@ How do we notify customers about new and deprecated Extended Support Releases?
 
 For a new upcoming ESR, we send out an email announcement on or close to release day. We also add a reminder on our release announcement, changelog, and via a Forum post (`see example <https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>`_).
 
-For a deprecated ESR, we send out an email announcement three months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.com/>`_.
+For a deprecated ESR, we send out an email announcement three months in advance. We also add reminders on our release announcements, changelogs, `important upgrade notes </upgrade/important-upgrade-notes.html>`_, and our `Forum site <https://forum.mattermost.com/>`_.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <https://eepurl.com/dCKn2P>`_.
 
@@ -106,7 +106,7 @@ What Mobile and Desktop App versions are compatible with the latest ESR?
 
 Earlier 4.x versions of Mattermost Desktop App and earlier v1.x versions of the Mobile App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
 
-Please review the `Desktop App changelog <https://docs.mattermost.com/install/desktop-app-changelog.html>`_ and the `Mobile App changelog <https://docs.mattermost.com/deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
+Please review the `Desktop App changelog </install/desktop-app-changelog.html>`_ and the `Mobile App changelog </deploy/mobile-app-changelog.html>`_ notes for any self-hosted version requirements for features and functionalities, as well as notes on security fixes.
 
 +-------------+------------------+-----------------------------------------+----------------------------------------+
 | ESR Version | Release Date     | Desktop App Minimum Supported Version   | Mobile App Minimum Supported Version   |
@@ -118,4 +118,4 @@ Please review the `Desktop App changelog <https://docs.mattermost.com/install/de
 | 5.37        | July 16, 2021    | 4.7.0                                   | 1.45.0                                 |
 +-------------+------------------+-----------------------------------------+----------------------------------------+
 
-See more details in our `release lifecycle documentation <https://docs.mattermost.com/upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.
+See more details in our `release lifecycle documentation </upgrade/release-lifecycle.html#desktop-and-mobile-app-server-compatibility>`_.

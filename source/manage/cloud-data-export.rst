@@ -16,11 +16,11 @@ You can migrate your Cloud workspace data to a self-hosted deployment at any tim
 How does the process work?
 --------------------------
 
-Before you export and migrate your data, you must `install Mattermost <https://docs.mattermost.com/guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. From Mattermost v6.0 onwards, mmctl is pre-installed. For versions prior to 6.0, first download the newest release from `the releases page <https://github.com/mattermost/mmctl/releases/tag/v6.1.0>`_, `install mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#install-mmctl>`_, and place the binary on your ``PATH``.
+Before you export and migrate your data, you must `install Mattermost </guides/deployment.html#install-guides>`_ on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. From Mattermost v6.0 onwards, mmctl is pre-installed. For versions prior to 6.0, first download the newest release from `the releases page <https://github.com/mattermost/mmctl/releases/tag/v6.1.0>`_, `install mmctl </manage/mmctl-command-line-tool.html#install-mmctl>`_, and place the binary on your ``PATH``.
 
-The `mmctl usage notes <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
+The `mmctl usage notes </manage/mmctl-command-line-tool.html#mmctl-usage-notes>`_ provide some additional context and information which you can reference before and during the process.
 
-You'll be using the `mmctl export <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
+You'll be using the `mmctl export </manage/mmctl-command-line-tool.html#mmctl-export>`__ commands to export your Cloud data for channels, messages, users, etc. The export file is downloaded to a location specified in the export commands. Once the export is complete, you'll import the data into your self-hosted instance.
 
 .. note::
   

@@ -6,9 +6,6 @@ Configure Mattermost to enable push notifications to Mattermost clients by going
 Enable push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -21,9 +18,6 @@ Enable push notifications
 
 Push notification server location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -44,9 +38,9 @@ Push notification server location
 | **Notes**:                                                                                                                                       |
 |                                                                                                                                                  |
 | - The TPNS is provided for testing push notifications prior to compiling your own service. Ensure you’re familiar with its `limitations          |
-|   <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__. Review the                                      |
-|   `mobile push notifications <https://docs.mattermost.com/deploy/mobile-hpns.html>`__                                                            |
-|   and `mobile apps <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ documentation, including guidance on compiling your own |
+|   </deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__. Review the                                      |
+|   `mobile push notifications </deploy/mobile-hpns.html>`__                                                            |
+|   and `mobile apps </deploy/build-custom-mobile-apps.html>`__ documentation, including guidance on compiling your own |
 |   mobile apps and MPNS, before deploying to production.                                                                                          |
 | - To confirm push notifications are working, connect to the `Mattermost iOS App <https://apps.apple.com/us/app/mattermost/id1257222717>`__       |
 |   available on the App Store, or the `Mattermost Android App <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ available on   |
@@ -55,9 +49,6 @@ Push notification server location
 
 Maximum notifications per channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -69,6 +60,6 @@ Maximum notifications per channel
 | Numerical input. Default is **1000**.                           |                                                                                      |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | **Note**: We recommend increasing this value a little at a time, monitoring system health by tracking `performance monitoring metrics                  |
-| <https://docs.mattermost.com/scale/performance-monitoring.html>`__, and only increasing this value if large channels have restricted permissions       |
+| </scale/performance-monitoring.html>`__, and only increasing this value if large channels have restricted permissions       |
 | controlling who can post to the channel, such as a read-only Town Square channel.                                                                      |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
