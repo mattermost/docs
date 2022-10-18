@@ -21,19 +21,13 @@ Anyone can create public channels, private channels, direct messages, and group 
 .. tabs::
 
   .. tab:: Web browser/Desktop app
-
-    Create a public or private channel in Web App
-    ---------------------------------------------
-    
-    To create a public or private channel, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
+  
+    **To create a public or private channel in Web App**, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
     .. image:: ../images/create-new-channel.png
       :alt: Create a channel
-
-   Create a direct or group message in Web App
-   ---------------------------------------------
    
-   To start a direct or group message, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
+   **To start a direct or group message in Web App**, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
     .. image:: ../images/write-dm.png
       :alt: Access recent direct messages and group messages.
@@ -45,24 +39,15 @@ Anyone can create public channels, private channels, direct messages, and group 
                           
                   .. image:: ../images/recent-direct-group-messages.png
                       :alt: Write a direct message or group message.
-    
-
-                                
-    
+      
   .. tab:: Mobile app
-
-   Create a public or private channel Using Mobile App V2
-   --------------------------------------------------------
    
-   To create a public or private channel, select **+** symbol at the top right corner, then one menu will be appeared at the bottom of the screen, then select**Create New Channel**. If you want to make the channel private then enable the **Make Private** option. Otherwise it will be automatically Public Channel .
+   **To create a public or private channel in mobile app V2**, select **+** symbol at the top right corner, then one menu will be appeared at the bottom of the screen, then select **Create New Channel**. If you want to make the channel private then enable the **Make Private** option. Otherwise it will be automatically Public Channel .
    
    .. image:: ../images/create-channel-mobile-appV2.png
        :alt: create channel in mobile app v2 .
-       
-    create a direct or group message in Mobile App V2
-    ----------------------------------------------------------
     
-    To start a direct or group message, select  the **+** sign again, then select Open **a Direct Message** then select the person whom you want to have a chat or you can select multiple person if you want to create a **Group**, then select **Start** . your group will be created .
+    **To start a direct or group message in Mobile App V2**, select  the **+** sign again, then select Open **a Direct Message** then select the person whom you want to have a chat or you can select multiple person if you want to create a **Group**, then select **Start** . your group will be created .
     
     .. image:: ../images/direct-chat-mobile-appV2.png
         :alt: how to create group or have a direct chat .
