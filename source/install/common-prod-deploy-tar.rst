@@ -173,4 +173,4 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             
       sudo systemctl enable mattermost.service
 
-Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 

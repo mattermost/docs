@@ -1,7 +1,7 @@
 :orphan:
 :nosearch:
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__ in our product documentation. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch </scale/elasticsearch.html>`__ in our product documentation. 
 
 Configure the Elasticsearch environment in which Mattermost is deployed by going to **System Console > Environment > Elasticsearch**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
@@ -235,8 +235,8 @@ Aggregate search indexes
 |                                                               |                                                                                        |
 | Numerical input. Default is **365** days.                     |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| **Note**: If you’re using `data retention <https://docs.mattermost.com/comply/data-retention-policy.html>`__ and                                       |
-| `Elasticsearch <https://docs.mattermost.com/scale/elasticsearch.html>`__, configure this with a value greater than your data retention policy.         |
+| **Note**: If you’re using `data retention </comply/data-retention-policy.html>`__ and                                       |
+| `Elasticsearch </scale/elasticsearch.html>`__, configure this with a value greater than your data retention policy.         |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Post aggregator start time

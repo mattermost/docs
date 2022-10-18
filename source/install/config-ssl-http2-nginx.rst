@@ -17,7 +17,7 @@ You can use any certificate that you want, but these instructions show you how t
 
 .. note::
    
-   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 </configure/configuration-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 
@@ -239,7 +239,7 @@ Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain be
   "AllowCorsFrom": "domain.com domain.com:443 im.domain.com",
   "SessionLengthWebInDays": 30,
 
-For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
+For other troubleshooting tips for WebSocket errors, see `potential solutions here </install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
 
 How do I setup an NGINX proxy with the Mattermost Docker installation?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

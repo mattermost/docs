@@ -10,7 +10,7 @@ By default, Mattermost stores all message history providing an unlimited search 
 
 In Mattermost Enterprise, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
 
-For scheduled data retention jobs to work, the `global retention policy for files <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ as well as the `global retention policy for messages <https://docs.mattermost.com/configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration settings in the ``config.json`` file must be set to ``true``. These configuration settings are disabled by default.
+For scheduled data retention jobs to work, the `global retention policy for files </configure/configuration-settings.html#enable-global-retention-policy-for-files>`__ as well as the `global retention policy for messages </configure/configuration-settings.html#enable-global-retention-policy-for-messages>`__ configuration settings in the ``config.json`` file must be set to ``true``. These configuration settings are disabled by default.
 
 .. warning:: 
   Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
@@ -49,7 +49,7 @@ You can also run the deletion job manually at any time by selecting **Run Deleti
 
 .. note::
   
-  If using data retention and `ElasticSearch <https://docs.mattermost.com/scale/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/configure/configuration-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
+  If using data retention and `ElasticSearch </scale/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes </configure/configuration-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
 
 Frequently Asked Questions (FAQs)
 ---------------------------------
@@ -78,7 +78,7 @@ If the files were uploaded prior to Mattermost v4.2, you will need to delete the
 1. Wait until all files uploaded prior to Mattermost v4.2 are past the file retention policy duration.
 2. Delete the ``teams/`` folder in the root of your  Mattermost storage directory.
 
-Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table <https://docs.mattermost.com/install/self-managed-changelog.html#id41>`__. 
+Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table </install/self-managed-changelog.html#id41>`__. 
 
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
