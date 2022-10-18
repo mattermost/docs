@@ -4,7 +4,7 @@ mmctl command line tool
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included from Mattermost v6.0, and it replaces the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
+The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included from Mattermost v6.0, and it replaces the `CLI </manage/command-line-tools.html>`__. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
 Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
@@ -57,7 +57,7 @@ mmctl usage notes
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
   - If the ``bin`` directory is not added to the ``$PATH`` environment variable, each time you use mmctl you must be in the ``bin`` directory to run mmctl commands, and the commands must be prefixed with ``./``. If you're working from a different directory, make sure you specify the full path to mmctl when running mmctl commands.
 - Parameters in CLI commands are order-specific.
-- You can use the ``--local`` flag with mmctl commands to run them without authentication by allowing communicating with the server through a Unix socket. See the `local mode <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#local-mode>`__ documentation for activation and usage details.
+- You can use the ``--local`` flag with mmctl commands to run them without authentication by allowing communicating with the server through a Unix socket. See the `local mode </manage/mmctl-command-line-tool.html#local-mode>`__ documentation for activation and usage details.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
@@ -161,7 +161,7 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to `have local mode enabled </configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 .. tip::
 
@@ -170,7 +170,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 Using local mode
 ~~~~~~~~~~~~~~~~
 
-You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting <https://docs.mattermost.com/configure/configuration-settings.html#enable-local-mode-socket-location>`_.
+You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the `server configuration setting </configure/configuration-settings.html#enable-local-mode-socket-location>`_.
 
 In Mattermost versions prior to 5.26, only the commands ``config``, ``plugin``, and ``license`` are available.
 
@@ -970,7 +970,7 @@ mmctl channel delete
 Permanently delete channels along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API Channel Deletion <https://docs.mattermost.com/configure/configuration-settings.html#enable-api-channel-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
+   Requires the `Enable API Channel Deletion </configure/configuration-settings.html#enable-api-channel-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
 
 **Format**
 
@@ -1950,7 +1950,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
   
-   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-mattermost-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
 **Format**
 
@@ -4951,7 +4951,7 @@ mmctl team delete
 Permanently delete a team along with all related information including posts from the database.
 
 .. note::
-   Requires the `Enable API Team Deletion <https://docs.mattermost.com/configure/configuration-settings.html#enable-api-team-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
+   Requires the `Enable API Team Deletion </configure/configuration-settings.html#enable-api-team-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
 
 **Format**
 
@@ -5705,7 +5705,7 @@ mmctl user delete
 Permanently delete users along with all related information including posts from the database. 
 
 .. note::
-   Requires the `Enable API User Deletion <https://docs.mattermost.com/configure/configuration-settings.html#enable-api-user-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
+   Requires the `Enable API User Deletion </configure/configuration-settings.html#enable-api-user-deletion>`__ configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
 
 **Format**
 

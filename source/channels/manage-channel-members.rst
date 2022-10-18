@@ -34,7 +34,7 @@ Remove members from a channel
 
 Any member of a channel can remove other members from a channel. 
 
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role <https://docs.mattermost.com/welcome/about-user-roles.html>`__, then select **Remove from Channel**.
+Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
 
 .. image:: ../images/remove-member-from-channel.png
     :alt: Use options available through the channel name to remove a member from a channel.

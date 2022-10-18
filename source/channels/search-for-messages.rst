@@ -54,9 +54,9 @@ File contents that match on file name, or contain matching text content within s
 
   - System Admins can extend file content search support for self-hosted deployments to include:
   
-    - `files shared before upgrading to Mattermost Server v5.35 <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__.
-    - `DOC, RTF, and PAGES file formats <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__.
-    - `documents within ZIP files <https://docs.mattermost.com/configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
+    - `files shared before upgrading to Mattermost Server v5.35 </manage/command-line-tools.html#mattermost-extract-documents-content>`__.
+    - `DOC, RTF, and PAGES file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
+    - `documents within ZIP files </configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
 
 To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
   
@@ -159,7 +159,7 @@ Technical notes about searching
 Searching Chinese, Korean, and Japanese
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation <https://docs.mattermost.com/install/i18n.html>`__ for details.
+- The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation </install/i18n.html>`__ for details.
 - You can perform searches without this configuration by adding wildcards ``*`` to the end of search terms.
 
 Differences between PostgreSQL and MySQL search

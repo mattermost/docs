@@ -225,7 +225,7 @@ Allow team admins to edit others' posts
 
       .. note::
 
-         System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ to configure this permission.
+         System Admins and Team Admins can always delete other users' posts. This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions </onboard/advanced-permissions.html>`__ to configure this permission.
 
 Enable team creation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -286,7 +286,7 @@ Enable legacy sidebar
 
       This setting re-enables the legacy sidebar functionality for all users on this server. We strongly recommend System Admins disable this setting so users can access `enhanced sidebar features <https://mattermost.com/blog/custom-collapsible-channel-categories/>`__, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
-      **False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      **False**: Users can access all new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
       **True**: When enabled, the legacy sidebar is enabled for all users on this server and users cannot access any new channel sidebar features. The legacy channel sidebar is scheduled to be deprecated, and is only recommended if your deployment is experiencing bugs or other issues with the new channel sidebar.
 
@@ -300,7 +300,7 @@ Experimental sidebar features
 *Deprecated. Not used in Mattermost v5.32 and later*
 
 .. note::
-   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ for details on customizing the sidebar. 
+   This experimental configuration setting has been deprecated, and the ability to organize channels in the sidebar has been promoted to general availability from Mattermost v5.32. See the `Organizing Your Sidebar documentation </messaging/organizing-your-sidebar.html#customizing-your-sidebar>`__ for details on customizing the sidebar. 
 
 **Disabled**: Users cannot access the experimental channel sidebar feature set.
 
@@ -325,13 +325,13 @@ Sidebar organization
       
       *Not available in Mattermost Cloud*
 
-      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
       .. note::
 
          This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html#organizing-your-sidebar>`__ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html#organizing-your-sidebar>`__ for more information about these features.
 
       **True**: Enables channel sidebar organization options in **Settings > Sidebar > Channel grouping and sorting**. Includes options for grouping unread channels, sorting channels by most recent post, and combining all channel types into a single list.
 
@@ -354,13 +354,13 @@ Enable X to leave channels from left hand sidebar
       
       *Not available in Mattermost Cloud*
 
-      This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must first enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting if you want to see and enable this functionality in the System Console.
 
       .. note::
 
          This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
       **True**: Users can leave public and private channels by clicking the "x" beside the channel name.
 
@@ -383,13 +383,13 @@ Autoclose direct messages in sidebar
       
       *Not available in Mattermost Cloud*
 
-      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
       .. note::
 
          This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
       **True**: By default, direct message conversations with no activity for 7 days will be hidden from the sidebar. Users can disable this in **Settings > Sidebar**.
 
@@ -417,13 +417,13 @@ Town Square is hidden in left hand sidebar
       
       Available in legacy Enterprise Edition E10 and higher.
 
-      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
+      This setting applies to the legacy sidebar only. You must enable the `Enable Legacy Sidebar </configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
       .. note::
 
          This experimental setting is not recommended for production environments. The new channel sidebar matches and exceeds the feature set offered by this configuration setting.
 
-      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation <https://docs.mattermost.com/messaging/organizing-your-sidebar.html>`_ for more information about these features.
+      We strongly recommend that you leave the **Enable Legacy Sidebar** configuration setting disabled so users can access new channel sidebar features, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more. See `the channel sidebar documentation </messaging/organizing-your-sidebar.html>`_ for more information about these features.
 
       **True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
 
@@ -440,7 +440,7 @@ Town Square is read-only
 
    .. tab:: Mattermost v6.0 onwards
       
-      In Mattermost v.6.0, this feature has been deprecated in favor of `channel moderation <https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation>`__ which allows you to set any channel as read-only, including Town Square.
+      In Mattermost v.6.0, this feature has been deprecated in favor of `channel moderation </manage/team-channel-members.html#channel-moderation>`__ which allows you to set any channel as read-only, including Town Square.
 
    .. tab:: Mattermost v5.39 and earlier
       
@@ -587,7 +587,7 @@ Permission policy settings
 
 .. note:: 
   
-   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ page instead of configuration settings.
+   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the `Advanced Permissions </onboard/advanced-permissions.html>`__ page instead of configuration settings.
 
 Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -596,7 +596,7 @@ Enable sending team invites from
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the product menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
@@ -617,7 +617,7 @@ Enable public channel creation for
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to create public channels.
 
@@ -638,7 +638,7 @@ Enable public channel renaming for
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Public channels.
 
@@ -661,9 +661,9 @@ Enable public channel deletion for
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
-Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/manage/command-line-tools.html>`__.
+Restrict the permission level required to delete Public channels. Deleted channels can be recovered from the database using a `command line tool </manage/command-line-tools.html>`__.
 
 **All channel members**: Allow all channel members to delete public channels.
 
@@ -684,7 +684,7 @@ Enable private channel creation for
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to create private channels.
 
@@ -705,7 +705,7 @@ Enable private channel renaming for
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Private channels.
 
@@ -728,7 +728,7 @@ Enable managing of private channel members for
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Set policy on who can add and remove members from Private channels.
 
@@ -751,9 +751,9 @@ Enable private channel deletion for
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
-Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/manage/command-line-tools.html>`__.
+Restrict the permission level required to delete Private channels. Deleted channels can be recovered from the database using a `command line tool </manage/command-line-tools.html>`__.
 
 **All channel members**: Allow all channel members to delete private channels.
 
@@ -774,7 +774,7 @@ Allow which users to delete messages
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Restrict the permission level required to delete messages. Team Admins, Channel Admins, and System Admins can delete messages only in channels where they are members. Messages can be deleted any time.
 
@@ -795,7 +795,7 @@ Allow users to edit their messages
 
 .. note:: 
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation <https://docs.mattermost.com/onboard/advanced-permissions.html>`_ for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the `Advanced Permissions documentation </onboard/advanced-permissions.html>`_ for more details.
 
 Set the time limit that users have to edit their messages after posting.
 
