@@ -96,7 +96,6 @@ Server installation
 * :doc:`Debian Buster </install/install-debian>`
 * :doc:`RHEL 8 </install/install-rhel-8>`
 * :doc:`CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific>`
-* `More server install guides <https://docs.mattermost.com/guides/deployment.html#other-resources>`__
 
 Desktop and Mobile App installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
