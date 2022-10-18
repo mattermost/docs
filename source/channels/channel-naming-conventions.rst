@@ -45,7 +45,7 @@ Here are different navigation options and types of channels to consider.
 Navigate channels using the keyboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Keyboard shortcuts allow users to jump between channels. See the `keyboard shortcuts for Channels <https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html>`__ documentation for all available keyboard shortcuts.
+Keyboard shortcuts allow users to jump between channels. See the `keyboard shortcuts for Channels </channels/keyboard-shortcuts-for-channels.html>`__ documentation for all available keyboard shortcuts.
 
 Topic channels
 ~~~~~~~~~~~~~~
@@ -80,7 +80,7 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 3. Header links
 
-When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts, or BlueJeans in the channel header. See our `documentation <https://docs.mattermost.com/channels/set-channel-preferences.html#channel-header>`__ to learn more about working with channel headers. 
+When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts, or BlueJeans in the channel header. See our `documentation </channels/set-channel-preferences.html#channel-header>`__ to learn more about working with channel headers. 
 
 When it's time to meet, your team can select the conference link to connect.
 

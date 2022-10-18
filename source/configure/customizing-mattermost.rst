@@ -34,7 +34,7 @@ Mattermost Server
 There are a few things you can customize in the Mattermost server without forking:
 
 1. Modify text in the Mattermost interface by modifying the ``en.json`` file.
-2. Customize or hide help and support links by modifying your `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
+2. Customize or hide help and support links by modifying your `configuration settings </configure/configuration-settings.html#customization>`__.
 3. Customize the email notifications by editing the HTML files in ``/templates``.
 
 Mattermost mobile apps
