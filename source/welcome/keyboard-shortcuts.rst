@@ -9,7 +9,7 @@ Mattermost keyboard shortcuts help you make a more efficient use of your keyboar
 .. tip::
 
   - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.
-  - Additional keyboard shortcuts are available for Mattermost Channels. See the `keyboard shortcuts for Mattermost Channels <https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html>`__ and the `team keyboard shortcuts <https://docs.mattermost.com/welcome/team-keyboard-shortcuts.html>`__ documentation for details.
+  - Additional keyboard shortcuts are available for Mattermost Channels. See the `keyboard shortcuts for Mattermost Channels </channels/keyboard-shortcuts-for-channels.html>`__ and the `team keyboard shortcuts </welcome/team-keyboard-shortcuts.html>`__ documentation for details.
 
 Navigation shortcuts in the desktop app
 ---------------------------------------
@@ -69,7 +69,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 Zoom shortcuts for Web and Desktop App
 ---------------------------------------
 
-The following display keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following display keyboard shortcuts work in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +------------------------------+------------------------------+----------------------------------------+
 | On Windows & Linux           | On Mac                       | Description                            |

@@ -14,7 +14,7 @@ If the server URL is correct, there could be an issue with the SSL certificate c
 
 To check your SSL certificate set up, test it by visiting a site such as `SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
+Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt </install/config-ssl-http2-nginx.html>`__ instead.
 
 Login with ADFS/Office365 is not working
 ----------------------------------------
@@ -26,7 +26,7 @@ I see a “Connecting…” bar that does not go away
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
-If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
+If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints </install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
 I’m not receiving push notifications on my device
 -------------------------------------------------
@@ -82,7 +82,7 @@ For example:
       [...]
     }
 
-See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#data-source>`__ documentation for details on configuring the connection string to the master database.
+See our `Configuration Settings </configure/configuration-settings.html#data-source>`__ documentation for details on configuring the connection string to the master database.
 
 None of these solve my problem!
 -------------------------------
