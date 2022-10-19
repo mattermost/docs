@@ -6,19 +6,19 @@ OAuth 2.0 Applications
 OAuth 2.0 is a protocol that allows Mattermost to authorize API requests from external applications. The authorization allows:
 
 - Users with an account on a Mattermost server to sign in to third-party applications. You can find a `sample OAuth2 Client Application for Mattermost here <https://github.com/enahum/mattermost-oauth2-client-sample>`__ to test the functionality.
-- A Mattermost server to authenticate requests to a third-party API. One popular application is Zapier integration which allows you to integrate more than 700 applications with Mattermost through OAuth 2.0. See our `Zapier documentation <https://docs.mattermost.com/integrations/zapier.html>`__ to learn more.
+- A Mattermost server to authenticate requests to a third-party API. One popular application is Zapier integration which allows you to integrate more than 700 applications with Mattermost through OAuth 2.0. See our `Zapier documentation </integrations/zapier.html>`__ to learn more.
 
 This documentation includes the following details:
 
- - `Register your application in Mattermost <https://docs.mattermost.com/developer/oauth-2-0-applications.html#id1>`__
- - `Granting permissions to your application <https://docs.mattermost.com/developer/oauth-2-0-applications.html#id3>`__
+ - `Register your application in Mattermost </developer/oauth-2-0-applications.html#id1>`__
+ - `Granting permissions to your application </developer/oauth-2-0-applications.html#id3>`__
 
 Register your application in Mattermost
 ---------------------------------------
 
 You must register your application in Mattermost to generate OAuth 2.0 credentials (client ID and secret), which your application can use to authenticate API calls to Mattermost, and which Mattermost uses to authorize API requests from the application.
 
-If you'd like to set up a Zapier integration with OAuth 2.0, see our `Zapier documentation <https://docs.mattermost.com/integrations/zapier.html>`__ to learn more.
+If you'd like to set up a Zapier integration with OAuth 2.0, see our `Zapier documentation </integrations/zapier.html>`__ to learn more.
 
 Enable OAuth 2.0 Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,9 +27,9 @@ OAuth 2.0 applications are off by default and can be enabled by the System Admin
 
 1. Log in to your Mattermost server as the System Administrator.
 2. Go to **System Console > Integrations > Integration Management**.
-3. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/configure/configuration-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
-4. (Optional) If you'd like to allow external applications to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ to **True**.
-5. (Optional) If you'd like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set `Restrict managing integrations to Admins <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__ to **False**.
+3. Set `Enable OAuth 2.0 Service Provider </configure/configuration-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
+4. (Optional) If you'd like to allow external applications to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames </configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons </configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ to **True**.
+5. (Optional) If you'd like to allow users on your system who are not System Admins to create OAuth 2.0 applications, then set `Restrict managing integrations to Admins </administration/config-settings.html#restrict-managing-integrations-to-admins>`__ to **False**.
 
 Register an OAuth 2.0 Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

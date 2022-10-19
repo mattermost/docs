@@ -40,19 +40,19 @@ You can deploy interactive bots to help users with processes and tasks with Matt
 
 Prebuilt bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `configure your own bots <https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/>`__.
 
-Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can `build your own <https://docs.mattermost.com/integrations/cloud-bot-accounts.html>`_.
+Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`__ and `other open source community bots available <https://integrations.mattermost.com/>`__ or you can `build your own </integrations/cloud-bot-accounts.html>`_.
 
 Custom slash commands
 ---------------------
 
-A `slash commands <https://docs.mattermost.com/channels/run-slash-commands.html>`__ is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
+A `slash commands </channels/run-slash-commands.html>`__ is similar to an `outgoing webhooks <https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-outgoing/>`__, but instead of listening to a channel, it's used as a command tool in a channel.
 
 Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the `built-in slash commands <https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/#built-in-commands>`__ and the `custom slash command <https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/#custom-slash-command>`__ developer documentation to learn more.
 
 .. tip::
     The Mattermost slash command format is compatible with Slack's format, so you can easily port commands from Slack. 
 
-Learn about `Mattermost slash commands <https://docs.mattermost.com/messaging/extending-messaging-with-integrations.html#slash-commands>`__.
+Learn about `Mattermost slash commands </messaging/extending-messaging-with-integrations.html#slash-commands>`__.
 
 Webhooks
 --------

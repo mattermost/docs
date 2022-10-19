@@ -21,9 +21,9 @@ You can share files with other Mattermost users or entire channels by:
 Attachment limits and sizes
 ---------------------------
 
-Up to 10 files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size>`__ product documentation for details.
+Up to 10 files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin. See our `Configuration Settings </configure/configuration-settings.html#maximum-file-size>`__ product documentation for details.
 
-Image files can be a maximum size of 7680 pixels x 4320 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 253 MB. System Admins can customize the maximum image resolution size within the ``config.json`` file. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#maximum-image-resolution>`__ product documentation for details.
+Image files can be a maximum size of 7680 pixels x 4320 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 253 MB. System Admins can customize the maximum image resolution size within the ``config.json`` file. See our `Configuration Settings </configure/configuration-settings.html#maximum-image-resolution>`__ product documentation for details.
 
 Preview file attachments
 ------------------------

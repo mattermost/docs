@@ -11,7 +11,7 @@ Two permission schemes are provided in Mattermost:
 * **System Scheme**: Applies permissions universally across all teams and channels.
 * **Team Override Schemes**: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
 
-This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
+This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The `permissions backend documentation </onboard/advanced-permissions-backend-infrastructure.html>`__ provides additional technical details around permissions.
   
 Permissions structure
 ----------------------
@@ -42,7 +42,7 @@ Team override scheme
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-On systems with multiple `Mattermost teams <https://docs.mattermost.com/welcome/about-teams.html#create-a-team>`__, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
+On systems with multiple `Mattermost teams </welcome/about-teams.html#create-a-team>`__, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
 
@@ -62,7 +62,7 @@ The channel permissions interface is accessed in **System Console > User Managem
 Channel Moderation
 ~~~~~~~~~~~~~~~~~~~
 
-This content has moved to `Team and Channel Management <https://docs.mattermost.com/manage/team-channel-members.html>`__.
+This content has moved to `Team and Channel Management </manage/team-channel-members.html>`__.
 
 Supplementary Roles
 ~~~~~~~~~~~~~~~~~~~~
@@ -212,14 +212,14 @@ Administration tools
 
 There are a number of CLI and mmctl tools available for Admins to help in configuring and troubleshooting the permissions system:
 
-1. Reset all permissions to the default on new installations using the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-reset>`__, or using the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions-reset>`__.
-2. `Export permission schemes <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-export>`__: Exports the System Scheme and any Team Override Schemes to a ``jsonl`` file.
-3. `Import permission schemes <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a ``jsonl`` input file in the format outputted by ``mattermost permissions export``.
+1. Reset all permissions to the default on new installations using the `CLI </manage/command-line-tools.html#mattermost-permissions-reset>`__, or using the `mmctl </manage/mmctl-command-line-tool.html#mmctl-permissions-reset>`__.
+2. `Export permission schemes </manage/command-line-tools.html#mattermost-permissions-export>`__: Exports the System Scheme and any Team Override Schemes to a ``jsonl`` file.
+3. `Import permission schemes </manage/command-line-tools.html#mattermost-permissions-import>`__: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a ``jsonl`` input file in the format outputted by ``mattermost permissions export``.
 
 Backend infrastructure
 ----------------------
 
-Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our `permissions backend documentation <https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html>`__.
+Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our `permissions backend documentation </onboard/advanced-permissions-backend-infrastructure.html>`__.
 
 Glossary
 --------
