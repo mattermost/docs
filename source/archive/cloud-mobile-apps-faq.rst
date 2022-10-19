@@ -40,7 +40,7 @@ The following post metadata is sent in all push notifications:
 - ``Category`` (iOS only, determines if the notifications can be replied to)
 - ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
 
-Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__:
+Additional metadata may be sent depending on the System Console setting for `Push Notification Contents </administration/config-settings.html#push-notification-contents>`__:
 
 - **Generic description with sender and channel names:** ``Channel name`` metadata will be included.
 - **Full message content sent in the notification payload:** ``Post content`` and ``Channel name`` metadata will be included.
@@ -53,7 +53,7 @@ When it comes to mobile data privacy, many organizations prioritize secure handl
 
 To solve this, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data. Once the device receives the ID, it then fetches the message content directly from Mattermost and displays the notification per usual. External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself.
 
-If your organization has strict privacy or compliance needs, the `ID-Only Push Notification <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
+If your organization has strict privacy or compliance needs, the `ID-Only Push Notification </administration/config-settings.html#push-notification-contents>`_ setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.
 
 What are my options for securing the mobile apps?
 -------------------------------------------------
@@ -86,7 +86,7 @@ How do I deploy Mattermost with Enterprise Mobility Management (EMM) providers?
 
 Mattermost enables customers with high privacy and custom security requirements to deploy mobile app and push notification services using keys that they alone control.
 
-`Learn more about using AppConfig for EMM providers <https://docs.mattermost.com/cloud/cloud-mobile/cloud-app-config.html>`__.
+`Learn more about using AppConfig for EMM providers </cloud/cloud-mobile/cloud-app-config.html>`__.
 
 How can I get Google SSO to work with the Mattermost mobile app?
 ----------------------------------------------------------------

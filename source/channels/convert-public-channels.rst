@@ -21,4 +21,4 @@ Convert private channels to public channels
 
 Due to potential security concerns with sharing private channel history, only System Admins can convert private channels to public channels via **System Console > Channels > Edit (Channel Configuration)**. 
 
-Alternatively, System Admins can perform this action using the `mmctl channel modify command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-channel-modify>`__.
+Alternatively, System Admins can perform this action using the `mmctl channel modify command </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-channel-modify>`__.

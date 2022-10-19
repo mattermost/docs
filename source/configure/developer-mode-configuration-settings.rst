@@ -35,7 +35,7 @@ Enable developer mode
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 Enable client debugging
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -73,7 +73,7 @@ Allow untrusted internal connections
 |                                                                                                                                               |
 | - Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.     |
 | - Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.       |
-| - The local `image proxy <https://docs.mattermost.com/deploy/image-proxy.html>`__. If the local image proxy is enabled, images located on     |
+| - The local `image proxy </deploy/image-proxy.html>`__. If the local image proxy is enabled, images located on                                |
 |   the local network cannot be used by integrations or posted in chat messages.                                                                |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 |                                                                                                                                               |

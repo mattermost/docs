@@ -174,7 +174,7 @@ Output logs to multiple targets
 | - Logs are recorded asynchronously to reduce latency to the caller.                                                       |
 | - Advanced logging supports hot-reloading of logger configuration.                                                        |
 +-----------------------------------------------+---------------------------------------------------------------------------+   
-| See the `audit log v2 <https://docs.mattermost.com/comply/audit-log.html>`__ documentation for additional information.    |
+| See the :doc:`audit log v2 </comply/audit-log>` documentation for additional information.                                 |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 Teammate name display

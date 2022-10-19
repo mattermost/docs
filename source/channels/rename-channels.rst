@@ -4,7 +4,7 @@ Rename channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions to do so using advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__.
+Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
 
 In the desktop app, select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted for two values:
 

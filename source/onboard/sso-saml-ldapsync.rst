@@ -13,7 +13,7 @@ To configure SAML synchronization with AD/LDAP:
 1. Go to **System Console > Authentication > SAML 2.0**, then set **Enable Synchronizing SAML Accounts With AD/LDAP** to **true**.
 2. Go to  **System Console > Authentication > AD/LDAP**, then set **Enable Synchronization with AD/LDAP** to **true**.
 3. To ignore guest users when sychronizing, go to **System Console > Authentication > SAML 2.0**, then set **Ignore Guest Users when Synchronizing with AD/LDAP** to **true**. 
-4. Set the rest of the AD/LDAP settings based on `configuration settings documentation <https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap-settings>`__ to connect Mattermost with your AD/LDAP server.
+4. Set the rest of the AD/LDAP settings based on `configuration settings documentation </configure/configuration-settings.html#ad-ldap-settings>`__ to connect Mattermost with your AD/LDAP server.
 
  - If you don't want to enable AD/LDAP sign-in, go to **System Console > Authentication > AD/LDAP**, then set **Enable sign-in with AD/LDAP** to **false**.
 
@@ -44,7 +44,7 @@ See :ref:`technical description of SAML synchronization with AD/LDAP <sso-saml-t
 Override SAML data with AD/LDAP data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Alternatively, you can choose to override SAML bind data with AD/LDAP information. For more information on binding a user with the SAML ID Attribute, please refer to this `documentation <https://docs.mattermost.com/onboard/sso-saml-okta.html#how-to-bind-authentication-to-id-attribute-instead-of-email>`__.
+Alternatively, you can choose to override SAML bind data with AD/LDAP information. For more information on binding a user with the SAML ID Attribute, please refer to this `documentation </onboard/sso-saml-okta.html#how-to-bind-authentication-to-id-attribute-instead-of-email>`__.
 
 This process overrides SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. We recommend using this configuration with the SAML ID Attribute to help ensure new users are not created when the email address changes for a user.
 

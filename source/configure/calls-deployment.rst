@@ -64,7 +64,7 @@ Limitations
 Configuration
 -------------
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console <https://docs.mattermost.com/configure/configuration-settings.html#calls-beta>`_.
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/configuration-settings.html#calls-beta>`_.
 
 Modes of operation
 ------------------
@@ -124,7 +124,7 @@ Kubernetes deployments
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
   
-If Mattermost is not deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide <https://docs.mattermost.com/install/mattermost-kubernetes-operator.html>`_.
+If Mattermost is not deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`_.
 
 ``rtcd`` is deployed with a Helm chart. To install this Helm chart run:
 
