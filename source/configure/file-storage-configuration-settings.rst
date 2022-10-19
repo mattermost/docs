@@ -3,13 +3,12 @@
 
 Configure file storage settings by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following tables. 
 
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
+.. note::
+
+  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
 
 File storage system
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -28,9 +27,6 @@ File storage system
 Local storage directory
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -42,14 +38,11 @@ Local storage directory
 |                                                               |                                                                          |
 | Defaults to **./data/**.                                      |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: When **File storage system** is set to **amazons3**, this setting has no effect.                                               |                      
+| **Note**: When **File storage system** is set to **amazons3**, this setting has no effect.                                               |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Maximum file size
 ~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -72,9 +65,6 @@ Maximum file size
 Enable document search by content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -88,8 +78,8 @@ Enable document search by content
 |   for files by file name only.                                |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **Note**: Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an                   |
-| extraction command is executed using the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__  | 
-| or the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,       |
+| extraction command is executed using the `CLI </manage/command-line-tools.html#mattermost-extract-documents-content>`__                             | 
+| or the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,                                  |
 | users can search older files based on file name only.                                                                                               |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |
@@ -108,9 +98,6 @@ Enable document search by content
 Enable searching content of documents within ZIP files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -126,15 +113,12 @@ Enable searching content of documents within ZIP files
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | **Note**: Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon.                      |
 | Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,                     |
-| we recommend you review our `hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html#hardware-requirements>`__, |
+| we recommend you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__,                            |
 | and test enabling this feature in a staging environment before enabling it in a production environment.                                                |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Amazon S3 bucket
 ~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -148,9 +132,6 @@ Amazon S3 bucket
 Amazon S3 path prefix
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -161,9 +142,6 @@ Amazon S3 path prefix
 
 Amazon S3 region
 ~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -182,9 +160,6 @@ Amazon S3 region
 Amazon S3 access key ID
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -199,9 +174,6 @@ Amazon S3 access key ID
 
 Amazon S3 endpoint
 ~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -218,9 +190,6 @@ Amazon S3 endpoint
 Amazon S3 secret access key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -234,9 +203,6 @@ Amazon S3 secret access key
 Enable secure Amazon S3 connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -249,9 +215,6 @@ Enable secure Amazon S3 connections
 
 Amazon S3 signature v2
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Not available in legacy Enterprise Edition E10/E20*
 
@@ -269,9 +232,6 @@ Amazon S3 signature v2
 Enable server-side encryption for Amazon S3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -285,9 +245,6 @@ Enable server-side encryption for Amazon S3
 
 Enable Amazon S3 debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -306,9 +263,6 @@ Enable Amazon S3 debugging
 
 Initial Font
 ~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 

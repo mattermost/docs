@@ -20,7 +20,7 @@ To submit a merge request (MR) to GitLab for taking the next Mattermost version,
     - Config.json updates to `gitlab.rb <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template>`__, `attributes default.rb <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/mattermost/attributes/default.rb>`__ and `config.json.erb <https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/mattermost/templates/default/config.json.erb>`__ with new TE config settings (`see example <https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests/1855>`__)
     - Update to `GitLab Mattermost documentation <https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html>`__
 
-2. Build GitLab and test it locally `following these steps <https://docs.mattermost.com/developer/developer-flow.html#testing-with-gitlab-omnibus>`__.
+2. Build GitLab and test it locally `following these steps </developer/developer-flow.html#testing-with-gitlab-omnibus>`__.
 3. Submit a MR to the `master branch of Gitlab <https://gitlab.com/gitlab-org/omnibus-gitlab>`__, including a summary of updates in Team Edition that are relevant to GitLab
 4. Post a link to the MR in the Release Discussion channel.
 5. Check daily for updates until the MR is merged, ensuring it gets merged by the 7th of the month.
@@ -107,7 +107,7 @@ The root admin account for them has username `root` and password `Password1`.
  - Create an account and log in.
  - Confirm the correct version number in **Main Menu** > **About Mattermost**.
 
-To help with debugging, including a list of useful commands, see the `support handbook <https://docs.mattermost.com/process/support.html#gitlab-issues>`_.
+To help with debugging, including a list of useful commands, see the `support handbook </process/support.html#gitlab-issues>`_.
 
 Service-Level Agreement (SLA)
 -------------------------------

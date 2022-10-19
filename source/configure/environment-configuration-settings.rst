@@ -7,7 +7,7 @@ Environment configuration settings
 .. include:: common-config-settings-notation.rst
     :start-after: :nosearch:
 
-The following environment configuration settings are available:
+Access the following configuration settings in the System Console by going to **Environment**, or by editing the ``config.json`` file as described in the following tables. 
 
 - `Web server <#web-server>`__
 - `Database <#database>`__
@@ -23,80 +23,145 @@ The following environment configuration settings are available:
 - `Performance Monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
 
+----
+
 Web server
 ----------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: web-server-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Database
 --------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: database-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Elasticsearch
 -------------
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: elasticsearch-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 File storage
 ------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: file-storage-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Image proxy
 -----------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: image-proxy-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 SMTP
 ----
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: smtp-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Push notification server
 ------------------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: push-notification-server-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 High availability
 -----------------
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: high-availability-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Rate limiting
 -------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: rate-limiting-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Logging
 --------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: logging-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Session lengths
 ---------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: session-lengths-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Performance monitoring
 ----------------------
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: performance-monitoring-configuration-settings.rst
     :start-after: :nosearch:
 
+----
+
 Developer
 ---------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 .. include:: developer-mode-configuration-settings.rst
     :start-after: :nosearch:

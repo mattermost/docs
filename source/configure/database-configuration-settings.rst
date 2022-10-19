@@ -6,9 +6,6 @@ Configure the database environment in which Mattermost is deployed by going to *
 Driver name
 ~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -20,9 +17,6 @@ Driver name
 
 Data source
 ~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -61,8 +55,7 @@ Data source
 |    }                                                                                                                                     |
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
-| Requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ documentation for details on                   |
-| MySQL 8.0 support.                                                                                                                       |
+| Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **PostgreSQL databases**                                                                                                                 |
 |                                                                                                                                          |
@@ -72,9 +65,6 @@ Data source
 
 Maximum idle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -88,9 +78,6 @@ Maximum idle database connections
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
@@ -102,9 +89,6 @@ Maximum open connections
 
 Query timeout
 ~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -118,9 +102,6 @@ Query timeout
 
 Maximum connection lifetime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -137,14 +118,11 @@ Maximum connection lifetime
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
-| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |             
+| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``              |
 | Numerical input in milliseconds. Default is **300000** |                                                                                     | 
 | (5 minutes).                                           |                                                                                     |
@@ -152,9 +130,6 @@ Maximum connection idle timeout
 
 Minimum hashtag length
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -170,9 +145,6 @@ Minimum hashtag length
 SQL statement logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -187,7 +159,7 @@ SQL statement logging
 Recycle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
@@ -207,15 +179,12 @@ Recycle database connections
 Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
 | `Elasticsearch                                                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-| <https://docs.mattermost.com/scale/elasticsearch.html>`__,    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
+| </scale/elasticsearch.html>`__,                               | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | the database can be disabled to perform searches.             |                                                                              |
 |                                                               |                                                                              |
 | - **true**: Disables the use of the database to perform       |                                                                              |
@@ -228,9 +197,6 @@ Disable database search
 Applied schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E10/E20*
 
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
@@ -238,7 +204,7 @@ A list of all migrations that have been applied to the data store based on the v
 Read replicas
 ~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
@@ -255,7 +221,7 @@ Read replicas
 Search replicas
 ~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-pro-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10 and E20*
@@ -273,7 +239,7 @@ Search replicas
 Replica lag settings
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
@@ -318,7 +284,7 @@ Replica lag settings
 |                                                                                                                                           |
 | For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:               |
 |                                                                                                                                           |
-| .. code-block:: sh                                                                                                                        |                       
+| .. code-block:: sh                                                                                                                        |
 |                                                                                                                                           |
 |   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+

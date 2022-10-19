@@ -1,9 +1,10 @@
 User management configuration settings
 ======================================
 
-Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature by going to **System Console > User Management**.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-The following user management configuration settings are available:
+Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Configure this feature in the System Console by going to **User Management**:
 
 - `Users <#users>`__
 - `Groups <#groups>`__
@@ -12,13 +13,12 @@ The following user management configuration settings are available:
 - `Permissions <#permissions>`__
 - `System roles <#system-roles>`__
 
+----
+
 Users
 -----
 
 *Available in legacy Enterprise Edition E10/E20*
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage active and inactive users, revoke all user sessions,   | - System Config path: **User Management > Users**           |
@@ -27,11 +27,10 @@ Users
 | their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Groups
 ------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -40,15 +39,14 @@ Groups
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| See the `AD/LDAP groups <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ documentation for      |
+| See the `AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`__ documentation for                                 |
 | details.                                                                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+----
+
 Teams
 -----
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -58,14 +56,13 @@ Teams
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | See the `using AD/LDAP synchronized groups to manage team or private channel membership                                     |
-| <https://docs.mattermost.com/onboard/cloud-groups.html#using-ad-ldap-group-synchronization>`__ documentation for details.   |
+| </onboard/cloud-groups.html#using-ad-ldap-group-synchronization>`__ documentation for details.                              |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+
+----
 
 Channels
 --------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -74,13 +71,18 @@ Channels
 |                                                                         | - ``config.json setting``: N/A                              |
 |                                                                         | - Environment variable: N/A                                 |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
+| Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete                            |
+| </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__ tool.                                                                  |
++-------------------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: You can search for channels by channel name or by channel ID.                                                               |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
+
+----
 
 Permissions
 -----------
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
@@ -90,14 +92,13 @@ Permissions
 |                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-| See `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation for details            |
+| See `advanced permissions </onboard/advanced-permissions.html>`__ documentation for details                                       |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
+
+----
 
 System roles
 ------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -106,5 +107,5 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| See `additional system admin roles <https://docs.mattermost.com/onboard/system-admin-roles.html>`__ documentation for details     |
+| See `additional system admin roles </onboard/system-admin-roles.html>`__ documentation for details                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+

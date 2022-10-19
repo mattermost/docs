@@ -6,9 +6,6 @@ Configure performance monitoring by going to **System Console > Environment > Pe
 Enable performance monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 *Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------+---------------------------------------------------------------------+
@@ -19,15 +16,12 @@ Enable performance monitoring
 | - **false**: **(Default)** Mattermost         |                                                                     |
 |   performance monitoring is disabled.         |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| See the `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation    |
+| See the `performance monitoring </scale/performance-monitoring.html>`__ documentation                               |
 | to learn more.                                                                                                      |
-+---------------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------+
 
 Listen address for performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
