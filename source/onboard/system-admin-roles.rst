@@ -10,9 +10,9 @@ System Admins can assign system roles that permit granular user access to specif
 
 .. note::
 
-  - From Mattermost v5.28, System Admins can use the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__ to assign roles and privileges.
+  - From Mattermost v5.28, System Admins can use the `CLI </manage/command-line-tools.html>`__ to assign roles and privileges.
   - From Mattermost v5.30 and in Mattermost Cloud, System Admins can use the System Console to assign and manage roles and privileges.
-  - From Mattermost v6.0, the CLI has been deprecated in favor of the `mmctl command line tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+  - From Mattermost v6.0, the CLI has been deprecated in favor of the `mmctl command line tool </manage/mmctl-command-line-tool.html>`__.
 
 Available roles
 ----------------
@@ -21,7 +21,7 @@ A System Admin can configure the following system roles:
 
 - **System Manager:** The System Manager role has read/write permissions for management areas of the System Console, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
 - **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read-only.
-- **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, and delete custom user groups <https://docs.mattermost.com/welcome/manage-custom-groups.html>`__ via **User Groups** in the **Products menu**. It can be used to assign individual users this ability when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
+- **Custom Group Manager** The Custom Group Manager role has permissions to `create, edit, and delete custom user groups </welcome/manage-custom-groups.html>`__ via **User Groups** in the **Products menu**. It can be used to assign individual users this ability when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
 - **Viewer:** The Viewer role is able to view all pages of the System Console, but has no write access to any pages.
 
 When a user is assigned a system role, they have role-based access to the System Console. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
@@ -51,7 +51,7 @@ Assign system admin roles
 There are two ways to assign roles:
 
 1. In the System Console under **User Management > System Roles**.
-2. Using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
+2. Using the `mmctl tool </manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
 
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **You want to**                                   | **Using the System Console**                                                                                  | **Using mmctl**                                                                     |
@@ -92,7 +92,7 @@ System Admins can grant read/write access to other areas of the System Console, 
 There are two ways to assign roles:
 
 1. In the System Console under **User Management > System Roles**.
-2. Using the `mmctl tool <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
+2. Using the `mmctl tool </manage/mmctl-command-line-tool.html>`__. This can be done either locally or remotely.
 
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **You want to**                                  | **Using the System Console**                                                                                  | **Using mmctl**                                                                     |                                                              

@@ -70,7 +70,7 @@ Web server connection security
 |   connection.                                                         |                                                                       |
 | - **TLS**: Encrypts the communication between Mattermost              |                                                                       |
 |   clients and your server. See the `configuring TLS on Mattermost     |                                                                       |
-|   <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ |                                                                       |
+|   </install/config-tls-mattermost.html>`__                            |                                                                       |
 |   for more details                                                    |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
@@ -106,7 +106,7 @@ Use Let's Encrypt
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.  | - System Config path: **Environment > Web Server**                       |
 | See the `configuring TLS on Mattermost documentation                | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
-| <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
+| </install/config-tls-mattermost.html>`__                            | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
 | for more details on setting up Let’s Encrypt.                       |                                                                          |
 |                                                                     |                                                                          |
 | - **true**: The certificate will be retrieved when a client         |                                                                          |
@@ -231,7 +231,7 @@ Managed resource paths
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | **Note:**                                                                                                                        |
 | When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of   |
-| in a browser. See the `desktop managed resources <https://docs.mattermost.com/install/desktop-app-managed-resources.html>`__     |
+| in a browser. See the `desktop managed resources </install/desktop-app-managed-resources.html>`__                                |
 | documentation for details.                                                                                                       |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
@@ -268,8 +268,7 @@ Purge all caches
 | Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Purging the caches may adversely impact performance. Deployments using `high availability clusters             |
-| <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the       |
-| cluster.                                                                                                                 |
+| </scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the cluster                          |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
 Websocket URL
@@ -444,5 +443,5 @@ Cluster log timeout
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |        
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| See the `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation for details.                    |
+| See the :doc:`performance monitoring </scale/performance-monitoring>` documentation for details.                                                 |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+

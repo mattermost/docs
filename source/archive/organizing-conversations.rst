@@ -10,7 +10,7 @@ Collapsed Reply Threads (Beta) offers an enhanced experience for users communica
 .. image:: ../../images/collapsed-reply-threads.gif
   :alt: Organize conversations using Collapsed Reply Threads.
 
-Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You can `enable this feature for your Mattermost account <https://docs.mattermost.com/messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
+Your System Admin must enable the Collapsed Reply Threads feature in the System Console. See our `Configuration Settings </configure/configuration-settings.html#collapsed-reply-threads-beta>`__ documentation for details. You can `enable this feature for your Mattermost account </messaging/manage-channels-settings.html#collapsed-reply-threads-beta>`__ by going to **Account Settings > Display > Collapsed Reply Threads (Beta)**.
 
 Known Issues
 ------------
