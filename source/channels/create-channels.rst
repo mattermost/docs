@@ -27,10 +27,10 @@ Anyone can create public channels, private channels, direct messages, and group 
       
      **To create a public or private channel in Web App**, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
-     .. image:: ../images/write-dm.png
-      :alt: Access recent direct messages and group messages.
+       .. image:: ../images/write-dm.png
+            :alt: Access recent direct messages and group messages.
    
-      **To start a direct or group message in Web App**, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
+     **To start a direct or group message in Web App**, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
 
       .. tip::
@@ -47,7 +47,3 @@ Anyone can create public channels, private channels, direct messages, and group 
 
     
      **To start a direct or group message in Mobile App V2**, select  the **+** sign again, then select Open **a Direct Message** then select the person whom you want        to have a chat or you can select multiple person if you want to create a **Group**, then select **Start** . your group will be created .
-    
-      
-        
-        
