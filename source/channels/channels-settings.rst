@@ -289,10 +289,10 @@ Scroll position when viewing unread channels
 
 Configure where to start when viewing channels with unread messages. You can start where you left off at the oldest unread message, or start at the newest message. Your preference applies to all channels.
 
-Performance debugging
+Client debugging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Turn on settings intended to help isolate performance issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client performance debugging </configure/environment-configuration-settings.html#enable-client-performance-debugging>`__ is enabled.
+Turn on settings intended to help isolate issues while debugging. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience. Available only when `client debugging <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-client-debugging>`__ is enabled.
 
 Deactivate account
 ~~~~~~~~~~~~~~~~~~
