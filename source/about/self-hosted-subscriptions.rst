@@ -101,7 +101,7 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
 
 .. raw:: html
   
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" alt="Video on self hosted subscription" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Frequently asked questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
