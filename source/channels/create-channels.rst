@@ -36,7 +36,7 @@ Anyone can create public channels, private channels, direct messages, and group 
       .. tip::
              Alternatively, you can select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**.
                  
-              In the **Direct Messages** popup, identify your most recent conversations by relative timestamps.
+              In the **Direct Messages** popup, identify your most recent conversations.
                           
                   .. image:: ../images/recent-direct-group-messages.png
                       :alt: Write a direct message or group message.
