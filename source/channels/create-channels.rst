@@ -20,7 +20,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Web browser/desktop app
       
        .. image:: ../images/create-new-channel.png
             :alt: Create a channel
