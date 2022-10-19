@@ -39,7 +39,7 @@ Groups
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| See the `AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`__ documentation for      |
+| See the `AD/LDAP groups </onboard/ad-ldap-groups-synchronization.html>`__ documentation for                                 |
 | details.                                                                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
@@ -56,7 +56,7 @@ Teams
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | See the `using AD/LDAP synchronized groups to manage team or private channel membership                                     |
-| </onboard/cloud-groups.html#using-ad-ldap-group-synchronization>`__ documentation for details.   |
+| </onboard/cloud-groups.html#using-ad-ldap-group-synchronization>`__ documentation for details.                              |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -70,6 +70,9 @@ Channels
 | Manage channel settings, including group synchronization on channels.   | - System Config path: **User Management > Channels**        |
 |                                                                         | - ``config.json setting``: N/A                              |
 |                                                                         | - Environment variable: N/A                                 |
++-------------------------------------------------------------------------+-------------------------------------------------------------+
+| Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete                            |
+| </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__ tool.                                                                  |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: You can search for channels by channel name or by channel ID.                                                               |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
@@ -89,7 +92,7 @@ Permissions
 |                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-| See `advanced permissions </onboard/advanced-permissions.html>`__ documentation for details            |
+| See `advanced permissions </onboard/advanced-permissions.html>`__ documentation for details                                       |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -104,5 +107,5 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| See `additional system admin roles </onboard/system-admin-roles.html>`__ documentation for details     |
+| See `additional system admin roles </onboard/system-admin-roles.html>`__ documentation for details                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+

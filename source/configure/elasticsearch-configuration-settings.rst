@@ -235,8 +235,8 @@ Aggregate search indexes
 |                                                               |                                                                                        |
 | Numerical input. Default is **365** days.                     |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| **Note**: If you’re using `data retention </comply/data-retention-policy.html>`__ and                                       |
-| `Elasticsearch </scale/elasticsearch.html>`__, configure this with a value greater than your data retention policy.         |
+| **Note**: If you’re using `data retention </comply/data-retention-policy.html>`__ and                                                                  |
+| `Elasticsearch </scale/elasticsearch.html>`__, configure this with a value greater than your data retention policy.                                    |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Post aggregator start time

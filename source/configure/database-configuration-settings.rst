@@ -55,8 +55,7 @@ Data source
 |    }                                                                                                                                     |
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
-| Requirements </install/software-hardware-requirements.html>`__ documentation for details on                   |
-| MySQL 8.0 support.                                                                                                                       |
+| Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **PostgreSQL databases**                                                                                                                 |
 |                                                                                                                                          |
@@ -191,7 +190,7 @@ Disable database search
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
 | `Elasticsearch                                                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-| </scale/elasticsearch.html>`__,    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
+| </scale/elasticsearch.html>`__,                               | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | the database can be disabled to perform searches.             |                                                                              |
 |                                                               |                                                                              |
 | - **true**: Disables the use of the database to perform       |                                                                              |
