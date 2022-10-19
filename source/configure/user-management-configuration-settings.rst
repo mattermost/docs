@@ -71,6 +71,9 @@ Channels
 |                                                                         | - ``config.json setting``: N/A                              |
 |                                                                         | - Environment variable: N/A                                 |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
+| Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete                            |
+| </manage/mmctl-command-line-tool.html#mmctl-channel-delete>`__ tool.                                                                  |
++-------------------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: You can search for channels by channel name or by channel ID.                                                               |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 
