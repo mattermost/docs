@@ -25,7 +25,7 @@ Anyone can create public channels, private channels, direct messages, and group 
        .. image:: ../images/create-new-channel.png
             :alt: Create a channel
       
-     **To create a public or private channel in Web App**, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
+     **To create a public or private channel in the web app**, select the **+** symbol at the top of the channel sidebar, then select **Create New Channel**.
 
        .. image:: ../images/write-dm.png
             :alt: Access recent direct messages and group messages.
