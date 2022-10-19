@@ -19,8 +19,8 @@ Using the Mattermost desktop app, you can connect to multiple Mattermost servers
       .. image:: ../images/desktop-server-add.png
         :alt: Connect the desktop app to a Mattermost Server using options located in the top left corner of the Mattermost screen.
 
-    2. Enter the server name as it will appear in the desktop app.
-    3. Enter the server URL. Server URLs must begin with either ``http://`` or ``https://``.
+    2. Enter the server URL. Server URLs must begin with either ``http://`` or ``https://``.
+    3. Enter the server name as it will appear in the desktop app.
 
        .. tip::
 
