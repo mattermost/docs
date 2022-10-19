@@ -199,6 +199,7 @@ Disable database search
 | - If Elasticsearch fails or is disabled, Mattermost will attempt to use `Bleve </deploy/bleve-search.html>`__, if enabled. If this occurs,   |
 |   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
 | - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
+| - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Applied schema migrations
