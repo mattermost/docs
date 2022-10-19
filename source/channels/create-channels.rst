@@ -30,7 +30,7 @@ Anyone can create public channels, private channels, direct messages, and group 
        .. image:: ../images/write-dm.png
             :alt: Access recent direct messages and group messages.
    
-     **To start a direct or group message in Web App**, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
+     **To start a direct or group message in the web app**, select the **+** symbol next to the **Direct Messages** category in the channel sidebar.
 
 
       .. tip::
