@@ -63,7 +63,7 @@ When these notices are triggered, System Admins receive a bot message notificati
 
 System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
 
-Managing Admin Advisor 
+Managing Admin Advisor notices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Admin Advisor notices are run on a schedule based on specific triggers.
