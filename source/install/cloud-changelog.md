@@ -22,7 +22,6 @@ Latest Mattermost Cloud releases:
  - Email notifications now also include Slack attachments.
 
 #### Administration
- - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
  - Added JSON-compatible nested config value parsing from environment variables.
  - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in DM/GM channels. To force this change to appear, a re-indexing will be necessary.
 
