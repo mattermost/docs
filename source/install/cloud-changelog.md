@@ -30,7 +30,6 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded Youtube preview images.
  - Fixed an issue where formatting was applied to selected spaces after a word.
  - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
- - Fixed an issue where the scroll position in a channel was not maintained when opening a permalink to reply to a message.
  - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
  - Fixed a bug where role filters weren't being applied for ``GetProfilesInChannel``.
  - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
