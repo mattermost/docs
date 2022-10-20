@@ -17,9 +17,9 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Added the ability to create a new channel along with a new board associated with the created channel.
- - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by clicking “Notify admin to update billing”.
+ - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by selecting “Notify admin to update billing”.
  - Added markdown formatting for hyperlinks when pasted into the text editor.
- - Email notifications now also include Slack attachments.
+ - Email notifications from new messages now also support displaying Slack attachments from the channel post.
 
 #### Administration
  - Added JSON-compatible nested config value parsing from environment variables.
