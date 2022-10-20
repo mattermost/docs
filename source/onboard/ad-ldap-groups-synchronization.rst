@@ -25,7 +25,7 @@ You can also watch a video overview about adding users to Mattermost with AD/LDA
 .. raw:: html
 
    <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-      <iframe src="https://www.youtube.com/embed/zyku2ibsG0M" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
+      <iframe src="https://www.youtube.com/embed/zyku2ibsG0M" alt="Video about adding users to Mattermost using AD/LDAP" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
    </div>
 
 Pre-installation notes
