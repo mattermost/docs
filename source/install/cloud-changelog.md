@@ -22,8 +22,7 @@ Latest Mattermost Cloud releases:
  - Email notifications from new messages now also support displaying Slack attachments from the channel post.
 
 #### Administration
- - Added JSON-compatible nested config value parsing from environment variables.
- - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in DM/GM channels. To force this change to appear, a re-indexing will be necessary.
+ - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
 
 ### Bug Fixes
  - Fixed an issue with incorrect mention counts in unread channels.
