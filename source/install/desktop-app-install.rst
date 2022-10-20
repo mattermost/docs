@@ -24,7 +24,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
   .. tab:: Ubuntu/Debian
 
-    An official ``.deb`` package and APT repository is available for Debian 9 and for Ubuntu releases 18.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
+    Both a beta ``.deb`` package and an official APT repository is available for Debian 9 and for Ubuntu releases 18.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
 
     1. At the command line, set up the Mattermost repository on your system: 
 
