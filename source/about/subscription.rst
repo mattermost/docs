@@ -27,7 +27,7 @@ To be eligible, an organization needs to be an official nonprofit or charity; as
 How to apply?
 ~~~~~~~~~~~~~
 
-To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__.
+To apply for the Mattermost Nonprofit License, `please complete this form <https://docs.google.com/forms/d/e/1FAIpQLSe2OUQGOQAni74FBXgAOooYsUTGbLn_VXFYEKUthg9Wmmiebg/viewform>`__ (please note that it can take us 6-8 weeks to review your application).
 
 Mattermost educational license program
 ---------------------------------------
