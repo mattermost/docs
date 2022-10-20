@@ -4,12 +4,39 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-10-27](#release-2022-10-27)
 - [Release 2022-10-20](#release-2022-10-20)
 - [Release 2022-10-13](#release-2022-10-13)
 - [Release 2022-10-06](#release-2022-10-06)
 - [Release 2022-09-15](#release-2022-09-15)
 - [Release 2022-09-08](#release-2022-09-08)
-- [Release 2022-09-01](#release-2022-09-01)
+
+## Release 2022-10-27
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the ability to create a new channel along with a new board associated with the created channel.
+ - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by clicking “Notify admin to update billing”.
+ - Added markdown formatting for hyperlinks when pasted into the text editor.
+
+### Administration
+ - Added a new section in the **System Console** for products. For now, it only contains Boards-specific settings.
+ - Added JSON-compatible nested config value parsing from environment variables.
+ - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in DM/GM channels. To force this change to appear, a re-indexing will be necessary.
+
+### Bug Fixes
+ - Fixed an issue with incorrect mention counts in unread channels.
+ - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded Youtube preview images.
+ - Fixed an issue where formatting was applied to selected spaces after a word.
+ - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
+ - Fixed an issue where the scroll position in a channel was not maintained when opening a permalink to reply to a message.
+ - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
+ - Fixed a bug where role filters weren't being applied for ``GetProfilesInChannel``.
+ - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-10-20
 
