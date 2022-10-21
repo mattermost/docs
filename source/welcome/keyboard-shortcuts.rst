@@ -23,7 +23,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for Channels, Playbooks, and Boards. 
     
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-    | On Windows & Linux                   | On Mac                        | Description                                                                                     |
+    | On Windows & Linux                   | On macOS                      | Description                                                                                     |
     +======================================+===============================+=================================================================================================+
     | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`             | Move focus to the **Search** field and search the current channel.                              |
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
@@ -46,12 +46,12 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on your current position.                                |
     +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
     
-  .. tab:: Desktop App v4.7 and earlier
+  .. tab:: Desktop app v4.7 and earlier
 
-    Mattermost Desktop App v4.7 and earlier releases support the following navigation keyboard shortcuts:
+    Mattermost desktop app v4.7 and earlier releases support the following navigation keyboard shortcuts:
 
     +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
-    | On Windows & Linux                   | On Mac                       | Description                                                                    |
+    | On Windows & Linux                   | On macOS                     | Description                                                                    |
     +======================================+==============================+================================================================================+
     | :kbd:`Ctrl` :kbd:`F`                 | :kbd:`⌘` :kbd:`F`            | Move focus to the **Search** field and search the current channel.             |
     +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
@@ -66,13 +66,13 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
     | :kbd:`Alt` :kbd:`↓`                  | :kbd:`⌥` :kbd:`↓`            | Next channel or direct message in the channel sidebar.                         |
     +--------------------------------------+------------------------------+--------------------------------------------------------------------------------+
 
-Zoom shortcuts for Web and Desktop App
+Zoom shortcuts for web and desktop app
 ---------------------------------------
 
 The following display keyboard shortcuts work in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +-------------------------------------+------------------------------+----------------------------------------+
-| On Windows & Linux                  | On Mac                       | Description                            |
+| On Windows & Linux                  | On macOS                     | Description                            |
 +=====================================+==============================+========================================+
 | :kbd:`Ctrl` :kbd:`Shift` :kbd:`+`   | :kbd:`⌘` :kbd:`⇧` :kbd:`+`   | Increase font size (zoom in).          |
 +-------------------------------------+------------------------------+----------------------------------------+
