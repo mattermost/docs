@@ -22,6 +22,8 @@ Site statistics
 | sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+| **Note**: Inactive and deactivated users are not counted towards the total number of active users.                          |
++---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -34,6 +36,8 @@ Team statistics
 | View statistics per team on number of active users,           | - System Config path: **Reporting > Team Statistics**         |
 | as well as public and private channels.                       | - ``config.json`` setting: N/A                                |
 |                                                               | - Environment variable: N/A                                   |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| **Note**: Inactive and deactivated users are not counted towards the total number of active users.                            |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----
