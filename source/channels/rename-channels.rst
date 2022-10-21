@@ -7,7 +7,7 @@ Rename channels
 Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Web browser/desktop app
 
       **To Rename  channel in the desktop app**
 
