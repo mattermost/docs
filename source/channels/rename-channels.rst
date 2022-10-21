@@ -8,7 +8,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Web browser/desktop app
 
      **Rename a channel**
 
