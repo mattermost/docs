@@ -25,16 +25,16 @@ To join a public channel:
       .. image:: ../images/join-channels.png
         :alt: When browsing available channels, select the join option next to any channel to become a member.
 
-    .. tip::
-      
-      When you join channels, depending on the `channel actions configured </channels/create-channels.html>`__, you may see a welcome message, and channels may be added to `a category in your channel sidebar </channels/customize-your-channel-sidebar.html>`__ automatically. 
-      Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
-
   .. tab:: Mobile app
 
     1. Select the **+** symbol at the top right of the page, then select **Browse Channels** at the bottom. 
 
     2. Select the public channel you want to join.
+
+.. tip::
+  
+  When you join channels, depending on the `channel actions configured </channels/create-channels.html>`__, you may see a welcome message, and channels may be added to `a category in your channel sidebar </channels/customize-your-channel-sidebar.html>`__ automatically. 
+  Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
 
 Leave a channel
 ---------------
