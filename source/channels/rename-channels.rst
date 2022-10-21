@@ -5,11 +5,12 @@ Rename channels
   :start-after: :nosearch:
 
 Anyone can rename the channels they belong to, unless the System Admin has `restricted the permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+
 .. tabs::
 
-  .. tab:: Web browser/desktop app
+  .. tab:: Web browser/Desktop app
 
-      **Rename a channel**
+     **Rename a channel**
 
         Select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted for two values:
 
@@ -18,14 +19,16 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
         For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``, The channel display name would be ``UX Design``, and the channel handle would be ``ux-design``.
 
-    .. tab:: Mobile app
-       
-        **Rename a channel in the mobile app v2**
 
-           In the mobile app, select the channel name from the sidebar to access the menu, then select **Edit Channel**. You'll be promoted for three values:
-           - **Name:** This appears in the Mattermost user interface.
-           - **Purpose:** This can be used to describe the channel's function or goal. This is optional.
-           - **Header:** This may include information relevant to the channel, such as useful contacts or documents. This is optional.
+  .. tab:: Mobile app
 
-           For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``, The channel display **Name** would be ``UX Design``,             **purpose** is to discuss about UX by core contributors and staff, **Header** is the links and repos listed under Header option.
+     **Rename a channel in the mobile app v2**
+
+     In the mobile app, select the channel name from the sidebar to access the menu, then select **Edit Channel**. You'll be promoted for three values:
+     - **Name:** This appears in the Mattermost user interface.
+     - **Purpose:** This can be used to describe the channel's function or goal. This is optional.
+     - **Header:** This may include information relevant to the channel, such as useful contacts or documents. This is optional.
+
+     For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``, The channel display **Name** would be ``UX Design``,             **purpose** is to discuss about UX by core contributors and staff, **Header** is the links and repos listed under Header option.
+
 
