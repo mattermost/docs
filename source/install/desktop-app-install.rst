@@ -174,6 +174,18 @@ You can `download the desktop app directly from our Downloads page <https://matt
     
     Automatic desktop app updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
     
+Log in using the desktop app
+-----------------------------
+
+The first time you log in to Mattermost using the desktop app, you'll see a splash screen that introduces you to desktop app functionality. 
+
+1. Select **Get Started** to connect to a Mattermost server. 
+2. Enter a **Server URL** and **Server display name**, then select **Connect**.
+
+.. tip::
+
+  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost System Admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+
 Additional documentation resources
 ----------------------------------
 
