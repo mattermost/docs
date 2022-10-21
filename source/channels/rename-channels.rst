@@ -22,7 +22,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
        
         **Rename a channel in the mobile app v2**
 
-           In the mobile app, select the channel name from the sidebar to access the menu, then select **Edit Channel** option. There will be three values:
+           In the mobile app, select the channel name from the sidebar to access the menu, then select **Edit Channel**. You'll be promoted for three values:
            - **Name:** you can give a suitable name which will appear in the Mattermost user interface.
            - **Purpose:** you can write the motive of the channel.
            - **Header:** This may include information relevant to the channel, such as useful contacts or documents. This is optional.
