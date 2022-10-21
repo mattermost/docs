@@ -62,6 +62,7 @@ Guests can:
 - Favorite channels.
 - Mute channels.
 - Update their profile.
+- Use different authentication methods than other users
 
 Guests cannot:
 
