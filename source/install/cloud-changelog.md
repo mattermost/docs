@@ -20,6 +20,7 @@ Latest Mattermost Cloud releases:
  - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by selecting “Notify admin to update billing”.
  - Added markdown formatting for hyperlinks when pasted into the text editor.
  - Email notifications from new messages now also support displaying Slack attachments from the channel post.
+ - Updated prepackaged Boards version to v7.4.3.
 
 #### Administration
  - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
