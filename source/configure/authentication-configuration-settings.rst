@@ -8,7 +8,7 @@ Mattermost supports up to four distinct, concurrent methods of **Authentication*
 
 - An OpenID provider
 - A SAML provider
-- An LDAP instance (ex Active Directory, OpenLDAP)
+- An LDAP instance (e.g., Active Directory, OpenLDAP)
 - Email and Password
 
 Access the following configuration settings in the System Console by going to **Authentication**, or by editing the ``config.json`` file as described in the following tables:
