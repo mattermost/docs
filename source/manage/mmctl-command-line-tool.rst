@@ -161,7 +161,7 @@ The API that the socket exposes follows the same specification that can be found
 Activating local mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-To use local mode, the Mattermost server first needs to `have local mode enabled </configure/configuration-settings.html#enable-local-mode>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
+To use local mode, the Mattermost server first needs to `have local mode enabled </configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl>`_. When local mode is enabled, a socket is created at ``/var/tmp/mattermost_local.socket`` by default.
 
 .. tip::
 
