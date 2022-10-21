@@ -151,4 +151,4 @@ Mattermost daily compliance reports are compatible with Global Relay compliance 
 - This conversion can be done by in-house developers who have previously written scripts to convert other communication systems into Global Relay format based on your organization's specific needs.
 - You can also contact your Global Relay account manager about a services project to establish this conversion.
 
-We recommend using the new `Compliance Export feature <https://docs.mattermost.com/cloud/cloud-administration/compliance-export.html>`_ for Global Relay exports.
+We recommend using the new `Compliance Export feature </cloud/cloud-administration/compliance-export.html>`_ for Global Relay exports.

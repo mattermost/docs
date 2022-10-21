@@ -10,15 +10,15 @@ After completing your Mattermost install with a deployment solution provider, su
 Set up SSL
 -----------
 
-- `Set up SSL with NGNIX <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__
-- `Set up SSL without NGINX using Mattermost as a web server <https://docs.mattermost.com/install/config-tls-mattermost.html>`__
+- `Set up SSL with NGNIX </install/config-ssl-http2-nginx.html>`__
+- `Set up SSL without NGINX using Mattermost as a web server </install/config-tls-mattermost.html>`__
 
 Set up SMTP email
 ------------------
 
-- `Set up SMTP email <https://docs.mattermost.com/install/smtp-email-setup.html>`__ to receive email notifications
+- `Set up SMTP email </install/smtp-email-setup.html>`__ to receive email notifications
 
 Configure your core Mattermost server options
 ---------------------------------------------
 
-- `Set up basic Mattermost options <https://docs.mattermost.com/install/config-mattermost-server.html>`__
+- `Set up basic Mattermost options </install/config-mattermost-server.html>`__

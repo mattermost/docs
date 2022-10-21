@@ -49,7 +49,7 @@ Frequently Asked Questions
 Can I upgrade my plan to get a copy of my archived data?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently you don't have to upgrade your plan to get your archived data. You can follow the steps provided `in this article <https://docs.mattermost.com/manage/cloud-data-export.html>`_ to export your data.
+Currently you don't have to upgrade your plan to get your archived data. You can follow the steps provided `in this article </manage/cloud-data-export.html>`_ to export your data.
 
 Does Mattermost delete data?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

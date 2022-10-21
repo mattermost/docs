@@ -44,7 +44,7 @@ When self-hosting restrictions are less strict, AWS, Heroku, and other public cl
 
 ## How do I create a bot account with personal access tokens?
 
-See [bot accounts documentation](https://docs.mattermost.com/developer/bot-accounts.html) to learn more about how to create and manage bot accounts in Mattermost.
+See [bot accounts documentation](/developer/bot-accounts.html) to learn more about how to create and manage bot accounts in Mattermost.
 
 ## How do I create a bot account without personal access tokens or webhooks?
 

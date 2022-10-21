@@ -23,7 +23,7 @@ To join a public channel:
 
 .. tip::
   
-  When you join channels, depending on the `channel actions configured <https://docs.mattermost.com/channels/create-channels.html>`__, you may see a welcome message, and channels may be added to `a category in your channel sidebar <https://docs.mattermost.com/channels/customize-your-channel-sidebar.html>`__ automatically. 
+  When you join channels, depending on the `channel actions configured </channels/create-channels.html>`__, you may see a welcome message, and channels may be added to `a category in your channel sidebar </channels/customize-your-channel-sidebar.html>`__ automatically. 
   Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured.
 
 Leave a channel
