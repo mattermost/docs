@@ -19,7 +19,7 @@ If you have any questions, create an account on the [Mattermost Community server
 
 ### Get started
 
-You can edit or create Mattermost documentation directly in GitHub, or by downloading the `mattermost/docs` repository onto your machine and using an IDE such as VS Code. Consult the Mattermost [Documentation Style Guide](https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide) and [reStructuredText Markup](https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#using-restructuredtext-markup-rst) section for stylistic and technical guidance.
+You can edit or create Mattermost documentation directly in GitHub, or by downloading the `mattermost/docs` repository onto your machine and using an IDE such as VS Code. Consult the Mattermost [Documentation Style Guide](https://handbook.mattermost.com/operations/research-and-development/product/technical-writing-team-handbook/documentation-style-guide) and [reStructuredText Markup](https://handbook.mattermost.com/operations/research-and-development/product/technical-writing-team-handbook/documentation-style-guide#using-restructuredtext-markup-rst) section for stylistic and technical guidance.
 
 If this is your first time contributing to Mattermost, first read and sign the [Mattermost Contributor Agreement](https://mattermost.com/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
