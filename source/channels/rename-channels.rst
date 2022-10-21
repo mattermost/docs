@@ -10,7 +10,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
 
   .. tab:: Web browser/Desktop app
 
-     **Rename a channel in desktop app**
+     **Rename a channel**
 
         Select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted for two values:
 
