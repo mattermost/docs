@@ -25,7 +25,7 @@ Anyone can rename the channels they belong to, unless the System Admin has `rest
            In the mobile app, select the channel name from the sidebar to access the menu, then select **Edit Channel** option. There will be three values:
            - **Name:** you can give a suitable name which will appear in the Mattermost user interface.
            - **Purpose:** you can write the motive of the channel.
-           - **Header:** we can use it to list various links and repos.
+           - **Header:** This may include information relevant to the channel, such as useful contacts or documents. This is optional.
 
            For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``, The channel display **Name** would be ``UX Design``,             **purpose** is to discuss about UX by core contributors and staff, **Header** is the links and repos listed under Header option.
 
