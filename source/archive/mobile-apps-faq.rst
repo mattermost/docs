@@ -30,7 +30,7 @@ App data is wiped from the device when a user logs out of the app. If the user i
 Do I need to compile the mobile apps to host my own push notification server?
 ------------------------------------------------------------------------------
 
-Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation </mobile/mobile-compile-yourself.html>`__ to learn how to compile your own mobile apps.
+Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation </deploy/build-custom-mobile-apps.html>`__ to learn how to compile your own mobile apps.
 
 How do push notifications work?
 -------------------------------
