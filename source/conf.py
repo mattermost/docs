@@ -2505,6 +2505,10 @@ linkcheck_timeout = 5
 linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
 
+# relative path to custom css
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
+
 # CopyButton configuration
 copybutton_selector = "div.highlight pre, code"
 
