@@ -4,7 +4,7 @@
 
 You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`__ (release 1.28 or later) Follow the steps in the `Mattermost Docker Setup README <https://github.com/mattermost/docker#mattermost-docker-setup>`__ or follow the steps below.
 
-Encountering issues with your Docker deployment? See the `Docker deployment troubleshooting <https://docs.mattermost.com/install/troubleshooting.html#docker-deployments>`__ documentation for details.
+Encountering issues with your Docker deployment? See the `Docker deployment troubleshooting </install/troubleshooting.html#docker-deployments>`__ documentation for details.
       
 1. In a terminal window, clone the repository and enter the directory.
 
@@ -104,4 +104,4 @@ Encountering issues with your Docker deployment? See the `Docker deployment trou
   
       sudo docker-compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
-7. Create your first Mattermost System Admin user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+7. Create your first Mattermost System Admin user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 

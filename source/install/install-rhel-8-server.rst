@@ -14,9 +14,9 @@ Install the 64-bit version of RHEL 8 on each machine that hosts one or more of t
 
 2. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands:
 
-  ``sudo yum update``
+  ``sudo dnf update``
   
-  ``sudo yum upgrade``
+  ``sudo dnf upgrade``
 
 Now that the system is up to date, you can start installing the components that make up a Mattermost system.
 

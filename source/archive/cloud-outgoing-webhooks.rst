@@ -13,7 +13,7 @@ Use outgoing webhooks to post automated responses to posts made by your users. O
  - It is posted in a specified channel
  - The first word matches or starts with one of the defined trigger words, such as ``gif``
 
-Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`__ instead.
+Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command </developer/slash-commands.html>`__ instead.
 
 .. note::
   To prevent malicious users from trying to perform `phishing attacks <https://en.wikipedia.org/wiki/Phishing>`__ a *BOT* indicator appears next to posts coming from webhooks regardless of what username is specified.
@@ -49,7 +49,7 @@ In our example, we would set the channel to ``town-square`` and specify ``#build
  - If the first word of a message matches one of the trigger words exactly, or
  - If the first word of a message starts with one of the trigger words.
 
-6. Finally, set one or more callback URLs that HTTP POST requests will be sent to, and select **Save**. If the URL is private, add it as a `trusted internal connection <https://docs.mattermost.com/configure/configuration-settings.html#allow-untrusted-internal-connections-to>`__.
+6. Finally, set one or more callback URLs that HTTP POST requests will be sent to, and select **Save**. If the URL is private, add it as a `trusted internal connection </configure/configuration-settings.html#allow-untrusted-internal-connections-to>`__.
 7. On the next page, copy the **Token** value. This will be used in a later step.
 
 .. image:: ../images/outgoing_webhooks_token.png
@@ -101,18 +101,18 @@ which would render in Mattermost as:
 Messages with advanced formatting can be created by including an `attachment array <https://developers.mattermost.com/integrate/admin-guide/admin-message-attachments/>`_ and `interactive message buttons <https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/>`_ in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
+  `Enable integrations to override usernames </configure/configuration-settings.html#enable-integrations-to-override-usernames>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the username is set to ``webhook``.
 
-  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons </configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to ``true`` in ``config.json`` to override usernames. Enable them from **System Console > Integrations > Integration Management** or ask your System Admin to do so. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and best practices
 -----------------------
 
 1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`__.
 2. If the text in the JSON response is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Posts up to 16383 characters are supported. 
-3. Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`__ instead.
-4. You can restrict who can create outgoing webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/configure/configuration-settings.html#restrict-managing-integrations-to-admins>`__.
-5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's proprietary JSON response format <https://docs.mattermost.com/integrations/cloud-incoming-webhooks.html#translate-slack-s-data-format-to-mattermost>`__.
+3. Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command </developer/slash-commands.html>`__ instead.
+4. You can restrict who can create outgoing webhooks in `System Console > Integrations > Integration Management </configure/configuration-settings.html#restrict-managing-integrations-to-admins>`__.
+5. Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste code used for a Slack outgoing webhook to create Mattermost integrations. Mattermost `automatically translates Slack's proprietary JSON response format </integrations/cloud-incoming-webhooks.html#translate-slack-s-data-format-to-mattermost>`__.
 6. The external application may be written in any programming language. It needs to provide a URL that reacts to the request sent by your Mattermost server and send an HTTP POST in the required JSON format as a response.
  
 Share your integration
@@ -150,7 +150,7 @@ Known Slack compatibility issues
 3. ``<!everyone>`` and ``<!group>`` are not supported.
 4. Parameters "mrkdwn", "parse", and "link_names" are not supported (Mattermost always converts markdown and automatically links @mentions).
 5. Bold formatting supplied as ``*bold*`` is not supported (must be done as ``**bold**``).
-6. Advanced formatting using `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_ is not yet supported.
+6. Advanced formatting using `message attachments </developer/message-attachments.html>`_ is not yet supported.
 
 Troubleshooting
 ---------------

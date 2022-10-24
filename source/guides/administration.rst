@@ -6,10 +6,10 @@ Mattermost administration guide
 
 This guide is for people who administer an existing Mattermost server. It’s divided into four parts:
 
-* `Get started <https://docs.mattermost.com/guides/administration.html#get-started>`__ - An overview of standard configurations and features for both self-hosted and Cloud workspaces.
-* `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
-* `Self-hosted administration <https://docs.mattermost.com/guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
-* `Other resources <https://docs.mattermost.com/guides/administration.html#other-resources>`__ - Additional migration, conversion, and troubleshooting resources.
+* `Get started </guides/administration.html#get-started>`__ - An overview of standard configurations and features for both self-hosted and Cloud workspaces.
+* `Cloud workspace management </guides/administration.html#workspace-management>`__ - Detailed information about admin capabilities of Mattermost Cloud workspaces.
+* `Self-hosted administration </guides/administration.html#self-hosted-admin>`__ - Detailed information about admin capabilities of self-hosted Mattermost servers.
+* `Other resources </guides/administration.html#other-resources>`__ - Additional migration, conversion, and troubleshooting resources.
 
 If you’re looking for resources to help you install, deploy, and scale your self-hosted Mattermost server, see the :doc:`Mattermost Deployment Guide </guides/deployment>`.
 
@@ -50,11 +50,12 @@ Get started
     Compliance export </comply/compliance-export>
     Data retention tools </comply/data-retention-policy>
     Custom terms of service </comply/custom-terms-of-service>
+    Notify Admin </upgrade/notify-admin>
 
 These resources will help you get started with your Mattermost self-hosted or Cloud workspace.
 
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
-* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces <https://docs.mattermost.com/configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
+* **Configure your workspace** - Mattermost offers extensive configuration options for both `self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings.html>`__, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 * **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
 * **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
 * **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Professional and Enterprise versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
@@ -62,6 +63,7 @@ These resources will help you get started with your Mattermost self-hosted or Cl
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
 * **Customize branding** - Change Mattermost branding, site name, and description with :doc:`custom branding tools </configure/custom-branding-tools>`.
 * **Compliance tools** - Extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, create :doc:`Compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, or :doc:`Compliance export </comply/compliance-export>` reports for channel history actions, set custom :doc:`data retention policies </comply/data-retention-policy>`, and set :doc:`custom terms of service </comply/custom-terms-of-service>` for team members.
+* **Notify admin** - Keep track of your users' :doc:`feature requirement needs </upgrade/notify-admin>`.
 
 Advanced user management
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,7 +129,7 @@ Cloud workspace management
 Self-hosted administration
 --------------------------
 
-This section of the guide is for system admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud workspace management <https://docs.mattermost.com/guides/administration.html#cloud-workspace-management>`__ section on this page.
+This section of the guide is for system admins of self-hosted Mattermost servers. If you're the admin for a Mattermost Cloud workspace, please refer to the `Cloud workspace management </guides/administration.html#cloud-workspace-management>`__ section on this page.
 
 .. toctree::
     :maxdepth: 1

@@ -16,9 +16,9 @@ Enable performance monitoring
 | - **false**: **(Default)** Mattermost         |                                                                     |
 |   performance monitoring is disabled.         |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| See the `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation    |
+| See the `performance monitoring </scale/performance-monitoring.html>`__ documentation                               |
 | to learn more.                                                                                                      |
-+---------------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------+
 
 Listen address for performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

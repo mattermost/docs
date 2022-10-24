@@ -22,7 +22,7 @@ If you choose not to upgrade at the end of your 30-day trial, your subscription 
 View subscription details
 -------------------------
 
-The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html>`__ set for your subscription.
+The subscription screen outlines the details of your Mattermost Cloud account, including the cost per user per month and the number of users currently registered in your workspace. You can also find a summary of your last invoice in the same page, and any `workspace limits </onboard/mattermost-limits.html>`__ set for your subscription.
 
 Billing period
 --------------
@@ -78,7 +78,7 @@ If you're on a monthly Cloud subscription, you can add more users to your instan
 
 When you subscribe to an annual plan with Mattermost, you may incur retroactive charges on a quarterly basis for the actual number of registered users within your system if you are above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
-If you have more total active users than the number purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__.
+If you have more total active users than the number purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
 Renew your subscription
 -----------------------
@@ -93,7 +93,7 @@ What happens when my 30-day Mattermost Enterprise trial period ends?
 
 At the end of the 30-day trial, you can opt to purchase a monthly subscription to Mattermost Professional via the prompts provided in Mattermost. 
 
-If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits <https://docs.mattermost.com/mattermost-limits.html>`_ for Mattermost Starter will be auto-archived.
+If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Starter will be auto-archived.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +133,7 @@ I'm no longer being billed for my Cloud Starter ($149 / year) plan. Why is that?
 
 Cloud Starter ($149 / year) plans created before June 15, 2022 are now free with no data limits. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using your Cloud Starter plan for free.
 
-Free Cloud Starter workspaces created on or after June 15, 2022 are free forever with certain `workspace limits <https://docs.mattermost.com/onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
+Free Cloud Starter workspaces created on or after June 15, 2022 are free forever with certain `workspace limits </onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
