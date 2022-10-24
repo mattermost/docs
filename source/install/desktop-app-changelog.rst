@@ -85,7 +85,7 @@ Open Source Components
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For Mac it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
 - On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
