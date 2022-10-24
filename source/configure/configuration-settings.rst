@@ -50,3 +50,4 @@ Deprecated configuration settings
 ---------------------------------
 
 See the :doc:`deprecated configuration settings documentation </configure/deprecated-configuration-settings>` for details on all deprecated Mattermost configuration settings that are no longer supported.
+
