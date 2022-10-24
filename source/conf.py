@@ -1291,7 +1291,14 @@ redirects = {
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-admin-notices",
 "configure/configuration-settings.html#enable-end-user-notices": 
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-end-user-notices",
-
+"configure/experimental-configuration-settings.html#import-settings-default-directory":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-input-directory",
+"configure/experimental-confguration-settings.html#import-settings-default-retention-days":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#import-retention-days",
+"configure/experimental-configuration-settings.html#export-settings-default-directory":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-output-directory",
+"configure/experimental-configuration-settings.html#export-settings-default-retention-days":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#export-retention-days",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

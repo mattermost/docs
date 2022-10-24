@@ -834,8 +834,8 @@ Used in combination with the ``ClientSideCertEnable`` configuration setting.
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
 +----------------------------------------------------------------------------------------------------------------------------------+
 
-Export settings default directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Export output directory
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -845,8 +845,8 @@ The directory where the exported files are stored. The path is relative to the `
 | This feature's ``config.json`` setting under the ``ExportSettings`` section is ``Directory: ./export`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-Export settings default retention days
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Export retention days
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -964,8 +964,8 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "profile email"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Import settings default directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Import input directory
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -975,8 +975,8 @@ The directory where the imported files are stored. The path is relative to the `
 | This feature's ``config.json`` setting under the ``ImportSettings`` section is ``Directory: ./import`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-Import settings default retention days
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Import retention days
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
