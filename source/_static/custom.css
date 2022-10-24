@@ -1,5 +1,5 @@
 p button.copybtn {
-   positioning : relative;
+   position : relative;
    display : unset;
    margin-left : 0.3em;
 }
