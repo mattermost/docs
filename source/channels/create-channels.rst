@@ -17,6 +17,8 @@ Anyone can create public channels, private channels, direct messages, and group 
   - Displaying a temporary welcome message for new channel members.
   - Automatically adding the channel to a `category in the user's channel sidebar </channels/customize-your-channel-sidebar.html>`__.
   - Prompting to run a playbook based on the contents of a message.
+
+  The `Playbooks plugin must be enabled </configure/plugins-configuration-settings.html#mattermost-playbooks>`__ for Channel Admins to use channel actions.
   
 .. tabs::
 
