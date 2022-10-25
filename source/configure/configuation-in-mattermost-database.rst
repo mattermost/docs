@@ -14,6 +14,12 @@ Benefits to using this option:
 * Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
 * Automatically deploy SAML certificates and keys to all servers in the cluster.
 
+Note that once you start using configuration in the database, you can't manually edit the active configuration row. You will either need to do one of:
+
+* Use the System Console to make changes to the configuration.
+* Use ``mmctl`` to make changes to the configuration.
+* Stop any of the running mattermost-server instances and edit the active configuration row directly in the ``Configurations`` table.
+
 How to migrate configuration to the database
 --------------------------------------------
 
