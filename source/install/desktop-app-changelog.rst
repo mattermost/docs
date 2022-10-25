@@ -76,6 +76,7 @@ All Platforms
 - Fixed an issue where users still received notifications when their status was set to **Do Not Disturb**.
 - Fixed an issue where users could not replace files in the **Downloads** folder.
 - Fixed improper reporting of app version when the ``--version`` or ``-v`` command-line flags were passed.
+- Fixed an issue where MAS users couldn't easily replace files.
 
 Open Source Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
