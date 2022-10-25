@@ -193,6 +193,14 @@ Disable database search
 |   results.                                                    |                                                                              |
 | - **false**: **(Default)** Database search isn't disabled.    |                                                                              |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
+| Search behavior in Mattermost depends on which search engines are enabled.                                                                   |
+|                                                                                                                                              |
+| - When `Elasticsearch </scale/elasticsearch.html>`__ is enabled, Mattermost will try to use it first.                                        |
+| - If Elasticsearch fails or is disabled, Mattermost will attempt to use `Bleve </deploy/bleve-search.html>`__, if enabled. If this occurs,   |
+|   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
+| - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
+| - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
++---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Applied schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
