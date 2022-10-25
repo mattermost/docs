@@ -3,8 +3,18 @@ Start a call (beta)
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
-  
+
 Mattermost introduces beta voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
+
+:ref:`Features available in Mattermost 7.0`
+:ref:`Frequently asked questions`
+:ref:`Troubleshooting`
+   :ref: `My call is disconnected after a few seconds`
+   :ref: `I cannot screen share using Mattermost Desktop on MacOS`
+:ref:`Debugging`
+
+Features available in Mattermost 7.0
+------------------------------------
 
 From 7.0, you can:
 
@@ -46,15 +56,27 @@ The only external service used is Mattermost official STUN server (``stun.global
 Troubleshooting
 ---------------
 
+My call is disconnected after a few seconds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 My call is disconnected after a few seconds and I can't transmit voice nor hear anything.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
+
+I cannot screen share using Mattermost Desktop on MacOS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is a known bug on MacOS with some versions of Chrome (which is used by Mattermost Desktop). If you have given screen sharing permissions to Mattermost Desktop, and you are still unable to screen share, do the following:
+
+#. Quit Mattermost Desktop
+#. In the MacOS terminal, run: `tccutil reset ScreenCapture Mattermost.Desktop`
+#. Restart Mattermost Desktop and start a call
+#. Click screen share and give it permissions again (which will require another restart of Mattermost Desktop)
 
 Debugging
 ---------
 
-If you experience issues with calls, collecting information is helpful as you can share it with us for debugging purposes. 
+If you experience issues with calls, collecting information is helpful as you can share it with us for debugging purposes.
 
 As with any other issue, but more importantly with calls, it’s very useful to provide date and time of when some problem occurred, with as much detail as possible so that information can be cross-checked with server logs as well. Also please include any reproduction steps if applicable. Other important information include:
 
@@ -77,24 +99,24 @@ Desktop app
 In the top menu bar of the app, select **View > Developer Tools for Current Tab**. In the logs that are generated, right-click and select **Save as** to download the logs.
 
 Call stats dump
----------------
+~~~~~~~~~~~~~~~
 
 In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message.
 
 You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
 
 WebRTC internals (Chrome + Firefox only)
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is an additional method for Chrome and Firefox users in cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio.
 
 Chrome browser (recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open ``chrome://webrtc-internals/`` in the browser that you're using for the active call.
 
 Firefox browser
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 Open ``about://webrtc`` in the browser that you're using for the active call.
 
