@@ -30,52 +30,52 @@ Access the following configuration settings in the System Console by going to **
 Site name
 ~~~~~~~~~
 
-Name of service shown in login screens and UI. Maximum 30 characters.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteName": "Mattermost"`` with string input. |
-+-------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| Name of service shown in login screens and UI. Maximum 30       |This feature's ``config.json`` setting is ``"SiteName":          |
+|characters.                                                      |"Mattermost"`` with string input.                                |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 Site description
 ~~~~~~~~~~~~~~~~
 
-Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomDescriptionText": ""`` with string input. |
-+----------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+|Description of service shown in login screens and UI. When not   |   This feature's ``config.json`` setting is                     |
+|specified, "All team communication in one place, searchable and  |``"CustomDescriptionText": ""`` with string input.               |
+|accessible anywhere" is displayed.                               |                                                                 |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 Enable custom branding
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-**True**: Enables custom branding to show a JPG image some custom text on the server login page.
-
-**False**: Custom branding is disabled.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableCustomBrand": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
-
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| **True**: Enables custom branding to show a JPG image some      |  This feature's ``config.json`` setting is                      |
+|custom text on the server login page.                            |``"EnableCustomBrand": false`` with options ``true`` and         |
+|                                                                 |``false``.                                                       |
+|**False**: Custom branding is disabled.                          |                                                                 |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+									     
 Custom brand image
 ~~~~~~~~~~~~~~~~~~~
 
-Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
-
-+----------------------------------------------------------------------------------------------------+
-| This features has no ``config.json`` setting and must be set in the System Console user interface. |
-+----------------------------------------------------------------------------------------------------+
-
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| Custom JPG image is displayed on left side of server login      |   This features has no ``config.json`` setting and must be set  |
+|page. Recommended maximum image size is less than 2 MB because   |in the System Console user interface.                            |
+|image will be loaded for every user who logs in.                 |                                                                 |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+                                                                                                    
 Custom brand text
 ~~~~~~~~~~~~~~~~~
 
-Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as using in Mattermost messages.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomBrandText": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
-
++--------------------------------------------------------------------+-----------------------------------------------------------------+
+|  Custom text will be shown below custom brand image on left side of| This feature's ``config.json`` setting is ``"CustomBrandText":  |
+|server login page. Maximum 500 characters allowed. You can format   |""`` with string input.                                          |
+|this text using the same `Markdown formatting codes                 |                                                                 |
+|<https://docs.mattermost.com/help/messaging/formatting-text.html>`__|                                                                 |
+|as using in Mattermost messages.                                    |                                                                 |
++--------------------------------------------------------------------+-----------------------------------------------------------------+
+      
 Enable Ask Community link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
