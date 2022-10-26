@@ -51,14 +51,14 @@ Enable custom branding
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-+--------------------------------------------------------------------+-----------------------------------------------------------------------+
-| - **true**: Enables the display of a custom image and text on the  | - System Config path: **Site Configuration > Customization**          |
-|login page (see settings for **Custom brand image** and **Custom    | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
-|brand text**)                                                       | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
-| - **false: (Default)** Custom branding is disabled.                |                                                                       |
-|                                                                    |                                                                       |
-+--------------------------------------------------------------------+-----------------------------------------------------------------------+
- 								   	     
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| - **true**: Enables the display of a custom image and text on the login page (see settings for **Custom brand image** and **Custom brand text**)| - System Config path: **Site Configuration > Customization**          |
+| - **false: (Default)** Custom branding is disabled.                                                                                             | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
+|                                                                                                                                                 | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
+|                                                                                                                                                 |                                                                       |
+|                                                                                                                                                 |                                                                       |
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+ 								     	     
 Custom brand image
 ~~~~~~~~~~~~~~~~~~~
 
@@ -89,16 +89,12 @@ Custom brand text
 Enable Ask Community link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| - **true: (Default)** **Ask the community** link to the `Mattermost        | - System Config path: **Site Configuration > Customization**                 |
-|Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__  | - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
-|appears under the **Help** menu in the channel header. Users can join the   | - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
-|Mattermost Community to ask questions and help others troubleshoot          |                                                                              |
-|issues. This option is not available on mobile apps.                        |                                                                              |
-| - **false**: The link is not visible to users.                             |                                                                              |
-|                                                                            |                                                                              |
-|                                                                            |                                                                              |
-+----------------------------------------------------------------------------+------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| - **true: (Default)** **Ask the community** link to the `Mattermost Community <https://mattermost.com/pl/default-ask-mattermost-community>`__ appears under the **Help** menu in the channel header. | - System Config path: **Site Configuration > Customization**                 |
+| - **false**: The link is not visible to users.                                                                                                                                                       | - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
+|                                                                                                                                                                                                      | - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
+|The link does not appear on mobile apps.                                                                                                                                                              |                                                                              |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Help link
 ~~~~~~~~~
@@ -118,26 +114,26 @@ Terms of Use link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------------------------+---------------------------------------------------------------------+
-|The URL for the Terms of Use of a self-hosted site. A link to the terms   | - System Config path: **Site Configuration > Customization**        |
-|appears at the bottom of the sign-up and login pages.                     | - ``config.json`` setting: ``.SupportSettings.TermsOfServiceLink``  |
-|                                                                          | - Environment variable: ``MM_SUPPORTSETTINGS_TERMSOFSERVICELINK``   |
-| The default URL links to a `Terms of Use                                 |                                                                     |
-|<https://about.mattermost.com/default-terms/>`__ page hosted on           |                                                                     |
-|``mattermost.com``. This includes the Mattermost Acceptable Use Policy    |                                                                     |
-|explaining the terms under which Mattermost software is provided to end   |                                                                     |
-|users. If you change the default link to add your own terms for using the |                                                                     |
-|service you provide, your new terms **must include a link** to the default|                                                                     |
-|terms so end users are aware of the Mattermost Acceptable Use Policy.     |                                                                     |
-|                                                                          |                                                                     |
-|From Mattermost v5.17, this setting doesn't change the terms of use link  |                                                                     |
-|displayed in the **About Mattermost** dialog, which refers to the         |                                                                     |
-|Mattermost Terms of Use.                                                  |                                                                     |
-|                                                                          |                                                                     |
-|String input. Default is ``https://about.mattermost.com/default-terms/``. |                                                                     |
-|                                                                          |                                                                     |
-|                                                                          |                                                                     |
-+--------------------------------------------------------------------------+---------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+|The URL for the Terms of Use of a self-hosted site. A link to the terms appears at the      | - System Config path: **Site Configuration > Customization**        |
+|bottom of the sign-up and login pages.                                                      | - ``config.json`` setting: ``.SupportSettings.TermsOfServiceLink``  |
+|                                                                                            | - Environment variable: ``MM_SUPPORTSETTINGS_TERMSOFSERVICELINK``   |
+| The default URL links to a `Terms of Use <https://about.mattermost.com/default-terms>`__   |                                                                     |
+|page hosted on ``mattermost.com``. This includes the Mattermost Acceptable Use Policy       |                                                                     |
+|explaining the terms under which Mattermost software is provided to end users. If you change|                                                                     |
+|the default link to add your own terms for using the service you provide, your new terms    |                                                                     |
+|**must include a link** to the default terms so end users are aware of the Mattermost       |                                                                     |
+|Acceptable Use Policy.                                                                      |                                                                     |
+|                                                                                            |                                                                     |
+|From Mattermost v5.17, this setting doesn't change the terms of use link displayed in the   |                                                                     |
+|**About Mattermost** dialog, which refers to the Mattermost Terms of Use.                   |                                                                     |
+|                                                                                            |                                                                     |
+|String input. Default is ``https://about.mattermost.com/default-terms/``.                   |                                                                     |
+|                                                                                            |                                                                     |
+|                                                                                            |                                                                     |
+|                                                                                            |                                                                     |
+|                                                                                            |                                                                     |
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Privacy Policy link
 ~~~~~~~~~~~~~~~~~~~~
@@ -166,15 +162,15 @@ About link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+--------------------------------------------------------------+
-|The URL for general information about a self-hosted site. A link | - System Config path: **Site Configuration > Customization** |               
-|to the About page appears at the bottom of the sign-up and login | - ``config.json`` setting: ``.SupportSettings.AboutLink``    |
-|pages. If this field is empty, the link does not appear.         | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``     |
-|                                                                 |                                                              |       
-|String input. Default is                                         |                                                              |
-|``https://about.mattermost.com/default-about/``.                 |                                                              |
-|                                                                 |                                                              |
-+-----------------------------------------------------------------+--------------------------------------------------------------+
++-------------------------------------------------------------------------+--------------------------------------------------------------+
+|The URL for general information about a self-hosted site. A link to the  | - System Config path: **Site Configuration > Customization** |               
+|About page appears at the bottom of the sign-up and login pages. If this | - ``config.json`` setting: ``.SupportSettings.AboutLink``    |
+|field is empty, the link does not appear.                                | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``     |
+|                                                                         |                                                              |       
+|String input. Default is ``https://about.mattermost.com/default-about/``.|                                                              |
+|                                                                         |                                                              |
+|                                                                         |                                                              |
++-------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -182,14 +178,14 @@ Report a Problem link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
-|The URL for the Report a Problem link in the **Help** menu. If   | - System Config path: **Site Configuration > Customization**       |
-|this field is empty, the link does not appear.                   | - ``config.json`` setting: ``.SupportSettings.ReportAProblemLink`` |
-|                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``  |
-| String input. Default is                                        |                                                                    |
-|https://about.mattermost.com/default-report-a-problem.           |                                                                    |
-|                                                                 |                                                                    |
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------+--------------------------------------------------------------------+
+|The URL for the Report a Problem link in the **Help** menu. If this field is     | - System Config path: **Site Configuration > Customization**       |
+|empty, the link does not appear.                                                 | - ``config.json`` setting: ``.SupportSettings.ReportAProblemLink`` |
+|                                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``  |
+| String input. Default is                                                        |                                                                    |
+|``https://about.mattermost.com/default-report-a-problem``.                       |                                                                    |
+|                                                                                 |                                                                    |
++---------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,7 +217,8 @@ Android app download link
 |If you have an Enterprise App Store, use this setting to link to the correct |                                                                          |
 |app.                                                                         |                                                                          |
 |                                                                             |                                                                          |
-|String input. Default is https://about.mattermost.com/mattermost-android-app.|                                                                          |
+|String input. Default is                                                     |                                                                          |
+|https://about.mattermost.com/mattermost-android-app/.                        |                                                                          |
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 iOS app download link
