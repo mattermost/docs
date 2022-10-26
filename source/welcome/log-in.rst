@@ -4,7 +4,7 @@ Log in to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You'll receive link to access Mattermost from your Mattermost System Admin or through an email invitation. Once you have your organization's Mattermost link, navigate to that URL in a web browser, the `desktop app <https://docs.mattermost.com/install/desktop-app-install.html>`__, or the `mobile app <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__, then enter your user credentials to log into Mattermost.
+You'll receive link to access Mattermost from your Mattermost System Admin or through an email invitation. Once you have your organization's Mattermost link, navigate to that URL in a web browser, the `desktop app </install/desktop-app-install.html>`__, or the `mobile app </deploy/use-prebuilt-mobile-apps.html>`__, then enter your user credentials to log into Mattermost.
 
 .. tip::
   - We recommend bookmarking the Mattermost URL in your browser of choice so logging into Mattermost is easy in the future.
@@ -86,7 +86,7 @@ SAML SSO
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-When enabled by your System Admin, you can log in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. Mattermost officially supports `Okta <https://docs.mattermost.com/onboard/sso-saml-okta.html>`__, `OneLogin <https://docs.mattermost.com/onboard/sso-saml-onelogin.html>`__, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. Please see our `SAML Single Sign-On documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
+When enabled by your System Admin, you can log in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. Mattermost officially supports `Okta </onboard/sso-saml-okta.html>`__, `OneLogin </onboard/sso-saml-onelogin.html>`__, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. Please see our `SAML Single Sign-On documentation </onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
 
 .. image:: ../images/sign-in_with_saml.png
   :alt: Log in to Mattermost with your SAML credentials.

@@ -55,8 +55,7 @@ Data source
 |    }                                                                                                                                     |
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
-| Requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ documentation for details on                   |
-| MySQL 8.0 support.                                                                                                                       |
+| Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **PostgreSQL databases**                                                                                                                 |
 |                                                                                                                                          |
@@ -123,7 +122,7 @@ Maximum connection idle timeout
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
-| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |             
+| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``              |
 | Numerical input in milliseconds. Default is **300000** |                                                                                     | 
 | (5 minutes).                                           |                                                                                     |
@@ -185,7 +184,7 @@ Disable database search
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
 | `Elasticsearch                                                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-| <https://docs.mattermost.com/scale/elasticsearch.html>`__,    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
+| </scale/elasticsearch.html>`__,                               | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | the database can be disabled to perform searches.             |                                                                              |
 |                                                               |                                                                              |
 | - **true**: Disables the use of the database to perform       |                                                                              |
@@ -193,6 +192,14 @@ Disable database search
 |   setting this value to ``true`` will result in empty search  |                                                                              |
 |   results.                                                    |                                                                              |
 | - **false**: **(Default)** Database search isn't disabled.    |                                                                              |
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+| Search behavior in Mattermost depends on which search engines are enabled.                                                                   |
+|                                                                                                                                              |
+| - When `Elasticsearch </scale/elasticsearch.html>`__ is enabled, Mattermost will try to use it first.                                        |
+| - If Elasticsearch fails or is disabled, Mattermost will attempt to use `Bleve </deploy/bleve-search.html>`__, if enabled. If this occurs,   |
+|   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
+| - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
+| - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Applied schema migrations

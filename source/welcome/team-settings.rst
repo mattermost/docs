@@ -72,4 +72,4 @@ Import
 Import from Slack
 ~~~~~~~~~~~~~~~~~
 
-From v6.0, this feature has been deprecated. See our `Migration Guide <https://docs.mattermost.com/onboard/migrating-to-mattermost.html>`__ for details on migrating to Mattermost from other solutions, including `Slack <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack>`__. 
+From v6.0, this feature has been deprecated. See our `Migration Guide </onboard/migrating-to-mattermost.html>`__ for details on migrating to Mattermost from other solutions, including `Slack </onboard/migrating-to-mattermost.html#migrating-from-slack>`__. 
