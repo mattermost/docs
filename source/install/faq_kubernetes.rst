@@ -1,3 +1,4 @@
+:orphan:
 :nosearch:
 
 Frequently Asked Questions
@@ -35,7 +36,7 @@ Currently this is not supported as it introduces the possibility of missing a da
 Are environment variables supported?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. However, ``config.json`` file settings will be overridden if the `$MM_SQLSETTINGS_DATASOURCE` environment variable is set. See the `Environment Variables <https://docs.mattermost.com/configure/configuration-settings.html#environment-variables>`__ configuration settings documentation for details.
+Yes. However, ``config.json`` file settings will be overridden if the `$MM_SQLSETTINGS_DATASOURCE` environment variable is set. See the `Environment Variables </configure/configuration-settings.html#environment-variables>`__ configuration settings documentation for details.
 
 Issues configuring Login with SAML on Kubernetes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

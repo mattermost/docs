@@ -18,7 +18,7 @@ jobs:
         if: github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/setup-python@v2
         with:
-          python-version: '3.7'
+          python-version: '3.9'
 
       - name: Install pipenv
         if: github.event.pull_request.head.repo.full_name == github.repository
@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         if: github.event.pull_request.head.repo.full_name == github.repository
-        run: make html
+        run: make SPHINXOPTS="-j auto -D mm_url_path_prefix=/${{ steps.pr.outputs.id }}" html
 
       - uses: shallwefootball/s3-upload-action@master
         name: Upload Preview Env

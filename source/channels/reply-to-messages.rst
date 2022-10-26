@@ -1,24 +1,10 @@
 Reply to messages
 =================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. You can `edit and delete messages <https://docs.mattermost.com/channels/send-messages.html#edit-or-delete-messages>`__ after you've sent them.
+Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. You can `edit and delete messages </channels/send-messages.html#edit-or-delete-messages>`__ after you've sent them.
 
 .. |reply-arrow| image:: ../images/reply-outline_F0F20.svg
   :alt: Reply icon.
@@ -43,9 +29,9 @@ To shrink the right-hand sidebar to its original width, select the same **Collap
 
 .. note::
   
-  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `advanced permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
+  Your System Admin may restrict Messaging actions, such as editing or deleting messages, by configuring `advanced permissions </onboard/advanced-permissions.html>`__, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
 
 Work with Collapsed Reply Threads
 ---------------------------------
 
-Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads <https://docs.mattermost.com/channels#organize-conversations.html>`__ documentation to learn more.
+Collapsed Reply Threads is generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and is enabled by default for all new Mattermost deployments. Collapsed Reply Threads offer a new way to organize conversations within channels. See our `Organizing Conversations using Collapsed Reply Threads </channels/organize-conversations.html>`__ documentation to learn more.

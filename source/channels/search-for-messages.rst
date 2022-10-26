@@ -1,24 +1,15 @@
 Search for messages
 ===================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+.. |product-list| image:: ../images/products_E82F.svg
+  :height: 24px
+  :width: 24px
+  :alt: Navigate between Channels, Playbooks, and Boards using the product menu icon.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Use the Mattermost Search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
+Use the Mattermost search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. File content search is available in Mattermost Server from v5.35 and in Mattermost Cloud, with mobile support coming soon.
 
 .. image:: ../images/ui_search.png
    :alt: Use Search to find messages, replies, and the contents of files shared across channels.
@@ -63,9 +54,9 @@ File contents that match on file name, or contain matching text content within s
 
   - System Admins can extend file content search support for self-hosted deployments to include:
   
-    - `files shared before upgrading to Mattermost Server v5.35 <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__.
-    - `DOC, RTF, and PAGES file formats <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__.
-    - `documents within ZIP files <https://docs.mattermost.com/configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
+    - `files shared before upgrading to Mattermost Server v5.35 </manage/command-line-tools.html#mattermost-extract-documents-content>`__.
+    - `DOC, RTF, and PAGES file formats </configure/configuration-settings.html#enable-document-search-by-content>`__.
+    - `documents within ZIP files </configure/configuration-settings.html#enable-searching-content-of-documents-within-zip-files>`__.
 
 To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
   
@@ -168,13 +159,13 @@ Technical notes about searching
 Searching Chinese, Korean, and Japanese
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation <https://docs.mattermost.com/install/i18n.html>`__ for details.
+- The best experience for searching in Chinese, Korean, and Japanese is to use MySQL 5.7.6 or later with special configuration. See the `Chinese, Japanese and Korean Search documentation </install/i18n.html>`__ for details.
 - You can perform searches without this configuration by adding wildcards ``*`` to the end of search terms.
 
 Differences between PostgreSQL and MySQL search
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Check **Product menu > About Mattermost** to see which database you’re using.
+By default, Mattermost uses full text search support included in MySQL and PostgreSQL. These databases have slightly different search behavior. Select the **product menu** |product-list| then select **About Mattermost** to see which database you’re using.
 
 For example, different databases have different “stop words” filtered out of search results. See `MySQL <https://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html>`__ or `PostgreSQL <https://www.postgresql.org/docs/10/textsearch-dictionaries.html#TEXTSEARCH-STOPWORDS>`__ database documentation for a full list.
 
@@ -183,8 +174,10 @@ Other database-specific differences include:
 PostgreSQL:
 
 - Email addresses don't return results.
+- URLs don’t return results.
 - Hashtags or recent mentions of usernames containing a dash don't return results.
 - Terms containing a dash return incorrect results since dashes are ignored in the search engine.
+- From Mattermost v7.1, search results respect the ``default_text_search_config`` value instead of being hardcoded to English. We recommend that Mattermost system admins review this value to ensure it's set correctly.
 
 MySQL:
 

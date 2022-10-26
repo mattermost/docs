@@ -1,22 +1,8 @@
 Create a playbook
 ==================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
   
 Playbooks help streamline and manage complex processes while decreasing the risk of forgotten steps or tasks. They also support tool integration, status updates in a dedicated channel, and can be edited on the fly. When a playbook run is finished, you can review the entire run to assess any areas of improvement for the next run.
 
@@ -90,7 +76,7 @@ Webhooks
 Set permissions
 ---------------
 
-1. Go to **Product menu > Playbooks**, and then select **Permissions**.
+1. Go to **product menu > Playbooks**, and then select **Permissions**.
 
  * **Channel access**: Decide whether the automatically-created channel should be Public or Private within the team.
  * **Playbook access**: Share this playbook with other members of the team to allow them to use the playbook to start a run, as well as edit the playbook.
@@ -100,7 +86,7 @@ Edit a playbook
 
 You can change a playbook's configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **Product menu > Playbooks**.
+1. Go to **product menu > Playbooks**.
 2. Find the playbook to be edited.
 
  * Only playbooks of which you are a member are listed. System Admins have unrestricted access to all playbooks on the team.

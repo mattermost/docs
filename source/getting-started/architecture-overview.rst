@@ -1,19 +1,10 @@
 Architecture overview
 =====================
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deploy/deployment-overview.html>`__.
+This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki </deploy/deployment-overview.html>`__.
 
 .. toctree::
     :maxdepth: 2
@@ -23,7 +14,7 @@ Basics
 
 At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`__.
 
-It is configured using `config/config.json <https://docs.mattermost.com/configure/configuration-settings.html>`__ and provides the following:
+It is configured using `config/config.json </configure/configuration-settings.html>`__ and provides the following:
 
 - **Authentication client:** The functionality for users to log into Mattermost via email address and password in Team Edition. Mattermost Professional adds the ability for users to authenticate using Active Directory or LDAP, and Mattermost Enterprise adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin, and Okta.
 - **Authentication provider:** Enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
@@ -37,7 +28,7 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 Push notification service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Mattermost `hosted push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service <https://docs.mattermost.com/deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__ and `compile their mobile applications <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__ to use that service.
+The Mattermost `hosted push notification service </deploy/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service </deploy/mobile-hpns.html#test-push-notifications-service-tpns>`__ or `host their own push notification service </deploy/mobile-hpns.html#host-your-own-push-proxy-service>`__ and `compile their mobile applications </deploy/build-custom-mobile-apps.html>`__ to use that service.
 
 Proxy
 ~~~~~
@@ -48,7 +39,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance:** In a High Availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938/3>`__.
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see `our guide </guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938/3>`__.
 
 .. image:: ../images/architecture_with_proxy.png
 
@@ -142,7 +133,7 @@ The following diagrams show the suggested architecture configurations enterprise
 
 There are two versions of each diagram. One is generalized while the other focuses on AWS.
 
-Each generalized diagram represents a full High Availability deployment across all critical components. The proxy, database, file storage, and Elasticsearch layers can be replaced by cloud services. Push proxy can be replaced by the Mattermost `HPNS <https://docs.mattermost.com/mobile/mobile-hpns.html>`__.
+Each generalized diagram represents a full High Availability deployment across all critical components. The proxy, database, file storage, and Elasticsearch layers can be replaced by cloud services. Push proxy can be replaced by the Mattermost `HPNS </mobile/mobile-hpns.html>`__.
 
 Each AWS diagram represents a full High Availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
 

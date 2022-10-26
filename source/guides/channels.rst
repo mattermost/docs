@@ -1,6 +1,9 @@
 Mattermost Channels
 ===================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Mattermost Channels provide 1:1 and group messaging that features integrated voice/video conferencing, file, image, and link sharing, rich markdown formatting, and a fully searchable message history. 
 
 With Mattermost Channels, you can keep all of your team's communications in one place and remove information and organizational silos. This Mattermost Channels User Guide is designed for anyone who needs help using Mattermost messaging capabilities.
@@ -35,7 +38,7 @@ Work with channels
    Mark channels as favorites </channels/favorite-channels>
    Customize your channel sidebar </channels/customize-your-channel-sidebar>
    Archive and unarchive channels </channels/archive-unarchive-channels>
-   Set Channel preferences </channels/set-channel-preferences>
+   Set channel preferences </channels/set-channel-preferences>
    Channels settings </channels/channels-settings>
 
 * :doc:`Channel types </channels/channel-types>` - Learn more about the types of channels available in Mattermost.
@@ -68,6 +71,7 @@ Work with messages
    Mark messages as unread </channels/mark-messages-unread>
    Format messages </channels/format-messages>
    Share files in messages </channels/share-files-in-messages>
+   Forward messages </channels/forward-messages>
    Share links to messages </channels/share-links>
    Save and pin messages </channels/save-pin-messages>
    Search for messages </channels/search-for-messages>
@@ -80,6 +84,7 @@ Work with messages
 * :doc:`Mark Messages as unread </channels/mark-messages-unread>` - Change messages to an unread state for easy follow-up.
 * :doc:`Format messages </channels/format-messages>` - Use markdown to format message content.
 * :doc:`Share files in messages </channels/share-files-in-messages>` - Share videos, voice recordings, and images in your Mattermost messages.
+* :doc:`Forward messages </channels/forward-messages>` - Quickly and easily forward messages with previews.
 * :doc:`Share links to messages </channels/share-links>` - Share links to messages across channels.
 * :doc:`Save and pin messages </channels/save-pin-messages>` - Mark useful messages for easy retrieval in the future.
 * :doc:`Search for messages </channels/search-for-messages>` - Use search to find messages, replies, and contents of files across Mattermost Channels.

@@ -1,22 +1,8 @@
 Customizing Mattermost
 ======================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 There are several ways to customize your Mattermost server. 
 
@@ -48,7 +34,7 @@ Mattermost Server
 There are a few things you can customize in the Mattermost server without forking:
 
 1. Modify text in the Mattermost interface by modifying the ``en.json`` file.
-2. Customize or hide help and support links by modifying your `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#customization>`__.
+2. Customize or hide help and support links by modifying your `configuration settings </configure/configuration-settings.html#customization>`__.
 3. Customize the email notifications by editing the HTML files in ``/templates``.
 
 Mattermost mobile apps

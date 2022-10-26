@@ -1,61 +1,29 @@
-Database configuration settings
-===============================
+:orphan:
+:nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
-
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 Driver name
------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Identify the type of database. Can be one of:                 | - System Config path: N/A                                                |
+| The type of database. Can be either:                          | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".SqlSettings.DriverName",``                |
 | - **mysql**: **(Default)** Enables driver to MySQL database.  | - Environment variable: ``MM_SQLSETTINGS_DRIVERNAME``                    |
 | - **postgres**: Enables driver to PostgreSQL database.        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Data source
------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The connection string to the master database.                 | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".SqlSettings.DataSource",``                |
-| String input                                                  | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
+| String input.                                                 | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | To enable SSL:                                                                                                                           |
@@ -87,8 +55,7 @@ Data source
 |    }                                                                                                                                     |
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our `Database Software    |
-| Requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__ documentation for details on                   |
-| MySQL 8.0 support.                                                                                                                       |
+| Requirements </install/software-hardware-requirements.html>`__ documentation for details on MySQL 8.0 support.                           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | **PostgreSQL databases**                                                                                                                 |
 |                                                                                                                                          |
@@ -96,53 +63,45 @@ Data source
 | ``postgres://mmuser:password@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10.``                                        |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Maximum idle connections
-------------------------
-
-|all-plans| |self-hosted|
+Maximum idle database connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| Maximum number of idle connections held open           | - System Config path: **Environment > Database**                 |
+| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
 | to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 10,``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is 10.                        |                                                                  |
+| Numerical input. Default is **10**.                    |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum open connections
-------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| Maximum number of idle connections held open           | - System Config path: **Environment > Database**                 |
+| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
 | to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
-| Numerical input. Default is 300.                       |                                                                  |
+| Numerical input. Default is **300**.                   |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Query timeout
--------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| The amount of time to wait for a response from the     | - System Config path: **Environment > Database**                 |
-| database, in seconds, after opening a connection       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
-| and sending the query.                                 | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``          |
+| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                 |
+| from the database after opening a connection and       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
+| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``          |
 |                                                        |                                                                  |
-| Numerical input in seconds. Default is 30 seconds.     |                                                                  |
+| Numerical input in seconds. Default is **30** seconds. |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum connection lifetime
----------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -153,32 +112,30 @@ Maximum connection lifetime
 | may be reused                                          |                                                                                     |
 |                                                        |                                                                                     |
 | Numerical input in milliseconds. Default is            |                                                                                     |
-| 3,600,000 milliseconds (1 hour).                       |                                                                                     |
+| **3,600,000** milliseconds (1 hour).                   |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Maximum connection idle timeout
--------------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
-| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |             
+| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``              |
-| Numerical input in milliseconds. Default is 300000     |                                                                                     | 
+| Numerical input in milliseconds. Default is **300000** |                                                                                     | 
 | (5 minutes).                                           |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Minimum hashtag length
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+*Available in legacy Enterprise Edition E10/E20*
 
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
-| This value must be greater than or equal to 2.                       | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
+| This value must be greater than or equal to **2**.                   | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
 |                                                                      | - Environment variable: ``MM_SQLSETTINGS_MINIMUMHASHTAGLENGTH``         |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | **Note**: MySQL databases must be configured to support searching strings shorter than three characters. See the                               |
@@ -186,9 +143,9 @@ Minimum hashtag length
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 SQL statement logging
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
-|all-plans| |self-hosted|
+*Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
@@ -200,49 +157,142 @@ SQL statement logging
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Recycle database connections
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | Select the **Recycle Database Connections** button to  | - System Config path: **Environment > Database**                 |
-| reconnects to the configured database.                 | - ``config.json`` setting: N/A                                   |
+| reconnect to the configured database.                  | - ``config.json`` setting: N/A                                   |
 | All old connections are closed after 20 seconds.       | - Environment variable: N/A                                      |
 |                                                        |                                                                  |
 | To fail over without downing the server, change the    |                                                                  |
 | database line in the ``config.json`` file, select      |                                                                  |
 | **Reload Configuration from Disk** via **Environment   |                                                                  |
-| > Web Server**, then select **Recycle Database         |                                                                  |    
+| > Web Server**, then select **Recycle Database         |                                                                  |
 | Connections**.                                         |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 Disable database search
------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
 | `Elasticsearch                                                | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-| <https://docs.mattermost.com/scale/elasticsearch.html>`__,    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
+| </scale/elasticsearch.html>`__,                               | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | the database can be disabled to perform searches.             |                                                                              |
 |                                                               |                                                                              |
 | - **true**: Disables the use of the database to perform       |                                                                              |
 |   searches. If another search engine isn't configured,        |                                                                              |
 |   setting this value to ``true`` will result in empty search  |                                                                              |
 |   results.                                                    |                                                                              |
-| - **false**: **(Default)** Database search is not disabled.   |                                                                              |
+| - **false**: **(Default)** Database search isn't disabled.    |                                                                              |
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+| Search behavior in Mattermost depends on which search engines are enabled.                                                                   |
+|                                                                                                                                              |
+| - When `Elasticsearch </scale/elasticsearch.html>`__ is enabled, Mattermost will try to use it first.                                        |
+| - If Elasticsearch fails or is disabled, Mattermost will attempt to use `Bleve </deploy/bleve-search.html>`__, if enabled. If this occurs,   |
+|   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
+| - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
+| - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Applied schema migrations
--------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
+
+Read replicas
+~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
+
+*Available in legacy Enterprise Edition E10 and E20*
+
++--------------------------------------------------------+-----------------------------------------------------------------------+
+| Specifies the connection strings for the read replica  | - System Config path: N/A                                             |
+| databases.                                             | - ``config.json`` setting: ``".SqlSettings.DataSourceReplicas": []``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_DATASOURCEREPLICAS``         |
++--------------------------------------------------------+-----------------------------------------------------------------------+
+| **Note**: Each database connection string in the array must be in the same form used for the                                   |
+| `Data source <#data-source>`__ setting.                                                                                        |
++--------------------------------------------------------+-----------------------------------------------------------------------+
+
+Search replicas
+~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
+
+*Available in legacy Enterprise Edition E10 and E20*
+
++--------------------------------------------------------+-----------------------------------------------------------------------------+
+| Specifies the connection strings for the search        | - System Config path: N/A                                                   |
+| replica databases. A search replica is similar to a    | - ``config.json`` setting: ``".SqlSettings.DataSourceSearchReplicas": []``  |
+| read replica, but is used only for handling search     | - Environment variable: ``MM_SQLSETTINGS_DATASOURCESEARCHREPLICAS``         |
+| queries.                                               |                                                                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------+
+| **Note**: Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__          |
+| setting.                                                                                                                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------+
+
+Replica lag settings
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+*Available in legacy Enterprise Edition E20*
+
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| String array input specifies a connection string and   | - System Config path: N/A                                                        |
+| user-defined SQL queries on the database to measure    | - ``config.json`` setting: ``".SqlSettings.ReplicaLagSettings": []``             |
+| replica lag for a single replica instance.             | - Environment variable: ``MM_SQLSETTINGS_REPLICALAGSETTINGS``                    |
+|                                                        |                                                                                  |   
+| These settings monitor absolute lag based on binlog    |                                                                                  |
+| distance/transaction queue length, and the time taken  |                                                                                  |
+| for the replica to catch up.                           |                                                                                  |
+|                                                        |                                                                                  |
+| String array input consists of:                        |                                                                                  |
+|                                                        |                                                                                  |
+| - ``DataSource``: The database credentials to connect  |                                                                                  |
+|   to the replica instance.                             |                                                                                  |
+| - ``QueryAbsoluteLag``: A plain SQL query that must    |                                                                                  |
+|   return a single row. The first column must be the    |                                                                                  |
+|   node value of the Prometheus metric, and the second  |                                                                                  |
+|   column must be the value of the lag used to          |                                                                                  |
+|   measure absolute lag.                                |                                                                                  |
+| - ``QueryTimeLag``: A plain SQL query that must        |                                                                                  |
+|   return a single row. The first column must be the    |                                                                                  |
+|   node value of the Prometheus metric, and the second  |                                                                                  |
+|   column must be the value of the lag used to measure  |                                                                                  |
+|   the time lag.                                        |                                                                                  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| Examples:                                                                                                                                 |
+|                                                                                                                                           |
+| For AWS Aurora instances, ``QueryAbsoluteLag`` can be:                                                                                    |
+|                                                                                                                                           |
+| .. code-block:: sh                                                                                                                        |
+|                                                                                                                                           |
+|   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>                    |
+|                                                                                                                                           |
+| And for AWS Aurora instances, ``QueryTimeLag`` can be:                                                                                    |
+|                                                                                                                                           |
+| .. code-block:: sh                                                                                                                        |
+|                                                                                                                                           |
+|   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>                                     |
+|                                                                                                                                           |
+| For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:               |
+|                                                                                                                                           |
+| .. code-block:: sh                                                                                                                        |
+|                                                                                                                                           |
+|   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+

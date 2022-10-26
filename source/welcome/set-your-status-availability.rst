@@ -1,22 +1,8 @@
 Set your status and availability
 =================================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Let your team know whether you're available by setting a custom status and your availability in Mattermost.
 
@@ -44,7 +30,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 .. note::
 
   - If custom statuses aren't available, you can request your System Admin to enable this feature in **System Console > Site Configuration > Users and Teams > Enable Custom Statuses**.
-  - Custom statuses will be available in the Mattermost Mobile App in a future release. 
+  - Custom statuses will be available in the Mattermost mobile app in a future release. 
 
 Clear a custom status
 ------------------------

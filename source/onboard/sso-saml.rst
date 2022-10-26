@@ -1,27 +1,8 @@
 SAML Single Sign-On
 ===================
 
-|enterprise| |professional| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -50,7 +31,7 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>
   Keycloak SAML Configuration <sso-saml-keycloak>
 
-In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
+In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up miniOrange, Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as a custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
 
 Using SAML attributes to apply roles
 -------------------------------------
@@ -82,7 +63,7 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the `Guest accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`_ for more information about this feature.
+See the `Guest accounts documentation </onboard/guest-accounts.html>`_ for more information about this feature.
 
 Admin attribute
 ~~~~~~~~~~~~~~~

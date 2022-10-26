@@ -1,6 +1,9 @@
 What changed in Mattermost v6.0?
 ================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 In Mattermost v6.0, we introduced changes in how to navigate Mattermost with the introduction of the Global Header. Whether you're new to Mattermost, or a long-time user, this document will help you start using these new Global Header features as well as introduce you to some new ways of navigating the product.
 
 The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the Mattermost platform in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks. You'll notice that going forward, when you open Playbooks and Boards, they display as tabs in the window header for easier access.
@@ -36,7 +39,7 @@ Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **
 Status and availability
 -----------------------
 
-Let your team know your online status using `custom status and availability settings <https://docs.mattermost.com/welcome/set-your-status-availability.html>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
+Let your team know your online status using `custom status and availability settings </welcome/set-your-status-availability.html>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
 
 Product menu
 ------------

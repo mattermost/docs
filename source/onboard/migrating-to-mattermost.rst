@@ -1,17 +1,8 @@
 Migration guide
 ===============
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Thousands of organizations are moving to Mattermost for powerful, flexible, and easy-to-manage workplace collaboration. Mattermost deploys as a single Linux binary with MySQL or PostgreSQL, and can scale from dozens to tens of thousands of users in a single channel.
 
@@ -27,11 +18,11 @@ Migrating Mattermost server
 The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions **SOURCE** refers to the Mattermost server *from which* your system will be migrated and **DESTINATION** refers to the Mattermost server *to which* your system will be migrated.
 
 1. Back up your SOURCE Mattermost server.
-    1. See `Backup and Disaster Recovery documentation <https://docs.mattermost.com/deploy/backup-disaster-recovery.html>`__.
+    1. See `Backup and Disaster Recovery documentation </deploy/backup-disaster-recovery.html>`__.
 2. Upgrade your SOURCE Mattermost server to the latest major build version.
-    1. See `Upgrading Mattermost Server documentation <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__.
+    1. See `Upgrading Mattermost Server documentation </upgrade/upgrading-mattermost-server.html>`__.
 3. Install the latest major build of Mattermost server as your DESTINATION.
-    1. See `Install Mattermost documentation <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__ for details. Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
+    1. See `Install Mattermost documentation </guides/install-deploy-upgrade-scale.html#install-mattermost>`__ for details. Make sure your new instance is properly configured and tested. The database type (MySQL or PostgreSQL) and version of SOURCE and DESTINATION deployments need to match.
     2. Stop the DESTINATION server using ``sudo stop mattermost``, then back up the database and ``config.json`` file.
 4. Migrate database from SOURCE to DESTINATION.
     1. Backup the database from the SOURCE Mattermost server and restore it in place of the database to which the DESTINATION server is connected.
@@ -46,7 +37,7 @@ The following instructions migrate Mattermost from one server to another by back
 8. Test that the system is working by going to the URL of an existing team.
     1. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
-Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`__.
+Once your migration is complete and verified, you can optionally `upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide </upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition>`__.
 
 Migrating Mattermost server from MySQL to PostgreSQL
 ------------------------------------------------------
@@ -131,7 +122,7 @@ Why IT teams choose Mattermost over bespoke solutions
 
 Mattermost is designed to replace bespoke messaging solutions through a platform that is unmatched in flexibility. From the `hundreds of open source projects extending and customizing Mattermost through APIs and drivers <https://github.com/search?utf8=✓&q=mattermost&type=>`__, to an innovative client and server plugin framework for adapting the Mattermost user experience to the specific workflows and needs, thousands of high performance teams rely on Mattermost daily.
 
-In addition, IT teams prefer Mattermost for its specific `security assurances <https://docs.mattermost.com/about/security.html>`__:
+In addition, IT teams prefer Mattermost for its specific `security assurances </about/security.html>`__:
 
 1. Mattermost products are backed by Mattermost, Inc., which has commercial contracts with hundreds of enterprises around the world, many with Fortune 500 and Global 2000 organizations who require significant obligations and assurances from vendors of critical infrastructure.
 2. Mattermost offers a `security bulletin <https://mattermost.com/security-updates/#sign-up>`__ to alert IT teams and customers of high priority security updates, with step-by-step instructions for upgrade and options for commercial support.
@@ -146,7 +137,7 @@ Migrating from bespoke messengers to Mattermost can be challenging. Because of t
 
 If your data in the bespoke messenger is vital, consider:
 
-1. `Mattermost Bulk Load tool <https://docs.mattermost.com/onboard/bulk-loading-data.html>`__: Use the Mattermost Bulk Load tool to ETL from your bespoke system to Mattermost.
+1. `Mattermost Bulk Load tool </onboard/bulk-loading-data.html>`__: Use the Mattermost Bulk Load tool to ETL from your bespoke system to Mattermost.
 2. `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`__: Consider the Mattermost ETL framework from BrightScout to custom-configure an adapter to plug in to the Bulk Load tool mentioned above.
 3. **Legacy Slack import:** If you only recently switched from Slack to a bespoke tool, consider going back to import the data and users from the old Slack instance directly into Mattermost, leveraging the extensive support for Slack-import provided.
 4. **Export to Slack, then import to Mattermost:** `Export HipChat, Flowdock, Campfire, Chatwork, Hall, or CSV files to Slack <https://get.slack.help/hc/en-us/articles/201748703-Import-message-history>`__ and then export to a Slack export file and import the file into Mattermost.
@@ -231,17 +222,19 @@ Next, run this command to do the conversion. Replace ``<TEAM NAME>`` with the na
 
     ./mmetl transform slack --team <TEAM NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
-Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` that contains the attachments. On Linux and Mac you can use this command:
+Next you have to create a zip file with the ``mattermost_import.jsonl`` file and the directory ``bulk-export-attachments`` (which needs to be moved to a subdirectory ``data`` first) that contains the attachments. On Linux and macOS you can use this command:
 
 .. code:: bash
 
-    zip -r mattermost-bulk-import.zip bulk-export-attachments mattermost_import.jsonl
+    mkdir data
+    mv bulk-export-attachments data
+    zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
 
 The file ``mattermost-bulk-import.zip`` is now ready to import into Mattermost.
 
 **5. Import into Mattermost**
 
-Now you can start the import process. Once you have ``mmctl`` installed and authenticated use this command to upload ``mattermost-bulk-export.zip``:
+Now you can start the import process. Once you have ``mmctl`` installed and authenticated use this command to upload ``mattermost-bulk-import.zip``:
 
 .. code:: bash
 
@@ -278,7 +271,7 @@ Migrating from Slack using the Mattermost Web App
 
 .. note::
   
-  For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool <https://docs.mattermost.com/onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
+  For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `mmetl tool and bulk loading tool </onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import>`__.
 
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
 2. In Mattermost go to **Main Menu > Team Settings > Import > Import from Slack**. Team Admin or System Admin permission is required to access this menu option.
@@ -288,7 +281,7 @@ Migrating from Slack using the Mattermost CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
-  In Mattermost v6.0, the CLI has been deprecated in favor of the mmctl `CLI <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__.
+  In Mattermost v6.0, the CLI has been deprecated in favor of the mmctl `CLI </manage/mmctl-command-line-tool.html>`__.
 
 1. Generate a Slack export file from **Slack > Administration > Workspace Settings > Import/Export Data > Export > Start Export**.
 2. Run the following Mattermost CLI command, with the name of a team you've already created:
@@ -297,7 +290,7 @@ Migrating from Slack using the Mattermost CLI
    
 .. note::
 
-  To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process <https://docs.mattermost.com/guides/install-deploy-upgrade-scale.html#install-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
+  To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default installation of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process </guides/install-deploy-upgrade-scale.html#install-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
 
 Using the imported team
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -318,7 +311,7 @@ For more information about letter case in MySQL table names and the ``--lower-ca
 Migrating from HipChat Server and HipChat Data Center to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please see `HipChat Migration Guide <https://docs.mattermost.com/onboard/migrating-from-hipchat-to-mattermost.html>`__.
+Please see `HipChat Migration Guide </onboard/migrating-from-hipchat-to-mattermost.html>`__.
 
 Migrating from Jabber to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

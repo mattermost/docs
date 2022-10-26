@@ -1,24 +1,10 @@
 Testing push notifications
 ==========================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Make sure to configure push notifications for your `pre-built mobile apps <https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html>`__, or for `your custom built mobile apps <https://docs.mattermost.com/deploy/build-custom-mobile-apps.html>`__. 
+Make sure to configure push notifications for your `pre-built mobile apps </deploy/use-prebuilt-mobile-apps.html>`__, or for `your custom built mobile apps </deploy/build-custom-mobile-apps.html>`__. 
 
 Then use the following instructions to confirm push notifications are working properly.
 
@@ -51,6 +37,6 @@ Then use the following instructions to confirm push notifications are working pr
 
 5. Using a browser, log in to “Account B” on the same Mattermost Server.
 
-6. Open a Direct Message with “Account A”, and send a message.
+6. Open a direct message with “Account A”, and send a message.
 
 7. A push notification with the message should appear on the mobile device of “Account A”. If the push notification does not appear, follow :doc:`troubleshooting steps <mobile-troubleshoot-notifications>` to look for issues.

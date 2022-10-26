@@ -1,27 +1,13 @@
 Navigate channels
 =================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Navigate between channels
 --------------------------
 
-Use the **Find channel** option in the channel sidebar, or press CMD/CTRL+K, to visit other channels, or to review `member availability <https://docs.mattermost.com/welcome/set-your-status-availability.html>`__ at a glance.
+Use the **Find channel** option in the channel sidebar, or press :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac to visit other channels, or to review `member availability </welcome/set-your-status-availability.html>`__ at a glance.
 
     .. image:: ../images/switch-channels.png
         :alt: Navigate between channels and review member availability.

@@ -14,16 +14,19 @@ SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile livehtml python-deps
+.PHONY: help Makefile livehtml python-deps test
 
 python-deps:
 	pip install pipenv
 	pipenv install --dev
 
+test:
+	pipenv run pytest
+
 # Run `make livehtml` to start sphinx-autobuild
 livehtml:
 	@mkdir -p "$(BUILDDIR)"
-	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(O)
 
 # Run `make linkcheck` to check external links
 # Overriding `exclude_patterns` configuration to exclude

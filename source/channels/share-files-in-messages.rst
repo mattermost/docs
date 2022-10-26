@@ -1,22 +1,14 @@
 Share files in messages
 =======================
 
-|all-plans| |cloud| |self-hosted|
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+.. |attachment-icon| image:: ../images/attachment-icon.png
+  :alt: Use the Attachment icon to share files with messages.
 
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. |download-icon| image:: ../images/download-outline_F0B8F.svg
+  :alt: Use the Download icon to download an attached file to your local system.
 
 With file attachments, you can share additional information that helps your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos can make your messages more effective and clear.
 
@@ -26,15 +18,12 @@ You can share files with other Mattermost users or entire channels by:
 - selecting the **Attachment** |attachment-icon| icon in the message input box.
 - pasting from the clipboard.
 
-.. |attachment-icon| image:: ../images/attachment-icon.png
-  :alt: Attachment icon.
-
 Attachment limits and sizes
 ---------------------------
 
-Up to 10 files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#maximum-file-size>`__ product documentation for details.
+Up to 10 files can be attached per post. The default maximum file size is 100 MB, but this can be changed by the System Admin. See our `Configuration Settings </configure/configuration-settings.html#maximum-file-size>`__ product documentation for details.
 
-Image files can be a maximum size of 7680 pixels x 4320 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 253 MB. System Admins can customize the maximum image resolution size within the ``config.json`` file. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#maximum-image-resolution>`__ product documentation for details.
+Image files can be a maximum size of 7680 pixels x 4320 pixels, with a maximum image resolution of 33 MP (mega pixels) or 8K resolution, and a maximum raw image file size of approximately 253 MB. System Admins can customize the maximum image resolution size within the ``config.json`` file. See our `Configuration Settings </configure/configuration-settings.html#maximum-image-resolution>`__ product documentation for details.
 
 Preview file attachments
 ------------------------
@@ -71,4 +60,4 @@ Public links allow you to share message attachments with anyone outside your Mat
 Download files
 --------------
 
-You can download an attached file by selecting the **Download** icon next to the file thumbnail.
+You can download an attached file by selecting the **Download** |download-icon| icon next to the file thumbnail.

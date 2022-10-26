@@ -1,14 +1,12 @@
 :nosearch:
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
 ..  _install-rhel-8-mattermost:
 
-Installing Mattermost Server
-----------------------------
+Install Mattermost server
+--------------------------
 
-Install Mattermost Server on a 64-bit machine.
-
-Assume that the IP address of this server is ``10.10.10.2``.
-
-**To install Mattermost Server on RHEL 8**
+Install Mattermost Server on a 64-bit machine. Assume that the IP address of this server is ``10.10.10.2``.
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
@@ -43,15 +41,15 @@ Assume that the IP address of this server is ``10.10.10.2``.
 
   -  If you are using PostgreSQL:
 
-    1.  Set ``"DriverName"`` to ``"postgres"``
-    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values:
+    a.  Set ``"DriverName"`` to ``"postgres"``
+    b.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values:
 
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
   
   -  If you are using MySQL:
 
-    1.  Set ``"DriverName"`` to ``"mysql"``
-    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
+    a.  Set ``"DriverName"`` to ``"mysql"``
+    b.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
 
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
     
@@ -71,7 +69,7 @@ Assume that the IP address of this server is ``10.10.10.2``.
 
       ``sudo -u mattermost ./bin/mattermost``
 
-  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
+  When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing pressing :kbd:`Ctrl` :kbd:`C` on Windows or Linux, or :kbd:`⌘` :kbd:`C` on Mac, in the terminal window.
 
 10. Set up Mattermost to use the ``systemd init`` daemon which handles supervision of the Mattermost process.
 

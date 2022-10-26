@@ -1,16 +1,19 @@
 SSL client certificate setup (beta)
 ===================================
 
-Follow these steps to configure SSL client certificates for your browser and the Mattermost Desktop Apps on Windows, Mac and Linux. SSL client certificates are not yet supported on the Mattermost mobile apps.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
+Follow these steps to configure SSL client certificates for your browser and the Mattermost desktop apps on Windows, macOS, and Linux. SSL client certificates are not yet supported on the Mattermost mobile apps.
+
+Before you begin, follow the `official guides to install Mattermost </guides/administrator.html#installing-mattermost>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
 For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
 .. note::
   Generating the client certificates in this section is optional if you have already generated them before.
 
-Set up mutual TLS authentication for the Web App
+Set up mutual TLS authentication for the web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Create a `certificate authority (CA) key <https://en.wikipedia.org/wiki/Certificate_authority>`__ and a certificate for signing the client certificate. When establishing a TLS connection, the NGINX proxy server requests and validates a client certificate provided by the web app.
@@ -114,7 +117,7 @@ You should see the Mattermost login page. If you see:
 
 8. Repeat steps 2-7 above for other users as needed.
 
-9. Import the generated .p12 file in step 7 into your key chain. In the Chrome browser on macOS:
+9. Import the generated ``.p12`` file in step 7 into your key chain. In the Chrome browser on macOS:
 
   1. Go to **Settings > Advanced > Privacy and security > Manage certificates**. This opens the Keychain Access app.
   2. Go to **File > Import Items** and select the ``mmuser-mattermost.p12`` file.
@@ -124,4 +127,4 @@ You should see the Mattermost login page. If you see:
 Troubleshooting
 ~~~~~~~~~~~~~~~~
 
-`Follow this process <https://docs.mattermost.com/install/troubleshooting.html>`__ to resolve configuration issues and to ask for help.
+`Follow this process </install/troubleshooting.html>`__ to resolve configuration issues and to ask for help.

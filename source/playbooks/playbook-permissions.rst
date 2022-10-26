@@ -1,6 +1,9 @@
 Roles and permissions
 =====================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 There are different ways for teams to access and interact with playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility.
 
 Permissions are provided using:
@@ -8,7 +11,7 @@ Permissions are provided using:
 * **System Scheme:** Applies permissions universally across all teams, channels, and playbooks.
 * **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Professional and Enterprise).
 
-For more information about System and Team Override Schemes, refer to the `Advanced Permissions <https://docs.mattermost.com/onboard/advanced-permissions.html>`__ documentation.
+For more information about System and Team Override Schemes, refer to the `Advanced Permissions </onboard/advanced-permissions.html>`__ documentation.
 
 .. note::
 

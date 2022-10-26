@@ -1,22 +1,8 @@
 React to messages using emojis
 ==============================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Emojis are small, digital images or icons used to communicate or express concepts such as emotions and physical gestures in your messages. React to messages with emoji by selecting the **Smile** |smile-icon| icon inside the Mattermost message input box to open the Emoji Picker. If the existing emojis available in Mattermost don't cover what you want to express, you can also `upload your own custom emoji <#upload-custom-emojis>`__.
 
@@ -28,7 +14,7 @@ Emojis are small, digital images or icons used to communicate or express concept
 
 .. tip::
 
-    You can also react to messages by typing ":" followed by at least two characters of the word describing the emoji, which will open an emoji autocomplete. Descriptions include skin tone details for people-based emojis, where supported.
+    You can also react to messages by typing ``:`` followed by at least two characters of the word describing the emoji, which will open an emoji autocomplete. Descriptions include skin tone details for people-based emojis, where supported.
 
     .. image:: ../images/emojiautocomplete.png
         :alt: Emoji Autocomplete
@@ -36,10 +22,10 @@ Emojis are small, digital images or icons used to communicate or express concept
 Select recent emojis
 --------------------
 
-From Mattermost v6.1 and in Mattermost Cloud, react to messages quickly by selecting a recently-used emoji while hovering over a message. If your most recent reactions aren't visible, you can enable quick reactions by selecting **Settings > Display > Quick reactions on messages**.
+From Mattermost v6.1 and in Mattermost Cloud, react to messages quickly by selecting a recent emoji while hovering over a message. Recent emojis are sorted based on the number of times you've used the emoji. If your most recent reactions aren't visible, you can enable quick reactions by selecting **Settings > Display > Quick reactions on messages**.
 
 .. image:: ../images/recent-emojis.png
-  :alt: React to messages quickly by selecting one of your last three emojis.
+  :alt: React to messages quickly by selecting one of your most recently used emojis.
 
 Select default skin tone
 -------------------------
@@ -47,7 +33,7 @@ Select default skin tone
 Select the **Skin Tone** icon in the top right corner of the Emoji Picker to specify the skin tone you prefer to use for people-based emojis by default. You can select an alternate skin tone any time.
 
 .. image:: ../images/emoji-skin-tone.png
-  :alt: Select a default skin tone for people-based emojis.
+  :alt: Select a default skin tone preference for people-based emojis.
 
 Upload custom emojis
 ---------------------

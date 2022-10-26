@@ -1,22 +1,8 @@
 Archive and unarchive channels
 ==============================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/download
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Archive a channel
 -----------------
@@ -44,6 +30,6 @@ Search for the channel if required. Then, open the channel, select the channel n
 .. image:: ../images/unarchive-channel.png
     :alt: Unarchive a channel.
 
-When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy <https://docs.mattermost.com/configure/configuration-settings.html#data-retention-policies>`__.
+When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the `data retention policy </configure/configuration-settings.html#data-retention-policies>`__.
 
-Alternatively, System Admins can unarchive channels `via the CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-channel-restore>`__, or via the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-unarchive>`__. Team Admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
+Alternatively, System Admins can unarchive channels `via the CLI </manage/command-line-tools.html#mattermost-channel-restore>`__, or via the `mmctl </manage/mmctl-command-line-tool.html#mmctl-channel-unarchive>`__. Team Admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.

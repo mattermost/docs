@@ -1,4 +1,6 @@
 :nosearch:
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
 .. _install-ubuntu-1804-postgresql:
 
 Install PostgreSQL Database Server
@@ -106,6 +108,6 @@ Confirm this version is PostgreSQL version 10 or higher. You can do this by runn
 
   You might have to install the PostgreSQL client software to use the command.
 
-The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press ENTER.
+The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac.
 
 With the database installed and the initial setup complete, you can now install the Mattermost server.

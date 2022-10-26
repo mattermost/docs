@@ -1,19 +1,10 @@
 Configuration in the Mattermost database
 ========================================
 
-|all-plans| |self-hosted|
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-A new configuration option was added in the `5.10 release <https://docs.mattermost.com/install/self-managed-changelog.html>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
+A new configuration option was added in the `5.10 release </install/self-managed-changelog.html>`_ to use the database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
 
 Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
 
@@ -22,6 +13,14 @@ Benefits to using this option:
 * Conveniently manage configuration changes directly from the System Console, even in High Availability deployments and read-only containerized environments.
 * Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
 * Automatically deploy SAML certificates and keys to all servers in the cluster.
+
+Note that once you start using configuration in the database, you shouldn't manually edit the active configuration row. You should edit or update the configuration in one of the following ways:
+
+* Use the System Console to make changes to the configuration.
+* Use ``mmctl`` to make changes to the configuration.
+* Stop any of the running mattermost-server instances and edit the active configuration row directly in the ``Configurations`` table.
+
+The Mattermost server keeps active configuration in memory and writes new ones to the database only when there is a change. This way we avoid polling the database to process changes to the configuration. Publishing the changes to the cluster are handled by the application itself.
 
 How to migrate configuration to the database
 --------------------------------------------
@@ -34,7 +33,7 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. We recommend using the `mmctl config get command <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-get>`__, or using the CLI's ``mattermost config get`` command to do this.  
+The first step is to get your master database connection string. We recommend using the `mmctl config get command </manage/mmctl-command-line-tool.html#mmctl-config-get>`__, or using the CLI's ``mattermost config get`` command to do this.  
 
 To use the ``mattermost config get`` command:
 
@@ -42,16 +41,13 @@ To use the ``mattermost config get`` command:
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config get SqlSettings.DataSource
+   mmctl config get SqlSettings.DataSource
 
 Example output:
 
 .. code-block:: text
 
-   SqlSettings.DataSource: "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
-
-.. note::
-   Be sure to run this CLI command as the *mattermost* user and not *root*. Running the Mattermost binary as *root* will cause permissions errors.
+   "mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s"
 
 Another way to get your database connection string is to view your ``config.json`` file and get the value in ``SqlSettings.DataSource``.
 
@@ -158,7 +154,7 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the `mmctl config migrate <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ command, or you can use the CLI mattermost config migrate command for this step, as described below.
+You can use the `mmctl config migrate </manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ command, or you can use the CLI mattermost config migrate command for this step, as described below.
 
 .. note::
  
@@ -170,10 +166,10 @@ The CLI command to migrate the config to the database should always be run as th
 
    sudo su mattermost
    cd /opt/mattermost
-   bin/mattermost config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
+   mmctl config migrate ./config/config.json 'mysql://mmuser:mostest@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s'
 
 .. warning::
-   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  <https://docs.mattermost.com/configure/configuration-settings.html>`_
+   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See `Environment Variables  </configure/configuration-settings.html>`_
    
 As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
 

@@ -1,17 +1,8 @@
 High Availability cluster
 =========================
 
-|enterprise| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Managed deployments.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -52,7 +43,7 @@ To ensure your instance and configuration are compatible with High Availability,
 
 1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../upgrade/upgrading-mattermost-server`.
 2. Set up a new Mattermost server with version 4.0 or later by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-3. Modify the ``config.json`` files on both servers to add ``ClusterSettings`` as described in :ref:`high-availability`.
+3. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation for details.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
 6. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -98,7 +89,7 @@ Configuration settings
             "StreamingPort": 8075
     }
 
-  For more details on these settings, see :ref:`high-availability`.
+  For more details on these settings, see the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation.
 
 2. Change the process limit to 8192 and the maximum number of open files to 65536.
 
@@ -128,7 +119,7 @@ You can do the same for the proxy server.
 Cluster discovery
 ^^^^^^^^^^^^^^^^^
 
-If you have non-standard (i.e. complex) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/configure/configuration-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/configure/configuration-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
+If you have non-standard (i.e. complex) network configurations, then you may need to use the `Override Hostname </configure/configuration-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname </configure/configuration-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
 If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
 
@@ -350,7 +341,7 @@ The process is based on a widely used `bully leader election algorithm <https://
 Job server
 ^^^^^^^^^^^
 
-Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/configure/configuration-settings.html#jobs>`__. These tasks include:
+Mattermost runs periodic tasks via the `job server </configure/configuration-settings.html#jobs>`__. These tasks include:
 
 - LDAP sync
 - Data retention
@@ -377,9 +368,9 @@ Note a slight behavior change from Mattermost v5.15: When you reinstall a plugin
 CLI and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands <https://docs.mattermost.com/manage/command-line-tools.html>`__ in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
+The CLI is run in a single node which bypasses the mechanisms that a `High Availability environment </scale/high-availability-cluster.html>`__ uses to perform actions across all nodes in the cluster. As a result, when running `CLI commands </manage/command-line-tools.html>`__ in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
 
-We recommend using `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html>`__ in a High Availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
+We recommend using `mmctl </manage/mmctl-command-line-tool.html>`__ in a High Availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
 
 Upgrade guide
 -------------
@@ -468,7 +459,7 @@ From Mattermost Server v4.0, when a server starts up, it can automatically disco
         "StreamingPort": 8075
     },
 
-  For more information about these settings, see :ref:`high-availability`.
+  For more information about these settings, see the `high availability configuration settings </configure/environment-configuration-settings.html#high-availability>`__ documentation.
 
 4. Stop NGINX.
 5. Upgrade each Mattermost instance.
@@ -480,7 +471,7 @@ From Mattermost Server v4.0, when a server starts up, it can automatically disco
 All cluster nodes must use a single protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All cluster traffic uses the gossip protocol. From Mattermost Server v5.36, `gossip clustering can no longer be disabled <https://docs.mattermost.com/configure/configuration-settings.html#use-gossip>`__.
+All cluster traffic uses the gossip protocol. From Mattermost Server v5.36, `gossip clustering can no longer be disabled </configure/configuration-settings.html#use-gossip>`__.
 
 When upgrading a High Availability cluster, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete a High Availability upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
@@ -511,7 +502,7 @@ You may be asked to provide this data to Mattermost for analysis and troubleshoo
 
 .. note::
 
-  - Ensure that server log files are being created. You can find more on working with Mattermost logs `here <https://docs.mattermost.com/install/troubleshooting.html#review-mattermost-logs>`__.
+  - Ensure that server log files are being created. You can find more on working with Mattermost logs `here </install/troubleshooting.html#review-mattermost-logs>`__.
   - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
   - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster.
 
@@ -536,7 +527,7 @@ App refreshes continuously
 
 When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a High Availability cluster.
 
-Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/scale/high-availability-cluster.html#updating-configuration-changes-while-operating-continuously>`__.
+Modify configuration settings directly through ``config.json`` `following these steps </scale/high-availability-cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
 Messages do not post until after reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

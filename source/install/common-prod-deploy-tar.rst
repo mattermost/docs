@@ -1,6 +1,23 @@
+:orphan:
 :nosearch:
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 These instructions outline how to install Mattermost Server on a 64-bit Linux host from a compressed tarball, and assume the IP address of the Mattermost server is 10.10.10.2.
+
+**Minimum system requirements**
+
+- Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
+- Database: MySQL v8+ or PostgreSQL v12+
+- Network ports required:
+
+   - Application ports 80/443, TLS, TCP Inbound
+   - Administrator Console port 8065, TLS, TCP Inbound
+   - SMTP port 10025, TCP/UDP Outbound
+
+**Deploy Generic Linux**
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
@@ -78,7 +95,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             
       sudo -u mattermost bin/mattermost
   
-    When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
+    When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing :kbd:`Ctrl` :kbd:`C` on Windows or Linux, or :kbd:`⌘` :kbd:`C` on Mac, in the terminal window.
 
 9. Set up Mattermost to use *systemd* for starting and stopping.
   
@@ -156,4 +173,4 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
             
       sudo systemctl enable mattermost.service
 
-Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users <https://docs.mattermost.com/channels/manage-channel-members.html>`__, and explore the Mattermost platform. 
+Once you're Mattermost server is up and running, create your first Mattermost user, `invite more users </channels/manage-channel-members.html>`__, and explore the Mattermost platform. 

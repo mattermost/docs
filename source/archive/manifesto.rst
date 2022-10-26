@@ -21,7 +21,7 @@ Because of how we started, we're committed to never allowing commercial versions
 Stewardship Principles for the Mattermost Open Source Project  
 --------------------------------------------------------------
 
-Mattermost, Inc. is for-profit company focused on making the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`__ highly successful and popular for teams, while also generating revenue for our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`__ for large and sophisticated organizations. 
+Mattermost, Inc. is for-profit company focused on making the open source `Mattermost Team Edition </overview/product.html#mattermost-editions>`__ highly successful and popular for teams, while also generating revenue for our commercial `Mattermost Enterprise Edition </overview/product.html#mattermost-editions>`__ for large and sophisticated organizations. 
 
 The following stewardship principles for our open source work helps keep our intent and purpose clear: 
 
@@ -65,6 +65,6 @@ Let people work simply. Team Edition is for teams needing a "virtual office" whe
 
 For non-technical users with basic IT skills, Team Edition aspires to be an ideal workplace messaging solution deployed on a private network, emphasizing simplicity and fast time-to-value. For sophisticated organizations with advanced security, configurability and scalability needs, the commercial Enterprise Edition extension strives to be an ideal solution. 
 
-For organizations who seek other options, full source code of the server and webapp for creating Team Edition should be available for the development of open source variants, including commercial variants, `provided the Mattermost trademark is not used and other protocols are respected. <https://docs.mattermost.com/overview/faq.html#can-i-create-a-derivative-work-of-the-mattermost-mattermost-server-repository-that-is-not-open-source>`__ 
+For organizations who seek other options, full source code of the server and webapp for creating Team Edition should be available for the development of open source variants, including commercial variants, `provided the Mattermost trademark is not used and other protocols are respected. </overview/faq.html#can-i-create-a-derivative-work-of-the-mattermost-mattermost-server-repository-that-is-not-open-source>`__ 
 
 These principles were inspired by WordPress Philosophy: https://wordpress.org/about/philosophy/
