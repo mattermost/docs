@@ -53,10 +53,10 @@ Enable custom branding
 
 +-------------------------------------------------------------------+-----------------------------------------------------------------------+
 | - **true**: Enables the display of a custom image and text on the | - System Config path: **Site Configuration > Customization**          |
-| login page (see settings for **Custom brand image** and **Custom  | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
-| brand text**)                                                     | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
-| - **false: (Default)** Custom branding is disabled.               |                                                                       |
+| login page                                                        | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
+| - **false: (Default)** Custom branding is disabled.               | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
 |                                                                   |                                                                       |
+| See **Custom brand image** and **Custom brand text** settings.    |                                                                       |
 |                                                                   |                                                                       |
 |                                                                   |                                                                       |
 +-------------------------------------------------------------------+-----------------------------------------------------------------------+
