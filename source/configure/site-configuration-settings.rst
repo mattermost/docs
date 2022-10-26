@@ -51,16 +51,13 @@ Enable custom branding
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-+-------------------------------------------------------------------+-----------------------------------------------------------------------+
-| - **true**: Enables the display of a custom image and text on the | - System Config path: **Site Configuration > Customization**          |
-| login page                                                        | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
-| - **false: (Default)** Custom branding is disabled.               | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
-|                                                                   |                                                                       |
-| See **Custom brand image** and **Custom brand text** settings.    |                                                                       |
-|                                                                   |                                                                       |
-|                                                                   |                                                                       |
-+-------------------------------------------------------------------+-----------------------------------------------------------------------+
- 								     	     
++------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| - **true**: Enables the display of a custom image and text on the login page | - System Config path: **Site Configuration > Customization**          |
+| - **false: (Default)** Custom branding is disabled.                          | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
+|                                                                              | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
+| See **Custom brand image** and **Custom brand text** settings.               |                                                                       |
++------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
 Custom brand image
 ~~~~~~~~~~~~~~~~~~~
 
@@ -91,15 +88,14 @@ Custom brand text
 Enable Ask Community link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| - **true: (Default)** **Ask the community** link to the `Mattermost      | - System Config path: **Site Configuration > Customization**                 |
-| Community                                                                | - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
-| <https://mattermost.com/pl/default-ask-mattermost-community/>`__ appears | - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
-| under the **Help** menu in the channel header.                           |                                                                              |
-| - **false**: The link is not visible to users.                           |                                                                              |
-|                                                                          |                                                                              |
-| The link does not appear on mobile apps.                                 |                                                                              |
-+--------------------------------------------------------------------------+------------------------------------------------------------------------------+
++----------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| - **true: (Default)** **Ask the community** link to the `Mattermost        | - System Config path: **Site Configuration > Customization**                 |
+| Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__ | - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
+| appears under the **Help** menu in the channel header.                     | - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
+| - **false**: The link is not visible to users.                             |                                                                              |
+|                                                                            |                                                                              |
+| The link does not appear on mobile apps.                                   |                                                                              |
++----------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Help link
 ~~~~~~~~~
