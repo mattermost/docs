@@ -38,6 +38,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
 
 ### Known Issues
+ - Users cannot be added to teams from the **System Console** [MM-47667](https://mattermost.atlassian.net/browse/MM-47667).
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-10-20
