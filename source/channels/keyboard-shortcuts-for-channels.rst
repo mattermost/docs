@@ -1,6 +1,9 @@
 Keyboard shortcuts for Channels
 ===============================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Keyboard shortcuts for Mattermost Channels help you make a more efficient use of your keyboard.
 
 .. tip::
@@ -10,10 +13,10 @@ Keyboard shortcuts for Mattermost Channels help you make a more efficient use of
 Navigation shortcuts for Mattermost Channels
 --------------------------------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 .. note::
-  See our `Keyboard Accessibility in Channels <https://docs.mattermost.com/channels/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen readers.
+  See our `Keyboard Accessibility in Channels </channels/keyboard-accessibility.html>`__ documentation for additional navigation keyboard shortcuts for screen readers.
 
 +-------------------------------------+------------------------------+----------------------------------------------------------------------------------+
 | On Windows & Linux                  | On Mac                       | Description                                                                      |
@@ -46,7 +49,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 File upload shortcuts
 ---------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +-----------------------+--------------------+-----------------+
 | On Windows & Linux    | On Mac             | Description     |
@@ -57,7 +60,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 Message shortcuts
 -----------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +-----------------------------------------------+--------------------------------------------+-----------------------------------------------------------+
 | On Windows & Linux                            | On Mac                                     | Description                                               |
@@ -82,7 +85,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 Formatting shortcuts
 --------------------
 
-The following keyboard shortcuts are supported in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +-----------------------------------+-----------------------------+------------------------+
 | On Windows & Linux                | On Mac                      | Description            |
@@ -97,7 +100,7 @@ The following keyboard shortcuts are supported in all `supported browsers <https
 Accessibility nagivation shortcuts
 ----------------------------------
 
-The following keyboard shortcuts work in all `supported browsers <https://docs.mattermost.com/install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
+The following keyboard shortcuts work in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app.
 
 +----------------------------------------------+------------------------------------------+--------------------------------------------------+
 | On Windows & Linux                           | On Mac                                   | Description                                      |
@@ -116,3 +119,26 @@ The following keyboard shortcuts work in all `supported browsers <https://docs.m
 .. note::
 
    Though Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
+
+Calls shortcuts
+---------------
+
+The following keyboard shortcuts are supported in all `supported browsers </install/software-hardware-requirements.html#software-requirements>`__ and in the Mattermost desktop app when `calls </channels/make-calls.html>`_ are enabled.
+
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
+| On Windows & Linux                                        | On Mac                                           | Description                                                                             |
++===========================================================+==================================================+=========================================================================================+
+| :kbd:`Ctrl` :kbd:`Shift` :kbd:`S`                         | :kbd:`⌘` :kbd:`⇧` :kbd:`S`                       | Start or join call in current channel.                                                  |
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :kbd:`Ctrl` :kbd:`Shift` :kbd:`Space`                     | :kbd:`⌘` :kbd:`⇧` :kbd:`Space`                   | Mute or unmute.                                                                         |
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :kbd:`Ctrl` :kbd:`Shift` :kbd:`Y`                         | :kbd:`⌘` :kbd:`⇧` :kbd:`Y`                       | Raise or lower hand.                                                                    |
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :kbd:`Ctrl` :kbd:`Shift` :kbd:`E`                         | :kbd:`⌘` :kbd:`⇧` :kbd:`E`                       | Share or unshare screen.                                                                |
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :kbd:`Alt` :kbd:`P` or :kbd:`Ctrl` :kbd:`Shift` :kbd:`P`  | :kbd:`⌥` :kbd:`P` or :kbd:`⌘` :kbd:`⇧` :kbd:`P`  | Show or hide participants list.                                                         |
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :kbd:`Ctrl` :kbd:`Shift` :kbd:`L`                         | :kbd:`⌘` :kbd:`⇧` :kbd:`L`                       | Leave current call.                                                                     |
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :kbd:`Space`                                              | :kbd:`Space`                                     | Hold to unmute (push to talk) ``Note``: works in the expanded view/popout window only.  |
++-----------------------------------------------------------+--------------------------------------------------+-----------------------------------------------------------------------------------------+

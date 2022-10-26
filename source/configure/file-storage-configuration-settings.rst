@@ -1,47 +1,19 @@
-File storage configuration settings
-===================================
+:orphan:
+:nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+Configure file storage settings by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following tables. 
 
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
+.. note::
 
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Configure file storage configuration by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following table. 
-
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
-
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
 
 File storage system
--------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Select which file storage system is used.                     | - System Config path: **Environment > File Storage**                     |
+| The type of file storage system used.                         | - System Config path: **Environment > File Storage**                     |
 | Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``".FileSettings.DriverName:  local”,``       |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_DRIVERNAME``                   |
 | - **local**: **(Default)** Files and images are stored in     |                                                                          |
@@ -53,9 +25,7 @@ File storage system
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Local storage directory
------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -68,18 +38,16 @@ Local storage directory
 |                                                               |                                                                          |
 | Defaults to **./data/**.                                      |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: When **File storage system** is set to **amazons3**, this setting has no effect.                                               |                      
+| **Note**: When **File storage system** is set to **amazons3**, this setting has no effect.                                               |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Maximum file size
------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Maximum file size for message attachments.                    | - System Config path: **Environment > File Storage**                     |
+| The maximum file size for message attachments.                | - System Config path: **Environment > File Storage**                     |
 | This value must be specified in megabytes in the              | - ``config.json`` setting: ``".FileSettings.MaxFileSize: 104857600",``   |
 | System Console, and in bytes in the ``config.json`` file.     | - Environment variable: ``MM_FILESETTINGS_MAXFILESIZE``                  |
 |                                                               |                                                                          |
@@ -95,9 +63,7 @@ Maximum file size
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Enable document search by content
----------------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -112,8 +78,8 @@ Enable document search by content
 |   for files by file name only.                                |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **Note**: Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an                   |
-| extraction command is executed using the `CLI <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-extract-documents-content>`__  | 
-| or the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,       |
+| extraction command is executed using the `CLI </manage/command-line-tools.html#mattermost-extract-documents-content>`__                             | 
+| or the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__. If this command is not run,                                  |
 | users can search older files based on file name only.                                                                                               |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |
@@ -130,33 +96,29 @@ Enable document search by content
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Enable searching content of documents within ZIP files
-------------------------------------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| This configuration setting enables users to search the        | - System Config path: **Environment > File Storage**                     |
-| contents of compressed ZIP files attached to messages.        | - ``config.json`` setting: ``".FileSettings.ArchiveRecursion: false",``  |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_ARCHIVERECURSION``             |
-| - **true**: Contents of documents within ZIP files are        |                                                                          |
-|   returned in search results. This may have an impact on      |                                                                          |
-|   server performance for large files.                         |                                                                          |
-|   the specified local file directory.                         |                                                                          |
-| - **false**: **(Default)** The contents of documents within   |                                                                          | 
-|   ZIP files aren’t returned in search results.                |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon.        |
-| Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,       |
-| we recommend you review our hardware requirements, and test enabling this feature in a staging environment before enabling it in         |
-| a production environment.                                                                                                                |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Enables users to search the contents of compressed ZIP files  | - System Config path: **Environment > File Storage**                                   |
+| attached to messages.                                         | - ``config.json`` setting: ``".FileSettings.ArchiveRecursion: false",``                |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_ARCHIVERECURSION``                           |
+| - **true**: Contents of documents within ZIP files are        |                                                                                        |
+|   returned in search results. This may have an impact on      |                                                                                        |
+|   server performance for large files.                         |                                                                                        |
+|   the specified local file directory.                         |                                                                                        |
+| - **false**: **(Default)** The contents of documents within   |                                                                                        | 
+|   ZIP files aren’t returned in search results.                |                                                                                        |
++---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| **Note**: Document content search within ZIP files is available in Mattermost Server from v5.35, with mobile support coming soon.                      |
+| Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,                     |
+| we recommend you review our `hardware requirements </install/software-hardware-requirements.html#hardware-requirements>`__,                            |
+| and test enabling this feature in a staging environment before enabling it in a production environment.                                                |
++---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Amazon S3 bucket
-----------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -168,22 +130,18 @@ Amazon S3 bucket
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Amazon S3 path prefix
----------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Prefix you selected for your **Amazon S3 bucket** in AWS.     | - System Config path: N/A                                                |
+| The prefix you selected for your **Amazon S3 bucket** in AWS. | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3PathPrefix",``       |
 | A string containing the path prefix.                          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3PATHPREFIX``           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Amazon S3 region
-----------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -200,9 +158,7 @@ Amazon S3 region
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Amazon S3 access key ID
------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -217,14 +173,12 @@ Amazon S3 access key ID
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Amazon S3 endpoint
-------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Hostname of your S3-compatible instance.                      | - System Config path: **Environment > File Storage**                               |
+| The hostname of your S3-compatible instance.                  | - System Config path: **Environment > File Storage**                               |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3Endpoint: s3.amazonaws.com",`` |
 | A string with the hostname of the S3-compatible storage       | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ENDPOINT``                       |
 | instance. Defaults to **s3.amazonaws.com**.                   |                                                                                    |
@@ -234,9 +188,7 @@ Amazon S3 endpoint
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 Amazon S3 secret access key
----------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -249,14 +201,12 @@ Amazon S3 secret access key
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Enable secure Amazon S3 connections
------------------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Secure Amazon S3 connections can be enabled.                  | - System Config path: **Environment > File Storage**                     |
+| Enable or disable secure Amazon S3 connections.               | - System Config path: **Environment > File Storage**                     |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSL: true",``        |
 | - **true**: **(Default)** Enables only secure Amazon          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSL``                  |
 |   S3 connections.                                             |                                                                          |
@@ -264,9 +214,7 @@ Enable secure Amazon S3 connections
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Amazon S3 signature v2
-----------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~
 
 *Not available in legacy Enterprise Edition E10/E20*
 
@@ -282,14 +230,12 @@ Amazon S3 signature v2
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Enable server-side encryption for Amazon S3
--------------------------------------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Server-side encryption for Amazon S3.                         | - System Config path: **Environment > File Storage**                     |
+| Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSE: false",``       |
 | - **true**: Encrypts files in Amazon S3 using server-side     | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSE``                  |
 |   encryption with Amazon S3-managed keys.                     |                                                                          |
@@ -298,15 +244,13 @@ Enable server-side encryption for Amazon S3
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Enable Amazon S3 debugging
---------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Additional debugging information can be captured in           | - System Config path: **Environment > File Storage**                     |
-| system logs.                                                  | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
+| Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                     |
+| debugging information in system logs                          | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3TRACE``                |
 | - **true**:Log additional debugging information is logged     |                                                                          |
 |   to the system logs.                                         |                                                                          |
@@ -318,14 +262,12 @@ Enable Amazon S3 debugging
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Initial Font
--------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Font used in auto-generated profile pictures with colored     | - System Config path: N/A                                                      |
+| The font used in auto-generated profile pictures with colored | - System Config path: N/A                                                      |
 | backgrounds and username initials.                            | - ``config.json`` setting: ``".FileSettings.InitialFont: nunito-bold.ttf",``   |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_INITIALFONT``                        |
 | A string with the font file name. Default is                  |                                                                                |

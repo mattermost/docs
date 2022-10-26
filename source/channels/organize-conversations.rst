@@ -1,22 +1,8 @@
 Organize conversations using Collapsed Reply Threads
 ====================================================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. |more-actions-icon| image:: ../images/dots-horizontal_F01D8.svg
   :height: 24px
@@ -46,7 +32,7 @@ Replies are collapsed under the first message of a thread. To reply to a thread,
 Follow threads and messages
 ---------------------------
 
-You can follow particular messages and threads so that any reply activity triggers `notifications <https://docs.mattermost.com/channels/channels-settings.html#notifications>`__. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or from the **More Actions** |more-actions-icon| icon.
+You can follow particular messages and threads so that any reply activity triggers `notifications </channels/channels-settings.html#notifications>`__. Follow or unfollow any thread, at any time, by toggling the thread’s **Follow/Following** indicator, or from the **More Actions** |more-actions-icon| icon.
 
 .. image:: ../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies to messages.
@@ -73,9 +59,9 @@ Select **Unreads** to filter your followed threads by only those with unread rep
 Enable Collapsed Reply Threads
 ------------------------------
 
-See our `configuration settings <https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads>`__ documentation for details on configuring the default availability of collapsed reply threads. From Mattermost v7.0, Collapsed Reply Threads are enabled by default for all new Mattermost deployments.
+See our `configuration settings </configure/configuration-settings.html#collapsed-reply-threads>`__ documentation for details on configuring the default availability of collapsed reply threads. From Mattermost v7.0, Collapsed Reply Threads are enabled by default for all new Mattermost deployments.
 
-Depending on how your System Admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ by going to **Settings > Display > Collapsed Reply Threads**. 
+Depending on how your System Admin has configured **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to `enable this feature for your account </channels/channels-settings.html#collapsed-reply-threads>`__ by going to **Settings > Display > Collapsed Reply Threads**. 
 
 Tutorial video
 ---------------
@@ -89,7 +75,7 @@ Tutorial video
 Known issues
 ------------
 
-Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for System Admins to enable the feature by default. We highly recommended `upgrading to Mattermost v7.0 <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ to take advantage of these configuration and performance enhancements.
+Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for System Admins to enable the feature by default. We highly recommended `upgrading to Mattermost v7.0 </upgrade/upgrading-mattermost-server.html>`__ to take advantage of these configuration and performance enhancements.
 
 Customers running Collapsed Reply Threads in beta on Mattermost v6.7 or earlier will likely experience bugs and unoptimized server performance. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments.
 

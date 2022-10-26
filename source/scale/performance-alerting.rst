@@ -1,22 +1,8 @@
 Mattermost performance alerting guide
 ======================================
 
-|enterprise| |cloud| |self-hosted|
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
@@ -27,7 +13,7 @@ Mattermost recommends using Prometheus and Grafana to track performance metrics 
 
 **Prerequisites**
 
-Set up performance monitoring for Mattermost. See our `Performance Monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation to learn more.
+Set up performance monitoring for Mattermost. See our `Performance Monitoring </scale/performance-monitoring.html>`__ documentation to learn more.
 
 To get alerts, first set up a Notification Channel in Grafana. Here’s how you can set it up to automatically post alerts in Mattermost:
 
@@ -183,4 +169,4 @@ You can trace hooks and plugin API calls with Prometheus. Below are some example
 Other alerts
 -------------
 
-If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation <https://docs.mattermost.com/scale/performance-monitoring.html#statistics>`_.
+If you want more alerts, you can set them up on any of the Grafana charts you'd like. We recommend reviewing custom metrics listed on our `Performance Monitoring feature documentation </scale/performance-monitoring.html#statistics>`_.

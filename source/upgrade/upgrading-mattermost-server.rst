@@ -1,6 +1,9 @@
 Upgrade Mattermost Server
 =========================
 
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
 In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
 .. _before-you-begin:
@@ -10,7 +13,7 @@ Before you begin
 
 **Read these instructions carefully from start to finish.** 
 
-Make sure that you understand how to `prepare for your upgrade <https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html>`__, familiarize yourself with all `software and hardware requirements <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
+Make sure that you understand how to `prepare for your upgrade </upgrade/prepare-to-upgrade-mattermost.html>`__, familiarize yourself with all `software and hardware requirements </install/software-hardware-requirements.html>`__, and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
 
 **Gather the following information before starting the upgrade:**
 
@@ -114,11 +117,11 @@ or
   
   **Using Bleve Search**
 
-  If using `Bleve Search <https://docs.mattermost.com/deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
+  If using `Bleve Search </deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
   
   - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
   - You can then store that directory or re-index as preferred. 
-  - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on configuring the bleve index directory.
+  - The bleve indexes can be migrated without reindexing between Mattermost versions. See our `Configuration Settings </configure/configuration-settings.html#bleve-settings-experimental>`__ documentation for details on configuring the bleve index directory.
 
 8. Copy the new files to your install directory.
 
@@ -161,7 +164,7 @@ or
     sudo rm -r /tmp/mattermost-upgrade/
     sudo rm -i /tmp/mattermost*.gz
 
-13. If you're using a `High Availability <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+13. If you're using a `High Availability </scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
     If they continue to display as yellow, trigger a configuration propagation across the cluster by opening the System Console, changing a setting, and reverting it. This will enable the **Save** button for that page. Then, select **Save**. This will not change any configuration, but sends the existing configuration to all nodes in the cluster. 
 

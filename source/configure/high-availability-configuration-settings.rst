@@ -1,44 +1,13 @@
 .. _high-availability:
+:orphan:
+:nosearch:
 
-High availability server configuration settings
-===============================================
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-You can configure Mattermost as a `high availability environment <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
+You can configure Mattermost as a `high availability environment </scale/high-availability-cluster.html>`__ by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
-
 Enable high availability mode 
------------------------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -55,9 +24,7 @@ Enable high availability mode
 +-----------------------------------------------------------------+------------------------------------------------------------+
 
 Cluster name
-------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -70,9 +37,7 @@ Cluster name
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 Override hostname
------------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -85,13 +50,11 @@ Override hostname
 | - If left blank, Mattermost attempts to get the hostname from   |                                                                      |
 |   the operating system or uses the IP address.                  |                                                                      |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
-| See the `high availability cluster <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ documentation for details.    |
+| See the `high availability cluster </scale/high-availability-cluster.html>`__ documentation for details.                               |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 
 Use IP address
---------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -106,9 +69,7 @@ Use IP address
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Use gossip
-----------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -127,9 +88,7 @@ Use gossip
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 Enable experimental gossip encryption
--------------------------------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -147,9 +106,7 @@ Enable experimental gossip encryption
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Enable gossip compression
--------------------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -166,9 +123,7 @@ Enable gossip compression
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Gossip port
------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -180,9 +135,7 @@ Gossip port
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 
 Streaming port
---------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -193,9 +146,7 @@ Streaming port
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Read only config
-----------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -207,9 +158,7 @@ Read only config
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Network interface
------------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -221,9 +170,7 @@ Network interface
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Bind address
-------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -240,9 +187,7 @@ Bind address
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 
 Advertise address
------------------
-
-|enterprise| |self-hosted|
+~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -254,10 +199,8 @@ Advertise address
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
-Maximum idle connections
-------------------------
-
-|enterprise| |self-hosted|
+Maximum idle connections for high availability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -268,10 +211,8 @@ Maximum idle connections
 | Numerical input. Default is **100**.                            |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
-Maximum Idle Connections per Host
----------------------------------
-
-|enterprise| |self-hosted|
+Maximum idle connections per host
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -282,10 +223,8 @@ Maximum Idle Connections per Host
 | Numerical input. Default is **128**.                            |                                                                              |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------+
 
-Idle Connection Timeout
------------------------
-
-|enterprise| |self-hosted|
+Idle connection timeout
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 

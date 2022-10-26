@@ -1,27 +1,13 @@
 Customize your Desktop App experience
 =====================================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 .. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
   :alt: Use the More icon in the top left corner to access Mattermost Desktop Apps customization settings.
 
-In addition to your `personal profile settings <https://docs.mattermost.com/welcome/manage-your-profile.html>`__ and :doc:`Mattermost Channels settings </channels/channels-settings>`, the Mattermost Desktop App offers the following options to further customize your Mattermost experience.
+In addition to your `personal profile settings </welcome/manage-your-profile.html>`__ and :doc:`Mattermost Channels settings </channels/channels-settings>`, the Mattermost desktop app offers the following options to further customize your Mattermost experience.
 
 .. tabs::
 

@@ -7,18 +7,18 @@ Bulk export data
 
   .. tab:: Use mmctl
 
-    1. Create a full export file including attachments by running the `mmctl export create -- attachments <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-create>`__ command. See the `Mattermost workspace migration <https://docs.mattermost.com/manage/cloud-data-export.html#create-the-export>`__ documentation for details.
+    1. Create a full export file including attachments by running the `mmctl export create -- attachments </manage/mmctl-command-line-tool.html#mmctl-export-create>`__ command. See the `Mattermost workspace migration </manage/cloud-data-export.html#create-the-export>`__ documentation for details.
     
-    2. While the job is running, you can check its status by running the `mmctl export job show <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
+    2. While the job is running, you can check its status by running the `mmctl export job show </manage/mmctl-command-line-tool.html#mmctl-export-job-show>`__ command.
 
     3. When the export job status is successful:
     
-      a. Identify the name of the completed export file by running the `mmctl export list <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
-      b. Download the export file to your local machine by running the `mmctl export download <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
+      a. Identify the name of the completed export file by running the `mmctl export list </manage/mmctl-command-line-tool.html#mmctl-export-list>`__ command.
+      b. Download the export file to your local machine by running the `mmctl export download </manage/mmctl-command-line-tool.html#mmctl-export-download>`__ command.
 
   .. tab:: Use CLI
 
-    The export command runs in the `CLI <https://docs.mattermost.com/manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
+    The export command runs in the `CLI </manage/command-line-tools.html>`__.  It has permissions to access all information in the Mattermost database.
 
     To run the export command:
 
@@ -36,17 +36,17 @@ At this time, the export supports attributes of the objects listed below. All Ma
 You can export the following data types:
 
 - Teams
-- Channels (Public and Private)
+- Channels (public and private)
 - Users
-- Users' Team memberships
-- Users' Channel memberships
+- Users' team memberships
+- Users' channel memberships
 - Users' notification preferences
 - Posts (regular, non-reply posts)
-- Posts' Replies
-- Posts' Reactions
-- Custom Emoji
-- Direct Message Channels
-- Direct Message Posts
+- Posts' replies
+- Posts' reactions
+- Custom emoji
+- Direct message channels
+- Direct message posts
 
 .. note::
 

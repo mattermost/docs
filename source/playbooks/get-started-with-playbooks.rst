@@ -1,6 +1,9 @@
 Get started with Mattermost Playbooks
 =====================================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access Mattermost Playbooks by selecting **Playbooks** from the **product menu** |product-list|.
 
 .. |product-list| image:: ../images/products_E82F.svg
@@ -12,7 +15,7 @@ Playbooks are workflows that can be repeated and refined over time. They can be 
 
 When you get started with Playbooks, it helps to have a repeatable process in mind up front. As a working example, we'll refer to an incident response playbook and discuss its moving parts.
 
-Visit the `Mattermost Playbooks documentation <https://docs.mattermost.com/playbooks/setting-up-playbooks.html>`_ to learn more.
+Visit the `Mattermost Playbooks documentation </playbooks/setting-up-playbooks.html>`_ to learn more.
 
 Choose a template
 -----------------

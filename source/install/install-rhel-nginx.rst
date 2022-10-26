@@ -1,25 +1,22 @@
 :nosearch:
+
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
 .. _install-rhel-nginx:
 
-Installing NGINX server
------------------------
+Install NGINX server
+---------------------
 
-In a production setting, use a proxy server for greater security and performance of Mattermost.
-
-The main benefits of using a proxy are as follows:
+In a production setting, use a proxy server for greater security and performance of Mattermost:
 
   -  SSL termination
   -  HTTP to HTTPS redirect
   -  Port mapping ``:80`` to ``:8065``
   -  Standard request logs
 
-**To install NGINX on RHEL 7 or 8:**
-
 1. Log in to the server that will host the proxy, and open a terminal window.
 
-2. Create the file /etc/yum.repos.d/nginx.repo.
-
-  ``sudo touch /etc/yum.repos.d/nginx.repo``
+2. Create the file ``/etc/yum.repos.d/nginx.repo`` by running ``sudo touch /etc/yum.repos.d/nginx.repo``.
 
   If you are on RHEL 8 you can skip to **Step 4. Install NGINX**.
 
@@ -33,32 +30,14 @@ The main benefits of using a proxy are as follows:
     gpgcheck=0
     enabled=1
 
-4. Install NGINX.
+4. Install NGINX by running ``sudo yum install nginx.x86_64``.
 
-  ``sudo yum install nginx.x86_64``
-
-5. After the installation is complete, start NGINX.
+5. After the installation is complete, start NGINX by running ``sudo systemctl start nginx``.
     On RHEL 6:
   
-    ``sudo service nginx start``
-  
-    On RHEL 7 and RHEL 8:
-  
-    ``sudo systemctl start nginx``
-  
-6. **Optional** Set NGINX to start at system boot.
-  
-    On RHEL 6:
-  
-    ``sudo chkconfig nginx on``
-  
-    On RHEL 7 and RHEL 8:
-  
-    ``sudo systemctl enable nginx``
+6. **Optional** Set NGINX to start at system boot by running ``sudo systemctl enable nginx``.
 
-7. Verify that NGINX is running.
-
-  ``curl http://localhost``
+7. Verify that NGINX is running by running ``curl http://localhost``.
   
   If NGINX is running, you see the following output:
   
@@ -75,8 +54,7 @@ The main benefits of using a proxy are as follows:
     </body>
     </html>
 
-
 **What to do next**
 
-1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` to point to the NGINX server.
+1. Map a fully qualified domain name (FQDN) such as ``mattermost.example.com`` on your DNS server/service, to point to the NGINX server.
 2. Configure NGINX to proxy connections from the Internet to the Mattermost Server.

@@ -1,22 +1,8 @@
 Welcome email to end users
 ===========================
 
-|all-plans| |cloud| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 30
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 To make it easy for your end users to start using Mattermost right away, we created a sample email template that you can use.
 
@@ -56,7 +42,7 @@ To get started:
 
 1. Open a browser on your computer, go to **[Mattermost URL]** and log in with your **[LDAP/AD, SAML, Google, etc]** credentials. Remember to bookmark the URL so you can use it to log in next time.
 
-2. `Download <https://mattermost.com/apps>`__ the Mattermost apps for desktop and mobile. See the `Channels <https://docs.mattermost.com/messaging/welcome-to-mattermost-messaging.html>`__ documentation for details on how to get up and running quickly.
+2. `Download <https://mattermost.com/apps>`__ the Mattermost apps for desktop and mobile. See the `Channels </messaging/welcome-to-mattermost-messaging.html>`__ documentation for details on how to get up and running quickly.
 
 3. Start messaging! 
 

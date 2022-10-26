@@ -3,17 +3,8 @@
 AWS Elastic Beanstalk Docker setup
 ==================================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality. This configuration should not
 be used in production.
@@ -37,7 +28,7 @@ The Elastic Beanstalk application creation process used here is the easy *Gettin
 Configuration Settings
 ----------------------
 
-See `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
+See `Configuration Settings </configure/configuration-settings.html>`__ documentation to customize your deployment.
 
 (Recommended) Enable Email
 --------------------------

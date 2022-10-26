@@ -30,11 +30,11 @@ System Admin access is required in order to apply the license. If you're not a M
 
 On the Customer Portal **Subscriptions** page, select **Download License** to download the license key for your subscription. In Mattermost, follow the steps provided in **System Console > About > Edition and License** to apply your license key.
 
-You can also use the `mmctl <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-license>`__ to apply the license.
+You can also use the `mmctl </manage/mmctl-command-line-tool.html#mmctl-license>`__ to apply the license.
 
 **If you don't have Mattermost installed**
 
-If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide <https://docs.mattermost.com/deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks <https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html>`__ documentation.
+If you haven't yet installed and deployed a Mattermost instance, visit the `Deployment Guide </deploy/deployment-overview.html>`__ to get started. For information on creating a System Admin account, visit our `Administrator Tasks </getting-started/admin-onboarding-tasks.html>`__ documentation.
 
 View subscription information
 -----------------------------
@@ -67,7 +67,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 .. image:: ../images/Site_Statistics.png
 	:alt: Take a screenshot from the System Console > Site Statistics page.
 
-If you have more total active users than you purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__ .
+If you have more total active users than you purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
 Renew a subscription
 --------------------
@@ -101,7 +101,7 @@ You can watch a video overview of the renewal process on `YouTube <https://www.y
 
 .. raw:: html
   
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Sz_1nhVufHY" alt="Video on self hosted subscription" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Frequently asked questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

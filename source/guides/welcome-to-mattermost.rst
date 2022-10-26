@@ -1,6 +1,9 @@
 Welcome to Mattermost
 =====================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Whether it's your first day as a Mattermost user, or you're upgrading from an older Mattermost version, we recommend starting here to learn how to access and customize your workspace, familiarize yourself with the concept of teams and user roles, and learn how to get started with Channels, Boards, and Playbooks.
 
 Access your Mattermost workspace
@@ -75,6 +78,8 @@ Upgrading from an older version of Mattermost? Learn what's changed or moved in 
 
    What changed in Mattermost v7.0? </welcome/what-changed-in-v70>
    What changed in Mattermost v6.0? </welcome/what-changed-in-v60>
+   What changed in Mattermost Boards </welcome/whats-new-in-v72> 
 
 * :doc:`What changed in Mattermost v7.0? </welcome/what-changed-in-v70>` - Learn more about how we've improved your Mattermost user experience from v7.0.
 * :doc:`What changed in Mattermost v6.0? </welcome/what-changed-in-v60>` - Learn more about the ways we've improved your Mattermost navigation experience from v6.0.
+* :doc:`What changed in Mattermost Boards </welcome/whats-new-in-v72>` - Learn more about the ways we've improved your Mattermost Boards experience from v7.2.

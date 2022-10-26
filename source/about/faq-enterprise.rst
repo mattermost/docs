@@ -23,7 +23,7 @@ Growing your Mattermost installation from supporting a team to supporting an ent
 
 **Functional Scaling:** Scaling from a team to an enterprise is like going from a "virtual office" to a "virtual campus". Advanced features like enterprise authentication, granular permissions, compliance and auditing, and advanced reporting become increasingly important as organizations grow beyond teams. Organizations needing this flexibility can easily upgrade from Mattermost Team Edition to Mattermost Enterprise Edition as well as downgrade without data loss, should their needs change.
 
-For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise <https://docs.mattermost.com/scale/scaling-for-enterprise.html>`__.
+For more information on how Mattermost scales, technically, and functionally, please `contact the Enterprise team <https://mattermost.com/contact-us/>`__ and `read about scaling for Enterprise </scale/scaling-for-enterprise.html>`__.
 
 What does it take to manage a Mattermost deployment?
 ----------------------------------------------------
@@ -65,100 +65,17 @@ What happens when the Enterprise Edition subscription expires?
 
 Sixty days prior to expiry, System Administrators receive notifications that the Enterprise Edition license key will expire on the anniversary of its purchase. After expiry, there is a 10-day grace period to upload a new license key. After the grace period, Enterprise features will be disabled. At any time, Enterprise Edition can be downgraded to the free Team Edition without data loss by switching off any Enterprise features enabled and then removing the license key.
 
-What are Mattermost's policies around licensing, terms of use, and privacy?
----------------------------------------------------------------------------
-
-The following outlines the licensing, terms of use and privacy policies across Mattermost software and services.
-
-Mattermost Software
-~~~~~~~~~~~~~~~~~~~
-
-+----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Software                                           | License                                                                                                                    | Terms and Conditions                                                                                                          | Privacy Policy                                                                                                             |
-+====================================================+============================================================================================================================+===============================================================================================================================+============================================================================================================================+
-| Mattermost Team Edition (Open Source)              | Open Source **MIT License**.                                                                                               | `Mattermost Trademark Policy <https://mattermost.com/trademark-standards-of-use/>`__                                          | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__ |
-|                                                    |                                                                                                                            |                                                                                                                               | with `GDPR Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`__.                                 |
-|                                                    | Open Source Add-ons available under `Apache v2 and other licenses <https://docs.mattermost.com/about/subscription.html>`__.|                 | `Mattermost Terms of Use <https://mattermost.com/terms-of-use/>`__                                          |                                                                                                                            |
-+----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
-| Mattermost Enterprise Edition with no subscription | `Commercial Enterprise Edition License <https://mattermost.com/enterprise-edition-license/>`__.                            | No subscription terms apply when operating without a subscription                                                             |                                                                                                                            |
-|                                                    |                                                                                                                            |                                                                                                                               |                                                                                                                            |
-|                                                    | You are welcome to use the Enterprise Edition of Mattermost free of charge in perpetuity when the subscription feature     |                                                                                                                               |                                                                                                                            |
-+----------------------------------------------------+ are not enabled by a license key.                                                                                          +-------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
-| Mattermost Enterprise Edition with subscription    |                                                                                                                            | `Self Managed Subscription Terms <https://mattermost.com/enterprise-edition-terms/>`__                                        |                                                                                                                            |
-|                                                    | If you choose to purchase a subscription for paid features, terms and conditions are offered                               |                                                                                                                               |                                                                                                                            |
-|                                                    | as part of the subscription purchase (see “Terms”).                                                                        | `Enterprise Edition Subscription Terms for Purchase by Resale <https://mattermost.com/terms-of-use/>`__                       |                                                                                                                            |
-|                                                    |                                                                                                                            |                                                                                                                               |                                                                                                                            |
-|                                                    |                                                                                                                            | `Cloud Subscription Agreement <https://mattermost.com/cloud-subscription-terms/>`__                                           |                                                                                                                            |
-+----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-
-Mattermost Service Agreements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Service                                                                     | Terms and Conditions                                                                                                                            | Privacy Policy                                                                                                             |
-+=============================================================================+=================================================================================================================================================+============================================================================================================================+
-| Mattermost Enterprise Edition Support, including Premier Support            | `Mattermost Support Terms <https://mattermost.com/support/>`__                                                                                  | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__ |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+ with `GDPR Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`__.                                 |
-| Mattermost Hosted Push Notification Service                                 | `Hosted Push Notifications Service Terms <https://mattermost.com/terms-of-use/>`__                                                              |                                                                                                                            |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
-| Mattermost Professional Services                                            | To be posted.                                                                                                                                   |                                                                                                                            |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-
-Mattermost Websites
-~~~~~~~~~~~~~~~~~~~
-
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| Website                    | License                                                                                                                                                          | Terms and Conditions                                                                  | Privacy Policy                                                                                                            |
-+============================+==================================================================================================================================================================+=======================================================================================+===========================================================================================================================+
-| Mattermost Websites:       | Open source under                                                                                                                                                | `Mattermost Terms of Use <https://mattermost.com/terms-of-service/>`__                | `Mattermost Websites Privacy Policy <https://mattermost.com/privacy-policy/>`__                                           |
-|                            | `Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (CC BY-NC-SA 3.0) <https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US>`__. |                                                                                       |                                                                                                                           |
-|  - about.mattermost.com    |                                                                                                                                                                  |                                                                                       |                                                                                                                           |
-|  - mattermost.com          |                                                                                                                                                                  |                                                                                       |                                                                                                                           |
-|  - mattermost.org          |                                                                                                                                                                  |                                                                                       |                                                                                                                           |
-|  - forum.mattermost.org    |                                                                                                                                                                  |                                                                                       |                                                                                                                           |
-|  - docs.mattermost.com     |                                                                                                                                                                  |                                                                                       |                                                                                                                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-
-Mattermost Partnership Agreements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| Partnership Agreement                                                       | Agreement                                                                                                         |
-+=============================================================================+===================================================================================================================+
-| Mattermost Authorized Reseller Agreement                                    | `Mattermost Authorized Reseller Agreement <https://mattermost.com/partners/>`__                                   |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-
-Mattermost Confidentiality Agreements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| Confidentiality Agreement                                                   | Agreement                                                                                                                             |
-+=============================================================================+=======================================================================================================================================+
-| Mattermost Mutual Non-Disclosure Agreement                                  | `Mattermost Mutual Non-Disclosure Agreement <https://docs.google.com/document/d/1Ev3VFjiJBKSf1D5Kmf2BScbHBgSQbMzTzOhY3Of28vY/edit>`__ |
-+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-
-Working for Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| Service                                                                     | Terms and Conditions                                                                                                                             |
-+=============================================================================+==================================================================================================================================================+
-| Mattermost Professional Consulting Services                                 | `Mattermost Professional Consulting Services Agreement <https://docs.google.com/document/d/1tgEkO5Q-xqAgVEcx5Y-z28OC36HptpltKORpivQGLoY/edit>`__ |
-+-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| Mattermost Consulting                                                       | `Mattermost Consulting Terms <https://handbook.mattermost.com/operations/sales/partner-programs>`__                                              |
-+-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-
 How does the licensing key work?
 --------------------------------
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`__.
+See our `frequently asked questions about licensing </about/licensing-and-subscription.html#frequently-asked-questions>`__.
 
 Do you have a program for official non-profits and charities?
 -------------------------------------------------------------
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`__.
+See our `frequently asked questions about licensing </about/licensing-and-subscription.html#frequently-asked-questions>`__.
 
 Do you have discounted licenses for academic institutions?
 ----------------------------------------------------------
 
-See our `frequently asked questions about licensing <https://docs.mattermost.com/about/licensing-and-subscription.html#frequently-asked-questions>`__.
+See our `frequently asked questions about licensing </about/licensing-and-subscription.html#frequently-asked-questions>`__.

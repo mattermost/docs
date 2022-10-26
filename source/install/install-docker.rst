@@ -3,17 +3,8 @@
 Install Mattermost via Docker
 ==============================
 
-|all-plans| |self-hosted|
-
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 30
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 30
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
 
 Prerequisites
 -------------
@@ -57,7 +48,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 Troubleshooting your preview deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **Preview Mode** Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings <https://docs.mattermost.com/configure/configuration-settings.html>`__ documentation to customize your deployment.
+The **Preview Mode** Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the `Configuration Settings </configure/configuration-settings.html>`__ documentation to customize your deployment.
 
 To update your Mattermost preview image and container, you must first stop and delete your existing **mattermost-preview** container by running the following commands:
 
@@ -139,4 +130,4 @@ For an in-depth guide to configuring the TLS certificate and key for Nginx, plea
 Further help
 ~~~~~~~~~~~~~
 
-If you encounter other problems while installing Mattermost, please refer to our `troubleshooting guide <https://docs.mattermost.com/install/troubleshooting.html>`__. 
+If you encounter other problems while installing Mattermost, please refer to our `troubleshooting guide </install/troubleshooting.html>`__. 

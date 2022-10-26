@@ -1,40 +1,10 @@
-Web server configuration settings
-=================================
+:orphan:
+:nosearch:
 
-.. |all-plans| image:: ../images/all-plans-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
-
-.. |enterprise| image:: ../images/enterprise-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Enterprise subscription plan.
-
-.. |professional| image:: ../images/professional-badge.png
-  :scale: 25
-  :target: https://mattermost.com/pricing
-  :alt: Available in the Mattermost Professional subscription plan.
-
-.. |cloud| image:: ../images/cloud-badge.png
-  :scale: 25
-  :target: https://mattermost.com/sign-up
-  :alt: Available for Mattermost Cloud deployments.
-
-.. |self-hosted| image:: ../images/self-hosted-badge.png
-  :scale: 25
-  :target: https://mattermost.com/deploy
-  :alt: Available for Mattermost Self-Hosted deployments.
-
-Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
-
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 Site URL
---------
-
-|all-plans| |self-hosted|
+~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -57,10 +27,8 @@ Site URL
 |   - Plugins may not work as expected.                                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-Listen address
---------------
-
-|all-plans| |self-hosted|
+Web server listen address
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -76,9 +44,7 @@ Listen address
 +---------------------------------------------------------------+------------------------------------------------------------------+
 
 Forward port 80 to 443
-----------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -92,10 +58,8 @@ Forward port 80 to 443
 |   and should be set to false.                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Connection security
--------------------
-
-|all-plans| |self-hosted|
+Web server connection security
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -106,14 +70,12 @@ Connection security
 |   connection.                                                         |                                                                       |
 | - **TLS**: Encrypts the communication between Mattermost              |                                                                       |
 |   clients and your server. See the `configuring TLS on Mattermost     |                                                                       |
-|   <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ |                                                                       |
+|   </install/config-tls-mattermost.html>`__                            |                                                                       |
 |   for more details                                                    |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 TLS certificate file
---------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -124,10 +86,8 @@ TLS certificate file
 | String input.                                          |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
-TSL key file
-------------
-
-|all-plans| |self-hosted|
+TLS key file
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -139,16 +99,14 @@ TSL key file
 +--------------------------------------------------------+---------------------------------------------------------------+
 
 Use Let's Encrypt
------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.  | - System Config path: **Environment > Web Server**                       |
 | See the `configuring TLS on Mattermost documentation                | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
-| <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
+| </install/config-tls-mattermost.html>`__                            | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
 | for more details on setting up Let’s Encrypt.                       |                                                                          |
 |                                                                     |                                                                          |
 | - **true**: The certificate will be retrieved when a client         |                                                                          |
@@ -160,9 +118,7 @@ Use Let's Encrypt
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Let's Encrypt certificate cache file
--------------------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -174,9 +130,7 @@ Let's Encrypt certificate cache file
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 
 Read timeout
-------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -188,9 +142,7 @@ Read timeout
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
 Write timeout
--------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -206,9 +158,7 @@ Write timeout
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Idle timeout
-------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -221,9 +171,7 @@ Idle timeout
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
 Webserver mode
---------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -232,7 +180,7 @@ Webserver mode
 | environment has specific restrictions, such as a web proxy that     | - ``config.json`` setting: ``".ServiceSettings.WebserverMode: gzip",`` |
 | distributes gzip files poorly.                                      | - Environment variable: ``MM_SERVICESETTINGS_WEBSERVERMODE``           |
 |                                                                     |                                                                        |
-| - **gzip**: **(Default)** The Mattermost server will serve stati    |                                                                        |
+| - **gzip**: **(Default)** The Mattermost server will serve static   |                                                                        |
 |   files compressed with gzip to improve performance.                |                                                                        |
 |   gzip compression applies to the HTML, CSS, Javascript, and other  |                                                                        |
 |   static content files that make up the Mattermost web client.      |                                                                        |
@@ -244,16 +192,16 @@ Webserver mode
 +---------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Enable insecure outgoing connections
-------------------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| - **true**: Outgoing HTTPS requests, including S3 clients,    | - System Config path: **Environment > Web Server**                                          |
-|   can accept unverified, self-signed certificates.            | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
-|   For example, outgoing webhooks to a server with a           | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
+| Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                          |
+|                                                               | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
+| - **true**: Outgoing HTTPS requests, including S3 clients,    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
+|   can accept unverified, self-signed certificates.            |                                                                                             |     
+|   For example, outgoing webhooks to a server with a           |                                                                                             |
 |   self-signed TLS certificate, using any domain, will be      |                                                                                             |
 |   allowed, and will skip TLS verification.                    |                                                                                             |
 | - **false**: **(Default)** Only secure HTTPS requests are     |                                                                                             |
@@ -263,9 +211,7 @@ Enable insecure outgoing connections
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Managed resource paths
-----------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -285,14 +231,15 @@ Managed resource paths
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | **Note:**                                                                                                                        |
 | When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of   |
-| in a browser. See the `desktop managed resources <https://docs.mattermost.com/install/desktop-app-managed-resources.html>`__     |
+| in a browser. See the `desktop managed resources </install/desktop-app-managed-resources.html>`__                                |
 | documentation for details.                                                                                                       |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
 Reload configuration from disk
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -309,9 +256,7 @@ Reload configuration from disk
 +----------------------------------------------------------+---------------------------------------------------------------+
 
 Purge all caches
-----------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -323,27 +268,26 @@ Purge all caches
 | Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Purging the caches may adversely impact performance. Deployments using `high availability clusters             |
-| <https://docs.mattermost.com/scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the       |
-| cluster.                                                                                                                 |
+| </scale/high-availability-cluster.html>`__ will attempt to purge all the servers in the cluster                          |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
 Websocket URL
--------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | You can configure the server to instruct clients       | - System Config path: N/A                                           |
-| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  |  |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
+| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
 License file location
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |professional| |self-hosted|
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -358,15 +302,14 @@ License file location
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 
 TLS minimum version
--------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | The minimum TLS version used by the Mattermost server. | - System Config path: N/A                                           |
-| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.TLSMinVer: 1.2",``   ||                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSMINVER``            |
+| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.TLSMinVer: 1.2",``   |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSMINVER``            |
 | String input. Default is **1.2**.                      |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | **Note**: This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy |
@@ -374,9 +317,7 @@ TLS minimum version
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
 Trusted proxy IP header
------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -400,9 +341,7 @@ Trusted proxy IP header
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 
 Enable Strict Transport Security (HSTS)
----------------------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -419,9 +358,7 @@ Enable Strict Transport Security (HSTS)
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Secure TLS transport expiry
----------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -438,9 +375,7 @@ Secure TLS transport expiry
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 TLS cipher overwrites
----------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -464,9 +399,7 @@ TLS cipher overwrites
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Goroutine health threshold
----------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -483,9 +416,7 @@ Goroutine health threshold
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Allow cookies for subdomains
-----------------------------
-
-|all-plans| |self-hosted|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
@@ -497,9 +428,10 @@ Allow cookies for subdomains
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Cluster log timeout
--------------------
+~~~~~~~~~~~~~~~~~~~
 
-|enterprise| |self-hosted|
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
 
@@ -511,5 +443,5 @@ Cluster log timeout
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |        
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| See the `performance monitoring <https://docs.mattermost.com/scale/performance-monitoring.html>`__ documentation for details.                    |
+| See the :doc:`performance monitoring </scale/performance-monitoring>` documentation for details.                                                 |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
