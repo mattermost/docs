@@ -78,7 +78,7 @@ If you're on a monthly Cloud subscription, you can add more users to your instan
 
 When you subscribe to an annual plan with Mattermost, you may incur retroactive charges on a quarterly basis for the actual number of registered users within your system if you are above the amount you subscribed in your purchase order. A registered user is a user who has an account in a workspace and does not show as *Inactive* in **System Console > User Management > Users**.
 
-If you have more total active users than the number purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <www.mattermost.com/pricing>`__.
+If you have more total active users than the number purchased in your annual subscription, we'll provide you with an invoice and an amendment to your purchase order for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter at the time we review your user counts. We will not provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`__.
 
 Renew your subscription
 -----------------------
@@ -93,7 +93,7 @@ What happens when my 30-day Mattermost Enterprise trial period ends?
 
 At the end of the 30-day trial, you can opt to purchase a monthly subscription to Mattermost Professional via the prompts provided in Mattermost. 
 
-If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </mattermost-limits.html>`_ for Mattermost Starter will be auto-archived.
+If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Starter will be auto-archived.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
