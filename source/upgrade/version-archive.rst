@@ -7,7 +7,7 @@ Version Archive
 If you want to check that the version of Mattermost you are installing is the official, unmodified version, compare the SHA-265 checksum or the file's GPG signature with the one published in this version archive. To verify the GPG signature of a Mattermost release, use the public key stored in Keybase: https://keybase.io/mattermost.
 
 .. important::
-   
+
    Support for Mattermost Server v6.3 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle on October 15, 2022. Upgrading to Mattermost Server v7.1 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
 
 .. contents::
@@ -224,7 +224,7 @@ Mattermost Enterprise Edition v5.1.2 - `View Changelog </install/legacy-self-hos
   - ``https://releases.mattermost.com/5.1.2/mattermost-5.1.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``4646910788a177931e6a4c5a0d8751e3d4f10e8083c6078de348e3463b106bb3``
   - GPG Signature: https://releases.mattermost.com/5.1.2/mattermost-5.1.2-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v5.0.3 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v5-0-feature-release>`__ - `Download <https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz?src=arc>`__
+Mattermost Enterprise Edition v5.0.3 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v5-0-feature-release>`__ - `Download <https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``35863bd376f949d1fd87a012d4f5676e5eb2bdaaccaec4dd9141cf88979af6a6``
   - GPG Signature: https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz.sig
@@ -393,11 +393,11 @@ Mattermost Team Edition v5.32.1 - `View Changelog </install/legacy-self-hosted-c
   - ``https://releases.mattermost.com/5.32.1/mattermost-team-5.32.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``86fd99e49b6ed687004d46813e51fd91e761a87dff58fa2878e752728fac555a``
   - GPG Signature: https://releases.mattermost.com/5.32.1/mattermost-team-5.32.1-linux-amd64.tar.gz.sig
-Mattermost Team Edition v5.31.9 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v5-31-esr>`__ - `Download <https://releases.mattermost.com/5.31.9/mattermost-team-5.31.9-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v5.31.9 *Extended Support Release (ESR)* - `View Changelog </install/legacy-self-hosted-changelog.html#release-v5-31-esr>`__ - `Download <https://releases.mattermost.com/5.31.9/mattermost-team-5.31.9-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.31.9/mattermost-team-5.31.9-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b5322d6187ca62b1b5725ae7162c8a2c7306a181afae6ebc508fc5de7308c808``
   - GPG Signature: https://releases.mattermost.com/5.31.9/mattermost-team-5.31.9-linux-amd64.tar.gz.sig
-Mattermost Team Edition v5.30.3 - `View Changelog </https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v5-30-feature-release>`__ - `Download <https://releases.mattermost.com/5.30.3/mattermost-team-5.30.3-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v5.30.3 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v5-30-feature-release>`__ - `Download <https://releases.mattermost.com/5.30.3/mattermost-team-5.30.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/5.30.3/mattermost-team-5.30.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``9d9e3c5b4602749d111a569b5a597745450898dab6976c17b5b87d7b8f82d4b4``
   - GPG Signature: https://releases.mattermost.com/5.30.3/mattermost-team-5.30.3-linux-amd64.tar.gz.sig
@@ -521,38 +521,38 @@ Mattermost Team Edition v5.0.3 - `View Changelog </install/legacy-self-hosted-ch
   - ``https://releases.mattermost.com/5.0.3/mattermost-team-5.0.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b3711ebd0e0240876ba751b18bd7a7349ffbf3f8a02d63ff79303aba98ca02c9``
   - GPG Signature: https://releases.mattermost.com/5.0.3/mattermost-team-5.0.3-linux-amd64.tar.gz.sig
-Mattermost Team Edition v4.10.10 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-10-esr>`__ - `Download <https://releases.mattermost.com/4.10.10/mattermost-team-4.10.10-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.10.10 *Extended Support Release (ESR)* - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-10-esr>`__ - `Download <https://releases.mattermost.com/4.10.10/mattermost-team-4.10.10-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.10.10/mattermost-team-4.10.10-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``c8a8569e3a65246ab4babc01ce61c52b0ac0b6bd4984ef9896d20ce0ade233c2``
   - GPG Signature: https://releases.mattermost.com/4.10.10/mattermost-team-4.10.10-linux-amd64.tar.gz.sig
-Mattermost Team Edition v4.9.4 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-9-feature-release>`__ - `Download <https://releases.mattermost.com/4.9.4/mattermost-team-4.9.4-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.9.4 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-9-feature-release>`__ - `Download <https://releases.mattermost.com/4.9.4/mattermost-team-4.9.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.9.4/mattermost-team-4.9.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``7b8ed13dc08349bcd7e0886464e7c242f5905bb6685fb28e434a2bd3e3423cfc``
-Mattermost Team Edition v4.8.2 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-8-feature-release>`__ - `Download <https://releases.mattermost.com/4.8.2/mattermost-team-4.8.2-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.8.2 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-8-feature-release>`__ - `Download <https://releases.mattermost.com/4.8.2/mattermost-team-4.8.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.8.2/mattermost-team-4.8.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``192d5b9ce2b1aeb3fc1c8a09ca53e7883b0977d7a37d63ea2f116a13ca5efaf8``
-Mattermost Team Edition v4.7.4 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-7-feature-release>`__ - `Download <https://releases.mattermost.com/4.7.4/mattermost-team-4.7.4-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.7.4 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-7-feature-release>`__ - `Download <https://releases.mattermost.com/4.7.4/mattermost-team-4.7.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.7.4/mattermost-team-4.7.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``caac6f6a612fc50b230e0f77b3ba58c34e7bca86c2c6479e7732dece03cd69dc``
-Mattermost Team Edition v4.6.3 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-6-feature-release>`__ - `Download <https://releases.mattermost.com/4.6.3/mattermost-team-4.6.3-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.6.3 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-6-feature-release>`__ - `Download <https://releases.mattermost.com/4.6.3/mattermost-team-4.6.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.6.3/mattermost-team-4.6.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``2583ece515ecd6f9f45f874aa009c8fa8970a273d5d2e3006ee47aad0bac0a3d``
-Mattermost Team Edition v4.5.2 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-5-feature-release>`__ - `Download <https://releases.mattermost.com/4.5.2/mattermost-team-4.5.2-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.5.2 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-5-feature-release>`__ - `Download <https://releases.mattermost.com/4.5.2/mattermost-team-4.5.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.5.2/mattermost-team-4.5.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``756f30c7690c1c3d81470d73f18d87ff99869d130ca2528cb2a97a660ec9b73e``
-Mattermost Team Edition v4.4.5 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-4-5-feature-release>`__ - `Download <https://releases.mattermost.com/4.4.5/mattermost-team-4.4.5-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.4.5 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-4-5-feature-release>`__ - `Download <https://releases.mattermost.com/4.4.5/mattermost-team-4.4.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.4.5/mattermost-team-4.4.5-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``c261384b2bd8e0472e22307368818eb84b0171e15bdacf7e926187aa846861d7``
-Mattermost Team Edition v4.3.4 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-3-4-feature-release>`__ - `Download <https://releases.mattermost.com/4.3.4/mattermost-team-4.3.4-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.3.4 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-3-4-feature-release>`__ - `Download <https://releases.mattermost.com/4.3.4/mattermost-team-4.3.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.3.4/mattermost-team-4.3.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``fbc2504cfe417b45ed957c2f45be654849c87fc0d46c14067b8febdbc626f4cc``
-Mattermost Team Edition v4.2.2 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-2-2-feature-release>`__ - `Download <https://releases.mattermost.com/4.2.2/mattermost-team-4.2.2-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.2.2 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-2-2-feature-release>`__ - `Download <https://releases.mattermost.com/4.2.2/mattermost-team-4.2.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.2.2/mattermost-team-4.2.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``4353f7d77bf5a0bcc1bbce00f2ca60fd14f5fd8caa8b57f4c518dc3ef657c4d6``
-Mattermost Team Edition v4.1.2 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-1-2-feature-release>`__ - `Download <https://releases.mattermost.com/4.1.2/mattermost-team-4.1.2-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.1.2 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-1-2-feature-release>`__ - `Download <https://releases.mattermost.com/4.1.2/mattermost-team-4.1.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.1.2/mattermost-team-4.1.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``1b43c5d1938d17f3ce5d9f90c958a8353639422df48488f002377a30a6d84ae1``
-Mattermost Team Edition v4.0.5 - `View Changelog <https://docs.mattermost.com/install/legacy-self-hosted-changelog.html#release-v4-0-5-feature-release>`__ - `Download <https://releases.mattermost.com/4.0.5/mattermost-team-4.0.5-linux-amd64.tar.gz?src=arc>`__
+Mattermost Team Edition v4.0.5 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v4-0-5-feature-release>`__ - `Download <https://releases.mattermost.com/4.0.5/mattermost-team-4.0.5-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/4.0.5/mattermost-team-4.0.5-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``a7897c6027eb972c0e5d8039862308f1073f1a078e0aa28b3d67f7a5e519dc04``
 Mattermost Team Edition v3.10.3 - `View Changelog </install/legacy-self-hosted-changelog.html#release-v3-10-3>`__ - `Download <https://releases.mattermost.com/3.10.3/mattermost-team-3.10.3-linux-amd64.tar.gz?src=arc>`__
