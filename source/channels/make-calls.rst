@@ -9,8 +9,11 @@ Mattermost introduces beta voice calling and screen sharing functionality in cha
 - `Features available in Mattermost 7.0 <#features-available-in-mattermost-7.0>`__
 - `Frequently asked questions <#frequently_asked_questions>`__
 - `Troubleshooting <#troubleshooting>`__
-  - `My call is disconnected after a few seconds <#my-call-is-disconnected-after-a-few-seconds>`__
-  - `I cannot screen share using Mattermost Desktop on MacOS <#i-cannot-screen-share-using-mattermost-desktop-on-macos>`__
+
+   - `My call is disconnected after a few seconds <#my-call-is-disconnected-after-a-few-seconds>`__
+
+   - `I cannot screen share using Mattermost Desktop on MacOS <#i-cannot-screen-share-using-mattermost-desktop-on-macos>`__
+
 - `Debugging <#debugging>`__
 
 Features available in Mattermost 7.0
