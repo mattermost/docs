@@ -30,89 +30,87 @@ Access the following configuration settings in the System Console by going to **
 Site name
 ~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
-|Name of service shown in login screens and UI.                   | - System Config path: **Site Configuration > Customization**          |
-|                                                                 | - ``config.json`` setting: ``.TeamSettings.SiteName``                 |
-|String input. Maximum 30 characters. Default is ``Mattermost``.  | - Environment variable: ``MM_TEAMSETTINGS_SITENAME``                  |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
++--------------------------------------------------------------------+--------------------------------------------------------------+
+|Name of the site shown in login screens and UI.                     | - System Config path: **Site Configuration > Customization** |
+|                                                                    | - ``config.json`` setting: ``.TeamSettings.SiteName``        |
+|String input. Maximum 30 characters. Default is ``Mattermost``.     | - Environment variable: ``MM_TEAMSETTINGS_SITENAME``         |
++--------------------------------------------------------------------+--------------------------------------------------------------+
 
 Site description
 ~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
-|Displays as a title above the login form. When not specified, the| - System Config path: **Site Configuration > Customization**            |
-|phrase "Log in" is displayed.                                    | - ``config.json`` setting: ``.TeamSettings.CustomDescriptionText``      |
-|                                                                 | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMDESCRIPTIONTEXT``       |
-|String input.                                                    |                                                                         |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
++--------------------------------------------------------------------+--------------------------------------------------------------------+
+|Displays as a title above the login form. When not specified, the   | - System Config path: **Site Configuration > Customization**       |
+|phrase "Log in" is displayed.                                       | - ``config.json`` setting: ``.TeamSettings.CustomDescriptionText`` |
+|                                                                    | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMDESCRIPTIONTEXT``  |
+|String input.                                                       |                                                                    |
++--------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Enable custom branding
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
-| - **true**: Enables the display of a custom image and text on   | - System Config path: **Site Configuration > Customization**            |
-|the server login page (see settings for **Custom brand image**   | - ``config.json`` setting: ``".TeamSettings.EnableCustomBrand": false`` |
-|and **Custom brand text**)                                       | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``           |
-| - **false: (Default)** Custom branding is disabled.             |                                                                         |
-|                                                                 |                                                                         |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------+
++--------------------------------------------------------------------+-----------------------------------------------------------------------+
+| - **true**: Enables the display of a custom image and text on the  | - System Config path: **Site Configuration > Customization**          |
+|login page (see settings for **Custom brand image** and **Custom    | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
+|brand text**)                                                       | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
+| - **false: (Default)** Custom branding is disabled.                |                                                                       |
+|                                                                    |                                                                       |
++--------------------------------------------------------------------+-----------------------------------------------------------------------+
  								   	     
 Custom brand image
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Upload a JPG image for display on the server login page. The     | - System Config path: **Site Configuration > Customization**    |
-|image must be uploaded through the System Console. The file      | - ``config.json`` setting: N/A                                  |
-|should be **smaller than 2 MB**, because it will be loaded for   | - Environment variable: N/A                                     |
-|every user who logs in.                                          |                                                                 |
-|                                                                 |                                                                 |
-|**Enable custom branding** must be set to ``true`` to display the|                                                                 |
-|image.                                                           |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------+-----------------------------------------------------------------+
+|Upload a JPG image for display on the login page. The image must be | - System Config path: **Site Configuration > Customization**    |
+|uploaded through the System Console. The file should be **smaller   | - ``config.json`` setting: N/A                                  |
+|than 2 MB**.                                                        | - Environment variable: N/A                                     |
+|                                                                    |                                                                 |
+|**Enable custom branding** must be set to ``true`` to display the   |                                                                 |
+|image.                                                              |                                                                 |
+|                                                                    |                                                                 |
++--------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Custom brand text
 ~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------+-------------------------------------------------------------------+
-|Text that will be shown below the **Custom brand image** on left side of | - System Config path: **Site Configuration > Customization**      |
-|server login page, if **Enable custom branding** is set to ``true``.     | - ``config.json`` setting: ``".TeamSettings.CustomBrandText": ""``|
-|                                                                         | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMBRANDTEXT``       |
-|String input. Maximum 500 characters. You can format this text using the |                                                                   |
-|same `Markdown formatting                                                |                                                                   |
-|<https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as  |                                                                   |
-|in Mattermost messages.                                                  |                                                                   |
-|                                                                         |                                                                   |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------+
-      
++-------------------------------------------------------------------------+--------------------------------------------------------------+
+|Text that will be shown below the **Custom brand image** on left side of | - System Config path: **Site Configuration > Customization** |
+|login page. You can format this text using the same `Markdown formatting | - ``config.json`` setting: ``.TeamSettings.CustomBrandText`` |
+|<https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as  | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMBRANDTEXT``  |
+|in Mattermost messages.                                                  |                                                              |
+|                                                                         |                                                              |
+|String input. Maximum 500 characters. **Enable custom branding** must be |                                                              |
+|set to ``true`` to display the image.                                    |                                                              |
+|                                                                         |                                                              |
++-------------------------------------------------------------------------+--------------------------------------------------------------+
+
 Enable Ask Community link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------+--------------------------------------------------------------------------------+
-|**true: (Default)** **Ask the community** link is visible in the       | - System Config path: **Site Configuration > Customization**                   |
-|Mattermost channel header, under the **Help** menu. When selected,     | - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true``   |
-|users are redirected to                                                | - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``          |
-|https://mattermost.com/pl/default-ask-mattermost-community/, where they|                                                                                |
-|can join the Mattermost Community to ask questions and help others     |                                                                                |
-|troubleshoot issues. This option is not available on mobile apps.      |                                                                                |
-|                                                                       |                                                                                |
-|**false**: The link is not visible to users.                           |                                                                                |
-|                                                                       |                                                                                |
-+-----------------------------------------------------------------------+--------------------------------------------------------------------------------+
++----------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| - **true: (Default)** **Ask the community** link to the `Mattermost        | - System Config path: **Site Configuration > Customization**                 |
+|Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__  | - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
+|appears under the **Help** menu in the channel header. Users can join the   | - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
+|Mattermost Community to ask questions and help others troubleshoot          |                                                                              |
+|issues. This option is not available on mobile apps.                        |                                                                              |
+| - **false**: The link is not visible to users.                             |                                                                              |
+|                                                                            |                                                                              |
+|                                                                            |                                                                              |
++----------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Help link
 ~~~~~~~~~
 
-+------------------------------------------------------------------------+-----------------------------------------------------------------+
-|The URL for the Help link on the Mattermost login page, sign-up pages,  | - System Config path: **Site Configuration > Customization**    |
-|and the Help Resources link under the **Help** menu. If this field is   | - ``config.json`` setting: ``".SupportSettings.HelpLink":       |
-|empty, the Help link is hidden from users.                              |"https://docs.mattermost.com/"``                                 |
-|                                                                        | - Environment variable: ``MM_SUPPORTSETTINGS_HELPLINK``         |
-|String input. Default is ``https://about.mattermost.com/default-help/``.|                                                                 |
-|                                                                        |                                                                 |
-+------------------------------------------------------------------------+-----------------------------------------------------------------+
++-------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+|The URL for the Help link on the login page, sign-up pages, and the Help | - System Config path: **Site Configuration > Customization**                      |
+|Resources link under the **Help** menu. If this field is empty, the link | - ``config.json`` setting: ``.SupportSettings.HelpLink``                          |
+|does not appear.                                                         | - Environment variable: ``MM_SUPPORTSETTINGS_HELPLINK``                           |
+|                                                                         |                                                                                   |
+|String input. Default is ``https://about.mattermost.com/default-help/``. |                                                                                   |
+|                                                                         |                                                                                   |
++-------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 Terms of Use link
 ~~~~~~~~~~~~~~~~~~
@@ -120,25 +118,26 @@ Terms of Use link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Link to the terms under which users may use your self-hosted     | - System Config path: **Site Configuration > Customization**    |
-|service. The link appears in the footer of the sign-up and login | - This feature's ``config.json`` setting is                     |
-|pages. The default links to a `Terms of Use                      |``"TermsOfServiceLink": "https://mattermost.com/terms-of-use/"`` |
-|<https://about.mattermost.com/default-terms/>`__ page hosted on  |with string input.                                               |
-|``mattermost.com``. This includes the "Mattermost Acceptable Use |                                                                 |
-|Policy" explaining the terms under which Mattermost software is  |                                                                 |
-|provided to end users. If you change the default link to add your|                                                                 |
-|own terms for using the service you provide, your new terms must |                                                                 |
-|include a link to the default terms so end users are aware of the|                                                                 |
-|Mattermost Acceptable Use Policy for Mattermost software.        |                                                                 |
-|                                                                 |                                                                 |
-|From Mattermost v5.17, this setting doesn't change the terms of  |                                                                 |
-|use link displayed in the **About Mattermost** dialog, which     |                                                                 |
-|refers to the Mattermost Terms of Use.                           |                                                                 |
-|                                                                 |                                                                 |
-|String input. Default is                                         |                                                                 |
-|``https://about.mattermost.com/default-terms/``.                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------+---------------------------------------------------------------------+
+|The URL for the Terms of Use of a self-hosted site. A link to the terms   | - System Config path: **Site Configuration > Customization**        |
+|appears at the bottom of the sign-up and login pages.                     | - ``config.json`` setting: ``.SupportSettings.TermsOfServiceLink``  |
+|                                                                          | - Environment variable: ``MM_SUPPORTSETTINGS_TERMSOFSERVICELINK``   |
+| The default URL links to a `Terms of Use                                 |                                                                     |
+|<https://about.mattermost.com/default-terms/>`__ page hosted on           |                                                                     |
+|``mattermost.com``. This includes the Mattermost Acceptable Use Policy    |                                                                     |
+|explaining the terms under which Mattermost software is provided to end   |                                                                     |
+|users. If you change the default link to add your own terms for using the |                                                                     |
+|service you provide, your new terms **must include a link** to the default|                                                                     |
+|terms so end users are aware of the Mattermost Acceptable Use Policy.     |                                                                     |
+|                                                                          |                                                                     |
+|From Mattermost v5.17, this setting doesn't change the terms of use link  |                                                                     |
+|displayed in the **About Mattermost** dialog, which refers to the         |                                                                     |
+|Mattermost Terms of Use.                                                  |                                                                     |
+|                                                                          |                                                                     |
+|String input. Default is ``https://about.mattermost.com/default-terms/``. |                                                                     |
+|                                                                          |                                                                     |
+|                                                                          |                                                                     |
++--------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Privacy Policy link
 ~~~~~~~~~~~~~~~~~~~~
@@ -146,20 +145,20 @@ Privacy Policy link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
  		
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Link to a Privacy Policy for end users that appears in the footer| - System Config path: **Site Configuration > Customization**    |
-|of the sign-up and login pages. If this field is empty, the      | - This feature's ``config.json`` setting is                     |
-|Privacy link is hidden from users.                               |``"PrivacyPolicyLink": "https://mattermost.com/privacy-policy/"``|
-|                                                                 |with string input.                                               |
-|In version 5.17 and later, this setting does not change the      |                                                                 |
-|privacy policy link in the **About Mattermost** dialog, which    |                                                                 |
-|refers to the Mattermost Privacy Policy.                         |                                                                 |
-|                                                                 |                                                                 |
-|String input. Default is                                         |                                                                 |
-|``https://about.mattermost.com/default-privacy-policy/``.        |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------+-------------------------------------------------------------------+
+|The URL for the Privacy Policy of a self-hosted site. A link to the policy appears| - System Config path: **Site Configuration > Customization**      |
+|at the bottom of the sign-up and login pages. If this field is empty, the link    | - ``config.json`` setting: ``.SupportSettings.PrivacyPolicyLink`` |
+|does not appear.                                                                  | - Environment variable: ``MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK``  |
+|                                                                                  |                                                                   |
+|In version 5.17 and later, this setting does not change the Privacy Policy link in|                                                                   |
+|the **About Mattermost** dialog, which refers to the Mattermost Privacy Policy.   |                                                                   |
+|                                                                                  |                                                                   |
+|String input. Default is ``https://about.mattermost.com/default-privacy-policy/``.|                                                                   |
+|                                                                                  |                                                                   |
+|                                                                                  |                                                                   |
+|                                                                                  |                                                                   |
+|                                                                                  |                                                                   |
++----------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 About link
 ~~~~~~~~~~
@@ -167,14 +166,15 @@ About link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|The URL for the About link on the Mattermost login and sign-up   | - System Config path: **Site Configuration > Customization**    |
-|pages. If this field is empty, the About link is hidden from     | - This feature’s ``config.json`` setting is ``"AboutLink":      |
-|users.                                                           |"https://mattermost.com/platform-overview/"`` with string input. |
-|                                                                 |                                                                 |
-|String input. Default is                                         |                                                                 |
-|``https://about.mattermost.com/default-about/``.                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+--------------------------------------------------------------+
+|The URL for general information about a self-hosted site. A link | - System Config path: **Site Configuration > Customization** |               
+|to the About page appears at the bottom of the sign-up and login | - ``config.json`` setting: ``.SupportSettings.AboutLink``    |
+|pages. If this field is empty, the link does not appear.         | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``     |
+|                                                                 |                                                              |       
+|String input. Default is                                         |                                                              |
+|``https://about.mattermost.com/default-about/``.                 |                                                              |
+|                                                                 |                                                              |
++-----------------------------------------------------------------+--------------------------------------------------------------+
 
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -182,13 +182,14 @@ Report a Problem link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-|The URL for the Report a Problem link in the **Help** menu. If   | - System Config path: **Site Configuration > Customization**                                |
-|this field is empty, the link is removed from the menu.          | - This feature's ``config.json`` setting is ``"ReportAProblemLink":                         |
-|                                                                 |"https://handbook.mattermost.com/contributors/contributors/ways-to-contribute#report-a-bug"``|
-| String input. Default is                                        |with string input.                                                                           |
-|https://about.mattermost.com/default-report-a-problem.           |                                                                                             |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+--------------------------------------------------------------------+
+|The URL for the Report a Problem link in the **Help** menu. If   | - System Config path: **Site Configuration > Customization**       |
+|this field is empty, the link does not appear.                   | - ``config.json`` setting: ``.SupportSettings.ReportAProblemLink`` |
+|                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``  |
+| String input. Default is                                        |                                                                    |
+|https://about.mattermost.com/default-report-a-problem.           |                                                                    |
+|                                                                 |                                                                    |
++-----------------------------------------------------------------+--------------------------------------------------------------------+
 
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,22 +197,15 @@ Mattermost apps download page link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|The URL for the Download Apps link in the **Product** menu. If   | - System Config path: **Site Configuration > Customization**    |
-|you have an Enterprise App Store, use this setting to link to the| - This feature's ``config.json`` setting is ``"AppDownloadLink":|
-|appropriate download page for your Mattermost apps. If this field|"https://mattermost.com/apps/"`` with string input.              |
-|is empty, the link is removed from the menu.                     |                                                                 |
-|                                                                 |                                                                 |
-|String input. Default is https://about.mattermost.com/downloads/.|                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+-------------------------------------------------------------------+
+|The URL for the Download Apps link in the **Product** menu. If   | - System Config path: **Site Configuration > Customization**      |
+|this field is empty, the link does not appear.                   | - ``config.json`` setting: ``.NativeAppSettings.AppDownloadLink`` |
+|                                                                 | - Environment variable: ``MM_NATIVEAPPSETTINGS_APPDOWNLOADLINK``  |
+|If you have an Enterprise App Store, use this setting to link to |                                                                   |
+|the appropriate download page for your Mattermost apps.          |                                                                   |
+|                                                                 |                                                                   |
+|String input. Default is https://about.mattermost.com/downloads/.|                                                                   |
++-----------------------------------------------------------------+-------------------------------------------------------------------+
 
 Android app download link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -219,17 +213,16 @@ Android app download link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:+
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------+
-|The URL to download the Mattermost Android app. Users who access | - System Config path: **Site Configuration > Customization**      |
-|the site on a mobile web browser will be prompted to download the| - This feature's ``config.json`` setting is                       |
-|app through this link. If you use an Enterprise App Store, change|``"AndroidAppDownloadLink":                                        |
-|this link to point to the correct app. If this field is blank,   |"https://play.google.com/store/apps/details?id=com.mattermost.rn"``|
-|the download prompt will not appear.                             |with string input.                                                 |
-|                                                                 |                                                                   |
-|String input. Default is                                         |                                                                   |
-|https://about.mattermost.com/mattermost-android-app.             |                                                                   |
-|                                                                 |                                                                   |
-+-----------------------------------------------------------------+-------------------------------------------------------------------+
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------+
+|The URL to download the Mattermost Android app. Users who access the site on | - System Config path: **Site Configuration > Customization**             |
+|a mobile browser will be prompted to download the app through this link. If  | - ``config.json`` setting: ``.NativeAppSettings.AndroidAppDownloadLink`` |
+|this field is empty, the prompt does not appear.                             | - Environment variable: ``MM_NATIVEAPPSETTINGS_ANDROIDAPPDOWNLOADLINK``  |
+|                                                                             |                                                                          |
+|If you have an Enterprise App Store, use this setting to link to the correct |                                                                          |
+|app.                                                                         |                                                                          |
+|                                                                             |                                                                          |
+|String input. Default is https://about.mattermost.com/mattermost-android-app.|                                                                          |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 iOS app download link
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -237,16 +230,16 @@ iOS app download link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|The URL to download the Mattermost iOS app. Users who access the | - System Config path: **Site Configuration > Customization**    |
-|site on a mobile web browser will be prompted to download the app| - This feature's ``config.json`` setting is                     |
-|through this link. If you use an Enterprise App Store, change    |``"IosAppDownloadLink":                                          |
-|this link to point to the correct app. If this field is blank,   |"https://apps.apple.com/us/app/mattermost/id1257222717"`` with   |
-|the download prompt will not appear.                             |string input.                                                    |
-|                                                                 |                                                                 |
-|String input. Default is                                         |                                                                 |
-|https://about.mattermost.com/mattermost-ios-app/.                |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------+---------------------------------------------------------------------------+
+|The URL to download the Mattermost iOS app. Users who access the site on a| - System Config path: **Site Configuration > Customization**              |
+|mobile browser will be prompted to download the app through this link. If | - ``config.json`` setting: ``.NativeAppSettings.IosAppDownloadLink``      |
+|this field is empty, the prompt does not appear.                          | - Environment variable: ``MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK``       |
+|                                                                          |                                                                           |
+|If you use an Enterprise App Store, change this link to point to the      |                                                                           |
+|correct app.                                                              |                                                                           |
+|                                                                          |                                                                           |
+|String input. Default is https://about.mattermost.com/mattermost-ios-app/.|                                                                           |
++--------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 ----
 
