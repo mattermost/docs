@@ -24,6 +24,9 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
+ 
+#### API Changes
+ - Added new plugin endpoints to ``PermissionService`` interface.
 
 ### Bug Fixes
  - Fixed an issue with incorrect mention counts in unread channels.
