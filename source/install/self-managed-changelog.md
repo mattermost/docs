@@ -10,7 +10,114 @@ Latest Mattermost Releases:
 - [Release v7.3 - Feature Release](#release-v7-3-feature-release)
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
-- [Release v7.0 - Major Release](#release-v7-0-major-release)
+
+## Release v7.5 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**v7.5.0 release day: 2022-11-16**
+
+### Compatibility
+ - Updated the minimum version of Chrome to v106+ and the minimum version of Edge to 95+.
+
+### Highlights
+
+#### Boards
+
+#### Playbooks
+
+#### Calls
+
+### Improvements
+
+#### User Interface (UI)
+ - A confirmation modal is now displayed before a user marks all threads as read.
+ - Added the ability to hide the “required” asterisk in the App Field.
+ - Added a fading effect to the Apps Modal body while an Apps Modal is refreshing.
+ - Insights now filters out posts made by plugins and OAuth apps.
+ - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or DND. This can be disabled via **Settings > Display > Share last active time**.
+ - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
+ - The default number of **Direct Message** channels shown in the sidebar is now 40.
+ - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
+ - Added Insights to the channel switcher.
+ - Added a button to easily copy the content of text or code files in file previews.
+ - The team unread icon for muted channels is now hidden in the sidebar.
+ - Updated the designs for the “payment failed” email notifications.
+ - Added the ability to create a new channel along with a new board associated with the created channel.
+ - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by selecting “Notify admin to update billing”.
+ - Added markdown formatting for hyperlinks when pasted into the text editor.
+ - Email notifications from new messages now also support displaying Slack attachments from the channel post.
+
+#### Administration
+ - After 90 days since the day of missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
+ - Added a credit card update modal that communicates arrears for Admins.
+ - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
+ - Introduced an Invite Guests upsell prompt to self-hosted.
+ - Added JSON-compatible nested config value parsing from environment variables.
+ - An AD/LDAP upsell banner is now shown for self-hosted instances with a Professional license when visiting the invite guests modal.
+ - Self-hosted Admins now see "User Groups" in the product switcher with a CTA to start a trial.
+
+### Bug Fixes
+ - Fixed an issue where Enterprise features labeled as "Professional Feature" appeared in the **System Console** sidebar.
+ - Fixed an issue where the transparency for PNG images in image previews and thumbnails was not preserved.
+ - Fixed an issue where screen readers failed to announce “No results found” in the Direct Message modal.
+ - Fixed an issue where minipreview data was not generated nor stored for images imported from Slack.
+ - Fixed the error message that appears on the **Reset Password** page when inputting a password with fewer than 5 characters.
+ - Fixed an issue where ``Get categories`` with the "exclude" option did not return categories for deleted teams a user was no longer a member of.
+ - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
+ - Fixed an issue where custom groups could be created with at-mention names that are reserved words (@channel, @here, @all).
+ - Fixed an issue where 404 errors were shown when APIv4 had an incorrect content-type header.
+ - Fixed an issue where messages from bots and webhooks could not be forwarded.
+ - Fixed an issue where the **Integrations limit** warning modal stated "You're getting closer to the 5 enabled integrations limit" even when 5 plugins were already enabled.
+ - Fixed an issue where inline images did not appear in the channel header.
+ - Fixed an issue with the emoji skin tone selector animation.
+ - Fixed an issue where the screen reader did not announce a successful login when logging in.
+ - Fixed a few broken links at **System Console > User Management > Permission Schemes**.
+ - Fixed an issue where users were able to forward messages to users who are deactivated.
+ - Fixed an issue where "Threads" were not shown in the unread filter view even if there weren't unread threads.
+ - Fixed an issue where the user’s full name was not shown when adding people to a channel via the ``Add people`` modal.
+ - Fixed an issue where formatting keyboard shortcuts were conflicting with existing shortcuts.
+ - Fixed an issue where the markdown style for horizontal rules was too thick.
+ - Fixed an issue where the emoji reaction overlay blocked part of the message it belonged to in compact view.
+ - Fixed an issue with incorrect mention counts in unread channels.
+ - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded Youtube preview images.
+ - Fixed an issue where formatting was applied to selected spaces after a word.
+ - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
+ - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
+ - Fixed a bug where role filters weren't being applied for ``GetProfilesInChannel``.
+ - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
+ - Fixed an issue where the “Enterprise license is expired” banner was non-dismissible.
+ - Fixed an issue where the “Renew Now” option was not showing in-product and always defaulted to Contact Sales.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``TeamSettings`` in the ``config.json``:
+    - Added ``EnableLastActiveTime`` to add a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online.
+
+### API Changes
+ - Added a new response-header ``First-Inaccessible-File-Time`` to the APIs fetching single file info.
+ - Added a new query parameter to include deleted posts as long as it's requested by a System Admin in ``/api/v4/channels/{channel_id}/posts``.
+ - Added new plugin endpoints to ``PermissionService`` interface.
+
+### Go Version
+ - v7.5 is built with Go ``v1.18.1``.
+
+### Known Issues
+ - The **More** menu for Pinned posts on the right-hand side is cut-off [MM-46987](https://mattermost.atlassian.net/browse/MM-46987).
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - 
 
 ## Release v7.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
