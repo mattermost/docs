@@ -72,7 +72,7 @@ I cannot screen share using Mattermost Desktop on MacOS
 There is a known bug on MacOS with some versions of Chrome (which is used by Mattermost Desktop). If you have given screen sharing permissions to Mattermost Desktop, and you are still unable to screen share, do the following:
 
 #. Quit Mattermost Desktop
-#. In the MacOS terminal, run: `tccutil reset ScreenCapture Mattermost.Desktop`
+#. In the MacOS terminal, run: ``tccutil reset ScreenCapture Mattermost.Desktop``
 #. Restart Mattermost Desktop and start a call
 #. Click screen share and give it permissions again (which will require another restart of Mattermost Desktop)
 
