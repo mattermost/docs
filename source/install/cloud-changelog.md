@@ -4,12 +4,37 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-11-03](#release-2022-11-03)
 - [Release 2022-10-27](#release-2022-10-27)
 - [Release 2022-10-20](#release-2022-10-20)
 - [Release 2022-10-13](#release-2022-10-13)
 - [Release 2022-10-06](#release-2022-10-06)
 - [Release 2022-09-15](#release-2022-09-15)
-- [Release 2022-09-08](#release-2022-09-08)
+
+## Release 2022-11-03
+
+### Improvements
+
+#### User Interface (UI)
+ - Implemented progressive image loading in the webapp.
+
+#### Administration
+ - If an Admin encounters an invitation error “SMTP is not configured in **System Console**", a link to the **System Console** SMTP configuration is now included in the error message.
+ - Crashing jobs now sets the job status to "failed".
+ - Added the ability for Cloud customers to submit their feedback for wire transfers to buy a monthly subscription.
+ - Added a new schema migration to ensure the ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in the database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.  
+ - Added a logic to package product version of Boards with production builds.
+ - Denormalized Threads table by adding the ``TeamId`` column. See details for schema changes https://github.com/mattermost/mattermost-server/pull/20915#issuecomment-1282157291.
+
+### Bug Fixes
+ - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
+ - Fixed issues with branding in email notifications.
+ - Fixed an issue where text could be dragged and dropped into input-fields.
+ - Fixed an issue where the profile popover failed to dismiss when selecting one of the options from the popover.
+
+### Known Issues
+ - Users cannot be added to teams from the **System Console** [MM-47667](https://mattermost.atlassian.net/browse/MM-47667).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-10-27
 
