@@ -36,7 +36,6 @@ Latest Mattermost Releases:
  - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or DND. This can be disabled via **Settings > Display > Share last active time**.
  - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
  - The default number of **Direct Message** channels shown in the sidebar is now 40.
- - Downgraded Brazilian Portuguese and Romanian language support to Alpha.
  - Added Insights to the channel switcher.
  - Added a button to easily copy the content of text or code files in file previews.
  - The team unread icon for muted channels is now hidden in the sidebar.
@@ -54,6 +53,7 @@ Latest Mattermost Releases:
  - Added JSON-compatible nested config value parsing from environment variables.
  - An AD/LDAP upsell banner is now shown for self-hosted instances with a Professional license when visiting the invite guests modal.
  - Self-hosted Admins now see "User Groups" in the product switcher with a CTA to start a trial.
+ - Added logic to package product version of Boards with production builds.
 
 ### Bug Fixes
  - Fixed an issue where Enterprise features labeled as "Professional Feature" appeared in the **System Console** sidebar.
