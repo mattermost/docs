@@ -30,72 +30,60 @@ Access the following configuration settings in the System Console by going to **
 Site name
 ~~~~~~~~~
 
-+--------------------------------------------------------------+--------------------------------------------------------------+
-| Name of the site shown in login screens and UI.String input. | - System Config path: **Site Configuration > Customization** |
-|                                                              | - ``config.json`` setting: ``.TeamSettings.SiteName``        |
-| Maximum 30 characters. Default is ``Mattermost``.            | - Environment variable: ``MM_TEAMSETTINGS_SITENAME``         |
-+--------------------------------------------------------------+--------------------------------------------------------------+
++--------------------------------------------------------------+-----------------------------------------------------------------+
+| Name of the site shown in login screens and UI.              | - System Config path: **Site Configuration > Customization**    |
+|                                                              | - ``config.json`` setting: ``.TeamSettings.SiteName``           |
+| String input. Maximum 30 characters. Default: ``Mattermost`` | - Environment variable: ``MM_TEAMSETTINGS_SITENAME``            |
++--------------------------------------------------------------+-----------------------------------------------------------------+
 
 Site description
 ~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------+--------------------------------------------------------------------+
-| Displays as a title above the login form. When not specified, the | - System Config path: **Site Configuration > Customization**       |
-| phrase "Log in" is displayed.                                     | - ``config.json`` setting: ``.TeamSettings.CustomDescriptionText`` |
-|                                                                   | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMDESCRIPTIONTEXT``  |
-| String input.                                                     |                                                                    |
-+-------------------------------------------------------------------+--------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Text displayed above the login form. When not specified, the phrase "Log in" is displayed.| - System Config path: **Site Configuration > Customization**      |
+|                                                                                           | - ``config.json`` setting: ``.TeamSettings.CustomDescriptionText``|                                                                                           
+| String input.                                                                             | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMDESCRIPTIONTEXT`` |
++-------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 Enable custom branding
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-+------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| - **true**: Enables the display of a custom image and text on the login page | - System Config path: **Site Configuration > Customization**          |
-| - **false: (Default)** Custom branding is disabled.                          | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false`` |
-|                                                                              | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMBRAND``         |
-| See **Custom brand image** and **Custom brand text** settings.               |                                                                       |
-+------------------------------------------------------------------------------+-----------------------------------------------------------------------+
++--------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| - ***true***: Enables the display of a custom image and text on the login page | - System Config path: Site Configuration > Customization                |
+| - ***false***: **(Default)** Custom branding is disabled                       | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false``   |
+| See **Custom brand image** and **Custom brand text** settings                  | - Environment variable: MM_TEAMSETTINGS_ENABLECUSTOMBRAND               |
++--------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Custom brand image
 ~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------+--------------------------------------------------------------+
-| Upload a JPG image for display on the login page. The image must be | - System Config path: **Site Configuration > Customization** |
-| uploaded through the System Console. The file should be **smaller   | - ``config.json`` setting: N/A                               |
-| than 2 MB**.                                                        | - Environment variable: N/A                                  |
-|                                                                     |                                                              |
-| **Enable custom branding** must be set to ``true`` to display the   |                                                              |
-| image.                                                              |                                                              |
-|                                                                     |                                                              |
-+---------------------------------------------------------------------+--------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Upload a JPG image for display on the login page. The image must be uploaded through the System Console. The file should be **smaller than 2 MB**. | - System Config path: Site Configuration > Customization |
+|                                                                                                                                                    | - ``config.json`` setting: N/A                           |
+| Enable custom branding must be set to ``true`` to display the image.                                                                               | - Environment variable: N/A                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 Custom brand text
 ~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------+--------------------------------------------------------------+
-| Text that will be shown below the **Custom brand image** on left side of | - System Config path: **Site Configuration > Customization** |
-| login page. You can format this text using the same `Markdown formatting | - ``config.json`` setting: ``.TeamSettings.CustomBrandText`` |
-| <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as  | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMBRANDTEXT``  |
-| in Mattermost messages.                                                  |                                                              |
-|                                                                          |                                                              |
-| String input. Maximum 500 characters. **Enable custom branding** must be |                                                              |
-| set to ``true`` to display the image.                                    |                                                              |
-|                                                                          |                                                              |
-+--------------------------------------------------------------------------+--------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Text that will be shown below the ***Custom brand image*** on left side of login page. You can format this text using the same `Markdown formatting <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as in Mattermost messages. | - System Config path: Site Configuration > Customization     |
+|                                                                                                                                                                                                                                                     | - ``config.json`` setting: ``.TeamSettings.CustomBrandText`` |
+| String input. Maximum 500 characters. ***Enable custom branding*** must be set to ``true`` to display the image.                                                                                                                                    | - Environment variable: MM_TEAMSETTINGS_CUSTOMBRANDTEXT      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Enable Ask Community link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| - **true: (Default)** **Ask the community** link to the `Mattermost        | - System Config path: **Site Configuration > Customization**                 |
-| Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__ | - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
-| appears under the **Help** menu in the channel header.                     | - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
-| - **false**: The link is not visible to users.                             |                                                                              |
-|                                                                            |                                                                              |
-| The link does not appear on mobile apps.                                   |                                                                              |
-+----------------------------------------------------------------------------+------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+|  - **true: (Default)** **Ask the community** link to the `Mattermost Community                                           |  - System Config path: **Site Configuration > Customization**                 |
+|  <https://mattermost.com/pl/default-ask-mattermost-community/>`__ appears under the **Help** menu in the channel header. |  - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
+|  - **false**: The link does not appear.                                                                                  |  - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
+|                                                                                                                          |                                                                               |
+|  The link does not appear on mobile apps.                                                                                |                                                                               |
++--------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Help link
 ~~~~~~~~~
@@ -256,45 +244,54 @@ Access the following configuration settings in the System Console by going to **
 Default server language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Default language for system messages and logs.                   | - System Config path: **Site Configuration > Localization**     |
-|                                                                 | - This feature's ``config.json`` setting is                     |
-|Changes to this setting require a server restart before taking   |``"DefaultServerLocale": "en"`` with options ``"bg"``, ``"de"``, |
-|effect.                                                          |``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``,     |
-|                                                                 |``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``,   |
-|                                                                 |``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and |
-|                                                                 |``"zh_TW"``.                                                     |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------+----------------------------------------------------------------------------+
+| Default language for system messages and logs.                 | - System Config path: **Site Configuration > Localization**                |
+|                                                                | - ``config.json`` setting: ``.LocalizationSettings.DefaultServerLocale``   |
+| Changes to this setting require a server restart before taking |                                                                            |
+| effect.                                                        |                                                                            |
+|                                                                |                                                                            |
+| Possible options are: ``"bg"``, ``"de"``,                      |                                                                            |
+| ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``,   |                                                                            |
+| ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, |                                                                            |
+| ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``,   |                                                                            |
+|and ``"zh_TW"``. Default is ``"en"``.                           |                                                                            |
+|                                                                |                                                                            |
++----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Default client language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Default language for newly-created users and pages where the user| - System Config path: **Site Configuration > Localization**     |
-|hasn't logged in.                                                | - This feature's ``config.json`` setting is                     |
-|                                                                 |``"DefaultClientLocale": "en"`` with options ``"bg"``, ``"de"``, |
-|                                                                 |``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``,     |
-|                                                                 |``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``,   |
-|                                                                 |``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and |
-|                                                                 |``"zh_TW"``.                                                     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
+|Default language for newly-created users and pages where the user| - System Config path: **Site Configuration > Localization**               |
+|hasn't logged in.                                                | - ``config.json`` setting: ``.LocalizationSettings.DefaultClientLocale``  |
+|                                                                 |                                                                           |
+|Options: ``"bg"``, ``"de"``,                                     |                                                                           |
+| ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``,    |                                                                           |
+| ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``,  |                                                                           |
+| ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and|                                                                           |
+|``"zh_TW"``. Default: ``en``.                                    |                                                                           |
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
 
 Available languages
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Sets which languages are available for users in **Settings >     |  - System Config path: **Site Configuration > Localization**    |
-|Display > Language**. Leave the field blank to add new languages | - This feature's ``config.json`` setting is                     |
-|automatically by default, or add new languages using the dropdown|``"AvailableLocales": ""`` with options ``""``, ``"bg"``,        |
-|menu manually as they become available. If you're manually adding|``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``,     |
-|new languages, the **Default Client Language** must be added     |``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,      |
-|before saving the setting.                                       |``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``,     |
-|                                                                 |``"zh_CN"``, and ``"zh_TW"``.                                    |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|  **Note**: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.           |
-+-----------------------------------------------------------------------------------------------------------------------------------+
-																			  
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
+|Sets which languages are available for users in **Settings >     |  - System Config path: **Site Configuration > Localization**              |
+|Display > Language**. Leave the field blank to add new languages | - ``config.json`` setting: ```.LocalizationSettings.AvailableLocales``    |
+|automatically by default, or add new languages using the dropdown|                                                                           |
+|menu manually as they become available. If you're manually adding|                                                                           |
+|new languages, the **Default Client Language** must be added     |                                                                           |
+|before saving the setting.                                       |                                                                           |
+|                                                                 |                                                                           |
+|Options: ``""``, ``"bg"``, ``"de"``, ``"en"``, ``en-AU``,        |                                                                           |
+|``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``,      |                                                                           |
+|``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``,   |                                                                           |
+|``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. Default|                                                                           |
+|is ``""``.                                                       |                                                                           |
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
+|  **Note**: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.                     |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+																       	       		  
 ----
 
 Users and teams
@@ -310,8 +307,8 @@ Max users per team
 
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------+
 |The **Max Users Per Team** refers to the size of the "team site" which is    | - System Config path: **Site Configuration > Users and Teams**  |
-|workspace a "team of people" inhabits. A team of people is considered a small| - This feature's ``config.json`` setting is ``"MaxUsersPerTeam":|
-|organization where people work closely together towards a specific shared    |50`` with numerical input.                                       |
+|workspace a "team of people" inhabits. A team of people is considered a small| - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``|
+|organization where people work closely together towards a specific shared    |                                                                 |
 |goal and share the same etiquette. In the physical world, a team of people   |                                                                 |
 |could typically be seated around a single table to have a meal and discuss   |                                                                 |
 |their project.                                                               |                                                                 |
@@ -329,61 +326,63 @@ Max users per team
 |<https://docs.mattermost.com/install/software-hardware-requirements.html>`__,|                                                                 |
 |and provided the administrator believes the appropriate etiquette is in      |                                                                 |
 |place, they should feel free to increase the default value.                  |                                                                 |
+|                                                                             |                                                                 |
+|Number input.                                                                |                                                                 |
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 
 Max channels per team
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Maximum number of channels per team, including both active and   | - System Config path: **Site Configuration > Users and Teams**  |
-|deleted channels.                                                | - This feature's ``config.json`` setting is                     |
-|                                                                 |``"MaxChannelsPerTeam": 2000`` with numerical input.             |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
+|Maximum number of channels per team, including both active and   | - System Config path: **Site Configuration > Users and Teams**        |
+|deleted channels.                                                | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
+|                                                                 |                                                                       |
+|Number input.                                                    |                                                                       |
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Enable users to open direct message channels with
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**Any user on the Mattermost server**: The Direct Messages       | - System Config path: **Site Configuration > Users and Teams**  |
-|**More** menu has the option to open a Direct Message channel    | - This feature's ``config.json`` setting is                     |
-|with any user on the server.                                     |``"RestrictDirectMessage": "any"`` with options ``"any"`` and    |
-|                                                                 |``"team"`` for the above settings, respectively.                 |
-|**Any member of the team**: The Direct Messages **More** menu    |                                                                 |
-|only has the option to open a Direct Message channel with users  |                                                                 |
-|on the current team, and pressing :kbd:`Ctrl` :kbd:`K` on Windows|                                                                 |
-|or Linux, or :kbd:`⌘` :kbd:`K` on Mac only lists users on the    |                                                                 |
-|current team. If a user belongs to multiple teams, direct        |                                                                 |
-|messages will still be received regardless of what team they are |                                                                 |
-|currently on.                                                    |                                                                 |
-|                                                                 |                                                                 |
-|This setting only affects the UI, not permissions on the         |                                                                 |
-|server. For instance, a direct message channel can be created    |                                                                 |
-|with anyone on the server regardless of this setting.            |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
+|**Any user on the Mattermost server**: The Direct Messages       | - System Config path: **Site Configuration > Users and Teams**        |
+|**More** menu has the option to open a Direct Message channel    | - ``config.json`` setting: ``.TeamSettings.RestrictDirectMessage``    |
+|with any user on the server.                                     |with options ``"any"`` and ``"team"`` for the above settings,          |
+|                                                                 |respectively.                                                          |
+|**Any member of the team**: The Direct Messages **More** menu    |                                                                       |
+|only has the option to open a Direct Message channel with users  |                                                                       |
+|on the current team, and pressing :kbd:`Ctrl` :kbd:`K` on Windows|                                                                       |
+|or Linux, or :kbd:`⌘` :kbd:`K` on Mac only lists users on the    |                                                                       |
+|current team. If a user belongs to multiple teams, direct        |                                                                       |
+|messages will still be received regardless of what team they are |                                                                       |
+|currently on.                                                    |                                                                       |
+|                                                                 |                                                                       |
+|This setting only affects the UI, not permissions on the         |                                                                       |
+|server. For instance, a direct message channel can be created    |                                                                       |
+|with anyone on the server regardless of this setting.            |                                                                       |
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Specifies how names are displayed in the user interface by       |  - System Config path: **Site Configuration > Users and Teams** |
-|default. Please note that users can override this setting in     | - This feature's ``config.json`` setting is                     |
-|**Settings > Display > Teammate Name Display**.                  |``"TeammateNameDisplay": "username"`` with options               |
-|                                                                 |``"username"``, ``"nickname_full_name"``, and ``"full_name"`` for|
-|**Show username**: Displays the user's username.                 |the above settings, respectively.                                |
-|                                                                 |                                                                 |
-|**Show nickname if one exists**: Displays the user's nickname. If|                                                                 |
-|the user does not have a nickname, their full name is            |                                                                 |
-|displayed. If the user does not have a full name, their username |                                                                 |
-|is displayed.                                                    |                                                                 |
-|                                                                 |                                                                 |
-|**Show first and last name**: Displays the user's full name. If  |                                                                 |
-|the user does not have a full name, their username is            |                                                                 |
-|displayed. Recommended when using SAML or LDAP if first name and |                                                                 |
-|last name attributes are configured.                             |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
+|Specifies how names are displayed in the user interface by       |  - System Config path: **Site Configuration > Users and Teams**       |
+|default. Please note that users can override this setting in     | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay`` with |
+|**Settings > Display > Teammate Name Display**.                  |options ``"username"``, ``"nickname_full_name"``, and ``"full_name"``  |
+|                                                                 |for the above settings, respectively.                                  |
+|**Show username**: Displays the user's username.                 |                                                                       |
+|                                                                 |                                                                       |
+|**Show nickname if one exists**: Displays the user's nickname. If|                                                                       |
+|the user does not have a nickname, their full name is            |                                                                       |
+|displayed. If the user does not have a full name, their username |                                                                       |
+|is displayed.                                                    |                                                                       |
+|                                                                 |                                                                       |
+|**Show first and last name**: Displays the user's full name. If  |                                                                       |
+|the user does not have a full name, their username is            |                                                                       |
+|displayed. Recommended when using SAML or LDAP if first name and |                                                                       |
+|last name attributes are configured.                             |                                                                       |
+|                                                                 |                                                                       |
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
 
 
 Lock teammate name display for all users
@@ -393,7 +392,7 @@ Lock teammate name display for all users
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
-| **True**: Disables users' ability to change settings under      | - System Config path: **Site Configuration > Users and Teams**  |
+| **True**: Disables users' ability to change settings under      |- System Config path: **Site Configuration > Users and Teams**   |
 |**Settings > Display > Teammate Name Display**.                  |                                                                 |
 |                                                                 |                                                                 |
 |**False**: Users can change how their teammate name displays.    |                                                                 |
@@ -404,9 +403,9 @@ Allow users to view archived channels
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 |**True**: Allows users to view, share, and search for content of | - System Config path: **Site Configuration > Users and Teams**  |
-|channels that have been archived. Users can only view the content| - This feature's ``config.json`` setting is                     |
-|in channels of which they were a member before the channel was   |``"ExperimentalViewArchivedChannels": true`` with options        |
-|archived.                                                        |``true`` and ``false``.                                          |
+|channels that have been archived. Users can only view the content| - ``config.json`` setting:                                      |
+|in channels of which they were a member before the channel was   |``.TeamSettings.ExperimentalViewArchivedChannels: true`` with    |
+|archived.                                                        |options ``true`` and ``false``.                                  |
 |                                                                 |                                                                 |
 |**False**: Users are unable to view, share, or search for content|                                                                 |
 |of channels that have been archived.                             |                                                                 |
@@ -418,8 +417,8 @@ Show email address
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 |**True**: Show email address of all users.                       | - System Config path: **Site Configuration > Users and Teams**  |
-|                                                                 | - This feature's ``config.json`` setting is                     |
-|**False**: Hide email address of users from other users in the   |``"ShowEmailAddress": true`` with options ``true`` and ``false``.|
+|                                                                 | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: |
+|**False**: Hide email address of users from other users in the   |true`` with options ``true`` and ``false``.                      |
 |user interface, including Team Admins. This is designed for      |                                                                 |
 |managing teams where users choose to keep their contact          |                                                                 |
 |information private. System Admins will still be able to see     |                                                                 |
@@ -432,7 +431,7 @@ Show full name
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 |**True**: Show full name of all users.                           | - System Config path: **Site Configuration > Users and Teams**  |
-|                                                                 | - This feature's ``config.json`` setting is ``"ShowFullName":   |
+|                                                                 | - ``config.json`` setting: ``.PrivacySettings.ShowFullName:     |
 |**False**: Hide full name of users from other users including    |true`` with options ``true`` and ``false``.                      |
 |Team Admins. This is designed for managing teams where users     |                                                                 |
 |choose to keep their contact information private. System Admins  |                                                                 |
@@ -443,13 +442,13 @@ Show full name
 Enable custom user statuses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Users can set descriptive status messages and optional | - System Config path: **Site Configuration > Users and Teams**  |
-|status emojis that are visible to all users.                     | - This feature's ``config.json`` setting is                     |
-|                                                                 |``"EnableCustomUserStatuses": true`` with options ``true`` and   |
-|**False**: Users are unable to set custom user statuses.         |``false``.                                                       |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
+|**True**: Users can set descriptive status messages and optional | - System Config path: **Site Configuration > Users and Teams**        |
+|status emojis that are visible to all users.                     | - ``config.json`` setting: ``.TeamSettings.EnableCustomUserStatuses:  |
+|                                                                 |true`` with options ``true`` and ``false``.                            |
+|**False**: Users are unable to set custom user statuses.         |                                                                       |
+|                                                                 |                                                                       |
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
 
 ----
 
@@ -464,139 +463,129 @@ Access the following configuration settings in the System Console by going to **
 Show @channel, @all, or @here confirmation dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Users will be prompted to confirm when posting         | - System Config path: **Site Configuration > Notifications**    |
-|@channel, @all, or @here in channels with over five members.     |This feature's ``config.json`` setting is                        |
-|                                                                 |``"EnableConfirmNotificationsToChannel": true`` with options     |
-|**False**: No confirmation is required.                          |``true`` and ``false``.                                          |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+|**True**: Users will be prompted to confirm when posting         | - System Config path: **Site Configuration > Notifications** -                          |
+|@channel, @all, or @here in channels with over five members.     | - ``config.json`` setting is ``.TeamSettings.EnableConfirmNotificationsToChannel: true``|
+|                                                                 |with options ``true`` and ``false``.                                                     |
+|**False**: No confirmation is required.                          |                                                                                         |
+|                                                                 |                                                                                         |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 Enable email notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Enables sending of email notifications.                | - System Config path: **Site Configuration > Notifications**    |
-|                                                                 |This                                                             |
-|**False**: Disables email notifications for posts. This is useful|feature's ``config.json`` setting is ``"SendEmailNotifications": |
-|for developers who may want to skip email setup for faster       |false`` with options ``true`` and ``false``.                     |
-|development. In order to remove the **Preview Mode: Email        |                                                                 |
-|notifications have not been configured** banner, you should also |                                                                 |
-|set **Enable Preview Mode Banner** to ``false``.                 |                                                                 |
-|                                                                 |                                                                 |
-|If this setting is set to ``false`` and the SMTP server is set   |                                                                 |
-|up, account related emails (such as password, email, username,   |                                                                 |
-|user token, MFA, and other authentication related changes) will  |                                                                 |
-|be sent regardless of this setting.                              |                                                                 |
-|                                                                 |                                                                 |
-|Email invitations and account deactivation emails are not        |                                                                 |
-|affected by this setting.                                        |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+|**True**: Enables sending of email notifications.                                         | - System Config path: **Site Configuration > Notifications**                            |
+|                                                                                          |                                                                                         |
+|**False**: Disables email notifications for posts. This is useful for developers who may  |                                                                                         |
+|want to skip email setup for faster development. In order to remove the **Preview Mode:   |- ``config.json`` setting:``.EmailSettings.SendEmailNotifications: false`` with options  |
+|Email notifications have not been configured** banner, you should also set **Enable       |``true`` and ``false``.                                                                  |
+|Preview Mode Banner** to ``false``.                                                       |                                                                                         |
+|                                                                                          |                                                                                         |
+|If this setting is set to ``false`` and the SMTP server is set up, account related emails |                                                                                         |
+|(such as password, email, username, user token, MFA, and other authentication related     |                                                                                         |
+|changes) will be sent regardless of this setting.                                         |                                                                                         |
+|                                                                                          |                                                                                         |
+|Email invitations and account deactivation emails are not affected by this setting.       |                                                                                         |
+|                                                                                          |                                                                                         |
+|                                                                                          |                                                                                         |
+|                                                                                          |                                                                                         |
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. _email-preview-mode-banner-config:
 
 Enable preview mode banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|                                                                 | - System Config path: **Site Configuration > Notifications**    |
-|**True**: Preview Mode banner is displayed to all users when     |This                                                             |
-|``"SendEmailNotifications": false`` so users are aware that email|feature's ``config.json`` setting is ``"EnablePreviewModeBanner":|
-|notifications are disabled.                                      |true`` with options ``true`` and ``false``.                      |
-|                                                                 |                                                                 |
-|**False**: Preview Mode banner is not displayed to users.        |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+|                                                                                          | - System Config path: **Site Configuration > Notifications**                             |
+|                                                                                          |                                                                                          |
+|**True**: Preview Mode banner is displayed to all users when ``"SendEmailNotifications":  |- ``config.json`` setting: ``.EmailSettings.EnablePreviewModeBanner: true`` with options  |
+|false`` so users are aware that email notifications are disabled.                         |``true`` and ``false``.                                                                   |
+|                                                                                          |                                                                                          |
+|**False**: Preview Mode banner is not displayed to users.                                 |                                                                                          |
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 Enable email batching
 ~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Users can select how often to receive email notifications, and multiple notifications     | - System Config path: **Site Configuration > Notifications**    |
-|within that timeframe will be combined into a single email. Batching will occur at a default        |                                                                 |
-|interval of 15 minutes, configurable in **Settings > Notifications**.                               |                                                                 |
-|                                                                                                    |                                                                 |
-|.. note::                                                                                           |                                                                 |
-|  - Email batching cannot be enabled unless the `SiteURL                                            |                                                                 |
-|<https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and   |                                                                 |
-|the `SMTP Email Server                                                                              |                                                                 |
-|<https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ is         |                                                                 |
-|configured.                                                                                         |                                                                 |
-|  - Email batching in `High Availability mode                                                       |                                                                 |
-|<https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode>`__|                                                                 |
-|is planned but not yet supported.                                                                   |                                                                 |
-|                                                                                                    |                                                                 |
-|**False**: If email notifications are enabled in **Settings**, emails will be sent individually for |                                                                 |
-|every mention or direct message received.                                                           |                                                                 |
-+----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableEmailBatching": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+|**True**: Users can select how often to receive email notifications, and multiple notifications     | - System Config path: **Site Configuration > Notifications**                    |
+|within that timeframe will be combined into a single email. Batching will occur at a default        |                                                                                 |
+|interval of 15 minutes, configurable in **Settings > Notifications**.                               |                                                                                 |
+|                                                                                                    | - ``config.json`` setting is ``.EmailSettings.EnableEmailBatching: false`` with |
+|.. note::                                                                                           |options ``true`` and ``false``.                                                  |
+|  - Email batching cannot be enabled unless the `SiteURL                                            |                                                                                 |
+|<https://docs.mattermost.com/configure/configuration-settings.html#site-url>`__ is configured and   |                                                                                 |
+|the `SMTP Email Server                                                                              |                                                                                 |
+|<https://docs.mattermost.com/configure/configuration-settings.html#smtp-email-server>`__ is         |                                                                                 |
+|configured.                                                                                         |                                                                                 |
+|  - Email batching in `High Availability mode                                                       |                                                                                 |
+|<https://docs.mattermost.com/configure/configuration-settings.html#enable-high-availability-mode>`__|                                                                                 |
+|is planned but not yet supported.                                                                   |                                                                                 |
+|                                                                                                    |                                                                                 |
+|**False**: If email notifications are enabled in **Settings**, emails will be sent individually for |                                                                                 |
+|every mention or direct message received.                                                           |                                                                                 |
++----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Email notification contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**Send full message contents**: Sender name and channel are      | - System Config path: **Site Configuration > Notifications**    |
-|included in email notifications.                                 |This feature's ``config.json`` setting is                        |
-|                                                                 |``"EmailNotificationContentsType": "full"`` with options         |
-|**Send generic description with only sender name**: The team name|``"full"`` and ``"generic"`` for the above settings,             |
-|and name of the person who sent the message, with no information |respectively.                                                    |
-|about channel name or message contents, is included in email     |                                                                 |
-|notifications. Typically used for compliance reasons if          |                                                                 |
-|Mattermost contains confidential information and policy dictates |                                                                 |
-|it cannot be stored in email.                                    |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+|**Send full message contents**: Sender name and channel are included in email notifications.  | - System Config path: **Site Configuration > Notifications**                               |
+|                                                                                              |                                                                                            |
+|**Send generic description with only sender name**: The team name and name of the person who  |- ``config.json`` setting: ``.EmailSettings.EmailNotificationContentsType: "full"`` with    |
+|sent the message, with no information about channel name or message contents, is included in  |options ``"full"`` and ``"generic"`` for the above settings, respectively.                  |
+|email notifications. Typically used for compliance reasons if Mattermost contains confidential|                                                                                            |
+|information and policy dictates it cannot be stored in email.                                 |                                                                                            |
+|                                                                                              |                                                                                            |
+|                                                                                              |                                                                                            |
+|                                                                                              |                                                                                            |
++----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 
 
 Support email address
 ~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Set an email address for feedback or support requests. This field|- System Config path: **Site Configuration > Notifications**     |
-|is required, and if a value isn't set, email notifications don't | This                                                            |
-|include a way for users to request assistance.                   |feature's ``config.json`` setting is ``"SupportEmail": ""`` with |
-|                                                                 |string input.                                                    |
-|To ensure that users can contact you for assistance, set this    |                                                                 |
-|value to an email address your System Admin receives, such as    |                                                                 |
-|``"support@yourcompany.com"``. This address is displayed on email|                                                                 |
-|notifications and during the Getting Started tutorial.           |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+|Set an email address for feedback or support requests. This field|- System Config path: **Site Configuration > Notifications**                                  |
+|is required, and if a value isn't set, email notifications don't |                                                                                              |
+|include a way for users to request assistance.                   |                                                                                              |
+|                                                                 |- ``config.json`` setting: ``.SupportSettings.SupportEmail`` with string input.               |
+|To ensure that users can contact you for assistance, set this    |                                                                                              |
+|value to an email address your System Admin receives, such as    |                                                                                              |
+|``"support@yourcompany.com"``. This address is displayed on email|                                                                                              |
+|notifications and during the Getting Started tutorial.           |                                                                                              |
++-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Notification display name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Name displayed on email account used when sending notification   |- System Config path: **Site Configuration > Notifications**     |
-|emails from Mattermost system. This field is required, and if a  | This                                                            |
-|value isn't set, email notifications don't include a way for     |feature's ``config.json`` setting is ``"FeedbackName": ""`` with |
-|users to request assistance.                                     |string input.                                                    |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+|Name displayed on email account used when sending notification   |- System Config path: **Site Configuration > Notifications**                                                            |
+|emails from Mattermost system. This field is required, and if a  | - ``config.json`` setting is ``.EmailSettings.FeedbackName: ""`` with string input.                                    |
+|value isn't set, email notifications don't include a way for     |                                                                                                                        |
+|users to request assistance.                                     |                                                                                                                        |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Notification from address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 |Address displayed on email account used when sending notification|- System Config path: **Site Configuration > Notifications**     |
-|emails from within Mattermost. This field is required, and if a  |                                                                 |
+|emails from within Mattermost. This field is required, and if a  | - ``config.json`` setting: ``.EmailSettings.FeedbackEmail``     |
 |value isn't set, email notifications don't include a way for     |                                                                 |
 |users to request assistance.                                     |                                                                 |
 |                                                                 |                                                                 |
 |So you don't miss messages, please make sure to change this value|                                                                 |
 |to an email your system administrator receives, such as          |                                                                 |
 |``"admin@yourcompany.com"``.                                     |                                                                 |
+|                                                                 |                                                                 |
+|String input                                                     |                                                                 |
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
-
-
-
-+--------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FeedbackEmail": ""`` with string input. |
-+--------------------------------------------------------------------------------------+
 
 Notification reply-to address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -604,56 +593,51 @@ Notification reply-to address
 +------------------------------------------------------------------+----------------------------------------------------------------+
 |Email address used in the Reply-To header when sending            |- System Config path: **Site Configuration > Notifications**    |
 |notification emails from Mattermost.                              |                                                                |
-|                                                                  |                                                                |
-|                                                                  |                                                                |
+|                                                                  |  - ``config.json`` setting: ``.EmailSettings.ReplyToAddress``  |
+|String input.                                                     |                                                                |
 +------------------------------------------------------------------+----------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
 
 Notification footer mailing address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Organization name and mailing address displayed in the footer of |- System Config path: **Site Configuration > Notifications**     |
-|email notifications from Mattermost, such as "© ABC Corporation, | This                                                            |
-|565 Knight Way, Palo Alto, California, 94305, USA". If the field |feature's ``config.json`` setting is ``"FeedbackOrganization":   |
-|is left empty, the organization name and mailing address will not|""`` with string input.                                          |
-|be displayed.                                                    |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+
+|Organization name and mailing address displayed in the footer of email |- System Config path: **Site Configuration > Notifications**           |
+|notifications from Mattermost, such as "© ABC Corporation, 565 Knight  |  - ``config.json`` setting: ``.EmailSettings.FeedbackOrganization``   |
+|Way, Palo Alto, California, 94305, USA". If the field is left empty,   |with string input.                                                     |
+|the organization name and mailing address will not be displayed.       |                                                                       |
+|                                                                       |                                                                       |
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 
 Push notification contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-|**Generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message|- System Config path: **Site Configuration > Notifications**     |
-|text.                                                                                                                                                                      | This                                                            |
-|                                                                                                                                                                           |feature's ``config.json`` setting is                             |
-|**Generic description with sender and channel names**: Push notifications include names of users and channels but no specific details from the message text.               |``"PushNotificationContents": "full"`` with options              |
-|                                                                                                                                                                           |``"generic_no_channel"``, ``"generic"``, ``"full"``, and         |
-|**Full message content sent in the notification payload**: Selecting **Send full message snippet** sends excerpts from messages triggering notifications with specifics and|``"id_loaded"`` for the above settings, respectively.            |
-|may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with  |                                                                 |
-|an "https" protocol to encrypt the connection.                                                                                                                             |                                                                 |
-|                                                                                                                                                                           |                                                                 |
-|**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification  |                                                                 |
-|service                                                                                                                                                                    |                                                                 |
-|<https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__|                                                                 |
-|or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service contains no message content. Instead it contains a unique message ID used to    |                                                                 |
-|fetch message content from the server when a push notification is received by a device via a `notification service app extension                                           |                                                                 |
-|<https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`__ on iOS or `an expandable notification pattern          |                                                                 |
-|<https://developer.android.com/training/notify-user/expanded>`__ on Android. If the server cannot be reached, a generic push notification message is displayed without     |                                                                 |
-|message content or sender name.                                                                                                                                            |                                                                 |
-|                                                                                                                                                                           |                                                                 |
-|For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dynamics, MobileIron, AirWatch or other solutions, the        |                                                                 |
-|container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the      |                                                                 |
-|fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push          |                                                                 |
-|Notification service                                                                                                                                                       |                                                                 |
-|<https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__|                                                                 |
-|or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service.                                                                                |                                                                 |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+|**Generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message|- System Config path: **Site Configuration > Notifications**                           |
+|text.                                                                                                                                                                      | - ``config.json`` setting: ``.EmailSettings.PushNotificationContents`` with options   |
+|                                                                                                                                                                           |``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above | 
+|**Generic description with sender and channel names**: Push notifications include names of users and channels but no specific details from the message text.               |settings, respectively.                                                                |
+|                                                                                                                                                                           |                                                                                       |
+|**Full message content sent in the notification payload**: Selecting **Send full message snippet** sends excerpts from messages triggering notifications with specifics and|                                                                                       |
+|may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with  |                                                                                       |
+|an "https" protocol to encrypt the connection.                                                                                                                             |                                                                                       |
+|                                                                                                                                                                           |                                                                                       |
+|**Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload relayed through the `Apple Push Notification  |                                                                                       |
+|service                                                                                                                                                                    |                                                                                       |
+|<https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__|                                                                                       |
+|or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service contains no message content. Instead it contains a unique message ID used to    |                                                                                       |
+|fetch message content from the server when a push notification is received by a device via a `notification service app extension                                           |                                                                                       |
+|<https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications>`__ on iOS or `an expandable notification pattern          |                                                                                       |
+|<https://developer.android.com/training/notify-user/expanded>`__ on Android. If the server cannot be reached, a generic push notification message is displayed without     |                                                                                       |
+|message content or sender name.                                                                                                                                            |                                                                                       |
+|                                                                                                                                                                           |                                                                                       |
+|For customers who choose to wrap the Mattermost mobile application in a secure container, such as BlackBerry Dynamics, MobileIron, AirWatch or other solutions, the        |                                                                                       |
+|container needs to execute the fetching of message contents from the unique message ID when push notification are received. If the container is unable to execute the      |                                                                                       |
+|fetch, the push notification contents cannot be received by the customer's mobile application without passing the message contents through either the `Apple Push          |                                                                                       |
+|Notification service                                                                                                                                                       |                                                                                       |
+|<https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`__|                                                                                       |
+|or `Firebase Cloud Messaging <https://firebase.google.com/docs/cloud-messaging>`__ service.                                                                                |                                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 ----
 
@@ -671,8 +655,8 @@ Enable announcement banner
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 |Enable an announcement banner across all teams. The banner is    |- System Config path: **Site Configuration > Announcement        |
 |displayed at the top of the screen and is the entire width of the|Banner**                                                         |
-|screen. By default, users can dismiss the banner until you either|This feature's ``config.json`` setting is                        |
-|change the text of the banner or until you re-enable the banner  |``"EnableBanner": false`` with options ``true`` and ``false``.   |
+|screen. By default, users can dismiss the banner until you either| - ``config.json`` setting: ``"EnableBanner": false`` with       |
+|change the text of the banner or until you re-enable the banner  |options ``true`` and ``false``.                                  |
 |after it has been disabled. You can prevent users from dismissing|                                                                 |
 |the banner, and you can control the text color and the background|                                                                 |
 |color.                                                           |                                                                 |
@@ -742,9 +726,9 @@ Enable emoji picker
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 |**True**: Enables an emoji picker that allows users to select    | - System Config path: **Site Configuration > Emoji**            |
-|emojis to add as reactions or use in messages. Enabling the emoji| This feature's ``config.json`` setting is ``"EnableEmojiPicker":|
-|picker with a large number of custom emojis may slow down        |true`` with options ``true`` and ``false``.                      |
-|performance.                                                     |                                                                 |
+|emojis to add as reactions or use in messages. Enabling the emoji| - ``config.json`` setting:                                      |
+|picker with a large number of custom emojis may slow down        |``.ServiceSettings.EnableEmojiPicker`` with options ``true`` and |
+|performance.                                                     |``falt                                                           |
 |                                                                 |                                                                 |
 |**False**: The emoji picker is disabled.                         |                                                                 |
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
@@ -759,9 +743,9 @@ Enable custom emoji
 
 +----------------------------------------------------------------+------------------------------------------------------------------+
 |**True**: Enables a **Custom Emoji** option in the emoji picker,| - System Config path: **Site Configuration > Emoji**             |
-|where users can go to add custom emojis.                        |This                                                              |
-|                                                                |feature's ``config.json`` setting is ``"EnableCustomEmoji": true``|
-|**False**: Custom emojis are disabled.                          |with options ``true`` and ``false``.                              |
+|where users can go to add custom emojis.                        | - ``config.json`` setting:``.ServiceSettings.EnableCustomEmoji`` |
+|                                                                |with options ``true`` and ``false``.                              |
+|**False**: Custom emojis are disabled.                          |                                                                  |
 |                                                                |                                                                  |
 +----------------------------------------------------------------+------------------------------------------------------------------+
 
@@ -783,9 +767,9 @@ Automatically follow threads
 
 +--------------------------------------------------------------------------+-----------------------------------------------------------------+
 |This setting must be enabled to support `Collapsed Reply Threads          |  - System Config path: **Site Configuration > Posts**           |
-|<https://docs.mattermost.com/channels/organize-conversations.html>`__. See| This feature's ``config.json`` setting is ``"ThreadAutoFollow": |
-|the `administrator’s guide to enabling Collapsed Reply Threads            |true`` with options ``true`` and ``false``.                      |
-|<https://support.mattermost.com/hc/en-us/articles/6880701948564>`__       |                                                                 |
+|<https://docs.mattermost.com/channels/organize-conversations.html>`__. See| - ``config.json`` setting is                                    |
+|the `administrator’s guide to enabling Collapsed Reply Threads            |``.ServiceSettings.ThreadAutoFollow: true`` with options ``true``|
+|<https://support.mattermost.com/hc/en-us/articles/6880701948564>`__       | and ``false``.                                                  |
 |knowledge base article for details.                                       |                                                                 |
 |                                                                          |                                                                 |
 |**True**: Threads a user starts, participates in, or is mentioned in are  |                                                                 |
@@ -815,10 +799,10 @@ Collapsed reply threads
 
 +---------------------------------------------------------------------+-----------------------------------------------------------------+
 |Collapsed Reply Threads offers an enhanced experience for users      | - System Config path: **Site Configuration > Posts**            |
-|communicating in threads and replying to messages. Collapsed Reply   | This                                                            |
-|Threads is generally available in Mattermost Cloud and from          |feature's ``config.json`` setting is ``"CollapsedThreads":       |
-|self-hosted Mattermost v7.0, and is enabled by default for all new   |always_on`` with options ``disabled``, ``default_off``,          |
-|Mattermost deployments. See our `Organizing Conversations using      |``default_on``, and ``always_on``                                |
+|communicating in threads and replying to messages. Collapsed Reply   | This feature's ``config.json`` setting is                       |
+|Threads is generally available in Mattermost Cloud and from          |``.ServiceSettings.CollapsedThread: always_on`` with options     |
+|self-hosted Mattermost v7.0, and is enabled by default for all new   |``disabled``, ``default_off``, ``default_on``, and ``always_on`` |
+|Mattermost deployments. See our `Organizing Conversations using      |                                                                 |
 |Collapsed Reply Threads                                              |                                                                 |
 |<https://docs.mattermost.com/channels/organize-conversations.html>`__|                                                                 |
 |documentation to learn more about this feature.                      |                                                                 |
@@ -845,7 +829,7 @@ Enable link previews
 +-----------------------------------------------------------------+-----------------------------------------------------------------+
 |Link previews are previews of linked website content, image      |  - System Config path: **Site Configuration > Posts**           |
 |links, and YouTube videos that are displayed below posts when    |This                                                             |
-|available.                                                       |feature's ``config.json`` setting is ``"EnableLinkPreviews":     |
+|available.                                                       |feature's ``config.json`` setting is `":     		    
 |                                                                 |true`` with options ``true`` and ``false``.                      |
 |Link previews are requested by the server, meaning the Mattermost|                                                                 |
 |server must be connected to the internet for previews to be      |                                                                 |
