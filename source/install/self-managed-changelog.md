@@ -35,6 +35,7 @@ Latest Mattermost Releases:
 ### Improvements
 
 #### User Interface (UI)
+ - Renamed "Starter" plan to "Free" plan in product.
  - A confirmation modal is now displayed before a user marks all threads as read.
  - Added the ability to hide the “required” asterisk in the App Field.
  - Added a fading effect to the Apps Modal body while an Apps Modal is refreshing.
