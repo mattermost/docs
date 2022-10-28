@@ -3,3 +3,7 @@ p button.copybtn {
    display : unset;
    margin-left : 0.3em;
 }
+
+p button.copybtn:hover {
+   opacity : 1;
+}
