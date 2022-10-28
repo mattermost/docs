@@ -40,7 +40,8 @@ extensions = [
     # https://pypi.org/project/sphinx-sitemap/
     "sitemap",
     "sphinx_tabs.tabs",
-    "sphinx_copybutton"
+    "sphinx_copybutton",
+    "compass-icons"
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -2413,7 +2414,7 @@ html_static_path = ["_static"]
 # A list of CSS files. The entry must be a filename string or a tuple containing the filename string and the attributes
 # dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
 # https://example.org/style.css. The attributes is used for attributes of <link> tag. It defaults to an empty list.
-html_css_files = ["mytheme.css"]
+html_css_files = ["mytheme.css", "css/compass-icons.css"]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
 # attributes dictionary. The filename must be relative to the html_static_path, or a full URI with scheme like
@@ -2506,6 +2507,10 @@ linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
 
 # Variables
+# rst_prolog = """
+# .. |plans-image| image:: ../_static/images/badges/flag_icon.svg
+# .. |deployment-image| image:: ../_static/images/badges/deployment_icon.svg
+# """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
 # .. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/
