@@ -15,6 +15,12 @@ Latest Mattermost Releases:
 
 **v7.5.0 release day: 2022-11-16**
 
+### Important Upgrade Notes
+
+ - Adds a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.4, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+
 ### Compatibility
  - Updated the minimum version of Chrome to v106+ and the minimum version of Edge to 95+.
 
