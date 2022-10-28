@@ -51,6 +51,7 @@ Latest Mattermost Releases:
  - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by selecting “Notify admin to update billing”.
  - Added markdown formatting for hyperlinks when pasted into the text editor.
  - Email notifications from new messages now also support displaying Slack attachments from the channel post.
+ - Updated NPS plugin to version 1.3.0.
 
 #### Administration
  - After 90 days since the day of missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
