@@ -158,12 +158,12 @@ About link
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-|| The URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages. If this field is empty the link does not appear. || - System Config path: **Site Configuration > Customization** |
-||                                                                                                                                                                                                             || - ``config.json`` setting: ``.SupportSettings.AboutLink``    |
-|| String input. Default is ``https://about.mattermost.com/default-about/``.                                                                                                                                   || - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``     |
-||                                                                                                                                                                                                             ||                                                              |
-||                                                                                                                                                                                                             ||                                                              |
-||                                                                                                                                                                                                             ||                                                              |
+| The URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages. If this field is empty the link does not appear.  | - System Config path: **Site Configuration > Customization**  |
+|                                                                                                                                                                                                              | - ``config.json`` setting: ``.SupportSettings.AboutLink``     | 
+| String input. Default is ``https://about.mattermost.com/default-about/``.                                                                                                                                    | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``      |
+|                                                                                                                                                                                                              |                                                               |
+|                                                                                                                                                                                                              |                                                               |
+|                                                                                                                                                                                                              |                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 Report a Problem link
@@ -172,13 +172,13 @@ Report a Problem link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-|| The URL for the Report a Problem link in the **Help** menu. If this field is empty the link does not appear. || - System Config path: **Site Configuration > Customization**       |
-||                                                                                                              || - ``config.json`` setting: ``.SupportSettings.ReportAProblemLink`` |
-|| String input. Default: ``https://about.mattermost.com/default-report-a-problem``.                            || - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``  |
-||                                                                                                              ||                                                                    |
-||                                                                                                              ||                                                                    |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| The URL for the Report a Problem link in the **Help** menu. If this field is empty the link does not appear.  | - System Config path: **Site Configuration > Customization**       |
+|                                                                                                               | - ``config.json`` setting: ``.SupportSettings.ReportAProblemLink`` |
+| String input. Default: ``https://about.mattermost.com/default-report-a-problem``.                             | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``  |
+|                                                                                                               |                                                                    |
+|                                                                                                               |                                                                    |
++---------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,14 +221,14 @@ iOS app download link
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-|| The URL to download the Mattermost iOS app. Users who access the site on a || - System Config path: **Site Configuration > Customization**         |
-|| mobile browser will be prompted to download the app through this link. If  || - ``config.json`` setting: ``.NativeAppSettings.IosAppDownloadLink`` |
-|| this field is empty, the prompt does not appear.                           || - Environment variable: ``MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK``  |
-||                                                                            ||                                                                      |
-|| If you use an Enterprise App Store, change this link to point to the       ||                                                                      |
-|| correct app.                                                               ||                                                                      |
-||                                                                            ||                                                                      |
-|| String input. Default is https://about.mattermost.com/mattermost-ios-app/. ||                                                                      |
+| The URL to download the Mattermost iOS app. Users who access the site on a  |- System Config path: **Site Configuration > Customization**           |
+| mobile browser will be prompted to download the app through this link. If   |- ``config.json`` setting: ``.NativeAppSettings.IosAppDownloadLink``   |
+| this field is empty, the prompt does not appear.                            |- Environment variable: ``MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK``    |
+|                                                                             |                                                                       |
+| If you use an Enterprise App Store, change this link to point to the        |                                                                       |
+| correct app.                                                                |                                                                       |
+|                                                                             |                                                                       |
+| String input. Default is https://about.mattermost.com/mattermost-ios-app/.  |                                                                       |
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 ----
@@ -244,53 +244,37 @@ Access the following configuration settings in the System Console by going to **
 Default server language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+----------------------------------------------------------------------------+
-| Default language for system messages and logs.                 | - System Config path: **Site Configuration > Localization**                |
-|                                                                | - ``config.json`` setting: ``.LocalizationSettings.DefaultServerLocale``   |
-| Changes to this setting require a server restart before taking |                                                                            |
-| effect.                                                        |                                                                            |
-|                                                                |                                                                            |
-| Possible options are: ``"bg"``, ``"de"``,                      |                                                                            |
-| ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``,   |                                                                            |
-| ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, |                                                                            |
-| ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``,   |                                                                            |
-|and ``"zh_TW"``. Default is ``"en"``.                           |                                                                            |
-|                                                                |                                                                            |
-+----------------------------------------------------------------+----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| The language for system messages and logs. Changes to this setting require a server restart before taking effect.                                                                                                                     | - **Site Configuration > Localization**                                  |
+|                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.DefaultServerLocale`` |
+| Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE``  |
+|                                                                                                                                                                                                                                       |                                                                          |
+| Default is ``"en"``.                                                                                                                                                                                                                  |                                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Default client language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+
-|Default language for newly-created users and pages where the user| - System Config path: **Site Configuration > Localization**               |
-|hasn't logged in.                                                | - ``config.json`` setting: ``.LocalizationSettings.DefaultClientLocale``  |
-|                                                                 |                                                                           |
-|Options: ``"bg"``, ``"de"``,                                     |                                                                           |
-| ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``,    |                                                                           |
-| ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``,  |                                                                           |
-| ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and|                                                                           |
-|``"zh_TW"``. Default: ``en``.                                    |                                                                           |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| The language for new users and pages where the user is not logged in. Changes to this setting require a server restart before taking effect.                                                                                          | - **Site Configuration > Localization**                                  |
+|                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.DefaultClientLocale`` |
+| Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE``  |
+|                                                                                                                                                                                                                                       |                                                                          |
+| Default: ``"en"``.                                                                                                                                                                                                                    |                                                                          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Available languages
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+
-|Sets which languages are available for users in **Settings >     |  - System Config path: **Site Configuration > Localization**              |
-|Display > Language**. Leave the field blank to add new languages | - ``config.json`` setting: ```.LocalizationSettings.AvailableLocales``    |
-|automatically by default, or add new languages using the dropdown|                                                                           |
-|menu manually as they become available. If you're manually adding|                                                                           |
-|new languages, the **Default Client Language** must be added     |                                                                           |
-|before saving the setting.                                       |                                                                           |
-|                                                                 |                                                                           |
-|Options: ``""``, ``"bg"``, ``"de"``, ``"en"``, ``en-AU``,        |                                                                           |
-|``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``,      |                                                                           |
-|``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, ``"ro"``, ``"ru"``,   |                                                                           |
-|``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. Default|                                                                           |
-|is ``""``.                                                       |                                                                           |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+
-|  **Note**: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.                     |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| Sets the list of languages users see under **Settings > Display > Language**. If this field is blank, users see all supported languages. If this field is not blank, it must contain the **Default client language**, in addition to any other languages.                                                                                                                                                                             | - **Site Configuration > Localization**                               |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.AvailableLocales`` |
+| The ``config.json`` setting is a string that can contain the following comma-separated entries: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. For example, to limit the language choices to English (US) and Español, the string would be ``”en,es”``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_AVAILABLELOCALES``  |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                       |                                                                       |
+| Default: ``””``.                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+|  **Note**: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.                                                                                                                                                                                                                                                                                                                                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 																       	       		  
 ----
 
