@@ -41,7 +41,7 @@ Site description
 
 +-------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | Text displayed above the login form. When not specified, the phrase "Log in" is displayed.| - System Config path: **Site Configuration > Customization**      |
-|                                                                                           | - ``config.json`` setting: ``.TeamSettings.CustomDescriptionText``|                                                                                           
+|                                                                                           | - ``config.json`` setting: ``.TeamSettings.CustomDescriptionText``|                                                   
 | String input.                                                                             | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMDESCRIPTIONTEXT`` |
 +-------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
@@ -51,7 +51,7 @@ Enable custom branding
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
 +--------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - ***true***: Enables the display of a custom image and text on the login page | - System Config path: Site Configuration > Customization                |
+| - ***true***: Enables the display of a custom image and text on the login page | - System Config path: **Site Configuration > Customization**            |
 | - ***false***: **(Default)** Custom branding is disabled                       | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false``   |
 | See **Custom brand image** and **Custom brand text** settings                  | - Environment variable: MM_TEAMSETTINGS_ENABLECUSTOMBRAND               |
 +--------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -59,17 +59,18 @@ Enable custom branding
 Custom brand image
 ~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| Upload a JPG image for display on the login page. The image must be uploaded through the System Console. The file should be **smaller than 2 MB**. | - System Config path: Site Configuration > Customization |
-|                                                                                                                                                    | - ``config.json`` setting: N/A                           |
-| Enable custom branding must be set to ``true`` to display the image.                                                                               | - Environment variable: N/A                              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Upload a JPG image for display on the login page. The image must be uploaded through the System Console. The file should be **smaller than 2 MB**. | - System Config path: **Site Configuration > Customization** |
+|                                                                                                                                                    | - ``config.json`` setting: N/A                               |
+| Enable custom branding must be set to ``true`` to display the image.                                                                               | - Environment variable: N/A                                  |
+|                                                                                                                                                    |                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Custom brand text
 ~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| Text that will be shown below the ***Custom brand image*** on left side of login page. You can format this text using the same `Markdown formatting <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as in Mattermost messages. | - System Config path: Site Configuration > Customization     |
+| Text that will be shown below the ***Custom brand image*** on left side of login page. You can format this text using the same `Markdown formatting <https://docs.mattermost.com/help/messaging/formatting-text.html>`__ as in Mattermost messages. | - System Config path: **Site Configuration > Customization** |
 |                                                                                                                                                                                                                                                     | - ``config.json`` setting: ``.TeamSettings.CustomBrandText`` |
 | String input. Maximum 500 characters. ***Enable custom branding*** must be set to ``true`` to display the image.                                                                                                                                    | - Environment variable: MM_TEAMSETTINGS_CUSTOMBRANDTEXT      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
@@ -134,7 +135,7 @@ Privacy Policy link
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
-		
+ 		
 +-------------------------------------------------------------------------------------+-------------------------------------------------------------------+ 		
 | The URL for the Privacy Policy of a self-hosted site. A link to the policy appears  | - System Config path: **Site Configuration > Customization**      |
 | at the bottom of the sign-up and login pages. If this field is empty, the link does | - ``config.json`` setting: ``.SupportSettings.PrivacyPolicyLink`` |
@@ -156,14 +157,14 @@ About link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------+--------------------------------------------------------------+
-| The URL for general information about a self-hosted site. A link to the   | - System Config path: **Site Configuration > Customization** |
-| About page appears at the bottom of the sign-up and login pages. If this  | - ``config.json`` setting: ``.SupportSettings.AboutLink``    |
-| field is empty, the link does not appear.                                 | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``     |
-|                                                                           |                                                              |
-| String input. Default is ``https://about.mattermost.com/default-about/``. |                                                              |
-|                                                                           |                                                              |
-+---------------------------------------------------------------------------+--------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+|| The URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages. If this field is empty the link does not appear. || - System Config path: **Site Configuration > Customization** |
+||                                                                                                                                                                                                             || - ``config.json`` setting: ``.SupportSettings.AboutLink``    |
+|| String input. Default is ``https://about.mattermost.com/default-about/``.                                                                                                                                   || - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``     |
+||                                                                                                                                                                                                             ||                                                              |
+||                                                                                                                                                                                                             ||                                                              |
+||                                                                                                                                                                                                             ||                                                              |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -171,14 +172,13 @@ Report a Problem link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| The URL for the Report a Problem link in the **Help** menu. If this field is | - System Config path: **Site Configuration > Customization**       |
-| empty, the link does not appear.                                             | - ``config.json`` setting: ``.SupportSettings.ReportAProblemLink`` |
-|                                                                              | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``  |
-| String input. Default is                                                     |                                                                    |
-| ``https://about.mattermost.com/default-report-a-problem``.                   |                                                                    |
-|                                                                              |                                                                    |
-+------------------------------------------------------------------------------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+|| The URL for the Report a Problem link in the **Help** menu. If this field is empty the link does not appear. || - System Config path: **Site Configuration > Customization**       |
+||                                                                                                              || - ``config.json`` setting: ``.SupportSettings.ReportAProblemLink`` |
+|| String input. Default: ``https://about.mattermost.com/default-report-a-problem``.                            || - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``  |
+||                                                                                                              ||                                                                    |
+||                                                                                                              ||                                                                    |
++---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -220,16 +220,16 @@ iOS app download link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+----------------------------------------------------------------------------+----------------------------------------------------------------------+
-| The URL to download the Mattermost iOS app. Users who access the site on a | - System Config path: **Site Configuration > Customization**         |
-| mobile browser will be prompted to download the app through this link. If  | - ``config.json`` setting: ``.NativeAppSettings.IosAppDownloadLink`` |
-| this field is empty, the prompt does not appear.                           | - Environment variable: ``MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK``  |
-|                                                                            |                                                                      |
-| If you use an Enterprise App Store, change this link to point to the       |                                                                      |
-| correct app.                                                               |                                                                      |
-|                                                                            |                                                                      |
-| String input. Default is https://about.mattermost.com/mattermost-ios-app/. |                                                                      |
-+----------------------------------------------------------------------------+----------------------------------------------------------------------+
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+|| The URL to download the Mattermost iOS app. Users who access the site on a || - System Config path: **Site Configuration > Customization**         |
+|| mobile browser will be prompted to download the app through this link. If  || - ``config.json`` setting: ``.NativeAppSettings.IosAppDownloadLink`` |
+|| this field is empty, the prompt does not appear.                           || - Environment variable: ``MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK``  |
+||                                                                            ||                                                                      |
+|| If you use an Enterprise App Store, change this link to point to the       ||                                                                      |
+|| correct app.                                                               ||                                                                      |
+||                                                                            ||                                                                      |
+|| String input. Default is https://about.mattermost.com/mattermost-ios-app/. ||                                                                      |
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 ----
 
