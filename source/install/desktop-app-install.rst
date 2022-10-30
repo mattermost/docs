@@ -46,14 +46,14 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
     **Install with deb-get**
 
-    For users of Debian and Ubuntu based distributions, you can also install and update the `.deb` packages we publish in our GitHub releases page using [deb-get](https://github.com/wimpysworld/deb-get).
+    Users of Debian and Ubuntu can also install and update the `.deb` packages we publish in our GitHub releases page using [deb-get](https://github.com/wimpysworld/deb-get).
 
     1. First install `deb-get` using these commands in a terminal: 
 
        .. code-block:: none
     
         sudo apt install curl
-    curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+        curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
 
     2. Then install Mattermost using the following command in terminal: 
     
