@@ -44,6 +44,30 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
         sudo apt upgrade mattermost-desktop
 
+    **Install with deb-get**
+
+    For users of Debian and Ubuntu based distributions, you can also install and update the `.deb` packages we publish in our GitHub releases page using [deb-get](https://github.com/wimpysworld/deb-get).
+
+    1. First install `deb-get` using these commands in a terminal: 
+
+       .. code-block:: none
+    
+        sudo apt install curl
+    curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+
+    2. Then install Mattermost using the following command in terminal: 
+    
+       .. code-block:: none
+
+        deb-get install mattermost-desktop
+
+    3. Once Mattermost is installed it can be kept up to date using:
+    
+       .. code-block:: none
+
+        deb-get update
+        deb-get upgrade
+
     **Snapcraft package**
 
     A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`__ on the Snapcraft website for details.
