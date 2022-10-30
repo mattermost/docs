@@ -228,7 +228,7 @@ iOS app download link
 | If you use an Enterprise App Store, change this link to point to the        |                                                                       |
 | correct app.                                                                |                                                                       |
 |                                                                             |                                                                       |
-| String input. Default is https://about.mattermost.com/mattermost-ios-app/.  |                                                                       |
+| String input. Default: https://about.mattermost.com/mattermost-ios-app/.    |                                                                       |
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 ----
@@ -245,18 +245,18 @@ Default server language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| The language for system messages and logs. Changes to this setting require a server restart before taking effect.                                                                                                                     | - **Site Configuration > Localization**                                  |
+| The default language for system messages and logs. Changes to this setting require a server restart before taking effect.                                                                                                             | - **Site Configuration > Localization**                                  |
 |                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.DefaultServerLocale`` |
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE``  |
 |                                                                                                                                                                                                                                       |                                                                          |
-| Default is ``"en"``.                                                                                                                                                                                                                  |                                                                          |
+| Default: ``"en"``.                                                                                                                                                                                                                  |                                                                            |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Default client language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| The language for new users and pages where the user is not logged in. Changes to this setting require a server restart before taking effect.                                                                                          | - **Site Configuration > Localization**                                  |
+| The default language for new users and pages where the user is not logged in. Changes to this setting require a server restart before taking effect.                                                                                  | - **Site Configuration > Localization**                                  |
 |                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.DefaultClientLocale`` |
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE``  |
 |                                                                                                                                                                                                                                       |                                                                          |
@@ -271,7 +271,7 @@ Available languages
 |                                                                                                                                                                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.AvailableLocales`` |
 | The ``config.json`` setting is a string that can contain the following comma-separated entries: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. For example, to limit the language choices to English (US) and Español, the string would be ``”en,es”``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_AVAILABLELOCALES``  |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                       |                                                                       |
-| Default: ``””``.                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                       |
+| Default: ``""``.                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                       |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 |  **Note**: Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.                                                                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -289,84 +289,48 @@ Access the following configuration settings in the System Console by going to **
 Max users per team
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------+-----------------------------------------------------------------+
-|The **Max Users Per Team** refers to the size of the "team site" which is    | - System Config path: **Site Configuration > Users and Teams**  |
-|workspace a "team of people" inhabits. A team of people is considered a small| - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``|
-|organization where people work closely together towards a specific shared    |                                                                 |
-|goal and share the same etiquette. In the physical world, a team of people   |                                                                 |
-|could typically be seated around a single table to have a meal and discuss   |                                                                 |
-|their project.                                                               |                                                                 |
-|                                                                             |                                                                 |
-|The default maximum of 50 people, is at the extreme high end of a single team|                                                                 |
-|of people. At this point organizations are more often "multiple teams of     |                                                                 |
-|people" and investments in explicitly defining etiquette, such as `channel   |                                                                 |
-|organization                                                                 |                                                                 |
-|<https://docs.mattermost.com/messaging/organizing-mattermost.html>`__ in     |                                                                 |
-|Enterprise Edition, are often used to scale the high levels of productivity  |                                                                 |
-|found in a team of people using Mattermost to multiple teams of people.      |                                                                 |
-|                                                                             |                                                                 |
-|In terms of technical performance, `with appropriate hardware, Mattermost can|                                                                 |
-|easily scale to hundreds and even thousands of users                         |                                                                 |
-|<https://docs.mattermost.com/install/software-hardware-requirements.html>`__,|                                                                 |
-|and provided the administrator believes the appropriate etiquette is in      |                                                                 |
-|place, they should feel free to increase the default value.                  |                                                                 |
-|                                                                             |                                                                 |
-|Number input.                                                                |                                                                 |
-+-----------------------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| The **Max users per team** is the maximum total number of users per team, including active and inactive users. In Mattermost, a team of people should be a small organization with a specific goal. In the physical world, a team could sit around a single table to discuss their project. The default maximum of 50 should be high enough in most cases, but with appropriate `hardware <https://docs.mattermost.com/install/software-hardware-requirements.html>`_, this limit can be greatly increased. You may also consider using `channels <https://docs.mattermost.com/guides/channels.html>`_ to organize conversations across different topics. | - **Site Configuration > Users and teams**                       |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50`` |
+| Numerical input. Default: 50.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 
 Max channels per team
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
-|Maximum number of channels per team, including both active and   | - System Config path: **Site Configuration > Users and Teams**        |
-|deleted channels.                                                | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
-|                                                                 |                                                                       |
-|Number input.                                                    |                                                                       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| The maximum number of channels per team, including both active and deleted channels. | - **Site Configuration > Users and teams**                            |
+|                                                                                      | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
+|                                                                                      | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
++--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Enable users to open direct message channels with
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
-|**Any user on the Mattermost server**: The Direct Messages       | - System Config path: **Site Configuration > Users and Teams**        |
-|**More** menu has the option to open a Direct Message channel    | - ``config.json`` setting: ``.TeamSettings.RestrictDirectMessage``    |
-|with any user on the server.                                     |with options ``"any"`` and ``"team"`` for the above settings,          |
-|                                                                 |respectively.                                                          |
-|**Any member of the team**: The Direct Messages **More** menu    |                                                                       |
-|only has the option to open a Direct Message channel with users  |                                                                       |
-|on the current team, and pressing :kbd:`Ctrl` :kbd:`K` on Windows|                                                                       |
-|or Linux, or :kbd:`⌘` :kbd:`K` on Mac only lists users on the    |                                                                       |
-|current team. If a user belongs to multiple teams, direct        |                                                                       |
-|messages will still be received regardless of what team they are |                                                                       |
-|currently on.                                                    |                                                                       |
-|                                                                 |                                                                       |
-|This setting only affects the UI, not permissions on the         |                                                                       |
-|server. For instance, a direct message channel can be created    |                                                                       |
-|with anyone on the server regardless of this setting.            |                                                                       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| This setting determines whether a user can open a Direct Message channel to anyone on the server or only to members of the same team.                                                                                                                                                                                                                                                                                               | - **Site Configuration > Users and teams**                           |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                     | - ``config.json`` setting: ``.TeamSettings.RestrictDirectMessage``   |
+| - **Any user on the Mattermost server**: **(Default)** Users can open a Direct Messages channel to any user on the server through the Direct Messages > More menu.                                                                                                                                                                                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTDIRECTMESSAGE``    |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                      |
+| - **Any member of the team**: The Direct Messages > More menu only allows Direct Messages to users on the same team. Pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac, only lists other users on the team currently being viewed. A user who is a member of multiple teams can only send Direct Messages to the team that is being viewed in the UI, but can still receive messages from other teams. |                                                                      |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                      |
+| This setting only affects the UI, not permissions on the server.                                                                                                                                                                                                                                                                                                                                                                    |                                                                      |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
-|Specifies how names are displayed in the user interface by       |  - System Config path: **Site Configuration > Users and Teams**       |
-|default. Please note that users can override this setting in     | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay`` with |
-|**Settings > Display > Teammate Name Display**.                  |options ``"username"``, ``"nickname_full_name"``, and ``"full_name"``  |
-|                                                                 |for the above settings, respectively.                                  |
-|**Show username**: Displays the user's username.                 |                                                                       |
-|                                                                 |                                                                       |
-|**Show nickname if one exists**: Displays the user's nickname. If|                                                                       |
-|the user does not have a nickname, their full name is            |                                                                       |
-|displayed. If the user does not have a full name, their username |                                                                       |
-|is displayed.                                                    |                                                                       |
-|                                                                 |                                                                       |
-|**Show first and last name**: Displays the user's full name. If  |                                                                       |
-|the user does not have a full name, their username is            |                                                                       |
-|displayed. Recommended when using SAML or LDAP if first name and |                                                                       |
-|last name attributes are configured.                             |                                                                       |
-|                                                                 |                                                                       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| Specifies how names are displayed in the user interface by default. Users can override this setting in **Settings > Display > Teammate Name Display**.                                                                                                                 | - **Site Configuration > Users and teams**                       |
+|                                                                                                                                                                                                                                                                        | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay`` |
+| - **Show username**:**(Default)** Displays the user’s username. ``config.json`` option: ``"username"``.                                                                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``  |
+|                                                                                                                                                                                                                                                                        |                                                                  |
+| - **Show nickname if one exists...**: Displays the user’s nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed. ``config.json`` option: ``"nickname_full_name"``.          |                                                                  |
+|                                                                                                                                                                                                                                                                        |                                                                  |
+| - **Show first and last name**: Displays the user’s full name. If the user does not have a full name, their username is displayed. Recommended when using SAML or LDAP if first name and last name attributes are configured. ``config.json`` option: ``"full_name"``. |                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 
 Lock teammate name display for all users
@@ -375,64 +339,48 @@ Lock teammate name display for all users
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| **True**: Disables users' ability to change settings under      |- System Config path: **Site Configuration > Users and Teams**   |
-|**Settings > Display > Teammate Name Display**.                  |                                                                 |
-|                                                                 |                                                                 |
-|**False**: Users can change how their teammate name displays.    |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| Controls whether users can change settings under **Settings > Display > Teammate Name Display**. | - **Site Configuration > Users and teams**                                  |
+|                                                                                                  | - ``config.json`` setting: ``.TeamSettings.LockTeammateNameDisplay: false`` |
+| - **false**: **(Default)** Users can change their Teammate Name Display                          | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``         |
+| - **true**: Users **cannot** change their Teammate Name Dispaly                                  |                                                                             |
++--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Allow users to view archived channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Allows users to view, share, and search for content of | - System Config path: **Site Configuration > Users and Teams**  |
-|channels that have been archived. Users can only view the content| - ``config.json`` setting:                                      |
-|in channels of which they were a member before the channel was   |``.TeamSettings.ExperimentalViewArchivedChannels: true`` with    |
-|archived.                                                        |options ``true`` and ``false``.                                  |
-|                                                                 |                                                                 |
-|**False**: Users are unable to view, share, or search for content|                                                                 |
-|of channels that have been archived.                             |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to access content of archived channels of which they were a member. | - **Site Configuration > Users and teams**                                          |
+| - **false**: Users are unable to access content in archived channels.                                      | - ``config.json`` setting: ``.TeamSettings.ExperimentalViewArchivedChannels: true`` |
+|                                                                                                            | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``        |
++------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Show email address
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Show email address of all users.                       | - System Config path: **Site Configuration > Users and Teams**  |
-|                                                                 | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: |
-|**False**: Hide email address of users from other users in the   |true`` with options ``true`` and ``false``.                      |
-|user interface, including Team Admins. This is designed for      |                                                                 |
-|managing teams where users choose to keep their contact          |                                                                 |
-|information private. System Admins will still be able to see     |                                                                 |
-|email addresses in the UI.                                       |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** All users can see each others’ email addresses.                                                                            | - **Site Configuration > Users and teams**                             |
+| - **false**: User email addresses are hidden in the UI, including from Team Admins. However, System Admins can still view email addresses in the UI. | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
+|                                                                                                                                                      | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Show full name
 ~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Show full name of all users.                           | - System Config path: **Site Configuration > Users and Teams**  |
-|                                                                 | - ``config.json`` setting: ``.PrivacySettings.ShowFullName:     |
-|**False**: Hide full name of users from other users including    |true`` with options ``true`` and ``false``.                      |
-|Team Admins. This is designed for managing teams where users     |                                                                 |
-|choose to keep their contact information private. System Admins  |                                                                 |
-|will still be able to see full names in the UI.                  |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| - **true**: **(Default)** Full names are visible to all users in the UI.                                                   | - **Site Configuration > Users and teams**                         |
+| - **false**: Hides full names from all users in the UI, except System Admins. Username is shown in place of the full name. | - ``config.json`` setting: ``.PrivacySettings.ShowFullName: true`` |
+|                                                                                                                            | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``        |
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Enable custom user statuses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
-|**True**: Users can set descriptive status messages and optional | - System Config path: **Site Configuration > Users and Teams**        |
-|status emojis that are visible to all users.                     | - ``config.json`` setting: ``.TeamSettings.EnableCustomUserStatuses:  |
-|                                                                 |true`` with options ``true`` and ``false``.                            |
-|**False**: Users are unable to set custom user statuses.         |                                                                       |
-|                                                                 |                                                                       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| - **true**: **(Default)** Users can set status messages and emojis that are visible to all users. | - **Site Configuration > Users and teams**                                  |
+| - **false**: Users cannot set custom statuses.                                                    | - ``config.json`` setting: ``.TeamSettings.EnableCustomUserStatuses: true`` |
+|                                                                                                   | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMUSERSTATUSES``        |
++---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 ----
 
