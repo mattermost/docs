@@ -10,6 +10,9 @@ Share files in messages
 .. |download-icon| image:: ../images/download-outline_F0B8F.svg
   :alt: Use the Download icon to download an attached file to your local system.
 
+.. |desktop-download-icon| image:: ../images/arrow-down-bold-circle-outline_F0048.svg
+  :alt: Use the desktop app download icon to review download status, as well as access and clear the list of downloaded files.
+
 With file attachments, you can share additional information that helps your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos can make your messages more effective and clear.
 
 You can share files with other Mattermost users or entire channels by:
@@ -61,3 +64,7 @@ Download files
 --------------
 
 You can download an attached file by selecting the **Download** |download-icon| icon next to the file thumbnail.
+
+.. tip::
+
+  From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
