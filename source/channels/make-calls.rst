@@ -12,7 +12,7 @@ Mattermost introduces beta voice calling and screen sharing functionality in cha
 
    - `My call is disconnected after a few seconds <#my-call-is-disconnected-after-a-few-seconds>`__
 
-   - `I cannot screen share using Mattermost Desktop on MacOS <#i-cannot-screen-share-using-mattermost-desktop-on-macos>`__
+   - `I can't screen share using Mattermost desktop on macOS <#i-cant-screen-share-using-mattermost-desktop-on-macos>`__
 
 - `Debugging <#debugging>`__
 
@@ -66,15 +66,17 @@ My call is disconnected after a few seconds and I can't transmit voice nor hear 
 
 This is usually a sign that the underlying UDP channel has not been established and the connection times out after ~10 seconds. When the connection has been established correctly an ``rtc connected`` line should appear in the client-side logs (JS console). There isn't a single solution as it depends on the infrastructure/deployment specifics. However, if you're a System or Network Admin, you may need to open up the UDP port or configure the network accordingly.
 
-I cannot screen share using Mattermost Desktop on MacOS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I can't screen share using Mattermost desktop on macOS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is a known bug on MacOS with some versions of Chrome (which is used by Mattermost Desktop). If you have given screen sharing permissions to Mattermost Desktop, and you are still unable to screen share, do the following:
+There is a known bug on macOS with some versions of Chrome (which is used by Mattermost desktop). If you've given screen sharing permissions to Mattermost desktop, and are still unable to screen share, do the following:
 
-#. Quit Mattermost Desktop
-#. In the MacOS terminal, run: ``tccutil reset ScreenCapture Mattermost.Desktop``
-#. Restart Mattermost Desktop and start a call
-#. Click screen share and give it permissions again (which will require another restart of Mattermost Desktop)
+1. Quit Mattermost.
+2. Open Terminal.
+3. In terminal, run: ``tccutil reset ScreenCapture Mattermost.Desktop``
+4. Restart Mattermost and start a call.
+5. Select **Screen share** and give it permissions again.
+6. Restart Mattermost.
 
 Debugging
 ---------
