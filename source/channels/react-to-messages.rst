@@ -83,5 +83,5 @@ Emojis are small, digital images or icons used to communicate or express concept
 
     **Use of custom emojis**
      
-     If you want to use custom emojis in the mobile app tap on **Smile** icon |smile-icon| inside the Mattermost message input box then select **Custom-Emoji** |custom-emoji|.
+     If you want to use custom emojis in the mobile app tap on **Smile** icon |smile-icon| inside the Mattermost message input box then tap the **Smile** icon |smile-icon| at the bottom right of the emoji picker.
      Mobile v2 doesn't currently support custom emoji uploads.
