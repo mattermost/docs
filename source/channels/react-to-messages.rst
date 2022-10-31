@@ -69,7 +69,7 @@ Emojis are small, digital images or icons used to communicate or express concept
       
   .. tab:: Mobile app
    
-    **To react to messages with emoji in the mobile app v2**
+    **To react to messages with emoji in the mobile app**
 
      Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji picker.
 
@@ -79,9 +79,9 @@ Emojis are small, digital images or icons used to communicate or express concept
                 
     **Select default skin tone in the mobile app**
 
-     Mobile v2 doesn't currently support skin tone selection.
+     Mobile app doesn't currently support skin tone selection.
 
     **Use of custom emojis**
      
      If you want to use custom emojis in the mobile app tap on **Smile** icon |smile-icon| inside the Mattermost message input box then tap the **Smile** icon |smile-icon| at the bottom right of the emoji picker.
-     Mobile v2 doesn't currently support custom emoji uploads.
+     Mobile app doesn't currently support custom emoji uploads.
