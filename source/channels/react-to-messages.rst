@@ -10,9 +10,9 @@ Emojis are small, digital images or icons used to communicate or express concept
 
   .. tab:: Web browser/desktop app
       
-    **To react to messages with emoji ** 
+    **To react to messages with emoji** 
         
-    Select the **Smile** |smile-icon| icon inside the Mattermost message input box to open the Emoji Picker. If the existing emojis available in Mattermost don't cover what you want to express, you can also `upload your own custom emoji <#upload-custom-emojis>`__.
+    Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji picker. If the existing emojis available in Mattermost don't cover what you want to express, you can also `upload your own custom emoji <#upload-custom-emojis>`__.
 
        .. |smile-icon| image:: ../images/smile-icon.png
            :alt: Smile icon
@@ -33,14 +33,14 @@ Emojis are small, digital images or icons used to communicate or express concept
 
     **Select default skin tone**
 
-     Select the **Skin Tone** icon in the top right corner of the Emoji Picker to specify the skin tone you prefer to use for people-based emojis by default. You can select an alternate skin tone any time.
+     Select the **Skin tone** icon in the top right corner of the emoji picker to specify the skin tone you prefer to use for people-based emojis by default. You can select an alternate skin tone at any time.
 
       .. image:: ../images/emoji-skin-tone.png
           :alt: Select a default skin tone preference for people-based emojis.
 
     **Upload custom emojis**
 
-     Everyone in your Mattermost workspace can use the custom emojis you upload. From the Emoji Picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 1 MB in size.
+     Everyone in your Mattermost workspace can use the custom emojis you upload. From the emoji picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 1 MB in size.
 
      1. Enter a name for your custom emoji. This is the name that shows up in the emoji autocomplete.
      2. Choose **Select**, then select the image to use for the emoji.
@@ -52,15 +52,15 @@ Emojis are small, digital images or icons used to communicate or express concept
 
        If you can't see the **Custom Emoji** option, then your Mattermost System Admin may have restricted access to upload custom emoji. Contact your Mattermost System Admin for assistance.
   
-     To use your custom emoji in a message, select it from the Emoji Picker, or type ``:`` followed by your emoji name to bring it up in the emoji autocomplete.
+     To use your custom emoji in a message, select it from the emoji picker, or type ``:`` followed by your emoji name to bring it up in the emoji autocomplete.
 
     **Remove custom emojis**
       
       You can remove custom emojis that you uploaded to Mattermost.
   
-     1. Open the Emoji Picker.
+     1. Open the emoji picker.
      2. Select **Custom Emoji**.
-     3. If required, use the Search Bar to find your custom emoji in the list.
+     3. If required, use the Search bar to find your custom emoji in the list.
      4. Under **Actions** select **Delete**.
      5. Choose **Delete** to confirm.
 
@@ -69,13 +69,13 @@ Emojis are small, digital images or icons used to communicate or express concept
       
   .. tab:: Mobile app
    
-    **To react to messages with emojis in the mobile app**
+    **To react to messages with emoji in the mobile app v2**
 
-     Select the **Smile** |smile-icon| icon inside the Mattermost message input box to open the Emoji Picker.
+     Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji picker.
 
     **Recent emojis**
     
-     Tap on the **Smile** |smile-icon| icon to select recent emojis.
+     Tap on the **Smile** icon |smile-icon| to select recent emojis.
                 
     **Select default skin tone in the mobile app**
 
@@ -83,5 +83,5 @@ Emojis are small, digital images or icons used to communicate or express concept
 
     **Use of custom emojis**
      
-     If you want to use custom emojis in the mobile app tap on **Smile** |smile-icon| icon inside the Mattermost message input box then select **Custom-Emoji** |custom-emoji|.
+     If you want to use custom emojis in the mobile app tap on **Smile** icon |smile-icon| inside the Mattermost message input box then select **Custom-Emoji** |custom-emoji|.
      Mobile v2 doesn't currently support custom emoji uploads.
