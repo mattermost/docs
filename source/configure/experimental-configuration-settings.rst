@@ -11,7 +11,7 @@ Access the following experimental configuration settings:
 ----
 
 Experimental System Console configuration settings
----------------------------------------------------
+--------------------------------------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -84,7 +84,7 @@ Specify the maximum number of notifications batched into a single email.
 +--------------------------------------------------------------------------------------------------------------------------+
 
 Email batching interval
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Longer batching intervals will increase performance.
 
@@ -131,7 +131,7 @@ Enable account deactivation
 +--------------------------------------------------------------------------------------------------------------------+
 
 Enable automatic replies
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Users can enable Automatic Replies in **Settings > Notifications**. Users set a custom message that will be automatically sent in response to Direct Messages.
 
@@ -142,7 +142,7 @@ Enable automatic replies
 +--------------------------------------------------------------------------------------------------------------------------------+
 
 Enable channel viewed websocket messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices. Disabling the setting in larger deployments may improve server performance.
 
@@ -151,7 +151,7 @@ This setting determines whether ``channel_viewed WebSocket`` events are sent, wh
 +------------------------------------------------------------------------------------------------------------------------+
 
 Enable default channel leave/join system messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
 
@@ -164,7 +164,7 @@ This setting determines whether team leave/join system messages are posted in th
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable hardened mode
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 **True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
 
@@ -193,7 +193,7 @@ Enable preview features
 +------------------------------------------------------------------------------------------------------------------+
 
 Enable theme selection
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -209,7 +209,7 @@ Enable theme selection
 +-----------------------------------------------------------------------------------------------------------------+
 
 Allow custom themes
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -239,7 +239,7 @@ Set a default theme that applies to all new users on the system.
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable tutorial
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 **True**: Users are prompted with a tutorial when they open Mattermost for the first time after account creation.
 
@@ -250,7 +250,7 @@ Enable tutorial
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable onboarding 
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 **True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
 
@@ -261,7 +261,7 @@ Enable onboarding
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable user typing messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
 
@@ -270,7 +270,7 @@ This setting determines whether "user is typing..." messages are displayed below
 +---------------------------------------------------------------------------------------------------------------------+
 
 User typing timeout
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.
 
@@ -279,7 +279,7 @@ This setting defines how frequently "user is typing..." messages are updated, me
 +----------------------------------------------------------------------------------------------------------------------+
 
 Primary team
-~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
@@ -290,7 +290,7 @@ If the team URL of the primary team is https://example.mattermost.com/myteam/, t
 +-----------------------------------------------------------------------------------------------------------------+
 
 SAML login button color
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -318,7 +318,7 @@ Specify the color of the SAML login button border for white labeling purposes. U
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 SAML login button text color
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -371,7 +371,7 @@ Shared channels enables the ability to establish secure connections between Matt
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
 Enable app bar
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
 
@@ -429,12 +429,12 @@ Select **Index Now** to index all users, channels, and posts in the database fro
 You can configure the maximum time window used for a batch of posts being indexed. See the `Bulk Indexing Time Window Seconds <https://docs.mattermost.com/configure/configuration-settings.html#bulk-indexing-time-window-seconds>`__ documentation for details.
 
 Purge indexes
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
 
 Enable Bleve for search queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Search queries will use bleve search.
 
@@ -445,7 +445,7 @@ Enable Bleve for search queries
 +--------------------------------------------------------------------------------------------------------------+
 
 Enable Bleve for autocomplete queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **True**: Autocomplete queries will use bleve search.
 
@@ -469,7 +469,7 @@ Access the following self-hosted configuration settings by editing the ``config.
     :start-after: :nosearch:
 
 Allowed themes
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -485,7 +485,7 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum users for statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -503,7 +503,7 @@ This setting is used to maximize performance for large Enterprise deployments.
 +---------------------------------------------------------------------------------------------------+
 
 Latest Android version
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -514,7 +514,7 @@ The latest version of the Android React Native app that is recommended for use.
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Minimum Android version
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -525,7 +525,7 @@ The minimum version of the Android React Native app that is required to be used.
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Latest iOS version
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -547,7 +547,7 @@ The minimum version of the iOS React Native app that is required to be used.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Batch size
-~~~~~~~~~~~
+~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -601,7 +601,7 @@ This configuration setting disables the ability to send inactivity email notific
 +-------------------------------------------------------------------------------------------------------------------+
 
 File configuration options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -616,7 +616,7 @@ Enable this setting to write audit files locally, specifying size, backup interv
 +---------------------------------------------------------------------------------------------------------+
 
 File name
-~~~~~~~~~~
+~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -627,7 +627,7 @@ This is the path to the output file location.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 File max size MB
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -638,7 +638,7 @@ This is the maximum size (measured in megabytes) that the file can grow before t
 +------------------------------------------------------------------------------------------+
 
 File max age days
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -649,7 +649,7 @@ This is the maximum age in days a file can reach before triggering rotation. The
 +-----------------------------------------------------------------------------------------+
 
 File max backups
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -698,7 +698,7 @@ Enable this setting to write audit records to a local or remote syslog, specifyi
 +-----------------------------------------------------------------------------------------------------------+
 
 Syslog IP
-~~~~~~~~~~
+~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -709,7 +709,7 @@ The IP address or domain of the syslog server. Use ``localhost`` for local syslo
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
 Syslog port
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -720,7 +720,7 @@ The port that the syslog server is listening on. The default port is 6514.
 +------------------------------------------------------------------------------------------------------------------+
 
 Syslog tag
-~~~~~~~~~~~
+~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -781,7 +781,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 
 Remote clusters
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -801,7 +801,7 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 +------------------------------------------------------------------------------------------------------------+
 
 Enable client-side certification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -817,7 +817,7 @@ Enable client-side certification
 +------------------------------------------------------------------------------------------------------------------+
 
 Client-side certification login method
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -846,7 +846,7 @@ The directory where the exported files are stored. The path is relative to the `
 +---------------------------------------------------------------------------------------------------------------------------+
 
 Export retention days
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -894,7 +894,7 @@ Font used in auto-generated profile pics with colored backgrounds.
 +-----------------------------------------------------------------------------------------------+
 
 Amazon S3 signature v2
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -920,7 +920,7 @@ Allows using the same S3 bucket for multiple deployments.
 +------------------------------------------------------------------------------------------------------------+
 
 GitLab scope
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 *Not available in Cloud Starter*
 
@@ -933,7 +933,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +------------------------------------------------------------------------------+
 
 Global relay SMTP server timeout
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -965,7 +965,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +-------------------------------------------------------------------------------------------+
 
 Import input directory
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -976,7 +976,7 @@ The directory where the imported files are stored. The path is relative to the `
 +---------------------------------------------------------------------------------------------------------------------------+
 
 Import retention days
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1018,7 +1018,7 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 +---------------------------------------------------------------------------------------------------+
 
 App custom URL schemes
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1031,7 +1031,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Office 365 Scope
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1097,7 +1097,7 @@ The location of the plugin files. If blank, they are stored in the ``./plugins``
 +-----------------------------------------------------------------------------------------------------------------+
 
 Client plugin directory
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1168,7 +1168,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Custom user groups
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1200,7 +1200,7 @@ This configuration setting is disabled by default and requires `developer mode <
 +----------------------------------------------------------------------------------------+
 
 Enable post search
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1211,7 +1211,7 @@ If this setting is enabled, users can search messages. Disabling search can resu
 +-------------------------------------------------------------------------------------------------------------+
 
 Enable file search
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1237,7 +1237,7 @@ Turn status updates off to improve performance. When status updates are off, use
 +---------------------------------------------------------------------------------------------------------------+
 
 Websocket secure port
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
@@ -1248,7 +1248,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +------------------------------------------------------------------------------------------------+
 
 Websocket port
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
@@ -1259,7 +1259,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------+
 
 Enable API team deletion
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1285,7 +1285,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 
 Enable API channel deletion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1298,7 +1298,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------------------------------------+
 
 Enable OpenTracing
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1330,7 +1330,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   When trying to use local mode with mmctl, an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, can be resolved by setting this configuration setting to ``true``.
 
 Enable local mode socket location
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1343,7 +1343,7 @@ If nothing is specified, the default path that both the server and mmctl assumes
 +--------------------------------------------------------------------------------------------------------------------------------+
 
 Default channels
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1415,7 +1415,7 @@ Defines the threshold in hours beyond which older completed database jobs are re
 +--------------------------------------------------------------------------------------------------------------------+
 
 Clean up outdated database entries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
 
