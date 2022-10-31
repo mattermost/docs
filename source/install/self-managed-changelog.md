@@ -22,7 +22,7 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
 #### Boards
  - Added new [board roles](https://docs.mattermost.com/boards/share-and-collaborate.html#roles), **Commenter** and **Viewer**.
  - Added [minimum default board roles](https://docs.mattermost.com/boards/share-and-collaborate.html#manage-team-access) to reduce permissioning ambiguity and to prevent security loopholes.
- - Added support for [guest accounts](https://docs.mattermost.com//boards/share-and-collaborate.html#guest-accounts).
+ - Added support for [guest accounts](https://docs.mattermost.com/onboard/guest-accounts.html).
  - Added the ability to add a team member to a board by selecting their name from [an autocomplete list](https://docs.mattermost.com/boards/work-with-cards.html#mention-people).
  - Added channel notifications for linked boards.
  - Added a new [multi-person property](https://docs.mattermost.com/boards/work-with-cards.html#work-with-property-types) to easily set multiple assignees or owners on a card.
