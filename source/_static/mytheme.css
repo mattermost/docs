@@ -113,6 +113,7 @@ html, body {
 }
 .c-thermometer__trigger:hover {
 	filter: grayscale(0);
+    cursor: pointer;
 }
 .c-thermometer__popup p {
 	margin: 0 2rem;
@@ -139,6 +140,8 @@ html, body {
 
 .c-thermometer__close:hover {
 	color: #444;
+    cursor: pointer;
+
 }
 
 .c-thermometer__emojis {
@@ -169,6 +172,8 @@ html, body {
 .c-thermometer__emojis a:hover, .c-thermometer__emojis a.selected {
 	color: inherit;
 	filter: grayscale(0);
+    cursor: pointer;
+
 }
 /* Thermometer ends */
 
@@ -273,6 +278,7 @@ html, body {
 
 .c-thermometer-modal__footer .btn-primary:hover, .c-thermometer-modal__footer .btn-primary:focus, .c-thermometer-modal__footer .btn-primary:active {
 	background: rgb(19, 93, 190);
+    cursor: pointer;
 }
 
 /* Thermometer Modal Ends */
@@ -326,6 +332,8 @@ html, body {
 
 .c-thermometer-popup__close:hover {
 	color: var(--center-channel-text);
+    cursor: pointer;
+
 }
 
 /* Thermometer Confirmation Popup Ends */
@@ -604,6 +612,7 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .wy-menu-vertical a:hover {
 	background-color: #E7EFF5;
+    cursor: pointer;
 }
 
 .wy-side-scroll {
@@ -681,6 +690,7 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .search__icon:hover {
 	color: #1E325C;
+    cursor: pointer;
 }
 
 .wy-nav-top {
@@ -971,6 +981,7 @@ header .header__searchbar {
 
 .notification-bar-hide:hover {
     opacity: .5;
+    cursor: pointer;
 }
 
 .with-notification .wy-side-scroll {
@@ -1020,6 +1031,7 @@ a,
 
 a:hover {
 	color: #1E325C;
+    cursor: pointer;
 }
 
 pre {
@@ -1335,10 +1347,12 @@ pre {
 .site-header__col--menu .site-nav__toplink > a:focus,
 .site-header__col--menu .site-nav__toplink > a:hover {
     color: #1c58d9;
+    cursor: pointer;
 }
 .site-header__col--menu .site-nav__toplink > a:focus span svg path,
 .site-header__col--menu .site-nav__toplink > a:hover span svg path {
     stroke: #1c58d9;
+    cursor: pointer;
 }
 .site-header__col--menu .site-nav__button {
     border-bottom: none;
@@ -1361,6 +1375,7 @@ pre {
 .site-header__col--menu .site-nav__button a:focus,
 .site-header__col--menu .site-nav__button a:hover {
     color: #fff;
+    cursor: pointer;
 }
 @media (max-width: 991.98px) {
     .site-header__col--menu .site-nav__button {
@@ -1461,6 +1476,7 @@ pre {
     .site-header__col--menu .site-nav__hassubnav .sub-menu__block a:focus,
     .site-header__col--menu .site-nav__hassubnav .sub-menu__block a:hover {
         background-color: #e8edf8;
+        cursor: pointer;
     }
 }
 .site-header__col--menu .site-nav__hassubnav .sub-menu__block--wrapper {
@@ -1546,6 +1562,7 @@ pre {
 .site-header__col--menu .site-nav__hassubnav .sub-menu__links--single a:focus,
 .site-header__col--menu .site-nav__hassubnav .sub-menu__links--single a:hover {
     color: #1c58d9;
+    cursor: pointer;
 }
 .site-header__col--menu .site-nav__hassubnav .sub-menu__links--icon {
     display: inline-block;
@@ -1773,6 +1790,7 @@ pre {
     }
     .site-header__col--menu .site-nav__hassubnav .sub-menu__bar a:hover {
         background-color: #043cb5;
+        cursor: pointer;
     }
 }
 .site-header__col--menu .site-nav__hassubnav:focus-within .sub-menu,
@@ -1780,6 +1798,7 @@ pre {
 .site-header__col--menu .site-nav__hassubnav:hover .sub-menu {
     opacity: 1;
     pointer-events: auto;
+    cursor: pointer;
 }
 @media (max-width: 991.98px) {
     .site-header .sub-menu__links + .sub-menu__links {
@@ -1823,6 +1842,7 @@ pre {
     .mm-button.mm-button-solid.mm-button-blue:hover {
         background-color: #043cb5;
         border-color: #043cb5;
+        cursor: pointer;
     }
 }
 
@@ -1840,6 +1860,7 @@ pre {
     .mm-button-outline--thin.mm-button-outline--thin-blue:hover,
     .mm-button-outline--thin.mm-button-outline--thin-blue:focus {
         color: #043cb5 !important; 
+        cursor: pointer;
     }
 }
 @media (min-width: 768px) {
@@ -1848,6 +1869,7 @@ pre {
         color: white !important;
         background-color:  #043CB5;
         border: 1px solid  #043CB5;
+        cursor: pointer;
     }
 }
 
