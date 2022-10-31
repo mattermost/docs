@@ -18,6 +18,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Adds a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
+ - For ``PluginRegistry.registerCustomRoute``, when you register a custom route component, you must specify a CSS ``grid-area`` in order for it to be placed properly into the root layout (recommended: ``grid-area: center``).
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.4, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
@@ -36,6 +37,7 @@ Latest Mattermost Releases:
 
 #### User Interface (UI)
  - Renamed "Starter" plan to "Free" plan in product.
+ - Added a new grid-based layout to the right-hand side and globalized the right-hand side and the Apps Bar.
  - A confirmation modal is now displayed before a user marks all threads as read.
  - Added the ability to hide the “required” asterisk in the App Field.
  - Added a fading effect to the Apps Modal body while an Apps Modal is refreshing.
