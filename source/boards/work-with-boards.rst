@@ -87,7 +87,7 @@ Prior to Mattermost Boards v7.2
 
 Boards and templates are channel-specific so whichever channel you create your board or template in, is where you’ll find it. If you’d like to re-use a board as a template on another channel workspace, you can export it and then import the archive file in the channel of your choosing.
 
-To do this, select the options menu |options-icon| in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon |gear-icon| next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
+To do this, select the options menu |options-icon| in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon |gear-icon| next to your profile picture, then choose **Import archive**. The board you created will be added to this channel.
 
 Edit board templates
 --------------------

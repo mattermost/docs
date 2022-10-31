@@ -17,7 +17,7 @@ You can customize your Channels experience in the following ways in **Settings**
 
       In Mattermost v6.0, **Account Settings** have moved.
 
-      - Access **Profile** and **Security** settings from your avatar in the Global Header.
+      - Access **Profile** and **Security** settings from your profile picture in the Global Header.
       - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the gear |gear-icon| icon in the Global Header.
 
       .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
@@ -133,7 +133,7 @@ Configure how names are displayed in the user interface: nickname, username, or 
 Show online availability on profile images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Online availability icons display on user profile avatars in the center channel by default. Disable this setting to hide online availability icons within the center channel.
+Online availability icons display as part of your user profile picture in the center channel by default. Disable this setting to hide online availability icons within the center channel.
 
 Timezone
 ~~~~~~~~~
