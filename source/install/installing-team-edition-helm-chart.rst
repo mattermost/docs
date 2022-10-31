@@ -15,7 +15,7 @@ Prerequisites
 
 - A running Kubernetes cluster.
 - `Helm v2 <https://helm.sh/docs/intro/install/)>`_.
-- `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component) installed on the cluster.
+- `Tiller <https://docs.ranchermanager.rancher.io/v2.0-v2.4/pages-for-subheaders/helm2-helm-init>`_ (the Helm server-side component) installed on the cluster.
 
 .. note::
 
