@@ -135,6 +135,11 @@ Show online availability on profile images
 
 Online availability icons display as part of your user profile picture in the center channel by default. Disable this setting to hide online availability icons within the center channel.
 
+Share last active time
+~~~~~~~~~~~~~~~~~~~~~~
+
+Controls whether other users can see when you were last active on Mattermost while your status is Away, Offline, or DND (no not disturb). Enabled by default. Disable this setting to hide your last active information from your profile and from direct message channel headers. Your system admin can also `hide last active details for all users </configure/site-configuration-settings.html#enable-last-active-time>`__ in the System Console.
+
 Timezone
 ~~~~~~~~~
 
@@ -142,7 +147,7 @@ Select the timezone used for timestamps in the user interface and for email noti
 
 .. note::
   
-  In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin </configure/deprecated-configuration-settings.html#timezone>`__. Timezone is enabled by default from Mattermost v6.0.
+  Timezone is enabled by default from Mattermost v6.0. In Mattermost v5.38 or earlier, timezone functionality `must first be enabled by the System Admin </configure/deprecated-configuration-settings.html#timezone>`__.
 
 Website link previews
 ~~~~~~~~~~~~~~~~~~~~~
@@ -171,10 +176,10 @@ Collapsed Reply Threads offers an enhanced experience for users communicating in
 
 Depending on how your System Admin has enabled **Collapsed Reply Threads** for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our `organize conversations using Collapsed Reply Threads </channels/organize-conversations.html>`__ documentation to learn more about working with Collapsed Reply Threads.
 
-Select to open threads
+Click to open threads
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, selecting any part of a message opens the reply thread in the right hand sidebar. You can disable this behavior in **Settings > Display > Click to open threads**. When disabled, reply to a message or select the replies count to open the reply thread.
+By default, selecting any part of a message opens the reply thread in the right hand sidebar. Disable this option to reply to messages by selecting the replies count to open the reply thread.
 
 Channel display
 ~~~~~~~~~~~~~~~
@@ -184,7 +189,7 @@ Choose whether the text in the center channel is fixed width and centered, or fu
 Quick reactions to messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can react to messages quickly with your most recently-used emojis by hovering over a message.
+By default, you can react to messages quickly with your most recently-used emojis by hovering over a message. Disable this option to hide your recently-used emoji reactions.
 
 Language
 ~~~~~~~~

@@ -342,6 +342,24 @@ Enable custom user statuses
 | This feature's ``config.json`` setting is ``"EnableCustomUserStatuses": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
+Enable last active time
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Users can see when inactive users were last active on a user's profile and in direct message channel headers.
+
+**False**: Users can't see when inactive users were last online.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting under ``TeamSettings`` is ``"EnableLastActiveTime": true`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable custom user groups 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
+
+**False**: Users are unable to create custom user groups.
+
 ----
 
 Notifications
