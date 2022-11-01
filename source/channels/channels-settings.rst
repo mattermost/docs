@@ -138,7 +138,7 @@ Online availability icons display as part of your user profile picture in the ce
 Share last active time
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Controls whether other users can see when you were last active on Mattermost while your status is Away, Offline, or DND (no not disturb). Enabled by default. Disable this setting to hide your last active information from your profile and from direct message channel headers. Your system admin can also `hide last active details for all users </configure/site-configuration-settings.html#enable-last-active-time>`__ in the System Console.
+Controls whether other users can see when you were last active on Mattermost while your status is Away, Offline, or DND (do not disturb). Enabled by default. Disable this setting to hide your last active information from your profile and from direct message channel headers. Your system admin can also `hide last active details for all users </configure/site-configuration-settings.html#enable-last-active-time>`__ in the System Console.
 
 Timezone
 ~~~~~~~~~
