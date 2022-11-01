@@ -19,6 +19,7 @@ class AnchorNode(Element):
     """
     A docutils node that writes an ``<a>`` tag that includes a specific id
     """
+
     anchor: str
 
     def __init__(self, href: str):
@@ -51,16 +52,24 @@ class ConfigSettingDirective(ObjectDescription):
     """
     A directive that allow specifying one or more terms that will be added to the search as an Object Type
     """
+
     has_content = False
     required_arguments = 1
+    primary_signature = ""
 
     def run(self) -> List[Node]:
-        nodelist: List[Node] = super().run()
         anchornodes: List[Node] = list()
-        for sig in self.get_signatures():
-            anchor = "config.setting.anchor_%s" % sig
+        sigs = self.get_signatures()
+        logger.verbose("run(): sigs=" + ",".join(sigs))
+        # insert a single anchor using the first signature
+        if len(sigs) > 0:
+            if self.primary_signature == "":
+                logger.verbose("run(): primary_signature=%s" % sigs[0])
+                self.primary_signature = sigs[0]
+            anchor = "config.setting.anchor_%s" % sigs[0]
             logger.verbose("run(): adding container for anchor %s" % anchor)
             anchornodes.append(AnchorNode(anchor))
+        nodelist: List[Node] = super().run()
         anchornodes.extend(nodelist)
         return anchornodes
 
@@ -72,9 +81,10 @@ class ConfigSettingDirective(ObjectDescription):
         self, name: str, sig: str, signode: desc_signature
     ) -> None:
         # NOTE: Don't add the anchor id to the "ids" attribute of signode; the <a> tags won't work in that case
+        logger.verbose("add_target_and_index(%s, %s, ...)" % (name, sig))
         domain = self.env.get_domain("config")
         if isinstance(domain, ConfigSettingDomain):
-            domain.add_config_setting(sig)
+            domain.add_config_setting(sig, self.primary_signature)
 
 
 class ConfigSettingDomain(Domain):
@@ -82,6 +92,7 @@ class ConfigSettingDomain(Domain):
     A domain to hold references to individual config settings. These settings will be picked up by the Sphinx
     search and users will be given direct links to the specific setting's doc.
     """
+
     name = "config"
     label = "Mattermost configuration setting"
     roles = {
@@ -137,15 +148,32 @@ class ConfigSettingDomain(Domain):
     def add_config_setting(
         self,
         config_json_setting: str,
+        primary_signature: str,
     ) -> None:
         """
         Add a config setting to the list of config settings that the search will pick up
           :param config_json_setting: The config setting's JSON path
+          :param primary_signature:
           :return: None
         """
         name = "config.setting_%s" % config_json_setting
-        anchor = "config.setting.anchor_%s" % config_json_setting
-        self.data["configs"].append((name, config_json_setting, "setting", self.env.docname, anchor, 0))
+        anchor_id = config_json_setting
+        if primary_signature != "":
+            anchor_id = primary_signature
+        anchor = "config.setting.anchor_%s" % anchor_id
+        config_setting = (
+            name,
+            config_json_setting,
+            "setting",
+            self.env.docname,
+            anchor,
+            0,
+        )
+        logger.verbose(
+            "add_config_setting(): appending config: name=%s, dispname=%s, type=%s, docname=%s, anchor=%s, priority=%d"
+            % config_setting
+        )
+        self.data["configs"].append(config_setting)
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:

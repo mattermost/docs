@@ -305,17 +305,37 @@ class SearchClass {
         let results = [];
         $('#search-summary').empty();
 
-        // lookup as object
-        let foundObjectResults = false;
+        // Perform an object search
+        let foundObjectResults = false; // Take note if we've found any object results at all
+        /** @type {Record<string, SearchResult>} */
+        const uniqueObjectDocs = {};
         for (i = 0; i < objectterms.length; i++) {
             /** @type {Array<string>} */
             const others = [].concat(objectterms.slice(0, i),
                 objectterms.slice(i + 1, objectterms.length));
             const objectResults = this.performObjectSearch(objectterms[i], others);
+            // If there were any object results, remove duplicates by favouring the result with the highest score
             if (objectResults.length > 0) {
                 foundObjectResults = true;
+                /** @type {Record<string, SearchResult>} */
+                const filteredObjectResults = {};
+                for (const objectResult of objectResults) {
+                    const anchor = `${objectResult.docname}#${objectResult.anchor}`;
+                    // console.log(`objectResult: ${JSON.stringify(objectResult)}`);
+                    if (anchor in uniqueObjectDocs) {
+                        const existingDoc = uniqueObjectDocs[anchor];
+                        // console.log(`query(): existing doc score=${existingDoc.score}, current doc score=${objectResult.score}`);
+                        if (objectResult.score <= existingDoc.score) {
+                            continue;
+                        }
+                        delete(uniqueObjectDocs[anchor]);
+                        delete(filteredObjectResults[anchor]);
+                    }
+                    uniqueObjectDocs[anchor] = objectResult;
+                    filteredObjectResults[anchor] = objectResult;
+                }
+                results = results.concat(Object.values(filteredObjectResults));
             }
-            results = results.concat(objectResults);
         }
 
         // lookup as search terms in fulltext
@@ -415,8 +435,6 @@ class SearchClass {
         let linkUrl;
         // The result info is displayed as a list item
         const listItem = $('<li/>');
-        // Append the result's score
-        listItem.append($("<span/>").html("[" + item.score + "]&nbsp;"));
         if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
             // dirhtml builder
             let dirname = item.docname + '/';
