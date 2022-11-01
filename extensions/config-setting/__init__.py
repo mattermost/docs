@@ -55,16 +55,18 @@ class ConfigSettingDirective(ObjectDescription):
 
     has_content = False
     required_arguments = 1
+    """
+    The primary signature (search term) of the config setting. Used to group multiple search terms under a single
+    anchor.
+    """
     primary_signature = ""
 
     def run(self) -> List[Node]:
         anchornodes: List[Node] = list()
         sigs = self.get_signatures()
-        logger.verbose("run(): sigs=" + ",".join(sigs))
-        # insert a single anchor using the first signature
+        # insert a single anchor using the first signature since we only want one anchor to represent the setting
         if len(sigs) > 0:
             if self.primary_signature == "":
-                logger.verbose("run(): primary_signature=%s" % sigs[0])
                 self.primary_signature = sigs[0]
             anchor = "config.setting.anchor_%s" % sigs[0]
             logger.verbose("run(): adding container for anchor %s" % anchor)
@@ -81,7 +83,6 @@ class ConfigSettingDirective(ObjectDescription):
         self, name: str, sig: str, signode: desc_signature
     ) -> None:
         # NOTE: Don't add the anchor id to the "ids" attribute of signode; the <a> tags won't work in that case
-        logger.verbose("add_target_and_index(%s, %s, ...)" % (name, sig))
         domain = self.env.get_domain("config")
         if isinstance(domain, ConfigSettingDomain):
             domain.add_config_setting(sig, self.primary_signature)
@@ -146,14 +147,12 @@ class ConfigSettingDomain(Domain):
             return None
 
     def add_config_setting(
-        self,
-        config_json_setting: str,
-        primary_signature: str,
+        self, config_json_setting: str, primary_signature: str
     ) -> None:
         """
         Add a config setting to the list of config settings that the search will pick up
-          :param config_json_setting: The config setting's JSON path
-          :param primary_signature:
+          :param config_json_setting: A config setting signature
+          :param primary_signature: The primary signature of the config setting; ignored if empty
           :return: None
         """
         name = "config.setting_%s" % config_json_setting

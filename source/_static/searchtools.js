@@ -308,7 +308,7 @@ class SearchClass {
         // Perform an object search
         let foundObjectResults = false; // Take note if we've found any object results at all
         /** @type {Record<string, SearchResult>} */
-        const uniqueObjectDocs = {};
+        const uniqueObjectDocs = {}; // A map of the unique document anchors encountered when processing object results
         for (i = 0; i < objectterms.length; i++) {
             /** @type {Array<string>} */
             const others = [].concat(objectterms.slice(0, i),
@@ -318,19 +318,20 @@ class SearchClass {
             if (objectResults.length > 0) {
                 foundObjectResults = true;
                 /** @type {Record<string, SearchResult>} */
-                const filteredObjectResults = {};
+                const filteredObjectResults = {}; // A map of unique object results
                 for (const objectResult of objectResults) {
                     const anchor = `${objectResult.docname}#${objectResult.anchor}`;
-                    // console.log(`objectResult: ${JSON.stringify(objectResult)}`);
                     if (anchor in uniqueObjectDocs) {
                         const existingDoc = uniqueObjectDocs[anchor];
-                        // console.log(`query(): existing doc score=${existingDoc.score}, current doc score=${objectResult.score}`);
                         if (objectResult.score <= existingDoc.score) {
+                            // The score of the result we're evaluating is less or equal to the existing result; skip this result
                             continue;
                         }
+                        // We've got a result a higher score; remove the existing result with the lower score
                         delete(uniqueObjectDocs[anchor]);
                         delete(filteredObjectResults[anchor]);
                     }
+                    // Add this result to the map of unique anchors and the map of filtered results
                     uniqueObjectDocs[anchor] = objectResult;
                     filteredObjectResults[anchor] = objectResult;
                 }
@@ -417,9 +418,9 @@ class SearchClass {
         Search.stopPulse();
         Search.title.text(_('Search Results'));
         if (results.length === 0)
-            Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
+            Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly.'));
         else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', String(results.length)));
+            Search.status.text(_('Search finished, found %s page(s) matching the search query. Results are sorted by relevance.').replace('%s', String(results.length)));
     }
 
     /**
