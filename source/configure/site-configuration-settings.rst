@@ -111,8 +111,7 @@ Terms of Use link
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                    |
 | String input. Default is ``https://about.mattermost.com/default-terms/``.                                                                                                                                                                                                                                                                                                                                                                                                          |                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| .. note::                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|    From Mattermost v5.17, this setting doesn't change the Terms of Use link in the **About Mattermost** dialog.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Note**: From Mattermost v5.17, this setting doesn't change the Terms of Use link in the **About Mattermost** dialog.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Privacy Policy link
@@ -126,8 +125,8 @@ Privacy Policy link
 |                                                                                                                                                                                    | - ``config.json`` setting: ``.SupportSettings.PrivacyPolicyLink`` |
 |                                                                                                                                                                                    | - Environment variable: ``MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK``  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| Note: In version 5.17 and later, this setting does not change the Privacy Policy link in the **About Mattermost** dialog.                                                          |                                                                   |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| **Note**: In version 5.17 and later, this setting does not change the Privacy Policy link in the **About Mattermost** dialog.                                                                                                                          |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 About link
 ~~~~~~~~~~
@@ -223,7 +222,7 @@ Default server language
 |                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.DefaultServerLocale`` |
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE``  |
 |                                                                                                                                                                                                                                       |                                                                          |
-| Default: ``"en"``.                                                                                                                                                                                                                    |                                                                            |
+| Default: ``"en"``.                                                                                                                                                                                                                    |                                                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Default client language
@@ -383,7 +382,8 @@ Enable email notifications
 | - **false**: Disables notifications. A developer may choose this option to speed development by skipping email setup. See also the **Enable preview mode banner** setting. | - ``config.json`` setting: ``.EmailSettings.SendEmailNotifications: false`` |
 |                                                                                                                                                                            | - Environment variable: ``MM_EMAILSETTINGS_SENDEMAILNOTIFICATIONS``         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| Note:                                                                                                                                                                                                                                                    |
+| **Notes**:                                                                                                                                                                                                                                               |
+|                                                                                                                                                                                                                                                          |
 | - If this setting is ``false``, and the SMTP server is set up, account-related emails (such as authentication messages) will be sent regardless of this setting.                                                                                         |
 | - Email invitations and account deactivation emails are not affected by this setting.                                                                                                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -407,10 +407,11 @@ Enable email batching
 | - **false**: **(Default)** Emails will be sent for each mention or direct message.                                                                                                                                                                                           | - ``config.json`` setting: ``.EmailSettings.EnableEmailBatching: false`` |
 |                                                                                                                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEEMAILBATCHING``         |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| .. note::                                                                                                                                                                                                                                                                                                                                               |
-|    - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.                                                                                                                                                                                                                                            |
-|    - The `Site Url <https://docs.mattermost.com/configure/environment-configuration-settings.html#site-url>`_  and `SMTP Email Server <https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server>`_ must be configured to allow email batching.                                                                         |
-|    - Email batching in `High Availability Mode <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-high-availability-mode>`_ is planned, but not yet supported.                                                                                                                                                       |
+| **Notes**:                                                                                                                                                                                                                                                                                                                                              |
+|                                                                                                                                                                                                                                                                                                                                                         |
+| - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.                                                                                                                                                                                                                                               |
+| - The `Site Url <https://docs.mattermost.com/configure/environment-configuration-settings.html#site-url>`_  and `SMTP Email Server <https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp-server>`_ must be configured to allow email batching.                                                                            |
+| - Email batching in `High Availability Mode <https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-high-availability-mode>`_ is planned, but not yet supported.                                                                                                                                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Email notification contents
@@ -465,7 +466,7 @@ Notification footer mailing address
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | Optional setting to include the organization’s name and mailing address in the footer of email notifications. If not set, nothing will appear. | - **Site Configuration > Notifications**                             |
-|                                                                                                                                                | - ``config.json`` setting: ``.EmailSettings.FeedbackOrganization`` |
+|                                                                                                                                                | - ``config.json`` setting: ``.EmailSettings.FeedbackOrganization``   |
 | String input.                                                                                                                                  | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKORGANIZATION``    |
 +------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
@@ -496,64 +497,52 @@ Access the following configuration settings in the System Console by going to **
 Enable announcement banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Enable an announcement banner across all teams. The banner is    |- System Config path: **Site Configuration > Announcement        |
-|displayed at the top of the screen and is the entire width of the|Banner**                                                         |
-|screen. By default, users can dismiss the banner until you either| - ``config.json`` setting: ``"EnableBanner": false`` with       |
-|change the text of the banner or until you re-enable the banner  |options ``true`` and ``false``.                                  |
-|after it has been disabled. You can prevent users from dismissing|                                                                 |
-|the banner, and you can control the text color and the background|                                                                 |
-|color.                                                           |                                                                 |
-|                                                                 |                                                                 |
-|**True**: Enable the announcement banner. The banner is displayed|                                                                 |
-|only if ``BannerText`` has a value.                              |                                                                 |
-|                                                                 |                                                                 |
-|**False**: Disable the announcement banner.                      |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enable an announcement banner that is displayed across the top of the screen for all teams.              | - **Site Configuration > Announcement banner**                           |
+|                                                                                                                      | - ``config.json`` setting: ``.AnnouncementSettings.EnableBanner: false`` |
+| - **false**: **(Default)** Disable the announcement banner.                                                          | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ENABLEBANNER``         |
+|                                                                                                                      |                                                                          |
+| See **Banner text**, **Banner color**, **Banner text color**, and **Allow banner dismissal** for additional options. |                                                                          |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 
 Banner text
 ~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|The text of the announcement banner.                             | - System Config path: **Site Configuration > Announcement       |
-|                                                                 |Banner**                                                         |
-|                                                                 |This feature's ``config.json`` setting is                        |
-|                                                                 |``"BannerText": ""`` with string input.                          |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| The text of the announcement banner. If no text is provided, the banner will not appear. | - **Site Configuration > Announcement banner**                    |
+|                                                                                          | - ``config.json`` setting: ``.AnnouncementSettings.BannerText``   |
+| String input.                                                                            | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXT``    |
++------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 
 Banner color
 ~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|The background color of the announcement banner.                 | - System Config path: **Site Configuration > Announcement       |
-|                                                                 |Banner**                                                         |
-|                                                                 |This feature's ``config.json`` setting is                        |
-|                                                                 |``"BannerColor": "#f2a93b"`` with string input.                  |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------+-----------------------------------------------------------------------------+
+| The background color of the announcement banner. | - **Site Configuration > Announcement banner**                              |
+|                                                  | - ``config.json`` setting: ``.AnnouncementSettings.BannerColor: "#f2a93b"`` |
+| String input of a CSS color value.               | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERCOLOR``             |
++--------------------------------------------------+-----------------------------------------------------------------------------+
 
 Banner text color
 ~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|The color of the text in the announcement banner.                |- System Config path: **Site Configuration > Announcement        |
-|                                                                 |Banner**                                                         |
-|                                                                 |This feature's ``config.json`` setting is                        |
-|                                                                 |``"BannerTextColor": "#333333"`` with string input.              |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++---------------------------------------------------+---------------------------------------------------------------------------------+
+| The color of the text in the announcement banner. | - **Site Configuration > Announcement banner**                                  |
+|                                                   | - ``config.json`` setting: ``.AnnouncementSettings.BannerTextColor: "#333333"`` |
+| String input of a CSS color value.                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXTCOLOR``             |
++---------------------------------------------------+---------------------------------------------------------------------------------+
 
 
 Allow banner dismissal
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Users can dismiss the banner until the next time they  | - System Config path: **Site Configuration > Announcement       |
-|log in or the banner is updated.                                 |Banner**                                                         |
-|                                                                 |This feature's ``config.json`` setting is                        |
-|**False**: The banner is permanently visible until it is turned  |``"AllowBannerDismissal": true`` with options ``true`` and       |
-|off by the System Admin.                                         |``false``.                                                       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| - **true**: **(Default)** Users can dismiss the banner. The banner will re-appear the next time the user logs in, the banner text is updated, or a System Admin disables the banner and re-enables it. | - **Site Configuration > Announcement banner**                                  |
+|                                                                                                                                                                                                        | - ``config.json`` setting: ``.AnnouncementSettings.AllowBannerDismissal: true`` |
+| - **false**: Users cannot dismiss the banner.                                                                                                                                                          | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ALLOWBANNERDISMISSAL``        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 ----
 
