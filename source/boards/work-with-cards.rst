@@ -175,7 +175,7 @@ Alternatively, you can turn any existing card into a template:
 To set a default card template for all new cards created on the board:
 
 1. Select the drop-down arrow next to **New**.
-2. Open the options menu |options-icon|next to the card template of your choosing.
+2. Open the options menu |options-icon| next to the card template of your choosing.
 3. Select **Set as default**.
 
 .. note:: 
