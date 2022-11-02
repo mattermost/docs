@@ -310,9 +310,11 @@ class SearchClass {
         /** @type {Record<string, SearchResult>} */
         const uniqueObjectDocs = {}; // A map of the unique document anchors encountered when processing object results
         for (i = 0; i < objectterms.length; i++) {
-            /** @type {Array<string>} */
-            const others = [].concat(objectterms.slice(0, i),
-                objectterms.slice(i + 1, objectterms.length));
+            /** @type {Array<string>} A list of the search terms not including the current term being searched */
+            const others = [].concat(
+                objectterms.slice(0, i),
+                objectterms.slice(i + 1, objectterms.length)
+            );
             const objectResults = this.performObjectSearch(objectterms[i], others);
             // If there were any object results, remove duplicates by favouring the result with the highest score
             if (objectResults.length > 0) {
@@ -348,8 +350,9 @@ class SearchClass {
                 results[i].score = Scorer.score(['','','','',results[i].score]);
         }
 
-        // Remove results that have a duplicate anchor. This is fixed differently from Sphinx 5.0.0 onward.
-        /** @type {Record<string, boolean>} */
+        // Remove results that have a duplicate anchor by favouring the result with the higher score.
+        // This is fixed differently from Sphinx 5.0.0 onward.
+        /** @type {Record<string, SearchResult>} */
         const anchorMap = {};
         /** @type {Array<SearchResult>} */
         const filteredResults = [];
@@ -359,14 +362,17 @@ class SearchClass {
                 filteredResults.push(result);
                 continue;
             }
-            // If we have seen this anchor before, skip this result.
+            // If we have seen this anchor before, skip this result if it has the same or lower score.
             if (result.anchor in anchorMap) {
-                continue;
+                const existingResult = anchorMap[result.anchor];
+                if (result.score <= existingResult.score) {
+                    continue;
+                }
+                delete(anchorMap[result.anchor]);
             }
-            anchorMap[result.anchor] = true
-            filteredResults.push(result)
+            anchorMap[result.anchor] = result;
         }
-        results = filteredResults;
+        results = filteredResults.concat(Object.values(anchorMap));
 
         // sort results into buckets by score
         /** @type {Record<number, Array<SearchResult>>} */
