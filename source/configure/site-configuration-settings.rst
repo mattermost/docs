@@ -51,8 +51,8 @@ Enable custom branding
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
 +--------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - ***true***: Enables the display of a custom image and text on the login page | - System Config path: **Site Configuration > Customization**            |
-| - ***false***: **(Default)** Custom branding is disabled                       | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false``   |
+| - **true**: Enables the display of a custom image and text on the login page   | - System Config path: **Site Configuration > Customization**            |
+| - **false**: **(Default)** Custom branding is disabled                         | - ``config.json`` setting: ``.TeamSettings.EnableCustomBrand: false``   |
 | See **Custom brand image** and **Custom brand text** settings                  | - Environment variable: MM_TEAMSETTINGS_ENABLECUSTOMBRAND               |
 +--------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
@@ -79,7 +79,7 @@ Enable Ask Community link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-|  - **true: (Default)** **Ask the community** link to the `Mattermost Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__ appears under the **Help** menu in the channel header. |  - System Config path: **Site Configuration > Customization**                 |
+|  - **true**: **(Default)** **Ask the community** link to the `Mattermost Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__ appears under the **Help** menu in the channel header. |  - System Config path: **Site Configuration > Customization**                 |
 |                                                                                                                                                                                                        |  - ``config.json`` setting: ``.SupportSettings.EnableAskCommunityLink: true`` |
 |  - **false**: The link does not appear.                                                                                                                                                                |  - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``        |
 |                                                                                                                                                                                                        |                                                                               |
@@ -557,30 +557,22 @@ Access the following configuration settings in the System Console by going to **
 Enable emoji picker
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Enables an emoji picker that allows users to select    | - System Config path: **Site Configuration > Emoji**            |
-|emojis to add as reactions or use in messages. Enabling the emoji| - ``config.json`` setting:                                      |
-|picker with a large number of custom emojis may slow down        |``.ServiceSettings.EnableEmojiPicker`` with options ``true`` and |
-|performance.                                                     |``falt                                                           |
-|                                                                 |                                                                 |
-|**False**: The emoji picker is disabled.                         |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables a picker for adding emojis to messages and enables emojis as message reactions. | - **Site Configuration > Emoji**                                        |
+| - **false**: Disables the emoji picker for message composition and reactions.                                     | - ``config.json`` setting: ``.ServiceSettings.EnableEmojiPicker: true`` |
+|                                                                                                                   | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMOJIPICKER``        |
++-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Enable custom emoji
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-
-
-+----------------------------------------------------------------+------------------------------------------------------------------+
-|**True**: Enables a **Custom Emoji** option in the emoji picker,| - System Config path: **Site Configuration > Emoji**             |
-|where users can go to add custom emojis.                        | - ``config.json`` setting:``.ServiceSettings.EnableCustomEmoji`` |
-|                                                                |with options ``true`` and ``false``.                              |
-|**False**: Custom emojis are disabled.                          |                                                                  |
-|                                                                |                                                                  |
-+----------------------------------------------------------------+------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Allows users to add emojis through a **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or JPG files up to 1 MB. | - **Site Configuration > Emoji**                                         |
+| - **false**: **(Default)** Disables custom emojis.                                                                                             | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: false`` |
+|                                                                                                                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
++------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: Too many custom emojis can slow your server’s performance.                                                                                                                                                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
@@ -598,156 +590,100 @@ Automatically follow threads
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------------------------+-----------------------------------------------------------------+
-|This setting must be enabled to support `Collapsed Reply Threads          |  - System Config path: **Site Configuration > Posts**           |
-|<https://docs.mattermost.com/channels/organize-conversations.html>`__. See| - ``config.json`` setting is                                    |
-|the `administrator’s guide to enabling Collapsed Reply Threads            |``.ServiceSettings.ThreadAutoFollow: true`` with options ``true``|
-|<https://support.mattermost.com/hc/en-us/articles/6880701948564>`__       | and ``false``.                                                  |
-|knowledge base article for details.                                       |                                                                 |
-|                                                                          |                                                                 |
-|**True**: Threads a user starts, participates in, or is mentioned in are  |                                                                 |
-|automatically followed. A new ``Threads`` table is added in the database  |                                                                 |
-|that tracks threads and thread participants, and a ``ThreadMembership``   |                                                                 |
-|table tracks followed threads for each user and the read or unread state  |                                                                 |
-|of each followed thread. Mattermost Cloud workspaces have this setting    |                                                                 |
-|enabled.                                                                  |                                                                 |
-|                                                                          |                                                                 |
-|**False**: All backend operations for Collapsed Reply Threads are disabled|                                                                 |
-|and server performance will not be impacted by the feature. Collapsed     |                                                                 |
-|Reply Threads (``CollapsedThreads``) cannot be enabled if                 |                                                                 |
-|``ThreadAutoFollow`` is disabled.                                         |                                                                 |
-|                                                                          |                                                                 |
-+--------------------------------------------------------------------------+-----------------------------------------------------------------+
-
-
-.. note::
-
-   Enabling this configuration setting doesn’t retroactively follow threads for actions taken prior to the setting being enabled. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables automatic following for all threads that a user starts, or in which the user participates or is mentioned. A **Threads** table in the database tracks threads and thread participants. A **ThreadMembership** table tracks followed threads for each user and whether the thread is read or unread. | - **Site Configuration > Posts**                                       |
+|                                                                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.ServiceSettings.ThreadAutoFollow: true`` |
+| - **false**: Disables automatic following of threads.                                                                                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_THREADAUTOFOLLOW``        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                                                                                                                                                                                                                                                                                     |
+|                                                                                                                                                                                                                                                                                                                                                                                                                |
+| - This setting **must** be enabled for `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`_ to function. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`_ knowledge base article for details.                                                                                    |
+| - Enabling this setting does not automatically follow threads based on previous user actions. For example, threads a user participated in prior to enabling this setting won't be automatically followed. However, if this setting is enabled, and a user adds a new comment on an old thread, they will automatically start following the thread.                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Collapsed reply threads
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-+---------------------------------------------------------------------+-----------------------------------------------------------------+
-|Collapsed Reply Threads offers an enhanced experience for users      | - System Config path: **Site Configuration > Posts**            |
-|communicating in threads and replying to messages. Collapsed Reply   | This feature's ``config.json`` setting is                       |
-|Threads is generally available in Mattermost Cloud and from          |``.ServiceSettings.CollapsedThread: always_on`` with options     |
-|self-hosted Mattermost v7.0, and is enabled by default for all new   |``disabled``, ``default_off``, ``default_on``, and ``always_on`` |
-|Mattermost deployments. See our `Organizing Conversations using      |                                                                 |
-|Collapsed Reply Threads                                              |                                                                 |
-|<https://docs.mattermost.com/channels/organize-conversations.html>`__|                                                                 |
-|documentation to learn more about this feature.                      |                                                                 |
-+---------------------------------------------------------------------+-----------------------------------------------------------------+
-
-
 .. important::
 
-    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article to learn about the system requirements, steps to enable, and self-host prerequisites to consider prior to enabling this functionality.
+    Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article prior to enabling this functionality.
 
-System Admins can set the default availability of Collapsed Reply Threads for their workspace by going to **System Console > Site Configuration > Posts**, then setting **Collapsed Reply Threads** to one of the following options:
-
-**Always On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. Mattermost Cloud workspaces have Collapsed Reply Threads set to ``always_on`` by default.
-
-**Default On**: Enables Collapsed Reply Threads functionality on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
-
-**Default Off**: Enables Collapsed Reply Threads functionality on the server but not for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**.
-
-**Disabled**: Disables Collapsed Reply Threads front-end functionality.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. ``config.json`` setting: ``"always_on"``     | - **Site Configuration > Posts**                                   |
+| - **Default On**: Enables Collapsed Reply Threads on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_on"``                                                     | - ``config.json`` setting: ``.ServiceSettings.CollapsedThreads``   |
+| - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_off"``                                                | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``    |
+| - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                                                             |                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Enable link previews
 ~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Link previews are previews of linked website content, image      |  - System Config path: **Site Configuration > Posts**           |
-|links, and YouTube videos that are displayed below posts when    |This                                                             |
-|available.                                                       |feature's ``config.json`` setting is `":
-|                                                                 |true`` with options ``true`` and ``false``.                      |
-|Link previews are requested by the server, meaning the Mattermost|                                                                 |
-|server must be connected to the internet for previews to be      |                                                                 |
-|displayed. This connection can be established through a `firewall|                                                                 |
-|or outbound proxy                                                |                                                                 |
-|<https://docs.mattermost.com/install/outbound-proxy.html>`__ in  |                                                                 |
-|environments where direct internet connectivity is not given or  |                                                                 |
-|security policies make this necessary.                           |                                                                 |
-|                                                                 |                                                                 |
-|**True**: Website link previews, image link previews, and YouTube|                                                                 |
-|previews are enabled on the server. Users can enable or disable  |                                                                 |
-|website previews for themselves from **Settings > Display >      |                                                                 |
-|Website Link Previews**.                                         |                                                                 |
-|                                                                 |                                                                 |
-|**False**: Website link previews, image link previews, and       |                                                                 |
-|YouTube previews are disabled. The server does not request       |                                                                 |
-|metadata for any links sent in messages.                         |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** The server generates a preview of the first website, image, or YouTube video linked in a message. Users can disable website previews, but not image or YouTube previews, under **Settings > Display > Website Link Previews**. | - **Site Configuration > Posts**                                         |
+| - **false**: All previews are disabled and the server does not request metadata for any links contained in messages.                                                                                                                                     | - ``config.json`` setting: ``.ServiceSettings.EnableLinkPreviews: true`` |
+|                                                                                                                                                                                                                                                          | - Environment variable: ``MM_SERVICESETTINGS_ENABLELINKPREVIEWS``        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: The server must be connected to the internet to generate previews. This connection can be established through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ if necessary.                                                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 Disable link previews for specific domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Link previews are disabled for this list of comma-separated      | - System Config path: **Site Configuration > Posts**            |
-|domains (e.g. “github.com, mattermost.com”).                     | This                                                            |
-|                                                                 |feature's ``config.json`` setting is ``"RestrictLinkPreviews":   |
-|                                                                 |""`` with string input.                                          |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| Use this setting to disable previews of links for specific domains.                                      | - **Site Configuration > Posts**                                       |
+|                                                                                                          | - ``config.json`` setting: ``.ServiceSettings.RestrictLinkPreviews``   |
+| String input of a comma-separated list of domains, for example: ``"mattermost.com, images.example.com"`` | - Environment variable: ``MM_SERVICESETTINGS_RESTRICTLINKPREVIEWS``    |
++----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Enable message link previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Links to messages generate a preview for any users with|  - System Config path: **Site Configuration > Posts**           |
-|access to the original message.                                  |This                                                             |
-|                                                                 |feature's ``config.json`` setting is ``"EnablePermalinkPreviews":|
-|**False**: Links to messages don't include a preview.            |true`` with options ``true`` and ``false``.                      |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/channels/share-links.html>`__ will generate a preview for any users that have access to the original message. | - **Site Configuration > Posts**                                              |
+| - **false**: Share links do not generate a preview.                                                                                                                                                      | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
+|                                                                                                                                                                                                          | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Enable SVGs
 ~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Enables users to see previews of SVG file attachments  | - System Config path: **Site Configuration > Posts** This       |
-|and SVG image links.                                             |feature's ``config.json`` setting is ``"EnableSVGs": false`` with|
-|                                                                 |options ``true`` and ``false``.                                  |
-|**False**: Previews of SVG file attachments and SVG image links  |                                                                 |
-|are not displayed.                                               |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-------------------------------------------------------------------------------+------------------------------------------------------------------+
+| - **true**: **(Default)** Enables previews of SVG files attached to messages. | - **Site Configuration > Posts**                                 |
+| - **false**: Disables previews of SVG files.                                  | - ``config.json`` setting: ``.ServiceSettings.EnableSVGs: true`` |
+|                                                                               | - Environment variable: ``MM_SERVICESETTINGS_ENABLESVGS``        |
++-------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 Enable LaTeX code block rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Enables rendering of LaTeX code in a ``latex`` code    |  - System Config path: **Site Configuration > Posts** This      |
-|block.                                                           |feature's ``config.json`` setting is ``"EnableLatex": false``    |
-|                                                                 |with options ``true`` and ``false``.                             |
-|**False**: Disables rendering of LaTeX code to prevent the app   |                                                                 |
-|from crashing when sharing code that might outgrow assigned      |                                                                 |
-|memory. When disabled, LaTeX code will be highlighted.           |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| - **true**: **(Default)** Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__. | - **Site Configuration > Posts**                                  |
+| - **false**: Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                                     | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: true`` |
+|                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| **Warning**: Choose **false** to prevent Mattermost from crashing due to code outgrowing its assigned memory when it is rendered.                                                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable inline LaTeX rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| **True**: Enables inline rendering of LaTeX code.                                                       |  - System Config path: **Site Configuration > Posts**           |
-|                                                                                                         |This                                                             |
-|**False**: Disables inline rendering of LaTeX code to prevent the app from crashing when sharing code    |feature's ``config.json`` setting is ``"EnableInlineLatex":      |
-|that might outgrow assigned memory. When disabled, LaTeX code will be highlighted. When disabled, Latex  |false`` with options ``true`` and ``false``.                     |
-|code can only be `rendered in a code block using syntax highlighting                                     |                                                                 |
-|<https://docs.mattermost.com/configure/configuration-settings.html#enable-latex-code-block-rendering>`__.|                                                                 |
-+---------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.                                                                | - **Site Configuration > Posts**                                        |
+| - **false**: Disables inline rendering of LaTex. Instead, LaTeX in message text is highlighted. LaTex can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
+|                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| **Warning**: Choose **false** to prevent Mattermost from crashing due to code outgrowing its assigned memory when it is rendered.                                                                                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL schemes
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|A list of URL schemes that are used for autolinking in message   |  - System Config path: **Site Configuration > Posts**           |
-|text. ``http``, ``https``, ``ftp``, ``tel`` and ``mailto`` always|This                                                             |
-|create links.                                                    |feature's ``config.json`` setting is ``"CustomUrlSchemes": []``  |
-|                                                                 |with string array input consisting of URL schemes, such as       |
-|                                                                 |``["git", "smtp"]``.                                             |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| A list of URL schemes that will automatically create a link in message text, for example: ``["git", "smtp"]``. These schemes always create links: ``http``, ``https``, ``ftp``, ``tel``, and ``mailto``. | - **Site Configuration > Posts**                                      |
+|                                                                                                                                                                                                          | - ``config.json`` setting: ``.DisplaySettings.CustomURLSchemes: []``  |
+| ``config.json`` setting: an array of strings                                                                                                                                                             | - Environment variable: ``MM_DISPLAYSETTINGS_CUSTOMURLSCHEMES``       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Google API key
 ~~~~~~~~~~~~~~~
@@ -755,27 +691,16 @@ Google API key
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|Mattermost offers the ability to embed YouTube videos from URLs  | - System Config path: **Site Configuration > Posts**            |
-|shared by end users.                                             | This                                                            |
-|                                                                 |feature's ``config.json`` setting is ``"GoogleDeveloperKey": ""``|
-|Set this key and add YouTube Data API v3 as a service to your key|with string input.                                               |
-|to enable the display of titles for embedded YouTube video       |                                                                 |
-|previews. Without the key, YouTube previews will still be created|                                                                 |
-|based on hyperlinks appearing in messages or comments but they   |                                                                 |
-|will not show the video title. If Google detects the number of   |                                                                 |
-|views is exceedingly high, they may throttle embed access.       |                                                                 |
-|                                                                 |                                                                 |
-|Should this occur, you can remove the throttle by registering for|                                                                 |
-|a Google Developer Key and entering it in this field following   |                                                                 |
-|these instructions:                                              |                                                                 |
-|https://www.youtube.com/watch?v=Im69kzhpR3I. Your Google         |                                                                 |
-|Developer Key is used in client-side Javascript.                 |                                                                 |
-|                                                                 |                                                                 |
-|Using a Google API Key allows Mattermost to detect when a video  |                                                                 |
-|is no longer available and display the post with a *Video not    |                                                                 |
-|found* label.                                                    |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| If a key is provided in this setting, Mattermost displays titles of embedded YouTube videos and detects if a video is no longer available. Setting a key should also prevent Google from throttling access to embedded videos that receive a high number of views. | - **Site Configuration > Posts**                                     |
+|                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.ServiceSettings.GoogleDeveloperKey: `` |
+| String input.                                                                                                                                                                                                                                                      | - Environment variable: ``MM_SERVICESETTINGS_GOOGLEDEVELOPERKEY``    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| **Notes**:                                                                                                                                                                                                                                                                                                                                |
+|                                                                                                                                                                                                                                                                                                                                           |
+| - The key must have the YouTube Data API added as a service.                                                                                                                                                                                                                                                                              |
+| - This key is used in client-side Javascript.                                                                                                                                                                                                                                                                                             |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
