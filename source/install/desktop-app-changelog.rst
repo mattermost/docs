@@ -18,7 +18,7 @@ Release v5.2
 
 - **v5.2.1, release day TBD**
  - Fixing an issue where the onboarding screen is still displayed even when there is a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
- - Fixing an issue where the tray icon colour on Windows doesn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
+ - Fixing an issue where the tray icon color on Windows doesn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
 - **v5.2.0, released 2022-10-31**
  - Original v5.2.0 release
 
