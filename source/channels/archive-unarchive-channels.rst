@@ -7,24 +7,18 @@ Archive and unarchive channels
 Archive a channel
 -----------------
 
-Anyone can archive the public channels or private channels they belong to, unless the System Admin has restricted the permissions.
-Select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. 
+Anyone can archive the public channels or private channels they belong to, unless the System Admin has restricted the permissions to do so. System Admins can archive channels in the System Console without needing to be a channel member. To archive a channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. 
 
-When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. Because of this, the URL of a newly created channel can't be the same URL as an archived channel.
+When a channel is archived, the channel is removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. From Mattermost v5.28, users can view, share, and search for archived channel content. Because a copy of the channel exists on the server, you can't reuse the same URL of an archived channel when creating a new channel. 
 
-In addition to this, when a channel is archived, by default the contents can't be viewed, shared, or searched. If you want to be able to view or search the channel later, either:
+.. tip::
 
-1. Ask your System Admin to set ``ExperimentalViewArchivedChannels`` to ``true`` in ``config.json`` to allow users to view, share, and search for content of channels that have been archived; or
-2. Leave the channel open, but post a message in the channel saying it's considered archived: such as ``# This channel is archived.``
-
-.. note::
-  
-  System Admins can archive channels in the System Console without needing to be a channel member.
+  Instead of archiving, alternatively you can leave the channel open and post a message in the channel saying it's considered archived, such as: ``# This channel is archived.``
 
 Unarchive a channel
 -------------------
 
-System Admins and Team Admins can unarchive public channels or private channels they belonged to when it was archived.
+System Admins and Team Admins can unarchive public channels or private channels they belonged to before they were archived.
 Search for the channel if required. Then, open the channel, select the channel name at the top of the center pane to access the drop-down menu and select **Unarchive Channel**. 
 
 .. image:: ../images/unarchive-channel.png
