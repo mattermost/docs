@@ -28,7 +28,6 @@ Latest Mattermost Cloud releases:
  - Added the ability for Cloud customers to submit their feedback for wire transfers to buy a monthly subscription. 
  - Added logic to package product version of Boards with production builds.
  - **System Console** settings that Cloud Admins cannot configure are now hidden.
- - Denormalized Threads table by adding the ``TeamId`` column.
 
 ### Bug Fixes
  - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
