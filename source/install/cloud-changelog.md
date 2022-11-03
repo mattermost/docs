@@ -25,8 +25,7 @@ Latest Mattermost Cloud releases:
 #### Administration
  - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
  - Crashing jobs now sets the job status to "failed".
- - Added the ability for Cloud customers to submit their feedback for wire transfers to buy a monthly subscription.
- - Added a new schema migration to ensure the ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in the database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.  
+ - Added the ability for Cloud customers to submit their feedback for wire transfers to buy a monthly subscription. 
  - Added logic to package product version of Boards with production builds.
  - **System Console** settings that Cloud Admins cannot configure are now hidden.
  - Denormalized Threads table by adding the ``TeamId`` column.
