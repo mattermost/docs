@@ -174,8 +174,6 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
     3. To create a Desktop launcher, open the file ``README.md``, and follow the instructions in the **Desktop launcher** section.
 
-  
-    
 Log in using the desktop app
 -----------------------------
 
@@ -201,6 +199,16 @@ The following additional documentation resources are also available for the Matt
 
 Troubleshooting your Desktop App installation
 ----------------------------------------------
+
+Where is configuation stored locally?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The location of the Mattermost desktop app configuration file depends on the platform where you're running Mattermost:
+
+- Windows: ``Users\<username>\AppData\Roaming\Mattermost``
+- macOS DMG: ``/Users/<username>/Library/Application Support/Mattermost``
+- macOS TestFlight: ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``
+- Linux: ``~/.config/Mattermost``
 
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
