@@ -130,7 +130,11 @@ redirects = {
 "administration/compliance-export.html":
         "https://docs.mattermost.com/comply/compliance-export.html",
 "administration/config-in-database.html":
-        "https://docs.mattermost.com/configure/configuation-in-mattermost-database.html",
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"administration/config-in-database.html#configuration-in-a-database.html":
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
+"administration/config-in-database.html#configuration-in-the-mattermost-database":
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "administration/data-retention.html":
         "https://docs.mattermost.com/comply/data-retention-policy.html",
 "administration/devops-command-center.html":
@@ -230,7 +234,7 @@ redirects = {
 "administration/config-settings.html#ad-ldap":
         "https://docs.mattermost.com/configure/configuration-settings.html#ad-ldap",
 "administration/config-in-database.html":
-	"https://docs.mattermost.com/configure/configuation-in-mattermost-database.html#create-an-environment-file",
+	"https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "administration/config-settings.html#customization":
         "https://docs.mattermost.com/configure/configuration-settings.html#customization",
 "administration/config-settings.html#default-channels-experimental":
@@ -382,6 +386,8 @@ redirects = {
 
 
 # Configuration settings redirects
+"configure/configuration-in-mattermost-database.html":
+        "https://docs.mattermost.com/configure/configuation-in-a-database.html",
 "configure/configuration-settings.html#channels":
         "https://docs.mattermost.com/configure/user-management-configuration-settings.html#channels",
 "configure/configuration-settings.html#allow-use-of-api-v3-endpoints":
