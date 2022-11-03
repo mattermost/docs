@@ -97,6 +97,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the “Enterprise license is expired” banner was non-dismissible.
  - Fixed an issue where the “Renew Now” option was not showing in-product and always defaulted to Contact Sales.
  - Fixed an issue where ``getPostSince`` didn't properly return deleted posts when Collapsed Reply Threads was enabled.
+ - Fixed an issue where ``OwnerId`` was not set for bots created via ``EnsureBotUser``.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
