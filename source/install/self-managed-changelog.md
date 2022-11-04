@@ -48,16 +48,13 @@ Latest Mattermost Releases:
  - Added Insights to the channel switcher.
  - Added a button to easily copy the content of text or code files in file previews.
  - The team unread icon for muted channels is now hidden in the sidebar.
- - Updated the designs for the “payment failed” email notifications.
  - Added the ability to create a new channel along with a new board associated with the created channel.
- - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by selecting “Notify admin to update billing”.
  - Added markdown formatting for hyperlinks when pasted into the text editor.
  - Email notifications from new messages now also support displaying Slack attachments from the channel post.
  - Updated NPS plugin to version 1.3.0.
 
 #### Administration
  - After 90 days since the day of missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
- - Added a credit card update modal that communicates arrears for Admins.
  - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
  - Introduced an Invite Guests upsell prompt to self-hosted.
  - Added JSON-compatible nested config value parsing from environment variables.
@@ -76,7 +73,6 @@ Latest Mattermost Releases:
  - Fixed an issue where custom groups could be created with at-mention names that are reserved words (@channel, @here, @all).
  - Fixed an issue where 404 errors were shown when APIv4 had an incorrect content-type header.
  - Fixed an issue where messages from bots and webhooks could not be forwarded.
- - Fixed an issue where the **Integrations limit** warning modal stated "You're getting closer to the 5 enabled integrations limit" even when 5 plugins were already enabled.
  - Fixed an issue where inline images did not appear in the channel header.
  - Fixed an issue with the emoji skin tone selector animation.
  - Fixed an issue where the screen reader did not announce a successful login when logging in.
