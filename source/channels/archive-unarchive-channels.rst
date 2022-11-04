@@ -13,7 +13,7 @@ When a channel is archived, it's removed from the user interface, but a copy exi
 
 .. tip::
 
-  Instead of archiving, alternatively you can leave the channel open and post a message in the channel saying it's considered archived, such as: ``# This channel is archived.``
+  Instead of archiving, you can also leave the channel open and post a message in the channel saying it's considered archived, such as: ``# This channel is archived.``
 
 Unarchive a channel
 -------------------
