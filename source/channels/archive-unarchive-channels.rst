@@ -9,7 +9,7 @@ Archive a channel
 
 Anyone can archive the public channels or private channels they belong to, unless the System Admin has restricted the permissions to do so. System Admins can archive channels in the System Console without needing to be a channel member. To archive a channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. 
 
-When a channel is archived, the channel is removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. From Mattermost v5.28, users can view, share, and search for archived channel content. Because a copy of the channel exists on the server, you can't reuse the same URL of an archived channel when creating a new channel. 
+When a channel is archived, it's removed from the user interface, but a copy exists on the server in case it's needed for audit reasons at a later stage. From Mattermost v5.28, users can view, share, and search for archived channel content. Because a copy of the channel exists on the server, you can't reuse the URL of an archived channel when creating a new channel.
 
 .. tip::
 
