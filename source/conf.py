@@ -349,6 +349,8 @@ redirects = {
         "https://docs.mattermost.com/comply/cloud-data-retention-policy.html",
 "cloud/cloud-administration/saml-technical.html":
 	"https://docs.mattermost.com/onboard/cloud-sso-saml-technical.html",
+"cloud/cloud-administration/sso-openid-connect.html":
+        "https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html",
 "cloud/cloud-administration/sso-saml.html":
 	"https://docs.mattermost.com/onboard/cloud-sso-saml.html",
 "cloud/cloud-billing/cloud-billing.html":
