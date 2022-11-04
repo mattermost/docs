@@ -30,6 +30,7 @@ Latest Mattermost Releases:
 #### Boards
 
 #### Calls
+ - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then click the comment button to access the real-time message thread in the right-hand sidebar.
 
 ### Improvements
 
