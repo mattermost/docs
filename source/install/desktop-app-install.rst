@@ -203,11 +203,11 @@ Troubleshooting your Desktop App installation
 Where is configuation stored locally?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The location of the Mattermost desktop app configuration file depends on the platform where you're running Mattermost:
+The location of the Mattermost desktop app configuration file depends on the platform where you're running Mattermost (and, in the case of macOS, how you've chosen to install the app):
 
 - Windows: ``Users\<username>\AppData\Roaming\Mattermost``
-- macOS DMG: ``/Users/<username>/Library/Application Support/Mattermost``
-- macOS TestFlight: ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``
+- macOS standalone download: ``/Users/<username>/Library/Application Support/Mattermost``
+- macOS App Store & TestFlight: ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``
 - Linux: ``~/.config/Mattermost``
 
 "Installation has failed" dialog
