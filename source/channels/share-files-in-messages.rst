@@ -67,4 +67,4 @@ You can download an attached file by selecting the **Download** |download-icon| 
 
 .. tip::
 
-  From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
+  From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window. Downloaded files are saved to the **Download location** set in Mattermost desktop app preferences. See the `customize your desktop app experience documentation </welcome/customize-desktop-app-experience.html>`__ for details on customizing your desktop app download location.
