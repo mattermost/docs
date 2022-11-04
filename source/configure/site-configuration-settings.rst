@@ -105,7 +105,7 @@ Terms of Use link
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| The URL for the Terms of Use of a self-hosted site. A link to the terms appears at the bottom of the sign-up and login pages.                                                                                                                                                                                                                                                                                                                                                      | - **Site Configuration > Customization**                           |
+| The URL for the Terms of Use of a self-hosted site. A link to the terms appears at the bottom of the sign-up and login pages.                                                                                                                                                                                                                                                                                                                                                      | - System Config path: **Site Configuration > Customization**       |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.SupportSettings.TermsOfServiceLink`` |
 | The default URL links to a `Terms of Use <https://about.mattermost.com/default-terms/>`__ page hosted on ``mattermost.com``. This includes the Mattermost Acceptable Use Policy explaining the terms under which Mattermost software is provided to end users. If you change the default link to add your own terms for using the service you provide, your new terms **must include a link** to the default terms so end users are aware of the Mattermost Acceptable Use Policy. | - Environment variable: ``MM_SUPPORTSETTINGS_TERMSOFSERVICELINK``  |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                    |
@@ -121,7 +121,7 @@ Privacy Policy link
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| The URL for the Privacy Policy of a self-hosted site. A link to the policy appears at the bottom of the sign-up and login pages. If this field is empty, the link does not appear. | - **Site Configuration > Customization**                          |
+| The URL for the Privacy Policy of a self-hosted site. A link to the policy appears at the bottom of the sign-up and login pages. If this field is empty, the link does not appear. | - System Config path: **Site Configuration > Customization**      |
 |                                                                                                                                                                                    | - ``config.json`` setting: ``.SupportSettings.PrivacyPolicyLink`` |
 |                                                                                                                                                                                    | - Environment variable: ``MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK``  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
@@ -180,7 +180,7 @@ Android app download link
   :start-after: :nosearch:+
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| The URL to download the Mattermost Android app. Users who access the Mattermost site on a mobile browser will be prompted to download the app through this link. If this field is empty, the prompt does not appear.                              | - **Site Configuration > Customization**                                 |
+| The URL to download the Mattermost Android app. Users who access the Mattermost site on a mobile browser will be prompted to download the app through this link. If this field is empty, the prompt does not appear.                              | - System Config path: **Site Configuration > Customization**             |
 |                                                                                                                                                                                                                                                   | - ``config.json`` setting: ``.NativeAppSettings.AndroidAppDownloadLink`` |
 | If you have an Enterprise App Store, use this setting to link to your Android app.                                                                                                                                                                | - Environment variable: ``MM_NATIVEAPPSETTINGS_ANDROIDAPPDOWNLOADLINK``  |
 |                                                                                                                                                                                                                                                   |                                                                          |
@@ -218,7 +218,7 @@ Default server language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| The default language for system messages and logs. Changes to this setting require a server restart before taking effect.                                                                                                             | - **Site Configuration > Localization**                                  |
+| The default language for system messages and logs. Changes to this setting require a server restart before taking effect.                                                                                                             | - System Config path: **Site Configuration > Localization**              |
 |                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.DefaultServerLocale`` |
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE``  |
 |                                                                                                                                                                                                                                       |                                                                          |
@@ -229,7 +229,7 @@ Default client language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| The default language for new users and pages where the user is not logged in. Changes to this setting require a server restart before taking effect.                                                                                  | - **Site Configuration > Localization**                                  |
+| The default language for new users and pages where the user is not logged in. Changes to this setting require a server restart before taking effect.                                                                                  | - System Config path: **Site Configuration > Localization**              |
 |                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.DefaultClientLocale`` |
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE``  |
 |                                                                                                                                                                                                                                       |                                                                          |
@@ -240,7 +240,7 @@ Available languages
 ~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Sets the list of languages users see under **Settings > Display > Language**. If this field is blank, users see all supported languages. If this field is not blank, it must contain the **Default client language**, in addition to any other languages.                                                                                                                                                                             | - **Site Configuration > Localization**                               |
+| Sets the list of languages users see under **Settings > Display > Language**. If this field is blank, users see all supported languages. If this field is not blank, it must contain the **Default client language**, in addition to any other languages.                                                                                                                                                                             | - System Config path: **Site Configuration > Localization**           |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.LocalizationSettings.AvailableLocales`` |
 | The ``config.json`` setting is a string that can contain the following comma-separated entries: ``"bg"``, ``"de"``, ``"en"``, ``en-AU``, ``"es"``, ``"fa"``, ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``, ``"pt-br"``, `"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``uk``, ``"zh_CN"``, and ``"zh_TW"``. For example, to limit the language choices to English (US) and Español, the string would be ``”en,es”``. | - Environment variable: ``MM_LOCALIZATIONSETTINGS_AVAILABLELOCALES``  |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                       |                                                                       |
@@ -263,7 +263,7 @@ Max users per team
 ~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| The **Max users per team** is the maximum total number of users per team, including active and inactive users. In Mattermost, a team of people should be a small organization with a specific goal. In the physical world, a team could sit around a single table to discuss their project. The default maximum (50) should be appropriate for most teams, but with appropriate `hardware <https://docs.mattermost.com/install/software-hardware-requirements.html>`_, this limit can be increased to thousands of users. `Channels <https://docs.mattermost.com/guides/channels.html>`_ are another way of organizing communications on different topics.              | - **Site Configuration > Users and teams**                       |
+| The **Max users per team** is the maximum total number of users per team, including active and inactive users. In Mattermost, a team of people should be a small organization with a specific goal. In the physical world, a team could sit around a single table to discuss their project. The default maximum (50) should be appropriate for most teams, but with appropriate `hardware <https://docs.mattermost.com/install/software-hardware-requirements.html>`_, this limit can be increased to thousands of users. `Channels <https://docs.mattermost.com/guides/channels.html>`_ are another way of organizing communications on different topics.              | - System Config path: **Site Configuration > Users and teams**   |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50`` |
 | Numerical input. Default: 50.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
@@ -273,7 +273,7 @@ Max channels per team
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| The maximum number of channels per team, including both active and deleted channels. | - **Site Configuration > Users and teams**                            |
+| The maximum number of channels per team, including both active and deleted channels. | - System Config path: **Site Configuration > Users and teams**        |
 |                                                                                      | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
 |                                                                                      | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
 +--------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
@@ -282,7 +282,7 @@ Enable users to open direct message channels with
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| This setting determines whether a user can open a Direct Message channel to anyone on the server or only to members of the same team.                                                                                                                                                                                                                                                                                                    | - **Site Configuration > Users and teams**                           |
+| This setting determines whether a user can open a Direct Message channel to anyone on the server or only to members of the same team.                                                                                                                                                                                                                                                                                                    | - System Config path: **Site Configuration > Users and teams**       |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.TeamSettings.RestrictDirectMessage``   |
 | - **Any user on the Mattermost server**: **(Default)** Users can open a Direct Messages channel to any user on the server through the **Direct Messages > More** menu.                                                                                                                                                                                                                                                                   | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTDIRECTMESSAGE``    |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                                      |
@@ -296,7 +296,7 @@ Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| Specifies how names are displayed in the user interface by default. Users can override this setting in **Settings > Display > Teammate Name Display**.                                                                                                                 | - **Site Configuration > Users and teams**                       |
+| Specifies how names are displayed in the user interface by default. Users can override this setting in **Settings > Display > Teammate Name Display**.                                                                                                                 | - System Config path: **Site Configuration > Users and teams**   |
 |                                                                                                                                                                                                                                                                        | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay`` |
 | - **Show username**:**(Default)** Displays the user’s username. ``config.json`` option: ``"username"``.                                                                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``  |
 |                                                                                                                                                                                                                                                                        |                                                                  |
@@ -313,7 +313,7 @@ Lock teammate name display for all users
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| Controls whether users can change settings under **Settings > Display > Teammate Name Display**. | - **Site Configuration > Users and teams**                                  |
+| Controls whether users can change settings under **Settings > Display > Teammate Name Display**. | - System Config path: **Site Configuration > Users and teams**              |
 |                                                                                                  | - ``config.json`` setting: ``.TeamSettings.LockTeammateNameDisplay: false`` |
 | - **false**: **(Default)** Users can change their Teammate Name Display                          | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``         |
 | - **true**: Users **cannot** change their Teammate Name Dispaly                                  |                                                                             |
@@ -323,7 +323,7 @@ Allow users to view archived channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows users to access content of archived channels of which they were a member. | - **Site Configuration > Users and teams**                                          |
+| - **true**: **(Default)** Allows users to access content of archived channels of which they were a member. | - System Config path: **Site Configuration > Users and teams**                      |
 | - **false**: Users are unable to access content in archived channels.                                      | - ``config.json`` setting: ``.TeamSettings.ExperimentalViewArchivedChannels: true`` |
 |                                                                                                            | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``        |
 +------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -332,7 +332,7 @@ Show email address
 ~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** All users can see each others’ email addresses.                                                                            | - **Site Configuration > Users and teams**                             |
+| - **true**: **(Default)** All users can see each others’ email addresses.                                                                            | - System Config path: **Site Configuration > Users and teams**         |
 | - **false**: Hides email addresses in the UI, except from System Admins.                                                                             | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
 |                                                                                                                                                      | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -341,7 +341,7 @@ Show full name
 ~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| - **true**: **(Default)** Full names are visible to all users in the UI.                                                   | - **Site Configuration > Users and teams**                         |
+| - **true**: **(Default)** Full names are visible to all users in the UI.                                                   | - System Config path: **Site Configuration > Users and teams**     |
 | - **false**: Hides full names from all users in the UI, except System Admins. Username is shown in place of the full name. | - ``config.json`` setting: ``.PrivacySettings.ShowFullName: true`` |
 |                                                                                                                            | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``        |
 +----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
@@ -350,7 +350,7 @@ Enable custom user statuses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users can set status messages and emojis that are visible to all users. | - **Site Configuration > Users and teams**                                  |
+| - **true**: **(Default)** Users can set status messages and emojis that are visible to all users. | - System Config path: **Site Configuration > Users and teams**              |
 | - **false**: Users cannot set custom statuses.                                                    | - ``config.json`` setting: ``.TeamSettings.EnableCustomUserStatuses: true`` |
 |                                                                                                   | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMUSERSTATUSES``        |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -369,7 +369,7 @@ Show @channel, @all, or @here confirmation dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Requires users to confirm when posting @channel, @all, @here, or group mentions in channels with more than 5 members.     | - **Site Configuration > Notifications**                                               |
+| - **true**: **(Default)** Requires users to confirm when posting @channel, @all, @here, or group mentions in channels with more than 5 members.     | - System Config path: **Site Configuration > Notifications**                           |
 | - **false**: No confirmation is required.                                                                                                           | - ``config.json`` setting: ``.TeamSettings.EnableConfirmNotificationsToChannel: true`` |
 |                                                                                                                                                     | - Environment variable: ``MM_TEAMSETTINGS_ENABLECONFIRMNOTIFICATIONSTOCHANNEL``        |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -378,7 +378,7 @@ Enable email notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables automatic email notifications for posts.                                                                                                 | - **Site Configuration > Notifications**                                    |
+| - **true**: **(Default)** Enables automatic email notifications for posts.                                                                                                 | - System Config path: **Site Configuration > Notifications**                |
 | - **false**: Disables notifications. A developer may choose this option to speed development by skipping email setup. See also the **Enable preview mode banner** setting. | - ``config.json`` setting: ``.EmailSettings.SendEmailNotifications: false`` |
 |                                                                                                                                                                            | - Environment variable: ``MM_EMAILSETTINGS_SENDEMAILNOTIFICATIONS``         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -394,7 +394,7 @@ Enable preview mode banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** When **Send email notifications** is ``false``, users see the Preview Mode banner. This banner alerts users that email notifications are disabled. | - **Site Configuration > Notifications**                                    |
+| - **true**: **(Default)** When **Send email notifications** is ``false``, users see the Preview Mode banner. This banner alerts users that email notifications are disabled. | - System Config path: **Site Configuration > Notifications**                |
 | - **false**: Preview Mode banner does not appear.                                                                                                                            | - ``config.json`` setting: ``.EmailSettings.EnablePreviewModeBanner: true`` |
 |                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEPREVIEWMODEBANNER``        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -403,7 +403,7 @@ Enable email batching
 ~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email. The time period can be customized by each user under **Settings > Notifications**. The default time period is 15 minutes.                | - **Site Configuration > Notifications**                                 |
+| - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email. The time period can be customized by each user under **Settings > Notifications**. The default time period is 15 minutes.                | - System Config path: **Site Configuration > Notifications**             |
 | - **false**: **(Default)** Emails will be sent for each mention or direct message.                                                                                                                                                                                           | - ``config.json`` setting: ``.EmailSettings.EnableEmailBatching: false`` |
 |                                                                                                                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEEMAILBATCHING``         |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -420,7 +420,7 @@ Email notification contents
 *Available in legacy Enterprise Edition E20*
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| - **Send full message contents**: **(Default)** Email notifications include the full message contents, along with the name of the sender and the channel. ``config.json`` setting: ``"full"``                                                                                                                                                          | - **Site Configuration > Notifications**                                            |
+| - **Send full message contents**: **(Default)** Email notifications include the full message contents, along with the name of the sender and the channel. ``config.json`` setting: ``"full"``                                                                                                                                                          | - System Config path: **Site Configuration > Notifications**                        |
 |                                                                                                                                                                                                                                                                                                                                                        | - ``config.json`` setting: ``.EmailSettings.EmailNotificationContentsType: "full"`` |
 | - **Send generic description with only sender name**: Only the name of the sender and team name are included in email notifications. Use this option if Mattermost contains confidential information and policy dictates it cannot be stored in email. ``config.json`` setting: ``"generic"``                                                          | - Environment variable: ``MM_EMAILSETTINGS_EMAILNOTIFICATIONCONTENTSTYPE``          |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -429,7 +429,7 @@ Support email address
 ~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial. This address should be monitored by a System Admin. If no value is set, email notifications will not contain a way for users to request assistance.                                                    | - **Site Configuration > Notifications**                       |
+| Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial. This address should be monitored by a System Admin. If no value is set, email notifications will not contain a way for users to request assistance.                                                    | - System Config path: **Site Configuration > Notifications**   |
 |                                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.SupportSettings.SupportEmail``   |
 | String input. This field is required when changing settings in the System Console.                                                                                                                                                                                                                                                       | - Environment variable: ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
@@ -438,7 +438,7 @@ Notification display name
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| Display name for email notifications sent from the Mattermost system.              | - **Site Configuration > Notifications**                     |
+| Display name for email notifications sent from the Mattermost system.              | - System Config path: **Site Configuration > Notifications** |
 |                                                                                    | - ``config.json`` setting: ``.EmailSettings.FeedbackName``   |
 | String input. This field is required when changing settings in the System Console. | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKNAME``    |
 +------------------------------------------------------------------------------------+--------------------------------------------------------------+
@@ -447,7 +447,7 @@ Notification from address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| Email address for notification emails from the Mattermost system. This address should be monitored by a System Admin. | - **Site Configuration > Notifications**                      |
+| Email address for notification emails from the Mattermost system. This address should be monitored by a System Admin. | - System Config path: **Site Configuration > Notifications**  |
 |                                                                                                                       | - ``config.json`` setting: ``.EmailSettings.FeedbackEmail``   |
 | String input. This field is required when changing settings in the System Console.                                    | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKEMAIL``    |
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -456,7 +456,7 @@ Notification reply-to address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| Email address used in the reply-to header when sending notification emails from the Mattermost system. This address should be monitored by a System Admin. | - **Site Configuration > Notifications**                       |
+| Email address used in the reply-to header when sending notification emails from the Mattermost system. This address should be monitored by a System Admin. | - System Config path: **Site Configuration > Notifications**   |
 |                                                                                                                                                            | - ``config.json`` setting: ``.EmailSettings.ReplyToAddress``   |
 | String input.                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_REPLYTOADDRESS``    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
@@ -465,7 +465,7 @@ Notification footer mailing address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| Optional setting to include the organization’s name and mailing address in the footer of email notifications. If not set, nothing will appear. | - **Site Configuration > Notifications**                             |
+| Optional setting to include the organization’s name and mailing address in the footer of email notifications. If not set, nothing will appear. | - System Config path: **Site Configuration > Notifications**         |
 |                                                                                                                                                | - ``config.json`` setting: ``.EmailSettings.FeedbackOrganization``   |
 | String input.                                                                                                                                  | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKORGANIZATION``    |
 +------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -475,7 +475,7 @@ Push notification contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **Generic description with only sender name**: Push notifications include the sender’s name, but not the channel name or message contents.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | - **Site Configuration > Notifications**                                 |
+| - **Generic description with only sender name**: Push notifications include the sender’s name, but not the channel name or message contents.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | - System Config path: **Site Configuration > Notifications**             |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | - ``config.json`` setting: ``.EmailSettings.PushNotificationContents: `` |
 | - **Generic description with sender and channel names**: **(Default)** Push notifications include the name of the sender and channel, but not the message contents.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONCONTENTS``    |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                          |
@@ -498,7 +498,7 @@ Enable announcement banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: Enable an announcement banner that is displayed across the top of the screen for all teams.              | - **Site Configuration > Announcement banner**                           |
+| - **true**: Enable an announcement banner that is displayed across the top of the screen for all teams.              | - System Config path: **Site Configuration > Announcement banner**       |
 |                                                                                                                      | - ``config.json`` setting: ``.AnnouncementSettings.EnableBanner: false`` |
 | - **false**: **(Default)** Disable the announcement banner.                                                          | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ENABLEBANNER``         |
 |                                                                                                                      |                                                                          |
@@ -510,7 +510,7 @@ Banner text
 ~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| The text of the announcement banner. If no text is provided, the banner will not appear. | - **Site Configuration > Announcement banner**                    |
+| The text of the announcement banner. If no text is provided, the banner will not appear. | - System Config path: **Site Configuration > Announcement banner**|
 |                                                                                          | - ``config.json`` setting: ``.AnnouncementSettings.BannerText``   |
 | String input.                                                                            | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXT``    |
 +------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
@@ -520,7 +520,7 @@ Banner color
 ~~~~~~~~~~~~~
 
 +--------------------------------------------------+-----------------------------------------------------------------------------+
-| The background color of the announcement banner. | - **Site Configuration > Announcement banner**                              |
+| The background color of the announcement banner. | - System Config path: **Site Configuration > Announcement banner**          |
 |                                                  | - ``config.json`` setting: ``.AnnouncementSettings.BannerColor: "#f2a93b"`` |
 | String input of a CSS color value.               | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERCOLOR``             |
 +--------------------------------------------------+-----------------------------------------------------------------------------+
@@ -529,7 +529,7 @@ Banner text color
 ~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------+---------------------------------------------------------------------------------+
-| The color of the text in the announcement banner. | - **Site Configuration > Announcement banner**                                  |
+| The color of the text in the announcement banner. | - System Config path: **Site Configuration > Announcement banner**              |
 |                                                   | - ``config.json`` setting: ``.AnnouncementSettings.BannerTextColor: "#333333"`` |
 | String input of a CSS color value.                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXTCOLOR``             |
 +---------------------------------------------------+---------------------------------------------------------------------------------+
@@ -539,7 +539,7 @@ Allow banner dismissal
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| - **true**: **(Default)** Users can dismiss the banner. The banner will re-appear the next time the user logs in, the banner text is updated, or a System Admin disables the banner and re-enables it. | - **Site Configuration > Announcement banner**                                  |
+| - **true**: **(Default)** Users can dismiss the banner. The banner will re-appear the next time the user logs in, the banner text is updated, or a System Admin disables the banner and re-enables it. | - System Config path: **Site Configuration > Announcement banner**              |
 |                                                                                                                                                                                                        | - ``config.json`` setting: ``.AnnouncementSettings.AllowBannerDismissal: true`` |
 | - **false**: Users cannot dismiss the banner.                                                                                                                                                          | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ALLOWBANNERDISMISSAL``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
@@ -558,7 +558,7 @@ Enable emoji picker
 ~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables a picker for adding emojis to messages and enables emojis as message reactions. | - **Site Configuration > Emoji**                                        |
+| - **true**: **(Default)** Enables a picker for adding emojis to messages and enables emojis as message reactions. | - System Config path: **Site Configuration > Emoji**                    |
 | - **false**: Disables the emoji picker for message composition and reactions.                                     | - ``config.json`` setting: ``.ServiceSettings.EnableEmojiPicker: true`` |
 |                                                                                                                   | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMOJIPICKER``        |
 +-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -567,7 +567,7 @@ Enable custom emoji
 ~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: Allows users to add emojis through a **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or JPG files up to 1 MB. | - **Site Configuration > Emoji**                                         |
+| - **true**: Allows users to add emojis through a **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or JPG files up to 1 MB. | - System Config path: **Site Configuration > Emoji**                     |
 | - **false**: **(Default)** Disables custom emojis.                                                                                             | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: false`` |
 |                                                                                                                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
 +------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -591,7 +591,7 @@ Automatically follow threads
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables automatic following for all threads that a user starts, or in which the user participates or is mentioned. A **Threads** table in the database tracks threads and thread participants. A **ThreadMembership** table tracks followed threads for each user and whether the thread is read or unread. | - **Site Configuration > Posts**                                       |
+| - **true**: **(Default)** Enables automatic following for all threads that a user starts, or in which the user participates or is mentioned. A **Threads** table in the database tracks threads and thread participants. A **ThreadMembership** table tracks followed threads for each user and whether the thread is read or unread. | - System Config path: **Site Configuration > Posts**                   |
 |                                                                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.ServiceSettings.ThreadAutoFollow: true`` |
 | - **false**: Disables automatic following of threads.                                                                                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_THREADAUTOFOLLOW``        |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -609,7 +609,7 @@ Collapsed reply threads
     Customers upgrading to v7.0 must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ knowledge base article prior to enabling this functionality.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. ``config.json`` setting: ``"always_on"``     | - **Site Configuration > Posts**                                   |
+| - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/channels/organize-conversations.html>`__ on the server and for all users. Users can't disable this functionality. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. ``config.json`` setting: ``"always_on"``     | - System Config path: **Site Configuration > Posts**               |
 | - **Default On**: Enables Collapsed Reply Threads on the server and for all users. Users can choose to `disable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_on"``                                                     | - ``config.json`` setting: ``.ServiceSettings.CollapsedThreads``   |
 | - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. Users can choose to `enable Collapsed Reply Threads <https://docs.mattermost.com/channels/channels-settings.html#collapsed-reply-threads>`__ for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_off"``                                                | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``    |
 | - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                                                             |                                                                    |
@@ -619,7 +619,7 @@ Enable link previews
 ~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: **(Default)** The server generates a preview of the first website, image, or YouTube video linked in a message. Users can disable website previews, but not image or YouTube previews, under **Settings > Display > Website Link Previews**. | - **Site Configuration > Posts**                                         |
+| - **true**: **(Default)** The server generates a preview of the first website, image, or YouTube video linked in a message. Users can disable website previews, but not image or YouTube previews, under **Settings > Display > Website Link Previews**. | - System Config path: **Site Configuration > Posts**                     |
 | - **false**: All previews are disabled and the server does not request metadata for any links contained in messages.                                                                                                                                     | - ``config.json`` setting: ``.ServiceSettings.EnableLinkPreviews: true`` |
 |                                                                                                                                                                                                                                                          | - Environment variable: ``MM_SERVICESETTINGS_ENABLELINKPREVIEWS``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -631,7 +631,7 @@ Disable link previews for specific domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| Use this setting to disable previews of links for specific domains.                                      | - **Site Configuration > Posts**                                       |
+| Use this setting to disable previews of links for specific domains.                                      | - System Config path: **Site Configuration > Posts**                   |
 |                                                                                                          | - ``config.json`` setting: ``.ServiceSettings.RestrictLinkPreviews``   |
 | String input of a comma-separated list of domains, for example: ``"mattermost.com, images.example.com"`` | - Environment variable: ``MM_SERVICESETTINGS_RESTRICTLINKPREVIEWS``    |
 +----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -640,7 +640,7 @@ Enable message link previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/channels/share-links.html>`__ will generate a preview for any users that have access to the original message. | - **Site Configuration > Posts**                                              |
+| - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/channels/share-links.html>`__ will generate a preview for any users that have access to the original message. | - System Config path: **Site Configuration > Posts**                          |
 | - **false**: Share links do not generate a preview.                                                                                                                                                      | - ``config.json`` setting: ``.ServiceSettings.EnablePermalinkPreviews: true`` |
 |                                                                                                                                                                                                          | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -658,7 +658,7 @@ Enable LaTeX code block rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| - **true**: **(Default)** Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__. | - **Site Configuration > Posts**                                  |
+| - **true**: **(Default)** Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__. | - System Config path: **Site Configuration > Posts**              |
 | - **false**: Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                                     | - ``config.json`` setting: ``.ServiceSettings.EnableLatex: true`` |
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
@@ -669,7 +669,7 @@ Enable inline LaTeX rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.                                                                | - **Site Configuration > Posts**                                        |
+| - **true**: **(Default)** Enables rendering of `LaTeX in message text <https://docs.mattermost.com/channels/format-messages.html#math-formulas>`__.                                                                | - System Config path: **Site Configuration > Posts**                    |
 | - **false**: Disables inline rendering of LaTex. Instead, LaTeX in message text is highlighted. LaTex can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**. | - ``config.json`` setting: ``.ServiceSettings.EnableInlineLatex: true`` |
 |                                                                                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -680,7 +680,7 @@ Custom URL schemes
 ~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| A list of URL schemes that will automatically create a link in message text, for example: ``["git", "smtp"]``. These schemes always create links: ``http``, ``https``, ``ftp``, ``tel``, and ``mailto``. | - **Site Configuration > Posts**                                      |
+| A list of URL schemes that will automatically create a link in message text, for example: ``["git", "smtp"]``. These schemes always create links: ``http``, ``https``, ``ftp``, ``tel``, and ``mailto``. | - System Config path: **Site Configuration > Posts**                  |
 |                                                                                                                                                                                                          | - ``config.json`` setting: ``.DisplaySettings.CustomURLSchemes: []``  |
 | ``config.json`` setting: an array of strings                                                                                                                                                             | - Environment variable: ``MM_DISPLAYSETTINGS_CUSTOMURLSCHEMES``       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
@@ -692,7 +692,7 @@ Google API key
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-| If a key is provided in this setting, Mattermost displays titles of embedded YouTube videos and detects if a video is no longer available. Setting a key should also prevent Google from throttling access to embedded videos that receive a high number of views. | - **Site Configuration > Posts**                                     |
+| If a key is provided in this setting, Mattermost displays titles of embedded YouTube videos and detects if a video is no longer available. Setting a key should also prevent Google from throttling access to embedded videos that receive a high number of views. | - System Config path: **Site Configuration > Posts**                 |
 |                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.ServiceSettings.GoogleDeveloperKey: `` |
 | String input.                                                                                                                                                                                                                                                      | - Environment variable: ``MM_SERVICESETTINGS_GOOGLEDEVELOPERKEY``    |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -715,12 +715,11 @@ Access the following configuration settings in the System Console by going to **
 Allow file sharing
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|When ``false``, disables file sharing on the server. All file and|  - System Config path: **Site Configuration > File Sharing and  |
-|image uploads on messages are forbidden across clients and       |Downloads** This feature's ``config.json`` setting is            |
-|devices, including mobile.                                       |``"EnableFileAttachments": true`` with options ``true`` and      |
-|                                                                 |``false``.                                                       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to attach files to messages.                                                                                     | - System Config path: **Site Configuration > File Sharing and Downloads** |
+| - **false**: Prevents users from attaching files (including images) to a message. This affects users on all clients and devices, including mobile apps. | - ``config.json`` setting: ``.FileSettings.EnableFileAttachments: true``  |
+|                                                                                                                                                         | - Environment variable: ``MM_FILESETTINGS_ENABLEFILEATTACHMENTS``         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 Allow file uploads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -730,16 +729,11 @@ Allow file uploads on mobile
 
 *Available in legacy Enterprise Edition E20*
 
-
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Enables file uploads on messages using Mattermost      |  - System Config path: **Site Configuration > File Sharing and  |
-|clients.                                                         |Downloads**                                                      |
-|                                                                 |This feature's ``config.json`` setting is                        |
-|**False**: Disables file uploads on mobile apps. All file and    |``"EnableMobileUpload": true`` with options ``true`` and         |
-|image uploads on messages are forbidden across clients and       |``false``.                                                       |
-|devices, including mobile.                                       |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              |  - System Config path: **Site Configuration > File Sharing and Downloads** |
+| - **false**: Prevents users from attaching files (including images) to messages from mobile apps. | - ``config.json`` setting: ``.FileSettings.EnableMobileUpload: true``      |
+|                                                                                                   | - Environment variable: ``MM_FILESETTINGS_ENABLEMOBILEUPLOAD``             |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Allow file downloads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -749,13 +743,11 @@ Allow file downloads on mobile
 
 *Available in legacy Enterprise Edition E20*
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Enables file downloads on Mattermost mobile apps.      |- System Config path: **Site Configuration > File Sharing and    |
-|                                                                 |Downloads**                                                      |
-|**False**: Disables file downloads on mobile apps. Users can     | This feature's ``config.json`` setting is                       |
-|still download files from a mobile web browser.                  |``"EnableMobileDownload": true`` with options ``true`` and       |
-|                                                                 |``false``.                                                       |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables file downloads on mobile apps.                                               | - System Config path: **Site Configuration > File sharing and downloads** |
+| - **false**: Disables file downloads on mobile apps. Users can still download files from a mobile web browser. | - ``config.json`` setting: ``.FileSettings.EnableMobileDownload: true``   |
+|                                                                                                                | - Environment variable: ``MM_FILESETTINGS_ENABLEMOBILEDOWNLOAD``          |
++----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 ----
 
@@ -770,29 +762,22 @@ Access the following configuration settings in the System Console by going to **
 Enable public file links
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: Allow users to generate public links to files and      |- System Config path: **Site Configuration > Public Links**      |
-|images for sharing outside the Mattermost system with a public   | This feature's ``config.json`` setting is ``"EnablePublicLink": |
-|URL.                                                             |true`` with options ``true`` and ``false``.                      |
-|                                                                 |                                                                 |
-|**False**: The **Get Public Link** option is hidden from the     |                                                                 |
-|image preview user interface.                                    |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-
-
-.. note::
-
-   When set to ``False``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When set back to ``True``, old public links will work again unless the **Public Link Salt** has been regenerated.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Allows users to create `public links <https://docs.mattermost.com/channels/share-files-in-messages.html#share-public-links>`__ to files attached to Mattermost messages.          | - System Config path: **Site Configuration > Public Links**                            |
+| - **false**: **(Default)** Disables previously created public links and prevents creation of new links.                                                                                       | - ``config.json`` setting: ``.FileSettings.EnablePublicLink: false``                   |
+|                                                                                                                                                                                               | - Environment variable: ``MM_FILESETTINGS_ENABLEPUBLICLINK``                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| **Note**: When set to ``false``, anyone who tries to visit a previously generated public link will receive an error message saying public links have been disabled. When set back to ``true``, old public links will work again unless the **Public link salt** has been regenerated.  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Public link salt
 ~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|32-character salt added to the URL of public links when public   |- System Config path: **Site Configuration > Public Links**      |
-|links are enabled. Select **Regenerate** in the System Console to| This                                                            |
-|create a new salt, which will invalidate all existing public     |feature's ``config.json`` setting is ``"PublicLinkSalt": ""``    |
-|links.                                                           |with string input.                                               |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| 32-character salt added to the URL of public file links. Changing this setting will **invalidate** all previously generated links. The salt is randomly generated when Mattermost is installed, and can be regenerated by selecting **Regenerate** in the System Console. | - System Config path: **Site Configuration > Public Links**     |
+|                                                                                                                                                                                                                                                                           | - ``config.json`` setting: ``.FileSettings.PublicLinkSalt``     |
+| String input.                                                                                                                                                                                                                                                             | - Environment variable: ``MM_FILESETTINGS_PUBLICLINKSALT``      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 ----
 
@@ -807,30 +792,23 @@ Access the following configuration settings in the System Console by going to **
 Enable admin notices
 ~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: System Admins will receive notices about available     | - System Config path: **Site Configuration > Notices** This     |
-|server upgrades and relevant system administration               |feature's ``config.json`` setting is ``"AdminNoticesEnabled":    |
-|features. `Learn more                                            |true`` with options ``true`` and ``false``.                      |
-|<https://docs.mattermost.com/manage/in-product-notices.html>`__. |                                                                 |
-|                                                                 |                                                                 |
-|**False**: System Admins will not receive notices except those   |                                                                 |
-|that apply to all end users (See ``UserNoticesEnabled``).        |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **true**: **(Default)** System Admins will receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about server upgrades and system administration features.        | - System Config path: **Site Configuration > Notices** -                         |
+|                                                                                                                                                                                                           | - ``config.json`` setting: ``.AnnouncementSettings.AdminNoticesEnabled: true``   |
+| - **false**: System Admins will not receive specific notices. Admins will still receive notices for all users. See **Enable end user notices**.                                                           | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Enable end user notices
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-|**True**: All users will receive notices about available client  |- System Config path: **Site Configuration > Notices**           |
-|upgrades and relevant end user features to improve user          | This feature's ``config.json`` setting is                       |
-|experience. `Learn more                                          |``"UserNoticesEnabled": true`` with options ``true`` and         |
-|<https://docs.mattermost.com/manage/in-product-notices.html>`__. |``false``.                                                       |
-|                                                                 |                                                                 |
-|**False**: Users will not receive notices about available client |                                                                 |
-|upgrades and relevant end user features.                         |                                                                 |
-|                                                                 |                                                                 |
-|                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| - **true**: **(Default)** All users receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about client upgrades and end user features.   | - System Config path: **Site Configuration > Notices**                        |
+| - **false**: Users will not receive in-product notices.                                                                                                                        | - ``config.json`` setting: ``.AnnouncementSettings.UserNoticesEnabled: true`` |
+|                                                                                                                                                                                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED``        |
+|                                                                                                                                                                                |                                                                               |
+|                                                                                                                                                                                |                                                                               |
+|                                                                                                                                                                                |                                                                               |
+|                                                                                                                                                                                |                                                                               |
+|                                                                                                                                                                                |                                                                               |
+|                                                                                                                                                                                |                                                                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
