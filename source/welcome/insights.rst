@@ -61,3 +61,8 @@ Team insights
 +-----------------------+-----------------------------------------------+
 | Top playbooks         | Playbooks with the most runs across the team. |
 +-----------------------+-----------------------------------------------+
+
+Note:
+
+- Team Insights are based on all public channels available as well as private channel membership. System Admins must be a member of private channels to see threads from those channels.
+- System admins who can't see public threads without joining them first indicates that compliance export is enabled for the Mattermost deployment. When enabled, compliance export requires a record of every user having joined a channel so that a compliance system knows who has access to messages.
