@@ -22,6 +22,64 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
 .. tabs::
 
+  .. tab:: Windows
+
+    Windows 8.1+ is required. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
+
+    **Install the Mattermost Desktop App**
+
+    1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-setup-5.2.0-win.exe>`__
+    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.2.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
+
+    **MSI Installer and group policies (beta)**
+
+    You can download the latest version of the Mattermost desktop app MSI installer (Beta):
+
+    - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-x64.msi>`__
+    - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-x86.msi>`__
+
+    The following group policies are available:
+
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
+    | Group policy             | Description                                                | Mattermost release   | Setting                    | State options    |
+    +==========================+============================================================+======================+============================+==================+
+    | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` | - Not Configured |   
+    |                          | app settings are disabled.                                 |                      |                            | - Enabled        |
+    |                          |                                                            |                      |                            | - Disabled       |
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
+    | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |                  |
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
+    | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |                  |
+    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
+
+    **Disable automatic updates**      
+    
+    Automatic desktop app updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
+
+  .. tab:: macOS
+
+    MacOS 10.15+ is required. You have two ways to install the desktop app, and how you install the app determines whether it updates automatically.
+
+    **Install from the App Store**
+
+    We recommend that you install the desktop app from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`__. When you install through the App Store, your desktop app updates automatically when a new release is available.
+
+    **Download the Desktop App from GitHub**
+
+    You can `download the desktop app directly from our GitHub release page <https://github.com/mattermost/desktop/releases>`__. However, when you install the desktop app this way, you can't manually check for updates, and updates won't be installed automatically.
+    
+    1. Download the latest version of the Mattermost desktop app:
+      
+      - `Intel systems <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-mac-x64.dmg>`__
+      - `M1 systems <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-mac-m1.dmg>`__ (Beta)
+
+    2. Double-click the download to open the disk image.
+
+    3. Drag the Mattermost application to the **Applications** folder.
+
+    .. tip:: 
+      You can review the current version of your desktop app by selecting **Mattermost > About Mattermost** from the macOS menu bar. 
+
   .. tab:: Ubuntu/Debian
 
     Both a beta ``.deb`` package and an official APT repository is available for Debian 9 and for Ubuntu releases 18.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
@@ -116,63 +174,7 @@ You can `download the desktop app directly from our Downloads page <https://matt
 
     3. To create a Desktop launcher, open the file ``README.md``, and follow the instructions in the **Desktop launcher** section.
 
-  .. tab:: macOS
-
-    MacOS 10.15+ is required. You have two ways to install the desktop app, and how you install the app determines whether it updates automatically.
-
-    **Install from the App Store**
-
-    We recommend that you install the desktop app from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`__. When you install through the App Store, your desktop app updates automatically when a new release is available.
-
-    **Download the Desktop App from GitHub**
-
-    You can `download the desktop app directly from our GitHub release page <https://github.com/mattermost/desktop/releases>`__. However, when you install the desktop app this way, you can't manually check for updates, and updates won't be installed automatically.
-    
-    1. Download the latest version of the Mattermost desktop app:
-      
-      - `Intel systems <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-mac-x64.dmg>`__
-      - `M1 systems <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-mac-m1.dmg>`__ (Beta)
-
-    2. Double-click the download to open the disk image.
-
-    3. Drag the Mattermost application to the **Applications** folder.
-
-    .. tip:: 
-      You can review the current version of your desktop app by selecting **Mattermost > About Mattermost** from the macOS menu bar. 
-
-  .. tab:: Windows
-
-    Windows 8.1+ is required. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
-
-    **Install the Mattermost Desktop App**
-
-    1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-setup-5.2.0-win.exe>`__
-    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.2.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
-
-    **MSI Installer and group policies (beta)**
-
-    You can download the latest version of the Mattermost desktop app MSI installer (Beta):
-
-    - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-x64.msi>`__
-    - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.2.0/mattermost-desktop-5.2.0-x86.msi>`__
-
-    The following group policies are available:
-
-    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
-    | Group policy             | Description                                                | Mattermost release   | Setting                    | State options    |
-    +==========================+============================================================+======================+============================+==================+
-    | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` | - Not Configured |   
-    |                          | app settings are disabled.                                 |                      |                            | - Enabled        |
-    |                          |                                                            |                      |                            | - Disabled       |
-    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
-    | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |                  |
-    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+                  |
-    | Automatic Updates        | If disabled, automatic Desktop App updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |                  |
-    +--------------------------+------------------------------------------------------------+----------------------+----------------------------+------------------+
-
-    **Disable automatic updates**      
-    
-    Automatic desktop app updates can be disabled by configuring the supported group policy. See the `MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install.html>`__ for instructions on installing the Mattermost Desktop App via an MSI installer, and configuring supported group policies. Changes to group policies require you to restart Mattermost for those changes to take effect.
+  
     
 Log in using the desktop app
 -----------------------------
