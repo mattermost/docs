@@ -30,7 +30,7 @@ Latest Mattermost Releases:
 #### Boards
 
 #### Calls
- - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then click the comment button to access the real-time message thread in the right-hand sidebar.
+ - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then select the comment button to access the real-time message thread in the right-hand sidebar.
 
 ### Improvements
 
@@ -41,7 +41,7 @@ Latest Mattermost Releases:
  - Added the ability to hide the “required” asterisk in the App Field.
  - Added a fading effect to the Apps Modal body while an Apps Modal is refreshing.
  - Insights now filters out posts made by plugins and OAuth apps.
- - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or DND. This can be disabled via **Settings > Display > Share last active time**.
+ - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
  - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
  - The default number of **Direct Message** channels shown in the sidebar is now 40.
  - Added Insights to the channel switcher.
@@ -53,12 +53,12 @@ Latest Mattermost Releases:
  - Updated NPS plugin to version 1.3.0.
 
 #### Administration
- - After 90 days since the day of missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
+ - After 90 days since missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
  - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
  - Introduced an Invite Guests upsell prompt to self-hosted.
- - Added JSON-compatible nested config value parsing from environment variables.
+ - Added JSON-compatible nested configuration value parsing from environment variables.
  - An AD/LDAP upsell banner is now shown for self-hosted instances with a Professional license when visiting the invite guests modal.
- - Self-hosted Admins now see "User Groups" in the product switcher with a CTA to start a trial.
+ - Self-hosted Admins now see "User Groups" in the product switcher with a call to action (CTA) to start a trial.
  - Added logic to package product version of Boards with production builds.
 
 ### Bug Fixes
@@ -66,7 +66,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the transparency for PNG images in image previews and thumbnails was not preserved.
  - Fixed an issue where screen readers failed to announce “No results found” in the Direct Message modal.
  - Fixed an issue where minipreview data was not generated nor stored for images imported from Slack.
- - Fixed the error message that appears on the **Reset Password** page when inputting a password with fewer than 5 characters.
+ - Fixed the error message that appears on the **Reset Password** page when inputting a password with fewer than five characters.
  - Fixed an issue where ``Get categories`` with the "exclude" option did not return categories for deleted teams a user was no longer a member of.
  - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
  - Fixed an issue where custom groups could be created with at-mention names that are reserved words (@channel, @here, @all).
@@ -83,14 +83,14 @@ Latest Mattermost Releases:
  - Fixed an issue where the markdown style for horizontal rules was too thick.
  - Fixed an issue where the emoji reaction overlay blocked part of the message it belonged to in compact view.
  - Fixed an issue with incorrect mention counts in unread channels.
- - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded Youtube preview images.
+ - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded YouTube preview images.
  - Fixed an issue where formatting was applied to selected spaces after a word.
  - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
  - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
  - Fixed a bug where role filters weren't being applied for ``GetProfilesInChannel``.
  - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
- - Fixed an issue where the “Enterprise license is expired” banner was non-dismissible.
- - Fixed an issue where the “Renew Now” option was not showing in-product and always defaulted to Contact Sales.
+ - Fixed an issue where the **Enterprise license is expired** banner was non-dismissible.
+ - Fixed an issue where the **Renew Now** option was not showing in-product and always defaulted to Contact Sales.
  - Fixed an issue where ``getPostSince`` didn't properly return deleted posts when Collapsed Reply Threads was enabled.
  - Fixed an issue where ``OwnerId`` was not set for bots created via ``EnsureBotUser``.
 
@@ -99,10 +99,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``TeamSettings`` in the ``config.json``:
-    - Added ``EnableLastActiveTime`` to add a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online.
+    - Added ``EnableLastActiveTime`` to add a **Last active** status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online.
 
 ### API Changes
- - Added a new response-header ``First-Inaccessible-File-Time`` to the APIs fetching single file info.
+ - Added a new response-header ``First-Inaccessible-File-Time`` to the APIs fetching single file information.
  - Added a new query parameter to include deleted posts as long as it's requested by a System Admin in ``/api/v4/channels/{channel_id}/posts``.
  - Added new plugin endpoints to ``PermissionService`` interface.
 
