@@ -80,6 +80,26 @@ const Scorer = {
  * @property {Record<string,Array<number>>} titleterms A map of title search terms to an array of matching document IDs
  */
 
+/* JSDoc type definition for a config setting search index record */
+/**
+ * @typedef ConfigSettingRecord
+ * @type {object}
+ * @property {string} id
+ * @property {string} docname
+ * @property {string} anchor
+ * @property {string} displayname
+ * @property {string} systemconsole
+ * @property {string} configjson
+ * @property {string} environment
+ * @property {string} description
+ */
+
+/* JSDoc type definition for the config setting search index */
+/**
+ * @typedef ConfigSettingSearchIndex
+ * @type {Array<ConfigSettingRecord>}
+ */
+
 /* JSDoc type definition for a search result */
 /**
  * @typedef SearchResult
@@ -115,13 +135,17 @@ class SearchClass {
      * @type {(SearchIndex|null)}
      */
     _index = null;
+    /**
+     * The config settings search index
+     * @type {(ConfigSettingSearchIndex|null)}
+     */
+    _configSettingIndex = null;
+    /** @type {(lunr.Index|null)} */
+    _lunrConfigSettingIndex = null;
     /** @type {(string|null)} */
     _queued_query = null;
     /** @type {number} */
     _pulse_status = -1;
-
-    constructor() {
-    }
 
     init() {
         const params = $.getQueryParameters();
@@ -184,6 +208,43 @@ class SearchClass {
 
     hasIndex() {
         return this._index !== null;
+    }
+
+    loadConfigSettingsIndex(url) {
+        fetch(url)
+            .catch((e) => {
+                console.error(e);
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.setConfigSettingsIndex(data);
+            });
+    }
+
+    setConfigSettingsIndex(index) {
+        /** @type {string} */
+        let q;
+        this._configSettingIndex = index;
+        /** @type {lunr.Index} */
+        this._lunrConfigSettingIndex = lunr((builder) => {
+            builder.field("displayname");
+            builder.field("systemconsole");
+            builder.field("configjson");
+            builder.field("environment");
+            builder.field("description");
+            builder.ref("anchor");
+            for (const record of index) {
+                builder.add(record);
+            }
+        });
+        if (this.hasIndex() && (q = this._queued_query) !== null) {
+            this._queued_query = null;
+            this.query(q);
+        }
+    }
+
+    hasConfigSettingsIndex() {
+        return this._configSettingIndex !== null;
     }
 
     /**
@@ -296,6 +357,22 @@ class SearchClass {
         // console.debug('SEARCH: searching for:');
         // console.info('required: ', searchterms);
         // console.info('excluded: ', excluded);
+
+        /*
+         * TODO: if the config settings index has been loaded, perform a lunr.js search with it and add
+         * the results to the config settings results section.
+         */
+        let configSettingSearchResults = [];
+        if (this.hasConfigSettingsIndex()) {
+            const /** @type {Array<Record<string, any>>} */ lunrResults = this._lunrConfigSettingIndex.search(query);
+            configSettingSearchResults = lunrResults.map((result) => {
+                const configSetting = this._configSettingIndex.filter((setting) => setting.anchor === result.ref);
+                return {
+                    score: result.score,
+                    page: configSetting[0],
+                };
+            });
+        }
 
         // prepare search
         const terms = this._index.terms;
@@ -521,7 +598,7 @@ class SearchClass {
             for (let iMatch = 0; iMatch !== objects[prefix].length; ++iMatch) {
                 const match = objects[prefix][iMatch];
                 const name = match[4];
-                const fullname = (prefix ? prefix + '.' : '') + name;
+                const fullname = (prefix && prefix !== "" ? prefix + '.' : '') + name;
                 const fullnameLower = fullname.toLowerCase()
                 if (fullnameLower.indexOf(object) > -1) {
                     let score = 0;

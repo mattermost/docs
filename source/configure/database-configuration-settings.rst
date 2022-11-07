@@ -87,8 +87,13 @@ Maximum open connections
 | Numerical input. Default is **300**.                   |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: SqlSettings.QueryTimeout
-  MM_SQLSETTINGS_QUERYTIMEOUT
+.. config:setting:: sqlsettings-querytimeout
+  :displayname: Query timeout
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.QueryTimeout
+  :environment: MM_SQLSETTINGS_QUERYTIMEOUT
+
+  The amount of time to wait, in seconds, for a response from the database after opening a connection and sending the query.
 
 Query timeout
 ~~~~~~~~~~~~~
@@ -118,8 +123,12 @@ Maximum connection lifetime
 | **3,600,000** milliseconds (1 hour).                   |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: SqlSettings.ConnMaxIdleTimeMilliseconds
-  MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS
+.. config:setting:: sqlsettings-connmaxidletime
+  :displayname: Maximum connection idle timeout
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.ConnMaxIdleTimeMilliseconds
+  :environment: MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS
+  :description: Maximum time a database connection can remain idle, in milliseconds.
 
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

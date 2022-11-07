@@ -3,8 +3,12 @@
 
 Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: ServiceSettings.SiteURL
-  MM_SERVICESETTINGS_SITEURL
+.. config:setting:: servicesettings-siteurl
+  :displayname: Site URL
+  :systemconsole: Environment > Web Server
+  :configjson: .ServiceSettings.SiteURL
+  :environment: MM_SERVICESETTINGS_SITEURL
+  :description: The URL that users use to access Mattermost.
 
 Site URL
 ~~~~~~~~
@@ -132,8 +136,12 @@ Let's Encrypt certificate cache file
 | File path input.                                       |                                                                                    |
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: ServiceSettings.ReadTimeout
-  MM_SERVICESETTINGS_READTIMEOUT
+.. config:setting:: servicesettings-readtimeout
+  :displayname: Read timeout
+  :systemconsole: Environment > Web Server
+  :configjson: .ServiceSettings.ReadTimeout
+  :environment: MM_SERVICESETTINGS_READTIMEOUT
+  :description: Maximum time allowed from when the connection is accepted to when the request body is fully read.
 
 Read timeout
 ~~~~~~~~~~~~
@@ -147,8 +155,14 @@ Read timeout
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: ServiceSettings.WriteTimeout
-  MM_SERVICESETTINGS_WRITETIMEOUT
+.. config:setting:: servicesettings-writetimeout
+  :displayname: Write timeout
+  :systemconsole: Environment > Web Server
+  :configjson: .ServiceSettings.WriteTimeout
+  :environment: MM_SERVICESETTINGS_WRITETIMEOUT
+
+  If using HTTP (insecure), this is the maximum time, in seconds, allowed from the end of reading the request headers until the response is written.
+  If using HTTPS, it's the total time, in seconds, from when the connection is accepted until the response is written.
 
 Write timeout
 ~~~~~~~~~~~~~
@@ -161,13 +175,16 @@ Write timeout
 |   until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUT``                 |
 | - If using HTTPS, it's the total time from when the      |                                                                             |
 |   connection is accepted until the response is written.  |                                                                             |
-|   accepted to when the request body is fully read.       |                                                                             |
 |                                                          |                                                                             |
 | Numerical input in seconds. Default is **300** seconds.  |                                                                             |
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: ServiceSettings.IdleTimeout
-  MM_SERVICESETTINGS_IDLETIMEOUT
+.. config:setting:: servicesettings-idletimeout
+  :displayname: Idle timeout
+  :systemconsole: Environment > Web Server
+  :configjson: .ServiceSettings.IdleTimeout
+  :environment: MM_SERVICESETTINGS_IDLETIMEOUT
+  :description: This is the maximum time, in seconds, allowed before an idle connection is disconnected.
 
 Idle timeout
 ~~~~~~~~~~~~
