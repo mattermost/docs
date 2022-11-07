@@ -31,6 +31,9 @@ Latest Mattermost Releases:
 
 #### Calls
  - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then select the comment button to access the real-time message thread in the right-hand sidebar.
+ 
+#### Last active status
+ - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
 
 ### Improvements
 
@@ -41,7 +44,6 @@ Latest Mattermost Releases:
  - Added the ability to hide the “required” asterisk in the App Field.
  - Added a fading effect to the Apps Modal body while an Apps Modal is refreshing.
  - Insights now filters out posts made by plugins and OAuth apps.
- - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
  - Added a shortcut ``Ctrl/Cmd + Shift + U`` to filter channels by unread.
  - The default number of **Direct Message** channels shown in the sidebar is now 40.
  - Added Insights to the channel switcher.
