@@ -55,9 +55,9 @@ Latest Mattermost Releases:
 #### Administration
  - After 90 days since missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
  - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
- - Introduced an Invite Guests upsell prompt to self-hosted.
+ - Introduced an **Invite Guests** prompt to self-hosted.
  - Added JSON-compatible nested configuration value parsing from environment variables.
- - An AD/LDAP upsell banner is now shown for self-hosted instances with a Professional license when visiting the invite guests modal.
+ - An AD/LDAP prompt banner is now shown for self-hosted instances with a Professional license when visiting the invite guests modal.
  - Self-hosted Admins now see "User Groups" in the product switcher with a call to action (CTA) to start a trial.
  - Added logic to package product version of Boards with production builds.
 
