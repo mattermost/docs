@@ -182,7 +182,7 @@ No. ``--displayname`` is optional. When omitted, ``--name`` is displayed and use
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. A System message is posted in the channel visible to all channel members when message synchronization is interrupted for more than five minutes.
+Yes. A System message is posted in the channel visible to all channel members when message synchronization is interrupted for more than five minutes. Once connectivity is restored a full sync will happen for all missed messages that occured. This resync includes Direct Messages and channels that linked.
 
 What happens if two secure connections share the same usernames?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
