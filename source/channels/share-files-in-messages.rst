@@ -15,11 +15,7 @@ Share files in messages
 
 With file attachments, you can share additional information that helps your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos can make your messages more effective and clear.
 
-.. tabs::
-
-  .. tab:: Web browser/desktop app
-
-    You can share files with other Mattermost users or entire channels by:
+ You can share files with other Mattermost users or entire channels by:
 
     - dragging and dropping files into Channels.
     - selecting the **Attachment** |attachment-icon| icon in the message input box.
@@ -52,6 +48,12 @@ With file attachments, you can share additional information that helps your team
      -  Files: PDF, TXT 
 
      Other document previews (such as Word, Excel, or PPT) are not yet supported.
+
+
+.. tabs::
+
+  .. tab:: Web browser/desktop app
+  
 
     **Share public links**
 
