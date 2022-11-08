@@ -58,7 +58,7 @@ Latest Mattermost Releases:
  - Updated NPS plugin to version 1.3.0.
 
 #### Administration
- - After 90 days since missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Starter subscription.
+ - After 90 days since missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Free subscription.
  - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
  - Introduced an **Invite Guests** prompt to self-hosted.
  - Added JSON-compatible nested configuration value parsing from environment variables.
