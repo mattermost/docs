@@ -27,10 +27,13 @@ Latest Mattermost Releases:
 
 ### Highlights
 
-#### Boards
-
 #### Calls
  - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then select the comment button to access the real-time message thread in the right-hand sidebar.
+
+#### Boards
+ - Added additional standard board templates to help users kick-off their next projects.
+ - Filters now support all text properties.
+ - Added two new tiles for System Console Boards metrics under **System Console > Site Statistics**.
  
 #### Last active status
  - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
