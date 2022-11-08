@@ -56,26 +56,25 @@ Other document previews (such as Word, Excel, or PPT) are not yet supported.
   .. tab:: Web browser/desktop app
 
     **Share public links**
-        
+
      Public links allow you to share message attachments with anyone outside your Mattermost workspace. To share an attachment, select the thumbnail of an attachment, then select **Get Public Link**.
 
     .. tip::
-     
+
       If **Get Public Link** is not visible in the file previewer, ask your System Admin to enable the feature from the System Console under **Site Configuration > Public Links**.
 
-    
     **Download files**
 
-      You can download an attached file by selecting the **Download** |download-icon| icon next to the file thumbnail.
+     You can download an attached file by selecting the **Download** |download-icon| icon next to the file thumbnail.
 
     .. tip::
 
       From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
 
-      
-  .. tab:: Mobile app
-   
-     **To share files in the mobile app**
-    
-      In mobile app we can only share image, video record by using the camera option, or document files.there is no **Attachment** |attachment-icon| icon in the message input box.
 
+    
+  .. tab:: Mobile app
+
+    **To share files in the mobile app**
+      In mobile app we can only share image, video record by using the camera option, or audio, document files.
+      there is no **Attachment** |attachment-icon| icon in the message input box.
