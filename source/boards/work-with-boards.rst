@@ -49,11 +49,17 @@ Board templates
 Standard board templates include:
 
 - **Content Calendar**: Plan and organize your content creation and publication schedule.
+- **Company Goals & OKRs**: Plan your company goals and objectives more efficiently.
+- **Competitive Analysis**: Track and stay ahead of the competition.
 - **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later.
 - **Personal Goals**: Categorize and plan your personal goals.
 - **Personal Tasks**: Organize your life and track your personal tasks.
 - **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
 - **Roadmap**: Plan your roadmap and manage your releases more efficiently.
+- **Sales Pipeline CRM**: Grow and keep track of your sales opportunities.
+- **Sprint Planner**: Plan your sprints and releases more efficiently.
+- **Team Retrospective**: Identify what worked well and what can be improved for the future.
+- **User Research Sessions**: Manage and keep track of all your user research sessions.
 - **Welcome to Boards!**: Onboarding template with guided tour points to help you quickly ramp up on Boards.
 
 Create a blank board
