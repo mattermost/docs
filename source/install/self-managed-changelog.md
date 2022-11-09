@@ -56,6 +56,7 @@ Latest Mattermost Releases:
  - Added markdown formatting for hyperlinks when pasted into the text editor.
  - Email notifications from new messages now also support displaying Slack attachments from the channel post.
  - Updated NPS plugin to version 1.3.0.
+ - Downgraded Bulgarian, Persian, and Simplified Chinese language support to Alpha.
 
 #### Administration
  - After 90 days since missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Free subscription.
