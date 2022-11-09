@@ -10,6 +10,7 @@ from sphinx.domains import Domain
 from sphinx.environment import BuildEnvironment
 from sphinx.roles import XRefRole
 from sphinx.util import logging
+from sphinx.util.console import bold  # type: ignore
 from sphinx.util.docutils import SphinxTranslator, SphinxDirective
 from sphinx.util.nodes import make_refnode
 from typing import Optional, Iterable, Tuple, List, Dict, Any
@@ -63,9 +64,9 @@ def depart_anchor_node(visitor: SphinxTranslator, node: AnchorNode) -> None:
 
 
 class ConfigSettingNode(Element):
-    config_settings: dict[str, str]
+    config_settings: Dict[str, str]
 
-    def __init__(self, settings: Optional[dict[str, str]]):
+    def __init__(self, settings: Optional[Dict[str, str]]):
         super().__init__()
         self.config_settings = dict()
         if settings is not None:
@@ -211,62 +212,75 @@ class ConfigSettingDomain(Domain):
         self.data["configs"].append(config_setting)
 
 
-def builder_inited(app: Sphinx):
-    if not hasattr(app.env, "config-settings"):
-        setattr(app.env, "config-settings", dict())
-
-
 def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
-    config_settings: Dict[str, List[Dict[str, str]]] = getattr(env, "config-settings")
-    if docname in config_settings:
-        config_settings.pop(docname)
+    if hasattr(env, "config_settings"):
+        if docname in env.config_settings:
+            logger.verbose(
+                "env_purge_doc(): removing doc %s from config_settings" % docname
+            )
+            env.config_settings.pop(docname)
 
 
 def env_merge_info(
     app: Sphinx, env: BuildEnvironment, docnames: List[str], other: BuildEnvironment
 ) -> None:
-    config_settings: Dict[str, List[Dict[str, str]]] = getattr(env, "config-settings")
-    other_settings: Dict[str, List[Dict[str, str]]] = getattr(other, "config-settings")
-    for docname in docnames:
-        config_settings[docname] = list()
-        if docname in other_settings:
-            config_settings[docname] = other_settings[docname]
+    if not hasattr(env, "config_settings"):
+        env.config_settings = dict()
+    if hasattr(other, "config_settings"):
+        for docname in docnames:
+            if docname in other.config_settings:
+                logger.verbose(
+                    "env_merge_info(): adding %d settings to config_settings[%s]"
+                    % (len(other.config_settings[docname]), docname)
+                )
+                if len(other.config_settings[docname]) > 0:
+                    env.config_settings[docname] = other.config_settings[docname]
 
 
-def doctree_resolved(app: Sphinx, doctree: nodes.document, docname: str) -> None:
+def doctree_read(app: Sphinx, doctree: nodes.document):
+    if not hasattr(app.env, "config_settings"):
+        app.env.config_settings = dict()
     config_nodes = doctree.traverse(ConfigSettingNode, False, True, False, False)
-    if len(config_nodes) > 0:
-        logger.verbose(
-            "doctree_resolved(): found %d ConfigSettingNodes" % len(config_nodes)
-        )
-    doc_config_settings = list()
+    if len(config_nodes) == 0:
+        return
+    logger.info(
+        "doctree_read(): found %d ConfigSettingNodes in doc %s"
+        % (len(config_nodes), app.env.docname)
+    )
+    doc_config_settings: List[Dict[str, str]] = list()
     for config_node in config_nodes:
         doc_config_settings.append(config_node.config_settings)
-    config_settings: Dict[str, List[Dict[str, str]]] = getattr(
-        app.env, "config-settings"
-    )
-    config_settings[docname] = doc_config_settings
+    if len(doc_config_settings) > 0:
+        logger.info(
+            "doctree_read(): adding %d settings to config_settings[%s]"
+            % (len(doc_config_settings), app.env.docname)
+        )
+        if app.env.docname not in app.env.config_settings:
+            app.env.config_settings[app.env.docname] = list()
+        app.env.config_settings[app.env.docname].extend(doc_config_settings)
+    else:
+        logger.info("doctree_read(): no config settings in doc %s" % app.env.docname)
 
 
 def build_finished(app: Sphinx, exception: Exception):
     if exception is not None:
         return
-    config_settings: Dict[str, List[Dict[str, str]]] = getattr(
-        app.env, "config-settings"
-    )
-    # create config setting search index
-    settings_index: List[Dict[str, str]] = list()
-    for docname in config_settings:
-        for config_setting in config_settings[docname]:
-            config_setting[CONFIG_SETTING_DOCNAME] = docname
-            config_setting[CONFIG_SETTING_ANCHOR] = (
-                docname + "#" + config_setting[CONFIG_SETTING_ID]
-            )
-            settings_index.append(config_setting)
-    # dump to a JSON file
-    outfile = pathlib.PurePath(app.outdir, "config-settings-index.json")
-    with open(outfile, "w") as fout:
-        json.dump(settings_index, fout)
+    if hasattr(app.env, "config_settings"):
+        logger.info(bold("writing config setting search index..."), nonl=True)
+        # create config setting search index
+        settings_index: List[Dict[str, str]] = list()
+        for docname in app.env.config_settings:
+            for config_setting in app.env.config_settings[docname]:
+                config_setting[CONFIG_SETTING_DOCNAME] = docname
+                config_setting[CONFIG_SETTING_ANCHOR] = (
+                    docname + ".html#" + config_setting[CONFIG_SETTING_ID]
+                )
+                settings_index.append(config_setting)
+        # dump to a JSON file
+        outfile = pathlib.PurePath(app.outdir, "config-settings-index.json")
+        with open(outfile, "w") as fout:
+            json.dump(settings_index, fout)
+        logger.info("done")
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
@@ -280,10 +294,9 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         ConfigSettingNode, html=(visit_config_setting_node, depart_config_setting_node)
     )
     app.add_domain(ConfigSettingDomain)
-    app.connect("builder-inited", builder_inited)
     app.connect("env-purge-doc", env_purge_doc)
     app.connect("env-merge-info", env_merge_info)
-    app.connect("doctree-resolved", doctree_resolved)
+    app.connect("doctree-read", doctree_read)
     app.connect("build-finished", build_finished)
     return {
         "version": __version__,

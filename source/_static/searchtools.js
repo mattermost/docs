@@ -94,13 +94,16 @@ const Scorer = {
  * @property {string} description
  */
 
-/* JSDoc type definition for the config setting search index */
+/* JSDoc type definition for the config setting search result */
 /**
- * @typedef ConfigSettingSearchIndex
- * @type {Array<ConfigSettingRecord>}
+ * @typedef ConfigSettingSearchResult
+ * @type {object}
+ * @property {number} score
+ * @property {ConfigSettingRecord} page
  */
 
 /* JSDoc type definition for a search result */
+
 /**
  * @typedef SearchResult
  * @type {object}
@@ -137,7 +140,7 @@ class SearchClass {
     _index = null;
     /**
      * The config settings search index
-     * @type {(ConfigSettingSearchIndex|null)}
+     * @type {(Array<ConfigSettingRecord>|null)}
      */
     _configSettingIndex = null;
     /** @type {(lunr.Index|null)} */
@@ -181,6 +184,7 @@ class SearchClass {
      * @param url {string} The URL to load search index data from
      */
     loadIndex(url) {
+        console.log("loadIndex(): loading search index");
         $.ajax({
             type: "GET", url: url, data: null,
             dataType: "script", cache: true,
@@ -200,8 +204,9 @@ class SearchClass {
         /** @type {string} */
         let q;
         this._index = index;
-        if ((q = this._queued_query) !== null) {
+        if (this.hasIndex() && this.hasConfigSettingsIndex() && (q = this._queued_query) !== null) {
             this._queued_query = null;
+            console.log(`setIndex(): running query; query=${q}`);
             this.query(q);
         }
     }
@@ -211,22 +216,77 @@ class SearchClass {
     }
 
     loadConfigSettingsIndex(url) {
+        console.log(`loadConfigSettingsIndex(): loading index from ${url}`);
         fetch(url)
             .catch((e) => {
                 console.error(e);
             })
-            .then((response) => response.json())
+            .then((response) => response.text())
             .then((data) => {
-                this.setConfigSettingsIndex(data);
+                // console.log(`loadConfigSettingsIndex(): data=${data}`);
+                /** @type {Array<ConfigSettingRecord>} */
+                const decoded = JSON.parse(data);
+                this.setConfigSettingsIndex(decoded);
             });
     }
 
+    /**
+     * Split configjson field data differently
+     * @param {lunr.Token} token
+     * @returns {(undefined|null|string|lunr.Token|Array<lunr.Token>)}
+     */
+    configjsonFilter(token) {
+        if (token.metadata["fields"] && token.metadata["fields"].indexOf("configjson") === -1) {
+            return token;
+        }
+        /** @type {Array<lunr.Token>} */
+        const replaced = []
+        const toks = token.toString().split(".");
+        for (const tok of toks) {
+            if (tok === "") {
+                continue;
+            }
+            replaced.push(new lunr.Token(tok));
+        }
+        return replaced;
+    }
+
+    /**
+     * Split environment variable field data differently
+     * @param {lunr.Token} token
+     * @returns {(undefined|null|string|lunr.Token|Array<lunr.Token>)}
+     */
+    environmentVarFilter(token) {
+        if (token.metadata["fields"] && token.metadata["fields"].indexOf("environment") === -1) {
+            return token;
+        }
+        const tokenString = token.toString().replaceAll("MM_", "");
+        /** @type {Array<lunr.Token>} */
+        const replaced = []
+        const toks = tokenString.split("_");
+        for (const tok of toks) {
+            if (tok === "") {
+                continue;
+            }
+            replaced.push(new lunr.Token(tok));
+        }
+        return replaced;
+    }
+
+    /**
+     * Set the configuration settings search index
+     * @param {Array<ConfigSettingRecord>} index
+     */
     setConfigSettingsIndex(index) {
         /** @type {string} */
         let q;
         this._configSettingIndex = index;
-        /** @type {lunr.Index} */
+        // console.log("setConfigSettingsIndex(): start building lunr index");
+        lunr.Pipeline.registerFunction(this.configjsonFilter, 'configjsonFilter');
+        lunr.Pipeline.registerFunction(this.environmentVarFilter, 'environmentVarFilter');
         this._lunrConfigSettingIndex = lunr((builder) => {
+            builder.pipeline.before(lunr.stemmer, this.configjsonFilter);
+            builder.pipeline.before(lunr.stemmer, this.environmentVarFilter);
             builder.field("displayname");
             builder.field("systemconsole");
             builder.field("configjson");
@@ -234,17 +294,20 @@ class SearchClass {
             builder.field("description");
             builder.ref("anchor");
             for (const record of index) {
+                // console.log(`lunr(): record=${JSON.stringify(record)}`);
                 builder.add(record);
             }
         });
-        if (this.hasIndex() && (q = this._queued_query) !== null) {
+        // console.log("setConfigSettingsIndex(): finished building lunr index");
+        if (this.hasIndex() && this.hasConfigSettingsIndex() && (q = this._queued_query) !== null) {
             this._queued_query = null;
+            // console.log(`setConfigSettingsIndex(): running query; query=${q}`);
             this.query(q);
         }
     }
 
     hasConfigSettingsIndex() {
-        return this._configSettingIndex !== null;
+        return this._configSettingIndex !== null && this._lunrConfigSettingIndex !== null;
     }
 
     /**
@@ -292,10 +355,11 @@ class SearchClass {
         this.startPulse();
 
         // index already loaded, the browser was quick!
-        if (this.hasIndex())
+        if (this.hasIndex() && this.hasConfigSettingsIndex()) {
             this.query(query);
-        else
-            this.deferQuery(query);
+            return;
+        }
+        this.deferQuery(query);
     }
 
     /**
@@ -303,6 +367,7 @@ class SearchClass {
      * @param query {string} The search query to perform
      */
     query(query) {
+        console.log(`query(${query})`);
         /** @type {number} */
         let i;
 
@@ -366,8 +431,8 @@ class SearchClass {
         let results = [];
         $('#search-summary').empty();
 
-        // Take note if we've found any object results at all
-        let foundObjectResults = false;
+        /** @type {Array<ConfigSettingSearchResult>} */
+        let configSettingSearchResults = [];
 
         /*
          * if the config settings index has been loaded, perform a lunr.js search with it and add
@@ -375,34 +440,21 @@ class SearchClass {
          */
         if (this.hasConfigSettingsIndex()) {
             console.log("query(): searching lunr");
-            /** @type {Array<Record<string, any>>} */
+            /** @type {Array<{score: number, ref: string}>} */
             const lunrResults = this._lunrConfigSettingIndex.search(query);
             console.log(`query(): lunr search returned ${lunrResults.length} results`);
-            /** @type {Array<{score: number, page: Record<string, any>}>} */
-            const configSettingSearchResults = lunrResults.map((result) => {
-                const configSetting = this._configSettingIndex.filter((setting) => setting.anchor === result.ref);
+            configSettingSearchResults = lunrResults.map((result) => {
+                /** @type {Array<ConfigSettingRecord>} */
+                const configSetting = this._configSettingIndex.filter((setting) => setting["anchor"] === result.ref);
                 return {
                     score: result.score,
                     page: configSetting[0],
                 };
             });
-            /** @type {Array<SearchResult>} */
-            const mappedResults = configSettingSearchResults.map((result) => {
-                return {
-                    score: result.score,
-                    docname: result.page.docname,
-                    title: result.page.displayname,
-                    anchor: result.page.anchor,
-                    description: result.page.description,
-                    filename: result.page.docname,
-                    isObject: true,
-                };
+            // sort the results by descending score
+            configSettingSearchResults = configSettingSearchResults.sort((a, b) => {
+                return (a.score > b.score) ? 1 : ((a.score < b.score) ? -1 : 0);
             });
-            results.push(...mappedResults);
-            console.log(`query(): pushed ${mappedResults.length} records to results array`);
-            if (mappedResults.length > 0) {
-                foundObjectResults = true;
-            }
         }
 
         // Perform an object search
@@ -417,7 +469,6 @@ class SearchClass {
             const objectResults = this.performObjectSearch(objectterms[i], others);
             // If there were any object results, remove duplicates by favouring the result with the highest score
             if (objectResults.length > 0) {
-                foundObjectResults = true;
                 /** @type {Record<string, SearchResult>} */
                 const filteredObjectResults = {}; // A map of unique object results
                 for (const objectResult of objectResults) {
@@ -429,8 +480,8 @@ class SearchClass {
                             continue;
                         }
                         // We've got a result a higher score; remove the existing result with the lower score
-                        delete(uniqueObjectDocs[anchor]);
-                        delete(filteredObjectResults[anchor]);
+                        delete (uniqueObjectDocs[anchor]);
+                        delete (filteredObjectResults[anchor]);
                     }
                     // Add this result to the map of unique anchors and the map of filtered results
                     uniqueObjectDocs[anchor] = objectResult;
@@ -446,7 +497,7 @@ class SearchClass {
         // let the scorer override scores with a custom scoring function
         if (Scorer.score) {
             for (i = 0; i < results.length; i++)
-                results[i].score = Scorer.score(['','','','',results[i].score]);
+                results[i].score = Scorer.score(['', '', '', '', results[i].score]);
         }
 
         // Remove results that have a duplicate anchor by favouring the result with the higher score.
@@ -467,7 +518,7 @@ class SearchClass {
                 if (result.score <= existingResult.score) {
                     continue;
                 }
-                delete(anchorMap[result.anchor]);
+                delete (anchorMap[result.anchor]);
             }
             anchorMap[result.anchor] = result;
         }
@@ -503,20 +554,26 @@ class SearchClass {
         }
         results = sortedResults;
 
-        // If we found object results, show the config settings div; otherwise hide it
-        const displaySetting = foundObjectResults ? "contents" : "none";
+        // If we found config setting results, show the config settings div; otherwise hide it
+        const displaySetting = configSettingSearchResults.length > 0 ? "contents" : "none";
         const configSettingsDiv = document.getElementById("config-setting-results-section");
-        if (configSettingsDiv !== null) {
+        if (configSettingsDiv) {
             configSettingsDiv.setAttribute("style", "display: " + displaySetting + ";");
         }
         const additionalInfoDiv = document.getElementById("search-additional-information-header");
-        if (additionalInfoDiv !== null) {
+        if (additionalInfoDiv) {
             additionalInfoDiv.setAttribute("style", "display: " + displaySetting + ";");
         }
 
+        // print the config setting results
+        if (configSettingSearchResults.length > 0) {
+            for (const configSettingSearchResult of configSettingSearchResults) {
+                this.displayConfigSettingResultItem(configSettingSearchResult);
+            }
+        }
         // print the results
         for (let x = results.length; x > 0; x--) {
-            const item = results[x-1];
+            const item = results[x - 1];
             this.displayResultItem(item, searchterms, hlterms);
         }
         // we're finished searching; stop the visual indicator and display the results summary
@@ -526,6 +583,47 @@ class SearchClass {
             Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly.'));
         else
             Search.status.text(_('Search finished, found %s page(s) matching the search query. Results are sorted by relevance.').replace('%s', String(results.length)));
+    }
+
+    /**
+     * Display a single config setting search result item
+     * @param {ConfigSettingSearchResult} item
+     */
+    displayConfigSettingResultItem(item) {
+        /** @type {String} */
+        let linkUrl;
+        if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
+            // dirhtml builder
+            let dirname = item.page.docname + '/';
+            if (dirname.match(/\/index\/$/)) {
+                dirname = dirname.substring(0, dirname.length - 6);
+            } else if (dirname === 'index/') {
+                dirname = '';
+            }
+            // requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
+            // linkUrl = requestUrl;
+            linkUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
+        } else {
+            // normal html builders
+            // requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item.page.docname + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
+            linkUrl = item.page.docname + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
+        }
+        // The result info is displayed as a list item
+        const listItem = document.createElement("li");
+        // Append the link
+        const itemLink = document.createElement("a");
+        itemLink.innerText = item.page.displayname;
+        itemLink.href = linkUrl + item.page.anchor;
+        listItem.appendChild(itemLink);
+        // Append the description
+        const itemDesc = document.createElement("span");
+        itemDesc.innerText = "(" + item.page.description + ")";
+        listItem.appendChild(itemDesc);
+        // Find the results div and add this result to it
+        const resultsListEl = document.getElementById("config-setting-results-list");
+        if (resultsListEl) {
+            resultsListEl.appendChild(listItem);
+        }
     }
 
     /**
@@ -583,9 +681,8 @@ class SearchClass {
                 }
             });
         }
-        const appendList = item.isObject ? $('#config-setting-results-list') : $('#search-results-list');
         setTimeout(() => {
-           appendList.append(listItem);
+            $('#search-results-list').append(listItem);
         }, 5);
     }
 
