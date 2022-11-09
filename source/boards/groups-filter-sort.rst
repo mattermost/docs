@@ -34,7 +34,12 @@ To ungroup cards on table view, select the **Group by** option at the top of the
 Filters
 -------
 
-You can filter cards on your board using all the text properties.
+You can filter cards on your board if they utilize any of the following property types:
+- Select
+- Text
+- Email
+- Phone
+- URL
 
 .. note:: 
   
