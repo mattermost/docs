@@ -38,7 +38,7 @@ You can filter cards on your board using all the text properties.
 
 .. note:: 
   
-   You must have at least one **Select** property on your board for filtering to work.
+   You must have at least one of the property types listed above on your board for filtering to work. Filtering by other property types such as **Person** or **Date** is not yet supported.
 
 Add filters
 ~~~~~~~~~~~
