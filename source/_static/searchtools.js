@@ -358,22 +358,6 @@ class SearchClass {
         // console.info('required: ', searchterms);
         // console.info('excluded: ', excluded);
 
-        /*
-         * TODO: if the config settings index has been loaded, perform a lunr.js search with it and add
-         * the results to the config settings results section.
-         */
-        let configSettingSearchResults = [];
-        if (this.hasConfigSettingsIndex()) {
-            const /** @type {Array<Record<string, any>>} */ lunrResults = this._lunrConfigSettingIndex.search(query);
-            configSettingSearchResults = lunrResults.map((result) => {
-                const configSetting = this._configSettingIndex.filter((setting) => setting.anchor === result.ref);
-                return {
-                    score: result.score,
-                    page: configSetting[0],
-                };
-            });
-        }
-
         // prepare search
         const terms = this._index.terms;
         const titleterms = this._index.titleterms;
@@ -382,8 +366,46 @@ class SearchClass {
         let results = [];
         $('#search-summary').empty();
 
+        // Take note if we've found any object results at all
+        let foundObjectResults = false;
+
+        /*
+         * if the config settings index has been loaded, perform a lunr.js search with it and add
+         * the results to the config settings results section.
+         */
+        if (this.hasConfigSettingsIndex()) {
+            console.log("query(): searching lunr");
+            /** @type {Array<Record<string, any>>} */
+            const lunrResults = this._lunrConfigSettingIndex.search(query);
+            console.log(`query(): lunr search returned ${lunrResults.length} results`);
+            /** @type {Array<{score: number, page: Record<string, any>}>} */
+            const configSettingSearchResults = lunrResults.map((result) => {
+                const configSetting = this._configSettingIndex.filter((setting) => setting.anchor === result.ref);
+                return {
+                    score: result.score,
+                    page: configSetting[0],
+                };
+            });
+            /** @type {Array<SearchResult>} */
+            const mappedResults = configSettingSearchResults.map((result) => {
+                return {
+                    score: result.score,
+                    docname: result.page.docname,
+                    title: result.page.displayname,
+                    anchor: result.page.anchor,
+                    description: result.page.description,
+                    filename: result.page.docname,
+                    isObject: true,
+                };
+            });
+            results.push(...mappedResults);
+            console.log(`query(): pushed ${mappedResults.length} records to results array`);
+            if (mappedResults.length > 0) {
+                foundObjectResults = true;
+            }
+        }
+
         // Perform an object search
-        let foundObjectResults = false; // Take note if we've found any object results at all
         /** @type {Record<string, SearchResult>} */
         const uniqueObjectDocs = {}; // A map of the unique document anchors encountered when processing object results
         for (i = 0; i < objectterms.length; i++) {

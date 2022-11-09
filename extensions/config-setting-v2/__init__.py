@@ -236,7 +236,7 @@ def env_merge_info(
 def doctree_resolved(app: Sphinx, doctree: nodes.document, docname: str) -> None:
     config_nodes = doctree.traverse(ConfigSettingNode, False, True, False, False)
     if len(config_nodes) > 0:
-        logger.info(
+        logger.verbose(
             "doctree_resolved(): found %d ConfigSettingNodes" % len(config_nodes)
         )
     doc_config_settings = list()
