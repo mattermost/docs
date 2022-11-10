@@ -13,13 +13,21 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-11-17
 
+### Highlights
+
+#### Calls
+ - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then select the comment button to access the real-time message thread in the right-hand sidebar.
+
+#### Boards
+ - Added additional standard board templates to help users kick-off their next projects.
+ - Filters now support all text properties.
+ - Added two new tiles for System Console Boards metrics under **System Console > Site Statistics**.
+
 ### Improvements
 
 #### User Interface (UI)
  - The **Mark as Unread** option was added to the ``…`` menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
  - Channel members are now able to remove themselves from a channel via the right-hand side channel members list.
- - Updated prepackaged Boards version to v7.5.0.
- - Updated prepackaged Calls version to v0.10.0.
  - Downgraded Bulgarian, Persian, and Simplified Chinese language support to Alpha.
 
 #### Administration
