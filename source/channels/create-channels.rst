@@ -33,7 +33,7 @@ Anyone can create public channels, private channels, direct messages, and group 
 
     .. tip::
      
-     Alternatively, you can select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. In the **Direct Messages** popup, you'lll see your most recent conversations.
+     Alternatively, select the **+** symbol at the top of the channel sidebar, then select **Open a Direct Message**. In the **Direct Messages** list, you'll see your most recent conversations.
 
       
   .. tab:: Mobile app
