@@ -5,7 +5,7 @@ Terms of use and privacy policy
 -------------------------------
 
 What are Mattermost's policies around licensing, terms of use, and privacy?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following outlines the licensing, terms of use and privacy policies across Mattermost software and services.
 
@@ -17,7 +17,7 @@ Mattermost Software
 +====================================================+============================================================================================================================+===============================================================================================================================+============================================================================================================================+
 | Mattermost Team Edition (Open Source)              | Open Source **MIT License**.                                                                                               | `Mattermost Trademark Policy <https://mattermost.com/trademark-standards-of-use/>`__                                          | `Mattermost Server Privacy Policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`__ |
 |                                                    |                                                                                                                            |                                                                                                                               | with `GDPR Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`__.                                 |
-|                                                    | Open Source Add-ons available under `Apache v2 and other licenses </about/subscription.html>`__.|                 | `Mattermost Terms of Use <https://mattermost.com/terms-of-use/>`__                                          |                                                                                                                            |
+|                                                    | Open Source Add-ons available under `Apache v2 and other licenses </about/subscription.html>`__.                           | `Mattermost Terms of Use <https://mattermost.com/terms-of-use/>`__                                                            |                                                                                                                            |
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+                                                                                                                            |
 | Mattermost Enterprise Edition with no subscription | `Commercial Enterprise Edition License <https://mattermost.com/enterprise-edition-license/>`__.                            | No subscription terms apply when operating without a subscription                                                             |                                                                                                                            |
 |                                                    |                                                                                                                            |                                                                                                                               |                                                                                                                            |
@@ -108,7 +108,7 @@ An example directory layout, using an Enterprise license, is shown below:
 
 .. image:: ../images/source-available-license.png
    :alt: An example directory layout shows how Enterprise subscription plan restrictions apply to Mattermost source code based on where the Mattermost Source Available license file appears in the Mattermost deployment directory.
-   
+
 Why are you changing the licensing model?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -161,7 +161,7 @@ Can I continue to use the existing open source repositories without restriction?
 Yes, the Mattermost Source Available License will only apply from the date it is added and to the versions in which it is included.
 
 Do I need to use the Mattermost Source Available License for plugins I create?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You are free to license your own code as you see fit. We will not apply the Mattermost Source Available License either to the `starter-template <https://github.com/mattermost/mattermost-plugin-starter-template>`__ or `demo <https://github.com/mattermost/mattermost-plugin-demo>`__ plugins, leaving them under a permissive open source license to give you the freedom to develop your own plugins.
 
@@ -176,7 +176,7 @@ Can’t someone compile out any license restrictions?
 We trust our community to honor the Mattermost Source Available License and work alongside us to develop features across our free and paid offerings. Our Support team does not provide support to unlicensed, enterprise-only functionality.
 
 If I make my own plugin using your source available code, can I remove the license restriction?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No, the Mattermost Source Available License continues to apply to modifications.
 
@@ -191,7 +191,7 @@ Is this a legal document?
 No. This FAQ is informational only. The Mattermost Source Available License stands on its own, and this FAQ does not affect its meaning.
 
 What is the full text of the Mattermost Source Available License?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "The Mattermost Source Available License (the “Source Available License”)
 (c) Mattermost, Inc. 2015-present.
@@ -200,17 +200,17 @@ With regard to the Mattermost Software:
 
 This software and associated documentation files (the "Software") may only be
 used in production, if you (and any entity that you represent) have agreed to,
-and are in compliance with all of the following: (a) the Mattermost Terms of Use, 
-available at https://mattermost.com/terms-of-use/ (the "TOU"), (b) and the Mattermost 
-Software License Agreement,  available at https://mattermost.com/enterprise-edition-terms/ 
-(the “SLA”) or other licensing agreement governing your use of the Software, as agreed 
-by you and Mattermost, and otherwise have a valid Mattermost Enterprise for the correct 
+and are in compliance with all of the following: (a) the Mattermost Terms of Use,
+available at https://mattermost.com/terms-of-use/ (the "TOU"), (b) and the Mattermost
+Software License Agreement,  available at https://mattermost.com/enterprise-edition-terms/
+(the “SLA”) or other licensing agreement governing your use of the Software, as agreed
+by you and Mattermost, and otherwise have a valid Mattermost Enterprise for the correct
 number of Registered Authorized Users the Software. Subject to the foregoing, you are free
 to modify this Software and publish patches to the Software. You agree that
 Mattermost and/or its licensors (as applicable) retain all right, title and
 interest in and to all such modifications and/or patches, and all such
 modifications and/or patches may only be used, copied, modified, displayed,
-distributed, or otherwise exploited with a valid license or Subscription for the correct number of 
+distributed, or otherwise exploited with a valid license or Subscription for the correct number of
 Registered Authorized Users of the Software.  Notwithstanding
 the foregoing, you may copy and modify the Software for development and testing
 purposes, without requiring a valid license or Subscription.  You agree that Mattermost and/or
@@ -241,7 +241,7 @@ How do I fork Mattermost?
 -------------------------
 
 If you wish to create a forked version of the Mattermost source code, you must comply with the applicable licenses under which the source code is made available. Historically, this was made clear via this link: https://docs.mattermost.com/about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code.
- 
+
 For example, the Mattermost server source code is and always has been made available under the AGPLv2 license. Therefore, all third-party open source forks of the Mattermost server source code must comply with the AGPLv2 license in both source code and compiled versions. If you encounter a third-party fork of the publicly available source code of Mattermost server that claims to be licensed under an alternate license, it is incorrect.
 
 For clarity, this license information regarding forking the source specifically refers to the use (and compilation) of the Mattermost source code by third parties. Third parties are obligated to comply with the open source licenses referenced above in connection with their derivative works. Compiled versions and derivative works of Mattermost prepared by third parties may not be made available under any license other than those under which the applicable source code is made available.
