@@ -16,10 +16,10 @@ Latest Mattermost Cloud releases:
 ### Improvements
 
 #### User Interface (UI)
- - The “Mark as Unread” option was added to the ``…`` menu for channels in the left-hand side sidebar. Alt+click on a channel on the left-hand side also now marks the last post in the channel as unread.
+ - The **Mark as Unread** option was added to the ``…`` menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
  - Channel members are now able to remove themselves from a channel via the right-hand side channel members list.
- - Updated prepackaged boards version to v7.5.0.
- - Updated prepackaged Calls version v0.10.0.
+ - Updated prepackaged Boards version to v7.5.0.
+ - Updated prepackaged Calls version to v0.10.0.
  - Downgraded Bulgarian, Persian, and Simplified Chinese language support to Alpha.
 
 #### Administration
@@ -28,7 +28,7 @@ Latest Mattermost Cloud releases:
  - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
 
 ### API Changes
- - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added  to the Plugin API and the following hooks:
+ - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks:
     - ``UserHasPermissionToCollection(c *Context, userID, collectionType, collectionId string, permission *model.Permission) (bool, error)``
     - ``GetAllCollectionIDsForUser(c *Context, userID, collectionType string) ([]string, error)``
     - ``GetAllUserIdsForCollection(c *Context, collectionType, collectionID string) ([]string, error)``
@@ -38,10 +38,10 @@ Latest Mattermost Cloud releases:
 
 ### Bug Fixes
  - Fixed an issue where exports did not contain favorited Direct Message channels.
- - Fixed an issue where screen readers did not announce search results on "Invite members to channel" modal.
+ - Fixed an issue where screen readers did not announce search results on the **Invite members to channel** modal.
  - Fixed an issue where screen readers did not announce the status of the user when hovering over the user status icon.
- - Fixed an issue where users with narrow screens could not see the Profile Setting section.
- - Fixed an issue where users were unable to access the create account button on narrow screens.
+ - Fixed an issue where users with narrow screens could not see the **Profile Settings** section within the **Settings** modal.
+ - Fixed an issue where users were unable to access the **Create an account** option on narrow screens.
  - Fixed an issue where users on desktop were unable to grab the vertical scroll bar without accidently resizing the window.
 
 ### Known Issues
