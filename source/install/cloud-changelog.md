@@ -32,7 +32,7 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - The **System Console > File Sharing and Download** setting is now unhidden and honored in Cloud.
- - **Total Active Users** was renamed to **Total Activated Users** in **system console > Site Statistics**.
+ - **Total Active Users** was renamed to **Total Activated Users** in **System Console > Reporting > Site Statistics**.
  - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
 
 ### API Changes
