@@ -2,35 +2,18 @@
 
 Latest Mattermost Mobile Apps releases:
 
-- [1.56.0 Release](#release)
 - [1.55.1 Release](#id1)
 - [1.55.0 Release](#id5)
 - [1.54.0 Release](#id9)
 - [1.53.0 Release](#id14)
 - [1.52.0 Release](#id18)
 
-## 1.56.0 Release
-- Release Date: November 16, 2022
-- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
-
-### Compatibility
- - Mobile App v1.56 is our first extended support release (ESR). We are very excited about the upcoming general availability of the v2.0 mobile app in December. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023. v1.56 will receive critical security fixes only and will be released as needed via unsigned builds to our mobile GitHub repository.
- - **Upgrade to Mattermost server version v7.1.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
- - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
- - iPhone 5s devices and later with iOS 12.1+ is required.
-
-### Bug Fixes
- - Calls: fixed a bug where a call started from mobile would appear to start, but then fail after 30 seconds.
-
-### Known Issues
- - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
- - Posts sometimes get stuck behind the post textbox on iPad.
-
 ## 1.55.1 Release
 - Release Date: September 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
+ - Mobile App v1.55.1 is our first extended support release (ESR). We are very excited about the upcoming general availability of the v2.0 mobile app in December. We recognize that some customers may have a custom build of Mattermost mobile and need more time to test or implement their custom changes on mobile v2.0. The mobile ESR will be supported until July 2023. v1.56 will receive critical security fixes only and will be released as needed via unsigned builds to our mobile GitHub repository.
  - **Upgrade to server version v6.3.0 or later is required.** Support for server [Extended Support Release](/upgrade/extended-support-release.html) (ESR) 5.37 has ended and upgrading to server ESR v6.3.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
