@@ -18,7 +18,7 @@ Release v5.2
 
 - **v5.2.1, release day TBD**
  - Fixed an issue where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
- - Fixed an issue where the default downloads location was not set on MacOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
+ - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
  - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows `MM-48184 <https://mattermost.atlassian.net/browse/MM-48184>`_.
 - **v5.2.0, released 2022-10-31**
  - Original v5.2.0 release
