@@ -36,7 +36,7 @@ Latest Mattermost Cloud releases:
  - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
 
 ### API Changes
- - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks:
+ - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks. This API method is in beta, subject to change, and not covered by our backwards compatibility guarantee.
     - ``UserHasPermissionToCollection(c *Context, userID, collectionType, collectionId string, permission *model.Permission) (bool, error)``
     - ``GetAllCollectionIDsForUser(c *Context, userID, collectionType string) ([]string, error)``
     - ``GetAllUserIdsForCollection(c *Context, collectionType, collectionID string) ([]string, error)``
