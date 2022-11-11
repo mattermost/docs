@@ -34,6 +34,7 @@ Latest Mattermost Cloud releases:
  - The **System Console > File Sharing and Download** setting is now unhidden and honored in Cloud.
  - **Total Active Users** was renamed to **Total Activated Users** in **System Console > Reporting > Site Statistics**.
  - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
+ - SQL migrations for PostgreSQL will now filter by the current schema name when checking for information from the ``information_schema.columns`` view. This does not affect anything because usually there's only one installation in a given database, but this gives flexibility to users to store multiple Mattermost instances under a single database.
 
 ### API Changes
  - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks. This API method is in beta, subject to change, and not covered by our backwards compatibility guarantee.
