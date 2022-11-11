@@ -28,7 +28,7 @@ Release v5.2
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps must be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -121,7 +121,7 @@ Release v5.1
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -232,7 +232,7 @@ Release v5.0
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Breaking Changes / Upgrade Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -324,7 +324,7 @@ Release v4.7
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
