@@ -36,51 +36,47 @@ Access the following configuration settings in the System Console by going to **
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
-
-**False**: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserCreation": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
-
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** New accounts can be created by an email invitation or a public team invitation link.                           | - System Config path: **Authentication > Signup**                      |
+| - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message. | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
+|                                                                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+ 										      
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
-
-This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This setting limits the email address domains that can be used to create a new account or team. You **must** set `**Require Email Verification** <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true`` for the restriction to function. This setting only affects email login. | - System Config path: **Authentication > Signup**                       |
+|                                                                                                                                                                                                                                                                                                                                        | - ``config.json`` setting: ``.TeamSettings.RestrictCreationToDomains``  |
+| String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                        | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Enable open server
 ~~~~~~~~~~~~~~~~~~
-
-**True**: Users can sign up to the server from the root page without an invite.
-
-**False**: Users can only sign up to the server if they receive an invite.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOpenServer": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
+  
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Users can create accounts on the server without an invitation.                       | - System Config path: **Authentication > Signup**                   |
+| - **false**: **(Default)** Users **must** have an invitation to create an account on the server. | - ``config.json`` setting: ``.TeamSettings.EnableOpenServer``       |
+|                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_ENABLEOPENSERVER``        |
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Enable email invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can invite others to the Mattermost system by email.
-
-**False**: Email invitations are disabled.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableEmailInvitations": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Allows users to send email invitations.    | - System Config path: **Authentication > Signup**                      |
+| - **false**: **(Default)** Disables email invitations. | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations`` |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``  |
++--------------------------------------------------------+------------------------------------------------------------------------+
 
 Invalidate pending email invites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This button invalidates active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+| This button invalidates email invitations that have not been accepted (by default, invitations expire after 48 hours). | - System Config path: **Authentication > Signup** |
+|                                                                                                                        | - ``config.json`` setting: N/A                    |
+| This option has no ``config.json`` setting or environment variable.                                                    | - Environment variable: N/A                       |
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
 
 ----
 
