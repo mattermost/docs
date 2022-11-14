@@ -93,6 +93,7 @@ Known Issues
 
 - Updating a local exe installation installs the update as a new app `MM-48381 <https://mattermost.atlassian.net/browse/MM-48381>`_.
 - The tray icon colour on Windows doesn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
+- Notifications are not displayed on Windows v8 and v8.1 `MM-48397 <https://mattermost.atlassian.net/browse/MM-48397>`_.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
 - On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
