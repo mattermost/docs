@@ -61,8 +61,8 @@ Mattermost v7.5.0 contains a medium severity level security fix. [Upgrading](htt
  - Downgraded Bulgarian, Persian, and Simplified Chinese language support to Alpha.
 
 #### Administration
- - After 90 days since missing a payment, Admins will see a modal where they can choose between updating the billing status or staying on the Free subscription.
- - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
+ - After 90 days since missing a payment, admins will see a modal where they can choose between updating the billing status or staying on the Free subscription.
+ - Autocomplete results using Elasticsearch or Bleve will correctly show a user as a channel member in direct message and group message channels. To force this change to appear, a re-indexing will be necessary.
  - Introduced an **Invite Guests** prompt to self-hosted.
  - Added JSON-compatible nested configuration value parsing from environment variables.
  - An AD/LDAP prompt banner is now shown for self-hosted instances with a Professional license when visiting the invite guests modal.
@@ -72,12 +72,12 @@ Mattermost v7.5.0 contains a medium severity level security fix. [Upgrading](htt
 ### Bug Fixes
  - Fixed an issue where Enterprise features labeled as "Professional Feature" appeared in the **System Console** sidebar.
  - Fixed an issue where the transparency for PNG images in image previews and thumbnails was not preserved.
- - Fixed an issue where screen readers failed to announce “No results found” in the Direct Message modal.
+ - Fixed an issue where screen readers failed to announce “No results found” in the direct message modal.
  - Fixed an issue where minipreview data was not generated nor stored for images imported from Slack.
  - Fixed the error message that appears on the **Reset Password** page when inputting a password with fewer than five characters.
  - Fixed an issue where ``Get categories`` with the "exclude" option did not return categories for deleted teams a user was no longer a member of.
- - Fixed an issue where a randomly generated default message-ID was not added for every outgoing email.
- - Fixed an issue where custom groups could be created with at-mention names that are reserved words (@channel, @here, @all).
+ - Fixed an issue where a randomly-generated default message-ID wasn't added for every outgoing email.
+ - Fixed an issue where custom groups could be created with @mention names that are reserved words (@channel, @here, @all).
  - Fixed an issue where 404 errors were shown when APIv4 had an incorrect content-type header.
  - Fixed an issue where messages from bots and webhooks could not be forwarded.
  - Fixed an issue where inline images did not appear in the channel header.
@@ -111,7 +111,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### API Changes
  - Added a new response-header ``First-Inaccessible-File-Time`` to the APIs fetching single file information.
- - Added a new query parameter to include deleted posts as long as it's requested by a System Admin in ``/api/v4/channels/{channel_id}/posts``.
+ - Added a new query parameter to include deleted posts as long as it's requested by a system admin in ``/api/v4/channels/{channel_id}/posts``.
  - Added new plugin endpoints to ``PermissionService`` interface.
 
 ### Go Version
@@ -122,14 +122,14 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
- - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
+ - Status may sometimes get stuck as **Away** or **Offline** in high availability mode with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - The team sidebar on the desktop app does not update when channels have been read on mobile.
  - Slack import through the CLI fails if email notifications are enabled.
- - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - Push notifications don't always clear on iOS when running Mattermost in high availability mode.
  - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
  - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
- - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board Admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
  
 ### Contributors
