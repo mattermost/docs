@@ -30,7 +30,7 @@ Mattermost v7.5.0 contains a medium severity level security fix. [Upgrading](htt
 ### Highlights
 
 #### Calls
- - Added new message threads with emoji reactions and @mentions to Calls. After joining a call, expand the widget to the window mode, and then select the comment button to access the real-time message thread in the right-hand sidebar.
+ - Added new message threads with emoji reactions and @mentions to calls. After joining a call, expand the widget to the window mode, and then select the comment button to access the real-time message thread in the right-hand sidebar.
 
 #### Boards
  - Added additional standard [board templates](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) to help users kick-off their next projects.
