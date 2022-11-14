@@ -20,6 +20,7 @@ Release v5.2
  - Fixed an issue where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
  - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
  - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows `MM-48184 <https://mattermost.atlassian.net/browse/MM-48184>`_.
+ - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
 - **v5.2.0, released 2022-10-31**
  - Original v5.2.0 release
 
@@ -92,7 +93,6 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Updating a local exe installation installs the update as a new app `MM-48381 <https://mattermost.atlassian.net/browse/MM-48381>`_.
-- The tray icon colour on Windows doesn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
 - Notifications are not displayed on Windows v8 and v8.1 `MM-48397 <https://mattermost.atlassian.net/browse/MM-48397>`_.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
 - On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
