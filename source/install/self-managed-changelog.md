@@ -15,6 +15,8 @@ Latest Mattermost Releases:
 
 **v7.5.0 release day: 2022-11-16**
 
+Mattermost v7.5.0 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 ### Important Upgrade Notes
 
  - Adds a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
@@ -31,12 +33,12 @@ Latest Mattermost Releases:
  - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then select the comment button to access the real-time message thread in the right-hand sidebar.
 
 #### Boards
- - Added additional standard board templates to help users kick-off their next projects.
- - Filters now support all text properties.
- - Added two new tiles for System Console Boards metrics under **System Console > Site Statistics**.
+ - Added additional standard [board templates](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) to help users kick-off their next projects.
+ - Filters now support all [text properties](https://docs.mattermost.com/boards/work-with-cards.html#work-with-property-types).
+ - Added two new tiles for System Console [Boards metrics](https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics) under **System Console > Site Statistics**.
  
 #### Last active status
- - Added a “Last active” status to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
+ - Added a [“Last active” status](https://docs.mattermost.com/channels/channels-settings.html#share-last-active-time) to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
 
 ### Improvements
 
