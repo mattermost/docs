@@ -118,7 +118,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.5 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - Users are unable to open threads in another team from recent mentions [MM-48399](https://mattermost.atlassian.net/browse/MM-48399).
+ - Users are unable to open threads from recent mentions when switching to another team [MM-48399](https://mattermost.atlassian.net/browse/MM-48399).
+ - When the right-hand side is expanded, an overlay is displayed with the Threads help text popup [MM-48412](https://mattermost.atlassian.net/browse/MM-48412).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
