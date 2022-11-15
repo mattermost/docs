@@ -35,6 +35,7 @@ Filters
 -------
 
 You can filter cards on your board if they utilize any of the following property types:
+
 - Select
 - Text
 - Email
