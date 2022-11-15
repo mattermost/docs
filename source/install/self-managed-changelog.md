@@ -25,7 +25,7 @@ Mattermost v7.5.0 contains a medium severity level security fix. [Upgrading](htt
 **IMPORTANT:** If you upgrade from a release earlier than v7.4, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
 ### Compatibility
- - Updated the minimum version of Chrome to v106+ and the minimum version of Edge to 95+.
+ - Updated the minimum version of Chrome and Edge to v106+.
 
 ### Highlights
 
