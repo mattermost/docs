@@ -147,42 +147,38 @@ Minimum password length
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 8`` with numerical input.                   |
-+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. | - System Config path: **Authentication > Password**            |
+|                                                                                                                                                           | - ``config.json`` setting: ``.PasswordSettings.MinimumLength`` |
+| Numerical input. Default is **5**.                                                                                                                        | - Environment variable: ``MM_PASSWORDSETTINGS_MINIMUMLENGTH``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Password requirements
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error message previewed in the System Console will appear on the account creation page if a user enters an invalid password.
-
-- **At least one lowercase letter**: Select this checkbox if a valid password must contain at least one lowercase letter.
-- **At least one uppercase letter**: Select this checkbox if a valid password must contain at least one uppercase letter.
-- **At least one number**: Select this checkbox if a valid password must contain at least one number.
-- **At least one symbol**: Select this checkbox if a valid password must contain at least one symbol. Valid symbols include: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``.
-
-This feature's ``config.json`` settings are, respectively:
-
-.. list-table::
-    :widths: 80
-
-    * - ``"Lowercase": false`` with options ``true`` and ``false``.
-    * - ``"Number": false`` with options ``true`` and ``false``.
-    * - ``"Uppercase": false`` with options ``true`` and ``false``.
-    * - ``"Symbol": false`` with options ``true`` and ``false``.
++-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This setting controls password character requirements. By checking the corresponding box, passwords must contain: | - System Config path: **Authentication > Password**                                                                                                                                  |
+|                                                                                                                   | - ``config.json`` settings: ``.PasswordSettings.Lowercase: false``, ``.PasswordSettings.Uppercase: false``, ``.PasswordSettings.Number: false``, ``.PasswordSettings.Symbol: false`` |
+| - **At least one lowercase letter**                                                                               | - Environment variables: ``MM_PASSWORDSETTINGS_LOWERCASE``, ``MM_PASSWORDSETTINGS_UPPERCASE``, ``MM_PASSWORDSETTINGS_NUMBER``, ``MM_PASSWORDSETTINGS_SYMBOL``                        |
+| - **At least one uppercase letter**                                                                               |                                                                                                                                                                                      |
+| - **At least one number**                                                                                         |                                                                                                                                                                                      |
+| - **At least one symbol** out of these: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``.                                        |                                                                                                                                                                                      |
+|                                                                                                                   |                                                                                                                                                                                      |
+| The error message previewed in the System Console will appear if the user attempts to set an invalid password.    |                                                                                                                                                                                      |
+|                                                                                                                   |                                                                                                                                                                                      |
+| The default for all boxes is unchecked. The default for all settings in ``config.json`` is ``false``.             |                                                                                                                                                                                      |
++-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Failed login attempts allowed before a user is locked out and required to reset their password via email.
-
-+------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with numerical input. |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. | - System Config path: **Authentication > Password**                      |
+|                                                                                                                                                             | - ``config.json`` setting: ``.ServiceSettings.MaximumLoginAttempts: 10`` |
+| Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
