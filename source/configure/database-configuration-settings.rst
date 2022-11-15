@@ -81,7 +81,7 @@ Maximum open connections
 *Available in legacy Enterprise Edition E10/E20*
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of open connections held open       | - System Config path: **Environment > Database**                 |
+| The maximum number of open connections                 | - System Config path: **Environment > Database**                 |
 | to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
 | Numerical input. Default is **300**.                   |                                                                  |
