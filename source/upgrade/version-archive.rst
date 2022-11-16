@@ -18,7 +18,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v7.5.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-5-feature-release>`__ - `Download <https://releases.mattermost.com/7.5.1/mattermost-7.5.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.5.1/mattermost-7.5.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``0146910dbb21894365f053ff51e54233848507c4b190a179cd587423cb094380``
+  - SHA-256 Checksum: ``0dd4235e8de7d77aadeb68855a1496b937045c98872c67645a7f2e96abf34c8d``
   - GPG Signature: https://releases.mattermost.com/7.5.1/mattermost-7.5.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v7.4.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-4-feature-release>`__ - `Download <https://releases.mattermost.com/7.4.0/mattermost-7.4.0-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.4.0/mattermost-7.4.0-linux-amd64.tar.gz``
@@ -315,7 +315,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v7.5.1 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-5-feature-release>`__ - `Download <https://releases.mattermost.com/7.5.1/mattermost-team-7.5.1-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.5.1/mattermost-team-7.5.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``810f5d4017aa3b0e6f94d9f37237f74f244569ea7bda328aeec2184e2eebba45``
+  - SHA-256 Checksum: ``d934b4c9efc4008c47ddd966039e92c95e01cb5404888a16a947be112c5750d3``
   - GPG Signature: https://releases.mattermost.com/7.5.1/mattermost-team-7.5.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v7.4.0 - `View Changelog <https://docs.mattermost.com/install/self-managed-changelog.html#release-v7-4-feature-release>`__ - `Download <https://releases.mattermost.com/7.4.0/mattermost-team-7.4.0-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/7.4.0/mattermost-team-7.4.0-linux-amd64.tar.gz``
