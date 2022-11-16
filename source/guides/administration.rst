@@ -42,7 +42,7 @@ Get started
     Google SSO </onboard/sso-google>
     Office 365 SSO </onboard/sso-office>
     Advanced permissions </onboard/advanced-permissions>
-    System Admin roles </onboard/system-admin-roles>
+    System admin roles </onboard/system-admin-roles>
     Manage team and channel members </manage/team-channel-members>
     Custom branding tools </configure/custom-branding-tools>
     eDiscovery </comply/electronic-discovery>
@@ -82,7 +82,7 @@ Advanced user management
 * :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
 * :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
 * :doc:`SAML Single Sign-On </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
-* :doc:`SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
+* :doc:`SAML Single Sign-On: technical documentation </onboard/sso-saml-technical>` - SAML 2.0 reference documentation for Mattermost.
 
 Advanced workspace management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,7 +135,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     :maxdepth: 1
     :hidden:
 
-    Store configuration in the database </configure/configuation-in-mattermost-database>
+    Store configuration in the database </configure/configuation-in-a-database>
     Bulk loading data </onboard/bulk-loading-data>
     SMTP email setup </configure/smtp-email>
     Email templates </configure/email-templates>
@@ -150,7 +150,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
 
-* :doc:`Include configuration in the Mattermost database </configure/configuation-in-mattermost-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
+* :doc:`Include configuration in the Mattermost database </configure/configuation-in-a-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
 * :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
 * :doc:`Email templates </configure/email-templates>` - Alter the transactional emails Mattermost sends to your users.

@@ -22,7 +22,7 @@ To speed up initial loading time, Mattermost mobile apps cache data locally on t
 
   - Messages
   - Files and images that are attached to messages
-  - Avatars, usernames, and email addresses of people in the currently open channel
+  - Profile pictures, usernames, and email addresses of people in the currently open channel
 
   In addition, metadata that the app uses for keeping track of its operations is also cached. The metadata includes user IDs, channel IDs, team IDs, and message IDs.
   

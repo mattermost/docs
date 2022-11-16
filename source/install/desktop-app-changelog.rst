@@ -6,12 +6,103 @@ Desktop application changelog
 
 Latest Mattermost Desktop App releases:
 
-- `Release v5.1 <#id1>`_
-- `Release v5.0 <#id6>`_
-- `Release v4.7 <#id22>`_
-- `Release v4.6 <#id40>`_
-- `Release v4.5 <#id52>`_
-- `Release v4.4 <#id69>`_
+- `Release v5.2 <#id1>`_
+- `Release v5.1 <#id4>`_
+- `Release v5.0 <#id18>`_
+- `Release v4.7 <#id33>`_
+- `Release v4.6 <#id50>`_
+- `Release v4.5 <#id62>`_
+
+Release v5.2
+--------------
+
+- **v5.2.1, release day 2022-11-15**
+ - Fixed an issue where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
+ - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
+ - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows `MM-48184 <https://mattermost.atlassian.net/browse/MM-48184>`_.
+ - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
+- **v5.2.0, released 2022-10-31**
+ - Original v5.2.0 release
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
+
+Highlights
+~~~~~~~~~~~~~~~
+
+- Onboarding screen improvements: Added new **Configure Server** and first user onboarding screens when starting the app without servers configured.
+- Added a Downloads dropdown menu that displays file upload progress and recently downloaded files.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^
+
+- Dropped support for Linux IA32 (Linux 32-bit builds).
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added localization support to the Desktop App (Beta).
+- Zoom in/out now works when ``CTRL/CMD+SHIFT+=`` is pressed.
+- Changed the order of fields in the Add Server modal so that the server URL is filled in first and the display name after.
+- The app window now reloads only when the URL changes, not when a server's name changes.
+- Updated the default window size to 1280x800, so that users can now see other login options as well on first load.
+- Swapped the dark and light theme tray icons on Linux and Windows to the expected behavior.
+- Disabled the auto-update functionality explicitly for all MSI installers except the Windows EXE installer and the Linux AppImage.
+- Dropped support for asterisk-based unreads in Mattermost Self-Hosted versions older than v5.28.
+- Improved the performance of window resizing.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v21.2.0. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Linux
+^^^^^^
+
+- To fix notification issues for Linux users, the configuration setting ``notifications.flashWindow`` default value was changed to ``0`` for Linux.
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where an Operating System could register Mattermost as the default web browser / mail app.
+- Fixed an issue where the download notification showed the wrong file name.
+- Fixed an issue where it was possible to drag the Minimize/Close buttons.
+- Fixed an issue where servers were not forced to update their configuration using the configured ``SiteURL`` value if available.
+- Fixed an issue where a misleading error message from a remote certificate would imply that the Mattermost server had an issue.
+- Fixed an issue where users still received notifications when their status was set to **Do Not Disturb**.
+- Fixed an issue where users could not replace files in the **Downloads** folder.
+- Fixed improper reporting of app version when the ``--version`` or ``-v`` command-line flags were passed.
+- Fixed an issue where MAS users couldn't easily replace files.
+
+Open Source Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added ``macos-notification-state``, ``windows-focus-assist``, and ``react-intl`` to https://github.com/mattermost/desktop.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Updating a local exe installation installs the update as a new app `MM-48381 <https://mattermost.atlassian.net/browse/MM-48381>`_.
+- Notifications are not displayed on Windows v8 and v8.1 `MM-48397 <https://mattermost.atlassian.net/browse/MM-48397>`_.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
+- On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `devinbinnie <https://github.com/devinbinnie>`_, `julmondragon <https://github.com/julmondragon>`_, `m1lt0n <https://github.com/m1lt0n>`_, `saturninoabril <https://github.com/saturninoabril>`_, `tboulis <https://github.com/tboulis>`_, `vaaas <https://github.com/vaaas>`_.
 
 Release v5.1
 --------------
@@ -26,14 +117,14 @@ Release v5.1
 - **v5.1.0, released 2022-05-16**
  - Original v5.1.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.1.1>`_
 
 **Note:** Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -100,6 +191,7 @@ All Platforms
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
 - Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
 - Desktop App may become unresponsive and crash when initiating a screen reader `MM-44058 <https://mattermost.atlassian.net/browse/MM-44058>`_.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
@@ -136,14 +228,14 @@ Release v5.0
 - **v5.0.0, released 2021-10-13**
  - Original v5.0.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.0.4>`_
 
 **Note:** Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
 
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Breaking Changes / Upgrade Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,7 +305,7 @@ Contributors
 Release v4.7
 --------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.7.2>`_
 
 - **v4.7.2, released 2021-09-13**
  - Upgraded to Electron v12.0.16.
@@ -235,7 +327,7 @@ Release v4.7
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -320,7 +412,7 @@ Contributors
 Release v4.6
 ----------------------------
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.6.2>`_
 
 - **v4.6.2, released 2021-01-25**
 

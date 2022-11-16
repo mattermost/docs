@@ -165,7 +165,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 
 .. tip::
 
-  When trying to use local mode with mmctl, an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, can be resolved by setting ``EnableLocalMode`` to ``true``.
+  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``. 
 
 Using local mode
 ~~~~~~~~~~~~~~~~
@@ -1950,7 +1950,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
   
-   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-mattermost-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
 **Format**
 

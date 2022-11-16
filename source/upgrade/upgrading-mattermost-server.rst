@@ -108,9 +108,9 @@ Upgrade Mattermost Server
   
     sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort | sudo xargs rm -r
   
-  **Using Bleve Search**
+  **Using Bleve search**
 
-  If using `Bleve Search </deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
+  If using `Bleve search </deploy/bleve-search.html>`__, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
   
   - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
   - You can then store that directory or re-index as preferred. 
@@ -157,7 +157,7 @@ Upgrade Mattermost Server
     sudo rm -r /tmp/mattermost-upgrade/
     sudo rm -i /tmp/mattermost*.gz
 
-13. If you're using a `High Availability </scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the High Availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
+13. If you're using a `high availability </scale/high-availability-cluster.html>`__ deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the high availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
 
     If they continue to display as yellow, trigger a configuration propagation across the cluster by opening the System Console, changing a setting, and reverting it. This will enable the **Save** button for that page. Then, select **Save**. This will not change any configuration, but sends the existing configuration to all nodes in the cluster. 
 

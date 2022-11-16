@@ -34,11 +34,17 @@ To ungroup cards on table view, select the **Group by** option at the top of the
 Filters
 -------
 
-You can filter cards on your board if they utilize the **Select** property.
+You can filter cards on your board if they utilize any of the following property types:
+
+- Select
+- Text
+- Email
+- Phone
+- URL
 
 .. note:: 
   
-   You must have at least one **Select** property on your board for filtering to work. Filtering by other property types such as **Person** or **Date** is not yet supported.
+   You must have at least one of the property types listed above on your board for filtering to work. Filtering by other property types such as **Person** or **Date** is not yet supported.
 
 Add filters
 ~~~~~~~~~~~
