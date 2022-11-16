@@ -13,7 +13,7 @@ Latest Mattermost Releases:
 
 ## Release v7.5 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-- **v7.5.1, released **
+- **v7.5.1, released 2022-11-16**
   - Fixed an upgrade issue affecting servers on Ubuntu v18.04.
 - **v7.5.0, released 2022-11-16**
   - Original 7.5.0 release
