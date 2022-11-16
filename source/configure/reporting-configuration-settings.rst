@@ -19,7 +19,7 @@ Site statistics
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | View statistics on active users, teams, channels,             | - System Config path: **Reporting > Site Statistics**       |
-| sessions, webhooks, and connections.                          | - ``config.json setting``: N/A                              |
+| sessions, webhooks, connections, playbooks, and boards.       | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: Inactive and deactivated users are not counted towards the total number of active users.                          |

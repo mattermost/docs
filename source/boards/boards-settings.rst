@@ -9,7 +9,7 @@ Settings
 Set language
 ------------
 
-To set your language on boards, select the gear icon |gear-icon| next to your profile avatar, then go to **Set language** to apply your language settings. 
+To set your language on boards, select the gear icon |gear-icon| next to your profile picture, then go to **Set language** to apply your language settings. 
 
 .. note:: 
   
@@ -18,9 +18,9 @@ To set your language on boards, select the gear icon |gear-icon| next to your pr
 Emoji icons
 -----------
 
-To enable or disable random emoji icons for your board and cards, select the gear icon |gear-icon| next to your profile avatar, then toggle **Random icons on or off**.
+To enable or disable random emoji icons for your board and cards, select the gear icon |gear-icon| next to your profile picture, then toggle **Random icons on or off**.
 
 Product tour
 ------------
 
-If you skipped the product tour or want a refresher on Boards, you can restart the product tour by going to the gear icon |gear-icon| next to your profile avatar and selecting **Product tour**. This will add a new **Welcome to Boards** template to your sidebar and kick-off the guided onboarding tour.
+If you skipped the product tour or want a refresher on Boards, you can restart the product tour by going to the gear icon |gear-icon| next to your profile picture and selecting **Product tour**. This will add a new **Welcome to Boards** template to your sidebar and kick-off the guided onboarding tour.
