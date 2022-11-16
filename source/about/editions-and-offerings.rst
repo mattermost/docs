@@ -37,28 +37,28 @@ Mattermost plans consist of features and entitlements available either free or a
 
 We have three primary plans available to our self-hosted and cloud users: 
 
-* **Mattermost Starter** - This a free version of our collaboration suite designed for single teams.
+* **Mattermost Free** - This a free version of our collaboration suite designed for single teams.
 * **Mattermost Professional** - This is a paid subscription service providing advance access controls and user management for managers leading teams of teams.
 * **Mattermost Enterprise** - This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost suite.
 
-For customers using our service in a self-hosted deployment, the Mattermost Starter offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). 
+For customers using our service in a self-hosted deployment, the Mattermost Free offering is available in both our open source and commercial code bases (called Mattermost Team Edition and Mattermost Enterprise Edition, respectively). 
 
 The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase, or by starting a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
-Mattermost Starter
--------------------
+Mattermost Free
+---------------
 
-Mattermost Starter is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
+Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
-* *Self-hosted deployments* - **Mattermost Starter** is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
-* *Cloud deployments* - **Mattermost Starter** is also available in Cloud. It provides the functionality of Mattermost Starter to unlimited users for free, with a `few workspace limits </onboard/mattermost-limits.html>`_. Get started today via https://mattermost.com/sign-up/.
+* *Self-hosted deployments* - **Mattermost Free** is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). See deployment options at: https://mattermost.com/deploy/.
+* *Cloud deployments* - **Mattermost Free** is also available in Cloud. It provides the functionality of Mattermost Starter to unlimited users for free, with a `few workspace limits </onboard/mattermost-limits.html>`_. Get started today via https://mattermost.com/sign-up/.
 
 Features include:
 
-- Unlimited teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and Custom Emoji.
+- Unlimited teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
 - One customizable playbook for unlimited participants, ad hoc add/remove tasks, automated triggers, and stakeholders dashboard.
 - Unlimited boards, with table, gallery, list views, a single workspace per channel, shareable read-only boards, and data import.
-- Native apps for iOS, Android, Windows, Mac, and Linux.
+- Native apps for iOS, Android, Windows, macOS, and Linux.
 - Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
 - Tools for `custom branding </configure/custom-branding-tools.html>`__ and `themes </messaging/customizing-theme-colors.html>`__.
 - `Multi-factor authentication </onboard/multi-factor-authentication.html>`__.
