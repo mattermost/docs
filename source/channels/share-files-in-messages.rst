@@ -81,8 +81,3 @@ The following media formats are supported on most browsers:
 -  Files: PDF, TXT
 
 Other document previews (such as Word, Excel, or PPT) are not yet supported.
-    
-      
-
-
-
