@@ -4,7 +4,7 @@ Manage your Mattermost profile
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can configure your profile and security preferences by selecting **Profile** from your avatar in the global header.
+You can configure your profile and security preferences by selecting **Profile** from your profile picture in the global header.
 
 .. tabs::
 
@@ -12,7 +12,7 @@ You can configure your profile and security preferences by selecting **Profile**
 
       In Mattermost v6.0, **Account Settings** have moved.
 
-      - Access **Profile** and **Security** settings from your Avatar in the Global Header.
+      - Access **Profile** and **Security** settings from your profile picture in the Global Header.
       - Access **Notifications**, **Display**, **Sidebar**, and **Advanced Settings** by selecting the Gear |gear-icon| icon in the Global Header.
 
       .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
@@ -74,7 +74,7 @@ When your System Admin enables `multi-factor authentication </configure/configur
 
 Download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`__ for your device, then:
 
-1. In Mattermost, select your avatar, then select **Profile > Security**.
+1. In Mattermost, select your profile picture, then select **Profile > Security**.
 2. Under **Multi-factor Authentication**, select **Edit**.
 
 .. image:: ../images/multi-factor-authentication.png
