@@ -15,7 +15,7 @@ Latest Mattermost Releases:
 
 **v7.5.0 release day: TBD**
 
- - v7.5 release is delayed for a few days while we investigate an upgrade issue affecting servers on Ubuntu v18.04 (https://github.com/mattermost/focalboard/issues/4210).
+ - v7.5 release is delayed for a few days while we investigate an upgrade issue affecting servers on Ubuntu v18.04 https://github.com/mattermost/focalboard/issues/4210.
 
 ## Release v7.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
