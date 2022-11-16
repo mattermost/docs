@@ -36,51 +36,47 @@ Access the following configuration settings in the System Console by going to **
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
-
-**False**: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserCreation": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
-
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** New accounts can be created by an email invitation or a public team invitation link.                           | - System Config path: **Authentication > Signup**                      |
+| - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message. | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
+|                                                                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+ 										      
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
-
-This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This setting limits the email address domains that can be used to create a new account or team. You **must** set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true`` for the restriction to function. This setting only affects email login. | - System Config path: **Authentication > Signup**                       |
+|                                                                                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.TeamSettings.RestrictCreationToDomains``  |
+| String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                    | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Enable open server
 ~~~~~~~~~~~~~~~~~~
-
-**True**: Users can sign up to the server from the root page without an invite.
-
-**False**: Users can only sign up to the server if they receive an invite.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOpenServer": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
+  
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Users can create accounts on the server without an invitation.                       | - System Config path: **Authentication > Signup**                   |
+| - **false**: **(Default)** Users **must** have an invitation to create an account on the server. | - ``config.json`` setting: ``.TeamSettings.EnableOpenServer``       |
+|                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_ENABLEOPENSERVER``        |
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Enable email invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can invite others to the Mattermost system by email.
-
-**False**: Email invitations are disabled.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableEmailInvitations": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Allows users to send email invitations.    | - System Config path: **Authentication > Signup**                      |
+| - **false**: **(Default)** Disables email invitations. | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations`` |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``  |
++--------------------------------------------------------+------------------------------------------------------------------------+
 
 Invalidate pending email invites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This button invalidates active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+| This button invalidates email invitations that have not been accepted (by default, invitations expire after 48 hours). | - System Config path: **Authentication > Signup** |
+|                                                                                                                        | - ``config.json`` setting: N/A                    |
+| This option has no ``config.json`` setting or environment variable.                                                    | - Environment variable: N/A                       |
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
 
 ----
 
@@ -184,22 +180,18 @@ MFA
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Configure security settings for multi-factor authentication (MFA) in the System Console by going to **Authentication > MFA**.
+Access the following configuration settings in the System Console by going to **Authentication > MFA**.
 
-The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
-
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
+We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
 
 Enable multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to log in to the Mattermost server. Specifically, they'll be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
-
-**False**: Multi-factor authentication is disabled.
-
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Users who sign-in with AD/LDAP or an email address have the option to add `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ to their accounts. | - System Config path: **Authentication > MFA**                                         |
+| - **false**: **(Default)** Disables multi-factor authentication                                                                                                                                                 | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
+|                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,13 +201,13 @@ Enforce multi-factor authentication
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: `Multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
-
-**False**: Multi-factor authentication is optional.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ for users who sign-in with AD/LDAP or an email address.  | - System Config path: **Authentication > MFA**                                   |
+| New users must configure MFA. Logged in users are redirected to the MFA setup page until configuration is complete.                                                                        | - ``config.json`` setting: ``.ServiceSettings.EnforceMultifactorAuthentication`` |
+| - **false**: MFA is optional.                                                                                                                                                              | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| Note: If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.                                                                                                       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
