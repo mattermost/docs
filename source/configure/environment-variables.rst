@@ -15,18 +15,19 @@ The name of the environment variable for any setting can be derived from the nam
 .. note::
 
   - If Mattermost is run from an initialization file, environment variables can be set via ``Environment=<>``, or ``EnvironmentFile=<path/to/file>``. In the second case, the file specified contains the list of environment variables to set.
+  - From Mattermost v7.5, environment configuration parsing supports JSON for ``MM_PLUGINSETTINGS_PLUGINS`` and ``MM_PLUGINSETTINGS_PLUGINSTATES``. This is especially helpful for Helm configuration files, provided all plugins are configured at the same time. For example, ``MM_PLUGINSETTINGS_PLUGINSTATES="{\"com.mattermost.calls\":{\"Enable\":true},\"com.mattermost.nps\":{\"Enable\":true}}"``.
   - When settings are configured through an environment variable, System Admins can't modify them in the System Console. If a setting is configured through an environment variable, and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
   - For any setting that's not set in ``config.json`` or in environment variables, the Mattermost server uses the setting's default value as documented in the sections below on this page.
 
 .. warning::
    
-   - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see `Configuration In Database </configure/configuation-in-mattermost-database.html>`__.
+   - Environment variables for Mattermost settings that are set within the active shell will take effect when migrating configuration. For more information, see the `configuration in a database </configure/configuation-in-a-database.html>`__ documentation.
    - Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
    
 Override Mattermost license file
 --------------------------------
 
-Starting from Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
+From Mattermost v5.26, you can use an environment variable to override any license in the database or file configuration without replacing those licenses.
 
 When starting the server, specify the license key as ``MM_LICENSE`` with the contents of a license file.
 

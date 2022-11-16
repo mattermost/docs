@@ -20,6 +20,9 @@ To access insights, go to Channels, then select **Insights** located at the top 
 - Show insights for the current day or the last 28 days.
 - Select insights to go directly to that channel, thread, or board.
 
+.. note::
+  From Mattermost v7.5, Insights for top channels and thread counts don't include messages posted by plugins and OAuth apps.
+
 My insights
 -----------
 
