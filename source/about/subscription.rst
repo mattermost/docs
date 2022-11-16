@@ -5,7 +5,7 @@ Mattermost offers features through `Mattermost Professional and Mattermost Enter
 
 Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans. Mattermost offers a `secure self-service Customer Portal <https://customers.mattermost.com>`__ where you can purchase and manage your Mattermost self-hosted subscription. When you complete the purchase process, a license key is generated. Please see :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for more details.
 
-Mattermost Cloud is a software-as-a-service product. You can sign up for free, forever, with Mattermost Starter. Then, start a free 30-day Mattermost Enterprise trial, to explore paid features. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
+Mattermost Cloud is a software-as-a-service product. You can sign up for free, forever, with Mattermost Free. Then, start a free 30-day Mattermost Enterprise trial, to explore paid features. Please see :doc:`Cloud subscriptions </about/cloud-subscriptions>` for more details.
 
 Mattermost Nonprofit License program
 --------------------------------------
@@ -107,7 +107,7 @@ The affected features include, but are not limited to, the following:
     Mentions for AD/LDAP groups are not shown in the autocomplete menu.
     
     Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use `mmctl </manage/mmctl-command-line-tool.html#mmctl-group>`__ to modify group sync settings for the team/channel."
-    "High Availability", "High Availability is disabled. If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
+    "High availability", "High availability is disabled. If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
     "Performance monitoring", "Monitoring is disabled and Grafana will no longer update with new data.", "None needed."
     "Compliance exports", "Jobs are no longer scheduled in the job server. Data is not exported.", "None needed."
     "Data retention", "Jobs are no longer scheduled in the job server. Data is not deleted.", "None needed."

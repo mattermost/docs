@@ -17,9 +17,9 @@ Once you're logged in:
 7. Choose **Download the license key**.
 
 .. note::
-   If you experience any problems with your transaction, please contact our Support Team via the Customer Portal. If possible, keep the error message/number that you received on hand as it may help with their investigation.
+   If you experience any problems with your transaction, please contact our Support team via the Customer Portal. If possible, keep the error message/number that you received on hand as it may help with their investigation.
 
-Once downloaded, your Mattermost license is ready to use and be applied via the Mattermost System Console.
+Once downloaded, your Mattermost license is ready to use and is applied via the Mattermost System Console.
 
 .. image:: ../images/mattermost_enterprise_license.png
 	:alt: Apply the Mattermost Enterprise license using the System Console.

@@ -384,6 +384,18 @@ Server side TURN
 
 Changing this setting requires a plugin restart to take effect.
 
+Allow screen sharing
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+**True**: Call participants will be allowed to share their screen.
+
+**False**: Call participants won't be allowed to share their screen.
+
+Changing this setting requires a plugin restart to take effect.
+
 RTCD service URL
 ~~~~~~~~~~~~~~~~
 
