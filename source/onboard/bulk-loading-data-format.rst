@@ -527,7 +527,7 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
   {
     "type": "user",
     "user": {
-      "profile_image": "avatar.png",
+      "profile_image": "profile-picture.png",
       "username": "username",
       "email": "email@example.com",
       "auth_service": "",

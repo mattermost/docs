@@ -4,11 +4,11 @@ Cloud subscriptions
 Purchase a Cloud subscription
 ------------------------------
 
-Mattermost Cloud can be used free forever with Mattermost Starter.
+Mattermost Cloud can be used free forever with Mattermost Free.
 
 You can also start a free, 30-day trial of Mattermost Enterprise to explore additional features. When you're near the end of your trial, a banner within Mattermost will notify you to upgrade to a subscription plan:
 
-1. Select **Subscribe now** from the banner.
+1. Select **Subscribe now**.
 2. Provide your credit card details.
   - Your credit card will be verified and you'll be charged at the end of the billing period. If you'd prefer an annual Cloud subscription, please contact our Sales team for a quote.
 3. Provide your billing address.
@@ -48,12 +48,12 @@ The prorated subscription cost for this user is determined by multiplying the mo
 
 The prorated subscription cost for the user added on day 11 is $6.67 USD.
 
-Similarly, if you make a registered user inactive in the middle of a billing cycle, we will calculate the prorated amount using the formula above to determine the prorated charge.
+Similarly, if you make a registered user inactive in the middle of a billing cycle, we'll calculate the prorated amount using the formula above to determine the prorated charge.
 
 Payment information
 ~~~~~~~~~~~~~~~~~~~
 
-Mattermost uses a third-party payments processor, Stripe, to safely collect and store your credit card information. 
+Mattermost uses a third-party payment processor, Stripe, to safely collect and store your credit card information. 
 
 Credit cards are the only form of payment for customers on a monthly billing cycle. All major credit cards are accepted. You can only store information for one credit card in your account.
 
@@ -93,7 +93,7 @@ What happens when my 30-day Mattermost Enterprise trial period ends?
 
 At the end of the 30-day trial, you can opt to purchase a monthly subscription to Mattermost Professional via the prompts provided in Mattermost. 
 
-If you choose not to continue, your subscription will revert to Mattermost Starter and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Starter will be auto-archived.
+If you choose not to continue, your subscription will revert to Mattermost Free and you will not be billed. In this case, Mattermost Enterprise features will no longer be available to use. Any data you may have that exceeds the `data limits </onboard/mattermost-limits.html>`_ for Mattermost Free will be auto-archived.
 
 How am I billed for my Cloud monthly subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,7 +109,7 @@ After your first month, the billing period begins at 12 AM UTC on the first day 
 What happens if I decide to purchase a subscription to Mattermost Enterprise during my trial?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your plan immediately changes to the plan you've upgraded to. Your trial will continue and on day 31 billing will commence. You won't incur any charges of your new plan until the trial period is over. Depending on what day of the month this is, you'll be billed pro-rata. You'll receive your bill at the end of the calendar month for this month and going forward.
+Your plan immediately changes to the plan you've upgraded to. Your trial will continue and on day 31 billing will commence. You won't incur any charges of your new plan until the trial period is over. Depending on what day of the month this is, you'll be billed prorata. You'll receive your bill at the end of the calendar month for this month and going forward.
 
 How do I change my subscription from Mattermost Enterprise to Mattermost Professional?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,11 +129,11 @@ How do I cancel my subscription?
 To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
 I'm no longer being billed for my Cloud Starter ($149 / year) plan. Why is that?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Cloud Starter ($149 / year) plans created before June 15, 2022 are now free with no data limits. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using your Cloud Starter plan for free.
+If you created a Cloud Starter ($149 / year) plans June 15, 2022, your plan is now free with no data limits and is called Cloud Free. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using Cloud Free.
 
-Free Cloud Starter workspaces created on or after June 15, 2022 are free forever with certain `workspace limits </onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
+Cloud Free workspaces created on or after June 15, 2022 are free forever with certain `workspace limits </onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
 
 When will support for other regions be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,7 +147,7 @@ How is Mattermost Cloud secured?
 
 Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certified and working towards SOC2 Type 2.
 
-Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated Cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. `Please contact Mattermost Sales for more information on this option <https://mattermost.com/contact-sales/>`_.
+Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. `Please contact Mattermost Sales for more information on this option <https://mattermost.com/contact-sales/>`_.
 
 What are the alternatives, and why should I choose Mattermost Cloud?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,7 +181,7 @@ Mattermost Cloud is hosted in AWS `us-east-1` region. Cross-region failover is p
 What environments and rings are Cloud offerings deployed with?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`_: Starter, Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
+Mattermost Cloud provides `three offerings <https://mattermost.com/pricing/>`_: Free, Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
 
 These offerings are deployed in the following ways:
 

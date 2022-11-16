@@ -19,7 +19,7 @@ Mute channel
 
 Muting turns off desktop, email, and push notifications for a channel, and the channel will only be marked as unread in the channel sidebar if you're mentioned. By default, all channels are unmuted.
 
-To mute the current channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen. 
+To mute the current channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen.
 
 Once a channel is muted:
 
@@ -36,9 +36,9 @@ To unmute the channel, select the channel name again to access the drop-down men
 Ignore mentions for @channel, @here, and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, you'll receive mention notifications every time someone on your team `mentions an entire channel </channels/mention-people.html>`__ using ``@channel``, ``@all``, or ``@here``. 
+By default, you'll receive mention notifications every time someone on your team `mentions an entire channel </channels/mention-people.html>`__ using ``@channel``, ``@all``, or ``@here``.
 
-To stop receiving mention notifications, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted. 
+To stop receiving mention notifications, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted.
 
 Send desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,12 +50,12 @@ To customize desktop notifications per channel, edit **Send desktop notification
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Notification option**   | **You'll receive...**                                                                                                                                                                                                                            |
 +===========================+==================================================================================================================================================================================================================================================+
-| **Global default (None)** | Desktop notifications based on your `Settings </channels/channels-settings.html>`__ configuration.                                                                                                                    |
+| **Global default (None)** | Desktop notifications based on your `Settings </channels/channels-settings.html>`__ configuration.                                                                                                                                               |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **For all activity**      | Desktop notifications for every new message.                                                                                                                                                                                                     |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Only for mentions**     | - Desktop notifications for @mentions only.                                                                                                                                                                                                      |
-|                           | - When you've `enabled Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.               |
+|                           | - When you've `enabled Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.                                          |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Never**                 | No desktop notifications.                                                                                                                                                                                                                        |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -70,12 +70,12 @@ To customize mobile push notifications per channel, edit **Send mobile push noti
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Notification option**      | **You'll receive...**                                                                                                                                                                                                                            |
 +==============================+==================================================================================================================================================================================================================================================+
-| **Global default (Mention)** | Mobile notifications based on your `Settings </channels/channels-settings.html>`__ configuration.                                                                                                                     |
+| **Global default (Mention)** | Mobile notifications based on your `Settings </channels/channels-settings.html>`__ configuration.                                                                                                                                                |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **For all activity**         | Mobile notifications for every new message.                                                                                                                                                                                                      |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Only for mentions**        | - Mobile notifications for @mentions only.                                                                                                                                                                                                       |
-|                              | - When you've `enabled Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.               |
+|                              | - When you've `enabled Collapsed Reply Threads </channels/channels-settings.html#collapsed-reply-threads>`__, receive reply thread notifications by enabling **Notify me about threads I'm following**.                                          |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Never**                    | No desktop notifications.                                                                                                                                                                                                                        |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,7 +83,7 @@ To customize mobile push notifications per channel, edit **Send mobile push noti
 Channel header
 --------------
 
-A channel header refers to text that displays under a channel name at the top of the screen. A channel header can be up to 1024 characters in length and is often used to summarize the channel's focus or to provide links to frequently accessed documents, tools, or websites. 
+A channel header refers to text that displays under a channel name at the top of the screen. A channel header can be up to 1024 characters in length and is often used to summarize the channel's focus or to provide links to frequently accessed documents, tools, or websites.
 
 Change the channel header by selecting **Edit Channel Header**. You can use Markdown to `format channel header text </messaging/formatting-text.html>`__ using the same Markdown for messages. Any channel member can change a channel header, unless the System Admin has `restricted permissions to do so </configure/configuration-settings.html#enable-public-channel-renaming-for>`__.
 
@@ -93,7 +93,7 @@ Change the channel header by selecting **Edit Channel Header**. You can use Mark
 Channel purpose
 ---------------
 
-A channel purpose refers to text that displays when users select **View Info** for a channel. A channel purpose can be up to 250 characters in length and is often used to help users decide whether to join the channel. 
+A channel purpose refers to text that displays when users select **View Info** for a channel. A channel purpose can be up to 250 characters in length and is often used to help users decide whether to join the channel.
 
 Change the channel purpose by selecting **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
 
