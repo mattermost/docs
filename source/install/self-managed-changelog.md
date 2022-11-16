@@ -13,7 +13,10 @@ Latest Mattermost Releases:
 
 ## Release v7.5 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**v7.5.0 release day: 2022-11-16**
+- **v7.5.1, released **
+  - Fixed an upgrade issue affecting servers on Ubuntu v18.04.
+- **v7.5.0, released 2022-11-16**
+  - Original 7.5.0 release
 
 Mattermost v7.5.0 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
