@@ -27,7 +27,7 @@ Channel members can choose to leave private channels at any time.
 Direct messages
 ---------------
 
-Direct messages are channels for conversations between two people. You can also start a direct message with people on other teams when enabled by the System Admin. Only members of the conversation can see direct messages. 
+Direct messages are channels for conversations between two people. You can also start a direct message with people on other teams when enabled by the System Admin. Only members of the conversation can see direct messages and channel heading information, including last active status of the other user, when enabled.
 
 Group messages
 --------------

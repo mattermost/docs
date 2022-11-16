@@ -49,11 +49,17 @@ Board templates
 Standard board templates include:
 
 - **Content Calendar**: Plan and organize your content creation and publication schedule.
+- **Company Goals & OKRs**: Plan your company goals and objectives more efficiently.
+- **Competitive Analysis**: Track and stay ahead of the competition.
 - **Meeting Agenda**: Use this template for recurring meetings. Queue up items, organize discussions, and plan what to revisit later.
 - **Personal Goals**: Categorize and plan your personal goals.
 - **Personal Tasks**: Organize your life and track your personal tasks.
 - **Project Tasks**: Stay on top of your project tasks, track progress, and set priorities.
 - **Roadmap**: Plan your roadmap and manage your releases more efficiently.
+- **Sales Pipeline CRM**: Grow and keep track of your sales opportunities.
+- **Sprint Planner**: Plan your sprints and releases more efficiently.
+- **Team Retrospective**: Identify what worked well and what can be improved for the future.
+- **User Research Sessions**: Manage and keep track of all your user research sessions.
 - **Welcome to Boards!**: Onboarding template with guided tour points to help you quickly ramp up on Boards.
 
 Create a blank board
@@ -87,7 +93,7 @@ Prior to Mattermost Boards v7.2
 
 Boards and templates are channel-specific so whichever channel you create your board or template in, is where you’ll find it. If you’d like to re-use a board as a template on another channel workspace, you can export it and then import the archive file in the channel of your choosing.
 
-To do this, select the options menu |options-icon| in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon |gear-icon| next to your profile avatar, then choose **Import archive**. The board you created will be added to this channel.
+To do this, select the options menu |options-icon| in the toolbar at the top of the board. Then select **Export** board archive. Download the archive file. Navigate to the channel where you’d like to add the exported board. Select the gear icon |gear-icon| next to your profile picture, then choose **Import archive**. The board you created will be added to this channel.
 
 Edit board templates
 --------------------

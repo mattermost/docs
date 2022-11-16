@@ -34,23 +34,23 @@ Enable developer mode
 |   Javascript errors.                          |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
-Enable client performance debugging
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable client debugging
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10/E20*
 
-+---------------------------------------------------+------------------------------------------------------------------------------+
-| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                            |
-|                                                   | - ``config.json setting``: ``".ServiceSettings.EnableDeveloper": false",``   |
-| - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDEVELOPER``               |
-|   command is enabled to load test accounts        |                                                                              |
-|   and test data.                                  |                                                                              |
-| - **false**:  The ``/test`` slash command is      |                                                                              |
-|   disabled.                                       |                                                                              |
-+---------------------------------------------------+------------------------------------------------------------------------------+
-| See the `performance debugging </channels/channels-settings.html#performance-debugging>`__                                       |
-| documentation to learn more.                                                                                                     |
-+---------------------------------------------------+------------------------------------------------------------------------------+
++---------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Enable or disable client-side debugging settings  | - System Config path: **Environment > Developer**                                           |
+| found in *Settings > Advanced > Debugging* for    | - ``config.json setting``: ``".ServiceSettings.EnableClientPerformanceDebugging": false",`` |
+| individual users.                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLECLIENTPERFORMANCEDEBUGGING``             |
+|                                                   |                                                                                             |
+| - **false**: Those settings are visible and can   |                                                                                             |
+|   be enabled by users.                            |                                                                                             |
+| - **false**: **(Default)** Those settings are     |                                                                                             |
+|   hidden and disabled.                            |                                                                                             |
++---------------------------------------------------+---------------------------------------------------------------------------------------------+
+| See the `client debugging <https://docs.mattermost.com/channels/channels-settings.html#client-debugging>`__ documentation to learn more.        |
++---------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 Allow untrusted internal connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
