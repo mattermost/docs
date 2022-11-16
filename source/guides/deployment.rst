@@ -153,23 +153,23 @@ Desktop and Mobile App deployment
     Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>
     Desktop App custom dictionaries </install/desktop-custom-dictionaries>
     Desktop managed resources </install/desktop-app-managed-resources>
-    Using Mattermost’s pre-built Mobile Apps </deploy/use-prebuilt-mobile-apps>
-    Deploy Mattermost Mobile Apps </deploy/mobile-overview>
+    Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>
+    Deploy Mattermost mobile apps </deploy/mobile-overview>
     Mobile push notifications </deploy/mobile-hpns>
     Building and distributing your own custom Mattermost mobile apps </deploy/build-custom-mobile-apps>
     Deploying mobile apps using an EMM provider </deploy/deploy-mobile-apps-using-emm-provider>
     AppConfig for EMM solutions with Mattermost Mobile Apps </deploy/mobile-appconfig> 
     Mobile VPN options </deploy/consider-mobile-vpn-options>
-    Mobile Apps FAQ </deploy/mobile-faq>
+    Mobile apps FAQ </deploy/mobile-faq>
     Client-side data storage FAQ </deploy/client-side-data>
 
 Customize the Mattermost desktop and mobile apps to meet any deployment needs.
 
 **Desktop Apps**
 
-* :doc:`Desktop App deployment guide </deploy/desktop-app>` - Customize and distribute the Mattermost desktop app with pre-configured settings.
+* :doc:`Desktop app deployment guide </deploy/desktop-app>` - Customize and distribute the Mattermost desktop app with pre-configured settings.
 * :doc:`Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>` - Use the Mattermost MSI installer and Group Policy definitions for Windows deployment.
-* :doc:`Desktop App custom dictionaries </install/desktop-custom-dictionaries>` - Create custom dictionaries for Mattermost spellcheck.
+* :doc:`Desktop app custom dictionaries </install/desktop-custom-dictionaries>` - Create custom dictionaries for Mattermost spellcheck.
 * :doc:`Desktop managed resources </install/desktop-app-managed-resources>` - Configure resource management for services running on the same domain as your Mattermost instance.
 
 **Mobile Apps**
@@ -221,7 +221,7 @@ Scale Mattermost
     :hidden:
 
     Scale for Enterprise </scale/scaling-for-enterprise>
-    High Availability cluster </scale/high-availability-cluster>
+    High availability cluster </scale/high-availability-cluster>
     Elasticsearch </scale/elasticsearch>
     Performance monitoring </scale/performance-monitoring>
     Mattermost performance alerting guide </scale/performance-alerting>
@@ -229,7 +229,7 @@ Scale Mattermost
 Scale and monitor your Mattermost deployment.
 
 * :doc:`Scale for Enterprise </scale/scaling-for-enterprise>` - Scale Mattermost to tens of thousands of users and beyond.
-* :doc:`High Availability cluster </scale/high-availability-cluster>` - Maintain Mattermost service during outages and hardware failures with redundant infrastructure.
+* :doc:`High availability cluster </scale/high-availability-cluster>` - Maintain Mattermost service during outages and hardware failures with redundant infrastructure.
 * :doc:`Elasticsearch </scale/elasticsearch>` - Enhance search performance with Elasticsearch.
 * :doc:`Performance monitoring </scale/performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.
 * :doc:`Mattermost performance alerting guide </scale/performance-alerting>` - Learn strategies and best practices for monitoring your Mattermost cluster. 
@@ -257,15 +257,15 @@ Changelogs
     Mattermost self-hosted </install/self-managed-changelog>
     Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>
     Mattermost Cloud </install/cloud-changelog>
-    Mobile Apps </deploy/mobile-app-changelog>
-    Desktop Apps </install/desktop-app-changelog>
+    Mobile apps </deploy/mobile-app-changelog>
+    Desktop apps </install/desktop-app-changelog>
     Deprecated features </install/deprecated-features>
 
 * :doc:`Mattermost self-hosted </install/self-managed-changelog>`
 * :doc:`Mattermost legacy self-hosted </install/legacy-self-hosted-changelog>`
 * :doc:`Mattermost Cloud </install/cloud-changelog>`
-* :doc:`Mobile Apps </deploy/mobile-app-changelog>`
-* :doc:`Desktop Apps </install/desktop-app-changelog>`
+* :doc:`Mobile apps </deploy/mobile-app-changelog>`
+* :doc:`Desktop apps </install/desktop-app-changelog>`
 * :doc:`Deprecated features </install/deprecated-features>`
 
 Additional server install guides

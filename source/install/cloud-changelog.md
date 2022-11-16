@@ -4,12 +4,74 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-11-10](#release-2022-11-10)
+- [Release 2022-10-27](#release-2022-10-27)
 - [Release 2022-10-20](#release-2022-10-20)
 - [Release 2022-10-13](#release-2022-10-13)
 - [Release 2022-10-06](#release-2022-10-06)
 - [Release 2022-09-15](#release-2022-09-15)
-- [Release 2022-09-08](#release-2022-09-08)
-- [Release 2022-09-01](#release-2022-09-01)
+
+## Release 2022-11-10
+
+### Improvements
+
+#### User Interface (UI)
+ - Implemented progressive image loading in the webapp.
+ - Renamed "Starter" plan to "Free" plan in product.
+ - Updated NPS plugin to version 1.3.0.
+ - Removed the user interface for the legacy "Mattermost Cloud" plan (removal effective on November 1st).
+ - When the "Custom Brand Text" is left blank with custom branding enabled, the default text is now hidden.
+
+#### Administration
+ - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
+ - Crashing jobs now sets the job status to "failed".
+ - Added the ability for Cloud customers to submit their feedback for wire transfers to buy a monthly subscription. 
+ - Added logic to package product version of Boards with production builds.
+ - **System Console** settings that Cloud Admins cannot configure are now hidden.
+
+### Bug Fixes
+ - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
+ - Fixed issues with branding in email notifications.
+ - Fixed an issue where text could be dragged and dropped into input-fields.
+ - Fixed an issue where the profile popover failed to dismiss when selecting one of the options from the popover.
+ - Fixed an issue where imports containing the team name with the wrong capitalization crashed the import job.
+ - Fixed an issue where ``getPostSince`` didn't properly return deleted posts when Collapsed Reply Threads was enabled.
+ - Fixed an issue where the screen reader did not announce emojis from the autocomplete list.
+ - Fixed an issue where the scroll position in a channel was not maintained when opening reply message permalinks.
+ - Fixed an issue where ``OwnerId`` was not set for bots created via ``EnsureBotUser``.
+
+### Known Issues
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-10-27
+
+### Improvements
+
+#### User Interface (UI)
+ - Added the ability to create a new channel along with a new board associated with the created channel.
+ - Added the ability for end users to notify their Admins to reactivate a paid plan during the delinquency period by selecting “Notify admin to update billing”.
+ - Added markdown formatting for hyperlinks when pasted into the text editor.
+ - Email notifications from new messages now also support displaying Slack attachments from the channel post.
+ - Updated prepackaged Boards version to v7.4.3.
+
+#### Administration
+ - Autocompletion results using Elasticsearch or Bleve will correctly show a user as a channel member in Direct Message and Group Message channels. To force this change to appear, a re-indexing will be necessary.
+ 
+#### API Changes
+ - Added new plugin endpoints to ``PermissionService`` interface.
+
+### Bug Fixes
+ - Fixed an issue with incorrect mention counts in unread channels.
+ - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded Youtube preview images.
+ - Fixed an issue where formatting was applied to selected spaces after a word.
+ - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
+ - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
+ - Fixed a bug where role filters weren't being applied for ``GetProfilesInChannel``.
+ - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
+
+### Known Issues
+ - Users cannot be added to teams from the **System Console** [MM-47667](https://mattermost.atlassian.net/browse/MM-47667).
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-10-20
 

@@ -4,7 +4,11 @@ Log in to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You'll receive link to access Mattermost from your Mattermost System Admin or through an email invitation. Once you have your organization's Mattermost link, navigate to that URL in a web browser, the `desktop app </install/desktop-app-install.html>`__, or the `mobile app </deploy/use-prebuilt-mobile-apps.html>`__, then enter your user credentials to log into Mattermost.
+.. note::
+
+  If you're looking to create a Mattermost workspace, start a `free Cloud trial <https://mattermost.com/get-started/>`_ and then come back to this page.
+
+You'll receive link to access Mattermost from your Mattermost system admin or through an email invitation. Once you have your organization's Mattermost link, navigate to that URL in a web browser, the `desktop app </install/desktop-app-install.html>`__, or the `mobile app </deploy/use-prebuilt-mobile-apps.html>`__, then enter your user credentials to log into Mattermost.
 
 .. tip::
   - We recommend bookmarking the Mattermost URL in your browser of choice so logging into Mattermost is easy in the future.
@@ -21,7 +25,7 @@ If you've forgotten your password, you can reset it on the login screen by selec
 Email address or username
 --------------------------
 
-When enabled by your System Admin, you can log in with the username or email address used to create your account.
+When enabled by your system admin, you can log in with the username or email address used to create your account.
 
 .. image:: ../images/sign-in_with_email.png
   :alt: Log in to Mattermost with your username or email address, or reset your password.
@@ -29,12 +33,12 @@ When enabled by your System Admin, you can log in with the username or email add
 Single Sign-On (SSO)
 --------------------
   
-When enabled by your System Admin, you may log in using your GitLab, Google, Office 365, AD/LDAP, or SAML credentials.
+When enabled by your system admin, you may log in using your GitLab, Google, Office 365, AD/LDAP, or SAML credentials.
 
 GitLab SSO
 ~~~~~~~~~~
 
-When enabled by your System Admin, you can log in with your GitLab account using a one-click login option.
+When enabled by your system admin, you can log in with your GitLab account using a one-click login option.
 
 .. image:: ../images/sign-in-gitlab.png
   :alt: Log in to Mattermost using your GitLab credentials.
@@ -47,7 +51,7 @@ Google SSO
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-When enabled by your System Admin, you can log in with your Google account using a one-click login option.
+When enabled by your system admin, you can log in with your Google account using a one-click login option.
 
 .. image:: ../images/sign-in-google-apps.png
   :alt: Log in to Mattermost using your Google Apps credentials.
@@ -60,7 +64,7 @@ Office 365 SSO
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-When enabled by your System Admin, you can log in with your Office 365 account using a one-click login option.
+When enabled by your system admin, you can log in with your Office 365 account using a one-click login option.
 
 .. image:: ../images/sign-in-office365.png
   :alt: Log in to Mattermost with your Office 365 credentials.
@@ -73,7 +77,7 @@ AD/LDAP SSO
 
 *Available in legacy Mattermost Enterprise Edition E10 and E20*
 
-When enabled by your System Admin, you can log in with your AD/LDAP credentials. This lets you use the same username and password for Mattermost that you use for various other company services.
+When enabled by your system admin, you can log in with your AD/LDAP credentials. This lets you use the same username and password for Mattermost that you use for various other company services.
 
 .. image:: ../images/sign-in_with_ldap.png
   :alt: Log in to Mattermost with your AD/LDAP credentials.
@@ -86,7 +90,7 @@ SAML SSO
 
 *Available in legacy Mattermost Enterprise Edition E20*
 
-When enabled by your System Admin, you can log in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. Mattermost officially supports `Okta </onboard/sso-saml-okta.html>`__, `OneLogin </onboard/sso-saml-onelogin.html>`__, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. Please see our `SAML Single Sign-On documentation </onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
+When enabled by your system admin, you can log in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. Mattermost officially supports `Okta </onboard/sso-saml-okta.html>`__, `OneLogin </onboard/sso-saml-onelogin.html>`__, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. Please see our `SAML Single Sign-On documentation </onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
 
 .. image:: ../images/sign-in_with_saml.png
   :alt: Log in to Mattermost with your SAML credentials.
