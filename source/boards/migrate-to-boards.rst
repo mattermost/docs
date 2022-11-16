@@ -14,7 +14,7 @@ Import and export a board archive
 
 If you’d like to back up your board or re-use it on another team or channel workspace, you can export it as an archive file, and then import the archive file in the team or channel workspace of your choosing. Exported and imported board archives include all card content such as properties, comments, descriptions, and image attachments.
 
-To do this, select the options menu |options-icon| to the left of the **New** button at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the team or channel workspace where you’d like to add the exported board. Select the Gear icon next to your profile avatar, then choose **Import archive**. The board you exported will be added to this team or channel workspace.
+To do this, select the options menu |options-icon| to the left of the **New** button at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the team or channel workspace where you’d like to add the exported board. Select the Gear icon next to your profile picture, then choose **Import archive**. The board you exported will be added to this team or channel workspace.
 
 - From Mattermost v6.4, the archive format changed, with a new `.boardarchive` extension and all new exports are in this format.
 - From Mattermost v7.2, channel workspaces are no longer supported, and the **Import archive** option will import the board to your current team. Use `board permissions <https://www.docs.mattermost.com/boards/share-and-collaborate.html#board-permissions>`__ to control access to your imported board.
