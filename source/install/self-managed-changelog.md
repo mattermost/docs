@@ -5,11 +5,17 @@
 See the [changelog in progress](https://bit.ly/2nK3cVf) for the upcoming release. See the [Legacy Self-Hosted Mattermost Changelog](legacy-self-hosted-changelog) for details on all Mattermost self-hosted releases prior to v6.0.
 
 Latest Mattermost Releases:
+- [Release v7.5 - Feature Release](#release-v7-5-feature-release)
 - [Release v7.4 - Feature Release](#release-v7-4-feature-release)
 - [Release v7.3 - Feature Release](#release-v7-3-feature-release)
 - [Release v7.2 - Feature Release](#release-v7-2-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
-- [Release v7.0 - Major Release](#release-v7-0-major-release)
+
+## Release v7.5 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**v7.5.0 release day: TBD**
+
+ - v7.5 release is delayed for a few days while we investigate an upgrade issue affecting servers on Ubuntu v18.04 https://github.com/mattermost/focalboard/issues/4210.
 
 ## Release v7.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
