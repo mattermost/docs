@@ -1327,7 +1327,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 .. tip::
 
-  When trying to use local mode with mmctl, an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, can be resolved by setting this configuration setting to ``true``.
+  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``. 
 
 Enable local mode socket location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
