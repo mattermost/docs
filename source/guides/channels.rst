@@ -81,7 +81,7 @@ Work with messages
 * :doc:`Organize conversations with Collapsed Reply Threads </channels/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
 * :doc:`React to messages using emojis </channels/react-to-messages>` - Use emojis to express concepts, emotions, and physical gestures in your messages.
 * :doc:`Mention people </channels/mention-people>` - Get the attention of specific people.
-* :doc:`Mark Messages as unread </channels/mark-messages-unread>` - Change messages to an unread state for easy follow-up.
+* :doc:`Mark messages as unread </channels/mark-messages-unread>` - Change messages to an unread state for easy follow-up.
 * :doc:`Format messages </channels/format-messages>` - Use markdown to format message content.
 * :doc:`Share files in messages </channels/share-files-in-messages>` - Share videos, voice recordings, and images in your Mattermost messages.
 * :doc:`Forward messages </channels/forward-messages>` - Quickly and easily forward messages with previews.
@@ -113,5 +113,4 @@ Extend Channels functionality
 
    Extend functionality with integrations </channels/extend-channels-functionality>
    
-
 * :doc:`Extend Channels with integrations </channels/extend-channels-functionality>` - Find open source integrations to common tools in the Mattermost Marketplace.
