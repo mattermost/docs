@@ -4,12 +4,33 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
 - [Release 2022-11-10](#release-2022-11-10)
 - [Release 2022-10-27](#release-2022-10-27)
 - [Release 2022-10-20](#release-2022-10-20)
 - [Release 2022-10-13](#release-2022-10-13)
-- [Release 2022-10-06](#release-2022-10-06)
+
+## Release 2022-11-24
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed Cloud defaults for ``MaxUsersPerTeam`` and ``MaxChannelsPerTeam`` to 10000.
+ - Added a Monthly vs Annual pricing toggle to the pricing modal.
+
+#### API Changes
+ - Added a new API endpoint ``POST /api/v4/groups/:group_id:/restore``.
+
+### Bug Fixes
+ - Fixed an issue where special characters were not allowed in group mention names.
+ - Fixed an issue where screen readers did not read the **Switch Channels** modal header.
+ - Fixed an issue in OAuth services where malformed redirect URLs were generated if the registered callback URLs already had static query parameters.
+ - Fixed an issue where suggestion dividers were displayed as undefined.
+
+### Known Issues
+ - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board Admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-11-17
 
