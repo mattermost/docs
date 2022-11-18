@@ -48,6 +48,7 @@ Linux
 All Platforms
 ^^^^^^^^^^^^^
 
+- The Desktop App configured URL is now forced to be changed to the SiteURL configured by the system adminstrator.
 - Added localization support to the Desktop App (Beta).
 - Zoom in/out now works when ``CTRL/CMD+SHIFT+=`` is pressed.
 - Changed the order of fields in the Add Server modal so that the server URL is filled in first and the display name after.
@@ -77,7 +78,6 @@ All Platforms
 - Fixed an issue where an Operating System could register Mattermost as the default web browser / mail app.
 - Fixed an issue where the download notification showed the wrong file name.
 - Fixed an issue where it was possible to drag the Minimize/Close buttons.
-- Fixed an issue where servers were not forced to update their configuration using the configured ``SiteURL`` value if available.
 - Fixed an issue where a misleading error message from a remote certificate would imply that the Mattermost server had an issue.
 - Fixed an issue where users still received notifications when their status was set to **Do Not Disturb**.
 - Fixed an issue where users could not replace files in the **Downloads** folder.
