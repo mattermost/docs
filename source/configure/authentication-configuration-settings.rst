@@ -1330,7 +1330,7 @@ GitLab settings
 GitLab site URL
 '''''''''''''''
 
-*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Starter.*
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
@@ -1338,7 +1338,7 @@ Discovery endpoint
 ''''''''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
 
@@ -1346,7 +1346,7 @@ Client ID
 '''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your service provider account.
 
@@ -1354,7 +1354,7 @@ Client secret
 '''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your Google account.
 

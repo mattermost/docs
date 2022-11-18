@@ -48,7 +48,7 @@ PC web
     "Chrome", "v106+", "v106+"
     "Firefox", "v91+", "v91+"
     "Safari", "v14.1+", "v14.1+"
-    "Edge", "106+", "106+"
+    "Edge", "v106+", "v106+"
 
 `*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 

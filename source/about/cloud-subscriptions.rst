@@ -17,7 +17,7 @@ You can also start a free, 30-day trial of Mattermost Enterprise to explore addi
 
 Alternatively, if you'd like to continue with Mattermost Enterprise, please contact our `Sales team <mailto:sales@mattermost.com>`_. 
 
-If you choose not to upgrade at the end of your 30-day trial, your subscription will revert to Mattermost Starter.
+If you choose not to upgrade at the end of your 30-day trial, your subscription will revert to Mattermost Free.
 
 View subscription details
 -------------------------
@@ -69,7 +69,7 @@ Failed or late payments
 
 You'll be notified immediately of failed payments both in-product, with a banner, and via email. The notifications provide directions on how to update payment information. Once payment information is updated, you'll be charged right away for the amount owing from the previous billing period.
 
-If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Starter and subject to the data limits of that plan. If there is no activity on your workspace 60 days after the downgrade, your workspace will be deleted.
+If you have not paid or resolved the failed payment after 90 days, your workspace will be downgraded to Mattermost Free and subject to the data limits of that plan. If there is no activity on your workspace 60 days after the downgrade, your workspace will be deleted.
 
 Add more users to your subscription
 -----------------------------------
@@ -128,10 +128,10 @@ How do I cancel my subscription?
 
 To cancel your subscription, please `contact us <https://customers.mattermost.com/cloud/contact-us>`__.
 
-I'm no longer being billed for my Cloud Starter ($149 / year) plan. Why is that?
+I'm no longer being billed for my Cloud Starter ($149/year) plan. Why is that?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you created a Cloud Starter ($149 / year) plans June 15, 2022, your plan is now free with no data limits and is called Cloud Free. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using Cloud Free.
+If you created a Cloud Starter ($149/year) plan prior to June 15, 2022, your plan is now free with no data limits and is called Cloud Free. You have the option to `upgrade to Professional or Enterprise <https://mattermost.com/pricing/>`__, or continue using Cloud Free.
 
 Cloud Free workspaces created on or after June 15, 2022 are free forever with certain `workspace limits </onboard/mattermost-limits.html#workspace-limits>`__ such as message and file history.
 
