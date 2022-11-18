@@ -1,6 +1,6 @@
 :nosearch:
 
-Configuring Notifications
+Configuring notifications
 =========================
 
 |all-plans| |cloud| |self-hosted|
