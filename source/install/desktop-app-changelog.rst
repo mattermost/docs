@@ -7,11 +7,11 @@ Desktop application changelog
 Latest Mattermost Desktop App releases:
 
 - `Release v5.2 <#id1>`_
-- `Release v5.1 <#id4>`_
-- `Release v5.0 <#id18>`_
-- `Release v4.7 <#id33>`_
-- `Release v4.6 <#id50>`_
-- `Release v4.5 <#id62>`_
+- `Release v5.1 <#id5>`_
+- `Release v5.0 <#id19>`_
+- `Release v4.7 <#id34>`_
+- `Release v4.6 <#id51>`_
+- `Release v4.5 <#id63>`_
 
 Release v5.2
 --------------
