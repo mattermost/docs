@@ -124,7 +124,7 @@ Use this option on Linux and macOS if you have Homebrew installed.
 
    brew install mmctl
 
-**Using go get (Linux, macOS, Windows)**
+**Using go install (Linux, macOS, Windows)**
 
 Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
@@ -132,7 +132,7 @@ To add the project in your `$GOPATH` run the following command:
 
 .. code-block:: sh
 
-   go get -u github.com/mattermost/mmctl
+   go install github.com/mattermost/mmctl@latest
 
 **Using release package (Linux, macOS, Windows)**
 
