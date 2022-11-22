@@ -18,7 +18,7 @@ Release v5.2
 
 - **v5.2.2, release day TBD**
  - Added ARM64 build (beta) for Windows/Linux.
- - Fixed an issue on ``.msi`` installers where the onboarding screen was displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
+ - Fixed an issue on Windows installers where the onboarding screen was displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
  - Fixed an issue where a crash could occur when a download list included corrupt data `MM-48483 <https://mattermost.atlassian.net/browse/MM-48483>`_.
  - Fixed an issue where ``AppImageLauncher`` still created a bad shortcut that caused the app not to launch `MM-48557 <https://mattermost.atlassian.net/browse/MM-48557>`_.
  - Fixed an issue where notifications were not displayed on Windows v8 and v8.1 `MM-48397 <https://mattermost.atlassian.net/browse/MM-48397>`_.
