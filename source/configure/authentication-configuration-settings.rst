@@ -257,11 +257,11 @@ Enable synchronization with AD/LDAP
 Login field name
 ~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-| This setting will display placeholder text in the login field of the sign-in page. This text can be used to remind users to sign-in with their AD/LDAP credentials. | - System Config path: **Authentication > AD/LDAP**          |
-|                                                                                                                                                                     | - ``config.json`` setting: ``.LdapSettings.LoginFieldName`` |
-| String input. Default is ``AD/LDAP Username``.                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_LOGINFIELDNAME``  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| This setting will display placeholder text in the login field of the sign-in page. This text can remind users to sign-in with their AD/LDAP credentials. | - System Config path: **Authentication > AD/LDAP**          |
+|                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.LoginFieldName`` |
+| String input. Default is ``AD/LDAP Username``.                                                                                                           | - Environment variable: ``MM_LDAPSETTINGS_LOGINFIELDNAME``  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 AD/LDAP server
 ~~~~~~~~~~~~~~
@@ -269,7 +269,7 @@ AD/LDAP server
 +--------------------------------------------------------------+---------------------------------------------------------+
 | This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**      |
 |                                                              | - ``config.json`` setting: ``.LdapSettings.LdapServer`` |
-|                                                              | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``  |
+| String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``  |
 +--------------------------------------------------------------+---------------------------------------------------------+
 
 AD/LDAP port
@@ -285,9 +285,9 @@ Connection security
 ~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This setting controls the type of security used by Mattermost to connect to the AD/LDAP server, with these options:                                                                                      | - System Config path: **Authentication > AD/LDAP**              |
+| This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                         | - System Config path: **Authentication > AD/LDAP**              |
 |                                                                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
-| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection is secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``""`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
+| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``""`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
 | - **TLS**: Encrypts communication with TLS. ``config.json`` option: ``"TLS"``                                                                                                                            |                                                                 |
 | - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``                                                              |                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -295,11 +295,11 @@ Connection security
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| - **true**: Disables the certificate verification step for TLS and STARTTLS connections. Use this option for testing.**Do not use** this option when TLS is required in production. | - System Config path: **Authentication > AD/LDAP**                              |
-| - **false**: **(Default)** Enables certification verification.                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.SkipCertificateVerification: false`` |
-|                                                                                                                                                                                     | - Environment variable: ``MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION``         |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| - **true**: Disables the certificate verification step for TLS and STARTTLS connections. Use this option for testing. **Do not use** this option when TLS is required in production. | - System Config path: **Authentication > AD/LDAP**                              |
+| - **false**: **(Default)** Enables certification verification.                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.SkipCertificateVerification: false`` |
+|                                                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION``         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Private key
 ~~~~~~~~~~~
@@ -410,26 +410,26 @@ Guest filter
 
 *Available in legacy Enterprise Edition E20*
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can use Mattermost as Guests.          | - System Config path: **Authentication > AD/LDAP**       |
-|                                                                                                                                                                                            | - ``config.json`` setting: ``.LdapSettings.GuestFilter`` |
-| See `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.                                                                                     | - Environment variable: ``MM_LDAPSETTINGS_GUESTFILTER``  |
-|                                                                                                                                                                                            |                                                          |
-| String input.                                                                                                                                                                              |                                                          |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can access Mattermost as Guests. | - System Config path: **Authentication > AD/LDAP**       |
+|                                                                                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.GuestFilter`` |
+| See `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.                                                                               | - Environment variable: ``MM_LDAPSETTINGS_GUESTFILTER``  |
+|                                                                                                                                                                                      |                                                          |
+| String input.                                                                                                                                                                        |                                                          |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 ID attribute
 ~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| This is the attribute in the AD/LDAP server that is used as a unique identifier in Mattermost.                                                                                                     | - System Config path: **Authentication > AD/LDAP**                                                                                |
-|                                                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.IdAttribute``                                                                          |
-| The attribute should have a unique value that does not change, such as ``objectGUID`` or ``entryUUID``. Confirm that these attributes are available in your environment before making any changes. | - Environment variable: ``MM_LDAPSETTINGS_IDATTRIBUTE``                                                                           |
-|                                                                                                                                                                                                    |                                                                                                                                   |
-| String input.                                                                                                                                                                                      |                                                                                                                                   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLfI tool. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost.                                                                                              | - System Config path: **Authentication > AD/LDAP**                                                                               |
+|                                                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.IdAttribute``                                                                         |
+| The attribute should have a unique value that does not change, such as ``objectGUID`` or ``entryUUID``. Confirm that these attributes are available in your environment before making any changes. | - Environment variable: ``MM_LDAPSETTINGS_IDATTRIBUTE``                                                                          |
+|                                                                                                                                                                                                    |                                                                                                                                  |
+| String input.                                                                                                                                                                                      |                                                                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool. |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Login ID attribute
 ~~~~~~~~~~~~~~~~~~
@@ -620,7 +620,7 @@ AD/LDAP synchronize now
 +-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
 | Use this button to immediately sync with the AD/LDAP server.                                              | - System Config path: **Authentication > AD/LDAP** |
 |                                                                                                           | - ``config.json`` setting: N/A                     |
-| The status of the sync is displayed in the table below the button (see the figure below).                 | - Environment variable: N/A                        |
+| The status of the sync is displayed in the table underneath the button (see the figure below).            | - Environment variable: N/A                        |
 |                                                                                                           |                                                    |
 | Following a manual sync, the next sync will occur after the time set in the **Synchronization Interval**. |                                                    |
 +-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
