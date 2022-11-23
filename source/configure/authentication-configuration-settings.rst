@@ -231,7 +231,10 @@ Enable sign-in with AD/LDAP
 +-------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Enable synchronization with AD/LDAP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
+
 +---------------------------------------------------------------+----------------------------------------------------------------+
 | - **true**: Mattermost periodically syncs users from AD/LDAP. | - System Config path: **Authentication > AD/LDAP**             |
 | - **false**: **(Default)** Disables AD/LDAP synchronization.  | - ``config.json`` setting: ``.LdapSettings.EnableSync: false`` |
@@ -240,6 +243,8 @@ Enable synchronization with AD/LDAP
 
 Login field name
 ~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | This setting will display placeholder text in the login field of the sign-in page. This text can remind users to sign-in with their AD/LDAP credentials. | - System Config path: **Authentication > AD/LDAP**          |
@@ -250,6 +255,8 @@ Login field name
 AD/LDAP server
 ~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +--------------------------------------------------------------+---------------------------------------------------------+
 | This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**      |
 |                                                              | - ``config.json`` setting: ``.LdapSettings.LdapServer`` |
@@ -259,6 +266,8 @@ AD/LDAP server
 AD/LDAP port
 ~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +--------------------------------------------------------------------+------------------------------------------------------------+
 | This is the port Mattermost uses to connect to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**         |
 |                                                                    | - ``config.json`` setting: ``.LdapSettings.LdapPort: 389`` |
@@ -267,6 +276,8 @@ AD/LDAP port
 
 Connection security
 ~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                         | - System Config path: **Authentication > AD/LDAP**              |
@@ -279,6 +290,8 @@ Connection security
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | - **true**: Disables the certificate verification step for TLS and STARTTLS connections. Use this option for testing. **Do not use** this option when TLS is required in production. | - System Config path: **Authentication > AD/LDAP**                              |
 | - **false**: **(Default)** Enables certification verification.                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.SkipCertificateVerification: false`` |
@@ -287,6 +300,8 @@ Skip certificate verification
 
 Private key
 ~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | Use this setting to upload the private key file from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.| - System Config path: **Authentication > AD/LDAP**          |
@@ -297,6 +312,8 @@ Private key
 Public certificate
 ~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | Use this setting to upload the public TLS certificate from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism. | - System Config path: **Authentication > AD/LDAP**                 |
 |                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.PublicCertificateFile`` |
@@ -305,6 +322,8 @@ Public certificate
 
 Bind username
 ~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost. | - System Config path: **Authentication > AD/LDAP**        |
@@ -321,6 +340,8 @@ Bind username
 Bind password
 ~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +-------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This is the password for the username given in the **Bind Username** setting. | - System Config path: **Authentication > AD/LDAP**        |
 |                                                                               | - ``config.json`` setting: ``.LdapSettings.BindPassword`` |
@@ -330,6 +351,8 @@ Bind password
 Base DN
 ~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
 | This is the **Base Distinguished Name** of the location in the AD/LDAP tree where Mattermost will start searching for users. | - System Config path: **Authentication > AD/LDAP**  |
 |                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.BaseDN`` |
@@ -338,6 +361,8 @@ Base DN
 
 User filter
 ~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
 | This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for user objects. Only the users selected by the query can access Mattermost. For example, to filter out disabled users, the filter is: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.              | - System Config path: **Authentication > AD/LDAP**      |
@@ -367,6 +392,8 @@ Group filter
 
 Enable admin filter
 ~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E20*
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | - **true**: Enables the **Admin Filter** setting that designates System Admins using an AD/LDAP filter.                                                                                                                     | - System Config path: **Authentication > AD/LDAP**                    |
@@ -405,6 +432,8 @@ Guest filter
 ID attribute
 ~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost.                                                                                              | - System Config path: **Authentication > AD/LDAP**                                                                               |
 |                                                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.IdAttribute``                                                                         |
@@ -418,6 +447,8 @@ ID attribute
 Login ID attribute
 ~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that is used for signing-in to Mattermost. This is normally the same as the **Username Attribute**.                         | - System Config path: **Authentication > AD/LDAP**            |
 |                                                                                                                                                                         | - ``config.json`` setting: ``.LdapSettings.LoginIdAttribute`` |
@@ -428,6 +459,8 @@ Login ID attribute
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the username field in Mattermost.                                                                                                                                                                       | - System Config path: **Authentication > AD/LDAP**             |
@@ -442,6 +475,8 @@ Username attribute
 Email attribute
 ~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 | This is the attribute in AD/LDAP server that populates the email address field in Mattermost.                                  | - System Config path: **Authentication > AD/LDAP**         |
 |                                                                                                                                | - ``config.json`` setting ``.LdapSettings.EmailAttribute`` |
@@ -452,6 +487,8 @@ Email attribute
 
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                 | - System Config path: **Authentication > AD/LDAP**              |
@@ -466,6 +503,8 @@ First name attribute
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
 |                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.LastNameAttribute`` |
@@ -479,6 +518,8 @@ Last name attribute
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
 |                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.NicknameAttribute`` |
@@ -491,6 +532,9 @@ Nickname attribute
 
 Position attribute
 ~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
+
 +----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
 |                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.PositionAttribute`` |
@@ -503,6 +547,8 @@ Position attribute
 
 Profile picture attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that syncs and locks the profile picture in Mattermost. | - System Config path: **Authentication > AD/LDAP**            |
@@ -551,6 +597,8 @@ Group ID attribute
 Synchronization interval (minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This value determines how often Mattermost syncs with the AD/LDAP server by setting the number of minutes between each sync. | - System Config path: **Authentication > AD/LDAP**                   |
 |                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.SyncIntervalMinutes: 60`` |
@@ -568,6 +616,8 @@ Synchronization interval (minutes)
 Maximum page size
 ~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | This setting paginates the results of AD/LDAP server queries. Use this setting if your AD/LDAP server has a page size limit. | - System Config path: **Authentication > AD/LDAP**          |
 |                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.MaxPageSize: 0`` |
@@ -581,6 +631,8 @@ Maximum page size
 Query timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+*Available in legacy Enterprise Edition E10 and E20*
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting determines the timeout period, in seconds, for AD/LDAP queries. Increase this value to avoid timeout errors when querying a slow server. | - System Config path: **Authentication > AD/LDAP**            |
 |                                                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.QueryTimeout: 60`` |
@@ -589,6 +641,8 @@ Query timeout (seconds)
 
 AD/LDAP test
 ~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +---------------------------------------------------------------+----------------------------------------------------+
 | Use this button to test the connection to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP** |
@@ -600,6 +654,8 @@ AD/LDAP test
 
 AD/LDAP synchronize now
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+*Available in legacy Enterprise Edition E10 and E20*
 
 +-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
 | Use this button to immediately sync with the AD/LDAP server.                                              | - System Config path: **Authentication > AD/LDAP** |
