@@ -36,51 +36,47 @@ Access the following configuration settings in the System Console by going to **
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
-
-**False**: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserCreation": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
-
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** New accounts can be created by an email invitation or a public team invitation link.                           | - System Config path: **Authentication > Signup**                      |
+| - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message. | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
+|                                                                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+ 										      
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
-
-This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This setting limits the email address domains that can be used to create a new account or team. You **must** set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true`` for the restriction to function. This setting only affects email login. | - System Config path: **Authentication > Signup**                       |
+|                                                                                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.TeamSettings.RestrictCreationToDomains``  |
+| String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                    | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Enable open server
 ~~~~~~~~~~~~~~~~~~
-
-**True**: Users can sign up to the server from the root page without an invite.
-
-**False**: Users can only sign up to the server if they receive an invite.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOpenServer": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
+  
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Users can create accounts on the server without an invitation.                       | - System Config path: **Authentication > Signup**                   |
+| - **false**: **(Default)** Users **must** have an invitation to create an account on the server. | - ``config.json`` setting: ``.TeamSettings.EnableOpenServer``       |
+|                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_ENABLEOPENSERVER``        |
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Enable email invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can invite others to the Mattermost system by email.
-
-**False**: Email invitations are disabled.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableEmailInvitations": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Allows users to send email invitations.    | - System Config path: **Authentication > Signup**                      |
+| - **false**: **(Default)** Disables email invitations. | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations`` |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``  |
++--------------------------------------------------------+------------------------------------------------------------------------+
 
 Invalidate pending email invites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This button invalidates active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+| This button invalidates email invitations that have not been accepted (by default, invitations expire after 48 hours). | - System Config path: **Authentication > Signup** |
+|                                                                                                                        | - ``config.json`` setting: N/A                    |
+| This option has no ``config.json`` setting or environment variable.                                                    | - Environment variable: N/A                       |
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
 
 ----
 
@@ -95,46 +91,38 @@ Access the following configuration settings in the System Console by going to **
 Enable account creation with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Allow team creation and account signup using email and password.
-
-**False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: **(Default)** Allows creation of team and user accounts with email and password.                                                        | - System Config path: **Authentication > Email**                    |
+| - **false**: Disables creation of team and user accounts with email and password. This requries a single sign-on service to create accounts.        | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
+|                                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Require Email Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Require email verification after account creation prior to allowing login.
-
-**False**: Users do not need to verify their email address prior to login. Developers may set this field to ``false`` to skip sending verification emails for faster development.
-
-+----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RequireEmailVerification": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Requires email verification for new accounts before allowing the user to sign-in.                                       | - System Config path: **Authentication > Email**                       |
+| - **false**: **(Default)** Disables email verification. This can be used to speed development by skipping the verification process. | - ``config.json`` setting: ``.EmailSettings.RequireEmailVerification`` |
+|                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION``  |
++-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Enable sign-in with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Mattermost allows account creation using email and password.
-
-**False**: Log in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a Single Sign-on service like AD/LDAP, SAML, or GitLab.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to sign-in with email and password.                                                                                                      | - System Config path: **Authentication > Email**                    |
+| - **false**: Disables authentication with email and password, and removes the option from the login screen. Use this option to limit authentication to single sign-on services. | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithEmail`` |
+|                                                                                                                                                                                 | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL``  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Enable sign-in with username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Mattermost allows users with email login to log in using their username and password. This setting does not affect AD/LDAP login.
-
-**False**: Log in with username is disabled and does not appear on the login screen.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``EnableSignInWithUsername": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                               |
+| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername``         |
+|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``          |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 ----
 
@@ -151,42 +139,38 @@ Minimum password length
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 8`` with numerical input.                   |
-+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. | - System Config path: **Authentication > Password**            |
+|                                                                                                                                                           | - ``config.json`` setting: ``.PasswordSettings.MinimumLength`` |
+| Numerical input. Default is **5**.                                                                                                                        | - Environment variable: ``MM_PASSWORDSETTINGS_MINIMUMLENGTH``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Password requirements
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error message previewed in the System Console will appear on the account creation page if a user enters an invalid password.
-
-- **At least one lowercase letter**: Select this checkbox if a valid password must contain at least one lowercase letter.
-- **At least one uppercase letter**: Select this checkbox if a valid password must contain at least one uppercase letter.
-- **At least one number**: Select this checkbox if a valid password must contain at least one number.
-- **At least one symbol**: Select this checkbox if a valid password must contain at least one symbol. Valid symbols include: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``.
-
-This feature's ``config.json`` settings are, respectively:
-
-.. list-table::
-    :widths: 80
-
-    * - ``"Lowercase": false`` with options ``true`` and ``false``.
-    * - ``"Number": false`` with options ``true`` and ``false``.
-    * - ``"Uppercase": false`` with options ``true`` and ``false``.
-    * - ``"Symbol": false`` with options ``true`` and ``false``.
++-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This setting controls password character requirements. By checking the corresponding box, passwords must contain: | - System Config path: **Authentication > Password**                                                                                                                                  |
+|                                                                                                                   | - ``config.json`` settings: ``.PasswordSettings.Lowercase: false``, ``.PasswordSettings.Uppercase: false``, ``.PasswordSettings.Number: false``, ``.PasswordSettings.Symbol: false`` |
+| - **At least one lowercase letter**                                                                               | - Environment variables: ``MM_PASSWORDSETTINGS_LOWERCASE``, ``MM_PASSWORDSETTINGS_UPPERCASE``, ``MM_PASSWORDSETTINGS_NUMBER``, ``MM_PASSWORDSETTINGS_SYMBOL``                        |
+| - **At least one uppercase letter**                                                                               |                                                                                                                                                                                      |
+| - **At least one number**                                                                                         |                                                                                                                                                                                      |
+| - **At least one symbol** out of these: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``.                                        |                                                                                                                                                                                      |
+|                                                                                                                   |                                                                                                                                                                                      |
+| The error message previewed in the System Console will appear if the user attempts to set an invalid password.    |                                                                                                                                                                                      |
+|                                                                                                                   |                                                                                                                                                                                      |
+| The default for all boxes is unchecked. The default for all settings in ``config.json`` is ``false``.             |                                                                                                                                                                                      |
++-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Failed login attempts allowed before a user is locked out and required to reset their password via email.
-
-+------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with numerical input. |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. | - System Config path: **Authentication > Password**                      |
+|                                                                                                                                                             | - ``config.json`` setting: ``.ServiceSettings.MaximumLoginAttempts: 10`` |
+| Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
@@ -196,22 +180,18 @@ MFA
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Configure security settings for multi-factor authentication (MFA) in the System Console by going to **Authentication > MFA**.
+Access the following configuration settings in the System Console by going to **Authentication > MFA**.
 
-The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
-
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
+We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
 
 Enable multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to log in to the Mattermost server. Specifically, they'll be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
-
-**False**: Multi-factor authentication is disabled.
-
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Users who sign-in with AD/LDAP or an email address have the option to add `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ to their accounts. | - System Config path: **Authentication > MFA**                                         |
+| - **false**: **(Default)** Disables multi-factor authentication                                                                                                                                                 | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
+|                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,13 +201,13 @@ Enforce multi-factor authentication
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: `Multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
-
-**False**: Multi-factor authentication is optional.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ for users who sign-in with AD/LDAP or an email address.  | - System Config path: **Authentication > MFA**                                   |
+| New users must configure MFA. Logged in users are redirected to the MFA setup page until configuration is complete.                                                                        | - ``config.json`` setting: ``.ServiceSettings.EnforceMultifactorAuthentication`` |
+| - **false**: MFA is optional.                                                                                                                                                              | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| Note: If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.                                                                                                       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
@@ -1350,7 +1330,7 @@ GitLab settings
 GitLab site URL
 '''''''''''''''
 
-*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Starter.*
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
@@ -1358,7 +1338,7 @@ Discovery endpoint
 ''''''''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
 
@@ -1366,7 +1346,7 @@ Client ID
 '''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your service provider account.
 
@@ -1374,7 +1354,7 @@ Client secret
 '''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
