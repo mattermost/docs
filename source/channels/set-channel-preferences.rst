@@ -4,7 +4,7 @@ Set channel preferences
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-For each channel you're a member of, you can set notification preferences as well as the channel's header, purpose, and name. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
+You can set notification preferences as well as the channel's header, purpose, and name for each channel you're a member of. See the documentation for details on :doc:`renaming channels </channels/rename-channels>` and :doc:`channel naming convention recommendations </channels/channel-naming-conventions>`.
 
 .. image:: ../images/channel-preferences.png
     :alt: Select the channel name at the top of the screen to set preferences for each channel you belong to.
@@ -19,26 +19,49 @@ Mute channel
 
 Muting turns off desktop, email, and push notifications for a channel, and the channel will only be marked as unread in the channel sidebar if you're mentioned. By default, all channels are unmuted.
 
-To mute the current channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen.
-
 Once a channel is muted:
 
 - Email, desktop, and push notifications are disabled.
 - A mute icon displays next to the channel name.
 - The channel appears at reduced opacity in the channel sidebar, and the channel isn't marked as unread unless you're mentioned directly.
 
-To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
+.. tabs::
 
-.. tip::
+  .. tab:: Web browser/desktop app
 
-  Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar.
+    To mute the current channel and disable notifications, select **Mute Channel** from the channel name at the top of the screen.
+
+    To unmute the channel, select the channel name again to access the drop-down menu, then select **Unmute Channel**.
+
+    .. tip::
+
+      Quickly mute or unmute any channel any time by selecting **Mute Channel** or **Unmute Channel** from the channel name at the top of the screen, or by selecting **More Options** for a channel in the Channel Sidebar.
+  
+  .. tab:: Mobile app
+
+    To mute a channel in the mobile app, select the channel you want to mute, then select **Mute**.
+
+    To unmute the channel, clear the **Mute** option.
 
 Ignore mentions for @channel, @here, and @all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, you'll receive mention notifications every time someone on your team `mentions an entire channel </channels/mention-people.html>`__ using ``@channel``, ``@all``, or ``@here``.
 
-To stop receiving mention notifications, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted.
+.. tabs::
+
+  .. tab:: Web browser/desktop app
+
+    To stop receiving mention notifications, enable the **Ignore mentions for @channel, @here and @all** option, then select **Save**. When enabled, mention notifications for channel-wide mentions are ignored, but the channel is marked as unread unless the channel is muted.
+  
+  .. tab:: Mobile app
+
+    To stop receiving mention notifications in the mobile app:
+
+    1. Select the channel where you want to mute mention notifications.
+    2. Select the **More** |more-icon| icon located in the top right corner of the app.
+    3. Select **View info**.
+    4. Select **Ignore @channel, @here, @all**.
 
 Send desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

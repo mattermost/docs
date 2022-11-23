@@ -27,8 +27,7 @@ To join a public channel:
 
   .. tab:: Mobile app
 
-    1. Select the **+** symbol at the top right of the page, then select **Browse Channels** at the bottom. 
-
+    1. Select the **+** symbol in the top right corner the app, then select **Browse Channels** at the bottom. 
     2. Select the public channel you want to join.
 
 .. tip::
@@ -39,9 +38,11 @@ To join a public channel:
 Leave a channel
 ---------------
 
+When you leave a private channel, you must be re-added by another channel member to rejoin. You won't receive mention notifications from a channel if you're not a member of that channel.
+
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Web browser/desktop app
 
     Select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**. 
 
@@ -50,6 +51,6 @@ Leave a channel
 
   .. tab:: Mobile app
 
-    Select the channel name at the top of the center pane to access the channel information pane, then select **Leave Channel**. 
-
-When you leave a private channel, you must be re-added by another channel member to rejoin. You won't receive mention notifications from a channel if you're not a member of that channel.
+    1. Select the channel you want to leave.
+    2. Select the **More** |more-icon| icon located in the top right corner of the app.
+    3. Select **Leave channel**.

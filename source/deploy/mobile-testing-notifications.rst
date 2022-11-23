@@ -21,16 +21,16 @@ Then use the following instructions to confirm push notifications are working pr
   A. Go to the notification settings menu in the mobile app.
 
   .. image:: ../images/mobile_notification_settings.png
-    :alt: Ensure push notifications are enabled by selecting the Settings icon located in the top-right corner of the screen.
+    :alt: Access notification settings by selecting your profile picture to access Settings > Notifications.
 
   B. Check that the mobile push notifications are set to send.
 
   .. image:: ../images/mobile_push_send_for.png
-    :alt: Select the type of activity you want push notifications for by going to Settings > Notifications > Mobile Push Notifications.
+    :alt: Select Push Notifications to confirm when mobile push notifications will be sent.
     :width: 300 px
 
   .. image:: ../images/mobile_push_send_when.png
-    :alt: Select when you want push notifications by going to Settings > Notifications > Mobile Push Notifications for all Mattermost activity or mentions and direct messages only.
+    :alt: Specify whether all new messages or only mentions and direct messages send push notifications. 
     :width: 300 px
 
 4. Have “Account A” put the app to background or close the app.

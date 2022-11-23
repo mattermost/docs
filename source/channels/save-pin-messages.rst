@@ -15,8 +15,6 @@ Save messages
 Save messages for later follow up by selecting the **Save** |save-icon| icon next to a message. 
 
 .. |save-icon| image:: ../images/save-icon.png
-  :height: 24px
-  :width: 24px
   :alt: Save icon.
 
 .. |more-icon| image:: ../images/dots-horizontal_F01D8.svg

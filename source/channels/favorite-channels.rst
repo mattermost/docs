@@ -4,13 +4,16 @@ Mark channels as favorites
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional message options.
+
 You can mark public channels, private channels, and direct messages as Favorite so they appear in the **Favorites** category in the channel sidebar.
 
 To mark a channel as a **Favorite**, open the channel:
 
 .. tabs::
 
-  .. tab:: Web browser/Desktop app
+  .. tab:: Web browser/desktop app
 
     At the top of the page, select on the star icon next to the channel name.
 
@@ -24,4 +27,7 @@ To mark a channel as a **Favorite**, open the channel:
 
   .. tab:: Mobile app
 
-    Select the channel name at the top of the center pane to access the drop-down menu, then select **Favorites**. To remove a channel from the **Favorites** list, select **Favorites** again.
+    1. Select the **More** |more-icon| icon located in the top right corner of the app.
+    2. Select **Favorite**.
+    
+    To remove a channel from the **Favorites** list, clear the **Favorited** option.

@@ -14,7 +14,7 @@ From Mattermost v7.1, insights are available in the web and the desktop app for 
 Access insights
 ---------------
 
-To access insights, go to Channels, then select **Insights** located at the top of the channel sidebar. On the Insights page, you'll see your own insights over the last seven days by default. You can also:
+To access insights, go to Channels, then select **Insights** at the top of the channel sidebar. On the Insights page, you'll see your own insights over the last seven days by default. You can also:
 
 - Switch between your insights and insights for the team.
 - Show insights for the current day or the last 28 days.

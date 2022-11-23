@@ -15,7 +15,7 @@ Use the **Find channel** option in the channel sidebar, or press :kbd:`Ctrl` :kb
 Return to recently viewed channels
 -----------------------------------
 
-Use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
+Using a browser or the desktop app, use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
 
 - Select the left arrow to go back one page. 
 - Select the right arrow to go forward one page.

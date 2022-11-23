@@ -5,74 +5,46 @@ Format messages
   :start-after: :nosearch:
 
 .. |bold-icon| image:: ../images/format-bold_F0264.svg
-  :height: 24px
-  :width: 24px
   :alt: Bold message text using the Bold icon in the message formatting toolbar.
 
 .. |italics-icon| image:: ../images/format-italic_F0277.svg
-  :height: 24px
-  :width: 24px
   :alt: Italicize message text using the Italic icon in the message formatting toolbar.
 
 .. |strikeout-icon| image:: ../images/format-strikethrough-variant_F0281.svg
-  :height: 24px
-  :width: 24px
   :alt: Strike out message text using the Strikethrough icon in the message formatting toolbar.
 
 .. |headings-icon| image:: ../images/format-header_E81D.svg
-  :height: 24px
-  :width: 24px
   :alt: Format message text as a heading using the Heading icon in the message formatting toolbar. Headings 1 through 6 are supported.
 
 .. |links-icon| image:: ../images/link-variant_F0339.svg
-  :height: 24px
-  :width: 24px
   :alt: Add a message link using the Link icon in the message formatting toolbar.
 
 .. |attachments-icon| image:: ../images/paperclip_F03E2.svg
-  :height: 24px
-  :width: 24px
   :alt: Add a message attachment using the Upload files icon in the message formatting toolbar.
 
 .. |numbered-icon| image:: ../images/format-list-numbered_F027B.svg
-  :height: 24px
-  :width: 24px
   :alt: Format message text as a numbered list using the Numbered list icon in the message formatting toolbar.
 
 .. |bullets-icon| image:: ../images/format-list-bulleted_F0279.svg
-  :height: 24px
-  :width: 24px
   :alt: Format message text as a bulleted list using the Bulleted list icon in the message formatting toolbar.
 
 .. |quotes-icon| image:: ../images/format-quote-open_F0757.svg
-  :height: 24px
-  :width: 24px
   :alt: Format message text as a quotation using the Quote icon in the message formatting toolbar.
 
 .. |code-icon| image:: ../images/code-tags_F0174.svg
-  :height: 24px
-  :width: 24px
   :alt: Format message text as code using the Code icon in the message formatting toolbar.
 
 .. |emoji-icon| image:: ../images/emoticon-outline_F01F2.svg
-  :height: 24px
-  :width: 24px
   :alt: Add emojis or GIFs to message text using the Emoji/Gif picker icon in the message formatting toolbar.
 
 .. |hide-formatting-icon| image:: ../images/format-letter-case_F0B34.svg
-  :height: 24px
-  :width: 24px
   :alt: Hide formatting options in the message formatting toolbar using the Show/Hide Formatting icon.
 
 .. |preview-icon| image:: ../images/eye-outline_F06D0.svg
-  :height: 24px
-  :width: 24px
   :alt: Review your message text formatting using the Show/Hide preview icon in the message formatting toolbar.
 
 .. |settings-icon| image:: ../images/settings-outline_F08BB.svg
-  :height: 24px
-  :width: 24px
-  :alt: Access and manage your Channels settings using the Gear icon next to your user profile image.
+  :alt: Access and manage your Channels settings using the Gear icon.
 
 Use the messaging formatting toolbar
 ------------------------------------

@@ -17,7 +17,7 @@ Organize conversations into threads
 
 You can also reply to a message by hovering over a message and selecting the **Reply** link to organize the conversation into a thread. Threaded conversations are easy to follow and allow multiple parallel conversations to occur at the same time without confusion. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
 
-Selecting the reply link opens a sidebar in the right-hand sidebar. To expand the right-hand sidebar to its full width, select the **Expand** icon with two arrows at the top of the sidebar.
+Selecting the reply link opens a sidebar in the right-hand sidebar in a web browser and the desktop app. To expand the right-hand sidebar to its full width, select the **Expand** icon with two arrows at the top of the sidebar.
 
 .. image:: ../images/expand-sidebar.png
    :alt: Expand right-hand sidebar to its full width
