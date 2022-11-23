@@ -106,12 +106,12 @@ These guides will get you up and running with Mattermost desktop and mobile apps
     :maxdepth: 1
     :hidden:
 
-    Desktop App install guides </install/desktop-app-install>
+    Desktop app install guides </install/desktop-app-install>
     iOS setup </install/install-ios-app>
     Android setup </install/install-android-app>
     Testing push notifications </deploy/mobile-testing-notifications>
 
-* :doc:`Desktop App install guides </install/desktop-app-install>`
+* :doc:`Desktop app install guides </install/desktop-app-install>`
 * :doc:`iOS setup </install/install-ios-app>`
 * :doc:`Android setup </install/install-android-app>`
 * :doc:`Testing push notifications </deploy/mobile-testing-notifications>`
@@ -149,7 +149,7 @@ Desktop and Mobile App deployment
     :maxdepth: 1
     :hidden:
 
-    Desktop App deployment guide </deploy/desktop-app>
+    Desktop app deployment guide </deploy/desktop-app>
     Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>
     Desktop App custom dictionaries </install/desktop-custom-dictionaries>
     Desktop managed resources </install/desktop-app-managed-resources>

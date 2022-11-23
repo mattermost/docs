@@ -7,18 +7,24 @@ Desktop application changelog
 Latest Mattermost Desktop App releases:
 
 - `Release v5.2 <#id1>`_
-- `Release v5.1 <#id4>`_
+- `Release v5.1 <#id5>`_
 - `Release v5.0 <#id19>`_
-- `Release v4.7 <#id35>`_
-- `Release v4.6 <#id53>`_
-- `Release v4.5 <#id65>`_
+- `Release v4.7 <#id34>`_
+- `Release v4.6 <#id51>`_
+- `Release v4.5 <#id63>`_
 
 Release v5.2
 --------------
 
-- **v5.2.1, release day TBD**
- - Fixing an issue where the onboarding screen is still displayed even when there is a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
- - Fixing an issue where the tray icon color on Windows doesn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
+- **v5.2.2, release day TBD**
+ - Fixing an issue on ``.msi`` installers where the onboarding screen is displayed even when there is a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
+ - Fixing an issue where a crash can occur when a download list includes corrupt data `MM-48483 <https://mattermost.atlassian.net/browse/MM-48483>`_.
+ - Fixing an issue where ``AppImageLauncher`` still creates a bad shortcut that causes the app not to launch `MM-48557 <https://mattermost.atlassian.net/browse/MM-48557>`_.
+- **v5.2.1, released 2022-11-15**
+ - Fixed an issue on ``.exe`` installers where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
+ - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
+ - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows `MM-48184 <https://mattermost.atlassian.net/browse/MM-48184>`_.
+ - Fixed an issue where the tray icon colour on Windows didn't obey the setting `MM-48080 <https://mattermost.atlassian.net/browse/MM-48080>`_.
 - **v5.2.0, released 2022-10-31**
  - Original v5.2.0 release
 
@@ -27,7 +33,7 @@ Release v5.2
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps must be used with any `supported Extended Support Release or a newer Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`_.
+- Desktop App is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -46,6 +52,7 @@ Linux
 All Platforms
 ^^^^^^^^^^^^^
 
+- The Desktop App configured URL is now forced to be changed to the SiteURL configured by the system adminstrator.
 - Added localization support to the Desktop App (Beta).
 - Zoom in/out now works when ``CTRL/CMD+SHIFT+=`` is pressed.
 - Changed the order of fields in the Add Server modal so that the server URL is filled in first and the display name after.
@@ -75,7 +82,6 @@ All Platforms
 - Fixed an issue where an Operating System could register Mattermost as the default web browser / mail app.
 - Fixed an issue where the download notification showed the wrong file name.
 - Fixed an issue where it was possible to drag the Minimize/Close buttons.
-- Fixed an issue where servers were not forced to update their configuration using the configured ``SiteURL`` value if available.
 - Fixed an issue where a misleading error message from a remote certificate would imply that the Mattermost server had an issue.
 - Fixed an issue where users still received notifications when their status was set to **Do Not Disturb**.
 - Fixed an issue where users could not replace files in the **Downloads** folder.
@@ -90,6 +96,8 @@ Open Source Components
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Updating a local exe installation installs the update as a new app `MM-48381 <https://mattermost.atlassian.net/browse/MM-48381>`_.
+- Notifications are not displayed on Windows v8 and v8.1 `MM-48397 <https://mattermost.atlassian.net/browse/MM-48397>`_.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`` and for Windows it is located in ``Users/<username>/AppData/Roaming/Mattermost``.
 - On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
@@ -120,7 +128,7 @@ Release v5.1
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~
@@ -231,7 +239,7 @@ Release v5.0
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Breaking Changes / Upgrade Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -323,7 +331,7 @@ Release v4.7
 Compatibility
 ~~~~~~~~~~~~~~~
 
-- Desktop Apps are required to be used with any `supported Extended Support Release or a newer Mattermost server version </upgrade/release-lifecycle.html>`_.
+- Desktop Apps is supported on any supported Extended Support Release or a newer Mattermost server version.
 
 Highlights
 ~~~~~~~~~~~~~~~

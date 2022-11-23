@@ -193,7 +193,7 @@ Currently, you cannot. This feature may be added at a later stage.
 Can MFA be applied selectively?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If MFA is enforced for your users, it can be applied to guest accounts. Guests can configure MFA in by going to their avatar and selecting **Profile > Security**. If MFA is not enforced for your users, it can't be applied to guest accounts.
+If MFA is enforced for your users, it can be applied to guest accounts. Guests can configure MFA in by going to their profile picture and selecting **Profile > Security**. If MFA is not enforced for your users, it can't be applied to guest accounts.
 
 Has the guest accounts feature been reviewed by an external security firm?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

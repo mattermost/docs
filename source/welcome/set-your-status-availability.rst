@@ -15,16 +15,16 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 
   .. tab:: Mattermost v6.0 onwards
 
-      From Mattermost v6.0, set status and availability from your Avatar in the top-right corner of the Global Header.
+      From Mattermost v6.0, set status and availability from your profile picture in the top-right corner of the Global Header.
       
-      1. Select your Avatar, then select **Set a Custom Status**.
+      1. Select your profile picture, then select **Set a Custom Status**.
       2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
       
   .. tab:: Mattermost v5.39 and earlier
 
-      In Mattermost versions up to v5.39, set status and availability from your Avatar at the top of the channel sidebar.
+      In Mattermost versions up to v5.39, set status and availability from your profile picture at the top of the channel sidebar.
 
-      1. Select your Avatar, then select **Set a Custom Status**.
+      1. Select your profile picture, then select **Set a Custom Status**.
       2. Choose from a list of suggested statuses, reuse a recent status, or enter a new emoji and status, then select **Set Status**. The Speech bubble emoji 💬  is used by default if you don't specify an emoji. A custom status can be a maximum of 100 characters in length.
  
 .. note::
@@ -35,7 +35,7 @@ Set a custom status to add an optional emoji to a descriptive status message. Ot
 Clear a custom status
 ------------------------
 
-To clear a custom status, select your Avatar, then select **Clear Status**, or select the **Clear** option next to your current status.
+To clear a custom status, select your profile picture, then select **Clear Status**, or select the **Clear** option next to your current status.
 
 .. image:: ../images/clear-custom-status.png
   :alt: Clear your custom status.
@@ -43,7 +43,7 @@ To clear a custom status, select your Avatar, then select **Clear Status**, or s
 Set your availability
 ---------------------
 
-To set your availability, select your Avatar, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
+To set your availability, select your profile picture, then specify your availability as  **Online**, **Away**, **Do Not Disturb**, or **Offline**.
 
 .. image:: ../images/set-your-availability.png
   :alt: Set your availability to online, away, do not disturb, or offline.

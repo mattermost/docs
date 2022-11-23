@@ -1,6 +1,6 @@
 :nosearch:
 
-Configuring Notifications
+Configuring notifications
 =========================
 
 |all-plans| |cloud| |self-hosted|
@@ -8,7 +8,7 @@ Configuring Notifications
 .. |all-plans| image:: ../images/all-plans-badge.png
   :scale: 30
   :target: https://mattermost.com/pricing
-  :alt: Available in Mattermost Free and Starter subscription plans.
+  :alt: Available in Mattermost Free.
 
 .. |cloud| image:: ../images/cloud-badge.png
   :scale: 30

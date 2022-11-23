@@ -27,7 +27,7 @@ Once saved, all users must accept the terms of service by clicking **I Agree** n
  
  If you make an update to your Terms of Service, make sure to update your terms of service link at **System Console > Site Configuration > Customization > Terms of Service link**. This link is presented to all users when they log in, and it's easily accessible to end users after accepting the terms.
 
-Frequently Asked Questions
+Frequently asked questions
 --------------------------
 
 What happens if I update my terms of service text?

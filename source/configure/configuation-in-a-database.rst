@@ -1,5 +1,5 @@
-Configuration in the Mattermost database
-========================================
+Configuration in a database
+============================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
