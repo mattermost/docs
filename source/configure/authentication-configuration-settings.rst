@@ -692,13 +692,11 @@ Enable login with SAML
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost allows login using SAML. Please see `documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
-
-**False**: Login with SAML is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: Enables sign-in with SAML. See `SAML Single Sign-On <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more. | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: **(Default)** Disables sign-in with SAML.                                                                                | - ``config.json`` setting: ``.SamlSettings.Enable: false`` |
+|                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENABLE``         |
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
