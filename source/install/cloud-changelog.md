@@ -13,12 +13,18 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-12-01
 
+### Highlights
+
+#### Message priority and Acknowledgments
+ - Added message priority labels to the Threads view.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
+
+#### Global Drafts
+ - Added a centralized page for draft messages.
+
 ### Improvements
 
 #### User Interface (UI)
- - Added message priority labels to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
- - Added a centralized page for draft messages.
  - Removed video check to allow the browser to decide what video types it can play.
  - Added a tooltip to the right-hand side files filter icon.
  - The number of users that can be added to a user group at once was increased to 256.
@@ -34,7 +40,7 @@ Latest Mattermost Cloud releases:
  - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
  - Added ``acknowledgements`` field to the post's metadata.
 
-#### API Changes
+### API Changes
  - The resumable uploads API was exposed to plugins.
  - Added a new API endpoint ``POST /api/v4/ldap/users/:user_id/group_sync_memberships`` to add (or re-add) users to all of their default teams and channels for all of the groups they're a member of.
  - Added two new URL parameters to the ``GET /api/v4/groups`` endpoint to get the ``ChannelMemberCount`` for a group.
