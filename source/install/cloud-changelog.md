@@ -4,12 +4,53 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
 - [Release 2022-11-10](#release-2022-11-10)
 - [Release 2022-10-27](#release-2022-10-27)
 - [Release 2022-10-20](#release-2022-10-20)
-- [Release 2022-10-13](#release-2022-10-13)
+
+## Release 2022-12-01
+
+### Improvements
+
+#### User Interface (UI)
+ - Added message priority labels to the Threads view.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
+ - Added a centralized page for draft messages.
+ - Removed video check to allow the browser to decide what video types it can play.
+ - Added a tooltip to the right-hand side files filter icon.
+ - The number of users that can be added to a user group at once was increased to 256.
+ - Pre-packaged Boards v7.5.2.
+
+#### Administration
+ - Updated MacOS supported version to 11+.
+ - **My Insights** and OpenId Connect were added to the Free plan.
+ - All integration limits and usage limit components were removed.
+ - A notice banner in the **Invite** modal and at **system console > Site Statistics > Total Active Users** is now displayed to admins when the instance is in overage users state.
+ - For admins to be able to see how many license seats they have versus their total number of activated users, a **Paid Users** card was added to **system console > Team Statistics**.
+ - Added a new menu item in **system console > Users** to re-add users to all of their default teams and channels associated with the groups they're a member of.
+ - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
+ - Added ``acknowledgements`` field to the post's metadata.
+
+#### API Changes
+ - The resumable uploads API was exposed to plugins.
+ - Added a new API endpoint ``POST /api/v4/ldap/users/:user_id/group_sync_memberships`` to add (or re-add) users to all of their default teams and channels for all of the groups they're a member of.
+ - Added two new URL parameters to the ``GET /api/v4/groups`` endpoint to get the ``ChannelMemberCount`` for a group.
+ - Added new API endpoints ``POST /api/v4/users/:user_id/posts/:post_id/ack`` and ``DELETE /api/v4/users/:user_id/posts/:post_id/ack``.
+
+### Bug Fixes
+ - Fixed an issue where a blank message was displayed in threads if the leave/join messages were disabled.
+ - Fixed an issue where threads would appear duplicated in the threads list after leaving a channel.
+ - Fixed an issue with email search when using PostgreSQL database.
+ - Fixed an issue where message drafts were not saved after a paste that went through the ``pasteHandler`` in the post textbox was not processed.
+ - Fixed an issue where the team name in the channel sidebar header was not accessible.
+ - Fixed an issue where users were unable to open the profile popover from the right-hand side channel members list.
+
+### Known Issues
+ - Boards linked to a channel you're a member of doesn't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-11-24
 
