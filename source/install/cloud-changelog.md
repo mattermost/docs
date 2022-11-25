@@ -15,7 +15,7 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
 
-#### Message priority and Acknowledgments
+#### Message Priority and Acknowledgments
  - Added message priority labels to the Threads view.
  - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
 
@@ -34,8 +34,8 @@ Latest Mattermost Cloud releases:
  - Updated MacOS supported version to 11+.
  - **My Insights** and OpenId Connect were added to the Free plan.
  - All integration limits and usage limit components were removed.
- - A notice banner in the **Invite** modal and at **system console > Site Statistics > Total Active Users** is now displayed to admins when the instance is in overage users state.
- - For admins to be able to see how many license seats they have versus their total number of activated users, a **Paid Users** card was added to **system console > Team Statistics**.
+ - A notice banner is displayed to admins on the **Invite** modal and on **System Console > Site Statistics > Total Active Users** page when the workspace exceeds the maximum number of users allowed.
+ - For admins to see how many license seats they have versus their total number of activated users, a **Paid Users** card was added to the **System Console > Team Statistics** page.
  - Added a new menu item in **system console > Users** to re-add users to all of their default teams and channels associated with the groups they're a member of.
  - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
  - Added ``acknowledgements`` field to the post's metadata.
@@ -48,14 +48,14 @@ Latest Mattermost Cloud releases:
 
 ### Bug Fixes
  - Fixed an issue where a blank message was displayed in threads if the leave/join messages were disabled.
- - Fixed an issue where threads would appear duplicated in the threads list after leaving a channel.
- - Fixed an issue with email search when using PostgreSQL database.
- - Fixed an issue where message drafts were not saved after a paste that went through the ``pasteHandler`` in the post textbox was not processed.
+ - Fixed an issue where threads would appear duplicated in the Threads view after leaving a channel.
+ - Fixed an issue with email search when using a PostgreSQL database.
+ - Fixed an issue where message drafts were not saved after pasting them into the post textbox.
  - Fixed an issue where the team name in the channel sidebar header was not accessible.
- - Fixed an issue where users were unable to open the profile popover from the right-hand side channel members list.
+ - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right pane.
 
 ### Known Issues
- - Boards linked to a channel you're a member of doesn't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
  - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-11-24
