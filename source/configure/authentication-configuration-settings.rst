@@ -706,11 +706,11 @@ Enable synchronizing SAML accounts with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: Mattermost syncs SAML user attributes with AD/LDAP, including user deactivation and removal. AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**. See `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more. | - System Config path: **Authentication > SAML 2.0**                    |
-| - **false**: **(Default)** Disables syncing of SAML accounts with AD/LDAP.                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdap: false`` |
-|                                                                                                                                                                                                                                                                                                                  | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``         |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Mattermost syncs SAML user attributes with AD/LDAP, including user deactivation and removal. AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**. See `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__ to learn more. | - System Config path: **Authentication > SAML 2.0**                    |
+| - **false**: **(Default)** Disables syncing of SAML accounts with AD/LDAP.                                                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdap: false`` |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                     | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Ignore guest users when synchronizing with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -720,9 +720,8 @@ Ignore guest users when synchronizing with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``. 
-
-**True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
+- **true**: Mattermost ignores Guest Users identified by the Guest Attribute when syncing with the AD/LDAP server on user deactivation and removal.
+ Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
 
 **False**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
 
