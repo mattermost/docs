@@ -20,7 +20,7 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`Compliance configuration settings </configure/compliance-configuration-settings>`
 - :doc:`Experimental configuration settings </configure/experimental-configuration-settings>`
 
-In self-hosted Mattermost deployments, configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory, or `stored in the database <https://docs.mattermost.com/configure/configuation-in-mattermost-database.html>`__. System Admins managing self-hosted workspaces can also modify the ``config.json`` file directly using a text editor.
+In self-hosted Mattermost deployments, configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory, or `stored in the database <https://docs.mattermost.com/configure/configuation-in-a-database.html>`__. System Admins managing self-hosted workspaces can also modify the ``config.json`` file directly using a text editor.
 
 Configuration in database
 --------------------------
@@ -28,7 +28,7 @@ Configuration in database
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-From Mattermost v5.10, self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration </configure/configuation-in-mattermost-database.html>`__ documentation for migration details.
+From Mattermost v5.10, self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the `Mattermost database configuration </configure/configuation-in-a-database.html>`__ documentation for migration details.
 
 Environment variables
 ---------------------
