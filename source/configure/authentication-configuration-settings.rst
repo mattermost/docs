@@ -706,13 +706,11 @@ Enable synchronizing SAML accounts with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP. Enable and configure synchronization settings at **Authentication > AD/LDAP**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
-
-**False**: Synchronization of SAML accounts with AD/LDAP is disabled.
-
-+----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Mattermost syncs SAML user attributes with AD/LDAP, including user deactivation and removal. AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**. See `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more. | - System Config path: **Authentication > SAML 2.0**                    |
+| - **false**: **(Default)** Disables syncing of SAML accounts with AD/LDAP.                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdap: false`` |
+|                                                                                                                                                                                                                                                                                                                  | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``         |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Ignore guest users when synchronizing with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
