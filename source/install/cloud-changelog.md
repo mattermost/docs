@@ -28,6 +28,7 @@ Latest Mattermost Cloud releases:
  - Removed video check to allow the browser to decide what video types it can play.
  - Added a tooltip to the right-hand side files filter icon.
  - The number of users that can be added to a user group at once was increased to 256.
+ - Keyboard and focus handling was improved in profile popovers and at-mentions.
  - Pre-packaged Boards v7.5.2.
 
 #### Administration
@@ -39,6 +40,7 @@ Latest Mattermost Cloud releases:
  - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
  - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
  - Added ``acknowledgements`` field to the post's metadata.
+ - Added support for product websocket messages on high availability instances.
 
 ### API Changes
  - The resumable uploads API was exposed to plugins.
