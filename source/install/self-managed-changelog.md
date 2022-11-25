@@ -121,6 +121,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.5 is built with Go ``v1.18.1``.
 
 ### Known Issues
+ - Email notifications sometimes look broken when email batching is enabled [MM-48521](https://mattermost.atlassian.net/browse/MM-48521).
  - Guest users are unable to return to the login screen after being removed from all channels [MM-48438](https://mattermost.atlassian.net/browse/MM-48438).
  - Users are unable to open threads from recent mentions when switching to another team [MM-48399](https://mattermost.atlassian.net/browse/MM-48399).
  - When the right-hand side is expanded, an overlay is displayed with the Threads help text popup [MM-48412](https://mattermost.atlassian.net/browse/MM-48412).

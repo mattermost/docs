@@ -922,7 +922,7 @@ Allows using the same S3 bucket for multiple deployments.
 GitLab scope
 ~~~~~~~~~~~~
 
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 

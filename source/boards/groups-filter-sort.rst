@@ -49,16 +49,16 @@ You can filter cards on your board if they utilize any of the following property
 Add filters
 ~~~~~~~~~~~
 
-To add a filter, select the **Filter** option at the top of the board, then select **+ Add filter**. The first **Select** property on your board will automatically be selected. To change the property to filter by, select the name of the first **Select** property, then select another property (if available) from the menu.
+To add a filter, select the **Filter** option at the top of the board, then select **+ Add filter**. To change the property to filter by, select the name of the first property, then select another property (if available) from the menu.
 
-**Specify the filtering criteria:**
+**Specify the filtering criteria**
 
-- **Includes**: Display cards with any of the specified values from the **Select** property.
-- **Doesn’t include**: Display all cards without any of the specified values from the **Select** property.
-- **Is empty**: Display cards with no values assigned to the **Select** property.
-- **Is not empty**: Display cards with any value assigned to the **Select** property.
+- **Includes**: Display cards with any of the specified values.
+- **Doesn’t include**: Display all cards without any of the specified values.
+- **Is empty**: Display cards with no values assigned to a property.
+- **Is not empty**: Display cards with any value assigned to a property.
 
-To add another filtering layer, repeat the steps above with another **Select** property or even the same **Select** property to refine your filtering results. Adding another layer will display cards that only match the criteria from the first layer and the second layer.
+To add another filtering layer, repeat the steps above with another property to refine your filtering results. Adding another layer will display cards that only match the criteria from the first layer and the second layer.
 
 Delete filters
 ~~~~~~~~~~~~~~

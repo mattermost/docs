@@ -4,7 +4,7 @@ GitLab Single Sign-On
 .. include:: ../_static/badges/cloud-selfhosted.rst
   :start-after: :nosearch:
 
-*Not available in Mattermost Cloud Starter*
+*Not available in Mattermost Cloud Free*
 
 Configuring GitLab as a Single Sign-On (SSO) service
 ----------------------------------------------------

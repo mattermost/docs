@@ -140,12 +140,12 @@ What happens to my subscription if I don't renew in time?
 
 If you don't renew within the 60-day renewal period, a 10-day grace period is provided. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
 
-When the grace period expires, your Professional or Enterprise plan is downgraded to the Starter plan and other plan features are disabled.
+When the grace period expires, your Professional or Enterprise plan is downgraded to the Free plan and other plan features are disabled.
  
 What happens when my subscription expires?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't renew within the 10-day grace period, your Mattermost version is automatically downgraded to Starter plan so you can still access and use Mattermost. However, subscription features will no longer be available, and if you are currently using them, the functionality will no longer be accessible.
+If you don't renew within the 10-day grace period, your Mattermost version is automatically downgraded to Free plan so you can still access and use Mattermost. However, subscription features will no longer be available, and if you are currently using them, the functionality will no longer be accessible.
 
 When you renew, the subscription features will become available with the previous configuration (provided no action such as user migration has been taken).
 
