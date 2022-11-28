@@ -36,7 +36,7 @@ At this time, the export supports attributes of the objects listed below. All Ma
 You can export the following data types:
 
 - Teams
-- Channels (public, private, and favorites)
+- Channels (public, private, and direct)
 - Users
 - Users' team memberships
 - Users' channel memberships
@@ -680,6 +680,11 @@ DirectChannel object
       <td valign="middle">members</td>
       <td valign="middle">array</td>
       <td>List of channel members.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">favorited_by</td>
+      <td valign="middle">array</td>
+      <td>List of channel members who have favorited the direct channel.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">header</td>

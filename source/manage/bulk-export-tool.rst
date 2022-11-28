@@ -12,7 +12,7 @@ Moving data from one Mattermost instance into another begins with exporting data
 You can export the following data types:
 
 - Teams
-- Channels (public, private, and favorites)
+- Channels (public, private, and direct)
 - Users
 - Users' team memberships
 - Users' channel memberships
