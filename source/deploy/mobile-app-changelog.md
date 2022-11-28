@@ -2,12 +2,40 @@
 
 Latest Mattermost Mobile Apps releases:
 
+- [2.0.0 Release](#release)
 - [1.55.1 Release](#release)
 - [1.55.0 Release](#id1)
 - [1.54.0 Release](#id5)
 - [1.53.0 Release](#id10)
 - [1.52.0 Release](#id14)
-- [1.51.2 Release](#id18)
+
+## 2.0.0 Release
+- Release Date: December 15, 2022
+- Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 5s devices and later with iOS 12.1+ is required.
+
+### Highlights
+
+#### Multiple Workspaces
+ - Collaborate in multiple workspaces with a redesigned channel and team sidebar for easier navigation.
+
+#### Improved Network Reliability
+ - Improved network reliability reducing app hang and errors if internet connectivity is unstable.
+
+#### Improved Performance
+ - The app is more responsive to user input, launches faster and consumes less memory when running.
+
+#### Improved Stability
+ - Improved app stability so users encounter fewer crashes and bugs.
+
+### Known Issues
+ - On iOS, the icon badge number may not reflect the correct mention count accross all servers.
+ - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
+ - Posts sometimes get stuck behind the post textbox on iPad.
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
