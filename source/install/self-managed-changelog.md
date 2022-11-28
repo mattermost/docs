@@ -11,6 +11,141 @@ Latest Mattermost Releases:
 - [Release v7.3 - Feature Release](#release-v7-3-feature-release)
 - [Release v7.1 - Extended Support Release](#release-v7-1-extended-support-release)
 
+## Release v7.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release Day: December 15, 2022**
+
+### Important Upgrade Notes
+
+ - Plugins with a webapp component may need to be updated to work with Mattermost v7.6 release and the updated ``React v17`` dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost v7.6 and is backwards compatible with older versions of Mattermost.
+ - Denormalized Threads table by adding the ``TeamId`` column. See details for schema changes https://github.com/mattermost/mattermost-server/pull/20915#issuecomment-1282157291.
+
+**IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
+
+### Compatibility
+ - Updated the minimum version of MacOS to 11+.
+
+### Highlights
+
+#### Calls
+ - 
+
+#### Boards
+ - 
+ 
+#### Playbooks
+ - 
+
+#### Message Priority and Acknowledgments
+ - Added message priority labels to the Threads view.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
+
+#### Global Drafts
+ - Added a centralized page for draft messages.
+
+### Improvements
+
+#### User Interface (UI)
+ - Implemented progressive image loading in the webapp.
+ - When the "Custom Brand Text" is left blank with custom branding enabled, the default text is now hidden.
+ - The **Mark as Unread** option was added to the ``…`` menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
+ - Channel members are now able to remove themselves from a channel via the right-hand side channel members list.
+ - Added a Monthly versus Annual pricing toggle to the pricing modal.
+ - Removed video check to allow the browser to decide what video types it can play.
+ - Added a tooltip to the right-hand side files filter icon.
+ - The number of users that can be added to a user group at once was increased to 256.
+ - Keyboard and focus handling was improved in profile popovers and at-mentions.
+
+#### Administration
+ - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
+ - Crashing jobs now sets the job status to "failed".
+ - **Total Active Users** was renamed to **Total Activated Users** in **System Console > Reporting > Site Statistics**.
+ - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
+ - SQL migrations for PostgreSQL will now filter by the current schema name when checking for information from the ``information_schema.columns`` view. This does not affect anything because usually there's only one installation in a given database, but this gives flexibility to users to store multiple Mattermost instances under a single database.
+ - **My Insights** and OpenId Connect were added to the Free plan.
+ - All integration limits and usage limit components were removed.
+ - A global banner as well as a notice banner are displayed to admins on the **Invite** modal and on **System Console > Site Statistics > Total Active Users** page when the workspace exceeds the maximum number of users allowed. If the number of actual users exceeds the number of paid users by less than 5%, the banner is dismissible. If the number of actual users exceeds the number of paid users by more than 10%, the banner is non-dismissible until the license seat count has been updated.
+ - For admins to see how many license seats they have versus their total number of activated users, a **Paid Users** card was added to the **System Console > Team Statistics** page.
+ - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
+ - Added ``acknowledgements`` field to the post's metadata.
+ - Added support for product websocket messages on high availability instances.
+
+### Bug Fixes
+ - Fixed an issue where custom group actions were appearing in the user interface even when the user didn't have the permissions for them.
+ - Fixed issues with branding in email notifications.
+ - Fixed an issue where text could be dragged and dropped into input-fields.
+ - Fixed an issue where the profile popover failed to dismiss when selecting one of the options from the popover.
+ - Fixed an issue where imports containing the team name with the wrong capitalization crashed the import job.
+ - Fixed an issue where ``getPostSince`` didn't properly return deleted posts when Collapsed Reply Threads was enabled.
+ - Fixed an issue where the screen reader did not announce emojis from the autocomplete list.
+ - Fixed an issue where the scroll position in a channel was not maintained when opening reply message permalinks.
+ - Fixed an issue where ``OwnerId`` was not set for bots created via ``EnsureBotUser``.
+ - Fixed an issue where exports did not contain favorited Direct Message channels.
+ - Fixed an issue where screen readers did not announce search results on the **Invite members to channel** modal.
+ - Fixed an issue where screen readers did not announce the status of the user when hovering over the user status icon.
+ - Fixed an issue where users with narrow screens could not see the **Profile Settings** section within the **Settings** modal.
+ - Fixed an issue where users were unable to access the **Create an account** option on narrow screens.
+ - Fixed an issue where users on desktop were unable to grab the vertical scroll bar without accidently resizing the window.
+ - Fixed an issue where special characters weren't allowed in group mention names.
+ - Fixed an issue where screen readers didn't read the **Switch Channels** modal header.
+ - Fixed an issue in OAuth services where malformed redirect URLs were generated if the registered callback URLs already had static query parameters.
+ - Fixed an issue where suggestion dividers were displayed as undefined.
+ - Fixed an issue where a blank message was displayed in threads if the leave/join messages were disabled.
+ - Fixed an issue where threads would appear duplicated in the Threads view after leaving a channel.
+ - Fixed an issue with email search when using a PostgreSQL database.
+ - Fixed an issue where message drafts were not saved after pasting them into the post textbox.
+ - Fixed an issue where the team name in the channel sidebar header was not accessible.
+ - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right pane.
+
+### config.json
+Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Under ``ServiceSettings`` in the ``config.json``:
+    - ``PostPriority``, to add an option to select a message priority label for root posts.
+    - ``AllowSyncedDrafts``, to add an option to display a centralized page for draft messages.
+
+### API Changes
+ - The resumable uploads API was exposed to plugins.
+ - Added a new API endpoint ``POST /api/v4/ldap/users/:user_id/group_sync_memberships`` to add (or re-add) users to all of their default teams and channels for all of the groups they're a member of.
+ - Added two new URL parameters to the ``GET /api/v4/groups`` endpoint to get the ``ChannelMemberCount`` for a group.
+ - Added new API endpoints ``POST /api/v4/users/:user_id/posts/:post_id/ack`` and ``DELETE /api/v4/users/:user_id/posts/:post_id/ack``.
+ - Added a new API endpoint ``POST /api/v4/groups/:group_id:/restore``.
+ - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks. This API method is in beta, subject to change, and not covered by our backwards compatibility guarantee.
+    - ``UserHasPermissionToCollection(c *Context, userID, collectionType, collectionId string, permission *model.Permission) (bool, error)``
+    - ``GetAllCollectionIDsForUser(c *Context, userID, collectionType string) ([]string, error)``
+    - ``GetAllUserIdsForCollection(c *Context, collectionType, collectionID string) ([]string, error)``
+    - ``GetTopicRedirect(c *Context, topicType, topicID string) (string, error)``
+    - ``GetCollectionMetadataByIds(c *Context, collectionType string, collectionIds []string) (map[string]model.CollectionMetadata, error)``
+    - ``GetTopicMetadataByIds(c *Context, topicType string, topicIds []string) (map[string]*model.TopicMetadata, error)``
+
+### Database Changes
+ - Added a new Database table ``PostAcknowledgements``.
+ 
+### Websocket Event Changes
+ - Added new websocket events ``post_acknowledgement_added`` and ``post_acknowledgement_removed``.
+
+### Go Version
+ - v7.6 is built with Go ``v1.18.1``.
+
+### Known Issues
+ - Email notifications sometimes look broken when email batching is enabled [MM-48521](https://mattermost.atlassian.net/browse/MM-48521).
+ - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
+ - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as **Away** or **Offline** in high availability mode with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - The team sidebar on the desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in high availability mode.
+ - Boards are not refreshing on creation. See the [GitHub discussion](https://github.com/mattermost/focalboard/discussions/1971) for more information.
+ - Boards export and reimport results in duplicates boards because all IDs are replaced by new ones on the server. See the [GitHub issue](https://github.com/mattermost/focalboard/issues/1924) for more information.
+ - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+ 
+### Contributors
+ - 
+
 ## Release v7.5 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v7.5.1, released 2022-11-16**
@@ -96,7 +231,6 @@ Mattermost v7.5.0 contains a medium severity level security fix. [Upgrading](htt
  - Fixed an issue with incorrect mention counts in unread channels.
  - Fixed an issue where the cursor displayed as a pointer instead of as an arrow in embedded YouTube preview images.
  - Fixed an issue where formatting was applied to selected spaces after a word.
- - Fixed an issue where an error with an option to refetch data was not displayed and instead a blank screen was shown when there was a failure fetching Cloud data.
  - Fixed an issue where screen readers did not announce that the channel interface language dropdown in **Settings > Display > Language > Change** is a dropdown.
  - Fixed a bug where role filters weren't being applied for ``GetProfilesInChannel``.
  - Fixed an issue where the guest onboarding checklist contained an “Invite team members” link as a tour point.
