@@ -96,20 +96,20 @@ VersionInfo object
     <tr class="row-odd">
       <td valign="middle">generator</td>
       <td valign="middle">string</td>
-      <td>Name of the tool this export was generated with. Well known tools are:<br>
+      <td>The name of the tool this export was generated with. Well known tools are:<br>
           <kbd>"mattermost-server"</kbd> for the Mattermost Server.<br>
           <kbd>"mmetl"</kbd> for the Slack export converter "mmetl".</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">version</td>
       <td valign="middle">string</td>
-      <td>The version of the generator which this export was generated with. This may contain multiple versions, separated by spaces. The first one should be a semantic version.<br>
+      <td>The version of the tool this export was generated with. This may contain multiple pieces of version info, separated by spaces. The first one should be a semantic version.<br>
       <kbd>"7.6.0 (29bb1e53ef5a439c73065f47de2972f9bbcb09a4, enterprise: true)"</kbd> is an example of such a version string.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">created</td>
       <td valign="middle">string</td>
-      <td>The timestamp of the file creation, this should be formatted as a "RFC 3339" timestamp. The nanosecond part is optional.<br>
+      <td>The timestamp of the file creation. This should be formatted as a RFC 3339 timestamp. The nanosecond part is optional.<br>
       <kbd>"2022-11-22T16:40:51.019582328+01:00"</kbd></td>
     </tr>
     <tr class="row-odd">
