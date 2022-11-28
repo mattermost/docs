@@ -109,7 +109,7 @@ VersionInfo object
     <tr class="row-odd">
       <td valign="middle">created</td>
       <td valign="middle">string</td>
-      <td>The timestamp of the file creation. This should be formatted as a RFC 3339 timestamp. The nanosecond part is optional.<br>
+      <td>The timestamp of the file creation. This should be formatted as an RFC 3339 timestamp. The nanosecond part is optional.<br>
       <kbd>"2022-11-22T16:40:51.019582328+01:00"</kbd></td>
     </tr>
     <tr class="row-odd">
