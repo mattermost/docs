@@ -63,6 +63,7 @@ Latest Mattermost Releases:
  - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
  - SQL migrations for PostgreSQL will now filter by the current schema name when checking for information from the ``information_schema.columns`` view. This does not affect anything because usually there's only one installation in a given database, but this gives flexibility to users to store multiple Mattermost instances under a single database.
  - **My Insights** and OpenId Connect were added to the Free plan.
+ - Team scheme APIs are now allowed to be administered with a Professional plan.
  - All integration limits and usage limit components were removed.
  - A global banner as well as a notice banner are displayed to admins on the **Invite** modal and on **System Console > Site Statistics > Total Active Users** page when the workspace exceeds the maximum number of users allowed. If the number of actual users exceeds the number of paid users by less than 5%, the banner is dismissible. If the number of actual users exceeds the number of paid users by more than 10%, the banner is non-dismissible until the license seat count has been updated.
  - For admins to see how many license seats they have versus their total number of activated users, a **Paid Users** card was added to the **System Console > Team Statistics** page.
@@ -95,7 +96,8 @@ Latest Mattermost Releases:
  - Fixed an issue with email search when using a PostgreSQL database.
  - Fixed an issue where message drafts were not saved after pasting them into the post textbox.
  - Fixed an issue where the team name in the channel sidebar header was not accessible.
- - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right pane.
+ - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right panel.
+ - Fixed an issue where the OAuth 2.0 deprecation notice was still displayed in the system console.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
