@@ -106,6 +106,8 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``ServiceSettings`` in the ``config.json``:
     - ``PostPriority``, to add an option to select a message priority label for root posts.
     - ``AllowSyncedDrafts``, to add an option to display a centralized page for draft messages.
+ - Under ``ExperimentalSettings`` in the ``config.json``:
+    - ``PatchPluginsReactDOM`` to enable the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app.
 
 ### API Changes
  - The resumable uploads API was exposed to plugins.
