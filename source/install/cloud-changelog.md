@@ -36,8 +36,6 @@ Latest Mattermost Cloud releases:
  - **My Insights** and OpenId Connect were added to the Free plan.
  - All integration limits and usage limit components were removed.
  - Team scheme APIs are now allowed to be administered with a Professional plan.
- - A global banner as well as a notice banner are displayed to admins on the **Invite** modal and on **System Console > Site Statistics > Total Active Users** page when the workspace exceeds the maximum number of users allowed. If the number of actual users exceeds the number of paid users by less than 5%, the banner is dismissible. If the number of actual users exceeds the number of paid users by more than 10%, the banner is non-dismissible until the license seat count has been updated.
- - For admins to see how many license seats they have versus their total number of activated users, a **Paid Users** card was added to the **System Console > Team Statistics** page.
  - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
  - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
  - Added ``acknowledgements`` field to the post's metadata.
