@@ -117,7 +117,7 @@ How do I change my subscription to Cloud Free?
 If you are on the Cloud Enterprise plan and wish to adjust your subscription, please contact our `Support team <mailto:support@mattermost.com>`_.
 
 To change your subscription from Cloud Professional to Cloud Free:
-- Navigate to your system console's Subscription and Billing page (Go to https://<your workspace url>/admin_console/billing/subscription)
+- Navigate to your system console's Billing & Account > Subscription page (Or, go to https://<your workspace url>/admin_console/billing/subscription in your browser)
 - Click the "View Plans" button
 - A modal will appear. To downgrade, click the "Downgrade" button
 
