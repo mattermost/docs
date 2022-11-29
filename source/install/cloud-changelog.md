@@ -13,15 +13,6 @@ Latest Mattermost Cloud releases:
 
 ## Release 2022-12-01
 
-### Highlights
-
-#### Message Priority and Acknowledgments
- - Added message priority labels to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
-
-#### Global Drafts
- - Added a centralized page for draft messages.
-
 ### Improvements
 
 #### User Interface (UI)
@@ -38,7 +29,6 @@ Latest Mattermost Cloud releases:
  - Team scheme APIs are now allowed to be administered with a Professional plan.
  - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
  - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
- - Added ``acknowledgements`` field to the post's metadata.
  - Added support for product websocket messages on high availability instances.
 
 ### API Changes
