@@ -596,26 +596,84 @@ class SearchClass {
      * @param {ConfigSettingSearchResult} item
      */
     displayConfigSettingResultItem(item) {
-        // The result info is displayed as a list item
-        const listItem = document.createElement("li");
+        // The result info is displayed in a div
+        const div = document.createElement("div");
+        div.classList.add("config-setting-result-item");
+
         // Append the link
         const itemLink = document.createElement("a");
+        itemLink.classList.add("config-setting-result-item_link");
         itemLink.innerText = item.page.displayname;
         itemLink.href = item.page.anchor;
-        listItem.appendChild(itemLink);
-        // Append the description
-        const itemDesc = document.createElement("span");
-        itemDesc.innerText = "(" + item.page.description + ")";
-        listItem.appendChild(itemDesc);
+        div.appendChild(itemLink);
 
-        const extraDesc = document.createElement("p");
-        extraDesc.innerText = `System console: ${item.page.systemconsole}, config.json: ${item.page.configjson}, Environment variable: ${item.page.environment}`;
-        listItem.appendChild(extraDesc);
+        // Create a table to hold the description and the config setting metadata
+        const table = document.createElement("table");
+        table.classList.add("docutils", "align-default");
+        // Table has 2 columns, each taking 50% of the table width
+        const tableColGroup = document.createElement("colgroup");
+        const tableColDesc = document.createElement("col");
+        tableColDesc.style.width = "50%";
+        const tableColDetail = document.createElement("col");
+        tableColDetail.style.width = "50%";
+        tableColGroup.append(tableColDesc, tableColDetail);
+        // Add the column group to the table
+        table.appendChild(tableColGroup);
+        // Table body contains one row
+        const tableBody = document.createElement("tbody");
+        const tableRow = document.createElement("tr");
+        tableRow.classList.add("row-odd");
+        // The first cell contains the description of the config setting
+        const itemDescCell = document.createElement("td");
+        const itemDesc = document.createElement("p");
+        itemDesc.innerText = item.page.description;
+        itemDescCell.appendChild(itemDesc);
+        // The second cell contains metadata about the config setting
+        const itemDetailCell = document.createElement("td");
+        const itemDetailCellList = document.createElement("ul");
+        itemDetailCellList.style.listStyleType = "disc";
+        // System console path
+        const systemconsoleDetail = document.createElement("li");
+        const systemconsoleDetailLabel = document.createElement("span");
+        systemconsoleDetailLabel.innerText = "System Config path: ";
+        const systemconsoleDetailValue = document.createElement("b");
+        systemconsoleDetailValue.innerText = item.page.systemconsole;
+        systemconsoleDetail.append(systemconsoleDetailLabel, systemconsoleDetailValue);
+        // config.json setting
+        const configjsonDetail = document.createElement("li");
+        const configjsonCode = document.createElement("code");
+        configjsonCode.classList.add("docutils", "literal", "notranslate");
+        configjsonCode.innerText = "config.json";
+        const configjsonDetailLabel = document.createElement("span");
+        configjsonDetailLabel.innerText = " setting: ";
+        const configjsonDetailValue = document.createElement("code");
+        configjsonDetailValue.innerText = item.page.configjson;
+        configjsonDetailValue.classList.add("docutils", "literal", "notranslate");
+        configjsonDetail.append(configjsonCode, configjsonDetailLabel, configjsonDetailValue);
+        // Environment variable
+        const environmentDetail = document.createElement("li");
+        const environmentDetailLabel = document.createElement("span");
+        environmentDetailLabel.innerText = "Environment variable: ";
+        const environmentDetailValue = document.createElement("code");
+        environmentDetailValue.innerText = item.page.environment;
+        environmentDetailValue.classList.add("docutils", "literal", "notranslate");
+        environmentDetail.append(environmentDetailLabel, environmentDetailValue);
+        itemDetailCellList.append(systemconsoleDetail, configjsonDetail, environmentDetail);
+        itemDetailCell.append(itemDetailCellList);
+        // Add the two cells to the table row
+        tableRow.append(itemDescCell, itemDetailCell);
+        // Add the table row to the table body
+        tableBody.appendChild(tableRow);
+        // Add the table body to the table
+        table.appendChild(tableBody);
+
+        // Append the description table
+        div.appendChild(table);
 
         // Find the results div and add this result to it
         const resultsListEl = document.getElementById("config-setting-results-list");
         if (resultsListEl) {
-            resultsListEl.appendChild(listItem);
+            resultsListEl.appendChild(div);
         }
     }
 

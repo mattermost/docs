@@ -1913,33 +1913,24 @@ img.mm-badge-flag {
     margin-right: 3px;
 }
 
-/* Hide the definition list for config settings as they're described elsewhere in the doc */
-dl.config.setting {
-	display: none;
+.config-setting-result-item {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #e1e4e5;
+	padding-bottom: 12px;
+	padding-top: 12px;
 }
 
-#config-setting-results-section .search li {
-	margin-bottom:24px;
-	border-bottom:1px solid #e1e4e5;
-	padding-bottom:24px
+.config-setting-result-item:first-child {
+	border-top: 1px solid #e1e4e5;
 }
 
-#config-setting-results-section .search li:first-child {
-	border-top:1px solid #e1e4e5;
-	padding-top:24px
+.config-setting-result-item:last-child {
+	border-top: 1px solid #e1e4e5;
+	margin-bottom: 12px;
 }
 
-#config-setting-results-section .search li a {
-	font-size:120%;
-	margin-bottom:12px;
-}
-
-#config-setting-results-section .search li span {
-	font-size: 100%;
-	margin-left: 12px;
-}
-
-#config-setting-results-section .context {
-	color:grey;
-	font-size:90%
+.config-setting-result-item_link {
+	font-size: 120%;
+	padding-bottom: 12px;
 }
