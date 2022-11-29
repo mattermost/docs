@@ -1932,7 +1932,11 @@ dl.config.setting {
 #config-setting-results-section .search li a {
 	font-size:120%;
 	margin-bottom:12px;
-	display:inline-block
+}
+
+#config-setting-results-section .search li span {
+	font-size: 100%;
+	margin-left: 12px;
 }
 
 #config-setting-results-section .context {

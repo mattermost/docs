@@ -579,10 +579,16 @@ class SearchClass {
         // we're finished searching; stop the visual indicator and display the results summary
         Search.stopPulse();
         Search.title.text(_('Search Results'));
-        if (results.length === 0)
+        if (results.length === 0) {
             Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly.'));
-        else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query. Results are sorted by relevance.').replace('%s', String(results.length)));
+        } else {
+            let statusText = `Search finished, found ${results.length} page(s) `;
+            if (configSettingSearchResults.length > 0) {
+                statusText += `and ${configSettingSearchResults.length} configuration setting(s) `;
+            }
+            statusText += "matching the search query. Results are sorted by relevance.";
+            Search.status.text(_(statusText));
+        }
     }
 
     /**
@@ -590,35 +596,22 @@ class SearchClass {
      * @param {ConfigSettingSearchResult} item
      */
     displayConfigSettingResultItem(item) {
-        /** @type {String} */
-        let linkUrl;
-        if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
-            // dirhtml builder
-            let dirname = item.page.docname + '/';
-            if (dirname.match(/\/index\/$/)) {
-                dirname = dirname.substring(0, dirname.length - 6);
-            } else if (dirname === 'index/') {
-                dirname = '';
-            }
-            // requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
-            // linkUrl = requestUrl;
-            linkUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
-        } else {
-            // normal html builders
-            // requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item.page.docname + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
-            linkUrl = item.page.docname + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
-        }
         // The result info is displayed as a list item
         const listItem = document.createElement("li");
         // Append the link
         const itemLink = document.createElement("a");
         itemLink.innerText = item.page.displayname;
-        itemLink.href = linkUrl + item.page.anchor;
+        itemLink.href = item.page.anchor;
         listItem.appendChild(itemLink);
         // Append the description
         const itemDesc = document.createElement("span");
         itemDesc.innerText = "(" + item.page.description + ")";
         listItem.appendChild(itemDesc);
+
+        const extraDesc = document.createElement("p");
+        extraDesc.innerText = `System console: ${item.page.systemconsole}, config.json: ${item.page.configjson}, Environment variable: ${item.page.environment}`;
+        listItem.appendChild(extraDesc);
+
         // Find the results div and add this result to it
         const resultsListEl = document.getElementById("config-setting-results-list");
         if (resultsListEl) {

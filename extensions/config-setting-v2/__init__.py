@@ -99,7 +99,7 @@ class ConfigSettingDirective(SphinxDirective):
     def run(self) -> List[Node]:
         nodes: List[Node] = list()
         # Add an anchor node, so we can refer to this section later
-        nodes.append(AnchorNode("config.setting.anchor_" + self.arguments[0]))
+        nodes.append(AnchorNode(self.arguments[0]))
         # If there is content, then collect it into a string and append it to the short description
         long_description = ""
         for content_line in self.content:
@@ -195,8 +195,7 @@ class ConfigSettingDomain(Domain):
           :return: None
         """
         name = "config.setting_%s" % setting[CONFIG_SETTING_ID]
-        anchor_id = setting[CONFIG_SETTING_ID]
-        anchor = "config.setting.anchor_%s" % anchor_id
+        anchor = setting[CONFIG_SETTING_ID]
         config_setting = (
             name,
             setting[CONFIG_SETTING_DISPLAYNAME],
@@ -240,6 +239,14 @@ def env_merge_info(
 def doctree_read(app: Sphinx, doctree: nodes.document):
     if not hasattr(app.env, "config_settings"):
         app.env.config_settings = dict()
+    # Check if this document has the :nosearch: metadata attribute; skip if it does
+    if app.env.docname in app.env.metadata:
+        if "nosearch" in app.env.metadata[app.env.docname]:
+            logger.debug(
+                "doctree_read(): doc %s has :nosearch: attribute; skipping it"
+                % app.env.docname
+            )
+            return
     config_nodes = doctree.traverse(ConfigSettingNode, False, True, False, False)
     if len(config_nodes) == 0:
         return
