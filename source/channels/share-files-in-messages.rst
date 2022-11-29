@@ -76,7 +76,7 @@ View media
 The following media formats are supported on most browsers:
 
 -  Images: BMP, GIF, JPG, JPEG, PNG, SVG
--  Video: MP4, MOV
+-  Video: browser supported video formats, including but not limited to MP4 and MOV
 -  Audio: MP3, M4A
 -  Files: PDF, TXT
 
