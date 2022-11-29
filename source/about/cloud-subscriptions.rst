@@ -114,7 +114,7 @@ Your plan immediately changes to the plan you've upgraded to. Your trial will co
 How do I change my subscription to Cloud Free?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're on the Cloud Enterprise plan and want to move to another plan, please contact our `Support team <mailto:support@mattermost.com>`_.
+If you're on the Cloud Enterprise plan and want to move to another plan, please contact your Customer Success Manager or our `Support team <mailto:support@mattermost.com>`_.
 
 If you're on Cloud Professional and want to move to Cloud Free:
 
