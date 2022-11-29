@@ -114,7 +114,7 @@ Your plan immediately changes to the plan you've upgraded to. Your trial will co
 How do I change my subscription to Cloud Free?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are on the Cloud Enterprise plan and wish to adjust your subscription, please contact our `Support team <mailto:support@mattermost.com>`_.
+If you are on the Cloud Enterprise plan and wish to adjust your subscription, please contact your Customer Success Manager, or our `Support team <mailto:support@mattermost.com>`_.
 
 To change your subscription from Cloud Professional to Cloud Free:
 - Navigate to your system console's Billing & Account > Subscription page (Or, go to https://<your workspace url>/admin_console/billing/subscription in your browser)
