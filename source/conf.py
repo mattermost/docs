@@ -262,6 +262,8 @@ redirects = {
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-public-channel-renaming-for",
 "administration/config-settings.html#enable-public-channel-creation-for":
         "https://docs.mattermost.com/configure/configuration-settings.html#enable-public-channel-creation-for",
+"administration/config-settings.html#enable-users-to-open-direct-message-channels-with":
+	"https://docs.mattermost.com/configure/site-configuration-settings.html#enable-users-to-open-direct-message-channels-with",
 "administration/config-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar-experimental":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-x-to-leave-channels-from-left-hand-sidebar",
 "administration/config-settings.html#environment":
