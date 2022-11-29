@@ -390,7 +390,7 @@ This setting enables the Apps Bar and moves all Mattermost integration icons fro
 Patch React DOM used by plugins
 ~~~~~~~~~~~~~~
 
-This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost 7.6 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
+This setting enables the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app. This should only be needed temporarily after upgrading to Mattermost v7.6 for plugins that have not been updated yet. Changes to this setting require a server restart before taking effect.
 
 See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ for more information.
 
