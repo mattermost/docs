@@ -3,7 +3,7 @@ Contribute to this site
 
 Mattermost has a diverse community that extends well beyond those who write code for our core projects. We value every contributor who helps make Mattermost better for everyone, from the community members who translate the Mattermost platform into languages beyond English, to those who write documentation and beyond. 
 
-If you’re interested in contributing to Mattermost, want to help improve the product documentation?
+If you’re interested in contributing to Mattermost, why not help improve the product documentation?
 
 How to get started
 ------------------
