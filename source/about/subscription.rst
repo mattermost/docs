@@ -29,7 +29,7 @@ Organizations applying for a non-profit license must meet **ALL** of the followi
 - Be willing to let us use their logo for promotional purposes.
 - Be willing to pay a $250 processing fee for a three-year, self-hosted Professional license contract for up to 1000 users.
 
-If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>` instead.
+If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>`__ instead.
 
 If you represent an open source community or project that is not hosted under a recognized nonprofit, but would like a commercial license for Mattermost, please email community@mattermost.com with your organization’s needs and requirements.
 
