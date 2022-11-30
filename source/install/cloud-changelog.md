@@ -45,6 +45,7 @@ Latest Mattermost Cloud releases:
  - Fixed an issue where the team name in the channel sidebar header wasn't accessible.
  - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right panel.
  - Fixed an issue where the OAuth 2.0 deprecation notice was still displayed in the System Console.
+ - Fixed an issue where clicking on a reply post time stamp in the global threads inbox opened two right-hand side panels.
 
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
