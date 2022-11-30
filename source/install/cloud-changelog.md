@@ -20,6 +20,7 @@ Latest Mattermost Cloud releases:
  - Added a tooltip to the right-hand side files filter icon.
  - The number of users that can be added to a user group at once was increased to 256.
  - Keyboard and focus handling was improved in profile popovers and at-mentions.
+ - If a channel has a draft message, the pencil icon is now displayed on the right side of the channel name in the channel sidebar.
  - Pre-packaged Boards v7.5.2.
 
 #### Administration
