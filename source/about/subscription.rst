@@ -23,7 +23,7 @@ Who's eligible?
 ~~~~~~~~~~~~~~~~
 
 Organizations applying for a non-profit license must meet **ALL** of the following requirements:
-- Be able to provide documentation that establishes a recognized nonprofit status.
+- Be able to provide documentation that establishes the organization as a recognized nonprofit status.
 - Have no affiliation with government, academic, commercial, or religious entities.
 - Be unable to afford a commercial Mattermost license.
 - Be willing to let us use their logo for promotional purposes.
