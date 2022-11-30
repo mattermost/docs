@@ -37,7 +37,7 @@ How to apply?
 ~~~~~~~~~~~~~
 
 To apply for the Mattermost Nonprofit License, `please complete this form <https://mattermost.typeform.com/to/gbM6xGkS>`.
-Please note that it may take up to 6-8 weeks for us to respond to your request.
+Please note that it may take up to six weeks for us to respond to your request.
 
 Mattermost educational license program
 ---------------------------------------
