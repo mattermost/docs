@@ -36,7 +36,7 @@ If you represent an open source community or project that is not hosted under a 
 How to apply?
 ~~~~~~~~~~~~~
 
-To apply for the Mattermost Nonprofit License, `please complete this form <https://mattermost.typeform.com/to/gbM6xGkS>`.
+To apply for the Mattermost Nonprofit License, `please complete this form <https://mattermost.typeform.com/to/gbM6xGkS>`__.
 Please note that it may take up to six weeks for us to respond to your request.
 
 Mattermost educational license program
