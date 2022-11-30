@@ -363,6 +363,72 @@ class SearchClass {
     }
 
     /**
+     * Search through configuration settings for matches on the query terms
+     * @param {string} query The search query
+     * @returns {Array<ConfigSettingSearchResult>} The config setting search results
+     */
+    queryConfigSettings(query) {
+        /** @type {Array<ConfigSettingSearchResult>} */
+        let configSettingSearchResults = [];
+        if (this.hasConfigSettingsIndex()) {
+            console.log("query(): searching lunr");
+            /** @type {Array<{score: number, ref: string}>} */
+            const lunrResults = this._lunrConfigSettingIndex.search(query);
+            console.log(`query(): lunr search returned ${lunrResults.length} results`);
+            configSettingSearchResults = lunrResults.map((result) => {
+                /** @type {Array<ConfigSettingRecord>} */
+                const configSetting = this._configSettingIndex.filter((setting) => setting["anchor"] === result.ref);
+                return {
+                    score: result.score,
+                    page: configSetting[0],
+                };
+            });
+            // sort the results by descending score
+            configSettingSearchResults = configSettingSearchResults.sort((a, b) => {
+                return (a.score > b.score) ? 1 : ((a.score < b.score) ? -1 : 0);
+            });
+        }
+        return configSettingSearchResults;
+    }
+
+    /**
+     * Sort the search results by score
+     * @param {Array<SearchResult>} results The search results to sort
+     * @returns {Array<SearchResult>} The sorted search results
+     */
+    sortSearchResults(results) {
+        // sort results into buckets by score
+        /** @type {Record<number, Array<SearchResult>>} */
+        const resultsByScore = {}
+        for (const result of results) {
+            if (result.score in resultsByScore) {
+                resultsByScore[Number(result.score)].push(result);
+            } else {
+                resultsByScore[Number(result.score)] = [result];
+            }
+        }
+        // sort the bucket keys numerically, highest to lowest
+        const rbsKeys = Object.keys(resultsByScore).sort((a, b) => {
+            const left = Number(a);
+            const right = Number(b);
+            return (left > right) ? 1 : ((left < right) ? -1 : 0);
+        });
+        // add each bucket of results to the final array of results
+        /** @type {Array<SearchResult>} */
+        const sortedResults = [];
+        for (const rbsKey of rbsKeys) {
+            // sort the results in each bucket alphabetically by title
+            const sorted = resultsByScore[rbsKey].sort((a, b) => {
+                const left = String(a.title).toLowerCase();
+                const right = String(b.title).toLowerCase();
+                return (left > right) ? -1 : ((left < right) ? 1 : 0);
+            });
+            sortedResults.push(...sorted);
+        }
+        return sortedResults;
+    }
+
+    /**
      * execute search (requires search index to be loaded)
      * @param query {string} The search query to perform
      */
@@ -431,31 +497,8 @@ class SearchClass {
         let results = [];
         $('#search-summary').empty();
 
-        /** @type {Array<ConfigSettingSearchResult>} */
-        let configSettingSearchResults = [];
-
-        /*
-         * if the config settings index has been loaded, perform a lunr.js search with it and add
-         * the results to the config settings results section.
-         */
-        if (this.hasConfigSettingsIndex()) {
-            console.log("query(): searching lunr");
-            /** @type {Array<{score: number, ref: string}>} */
-            const lunrResults = this._lunrConfigSettingIndex.search(query);
-            console.log(`query(): lunr search returned ${lunrResults.length} results`);
-            configSettingSearchResults = lunrResults.map((result) => {
-                /** @type {Array<ConfigSettingRecord>} */
-                const configSetting = this._configSettingIndex.filter((setting) => setting["anchor"] === result.ref);
-                return {
-                    score: result.score,
-                    page: configSetting[0],
-                };
-            });
-            // sort the results by descending score
-            configSettingSearchResults = configSettingSearchResults.sort((a, b) => {
-                return (a.score > b.score) ? 1 : ((a.score < b.score) ? -1 : 0);
-            });
-        }
+        // Perform a config settings search
+        const configSettingSearchResults = this.queryConfigSettings(query);
 
         // Perform an object search
         /** @type {Record<string, SearchResult>} */
@@ -524,35 +567,8 @@ class SearchClass {
         }
         results = filteredResults.concat(Object.values(anchorMap));
 
-        // sort results into buckets by score
-        /** @type {Record<number, Array<SearchResult>>} */
-        const resultsByScore = {}
-        for (const result of results) {
-            if (result.score in resultsByScore) {
-                resultsByScore[Number(result.score)].push(result);
-            } else {
-                resultsByScore[Number(result.score)] = [result];
-            }
-        }
-        // sort the bucket keys numerically, highest to lowest
-        const rbsKeys = Object.keys(resultsByScore).sort((a, b) => {
-            const left = Number(a);
-            const right = Number(b);
-            return (left > right) ? 1 : ((left < right) ? -1 : 0);
-        });
-        // add each bucket of results to the final array of results
-        /** @type {Array<SearchResult>} */
-        const sortedResults = [];
-        for (const rbsKey of rbsKeys) {
-            // sort the results in each bucket alphabetically by title
-            const sorted = resultsByScore[rbsKey].sort((a, b) => {
-                const left = String(a.title).toLowerCase();
-                const right = String(b.title).toLowerCase();
-                return (left > right) ? -1 : ((left < right) ? 1 : 0);
-            });
-            sortedResults.push(...sorted);
-        }
-        results = sortedResults;
+        // Sort the results
+        results = this.sortSearchResults(results);
 
         // If we found config setting results, show the config settings div; otherwise hide it
         const displaySetting = configSettingSearchResults.length > 0 ? "contents" : "none";
@@ -560,34 +576,89 @@ class SearchClass {
         if (configSettingsDiv) {
             configSettingsDiv.setAttribute("style", "display: " + displaySetting + ";");
         }
-        const additionalInfoDiv = document.getElementById("search-additional-information-header");
-        if (additionalInfoDiv) {
-            additionalInfoDiv.setAttribute("style", "display: " + displaySetting + ";");
+        const additionalInfoHeader = document.getElementById("search-additional-information-header");
+        if (additionalInfoHeader) {
+            additionalInfoHeader.setAttribute("style", "display: " + displaySetting + ";");
         }
 
         // print the config setting results
-        if (configSettingSearchResults.length > 0) {
-            for (const configSettingSearchResult of configSettingSearchResults) {
-                this.displayConfigSettingResultItem(configSettingSearchResult);
-            }
+        for (const configSettingSearchResult of configSettingSearchResults) {
+            this.displayConfigSettingResultItem(configSettingSearchResult);
         }
-        // print the results
+        // print the additional information results
         for (let x = results.length; x > 0; x--) {
-            const item = results[x - 1];
-            this.displayResultItem(item, searchterms, hlterms);
+            this.displayResultItem(results[x - 1], searchterms, hlterms);
         }
+
         // we're finished searching; stop the visual indicator and display the results summary
         Search.stopPulse();
         Search.title.text(_('Search Results'));
-        if (results.length === 0) {
-            Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly.'));
-        } else {
-            let statusText = `Search finished, found ${results.length} page(s) `;
-            if (configSettingSearchResults.length > 0) {
-                statusText += `and ${configSettingSearchResults.length} configuration setting(s) `;
+        this.setPostSearchStatus(results.length, configSettingSearchResults.length);
+    }
+
+    /**
+     * Update the search status field with the results of the search
+     * @param {number} numberOfResults
+     * @param {number} numberOfConfigSettingResults
+     */
+    setPostSearchStatus(numberOfResults, numberOfConfigSettingResults) {
+        // empty the current status
+        Search.status.empty();
+        // If there were no results, then display an appropriate message and return
+        if (!numberOfResults && !numberOfConfigSettingResults) {
+            const searchStatusEl = document.getElementById("search-summary");
+            if (searchStatusEl) {
+                searchStatusEl.innerText = "Your search did not match any documents. Please make sure that all words are spelled correctly.";
             }
-            statusText += "matching the search query. Results are sorted by relevance.";
-            Search.status.text(_(statusText));
+            return;
+        }
+        const prefixSpan = document.createElement('span');
+        prefixSpan.innerText = "Search finished, found ";
+        const postfixSpan = document.createElement('span');
+        postfixSpan.innerText = " matching your search query. Results are sorted by relevance.";
+        let configSettingSpan;
+        let resultSpan;
+        if (numberOfConfigSettingResults) {
+            configSettingSpan = document.createElement('span');
+            configSettingSpan.innerText = String(numberOfConfigSettingResults) + " ";
+            const configSettingLink = document.createElement('a');
+            configSettingLink.text = "configuration setting";
+            if (numberOfConfigSettingResults > 1) {
+                configSettingLink.text += "s";
+            }
+            configSettingLink.href = "#config-setting-results-anchor";
+            configSettingSpan.appendChild(configSettingLink);
+        }
+        if (numberOfResults) {
+            resultSpan = document.createElement('span');
+            if (numberOfConfigSettingResults) {
+                resultSpan.innerText = String(numberOfResults) + " page";
+                resultSpan.innerText =+ numberOfResults > 1 ? "s of " : " of ";
+                const resultSpanLink = document.createElement('a');
+                resultSpanLink.text = "additional information";
+                resultSpanLink.href = "#search-results-anchor";
+                resultSpan.appendChild(resultSpanLink);
+            } else {
+                resultSpan.innerText = String(numberOfResults) + " document";
+                resultSpan.innerText += numberOfResults > 1 ? "s " : " ";
+            }
+        }
+        const searchStatusEl = document.getElementById("search-summary");
+        if (searchStatusEl) {
+            // prefixSpan + configSettingSpan? + " and "? + resultSpan? + postfixSpan
+            searchStatusEl.appendChild(prefixSpan);
+            if (configSettingSpan) {
+                searchStatusEl.appendChild(configSettingSpan);
+                if (resultSpan) {
+                    const andSpan = document.createElement('span');
+                    andSpan.innerText = " and ";
+                    searchStatusEl.appendChild(andSpan);
+                }
+            }
+            if (resultSpan) {
+                searchStatusEl.appendChild(resultSpan);
+            }
+            searchStatusEl.appendChild(postfixSpan);
         }
     }
 
