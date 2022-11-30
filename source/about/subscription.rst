@@ -10,19 +10,20 @@ Mattermost Cloud is a software-as-a-service product. You can sign up for free, f
 Mattermost Nonprofit License program
 --------------------------------------
 
-The Mattermost Nonprofit License enables nonprofit organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted :doc:`Mattermost Professional offering </about/editions-and-offerings.html#mattermost-professional>` towards advancing their missions with special nonprofit pricing.
+The Mattermost Nonprofit License enables nonprofit organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted `:doc:`Mattermost Professional offering </about/editions-and-offerings.html#mattermost-professional>` towards advancing their missions with special nonprofit pricing.
 
 What's included?
 ~~~~~~~~~~~~~~~~~
 
 A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit or charitable institution on our website and in our marketing materials.
 
-Following the three-year free subscription, the institution can renew the license every three years for an additional $250 USD subscription fee.
+Following the three-year subscription, the institution can renew the license every three years for an additional $250 USD subscription fee.
 
 Who's eligible?
 ~~~~~~~~~~~~~~~~
 
 Organizations applying for a non-profit license must meet **ALL** of the following requirements:
+
 - Be able to provide documentation that establishes the organization as a recognized nonprofit status.
 - Have no affiliation with government, academic, commercial, or religious entities.
 - Be unable to afford a commercial Mattermost license.
