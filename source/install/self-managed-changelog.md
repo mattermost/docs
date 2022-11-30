@@ -98,6 +98,7 @@ Latest Mattermost Releases:
  - Fixed an issue where the team name in the channel sidebar header was not accessible.
  - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right panel.
  - Fixed an issue where the OAuth 2.0 deprecation notice was still displayed in the system console.
+ - Fixed an issue where clicking on a reply post time stamp in the global threads inbox opened two right-hand side panels.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
