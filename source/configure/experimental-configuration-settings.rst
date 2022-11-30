@@ -16,7 +16,7 @@ Experimental System Console configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following experimental configuration settings in the System Console by going to **Experimental > Features**. 
+Access the following experimental configuration settings in the System Console by going to **Experimental > Features**.
 
 AD/LDAP login button color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,6 +64,15 @@ Change authentication method
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: experimental-linkmetadatatimeout
+  :displayname: Link metadata timeout (Experimental)
+  :systemconsole: N/A
+  :configjson: LinkMetadataTimeoutMilliseconds
+  :environment: N/A
+
+  Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata.
+  This timeout covers the failure cases of broken URLs and bad content types on slow network connections. Default is 5000 milliseconds.
 
 Link metadata timeout
 ~~~~~~~~~~~~~~~~~~~~~
@@ -249,7 +258,7 @@ Enable tutorial
 | This feature's ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false``.                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable onboarding 
+Enable onboarding
 ~~~~~~~~~~~~~~~~~
 
 **True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
@@ -268,6 +277,13 @@ This setting determines whether "user is typing..." messages are displayed below
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: experimental-usertypingtimeout
+  :displayname: User typing timeout (Experimental)
+  :systemconsole: N/A
+  :configjson: TimeBetweenUserTypingUpdatesMilliseconds
+  :environment: N/A
+  :description: This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds. Default is 5000 milliseconds.
 
 User typing timeout
 ~~~~~~~~~~~~~~~~~~~
@@ -342,6 +358,13 @@ Use channel name in email notifications
 | This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: experimental-userstatusawaytimeout
+  :displayname: User status away timeout (Experimental)
+  :systemconsole: N/A
+  :configjson: UserStatusAwayTimeout
+  :environment: N/A
+  :description: This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost. Default is 300 seconds.
+
 User status away timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -359,7 +382,7 @@ Enable shared channels
 
 *Available in legacy Enterprise Edition E20*
 
-Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart. 
+Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
@@ -373,10 +396,10 @@ Shared channels enables the ability to establish secure connections between Matt
 Enable app bar
 ~~~~~~~~~~~~~~
 
-This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen. 
+This setting enables the Apps Bar and moves all Mattermost integration icons from the channel header to a vertical pane on the far right side of the screen.
 
 .. note::
-  
+
   Integrations currently registered to the channel header will move to the Apps Bar automatically; however, we strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
 
 **True**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
@@ -411,11 +434,11 @@ Enable Bleve indexing
 Index directory
 ~~~~~~~~~~~~~~~
 
-Directory path to use for storing bleve indexes. 
+Directory path to use for storing bleve indexes.
 
 .. tip::
-   
-   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details. 
+
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our `Upgrading Mattermost Server <https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html>`__ documentation for details.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
@@ -478,7 +501,7 @@ Allowed themes
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``. 
+Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
@@ -494,7 +517,7 @@ Maximum users for statistics
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. 
+Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled.
 
 This setting is used to maximize performance for large Enterprise deployments.
 
@@ -507,7 +530,7 @@ Latest Android version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The latest version of the Android React Native app that is recommended for use. 
+The latest version of the Android React Native app that is recommended for use.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -518,7 +541,7 @@ Minimum Android version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The minimum version of the Android React Native app that is required to be used. 
+The minimum version of the Android React Native app that is required to be used.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -529,7 +552,7 @@ Latest iOS version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The latest version of the iOS app that is recommended for use. 
+The latest version of the iOS app that is recommended for use.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -540,7 +563,7 @@ Minimum iOS version
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The minimum version of the iOS React Native app that is required to be used. 
+The minimum version of the iOS React Native app that is required to be used.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
@@ -583,7 +606,7 @@ Push notification buffer
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room. 
+Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
@@ -605,7 +628,7 @@ File configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. 
+Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps.
 
 **True**: File output is enabled.
 
@@ -620,7 +643,7 @@ File name
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the path to the output file location. 
+This is the path to the output file location.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).                                    |
@@ -631,7 +654,7 @@ File max size MB
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100. 
+This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. The default setting is 100.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxSizeMB": 100`` with numerical input. |
@@ -642,7 +665,7 @@ File max age days
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age. 
+This is the maximum age in days a file can reach before triggering rotation. The default value is 0, indicating no limit on the age.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxAgeDays": 0`` with numerical input. |
@@ -653,7 +676,7 @@ File max backups
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups. 
+This is the maximum number of rotated files kept; the oldest is deleted first. The default value is 0, indicating no limit on the number of backups.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileMaxBackups": 0`` with numerical input. |
@@ -664,7 +687,7 @@ File compress
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-When ``true``, rotated files are compressed using ``gzip``. 
+When ``true``, rotated files are compressed using ``gzip``.
 
 +----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileCompress": false`` with options ``true`` and ``false``. |
@@ -675,7 +698,7 @@ File max queue size
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records. 
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is 1000 records.
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +----------------------------------------------------------------------------------------------+
@@ -687,7 +710,7 @@ Syslog configuration options
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings. 
+Enable this setting to write audit records to a local or remote syslog, specifying the IP, port, user-generated fields, and certificate settings.
 
 **True**: Syslog output is enabled.
 
@@ -702,7 +725,7 @@ Syslog IP
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The IP address or domain of the syslog server. Use ``localhost`` for local syslog. 
+The IP address or domain of the syslog server. Use ``localhost`` for local syslog.
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogIP": "localhost"`` with string input consisting of an IP address or domain name. |
@@ -713,7 +736,7 @@ Syslog port
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The port that the syslog server is listening on. The default port is 6514. 
+The port that the syslog server is listening on. The default port is 6514.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogPort": 6514`` with numeric input consisting of a port number. |
@@ -735,7 +758,7 @@ Syslog cert
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``). 
+This is the path to the syslog server certificate for TLS connections (``.crt`` or ``.pem``).
 
 +-----------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SysLogCert": ""`` with string input consisting of the path to the certificate. |
@@ -746,9 +769,9 @@ Syslog insecure
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks. 
+This setting controls whether a client verifies the server's certificate chain and host name. If ``true``, TLS accepts any certificate presented by the server and any host name in that certificate. In this mode, TLS is susceptible to man-in-the-middle attacks.
 
-.. note:: 
+.. note::
    This should be used only for testing and not in a production environment.
 
 +------------------------------------------------------------------------------------------------------------+
@@ -760,7 +783,7 @@ Syslog max queue size
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records. 
+This setting determines how many audit records can be queued/buffered at any point in time when writing to syslog. The default is 1000 records.
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +------------------------------------------------------------------------------------------------+
@@ -790,7 +813,7 @@ Remote clusters
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Enable this setting to add, remove, and view remote clusters for shared channels. 
+Enable this setting to add, remove, and view remote clusters for shared channels.
 
 **True**: System Admins can manage remote clusters using the System Console.
 
@@ -861,7 +884,7 @@ Maximum image resolution
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Maximum image resolution size for message attachments in pixels. 
+Maximum image resolution size for message attachments in pixels.
 
 +--------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
@@ -932,6 +955,13 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": ""`` with string input. |
 +------------------------------------------------------------------------------+
 
+.. config:setting:: experimental-globalrelaysmtptimeout
+  :displayname: Global relay SMTP server timeout (Experimental)
+  :systemconsole: N/A
+  :configjson: GlobalRelaySettings.SMTPServerTimeout
+  :environment: N/A
+  :description: The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. Default is 1800 seconds.
+
 Global relay SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -996,7 +1026,7 @@ Export from timestamp
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Set the Unix timestamp (seconds since epoch, UTC) to export data from. 
+Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExportFromTimestamp": 0`` with numerical input. |
@@ -1022,7 +1052,7 @@ App custom URL schemes
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client. 
+Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client.
 
 When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
 
@@ -1090,7 +1120,7 @@ Plugin directory
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. 
+The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
@@ -1101,7 +1131,7 @@ Client plugin directory
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it. 
+The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientDirectory": "./client/plugins"`` with string input.          |
@@ -1144,11 +1174,11 @@ Group unread channels
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console. 
+This setting applies to the new sidebar only. You must disable the `Enable Legacy Sidebar <https://docs.mattermost.com/configure/configuration-settings.html#enable-legacy-sidebar>`__ configuration setting to see and enable this functionality in the System Console.
 
 **Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
 
-**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**. 
+**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |
@@ -1193,7 +1223,7 @@ The following values are currently supported:
 - ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 - ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 
-This configuration setting is disabled by default and requires `developer mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled. 
+This configuration setting is disabled by default and requires `developer mode <https://docs.mattermost.com/configure/configuration-settings.html#enable-developer-mode>`__ to be enabled.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
@@ -1215,9 +1245,9 @@ Enable file search
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our `Enable Document Search by Content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__ documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon. 
+This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our `Enable Document Search by Content <https://docs.mattermost.com/configure/configuration-settings.html#enable-document-search-by-content>`__ documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
 
-**True**: Supported document types are searchable by their filename. 
+**True**: Supported document types are searchable by their filename.
 
 **False**: File-based searches are disabled.
 
@@ -1327,7 +1357,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 .. tip::
 
-  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``. 
+  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``.
 
 Enable local mode socket location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1347,7 +1377,7 @@ Default channels
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server. 
+Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server.
 
 When not set, every user is added to the ``off-topic`` and ``town-square`` channels by default.
 

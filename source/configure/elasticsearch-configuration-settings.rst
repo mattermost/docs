@@ -1,7 +1,7 @@
 :orphan:
 :nosearch:
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch </scale/elasticsearch.html>`__ in our product documentation. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch </scale/elasticsearch.html>`__ in our product documentation.
 
 Configure the Elasticsearch environment in which Mattermost is deployed by going to **System Console > Environment > Elasticsearch**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
@@ -109,9 +109,9 @@ Purge indexes
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| Configure Mattermost to purge the entire Elasticsearch index. | - System Config path: **Environment > Elasticsearch**       |        
+| Configure Mattermost to purge the entire Elasticsearch index. | - System Config path: **Environment > Elasticsearch**       |
 | Typically only used if the index has corrupted and search     | - ``config.json`` setting: N/A                              |
-| isn't behaving as expected.                                   | - Environment variable: N/A                                 |          
+| isn't behaving as expected.                                   | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Select the **Purge Indexes** button in the System Console to purge the index.                                               |
 | After purging the index, create a new index by selecting the **Index Now** button.                                          |
@@ -124,8 +124,8 @@ Enable Elasticsearch for search queries
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch for all search      | - System Config path: **Environment > Elasticsearch**                           |
-| queries using the latest index                                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |  
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            | 
+| queries using the latest index                                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            |
 | - **true**: Elasticsearch will be used for all search         |                                                                                 |
 |   queries using the latest index. Search results may be       |                                                                                 |
 |   incomplete until a bulk index of the existing post database |                                                                                 |
@@ -161,7 +161,7 @@ Post index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
 | Numerical input. Default is 1.                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       | 
+| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       |
 | existing indexes, purge and rebuild the index after changing this setting.                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -175,7 +175,7 @@ Post index shards
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       | 
+| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       |
 | existing indexes, purge and rebuild the index after changing this setting.                                                                    |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -246,7 +246,7 @@ Post aggregator start time
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: 03:00",`` | 
+|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: 03:00",`` |
 | Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
 | the local time of the server.                                 |                                                                                             |
 |                                                               |                                                                                             |
@@ -278,8 +278,8 @@ Live indexing batch size
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
 | Numerical input. Default is **1**.                            |                                                                                   |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| **Note**: It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling           | 
-| multiple messages per second.                                                                                                                     |    
+| **Note**: It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling           |
+| multiple messages per second.                                                                                                                     |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 Bulk indexing time window
@@ -291,7 +291,7 @@ Bulk indexing time window
 | The maximum time window, in seconds, for a batch of posts     | - System Config path: **Environment > Elasticsearch**                                        |
 | being indexed by the Bulk Indexer. This setting serves as a   | - ``config.json`` setting: ``".Elasticsearchsettings.BulkIndexingTimeWindowSeconds: 3600",`` |
 | performance optimization for installs with over               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
-|  ~10 million posts in the database.                           |                                                                                              |
+| ~10 million posts in the database.                            |                                                                                              |
 |                                                               |                                                                                              |
 | Numerical input in seconds. Default is **3600** seconds       |                                                                                              |
 | (1 hour). Approximate this value based on the average number  |                                                                                              |
@@ -300,6 +300,13 @@ Bulk indexing time window
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | **Note**: Setting this value too low will cause bulk indexing jobs to run slowly.                                                                            |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+.. config:setting:: elasticsearch-requesttimeout
+  :displayname: Request timeout (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.RequestTimeoutSeconds
+  :environment: MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS
+  :description: The timeout, in seconds, for Elasticsearch calls. Default is 30 seconds.
 
 Request timeout
 ~~~~~~~~~~~~~~~

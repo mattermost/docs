@@ -107,6 +107,13 @@ Enable security alerts
 | See the `Telemetry </manage/telemetry.html#security-update-check-feature>`__ documentation to learn more.                                          |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
+.. config:setting:: elasticsearch-requesttimeout
+  :displayname: SMTP server timeout (SMTP)
+  :systemconsole: Environment > SMTP
+  :configjson: .EmailSettings.SMTPServerTimeout
+  :environment: MM_EMAILSETTINGS_SMTPSERVERTIMEOUT
+  :description: The maximum amount of time, in seconds, allowed for establishing a TCP connection between Mattermost and the SMTP server.
+
 SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~
 
@@ -115,7 +122,7 @@ SMTP server timeout
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 | The maximum amount of time, in seconds, allowed for             | - System Config path: **Environment > SMTP**                         |
 | establishing a TCP connection between Mattermost and the SMTP   | - ``config.json setting``: ``".EmailSettings.SMTPServerTimeout",``   |
-| server to be idle before being terminated.                      | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVERTIMEOUT``       |
+| server.                                                         | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVERTIMEOUT``       |
 |                                                                 |                                                                      |
 | Numerical value in seconds.                                     |                                                                      |
 +-----------------------------------------------------------------+----------------------------------------------------------------------+

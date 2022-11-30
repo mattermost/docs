@@ -87,6 +87,15 @@ Session cache
 | Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSONCACHEINMINUTES``         |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
+.. config:setting:: servicesettings-sessionidletimeout
+  :displayname: Session idle timeout (Session Lengths)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.SessionIdleTimeoutInMinutes
+  :environment: MM_SERVICESETTINGS_SESSONIDLETIMEOUTINMINUTES
+
+  The number of minutes from the last time a user was active on the system to the expiry of the user’s session. Once expired, the user will need to log in to continue.
+  Default is 43200 minutes (30 days). Minimum value is 5 minutes, and a value of 0 sets the time as unlimited.
+
 Session idle timeout
 ~~~~~~~~~~~~~~~~~~~~
 

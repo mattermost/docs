@@ -137,11 +137,11 @@ Let's Encrypt certificate cache file
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: servicesettings-readtimeout
-  :displayname: Read timeout
+  :displayname: Read timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ReadTimeout
   :environment: MM_SERVICESETTINGS_READTIMEOUT
-  :description: Maximum time allowed from when the connection is accepted to when the request body is fully read.
+  :description: Maximum time allowed from when the connection is accepted to when the request body is fully read. Default is 300 seconds.
 
 Read timeout
 ~~~~~~~~~~~~
@@ -156,13 +156,14 @@ Read timeout
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: servicesettings-writetimeout
-  :displayname: Write timeout
+  :displayname: Write timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.WriteTimeout
   :environment: MM_SERVICESETTINGS_WRITETIMEOUT
 
   If using HTTP (insecure), this is the maximum time, in seconds, allowed from the end of reading the request headers until the response is written.
   If using HTTPS, it's the total time, in seconds, from when the connection is accepted until the response is written.
+  Default is 300 seconds.
 
 Write timeout
 ~~~~~~~~~~~~~
@@ -180,11 +181,11 @@ Write timeout
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: servicesettings-idletimeout
-  :displayname: Idle timeout
+  :displayname: Idle timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.IdleTimeout
   :environment: MM_SERVICESETTINGS_IDLETIMEOUT
-  :description: This is the maximum time, in seconds, allowed before an idle connection is disconnected.
+  :description: This is the maximum time, in seconds, allowed before an idle connection is disconnected. Default is 300 seconds.
 
 Idle timeout
 ~~~~~~~~~~~~
@@ -456,6 +457,13 @@ Allow cookies for subdomains
 | - **false**: Cookies not allowed for subdomains.       |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
+.. config:setting:: servicesettings-clusterlogtimeout
+  :displayname: Cluster log timeout (Web Server)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.ClusterLogTimeoutMilliseconds
+  :environment: MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS
+  :description: Define the frequency, in milliseconds, of cluster request time logging for performance monitoring. Default is 2000 milliseconds.
+
 Cluster log timeout
 ~~~~~~~~~~~~~~~~~~~
 
@@ -467,7 +475,7 @@ Cluster log timeout
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                               |
 | request time logging for performance monitoring.       | - ``config.json`` setting: ``".ServiceSettings.ClusterLogTimeoutMilliseconds: 2000",``  |
-| for performance monitoring                             | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
 |                                                        |                                                                                         |
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |

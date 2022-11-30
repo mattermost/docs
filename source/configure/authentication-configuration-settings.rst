@@ -41,7 +41,7 @@ Enable account creation
 | - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message. | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
 |                                                                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
 +------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
- 										      
+
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -53,7 +53,7 @@ Restrict account creation to specified email domains
 
 Enable open server
 ~~~~~~~~~~~~~~~~~~
-  
+
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | - **true**: Users can create accounts on the server without an invitation.                       | - System Config path: **Authentication > Signup**                   |
 | - **false**: **(Default)** Users **must** have an invitation to create an account on the server. | - ``config.json`` setting: ``.TeamSettings.EnableOpenServer``       |
@@ -628,6 +628,13 @@ Maximum page size
 | Numerical input. Default is **0**.                                                                                           |                                                             |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
+.. config:setting:: ldapsettings-querytimeout
+  :displayname: Query timeout (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.QueryTimeout
+  :environment: MM_LDAPSETTINGS_QUERYTIMEOUT
+  :description: This setting determines the timeout period, in seconds, for AD/LDAP queries. Default is 60 seconds.
+
 Query timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -724,7 +731,7 @@ Ignore guest users when synchronizing with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``. 
+Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``.
 
 **True**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal. Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
 
@@ -1122,7 +1129,7 @@ OAuth 2.0
 Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**.
 
 .. note::
-  
+
   OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect>`__ in a future release.
 
 Settings to configure OAuth login for account creation and login.
@@ -1154,7 +1161,7 @@ Enable authentication with GitLab
 
 **False**: GitLab OAuth cannot be used for team creation or account signup.
 
-.. note:: 
+.. note::
    For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
 
 +----------------------------------------------------------------------------------------------------+
@@ -1525,7 +1532,7 @@ Client secret
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
-OpenID Connect (other) 
+OpenID Connect (other)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst

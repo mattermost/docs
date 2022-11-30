@@ -100,6 +100,7 @@ const Scorer = {
  * @type {object}
  * @property {number} score
  * @property {ConfigSettingRecord} page
+ * @property {Record<string,any>} matchData
  */
 
 /* JSDoc type definition for a search result */
@@ -287,11 +288,11 @@ class SearchClass {
         this._lunrConfigSettingIndex = lunr((builder) => {
             builder.pipeline.before(lunr.stemmer, this.configjsonFilter);
             builder.pipeline.before(lunr.stemmer, this.environmentVarFilter);
-            builder.field("displayname");
-            builder.field("systemconsole");
+            builder.field("displayname", { boost: 1 });
+            builder.field("systemconsole", { boost: 0.5 });
             builder.field("configjson");
             builder.field("environment");
-            builder.field("description");
+            builder.field("description", { boost: 2 });
             builder.ref("anchor");
             for (const record of index) {
                 // console.log(`lunr(): record=${JSON.stringify(record)}`);
@@ -372,7 +373,7 @@ class SearchClass {
         let configSettingSearchResults = [];
         if (this.hasConfigSettingsIndex()) {
             console.log("query(): searching lunr");
-            /** @type {Array<{score: number, ref: string}>} */
+            /** @type {Array<{score: number, ref: string, matchData: Record<string,any>}>} */
             const lunrResults = this._lunrConfigSettingIndex.search(query);
             console.log(`query(): lunr search returned ${lunrResults.length} results`);
             configSettingSearchResults = lunrResults.map((result) => {
@@ -381,6 +382,7 @@ class SearchClass {
                 return {
                     score: result.score,
                     page: configSetting[0],
+                    matchData: result.matchData,
                 };
             });
             // sort the results by descending score
@@ -582,8 +584,8 @@ class SearchClass {
         }
 
         // print the config setting results
-        for (const configSettingSearchResult of configSettingSearchResults) {
-            this.displayConfigSettingResultItem(configSettingSearchResult, hlterms);
+        for (let x = configSettingSearchResults.length; x > 0; x--) {
+            this.displayConfigSettingResultItem(configSettingSearchResults[x - 1], hlterms);
         }
         // print the additional information results
         for (let x = results.length; x > 0; x--) {
@@ -741,6 +743,11 @@ class SearchClass {
 
         // Append the description table
         div.appendChild(table);
+
+        // DEBUG: display score and match data
+        // const debugPara = document.createElement('p');
+        // debugPara.innerText = `score=${item.score}, matchData=${JSON.stringify(item.matchData)}`;
+        // div.appendChild(debugPara);
 
         // Highlight search terms in the description cell
         const mark = new Mark(itemDesc);

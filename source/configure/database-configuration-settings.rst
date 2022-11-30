@@ -88,12 +88,12 @@ Maximum open connections
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: sqlsettings-querytimeout
-  :displayname: Query timeout
+  :displayname: Query timeout (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.QueryTimeout
   :environment: MM_SQLSETTINGS_QUERYTIMEOUT
 
-  The amount of time to wait, in seconds, for a response from the database after opening a connection and sending the query.
+  The amount of time to wait, in seconds, for a response from the database after opening a connection and sending the query. Default is 30 seconds.
 
 Query timeout
 ~~~~~~~~~~~~~
@@ -124,11 +124,11 @@ Maximum connection lifetime
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: sqlsettings-connmaxidletime
-  :displayname: Maximum connection idle timeout
+  :displayname: Maximum connection idle timeout (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.ConnMaxIdleTimeMilliseconds
   :environment: MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS
-  :description: Maximum time a database connection can remain idle, in milliseconds.
+  :description: Maximum time a database connection can remain idle, in milliseconds. Default is 300000 milliseconds (5 minutes).
 
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,19 +295,19 @@ Replica lag settings
 |                                                                                                                                           |
 | For AWS Aurora instances, ``QueryAbsoluteLag`` can be:                                                                                    |
 |                                                                                                                                           |
-| .. code-block:: sh                                                                                                                        |
+| .. code-block:: sql                                                                                                                       |
 |                                                                                                                                           |
 |   select server_id, highest_lsn_rcvd-durable_lsn as bindiff from aurora_global_db_instance_status() where server_id=<>                    |
 |                                                                                                                                           |
 | And for AWS Aurora instances, ``QueryTimeLag`` can be:                                                                                    |
 |                                                                                                                                           |
-| .. code-block:: sh                                                                                                                        |
+| .. code-block:: sql                                                                                                                       |
 |                                                                                                                                           |
 |   select server_id, visibility_lag_in_msec from aurora_global_db_instance_status() where server_id=<>                                     |
 |                                                                                                                                           |
 | For MySQL Group Replication, the absolute lag can be measured from the number of pending transactions in the applier queue:               |
 |                                                                                                                                           |
-| .. code-block:: sh                                                                                                                        |
+| .. code-block:: sql                                                                                                                       |
 |                                                                                                                                           |
 |   select member_id, count_transactions_remote_in_applier_queue FROM performance_schema.replication_group_member_stats where member_id=<>  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+

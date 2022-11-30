@@ -6,7 +6,7 @@ You can configure Mattermost as a `high availability environment </scale/high-av
 
 In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
-Enable high availability mode 
+Enable high availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
@@ -154,7 +154,7 @@ Read only config
 | - **true**: **(Default)** Changes made to settings in the       | - System Config path: N/A                                              |
 |   System Console are ignored.                                   | - ``config.json`` setting: ``".ClusterSettings.ReadOnlyConfig: true,`` |
 | - **false**: Changes made to settings in the System Console     | - Environment variable: ``MM_CLUSTERSETTINGS_READONLYCONFIG``          |
-|   are written to ``config.json``.                               |                                                                        | 
+|   are written to ``config.json``.                               |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 Network interface
@@ -223,6 +223,13 @@ Maximum idle connections per host
 | Numerical input. Default is **128**.                            |                                                                              |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------+
 
+.. config:setting:: clustersettings-idleconnectiontimeout
+  :displayname: Idle connection timeout (High Availability)
+  :systemconsole: N/A
+  :configjson: .ClusterSettings.IdleConnTimeoutMilliseconds
+  :environment: MM_CLUSTERSETTINGS_IDLECONNTIMEOUTMILLISECONDS
+  :description: The amount of time, in milliseconds, to leave an idle connection open between servers in the cluster. Default is **90000** seconds.
+
 Idle connection timeout
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -232,5 +239,5 @@ Idle connection timeout
 | The amount of time, in milliseconds, to leave an idle           | - System Config path: N/A                                                             |
 | connection open between servers in the cluster.                 | - ``config.json`` setting: ``".ClusterSettings.IdleConnTimeoutMilliseconds: 90000",`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_IDLECONNTIMEOUTMILLISECONDS``            |
-| Numerical input. Default is **90000**.                          |                                                                                       | 
+| Numerical input. Default is **90000**.                          |                                                                                       |
 +-----------------------------------------------------------------+---------------------------------------------------------------------------------------+
