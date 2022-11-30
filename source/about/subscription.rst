@@ -31,7 +31,7 @@ Organizations applying for a non-profit license must meet **ALL** of the followi
 
 If your organization doesn’t fit this description, we suggest that you purchase a `commercial license <https://mattermost.com/pricing/>` instead.
 
-If you represent an open source community or project that is not hosted under a recognized nonprofit but would like a commercial license for Mattermost, please email community@mattermost.com with your organization’s needs and requirements.
+If you represent an open source community or project that is not hosted under a recognized nonprofit, but would like a commercial license for Mattermost, please email community@mattermost.com with your organization’s needs and requirements.
 
 How to apply?
 ~~~~~~~~~~~~~
