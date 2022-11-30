@@ -1934,3 +1934,13 @@ img.mm-badge-flag {
 	font-size: 120%;
 	padding-bottom: 12px;
 }
+
+/* Config setting description highlighting for search results */
+mark {
+	background: #F1C40F;
+	color: grey;
+	font-size: 90%;
+	font-weight: 700;
+	box-shadow: 0 0 0 2px #F1C40F;
+	font-style: unset;
+}

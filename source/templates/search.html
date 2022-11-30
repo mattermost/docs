@@ -12,6 +12,11 @@
 {% set display_vcs_links = False %}
 {%- block scripts %}
     <script type="text/javascript" src="https://unpkg.com/lunr@2.3.9/lunr.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.es6.min.js"
+            integrity="sha512-jZSRKDD86PmExf0ZoXQEMxhtxvLtOxo2xMJwgnx3VE/5VT5c8LCsnvut4wK3fIdFyO4szlbz/2tpg+xulnJDyQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
     {{ super() }}
     <script type="text/javascript" src="{{ pathto('_static/searchtools.js', 1) }}"></script>
     <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>

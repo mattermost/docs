@@ -583,7 +583,7 @@ class SearchClass {
 
         // print the config setting results
         for (const configSettingSearchResult of configSettingSearchResults) {
-            this.displayConfigSettingResultItem(configSettingSearchResult);
+            this.displayConfigSettingResultItem(configSettingSearchResult, hlterms);
         }
         // print the additional information results
         for (let x = results.length; x > 0; x--) {
@@ -633,7 +633,7 @@ class SearchClass {
             resultSpan = document.createElement('span');
             if (numberOfConfigSettingResults) {
                 resultSpan.innerText = String(numberOfResults) + " page";
-                resultSpan.innerText =+ numberOfResults > 1 ? "s of " : " of ";
+                resultSpan.innerText += numberOfResults > 1 ? "s of " : " of ";
                 const resultSpanLink = document.createElement('a');
                 resultSpanLink.text = "additional information";
                 resultSpanLink.href = "#search-results-anchor";
@@ -664,9 +664,10 @@ class SearchClass {
 
     /**
      * Display a single config setting search result item
-     * @param {ConfigSettingSearchResult} item
+     * @param {ConfigSettingSearchResult} item The result item to display
+     * @param {Array<string>} searchterms The terms used in the search
      */
-    displayConfigSettingResultItem(item) {
+    displayConfigSettingResultItem(item, searchterms) {
         // The result info is displayed in a div
         const div = document.createElement("div");
         div.classList.add("config-setting-result-item");
@@ -740,6 +741,12 @@ class SearchClass {
 
         // Append the description table
         div.appendChild(table);
+
+        // Highlight search terms in the description cell
+        const mark = new Mark(itemDesc);
+        for (const searchterm of searchterms) {
+            mark.mark(searchterm);
+        }
 
         // Find the results div and add this result to it
         const resultsListEl = document.getElementById("config-setting-results-list");
