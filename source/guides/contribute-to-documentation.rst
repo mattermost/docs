@@ -8,7 +8,7 @@ If you’re interested in contributing to Mattermost, why not help improve the p
 How to get started
 ------------------
 
-The fastest way to get started with a documentation contribution is to find something you want to change in the documentation, such as a typo or link fix, or updating content for clarity. Select **Edit** in the top-right corner of the page. 
+The fastest way to get started with a documentation contribution is to find something you want to change in the documentation, such as a typo or link fix, or updating content for clarity. Once you've found a page you want to update, select **Edit** in the top-right corner of that page. 
 
 .. image:: ../images/edit-on-github.png
     :height: 50
