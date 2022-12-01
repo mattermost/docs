@@ -12,11 +12,11 @@ Moving data from one Mattermost instance into another begins with exporting data
 You can export the following data types:
 
 - Teams
-- Channels (Public and Private)
+- Channels (public, private, and direct)
 - Users
-- Users' Team memberships
-- Users' Channel memberships
-- Posts (Posts in the public/private channels and also replies to those posts)
+- Users' team memberships
+- Users' channel memberships
+- Posts (messages in public or private channels and replies to those messages)
 
 .. include:: bulk-export-data.rst
   :start-after: :nosearch:
