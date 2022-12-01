@@ -25,7 +25,7 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - Updated macOS supported version to 11+.
- - **My Insights** and OpenId Connect were added to the Free plan.
+ - **My Insights** and OpenId Connect were added to the Mattermost Free plan.
  - All integration limits and usage limit components were removed.
  - Team scheme APIs are now allowed to be administered with a Professional plan.
  - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
