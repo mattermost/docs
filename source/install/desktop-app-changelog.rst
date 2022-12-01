@@ -23,6 +23,7 @@ Release v5.2
  - Fixed an issue where ``AppImageLauncher`` still created a bad shortcut that caused the app not to launch `MM-48557 <https://mattermost.atlassian.net/browse/MM-48557>`_.
  - Fixed an issue where notifications were not displayed on Windows v8 and v8.1 `MM-48397 <https://mattermost.atlassian.net/browse/MM-48397>`_.
  - Fixed an issue where users could get stuck after finished the Getting Started flow `MM-48682 <https://mattermost.atlassian.net/browse/MM-48682>`_.
+ - Fixed an issue where the window resize did not work on some windows machines `MM-48574 <https://mattermost.atlassian.net/browse/MM-48574>`_.
 - **v5.2.1, released 2022-11-15**
  - Fixed an issue on ``.exe`` installers where the onboarding screen was still displayed even when there was a preconfigured server list `MM-48079 <https://mattermost.atlassian.net/browse/MM-48079>`_.
  - Fixed an issue where the default downloads location was not set on macOS `MM-48167 <https://mattermost.atlassian.net/browse/MM-48167>`_.
