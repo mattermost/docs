@@ -11,7 +11,7 @@ Slash commands are available for playbooks. The ``/playbook`` slash command allo
 
 Available slash commands include:
 
-- ``/playbook start`` - Start a playbook run.
+- ``/playbook run`` - Start a playbook run.
 - ``/playbook end`` - End a playbook run.
 - ``/playbook update`` - Update the current playbook run's status.
 - ``/playbook restart`` - Restart an ended playbook run.
