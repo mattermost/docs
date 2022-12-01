@@ -33,9 +33,7 @@ Latest Mattermost Mobile Apps releases:
  - Improved app stability so users encounter fewer crashes and bugs.
 
 ### Known Issues
- - On iOS, the icon badge number may not reflect the correct mention count accross all servers.
- - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
- - Posts sometimes get stuck behind the post textbox on iPad.
+ - 
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
