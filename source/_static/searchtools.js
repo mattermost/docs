@@ -181,6 +181,16 @@ class SearchClass {
     }
 
     /**
+     * Strips all HTML tags from the source string and returns it
+     * @param {string} htmlString The source HTML string
+     * @returns {string} The source string stripped of all HTML tags
+     */
+    stripHtml(htmlString) {
+        const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+        return doc.body.textContent || '';
+    }
+
+    /**
      * Load the search index data from the specified URL
      * @param url {string} The URL to load search index data from
      */
@@ -296,7 +306,10 @@ class SearchClass {
             builder.ref("anchor");
             for (const record of index) {
                 // console.log(`lunr(): record=${JSON.stringify(record)}`);
-                builder.add(record);
+                // Strip HTML tags from the description field before adding it to the Lunr index
+                const strippedDescriptionRecord = { ...record };
+                strippedDescriptionRecord.description = this.stripHtml(record.description);
+                builder.add(strippedDescriptionRecord);
             }
         });
         // console.log("setConfigSettingsIndex(): finished building lunr index");
@@ -699,9 +712,7 @@ class SearchClass {
         tableRow.classList.add("row-odd");
         // The first cell contains the description of the config setting
         const itemDescCell = document.createElement("td");
-        const itemDesc = document.createElement("p");
-        itemDesc.innerText = item.page.description;
-        itemDescCell.appendChild(itemDesc);
+        itemDescCell.innerHTML = item.page.description;
         // The second cell contains metadata about the config setting
         const itemDetailCell = document.createElement("td");
         const itemDetailCellList = document.createElement("ul");
@@ -750,7 +761,7 @@ class SearchClass {
         // div.appendChild(debugPara);
 
         // Highlight search terms in the description cell
-        const mark = new Mark(itemDesc);
+        const mark = new Mark(itemDescCell);
         for (const searchterm of searchterms) {
             mark.mark(searchterm);
         }

@@ -35,15 +35,15 @@ The Mattermost API can be used to export a user's posts in CSV compliance format
 
 To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using curl, you can authenticate using the following command:
 
-.. code-block:: json
+.. code-block:: text
 
   curl -i -d '{"login_id": "username", "password": "password"}' https://yourmattermosturl/api/v4/users/login
 
 Mattermost will return a response that looks like this:
 
-.. code-block:: json
+.. code-block:: text
 
-  HTTP/2 200 
+  HTTP/2 200
   server: nginx/1.10.3 (Ubuntu)
   date: Thu, 12 Jul 2018 14:43:45 GMT
   content-type: application/json
@@ -56,7 +56,7 @@ Mattermost will return a response that looks like this:
 
 Include the ``token`` value sent in the response as part of the Authorization header on your future API requests with the Bearer method, e.g.:
 
-.. code-block:: json
+.. code-block:: text
 
   curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me
 
@@ -66,7 +66,7 @@ Once you're authenticated into Mattermost, you can use the `Compliance API to cr
 
   The data in the JSON payload must be formatted as Unix Epoch. A tool like https://www.epochconverter.com/ can be useful when converting to and from the required format.
 
-.. code-block:: json
+.. code-block:: text
 
   curl --header "Content-Type: application/json" \
   --request POST \
@@ -82,7 +82,7 @@ If the post is successful, Mattermost will return a message that looks like the 
 
 When the export process is complete (the execution time is based on the number of records to return and the current server load), you will need to send another HTTP Post request to Mattermost to retrieve and download a zip file containing the report that looks like the following curl request:
 
-.. code-block:: json
+.. code-block:: text
 
   curl --request GET \
   -H 'Authorization: Bearer p9o1qx457fbc9gdrn39z9ah59o' \
@@ -98,14 +98,14 @@ Mattermost database
 Selecting messages from the Mattermost database using standard SQL is quite easy. If you know the username, the following query can be used to select all messages for the specified user:
 
 .. code-block:: sql
-  
+
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username');
 
 If you want to limit the results of the query based on the date and time that the messages were posted, you can modify the above query to:
 
 .. code-block:: sql
-  
+
   SELECT * FROM mattermost.Posts WHERE UserId = (SELECT Id FROM mattermost.Users WHERE Username = 'username' AND CreateAt > 1530405832000 AND CreateAt < 1532997832000);
 
-.. note:: 
+.. note::
   The Mattermost database stores date and time stamps in the `Unix Epoch <https://en.wikipedia.org/wiki/Unix_time>`__ format. A tool like the `Epoch Converter <https://www.epochconverter.com/>`__ can be useful in converting to and from the required format.

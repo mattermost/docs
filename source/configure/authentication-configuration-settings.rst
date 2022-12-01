@@ -33,6 +33,15 @@ Signup
 
 Access the following configuration settings in the System Console by going to **Authentication > Signup**.
 
+.. config:setting:: signup-enableaccountcreation
+  :displayname: Enable account creation (Signup)
+  :systemconsole: Authentication > Signup
+  :configjson: .TeamSettings.EnableUserCreation
+  :environment: MM_TEAMSETTINGS_ENABLEUSERCREATION
+
+  - **true**: **(Default)** New accounts can be created by an email invitation or a public team invitation link.
+  - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message.
+
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -41,6 +50,18 @@ Enable account creation
 | - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message. | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
 |                                                                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
 +------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. config:setting:: signup-restrictcreationtodomains
+  :displayname: Restrict account creation to specified email domains (Signup)
+  :systemconsole: Authentication > Signup
+  :configjson: .TeamSettings.RestrictCreationToDomains
+  :environment: MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS
+
+  This setting limits the email address domains that can be used to create a new account or team.
+  You **must** set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true`` for the restriction to function.
+  This setting only affects email login.
+
+  String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``
 
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,6 +72,15 @@ Restrict account creation to specified email domains
 | String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                    | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
+.. config:setting:: signup-enableopenserver
+  :displayname: Enable open server (Signup)
+  :systemconsole: Authentication > Signup
+  :configjson: .TeamSettings.EnableOpenServer
+  :environment: MM_TEAMSETTINGS_ENABLEOPENSERVER
+
+  - **true**: Users can create accounts on the server without an invitation.
+  - **false**: **(Default)** Users **must** have an invitation to create an account on the server.
+
 Enable open server
 ~~~~~~~~~~~~~~~~~~
 
@@ -59,6 +89,15 @@ Enable open server
 | - **false**: **(Default)** Users **must** have an invitation to create an account on the server. | - ``config.json`` setting: ``.TeamSettings.EnableOpenServer``       |
 |                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_ENABLEOPENSERVER``        |
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+.. config:setting:: signup-enableemailinvitations
+  :displayname: Enable email invitations (Signup)
+  :systemconsole: Authentication > Signup
+  :configjson: .ServiceSettings.EnableEmailInvitations
+  :environment: MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS
+
+  - **true**: Allows users to send email invitations.
+  - **false**: **(Default)** Disables email invitations.
 
 Enable email invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,14 +127,32 @@ Email
 
 Access the following configuration settings in the System Console by going to **Authentication > Email**.
 
+.. config:setting:: email-enableaccountcreation
+  :displayname: Enable account creation with email (Email)
+  :systemconsole: Authentication > Email
+  :configjson: .EmailSettings.EnableSignUpWithEmail
+  :environment: MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL
+
+  - **true**: **(Default)** Allows creation of team and user accounts with email and password.
+  - **false**: Disables creation of team and user accounts with email and password. This requires a single sign-on service to create accounts.
+
 Enable account creation with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | - **true**: **(Default)** Allows creation of team and user accounts with email and password.                                                        | - System Config path: **Authentication > Email**                    |
-| - **false**: Disables creation of team and user accounts with email and password. This requries a single sign-on service to create accounts.        | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
+| - **false**: Disables creation of team and user accounts with email and password. This requires a single sign-on service to create accounts.        | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
 |                                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL``  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+.. config:setting:: email-requireverification
+  :displayname: Require email verification (Signup)
+  :systemconsole: Authentication > Email
+  :configjson: .EmailSettings.RequireEmailVerification
+  :environment: MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION
+
+  - **true**: Requires email verification for new accounts before allowing the user to sign-in.
+  - **false**: **(Default)** Disables email verification. This can be used to speed development by skipping the verification process.
 
 Require email verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,6 +163,15 @@ Require email verification
 |                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION``  |
 +-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
+.. config:setting:: email-enablesigninwithemail
+  :displayname: Enable sign-in with email (Signup)
+  :systemconsole: Authentication > Email
+  :configjson: .EmailSettings.EnableSignInWithEmail
+  :environment: MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL
+
+  - **true**: **(Default)** Allows users to sign-in with email and password.
+  - **false**: Disables authentication with email and password, and removes the option from the login screen. Use this option to limit authentication to single sign-on services.
+
 Enable sign-in with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -114,6 +180,15 @@ Enable sign-in with email
 | - **false**: Disables authentication with email and password, and removes the option from the login screen. Use this option to limit authentication to single sign-on services. | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithEmail`` |
 |                                                                                                                                                                                 | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL``  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+.. config:setting:: email-enablesigninwithusername
+  :displayname: Enable sign-in with username (Signup)
+  :systemconsole: Authentication > Email
+  :configjson: .EmailSettings.EnableSignInWithUsername
+  :environment: MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME
+
+  - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in.
+  - **false**: Disables authenticaton with a username and removes the option from the login screen.
 
 Enable sign-in with username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,6 +209,13 @@ Password
 
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
 
+.. config:setting:: password-minimumlength
+  :displayname: Minimum password length (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .PasswordSettings.MinimumLength
+  :environment: MM_PASSWORDSETTINGS_MINIMUMLENGTH
+  :description: This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. Default is **5**.
+
 Minimum password length
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -144,6 +226,34 @@ Minimum password length
 |                                                                                                                                                           | - ``config.json`` setting: ``.PasswordSettings.MinimumLength`` |
 | Numerical input. Default is **5**.                                                                                                                        | - Environment variable: ``MM_PASSWORDSETTINGS_MINIMUMLENGTH``  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
+.. config:setting:: password-lowercase
+  :displayname: Password requirements - At least one lowercase letter (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .PasswordSettings.Lowercase
+  :environment: MM_PASSWORDSETTINGS_LOWERCASE
+  :description: This setting controls password character requirements. When **true**, passwords must contain at least one lowercase letter. Default is **false**.
+
+.. config:setting:: password-uppercase
+  :displayname: Password requirements - At least one uppercase letter (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .PasswordSettings.Uppercase
+  :environment: MM_PASSWORDSETTINGS_UPPERCASE
+  :description: This setting controls password character requirements. When **true**, passwords must contain at least one uppercase letter. Default is **false**.
+
+.. config:setting:: password-number
+  :displayname: Password requirements - At least one number (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .PasswordSettings.Number
+  :environment: MM_PASSWORDSETTINGS_NUMBER
+  :description: This setting controls password character requirements. When **true**, passwords must contain at least one number. Default is **false**.
+
+.. config:setting:: password-symbol
+  :displayname: Password requirements - At least one symbol (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .PasswordSettings.Symbol
+  :environment: MM_PASSWORDSETTINGS_SYMBOL
+  :description: This setting controls password character requirements. When **true**, passwords must contain at least one symbol from ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``. Default is **false**.
 
 Password requirements
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -163,6 +273,13 @@ Password requirements
 | The default for all boxes is unchecked. The default for all settings in ``config.json`` is ``false``.             |                                                                                                                                                                                      |
 +-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: password-maximumloginattempts
+  :displayname: Maximum login attempts (Password)
+  :systemconsole: Authentication > Password
+  :configjson: .ServiceSettings.MaximumLoginAttempts
+  :environment: MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS
+  :description: This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. Default is **10**.
+
 Maximum login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -175,7 +292,7 @@ Maximum login attempts
 ----
 
 MFA
-----
+---
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -184,14 +301,33 @@ Access the following configuration settings in the System Console by going to **
 
 We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
 
+.. config:setting:: mfa-enablemfa
+  :displayname: Enable multi-factor authentication (MFA)
+  :systemconsole: Authentication > MFA
+  :configjson: .ServiceSettings.EnableMultifactorAuthentication
+  :environment: MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION
+
+  - **true**: Users who sign-in with AD/LDAP or an email address have the option to add `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ to their accounts.
+  - **false**: **(Default)** Disables multi-factor authentication.
+
 Enable multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | - **true**: Users who sign-in with AD/LDAP or an email address have the option to add `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ to their accounts. | - System Config path: **Authentication > MFA**                                         |
-| - **false**: **(Default)** Disables multi-factor authentication                                                                                                                                                 | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
+| - **false**: **(Default)** Disables multi-factor authentication.                                                                                                                                                | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
 |                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: mfa-enforcemfa
+  :displayname: Enforce multi-factor authentication (MFA)
+  :systemconsole: Authentication > MFA
+  :configjson: .ServiceSettings.EnforceMultifactorAuthentication
+  :environment: MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION
+
+  - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ for users who sign-in with AD/LDAP or an email address.
+    New users must configure MFA. Logged in users are redirected to the MFA setup page until configuration is complete.
+  - **false**: MFA is optional.
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -219,6 +355,15 @@ AD/LDAP
 
 Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**.
 
+.. config:setting:: ldap-enablesignin
+  :displayname: Enable sign-in with AD/LDAP (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.Enable
+  :environment: MM_LDAPSETTINGS_ENABLE
+
+  - **true**: Allows sign-in with AD/LDAP or Active Directory.
+  - **false**: **(Default)** Disables sign-in with AD/LDAP or Active Directory.
+
 Enable sign-in with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -229,6 +374,15 @@ Enable sign-in with AD/LDAP
 | - **false**: **(Default)** Disables sign-in with AD/LDAP or Active Directory. | - ``config.json`` setting: ``.LdapSettings.Enable: false`` |
 |                                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLE``         |
 +-------------------------------------------------------------------------------+------------------------------------------------------------+
+
+.. config:setting:: ldap-enablesync
+  :displayname: Enable synchronization with AD/LDAP (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.EnableSync
+  :environment: MM_LDAPSETTINGS_ENABLESYNC
+
+  - **true**: Mattermost periodically syncs users from AD/LDAP.
+  - **false**: **(Default)** Disables AD/LDAP synchronization.
 
 Enable synchronization with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,6 +395,13 @@ Enable synchronization with AD/LDAP
 |                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLESYNC``         |
 +---------------------------------------------------------------+----------------------------------------------------------------+
 
+.. config:setting:: ldap-loginfieldname
+  :displayname: Login field name (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.LoginFieldName
+  :environment: MM_LDAPSETTINGS_LOGINFIELDNAME
+  :description: This setting will display placeholder text in the login field of the sign-in page. This text can remind users to sign-in with their AD/LDAP credentials. Default is ``AD/LDAP Username``.
+
 Login field name
 ~~~~~~~~~~~~~~~~
 
@@ -251,6 +412,13 @@ Login field name
 |                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.LoginFieldName`` |
 | String input. Default is ``AD/LDAP Username``.                                                                                                           | - Environment variable: ``MM_LDAPSETTINGS_LOGINFIELDNAME``  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+
+.. config:setting:: ldap-server
+  :displayname: AD/LDAP server (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.LdapServer
+  :environment: MM_LDAPSETTINGS_LDAPSERVER
+  :description: This is the domain name or IP address of the AD/LDAP server.
 
 AD/LDAP server
 ~~~~~~~~~~~~~~
@@ -263,6 +431,13 @@ AD/LDAP server
 | String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``  |
 +--------------------------------------------------------------+---------------------------------------------------------+
 
+.. config:setting:: ldap-port
+  :displayname: AD/LDAP port (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.LdapPort
+  :environment: MM_LDAPSETTINGS_LDAPPORT
+  :description: This is the port Mattermost uses to connect to the AD/LDAP server. Default is **389**.
+
 AD/LDAP port
 ~~~~~~~~~~~~
 
@@ -274,18 +449,39 @@ AD/LDAP port
 | Numerical input. Default is **389**.                               | - Environment variable: ``MM_LDAPSETTINGS_LDAPPORT``       |
 +--------------------------------------------------------------------+------------------------------------------------------------+
 
+.. config:setting:: ldap-connectionsecurity
+  :displayname: Connection security (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.ConnectionSecurity
+  :environment: MM_LDAPSETTINGS_CONNECTIONSECURITY
+
+  This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:
+
+  - **none**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy.
+  - **TLS**: Encrypts communication with TLS.
+  - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS.
+
 Connection security
 ~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                         | - System Config path: **Authentication > AD/LDAP**              |
-|                                                                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
-| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``""`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
-| - **TLS**: Encrypts communication with TLS. ``config.json`` option: ``"TLS"``                                                                                                                            |                                                                 |
-| - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``                                                              |                                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                             | - System Config path: **Authentication > AD/LDAP**              |
+|                                                                                                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
+| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``"none"`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
+| - **TLS**: Encrypts communication with TLS. ``config.json`` option: ``"TLS"``                                                                                                                                |                                                                 |
+| - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``                                                                  |                                                                 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+
+.. config:setting:: ldap-skipcertverification
+  :displayname: Skip certificate verification (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.SkipCertificateVerification
+  :environment: MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION
+
+  - **true**: Disables the certificate verification step for TLS and STARTTLS connections. Use this option for testing. **Do not use** this option when TLS is required in production.
+  - **false**: **(Default)** Enables certification verification.
 
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -298,6 +494,13 @@ Skip certificate verification
 |                                                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION``         |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
+.. config:setting:: ldap-privatekey
+  :displayname: Private key (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.PrivateKeyFile
+  :environment: MM_LDAPSETTINGS_PRIVATEKEYFILE
+  :description: Use this setting to upload the private key file from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.
+
 Private key
 ~~~~~~~~~~~
 
@@ -309,6 +512,13 @@ Private key
 | String input.                                                                                                                                               | - Environment variable: ``MM_LDAPSETTINGS_PRIVATEKEYFILE``  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
+.. config:setting:: ldap-publiccert
+  :displayname: Public certificate (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.PublicCertificateFile
+  :environment: MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE
+  :description: Use this setting to upload the public TLS certificate from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.
+
 Public certificate
 ~~~~~~~~~~~~~~~~~~
 
@@ -319,6 +529,18 @@ Public certificate
 |                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.PublicCertificateFile`` |
 | String input.                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE``  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+
+.. config:setting:: ldap-bindusername
+  :displayname: Bind username (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.BindUsername
+  :environment: MM_LDAPSETTINGS_BINDUSERNAME
+
+  This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost.
+
+  Limit the permissions of the account to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** setting.
+
+  When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format.
 
 Bind username
 ~~~~~~~~~~~~~
@@ -337,6 +559,13 @@ Bind username
 | **Note**: This field is required. Anonymous bind is not currently supported.                                                                                                                         |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: ldap-bindpassword
+  :displayname: Bind password (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.BindPassword
+  :environment: MM_LDAPSETTINGS_BINDPASSWORD
+  :description: This is the password for the username given in the **Bind Username** setting.
+
 Bind password
 ~~~~~~~~~~~~~
 
@@ -348,6 +577,13 @@ Bind password
 | String input.                                                                 | - Environment variable: ``MM_LDAPSETTINGS_BINDPASSWORD``  |
 +-------------------------------------------------------------------------------+-----------------------------------------------------------+
 
+.. config:setting:: ldap-basedn
+  :displayname: Base DN (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.BaseDN
+  :environment: MM_LDAPSETTINGS_BASEDN
+  :description: This is the **Base Distinguished Name** of the location in the AD/LDAP tree where Mattermost will start searching for users.
+
 Base DN
 ~~~~~~~~
 
@@ -358,6 +594,13 @@ Base DN
 |                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.BaseDN`` |
 | String input.                                                                                                                | - Environment variable: ``MM_LDAPSETTINGS_BASEDN``  |
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+.. config:setting:: ldap-userfilter
+  :displayname: User filter (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.UserFilter
+  :environment: MM_LDAPSETTINGS_USERFILTER
+  :description: This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for user objects. Only the users selected by the query can access Mattermost.
 
 User filter
 ~~~~~~~~~~~~
@@ -373,6 +616,13 @@ User filter
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
 | **Note**: This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.                                                                                                                                                                                                                 |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: ldap-groupfilter
+  :displayname: Group filter (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.GroupFilter
+  :environment: MM_LDAPSETTINGS_GROUPFILTER
+  :description: This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for group objects. Only the groups selected by the query can access Mattermost.
 
 Group filter
 ~~~~~~~~~~~~~
@@ -390,6 +640,15 @@ Group filter
 | **Note**: This filter is only used when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information.                                                                                                           |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: ldap-enableadminfilter
+  :displayname: Enable admin filter (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.EnableAdminFilter
+  :environment: MM_LDAPSETTINGS_ENABLEADMINFILTER
+
+  - **true**: Enables the **Admin Filter** setting that designates System Admins using an AD/LDAP filter.
+  - **false**: **(Default)** Disables the **Admin Filter** setting.
+
 Enable admin filter
 ~~~~~~~~~~~~~~~~~~~
 
@@ -402,6 +661,13 @@ Enable admin filter
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | **Note**: If this setting is ``false``, no additional users are designated as System Admins by the filter. Users that were previously designated as System Admins retain this role unless the filter is changed or removed.                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: ldap-adminfilter
+  :displayname: Admin filter (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.AdminFilter
+  :environment: MM_LDAPSETTINGS_ADMINFILTER
+  :description: This setting accepts an AD/LDAP filter that designates the selected users as System Admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync.
 
 Admin filter
 ~~~~~~~~~~~~
@@ -416,6 +682,13 @@ Admin filter
 | String input.                                                                                                                                                                            |                                                          |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
+.. config:setting:: ldap-guestfilter
+  :displayname: Guest filter (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.GuestFilter
+  :environment: MM_LDAPSETTINGS_GUESTFILTER
+  :description: This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can access Mattermost as Guests.
+
 Guest filter
 ~~~~~~~~~~~~
 
@@ -428,6 +701,13 @@ Guest filter
 |                                                                                                                                                                                      |                                                          |
 | String input.                                                                                                                                                                        |                                                          |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+
+.. config:setting:: ldap-idattribute
+  :displayname: ID attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.IdAttribute
+  :environment: MM_LDAPSETTINGS_IDATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost. The attribute should have a unique value that does not change, such as ``objectGUID`` or ``entryUUID``.
 
 ID attribute
 ~~~~~~~~~~~~~
@@ -444,6 +724,13 @@ ID attribute
 | **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool. |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: ldap-loginidattribute
+  :displayname: Login ID attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.LoginIdAttribute
+  :environment: MM_LDAPSETTINGS_LOGINIDATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that is used for signing-in to Mattermost. This is normally the same as the **Username Attribute**.
+
 Login ID attribute
 ~~~~~~~~~~~~~~~~~~
 
@@ -456,6 +743,13 @@ Login ID attribute
 |                                                                                                                                                                         |                                                               |
 | String input.                                                                                                                                                           |                                                               |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+.. config:setting:: ldap-usernameattribute
+  :displayname: Username attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.UsernameAttribute
+  :environment: MM_LDAPSETTINGS_USERNAMEATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that populates the username field in Mattermost. This is normally the same as the **Login ID Attribute**, but it can be mapped to a different attribute.
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
@@ -472,6 +766,13 @@ Username attribute
 | String input.                                                                                                                                                                                                                                                      |                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
+.. config:setting:: ldap-emailattribute
+  :displayname: Email attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.EmailAttribute
+  :environment: MM_LDAPSETTINGS_EMAILATTRIBUTE
+  :description: This is the attribute in AD/LDAP server that populates the email address field in Mattermost. Email notifications are sent to this address.
+
 Email attribute
 ~~~~~~~~~~~~~~~~
 
@@ -484,6 +785,13 @@ Email attribute
 |                                                                                                                                |                                                            |
 | String input.                                                                                                                  |                                                            |
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+
+.. config:setting:: ldap-firstnameattribute
+  :displayname: First name attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.FirstNameAttribute
+  :environment: MM_LDAPSETTINGS_FIRSTNAMEATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that populates the first name field in Mattermost. When set, users cannot edit their first name.
 
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~~
@@ -500,6 +808,13 @@ First name attribute
 | String input.                                                                                                  |                                                                 |
 +----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
+.. config:setting:: ldap-lastnameattribute
+  :displayname: Last name attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.LastNameAttribute
+  :environment: MM_LDAPSETTINGS_LASTNAMEATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that populates the last name field in Mattermost. When set, users cannot edit their last name.
+
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
 
@@ -514,6 +829,13 @@ Last name attribute
 |                                                                                                                       |                                                                |
 | String input.                                                                                                         |                                                                |
 +-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
+.. config:setting:: ldap-nicknameattribute
+  :displayname: Nickname attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.NicknameAttribute
+  :environment: MM_LDAPSETTINGS_NICKNAMEATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost. When set, users cannot edit their nickname.
 
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
@@ -530,6 +852,13 @@ Nickname attribute
 | String input.                                                                                                        |                                                                |
 +----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
+.. config:setting:: ldap-positionattribute
+  :displayname: Position attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.PositionAttribute
+  :environment: MM_LDAPSETTINGS_POSITIONATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that populates the position field in Mattermost. When set, users cannot edit their position.
+
 Position attribute
 ~~~~~~~~~~~~~~~~~~
 
@@ -544,6 +873,13 @@ Position attribute
 |                                                                                                                      |                                                                |
 | String input.                                                                                                        |                                                                |
 +----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
+.. config:setting:: ldap-profilepictureattribute
+  :displayname: Profile picture attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.PictureAttribute
+  :environment: MM_LDAPSETTINGS_PICTUREATTRIBUTE
+  :description: This is the attribute in the AD/LDAP server that syncs and locks the profile picture in Mattermost. The image is updated when users sign-in, not when Mattermost syncs with the AD/LDAP server.
 
 Profile picture attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -560,6 +896,13 @@ Profile picture attribute
 | String input.                                                                                       |                                                               |
 +-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
+.. config:setting:: ldap-groupdisplaynameattribute
+  :displayname: Group display name attribute (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.GroupDisplayNameAttribute
+  :environment: MM_LDAPSETTINGS_GROUPDISPLAYNAMEATTRIBUTE
+  :description: This is the AD/LDAP Group Display name attribute that populates the Mattermost group name field.
+
 Group display name attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -575,6 +918,13 @@ Group display name attribute
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information. |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: ldap-groupidattribute
+  :displayname: Group ID attribute
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.GroupIdAttribute
+  :environment: MM_LDAPSETTINGS_GROUPIDATTRIBUTE
+  :description: This is an AD/LDAP Group ID attribute that sets a unique identifier for groups. This should be a value that does not change, such as ``entryUUID`` or ``objectGUID``.
 
 Group ID attribute
 ~~~~~~~~~~~~~~~~~~
@@ -593,6 +943,13 @@ Group ID attribute
 +--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information. |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: ldap-syncinterval
+  :displayname: Synchronization interval (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.SyncIntervalMinutes
+  :environment: MM_LDAPSETTINGS_SYNCINTERVALMINUTES
+  :description: This value determines how often Mattermost syncs with the AD/LDAP server by setting the number of minutes between each sync. Default is **60**.
 
 Synchronization interval (minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -613,6 +970,13 @@ Synchronization interval (minutes)
 | **Note**: LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: ldap-maxpagesize
+  :displayname: Maximum page size (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.MaxPageSize
+  :environment: MM_LDAPSETTINGS_MAXPAGESIZE
+  :description: This setting paginates the results of AD/LDAP server queries. Use this setting if your AD/LDAP server has a page size limit. A page size of **0** disables pagination of results. Default is **0**.
+
 Maximum page size
 ~~~~~~~~~~~~~~~~~~
 
@@ -628,12 +992,12 @@ Maximum page size
 | Numerical input. Default is **0**.                                                                                           |                                                             |
 +------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
-.. config:setting:: ldapsettings-querytimeout
+.. config:setting:: ldap-querytimeout
   :displayname: Query timeout (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.QueryTimeout
   :environment: MM_LDAPSETTINGS_QUERYTIMEOUT
-  :description: This setting determines the timeout period, in seconds, for AD/LDAP queries. Default is 60 seconds.
+  :description: This setting determines the timeout period, in seconds, for AD/LDAP queries. Default is **60**.
 
 Query timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -691,6 +1055,15 @@ Access the following configuration settings in the System Console by going to **
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
 
+.. config:setting:: saml-enablelogin
+  :displayname: Enable login with SAML (SAML)
+  :systemconsole: N/A
+  :configjson: Enable
+  :environment: N/A
+
+  - **true**: Mattermost allows login using SAML. Please see `documentation <https://docs.mattermost.com/onboard/sso-saml.html>`__ to learn more about configuring SAML for Mattermost.
+  - **false**: **(Default)** Login with SAML is disabled.
+
 Enable login with SAML
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -707,6 +1080,15 @@ Enable login with SAML
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-enablesyncwithldap
+  :displayname: Enable synchronizing SAML accounts with AD/LDAP (SAML)
+  :systemconsole: N/A
+  :configjson: EnableSyncWithLdap
+  :environment: N/A
+
+  - **true**: Mattermost periodically synchronizes SAML user attributes, including user deactivation and removal, with AD/LDAP.
+  - **false**: **(Default)** Synchronization of SAML accounts with AD/LDAP is disabled.
+
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -722,6 +1104,17 @@ Enable synchronizing SAML accounts with AD/LDAP
 +----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-ignoreguestsldapsync
+  :displayname: Ignore guest users when synchronizing with AD/LDAP (SAML)
+  :systemconsole: N/A
+  :configjson: IgnoreGuestsLdapSync
+  :environment: N/A
+
+  Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``true``.
+
+  - **true**: Mattermost ignores Guest Users identified by the Guest Attribute when synchronizing with AD/LDAP on user deactivation and removal.
+  - **false**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
 
 Ignore guest users when synchronizing with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -740,6 +1133,15 @@ Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``t
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IgnoreGuestsLdapSync": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-overridebindwithldap
+  :displayname: Override SAML bind data with AD/LDAP information (SAML)
+  :systemconsole: N/A
+  :configjson: EnableSyncWithLdapIncludeAuth
+  :environment: N/A
+
+  - **true**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present.
+  - **false**: **(Default)** Mattermost uses the email attribute to bind users to SAML.
 
 Override SAML bind data with AD/LDAP information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -760,6 +1162,13 @@ Override SAML bind data with AD/LDAP information
 | This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-providermetadataurl
+  :displayname: Identity provider metadata URL (SAML)
+  :systemconsole: N/A
+  :configjson: IdpMetadataUrl
+  :environment: N/A
+  :description: The URL where Mattermost sends a request to obtain setup metadata from the provider.
+
 Identity provider metadata URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -774,6 +1183,13 @@ The URL where Mattermost sends a request to obtain setup metadata from the provi
 | This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-ssourl
+  :displayname: SAML SSO URL (SAML)
+  :systemconsole: N/A
+  :configjson: IdpURL
+  :environment: N/A
+  :description: The URL where Mattermost sends a SAML request to start login sequence.
+
 SAML SSO URL
 ~~~~~~~~~~~~
 
@@ -787,6 +1203,13 @@ The URL where Mattermost sends a SAML request to start login sequence.
 +-------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdpURL": ""`` with string input. |
 +-------------------------------------------------------------------------------+
+
+.. config:setting:: saml-providerissuerurl
+  :displayname: Identity provider issuer URL (SAML)
+  :systemconsole: N/A
+  :configjson: IdpDescriptorUrl
+  :environment: N/A
+  :description: The issuer URL for the Identity Provider you use for SAML requests.
 
 Identity provider issuer URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

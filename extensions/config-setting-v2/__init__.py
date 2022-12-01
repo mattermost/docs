@@ -1,5 +1,6 @@
 import json
 import pathlib
+import docutils.core, docutils.io
 from docutils import nodes
 from docutils.nodes import Element, Node
 from docutils.parsers.rst.directives import unchanged
@@ -28,6 +29,20 @@ CONFIG_SETTING_DESCRIPTION = "description"
 
 # Sphinx logger
 logger = logging.getLogger(__name__)
+
+
+def rst2html(source_string: str) -> str:
+    # mostly taken from
+    # https://github.com/getpelican/pelican/
+    pub: docutils.core.Publisher = docutils.core.Publisher(
+        source_class=docutils.io.StringInput, destination_class=docutils.io.StringOutput
+    )
+    pub.set_components("standalone", "restructuredtext", "html")
+    pub.process_programmatic_settings(None, None, None)
+    pub.set_source(source=source_string)
+    pub.publish()
+    # publish parts are described here: https://docutils.sourceforge.io/docs/api/publisher.html#publish-parts-details
+    return pub.writer.parts["fragment"]
 
 
 class AnchorNode(Element):
@@ -104,13 +119,16 @@ class ConfigSettingDirective(SphinxDirective):
         long_description = ""
         for content_line in self.content:
             if content_line != "":
-                long_description += content_line.rstrip() + " "
+                long_description += content_line.rstrip()
+            long_description += "\n"
         short_description = ""
         if CONFIG_SETTING_DESCRIPTION in self.options:
             short_description = self.options[CONFIG_SETTING_DESCRIPTION]
         if short_description != "":
-            short_description += " "
+            short_description += "\n"
         description = short_description + long_description.rstrip()
+        # Parse RST content in the description into HTML, so it can be displayed richly on the browser side
+        description = rst2html(description)
         # Add a ConfigSettingNode that contains the metadata for the setting
         config_setting = {
             CONFIG_SETTING_ID: self.arguments[0],

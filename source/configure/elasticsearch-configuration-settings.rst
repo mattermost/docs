@@ -306,7 +306,7 @@ Bulk indexing time window
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.RequestTimeoutSeconds
   :environment: MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS
-  :description: The timeout, in seconds, for Elasticsearch calls. Default is 30 seconds.
+  :description: The timeout, in seconds, for Elasticsearch calls. Default is **30** seconds.
 
 Request timeout
 ~~~~~~~~~~~~~~~
@@ -318,6 +318,17 @@ Request timeout
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
 | Numerical input in seconds. Default is **30** seconds.        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: elasticsearch-trace
+  :displayname: Trace (ElasticSearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.Trace
+  :environment: MM_ELASTICSEARCHSETTINGS_TRACE
+  :description: Options for printing Elasticsearch trace errors.
+
+  - **error**: Creates the error trace when initializing the Elasticsearch client and prints any template creation or search query that returns an error as part of the error message.
+  - **all**: Creates the three traces (error, trace and info) for the driver and doesn’t print the queries because they will be part of the trace log level of the driver.
+  - **not specified**: **(Default)** No error trace is created.
 
 Trace
 ~~~~~
