@@ -36,6 +36,7 @@ Work with channels
    Find channels </channels/find-channels> 
    Navigate between channels </channels/navigate-between-channels>
    Mark channels as favorites </channels/favorite-channels>
+   Mark channels as unread </channels/mark-channels-unread>
    Customize your channel sidebar </channels/customize-your-channel-sidebar>
    Archive and unarchive channels </channels/archive-unarchive-channels>
    Set channel preferences </channels/set-channel-preferences>
@@ -52,6 +53,7 @@ Work with channels
 * :doc:`Find channels </channels/find-channels>` - Find all available public channels you can join, and all channels you're a member of.
 * :doc:`Navigate between channels </channels/navigate-between-channels>` - Learn how to navigate between channels.
 * :doc:`Mark channels as favorites </channels/favorite-channels>` - Mark commonly visited channels as favorites.
+* :doc:`Mark channels as unread </channels/mark-channels-unread>` - Mark channels unread to return to messages later.
 * :doc:`Customize your channel sidebar </channels/customize-your-channel-sidebar>` - Organize conversations in the sidebar to keep your workspace efficient.
 * :doc:`Archive and unarchive channels </channels/archive-unarchive-channels>` - Keep the number of available channels manageable. 
 * :doc:`Set Channel preferences </channels/set-channel-preferences>` - Customize notifications, headers, names, and channel descriptions.

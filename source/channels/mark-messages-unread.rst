@@ -5,8 +5,6 @@ Mark messages as unread
   :start-after: :nosearch:
 
 .. |more-actions-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :height: 24px
-  :width: 24px
   :alt: Access additional message actions using the More actions icon.
 
 If you read a message, but don't have time to address it right away, you can mark that message as unread. Hover over the message, select the **More** |more-actions-icon| option, then select **Mark as Unread**.

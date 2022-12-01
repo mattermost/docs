@@ -5,8 +5,6 @@ Desktop App custom dictionaries
   :start-after: :nosearch:
 
 .. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
-  :height: 24px
-  :width: 24px
   :alt: Navigate Desktop App options on Windows or Linux.
 
 On Windows or Linux, Mattermost desktop app v4.7.1 and later supports custom dictionary definitions served through a URL. If custom dictionaries aren't specified, default dictionary definitions are obtained automatically from Chromium's CDNs (content delivery networks).
