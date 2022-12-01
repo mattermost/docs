@@ -12,7 +12,7 @@ Access the following configuration settings in the System Console by going to **
 - `Apps <#apps>`__
 - `Autolink <#autolink>`__
 - `AWS SNS <#aws-sns>`__
-- `Calls (beta) <#calls-beta>`__
+- `Calls <#calls>`__
 - `Channel Export <#channel-export>`__
 - `Demo Plugin <#demo-plugin>`__
 - `GIF commands <#gif-commands>`__
@@ -260,7 +260,7 @@ Generate a token to validate incoming requests from AWS SNS by selecting ``Regen
 
 ----
 
-Calls 
+Calls
 -----
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
@@ -417,6 +417,26 @@ Enable call recordings (beta)
 **False**: Call recording functionality is not available to hosts.
 
 Changing this setting requires a plugin restart to take effect.
+
+Job service URL
+~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
+The URL to the instance where call recordings will be stored.
+
+This is a required field.
+
+Maximum call recording duration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
+The maximum duration of a call recording in minutes. The default is 60 with a maximum of <>.
+
+This is a required value.
 
 ----
 
