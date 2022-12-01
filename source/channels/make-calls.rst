@@ -1,12 +1,13 @@
-Start a call (beta)
-===================
+Start a call 
+============
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost introduces beta voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
 
-- `Features available in Mattermost 7.0 <#features-available-in-mattermost-7.0>`__
+- `Features <#features>`__
+- `Record a call <#record-a-call>`__
 - `Frequently asked questions <#frequently_asked_questions>`__
 - `Troubleshooting <#troubleshooting>`__
 
@@ -16,14 +17,16 @@ Mattermost introduces beta voice calling and screen sharing functionality in cha
 
 - `Debugging <#debugging>`__
 
-Features available in Mattermost 7.0
-------------------------------------
+Features 
+--------
 
-From 7.0, you can:
+Starting from Mattermost v7.0, you can:
 
 - Start or join a call from desktop and mobile apps in addition to web browsers.
 - Share screen (not available on mobile), raise hands, chat in a thread, and even switch between products in the Mattermost suite (i.e., Channels, Boards, and Playbooks) while on a call.
+- React using emojis.
 - Start a call using the ``/call start`` slash command or **Start call** in the channel header.
+- Record calls (Mattermost Enterprise only).
 
 Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System Admins need to enable the plugin and adjust configurations `in the System Console </configure/configuration-settings.html#calls-beta>`_.
 
@@ -33,13 +36,19 @@ You can share a call's link to use in a meeting request or share with other team
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
+Record a call
+-------------
+
+
+
+
 Frequently asked questions
 --------------------------
 
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~
 
-The integration currently supports only voice calling and screen sharing. We are considering video support as well for the upcoming future.
+The integration currently supports only voice calling and screen sharing. We're considering video support in the future.
 
 Can I password-protect a call?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
