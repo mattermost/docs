@@ -111,10 +111,16 @@ What happens if I decide to purchase a subscription to Mattermost Enterprise dur
 
 Your plan immediately changes to the plan you've upgraded to. Your trial will continue and on day 31 billing will commence. You won't incur any charges of your new plan until the trial period is over. Depending on what day of the month this is, you'll be billed prorata. You'll receive your bill at the end of the calendar month for this month and going forward.
 
-How do I change my subscription from Mattermost Enterprise to Mattermost Professional?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How do I change my subscription to Cloud Free?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To downgrade, please contact our `Support team <mailto:support@mattermost.com>`_.
+If you're on the Cloud Enterprise plan and want to move to another plan, please contact your Customer Success Manager or our `Support team <mailto:support@mattermost.com>`_.
+
+If you're on Cloud Professional and want to move to Cloud Free:
+
+1. Open **System Console > Billing & Account > Subscription**.
+2. Select **View Plans**.
+3. Select **Downgrade**.
 
 Can I purchase an annual Mattermost Cloud subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

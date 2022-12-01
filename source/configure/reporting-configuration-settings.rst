@@ -18,9 +18,9 @@ Site statistics
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| View statistics on active users, teams, channels,             | - System Config path: **Reporting > Site Statistics**       |
-| sessions, webhooks, connections, playbooks, and boards.       | - ``config.json setting``: N/A                              |
-|                                                               | - Environment variable: N/A                                 |
+| View statistics on activated users, teams, channels, posts,   | - System Config path: **Reporting > Site Statistics**       |
+| sessions, commands, webhooks, active users, connections,      | - ``config.json setting``: N/A                              |
+| playbooks, runs, boards, and cards.                           | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | **Note**: Inactive and deactivated users are not counted towards the total number of active users.                          |
 +---------------------------------------------------------------+-------------------------------------------------------------+
@@ -33,9 +33,9 @@ Team statistics
 *Available in legacy Enterprise Edition E10/E20*
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
-| View statistics per team on number of active users,           | - System Config path: **Reporting > Team Statistics**         |
-| as well as public and private channels.                       | - ``config.json`` setting: N/A                                |
-|                                                               | - Environment variable: N/A                                   |
+| View statistics per team on number of activated users,        | - System Config path: **Reporting > Team Statistics**         |
+| number of public and private channels, total post count, and  | - ``config.json`` setting: N/A                                |
+| count of paid users (self-hosted only).                       | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Inactive and deactivated users are not counted towards the total number of active users.                            |
 +---------------------------------------------------------------+---------------------------------------------------------------+
