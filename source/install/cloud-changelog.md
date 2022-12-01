@@ -4,12 +4,43 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-12-08](#release-2022-12-08)
 - [Release 2022-12-01](#release-2022-12-01)
 - [Release 2022-11-24](#release-2022-11-24)
 - [Release 2022-11-17](#release-2022-11-17)
 - [Release 2022-11-10](#release-2022-11-10)
 - [Release 2022-10-27](#release-2022-10-27)
-- [Release 2022-10-20](#release-2022-10-20)
+
+## Release 2022-12-01
+
+### Highlights
+
+#### Message Priority and Acknowledgments (Professional plan)
+ - Added message priority labels to the Threads view.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
+
+#### Global Drafts
+ - Added a centralized page for draft messages.
+Added ``acknowledgements`` field to the post's metadata.
+
+### Improvements
+
+#### User Interface (UI)
+ - Updated prepackaged version of plugins affected by React 17 upgrade.
+
+#### Administration
+ - The export file now contains the server version and a creation timestamp.
+ - The **System Console > Subscriptions** page now reflects if the plan is monthly or annual.
+ - Added the ability to migrate from a monthly to an annual Cloud Professional plan.
+ - On the purchase modal, admins are now able to buy a subscription count in excess of the current user count.
+ - Plugins with a webapp component may need to be updated to work with Mattermost and the updated ``React v17`` dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost and is backwards compatible with older versions of Mattermost.
+
+### API Changes
+ - Added new endpoint ``api/v4/cloud/products/selfhosted``.
+
+### Known Issues
+ - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-12-01
 
