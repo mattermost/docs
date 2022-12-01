@@ -32,7 +32,7 @@ Where to find more information
 
 If you'd like to take on a project with larger scope across multiple pages at a time, you'll want to be able to generate the documentation locally on demand to review your changes. See the product documentation `README <https://github.com/mattermost/docs#readme>`__ documentation to learn how to build the product documentation locally on your own system. 
 
-Contributing to Mattermost developer or API reference documentation? See the additional README links below for details on generating documentation locally:
+Are you interested in contributing to the Mattermost developer or API reference documentation? See the additional README links below for details on generating documentation locally:
 
 - `Mattermost Developer README <https://github.com/mattermost/mattermost-developer-documentation#readme>`__
 - `API reference README <https://github.com/mattermost/mattermost-api-reference#readme>`__
