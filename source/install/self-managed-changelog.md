@@ -55,6 +55,7 @@ Latest Mattermost Releases:
  - Added a tooltip to the right-hand side files filter icon.
  - The number of users that can be added to a user group at once was increased to 256.
  - Keyboard and focus handling was improved in profile popovers and at-mentions.
+ - Updated prepackaged version of plugins affected by React 17 upgrade.
 
 #### Administration
  - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
