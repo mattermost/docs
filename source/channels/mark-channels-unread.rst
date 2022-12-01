@@ -5,7 +5,7 @@ Mark messages as unread
   :start-after: :nosearch:
 
 .. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
-  :alt: Navigate Desktop App options on Windows or Linux.
+  :alt: Select the More icon to access additional channel management options.
 
 If you read a messages in a channel, but don't have time to address them right away, you can mark that channel as unread. Hover over the channel name in the channel sidebar, select the **More** |vertical-3-dots| option, then select **Mark as Unread**.
 
