@@ -260,8 +260,8 @@ Generate a token to validate incoming requests from AWS SNS by selecting ``Regen
 
 ----
 
-Calls (Beta)
-------------
+Calls 
+-----
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -405,6 +405,18 @@ RTCD service URL
 The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 This is an optional field. Changing this setting requires a plugin restart to take effect.
+
+Enable call recordings (beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
+**True**: Allow call hosts to record meeting video and audio on the cloud. Recordings include the entire call window view along with participants' audio track and any shared screen video.
+
+**False**: Call recording functionality is not available to hosts.
+
+Changing this setting requires a plugin restart to take effect.
 
 ----
 
