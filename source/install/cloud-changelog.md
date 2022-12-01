@@ -24,7 +24,7 @@ Latest Mattermost Cloud releases:
  - Pre-packaged Boards v7.5.2.
 
 #### Administration
- - Updated MacOS supported version to 11+.
+ - Updated macOS supported version to 11+.
  - **My Insights** and OpenId Connect were added to the Free plan.
  - All integration limits and usage limit components were removed.
  - Team scheme APIs are now allowed to be administered with a Professional plan.
