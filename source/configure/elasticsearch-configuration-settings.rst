@@ -3,7 +3,7 @@
 
 Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about `Elasticsearch </scale/elasticsearch.html>`__ in our product documentation. 
 
-Configure the Elasticsearch environment in which Mattermost is deployed by going to **System Console > Environment > Elasticsearch**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+You can configure the Elasticsearch environment in which Mattermost is deployed by going to **System Console > Environment > Elasticsearch**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -281,25 +281,6 @@ Live indexing batch size
 | **Note**: It may be necessary to increase this value to avoid hitting the rate limit of your Elasticsearch cluster on installs handling           | 
 | multiple messages per second.                                                                                                                     |    
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-
-Bulk indexing time window
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Available in legacy Enterprise Edition E10/E20*
-
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| The maximum time window, in seconds, for a batch of posts     | - System Config path: **Environment > Elasticsearch**                                        |
-| being indexed by the Bulk Indexer. This setting serves as a   | - ``config.json`` setting: ``".Elasticsearchsettings.BulkIndexingTimeWindowSeconds: 3600",`` |
-| performance optimization for installs with over               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
-|  ~10 million posts in the database.                           |                                                                                              |
-|                                                               |                                                                                              |
-| Numerical input in seconds. Default is **3600** seconds       |                                                                                              |
-| (1 hour). Approximate this value based on the average number  |                                                                                              |
-| of seconds for 2,000 posts to be added to the database on a   |                                                                                              |
-| typical day in production.                                    |                                                                                              |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| **Note**: Setting this value too low will cause bulk indexing jobs to run slowly.                                                                            |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 Request timeout
 ~~~~~~~~~~~~~~~
