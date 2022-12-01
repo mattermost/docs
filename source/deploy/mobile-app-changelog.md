@@ -14,23 +14,20 @@ Latest Mattermost Mobile Apps releases:
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
+ - Please [see here](https://mattermost.com/blog/preparing-for-mobile-v2-0/) for more details on the v2 release.
  - **Upgrade to server version v7.1.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) 6.3.0 has ended and upgrading to server ESR v7.1.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Highlights
 
-#### Multiple Workspaces
- - Collaborate in multiple workspaces with a redesigned channel and team sidebar for easier navigation.
+Mattermost mobile v2.0 is a major update to the iOS and Android apps bringing support for multiple workspaces and a more stable and performant user experience that includes:
 
-#### Improved Network Reliability
- - Improved network reliability reducing app hang and errors if internet connectivity is unstable.
+ - Support for collaborating in multiple workspaces with a redesigned channel and team sidebar for easier navigation. 
+ - Improved app responsiveness to user input, faster launch, and less memory consumed when running.
+ - Improved app stability so users encounter fewer crashes and bugs, as well as reduced app hang and errors if internet connectivity becomes unstable. 
 
-#### Improved Performance
- - The app is more responsive to user input, launches faster and consumes less memory when running.
-
-#### Improved Stability
- - Improved app stability so users encounter fewer crashes and bugs.
+Users now gain a more reliable and feature-rich application, improving their experience for collaborating with their teams on the go.
 
 ### Known Issues
  - 
