@@ -36,7 +36,7 @@ Latest Mattermost Releases:
 #### Playbooks
  - 
 
-#### Message Priority and Acknowledgments
+#### Message Priority and Acknowledgments (Professional Plan)
  - Added message priority labels to the Threads view.
  - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
 
