@@ -42,7 +42,7 @@ You can export the following data types:
 - Users' channel memberships
 - Users' notification preferences
 - Posts (regular, non-reply messages)
-- Posts' replies & threads
+- Posts' replies and threads
 - Posts' reactions
 - Custom emoji
 - Direct message channels
