@@ -3843,12 +3843,12 @@ Assign users to a role by username.
 .. code-block:: sh
 
    # Assign users with usernames 'john.doe' and 'jane.doe' to the role named 'system_admin'.
-   mmctl permissions assign system_admin john.doe jane.doe
+   mmctl permissions role assign system_admin john.doe jane.doe
     
    # Examples using other system roles
-   mmctl permissions assign system_manager john.doe jane.doe
-   mmctl permissions assign system_user_manager john.doe jane.doe
-   mmctl permissions assign system_read_only_admin john.doe jane.doe
+   mmctl permissions role assign system_manager john.doe jane.doe
+   mmctl permissions role assign system_user_manager john.doe jane.doe
+   mmctl permissions role assign system_read_only_admin john.doe jane.doe
 
 **Options**
 
