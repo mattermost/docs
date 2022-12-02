@@ -28,7 +28,7 @@ You can mark public and private channels, as well as direct and group messages a
 
     .. tip::
 
-      - Alternatively, you can mark channels as favorites by selecting the channel name, selecting the **View Info** |channel-info| icon, then selecting **Favorite** in the right pane. Select **Favorited** to remove the channel from your list of favorites.
+      - Alternatively to mark channels as favorites, select the channel name, select the **View Info** |channel-info| icon, then select **Favorite** in the right pane. Select **Favorited** to remove the channel from your list of favorites.
 
   .. tab:: Mobile app
 
