@@ -758,11 +758,12 @@ Identity provider metadata URL
 
 *Available in legacy Enterprise Edition E20*
 
-The URL where Mattermost sends a request to obtain setup metadata from the provider.
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting is the URL from which Mattermost requests setup metadata from the provider. | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                          | - ``config.json`` setting: ``.SamlSettings.IdpMetadataURL: ""`` |
+| String input.                                                                            | - Environment variable: ``MM_SAMLSETTINGS_IDPMETADATAURL``      |
++------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
 
 SAML SSO URL
 ~~~~~~~~~~~~
