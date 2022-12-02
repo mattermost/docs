@@ -787,6 +787,11 @@ Identity provider issuer URL
 
 *Available in legacy Enterprise Edition E20*
 
++--+-------------------------------------------------------------------+
+|  | - System Config path: **Authentication > SAML 2.0**               |
+|  | - ``config.json`` setting: ``.SamlSettings.IdpDescriptorURL: ""`` |
+|  | - Environment variable: ``                                        |
++--+-------------------------------------------------------------------+
 The issuer URL for the Identity Provider you use for SAML requests.
 
 +-----------------------------------------------------------------------------------------+
