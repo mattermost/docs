@@ -113,7 +113,7 @@ Channel purpose
 
 A channel purpose refers to text that displays when users select **View Info** for a channel. A channel purpose can be up to 250 characters in length and is often used to help users decide whether to join the channel.
 
-Provide a channel purpose by selecting **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+To add a channel purpose, select **Edit Channel Purpose**. Any channel member can change a channel purpose, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
 
 .. image:: ../images/channel-purpose.png
     :alt: Channel purpose helps users decide if they want to join the channel based on its scope or focus.
