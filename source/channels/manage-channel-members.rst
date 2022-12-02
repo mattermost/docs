@@ -41,7 +41,7 @@ Leave a channel
 
 To remove yourself from a channel, you can:
 
-- Selecting the channel name at the top of the center pane to access the drop-down menu, then selecting **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
+- Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
 - Selecting the channel's **View Info** |channel-info| icon, and selecting **Members** in the right pane. Select **Manage**, select a user's role, then select **Leave a Channel**.
 
 Remove members from a channel
