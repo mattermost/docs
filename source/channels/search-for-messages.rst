@@ -13,7 +13,6 @@ Search for messages
 .. |channel-files-icon| image:: ../images/file-text-outline_F09EE.svg
   :alt: Use the Channel Files icon to search for files attached to messages in a given channel.
   
-
 From Mattermost v5.35, use the Mattermost search field to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. Mobile support is coming in a future release. 
 
 You can also do more advanced search using `search modifiers <#search-modifiers>`__.
