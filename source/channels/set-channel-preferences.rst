@@ -106,7 +106,7 @@ Change the channel header by selecting **Edit Channel Header**. You can use Mark
 
 .. tip::
 
-  Alternatively, you can provide or update a channel header by selecting the channel name, then selecting **Edit Channel Header** from the list of options.
+  Alternatively, to provide or update a channel header, select the channel name, then select **Edit Channel Header** from the list of options.
 
 Channel purpose
 ---------------
