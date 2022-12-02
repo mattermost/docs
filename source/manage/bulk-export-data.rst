@@ -75,8 +75,50 @@ Version object
       <td valign="middle">number</td>
       <td>The number 1.</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">info</td>
+      <td valign="middle">object</td>
+      <td>Optional VersionInfo object</td>
+    </tr>
   </table>
-  
+
+VersionInfo object
+--------------
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">generator</td>
+      <td valign="middle">string</td>
+      <td>The name of the tool this export was generated with. Well known tools are:<br>
+          <kbd>"mattermost-server"</kbd> for the Mattermost Server.<br>
+          <kbd>"mmetl"</kbd> for the Slack export converter "mmetl".</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">version</td>
+      <td valign="middle">string</td>
+      <td>The version of the tool this export was generated with. This may contain multiple pieces of version info, separated by spaces. The first one should be a semantic version.<br>
+      <kbd>"7.6.0 (29bb1e53ef5a439c73065f47de2972f9bbcb09a4, enterprise: true)"</kbd> is an example of such a version string.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">created</td>
+      <td valign="middle">string</td>
+      <td>The timestamp of the file creation. This should be formatted as an RFC 3339 timestamp. The nanosecond part is optional.<br>
+      <kbd>"2022-11-22T16:40:51.019582328+01:00"</kbd></td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">additional</td>
+      <td valign="middle">any</td>
+      <td>Any additional information the generator wants to include into the file header. May be omitted. Be aware that the size of each line is limited to a few MiB.</td>
+    </tr>
+  </table>
+
 Team object
 -----------
 
