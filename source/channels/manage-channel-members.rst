@@ -39,7 +39,7 @@ You can also add users to channels within their profile pop-over.
 Leave a channel
 ----------------
 
-Remove yourself from any channel by:
+To remove yourself from a channel, you can:
 
 - Selecting the channel name at the top of the center pane to access the drop-down menu, then selecting **Manage Members**. Select the member's `user role </welcome/about-user-roles.html>`__, then select **Remove from Channel**.
 - Selecting the channel's **View Info** |channel-info| icon, and selecting **Members** in the right pane. Select **Manage**, select a user's role, then select **Leave a Channel**.
