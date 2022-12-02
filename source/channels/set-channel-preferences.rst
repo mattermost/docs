@@ -127,7 +127,7 @@ Channel name
 
 A channel name must be at least two characters, and can be up to 64 characters in length. `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported.
 
-Change the channel name by selecting **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
+To change the channel name, select **Rename Channel**. Changing the name of the channel also changes the channel URL. Any channel member can change a channel name, unless the System Admin has `restricted permissions to do so using advanced permissions </onboard/advanced-permissions.html>`__.
 
 .. tip::
 
