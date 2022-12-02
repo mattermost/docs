@@ -120,7 +120,7 @@ Provide a channel purpose by selecting **Edit Channel Purpose**. Any channel mem
 
 .. tip::
 
-  Alternatively, you can provide or update a channel purpose by selecting the channel name, then selecting **Edit Channel Purpose** from the list of options.
+  Alternatively, to provide or update a channel purpose, select the channel name, then select **Edit Channel Purpose** from the list of options.
 
 Channel name
 ------------
