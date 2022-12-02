@@ -21,7 +21,7 @@ Any member of a channel can add other members to public or private channels, unl
 
 .. tip::
 
-  Alternatively, you can add members to a channel by selecting the channel name, selecting the **View Info** |channel-info| icon, selecting **Members** in the right pane, and selecting **Add**.
+  Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**.
  
 Add users from their profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
