@@ -720,14 +720,14 @@ Ignore guest users when synchronizing with AD/LDAP
 
 *Available in legacy Enterprise Edition E20*
 
-- **true**: Mattermost ignores Guest Users identified by the Guest Attribute when syncing with the AD/LDAP server on user deactivation and removal.
- Manage guest deactivation manually via **System Console > Users**. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: When syncing with the AD/LDAP server, Mattermost ignores Guest Users that have been deactivated and removed, and does not make any changes to them. Manage guest deactivation manually via **System Console > Users**. For more information, see `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__. | - System Config path: **Authentication > SAML 2.0**                      |
+| - **false**: **(Default)** Syncing Mattermost with the AD/LDAP server deactivates and removes SAML-based accounts for Guest Users that are no longer active on the AD/LDAP server.                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.IgnoreGuestsLdapSync: false`` |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_IGNOREGUESTSLDAPSYNC``         |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-**False**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
 
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IgnoreGuestsLdapSync": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
+ This feature's ``config.json`` setting is ``"IgnoreGuestsLdapSync": false`` with options ``true`` and ``false``. 
 
 Override SAML bind data with AD/LDAP information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
