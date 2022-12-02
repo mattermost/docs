@@ -773,11 +773,11 @@ SAML SSO URL
 
 *Available in legacy Enterprise Edition E20*
 
-The URL where Mattermost sends a SAML request to start login sequence.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpURL": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**     |
+|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL: ""`` |
+| String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``      |
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+
 
 Identity provider issuer URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
