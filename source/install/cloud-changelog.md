@@ -20,7 +20,7 @@ Latest Mattermost Cloud releases:
  - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
 
 #### Global Drafts
- - Added a centralized page for draft messages.
+ - Added a centralized Drafts view for draft messages.
 
 ### Improvements
 
