@@ -734,16 +734,21 @@ Override SAML bind data with AD/LDAP information
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://docs.mattermost.com/onboard/ad-ldap.html>`__ to learn more.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| - **true**: If the SAML ID attribute is configured, Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute.                                                                                      | - System Config path: **Authentication > SAML 2.0**                               |
+|                                                                                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.EnableSyncWithLdapIncludeAuth: false`` |
+| If the SAML ID attribute is not present, Mattermost overrides the SAML Email attribute with the AD/LDAP Email attribute.                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAPINCLUDEAUTH``         |
+|                                                                                                                                                                                                                    |                                                                                   |
+| For more information, see `AD/LDAP Setup <https://docs.mattermost.com/onboard/ad-ldap.html>`__ and `Advanced User Management <https://docs.mattermost.com/guides/administration.html#advanced-user-management>`__. |                                                                                   |
+|                                                                                                                                                                                                                    |                                                                                   |
+| - **false**: **(Default)** Mattermost uses the email attribute to bind users to SAML.                                                                                                                              |                                                                                   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                                                                                                                                                                             |
+| - This setting should be **false** unless LDAP sync is enabled.                                                                                                                                                                                                                                        |
+| - Changing this setting from **true** to **false** will disable the override.                                                                                                                                                                                                                          |
+| - SAML IDs must match LDAP IDs when the override is enabled.                                                                                                                                                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
-**False**: Mattermost uses the email attribute to bind users to SAML.
-
-.. note::
-  Moving from ``true`` to ``false`` will prevent the override from happening. To prevent the disabling of user accounts, SAML IDs must match the LDAP IDs when this feature is enabled. This setting should be set to ``false`` unless LDAP sync is enabled.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------------+
 
 Identity provider metadata URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
