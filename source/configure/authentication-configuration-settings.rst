@@ -787,16 +787,11 @@ Identity provider issuer URL
 
 *Available in legacy Enterprise Edition E20*
 
-+--+-------------------------------------------------------------------+
-|  | - System Config path: **Authentication > SAML 2.0**               |
-|  | - ``config.json`` setting: ``.SamlSettings.IdpDescriptorURL: ""`` |
-|  | - Environment variable: ``                                        |
-+--+-------------------------------------------------------------------+
-The issuer URL for the Identity Provider you use for SAML requests.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpDescriptorUrl": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| This setting is the issuer URL for the Identity Provider for SAML requests. | - System Config path: **Authentication > SAML 2.0**               |
+|                                                                             | - ``config.json`` setting: ``.SamlSettings.IdpDescriptorURL: ""`` |
+| String input.                                                               | - Environment variable: ``MM_SAMLSETTINGS_IDPDESCRIPTORURL``      |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 Identity provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -806,11 +801,11 @@ Identity provider public certificate
 
 *Available in legacy Enterprise Edition E20*
 
-The public authentication certificate issued by your Identity Provider.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpCertificateFile": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------+---------------------------------------------------------------------+
+| The public authentication certificate issued by your Identity Provider. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                         | - ``config.json`` setting: ``.SamlSettings.IdpCertificateFile: ""`` |
+| String input.                                                           | - Environment variable: ``MM_SAMLSETTINGS_IDPCERTIFICATEFILE``      |
++-------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Verify signature
 ~~~~~~~~~~~~~~~~
