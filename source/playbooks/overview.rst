@@ -25,31 +25,31 @@ For participants, it prescribes processes such as task checklists, status update
 
 Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration.
 
-What’s a playbook?
-^^^^^^^^^^^^^^^^^^
+Keywords
+--------
 
-A playbook is a checklist of the tasks that make up your processes. These tasks can range from at-mentioning a team member, to using a slash command to start a Zoom call. Tasks can be assigned to users, they can be given due dates.
+It's important to make it easy to start a run. One way to do this is by setting up keywords. These keywords prompt a user to start the run when they're used. In the incident response playbook, the keywords are specific to critical incidents, for example ``sev-1`` and ``#incident``. It's unlikely that someone would use those terms in general conversation and, even if they do, they can elect not to start the playbook run when prompted.
 
-There are other parts of a playbook, such as automation settings, and metrics. But the very first thing you’ll want to set up is a checklist.
+Welcome message
+---------------
 
-Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a dedicated channel. 
+Create a welcome message so that when members join your run, it's easy for them to see where they're needed and where to find the relevant information. This is especially important during a time-sensitive incident to eliminate confusion and help members ramp up quickly.
 
-Setting up a playbook includes configuring how the playbook manages the creation of its channel as well as how stakeholders are notified.
-To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** beside that playbook’s name.
+Tasks and checklists
+--------------------
 
-Templates
-~~~~~~~~~
+Tasks and checklists are the foundation of a template and a workflow. In an incident, it's critical to get stakeholders together as soon as possible, so one of the first tasks is to add the on-call engineer to the channel, followed by starting a bridge call. When you're setting up these tasks, you can add slash commands, at-mentions, and integrations with tools such as Zoom to make the initiation as seamless as possible.
 
-Creating a playbook from scratch can be daunting, even if you have the process mapped out. One way to get started quickly is to use one of the pre-configured templates available. These templates are populated with content and settings to provide guidance and are customizable.
+Status updates
+--------------
 
-Playbook templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
+Regular updates are important communication tools, especially in the middle of an incident like an outage. Channels can get very busy and overwhelming, and if you have more than one incident at a time, it's often too noisy for stakeholders to keep track of everything.
 
-What’s a run?
-^^^^^^^^^^^^^
+Use the **Broadcast update to other channels** option to cut through the noise and share critical information with both channel members and other users in a dedicated channel.
 
-To access runs, select the product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
+Additionally, set a timer that issues a reminder for updates to be shared.
 
-View run details
-~~~~~~~~~~~~~~~~
+Retrospective
+-------------
 
-When you’re in a channel with an active run, select the **Toggle Run Details** icon in the channel header to open the right-hand pane to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
+When an incident is over, create a retrospective that captures the impact of the event. You can also add metrics, such as how long it took to resolve the incident, which you can apply to other, similar incidents to see where you can improve and refine your workflows.

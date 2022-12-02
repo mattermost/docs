@@ -1,10 +1,40 @@
-Customize your playbook
+Work with playbooks
 =======================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Playbooks are highly customizable to align with your workflow.
+
+What’s a playbook?
+^^^^^^^^^^^^^^^^^^
+
+A playbook is a checklist of the tasks that make up your processes. These tasks can range from at-mentioning a team member, to using a slash command to start a Zoom call. Tasks can be assigned to users, they can be given due dates.
+
+There are other parts of a playbook, such as automation settings, and metrics. But the very first thing you’ll want to set up is a checklist.
+
+Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a dedicated channel. 
+
+Setting up a playbook includes configuring how the playbook manages the creation of its channel as well as how stakeholders are notified.
+To open a playbook and view its statistics, select the playbook name. To begin a run using a specific playbook, select **Run** beside that playbook’s name.
+
+Templates
+~~~~~~~~~
+
+Creating a playbook from scratch can be daunting, even if you have the process mapped out. One way to get started quickly is to use one of the pre-configured templates available. These templates are populated with content and settings to provide guidance and are customizable.
+
+Playbook templates are basic workflows that you can use to get started quickly. As you learn more about your workflows, you can customize them into specific playbooks.
+
+Choose a template
+-----------------
+
+The first step is to choose the right template for your use case. There are pre-configured templates for specific scenarios. The checklists, actions, status updates, and retrospective settings for these templates may already be filled in and, where appropriate, enabled. You can always edit and adjust these settings - they're there to guide you - removing them doesn't negatively affect the playbook run.
+
+.. tip:: 
+
+    Take a look at the **Learn how to use playbooks** template. This template breaks down the components of a playbook and you can also start a test run to see how everything fits together. If you're taking this option, you can stop reading here and enjoy the test run. You can also choose a blank template and start from scratch - this is a good option if your use case is unique.
+
+In the incident response template, the template contains items that are relevant to incident resolution. These are general items to help you get started.
 
 Edit a playbook
 ---------------
