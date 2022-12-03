@@ -871,11 +871,11 @@ Service provider private key
 
 *Available in legacy Enterprise Edition E20*
 
-The private key used to decrypt SAML Assertions from the Identity Provider.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting stores the private key used to decrypt SAML Assertions from the Identity Provider. | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PrivateKeyFile: ""`` |
+| String input.                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PRIVATEKEYFILE``      |
++-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Service provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
