@@ -814,14 +814,11 @@ Verify signature
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
-
-**True**: Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
-
-**False**: Not recommended for production environments. For testing only.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| - **true**: **(Default)** Mattermost checks that the SAML Response signature matches the Service Provider Login URL.      | - System Config path: **Authentication > SAML 2.0**       |
+| - **false**: The signature is not verified. This is **not recommended** for production. Use this option for testing only. | - ``config.json`` setting: ``.SamlSettings.Verify: true`` |
+|                                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_VERIFY``        |
++---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 Service provider login URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -830,12 +827,13 @@ Service provider login URL
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
-
-Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``). Make sure you use HTTP or HTTPS in your URL depending on your server configuration. This field is also known as the Assertion Consumer Service URL.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input. |
-+----------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``. | - System Config path: **Authentication > SAML 2.0**                          |
+|                                                                                                                        | - ``config.json`` setting: ``.SamlSettings.AssertionConsumerServiceURL: ""`` |
+| Use HTTP or HTTPS depending on the configuration of the server.                                                        | - Environment variable: ``MM_SAMLSETTINGS_ASSERTIONCONSUMERSERVICEURL``      |
+|                                                                                                                        |                                                                              |
+| This setting is also known as the Assertion Consumer Service URL.                                                      |                                                                              |
++------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Service provider identifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
