@@ -885,11 +885,11 @@ Service provider public certificate
 
 *Available in legacy Enterprise Edition E20*
 
-The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
-
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input. |
-+----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider. | - System Config path: **Authentication > SAML 2.0**                    |
+|                                                                                                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PublicCertificateFile: ""`` |
+|                                                                                                                                                                                 | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Sign request
 ~~~~~~~~~~~~
