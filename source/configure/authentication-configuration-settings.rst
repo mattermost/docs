@@ -400,8 +400,8 @@ Enable admin filter
 | - **false**: **(Default)** Disables the **Admin Filter** setting.                                                                                                                                                           | - ``config.json`` setting: ``.LdapSettings.EnableAdminFilter: false`` |
 |                                                                                                                                                                                                                             | - Environment variable: ``MM_LDAPSETTINGS_ENABLEADMINFILTER``         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| **Note**: If this setting is ``false``, no additional users are designated as System Admins by the filter. Users that were previously designated as System Admins retain this role unless the filter is changed or removed.                                                                         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: If this setting is ``false``, no additional users are designated as System Admins by the filter. Users that were previously designated as System Admins retain this role unless the filter is changed or removed. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Admin filter
 ~~~~~~~~~~~~
@@ -857,13 +857,11 @@ Enable encryption
 
 *Available in legacy Enterprise Edition E20*
 
-**True**: Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
-
-**False**: Not recommended for production environments. For testing only.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Encrypt": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: **(Default)** Mattermost will decrypt SAML Assertions that are encrypted with your Service Provider Public Certificate.   | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: Mattermost does not decrypt SAML Assertions. Use this option for testing only. It is **not recommended** for production. | - ``config.json`` setting: ``.SamlSettings.Encrypt: true`` |
+|                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENCRYPT``        |
++---------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Service provider private key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
