@@ -912,11 +912,11 @@ Signature algorithm
 
 *Available in legacy Enterprise Edition E20*
 
-The signature algorithm used to sign the request. Supported options are `RSAwithSHA1 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__, `RSAwithSHA256 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__, and `RSAwithSHA512 <https://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`__.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.SignatureAlgorithm: ""`` |
+| String input.                                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNATUREALGORITHM``      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Canonical algorithm
 ~~~~~~~~~~~~~~~~~~~~
