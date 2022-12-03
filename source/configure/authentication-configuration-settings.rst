@@ -843,11 +843,11 @@ Service provider identifier
 
 *Available in legacy Enterprise Edition E20*
 
-The unique identifier for the Service Provider, usually the same as Service Provider Login URL. In ADFS, this must match the Relying Party Identifier.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| This setting is the unique identifier for the Service Provider, which in most cases is the same as the Service Provider Login URL. In ADFS, this must match the Relying Party Identifier. | - System Config path: **Authentication > SAML 2.0**                        |
+|                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.ServiceProviderIdentifier: ""`` |
+| String input.                                                                                                                                                                             | - Environment variable: ``MM_SAMLSETTINGS_SERVICEPROVIDERIDENTIFIER``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 Enable encryption
 ~~~~~~~~~~~~~~~~~
