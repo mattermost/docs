@@ -888,7 +888,7 @@ Service provider public certificate
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider. | - System Config path: **Authentication > SAML 2.0**                    |
 |                                                                                                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PublicCertificateFile: ""`` |
-|                                                                                                                                                                                 | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``      |
+| String input.                                                                                                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Sign request
@@ -898,12 +898,11 @@ Sign request
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
-
-When ``true``, Mattermost signs the SAML request using your Service Provider Private Key. When ``false``, Mattermost does not sign the SAML request.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignRequest": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: Mattermost signs the SAML request with the Service Provider Private Key. | - System Config path: **Authentication > SAML 2.0**        |
+| - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``.SamlSettings.SignRequest: `` |
+|                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNREQUEST``    |
++--------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~~
