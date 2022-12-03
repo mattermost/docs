@@ -926,11 +926,14 @@ Canonical algorithm
 
 *Available in legacy Enterprise Edition E20*
 
-The canonicalization algorithm. Supported options are ``Canonical1.0`` for `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``) and ``Canonical1.1`` for `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``).
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": "Canonical1.0"`` with string input. |
-+-------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| This setting determines the canonicalization algorithm. With these options:                                                                                                                                                                | - System Config path: **Authentication > SAML 2.0**                             |
+|                                                                                                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.CanonicalAlgorithm: "Canonical1.0"`` |
+| - **Canonical1.0**: **(Default)** `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``). ``config.json`` setting: ``Canonical1.0``. | - Environment variable: ``MM_SAMLSETTINGS_CANONICALALGORITHM``                  |
+| - **Canonical1.1**:  `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``). ``config.json`` setting: ``Canonical1.1``.                                    |                                                                                 |
+|                                                                                                                                                                                                                                            |                                                                                 |
+| String input.                                                                                                                                                                                                                              |                                                                                 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Email attribute
 ~~~~~~~~~~~~~~~
