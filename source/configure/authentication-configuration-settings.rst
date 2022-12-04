@@ -1036,11 +1036,12 @@ First name attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input. |
-+-------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the first name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                 |
+|                                                                                                                       | - ``config.json`` setting: ``.SamlSettings.FirstNameAttribute: ""`` |
+|                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_FIRSTNAMEATTRIBUTE``      |
+| String input.                                                                                                         |                                                                     |
++-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
@@ -1050,11 +1051,12 @@ Last name attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the last name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.LastNameAttribute: ""`` |
+|                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_LASTNAMEATTRIBUTE``      |
+| String input.                                                                                                        |                                                                    |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1064,11 +1066,12 @@ Nickname attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the nickname of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                     | - ``config.json`` setting: ``.SamlSettings.NicknameAttribute: ""`` |
+|                                                                                                                     | - Environment variable: ``MM_SAMLSETTINGS_NICKNAMEATTRIBUTE``      |
+| String input.                                                                                                       |                                                                    |
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Position attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1078,11 +1081,12 @@ Position attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost (typically used to describe a person's job title or role at the company).
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the position (job title or role at company) of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.PositionAttribute: ""`` |
+|                                                                                                                                                    | - Environment variable: ``MM_SAMLSETTINGS_POSITIONATTRIBUTE``      |
+| String input.                                                                                                                                      |                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Preferred language attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1092,11 +1096,12 @@ Preferred language attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LocaleAttribute": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute that populates the language preference of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**              |
+|                                                                                                                                | - ``config.json`` setting: ``.SamlSettings.LocaleAttribute: ""`` |
+|                                                                                                                                | - Environment variable: ``MM_SAMLSETTINGS_LOCALEATTRIBUTE``      |
+| String input.                                                                                                                  |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 Login button text
 ~~~~~~~~~~~~~~~~~~
