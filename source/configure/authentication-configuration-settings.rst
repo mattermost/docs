@@ -747,7 +747,7 @@ Override SAML bind data with AD/LDAP information
 | - This setting should be **false** unless LDAP sync is enabled.                                                                                                                                                                                                                                        |
 | - Changing this setting from **true** to **false** will disable the override.                                                                                                                                                                                                                          |
 | - SAML IDs must match LDAP IDs when the override is enabled.                                                                                                                                                                                                                                           |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 Identity provider metadata URL
@@ -760,7 +760,7 @@ Identity provider metadata URL
 
 +------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This setting is the URL from which Mattermost requests setup metadata from the provider. | - System Config path: **Authentication > SAML 2.0**             |
-|                                                                                          | - ``config.json`` setting: ``.SamlSettings.IdpMetadataURL: ""`` |
+|                                                                                          | - ``config.json`` setting: ``.SamlSettings.IdpMetadataURL``     |
 | String input.                                                                            | - Environment variable: ``MM_SAMLSETTINGS_IDPMETADATAURL``      |
 +------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
@@ -775,7 +775,7 @@ SAML SSO URL
 
 +--------------------------------------------------------------------------------------------+---------------------------------------------------------+
 | This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**     |
-|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL: ""`` |
+|                                                                                            | - ``config.json`` setting: ``.SamlSettings.IdpURL``     |
 | String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``      |
 +--------------------------------------------------------------------------------------------+---------------------------------------------------------+
 
@@ -789,7 +789,7 @@ Identity provider issuer URL
 
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 | This setting is the issuer URL for the Identity Provider for SAML requests. | - System Config path: **Authentication > SAML 2.0**               |
-|                                                                             | - ``config.json`` setting: ``.SamlSettings.IdpDescriptorURL: ""`` |
+|                                                                             | - ``config.json`` setting: ``.SamlSettings.IdpDescriptorURL``     |
 | String input.                                                               | - Environment variable: ``MM_SAMLSETTINGS_IDPDESCRIPTORURL``      |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 
@@ -803,7 +803,7 @@ Identity provider public certificate
 
 +-------------------------------------------------------------------------+---------------------------------------------------------------------+
 | The public authentication certificate issued by your Identity Provider. | - System Config path: **Authentication > SAML 2.0**                 |
-|                                                                         | - ``config.json`` setting: ``.SamlSettings.IdpCertificateFile: ""`` |
+|                                                                         | - ``config.json`` setting: ``.SamlSettings.IdpCertificateFile``     |
 | String input.                                                           | - Environment variable: ``MM_SAMLSETTINGS_IDPCERTIFICATEFILE``      |
 +-------------------------------------------------------------------------+---------------------------------------------------------------------+
 
@@ -829,7 +829,7 @@ Service provider login URL
 *Available in legacy Enterprise Edition E20*
 +------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``. | - System Config path: **Authentication > SAML 2.0**                          |
-|                                                                                                                        | - ``config.json`` setting: ``.SamlSettings.AssertionConsumerServiceURL: ""`` |
+|                                                                                                                        | - ``config.json`` setting: ``.SamlSettings.AssertionConsumerServiceURL``     |
 | Use HTTP or HTTPS depending on the configuration of the server.                                                        | - Environment variable: ``MM_SAMLSETTINGS_ASSERTIONCONSUMERSERVICEURL``      |
 |                                                                                                                        |                                                                              |
 | This setting is also known as the Assertion Consumer Service URL.                                                      |                                                                              |
@@ -845,7 +845,7 @@ Service provider identifier
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 | This setting is the unique identifier for the Service Provider, which in most cases is the same as the Service Provider Login URL. In ADFS, this must match the Relying Party Identifier. | - System Config path: **Authentication > SAML 2.0**                        |
-|                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.ServiceProviderIdentifier: ""`` |
+|                                                                                                                                                                                           | - ``config.json`` setting: ``.SamlSettings.ServiceProviderIdentifier``     |
 | String input.                                                                                                                                                                             | - Environment variable: ``MM_SAMLSETTINGS_SERVICEPROVIDERIDENTIFIER``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
@@ -873,7 +873,7 @@ Service provider private key
 
 +-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This setting stores the private key used to decrypt SAML Assertions from the Identity Provider. | - System Config path: **Authentication > SAML 2.0**             |
-|                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PrivateKeyFile: ""`` |
+|                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PrivateKeyFile``     |
 | String input.                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PRIVATEKEYFILE``      |
 +-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
@@ -887,7 +887,7 @@ Service provider public certificate
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider. | - System Config path: **Authentication > SAML 2.0**                    |
-|                                                                                                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PublicCertificateFile: ""`` |
+|                                                                                                                                                                                 | - ``config.json`` setting: ``.SamlSettings.PublicCertificateFile``     |
 | String input.                                                                                                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``      |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
@@ -914,7 +914,7 @@ Signature algorithm
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. | - System Config path: **Authentication > SAML 2.0**                 |
-|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.SignatureAlgorithm: ""`` |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.SignatureAlgorithm``     |
 | String input.                                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNATUREALGORITHM``      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
@@ -928,7 +928,7 @@ Canonical algorithm
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | This setting determines the canonicalization algorithm. With these options:                                                                                                                                                                | - System Config path: **Authentication > SAML 2.0**                             |
-|                                                                                                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.CanonicalAlgorithm: "Canonical1.0"`` |
+|                                                                                                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.CanonicalAlgorithm``                 |
 | - **Canonical1.0**: **(Default)** `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``). ``config.json`` setting: ``Canonical1.0``. | - Environment variable: ``MM_SAMLSETTINGS_CANONICALALGORITHM``                  |
 | - **Canonical1.1**:  `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``). ``config.json`` setting: ``Canonical1.1``.                                    |                                                                                 |
 |                                                                                                                                                                                                                                            |                                                                                 |
@@ -945,7 +945,7 @@ Email attribute
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.                                   | - System Config path: **Authentication > SAML 2.0**             |
-|                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.EmailAttribute: ""`` |
+|                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.EmailAttribute``     |
 | Notifications are sent to this email address. This email address may be visible to other users, depending on how the System Admin has set-up user privacy. | - Environment variable: ``MM_SAMLSETTINGS_EMAILATTRIBUTE``      |
 |                                                                                                                                                            |                                                                 |
 | String input.                                                                                                                                              |                                                                 |
@@ -961,7 +961,7 @@ Username attribute
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | This setting determines the SAML Assertion attribute that populates the username field in the Mattermost UI.                                                                                                                                             | - System Config path: **Authentication > SAML 2.0**                |
-|                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.UsernameAttribute: ""`` |
+|                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.UsernameAttribute``     |
 | This attribute identifies users in the UI. For example, if a username is set to ``john.smith``, typing ``@john`` will show ``@john.smith`` as an auto-complete option, and posting a message with ``@john.smith`` will send a notification to that user. | - Environment variable: ``MM_SAMLSETTINGS_USERNAMEATTRIBUTE``      |
 |                                                                                                                                                                                                                                                          |                                                                    |
 | String input.                                                                                                                                                                                                                                            |                                                                    |
@@ -977,7 +977,7 @@ Id attribute
 
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute used to bind users from SAML to users in Mattermost. | - System Config path: **Authentication > SAML 2.0**          |
-|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.IdAttribute: ""`` |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.IdAttribute``     |
 | String input.                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_IDATTRIBUTE``      |
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
@@ -991,7 +991,7 @@ Guest attribute
 
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.       | - System Config path: **Authentication > SAML 2.0**             |
-|                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.GuestAttribute: ""`` |
+|                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.GuestAttribute``     |
 | See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information. | - Environment variable: ``MM_SAMLSETTINGS_GUESTATTRIBUTE``      |
 |                                                                                                                          |                                                                 |
 | String input.                                                                                                            |                                                                 |
@@ -1020,7 +1020,7 @@ Admin attribute
 
 +-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | (Optional) This setting determines the attribute in the SAML Assertion for designating System Admins.                         | - System Config path: **Authentication > SAML 2.0**             |
-|                                                                                                                               | - ``config.json`` setting: ``.SamlSettings.AdminAttribute: ""`` |
+|                                                                                                                               | - ``config.json`` setting: ``.SamlSettings.AdminAttribute``     |
 | Users are automatically promoted to this role when logging in to Mattermost.                                                  | - Environment variable: ``MM_SAMLSETTINGS_ADMINATTRIBUTE``      |
 |                                                                                                                               |                                                                 |
 | If the Admin attribute is removed, users that are logged in retain Admin status. The role is revoked only when users log out. |                                                                 |
@@ -1038,7 +1038,7 @@ First name attribute
 
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the first name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                 |
-|                                                                                                                       | - ``config.json`` setting: ``.SamlSettings.FirstNameAttribute: ""`` |
+|                                                                                                                       | - ``config.json`` setting: ``.SamlSettings.FirstNameAttribute``     |
 |                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_FIRSTNAMEATTRIBUTE``      |
 | String input.                                                                                                         |                                                                     |
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -1053,7 +1053,7 @@ Last name attribute
 
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the last name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
-|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.LastNameAttribute: ""`` |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.LastNameAttribute``     |
 |                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_LASTNAMEATTRIBUTE``      |
 | String input.                                                                                                        |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
@@ -1068,7 +1068,7 @@ Nickname attribute
 
 +---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the nickname of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
-|                                                                                                                     | - ``config.json`` setting: ``.SamlSettings.NicknameAttribute: ""`` |
+|                                                                                                                     | - ``config.json`` setting: ``.SamlSettings.NicknameAttribute``     |
 |                                                                                                                     | - Environment variable: ``MM_SAMLSETTINGS_NICKNAMEATTRIBUTE``      |
 | String input.                                                                                                       |                                                                    |
 +---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
@@ -1083,7 +1083,7 @@ Position attribute
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the position (job title or role at company) of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                |
-|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.PositionAttribute: ""`` |
+|                                                                                                                                                    | - ``config.json`` setting: ``.SamlSettings.PositionAttribute``     |
 |                                                                                                                                                    | - Environment variable: ``MM_SAMLSETTINGS_POSITIONATTRIBUTE``      |
 | String input.                                                                                                                                      |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
@@ -1098,7 +1098,7 @@ Preferred language attribute
 
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the language preference of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**              |
-|                                                                                                                                | - ``config.json`` setting: ``.SamlSettings.LocaleAttribute: ""`` |
+|                                                                                                                                | - ``config.json`` setting: ``.SamlSettings.LocaleAttribute``     |
 |                                                                                                                                | - Environment variable: ``MM_SAMLSETTINGS_LOCALEATTRIBUTE``      |
 | String input.                                                                                                                  |                                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
@@ -1110,12 +1110,11 @@ Login button text
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
-
-(Optional) The text that appears in the login button on the login page. Defaults to **SAML**.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+--------------------------------------------------------------+
+| (Optional) The text that appears in the login button on the sign-in page. | - System Config path: **Authentication > SAML 2.0**          |
+|                                                                           | - ``config.json`` setting: ``.SamlSettings.LoginButtonText`` |
+| String input. Default is **SAML**.                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONTEXT``  |
++---------------------------------------------------------------------------+--------------------------------------------------------------+
 
 ----
 
