@@ -943,13 +943,13 @@ Email attribute
 
 *Available in legacy Enterprise Edition E20*
 
-The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
-
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.                                   | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.EmailAttribute: ""`` |
+| Notifications are sent to this email address. This email address may be visible to other users, depending on how the System Admin has set-up user privacy. | - Environment variable: ``MM_SAMLSETTINGS_EMAILATTRIBUTE``      |
+|                                                                                                                                                            |                                                                 |
+| String input.                                                                                                                                              |                                                                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
