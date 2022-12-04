@@ -1004,10 +1004,11 @@ Enable admin attribute
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
-
-**True**: Enables System Admins to configure the SAML Assertion.
-
-**False**: Disables the ability for System Admins to configure the SAML Assertion.
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: System Admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                      |
+| - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``.SamlSettings.EnableAdminAttribute: false`` |
+|                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE``         |
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Admin attribute
 ~~~~~~~~~~~~~~~
@@ -1017,13 +1018,15 @@ Admin attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion for designating System Admins. The user is automatically promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
-
-This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| (Optional) This setting determines the attribute in the SAML Assertion for designating System Admins.                         | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                               | - ``config.json`` setting: ``.SamlSettings.AdminAttribute: ""`` |
+| Users are automatically promoted to this role when logging in to Mattermost.                                                  | - Environment variable: ``MM_SAMLSETTINGS_ADMINATTRIBUTE``      |
+|                                                                                                                               |                                                                 |
+| If the Admin attribute is removed, users that are logged in retain Admin status. The role is revoked only when users log out. |                                                                 |
+|                                                                                                                               |                                                                 |
+| String input.                                                                                                                 |                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~
