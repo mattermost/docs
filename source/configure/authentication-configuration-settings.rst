@@ -975,11 +975,11 @@ Id attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion used to bind users from SAML to users in Mattermost.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute used to bind users from SAML to users in Mattermost. | - System Config path: **Authentication > SAML 2.0**          |
+|                                                                                                                      | - ``config.json`` setting: ``.SamlSettings.IdAttribute: ""`` |
+| String input.                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_IDATTRIBUTE``      |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
 Guest attribute
 ~~~~~~~~~~~~~~~~
@@ -989,13 +989,13 @@ Guest attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
-
-See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
-
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.       | - System Config path: **Authentication > SAML 2.0**             |
+|                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.GuestAttribute: ""`` |
+| See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information. | - Environment variable: ``MM_SAMLSETTINGS_GUESTATTRIBUTE``      |
+|                                                                                                                          |                                                                 |
+| String input.                                                                                                            |                                                                 |
++--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Enable admin attribute
 ~~~~~~~~~~~~~~~~~~~~~~
