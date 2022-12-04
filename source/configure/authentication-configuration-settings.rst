@@ -118,11 +118,11 @@ Enable sign-in with email
 Enable sign-in with username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                               |
-| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername``         |
-|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``          |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                       |
+| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername`` |
+|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----
 
@@ -334,8 +334,8 @@ Bind username
 |                                                                                                                                          |                                                           |
 | String input.                                                                                                                            |                                                           |
 +------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
-| **Note**: This field is required. Anonymous bind is not currently supported.                                                                                                                         |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: This field is required. Anonymous bind is not currently supported.                                                             |
++------------------------------------------------------------------------------------------------------------------------------------------+
 
 Bind password
 ~~~~~~~~~~~~~
@@ -371,8 +371,8 @@ User filter
 |                                                                                                                                                                                                                                                                                                                                                                                                         |                                                         |
 | String input.                                                                                                                                                                                                                                                                                                                                                                                           |                                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
-| **Note**: This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.                                                                                                                                                                                                                 |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.                                                                                                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group filter
 ~~~~~~~~~~~~~
@@ -959,11 +959,13 @@ Username attribute
 
 *Available in legacy Enterprise Edition E20*
 
-The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| This setting determines the SAML Assertion attribute that populates the username field in the Mattermost UI.                                                                                                                                             | - System Config path: **Authentication > SAML 2.0**                |
+|                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``.SamlSettings.UsernameAttribute: ""`` |
+| This attribute identifies users in the UI. For example, if a username is set to ``john.smith``, typing ``@john`` will show ``@john.smith`` as an auto-complete option, and posting a message with ``@john.smith`` will send a notification to that user. | - Environment variable: ``MM_SAMLSETTINGS_USERNAMEATTRIBUTE``      |
+|                                                                                                                                                                                                                                                          |                                                                    |
+| String input.                                                                                                                                                                                                                                            |                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Id attribute
 ~~~~~~~~~~~~
