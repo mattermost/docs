@@ -32,7 +32,9 @@ Latest Mattermost Releases:
  - 
 
 #### Boards
- - 
+ - Boards now supports file attachments, including PDFs, images, videos, and any other file types.
+ - Users can now drag and drop boards and categories on the sidebar and organize them in any order they prefer.
+ - The template picker has been improved to make it easier for users to find the best template for their project.
  
 #### Playbooks
  - 
@@ -67,7 +69,7 @@ Latest Mattermost Releases:
  - Team scheme APIs are now allowed to be administered with a Professional plan.
  - All integration limits and usage limit components were removed.
  - A global banner as well as a notice banner are displayed to admins on the **Invite** modal and on **System Console > Site Statistics > Total Active Users** page when the workspace exceeds the maximum number of users allowed. If the number of actual users exceeds the number of paid users by less than 5%, the banner is dismissible. If the number of actual users exceeds the number of paid users by more than 10%, the banner is non-dismissible until the license seat count has been updated.
- - For admins to see how many license seats they have versus their total number of activated users, a **Paid Users** card was added to the **System Console > Team Statistics** page.
+ - For admins to see if the amount of users exceeds the license seats, a warning is now shown in the **System Console > Team Statistics** page.
  - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
  - Added ``acknowledgements`` field to the post's metadata.
  - Added support for product websocket messages on high availability instances.
