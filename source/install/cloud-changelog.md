@@ -37,6 +37,9 @@ Latest Mattermost Cloud releases:
 
 ### API Changes
  - Added new endpoint ``api/v4/cloud/products/selfhosted``.
+ 
+### Bug Fixes
+ - Fixed an issue where batch notifications failed while rendering.
 
 ### Known Issues
  - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
