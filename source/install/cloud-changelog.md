@@ -32,9 +32,6 @@ Latest Mattermost Cloud releases:
  - On the purchase modal, admins are now able to buy a subscription for a user count that exceeds the current user count.
  - Plugins with a webapp component may need to be updated to work with Mattermost and the updated ``React v17`` dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost and is backwards compatible with older versions of Mattermost.
  - Added ``acknowledgements`` field to the post's metadata.
-
-### API Changes
- - Added new endpoint ``api/v4/cloud/products/selfhosted``.
  
 ### Bug Fixes
  - Fixed an issue where batch notifications failed while rendering.
