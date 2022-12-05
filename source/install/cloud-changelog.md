@@ -29,8 +29,6 @@ Latest Mattermost Cloud releases:
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
- - The **System Console > Subscriptions** page now reflects whether the plan is monthly or annual.
- - Added the ability to migrate from a monthly to an annual Cloud Professional plan in-product.
  - On the purchase modal, admins are now able to buy a subscription for a user count that exceeds the current user count.
  - Plugins with a webapp component may need to be updated to work with Mattermost and the updated ``React v17`` dependency. This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost and is backwards compatible with older versions of Mattermost.
  - Added ``acknowledgements`` field to the post's metadata.
