@@ -51,7 +51,6 @@ Latest Mattermost Releases:
  - When the "Custom Brand Text" is left blank with custom branding enabled, the default text is now hidden.
  - The **Mark as Unread** option was added to the **More** (...) menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
  - Channel members are now able to remove themselves from a channel via the right-hand side channel members list.
- - Added a Monthly versus Annual pricing toggle to the pricing modal.
  - Removed video check to allow the browser to decide what video types it can play.
  - Added a tooltip to the right-hand side files filter icon.
  - The number of users that can be added to a user group at once was increased to 256.
