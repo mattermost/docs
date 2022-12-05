@@ -101,6 +101,7 @@ Latest Mattermost Releases:
  - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right panel.
  - Fixed an issue where the OAuth 2.0 deprecation notice was still displayed in the system console.
  - Fixed an issue where clicking on a reply post time stamp in the global threads inbox opened two right-hand side panels.
+ - Fixed an issue where batch notifications failed while rendering.
 
 ### config.json
 Multiple setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -136,7 +137,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - v7.6 is built with Go ``v1.18.1``.
 
 ### Known Issues
- - Email notifications sometimes look broken when email batching is enabled [MM-48521](https://mattermost.atlassian.net/browse/MM-48521).
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
