@@ -64,7 +64,7 @@ Enable account creation
   String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``
 
 Restrict account creation to specified email domains
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This setting limits the email address domains that can be used to create a new account or team. You **must** set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true`` for the restriction to function. This setting only affects email login. | - System Config path: **Authentication > Signup**                       |
@@ -100,7 +100,7 @@ Enable open server
   - **false**: **(Default)** Disables email invitations.
 
 Enable email invitations
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: Allows users to send email invitations.    | - System Config path: **Authentication > Signup**                      |
@@ -109,7 +109,7 @@ Enable email invitations
 +--------------------------------------------------------+------------------------------------------------------------------------+
 
 Invalidate pending email invites
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
 | This button invalidates email invitations that have not been accepted (by default, invitations expire after 48 hours). | - System Config path: **Authentication > Signup** |
@@ -120,7 +120,7 @@ Invalidate pending email invites
 ----
 
 Email
-------
+-----
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -256,7 +256,7 @@ Minimum password length
   :description: This setting controls password character requirements. When **true**, passwords must contain at least one symbol from ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``. Default is **false**.
 
 Password requirements
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
@@ -585,7 +585,7 @@ Bind password
   :description: This is the **Base Distinguished Name** of the location in the AD/LDAP tree where Mattermost will start searching for users.
 
 Base DN
-~~~~~~~~
+~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -603,7 +603,7 @@ Base DN
   :description: This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for user objects. Only the users selected by the query can access Mattermost.
 
 User filter
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -625,7 +625,7 @@ User filter
   :description: This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for group objects. Only the groups selected by the query can access Mattermost.
 
 Group filter
-~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -710,7 +710,7 @@ Guest filter
   :description: This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost. The attribute should have a unique value that does not change, such as ``objectGUID`` or ``entryUUID``.
 
 ID attribute
-~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -774,7 +774,7 @@ Username attribute
   :description: This is the attribute in AD/LDAP server that populates the email address field in Mattermost. Email notifications are sent to this address.
 
 Email attribute
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -794,7 +794,7 @@ Email attribute
   :description: This is the attribute in the AD/LDAP server that populates the first name field in Mattermost. When set, users cannot edit their first name.
 
 First name attribute
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -978,7 +978,7 @@ Synchronization interval (minutes)
   :description: This setting paginates the results of AD/LDAP server queries. Use this setting if your AD/LDAP server has a page size limit. A page size of **0** disables pagination of results. Default is **0**.
 
 Maximum page size
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
@@ -1065,7 +1065,7 @@ Access the following configuration settings in the System Console by going to **
   - **false**: **(Default)** Login with SAML is disabled.
 
 Enable login with SAML
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1117,7 +1117,7 @@ Enable synchronizing SAML accounts with AD/LDAP
   - **false**: Synchronization of SAML deactivates and removes Guest Users when synchronizing with AD/LDAP.
 
 Ignore guest users when synchronizing with AD/LDAP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1225,8 +1225,15 @@ The issuer URL for the Identity Provider you use for SAML requests.
 | This feature's ``config.json`` setting is ``"IdpDescriptorUrl": ""`` with string input. |
 +-----------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-providerpubliccert
+  :displayname: Identity provider public certificate (SAML)
+  :systemconsole: N/A
+  :configjson: IdpCertificateFile
+  :environment: N/A
+  :description: The public authentication certificate issued by your Identity Provider.
+
 Identity provider public certificate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1238,6 +1245,15 @@ The public authentication certificate issued by your Identity Provider.
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdpCertificateFile": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-verifysignature
+  :displayname: Verify signature (SAML)
+  :systemconsole: N/A
+  :configjson: Verify
+  :environment: N/A
+
+  - **true**: **(Default)** Mattermost verifies that the signature sent from the SAML Response matches the Service Provider Login URL.
+  - **false**: Not recommended for production environments. For testing only.
 
 Verify signature
 ~~~~~~~~~~~~~~~~
@@ -1255,6 +1271,16 @@ Verify signature
 | This feature's ``config.json`` setting is ``"Verify": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-providerloginurl
+  :displayname: Service provider login URL (SAML)
+  :systemconsole: N/A
+  :configjson: AssertionConsumerServiceURL
+  :environment: N/A
+
+  This field is also known as the Assertion Consumer Service URL.
+  Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://example.com/login/sso/saml``).
+  Make sure you use HTTP or HTTPS in your URL depending on your server configuration.
+
 Service provider login URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1269,6 +1295,13 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 | This feature's ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input. |
 +----------------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-provideridentifier
+  :displayname: Service provider identifier (SAML)
+  :systemconsole: N/A
+  :configjson: ServiceProviderIdentifier
+  :environment: N/A
+  :description: The unique identifier for the Service Provider, usually the same as Service Provider Login URL. In ADFS, this must match the Relying Party Identifier.
+
 Service provider identifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1282,6 +1315,15 @@ The unique identifier for the Service Provider, usually the same as Service Prov
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ServiceProviderIdentifier": ""`` with string input. |
 +--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-encryption
+  :displayname: Enable encryption (SAML)
+  :systemconsole: N/A
+  :configjson: Encrypt
+  :environment: N/A
+
+  - **true**: **(Default)** Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
+  - **false**: Not recommended for production environments. For testing only.
 
 Enable encryption
 ~~~~~~~~~~~~~~~~~
@@ -1299,6 +1341,13 @@ Enable encryption
 | This feature's ``config.json`` setting is ``"Encrypt": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-providerprivatekey
+  :displayname: Service provider private key (SAML)
+  :systemconsole: N/A
+  :configjson: PrivateKeyFile
+  :environment: N/A
+  :description: The private key used to decrypt SAML Assertions from the Identity Provider.
+
 Service provider private key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1313,8 +1362,15 @@ The private key used to decrypt SAML Assertions from the Identity Provider.
 | This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-serviceproviderpubliccert
+  :displayname: Service provider public certificate (SAML)
+  :systemconsole: N/A
+  :configjson: PublicCertificateFile
+  :environment: N/A
+  :description: The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
+
 Service provider public certificate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1326,6 +1382,13 @@ The certificate file used to generate the signature on a SAML request to the Ide
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input. |
 +----------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-signrequest
+  :displayname: Sign request (SAML)
+  :systemconsole: N/A
+  :configjson: SignRequest
+  :environment: N/A
+  :description: When ``true``, Mattermost signs the SAML request using your Service Provider Private Key. When ``false``, Mattermost does not sign the SAML request.
 
 Sign request
 ~~~~~~~~~~~~
@@ -1340,6 +1403,17 @@ When ``true``, Mattermost signs the SAML request using your Service Provider Pri
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SignRequest": ""`` with string input. |
 +------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-signaturealgo
+  :displayname: Signature algorithm
+  :systemconsole: N/A
+  :configjson: SignatureAlgorithm
+  :environment: N/A
+
+  The signature algorithm used to sign the request. Supported options are:
+  - `RSAwithSHA1 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__
+  - `RSAwithSHA256 <https://www.w3.org/2000/09/xmldsig#rsa-sha1>`__
+  - `RSAwithSHA512 <https://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`__
 
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~~
