@@ -30,7 +30,8 @@ Mattermost mobile v2.0 is a major update to the iOS and Android apps bringing su
 Users now gain a more reliable and feature-rich application, improving their experience for collaborating with their teams on the go.
 
 ### Known Issues
- - Users are unable to adjust the font size via the OS font size setting. 
+ - Users are unable to adjust the font size via the OS font size setting.
+ - **Add Members** and **Manage Members** modals are not yet added.
 
 ## 1.55.1 Release
 - Release Date: September 15, 2022
