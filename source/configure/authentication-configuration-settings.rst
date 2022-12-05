@@ -744,9 +744,9 @@ Override SAML bind data with AD/LDAP information
 | - **false**: **(Default)** Mattermost uses the email attribute to bind users to SAML.                                                                                                                              |                                                                                   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                                                                                                                                                                             |
-| - This setting should be **false** unless LDAP sync is enabled.                                                                                                                                                                                                                                        |
-| - Changing this setting from **true** to **false** will disable the override.                                                                                                                                                                                                                          |
-| - SAML IDs must match LDAP IDs when the override is enabled.                                                                                                                                                                                                                                           |
+|  - This setting should be **false** unless LDAP sync is enabled.                                                                                                                                                                                                                                        |
+|  - Changing this setting from **true** to **false** will disable the override.                                                                                                                                                                                                                          |
+|  - SAML IDs must match LDAP IDs when the override is enabled.                                                                                                                                                                                                                                           |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -814,6 +814,7 @@ Verify signature
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
+
 +---------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | - **true**: **(Default)** Mattermost checks that the SAML Response signature matches the Service Provider Login URL.      | - System Config path: **Authentication > SAML 2.0**       |
 | - **false**: The signature is not verified. This is **not recommended** for production. Use this option for testing only. | - ``config.json`` setting: ``.SamlSettings.Verify: true`` |
@@ -827,6 +828,7 @@ Service provider login URL
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
+
 +------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``. | - System Config path: **Authentication > SAML 2.0**                          |
 |                                                                                                                        | - ``config.json`` setting: ``.SamlSettings.AssertionConsumerServiceURL``     |
@@ -898,6 +900,7 @@ Sign request
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
+
 +--------------------------------------------------------------------------------------+------------------------------------------------------------+
 | - **true**: Mattermost signs the SAML request with the Service Provider Private Key. | - System Config path: **Authentication > SAML 2.0**        |
 | - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``.SamlSettings.SignRequest: `` |
@@ -1004,6 +1007,7 @@ Enable admin attribute
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
+
 +-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | - **true**: System Admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                      |
 | - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``.SamlSettings.EnableAdminAttribute: false`` |
@@ -1110,6 +1114,7 @@ Login button text
   :start-after: :nosearch:
 
 *Available in legacy Enterprise Edition E20*
+
 +---------------------------------------------------------------------------+--------------------------------------------------------------+
 | (Optional) The text that appears in the login button on the sign-in page. | - System Config path: **Authentication > SAML 2.0**          |
 |                                                                           | - ``config.json`` setting: ``.SamlSettings.LoginButtonText`` |
