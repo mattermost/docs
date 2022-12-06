@@ -29,9 +29,7 @@ If you're a board admin and want to unlink a board from a channel you're in, ope
 Sidebar categories
 ------------------
 
-From Mattermost Boards v7.2, you can organize your boards on the left-hand sidebar using custom categories. By default, all boards will appear under the **Boards** category.
-
-To manage your categories, open the options menu **(...)** next to the category to create, delete, or rename a category. With the exception to the default **Boards** category, all other categories can be renamed or deleted.
+From Mattermost Boards v7.2, you can organize your boards on the left-hand sidebar using custom categories. By default, all boards will appear under the **Boards** category. To manage your categories, open the options menu **(...)** next to the category to create, delete, or rename a category. With the exception to the default **Boards** category, all other categories can be renamed or deleted.
 
 After creating categories, you can move your boards to those categories by opening the options menu **(...)** next to the board and selecting **Move To…** to select the category where you want the board to be moved.
 
@@ -41,11 +39,31 @@ Categories are organized per-user, so you can arrange your boards under categori
 
 .. note::
 
-  If you're upgrading to Mattermost Boards v7.2 onwards: If you belonged to a workspace prior to v7.2, then you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
+  Upgrading to Mattermost Boards v7.2 onwards: If you belonged to a workspace prior to v7.2, you’ll see that the workspaces have been migrated to custom categories in the sidebar. All boards from a workspace are listed under a category of the same name. Boards from direct messages and group messages appear under the default **Boards** category.
   
   Categories are per-user, and can be renamed or deleted by each user after migration. New users won’t have default categories, and boards they join will appear under the default **Boards** category.
 
   Boards that you create after the migration won’t be linked to a workspace and will always appear under the default **Boards** category unless you move or hide the boards.
+  
+Drag and drop
+-------------
+
+You can move both sidebar categories and boards and change their order to suit your preference. You can:
+
+- Set the position of a board within a category.
+- Drag a board out of one category and drop it into another category.
+
+To do this, select and hold the cursor over the category or board name. Then move the category or board around as needed. Boards moved into a category are sorted on top of the category by default unless you specifically position the board before releasing the cursor.
+
+Bulk drag and drop boards
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can select multiple boards on the sidebar and drag them into a new category or position. Bulk select only applies to boards and not categories
+
+There are two options available:
+
+- **Sequentially:** Select and hold the cursor, then press the SHIFT key. This selects boards sequentially below the first select board.
+- **Individually:** Select and hold the cursor, then press the CMD/CTRL key. This allows you to select multiple boards individually.
 
 Manage boards on the sidebar
 ----------------------------
