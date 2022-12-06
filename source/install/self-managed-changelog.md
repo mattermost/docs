@@ -60,6 +60,7 @@ Latest Mattermost Releases:
  - The number of users that can be added to a user group at once was increased to 256.
  - Keyboard and focus handling was improved in profile popovers and @mentions.
  - Updated prepackaged version of plugins affected by React 17 upgrade.
+ - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
 
 #### Administration
  - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
