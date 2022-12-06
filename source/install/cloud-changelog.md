@@ -26,6 +26,7 @@ Latest Mattermost Cloud releases:
 
 #### User Interface (UI)
  - Updated prepackaged version of plugins affected by React 17 upgrade.
+ - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
