@@ -43,7 +43,7 @@ The host of a meeting can record the call. The recording includes audio as well 
 
 If your call is going to continue and you still want to record, once the first recording is complete you can start a new one immediately after.
 
-You can access the call recording locally.
+Call recordings are posted by the Calls bot directly in the call thread as normal file attachment and can be accessed by all users in the channel.
 
 Frequently asked questions
 --------------------------
