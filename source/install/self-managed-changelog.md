@@ -29,7 +29,7 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Calls
- - 
+ - Audio calling and screen sharing in channels is now generally available to all Mattermost customers.
 
 #### Boards
  - Boards now supports file attachments, including PDFs, images, videos, and any other file types.
@@ -37,7 +37,8 @@ Latest Mattermost Releases:
  - The template picker has been improved to make it easier for users to find the best template for their project.
  
 #### Playbooks
- - 
+ - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
+ - In addition to the daily digest, users can now also view a task inbox from the global header bar while in Playbooks.
 
 #### Message Priority and Acknowledgments (Professional Plan)
  - Added message priority labels to the Threads view.
