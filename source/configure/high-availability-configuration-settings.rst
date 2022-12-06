@@ -96,7 +96,7 @@ Enable experimental gossip encryption
 | Gossip encryption uses AES-256 by default, and this value isn’t | - System Config path: **Environment > High Availability**                                    |
 | configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableExperimentalGossipEncryption: false”,`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEEXPERIMENTALGOSSIPENCRYPTION``            |
-| - **true**: **(Default for Cloud deployments)                   |                                                                                              |
+| - **true**: **(Default for Cloud deployments)**                 |                                                                                              |
 |   All communication through the cluster using the gossip        |                                                                                              |
 |   protocol will be encrypted.                                   |                                                                                              |
 | - **false**: **(Default for self-hosted deployments)**          |                                                                                              |

@@ -11,7 +11,7 @@ Mattermost supports up to four distinct, concurrent methods of **Authentication*
 - An LDAP instance (e.g., Active Directory, OpenLDAP)
 - Email and Password
 
-Access the following configuration settings in the System Console by going to **Authentication**, or by editing the ``config.json`` file as described in the following tables:
+Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Authentication**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Signup <#signup>`__
 - `Email <#email>`__
@@ -63,12 +63,12 @@ Enable open server
 Enable email invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default for Cloud deployments)**        | - System Config path: **Authentication > Signup**                      |
-|   Allows users to send email invitations.              | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations`` |
-| - **false**: **(Default for self-hosted deployments)** | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``  |
-|   Disables email invitations.                          |                                                                        |
-+--------------------------------------------------------+------------------------------------------------------------------------+
++--------------------------------------------------------+-------------------------------------------------------------------------------+
+| - **true**: **(Default for Cloud deployments)**        | - System Config path: **Authentication > Signup**                             |
+|   Allows users to send email invitations.              | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations: false`` |
+| - **false**: **(Default for self-hosted deployments)** | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``         |
+|   Disables email invitations.                          |                                                                               |
++--------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Invalidate pending email invites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -205,13 +205,17 @@ Enforce multi-factor authentication
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ for users who sign-in with AD/LDAP or an email address.  | - System Config path: **Authentication > MFA**                                   |
-| New users must configure MFA. Logged in users are redirected to the MFA setup page until configuration is complete.                                                                        | - ``config.json`` setting: ``.ServiceSettings.EnforceMultifactorAuthentication`` |
-| - **false**: MFA is optional.                                                                                                                                                              | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``  |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Note: If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.                                                                                                       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| - **true**: Requires `multi-factor authentication (MFA)                          | - System Config path: **Authentication > MFA**                                          |
+|   <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__      | - ``config.json`` setting: ``.ServiceSettings.EnforceMultifactorAuthentication: false`` |
+|   for users who sign-in with AD/LDAP or an email address. New users must         | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``         |
+|   configure MFA. Logged in users are redirected to the MFA setup page            |                                                                                         |
+|   until configuration is complete.                                               |                                                                                         |
+| - **false**: **(Default)** MFA is optional.                                      |                                                                                         |
++----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| **Note**: If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider                       |
+| outside of Mattermost.                                                                                                                                                     |
++----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 ----
 
@@ -283,19 +287,19 @@ Connection security
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This setting controls the type of security Mattermost uses to                | - System Config path: **Authentication > AD/LDAP**              |
-| connect to the AD/LDAP server, with these options:                           | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
-|                                                                              | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
-| - **None**: **(Default for self-hosted deployments)** No encryption.         |                                                                 |
-|   With this option, it is **highly recommended** that the connection be      |                                                                 |
-|   secured outside of Mattermost, such as by a stunnel proxy.                 |                                                                 |
-|   ``config.json`` option: ``""``                                             |                                                                 |
-| - **TLS**: **(Default for Cloud deployments)** Encrypts                      |                                                                 |
-|   communication with TLS. ``config.json`` option: ``"TLS"``                  |                                                                 |
-| - **STARTTLS**: Attempts to upgrade an existing insecure connection          |                                                                 |
-|   to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``    |                                                                 |
-+------------------------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| This setting controls the type of security Mattermost uses to                | - System Config path: **Authentication > AD/LDAP**                  |
+| connect to the AD/LDAP server, with these options:                           | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity: ""`` |
+|                                                                              | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``      |
+| - **None**: **(Default for self-hosted deployments)** No encryption.         |                                                                     |
+|   With this option, it is **highly recommended** that the connection be      |                                                                     |
+|   secured outside of Mattermost, such as by a stunnel proxy.                 |                                                                     |
+|   ``config.json`` option: ``""``                                             |                                                                     |
+| - **TLS**: **(Default for Cloud deployments)** Encrypts                      |                                                                     |
+|   communication with TLS. ``config.json`` option: ``"TLS"``                  |                                                                     |
+| - **STARTTLS**: Attempts to upgrade an existing insecure connection          |                                                                     |
+|   to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``    |                                                                     |
++------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1619,9 +1623,9 @@ Enable guest access
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
+**True**: **(Default for Cloud deployments)** Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
 
-**False**: Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
+**False**: **(Default for self-hosted deployments)** Email signup is disabled. This limits signup to Single sign-on services like OAuth or AD/LDAP.
 
 +----------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |

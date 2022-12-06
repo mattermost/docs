@@ -4,7 +4,7 @@ Integrations configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Integrations**, or by editing the ``config.json`` file as described in the following tables:
+Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Integrations**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Integrations management <#integrations-management>`__
 - `Bot Accounts <#bot-acocunts>`__

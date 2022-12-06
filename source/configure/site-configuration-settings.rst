@@ -4,7 +4,7 @@ Site configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Site Configuration**, or by editing the ``config.json`` file as described in the following tables:
+Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Site Configuration**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__
@@ -264,7 +264,7 @@ Max users per team
 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and teams**    |
-| including active and inactive users.                                         | ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``    |
+| including active and inactive users.                                         | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``  |
 |                                                                              | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``       |
 | In Mattermost, a team of people should be a small organization with a        |                                                                   |
 | specific goal. In the physical world, a team could sit around a single       |                                                                   |
@@ -320,7 +320,7 @@ Teammate name display
 |   If the user doesn't have a full name, their username is displayed. Recommended when using     |                                                                            |
 |   `SAML <https://docs.mattermost.com/onboard/sso-saml.html>`__ or                               |                                                                            |
 |   `LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ if first name and last name       |                                                                            |
-|    attributes are configured. ``config.json`` option: ``"full_name"``.                          |                                                                            |
+|   attributes are configured. ``config.json`` option: ``"full_name"``.                           |                                                                            |
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 
@@ -624,7 +624,7 @@ Enable emoji picker
 Enable custom emoji
 ~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------+----------------------------------------------------------------------+
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to add emojis through a                | - System Config path: **Site Configuration > Emoji**                     |
 |   **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or     | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: true``  |
 |   JPG files up to 1 MB.                                                       | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
