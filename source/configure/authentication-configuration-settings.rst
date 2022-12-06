@@ -64,9 +64,10 @@ Enable email invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: Allows users to send email invitations.    | - System Config path: **Authentication > Signup**                      |
-| - **false**: **(Default)** Disables email invitations. | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations`` |
-|                                                        | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``  |
+| - **true**: **(Default for Cloud deployments)**        | - System Config path: **Authentication > Signup**                      |
+|   Allows users to send email invitations.              | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations`` |
+| - **false**: **(Default for self-hosted deployments)** | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``  |
+|   Disables email invitations.                          |                                                                        |
 +--------------------------------------------------------+------------------------------------------------------------------------+
 
 Invalidate pending email invites
@@ -100,11 +101,14 @@ Enable account creation with email
 Require email verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: Requires email verification for new accounts before allowing the user to sign-in.                                       | - System Config path: **Authentication > Email**                       |
-| - **false**: **(Default)** Disables email verification. This can be used to speed development by skipping the verification process. | - ``config.json`` setting: ``.EmailSettings.RequireEmailVerification`` |
-|                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION``  |
-+-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| - **true**: **(Default for Cloud deployments)**                               | - System Config path: **Authentication > Email**                              |
+|   Requires email verification for new accounts                                | - ``config.json`` setting: ``.EmailSettings.RequireEmailVerification: false`` |
+|   before allowing the user to sign-in.                                        | - Environment variable: ``MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION``         |
+| - **false**: **(Default for self-hosted deployments)**                        |                                                                               |
+|   Disables email verification. can be used to speed development by            |                                                                               |
+|   skipping the verification process.                                          |                                                                               |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 Enable sign-in with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -279,13 +283,19 @@ Connection security
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                         | - System Config path: **Authentication > AD/LDAP**              |
-|                                                                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
-| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``""`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
-| - **TLS**: Encrypts communication with TLS. ``config.json`` option: ``"TLS"``                                                                                                                            |                                                                 |
-| - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``                                                              |                                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting controls the type of security Mattermost uses to                | - System Config path: **Authentication > AD/LDAP**              |
+| connect to the AD/LDAP server, with these options:                           | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
+|                                                                              | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
+| - **None**: **(Default for self-hosted deployments)** No encryption.         |                                                                 |
+|   With this option, it is **highly recommended** that the connection be      |                                                                 |
+|   secured outside of Mattermost, such as by a stunnel proxy.                 |                                                                 |
+|   ``config.json`` option: ``""``                                             |                                                                 |
+| - **TLS**: **(Default for Cloud deployments)** Encrypts                      |                                                                 |
+|   communication with TLS. ``config.json`` option: ``"TLS"``                  |                                                                 |
+| - **STARTTLS**: Attempts to upgrade an existing insecure connection          |                                                                 |
+|   to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``    |                                                                 |
++------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

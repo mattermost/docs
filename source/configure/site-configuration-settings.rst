@@ -262,15 +262,23 @@ Access the following configuration settings in the System Console by going to **
 Max users per team
 ~~~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| The **Max users per team** is the maximum total number of users per team, including active and inactive users.                                                                                                                                                                                                                                                                | - System Config path: **Site Configuration > Users and teams**   |
-|                                                                                                                                                                                                                                                                                                                                                                               | - ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50`` |
-| In Mattermost, a team of people should be a small organization with a specific goal. In the physical world, a team could sit around a single table. The default maximum (50) should be enough for most teams, but with appropriate `hardware <https://docs.mattermost.com/install/software-hardware-requirements.html>`__, this limit can be increased to thousands of users. | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``      |
-|                                                                                                                                                                                                                                                                                                                                                                               |                                                                  |
-| `Channels <https://docs.mattermost.com/guides/channels.html>`__ are another way of organizing communications within teams on different topics.                                                                                                                                                                                                                                |                                                                  |
-|                                                                                                                                                                                                                                                                                                                                                                               |                                                                  |
-| Numerical input. Default is 50.                                                                                                                                                                                                                                                                                                                                               |                                                                  |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
++------------------------------------------------------------------------------+-------------------------------------------------------------------+
+| The **Max users per team** is the maximum total number of users per team,    | - System Config path: **Site Configuration > Users and teams**    |
+| including active and inactive users.                                         | ``config.json`` setting: ``.TeamSettings.MaxUsersPerTeam: 50``    |
+|                                                                              | - Environment variable: ``MM_TEAMSETTINGS_MAXUSERSPERTEAM``       |
+| In Mattermost, a team of people should be a small organization with a        |                                                                   |
+| specific goal. In the physical world, a team could sit around a single       |                                                                   |
+| table. The default maximum (50) should be enough for most teams, but         |                                                                   |
+| with appropriate `hardware <https://docs.mattermost.com/install/             |                                                                   |
+| software-hardware-requirements.html>`__, this limit can be increased to      |                                                                   |
+| thousands of users.                                                          |                                                                   |
+|                                                                              |                                                                   |
+| `Channels <https://docs.mattermost.com/guides/channels.html>`__ are          |                                                                   |
+| another way of organizing communications within teams on different topics.   |                                                                   |
+|                                                                              |                                                                   |
+| Numerical input. Default is 50 self-hosted deployments, and 10000 for Cloud  |                                                                   |
+| deployments.                                                                 |                                                                   |
++------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 
 Max channels per team
@@ -279,7 +287,8 @@ Max channels per team
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | The maximum number of channels per team, including both active and archived channels. | - System Config path: **Site Configuration > Users and teams**        |
 |                                                                                       | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
-| Numerical input. Default is 2000.                                                     | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
+| Numerical input. Default is 2000 for self-hosted deployments, and 10000 for Cloud     | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
+| deployments.                                                                          |                                                                       |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Enable users to open direct message channels with
@@ -296,15 +305,23 @@ Enable users to open direct message channels with
 Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| This setting determines how names appear in posts and under the **Direct Messages** list. Users can change this setting in their interface under **Settings > Display > Teammate Name Display**, unless this setting is locked by a System Admin (see **Lock teammate name display...**).                                                                                                            | - System Config path: **Site Configuration > Users and teams**   |
-|                                                                                                                                                                                                                                                                                                                                                                                                      | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay`` |
-| - **Show username**: **(Default)** Displays usernames. ``config.json`` option: ``"username"``.                                                                                                                                                                                                                                                                                                       | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``  |
-|                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                  |
-| - **Show nickname if one exists...**: Displays the user’s nickname. If the user does not have a nickname, their full name is displayed. If the user does not have a full name, their username is displayed. ``config.json`` option: ``"nickname_full_name"``.                                                                                                                                        |                                                                  |
-|                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                  |
-| - **Show first and last name**: Displays the user’s full name. If the user does not have a full name, their username is displayed. This option is recommended when using `SAML <https://docs.mattermost.com/onboard/sso-saml.html>`__ or `LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ if first name and last name attributes are configured. ``config.json`` option: ``"full_name"``. |                                                                  |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| This setting determines how names appear in posts and under the **Direct Messages** list.       | - System Config path: **Site Configuration > Users and teams**             |
+| Users can change this setting in their interface under **Settings > Display >                   | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay: username`` |
+| Teammate Name Display**, unless this setting is locked by a System Admin                        | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``            |
+| via the **Lock teammate name display for all users** configuration setting.                     |                                                                            |
+|                                                                                                 |                                                                            |
+| - **Show username**: **(Default for self-hosted deployments)** Displays usernames.              |                                                                            |
+|   ``config.json`` option: ``"username"``.                                                       |                                                                            |
+| - **Show nickname if one exists...**: Displays the user’s nickname. If the user doesn't have a  |                                                                            |
+|   nickname, their full name is displayed. If the user doesn't have a full name, their username  |                                                                            |
+|   is displayed. ``config.json`` option: ``"nickname_full_name"``.                               |                                                                            |
+| - **Show first and last name**: **(Default for Cloud deployments)** Displays user’s full name.  |                                                                            |
+|   If the user doesn't have a full name, their username is displayed. Recommended when using     |                                                                            |
+|   `SAML <https://docs.mattermost.com/onboard/sso-saml.html>`__ or                               |                                                                            |
+|   `LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`__ if first name and last name       |                                                                            |
+|    attributes are configured. ``config.json`` option: ``"full_name"``.                          |                                                                            |
++-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
 
 Lock teammate name display for all users
@@ -607,13 +624,14 @@ Enable emoji picker
 Enable custom emoji
 ~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: Allows users to add emojis through a **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or JPG files up to 1 MB. | - System Config path: **Site Configuration > Emoji**                     |
-| - **false**: **(Default)** Disables custom emojis.                                                                                             | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: false`` |
-|                                                                                                                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
-+------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Too many custom emojis can slow your server’s performance.                                                                                                                                                      |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to add emojis through a                | - System Config path: **Site Configuration > Emoji**                     |
+|   **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or     | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: true``  |
+|   JPG files up to 1 MB.                                                       | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
+| - **false**:  Disables custom emojis.                                         |                                                                          |
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Note**: Too many custom emojis can slow your server’s performance.          |                                                                          |
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
