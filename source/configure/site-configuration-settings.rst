@@ -276,8 +276,8 @@ Max users per team
 | `Channels <https://docs.mattermost.com/guides/channels.html>`__ are          |                                                                   |
 | another way of organizing communications within teams on different topics.   |                                                                   |
 |                                                                              |                                                                   |
-| Numerical input. Default is 50 self-hosted deployments, and 10000 for Cloud  |                                                                   |
-| deployments.                                                                 |                                                                   |
+| Numerical input. Default is **50** self-hosted deployments, and **10000**    |                                                                   |
+| for Cloud deployments.                                                       |                                                                   |
 +------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 
@@ -287,8 +287,8 @@ Max channels per team
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | The maximum number of channels per team, including both active and archived channels. | - System Config path: **Site Configuration > Users and teams**        |
 |                                                                                       | - ``config.json`` setting: ``.TeamSettings.MaxChannelsPerTeam: 2000`` |
-| Numerical input. Default is 2000 for self-hosted deployments, and 10000 for Cloud     | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
-| deployments.                                                                          |                                                                       |
+| Numerical input. Default is **2000** for self-hosted deployments, and **10000**       | - Environment variable: ``MM_TEAMSETTINGS_MAXCHANNELSPERTEAM``        |
+| for Cloud deployments.                                                                |                                                                       |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 Enable users to open direct message channels with
