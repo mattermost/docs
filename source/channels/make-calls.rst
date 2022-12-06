@@ -36,8 +36,8 @@ You can share a call's link to use in a meeting request or share with other team
 
 The call link is valid for long as the channel is active. When a channel is archived or deleted the link will become invalid.
 
-Record a call
--------------
+Record calls
+------------
 
 
 
