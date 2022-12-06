@@ -15,9 +15,9 @@ Latest Mattermost Cloud releases:
 
 ### Highlights
 
-#### Message Priority and Acknowledgments (Professional plan)
+#### Message Priority and Acknowledgments
  - Added message priority labels to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional Plan).
 
 #### Global Drafts
  - Added a centralized Drafts view for draft messages.
