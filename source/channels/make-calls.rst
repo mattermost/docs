@@ -4,10 +4,10 @@ Start a call
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost introduces beta voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
+Mattermost introduces voice calling and screen sharing functionality in channels, group messages, and direct messages from Mattermost v7.0 for Mattermost Cloud and Mattermost self-hosted deployments.
 
 - `Features <#features>`__
-- `Record a call <#record-a-call>`__
+- `Record call <#record-calls>`__
 - `Frequently asked questions <#frequently_asked_questions>`__
 - `Troubleshooting <#troubleshooting>`__
 
@@ -39,8 +39,11 @@ The call link is valid for long as the channel is active. When a channel is arch
 Record calls
 ------------
 
+The host of a meeting can record the call. The recording includes audio as well as any screen sharing during the call. The default setting for a recording is 60 minutes, but your system admin may adjust that as needed. Ten minutes before the time limit, you'll receive a reminder that the recording limit will be reached soon.
 
+If your call is going to continue and you still want to record, once the first recording is complete you can start a new one immediately after.
 
+You can access the call recording locally.
 
 Frequently asked questions
 --------------------------
