@@ -30,6 +30,7 @@ Latest Mattermost Releases:
 
 #### Calls
  - Audio calling and screen sharing in channels is now generally available to all Mattermost customers.
+ - Updated keyboard shortcut to start and join calls.
 
 #### Boards
  - Boards now supports file attachments, including PDFs, images, videos, and any other file types.
