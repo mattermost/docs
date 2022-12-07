@@ -1119,7 +1119,7 @@ OAuth 2.0
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**.
+Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**. Settings for GitLab OAuth authentication can also be accessed under **Authentication > GitLab** in self-hosted deployments.
 
 .. note::
   
@@ -1150,16 +1150,11 @@ GitLab OAuth settings
 Enable authentication with GitLab
 ''''''''''''''''''''''''''''''''''
 
-**True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
-
-**False**: GitLab OAuth cannot be used for team creation or account signup.
-
-.. note:: 
-   For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+| - **false**: Disables GitLab OAuth authentication.                                                                                        | - ``config.json`` setting: ``.GitLabSettings.Enable: false``     |
+|                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 Application ID
 ''''''''''''''
