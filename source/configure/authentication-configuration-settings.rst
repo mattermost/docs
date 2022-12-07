@@ -1416,7 +1416,7 @@ When ``true``, Mattermost signs the SAML request using your Service Provider Pri
   - `RSAwithSHA512 <https://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`__
 
 Signature algorithm
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1440,7 +1440,7 @@ The signature algorithm used to sign the request. Supported options are `RSAwith
   - ``Canonical1.1`` for `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``)
 
 Canonical algorithm
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1526,7 +1526,7 @@ Id attribute
   :description: (Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
 
 Guest attribute
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1682,7 +1682,7 @@ Preferred language attribute
   :description: (Optional) The text that appears in the login button on the login page. Defaults to **SAML**.
 
 Login button text
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -1719,7 +1719,7 @@ Settings to configure OAuth login for account creation and login.
   :description: Choose whether OAuth can be used for account creation and login.
 
 Select OAuth 2.0 service provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1748,7 +1748,7 @@ GitLab
   - **False**: **(Default)** GitLab OAuth cannot be used for team creation or account signup.
 
 Enable authentication with GitLab
-''''''''''''''''''''''''''''''''''
+'''''''''''''''''''''''''''''''''
 
 **True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
 
@@ -1787,7 +1787,7 @@ Obtain this value by logging into your GitLab account. Go to **Profile Settings 
 +-------------------------------------------------------------------------------+
 
 GitLab site URL
-''''''''''''''''
+'''''''''''''''
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
@@ -1799,7 +1799,7 @@ Specify the URL of your GitLab instance (example ``https://example.com:3000``). 
   :description: Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``).
 
 User API endpoint
-''''''''''''''''''
+'''''''''''''''''
 
 Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
 
@@ -1908,7 +1908,7 @@ Obtain this value by registering Mattermost as an application in your Google acc
   :description: We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. It is the default value.
 
 User API endpoint
-''''''''''''''''''
+'''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
@@ -1944,7 +1944,7 @@ We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Aut
   :description: We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. It is the default value.
 
 Token endpoint
-'''''''''''''''
+''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2026,7 +2026,7 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
   :description: This value is the ID of the application's AAD directory.
 
 Directory (tenant) ID
-''''''''''''''''''''''
+'''''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2080,7 +2080,7 @@ We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth 
   :description: We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. It is the default value.
 
 Token endpoint
-'''''''''''''''
+''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2169,7 +2169,7 @@ Enable authentication with Google by selecting ``Google Apps`` from **System Con
 +----------------------------------------------------------------------------------------------------+
 
 Discovery endpoint
-'''''''''''''''''''
+''''''''''''''''''
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2235,7 +2235,7 @@ Discovery endpoint
 This value is prepopulated with https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration.
 
 Client ID
-''''''''''
+'''''''''
 
 *Available in legacy Enterprise Edition E20*
 
@@ -2341,7 +2341,7 @@ Enable guest access
 +----------------------------------------------------------------------------------------------------+
 
 Whitelisted guest domains
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E10 and E20*
 
