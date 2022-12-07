@@ -43,7 +43,7 @@ Latest Mattermost Releases:
 
 #### Message Priority and Acknowledgments
  - Added message priority labels to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional Plan).
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
 
 #### Global Drafts
  - Added a centralized Drafts view for draft messages.
