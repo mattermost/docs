@@ -1186,20 +1186,22 @@ GitLab OAuth 2.0 Application secret key
 GitLab OAuth 2.0 site URL
 '''''''''''''''''''''''''
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| This setting holds the URL of your GitLab instance, e.g. ``https://example.com:3000``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (GitLab)** |
-|                                                                                                                                                       | - ``config.json`` setting: N/A                                |
-|                                                                                                                                                       | - Environment variable: N/A                                   |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab instance, e.g. ``https://example.com:3000``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                       | - ``config.json`` setting: N/A                                   |
+|                                                                                                                                                       | - Environment variable: N/A                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-User API endpoint
+GitLab OAuth 2.0 User API endpoint
 ''''''''''''''''''
 
-Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``). Use HTTP or HTTPS depending on how your server is configured.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input. |
-+----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab User API endpoint, e.g. ``https://<your-gitlab-url>/api/v3/user``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                             | - ``config.json`` setting: ``.GitLabSettings.UserAPIEndpoint``   |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                     | - Environment variable: ``MM_GITLABSETTINGS_USERAPIENDPOINT``    |
+|                                                                                                                                                                             |                                                                  |
+| String input.                                                                                                                                                               |                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 Auth endpoint
 '''''''''''''
