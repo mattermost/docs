@@ -1057,7 +1057,7 @@ Access the following configuration settings in the System Console by going to **
 
 .. config:setting:: saml-enablelogin
   :displayname: Enable login with SAML (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: Enable
   :environment: N/A
 
@@ -1082,7 +1082,7 @@ Enable login with SAML
 
 .. config:setting:: saml-enablesyncwithldap
   :displayname: Enable synchronizing SAML accounts with AD/LDAP (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: EnableSyncWithLdap
   :environment: N/A
 
@@ -1107,7 +1107,7 @@ Enable synchronizing SAML accounts with AD/LDAP
 
 .. config:setting:: saml-ignoreguestsldapsync
   :displayname: Ignore guest users when synchronizing with AD/LDAP (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: IgnoreGuestsLdapSync
   :environment: N/A
 
@@ -1136,7 +1136,7 @@ Available when ``Enable Synchronizing SAML Accounts With AD/LDAP`` is set to ``t
 
 .. config:setting:: saml-overridebindwithldap
   :displayname: Override SAML bind data with AD/LDAP information (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: EnableSyncWithLdapIncludeAuth
   :environment: N/A
 
@@ -1164,7 +1164,7 @@ Override SAML bind data with AD/LDAP information
 
 .. config:setting:: saml-providermetadataurl
   :displayname: Identity provider metadata URL (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: IdpMetadataUrl
   :environment: N/A
   :description: The URL where Mattermost sends a request to obtain setup metadata from the provider.
@@ -1185,7 +1185,7 @@ The URL where Mattermost sends a request to obtain setup metadata from the provi
 
 .. config:setting:: saml-ssourl
   :displayname: SAML SSO URL (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: IdpURL
   :environment: N/A
   :description: The URL where Mattermost sends a SAML request to start login sequence.
@@ -1206,7 +1206,7 @@ The URL where Mattermost sends a SAML request to start login sequence.
 
 .. config:setting:: saml-providerissuerurl
   :displayname: Identity provider issuer URL (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: IdpDescriptorUrl
   :environment: N/A
   :description: The issuer URL for the Identity Provider you use for SAML requests.
@@ -1227,7 +1227,7 @@ The issuer URL for the Identity Provider you use for SAML requests.
 
 .. config:setting:: saml-providerpubliccert
   :displayname: Identity provider public certificate (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: IdpCertificateFile
   :environment: N/A
   :description: The public authentication certificate issued by your Identity Provider.
@@ -1248,7 +1248,7 @@ The public authentication certificate issued by your Identity Provider.
 
 .. config:setting:: saml-verifysignature
   :displayname: Verify signature (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: Verify
   :environment: N/A
 
@@ -1273,7 +1273,7 @@ Verify signature
 
 .. config:setting:: saml-providerloginurl
   :displayname: Service provider login URL (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: AssertionConsumerServiceURL
   :environment: N/A
 
@@ -1297,7 +1297,7 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 
 .. config:setting:: saml-provideridentifier
   :displayname: Service provider identifier (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: ServiceProviderIdentifier
   :environment: N/A
   :description: The unique identifier for the Service Provider, usually the same as Service Provider Login URL. In ADFS, this must match the Relying Party Identifier.
@@ -1318,7 +1318,7 @@ The unique identifier for the Service Provider, usually the same as Service Prov
 
 .. config:setting:: saml-encryption
   :displayname: Enable encryption (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: Encrypt
   :environment: N/A
 
@@ -1343,7 +1343,7 @@ Enable encryption
 
 .. config:setting:: saml-providerprivatekey
   :displayname: Service provider private key (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: PrivateKeyFile
   :environment: N/A
   :description: The private key used to decrypt SAML Assertions from the Identity Provider.
@@ -1364,7 +1364,7 @@ The private key used to decrypt SAML Assertions from the Identity Provider.
 
 .. config:setting:: saml-serviceproviderpubliccert
   :displayname: Service provider public certificate (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: PublicCertificateFile
   :environment: N/A
   :description: The certificate file used to generate the signature on a SAML request to the Identity Provider for a service provider initiated SAML login, when Mattermost is the Service Provider.
@@ -1385,7 +1385,7 @@ The certificate file used to generate the signature on a SAML request to the Ide
 
 .. config:setting:: saml-signrequest
   :displayname: Sign request (SAML)
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: SignRequest
   :environment: N/A
   :description: When ``true``, Mattermost signs the SAML request using your Service Provider Private Key. When ``false``, Mattermost does not sign the SAML request.
@@ -1406,7 +1406,7 @@ When ``true``, Mattermost signs the SAML request using your Service Provider Pri
 
 .. config:setting:: saml-signaturealgo
   :displayname: Signature algorithm
-  :systemconsole: N/A
+  :systemconsole: Authentication > SAML 2.0
   :configjson: SignatureAlgorithm
   :environment: N/A
 
@@ -1429,6 +1429,16 @@ The signature algorithm used to sign the request. Supported options are `RSAwith
 | This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-canonicalalgo
+  :displayname: Canonical algorithm (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: CanonicalAlgorithm
+  :environment: N/A
+
+  The canonicalization algorithm. Supported options are:
+  - ``Canonical1.0`` **(Default)** for `Exclusive XML Canonicalization 1.0 (omit comments) <https://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/>`__ (``http://www.w3.org/2001/10/xml-exc-c14n#``)
+  - ``Canonical1.1`` for `Canonical XML 1.1 (omit comments) <https://www.w3.org/TR/2008/REC-xml-c14n11-20080502/>`__ (``http://www.w3.org/2006/12/xml-c14n11``)
+
 Canonical algorithm
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -1442,6 +1452,13 @@ The canonicalization algorithm. Supported options are ``Canonical1.0`` for `Excl
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CanonicalAlgorithm": "Canonical1.0"`` with string input. |
 +-------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-emailattribute
+  :displayname: Email attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: EmailAttribute
+  :environment: N/A
+  :description: The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
 
 Email attribute
 ~~~~~~~~~~~~~~~
@@ -1459,6 +1476,13 @@ Email notifications will be sent to this email address, and this email address m
 | This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-usernameattribute
+  :displayname: Username attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: UsernameAttribute
+  :environment: N/A
+  :description: The attribute in the SAML Assertion that will be used to populate the username field in Mattermost user interface.
+
 Username attribute
 ~~~~~~~~~~~~~~~~~~
 
@@ -1473,6 +1497,13 @@ The attribute in the SAML Assertion that will be used to populate the username f
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-idattribute
+  :displayname: Id attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: IdAttribute
+  :environment: N/A
+  :description: (Optional) The attribute in the SAML Assertion used to bind users from SAML to users in Mattermost.
+
 Id attribute
 ~~~~~~~~~~~~
 
@@ -1486,6 +1517,13 @@ Id attribute
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-guestattribute
+  :displayname: Guest attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: GuestAttribute
+  :environment: N/A
+  :description: (Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
 
 Guest attribute
 ~~~~~~~~~~~~~~~~
@@ -1531,6 +1569,13 @@ This attribute's default is ``false`` and must be set to ``true`` in order for t
 | This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-firstnameattribute
+  :displayname: First name attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: FirstNameAttribute
+  :environment: N/A
+  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the first name of users in Mattermost.
+
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -1544,6 +1589,13 @@ First name attribute
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-lastnameattribute
+  :displayname: Last name attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: LastNameAttribute
+  :environment: N/A
+  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the last name of users in Mattermost.
 
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
@@ -1559,6 +1611,13 @@ Last name attribute
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-nicknameattribute
+  :displayname: Nickname attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: NicknameAttribute
+  :environment: N/A
+  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the nickname of users in Mattermost.
+
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
 
@@ -1572,6 +1631,13 @@ Nickname attribute
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-positionattribute
+  :displayname: Position atribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: PositionAttribute
+  :environment: N/A
+  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the position field for users in Mattermost.
 
 Position attribute
 ~~~~~~~~~~~~~~~~~~
@@ -1587,6 +1653,13 @@ Position attribute
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
 +------------------------------------------------------------------------------------------+
 
+.. config:setting:: saml-localeattribute
+  :displayname: Preferred language attribute (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: LocaleAttribute
+  :environment: N/A
+  :description: (Optional) The attribute in the SAML Assertion that will be used to populate the language of users in Mattermost.
+
 Preferred language attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1600,6 +1673,13 @@ Preferred language attribute
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LocaleAttribute": ""`` with string input. |
 +----------------------------------------------------------------------------------------+
+
+.. config:setting:: saml-loginbuttontext
+  :displayname: Login button text (SAML)
+  :systemconsole: Authentication > SAML 2.0
+  :configjson: LoginButtonText
+  :environment: N/A
+  :description: (Optional) The text that appears in the login button on the login page. Defaults to **SAML**.
 
 Login button text
 ~~~~~~~~~~~~~~~~~~
