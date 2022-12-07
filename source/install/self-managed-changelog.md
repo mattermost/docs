@@ -475,7 +475,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - Added a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
   - Fixed an issue where **Renew Now** option was not available in-product for self-serve eligible licenses [MM-47045](https://mattermost.atlassian.net/browse/MM-47045).
   - ``getPostSince`` now properly returns deleted posts when Collapsed Reply Threads is enabled.
-  - Fixed an issue where the ``Enterprise license is expired`` banner was undismissible [MM-47396](https://mattermost.atlassian.net/browse/MM-47396).
+  - Fixed an issue where the ``Enterprise license is expired`` banner was undismissable [MM-47396](https://mattermost.atlassian.net/browse/MM-47396).
   - Fixed an issue where screen readers did not announce search results in the "Invite members to channel" modal [MM-44859](https://mattermost.atlassian.net/browse/MM-44859).
   - Fixed an issue where screen readers did not announce user status [MM-44873](https://mattermost.atlassian.net/browse/MM-44873).
   - Fixed an issue where screen readers did not announce emojis in the autocomplete list [MM-44877](https://mattermost.atlassian.net/browse/MM-44877).
