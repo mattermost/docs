@@ -1193,7 +1193,7 @@ GitLab OAuth 2.0 site URL
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 GitLab OAuth 2.0 User API endpoint
-''''''''''''''''''
+''''''''''''''''''''''''''''''''''
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | This setting holds the URL of your GitLab User API endpoint, e.g. ``https://<your-gitlab-url>/api/v3/user``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
@@ -1203,23 +1203,27 @@ GitLab OAuth 2.0 User API endpoint
 | String input.                                                                                                                                                               |                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-Auth endpoint
-'''''''''''''
+GitLab OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''
 
-Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``). Use HTTP or HTTPS depending on how your server is configured.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab Auth endpoint, e.g. ``https://<your-gitlab-url>/oauth/authorize``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                             | - ``config.json`` setting: ``.GitLabSettings.AuthEndpoint``      |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                     | - Environment variable: ``MM_GITLABSETTINGS_AUTHENDPOINT``       |
+|                                                                                                                                                                             |                                                                  |
+| String input.                                                                                                                                                               |                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AuthEndpoint": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
+GitLab OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''
 
-Token endpoint
-''''''''''''''
-
-Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``). Use HTTP or HTTPS depending on how your server is configured.
-
-+--------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input. |
-+--------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the URL of your GitLab OAuth Token endpoint, e.g. ``https://<your-gitlab-url>/oauth/token``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                                | - ``config.json`` setting: ``.GitLabSettings.TokenEndpoint``     |
+| Enter the URL in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                        | - Environment variable: ``MM_GITLABSETTINGS_TOKENENDPOINT``      |
+|                                                                                                                                                                                |                                                                  |
+| String input.                                                                                                                                                                  |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 Google OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
