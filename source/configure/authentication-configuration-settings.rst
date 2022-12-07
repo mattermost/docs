@@ -1125,24 +1125,24 @@ Access the following configuration settings in the System Console by going to **
   
   OAuth 2.0 is being deprecated and will be replaced by `OpenID Connect <https://docs.mattermost.com/configure/configuration-settings.html#openid-connect>`__ in a future release.
 
-Settings to configure OAuth login for account creation and login.
+Use these settings to configure OAuth 2.0 for account creation and login.
 
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
-Choose whether OAuth can be used for account creation and login. Options include:
++----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Use this setting to enable OAuth and specify the service provider, with these options:                                                 | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                        | - ``config.json`` setting: N/A                       |
+| - **Do not allow login via an OAuth 2.0 provider**                                                                                     | - Environment variable: N/A                          |
+| - **GitLab** (Available in all plans; see `GitLab OAuth settings <#gitlab-oauth-settings>`__)                                          |                                                      |
+| - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google OAuth settings <#google-oauth-settings>`__)        |                                                      |
+| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 OAuth settings <#office-365-oauth-settings>`__) |                                                      |
++----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-- **Do not allow login via an OAuth 2.0 provider**
-- **GitLab** (available in all plans; see `GitLab Settings <https://docs.mattermost.com/configure/configuration-settings.html#gitlab-settings>`__ for details)
-- **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google Settings <https://docs.mattermost.com/configure/configuration-settings.html#google-settings>`__ for details)
-- **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 Settings <https://docs.mattermost.com/configure/configuration-settings.html#office-365-settings>`__ for details)
-
-This feature's setting does not appear in ``config.json``.
-
-GitLab
-^^^^^^
+GitLab OAuth settings
+^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1211,8 +1211,8 @@ Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:
 | This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input. |
 +--------------------------------------------------------------------------------------+
 
-Google
-^^^^^^
+Google OAuth settings
+^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1282,8 +1282,8 @@ We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the 
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
-Office 365
-^^^^^^^^^^
+Office 365 OAuth settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
