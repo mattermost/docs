@@ -1132,23 +1132,23 @@ Select OAuth 2.0 service provider
 
 *Available in legacy Enterprise Edition E20*
 
-+----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
-| Use this setting to enable OAuth and specify the service provider, with these options:                                                 | - System Config path: **Authentication > OAuth 2.0** |
-|                                                                                                                                        | - ``config.json`` setting: N/A                       |
-| - **Do not allow login via an OAuth 2.0 provider**                                                                                     | - Environment variable: N/A                          |
-| - **GitLab** (Available in all plans; see `GitLab OAuth settings <#gitlab-oauth-settings>`__)                                          |                                                      |
-| - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google OAuth settings <#google-oauth-settings>`__)        |                                                      |
-| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 OAuth settings <#office-365-oauth-settings>`__) |                                                      |
-+----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+| Use this setting to enable OAuth and specify the service provider, with these options:                                                         | - System Config path: **Authentication > OAuth 2.0** |
+|                                                                                                                                                | - ``config.json`` setting: N/A                       |
+| - **Do not allow login via an OAuth 2.0 provider**                                                                                             | - Environment variable: N/A                          |
+| - **GitLab** (Available in all plans; see `GitLab 2.0 OAuth settings <#gitlab-oauth-2-0-settings>`__)                                          |                                                      |
+| - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google OAuth 2.0 settings <#google-oauth-2-0-settings>`__)        |                                                      |
+| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 OAuth 2.0 settings <#office-365-oauth-2-0-settings>`__) |                                                      |
++------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
-GitLab OAuth settings
-^^^^^^^^^^^^^^^^^^^^^
+GitLab OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable authentication with GitLab
-''''''''''''''''''''''''''''''''''
+Enable OAuth 2.0 authentication with GitLab
+'''''''''''''''''''''''''''''''''''''''''''
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | - **true**: Allows team and account creation using GitLab OAuth authentication. Input the **Secret** and **ID** credentials to configure. | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
@@ -1156,14 +1156,19 @@ Enable authentication with GitLab
 |                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``             |
 +-------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-Application ID
-''''''''''''''
+GitLab OAuth 2.0 Application ID
+'''''''''''''''''''''''''''''''
 
-Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
-
-+---------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
-+---------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the OAuth Application ID from GitLab. Generate the ID by these steps:                                                          | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                   | - ``config.json`` setting: ``.GitLabSettings.Id``                |
+| 1. Login to your GitLab account.                                                                                                                  | - Environment variable: ``MM_GITLABSETTINGS_ID``                 |
+| 2. Go to **Profile Settings > Applications > New Application** and enter a name.                                                                  |                                                                  |
+| 3. Enter the Redirect URLs: ``https://<your-mattermost-url>/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``. |                                                                  |
+| 4. Enter the Application ID provided by GitLab in the System Console field, the ``config.json`` setting, or the Environment variable.             |                                                                  |
+|                                                                                                                                                   |                                                                  |
+| String input.                                                                                                                                     |                                                                  |
++---------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 Application secret key
 ''''''''''''''''''''''
@@ -1206,8 +1211,8 @@ Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:
 | This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input. |
 +--------------------------------------------------------------------------------------+
 
-Google OAuth settings
-^^^^^^^^^^^^^^^^^^^^^
+Google OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1277,8 +1282,8 @@ We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the 
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
-Office 365 OAuth settings
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Office 365 OAuth 2.0 settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
