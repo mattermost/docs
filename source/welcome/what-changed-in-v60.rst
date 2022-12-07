@@ -29,9 +29,9 @@ Account settings
 
 The Account Settings menu has been split into **Profile** and **Settings**.
 
-Your **Profile** and **Security** settings can be found in **Profile**. Select your avatar in the top-right corner of Mattermost, then choose **Profile**.
+Your **Profile** and **Security** settings can be found in **Profile**. Select your profile picture in the top-right corner of Mattermost, then choose **Profile**.
 
-Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are found in **Settings**. In Channels, select the |gear-icon| in the Global Header, to the left of your avatar, to access Channels settings. 
+Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **Advanced** settings are found in **Settings**. In Channels, select the |gear-icon| in the Global Header, to the left of your profile picture, to access Channels settings. 
 
 .. |gear-icon| image:: ../images/settings-outline_F08BB.svg
   :alt: Select the Gear icon to access Channel settings.
@@ -39,7 +39,7 @@ Channel-specific options for **Notifications**, **Display**, **Sidebar**, and **
 Status and availability
 -----------------------
 
-Let your team know your online status using `custom status and availability settings </welcome/set-your-status-availability.html>`_, which include emojis. Select your avatar in the top-right corner to change your status and availability.
+Let your team know your online status using `custom status and availability settings </welcome/set-your-status-availability.html>`_, which include emojis. Select your profile picture in the top-right corner to change your status and availability.
 
 Product menu
 ------------

@@ -28,7 +28,7 @@ Save messages for later follow up by selecting the **Save** |save-icon| icon nex
 See your saved messages
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To see all of your saved messages, select the **Bookmark** icon to the left of your avatar. The right-hand sidebar opens to show the list of saved messages.
+To see all of your saved messages, select the **Bookmark** icon to the left of your profile picture. The right-hand sidebar opens to show the list of saved messages.
 
 Unsave messages
 ~~~~~~~~~~~~~~~

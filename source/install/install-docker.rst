@@ -80,7 +80,7 @@ Deploy Mattermost on Docker for production use
 Upgrade from ``mattermost-docker``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For an in-depth guide to upgrading from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__, please refer to `this document <https://github.com/mattermost/docker/blob/main/scripts/UPGRADE.md>`__. For additional help pr questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
+For an in-depth guide to upgrading from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__, please refer to `this document <https://github.com/mattermost/docker/blob/main/scripts/UPGRADE.md>`__. For additional help or questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
 
 Installing a different version of Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

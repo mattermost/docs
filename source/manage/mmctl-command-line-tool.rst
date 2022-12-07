@@ -124,7 +124,7 @@ Use this option on Linux and macOS if you have Homebrew installed.
 
    brew install mmctl
 
-**Using go get (Linux, macOS, Windows)**
+**Using go install (Linux, macOS, Windows)**
 
 Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
@@ -132,7 +132,7 @@ To add the project in your `$GOPATH` run the following command:
 
 .. code-block:: sh
 
-   go get -u github.com/mattermost/mmctl
+   go install github.com/mattermost/mmctl@latest
 
 **Using release package (Linux, macOS, Windows)**
 
@@ -165,7 +165,7 @@ To use local mode, the Mattermost server first needs to `have local mode enabled
 
 .. tip::
 
-  When trying to use local mode with mmctl, an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, can be resolved by setting ``EnableLocalMode`` to ``true``.
+  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``. 
 
 Using local mode
 ~~~~~~~~~~~~~~~~
@@ -1950,7 +1950,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
   
-   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-mattermost-database.html#create-an-environment-file>`_ and restart the Mattermost server.
+   To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` `environment variable </configure/configuation-in-a-database.html#create-an-environment-file>`_ and restart the Mattermost server.
 
 **Format**
 
@@ -3843,12 +3843,12 @@ Assign users to a role by username.
 .. code-block:: sh
 
    # Assign users with usernames 'john.doe' and 'jane.doe' to the role named 'system_admin'.
-   mmctl permissions assign system_admin john.doe jane.doe
+   mmctl permissions role assign system_admin john.doe jane.doe
     
    # Examples using other system roles
-   mmctl permissions assign system_manager john.doe jane.doe
-   mmctl permissions assign system_user_manager john.doe jane.doe
-   mmctl permissions assign system_read_only_admin john.doe jane.doe
+   mmctl permissions role assign system_manager john.doe jane.doe
+   mmctl permissions role assign system_user_manager john.doe jane.doe
+   mmctl permissions role assign system_read_only_admin john.doe jane.doe
 
 **Options**
 

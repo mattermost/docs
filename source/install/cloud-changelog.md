@@ -4,12 +4,120 @@ This changelog summarizes updates to [Mattermost Cloud](https://mattermost.com/g
 
 Latest Mattermost Cloud releases:
 
+- [Release 2022-12-01](#release-2022-12-01)
+- [Release 2022-11-24](#release-2022-11-24)
+- [Release 2022-11-17](#release-2022-11-17)
 - [Release 2022-11-10](#release-2022-11-10)
 - [Release 2022-10-27](#release-2022-10-27)
 - [Release 2022-10-20](#release-2022-10-20)
-- [Release 2022-10-13](#release-2022-10-13)
-- [Release 2022-10-06](#release-2022-10-06)
-- [Release 2022-09-15](#release-2022-09-15)
+
+## Release 2022-12-01
+
+### Improvements
+
+#### User Interface (UI)
+ - Removed video check to allow the browser to decide what video types it can play.
+ - Added a tooltip to the right-hand side files filter icon.
+ - The number of users that can be added to a user group at once was increased to 256.
+ - Keyboard and focus handling was improved in profile popovers and @mentions.
+ - If a channel has a draft message, the pencil icon is now displayed on the right side of the channel name in the channel sidebar.
+ - Pre-packaged Boards v7.5.2.
+
+#### Administration
+ - Updated macOS supported version to 11+.
+ - **My Insights** and OpenId Connect were added to the Mattermost Free plan.
+ - All integration limits and usage limit components were removed.
+ - Team scheme APIs are now allowed to be administered with a Professional plan.
+ - Added a new menu item on the **System Console > Users** page that re-adds users to all of their default teams and channels associated with the groups they're a member of.
+ - Changing the license in a cloud environment will now force an update of the subscription and kick the cache for all cluster members.
+ - Added support for product websocket messages on high availability instances.
+
+### API Changes
+ - The resumable uploads API was exposed to plugins.
+ - Added a new API endpoint ``POST /api/v4/ldap/users/:user_id/group_sync_memberships`` to add (or re-add) users to all of their default teams and channels for all of the groups they're a member of.
+ - Added two new URL parameters to the ``GET /api/v4/groups`` endpoint to get the ``ChannelMemberCount`` for a group.
+ - Added new API endpoints ``POST /api/v4/users/:user_id/posts/:post_id/ack`` and ``DELETE /api/v4/users/:user_id/posts/:post_id/ack``.
+
+### Bug Fixes
+ - Fixed an issue where a blank message was displayed in threads if the leave/join messages were disabled.
+ - Fixed an issue where threads would appear duplicated in the Threads view after leaving a channel.
+ - Fixed an issue with email search when using a PostgreSQL database.
+ - Fixed an issue where message drafts were not saved after pasting them into the post textbox.
+ - Fixed an issue where the team name in the channel sidebar header wasn't accessible.
+ - Fixed an issue where users were unable to open the user's profile popover from the channel members list in the right panel.
+ - Fixed an issue where the OAuth 2.0 deprecation notice was still displayed in the System Console.
+ - Fixed an issue where clicking on a reply post time stamp in the global threads inbox opened two right-hand side panels.
+
+### Known Issues
+ - Boards linked to a channel you're a member of don't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-11-24
+
+### Improvements
+
+#### User Interface (UI)
+ - Changed Cloud defaults for ``MaxUsersPerTeam`` and ``MaxChannelsPerTeam`` to 10000.
+ - Added a Monthly versus Annual pricing toggle to the pricing modal.
+
+#### API Changes
+ - Added a new API endpoint ``POST /api/v4/groups/:group_id:/restore``.
+
+### Bug Fixes
+ - Fixed an issue where special characters weren't allowed in group mention names.
+ - Fixed an issue where screen readers didn't read the **Switch Channels** modal header.
+ - Fixed an issue in OAuth services where malformed redirect URLs were generated if the registered callback URLs already had static query parameters.
+ - Fixed an issue where suggestion dividers were displayed as undefined.
+
+### Known Issues
+ - Boards linked to a channel you're a member of doesn't automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS, or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
+
+## Release 2022-11-17
+
+### Highlights
+
+#### Calls
+ - Added new message threads with emoji reactions and at-mentions to Calls. After joining a call, expand the widget to the window mode and then select the comment button to access the real-time message thread in the right-hand sidebar.
+
+#### Boards
+ - Added additional standard board templates to help users kick-off their next projects.
+ - Filters now support all text properties.
+ - Added two new tiles for System Console Boards metrics under **System Console > Site Statistics**.
+
+### Improvements
+
+#### User Interface (UI)
+ - The **Mark as Unread** option was added to the ``…`` menu for channels in the left-hand side sidebar. Pressing Alt while selecting a channel on the left-hand side now also marks the last post in the channel as unread.
+ - Channel members are now able to remove themselves from a channel via the right-hand side channel members list.
+ - Downgraded Bulgarian, Persian, and Simplified Chinese language support to Alpha.
+
+#### Administration
+ - The **System Console > File Sharing and Download** setting is now unhidden and honored in Cloud.
+ - **Total Active Users** was renamed to **Total Activated Users** in **System Console > Reporting > Site Statistics**.
+ - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
+ - SQL migrations for PostgreSQL will now filter by the current schema name when checking for information from the ``information_schema.columns`` view. This does not affect anything because usually there's only one installation in a given database, but this gives flexibility to users to store multiple Mattermost instances under a single database.
+
+### API Changes
+ - A new API method ``RegisterCollectionAndTopic(collectionType, topicType string) (error)`` was added to the Plugin API and the following hooks. This API method is in beta, subject to change, and not covered by our backwards compatibility guarantee.
+    - ``UserHasPermissionToCollection(c *Context, userID, collectionType, collectionId string, permission *model.Permission) (bool, error)``
+    - ``GetAllCollectionIDsForUser(c *Context, userID, collectionType string) ([]string, error)``
+    - ``GetAllUserIdsForCollection(c *Context, collectionType, collectionID string) ([]string, error)``
+    - ``GetTopicRedirect(c *Context, topicType, topicID string) (string, error)``
+    - ``GetCollectionMetadataByIds(c *Context, collectionType string, collectionIds []string) (map[string]model.CollectionMetadata, error)``
+    - ``GetTopicMetadataByIds(c *Context, topicType string, topicIds []string) (map[string]*model.TopicMetadata, error)``
+
+### Bug Fixes
+ - Fixed an issue where exports did not contain favorited Direct Message channels.
+ - Fixed an issue where screen readers did not announce search results on the **Invite members to channel** modal.
+ - Fixed an issue where screen readers did not announce the status of the user when hovering over the user status icon.
+ - Fixed an issue where users with narrow screens could not see the **Profile Settings** section within the **Settings** modal.
+ - Fixed an issue where users were unable to access the **Create an account** option on narrow screens.
+ - Fixed an issue where users on desktop were unable to grab the vertical scroll bar without accidently resizing the window.
+
+### Known Issues
+ - Boards linked to a channel you're a member of do not automatically appear on your sidebar unless you're an explicit member of the board. As a workaround, you can access the board from the channel RHS or by searching for the board via the board switcher (Ctrl/Cmd+K). Alternatively, you can ask the board Admin to add you to the board as an explicit member. See the [issue-focalboard-4179](https://github.com/mattermost/focalboard/issues/4179) for more details.
+ - The Playbooks left-hand sidebar does not update when a user is added to a run or playbook without a refresh.
 
 ## Release 2022-11-10
 

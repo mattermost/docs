@@ -36,51 +36,47 @@ Access the following configuration settings in the System Console by going to **
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Ability to create new accounts is enabled via inviting new members or sharing the team invite link.
-
-**False**: Ability to create accounts is disabled. The **Create Account** button displays an error when trying to signup via an email invite or team invite link.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserCreation": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
-
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** New accounts can be created by an email invitation or a public team invitation link.                           | - System Config path: **Authentication > Signup**                      |
+| - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message. | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
+|                                                                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+ 										      
 Restrict account creation to specified email domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Teams and user accounts can only be created by a verified email from this list of comma-separated domains (e.g. "corp.mattermost.com, mattermost.com").
-
-This setting only affects email login. For domain restrictions to be effective, you must also set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true``.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This setting limits the email address domains that can be used to create a new account or team. You **must** set `Require Email Verification <https://docs.mattermost.com/configure/configuration-settings.html#require-email-verification>`__ to ``true`` for the restriction to function. This setting only affects email login. | - System Config path: **Authentication > Signup**                       |
+|                                                                                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.TeamSettings.RestrictCreationToDomains``  |
+| String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                    | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 Enable open server
 ~~~~~~~~~~~~~~~~~~
-
-**True**: Users can sign up to the server from the root page without an invite.
-
-**False**: Users can only sign up to the server if they receive an invite.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOpenServer": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
+  
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: Users can create accounts on the server without an invitation.                       | - System Config path: **Authentication > Signup**                   |
+| - **false**: **(Default)** Users **must** have an invitation to create an account on the server. | - ``config.json`` setting: ``.TeamSettings.EnableOpenServer``       |
+|                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_ENABLEOPENSERVER``        |
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Enable email invitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can invite others to the Mattermost system by email.
-
-**False**: Email invitations are disabled.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableEmailInvitations": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Allows users to send email invitations.    | - System Config path: **Authentication > Signup**                      |
+| - **false**: **(Default)** Disables email invitations. | - ``config.json`` setting: ``.ServiceSettings.EnableEmailInvitations`` |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``  |
++--------------------------------------------------------+------------------------------------------------------------------------+
 
 Invalidate pending email invites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This button invalidates active email invitations that have not been accepted by the user. By default email invitations expire after 48 hours.
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+| This button invalidates email invitations that have not been accepted (by default, invitations expire after 48 hours). | - System Config path: **Authentication > Signup** |
+|                                                                                                                        | - ``config.json`` setting: N/A                    |
+| This option has no ``config.json`` setting or environment variable.                                                    | - Environment variable: N/A                       |
++------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
 
 ----
 
@@ -95,46 +91,38 @@ Access the following configuration settings in the System Console by going to **
 Enable account creation with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Allow team creation and account signup using email and password.
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: **(Default)** Allows creation of team and user accounts with email and password.                                                        | - System Config path: **Authentication > Email**                    |
+| - **false**: Disables creation of team and user accounts with email and password. This requries a single sign-on service to create accounts.        | - ``config.json`` setting: ``.EmailSettings.EnableSignUpWithEmail`` |
+|                                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-**False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
-
-Require Email Verification
+Require email verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Require email verification after account creation prior to allowing login.
-
-**False**: Users do not need to verify their email address prior to login. Developers may set this field to ``false`` to skip sending verification emails for faster development.
-
-+----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RequireEmailVerification": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: Requires email verification for new accounts before allowing the user to sign-in.                                       | - System Config path: **Authentication > Email**                       |
+| - **false**: **(Default)** Disables email verification. This can be used to speed development by skipping the verification process. | - ``config.json`` setting: ``.EmailSettings.RequireEmailVerification`` |
+|                                                                                                                                     | - Environment variable: ``MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION``  |
++-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 Enable sign-in with email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Mattermost allows account creation using email and password.
-
-**False**: Log in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a Single Sign-on service like AD/LDAP, SAML, or GitLab.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to sign-in with email and password.                                                                                                      | - System Config path: **Authentication > Email**                    |
+| - **false**: Disables authentication with email and password, and removes the option from the login screen. Use this option to limit authentication to single sign-on services. | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithEmail`` |
+|                                                                                                                                                                                 | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL``  |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 Enable sign-in with username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Mattermost allows users with email login to log in using their username and password. This setting does not affect AD/LDAP login.
-
-**False**: Log in with username is disabled and does not appear on the login screen.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``EnableSignInWithUsername": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in. | - System Config path: **Authentication > Email**                               |
+| - **false**: Disables authenticaton with a username and removes the option from the login screen.                                                                      | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername``         |
+|                                                                                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``          |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 ----
 
@@ -151,42 +139,38 @@ Minimum password length
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 8`` with numerical input.                   |
-+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. | - System Config path: **Authentication > Password**            |
+|                                                                                                                                                           | - ``config.json`` setting: ``.PasswordSettings.MinimumLength`` |
+| Numerical input. Default is **5**.                                                                                                                        | - Environment variable: ``MM_PASSWORDSETTINGS_MINIMUMLENGTH``  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Password requirements
 ~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature was moved to Team Edition in Mattermost v5.0, released June 16th, 2018. Prior to v5.0, this feature is available in legacy Enterprise Edition E10 and E20.*
 
-Set the required character types to be included in a valid password. Defaults to allow any characters unless otherwise specified by the checkboxes. The error message previewed in the System Console will appear on the account creation page if a user enters an invalid password.
-
-- **At least one lowercase letter**: Select this checkbox if a valid password must contain at least one lowercase letter.
-- **At least one uppercase letter**: Select this checkbox if a valid password must contain at least one uppercase letter.
-- **At least one number**: Select this checkbox if a valid password must contain at least one number.
-- **At least one symbol**: Select this checkbox if a valid password must contain at least one symbol. Valid symbols include: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``.
-
-This feature's ``config.json`` settings are, respectively:
-
-.. list-table::
-    :widths: 80
-
-    * - ``"Lowercase": false`` with options ``true`` and ``false``.
-    * - ``"Number": false`` with options ``true`` and ``false``.
-    * - ``"Uppercase": false`` with options ``true`` and ``false``.
-    * - ``"Symbol": false`` with options ``true`` and ``false``.
++-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This setting controls password character requirements. By checking the corresponding box, passwords must contain: | - System Config path: **Authentication > Password**                                                                                                                                  |
+|                                                                                                                   | - ``config.json`` settings: ``.PasswordSettings.Lowercase: false``, ``.PasswordSettings.Uppercase: false``, ``.PasswordSettings.Number: false``, ``.PasswordSettings.Symbol: false`` |
+| - **At least one lowercase letter**                                                                               | - Environment variables: ``MM_PASSWORDSETTINGS_LOWERCASE``, ``MM_PASSWORDSETTINGS_UPPERCASE``, ``MM_PASSWORDSETTINGS_NUMBER``, ``MM_PASSWORDSETTINGS_SYMBOL``                        |
+| - **At least one uppercase letter**                                                                               |                                                                                                                                                                                      |
+| - **At least one number**                                                                                         |                                                                                                                                                                                      |
+| - **At least one symbol** out of these: ``!"#$%&'()*+,-./:;<=>?@[]^_`|~``.                                        |                                                                                                                                                                                      |
+|                                                                                                                   |                                                                                                                                                                                      |
+| The error message previewed in the System Console will appear if the user attempts to set an invalid password.    |                                                                                                                                                                                      |
+|                                                                                                                   |                                                                                                                                                                                      |
+| The default for all boxes is unchecked. The default for all settings in ``config.json`` is ``false``.             |                                                                                                                                                                                      |
++-------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Failed login attempts allowed before a user is locked out and required to reset their password via email.
-
-+------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with numerical input. |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. | - System Config path: **Authentication > Password**                      |
+|                                                                                                                                                             | - ``config.json`` setting: ``.ServiceSettings.MaximumLoginAttempts: 10`` |
+| Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
@@ -196,22 +180,18 @@ MFA
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Configure security settings for multi-factor authentication (MFA) in the System Console by going to **Authentication > MFA**.
+Access the following configuration settings in the System Console by going to **Authentication > MFA**.
 
-The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
-
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend you set up a multi-factor authentication service specifically for accessing Mattermost.
+We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
 
 Enable multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users with LDAP and email authentication will be given the option to require a phone-based passcode, in addition to their password-based authentication, to log in to the Mattermost server. Specifically, they'll be asked to download the `Google Authenticator <https://en.wikipedia.org/wiki/Google_Authenticator>`__ app to their iOS or Android mobile device, connect the app with their account, and then enter a passcode generated by the app on their phone whenever they log in to the Mattermost server.
-
-**False**: Multi-factor authentication is disabled.
-
-+-----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Users who sign-in with AD/LDAP or an email address have the option to add `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ to their accounts. | - System Config path: **Authentication > MFA**                                         |
+| - **false**: **(Default)** Disables multi-factor authentication                                                                                                                                                 | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
+|                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,13 +201,13 @@ Enforce multi-factor authentication
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: `Multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ is required for login. New users will be required to configure MFA on signup. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
-
-**False**: Multi-factor authentication is optional.
-
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ for users who sign-in with AD/LDAP or an email address.  | - System Config path: **Authentication > MFA**                                   |
+| New users must configure MFA. Logged in users are redirected to the MFA setup page until configuration is complete.                                                                        | - ``config.json`` setting: ``.ServiceSettings.EnforceMultifactorAuthentication`` |
+| - **false**: MFA is optional.                                                                                                                                                              | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| Note: If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.                                                                                                       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
@@ -244,142 +224,155 @@ Enable sign-in with AD/LDAP
 
 *Available in legacy Enterprise Edition E10 and E20*
 
-**True**: Mattermost allows login using AD/LDAP or Active Directory.
-
-**False**: Login with AD/LDAP is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+------------------------------------------------------------+
+| - **true**: Allows sign-in with AD/LDAP or Active Directory.                  | - System Config path: **Authentication > AD/LDAP**         |
+| - **false**: **(Default)** Disables sign-in with AD/LDAP or Active Directory. | - ``config.json`` setting: ``.LdapSettings.Enable: false`` |
+|                                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLE``         |
++-------------------------------------------------------------------------------+------------------------------------------------------------+
 
 Enable synchronization with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Mattermost periodically synchronizes users from AD/LDAP.
+*Available in legacy Enterprise Edition E10 and E20*
 
-**False**: AD/LDAP synchronization is disabled.
-
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSync": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+----------------------------------------------------------------+
+| - **true**: Mattermost periodically syncs users from AD/LDAP. | - System Config path: **Authentication > AD/LDAP**             |
+| - **false**: **(Default)** Disables AD/LDAP synchronization.  | - ``config.json`` setting: ``.LdapSettings.EnableSync: false`` |
+|                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLESYNC``         |
++---------------------------------------------------------------+----------------------------------------------------------------+
 
 Login field name
 ~~~~~~~~~~~~~~~~
 
-The placeholder text that appears in the login field on the login page. Typically this would be whatever name is used to refer to AD/LDAP credentials in your company, so it is recognizable to your users. Defaults to **AD/LDAP Username**.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginFieldName": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| This setting will display placeholder text in the login field of the sign-in page. This text can remind users to sign-in with their AD/LDAP credentials. | - System Config path: **Authentication > AD/LDAP**          |
+|                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.LoginFieldName`` |
+| String input. Default is ``AD/LDAP Username``.                                                                                                           | - Environment variable: ``MM_LDAPSETTINGS_LOGINFIELDNAME``  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 AD/LDAP server
 ~~~~~~~~~~~~~~
 
-The domain or IP address of the AD/LDAP server.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LdapServer": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------+---------------------------------------------------------+
+| This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**      |
+|                                                              | - ``config.json`` setting: ``.LdapSettings.LdapServer`` |
+| String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``  |
++--------------------------------------------------------------+---------------------------------------------------------+
 
 AD/LDAP port
 ~~~~~~~~~~~~
 
-The port Mattermost will use to connect to the AD/LDAP server. Defaults to ``389``.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LdapPort": 389`` with numerical input. |
-+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+------------------------------------------------------------+
+| This is the port Mattermost uses to connect to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**         |
+|                                                                    | - ``config.json`` setting: ``.LdapSettings.LdapPort: 389`` |
+| Numerical input. Default is **389**.                               | - Environment variable: ``MM_LDAPSETTINGS_LDAPPORT``       |
++--------------------------------------------------------------------+------------------------------------------------------------+
 
 Connection security
 ~~~~~~~~~~~~~~~~~~~
 
-The type of connection security Mattermost uses to connect to AD/LDAP.
+*Available in legacy Enterprise Edition E10 and E20*
 
-**None**: No encryption, Mattermost will not attempt to establish an encrypted connection to the AD/LDAP server.
-
-**TLS**: Encrypts the communication between Mattermost and your server using TLS.
-
-**STARTTLS**: Takes an existing insecure connection and attempts to upgrade it to a secure connection using TLS.
-
-If the "No encryption" option is selected it is highly recommended that the AD/LDAP connection is secured outside of Mattermost, for example, by adding a stunnel proxy.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""``, ``"TLS"``, and ``"STARTTLS"``. |
-+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This setting controls the type of security Mattermost uses to connect to the AD/LDAP server, with these options:                                                                                         | - System Config path: **Authentication > AD/LDAP**              |
+|                                                                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.ConnectionSecurity`` |
+| - **None**: **(Default)** No encryption. With this option, it is **highly recommended** that the connection be secured outside of Mattermost, such as by a stunnel proxy. ``config.json`` option: ``""`` | - Environment variable: ``MM_LDAPSETTINGS_CONNECTIONSECURITY``  |
+| - **TLS**: Encrypts communication with TLS. ``config.json`` option: ``"TLS"``                                                                                                                            |                                                                 |
+| - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``                                                              |                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Skips the certificate verification step for TLS or STARTTLS connections. Not recommended for production environments where TLS is required. For testing only.
+*Available in legacy Enterprise Edition E10 and E20*
 
-**False**: Mattermost does not skip certificate verification.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipCertificateVerification": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| - **true**: Disables the certificate verification step for TLS and STARTTLS connections. Use this option for testing. **Do not use** this option when TLS is required in production. | - System Config path: **Authentication > AD/LDAP**                              |
+| - **false**: **(Default)** Enables certification verification.                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.SkipCertificateVerification: false`` |
+|                                                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION``         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Private key
 ~~~~~~~~~~~
 
-(Optional) The private key file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+---------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PrivateKeyFile": ""`` with string input. |
-+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| Use this setting to upload the private key file from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.| - System Config path: **Authentication > AD/LDAP**          |
+|                                                                                                                                                             | - ``config.json`` setting: ``.LdapSettings.PrivateKeyFile`` |
+| String input.                                                                                                                                               | - Environment variable: ``MM_LDAPSETTINGS_PRIVATEKEYFILE``  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 Public certificate
 ~~~~~~~~~~~~~~~~~~
 
-(Optional) The public TLS certificate file provided by your LDAP Authentication Provider and uploaded if TLS client certificates are being used as the primary authentication mechanism.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with with string input. |
-+---------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+| Use this setting to upload the public TLS certificate from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism. | - System Config path: **Authentication > AD/LDAP**                 |
+|                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.PublicCertificateFile`` |
+| String input.                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 Bind username
 ~~~~~~~~~~~~~
 
-The username used to perform the AD/LDAP search. This should be an account created specifically for use with Mattermost. Its permissions should be limited to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field. When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format. This field is required, and anonymous bind is not currently supported.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BindUsername": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost. | - System Config path: **Authentication > AD/LDAP**        |
+|                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.BindUsername`` |
+| Limit the permissions of the account to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** setting.        | - Environment variable: ``MM_LDAPSETTINGS_BINDUSERNAME``  |
+|                                                                                                                                          |                                                           |
+| When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format.                                    |                                                           |
+|                                                                                                                                          |                                                           |
+| String input.                                                                                                                            |                                                           |
++------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| **Note**: This field is required. Anonymous bind is not currently supported.                                                                                                                         |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Bind password
 ~~~~~~~~~~~~~
 
-Password of the user given in **Bind Username**. Anonymous bind is not currently supported.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BindPassword": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+-----------------------------------------------------------+
+| This is the password for the username given in the **Bind Username** setting. | - System Config path: **Authentication > AD/LDAP**        |
+|                                                                               | - ``config.json`` setting: ``.LdapSettings.BindPassword`` |
+| String input.                                                                 | - Environment variable: ``MM_LDAPSETTINGS_BINDPASSWORD``  |
++-------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 Base DN
 ~~~~~~~~
 
-The **Base Distinguished Name** of the location where Mattermost should start its search for users in the AD/LDAP tree.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BaseDN": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| This is the **Base Distinguished Name** of the location in the AD/LDAP tree where Mattermost will start searching for users. | - System Config path: **Authentication > AD/LDAP**  |
+|                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.BaseDN`` |
+| String input.                                                                                                                | - Environment variable: ``MM_LDAPSETTINGS_BASEDN``  |
++------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 User filter
 ~~~~~~~~~~~~
 
-(Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the users selected by the query will be able to access Mattermost.
+*Available in legacy Enterprise Edition E10 and E20*
 
-Sample filters for Active Directory:
-
-- To filter out disabled users: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.
-- To filter out by group membership, determine the distinguishedName of your group, then use the group membership general syntax format as your filter.
-
-  * For example, if the security group distinguishedName is ``CN=group1,OU=groups,DC=example,DC=com``, then the user filter to use is: ``(memberOf=CN=group1,OU=groups,DC=example,DC=com)``. Note that the user must explicitly belong to this group for the filter to apply.
-
-This filter uses the permissions of the **Bind Username** account to execute the search. Administrators should make sure to use a specially created account for Bind Username with read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
-
-+-----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserFilter": ""`` with string input. |
-+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for user objects. Only the users selected by the query can access Mattermost. For example, to filter out disabled users, the filter is: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.              | - System Config path: **Authentication > AD/LDAP**      |
+|                                                                                                                                                                                                                                                                                                                                                                                                         | - ``config.json`` setting: ``.LdapSettings.UserFilter`` |
+| To filter by group membership, determine the ``distinguishedName`` of the group, then use group membership general syntax to format the filter. For example, if the security group ``distinguishedName`` is ``CN=group1,OU=groups,DC=example,DC=com``, then the filter is: ``(memberOf=CN=group1,OU=groups,DC=example,DC=com)``. The user must explicitly belong to this group for the filter to apply. | - Environment variable: ``MM_LDAPSETTINGS_USERFILTER``  |
+|                                                                                                                                                                                                                                                                                                                                                                                                         |                                                         |
+| String input.                                                                                                                                                                                                                                                                                                                                                                                           |                                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+| **Note**: This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.                                                                                                                                                                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group filter
 ~~~~~~~~~~~~~
@@ -389,146 +382,183 @@ Group filter
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able to access Mattermost.
-
-This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` when blank.
-
-.. note::
-  This filter is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GroupFilter": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for group objects. Only the groups selected by the query can access Mattermost.| - System Config path: **Authentication > AD/LDAP**       |
+|                                                                                                                                                                                                                                                  | - ``config.json`` setting: ``.LdapSettings.GroupFilter`` |
+| String input. Default is ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``.                                                                                                                                   | - Environment variable: ``MM_LDAPSETTINGS_GROUPFILTER``  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| **Note**: This filter is only used when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information.                                                                                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable admin filter
 ~~~~~~~~~~~~~~~~~~~
 
-**True**: Enables System Admins to configure an AD/LDAP filter.
+*Available in legacy Enterprise Edition E20*
 
-**False**: Disables the ability for System Admins to configure an AD/LDAP filter.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| - **true**: Enables the **Admin Filter** setting that designates System Admins using an AD/LDAP filter.                                                                                                                     | - System Config path: **Authentication > AD/LDAP**                    |
+| - **false**: **(Default)** Disables the **Admin Filter** setting.                                                                                                                                                           | - ``config.json`` setting: ``.LdapSettings.EnableAdminFilter: false`` |
+|                                                                                                                                                                                                                             | - Environment variable: ``MM_LDAPSETTINGS_ENABLEADMINFILTER``         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+| **Note**: If this setting is ``false``, no additional users are designated as System Admins by the filter. Users that were previously designated as System Admins retain this role unless the filter is changed or removed.                                                                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Admin filter
 ~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) Enter a filter to use for designating the System Admin role to users. When enabled the user is promoted to this role on their next login or at the next scheduled AD/LDAP sync. If the Admin Filter is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
-
-This filter default is ``false`` and must be set to ``true`` in order for the Admin Filter to be used.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAdminFilter": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| This setting accepts an AD/LDAP filter that designates the selected users as System Admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync. | - System Config path: **Authentication > AD/LDAP**       |
+|                                                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.AdminFilter`` |
+| If the Admin Filter is removed, users who are currently logged in retain their Admin role until their next sign-in.                                                                      | - Environment variable: ``MM_LDAPSETTINGS_ADMINFILTER``  |
+|                                                                                                                                                                                          |                                                          |
+| String input.                                                                                                                                                                            |                                                          |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 Guest filter
 ~~~~~~~~~~~~
 
 *Available in legacy Enterprise Edition E20*
 
-(Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost. Only the users selected by the query will be able to log in to and use Mattermost as Guests. This filter default is blank.
-
-See the `Guest Accounts documentation <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GuestFilter": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can access Mattermost as Guests. | - System Config path: **Authentication > AD/LDAP**       |
+|                                                                                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.GuestFilter`` |
+| See `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`__ for more information.                                                                               | - Environment variable: ``MM_LDAPSETTINGS_GUESTFILTER``  |
+|                                                                                                                                                                                      |                                                          |
+| String input.                                                                                                                                                                        |                                                          |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 ID attribute
 ~~~~~~~~~~~~~
 
-The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
+*Available in legacy Enterprise Edition E10 and E20*
 
-If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead.
-
-Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
-
-If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost.                                                                                              | - System Config path: **Authentication > AD/LDAP**                                                                               |
+|                                                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.IdAttribute``                                                                         |
+| The attribute should have a unique value that does not change, such as ``objectGUID`` or ``entryUUID``. Confirm that these attributes are available in your environment before making any changes. | - Environment variable: ``MM_LDAPSETTINGS_IDATTRIBUTE``                                                                          |
+|                                                                                                                                                                                                    |                                                                                                                                  |
+| String input.                                                                                                                                                                                      |                                                                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/manage/command-line-tools.html#mattermost-ldap-idmigrate>`__ CLI tool. |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Login ID attribute
 ~~~~~~~~~~~~~~~~~~
 
-The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the **Username Attribute** field above.
+*Available in legacy Enterprise Edition E10 and E20*
 
-If your team typically uses domain\username to log in to other services with AD/LDAP, you may enter domain\username in this field to maintain consistency between sites.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginIdAttribute": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that is used for signing-in to Mattermost. This is normally the same as the **Username Attribute**.                         | - System Config path: **Authentication > AD/LDAP**            |
+|                                                                                                                                                                         | - ``config.json`` setting: ``.LdapSettings.LoginIdAttribute`` |
+| If your team uses ``domain\username`` to sign-in to other services with AD/LDAP, you may enter ``domain\username`` in this field to maintain consistency between sites. | - Environment variable: ``MM_LDAPSETTINGS_LOGINIDATTRIBUTE``  |
+|                                                                                                                                                                         |                                                               |
+| String input.                                                                                                                                                           |                                                               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
 
-The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the Login ID Attribute.
+*Available in legacy Enterprise Edition E10 and E20*
 
-This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
-
-The **Username Attribute** may be set to the same value used to log in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the username field in Mattermost.                                                                                                                                                                       | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``.LdapSettings.UsernameAttribute`` |
+| This attribute identifies users in the UI. For example, if a Username Attribute is set to ``john.smith``, typing ``@john`` will show ``@john.smith`` as an auto-complete option, and posting a message with ``@john.smith`` will send a notification to that user. | - Environment variable: ``MM_LDAPSETTINGS_USERNAMEATTRIBUTE``  |
+|                                                                                                                                                                                                                                                                    |                                                                |
+| This is normally the same as the **Login ID Attribute**, but it can be mapped to a different attribute.                                                                                                                                                            |                                                                |
+|                                                                                                                                                                                                                                                                    |                                                                |
+| String input.                                                                                                                                                                                                                                                      |                                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Email attribute
 ~~~~~~~~~~~~~~~~
 
-The attribute in the AD/LDAP server used to populate the email address field in Mattermost.
+*Available in legacy Enterprise Edition E10 and E20*
 
-Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings chosen by the System Admin.
-
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EmailAttribute": ""`` with string input.    |
-+------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
+| This is the attribute in AD/LDAP server that populates the email address field in Mattermost.                                  | - System Config path: **Authentication > AD/LDAP**         |
+|                                                                                                                                | - ``config.json`` setting ``.LdapSettings.EmailAttribute`` |
+| Email notifications are sent to this address. The address may be seen by other Mattermost users depending on privacy settings. | - Environment variable: ``MM_LDAPSETTINGS_EMAILATTRIBUTE`` |
+|                                                                                                                                |                                                            |
+| String input.                                                                                                                  |                                                            |
++--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~~
 
-(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FirstNameAttribute": ""`` with string input.    |
-+----------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                 | - System Config path: **Authentication > AD/LDAP**              |
+|                                                                                                                | - ``config.json`` setting: ``.LdapSettings.FirstNameAttribute`` |
+| When set, users cannot edit their first name.                                                                  | - Environment variable: ``MM_LDAPSETTINGS_FIRSTNAMEATTRIBUTE``  |
+|                                                                                                                |                                                                 |
+| When not set, users can edit their first name in their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                 |
+|                                                                                                                |                                                                 |
+| String input.                                                                                                  |                                                                 |
++----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
 
-(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name as part of their :doc:`profile settings </welcome/manage-your-profile>`.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+-----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.      |
-+-----------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.LastNameAttribute`` |
+| When set, users cannot edit their last name.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_LASTNAMEATTRIBUTE``  |
+|                                                                                                                       |                                                                |
+| When not set, users can edit their last name as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
+|                                                                                                                       |                                                                |
+| String input.                                                                                                         |                                                                |
++-----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
 
-(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname as part of their :doc:`profile settings </welcome/manage-your-profile>`.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+--------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.   |
-+--------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.NicknameAttribute`` |
+| When set, users cannot edit their nickname.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_NICKNAMEATTRIBUTE``  |
+|                                                                                                                      |                                                                |
+| When not set, users can edit their nickname as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
+|                                                                                                                      |                                                                |
+| String input.                                                                                                        |                                                                |
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Position attribute
 ~~~~~~~~~~~~~~~~~~
 
-(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position as part of their :doc:`profile settings </welcome/manage-your-profile>`.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input. |
-+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                         | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                      | - ``config.json`` setting: ``.LdapSettings.PositionAttribute`` |
+| When set, users cannot edit their position.                                                                          | - Environment variable: ``MM_LDAPSETTINGS_POSITIONATTRIBUTE``  |
+|                                                                                                                      |                                                                |
+| When not set, users can edit their position as part of their :doc:`profile settings </welcome/manage-your-profile>`. |                                                                |
+|                                                                                                                      |                                                                |
+| String input.                                                                                                        |                                                                |
++----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 Profile picture attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The attribute in the AD/LDAP server used to synchronize (and lock) the profile picture used in Mattermost.
+*Available in legacy Enterprise Edition E10 and E20*
 
-The Mattermost server will replace the user’s profile image upon login (not at the sync interval as with other attributes). The sync will not occur if the current Mattermost profile image matches the image associated with that user in AD/LDAP.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PictureAttribute": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This is the attribute in the AD/LDAP server that syncs and locks the profile picture in Mattermost. | - System Config path: **Authentication > AD/LDAP**            |
+|                                                                                                     | - ``config.json`` setting: ``.LdapSettings.PictureAttribute`` |
+| The image is updated when users sign-in, not when Mattermost syncs with the AD/LDAP server.         | - Environment variable: ``MM_LDAPSETTINGS_PICTUREATTRIBUTE``  |
+|                                                                                                     |                                                               |
+| The image is not updated if the Mattermost image already matches the AD/LDAP image.                 |                                                               |
+|                                                                                                     |                                                               |
+| String input.                                                                                       |                                                               |
++-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 Group display name attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -538,14 +568,13 @@ Group display name attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Required) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names.
-
-.. note::
-  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
-
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GroupDisplayNameAttribute": ""`` with string input. |
-+--------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| This is the AD/LDAP Group Display name attribute that populates the Mattermost group name field. | - System Config path: **Authentication > AD/LDAP**                                                                                          |
+|                                                                                                  | - ``config.json`` setting: ``.LdapSettings.GroupDisplayNameAttribute``                                                                      |
+| String input.                                                                                    | - Environment variable: ``MM_LDAPSETTINGS_GROUPDISPLAYNAMEATTRIBUTE``                                                                       |
++--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information. |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group ID attribute
 ~~~~~~~~~~~~~~~~~~
@@ -555,66 +584,88 @@ Group ID attribute
 
 *Available in legacy Enterprise Edition E20*
 
-(Required) Enter an AD/LDAP Group ID attribute to use as a unique identifier for Groups. This should be an AD/LDAP value that does not change. This is usually ``entryUUID`` for LDAP and ``objectGUID`` for AD.
-
-.. note::
-  This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information on enabling and configuring AD/LDAP Group Sync.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GroupIdAttribute": ""`` with string input. |
-+-----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| This is an AD/LDAP Group ID attribute that sets a unique identifier for groups.                              | - System Config path: **Authentication > AD/LDAP**                                                                              |
+|                                                                                                              | - ``config.json`` setting: ``.LdapSettings.GroupIdAttribute``                                                                   |
+| This should be a value that does not change, such as ``entryUUID`` or ``objectGUID``.                        | - Environment variable: ``MM_LDAPSETTINGS_GROUPIDATTRIBUTE``                                                                    |
+|                                                                                                              |                                                                                                                                 |
+| String input.                                                                                                |                                                                                                                                 |
++--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html>`__ for more information. |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Synchronization interval (minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minutes. 
+*Available in legacy Enterprise Edition E10 and E20*
 
-When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). 
-
-When accounts are disabled in AD/LDAP users are made inactive in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes. To synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button.
-
-+-----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SyncIntervalMinutes": 60`` with numerical input. |
-+-----------------------------------------------------------------------------------------------+
-
-.. note::
-  LDAP syncs cause a large number of database read queries. Ensure that you monitor database load during a sync to determine how often these syncs should happen in your environment in order to minimize performance degradation.
++------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| This value determines how often Mattermost syncs with the AD/LDAP server by setting the number of minutes between each sync. | - System Config path: **Authentication > AD/LDAP**                   |
+|                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.SyncIntervalMinutes: 60`` |
+| Syncing with the AD/LDAP server will update Mattermost accounts to match any changes made to AD/LDAP attributes.             | - Environment variable: ``MM_LDAPSETTINGS_SYNCINTERVALMINUTES``      |
+|                                                                                                                              |                                                                      |
+| Disabled AD/LDAP accounts become inactive users in Mattermost, and any active sessions are revoked.                          |                                                                      |
+|                                                                                                                              |                                                                      |
+| Use the **AD/LDAP Synchronize Now** button to immediately revoke a session after disabling an AD/LDAP account.               |                                                                      |
+|                                                                                                                              |                                                                      |
+| Numerical input. Default is **60**.                                                                                          |                                                                      |
++------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| **Note**: LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum page size
 ~~~~~~~~~~~~~~~~~~
 
-The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once.
+*Available in legacy Enterprise Edition E10 and E20*
 
-- A value of 0 is unlimited and does not paginate the results.
-- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting.
-
-+--------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input. |
-+--------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| This setting paginates the results of AD/LDAP server queries. Use this setting if your AD/LDAP server has a page size limit. | - System Config path: **Authentication > AD/LDAP**          |
+|                                                                                                                              | - ``config.json`` setting: ``.LdapSettings.MaxPageSize: 0`` |
+| The recommended setting is **1500**. This is the default AD/LDAP ``MaxPageSize``.                                            | - Environment variable: ``MM_LDAPSETTINGS_MAXPAGESIZE``     |
+|                                                                                                                              |                                                             |
+| A page size of **0** disables pagination of results.                                                                         |                                                             |
+|                                                                                                                              |                                                             |
+| Numerical input. Default is **0**.                                                                                           |                                                             |
++------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 Query timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The timeout value for queries to the AD/LDAP server. Increase this value if you are getting timeout errors caused by a slow AD/LDAP server.
+*Available in legacy Enterprise Edition E10 and E20*
 
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"QueryTimeout": 60`` with numerical input. |
-+----------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting determines the timeout period, in seconds, for AD/LDAP queries. Increase this value to avoid timeout errors when querying a slow server. | - System Config path: **Authentication > AD/LDAP**            |
+|                                                                                                                                                       | - ``config.json`` setting: ``.LdapSettings.QueryTimeout: 60`` |
+| Numerical input. Default is **60**.                                                                                                                   | - Environment variable: ``MM_LDAPSETTINGS_QUERYTIMEOUT``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 AD/LDAP test
 ~~~~~~~~~~~~
 
-This button can be used to test the connection to the AD/LDAP server. If the test is successful, it shows a confirmation message and if there is a problem with the configuration settings it will show an error message.
+*Available in legacy Enterprise Edition E10 and E20*
+
++---------------------------------------------------------------+----------------------------------------------------+
+| Use this button to test the connection to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP** |
+|                                                               | - ``config.json`` setting: N/A                     |
+| If the test succeeds, a confirmation message is displayed.    | - Environment variable: N/A                        |
+|                                                               |                                                    |
+| If the test fails, an error message is displayed.             |                                                    |
++---------------------------------------------------------------+----------------------------------------------------+
 
 AD/LDAP synchronize now
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-This button causes AD/LDAP synchronization to occur as soon as it is pressed. Use it whenever you have made a change in the AD/LDAP server you want to take effect immediately. After using the button, the next AD/LDAP synchronization will occur after the time specified by the Synchronization Interval.
+*Available in legacy Enterprise Edition E10 and E20*
 
-You can monitor the status of the synchronization job in the table below this button.
-
-.. note::
-  If synchronization **Status** displays as ``Pending`` and does not complete, make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
++-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+| Use this button to immediately sync with the AD/LDAP server.                                              | - System Config path: **Authentication > AD/LDAP** |
+|                                                                                                           | - ``config.json`` setting: N/A                     |
+| The status of the sync is displayed in the table underneath the button (see the figure below).            | - Environment variable: N/A                        |
+|                                                                                                           |                                                    |
+| Following a manual sync, the next sync will occur after the time set in the **Synchronization Interval**. |                                                    |
++-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+| **Note**: If a sync is ``Pending`` and does not complete, check that **Enable Synchronization with AD/LDAP** is set to ``true``.                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. figure:: ../images/ldap-sync-table.png
 
@@ -1350,7 +1401,7 @@ GitLab settings
 GitLab site URL
 '''''''''''''''
 
-*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Starter.*
+*Available in legacy Enterprise Edition E10 and E20. Not available in Cloud Free.*
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
@@ -1358,7 +1409,7 @@ Discovery endpoint
 ''''''''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your service provider account. Should be in the format ``https://myopenid.provider.com/{my_company}/.well-known/openid-configuration`` where the value of *{my_company}* is replaced with your organization.
 
@@ -1366,7 +1417,7 @@ Client ID
 '''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your service provider account.
 
@@ -1374,7 +1425,7 @@ Client secret
 '''''''''''''
 
 *Available in legacy Enterprise Edition E10 and E20*
-*Not available in Cloud Starter*
+*Not available in Cloud Free*
 
 Obtain this value by registering Mattermost as an application in your Google account.
 
