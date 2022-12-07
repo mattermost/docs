@@ -1159,25 +1159,29 @@ Enable OAuth 2.0 authentication with GitLab
 GitLab OAuth 2.0 Application ID
 '''''''''''''''''''''''''''''''
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
-| This setting holds the OAuth Application ID from GitLab. Generate the ID by these steps:                                                          | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
-|                                                                                                                                                   | - ``config.json`` setting: ``.GitLabSettings.Id``                |
-| 1. Login to your GitLab account.                                                                                                                  | - Environment variable: ``MM_GITLABSETTINGS_ID``                 |
-| 2. Go to **Profile Settings > Applications > New Application** and enter a name.                                                                  |                                                                  |
-| 3. Enter the Redirect URLs: ``https://<your-mattermost-url>/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``. |                                                                  |
-| 4. Enter the Application ID provided by GitLab in the System Console field, the ``config.json`` setting, or the Environment variable.             |                                                                  |
-|                                                                                                                                                   |                                                                  |
-| String input.                                                                                                                                     |                                                                  |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the OAuth Application ID from GitLab. Generate the ID by these steps:                                                             | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                      | - ``config.json`` setting: ``.GitLabSettings.Id``                |
+| 1. Login to your GitLab account.                                                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_ID``                 |
+| 2. Go to **Profile Settings > Applications > New Application** and enter a name.                                                                     |                                                                  |
+| 3. Enter the Redirect URLs: ``https://<your-mattermost-url>/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.    |                                                                  |
+| 4. Take the Application ID provided by GitLab and enter it in the Mattermost System Console field, ``config.json`` setting, or Environment variable. |                                                                  |
+|                                                                                                                                                      |                                                                  |
+| String input.                                                                                                                                        |                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| Note: GitLab provides the `Application Secret Key <#gitlab-oauth-2-0-application-secret-key>`__ along with the the ID.                                                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-Application secret key
-''''''''''''''''''''''
+GitLab OAuth 2.0 Application secret key
+'''''''''''''''''''''''''''''''''''''''
 
-Obtain this value by logging into your GitLab account. Go to **Profile Settings > Applications > New Application**, enter a Name, then enter Redirect URLs ``https://<your-mattermost-url>/login/gitlab/complete`` (example: ``https://example.com:8065/login/gitlab/complete`` and ``https://<your-mattermost-url>/signup/gitlab/complete``.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
-+-------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+| This setting holds the OAuth Application Secret Key from GitLab. The key is generated at the same time as the **Application ID** (see `GitLab OAuth 2.0 Application ID <#gitlab-oauth-2-0-application-id>`__). | - System Config path: **Authentication > OAuth 2.0 (or GitLab)** |
+|                                                                                                                                                                                                                | - ``config.json`` setting: ``.GitLabSettings.Secret``            |
+| Enter the key provided by GitLab in the Mattermost System Console field, ``config.json`` setting, or Environment variable.                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_SECRET``             |
+|                                                                                                                                                                                                                |                                                                  |
+| String input.                                                                                                                                                                                                  |                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 GitLab site URL
 ''''''''''''''''
