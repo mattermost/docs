@@ -14,7 +14,7 @@ Latest Mattermost Releases:
 ## Release v7.5 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v7.5.2, released **
-  - Mattermost v7.5.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v7.5.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where email notifications looked broken when email batching was enabled [MM-48521](https://mattermost.atlassian.net/browse/MM-48521).
   - Updated prepackaged Boards version to 7.5.2.
 - **v7.5.1, released 2022-11-16**
@@ -473,16 +473,16 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 - **v7.1.5, released **
   - Mattermost v7.1.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a new schema migration to ensure ``ParentId`` column is dropped from the ``Posts`` table. Depending on the table size, if the column is not dropped before, a significant spike in database CPU usage is expected on MySQL databases. Writes to the table will be limited during the migration.
-  - Fixed an issue where **Renew Now** was not available in-product for self-serve eligible licenses [MM-47045](https://mattermost.atlassian.net/browse/MM-47045).
+  - Fixed an issue where **Renew Now** option was not available in-product for self-serve eligible licenses [MM-47045](https://mattermost.atlassian.net/browse/MM-47045).
   - ``getPostSince`` now properly returns deleted posts when Collapsed Reply Threads is enabled.
-  - Fixed an issue where the ``Enterprise license is expired`` banner was un-dismissible [MM-47396](https://mattermost.atlassian.net/browse/MM-47396).
-  - Fixed an issue where screen readers did not announce search results on "Invite members to channel" modal [MM-44859](https://mattermost.atlassian.net/browse/MM-44859).
+  - Fixed an issue where the ``Enterprise license is expired`` banner was undismissible [MM-47396](https://mattermost.atlassian.net/browse/MM-47396).
+  - Fixed an issue where screen readers did not announce search results in the "Invite members to channel" modal [MM-44859](https://mattermost.atlassian.net/browse/MM-44859).
   - Fixed an issue where screen readers did not announce user status [MM-44873](https://mattermost.atlassian.net/browse/MM-44873).
-  - Fixed an issue where screen readers did not announce emojis from the autocomplete list [MM-44877](https://mattermost.atlassian.net/browse/MM-44877).
+  - Fixed an issue where screen readers did not announce emojis in the autocomplete list [MM-44877](https://mattermost.atlassian.net/browse/MM-44877).
   - Fixed an issue where screen readers did not announce successful logins [MM-46596](https://mattermost.atlassian.net/browse/MM-46596).
   - Fixed an issue where screen readers incorrectly announced the **Settings > Display > Language > Change interface language** field [MM-44114](https://mattermost.atlassian.net/browse/MM-44114).
   - Fixed an issue where the search dropdown options did not allow focusing with a tab [MM-34969](https://mattermost.atlassian.net/browse/MM-34969).
-  - Fixed an issue where screen readers failed to announce no results found on the Direct Message modal [MM-44858](https://mattermost.atlassian.net/browse/MM-44858).
+  - Fixed an issue where screen readers failed to announce "no results found" in the **Direct Message** modal [MM-44858](https://mattermost.atlassian.net/browse/MM-44858).
 - **v7.1.4, released 2022-10-14**
   - Mattermost v7.1.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.1.3, released 2022-08-23**
