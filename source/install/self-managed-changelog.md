@@ -477,7 +477,6 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
   - ``getPostSince`` now properly returns deleted posts when Collapsed Reply Threads is enabled.
   - Fixed an issue where the ``Enterprise license is expired`` banner was undismissable [MM-47396](https://mattermost.atlassian.net/browse/MM-47396).
   - Fixed an issue where screen readers did not announce search results in the "Invite members to channel" modal [MM-44859](https://mattermost.atlassian.net/browse/MM-44859).
-  - Fixed an issue where screen readers did not announce user status [MM-44873](https://mattermost.atlassian.net/browse/MM-44873).
   - Fixed an issue where screen readers did not announce emojis in the autocomplete list [MM-44877](https://mattermost.atlassian.net/browse/MM-44877).
   - Fixed an issue where screen readers did not announce successful logins [MM-46596](https://mattermost.atlassian.net/browse/MM-46596).
   - Fixed an issue where screen readers incorrectly announced the **Settings > Display > Language > Change interface language** field [MM-44114](https://mattermost.atlassian.net/browse/MM-44114).
