@@ -27,6 +27,10 @@ Users
 | their role is on a team.                                      |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
+users will be added by admin's invite to a specific channel. Admin has the power to add, remove, revoke user's sessions.
+To view about the users simply click on the **options** |options-icon| then select **system console** , One new window will open then go to **USER MANAGEMENT** tab
+then select **User** option. We can see all the users of that channel. Admin can control users from there.
+
 ----
 
 Groups
