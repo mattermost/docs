@@ -124,7 +124,7 @@ Use this option on Linux and macOS if you have Homebrew installed.
 
    brew install mmctl
 
-**Using go get (Linux, macOS, Windows)**
+**Using go install (Linux, macOS, Windows)**
 
 Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
 
@@ -132,7 +132,7 @@ To add the project in your `$GOPATH` run the following command:
 
 .. code-block:: sh
 
-   go get -u github.com/mattermost/mmctl
+   go install github.com/mattermost/mmctl@latest
 
 **Using release package (Linux, macOS, Windows)**
 
@@ -2355,7 +2355,7 @@ Delete an export file.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-
+   
 mmctl export download
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -2385,7 +2385,7 @@ Download export files.
 
    -h, --help     help for download
    --resume       Set to true to resume an export download.
-
+    
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -2399,7 +2399,7 @@ Download export files.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-
+   
 mmctl export job
 ~~~~~~~~~~~~~~~~
 
@@ -2487,7 +2487,7 @@ Show export job.
 .. code-block:: sh
 
   mmctl export job show
-
+  
 **Options**
 
 .. code-block:: sh
@@ -2942,7 +2942,7 @@ Disable group constrains in the specified team.
 **Examples**
 
 .. code-block:: sh
-
+   
    mmctl group team disable myteam
 
 **Options**
@@ -3081,7 +3081,7 @@ Show the group constrain status for the specified team.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-
+   
 mmctl import
 ------------
 
@@ -3185,7 +3185,7 @@ Show import job.
 
 .. code-block:: sh
 
-     mmctl import job show [importJobID] [flags]
+     mmctl import job show [importJobID] [flags] 
 
 **Examples**
 
@@ -3322,7 +3322,7 @@ List incomplete import files uploads.
    --local                        allows communicating with the server through a unix socket
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages
+   --suppress-warnings            disables printing warning messages 
 
 mmctl import process
 ~~~~~~~~~~~~~~~~~~~~
@@ -3830,7 +3830,7 @@ mmctl permissions role assign
 
 **Description**
 
-Assign users to a role by username.
+Assign users to a role by username. 
 
 **Format**
 
@@ -3843,12 +3843,12 @@ Assign users to a role by username.
 .. code-block:: sh
 
    # Assign users with usernames 'john.doe' and 'jane.doe' to the role named 'system_admin'.
-   mmctl permissions assign system_admin john.doe jane.doe
+   mmctl permissions role assign system_admin john.doe jane.doe
 
    # Examples using other system roles
-   mmctl permissions assign system_manager john.doe jane.doe
-   mmctl permissions assign system_user_manager john.doe jane.doe
-   mmctl permissions assign system_read_only_admin john.doe jane.doe
+   mmctl permissions role assign system_manager john.doe jane.doe
+   mmctl permissions role assign system_user_manager john.doe jane.doe
+   mmctl permissions role assign system_read_only_admin john.doe jane.doe
 
 **Options**
 
@@ -3967,7 +3967,7 @@ Manage plugins.
       -  `mmctl plugin install-url`_ - Install plugin from URL
       -  `mmctl plugin list`_ - List plugins
       -  `mmctl plugin marketplace`_ - Manage Marketplace plugins
-
+  
 **Options**
 
 .. code-block:: sh
@@ -5837,7 +5837,7 @@ Change the email address associated with a user.
 .. code-block:: sh
 
   mmctl user email testuser user@example.com
-
+  
 **Options**
 
 .. code-block:: sh
