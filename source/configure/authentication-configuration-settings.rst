@@ -1183,10 +1183,14 @@ GitLab OAuth 2.0 Application secret key
 | String input.                                                                                                                                                                                                  |                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-GitLab site URL
-''''''''''''''''
+GitLab OAuth 2.0 site URL
+'''''''''''''''''''''''''
 
-Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
++-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+| This setting holds the URL of your GitLab instance, e.g. ``https://example.com:3000``. Use ``http://`` if SSL is not enabled on your GitLab instance. | - System Config path: **Authentication > OAuth 2.0 (GitLab)** |
+|                                                                                                                                                       | - ``config.json`` setting: N/A                                |
+|                                                                                                                                                       | - Environment variable: N/A                                   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 User API endpoint
 ''''''''''''''''''
