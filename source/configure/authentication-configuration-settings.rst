@@ -1711,6 +1711,13 @@ Access the following configuration settings in the System Console by going to **
 
 Settings to configure OAuth login for account creation and login.
 
+.. config:setting:: oauth-selectprovider
+  :displayname: Select OAuth 2.0 service provider (OAuth)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: N/A
+  :environment: N/A
+  :description: Choose whether OAuth can be used for account creation and login.
+
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1731,6 +1738,15 @@ GitLab
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. config:setting:: oauth-gitlabenable
+  :displayname: Enable authentication with GitLab (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Enable
+  :environment: N/A
+
+  - **True**: Allow team creation and account signup using GitLab OAuth. To configure, input the **Secret** and **Id** credentials.
+  - **False**: **(Default)** GitLab OAuth cannot be used for team creation or account signup.
+
 Enable authentication with GitLab
 ''''''''''''''''''''''''''''''''''
 
@@ -1744,6 +1760,13 @@ Enable authentication with GitLab
 +----------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
+
+.. config:setting:: oauth-gitlabappid
+  :displayname: Application ID (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Id
+  :environment: N/A
+  :description: Obtain this value by logging into your GitLab account.
 
 Application ID
 ''''''''''''''
@@ -1768,6 +1791,13 @@ GitLab site URL
 
 Specify the URL of your GitLab instance (example ``https://example.com:3000``). If your GitLab instance is not set up with SSL, start the URL with ``http://`` instead of ``https://``.
 
+.. config:setting:: oauth-gitlabuserapiendpoint
+  :displayname: User API endpoint (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: UserApiEndpoint
+  :environment: N/A
+  :description: Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:3000/api/v3/user``).
+
 User API endpoint
 ''''''''''''''''''
 
@@ -1776,6 +1806,13 @@ Enter ``https://<your-gitlab-url>/api/v3/user`` (example: ``https://example.com:
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": ""`` with string input. |
 +----------------------------------------------------------------------------------------+
+
+.. config:setting:: oauth-gitlabauthendpoint
+  :displayname: Auth endpoint (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: AuthEndpoint
+  :environment: N/A
+  :description: Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.com:3000/oauth/authorize``).
 
 Auth endpoint
 '''''''''''''
@@ -1786,6 +1823,13 @@ Enter ``https://<your-gitlab-url>/oauth/authorize`` (example: ``https://example.
 | This feature's ``config.json`` setting is ``"AuthEndpoint": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
+.. config:setting:: oauth-gitlabtokenendpoint
+  :displayname: Token endpoint (OAuth - GitLab)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: TokenEndpoint
+  :environment: N/A
+  :description: Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:3000/oauth/token``).
+
 Token endpoint
 ''''''''''''''
 
@@ -1794,6 +1838,15 @@ Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input. |
 +--------------------------------------------------------------------------------------+
+
+.. config:setting:: oauth-googleenable
+  :displayname: Enable (OAuth - Google)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Enable
+  :environment: N/A
+
+  - **True**: Allow team creation and account signup using Google OAuth.
+  - **False**: **(Default)** Google OAuth cannot be used for team creation or account signup.
 
 Google
 ^^^^^^
@@ -1811,6 +1864,13 @@ Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
+.. config:setting:: oauth-googleclientid
+  :displayname: Client ID (OAuth - Google)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Id
+  :environment: N/A
+  :description: Obtain this value by registering Mattermost as an application in your Google account.
+
 Client ID
 '''''''''
 
@@ -1821,6 +1881,13 @@ Obtain this value by registering Mattermost as an application in your Google acc
 +---------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
 +---------------------------------------------------------------------------+
+
+.. config:setting:: oauth-googleclientsecret
+  :displayname: Client secret (OAuth - Google)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Secret
+  :environment: N/A
+  :description: Obtain this value by registering Mattermost as an application in your Google account.
 
 Client secret
 '''''''''''''
@@ -1833,6 +1900,13 @@ Obtain this value by registering Mattermost as an application in your Google acc
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
+.. config:setting:: oauth-googleuserapiendpoint
+  :displayname: User API endpoint (OAuth - Google)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: UserApiEndpoint
+  :environment: N/A
+  :description: We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. It is the default value.
+
 User API endpoint
 ''''''''''''''''''
 
@@ -1843,6 +1917,13 @@ We recommend you use ``https://people.googleapis.com/v1/people/me?personFields=n
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: oauth-googleauthendpoint
+  :displayname: Auth endpoint (OAuth - Google)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: AuthEndpoint
+  :environment: N/A
+  :description: We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. It is the default value.
 
 Auth endpoint
 '''''''''''''
@@ -1855,6 +1936,13 @@ We recommend you use ``https://accounts.google.com/o/oauth2/v2/auth`` as the Aut
 | This feature's ``config.json`` setting is ``"AuthEndpoint": "https://accounts.google.com/o/oauth2/v2/auth"`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: oauth-googletokenendpoint
+  :displayname: Token endpoint (OAuth - Google)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: TokenEndpoint
+  :environment: N/A
+  :description: We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. It is the default value.
+
 Token endpoint
 '''''''''''''''
 
@@ -1865,6 +1953,15 @@ We recommend that you use ``https://www.googleapis.com/oauth2/v4/token`` as the 
 +--------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input. |
 +--------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: oauth-o365enable
+  :displayname: Enable (OAuth - Office 365)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Enable
+  :environment: N/A
+
+  - **True**: Allow team creation and account signup using Office 365 OAuth.
+  - **False**: **(Default)** Office 365 OAuth cannot be used for team creation or account signup.
 
 Office 365
 ^^^^^^^^^^
@@ -1885,6 +1982,13 @@ Enable authentication with Office 365 by selecting **Office 365** from **System 
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
+.. config:setting:: oauth-o365appid
+  :displayname: Application ID (OAuth - Office 365)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Id
+  :environment: N/A
+  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
+
 Application ID
 ''''''''''''''
 
@@ -1895,6 +1999,13 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 +---------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Id": ""`` with string input. |
 +---------------------------------------------------------------------------+
+
+.. config:setting:: oauth-o365appsecret
+  :displayname: Application secret password (OAuth - Office 365)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: Secret
+  :environment: N/A
+  :description: Obtain this value by registering Mattermost as an application in your Microsoft or Office account.
 
 Application secret password
 '''''''''''''''''''''''''''
@@ -1907,6 +2018,13 @@ Obtain this value by registering Mattermost as an application in your Microsoft 
 | This feature's ``config.json`` setting is ``"Secret": ""`` with string input. |
 +-------------------------------------------------------------------------------+
 
+.. config:setting:: oauth-o365directoryid
+  :displayname: Directory ID (OAuth - Office 365)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: DirectoryId
+  :environment: N/A
+  :description: This value is the ID of the application's AAD directory.
+
 Directory (tenant) ID
 ''''''''''''''''''''''
 
@@ -1917,6 +2035,13 @@ This value is the ID of the application's AAD directory.
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DirectoryId": ""`` with string input. |
 +------------------------------------------------------------------------------------+
+
+.. config:setting:: oauth-o365userapiendpoint
+  :displayname: User API endpoint (OAuth - Office 365)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: UserApiEndpoint
+  :environment: N/A
+  :description: We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. It is the default value.
 
 User API endpoint
 '''''''''''''''''
@@ -1929,6 +2054,13 @@ We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpo
 | This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: oauth-o365authendpoint
+  :displayname: Auth endpoint (OAuth - Office 365)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: AuthEndpoint
+  :environment: N/A
+  :description: We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. It is the default value.
+
 Auth endpoint
 '''''''''''''
 
@@ -1939,6 +2071,13 @@ We recommend using ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"`` with string input.                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: oauth-o365tokenendpoint
+  :displayname: Token endpoint (OAuth - Office 365)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: TokenEndpoint
+  :environment: N/A
+  :description: We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. It is the default value.
 
 Token endpoint
 '''''''''''''''
