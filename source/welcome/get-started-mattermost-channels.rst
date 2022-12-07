@@ -7,8 +7,6 @@ Get started with Mattermost Channels
 Access Mattermost Channels by selecting **Channels** from the **product menu** |product-list|.
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :height: 24px
-  :width: 24px
   :alt: Navigate between Channels, Playbooks, and Boards using the Product list icon.
 
 Channels are where you can communicate with your team about various topics or projects. The channels you're a member of and useful channel management tools are available in the channel sidebar to the left. 
@@ -58,7 +56,7 @@ As your channel sidebar fills up with channels you've joined, you can organize y
 Invite people to the team
 -------------------------
 
-You can invite members of your organization, as well as external guests such as vendors or project partners, to a Mattermost team. Anyone can invite people to the team, unless the System Admin has `disabled this option </configure/configuration-settings.html#enable-account-creation>`__ or `restricted permissions </onboard/advanced-permissions.html>`__ to do so. See the `About teams </welcome/about-teams.html>`__ documentation for details.
+You can invite members of your organization, as well as external guests such as vendors or project partners, to a Mattermost team. Anyone can invite people to the team, unless the system admin has `disabled this option </configure/configuration-settings.html#enable-account-creation>`__ or `restricted permissions </onboard/advanced-permissions.html>`__ to do so. See the `About teams </welcome/about-teams.html>`__ documentation to learn more about team invitations.
 
 Send messages
 -------------
