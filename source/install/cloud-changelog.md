@@ -26,6 +26,10 @@ Latest Mattermost Cloud releases:
  - On the purchase modal, admins are now able to buy an annual cloud subscription for a user count that exceeds the current user count.
  - The **System Console > Billing & Account > Subscriptions** page now reflects if the plan is monthly or annual.
  - Added the ability to migrate from a monthly to an annual Cloud Professional plan.
+ 
+#### Playbooks
+ - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
+ - In addition to the daily digest, users can now also view a task inbox from the global header bar while in Playbooks.
 
 ### Improvements
 
