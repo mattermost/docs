@@ -18,7 +18,7 @@ Latest Mattermost Releases:
 ### Important Upgrade Notes
 
  - Plugins with a webapp component may need to be updated to work with Mattermost v7.6 release and the updated ``React v17`` dependency. 
- 	- This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our `starter template <https://github.com/mattermost/mattermost-plugin-starter-template>`_ depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost v7.6 and is backwards compatible with older versions of Mattermost. If you run into issues, you can either enable ``ExperimentalSettings.PatchPluginsReactDOM`` or just disable the affected plugin while it's updated.
+ 	- This is to avoid plugins crashing with an error about ``findDOMNode`` being called on an unmounted component. While our [starter template](https://github.com/mattermost/mattermost-plugin-starter-template) depended on an external version of ``React``, it did not do the same for ``ReactDOM``. Plugins need to update their ``webpack.config.js`` directives to externalize ``ReactDOM``. For reference, see https://github.com/mattermost/mattermost-plugin-playbooks/pull/1489. Server-side only plugins are unaffected. This change can be done for existing plugins any time prior to upgrading to Mattermost v7.6 and is backwards compatible with older versions of Mattermost. If you run into issues, you can either enable ``ExperimentalSettings.PatchPluginsReactDOM`` or just disable the affected plugin while it's updated.
  - Denormalized ``Threads table`` by adding the ``TeamId`` column. See details for schema changes in the [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
 
 **IMPORTANT:** If you upgrade from a release earlier than v7.5, please read the other [Important Upgrade Notes](/upgrade/important-upgrade-notes.html).
@@ -29,13 +29,13 @@ Latest Mattermost Releases:
 ### Highlights
 
 #### Calls
- - Audio calling and screen sharing in channels is now generally available to all Mattermost customers.
- - Updated keyboard shortcut to start and join calls.
+ - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
+ - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
 
 #### Boards
  - Boards now supports file attachments, including PDFs, images, videos, and any other file types.
- - Users can now drag and drop boards and categories on the sidebar and organize them in any order they prefer.
- - The template picker has been improved to make it easier for users to find the best template for their project.
+ - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
+ - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
  
 #### Playbooks
  - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
@@ -121,7 +121,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
     - ``PostPriority``, to add an option to select a message priority label for root posts.
     - ``AllowSyncedDrafts``, to add an option to display a centralized page for draft messages.
  - Under ``ExperimentalSettings`` in the ``config.json``:
-    - ``PatchPluginsReactDOM`` to enable the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app.
+    - ``PatchPluginsReactDOM``, to enable the patching of the React DOM library when loading web app plugins so that the plugin uses the version matching the web app.
 
 ### API Changes
  - The resumable uploads API was exposed to plugins.
