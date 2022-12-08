@@ -42,7 +42,7 @@ Latest Mattermost Releases:
  - In addition to the daily digest, users can now also view a task inbox from the global header bar while in Playbooks.
 
 #### Message Priority and Acknowledgments
- - Added message priority labels to the Threads view.
+ - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
  - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
 
 #### Global Drafts
