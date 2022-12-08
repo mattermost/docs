@@ -16,8 +16,8 @@ Latest Mattermost Cloud releases:
 ### Highlights
 
 #### Message Priority and Acknowledgments
- - Added message priority labels to the Threads view.
- - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional Plan).
+ - Added [message priority labels](https://docs.mattermost.com/channels/message-priority.html) to the Threads view.
+ - Added support for enterprise users to request acknowledgements on posts and to acknowledge posts (Professional).
 
 #### Global Drafts
  - Added a centralized Drafts view for draft messages.
@@ -30,13 +30,16 @@ Latest Mattermost Cloud releases:
 #### Playbooks
  - Added an option to run playbooks without creating a new channel every time in order to reduce the unnecessary overhead.
  - In addition to the daily digest, users can now also view a task inbox from the global header bar while in Playbooks.
+ 
+#### Calls
+ - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
+ - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
 
 ### Improvements
 
 #### User Interface (UI)
  - Updated prepackaged version of plugins affected by React 17 upgrade.
  - Updated the **Remove license and download** text in-product to clarify that server will be downgraded to Mattermost Free as a result.
- - Updated the keyboard shortcut to start and join calls.
 
 #### Administration
  - The export file now contains the server version and a creation timestamp.
