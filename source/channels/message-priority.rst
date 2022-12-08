@@ -4,13 +4,13 @@ Set message priority (Beta)
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |priority-icon| image:: ../images/reply-outline_F0F20.svg
+.. |priority-icon| image:: ../images/Priority-Message-Icon.svg
   :alt: Select the Priority icon to mark new messages as important or urgent before sending them.
 
-.. |acknowledge-button| image:: ../images/reply-outline_F0F20.svg
+.. |acknowledge-button| image:: ../images/Ack-Button-Default.svg
   :alt: Select the Acknowledge button to indicate that you've read it and taken necessary action.
 
-.. |acknowledged-icon| image:: ../images/reply-outline_F0F20.svg
+.. |acknowledged-icon| image:: ../images/Ack-Button-Active.svg
   :alt: Hover over the Acknowledged icon to see who has read and actioned the message. Select the icon to remove your acknowledgement within five minutes.
 
 From Mattermost v7.6, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
