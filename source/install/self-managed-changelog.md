@@ -68,7 +68,6 @@ Latest Mattermost Releases:
 #### Administration
  - If an Admin encounters an invitation error “SMTP is not configured in System Console", a link to the SMTP configuration within the **System Console** is now included in the error message.
  - Crashing jobs now sets the job status to "failed".
- - **Total Active Users** was renamed to **Total Activated Users** in **System Console > Reporting > Site Statistics** and in **System Console > Reporting > Team Statistics**.
  - Optimized ``ThreadStore.MarkAllAsUnreadByTeam``.
  - SQL migrations for PostgreSQL will now filter by the current schema name when checking for information from the ``information_schema.columns`` view. This does not affect anything because usually there's only one installation in a given database, but this gives flexibility to users to store multiple Mattermost instances under a single database.
  - **My Insights** and OpenId Connect were added to the Free plan.
