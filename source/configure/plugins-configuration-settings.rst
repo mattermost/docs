@@ -434,7 +434,7 @@ Maximum call recording duration
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-The maximum duration of a call recording in minutes. The default is 60 with a maximum of <>.
+The maximum duration of a call recording in minutes. The default is 60 with a maximum of 180. A recording of a 60-minute call will result in a file of about 700 MB.
 
 This is a required value.
 
