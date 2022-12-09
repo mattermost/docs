@@ -11,7 +11,7 @@ Mattermost supports up to four distinct, concurrent methods of **Authentication*
 - An LDAP instance (e.g., Active Directory, OpenLDAP)
 - Email and Password
 
-Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Authentication**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Authentication**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables.
 
 - `Signup <#signup>`__
 - `Email <#email>`__
