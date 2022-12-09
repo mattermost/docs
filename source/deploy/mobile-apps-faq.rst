@@ -9,14 +9,12 @@ Mobile apps FAQ
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 
-At the moment, we only support connecting to one server at a time; however, we are aware that this is one of the `top feature requests <https://mattermost.uservoice.com/forums/306457-general/suggestions/10975938-ios-and-android-apps-should-allow-multiple-server>`__ for the mobile app. We are currently investigating some technical challenges, such as how to handle push notifications coming from multiple servers. To follow our progress on this feature, you can join the `RN: Multi-Server <https://community.mattermost.com/core/channels/rn-multi-server-suppot>`_ channel on our community server.
-
-As a workaround, you can install the released Mattermost mobile app and sign up to be a `tester <https://github.com/mattermost/mattermost-mobile/blob/master/README.md#testing>`__ for the Mattermost Beta mobile app. This allows you to connect and log in to a different server from each app.
+Yes. Mattermost mobile app v2.0 and later supports multiple server connections. See the `manage multiple server connections </welcome/manage-multiple-server-connections.html>`__ documentation for details. 
 
 Is there a tablet version of the mobile apps?
 ---------------------------------------------
 
-Mattermost Classic mobile apps support tablets. Our second generation mobile apps (Mattermost) have beta support for tablets.
+Mattermost Classic mobile apps support tablets.
 
 Can the permanent sidebar on tablet devices be disabled?
 --------------------------------------------------------

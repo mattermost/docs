@@ -11,7 +11,7 @@ What's the global header?
 
 The Global Header introduces a new way of navigating and using Mattermost, and offers shared functionality available across the Mattermost platform in a single place. If you’ve recently installed or upgraded to v6.0, you’ll notice that Account Settings options have been split up, the Search bar is now front and center, and we’ve introduced a Product Menu button for easy navigation between Channels, Boards, and Playbooks. You'll notice that going forward, when you open Playbooks and Boards, they display as tabs in the window header for easier access.
 
-We've also changed how you access multiple servers. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
+We've also changed how you access multiple servers when using Mattermost in a web browser or the desktop app. Previously, multiple servers were displayed in tabs across the top of Mattermost. They're now folded into a single menu which supports drag and drop for reordering. Notifications across servers work the same way as before, so you won't miss any important conversations.
 
 .. image:: ../images/server-menu.png
   :alt: Mattermost server list
@@ -60,7 +60,7 @@ Use the arrows to the right of the Product menu to show the last channel/next ch
 Server list
 -----------
 
-If you're using multiple servers (e.g., you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are . To change servers, select the menu and then select the server you want to use.
+If you're using multiple servers (e.g., you're running community, community-release, and a Cloud test server) the Mattermost menu is where your servers are. To change servers, select the menu and then select the server you want to use.
 
 What else has changed?
 ----------------------

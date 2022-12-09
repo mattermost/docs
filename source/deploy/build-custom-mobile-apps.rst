@@ -12,8 +12,10 @@ This approach is recommended for:
 - Customers using self-hosted Mattermost Team Edition, Professional or Enterprise Edition that prefer to host their own push proxy server instead of using one of Mattermost’s hosted versions.
 
 .. note::
-   A Mattermost Enterprise subscription plan (or a legacy Enterprise Edition license) is required to request assistance or troubleshooting help from `Mattermost Customer Support <https://mattermost.com/support/>`__ when building and deploying custom mobile apps. Customers on other Mattermost subscription plans can develop and deploy custom mobile apps, but can't request technical support assistance through Mattermost Customer Support.
-  
+   
+   - A Mattermost Enterprise subscription plan (or a legacy Enterprise Edition license) is required to request assistance or troubleshooting help from `Mattermost Customer Support <https://mattermost.com/support/>`__ when building and deploying custom mobile apps. Customers on other Mattermost subscription plans can develop and deploy custom mobile apps, but can't request technical support assistance through Mattermost Customer Support.
+   - With the release of Mattermost mobile app v2.0, `mobile app v1.55 becomes the official extended support mobile release </upgrade/extended-support-release.html#mobile-app-v1-55-1-extended-support-release-esr>`__, and will be supported for an extended timeframe.
+
 Deployment options
 ------------------
 
