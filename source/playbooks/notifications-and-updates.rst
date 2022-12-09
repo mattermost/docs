@@ -43,6 +43,12 @@ Running playbooks in multiple channels can be overwhelming. The daily digest is 
 
 The digest is on by default. To turn it off, use the slash command ``/playbook settings digest off``.
 
+Task inbox
+----------
+
+In addition to the daily digest, you also have access to a task inbox. To view it, open Playbooks. In the header, select the message icon. In the RHS, every task assigned to you from every run that's in progress is listed into one view. You can check off, change due dates, and reassign tasks in this view.
+
+
 Playbook to do
 --------------
 

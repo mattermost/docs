@@ -57,8 +57,8 @@ You can change a playbook’s configuration at any time, but changes will only b
 Make checklists
 ----------------
 
-1. Open Playbooks and select the **Playbooks** tab.
-2. Start a **Blank Playbook**, or use the built-in template.
+1. In channels, select **Toggle Playbook List** from the apps bar.
+2. Select an exiStart a **Blank Playbook**, or use the built-in template.
 3. Name your playbook and provide a description.
 4. Select the **Checklists** tab.
 
@@ -70,6 +70,16 @@ Make checklists
     * Add a slash command to the task that can be executed by members of the playbook as needed.
 
 5. Choose **Save**.
+
+Runs and channel behavior
+-------------------------
+
+When setting up your playbook:
+
+- You can link it to an existing channel so that each run starts in that channel.
+- You can choose that each time the playbook is run, it creates a new channel.
+
+To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
 Assign tasks and due dates
 --------------------------
@@ -104,6 +114,7 @@ You can customize actions associated with your playbook to ensure a smooth start
 Options include: Creating a channel when a run is started, inviting members to the run, sending outgoing webhooks, and automatically adding the run channel to a sidebar category.
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
+
 If you’re a System Admin or Channel Admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook.
 
 Only Channel Admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
